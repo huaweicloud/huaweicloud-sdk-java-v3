@@ -14,16 +14,18 @@ public class UpdateScreenRecordsTrafficLimitConfigRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ScreenRecordsConfigResultReq body;
+    private UpdateScreenRecordsTrafficLimitConfigRequestBody body;
 
-    public UpdateScreenRecordsTrafficLimitConfigRequest withBody(ScreenRecordsConfigResultReq body) {
+    public UpdateScreenRecordsTrafficLimitConfigRequest withBody(
+        UpdateScreenRecordsTrafficLimitConfigRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateScreenRecordsTrafficLimitConfigRequest withBody(Consumer<ScreenRecordsConfigResultReq> bodySetter) {
+    public UpdateScreenRecordsTrafficLimitConfigRequest withBody(
+        Consumer<UpdateScreenRecordsTrafficLimitConfigRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new ScreenRecordsConfigResultReq();
+            this.body = new UpdateScreenRecordsTrafficLimitConfigRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +36,11 @@ public class UpdateScreenRecordsTrafficLimitConfigRequest {
      * Get body
      * @return body
      */
-    public ScreenRecordsConfigResultReq getBody() {
+    public UpdateScreenRecordsTrafficLimitConfigRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ScreenRecordsConfigResultReq body) {
+    public void setBody(UpdateScreenRecordsTrafficLimitConfigRequestBody body) {
         this.body = body;
     }
 

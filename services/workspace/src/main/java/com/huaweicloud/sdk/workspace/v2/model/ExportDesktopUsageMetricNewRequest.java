@@ -26,6 +26,11 @@ public class ExportDesktopUsageMetricNewRequest {
     private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_id")
+
+    private String resourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_idle_days")
 
     private Integer minIdleDays;
@@ -109,6 +114,23 @@ public class ExportDesktopUsageMetricNewRequest {
 
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
+    }
+
+    public ExportDesktopUsageMetricNewRequest withResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
+
+    /**
+     * 资源ID(精确匹配)。
+     * @return resourceId
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
     }
 
     public ExportDesktopUsageMetricNewRequest withMinIdleDays(Integer minIdleDays) {
@@ -248,7 +270,7 @@ public class ExportDesktopUsageMetricNewRequest {
         }
         ExportDesktopUsageMetricNewRequest that = (ExportDesktopUsageMetricNewRequest) obj;
         return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.resourceId, that.resourceId)
             && Objects.equals(this.minIdleDays, that.minIdleDays) && Objects.equals(this.maxIdleDays, that.maxIdleDays)
             && Objects.equals(this.usageMinHours, that.usageMinHours)
             && Objects.equals(this.usageMaxHours, that.usageMaxHours)
@@ -261,6 +283,7 @@ public class ExportDesktopUsageMetricNewRequest {
         return Objects.hash(startTime,
             endTime,
             resourceName,
+            resourceId,
             minIdleDays,
             maxIdleDays,
             usageMinHours,
@@ -277,6 +300,7 @@ public class ExportDesktopUsageMetricNewRequest {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    minIdleDays: ").append(toIndentedString(minIdleDays)).append("\n");
         sb.append("    maxIdleDays: ").append(toIndentedString(maxIdleDays)).append("\n");
         sb.append("    usageMinHours: ").append(toIndentedString(usageMinHours)).append("\n");

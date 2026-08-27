@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -24,6 +27,11 @@ public class ExportUserGroupUsersNewRequest {
     @JsonProperty(value = "user_name")
 
     private String userName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_names")
+
+    private List<String> userNames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -224,6 +232,39 @@ public class ExportUserGroupUsersNewRequest {
         this.userName = userName;
     }
 
+    public ExportUserGroupUsersNewRequest withUserNames(List<String> userNames) {
+        this.userNames = userNames;
+        return this;
+    }
+
+    public ExportUserGroupUsersNewRequest addUserNamesItem(String userNamesItem) {
+        if (this.userNames == null) {
+            this.userNames = new ArrayList<>();
+        }
+        this.userNames.add(userNamesItem);
+        return this;
+    }
+
+    public ExportUserGroupUsersNewRequest withUserNames(Consumer<List<String>> userNamesSetter) {
+        if (this.userNames == null) {
+            this.userNames = new ArrayList<>();
+        }
+        userNamesSetter.accept(this.userNames);
+        return this;
+    }
+
+    /**
+     * 用户名列表，支持多用户名查询。
+     * @return userNames
+     */
+    public List<String> getUserNames() {
+        return userNames;
+    }
+
+    public void setUserNames(List<String> userNames) {
+        this.userNames = userNames;
+    }
+
     public ExportUserGroupUsersNewRequest withDescription(String description) {
         this.description = description;
         return this;
@@ -319,14 +360,16 @@ public class ExportUserGroupUsersNewRequest {
         }
         ExportUserGroupUsersNewRequest that = (ExportUserGroupUsersNewRequest) obj;
         return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.userName, that.userName)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.activeType, that.activeType)
-            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.userNames, that.userNames) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.activeType, that.activeType) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.language, that.language)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupId, userName, description, activeType, groupName, language, enterpriseProjectId);
+        return Objects
+            .hash(groupId, userName, userNames, description, activeType, groupName, language, enterpriseProjectId);
     }
 
     @Override
@@ -335,6 +378,7 @@ public class ExportUserGroupUsersNewRequest {
         sb.append("class ExportUserGroupUsersNewRequest {\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    userNames: ").append(toIndentedString(userNames)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    activeType: ").append(toIndentedString(activeType)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");

@@ -21,6 +21,16 @@ public class MetricTableItem {
 
     private Capacity capacity;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "available")
+
+    private Available available;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workload")
+
+    private WorkloadInfo workload;
+
     public MetricTableItem withAllocated(Allocated allocated) {
         this.allocated = allocated;
         return this;
@@ -73,6 +83,58 @@ public class MetricTableItem {
         this.capacity = capacity;
     }
 
+    public MetricTableItem withAvailable(Available available) {
+        this.available = available;
+        return this;
+    }
+
+    public MetricTableItem withAvailable(Consumer<Available> availableSetter) {
+        if (this.available == null) {
+            this.available = new Available();
+            availableSetter.accept(this.available);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get available
+     * @return available
+     */
+    public Available getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(Available available) {
+        this.available = available;
+    }
+
+    public MetricTableItem withWorkload(WorkloadInfo workload) {
+        this.workload = workload;
+        return this;
+    }
+
+    public MetricTableItem withWorkload(Consumer<WorkloadInfo> workloadSetter) {
+        if (this.workload == null) {
+            this.workload = new WorkloadInfo();
+            workloadSetter.accept(this.workload);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get workload
+     * @return workload
+     */
+    public WorkloadInfo getWorkload() {
+        return workload;
+    }
+
+    public void setWorkload(WorkloadInfo workload) {
+        this.workload = workload;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -82,12 +144,13 @@ public class MetricTableItem {
             return false;
         }
         MetricTableItem that = (MetricTableItem) obj;
-        return Objects.equals(this.allocated, that.allocated) && Objects.equals(this.capacity, that.capacity);
+        return Objects.equals(this.allocated, that.allocated) && Objects.equals(this.capacity, that.capacity)
+            && Objects.equals(this.available, that.available) && Objects.equals(this.workload, that.workload);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(allocated, capacity);
+        return Objects.hash(allocated, capacity, available, workload);
     }
 
     @Override
@@ -96,6 +159,8 @@ public class MetricTableItem {
         sb.append("class MetricTableItem {\n");
         sb.append("    allocated: ").append(toIndentedString(allocated)).append("\n");
         sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
+        sb.append("    available: ").append(toIndentedString(available)).append("\n");
+        sb.append("    workload: ").append(toIndentedString(workload)).append("\n");
         sb.append("}");
         return sb.toString();
     }

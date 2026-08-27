@@ -158,7 +158,7 @@ public class PolicyTemplateInfo {
     }
 
     /**
-     * **参数解释**: 推荐级别 **取值范围**: 字符长度1-5 
+     * **参数解释**: 推荐级别 **取值范围**: 字符长度1-6 
      * @return level
      */
     public String getLevel() {

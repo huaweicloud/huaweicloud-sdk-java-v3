@@ -64,6 +64,11 @@ public class Workload {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "userName")
+
+    private String userName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resourceRequirement")
 
     private WorkloadResourceRequirement resourceRequirement;
@@ -278,6 +283,23 @@ public class Workload {
         this.status = status;
     }
 
+    public Workload withUserName(String userName) {
+        this.userName = userName;
+        return this;
+    }
+
+    /**
+     * **参数解释**：作业创建者。 **取值范围**：不涉及。
+     * @return userName
+     */
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     public Workload withResourceRequirement(WorkloadResourceRequirement resourceRequirement) {
         this.resourceRequirement = resourceRequirement;
         return this;
@@ -470,6 +492,7 @@ public class Workload {
             && Objects.equals(this.name, that.name) && Objects.equals(this.jobName, that.jobName)
             && Objects.equals(this.uid, that.uid) && Objects.equals(this.jobUUID, that.jobUUID)
             && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.userName, that.userName)
             && Objects.equals(this.resourceRequirement, that.resourceRequirement)
             && Objects.equals(this.priority, that.priority)
             && Objects.equals(this.runningDuration, that.runningDuration)
@@ -491,6 +514,7 @@ public class Workload {
             jobUUID,
             flavor,
             status,
+            userName,
             resourceRequirement,
             priority,
             runningDuration,
@@ -516,6 +540,7 @@ public class Workload {
         sb.append("    jobUUID: ").append(toIndentedString(jobUUID)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    resourceRequirement: ").append(toIndentedString(resourceRequirement)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    runningDuration: ").append(toIndentedString(runningDuration)).append("\n");

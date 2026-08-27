@@ -21,12 +21,12 @@ public class PaimonSchema {
     private List<PaimonField> fields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "partitionKeys")
+    @JsonProperty(value = "partition_keys")
 
     private List<String> partitionKeys = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "primaryKeys")
+    @JsonProperty(value = "primary_keys")
 
     private List<String> primaryKeys = null;
 

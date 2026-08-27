@@ -119,9 +119,19 @@ public class OpenMysqlProxyRequestBody {
     private List<NodesWeight> nodesReadWeight = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "proxy_nodes_az_list")
+
+    private List<String> proxyNodesAzList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
 
     private String subnetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "proxy_ip")
+
+    private String proxyIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_node_auto_add_status")
@@ -251,6 +261,39 @@ public class OpenMysqlProxyRequestBody {
         this.nodesReadWeight = nodesReadWeight;
     }
 
+    public OpenMysqlProxyRequestBody withProxyNodesAzList(List<String> proxyNodesAzList) {
+        this.proxyNodesAzList = proxyNodesAzList;
+        return this;
+    }
+
+    public OpenMysqlProxyRequestBody addProxyNodesAzListItem(String proxyNodesAzListItem) {
+        if (this.proxyNodesAzList == null) {
+            this.proxyNodesAzList = new ArrayList<>();
+        }
+        this.proxyNodesAzList.add(proxyNodesAzListItem);
+        return this;
+    }
+
+    public OpenMysqlProxyRequestBody withProxyNodesAzList(Consumer<List<String>> proxyNodesAzListSetter) {
+        if (this.proxyNodesAzList == null) {
+            this.proxyNodesAzList = new ArrayList<>();
+        }
+        proxyNodesAzListSetter.accept(this.proxyNodesAzList);
+        return this;
+    }
+
+    /**
+     * **参数解释**：  数据库代理节点的可用区设置。  **约束限制**：  不传该字段，代理节点可用区将随机设置，优先与数据库节点可用区保持一致；传入该字段，代理节点将设置在指定可用区。
+     * @return proxyNodesAzList
+     */
+    public List<String> getProxyNodesAzList() {
+        return proxyNodesAzList;
+    }
+
+    public void setProxyNodesAzList(List<String> proxyNodesAzList) {
+        this.proxyNodesAzList = proxyNodesAzList;
+    }
+
     public OpenMysqlProxyRequestBody withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -266,6 +309,23 @@ public class OpenMysqlProxyRequestBody {
 
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
+    }
+
+    public OpenMysqlProxyRequestBody withProxyIp(String proxyIp) {
+        this.proxyIp = proxyIp;
+        return this;
+    }
+
+    /**
+     * **参数解释**：   数据库代理IP，获取方法如下。 - 用户自定义代理IP时，由用户自定义传入。 - 用户不指定代理IP时，随机在指定子网下生成的IPV4地址。  **约束限制**：  指定子网下的可用IP，获取方法如下： 登录TaurusDB的控制台界面，单击实例名称，进入实例详情页面，在该页面单击数据库代理，新增代理，查看已使用IP地址，查找指定子网下未被使用的IP。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
+     * @return proxyIp
+     */
+    public String getProxyIp() {
+        return proxyIp;
+    }
+
+    public void setProxyIp(String proxyIp) {
+        this.proxyIp = proxyIp;
     }
 
     public OpenMysqlProxyRequestBody withNewNodeAutoAddStatus(String newNodeAutoAddStatus) {
@@ -315,7 +375,8 @@ public class OpenMysqlProxyRequestBody {
             && Objects.equals(this.proxyName, that.proxyName) && Objects.equals(this.proxyMode, that.proxyMode)
             && Objects.equals(this.routeMode, that.routeMode)
             && Objects.equals(this.nodesReadWeight, that.nodesReadWeight)
-            && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.proxyNodesAzList, that.proxyNodesAzList)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.proxyIp, that.proxyIp)
             && Objects.equals(this.newNodeAutoAddStatus, that.newNodeAutoAddStatus)
             && Objects.equals(this.newNodeWeight, that.newNodeWeight);
     }
@@ -328,7 +389,9 @@ public class OpenMysqlProxyRequestBody {
             proxyMode,
             routeMode,
             nodesReadWeight,
+            proxyNodesAzList,
             subnetId,
+            proxyIp,
             newNodeAutoAddStatus,
             newNodeWeight);
     }
@@ -343,7 +406,9 @@ public class OpenMysqlProxyRequestBody {
         sb.append("    proxyMode: ").append(toIndentedString(proxyMode)).append("\n");
         sb.append("    routeMode: ").append(toIndentedString(routeMode)).append("\n");
         sb.append("    nodesReadWeight: ").append(toIndentedString(nodesReadWeight)).append("\n");
+        sb.append("    proxyNodesAzList: ").append(toIndentedString(proxyNodesAzList)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    proxyIp: ").append(toIndentedString(proxyIp)).append("\n");
         sb.append("    newNodeAutoAddStatus: ").append(toIndentedString(newNodeAutoAddStatus)).append("\n");
         sb.append("    newNodeWeight: ").append(toIndentedString(newNodeWeight)).append("\n");
         sb.append("}");

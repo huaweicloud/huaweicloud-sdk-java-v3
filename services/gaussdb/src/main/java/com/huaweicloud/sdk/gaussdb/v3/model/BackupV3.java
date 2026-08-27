@@ -85,6 +85,11 @@ public class BackupV3 {
 
     private String timeZone;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_mode")
+
+    private String backupMode;
+
     public BackupV3 withId(String id) {
         this.id = id;
         return this;
@@ -340,6 +345,23 @@ public class BackupV3 {
         this.timeZone = timeZone;
     }
 
+    public BackupV3 withBackupMode(String backupMode) {
+        this.backupMode = backupMode;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 备份类型。 **取值范围**： - differential：差量备份。 - completed：全量备份。
+     * @return backupMode
+     */
+    public String getBackupMode() {
+        return backupMode;
+    }
+
+    public void setBackupMode(String backupMode) {
+        this.backupMode = backupMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -356,7 +378,7 @@ public class BackupV3 {
             && Objects.equals(this.created, that.created) && Objects.equals(this.updated, that.updated)
             && Objects.equals(this.backupType, that.backupType) && Objects.equals(this.backupLevel, that.backupLevel)
             && Objects.equals(this.backupMethod, that.backupMethod) && Objects.equals(this.useDetail, that.useDetail)
-            && Objects.equals(this.timeZone, that.timeZone);
+            && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.backupMode, that.backupMode);
     }
 
     @Override
@@ -375,7 +397,8 @@ public class BackupV3 {
             backupLevel,
             backupMethod,
             useDetail,
-            timeZone);
+            timeZone,
+            backupMode);
     }
 
     @Override
@@ -397,6 +420,7 @@ public class BackupV3 {
         sb.append("    backupMethod: ").append(toIndentedString(backupMethod)).append("\n");
         sb.append("    useDetail: ").append(toIndentedString(useDetail)).append("\n");
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
+        sb.append("    backupMode: ").append(toIndentedString(backupMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

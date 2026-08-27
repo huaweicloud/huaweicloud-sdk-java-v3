@@ -173,6 +173,11 @@ public class MysqlInstanceInfoDetailUnifyStatus {
 
     private MysqlTdeInfo tdeInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eos_tag")
+
+    private Boolean eosTag;
+
     public MysqlInstanceInfoDetailUnifyStatus withId(String id) {
         this.id = id;
         return this;
@@ -833,6 +838,23 @@ public class MysqlInstanceInfoDetailUnifyStatus {
         this.tdeInfo = tdeInfo;
     }
 
+    public MysqlInstanceInfoDetailUnifyStatus withEosTag(Boolean eosTag) {
+        this.eosTag = eosTag;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  当前内核版本是否EOS。  **取值范围**：  - true：版本EOS。 - false：版本正常维护。
+     * @return eosTag
+     */
+    public Boolean getEosTag() {
+        return eosTag;
+    }
+
+    public void setEosTag(Boolean eosTag) {
+        this.eosTag = eosTag;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -860,7 +882,8 @@ public class MysqlInstanceInfoDetailUnifyStatus {
             && Objects.equals(this.masterAzCode, that.masterAzCode)
             && Objects.equals(this.maintenanceWindow, that.maintenanceWindow) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.dedicatedResourceId, that.dedicatedResourceId)
-            && Objects.equals(this.proxies, that.proxies) && Objects.equals(this.tdeInfo, that.tdeInfo);
+            && Objects.equals(this.proxies, that.proxies) && Objects.equals(this.tdeInfo, that.tdeInfo)
+            && Objects.equals(this.eosTag, that.eosTag);
     }
 
     @Override
@@ -896,7 +919,8 @@ public class MysqlInstanceInfoDetailUnifyStatus {
             tags,
             dedicatedResourceId,
             proxies,
-            tdeInfo);
+            tdeInfo,
+            eosTag);
     }
 
     @Override
@@ -935,6 +959,7 @@ public class MysqlInstanceInfoDetailUnifyStatus {
         sb.append("    dedicatedResourceId: ").append(toIndentedString(dedicatedResourceId)).append("\n");
         sb.append("    proxies: ").append(toIndentedString(proxies)).append("\n");
         sb.append("    tdeInfo: ").append(toIndentedString(tdeInfo)).append("\n");
+        sb.append("    eosTag: ").append(toIndentedString(eosTag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -3436,6 +3436,7 @@ public class HssAsyncClient {
      * @param request ListEventTopRiskRequest 请求对象
      * @return CompletableFuture<ListEventTopRiskResponse>
      */
+    @Deprecated
     public CompletableFuture<ListEventTopRiskResponse> listEventTopRiskAsync(ListEventTopRiskRequest request) {
         return hcClient.asyncInvokeHttp(request, HssMeta.listEventTopRisk);
     }
@@ -3450,6 +3451,7 @@ public class HssAsyncClient {
      * @param request ListEventTopRiskRequest 请求对象
      * @return AsyncInvoker<ListEventTopRiskRequest, ListEventTopRiskResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListEventTopRiskRequest, ListEventTopRiskResponse> listEventTopRiskAsyncInvoker(
         ListEventTopRiskRequest request) {
         return new AsyncInvoker<>(request, HssMeta.listEventTopRisk, hcClient);
@@ -11754,6 +11756,7 @@ public class HssAsyncClient {
      * @param request BatchScanSwrImageRequest 请求对象
      * @return CompletableFuture<BatchScanSwrImageResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchScanSwrImageResponse> batchScanSwrImageAsync(BatchScanSwrImageRequest request) {
         return hcClient.asyncInvokeHttp(request, HssMeta.batchScanSwrImage);
     }
@@ -11768,6 +11771,7 @@ public class HssAsyncClient {
      * @param request BatchScanSwrImageRequest 请求对象
      * @return AsyncInvoker<BatchScanSwrImageRequest, BatchScanSwrImageResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchScanSwrImageRequest, BatchScanSwrImageResponse> batchScanSwrImageAsyncInvoker(
         BatchScanSwrImageRequest request) {
         return new AsyncInvoker<>(request, HssMeta.batchScanSwrImage, hcClient);
@@ -11813,6 +11817,7 @@ public class HssAsyncClient {
      * @param request ChangeFilePathWhiteDetailRequest 请求对象
      * @return CompletableFuture<ChangeFilePathWhiteDetailResponse>
      */
+    @Deprecated
     public CompletableFuture<ChangeFilePathWhiteDetailResponse> changeFilePathWhiteDetailAsync(
         ChangeFilePathWhiteDetailRequest request) {
         return hcClient.asyncInvokeHttp(request, HssMeta.changeFilePathWhiteDetail);
@@ -11828,6 +11833,7 @@ public class HssAsyncClient {
      * @param request ChangeFilePathWhiteDetailRequest 请求对象
      * @return AsyncInvoker<ChangeFilePathWhiteDetailRequest, ChangeFilePathWhiteDetailResponse>
      */
+    @Deprecated
     public AsyncInvoker<ChangeFilePathWhiteDetailRequest, ChangeFilePathWhiteDetailResponse> changeFilePathWhiteDetailAsyncInvoker(
         ChangeFilePathWhiteDetailRequest request) {
         return new AsyncInvoker<>(request, HssMeta.changeFilePathWhiteDetail, hcClient);
@@ -12820,6 +12826,7 @@ public class HssAsyncClient {
      * @param request ListSwrImageRepositoryRequest 请求对象
      * @return CompletableFuture<ListSwrImageRepositoryResponse>
      */
+    @Deprecated
     public CompletableFuture<ListSwrImageRepositoryResponse> listSwrImageRepositoryAsync(
         ListSwrImageRepositoryRequest request) {
         return hcClient.asyncInvokeHttp(request, HssMeta.listSwrImageRepository);
@@ -12835,6 +12842,7 @@ public class HssAsyncClient {
      * @param request ListSwrImageRepositoryRequest 请求对象
      * @return AsyncInvoker<ListSwrImageRepositoryRequest, ListSwrImageRepositoryResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListSwrImageRepositoryRequest, ListSwrImageRepositoryResponse> listSwrImageRepositoryAsyncInvoker(
         ListSwrImageRepositoryRequest request) {
         return new AsyncInvoker<>(request, HssMeta.listSwrImageRepository, hcClient);
@@ -12998,6 +13006,7 @@ public class HssAsyncClient {
      * @param request RunImageSynchronizeRequest 请求对象
      * @return CompletableFuture<RunImageSynchronizeResponse>
      */
+    @Deprecated
     public CompletableFuture<RunImageSynchronizeResponse> runImageSynchronizeAsync(RunImageSynchronizeRequest request) {
         return hcClient.asyncInvokeHttp(request, HssMeta.runImageSynchronize);
     }
@@ -13012,6 +13021,7 @@ public class HssAsyncClient {
      * @param request RunImageSynchronizeRequest 请求对象
      * @return AsyncInvoker<RunImageSynchronizeRequest, RunImageSynchronizeResponse>
      */
+    @Deprecated
     public AsyncInvoker<RunImageSynchronizeRequest, RunImageSynchronizeResponse> runImageSynchronizeAsyncInvoker(
         RunImageSynchronizeRequest request) {
         return new AsyncInvoker<>(request, HssMeta.runImageSynchronize, hcClient);
@@ -13057,6 +13067,7 @@ public class HssAsyncClient {
      * @param request ShowFilePathWhiteDetailRequest 请求对象
      * @return CompletableFuture<ShowFilePathWhiteDetailResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowFilePathWhiteDetailResponse> showFilePathWhiteDetailAsync(
         ShowFilePathWhiteDetailRequest request) {
         return hcClient.asyncInvokeHttp(request, HssMeta.showFilePathWhiteDetail);
@@ -13072,6 +13083,7 @@ public class HssAsyncClient {
      * @param request ShowFilePathWhiteDetailRequest 请求对象
      * @return AsyncInvoker<ShowFilePathWhiteDetailRequest, ShowFilePathWhiteDetailResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowFilePathWhiteDetailRequest, ShowFilePathWhiteDetailResponse> showFilePathWhiteDetailAsyncInvoker(
         ShowFilePathWhiteDetailRequest request) {
         return new AsyncInvoker<>(request, HssMeta.showFilePathWhiteDetail, hcClient);
@@ -15389,6 +15401,7 @@ public class HssAsyncClient {
      * @param request ListServerlessAssetRequest 请求对象
      * @return CompletableFuture<ListServerlessAssetResponse>
      */
+    @Deprecated
     public CompletableFuture<ListServerlessAssetResponse> listServerlessAssetAsync(ListServerlessAssetRequest request) {
         return hcClient.asyncInvokeHttp(request, HssMeta.listServerlessAsset);
     }
@@ -15403,6 +15416,7 @@ public class HssAsyncClient {
      * @param request ListServerlessAssetRequest 请求对象
      * @return AsyncInvoker<ListServerlessAssetRequest, ListServerlessAssetResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListServerlessAssetRequest, ListServerlessAssetResponse> listServerlessAssetAsyncInvoker(
         ListServerlessAssetRequest request) {
         return new AsyncInvoker<>(request, HssMeta.listServerlessAsset, hcClient);
@@ -15418,6 +15432,7 @@ public class HssAsyncClient {
      * @param request ListServerlessAssetDetailRequest 请求对象
      * @return CompletableFuture<ListServerlessAssetDetailResponse>
      */
+    @Deprecated
     public CompletableFuture<ListServerlessAssetDetailResponse> listServerlessAssetDetailAsync(
         ListServerlessAssetDetailRequest request) {
         return hcClient.asyncInvokeHttp(request, HssMeta.listServerlessAssetDetail);
@@ -15433,6 +15448,7 @@ public class HssAsyncClient {
      * @param request ListServerlessAssetDetailRequest 请求对象
      * @return AsyncInvoker<ListServerlessAssetDetailRequest, ListServerlessAssetDetailResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListServerlessAssetDetailRequest, ListServerlessAssetDetailResponse> listServerlessAssetDetailAsyncInvoker(
         ListServerlessAssetDetailRequest request) {
         return new AsyncInvoker<>(request, HssMeta.listServerlessAssetDetail, hcClient);

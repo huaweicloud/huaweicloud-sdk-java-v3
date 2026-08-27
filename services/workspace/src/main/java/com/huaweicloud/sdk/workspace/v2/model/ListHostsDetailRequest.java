@@ -146,6 +146,162 @@ public class ListHostsDetailRequest {
 
     private String changesSince;
 
+    /**
+     * 排序字段名称，需要结合sort_type字段一起使用。 - instance_total 云办公主机上的实例总数 - available_vcpus 云办公主机可用的vCPU核数 - available_memory 云办公主机可用的内存大小
+     */
+    public static final class SortFieldEnum {
+
+        /**
+         * Enum INSTANCE_TOTAL for value: "instance_total"
+         */
+        public static final SortFieldEnum INSTANCE_TOTAL = new SortFieldEnum("instance_total");
+
+        /**
+         * Enum AVAILABLE_VCPUS for value: "available_vcpus"
+         */
+        public static final SortFieldEnum AVAILABLE_VCPUS = new SortFieldEnum("available_vcpus");
+
+        /**
+         * Enum AVAILABLE_MEMORY for value: "available_memory"
+         */
+        public static final SortFieldEnum AVAILABLE_MEMORY = new SortFieldEnum("available_memory");
+
+        private static final Map<String, SortFieldEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SortFieldEnum> createStaticFields() {
+            Map<String, SortFieldEnum> map = new HashMap<>();
+            map.put("instance_total", INSTANCE_TOTAL);
+            map.put("available_vcpus", AVAILABLE_VCPUS);
+            map.put("available_memory", AVAILABLE_MEMORY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SortFieldEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SortFieldEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortFieldEnum(value));
+        }
+
+        public static SortFieldEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SortFieldEnum) {
+                return this.value.equals(((SortFieldEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_field")
+
+    private SortFieldEnum sortField;
+
+    /**
+     * 排序类型，默认升序，需要结合sort_field字段一起使用。 - ASC 升序。 - DESC 降序。
+     */
+    public static final class SortTypeEnum {
+
+        /**
+         * Enum ASC for value: "ASC"
+         */
+        public static final SortTypeEnum ASC = new SortTypeEnum("ASC");
+
+        /**
+         * Enum DESC for value: "DESC"
+         */
+        public static final SortTypeEnum DESC = new SortTypeEnum("DESC");
+
+        private static final Map<String, SortTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SortTypeEnum> createStaticFields() {
+            Map<String, SortTypeEnum> map = new HashMap<>();
+            map.put("ASC", ASC);
+            map.put("DESC", DESC);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SortTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SortTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortTypeEnum(value));
+        }
+
+        public static SortTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SortTypeEnum) {
+                return this.value.equals(((SortTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_type")
+
+    private SortTypeEnum sortType;
+
     public ListHostsDetailRequest withName(String name) {
         this.name = name;
         return this;
@@ -337,6 +493,40 @@ public class ListHostsDetailRequest {
         this.changesSince = changesSince;
     }
 
+    public ListHostsDetailRequest withSortField(SortFieldEnum sortField) {
+        this.sortField = sortField;
+        return this;
+    }
+
+    /**
+     * 排序字段名称，需要结合sort_type字段一起使用。 - instance_total 云办公主机上的实例总数 - available_vcpus 云办公主机可用的vCPU核数 - available_memory 云办公主机可用的内存大小
+     * @return sortField
+     */
+    public SortFieldEnum getSortField() {
+        return sortField;
+    }
+
+    public void setSortField(SortFieldEnum sortField) {
+        this.sortField = sortField;
+    }
+
+    public ListHostsDetailRequest withSortType(SortTypeEnum sortType) {
+        this.sortType = sortType;
+        return this;
+    }
+
+    /**
+     * 排序类型，默认升序，需要结合sort_field字段一起使用。 - ASC 升序。 - DESC 降序。
+     * @return sortType
+     */
+    public SortTypeEnum getSortType() {
+        return sortType;
+    }
+
+    public void setSortType(SortTypeEnum sortType) {
+        this.sortType = sortType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -352,7 +542,8 @@ public class ListHostsDetailRequest {
             && Objects.equals(this.hostType, that.hostType) && Objects.equals(this.hostTypeName, that.hostTypeName)
             && Objects.equals(this.state, that.state) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.marker, that.marker)
-            && Objects.equals(this.changesSince, that.changesSince);
+            && Objects.equals(this.changesSince, that.changesSince) && Objects.equals(this.sortField, that.sortField)
+            && Objects.equals(this.sortType, that.sortType);
     }
 
     @Override
@@ -367,7 +558,9 @@ public class ListHostsDetailRequest {
             limit,
             offset,
             marker,
-            changesSince);
+            changesSince,
+            sortField,
+            sortType);
     }
 
     @Override
@@ -385,6 +578,8 @@ public class ListHostsDetailRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    changesSince: ").append(toIndentedString(changesSince)).append("\n");
+        sb.append("    sortField: ").append(toIndentedString(sortField)).append("\n");
+        sb.append("    sortType: ").append(toIndentedString(sortType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

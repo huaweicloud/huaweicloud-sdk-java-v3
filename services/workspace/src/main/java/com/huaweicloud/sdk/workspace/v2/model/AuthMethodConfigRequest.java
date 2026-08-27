@@ -51,6 +51,11 @@ public class AuthMethodConfigRequest {
 
     private Boolean smsLoginEnabled;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "login_captcha")
+
+    private LoginCaptchaConfig loginCaptcha;
+
     public AuthMethodConfigRequest withId(String id) {
         this.id = id;
         return this;
@@ -214,6 +219,32 @@ public class AuthMethodConfigRequest {
         this.smsLoginEnabled = smsLoginEnabled;
     }
 
+    public AuthMethodConfigRequest withLoginCaptcha(LoginCaptchaConfig loginCaptcha) {
+        this.loginCaptcha = loginCaptcha;
+        return this;
+    }
+
+    public AuthMethodConfigRequest withLoginCaptcha(Consumer<LoginCaptchaConfig> loginCaptchaSetter) {
+        if (this.loginCaptcha == null) {
+            this.loginCaptcha = new LoginCaptchaConfig();
+            loginCaptchaSetter.accept(this.loginCaptcha);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get loginCaptcha
+     * @return loginCaptcha
+     */
+    public LoginCaptchaConfig getLoginCaptcha() {
+        return loginCaptcha;
+    }
+
+    public void setLoginCaptcha(LoginCaptchaConfig loginCaptcha) {
+        this.loginCaptcha = loginCaptcha;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -230,7 +261,8 @@ public class AuthMethodConfigRequest {
             && Objects.equals(this.thirdPartyAuthConfig, that.thirdPartyAuthConfig)
             && Objects.equals(this.emergencyLoginMode, that.emergencyLoginMode)
             && Objects.equals(this.saml2AuthConfig, that.saml2AuthConfig)
-            && Objects.equals(this.smsLoginEnabled, that.smsLoginEnabled);
+            && Objects.equals(this.smsLoginEnabled, that.smsLoginEnabled)
+            && Objects.equals(this.loginCaptcha, that.loginCaptcha);
     }
 
     @Override
@@ -242,7 +274,8 @@ public class AuthMethodConfigRequest {
             thirdPartyAuthConfig,
             emergencyLoginMode,
             saml2AuthConfig,
-            smsLoginEnabled);
+            smsLoginEnabled,
+            loginCaptcha);
     }
 
     @Override
@@ -259,6 +292,7 @@ public class AuthMethodConfigRequest {
         sb.append("    emergencyLoginMode: ").append(toIndentedString(emergencyLoginMode)).append("\n");
         sb.append("    saml2AuthConfig: ").append(toIndentedString(saml2AuthConfig)).append("\n");
         sb.append("    smsLoginEnabled: ").append(toIndentedString(smsLoginEnabled)).append("\n");
+        sb.append("    loginCaptcha: ").append(toIndentedString(loginCaptcha)).append("\n");
         sb.append("}");
         return sb.toString();
     }

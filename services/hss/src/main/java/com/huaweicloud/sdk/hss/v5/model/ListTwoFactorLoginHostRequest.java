@@ -112,7 +112,7 @@ public class ListTwoFactorLoginHostRequest {
 
     /**
      * 默认0
-     * minimum: 10
+     * minimum: 0
      * maximum: 2000000
      * @return offset
      */

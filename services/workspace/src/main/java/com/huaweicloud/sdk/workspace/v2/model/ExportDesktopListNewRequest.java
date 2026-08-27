@@ -24,6 +24,11 @@ public class ExportDesktopListNewRequest {
     private String computerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "computer_names")
+
+    private List<String> computerNames = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desktop_ip")
 
     private String desktopIp;
@@ -284,11 +289,6 @@ public class ExportDesktopListNewRequest {
     private SortTypeEnum sortType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "pool_id")
-
-    private String poolId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_attached")
 
     private Boolean userAttached;
@@ -318,6 +318,106 @@ public class ExportDesktopListNewRequest {
 
     private String connectionStatusVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_id")
+
+    private String poolId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "include_pool")
+
+    private Boolean includePool;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_name")
+
+    private String poolName;
+
+    /**
+     * 桌面池类型，DYNAMIC：动态池，STATIC：静态池。
+     */
+    public static final class PoolTypeEnum {
+
+        /**
+         * Enum DYNAMIC for value: "DYNAMIC"
+         */
+        public static final PoolTypeEnum DYNAMIC = new PoolTypeEnum("DYNAMIC");
+
+        /**
+         * Enum STATIC for value: "STATIC"
+         */
+        public static final PoolTypeEnum STATIC = new PoolTypeEnum("STATIC");
+
+        private static final Map<String, PoolTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PoolTypeEnum> createStaticFields() {
+            Map<String, PoolTypeEnum> map = new HashMap<>();
+            map.put("DYNAMIC", DYNAMIC);
+            map.put("STATIC", STATIC);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PoolTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PoolTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PoolTypeEnum(value));
+        }
+
+        public static PoolTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PoolTypeEnum) {
+                return this.value.equals(((PoolTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_type")
+
+    private PoolTypeEnum poolType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_in_maintenance_mode")
+
+    private Boolean poolInMaintenanceMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_enterprise_project_id")
+
+    private String poolEnterpriseProjectId;
+
     public ExportDesktopListNewRequest withComputerName(String computerName) {
         this.computerName = computerName;
         return this;
@@ -333,6 +433,39 @@ public class ExportDesktopListNewRequest {
 
     public void setComputerName(String computerName) {
         this.computerName = computerName;
+    }
+
+    public ExportDesktopListNewRequest withComputerNames(List<String> computerNames) {
+        this.computerNames = computerNames;
+        return this;
+    }
+
+    public ExportDesktopListNewRequest addComputerNamesItem(String computerNamesItem) {
+        if (this.computerNames == null) {
+            this.computerNames = new ArrayList<>();
+        }
+        this.computerNames.add(computerNamesItem);
+        return this;
+    }
+
+    public ExportDesktopListNewRequest withComputerNames(Consumer<List<String>> computerNamesSetter) {
+        if (this.computerNames == null) {
+            this.computerNames = new ArrayList<>();
+        }
+        computerNamesSetter.accept(this.computerNames);
+        return this;
+    }
+
+    /**
+     * 桌面名列表
+     * @return computerNames
+     */
+    public List<String> getComputerNames() {
+        return computerNames;
+    }
+
+    public void setComputerNames(List<String> computerNames) {
+        this.computerNames = computerNames;
     }
 
     public ExportDesktopListNewRequest withDesktopIp(String desktopIp) {
@@ -521,23 +654,6 @@ public class ExportDesktopListNewRequest {
         this.sortType = sortType;
     }
 
-    public ExportDesktopListNewRequest withPoolId(String poolId) {
-        this.poolId = poolId;
-        return this;
-    }
-
-    /**
-     * 桌面池ID,多个桌面池ID用逗号隔开。
-     * @return poolId
-     */
-    public String getPoolId() {
-        return poolId;
-    }
-
-    public void setPoolId(String poolId) {
-        this.poolId = poolId;
-    }
-
     public ExportDesktopListNewRequest withUserAttached(Boolean userAttached) {
         this.userAttached = userAttached;
         return this;
@@ -640,6 +756,108 @@ public class ExportDesktopListNewRequest {
         this.connectionStatusVersion = connectionStatusVersion;
     }
 
+    public ExportDesktopListNewRequest withPoolId(String poolId) {
+        this.poolId = poolId;
+        return this;
+    }
+
+    /**
+     * 桌面池ID,多个桌面池ID用逗号隔开。
+     * @return poolId
+     */
+    public String getPoolId() {
+        return poolId;
+    }
+
+    public void setPoolId(String poolId) {
+        this.poolId = poolId;
+    }
+
+    public ExportDesktopListNewRequest withIncludePool(Boolean includePool) {
+        this.includePool = includePool;
+        return this;
+    }
+
+    /**
+     * 是否只导出桌面池桌面。 - true：只导出桌面池桌面，此时可配合pool_name、pool_type、pool_in_maintenance_mode过滤参数对桌面池进行过滤 - false：只导出普通桌面，忽略其他pool_name、pool_type、pool_in_maintenance_mode过滤参数参数
+     * @return includePool
+     */
+    public Boolean getIncludePool() {
+        return includePool;
+    }
+
+    public void setIncludePool(Boolean includePool) {
+        this.includePool = includePool;
+    }
+
+    public ExportDesktopListNewRequest withPoolName(String poolName) {
+        this.poolName = poolName;
+        return this;
+    }
+
+    /**
+     * 桌面池名称。
+     * @return poolName
+     */
+    public String getPoolName() {
+        return poolName;
+    }
+
+    public void setPoolName(String poolName) {
+        this.poolName = poolName;
+    }
+
+    public ExportDesktopListNewRequest withPoolType(PoolTypeEnum poolType) {
+        this.poolType = poolType;
+        return this;
+    }
+
+    /**
+     * 桌面池类型，DYNAMIC：动态池，STATIC：静态池。
+     * @return poolType
+     */
+    public PoolTypeEnum getPoolType() {
+        return poolType;
+    }
+
+    public void setPoolType(PoolTypeEnum poolType) {
+        this.poolType = poolType;
+    }
+
+    public ExportDesktopListNewRequest withPoolInMaintenanceMode(Boolean poolInMaintenanceMode) {
+        this.poolInMaintenanceMode = poolInMaintenanceMode;
+        return this;
+    }
+
+    /**
+     * 按照维护状态过滤。
+     * @return poolInMaintenanceMode
+     */
+    public Boolean getPoolInMaintenanceMode() {
+        return poolInMaintenanceMode;
+    }
+
+    public void setPoolInMaintenanceMode(Boolean poolInMaintenanceMode) {
+        this.poolInMaintenanceMode = poolInMaintenanceMode;
+    }
+
+    public ExportDesktopListNewRequest withPoolEnterpriseProjectId(String poolEnterpriseProjectId) {
+        this.poolEnterpriseProjectId = poolEnterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 按照企业项目ID过滤桌面池。
+     * @return poolEnterpriseProjectId
+     */
+    public String getPoolEnterpriseProjectId() {
+        return poolEnterpriseProjectId;
+    }
+
+    public void setPoolEnterpriseProjectId(String poolEnterpriseProjectId) {
+        this.poolEnterpriseProjectId = poolEnterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -649,23 +867,28 @@ public class ExportDesktopListNewRequest {
             return false;
         }
         ExportDesktopListNewRequest that = (ExportDesktopListNewRequest) obj;
-        return Objects.equals(this.computerName, that.computerName) && Objects.equals(this.desktopIp, that.desktopIp)
+        return Objects.equals(this.computerName, that.computerName)
+            && Objects.equals(this.computerNames, that.computerNames) && Objects.equals(this.desktopIp, that.desktopIp)
             && Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.tag, that.tag)
             && Objects.equals(this.language, that.language)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.desktopType, that.desktopType) && Objects.equals(this.status, that.status)
             && Objects.equals(this.userNames, that.userNames) && Objects.equals(this.sortField, that.sortField)
-            && Objects.equals(this.sortType, that.sortType) && Objects.equals(this.poolId, that.poolId)
-            && Objects.equals(this.userAttached, that.userAttached) && Objects.equals(this.imageId, that.imageId)
-            && Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.sortType, that.sortType) && Objects.equals(this.userAttached, that.userAttached)
+            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.chargeMode, that.chargeMode)
             && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode)
             && Objects.equals(this.subnetId, that.subnetId)
-            && Objects.equals(this.connectionStatusVersion, that.connectionStatusVersion);
+            && Objects.equals(this.connectionStatusVersion, that.connectionStatusVersion)
+            && Objects.equals(this.poolId, that.poolId) && Objects.equals(this.includePool, that.includePool)
+            && Objects.equals(this.poolName, that.poolName) && Objects.equals(this.poolType, that.poolType)
+            && Objects.equals(this.poolInMaintenanceMode, that.poolInMaintenanceMode)
+            && Objects.equals(this.poolEnterpriseProjectId, that.poolEnterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(computerName,
+            computerNames,
             desktopIp,
             desktopId,
             tag,
@@ -676,13 +899,18 @@ public class ExportDesktopListNewRequest {
             userNames,
             sortField,
             sortType,
-            poolId,
             userAttached,
             imageId,
             chargeMode,
             inMaintenanceMode,
             subnetId,
-            connectionStatusVersion);
+            connectionStatusVersion,
+            poolId,
+            includePool,
+            poolName,
+            poolType,
+            poolInMaintenanceMode,
+            poolEnterpriseProjectId);
     }
 
     @Override
@@ -690,6 +918,7 @@ public class ExportDesktopListNewRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExportDesktopListNewRequest {\n");
         sb.append("    computerName: ").append(toIndentedString(computerName)).append("\n");
+        sb.append("    computerNames: ").append(toIndentedString(computerNames)).append("\n");
         sb.append("    desktopIp: ").append(toIndentedString(desktopIp)).append("\n");
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
@@ -700,13 +929,18 @@ public class ExportDesktopListNewRequest {
         sb.append("    userNames: ").append(toIndentedString(userNames)).append("\n");
         sb.append("    sortField: ").append(toIndentedString(sortField)).append("\n");
         sb.append("    sortType: ").append(toIndentedString(sortType)).append("\n");
-        sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("    userAttached: ").append(toIndentedString(userAttached)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    inMaintenanceMode: ").append(toIndentedString(inMaintenanceMode)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    connectionStatusVersion: ").append(toIndentedString(connectionStatusVersion)).append("\n");
+        sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
+        sb.append("    includePool: ").append(toIndentedString(includePool)).append("\n");
+        sb.append("    poolName: ").append(toIndentedString(poolName)).append("\n");
+        sb.append("    poolType: ").append(toIndentedString(poolType)).append("\n");
+        sb.append("    poolInMaintenanceMode: ").append(toIndentedString(poolInMaintenanceMode)).append("\n");
+        sb.append("    poolEnterpriseProjectId: ").append(toIndentedString(poolEnterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

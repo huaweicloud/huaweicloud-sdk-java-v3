@@ -321,6 +321,87 @@ public class ListPoolDesktopsDetailRequest {
 
     private String tag;
 
+    /**
+     * 加域状态。|- 1 正常。 2 脱域。 3 未上报。
+     */
+    public static final class DomainStatusEnum {
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final DomainStatusEnum NUMBER_1 = new DomainStatusEnum(1);
+
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final DomainStatusEnum NUMBER_2 = new DomainStatusEnum(2);
+
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
+        public static final DomainStatusEnum NUMBER_3 = new DomainStatusEnum(3);
+
+        private static final Map<Integer, DomainStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, DomainStatusEnum> createStaticFields() {
+            Map<Integer, DomainStatusEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            map.put(3, NUMBER_3);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        DomainStatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static DomainStatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DomainStatusEnum(value));
+        }
+
+        public static DomainStatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DomainStatusEnum) {
+                return this.value.equals(((DomainStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_status")
+
+    private DomainStatusEnum domainStatus;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_attached")
 
@@ -678,6 +759,25 @@ public class ListPoolDesktopsDetailRequest {
         this.tag = tag;
     }
 
+    public ListPoolDesktopsDetailRequest withDomainStatus(DomainStatusEnum domainStatus) {
+        this.domainStatus = domainStatus;
+        return this;
+    }
+
+    /**
+     * 加域状态。|- 1 正常。 2 脱域。 3 未上报。
+     * minimum: 1
+     * maximum: 3
+     * @return domainStatus
+     */
+    public DomainStatusEnum getDomainStatus() {
+        return domainStatus;
+    }
+
+    public void setDomainStatus(DomainStatusEnum domainStatus) {
+        this.domainStatus = domainStatus;
+    }
+
     public ListPoolDesktopsDetailRequest withUserAttached(Boolean userAttached) {
         this.userAttached = userAttached;
         return this;
@@ -864,7 +964,8 @@ public class ListPoolDesktopsDetailRequest {
             && Objects.equals(this.sortType, that.sortType) && Objects.equals(this.computerName, that.computerName)
             && Objects.equals(this.computerNames, that.computerNames) && Objects.equals(this.desktopIp, that.desktopIp)
             && Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.desktopType, that.desktopType)
-            && Objects.equals(this.tag, that.tag) && Objects.equals(this.userAttached, that.userAttached)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.domainStatus, that.domainStatus)
+            && Objects.equals(this.userAttached, that.userAttached)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.chargeMode, that.chargeMode)
             && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode)
@@ -891,6 +992,7 @@ public class ListPoolDesktopsDetailRequest {
             desktopId,
             desktopType,
             tag,
+            domainStatus,
             userAttached,
             enterpriseProjectId,
             imageId,
@@ -922,6 +1024,7 @@ public class ListPoolDesktopsDetailRequest {
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
         sb.append("    desktopType: ").append(toIndentedString(desktopType)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    domainStatus: ").append(toIndentedString(domainStatus)).append("\n");
         sb.append("    userAttached: ").append(toIndentedString(userAttached)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");

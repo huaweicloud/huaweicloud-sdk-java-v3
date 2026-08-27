@@ -22,7 +22,7 @@ public class ShowTrainingJobFlavorsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavors")
 
-    private List<FlavorResponse> flavors = null;
+    private List<FlavorResponseWithSupport> flavors = null;
 
     public ShowTrainingJobFlavorsResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
@@ -41,12 +41,12 @@ public class ShowTrainingJobFlavorsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    public ShowTrainingJobFlavorsResponse withFlavors(List<FlavorResponse> flavors) {
+    public ShowTrainingJobFlavorsResponse withFlavors(List<FlavorResponseWithSupport> flavors) {
         this.flavors = flavors;
         return this;
     }
 
-    public ShowTrainingJobFlavorsResponse addFlavorsItem(FlavorResponse flavorsItem) {
+    public ShowTrainingJobFlavorsResponse addFlavorsItem(FlavorResponseWithSupport flavorsItem) {
         if (this.flavors == null) {
             this.flavors = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class ShowTrainingJobFlavorsResponse extends SdkResponse {
         return this;
     }
 
-    public ShowTrainingJobFlavorsResponse withFlavors(Consumer<List<FlavorResponse>> flavorsSetter) {
+    public ShowTrainingJobFlavorsResponse withFlavors(Consumer<List<FlavorResponseWithSupport>> flavorsSetter) {
         if (this.flavors == null) {
             this.flavors = new ArrayList<>();
         }
@@ -66,11 +66,11 @@ public class ShowTrainingJobFlavorsResponse extends SdkResponse {
      * 训练作业资源规格列表。
      * @return flavors
      */
-    public List<FlavorResponse> getFlavors() {
+    public List<FlavorResponseWithSupport> getFlavors() {
         return flavors;
     }
 
-    public void setFlavors(List<FlavorResponse> flavors) {
+    public void setFlavors(List<FlavorResponseWithSupport> flavors) {
         this.flavors = flavors;
     }
 

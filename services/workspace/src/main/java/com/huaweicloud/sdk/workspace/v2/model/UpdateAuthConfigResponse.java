@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -20,6 +21,11 @@ public class UpdateAuthConfigResponse extends SdkResponse {
     @JsonProperty(value = "sms_login_enabled")
 
     private Boolean smsLoginEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "login_captcha")
+
+    private LoginCaptchaConfig loginCaptcha;
 
     public UpdateAuthConfigResponse withAuthConfigId(String authConfigId) {
         this.authConfigId = authConfigId;
@@ -55,6 +61,32 @@ public class UpdateAuthConfigResponse extends SdkResponse {
         this.smsLoginEnabled = smsLoginEnabled;
     }
 
+    public UpdateAuthConfigResponse withLoginCaptcha(LoginCaptchaConfig loginCaptcha) {
+        this.loginCaptcha = loginCaptcha;
+        return this;
+    }
+
+    public UpdateAuthConfigResponse withLoginCaptcha(Consumer<LoginCaptchaConfig> loginCaptchaSetter) {
+        if (this.loginCaptcha == null) {
+            this.loginCaptcha = new LoginCaptchaConfig();
+            loginCaptchaSetter.accept(this.loginCaptcha);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get loginCaptcha
+     * @return loginCaptcha
+     */
+    public LoginCaptchaConfig getLoginCaptcha() {
+        return loginCaptcha;
+    }
+
+    public void setLoginCaptcha(LoginCaptchaConfig loginCaptcha) {
+        this.loginCaptcha = loginCaptcha;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -65,12 +97,13 @@ public class UpdateAuthConfigResponse extends SdkResponse {
         }
         UpdateAuthConfigResponse that = (UpdateAuthConfigResponse) obj;
         return Objects.equals(this.authConfigId, that.authConfigId)
-            && Objects.equals(this.smsLoginEnabled, that.smsLoginEnabled);
+            && Objects.equals(this.smsLoginEnabled, that.smsLoginEnabled)
+            && Objects.equals(this.loginCaptcha, that.loginCaptcha);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authConfigId, smsLoginEnabled);
+        return Objects.hash(authConfigId, smsLoginEnabled, loginCaptcha);
     }
 
     @Override
@@ -79,6 +112,7 @@ public class UpdateAuthConfigResponse extends SdkResponse {
         sb.append("class UpdateAuthConfigResponse {\n");
         sb.append("    authConfigId: ").append(toIndentedString(authConfigId)).append("\n");
         sb.append("    smsLoginEnabled: ").append(toIndentedString(smsLoginEnabled)).append("\n");
+        sb.append("    loginCaptcha: ").append(toIndentedString(loginCaptcha)).append("\n");
         sb.append("}");
         return sb.toString();
     }

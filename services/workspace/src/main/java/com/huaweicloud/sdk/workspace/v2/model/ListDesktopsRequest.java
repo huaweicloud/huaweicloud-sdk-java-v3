@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.workspace.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -37,6 +42,87 @@ public class ListDesktopsRequest {
     @JsonProperty(value = "limit")
 
     private Integer limit;
+
+    /**
+     * 加域状态。|- 1 正常。 2 脱域。 3 未上报。
+     */
+    public static final class DomainStatusEnum {
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final DomainStatusEnum NUMBER_1 = new DomainStatusEnum(1);
+
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final DomainStatusEnum NUMBER_2 = new DomainStatusEnum(2);
+
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
+        public static final DomainStatusEnum NUMBER_3 = new DomainStatusEnum(3);
+
+        private static final Map<Integer, DomainStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, DomainStatusEnum> createStaticFields() {
+            Map<Integer, DomainStatusEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            map.put(3, NUMBER_3);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        DomainStatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static DomainStatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DomainStatusEnum(value));
+        }
+
+        public static DomainStatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DomainStatusEnum) {
+                return this.value.equals(((DomainStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_status")
+
+    private DomainStatusEnum domainStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool_id")
@@ -181,6 +267,25 @@ public class ListDesktopsRequest {
 
     public void setLimit(Integer limit) {
         this.limit = limit;
+    }
+
+    public ListDesktopsRequest withDomainStatus(DomainStatusEnum domainStatus) {
+        this.domainStatus = domainStatus;
+        return this;
+    }
+
+    /**
+     * 加域状态。|- 1 正常。 2 脱域。 3 未上报。
+     * minimum: 1
+     * maximum: 3
+     * @return domainStatus
+     */
+    public DomainStatusEnum getDomainStatus() {
+        return domainStatus;
+    }
+
+    public void setDomainStatus(DomainStatusEnum domainStatus) {
+        this.domainStatus = domainStatus;
     }
 
     public ListDesktopsRequest withPoolId(String poolId) {
@@ -346,7 +451,8 @@ public class ListDesktopsRequest {
         ListDesktopsRequest that = (ListDesktopsRequest) obj;
         return Objects.equals(this.userName, that.userName) && Objects.equals(this.computerName, that.computerName)
             && Objects.equals(this.desktopIp, that.desktopIp) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.poolId, that.poolId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.domainStatus, that.domainStatus)
+            && Objects.equals(this.poolId, that.poolId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.desktopType, that.desktopType)
             && Objects.equals(this.isShareDesktop, that.isShareDesktop) && Objects.equals(this.subnetId, that.subnetId)
@@ -361,6 +467,7 @@ public class ListDesktopsRequest {
             desktopIp,
             offset,
             limit,
+            domainStatus,
             poolId,
             enterpriseProjectId,
             desktopType,
@@ -380,6 +487,7 @@ public class ListDesktopsRequest {
         sb.append("    desktopIp: ").append(toIndentedString(desktopIp)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    domainStatus: ").append(toIndentedString(domainStatus)).append("\n");
         sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    desktopType: ").append(toIndentedString(desktopType)).append("\n");

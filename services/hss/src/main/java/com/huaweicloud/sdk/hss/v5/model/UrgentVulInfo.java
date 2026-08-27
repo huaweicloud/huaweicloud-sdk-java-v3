@@ -232,7 +232,7 @@ public class UrgentVulInfo {
     }
 
     /**
-     * **参数解释**： 漏洞描述 **取值范围**： 字符长度0-64位 
+     * **参数解释**： 漏洞描述 **取值范围**： 字符长度0-2048位 
      * @return description
      */
     public String getDescription() {

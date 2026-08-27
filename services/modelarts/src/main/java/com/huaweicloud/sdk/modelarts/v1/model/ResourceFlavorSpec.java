@@ -36,12 +36,12 @@ public class ResourceFlavorSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gpu")
 
-    private ResourceFlavorSpecGpu gpu;
+    private ResourceFlavorXpu gpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "npu")
 
-    private ResourceFlavorSpecNpu npu;
+    private ResourceFlavorXpu npu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dataVolume")
@@ -131,14 +131,14 @@ public class ResourceFlavorSpec {
         this.memory = memory;
     }
 
-    public ResourceFlavorSpec withGpu(ResourceFlavorSpecGpu gpu) {
+    public ResourceFlavorSpec withGpu(ResourceFlavorXpu gpu) {
         this.gpu = gpu;
         return this;
     }
 
-    public ResourceFlavorSpec withGpu(Consumer<ResourceFlavorSpecGpu> gpuSetter) {
+    public ResourceFlavorSpec withGpu(Consumer<ResourceFlavorXpu> gpuSetter) {
         if (this.gpu == null) {
-            this.gpu = new ResourceFlavorSpecGpu();
+            this.gpu = new ResourceFlavorXpu();
             gpuSetter.accept(this.gpu);
         }
 
@@ -149,22 +149,22 @@ public class ResourceFlavorSpec {
      * Get gpu
      * @return gpu
      */
-    public ResourceFlavorSpecGpu getGpu() {
+    public ResourceFlavorXpu getGpu() {
         return gpu;
     }
 
-    public void setGpu(ResourceFlavorSpecGpu gpu) {
+    public void setGpu(ResourceFlavorXpu gpu) {
         this.gpu = gpu;
     }
 
-    public ResourceFlavorSpec withNpu(ResourceFlavorSpecNpu npu) {
+    public ResourceFlavorSpec withNpu(ResourceFlavorXpu npu) {
         this.npu = npu;
         return this;
     }
 
-    public ResourceFlavorSpec withNpu(Consumer<ResourceFlavorSpecNpu> npuSetter) {
+    public ResourceFlavorSpec withNpu(Consumer<ResourceFlavorXpu> npuSetter) {
         if (this.npu == null) {
-            this.npu = new ResourceFlavorSpecNpu();
+            this.npu = new ResourceFlavorXpu();
             npuSetter.accept(this.npu);
         }
 
@@ -175,11 +175,11 @@ public class ResourceFlavorSpec {
      * Get npu
      * @return npu
      */
-    public ResourceFlavorSpecNpu getNpu() {
+    public ResourceFlavorXpu getNpu() {
         return npu;
     }
 
-    public void setNpu(ResourceFlavorSpecNpu npu) {
+    public void setNpu(ResourceFlavorXpu npu) {
         this.npu = npu;
     }
 

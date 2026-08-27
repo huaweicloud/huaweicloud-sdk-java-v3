@@ -100,6 +100,11 @@ public class AccessPolicyObject {
 
     private ObjectTypeEnum objectType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "object_domain")
+
+    private String objectDomain;
+
     public AccessPolicyObject withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
@@ -151,6 +156,23 @@ public class AccessPolicyObject {
         this.objectType = objectType;
     }
 
+    public AccessPolicyObject withObjectDomain(String objectDomain) {
+        this.objectDomain = objectDomain;
+        return this;
+    }
+
+    /**
+     * 域名称。
+     * @return objectDomain
+     */
+    public String getObjectDomain() {
+        return objectDomain;
+    }
+
+    public void setObjectDomain(String objectDomain) {
+        this.objectDomain = objectDomain;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -161,12 +183,12 @@ public class AccessPolicyObject {
         }
         AccessPolicyObject that = (AccessPolicyObject) obj;
         return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.objectName, that.objectName)
-            && Objects.equals(this.objectType, that.objectType);
+            && Objects.equals(this.objectType, that.objectType) && Objects.equals(this.objectDomain, that.objectDomain);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(objectId, objectName, objectType);
+        return Objects.hash(objectId, objectName, objectType, objectDomain);
     }
 
     @Override
@@ -176,6 +198,7 @@ public class AccessPolicyObject {
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
         sb.append("    objectName: ").append(toIndentedString(objectName)).append("\n");
         sb.append("    objectType: ").append(toIndentedString(objectType)).append("\n");
+        sb.append("    objectDomain: ").append(toIndentedString(objectDomain)).append("\n");
         sb.append("}");
         return sb.toString();
     }

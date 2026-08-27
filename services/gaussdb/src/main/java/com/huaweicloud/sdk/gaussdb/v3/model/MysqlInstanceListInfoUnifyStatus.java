@@ -143,6 +143,11 @@ public class MysqlInstanceListInfoUnifyStatus {
 
     private List<InstanceTagItem> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eos_tag")
+
+    private Boolean eosTag;
+
     public MysqlInstanceListInfoUnifyStatus withId(String id) {
         this.id = id;
         return this;
@@ -710,6 +715,23 @@ public class MysqlInstanceListInfoUnifyStatus {
         this.tags = tags;
     }
 
+    public MysqlInstanceListInfoUnifyStatus withEosTag(Boolean eosTag) {
+        this.eosTag = eosTag;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  当前内核版本是否EOS。  **取值范围**：  - true：版本EOS。 - false：版本正常维护。
+     * @return eosTag
+     */
+    public Boolean getEosTag() {
+        return eosTag;
+    }
+
+    public void setEosTag(Boolean eosTag) {
+        this.eosTag = eosTag;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -734,7 +756,7 @@ public class MysqlInstanceListInfoUnifyStatus {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.chargeInfo, that.chargeInfo)
             && Objects.equals(this.dedicatedResourceId, that.dedicatedResourceId)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.eosTag, that.eosTag);
     }
 
     @Override
@@ -764,7 +786,8 @@ public class MysqlInstanceListInfoUnifyStatus {
             timeZone,
             chargeInfo,
             dedicatedResourceId,
-            tags);
+            tags,
+            eosTag);
     }
 
     @Override
@@ -797,6 +820,7 @@ public class MysqlInstanceListInfoUnifyStatus {
         sb.append("    chargeInfo: ").append(toIndentedString(chargeInfo)).append("\n");
         sb.append("    dedicatedResourceId: ").append(toIndentedString(dedicatedResourceId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    eosTag: ").append(toIndentedString(eosTag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -128,6 +128,16 @@ public class MysqlInstanceRequest {
 
     private MysqlTdeInfo tdeInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_binlog")
+
+    private Boolean enableBinlog;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "volume_auto_expand")
+
+    private MysqlVolumeAutoExpandPolicy volumeAutoExpand;
+
     public MysqlInstanceRequest withChargeInfo(MysqlChargeInfo chargeInfo) {
         this.chargeInfo = chargeInfo;
         return this;
@@ -589,6 +599,49 @@ public class MysqlInstanceRequest {
         this.tdeInfo = tdeInfo;
     }
 
+    public MysqlInstanceRequest withEnableBinlog(Boolean enableBinlog) {
+        this.enableBinlog = enableBinlog;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  是否打开本地Binlog日志。  **约束限制**：  不涉及。  **取值范围**：  - true: 打开。 - false: 关闭。  **默认取值**：  false。
+     * @return enableBinlog
+     */
+    public Boolean getEnableBinlog() {
+        return enableBinlog;
+    }
+
+    public void setEnableBinlog(Boolean enableBinlog) {
+        this.enableBinlog = enableBinlog;
+    }
+
+    public MysqlInstanceRequest withVolumeAutoExpand(MysqlVolumeAutoExpandPolicy volumeAutoExpand) {
+        this.volumeAutoExpand = volumeAutoExpand;
+        return this;
+    }
+
+    public MysqlInstanceRequest withVolumeAutoExpand(Consumer<MysqlVolumeAutoExpandPolicy> volumeAutoExpandSetter) {
+        if (this.volumeAutoExpand == null) {
+            this.volumeAutoExpand = new MysqlVolumeAutoExpandPolicy();
+            volumeAutoExpandSetter.accept(this.volumeAutoExpand);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get volumeAutoExpand
+     * @return volumeAutoExpand
+     */
+    public MysqlVolumeAutoExpandPolicy getVolumeAutoExpand() {
+        return volumeAutoExpand;
+    }
+
+    public void setVolumeAutoExpand(MysqlVolumeAutoExpandPolicy volumeAutoExpand) {
+        this.volumeAutoExpand = volumeAutoExpand;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -613,7 +666,9 @@ public class MysqlInstanceRequest {
             && Objects.equals(this.lowerCaseTableNames, that.lowerCaseTableNames)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.dedicatedResourceId, that.dedicatedResourceId)
-            && Objects.equals(this.restorePoint, that.restorePoint) && Objects.equals(this.tdeInfo, that.tdeInfo);
+            && Objects.equals(this.restorePoint, that.restorePoint) && Objects.equals(this.tdeInfo, that.tdeInfo)
+            && Objects.equals(this.enableBinlog, that.enableBinlog)
+            && Objects.equals(this.volumeAutoExpand, that.volumeAutoExpand);
     }
 
     @Override
@@ -640,7 +695,9 @@ public class MysqlInstanceRequest {
             enterpriseProjectId,
             dedicatedResourceId,
             restorePoint,
-            tdeInfo);
+            tdeInfo,
+            enableBinlog,
+            volumeAutoExpand);
     }
 
     @Override
@@ -670,6 +727,8 @@ public class MysqlInstanceRequest {
         sb.append("    dedicatedResourceId: ").append(toIndentedString(dedicatedResourceId)).append("\n");
         sb.append("    restorePoint: ").append(toIndentedString(restorePoint)).append("\n");
         sb.append("    tdeInfo: ").append(toIndentedString(tdeInfo)).append("\n");
+        sb.append("    enableBinlog: ").append(toIndentedString(enableBinlog)).append("\n");
+        sb.append("    volumeAutoExpand: ").append(toIndentedString(volumeAutoExpand)).append("\n");
         sb.append("}");
         return sb.toString();
     }

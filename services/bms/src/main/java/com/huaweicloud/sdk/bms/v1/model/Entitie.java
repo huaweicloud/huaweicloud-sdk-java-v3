@@ -20,6 +20,11 @@ public class Entitie {
 
     private String nicId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "errorcode_message")
+
+    private String errorcodeMessage;
+
     public Entitie withServerId(String serverId) {
         this.serverId = serverId;
         return this;
@@ -54,6 +59,23 @@ public class Entitie {
         this.nicId = nicId;
     }
 
+    public Entitie withErrorcodeMessage(String errorcodeMessage) {
+        this.errorcodeMessage = errorcodeMessage;
+        return this;
+    }
+
+    /**
+     * 子任务执行失败的具体原因
+     * @return errorcodeMessage
+     */
+    public String getErrorcodeMessage() {
+        return errorcodeMessage;
+    }
+
+    public void setErrorcodeMessage(String errorcodeMessage) {
+        this.errorcodeMessage = errorcodeMessage;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class Entitie {
             return false;
         }
         Entitie that = (Entitie) obj;
-        return Objects.equals(this.serverId, that.serverId) && Objects.equals(this.nicId, that.nicId);
+        return Objects.equals(this.serverId, that.serverId) && Objects.equals(this.nicId, that.nicId)
+            && Objects.equals(this.errorcodeMessage, that.errorcodeMessage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serverId, nicId);
+        return Objects.hash(serverId, nicId, errorcodeMessage);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class Entitie {
         sb.append("class Entitie {\n");
         sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
         sb.append("    nicId: ").append(toIndentedString(nicId)).append("\n");
+        sb.append("    errorcodeMessage: ").append(toIndentedString(errorcodeMessage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -23,7 +23,7 @@ public class DownLoadFileInfoItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_size")
 
-    private Integer fileSize;
+    private Long fileSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "download_url")
@@ -33,7 +33,7 @@ public class DownLoadFileInfoItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
 
-    private String expireTime;
+    private Long expireTime;
 
     public DownLoadFileInfoItem withId(String id) {
         this.id = id;
@@ -69,7 +69,7 @@ public class DownLoadFileInfoItem {
         this.fileName = fileName;
     }
 
-    public DownLoadFileInfoItem withFileSize(Integer fileSize) {
+    public DownLoadFileInfoItem withFileSize(Long fileSize) {
         this.fileSize = fileSize;
         return this;
     }
@@ -78,11 +78,11 @@ public class DownLoadFileInfoItem {
      * **参数解释**：  日志文件大小，单位为字节。  **取值范围**：  不涉及。 
      * @return fileSize
      */
-    public Integer getFileSize() {
+    public Long getFileSize() {
         return fileSize;
     }
 
-    public void setFileSize(Integer fileSize) {
+    public void setFileSize(Long fileSize) {
         this.fileSize = fileSize;
     }
 
@@ -103,7 +103,7 @@ public class DownLoadFileInfoItem {
         this.downloadUrl = downloadUrl;
     }
 
-    public DownLoadFileInfoItem withExpireTime(String expireTime) {
+    public DownLoadFileInfoItem withExpireTime(Long expireTime) {
         this.expireTime = expireTime;
         return this;
     }
@@ -112,11 +112,11 @@ public class DownLoadFileInfoItem {
      * **参数解释**：  下载链接过期时间，格式为\"yyyy-MM-dd HH:mm:ss\"。  **取值范围**：  不涉及。 
      * @return expireTime
      */
-    public String getExpireTime() {
+    public Long getExpireTime() {
         return expireTime;
     }
 
-    public void setExpireTime(String expireTime) {
+    public void setExpireTime(Long expireTime) {
         this.expireTime = expireTime;
     }
 

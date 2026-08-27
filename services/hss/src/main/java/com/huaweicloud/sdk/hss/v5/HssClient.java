@@ -3399,6 +3399,7 @@ public class HssClient {
      * @param request ListEventTopRiskRequest 请求对象
      * @return ListEventTopRiskResponse
      */
+    @Deprecated
     public ListEventTopRiskResponse listEventTopRisk(ListEventTopRiskRequest request) {
         return hcClient.syncInvokeHttp(request, HssMeta.listEventTopRisk);
     }
@@ -3413,6 +3414,7 @@ public class HssClient {
      * @param request ListEventTopRiskRequest 请求对象
      * @return SyncInvoker<ListEventTopRiskRequest, ListEventTopRiskResponse>
      */
+    @Deprecated
     public SyncInvoker<ListEventTopRiskRequest, ListEventTopRiskResponse> listEventTopRiskInvoker(
         ListEventTopRiskRequest request) {
         return new SyncInvoker<>(request, HssMeta.listEventTopRisk, hcClient);
@@ -11565,6 +11567,7 @@ public class HssClient {
      * @param request BatchScanSwrImageRequest 请求对象
      * @return BatchScanSwrImageResponse
      */
+    @Deprecated
     public BatchScanSwrImageResponse batchScanSwrImage(BatchScanSwrImageRequest request) {
         return hcClient.syncInvokeHttp(request, HssMeta.batchScanSwrImage);
     }
@@ -11579,6 +11582,7 @@ public class HssClient {
      * @param request BatchScanSwrImageRequest 请求对象
      * @return SyncInvoker<BatchScanSwrImageRequest, BatchScanSwrImageResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchScanSwrImageRequest, BatchScanSwrImageResponse> batchScanSwrImageInvoker(
         BatchScanSwrImageRequest request) {
         return new SyncInvoker<>(request, HssMeta.batchScanSwrImage, hcClient);
@@ -11623,6 +11627,7 @@ public class HssClient {
      * @param request ChangeFilePathWhiteDetailRequest 请求对象
      * @return ChangeFilePathWhiteDetailResponse
      */
+    @Deprecated
     public ChangeFilePathWhiteDetailResponse changeFilePathWhiteDetail(ChangeFilePathWhiteDetailRequest request) {
         return hcClient.syncInvokeHttp(request, HssMeta.changeFilePathWhiteDetail);
     }
@@ -11637,6 +11642,7 @@ public class HssClient {
      * @param request ChangeFilePathWhiteDetailRequest 请求对象
      * @return SyncInvoker<ChangeFilePathWhiteDetailRequest, ChangeFilePathWhiteDetailResponse>
      */
+    @Deprecated
     public SyncInvoker<ChangeFilePathWhiteDetailRequest, ChangeFilePathWhiteDetailResponse> changeFilePathWhiteDetailInvoker(
         ChangeFilePathWhiteDetailRequest request) {
         return new SyncInvoker<>(request, HssMeta.changeFilePathWhiteDetail, hcClient);
@@ -12610,6 +12616,7 @@ public class HssClient {
      * @param request ListSwrImageRepositoryRequest 请求对象
      * @return ListSwrImageRepositoryResponse
      */
+    @Deprecated
     public ListSwrImageRepositoryResponse listSwrImageRepository(ListSwrImageRepositoryRequest request) {
         return hcClient.syncInvokeHttp(request, HssMeta.listSwrImageRepository);
     }
@@ -12624,6 +12631,7 @@ public class HssClient {
      * @param request ListSwrImageRepositoryRequest 请求对象
      * @return SyncInvoker<ListSwrImageRepositoryRequest, ListSwrImageRepositoryResponse>
      */
+    @Deprecated
     public SyncInvoker<ListSwrImageRepositoryRequest, ListSwrImageRepositoryResponse> listSwrImageRepositoryInvoker(
         ListSwrImageRepositoryRequest request) {
         return new SyncInvoker<>(request, HssMeta.listSwrImageRepository, hcClient);
@@ -12785,6 +12793,7 @@ public class HssClient {
      * @param request RunImageSynchronizeRequest 请求对象
      * @return RunImageSynchronizeResponse
      */
+    @Deprecated
     public RunImageSynchronizeResponse runImageSynchronize(RunImageSynchronizeRequest request) {
         return hcClient.syncInvokeHttp(request, HssMeta.runImageSynchronize);
     }
@@ -12799,6 +12808,7 @@ public class HssClient {
      * @param request RunImageSynchronizeRequest 请求对象
      * @return SyncInvoker<RunImageSynchronizeRequest, RunImageSynchronizeResponse>
      */
+    @Deprecated
     public SyncInvoker<RunImageSynchronizeRequest, RunImageSynchronizeResponse> runImageSynchronizeInvoker(
         RunImageSynchronizeRequest request) {
         return new SyncInvoker<>(request, HssMeta.runImageSynchronize, hcClient);
@@ -12843,6 +12853,7 @@ public class HssClient {
      * @param request ShowFilePathWhiteDetailRequest 请求对象
      * @return ShowFilePathWhiteDetailResponse
      */
+    @Deprecated
     public ShowFilePathWhiteDetailResponse showFilePathWhiteDetail(ShowFilePathWhiteDetailRequest request) {
         return hcClient.syncInvokeHttp(request, HssMeta.showFilePathWhiteDetail);
     }
@@ -12857,6 +12868,7 @@ public class HssClient {
      * @param request ShowFilePathWhiteDetailRequest 请求对象
      * @return SyncInvoker<ShowFilePathWhiteDetailRequest, ShowFilePathWhiteDetailResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowFilePathWhiteDetailRequest, ShowFilePathWhiteDetailResponse> showFilePathWhiteDetailInvoker(
         ShowFilePathWhiteDetailRequest request) {
         return new SyncInvoker<>(request, HssMeta.showFilePathWhiteDetail, hcClient);
@@ -15140,6 +15152,7 @@ public class HssClient {
      * @param request ListServerlessAssetRequest 请求对象
      * @return ListServerlessAssetResponse
      */
+    @Deprecated
     public ListServerlessAssetResponse listServerlessAsset(ListServerlessAssetRequest request) {
         return hcClient.syncInvokeHttp(request, HssMeta.listServerlessAsset);
     }
@@ -15154,6 +15167,7 @@ public class HssClient {
      * @param request ListServerlessAssetRequest 请求对象
      * @return SyncInvoker<ListServerlessAssetRequest, ListServerlessAssetResponse>
      */
+    @Deprecated
     public SyncInvoker<ListServerlessAssetRequest, ListServerlessAssetResponse> listServerlessAssetInvoker(
         ListServerlessAssetRequest request) {
         return new SyncInvoker<>(request, HssMeta.listServerlessAsset, hcClient);
@@ -15169,6 +15183,7 @@ public class HssClient {
      * @param request ListServerlessAssetDetailRequest 请求对象
      * @return ListServerlessAssetDetailResponse
      */
+    @Deprecated
     public ListServerlessAssetDetailResponse listServerlessAssetDetail(ListServerlessAssetDetailRequest request) {
         return hcClient.syncInvokeHttp(request, HssMeta.listServerlessAssetDetail);
     }
@@ -15183,6 +15198,7 @@ public class HssClient {
      * @param request ListServerlessAssetDetailRequest 请求对象
      * @return SyncInvoker<ListServerlessAssetDetailRequest, ListServerlessAssetDetailResponse>
      */
+    @Deprecated
     public SyncInvoker<ListServerlessAssetDetailRequest, ListServerlessAssetDetailResponse> listServerlessAssetDetailInvoker(
         ListServerlessAssetDetailRequest request) {
         return new SyncInvoker<>(request, HssMeta.listServerlessAssetDetail, hcClient);

@@ -18,6 +18,11 @@ public class ApplyConfigurationRequestBody {
 
     private List<String> instanceIds = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_update_param_group_version")
+
+    private Boolean isUpdateParamGroupVersion;
+
     public ApplyConfigurationRequestBody withInstanceIds(List<String> instanceIds) {
         this.instanceIds = instanceIds;
         return this;
@@ -51,6 +56,23 @@ public class ApplyConfigurationRequestBody {
         this.instanceIds = instanceIds;
     }
 
+    public ApplyConfigurationRequestBody withIsUpdateParamGroupVersion(Boolean isUpdateParamGroupVersion) {
+        this.isUpdateParamGroupVersion = isUpdateParamGroupVersion;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  是否更新实例参数组版本，更新后实例规格变更时默认的规格参数值会以最新版本的为准。  **约束限制**：  不涉及。  **取值范围**：  - true：是。 - false：否。  **默认取值**：    false。
+     * @return isUpdateParamGroupVersion
+     */
+    public Boolean getIsUpdateParamGroupVersion() {
+        return isUpdateParamGroupVersion;
+    }
+
+    public void setIsUpdateParamGroupVersion(Boolean isUpdateParamGroupVersion) {
+        this.isUpdateParamGroupVersion = isUpdateParamGroupVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -60,12 +82,13 @@ public class ApplyConfigurationRequestBody {
             return false;
         }
         ApplyConfigurationRequestBody that = (ApplyConfigurationRequestBody) obj;
-        return Objects.equals(this.instanceIds, that.instanceIds);
+        return Objects.equals(this.instanceIds, that.instanceIds)
+            && Objects.equals(this.isUpdateParamGroupVersion, that.isUpdateParamGroupVersion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceIds);
+        return Objects.hash(instanceIds, isUpdateParamGroupVersion);
     }
 
     @Override
@@ -73,6 +96,7 @@ public class ApplyConfigurationRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class ApplyConfigurationRequestBody {\n");
         sb.append("    instanceIds: ").append(toIndentedString(instanceIds)).append("\n");
+        sb.append("    isUpdateParamGroupVersion: ").append(toIndentedString(isUpdateParamGroupVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

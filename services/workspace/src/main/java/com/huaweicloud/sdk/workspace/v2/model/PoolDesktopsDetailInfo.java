@@ -89,6 +89,11 @@ public class PoolDesktopsDetailInfo {
     private String taskStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_status")
+
+    private Integer domainStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "in_maintenance_mode")
 
     private Boolean inMaintenanceMode;
@@ -455,6 +460,11 @@ public class PoolDesktopsDetailInfo {
     private String domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_version")
+
+    private String agentVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inconsistent_types")
 
     private List<String> inconsistentTypes = null;
@@ -784,6 +794,23 @@ public class PoolDesktopsDetailInfo {
 
     public void setTaskStatus(String taskStatus) {
         this.taskStatus = taskStatus;
+    }
+
+    public PoolDesktopsDetailInfo withDomainStatus(Integer domainStatus) {
+        this.domainStatus = domainStatus;
+        return this;
+    }
+
+    /**
+     * 加域状态。|- 1 正常。 2 脱域。 3 未上报。
+     * @return domainStatus
+     */
+    public Integer getDomainStatus() {
+        return domainStatus;
+    }
+
+    public void setDomainStatus(Integer domainStatus) {
+        this.domainStatus = domainStatus;
     }
 
     public PoolDesktopsDetailInfo withInMaintenanceMode(Boolean inMaintenanceMode) {
@@ -1471,6 +1498,23 @@ public class PoolDesktopsDetailInfo {
         this.domain = domain;
     }
 
+    public PoolDesktopsDetailInfo withAgentVersion(String agentVersion) {
+        this.agentVersion = agentVersion;
+        return this;
+    }
+
+    /**
+     * agent版本。
+     * @return agentVersion
+     */
+    public String getAgentVersion() {
+        return agentVersion;
+    }
+
+    public void setAgentVersion(String agentVersion) {
+        this.agentVersion = agentVersion;
+    }
+
     public PoolDesktopsDetailInfo withInconsistentTypes(List<String> inconsistentTypes) {
         this.inconsistentTypes = inconsistentTypes;
         return this;
@@ -1520,7 +1564,7 @@ public class PoolDesktopsDetailInfo {
             && Objects.equals(this.userGroupList, that.userGroupList)
             && Objects.equals(this.desktopType, that.desktopType) && Objects.equals(this.metadata, that.metadata)
             && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.taskStatus, that.taskStatus)
+            && Objects.equals(this.taskStatus, that.taskStatus) && Objects.equals(this.domainStatus, that.domainStatus)
             && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode)
             && Objects.equals(this.created, that.created) && Objects.equals(this.securityGroups, that.securityGroups)
             && Objects.equals(this.loginStatus, that.loginStatus) && Objects.equals(this.userName, that.userName)
@@ -1544,7 +1588,7 @@ public class PoolDesktopsDetailInfo {
             && Objects.equals(this.process, that.process) && Objects.equals(this.rootResourceId, that.rootResourceId)
             && Objects.equals(this.hourPackageInfo, that.hourPackageInfo)
             && Objects.equals(this.isFreeze, that.isFreeze) && Objects.equals(this.isolated, that.isolated)
-            && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.agentVersion, that.agentVersion)
             && Objects.equals(this.inconsistentTypes, that.inconsistentTypes);
     }
 
@@ -1564,6 +1608,7 @@ public class PoolDesktopsDetailInfo {
             flavor,
             status,
             taskStatus,
+            domainStatus,
             inMaintenanceMode,
             created,
             securityGroups,
@@ -1598,6 +1643,7 @@ public class PoolDesktopsDetailInfo {
             isFreeze,
             isolated,
             domain,
+            agentVersion,
             inconsistentTypes);
     }
 
@@ -1619,6 +1665,7 @@ public class PoolDesktopsDetailInfo {
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    taskStatus: ").append(toIndentedString(taskStatus)).append("\n");
+        sb.append("    domainStatus: ").append(toIndentedString(domainStatus)).append("\n");
         sb.append("    inMaintenanceMode: ").append(toIndentedString(inMaintenanceMode)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
@@ -1653,6 +1700,7 @@ public class PoolDesktopsDetailInfo {
         sb.append("    isFreeze: ").append(toIndentedString(isFreeze)).append("\n");
         sb.append("    isolated: ").append(toIndentedString(isolated)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+        sb.append("    agentVersion: ").append(toIndentedString(agentVersion)).append("\n");
         sb.append("    inconsistentTypes: ").append(toIndentedString(inconsistentTypes)).append("\n");
         sb.append("}");
         return sb.toString();

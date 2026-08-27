@@ -99,6 +99,9 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateProductResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateProtocolConfigDTO;
+import com.huaweicloud.sdk.iotda.v5.model.CreateProtocolConfigRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateProtocolConfigResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateProvisioningTemplate;
 import com.huaweicloud.sdk.iotda.v5.model.CreateProvisioningTemplateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateProvisioningTemplateResponse;
@@ -163,6 +166,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProductResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteProtocolConfigRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteProtocolConfigResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProvisioningTemplateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProvisioningTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteQueueRequest;
@@ -239,6 +244,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListProductsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListProductsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListPropertiesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListPropertiesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListProtocolConfigsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListProtocolConfigsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListProvisioningTemplatesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListProvisioningTemplatesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListResourcesByTagsRequest;
@@ -321,6 +328,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowProductResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowProtocolConfigRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowProtocolConfigResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowProvisioningTemplateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowProvisioningTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowQueueRequest;
@@ -398,6 +407,9 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateProductResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdatePropertiesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdatePropertiesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateProtocolConfigDTO;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateProtocolConfigRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateProtocolConfigResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateProvisioningTemplate;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateProvisioningTemplateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateProvisioningTemplateResponse;
@@ -5286,6 +5298,167 @@ public class IoTDAMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DevicePropertiesRequest.class),
             f -> f.withMarshaller(UpdatePropertiesRequest::getBody, UpdatePropertiesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateProtocolConfigRequest, CreateProtocolConfigResponse> createProtocolConfig =
+        genForCreateProtocolConfig();
+
+    private static HttpRequestDef<CreateProtocolConfigRequest, CreateProtocolConfigResponse> genForCreateProtocolConfig() {
+        // basic
+        HttpRequestDef.Builder<CreateProtocolConfigRequest, CreateProtocolConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateProtocolConfigRequest.class, CreateProtocolConfigResponse.class)
+            .withName("CreateProtocolConfig")
+            .withUri("/v5/iot/{project_id}/protocol-configs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateProtocolConfigRequest::getInstanceId,
+                CreateProtocolConfigRequest::setInstanceId));
+        builder.<CreateProtocolConfigDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateProtocolConfigDTO.class),
+            f -> f.withMarshaller(CreateProtocolConfigRequest::getBody, CreateProtocolConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteProtocolConfigRequest, DeleteProtocolConfigResponse> deleteProtocolConfig =
+        genForDeleteProtocolConfig();
+
+    private static HttpRequestDef<DeleteProtocolConfigRequest, DeleteProtocolConfigResponse> genForDeleteProtocolConfig() {
+        // basic
+        HttpRequestDef.Builder<DeleteProtocolConfigRequest, DeleteProtocolConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteProtocolConfigRequest.class, DeleteProtocolConfigResponse.class)
+            .withName("DeleteProtocolConfig")
+            .withUri("/v5/iot/{project_id}/protocol-configs/{protocol_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("protocol_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteProtocolConfigRequest::getProtocolId,
+                DeleteProtocolConfigRequest::setProtocolId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteProtocolConfigRequest::getInstanceId,
+                DeleteProtocolConfigRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProtocolConfigsRequest, ListProtocolConfigsResponse> listProtocolConfigs =
+        genForListProtocolConfigs();
+
+    private static HttpRequestDef<ListProtocolConfigsRequest, ListProtocolConfigsResponse> genForListProtocolConfigs() {
+        // basic
+        HttpRequestDef.Builder<ListProtocolConfigsRequest, ListProtocolConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProtocolConfigsRequest.class, ListProtocolConfigsResponse.class)
+                .withName("ListProtocolConfigs")
+                .withUri("/v5/iot/{project_id}/protocol-configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProtocolConfigsRequest::getLimit, ListProtocolConfigsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProtocolConfigsRequest::getMarker, ListProtocolConfigsRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProtocolConfigsRequest::getOffset, ListProtocolConfigsRequest::setOffset));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProtocolConfigsRequest::getInstanceId,
+                ListProtocolConfigsRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowProtocolConfigRequest, ShowProtocolConfigResponse> showProtocolConfig =
+        genForShowProtocolConfig();
+
+    private static HttpRequestDef<ShowProtocolConfigRequest, ShowProtocolConfigResponse> genForShowProtocolConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowProtocolConfigRequest, ShowProtocolConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowProtocolConfigRequest.class, ShowProtocolConfigResponse.class)
+                .withName("ShowProtocolConfig")
+                .withUri("/v5/iot/{project_id}/protocol-configs/{protocol_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("protocol_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProtocolConfigRequest::getProtocolId, ShowProtocolConfigRequest::setProtocolId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProtocolConfigRequest::getInstanceId, ShowProtocolConfigRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateProtocolConfigRequest, UpdateProtocolConfigResponse> updateProtocolConfig =
+        genForUpdateProtocolConfig();
+
+    private static HttpRequestDef<UpdateProtocolConfigRequest, UpdateProtocolConfigResponse> genForUpdateProtocolConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateProtocolConfigRequest, UpdateProtocolConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateProtocolConfigRequest.class, UpdateProtocolConfigResponse.class)
+            .withName("UpdateProtocolConfig")
+            .withUri("/v5/iot/{project_id}/protocol-configs/{protocol_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("protocol_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProtocolConfigRequest::getProtocolId,
+                UpdateProtocolConfigRequest::setProtocolId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProtocolConfigRequest::getInstanceId,
+                UpdateProtocolConfigRequest::setInstanceId));
+        builder.<UpdateProtocolConfigDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateProtocolConfigDTO.class),
+            f -> f.withMarshaller(UpdateProtocolConfigRequest::getBody, UpdateProtocolConfigRequest::setBody));
 
         // response
 

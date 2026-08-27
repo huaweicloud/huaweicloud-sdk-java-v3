@@ -173,13 +173,18 @@ public class NotebookCreateRequest {
 
     private Integer duration;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_network_config")
+
+    private PublicNetworkConfig publicNetworkConfig;
+
     public NotebookCreateRequest withDescription(String description) {
         this.description = description;
         return this;
     }
 
     /**
-     * **参数解释**：实例描述信息。 **约束限制**：不涉及。 **取值范围**：长度限制为512字符，且不能包含字符&<>\"'/。 **默认取值**：不涉及。
+     * **参数解释**：实例描述信息。 **约束限制**：不涉及。 **取值范围**：长度限制为512字符，不可包含特殊字符<>，缺省值为空。 **默认取值**：不涉及。
      * @return description
      */
     public String getDescription() {
@@ -306,7 +311,7 @@ public class NotebookCreateRequest {
     }
 
     /**
-     * **参数解释**：实例名称。 **约束限制**：不涉及。 **取值范围**：长度限制为128个字符，支持大小写字母、数字、中划线和下划线，名称可重复。 **默认取值**：不涉及。
+     * **参数解释**：实例名称。 **约束限制**：不涉及。 **取值范围**：长度限制为128个字符， 支持大小写字母、数字、中划线、下划线和中文，名称可重复。 **默认取值**：不涉及。
      * @return name
      */
     public String getName() {
@@ -557,6 +562,32 @@ public class NotebookCreateRequest {
         this.duration = duration;
     }
 
+    public NotebookCreateRequest withPublicNetworkConfig(PublicNetworkConfig publicNetworkConfig) {
+        this.publicNetworkConfig = publicNetworkConfig;
+        return this;
+    }
+
+    public NotebookCreateRequest withPublicNetworkConfig(Consumer<PublicNetworkConfig> publicNetworkConfigSetter) {
+        if (this.publicNetworkConfig == null) {
+            this.publicNetworkConfig = new PublicNetworkConfig();
+            publicNetworkConfigSetter.accept(this.publicNetworkConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get publicNetworkConfig
+     * @return publicNetworkConfig
+     */
+    public PublicNetworkConfig getPublicNetworkConfig() {
+        return publicNetworkConfig;
+    }
+
+    public void setPublicNetworkConfig(PublicNetworkConfig publicNetworkConfig) {
+        this.publicNetworkConfig = publicNetworkConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -574,7 +605,8 @@ public class NotebookCreateRequest {
             && Objects.equals(this.hooks, that.hooks) && Objects.equals(this.lease, that.lease)
             && Objects.equals(this.affinity, that.affinity) && Objects.equals(this.runUser, that.runUser)
             && Objects.equals(this.dataVolumes, that.dataVolumes) && Objects.equals(this.userVpc, that.userVpc)
-            && Objects.equals(this.duration, that.duration);
+            && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.publicNetworkConfig, that.publicNetworkConfig);
     }
 
     @Override
@@ -595,7 +627,8 @@ public class NotebookCreateRequest {
             runUser,
             dataVolumes,
             userVpc,
-            duration);
+            duration,
+            publicNetworkConfig);
     }
 
     @Override
@@ -619,6 +652,7 @@ public class NotebookCreateRequest {
         sb.append("    dataVolumes: ").append(toIndentedString(dataVolumes)).append("\n");
         sb.append("    userVpc: ").append(toIndentedString(userVpc)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+        sb.append("    publicNetworkConfig: ").append(toIndentedString(publicNetworkConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -372,6 +372,31 @@ public class ListAllNotebooksRequest {
 
     private String tags;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "swr_path")
+
+    private String swrPath;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_name")
+
+    private String poolName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip")
+
+    private String ip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "username")
+
+    private String username;
+
     public ListAllNotebooksRequest withFeature(FeatureEnum feature) {
         this.feature = feature;
         return this;
@@ -548,7 +573,7 @@ public class ListAllNotebooksRequest {
     }
 
     /**
-     * **参数解释**：实例的机器规格。如下规格仅供参考，实际支持的规格以具体区域为准。 modelarts.vm.cpu.2u：Intel CPU通用规格，用于快速数据探索和实验。 modelarts.vm.cpu.8u：Intel CPU算力增强型，适用于密集计算场景下运算。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * **参数解释**：实例的机器规格编码，支持模糊匹配查询。如下规格仅供参考，实际支持的规格以具体区域为准。 modelarts.vm.cpu.2u：Intel CPU通用规格，用于快速数据探索和实验。 modelarts.vm.cpu.8u：Intel CPU算力增强型，适用于密集计算场景下运算。 **约束限制**：不支持专属资源池的自定义规格查询。 **取值范围**：长度限制1-256字符，支持数字、大小写字母、小数点、下划线或中划线。 **默认取值**：不涉及。
      * @return flavor
      */
     public String getFlavor() {
@@ -616,7 +641,7 @@ public class ListAllNotebooksRequest {
     }
 
     /**
-     * **参数解释**：实例标签信息。 **约束限制**：不涉及。 **取值范围**：不以逗号，竖划线开头，不以逗号结尾，不出现连续的竖划线和逗号，允许中文、西文、葡文等语言以及空格_.:/=+-@特殊字符，且字符间以逗号或者竖划线分割。 **默认取值**：不涉及。
+     * **参数解释**：实例标签信息。 **约束限制**：不涉及。 **取值范围**：不以逗号，竖划线开头，不以逗号结尾，不出现连续的竖划线和逗号，允许中文、西文、葡文等语言以及空格_.:/=+-@特殊字符，且字符间以逗号或者竖划线分割。例：tag_key1|tag_value1,tag_key2|tag_value2。 **默认取值**：不涉及。
      * @return tags
      */
     public String getTags() {
@@ -625,6 +650,91 @@ public class ListAllNotebooksRequest {
 
     public void setTags(String tags) {
         this.tags = tags;
+    }
+
+    public ListAllNotebooksRequest withSwrPath(String swrPath) {
+        this.swrPath = swrPath;
+        return this;
+    }
+
+    /**
+     * **参数解释**：SWR镜像路径，该参数是针对返回参数NotebookResp中Image的swr_path属性进行模糊匹配查询。 **约束限制**：不涉及。 **取值范围**：长度限制2048个字符，支持数字、大小写字母、下划线、中划线、点号、冒号和斜杠，0-2048个字符。 **默认取值**：不涉及。
+     * @return swrPath
+     */
+    public String getSwrPath() {
+        return swrPath;
+    }
+
+    public void setSwrPath(String swrPath) {
+        this.swrPath = swrPath;
+    }
+
+    public ListAllNotebooksRequest withPoolName(String poolName) {
+        this.poolName = poolName;
+        return this;
+    }
+
+    /**
+     * **参数解释**：专属资源池名称，支持模糊匹配查询。 **约束限制**：不涉及。 **取值范围**：长度限制1-64字符，支持数字、大小写字母和中划线。 **默认取值**：不涉及。
+     * @return poolName
+     */
+    public String getPoolName() {
+        return poolName;
+    }
+
+    public void setPoolName(String poolName) {
+        this.poolName = poolName;
+    }
+
+    public ListAllNotebooksRequest withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * **参数解释**：实例描述信息，支持模糊匹配查询。 **约束限制**：不涉及。 **取值范围**：长度限制为512字符，不可包含特殊字符<>。 **默认取值**：不涉及。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public ListAllNotebooksRequest withIp(String ip) {
+        this.ip = ip;
+        return this;
+    }
+
+    /**
+     * **参数解释**：节点IP。 **约束限制**：不涉及。 **取值范围**：正确的IPv4地址，暂不支持IPv6地址。 **默认取值**：不涉及。
+     * @return ip
+     */
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
+    public ListAllNotebooksRequest withUsername(String username) {
+        this.username = username;
+        return this;
+    }
+
+    /**
+     * **参数解释**：实例创建用户名称，支持模糊匹配查询。 **约束限制**：不涉及。 **取值范围**：长度限制1-256字符，支持数字、大小写字母、小数点、下划线或中划线。 **默认取值**：不涉及。
+     * @return username
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Override
@@ -643,7 +753,9 @@ public class ListAllNotebooksRequest {
             && Objects.equals(this.status, that.status) && Objects.equals(this.workspaceId, that.workspaceId)
             && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.imageId, that.imageId)
             && Objects.equals(this.id, that.id) && Objects.equals(this.billing, that.billing)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.swrPath, that.swrPath)
+            && Objects.equals(this.poolName, that.poolName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.username, that.username);
     }
 
     @Override
@@ -662,7 +774,12 @@ public class ListAllNotebooksRequest {
             imageId,
             id,
             billing,
-            tags);
+            tags,
+            swrPath,
+            poolName,
+            description,
+            ip,
+            username);
     }
 
     @Override
@@ -684,6 +801,11 @@ public class ListAllNotebooksRequest {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    billing: ").append(toIndentedString(billing)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    swrPath: ").append(toIndentedString(swrPath)).append("\n");
+        sb.append("    poolName: ").append(toIndentedString(poolName)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    username: ").append(toIndentedString(username)).append("\n");
         sb.append("}");
         return sb.toString();
     }

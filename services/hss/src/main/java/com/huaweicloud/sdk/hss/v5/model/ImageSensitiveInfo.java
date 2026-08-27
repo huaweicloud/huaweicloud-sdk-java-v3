@@ -185,9 +185,9 @@ public class ImageSensitiveInfo {
     }
 
     /**
-     * **参数解释**: 最后一次检测时间，时间单位 毫秒（ms） **取值范围**: 最小值0，最大值2147483647 
+     * **参数解释**: 最后一次检测时间，时间单位 毫秒（ms） **取值范围**: 最小值0，最大值9223372036854775807 
      * minimum: 0
-     * maximum: 2147483647
+     * maximum: 9223372036854775807
      * @return latestScanTime
      */
     public Long getLatestScanTime() {

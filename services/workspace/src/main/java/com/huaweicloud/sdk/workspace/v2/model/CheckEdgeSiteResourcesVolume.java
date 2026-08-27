@@ -44,6 +44,8 @@ public class CheckEdgeSiteResourcesVolume {
 
     /**
      * 磁盘大小，单位GB。
+     * minimum: 1
+     * maximum: 100
      * @return size
      */
     public Long getSize() {

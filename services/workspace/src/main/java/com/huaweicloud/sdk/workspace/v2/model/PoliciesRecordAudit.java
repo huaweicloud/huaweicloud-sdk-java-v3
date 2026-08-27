@@ -41,6 +41,11 @@ public class PoliciesRecordAudit {
 
     private Integer retentionDuration;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reminder_frequency")
+
+    private Integer reminderFrequency;
+
     public PoliciesRecordAudit withEnable(Boolean enable) {
         this.enable = enable;
         return this;
@@ -154,6 +159,25 @@ public class PoliciesRecordAudit {
         this.retentionDuration = retentionDuration;
     }
 
+    public PoliciesRecordAudit withReminderFrequency(Integer reminderFrequency) {
+        this.reminderFrequency = reminderFrequency;
+        return this;
+    }
+
+    /**
+     * 登录时，录屏审计提醒频率（天/次）。取值为1~30天，0 表示每次登录都提醒。
+     * minimum: 0
+     * maximum: 30
+     * @return reminderFrequency
+     */
+    public Integer getReminderFrequency() {
+        return reminderFrequency;
+    }
+
+    public void setReminderFrequency(Integer reminderFrequency) {
+        this.reminderFrequency = reminderFrequency;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -167,12 +191,14 @@ public class PoliciesRecordAudit {
             && Objects.equals(this.storageType, that.storageType)
             && Objects.equals(this.obsBucketSource, that.obsBucketSource)
             && Objects.equals(this.obsBucketName, that.obsBucketName)
-            && Objects.equals(this.retentionDuration, that.retentionDuration);
+            && Objects.equals(this.retentionDuration, that.retentionDuration)
+            && Objects.equals(this.reminderFrequency, that.reminderFrequency);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enable, rules, storageType, obsBucketSource, obsBucketName, retentionDuration);
+        return Objects
+            .hash(enable, rules, storageType, obsBucketSource, obsBucketName, retentionDuration, reminderFrequency);
     }
 
     @Override
@@ -185,6 +211,7 @@ public class PoliciesRecordAudit {
         sb.append("    obsBucketSource: ").append(toIndentedString(obsBucketSource)).append("\n");
         sb.append("    obsBucketName: ").append(toIndentedString(obsBucketName)).append("\n");
         sb.append("    retentionDuration: ").append(toIndentedString(retentionDuration)).append("\n");
+        sb.append("    reminderFrequency: ").append(toIndentedString(reminderFrequency)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -98,6 +98,11 @@ public class Flavor {
 
     private AscendInfo ascend;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_eni")
+
+    private Boolean supportEni;
+
     public Flavor withArch(String arch) {
         this.arch = arch;
         return this;
@@ -430,6 +435,23 @@ public class Flavor {
         this.ascend = ascend;
     }
 
+    public Flavor withSupportEni(Boolean supportEni) {
+        this.supportEni = supportEni;
+        return this;
+    }
+
+    /**
+     * **参数解释**：是否支持ENI挂载。
+     * @return supportEni
+     */
+    public Boolean getSupportEni() {
+        return supportEni;
+    }
+
+    public void setSupportEni(Boolean supportEni) {
+        this.supportEni = supportEni;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -447,7 +469,7 @@ public class Flavor {
             && Objects.equals(this.memory, that.memory) && Objects.equals(this.name, that.name)
             && Objects.equals(this.soldOut, that.soldOut) && Objects.equals(this.storages, that.storages)
             && Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.gpu, that.gpu)
-            && Objects.equals(this.ascend, that.ascend);
+            && Objects.equals(this.ascend, that.ascend) && Objects.equals(this.supportEni, that.supportEni);
     }
 
     @Override
@@ -468,7 +490,8 @@ public class Flavor {
             storages,
             vcpus,
             gpu,
-            ascend);
+            ascend,
+            supportEni);
     }
 
     @Override
@@ -492,6 +515,7 @@ public class Flavor {
         sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
         sb.append("    gpu: ").append(toIndentedString(gpu)).append("\n");
         sb.append("    ascend: ").append(toIndentedString(ascend)).append("\n");
+        sb.append("    supportEni: ").append(toIndentedString(supportEni)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +15,31 @@ public class ShowQuotasResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quotas")
 
-    private Object quotas;
+    private Quotas quotas;
 
-    public ShowQuotasResponse withQuotas(Object quotas) {
+    public ShowQuotasResponse withQuotas(Quotas quotas) {
         this.quotas = quotas;
         return this;
     }
 
+    public ShowQuotasResponse withQuotas(Consumer<Quotas> quotasSetter) {
+        if (this.quotas == null) {
+            this.quotas = new Quotas();
+            quotasSetter.accept(this.quotas);
+        }
+
+        return this;
+    }
+
     /**
-     * 配额列表对象。
+     * Get quotas
      * @return quotas
      */
-    public Object getQuotas() {
+    public Quotas getQuotas() {
         return quotas;
     }
 
-    public void setQuotas(Object quotas) {
+    public void setQuotas(Quotas quotas) {
         this.quotas = quotas;
     }
 

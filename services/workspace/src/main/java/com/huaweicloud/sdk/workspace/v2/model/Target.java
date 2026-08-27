@@ -164,7 +164,7 @@ public class Target {
     }
 
     /**
-     * 对象名称，长度不能超过55个字符。
+     * 对象名称，长度不能超过64个字符。
      * @return targetName
      */
     public String getTargetName() {

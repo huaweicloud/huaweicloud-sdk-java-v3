@@ -25,6 +25,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDevServersActionRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDevServersActionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDrainPoolNodesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDrainPoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchLockPoolNodesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchLockPoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchMigratePoolNodesRequest;
@@ -598,6 +600,36 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * Lite Server服务器挂载磁盘
+     *
+     * Lite Server服务器挂载磁盘接口用于将额外的磁盘挂载到Lite Server服务器上。该接口适用于以下场景：当用户需要扩展Lite Server服务器的存储空间以满足更大的数据存储需求时，可以通过此接口将指定的磁盘挂载到服务器上。使用该接口的前提条件是Lite Server服务器已创建且处于运行状态、或者停止状态，用户具有挂载磁盘的权限，且指定的磁盘已存在且未被其他服务器使用。挂载操作完成后，磁盘将成功挂载到Lite Server服务器上，用户可以访问和使用新增的存储空间。若Lite Server服务器不存在、指定的磁盘不存在或已被使用，或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AttachDevServerVolumeRequest 请求对象
+     * @return CompletableFuture<AttachDevServerVolumeResponse>
+     */
+    public CompletableFuture<AttachDevServerVolumeResponse> attachDevServerVolumeAsync(
+        AttachDevServerVolumeRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.attachDevServerVolume);
+    }
+
+    /**
+     * Lite Server服务器挂载磁盘
+     *
+     * Lite Server服务器挂载磁盘接口用于将额外的磁盘挂载到Lite Server服务器上。该接口适用于以下场景：当用户需要扩展Lite Server服务器的存储空间以满足更大的数据存储需求时，可以通过此接口将指定的磁盘挂载到服务器上。使用该接口的前提条件是Lite Server服务器已创建且处于运行状态、或者停止状态，用户具有挂载磁盘的权限，且指定的磁盘已存在且未被其他服务器使用。挂载操作完成后，磁盘将成功挂载到Lite Server服务器上，用户可以访问和使用新增的存储空间。若Lite Server服务器不存在、指定的磁盘不存在或已被使用，或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AttachDevServerVolumeRequest 请求对象
+     * @return AsyncInvoker<AttachDevServerVolumeRequest, AttachDevServerVolumeResponse>
+     */
+    public AsyncInvoker<AttachDevServerVolumeRequest, AttachDevServerVolumeResponse> attachDevServerVolumeAsyncInvoker(
+        AttachDevServerVolumeRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.attachDevServerVolume, hcClient);
+    }
+
+    /**
      * 动态挂载Notebook存储
      *
      * 动态挂载Notebook存储接口支持将存储动态挂载到运行中的Notebook实例的指定文件目录。调用该接口后，系统将在Notebook实例中**异步**挂载指定的存储实例，挂载完成后用户可在容器中以文件系统方式读写存储实例中的文件。若用户无权限访问指定实例或Notebook实例未运行，接口将返回相应的错误信息。
@@ -845,6 +877,65 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 批量操作Lite Server实例
+     *
+     * 批量操作Lite Server实例接口用于对多个Lite Server实例进行统一操作，如启动、停止、重启或删除等。该接口适用于以下场景：当需要对多个Lite Server实例进行相同的操作，例如在维护期间批量停止实例、更新配置后批量重启实例或清理不再需要的实例时，用户可通过此接口高效地完成批量操作。使用该接口的前提条件是目标Lite Server实例已存在且用户具有相应的操作权限。操作完成后，所有指定的Lite Server实例将根据请求完成相应的状态变更或被移除，相关资源和配置也将被相应调整或清理。若目标Lite Server实例不存在、用户无权限操作或请求参数不正确，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDevServersActionRequest 请求对象
+     * @return CompletableFuture<BatchDevServersActionResponse>
+     */
+    public CompletableFuture<BatchDevServersActionResponse> batchDevServersActionAsync(
+        BatchDevServersActionRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.batchDevServersAction);
+    }
+
+    /**
+     * 批量操作Lite Server实例
+     *
+     * 批量操作Lite Server实例接口用于对多个Lite Server实例进行统一操作，如启动、停止、重启或删除等。该接口适用于以下场景：当需要对多个Lite Server实例进行相同的操作，例如在维护期间批量停止实例、更新配置后批量重启实例或清理不再需要的实例时，用户可通过此接口高效地完成批量操作。使用该接口的前提条件是目标Lite Server实例已存在且用户具有相应的操作权限。操作完成后，所有指定的Lite Server实例将根据请求完成相应的状态变更或被移除，相关资源和配置也将被相应调整或清理。若目标Lite Server实例不存在、用户无权限操作或请求参数不正确，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDevServersActionRequest 请求对象
+     * @return AsyncInvoker<BatchDevServersActionRequest, BatchDevServersActionResponse>
+     */
+    public AsyncInvoker<BatchDevServersActionRequest, BatchDevServersActionResponse> batchDevServersActionAsyncInvoker(
+        BatchDevServersActionRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.batchDevServersAction, hcClient);
+    }
+
+    /**
+     * 节点批量排水
+     *
+     * 节点批量排水接口用于集中停止指定节点的业务处理能力并释放相关资源。该接口适用于以下场景：当系统需进行紧急故障隔离、资源回收、版本升级或维护操作时，用户可通过此接口批量暂停目标节点的业务流量，确保操作期间服务稳定性。使用该接口的前提条件包括：目标节点已存在且用户具备管理员权限，节点需处于运行状态且未被锁定，资源池需满足排水后容量约束（如最小可用节点数），同时需提供有效的节点列表及排水策略（如立即排水或延迟排水）作为输入参数。操作完成后，指定节点将停止接收新任务并逐步释放资源，原有业务数据将根据策略保留或迁移。若节点不存在、用户权限不足、节点状态异常（如维护中）、资源池容量不足或输入参数缺失，接口将返回对应错误信息（如404未找到节点、403权限拒绝、400参数校验失败等）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDrainPoolNodesRequest 请求对象
+     * @return CompletableFuture<BatchDrainPoolNodesResponse>
+     */
+    public CompletableFuture<BatchDrainPoolNodesResponse> batchDrainPoolNodesAsync(BatchDrainPoolNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.batchDrainPoolNodes);
+    }
+
+    /**
+     * 节点批量排水
+     *
+     * 节点批量排水接口用于集中停止指定节点的业务处理能力并释放相关资源。该接口适用于以下场景：当系统需进行紧急故障隔离、资源回收、版本升级或维护操作时，用户可通过此接口批量暂停目标节点的业务流量，确保操作期间服务稳定性。使用该接口的前提条件包括：目标节点已存在且用户具备管理员权限，节点需处于运行状态且未被锁定，资源池需满足排水后容量约束（如最小可用节点数），同时需提供有效的节点列表及排水策略（如立即排水或延迟排水）作为输入参数。操作完成后，指定节点将停止接收新任务并逐步释放资源，原有业务数据将根据策略保留或迁移。若节点不存在、用户权限不足、节点状态异常（如维护中）、资源池容量不足或输入参数缺失，接口将返回对应错误信息（如404未找到节点、403权限拒绝、400参数校验失败等）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDrainPoolNodesRequest 请求对象
+     * @return AsyncInvoker<BatchDrainPoolNodesRequest, BatchDrainPoolNodesResponse>
+     */
+    public AsyncInvoker<BatchDrainPoolNodesRequest, BatchDrainPoolNodesResponse> batchDrainPoolNodesAsyncInvoker(
+        BatchDrainPoolNodesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.batchDrainPoolNodes, hcClient);
+    }
+
+    /**
      * 批量对节点功能上锁
      *
      * 批量对节点功能上锁接口用于批量对指定节点的功能进行上锁操作，被上锁的功能在控制台将无法正常使用。该接口适用于以下场景：当需要临时禁用某些节点的功能以防止误操作、进行系统维护或测试时，用户可通过此接口批量对节点功能进行上锁。使用该接口的前提条件是节点功能已存在且用户具有管理员权限。上锁操作完成后，指定节点的功能将在控制台被禁用，无法进行相关操作。若节点功能不存在、用户无权限操作或请求参数无效，接口将返回相应的错误信息。
@@ -1083,6 +1174,36 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * Lite Server服务器绑定EIP
+     *
+     * Lite Server服务器绑定的EIP接口用于将弹性公网IP（EIP）绑定到Lite Server服务器上。该接口适用于以下场景：当用户需要为Lite Server服务器分配一个固定的公网IP地址，以便从外部网络访问服务器时，可以通过此接口将指定的EIP绑定到服务器上。使用该接口的前提条件是Lite Server服务器已创建且处于运行状态，用户具有绑定EIP的权限，且指定的EIP已存在且未被其他资源使用。绑定操作完成后，EIP将成功绑定到Lite Server服务器上，服务器可以通过该EIP从外部网络访问。若Lite Server服务器不存在、已处于停止状态、指定的EIP不存在或已被使用，或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindDevServerPublicIPRequest 请求对象
+     * @return CompletableFuture<BindDevServerPublicIPResponse>
+     */
+    public CompletableFuture<BindDevServerPublicIPResponse> bindDevServerPublicIPAsync(
+        BindDevServerPublicIPRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.bindDevServerPublicIP);
+    }
+
+    /**
+     * Lite Server服务器绑定EIP
+     *
+     * Lite Server服务器绑定的EIP接口用于将弹性公网IP（EIP）绑定到Lite Server服务器上。该接口适用于以下场景：当用户需要为Lite Server服务器分配一个固定的公网IP地址，以便从外部网络访问服务器时，可以通过此接口将指定的EIP绑定到服务器上。使用该接口的前提条件是Lite Server服务器已创建且处于运行状态，用户具有绑定EIP的权限，且指定的EIP已存在且未被其他资源使用。绑定操作完成后，EIP将成功绑定到Lite Server服务器上，服务器可以通过该EIP从外部网络访问。若Lite Server服务器不存在、已处于停止状态、指定的EIP不存在或已被使用，或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindDevServerPublicIPRequest 请求对象
+     * @return AsyncInvoker<BindDevServerPublicIPRequest, BindDevServerPublicIPResponse>
+     */
+    public AsyncInvoker<BindDevServerPublicIPRequest, BindDevServerPublicIPResponse> bindDevServerPublicIPAsyncInvoker(
+        BindDevServerPublicIPRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.bindDevServerPublicIP, hcClient);
+    }
+
+    /**
      * 绑定应用密钥
      *
      * 本接口用于将生成的apikey与指定服务进行绑定，适用于应用程序需要调用特定服务的场景。调用此接口前，确保已成功创建服务实例，并获取到有效的apikey。绑定成功后，apikey将作为服务调用时的身份验证凭证，确保仅授权用户能够访问该服务。如果尝试绑定已失效的apikey，将返回相应的异常信息，提示用户检查apikey的有效性和绑定状态。
@@ -1168,6 +1289,65 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<ChangeAlgorithmRequest, ChangeAlgorithmResponse> changeAlgorithmAsyncInvoker(
         ChangeAlgorithmRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.changeAlgorithm, hcClient);
+    }
+
+    /**
+     * 切换Lite Server服务器操作系统镜像
+     *
+     * 切换Lite Server服务器操作系统镜像接口用于更换Lite Server服务器当前使用的操作系统镜像。该接口适用于以下场景：当用户需要更换操作系统以适应不同的开发或测试需求时，可以通过此接口切换指定的Lite Server服务器操作系统镜像。使用该接口的前提条件是Lite Server服务器已存在且处于停止状态，用户具有切换操作系统的权限。切换操作完成后，Lite Server服务器将安装新的操作系统镜像，并重新进入运行状态，若Lite Server服务器不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeDevServerOSRequest 请求对象
+     * @return CompletableFuture<ChangeDevServerOSResponse>
+     */
+    public CompletableFuture<ChangeDevServerOSResponse> changeDevServerOSAsync(ChangeDevServerOSRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.changeDevServerOS);
+    }
+
+    /**
+     * 切换Lite Server服务器操作系统镜像
+     *
+     * 切换Lite Server服务器操作系统镜像接口用于更换Lite Server服务器当前使用的操作系统镜像。该接口适用于以下场景：当用户需要更换操作系统以适应不同的开发或测试需求时，可以通过此接口切换指定的Lite Server服务器操作系统镜像。使用该接口的前提条件是Lite Server服务器已存在且处于停止状态，用户具有切换操作系统的权限。切换操作完成后，Lite Server服务器将安装新的操作系统镜像，并重新进入运行状态，若Lite Server服务器不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeDevServerOSRequest 请求对象
+     * @return AsyncInvoker<ChangeDevServerOSRequest, ChangeDevServerOSResponse>
+     */
+    public AsyncInvoker<ChangeDevServerOSRequest, ChangeDevServerOSResponse> changeDevServerOSAsyncInvoker(
+        ChangeDevServerOSRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.changeDevServerOS, hcClient);
+    }
+
+    /**
+     * 切换Lite Server超节点服务器操作系统镜像
+     *
+     * 切换Lite Server超节点服务器操作系统镜像接口用于更换Lite Server超节点服务器当前使用的操作系统镜像。该接口适用于以下场景：当用户需要更换操作系统以适应不同的开发或测试需求时，可以通过此接口切换指定的Lite Server超节点服务器操作系统镜像。使用该接口的前提条件是Lite Server超节点服务器已存在且处于停止状态，用户具有切换操作系统的权限。切换操作完成后，Lite Server超节点服务器将安装新的操作系统镜像，并重新进入运行状态，若Lite Server超节点服务器不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeHyperinstanceOSRequest 请求对象
+     * @return CompletableFuture<ChangeHyperinstanceOSResponse>
+     */
+    public CompletableFuture<ChangeHyperinstanceOSResponse> changeHyperinstanceOSAsync(
+        ChangeHyperinstanceOSRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.changeHyperinstanceOS);
+    }
+
+    /**
+     * 切换Lite Server超节点服务器操作系统镜像
+     *
+     * 切换Lite Server超节点服务器操作系统镜像接口用于更换Lite Server超节点服务器当前使用的操作系统镜像。该接口适用于以下场景：当用户需要更换操作系统以适应不同的开发或测试需求时，可以通过此接口切换指定的Lite Server超节点服务器操作系统镜像。使用该接口的前提条件是Lite Server超节点服务器已存在且处于停止状态，用户具有切换操作系统的权限。切换操作完成后，Lite Server超节点服务器将安装新的操作系统镜像，并重新进入运行状态，若Lite Server超节点服务器不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeHyperinstanceOSRequest 请求对象
+     * @return AsyncInvoker<ChangeHyperinstanceOSRequest, ChangeHyperinstanceOSResponse>
+     */
+    public AsyncInvoker<ChangeHyperinstanceOSRequest, ChangeHyperinstanceOSResponse> changeHyperinstanceOSAsyncInvoker(
+        ChangeHyperinstanceOSRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.changeHyperinstanceOS, hcClient);
     }
 
     /**
@@ -1380,6 +1560,123 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<CreateAuthorizationRequest, CreateAuthorizationResponse> createAuthorizationAsyncInvoker(
         CreateAuthorizationRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.createAuthorization, hcClient);
+    }
+
+    /**
+     * 创建Lite Server
+     *
+     * 创建Lite Server接口用于创建LiteServer弹性云服务器、裸金属服务器及超节点服务器。该接口适用于以下场景：用户需要根据业务需求快速部署和配置不同类型的服务器资源。使用该接口的前提条件是用户已登录且具有创建Lite Server的权限，并且需要提供服务器类型、规格、网络配置等必要参数。创建操作完成后，系统将返回新创建的Lite Server实例信息，包括实例ID、状态等。若用户无权限、参数配置错误或资源不足，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDevServerRequest 请求对象
+     * @return CompletableFuture<CreateDevServerResponse>
+     */
+    public CompletableFuture<CreateDevServerResponse> createDevServerAsync(CreateDevServerRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createDevServer);
+    }
+
+    /**
+     * 创建Lite Server
+     *
+     * 创建Lite Server接口用于创建LiteServer弹性云服务器、裸金属服务器及超节点服务器。该接口适用于以下场景：用户需要根据业务需求快速部署和配置不同类型的服务器资源。使用该接口的前提条件是用户已登录且具有创建Lite Server的权限，并且需要提供服务器类型、规格、网络配置等必要参数。创建操作完成后，系统将返回新创建的Lite Server实例信息，包括实例ID、状态等。若用户无权限、参数配置错误或资源不足，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDevServerRequest 请求对象
+     * @return AsyncInvoker<CreateDevServerRequest, CreateDevServerResponse>
+     */
+    public AsyncInvoker<CreateDevServerRequest, CreateDevServerResponse> createDevServerAsyncInvoker(
+        CreateDevServerRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createDevServer, hcClient);
+    }
+
+    /**
+     * 创建Lite Server任务
+     *
+     * 创建Lite Server任务接口用于在Lite Server上创建新的任务。该接口适用于以下场景：当用户需要在Lite Server上启动新的开发、测试或部署任务时，可以通过此接口创建并配置任务。使用该接口的前提条件是用户具有创建任务的权限，并且提供的任务配置参数符合要求。创建操作完成后，新的Lite Server任务将被成功创建，并返回任务ID和其他相关信息。若用户无权限操作、提供的参数不正确或系统资源不足，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDevServerJobRequest 请求对象
+     * @return CompletableFuture<CreateDevServerJobResponse>
+     */
+    public CompletableFuture<CreateDevServerJobResponse> createDevServerJobAsync(CreateDevServerJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createDevServerJob);
+    }
+
+    /**
+     * 创建Lite Server任务
+     *
+     * 创建Lite Server任务接口用于在Lite Server上创建新的任务。该接口适用于以下场景：当用户需要在Lite Server上启动新的开发、测试或部署任务时，可以通过此接口创建并配置任务。使用该接口的前提条件是用户具有创建任务的权限，并且提供的任务配置参数符合要求。创建操作完成后，新的Lite Server任务将被成功创建，并返回任务ID和其他相关信息。若用户无权限操作、提供的参数不正确或系统资源不足，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDevServerJobRequest 请求对象
+     * @return AsyncInvoker<CreateDevServerJobRequest, CreateDevServerJobResponse>
+     */
+    public AsyncInvoker<CreateDevServerJobRequest, CreateDevServerJobResponse> createDevServerJobAsyncInvoker(
+        CreateDevServerJobRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createDevServerJob, hcClient);
+    }
+
+    /**
+     * 创建Hyper Cluster
+     *
+     * 创建Hyper Cluster接口用于在系统中创建一个新的Hyper Cluster。该接口适用于以下场景：当用户需要使用超节点网络时，可以通过此接口创建Hyper Cluster。使用该接口的前提条件是用户已登录并具有创建Hyper Cluster的权限，且系统中已配置了必要的资源。创建操作完成后，将生成一个新的超节点网络，并返回超节点网络的详细信息，包括ID、名称、子网信息等。若用户无权限操作、系统中缺少必要的资源或配置参数无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHyperClusterRequest 请求对象
+     * @return CompletableFuture<CreateHyperClusterResponse>
+     */
+    public CompletableFuture<CreateHyperClusterResponse> createHyperClusterAsync(CreateHyperClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createHyperCluster);
+    }
+
+    /**
+     * 创建Hyper Cluster
+     *
+     * 创建Hyper Cluster接口用于在系统中创建一个新的Hyper Cluster。该接口适用于以下场景：当用户需要使用超节点网络时，可以通过此接口创建Hyper Cluster。使用该接口的前提条件是用户已登录并具有创建Hyper Cluster的权限，且系统中已配置了必要的资源。创建操作完成后，将生成一个新的超节点网络，并返回超节点网络的详细信息，包括ID、名称、子网信息等。若用户无权限操作、系统中缺少必要的资源或配置参数无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHyperClusterRequest 请求对象
+     * @return AsyncInvoker<CreateHyperClusterRequest, CreateHyperClusterResponse>
+     */
+    public AsyncInvoker<CreateHyperClusterRequest, CreateHyperClusterResponse> createHyperClusterAsyncInvoker(
+        CreateHyperClusterRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createHyperCluster, hcClient);
+    }
+
+    /**
+     * 创建Lite Server超节点标签
+     *
+     * 创建Lite Server超节点标签接口用于为Lite Server超节点添加自定义标签。该接口适用于以下场景：当用户需要对Lite Server超节点进行分类管理或标记特定信息时，可以通过此接口为指定的超节点创建标签。使用该接口的前提条件是Lite Server超节点已存在，用户具有创建标签的权限。创建操作完成后，标签将被成功添加到指定的超节点上，用户可以通过标签进行快速查找和管理。若Lite Server超节点不存在、标签已存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHyperinstanceTagsRequest 请求对象
+     * @return CompletableFuture<CreateHyperinstanceTagsResponse>
+     */
+    public CompletableFuture<CreateHyperinstanceTagsResponse> createHyperinstanceTagsAsync(
+        CreateHyperinstanceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createHyperinstanceTags);
+    }
+
+    /**
+     * 创建Lite Server超节点标签
+     *
+     * 创建Lite Server超节点标签接口用于为Lite Server超节点添加自定义标签。该接口适用于以下场景：当用户需要对Lite Server超节点进行分类管理或标记特定信息时，可以通过此接口为指定的超节点创建标签。使用该接口的前提条件是Lite Server超节点已存在，用户具有创建标签的权限。创建操作完成后，标签将被成功添加到指定的超节点上，用户可以通过标签进行快速查找和管理。若Lite Server超节点不存在、标签已存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHyperinstanceTagsRequest 请求对象
+     * @return AsyncInvoker<CreateHyperinstanceTagsRequest, CreateHyperinstanceTagsResponse>
+     */
+    public AsyncInvoker<CreateHyperinstanceTagsRequest, CreateHyperinstanceTagsResponse> createHyperinstanceTagsAsyncInvoker(
+        CreateHyperinstanceTagsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createHyperinstanceTags, hcClient);
     }
 
     /**
@@ -1753,6 +2050,35 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 创建RoCE网络
+     *
+     * 创建RoCE网络接口用于在系统中创建一个新的RoCE网络。该接口适用于以下场景：当用户需要为高性能计算或低延迟应用创建专用的RoCE网络时，可以通过此接口创建并配置RoCE网络。使用该接口的前提条件是用户已登录并具有创建RoCE网络的权限，且系统中已配置了必要的网络资源。创建操作完成后，将生成一个新的RoCE网络，并返回网络的详细信息，包括网络ID、子网信息、配置参数等。若用户无权限操作、系统中缺少必要的网络资源或网络配置参数无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRoceNetworkRequest 请求对象
+     * @return CompletableFuture<CreateRoceNetworkResponse>
+     */
+    public CompletableFuture<CreateRoceNetworkResponse> createRoceNetworkAsync(CreateRoceNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createRoceNetwork);
+    }
+
+    /**
+     * 创建RoCE网络
+     *
+     * 创建RoCE网络接口用于在系统中创建一个新的RoCE网络。该接口适用于以下场景：当用户需要为高性能计算或低延迟应用创建专用的RoCE网络时，可以通过此接口创建并配置RoCE网络。使用该接口的前提条件是用户已登录并具有创建RoCE网络的权限，且系统中已配置了必要的网络资源。创建操作完成后，将生成一个新的RoCE网络，并返回网络的详细信息，包括网络ID、子网信息、配置参数等。若用户无权限操作、系统中缺少必要的网络资源或网络配置参数无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRoceNetworkRequest 请求对象
+     * @return AsyncInvoker<CreateRoceNetworkRequest, CreateRoceNetworkResponse>
+     */
+    public AsyncInvoker<CreateRoceNetworkRequest, CreateRoceNetworkResponse> createRoceNetworkAsyncInvoker(
+        CreateRoceNetworkRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createRoceNetwork, hcClient);
+    }
+
+    /**
      * 创建训练作业镜像保存任务
      *
      * 创建训练作业镜像保存任务。
@@ -1957,6 +2283,152 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<DeleteAuthorizationsRequest, DeleteAuthorizationsResponse> deleteAuthorizationsAsyncInvoker(
         DeleteAuthorizationsRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.deleteAuthorizations, hcClient);
+    }
+
+    /**
+     * 删除Lite Server实例
+     *
+     * 删除Lite Server实例接口用于移除已创建的Lite Server实例。该接口适用于以下场景：当Lite Server按需实例不再需要使用时或者创建失败的实例以及处于ERROR状态时，用户可通过此接口删除指定的Lite Server实例。使用该接口的前提条件是Lite Server实例已存在且用户具有管理员权限。删除操作完成后，Lite Server实例将被永久移除，相关资源也将被清理。若Lite Server实例不存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDevServerRequest 请求对象
+     * @return CompletableFuture<DeleteDevServerResponse>
+     */
+    public CompletableFuture<DeleteDevServerResponse> deleteDevServerAsync(DeleteDevServerRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteDevServer);
+    }
+
+    /**
+     * 删除Lite Server实例
+     *
+     * 删除Lite Server实例接口用于移除已创建的Lite Server实例。该接口适用于以下场景：当Lite Server按需实例不再需要使用时或者创建失败的实例以及处于ERROR状态时，用户可通过此接口删除指定的Lite Server实例。使用该接口的前提条件是Lite Server实例已存在且用户具有管理员权限。删除操作完成后，Lite Server实例将被永久移除，相关资源也将被清理。若Lite Server实例不存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDevServerRequest 请求对象
+     * @return AsyncInvoker<DeleteDevServerRequest, DeleteDevServerResponse>
+     */
+    public AsyncInvoker<DeleteDevServerRequest, DeleteDevServerResponse> deleteDevServerAsyncInvoker(
+        DeleteDevServerRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.deleteDevServer, hcClient);
+    }
+
+    /**
+     * 批量删除Lite Server Job
+     *
+     * 批量删除Lite Server Job接口用于批量移除已创建的Lite Server Job。该接口适用于以下场景：当多个Lite Server Job已完成、配置错误或需要清理资源时，用户可以通过此接口批量删除指定的Lite Server Job。使用该接口的前提条件是目标Lite Server Job已存在且用户具有管理员权限。删除操作完成后，指定的Lite Server Job将被永久移除，相关资源和配置也将被清理。若目标Lite Server Job不存在、用户无权限操作或请求参数不正确，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDevServerJobsRequest 请求对象
+     * @return CompletableFuture<DeleteDevServerJobsResponse>
+     */
+    public CompletableFuture<DeleteDevServerJobsResponse> deleteDevServerJobsAsync(DeleteDevServerJobsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteDevServerJobs);
+    }
+
+    /**
+     * 批量删除Lite Server Job
+     *
+     * 批量删除Lite Server Job接口用于批量移除已创建的Lite Server Job。该接口适用于以下场景：当多个Lite Server Job已完成、配置错误或需要清理资源时，用户可以通过此接口批量删除指定的Lite Server Job。使用该接口的前提条件是目标Lite Server Job已存在且用户具有管理员权限。删除操作完成后，指定的Lite Server Job将被永久移除，相关资源和配置也将被清理。若目标Lite Server Job不存在、用户无权限操作或请求参数不正确，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDevServerJobsRequest 请求对象
+     * @return AsyncInvoker<DeleteDevServerJobsRequest, DeleteDevServerJobsResponse>
+     */
+    public AsyncInvoker<DeleteDevServerJobsRequest, DeleteDevServerJobsResponse> deleteDevServerJobsAsyncInvoker(
+        DeleteDevServerJobsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.deleteDevServerJobs, hcClient);
+    }
+
+    /**
+     * 删除Hyper Cluster实例
+     *
+     * 删除Hyper Cluster实例接口用于移除已创建的Hyper Cluster。该接口适用于以下场景：当超节点网络配置错误或需要清理资源时，用户可通过此接口删除指定的超节点网络。使用该接口的前提条件是Hyper Cluster实例已存在且用户具有管理员权限。删除操作完成后，超节点网络将被永久移除，相关资源和配置也将被清理。若Hyper Cluster实例不存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHyperClusterRequest 请求对象
+     * @return CompletableFuture<DeleteHyperClusterResponse>
+     */
+    public CompletableFuture<DeleteHyperClusterResponse> deleteHyperClusterAsync(DeleteHyperClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteHyperCluster);
+    }
+
+    /**
+     * 删除Hyper Cluster实例
+     *
+     * 删除Hyper Cluster实例接口用于移除已创建的Hyper Cluster。该接口适用于以下场景：当超节点网络配置错误或需要清理资源时，用户可通过此接口删除指定的超节点网络。使用该接口的前提条件是Hyper Cluster实例已存在且用户具有管理员权限。删除操作完成后，超节点网络将被永久移除，相关资源和配置也将被清理。若Hyper Cluster实例不存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHyperClusterRequest 请求对象
+     * @return AsyncInvoker<DeleteHyperClusterRequest, DeleteHyperClusterResponse>
+     */
+    public AsyncInvoker<DeleteHyperClusterRequest, DeleteHyperClusterResponse> deleteHyperClusterAsyncInvoker(
+        DeleteHyperClusterRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.deleteHyperCluster, hcClient);
+    }
+
+    /**
+     * 删除Lite Server超节点实例
+     *
+     * 删除Lite Server超节点实例接口用于删除按需超节点实例同时移除处于ERROR状态的Lite Server超节点实例。该接口适用于以下场景：当超节点实例因创建失败、或其他原因进入ERROR状态；按需超节点实例，用户可以通过此接口删除指定的超节点实例。使用该接口的前提条件是用户已登录并具有删除超节点实例的权限，且指定的超节点实例是按需且处于运行状态、或者处于ERROR状态。删除操作完成后，指定的超节点实例将被永久移除，相关资源也将被清理。若指定的超节点实例不存在、未处于ERROR状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHyperinstanceRequest 请求对象
+     * @return CompletableFuture<DeleteHyperinstanceResponse>
+     */
+    public CompletableFuture<DeleteHyperinstanceResponse> deleteHyperinstanceAsync(DeleteHyperinstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteHyperinstance);
+    }
+
+    /**
+     * 删除Lite Server超节点实例
+     *
+     * 删除Lite Server超节点实例接口用于删除按需超节点实例同时移除处于ERROR状态的Lite Server超节点实例。该接口适用于以下场景：当超节点实例因创建失败、或其他原因进入ERROR状态；按需超节点实例，用户可以通过此接口删除指定的超节点实例。使用该接口的前提条件是用户已登录并具有删除超节点实例的权限，且指定的超节点实例是按需且处于运行状态、或者处于ERROR状态。删除操作完成后，指定的超节点实例将被永久移除，相关资源也将被清理。若指定的超节点实例不存在、未处于ERROR状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHyperinstanceRequest 请求对象
+     * @return AsyncInvoker<DeleteHyperinstanceRequest, DeleteHyperinstanceResponse>
+     */
+    public AsyncInvoker<DeleteHyperinstanceRequest, DeleteHyperinstanceResponse> deleteHyperinstanceAsyncInvoker(
+        DeleteHyperinstanceRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.deleteHyperinstance, hcClient);
+    }
+
+    /**
+     * 删除Lite Server超节点标签
+     *
+     * 删除Lite Server超节点标签接口用于移除已创建的Lite Server超节点标签。该接口适用于以下场景：当用户需要清理不再需要的标签或修正标签错误时，可以通过此接口删除指定的超节点标签。使用该接口的前提条件是Lite Server超节点已存在，且该超节点上已存在要删除的标签，用户具有删除标签的权限。删除操作完成后，指定的标签将从超节点上移除，超节点的其他配置和数据保持不变。若Lite Server超节点不存在、标签不存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHyperinstanceTagsRequest 请求对象
+     * @return CompletableFuture<DeleteHyperinstanceTagsResponse>
+     */
+    public CompletableFuture<DeleteHyperinstanceTagsResponse> deleteHyperinstanceTagsAsync(
+        DeleteHyperinstanceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteHyperinstanceTags);
+    }
+
+    /**
+     * 删除Lite Server超节点标签
+     *
+     * 删除Lite Server超节点标签接口用于移除已创建的Lite Server超节点标签。该接口适用于以下场景：当用户需要清理不再需要的标签或修正标签错误时，可以通过此接口删除指定的超节点标签。使用该接口的前提条件是Lite Server超节点已存在，且该超节点上已存在要删除的标签，用户具有删除标签的权限。删除操作完成后，指定的标签将从超节点上移除，超节点的其他配置和数据保持不变。若Lite Server超节点不存在、标签不存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHyperinstanceTagsRequest 请求对象
+     * @return AsyncInvoker<DeleteHyperinstanceTagsRequest, DeleteHyperinstanceTagsResponse>
+     */
+    public AsyncInvoker<DeleteHyperinstanceTagsRequest, DeleteHyperinstanceTagsResponse> deleteHyperinstanceTagsAsyncInvoker(
+        DeleteHyperinstanceTagsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.deleteHyperinstanceTags, hcClient);
     }
 
     /**
@@ -2407,6 +2879,36 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * Lite Server服务器卸载磁盘
+     *
+     * Lite Server服务器卸载磁盘接口用于从Lite Server服务器上卸载已挂载的磁盘。该接口适用于以下场景：当用户需要释放存储资源或重新分配磁盘时，可以通过此接口卸载指定的磁盘。使用该接口的前提条件是Lite Server服务器已创建且处于运行状态、或者停止状态，用户具有卸载磁盘的权限，且指定的磁盘已挂载到服务器上。卸载操作完成后，磁盘将从Lite Server服务器上成功卸载，用户可以将其挂载到其他服务器或进行其他操作。若Lite Server服务器不存在、指定的磁盘未挂载到服务器上，或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DetachDevServerVolumeRequest 请求对象
+     * @return CompletableFuture<DetachDevServerVolumeResponse>
+     */
+    public CompletableFuture<DetachDevServerVolumeResponse> detachDevServerVolumeAsync(
+        DetachDevServerVolumeRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.detachDevServerVolume);
+    }
+
+    /**
+     * Lite Server服务器卸载磁盘
+     *
+     * Lite Server服务器卸载磁盘接口用于从Lite Server服务器上卸载已挂载的磁盘。该接口适用于以下场景：当用户需要释放存储资源或重新分配磁盘时，可以通过此接口卸载指定的磁盘。使用该接口的前提条件是Lite Server服务器已创建且处于运行状态、或者停止状态，用户具有卸载磁盘的权限，且指定的磁盘已挂载到服务器上。卸载操作完成后，磁盘将从Lite Server服务器上成功卸载，用户可以将其挂载到其他服务器或进行其他操作。若Lite Server服务器不存在、指定的磁盘未挂载到服务器上，或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DetachDevServerVolumeRequest 请求对象
+     * @return AsyncInvoker<DetachDevServerVolumeRequest, DetachDevServerVolumeResponse>
+     */
+    public AsyncInvoker<DetachDevServerVolumeRequest, DetachDevServerVolumeResponse> detachDevServerVolumeAsyncInvoker(
+        DetachDevServerVolumeRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.detachDevServerVolume, hcClient);
+    }
+
+    /**
      * 动态卸载Notebook存储
      *
      * 动态卸载Notebook存储接口用于从运行中的Notebook实例中卸载已挂载的动态存储实例。
@@ -2470,6 +2972,212 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 查询Lite Server镜像详情
+     *
+     * 查询Lite Server镜像详情接口用于获取指定Lite Server镜像的详细信息。该接口适用于以下场景：当用户需要了解某个Lite Server镜像的具体配置和属性，以便在创建或调整Lite Server实例时选择合适的镜像时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询镜像详情的权限，且指定的镜像已存在。查询操作完成后，接口将返回指定Lite Server镜像的详细信息，包括镜像ID、名称、操作系统、版本、创建时间等。若用户无权限操作、指定的镜像不存在或镜像ID无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetDevServerImageRequest 请求对象
+     * @return CompletableFuture<GetDevServerImageResponse>
+     */
+    public CompletableFuture<GetDevServerImageResponse> getDevServerImageAsync(GetDevServerImageRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getDevServerImage);
+    }
+
+    /**
+     * 查询Lite Server镜像详情
+     *
+     * 查询Lite Server镜像详情接口用于获取指定Lite Server镜像的详细信息。该接口适用于以下场景：当用户需要了解某个Lite Server镜像的具体配置和属性，以便在创建或调整Lite Server实例时选择合适的镜像时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询镜像详情的权限，且指定的镜像已存在。查询操作完成后，接口将返回指定Lite Server镜像的详细信息，包括镜像ID、名称、操作系统、版本、创建时间等。若用户无权限操作、指定的镜像不存在或镜像ID无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetDevServerImageRequest 请求对象
+     * @return AsyncInvoker<GetDevServerImageRequest, GetDevServerImageResponse>
+     */
+    public AsyncInvoker<GetDevServerImageRequest, GetDevServerImageResponse> getDevServerImageAsyncInvoker(
+        GetDevServerImageRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.getDevServerImage, hcClient);
+    }
+
+    /**
+     * 查询Lite Server Job详情
+     *
+     * 查询Lite Server Job详情接口用于获取指定Lite Server Job的详细信息。该接口适用于以下场景：当用户需要查看某个Lite Server Job的执行状态、配置参数、日志信息等详细数据时，可以通过此接口获取相关信息。使用该接口的前提条件是目标Lite Server Job已存在且用户具有查看权限。查询操作完成后，接口将返回指定Lite Server Job的详细信息，包括但不限于Job ID、状态、创建时间、执行时间、配置参数和日志等。若目标Lite Server Job不存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetDevServerJobRequest 请求对象
+     * @return CompletableFuture<GetDevServerJobResponse>
+     */
+    public CompletableFuture<GetDevServerJobResponse> getDevServerJobAsync(GetDevServerJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getDevServerJob);
+    }
+
+    /**
+     * 查询Lite Server Job详情
+     *
+     * 查询Lite Server Job详情接口用于获取指定Lite Server Job的详细信息。该接口适用于以下场景：当用户需要查看某个Lite Server Job的执行状态、配置参数、日志信息等详细数据时，可以通过此接口获取相关信息。使用该接口的前提条件是目标Lite Server Job已存在且用户具有查看权限。查询操作完成后，接口将返回指定Lite Server Job的详细信息，包括但不限于Job ID、状态、创建时间、执行时间、配置参数和日志等。若目标Lite Server Job不存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetDevServerJobRequest 请求对象
+     * @return AsyncInvoker<GetDevServerJobRequest, GetDevServerJobResponse>
+     */
+    public AsyncInvoker<GetDevServerJobRequest, GetDevServerJobResponse> getDevServerJobAsyncInvoker(
+        GetDevServerJobRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.getDevServerJob, hcClient);
+    }
+
+    /**
+     * 获取Lite Server 部署服务详情
+     *
+     * 根据服务id获取Lite Server部署服务详情。该接口适用于以下场景：当用户需要查看部署服务详情，以便查看已部署服务的状态、api等信息时，可以通过此接口获取服务详情。使用该接口的前提条件是用户具有查看服务的权限。查询操作完成后，接口将返回此部署服务的详细信息，包括名称、状态、描述、所用模型、实例详情等信息。若用户无权限操作或无相应id，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetDevServerJobServiceRequest 请求对象
+     * @return CompletableFuture<GetDevServerJobServiceResponse>
+     */
+    public CompletableFuture<GetDevServerJobServiceResponse> getDevServerJobServiceAsync(
+        GetDevServerJobServiceRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getDevServerJobService);
+    }
+
+    /**
+     * 获取Lite Server 部署服务详情
+     *
+     * 根据服务id获取Lite Server部署服务详情。该接口适用于以下场景：当用户需要查看部署服务详情，以便查看已部署服务的状态、api等信息时，可以通过此接口获取服务详情。使用该接口的前提条件是用户具有查看服务的权限。查询操作完成后，接口将返回此部署服务的详细信息，包括名称、状态、描述、所用模型、实例详情等信息。若用户无权限操作或无相应id，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetDevServerJobServiceRequest 请求对象
+     * @return AsyncInvoker<GetDevServerJobServiceRequest, GetDevServerJobServiceResponse>
+     */
+    public AsyncInvoker<GetDevServerJobServiceRequest, GetDevServerJobServiceResponse> getDevServerJobServiceAsyncInvoker(
+        GetDevServerJobServiceRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.getDevServerJobService, hcClient);
+    }
+
+    /**
+     * 获取Lite Server Job模板详情
+     *
+     * 获取Lite Server Job模板详情接口用于获取指定Lite Server Job模板的详细信息。该接口适用于以下场景：当用户需要查看某个特定Job模板的详细配置，以便了解其参数设置、使用说明等信息时，可以通过此接口获取模板详情。查询操作完成后，接口将返回指定模板的详细信息，包括模板ID、名称、描述、配置参数等。若目标模板不存在，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetDevServerJobTemplateRequest 请求对象
+     * @return CompletableFuture<GetDevServerJobTemplateResponse>
+     */
+    public CompletableFuture<GetDevServerJobTemplateResponse> getDevServerJobTemplateAsync(
+        GetDevServerJobTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getDevServerJobTemplate);
+    }
+
+    /**
+     * 获取Lite Server Job模板详情
+     *
+     * 获取Lite Server Job模板详情接口用于获取指定Lite Server Job模板的详细信息。该接口适用于以下场景：当用户需要查看某个特定Job模板的详细配置，以便了解其参数设置、使用说明等信息时，可以通过此接口获取模板详情。查询操作完成后，接口将返回指定模板的详细信息，包括模板ID、名称、描述、配置参数等。若目标模板不存在，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetDevServerJobTemplateRequest 请求对象
+     * @return AsyncInvoker<GetDevServerJobTemplateRequest, GetDevServerJobTemplateResponse>
+     */
+    public AsyncInvoker<GetDevServerJobTemplateRequest, GetDevServerJobTemplateResponse> getDevServerJobTemplateAsyncInvoker(
+        GetDevServerJobTemplateRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.getDevServerJobTemplate, hcClient);
+    }
+
+    /**
+     * 查询Operation详情
+     *
+     * 查询Operation详情接口用于获取指定Operation的详细信息。该接口适用于以下场景：当用户需要了解某个Operation的具体执行情况和状态，以便进行故障排查或操作审计时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Operation详情的权限，且指定的Operation已存在。查询操作完成后，接口将返回指定Operation的详细信息，包括Operation ID、操作类型、执行状态、开始时间、结束时间、操作结果等。若用户无权限操作、指定的Operation不存在或Operation ID无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetDevServerOperationRequest 请求对象
+     * @return CompletableFuture<GetDevServerOperationResponse>
+     */
+    public CompletableFuture<GetDevServerOperationResponse> getDevServerOperationAsync(
+        GetDevServerOperationRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getDevServerOperation);
+    }
+
+    /**
+     * 查询Operation详情
+     *
+     * 查询Operation详情接口用于获取指定Operation的详细信息。该接口适用于以下场景：当用户需要了解某个Operation的具体执行情况和状态，以便进行故障排查或操作审计时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Operation详情的权限，且指定的Operation已存在。查询操作完成后，接口将返回指定Operation的详细信息，包括Operation ID、操作类型、执行状态、开始时间、结束时间、操作结果等。若用户无权限操作、指定的Operation不存在或Operation ID无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetDevServerOperationRequest 请求对象
+     * @return AsyncInvoker<GetDevServerOperationRequest, GetDevServerOperationResponse>
+     */
+    public AsyncInvoker<GetDevServerOperationRequest, GetDevServerOperationResponse> getDevServerOperationAsyncInvoker(
+        GetDevServerOperationRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.getDevServerOperation, hcClient);
+    }
+
+    /**
+     * 查询Hyper Cluster实例详情
+     *
+     * 查询Hyper Cluster实例详情接口用于获取指定Hyper Cluster实例的详细信息。该接口适用于以下场景：当用户需要了解某个超节点网络的具体配置和状态，以便进行管理和监控时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Hyper Cluster详情的权限，且指定的超节点网络已存在。查询操作完成后，接口将返回指定超节点网络的详细信息，包括ID、名称、子网信息等。若用户无权限操作、指定的超节点网络不存在或ID无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetHyperClusterRequest 请求对象
+     * @return CompletableFuture<GetHyperClusterResponse>
+     */
+    public CompletableFuture<GetHyperClusterResponse> getHyperClusterAsync(GetHyperClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getHyperCluster);
+    }
+
+    /**
+     * 查询Hyper Cluster实例详情
+     *
+     * 查询Hyper Cluster实例详情接口用于获取指定Hyper Cluster实例的详细信息。该接口适用于以下场景：当用户需要了解某个超节点网络的具体配置和状态，以便进行管理和监控时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Hyper Cluster详情的权限，且指定的超节点网络已存在。查询操作完成后，接口将返回指定超节点网络的详细信息，包括ID、名称、子网信息等。若用户无权限操作、指定的超节点网络不存在或ID无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetHyperClusterRequest 请求对象
+     * @return AsyncInvoker<GetHyperClusterRequest, GetHyperClusterResponse>
+     */
+    public AsyncInvoker<GetHyperClusterRequest, GetHyperClusterResponse> getHyperClusterAsyncInvoker(
+        GetHyperClusterRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.getHyperCluster, hcClient);
+    }
+
+    /**
+     * 查询指定超节点实例详情
+     *
+     * 查询指定超节点实例详情接口用于获取特定Lite Server超节点实例的详细信息。该接口适用于以下场景：当用户需要查看某个具体超节点实例的配置、状态和使用情况时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询超节点实例的权限，且指定的超节点实例已存在。查询操作完成后，接口将返回指定超节点实例的详细信息，包括实例ID、操作系统、运行状态、资源使用情况等。若用户无权限操作、指定的超节点实例不存在或实例ID无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetHyperinstanceRequest 请求对象
+     * @return CompletableFuture<GetHyperinstanceResponse>
+     */
+    public CompletableFuture<GetHyperinstanceResponse> getHyperinstanceAsync(GetHyperinstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getHyperinstance);
+    }
+
+    /**
+     * 查询指定超节点实例详情
+     *
+     * 查询指定超节点实例详情接口用于获取特定Lite Server超节点实例的详细信息。该接口适用于以下场景：当用户需要查看某个具体超节点实例的配置、状态和使用情况时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询超节点实例的权限，且指定的超节点实例已存在。查询操作完成后，接口将返回指定超节点实例的详细信息，包括实例ID、操作系统、运行状态、资源使用情况等。若用户无权限操作、指定的超节点实例不存在或实例ID无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetHyperinstanceRequest 请求对象
+     * @return AsyncInvoker<GetHyperinstanceRequest, GetHyperinstanceResponse>
+     */
+    public AsyncInvoker<GetHyperinstanceRequest, GetHyperinstanceResponse> getHyperinstanceAsyncInvoker(
+        GetHyperinstanceRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.getHyperinstance, hcClient);
+    }
+
+    /**
      * 查询超节点Operation详情
      *
      * 查询Operation详情接口用于获取指定Operation的详细信息。该接口适用于以下场景：当用户需要了解某个Operation的具体执行情况和状态，以便进行故障排查或操作审计时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Operation详情的权限，且指定的Operation已存在。查询操作完成后，接口将返回指定Operation的详细信息，包括Operation ID、操作类型、执行状态、开始时间、结束时间、操作结果等。若用户无权限操作、指定的Operation不存在或Operation ID无效，接口将返回相应的错误信息。
@@ -2500,6 +3208,65 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 查询Lite Server超节点扩缩容支持规格列表及容量测算
+     *
+     * 查询Lite Server超节点扩缩容支持规格列表及容量测算接口用于获取Lite Server超节点支持的扩缩容规格列表，并进行容量测算。该接口适用于以下场景：当用户需要了解Lite Server超节点支持的扩缩容选项，以便在调整超节点资源时选择合适的规格，并评估扩缩容后的资源需求时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询超节点扩缩容规格的权限，且指定的超节点已存在。查询操作完成后，接口将返回支持的扩缩容规格列表及容量测算结果，包括规格ID、CPU、内存、存储等详细配置和扩缩容后的资源使用情况。若用户无权限操作、指定的超节点不存在或系统中没有可用的扩缩容规格，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetScaleEvaluationsDevServerRequest 请求对象
+     * @return CompletableFuture<GetScaleEvaluationsDevServerResponse>
+     */
+    public CompletableFuture<GetScaleEvaluationsDevServerResponse> getScaleEvaluationsDevServerAsync(
+        GetScaleEvaluationsDevServerRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getScaleEvaluationsDevServer);
+    }
+
+    /**
+     * 查询Lite Server超节点扩缩容支持规格列表及容量测算
+     *
+     * 查询Lite Server超节点扩缩容支持规格列表及容量测算接口用于获取Lite Server超节点支持的扩缩容规格列表，并进行容量测算。该接口适用于以下场景：当用户需要了解Lite Server超节点支持的扩缩容选项，以便在调整超节点资源时选择合适的规格，并评估扩缩容后的资源需求时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询超节点扩缩容规格的权限，且指定的超节点已存在。查询操作完成后，接口将返回支持的扩缩容规格列表及容量测算结果，包括规格ID、CPU、内存、存储等详细配置和扩缩容后的资源使用情况。若用户无权限操作、指定的超节点不存在或系统中没有可用的扩缩容规格，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetScaleEvaluationsDevServerRequest 请求对象
+     * @return AsyncInvoker<GetScaleEvaluationsDevServerRequest, GetScaleEvaluationsDevServerResponse>
+     */
+    public AsyncInvoker<GetScaleEvaluationsDevServerRequest, GetScaleEvaluationsDevServerResponse> getScaleEvaluationsDevServerAsyncInvoker(
+        GetScaleEvaluationsDevServerRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.getScaleEvaluationsDevServer, hcClient);
+    }
+
+    /**
+     * 查询实例的Tor信息
+     *
+     * 查询实例的Tor信息接口用于获取指定实例的Top-of-Rack（Tor）交换机相关信息。该接口适用于以下场景：当用户需要了解实例连接的Tor交换机的详细信息，以便进行网络配置时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询实例Tor信息的权限，且指定的实例已存在。查询操作完成后，接口将返回指定实例的Tor信息。若用户无权限操作、指定的实例不存在或实例未连接到Tor交换机，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetTopologiesRequest 请求对象
+     * @return CompletableFuture<GetTopologiesResponse>
+     */
+    public CompletableFuture<GetTopologiesResponse> getTopologiesAsync(GetTopologiesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getTopologies);
+    }
+
+    /**
+     * 查询实例的Tor信息
+     *
+     * 查询实例的Tor信息接口用于获取指定实例的Top-of-Rack（Tor）交换机相关信息。该接口适用于以下场景：当用户需要了解实例连接的Tor交换机的详细信息，以便进行网络配置时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询实例Tor信息的权限，且指定的实例已存在。查询操作完成后，接口将返回指定实例的Tor信息。若用户无权限操作、指定的实例不存在或实例未连接到Tor交换机，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetTopologiesRequest 请求对象
+     * @return AsyncInvoker<GetTopologiesRequest, GetTopologiesResponse>
+     */
+    public AsyncInvoker<GetTopologiesRequest, GetTopologiesResponse> getTopologiesAsyncInvoker(
+        GetTopologiesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.getTopologies, hcClient);
+    }
+
+    /**
      * 查询算法列表
      *
      * 查询算法列表。
@@ -2526,6 +3293,242 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<ListAlgorithmsRequest, ListAlgorithmsResponse> listAlgorithmsAsyncInvoker(
         ListAlgorithmsRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.listAlgorithms, hcClient);
+    }
+
+    /**
+     * 查询租户Lite Server列表
+     *
+     * 查询租户Lite Server列表接口用于获取指定租户的所有Lite Server实例信息。该接口适用于以下场景：当用户需要查看其租户下所有Lite Server实例的详细信息，以便进行管理和监控时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询租户Lite Server列表的权限。查询操作完成后，接口将返回租户下所有Lite Server实例的详细信息，包括实例ID、名称、状态、资源配置等。若用户无权限操作或租户下没有Lite Server实例，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllDevServersRequest 请求对象
+     * @return CompletableFuture<ListAllDevServersResponse>
+     */
+    public CompletableFuture<ListAllDevServersResponse> listAllDevServersAsync(ListAllDevServersRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listAllDevServers);
+    }
+
+    /**
+     * 查询租户Lite Server列表
+     *
+     * 查询租户Lite Server列表接口用于获取指定租户的所有Lite Server实例信息。该接口适用于以下场景：当用户需要查看其租户下所有Lite Server实例的详细信息，以便进行管理和监控时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询租户Lite Server列表的权限。查询操作完成后，接口将返回租户下所有Lite Server实例的详细信息，包括实例ID、名称、状态、资源配置等。若用户无权限操作或租户下没有Lite Server实例，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllDevServersRequest 请求对象
+     * @return AsyncInvoker<ListAllDevServersRequest, ListAllDevServersResponse>
+     */
+    public AsyncInvoker<ListAllDevServersRequest, ListAllDevServersResponse> listAllDevServersAsyncInvoker(
+        ListAllDevServersRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listAllDevServers, hcClient);
+    }
+
+    /**
+     * 查询租户Hyperinstance列表
+     *
+     * 查询租户Hyperinstance列表接口用于获取指定租户的所有Hyperinstance实例信息。该接口适用于以下场景：当用户需要查看其租户下所有Hyperinstance实例的详细信息，以便进行管理和监控时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询租户Hyperinstance列表的权限。查询操作完成后，接口将返回租户下所有Hyperinstance实例的详细信息，包括实例ID、名称、状态、资源配置等。若用户无权限操作或租户下没有Hyperinstance实例，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllHyperinstancesRequest 请求对象
+     * @return CompletableFuture<ListAllHyperinstancesResponse>
+     */
+    public CompletableFuture<ListAllHyperinstancesResponse> listAllHyperinstancesAsync(
+        ListAllHyperinstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listAllHyperinstances);
+    }
+
+    /**
+     * 查询租户Hyperinstance列表
+     *
+     * 查询租户Hyperinstance列表接口用于获取指定租户的所有Hyperinstance实例信息。该接口适用于以下场景：当用户需要查看其租户下所有Hyperinstance实例的详细信息，以便进行管理和监控时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询租户Hyperinstance列表的权限。查询操作完成后，接口将返回租户下所有Hyperinstance实例的详细信息，包括实例ID、名称、状态、资源配置等。若用户无权限操作或租户下没有Hyperinstance实例，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllHyperinstancesRequest 请求对象
+     * @return AsyncInvoker<ListAllHyperinstancesRequest, ListAllHyperinstancesResponse>
+     */
+    public AsyncInvoker<ListAllHyperinstancesRequest, ListAllHyperinstancesResponse> listAllHyperinstancesAsyncInvoker(
+        ListAllHyperinstancesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listAllHyperinstances, hcClient);
+    }
+
+    /**
+     * 查询规格列表
+     *
+     * 查询规格列表接口用于获取系统中所有可用的资源规格信息。该接口适用于以下场景：当用户需要了解可用的资源规格，以便在创建或调整Lite Server实例时选择合适的配置时，可以通过此接口获取规格列表。使用该接口的前提条件是用户已登录并具有查询规格的权限。查询操作完成后，接口将返回所有可用的资源规格信息，包括规格ID、CPU、内存、存储等详细配置。若用户无权限操作或系统中没有可用的资源规格，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDevServerFlavorsRequest 请求对象
+     * @return CompletableFuture<ListDevServerFlavorsResponse>
+     */
+    public CompletableFuture<ListDevServerFlavorsResponse> listDevServerFlavorsAsync(
+        ListDevServerFlavorsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listDevServerFlavors);
+    }
+
+    /**
+     * 查询规格列表
+     *
+     * 查询规格列表接口用于获取系统中所有可用的资源规格信息。该接口适用于以下场景：当用户需要了解可用的资源规格，以便在创建或调整Lite Server实例时选择合适的配置时，可以通过此接口获取规格列表。使用该接口的前提条件是用户已登录并具有查询规格的权限。查询操作完成后，接口将返回所有可用的资源规格信息，包括规格ID、CPU、内存、存储等详细配置。若用户无权限操作或系统中没有可用的资源规格，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDevServerFlavorsRequest 请求对象
+     * @return AsyncInvoker<ListDevServerFlavorsRequest, ListDevServerFlavorsResponse>
+     */
+    public AsyncInvoker<ListDevServerFlavorsRequest, ListDevServerFlavorsResponse> listDevServerFlavorsAsyncInvoker(
+        ListDevServerFlavorsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listDevServerFlavors, hcClient);
+    }
+
+    /**
+     * 查询Lite Server镜像列表
+     *
+     * 查询Lite Server镜像列表接口用于获取系统中所有可用的Lite Server镜像信息。该接口适用于以下场景：当用户需要了解可用的Lite Server镜像，以便在创建或调整Lite Server实例时选择合适的镜像时，可以通过此接口获取镜像列表。使用该接口的前提条件是用户已登录并具有查询镜像列表的权限。查询操作完成后，接口将返回所有可用的Lite Server镜像信息，包括镜像ID、名称、架构类型等。若用户无权限操作或系统中没有可用的镜像，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDevServerImagesRequest 请求对象
+     * @return CompletableFuture<ListDevServerImagesResponse>
+     */
+    public CompletableFuture<ListDevServerImagesResponse> listDevServerImagesAsync(ListDevServerImagesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listDevServerImages);
+    }
+
+    /**
+     * 查询Lite Server镜像列表
+     *
+     * 查询Lite Server镜像列表接口用于获取系统中所有可用的Lite Server镜像信息。该接口适用于以下场景：当用户需要了解可用的Lite Server镜像，以便在创建或调整Lite Server实例时选择合适的镜像时，可以通过此接口获取镜像列表。使用该接口的前提条件是用户已登录并具有查询镜像列表的权限。查询操作完成后，接口将返回所有可用的Lite Server镜像信息，包括镜像ID、名称、架构类型等。若用户无权限操作或系统中没有可用的镜像，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDevServerImagesRequest 请求对象
+     * @return AsyncInvoker<ListDevServerImagesRequest, ListDevServerImagesResponse>
+     */
+    public AsyncInvoker<ListDevServerImagesRequest, ListDevServerImagesResponse> listDevServerImagesAsyncInvoker(
+        ListDevServerImagesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listDevServerImages, hcClient);
+    }
+
+    /**
+     * 获取Lite Server Job模板列表
+     *
+     * 获取Lite Server Job模板列表接口用于获取可用的Lite Server Job模板列表。该接口适用于以下场景：当用户需要查看可用的Job模板，以便选择合适的模板来创建新的Lite Server任务时，可以通过此接口获取模板列表。查询操作完成后，接口将返回所有可用的Lite Server Job模板列表，包括模板ID、名称、描述等信息。若系统中无可用模板，接口将返回相应的信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDevServerJobTemplatesRequest 请求对象
+     * @return CompletableFuture<ListDevServerJobTemplatesResponse>
+     */
+    public CompletableFuture<ListDevServerJobTemplatesResponse> listDevServerJobTemplatesAsync(
+        ListDevServerJobTemplatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listDevServerJobTemplates);
+    }
+
+    /**
+     * 获取Lite Server Job模板列表
+     *
+     * 获取Lite Server Job模板列表接口用于获取可用的Lite Server Job模板列表。该接口适用于以下场景：当用户需要查看可用的Job模板，以便选择合适的模板来创建新的Lite Server任务时，可以通过此接口获取模板列表。查询操作完成后，接口将返回所有可用的Lite Server Job模板列表，包括模板ID、名称、描述等信息。若系统中无可用模板，接口将返回相应的信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDevServerJobTemplatesRequest 请求对象
+     * @return AsyncInvoker<ListDevServerJobTemplatesRequest, ListDevServerJobTemplatesResponse>
+     */
+    public AsyncInvoker<ListDevServerJobTemplatesRequest, ListDevServerJobTemplatesResponse> listDevServerJobTemplatesAsyncInvoker(
+        ListDevServerJobTemplatesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listDevServerJobTemplates, hcClient);
+    }
+
+    /**
+     * 查询Lite Server Job列表
+     *
+     * 查询Lite Server Job列表接口用于获取Lite Server Job的列表信息，并支持按照状态、ID等相关字段进行过滤。该接口适用于以下场景：当用户需要查看多个Lite Server Job的概要信息，例如在监控作业状态、排查问题或进行日常管理时，可以通过此接口获取符合过滤条件的Job列表。使用该接口的前提条件是用户具有查看权限。查询操作完成后，接口将返回符合条件的Lite Server Job列表，包括每个Job的ID、状态、创建时间等基本信息。若用户无权限操作或请求参数不正确，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDevServerJobsRequest 请求对象
+     * @return CompletableFuture<ListDevServerJobsResponse>
+     */
+    public CompletableFuture<ListDevServerJobsResponse> listDevServerJobsAsync(ListDevServerJobsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listDevServerJobs);
+    }
+
+    /**
+     * 查询Lite Server Job列表
+     *
+     * 查询Lite Server Job列表接口用于获取Lite Server Job的列表信息，并支持按照状态、ID等相关字段进行过滤。该接口适用于以下场景：当用户需要查看多个Lite Server Job的概要信息，例如在监控作业状态、排查问题或进行日常管理时，可以通过此接口获取符合过滤条件的Job列表。使用该接口的前提条件是用户具有查看权限。查询操作完成后，接口将返回符合条件的Lite Server Job列表，包括每个Job的ID、状态、创建时间等基本信息。若用户无权限操作或请求参数不正确，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDevServerJobsRequest 请求对象
+     * @return AsyncInvoker<ListDevServerJobsRequest, ListDevServerJobsResponse>
+     */
+    public AsyncInvoker<ListDevServerJobsRequest, ListDevServerJobsResponse> listDevServerJobsAsyncInvoker(
+        ListDevServerJobsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listDevServerJobs, hcClient);
+    }
+
+    /**
+     * 查询已绑定的EIP
+     *
+     * 查询已绑定的EIP接口用于获取已绑定到Lite Server服务器上的弹性公网IP（EIP）信息。该接口适用于以下场景：当用户需要查看Lite Server服务器上已绑定的EIP及其详细信息时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询EIP的权限，且指定的Lite Server服务器已存在。查询操作完成后，接口将返回已绑定到Lite Server服务器上的EIP的详细信息，包括EIP地址、绑定时间、状态等。若Lite Server服务器不存在、未绑定EIP或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDevServerPublicIPRequest 请求对象
+     * @return CompletableFuture<ListDevServerPublicIPResponse>
+     */
+    public CompletableFuture<ListDevServerPublicIPResponse> listDevServerPublicIPAsync(
+        ListDevServerPublicIPRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listDevServerPublicIP);
+    }
+
+    /**
+     * 查询已绑定的EIP
+     *
+     * 查询已绑定的EIP接口用于获取已绑定到Lite Server服务器上的弹性公网IP（EIP）信息。该接口适用于以下场景：当用户需要查看Lite Server服务器上已绑定的EIP及其详细信息时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询EIP的权限，且指定的Lite Server服务器已存在。查询操作完成后，接口将返回已绑定到Lite Server服务器上的EIP的详细信息，包括EIP地址、绑定时间、状态等。若Lite Server服务器不存在、未绑定EIP或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDevServerPublicIPRequest 请求对象
+     * @return AsyncInvoker<ListDevServerPublicIPRequest, ListDevServerPublicIPResponse>
+     */
+    public AsyncInvoker<ListDevServerPublicIPRequest, ListDevServerPublicIPResponse> listDevServerPublicIPAsyncInvoker(
+        ListDevServerPublicIPRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listDevServerPublicIP, hcClient);
+    }
+
+    /**
+     * 查询用户所有Lite Server实例列表
+     *
+     * 查询用户所有Lite Server实例列表接口用于获取用户名下所有Lite Server实例的详细信息。该接口适用于以下场景：用户需要查看其所有Lite Server实例的状态、配置等信息，以便进行资源管理和监控。使用该接口的前提条件是用户已登录且具有查看Lite Server实例的权限。调用此接口后，系统将返回用户名下所有Lite Server实例的列表，包括实例ID、名称、状态、创建时间等信息。若用户无权限或未登录，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDevServersRequest 请求对象
+     * @return CompletableFuture<ListDevServersResponse>
+     */
+    public CompletableFuture<ListDevServersResponse> listDevServersAsync(ListDevServersRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listDevServers);
+    }
+
+    /**
+     * 查询用户所有Lite Server实例列表
+     *
+     * 查询用户所有Lite Server实例列表接口用于获取用户名下所有Lite Server实例的详细信息。该接口适用于以下场景：用户需要查看其所有Lite Server实例的状态、配置等信息，以便进行资源管理和监控。使用该接口的前提条件是用户已登录且具有查看Lite Server实例的权限。调用此接口后，系统将返回用户名下所有Lite Server实例的列表，包括实例ID、名称、状态、创建时间等信息。若用户无权限或未登录，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDevServersRequest 请求对象
+     * @return AsyncInvoker<ListDevServersRequest, ListDevServersResponse>
+     */
+    public AsyncInvoker<ListDevServersRequest, ListDevServersResponse> listDevServersAsyncInvoker(
+        ListDevServersRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listDevServers, hcClient);
     }
 
     /**
@@ -2616,6 +3619,94 @@ public class ModelArtsAsyncClient {
      */
     public AsyncInvoker<ListEventsRequest, ListEventsResponse> listEventsAsyncInvoker(ListEventsRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.listEvents, hcClient);
+    }
+
+    /**
+     * 查询Hyper Cluster详情列表
+     *
+     * 查询Hyper Cluster详情列表接口用于获取所有Hyper Cluster的详细信息。该接口适用于以下场景：当用户需要了解系统中所有超节点网络的配置和状态时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Hyper Cluster详情的权限。查询操作完成后，接口将返回所有超节点网络的详细信息，包括ID、名称、子网信息等。若用户无权限操作或系统中没有Hyper Cluster，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHyperClusterRequest 请求对象
+     * @return CompletableFuture<ListHyperClusterResponse>
+     */
+    public CompletableFuture<ListHyperClusterResponse> listHyperClusterAsync(ListHyperClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listHyperCluster);
+    }
+
+    /**
+     * 查询Hyper Cluster详情列表
+     *
+     * 查询Hyper Cluster详情列表接口用于获取所有Hyper Cluster的详细信息。该接口适用于以下场景：当用户需要了解系统中所有超节点网络的配置和状态时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Hyper Cluster详情的权限。查询操作完成后，接口将返回所有超节点网络的详细信息，包括ID、名称、子网信息等。若用户无权限操作或系统中没有Hyper Cluster，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHyperClusterRequest 请求对象
+     * @return AsyncInvoker<ListHyperClusterRequest, ListHyperClusterResponse>
+     */
+    public AsyncInvoker<ListHyperClusterRequest, ListHyperClusterResponse> listHyperClusterAsyncInvoker(
+        ListHyperClusterRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listHyperCluster, hcClient);
+    }
+
+    /**
+     * 查询超节点hyperinstance-clusters逻辑容量测算结果
+     *
+     * 查询超节点hyperinstance-clusters逻辑容量测算结果接口用于获取指定超节点集群的逻辑容量测算结果。该接口适用于以下场景：当用户需要了解超节点集群的资源使用情况和容量规划，以便进行资源管理和优化时，可以通过此接口获取逻辑容量测算结果。使用该接口的前提条件是用户已登录并具有查询超节点集群逻辑容量的权限，且指定的超节点集群已存在。查询操作完成后，接口将返回指定超节点集群的逻辑容量测算结果，包括可用容量信息。若用户无权限操作、指定的超节点集群不存在或集群ID无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHyperinstanceClustersCapacityRequest 请求对象
+     * @return CompletableFuture<ListHyperinstanceClustersCapacityResponse>
+     */
+    public CompletableFuture<ListHyperinstanceClustersCapacityResponse> listHyperinstanceClustersCapacityAsync(
+        ListHyperinstanceClustersCapacityRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listHyperinstanceClustersCapacity);
+    }
+
+    /**
+     * 查询超节点hyperinstance-clusters逻辑容量测算结果
+     *
+     * 查询超节点hyperinstance-clusters逻辑容量测算结果接口用于获取指定超节点集群的逻辑容量测算结果。该接口适用于以下场景：当用户需要了解超节点集群的资源使用情况和容量规划，以便进行资源管理和优化时，可以通过此接口获取逻辑容量测算结果。使用该接口的前提条件是用户已登录并具有查询超节点集群逻辑容量的权限，且指定的超节点集群已存在。查询操作完成后，接口将返回指定超节点集群的逻辑容量测算结果，包括可用容量信息。若用户无权限操作、指定的超节点集群不存在或集群ID无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHyperinstanceClustersCapacityRequest 请求对象
+     * @return AsyncInvoker<ListHyperinstanceClustersCapacityRequest, ListHyperinstanceClustersCapacityResponse>
+     */
+    public AsyncInvoker<ListHyperinstanceClustersCapacityRequest, ListHyperinstanceClustersCapacityResponse> listHyperinstanceClustersCapacityAsyncInvoker(
+        ListHyperinstanceClustersCapacityRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listHyperinstanceClustersCapacity, hcClient);
+    }
+
+    /**
+     * 查询用户所有超节点实例详情
+     *
+     * 查询用户所有超节点实例详情接口用于获取用户所有Lite Server超节点实例的详细信息。该接口适用于以下场景：当用户需要查看其所有超节点实例的配置、状态和使用情况时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询超节点实例的权限。查询操作完成后，接口将返回所有超节点实例的详细信息，包括实例ID、操作系统、运行状态、资源使用情况等。若用户无权限操作或没有超节点实例，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHyperinstancesRequest 请求对象
+     * @return CompletableFuture<ListHyperinstancesResponse>
+     */
+    public CompletableFuture<ListHyperinstancesResponse> listHyperinstancesAsync(ListHyperinstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listHyperinstances);
+    }
+
+    /**
+     * 查询用户所有超节点实例详情
+     *
+     * 查询用户所有超节点实例详情接口用于获取用户所有Lite Server超节点实例的详细信息。该接口适用于以下场景：当用户需要查看其所有超节点实例的配置、状态和使用情况时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询超节点实例的权限。查询操作完成后，接口将返回所有超节点实例的详细信息，包括实例ID、操作系统、运行状态、资源使用情况等。若用户无权限操作或没有超节点实例，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHyperinstancesRequest 请求对象
+     * @return AsyncInvoker<ListHyperinstancesRequest, ListHyperinstancesResponse>
+     */
+    public AsyncInvoker<ListHyperinstancesRequest, ListHyperinstancesResponse> listHyperinstancesAsyncInvoker(
+        ListHyperinstancesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listHyperinstances, hcClient);
     }
 
     /**
@@ -3738,6 +4829,65 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 查询Lite Server超节点标签
+     *
+     * 查询Lite Server超节点标签接口用于获取Lite Server超节点上的所有标签信息。该接口适用于以下场景：当用户需要查看或管理Lite Server超节点的标签时，可以通过此接口查询指定超节点上的所有标签。使用该接口的前提条件是Lite Server超节点已存在，用户具有查询标签的权限。查询操作完成后，接口将返回超节点上的所有标签信息，包括标签名称和相关属性。若Lite Server超节点不存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request QueryHyperinstanceTagsRequest 请求对象
+     * @return CompletableFuture<QueryHyperinstanceTagsResponse>
+     */
+    public CompletableFuture<QueryHyperinstanceTagsResponse> queryHyperinstanceTagsAsync(
+        QueryHyperinstanceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.queryHyperinstanceTags);
+    }
+
+    /**
+     * 查询Lite Server超节点标签
+     *
+     * 查询Lite Server超节点标签接口用于获取Lite Server超节点上的所有标签信息。该接口适用于以下场景：当用户需要查看或管理Lite Server超节点的标签时，可以通过此接口查询指定超节点上的所有标签。使用该接口的前提条件是Lite Server超节点已存在，用户具有查询标签的权限。查询操作完成后，接口将返回超节点上的所有标签信息，包括标签名称和相关属性。若Lite Server超节点不存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request QueryHyperinstanceTagsRequest 请求对象
+     * @return AsyncInvoker<QueryHyperinstanceTagsRequest, QueryHyperinstanceTagsResponse>
+     */
+    public AsyncInvoker<QueryHyperinstanceTagsRequest, QueryHyperinstanceTagsResponse> queryHyperinstanceTagsAsyncInvoker(
+        QueryHyperinstanceTagsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.queryHyperinstanceTags, hcClient);
+    }
+
+    /**
+     * 重启Lite Server实例
+     *
+     * 重启Lite Server实例接口用于重启正在运行的Lite Server实例。该接口适用于以下场景：当用户需要重启实例以应用配置更改、解决运行问题或进行系统维护时，可以通过此接口重启指定的Lite Server实例。使用该接口的前提条件是Lite Server实例已创建且处于运行状态，用户具有重启实例的权限。重启操作完成后，Lite Server实例将重新启动并进入运行状态，用户可以继续使用实例提供的服务。若Lite Server实例不存在、已处于停止状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RebootDevServerRequest 请求对象
+     * @return CompletableFuture<RebootDevServerResponse>
+     */
+    public CompletableFuture<RebootDevServerResponse> rebootDevServerAsync(RebootDevServerRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.rebootDevServer);
+    }
+
+    /**
+     * 重启Lite Server实例
+     *
+     * 重启Lite Server实例接口用于重启正在运行的Lite Server实例。该接口适用于以下场景：当用户需要重启实例以应用配置更改、解决运行问题或进行系统维护时，可以通过此接口重启指定的Lite Server实例。使用该接口的前提条件是Lite Server实例已创建且处于运行状态，用户具有重启实例的权限。重启操作完成后，Lite Server实例将重新启动并进入运行状态，用户可以继续使用实例提供的服务。若Lite Server实例不存在、已处于停止状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RebootDevServerRequest 请求对象
+     * @return AsyncInvoker<RebootDevServerRequest, RebootDevServerResponse>
+     */
+    public AsyncInvoker<RebootDevServerRequest, RebootDevServerResponse> rebootDevServerAsyncInvoker(
+        RebootDevServerRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.rebootDevServer, hcClient);
+    }
+
+    /**
      * 注册自定义镜像
      *
      * 注册自定义镜像接口用于将用户自定义的镜像注册到ModelArts镜像管理。该接口适用于以下场景：当用户需要将自己的自定义镜像（如特定算法环境、工具链或配置）集成到ModelArts平台时，可通过此接口将镜像注册到镜像管理中以便后续使用。使用该接口的前提条件是用户具备ModelArts镜像管理权限，并且需要提供有效的镜像地址和符合要求的镜像格式。注册操作完成后，自定义镜像将被成功添加到ModelArts镜像列表中，用户可以在后续任务中选择使用该镜像。若镜像地址无效、镜像格式不符合要求或用户无权限操作，接口将返回相应的错误信息。
@@ -3764,6 +4914,96 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<RegisterImageRequest, RegisterImageResponse> registerImageAsyncInvoker(
         RegisterImageRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.registerImage, hcClient);
+    }
+
+    /**
+     * 重装Lite Server服务器操作系统镜像
+     *
+     * 重装Lite Server服务器操作系统镜像接口用于重新安装Lite Server服务器的操作系统镜像。该接口适用于以下场景：当用户需要更新操作系统版本、修复系统故障或重新配置系统环境时，可以通过此接口重装指定的Lite Server服务器操作系统镜像。使用该接口的前提条件是Lite Server服务器已存在且处于停止状态，用户具有重装操作系统的权限。重装操作完成后，Lite Server服务器将安装新的操作系统镜像，并重新进入运行状态，若Lite Server服务器不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ReinstallDevServerOSRequest 请求对象
+     * @return CompletableFuture<ReinstallDevServerOSResponse>
+     */
+    public CompletableFuture<ReinstallDevServerOSResponse> reinstallDevServerOSAsync(
+        ReinstallDevServerOSRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.reinstallDevServerOS);
+    }
+
+    /**
+     * 重装Lite Server服务器操作系统镜像
+     *
+     * 重装Lite Server服务器操作系统镜像接口用于重新安装Lite Server服务器的操作系统镜像。该接口适用于以下场景：当用户需要更新操作系统版本、修复系统故障或重新配置系统环境时，可以通过此接口重装指定的Lite Server服务器操作系统镜像。使用该接口的前提条件是Lite Server服务器已存在且处于停止状态，用户具有重装操作系统的权限。重装操作完成后，Lite Server服务器将安装新的操作系统镜像，并重新进入运行状态，若Lite Server服务器不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ReinstallDevServerOSRequest 请求对象
+     * @return AsyncInvoker<ReinstallDevServerOSRequest, ReinstallDevServerOSResponse>
+     */
+    public AsyncInvoker<ReinstallDevServerOSRequest, ReinstallDevServerOSResponse> reinstallDevServerOSAsyncInvoker(
+        ReinstallDevServerOSRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.reinstallDevServerOS, hcClient);
+    }
+
+    /**
+     * 缩容Lite Server超节点
+     *
+     * 缩容Lite Server超节点接口用于减少Lite Server超节点的资源容量。该接口适用于以下场景：当用户需要降低Lite Server超节点的资源使用，以节省成本或优化资源分配时，可以通过此接口进行缩容。使用该接口的前提条件是用户已登录并具有缩容超节点的权限，且指定的超节点已存在且处于运行状态。缩容操作完成后，超节点的资源容量将根据指定的规格进行调整，用户可以立即使用减少后的资源。若用户无权限操作、指定的超节点不存在、超节点已处于最小容量或指定的缩容规格无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ScaleDownHyperinstanceRequest 请求对象
+     * @return CompletableFuture<ScaleDownHyperinstanceResponse>
+     */
+    public CompletableFuture<ScaleDownHyperinstanceResponse> scaleDownHyperinstanceAsync(
+        ScaleDownHyperinstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.scaleDownHyperinstance);
+    }
+
+    /**
+     * 缩容Lite Server超节点
+     *
+     * 缩容Lite Server超节点接口用于减少Lite Server超节点的资源容量。该接口适用于以下场景：当用户需要降低Lite Server超节点的资源使用，以节省成本或优化资源分配时，可以通过此接口进行缩容。使用该接口的前提条件是用户已登录并具有缩容超节点的权限，且指定的超节点已存在且处于运行状态。缩容操作完成后，超节点的资源容量将根据指定的规格进行调整，用户可以立即使用减少后的资源。若用户无权限操作、指定的超节点不存在、超节点已处于最小容量或指定的缩容规格无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ScaleDownHyperinstanceRequest 请求对象
+     * @return AsyncInvoker<ScaleDownHyperinstanceRequest, ScaleDownHyperinstanceResponse>
+     */
+    public AsyncInvoker<ScaleDownHyperinstanceRequest, ScaleDownHyperinstanceResponse> scaleDownHyperinstanceAsyncInvoker(
+        ScaleDownHyperinstanceRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.scaleDownHyperinstance, hcClient);
+    }
+
+    /**
+     * 扩容Lite Server超节点
+     *
+     * 扩容Lite Server超节点接口用于增加Lite Server超节点的资源容量。该接口适用于以下场景：当用户需要提升Lite Server超节点的性能，以支持更多的负载或更大的数据处理需求时，可以通过此接口进行扩容。使用该接口的前提条件是用户已登录并具有扩容超节点的权限，且指定的超节点已存在且处于运行状态。扩容操作完成后，超节点的资源容量将根据指定的规格进行调整，用户可以立即使用增加的资源。若用户无权限操作、指定的超节点不存在、超节点已处于最大容量或指定的扩容规格无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ScaleUpHyperinstanceRequest 请求对象
+     * @return CompletableFuture<ScaleUpHyperinstanceResponse>
+     */
+    public CompletableFuture<ScaleUpHyperinstanceResponse> scaleUpHyperinstanceAsync(
+        ScaleUpHyperinstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.scaleUpHyperinstance);
+    }
+
+    /**
+     * 扩容Lite Server超节点
+     *
+     * 扩容Lite Server超节点接口用于增加Lite Server超节点的资源容量。该接口适用于以下场景：当用户需要提升Lite Server超节点的性能，以支持更多的负载或更大的数据处理需求时，可以通过此接口进行扩容。使用该接口的前提条件是用户已登录并具有扩容超节点的权限，且指定的超节点已存在且处于运行状态。扩容操作完成后，超节点的资源容量将根据指定的规格进行调整，用户可以立即使用增加的资源。若用户无权限操作、指定的超节点不存在、超节点已处于最大容量或指定的扩容规格无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ScaleUpHyperinstanceRequest 请求对象
+     * @return AsyncInvoker<ScaleUpHyperinstanceRequest, ScaleUpHyperinstanceResponse>
+     */
+    public AsyncInvoker<ScaleUpHyperinstanceRequest, ScaleUpHyperinstanceResponse> scaleUpHyperinstanceAsyncInvoker(
+        ScaleUpHyperinstanceRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.scaleUpHyperinstance, hcClient);
     }
 
     /**
@@ -4032,6 +5272,35 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<ShowAutoSearchYamlTemplatesInfoRequest, ShowAutoSearchYamlTemplatesInfoResponse> showAutoSearchYamlTemplatesInfoAsyncInvoker(
         ShowAutoSearchYamlTemplatesInfoRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.showAutoSearchYamlTemplatesInfo, hcClient);
+    }
+
+    /**
+     * 查询Lite Server实例详情
+     *
+     * 查询Lite Server实例详情接口用于获取指定Lite Server实例的详细信息。该接口适用于以下场景：用户需要查看特定Lite Server实例的配置、状态、网络信息等详细数据，以便进行故障排查、资源管理和监控。使用该接口的前提条件是用户已登录且具有查看Lite Server实例的权限，并且需要提供有效的实例ID。查询操作完成后，系统将返回指定Lite Server实例的详细信息，包括实例ID、名称、状态、配置、网络配置等。若用户无权限、实例ID无效或实例不存在，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDevServerRequest 请求对象
+     * @return CompletableFuture<ShowDevServerResponse>
+     */
+    public CompletableFuture<ShowDevServerResponse> showDevServerAsync(ShowDevServerRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showDevServer);
+    }
+
+    /**
+     * 查询Lite Server实例详情
+     *
+     * 查询Lite Server实例详情接口用于获取指定Lite Server实例的详细信息。该接口适用于以下场景：用户需要查看特定Lite Server实例的配置、状态、网络信息等详细数据，以便进行故障排查、资源管理和监控。使用该接口的前提条件是用户已登录且具有查看Lite Server实例的权限，并且需要提供有效的实例ID。查询操作完成后，系统将返回指定Lite Server实例的详细信息，包括实例ID、名称、状态、配置、网络配置等。若用户无权限、实例ID无效或实例不存在，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDevServerRequest 请求对象
+     * @return AsyncInvoker<ShowDevServerRequest, ShowDevServerResponse>
+     */
+    public AsyncInvoker<ShowDevServerRequest, ShowDevServerResponse> showDevServerAsyncInvoker(
+        ShowDevServerRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showDevServer, hcClient);
     }
 
     /**
@@ -5127,6 +6396,64 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 启动Lite Server实例
+     *
+     * 启动Lite Server实例接口用于启动已创建但未运行的Lite Server实例。该接口适用于以下场景：当用户需要开始使用Lite Server实例进行开发或测试时，可以通过此接口启动指定的Lite Server实例。使用该接口的前提条件是Lite Server实例已创建且处于停止状态，用户具有启动实例的权限。若Lite Server实例不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartDevServerRequest 请求对象
+     * @return CompletableFuture<StartDevServerResponse>
+     */
+    public CompletableFuture<StartDevServerResponse> startDevServerAsync(StartDevServerRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.startDevServer);
+    }
+
+    /**
+     * 启动Lite Server实例
+     *
+     * 启动Lite Server实例接口用于启动已创建但未运行的Lite Server实例。该接口适用于以下场景：当用户需要开始使用Lite Server实例进行开发或测试时，可以通过此接口启动指定的Lite Server实例。使用该接口的前提条件是Lite Server实例已创建且处于停止状态，用户具有启动实例的权限。若Lite Server实例不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartDevServerRequest 请求对象
+     * @return AsyncInvoker<StartDevServerRequest, StartDevServerResponse>
+     */
+    public AsyncInvoker<StartDevServerRequest, StartDevServerResponse> startDevServerAsyncInvoker(
+        StartDevServerRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.startDevServer, hcClient);
+    }
+
+    /**
+     * 启动Lite Server超节点服务器
+     *
+     * 启动Lite Server超节点服务器接口用于启动已创建但未运行的Lite Server超节点服务器。该接口适用于以下场景：当用户需要开始使用Lite Server超节点服务器进行开发或测试时，可以通过此接口启动指定的超节点服务器。使用该接口的前提条件是Lite Server超节点服务器已创建且处于停止状态，用户具有启动超节点服务器的权限。启动操作完成后，超节点服务器将进入运行状态，用户可以访问和使用服务器提供的服务。若Lite Server超节点服务器不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartHyperinstanceRequest 请求对象
+     * @return CompletableFuture<StartHyperinstanceResponse>
+     */
+    public CompletableFuture<StartHyperinstanceResponse> startHyperinstanceAsync(StartHyperinstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.startHyperinstance);
+    }
+
+    /**
+     * 启动Lite Server超节点服务器
+     *
+     * 启动Lite Server超节点服务器接口用于启动已创建但未运行的Lite Server超节点服务器。该接口适用于以下场景：当用户需要开始使用Lite Server超节点服务器进行开发或测试时，可以通过此接口启动指定的超节点服务器。使用该接口的前提条件是Lite Server超节点服务器已创建且处于停止状态，用户具有启动超节点服务器的权限。启动操作完成后，超节点服务器将进入运行状态，用户可以访问和使用服务器提供的服务。若Lite Server超节点服务器不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartHyperinstanceRequest 请求对象
+     * @return AsyncInvoker<StartHyperinstanceRequest, StartHyperinstanceResponse>
+     */
+    public AsyncInvoker<StartHyperinstanceRequest, StartHyperinstanceResponse> startHyperinstanceAsyncInvoker(
+        StartHyperinstanceRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.startHyperinstance, hcClient);
+    }
+
+    /**
      * 启动服务部署
      *
      * 使部署从“停止”或“失败”状态进入“部署中”状态，适用于用户需要重新启动已停止或启动失败的部署的情况。调用此接口前，部署状态必须为“停止”或“失败”，且用户需具有启动部署的权限。调用成功后，部署状态将变为“部署中”，系统将开始执行部署流程，包括资源准备、配置加载等。如果部署当前状态不是“停止”或“失败”，或用户没有启动部署的权限，调用将返回错误。
@@ -5183,6 +6510,64 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<StartInferServiceRequest, StartInferServiceResponse> startInferServiceAsyncInvoker(
         StartInferServiceRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.startInferService, hcClient);
+    }
+
+    /**
+     * 停止Lite Server实例
+     *
+     * 停止Lite Server实例接口用于停止正在运行的Lite Server实例。该接口适用于以下场景：当用户需要停止Lite Server实例，以节省资源或进行维护时，可以通过此接口停止指定的Lite Server实例。使用该接口的前提条件是Lite Server实例已创建且处于运行状态，用户具有停止实例的权限。若Lite Server实例不存在、已处于停止状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopDevServerRequest 请求对象
+     * @return CompletableFuture<StopDevServerResponse>
+     */
+    public CompletableFuture<StopDevServerResponse> stopDevServerAsync(StopDevServerRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.stopDevServer);
+    }
+
+    /**
+     * 停止Lite Server实例
+     *
+     * 停止Lite Server实例接口用于停止正在运行的Lite Server实例。该接口适用于以下场景：当用户需要停止Lite Server实例，以节省资源或进行维护时，可以通过此接口停止指定的Lite Server实例。使用该接口的前提条件是Lite Server实例已创建且处于运行状态，用户具有停止实例的权限。若Lite Server实例不存在、已处于停止状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopDevServerRequest 请求对象
+     * @return AsyncInvoker<StopDevServerRequest, StopDevServerResponse>
+     */
+    public AsyncInvoker<StopDevServerRequest, StopDevServerResponse> stopDevServerAsyncInvoker(
+        StopDevServerRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.stopDevServer, hcClient);
+    }
+
+    /**
+     * 停止Lite Server超节点服务器
+     *
+     * 停止Lite Server超节点服务器接口用于停止正在运行的Lite Server超节点服务器。该接口适用于以下场景：当用户需要暂停使用Lite Server超节点服务器，以节省资源或进行维护时，可以通过此接口停止指定的超节点服务器。使用该接口的前提条件是Lite Server超节点服务器已创建且处于运行状态或者停止失败状态，用户具有停止超节点服务器的权限。停止操作完成后，超节点服务器将进入停止状态，不再提供服务。若Lite Server超节点服务器不存在、已处于停止状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopHyperinstanceRequest 请求对象
+     * @return CompletableFuture<StopHyperinstanceResponse>
+     */
+    public CompletableFuture<StopHyperinstanceResponse> stopHyperinstanceAsync(StopHyperinstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.stopHyperinstance);
+    }
+
+    /**
+     * 停止Lite Server超节点服务器
+     *
+     * 停止Lite Server超节点服务器接口用于停止正在运行的Lite Server超节点服务器。该接口适用于以下场景：当用户需要暂停使用Lite Server超节点服务器，以节省资源或进行维护时，可以通过此接口停止指定的超节点服务器。使用该接口的前提条件是Lite Server超节点服务器已创建且处于运行状态或者停止失败状态，用户具有停止超节点服务器的权限。停止操作完成后，超节点服务器将进入停止状态，不再提供服务。若Lite Server超节点服务器不存在、已处于停止状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopHyperinstanceRequest 请求对象
+     * @return AsyncInvoker<StopHyperinstanceRequest, StopHyperinstanceResponse>
+     */
+    public AsyncInvoker<StopHyperinstanceRequest, StopHyperinstanceResponse> stopHyperinstanceAsyncInvoker(
+        StopHyperinstanceRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.stopHyperinstance, hcClient);
     }
 
     /**
@@ -5303,6 +6688,35 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 实时同步用户指定Lite Server实例状态
+     *
+     * 实时同步用户Lite Server实例状态接口用于实时获取并同步用户Lite Server实例的当前状态。该接口适用于以下场景：用户需要实时监控其Lite Server实例的运行状态，确保实例正常运行或及时发现并处理异常情况。使用该接口的前提条件是用户已登录并具有相应的权限，且Lite Server实例已创建并处于运行状态。接口调用成功后，将返回Lite Server实例的最新状态信息，包括但不限于实例ID、运行状态、资源使用情况等。若用户无权限操作或Lite Server实例不存在，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncDevServersRequest 请求对象
+     * @return CompletableFuture<SyncDevServersResponse>
+     */
+    public CompletableFuture<SyncDevServersResponse> syncDevServersAsync(SyncDevServersRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.syncDevServers);
+    }
+
+    /**
+     * 实时同步用户指定Lite Server实例状态
+     *
+     * 实时同步用户Lite Server实例状态接口用于实时获取并同步用户Lite Server实例的当前状态。该接口适用于以下场景：用户需要实时监控其Lite Server实例的运行状态，确保实例正常运行或及时发现并处理异常情况。使用该接口的前提条件是用户已登录并具有相应的权限，且Lite Server实例已创建并处于运行状态。接口调用成功后，将返回Lite Server实例的最新状态信息，包括但不限于实例ID、运行状态、资源使用情况等。若用户无权限操作或Lite Server实例不存在，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncDevServersRequest 请求对象
+     * @return AsyncInvoker<SyncDevServersRequest, SyncDevServersResponse>
+     */
+    public AsyncInvoker<SyncDevServersRequest, SyncDevServersResponse> syncDevServersAsyncInvoker(
+        SyncDevServersRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.syncDevServers, hcClient);
+    }
+
+    /**
      * 同步镜像状态
      *
      * 同步镜像状态接口用于修正镜像状态的异常情况。该接口适用于以下场景：当镜像状态因误操作、网络问题或系统故障等原因出现异常时，用户可通过此接口同步镜像的最新状态。使用该接口的前提条件是镜像已存在且用户具有相应的操作权限。同步操作完成后，镜像的状态将被更新为最新的正确状态，相关资源和配置也将被同步。若镜像不存在、用户无权限操作或同步过程中出现错误，接口将返回相应的错误信息。
@@ -5386,6 +6800,35 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<UpdateAuthModeRequest, UpdateAuthModeResponse> updateAuthModeAsyncInvoker(
         UpdateAuthModeRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.updateAuthMode, hcClient);
+    }
+
+    /**
+     * 修改Lite Server实例名称
+     *
+     * 修改DevServer实例名称接口用于更改已创建的DevServer实例的名称。该接口适用于以下场景：当用户需要对DevServer实例进行重命名以更好地反映实例的功能或用途时，或者在实例名称不再符合当前项目命名规范时进行更新。使用该接口的前提条件是DevServer实例已存在且用户具有对该实例的管理权限。修改操作完成后，实例的新名称将立即生效，并在所有相关视图和记录中更新。若DevServer实例不存在、用户无权限操作或新名称不符合命名规则，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDevServerRequest 请求对象
+     * @return CompletableFuture<UpdateDevServerResponse>
+     */
+    public CompletableFuture<UpdateDevServerResponse> updateDevServerAsync(UpdateDevServerRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.updateDevServer);
+    }
+
+    /**
+     * 修改Lite Server实例名称
+     *
+     * 修改DevServer实例名称接口用于更改已创建的DevServer实例的名称。该接口适用于以下场景：当用户需要对DevServer实例进行重命名以更好地反映实例的功能或用途时，或者在实例名称不再符合当前项目命名规范时进行更新。使用该接口的前提条件是DevServer实例已存在且用户具有对该实例的管理权限。修改操作完成后，实例的新名称将立即生效，并在所有相关视图和记录中更新。若DevServer实例不存在、用户无权限操作或新名称不符合命名规则，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDevServerRequest 请求对象
+     * @return AsyncInvoker<UpdateDevServerRequest, UpdateDevServerResponse>
+     */
+    public AsyncInvoker<UpdateDevServerRequest, UpdateDevServerResponse> updateDevServerAsyncInvoker(
+        UpdateDevServerRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.updateDevServer, hcClient);
     }
 
     /**
@@ -5860,1418 +7303,6 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<UpdateInferHraRequest, UpdateInferHraResponse> updateInferHraAsyncInvoker(
         UpdateInferHraRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.updateInferHra, hcClient);
-    }
-
-    /**
-     * Lite Server服务器挂载磁盘
-     *
-     * Lite Server服务器挂载磁盘接口用于将额外的磁盘挂载到Lite Server服务器上。该接口适用于以下场景：当用户需要扩展Lite Server服务器的存储空间以满足更大的数据存储需求时，可以通过此接口将指定的磁盘挂载到服务器上。使用该接口的前提条件是Lite Server服务器已创建且处于运行状态、或者停止状态，用户具有挂载磁盘的权限，且指定的磁盘已存在且未被其他服务器使用。挂载操作完成后，磁盘将成功挂载到Lite Server服务器上，用户可以访问和使用新增的存储空间。若Lite Server服务器不存在、指定的磁盘不存在或已被使用，或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AttachDevServerVolumeRequest 请求对象
-     * @return CompletableFuture<AttachDevServerVolumeResponse>
-     */
-    public CompletableFuture<AttachDevServerVolumeResponse> attachDevServerVolumeAsync(
-        AttachDevServerVolumeRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.attachDevServerVolume);
-    }
-
-    /**
-     * Lite Server服务器挂载磁盘
-     *
-     * Lite Server服务器挂载磁盘接口用于将额外的磁盘挂载到Lite Server服务器上。该接口适用于以下场景：当用户需要扩展Lite Server服务器的存储空间以满足更大的数据存储需求时，可以通过此接口将指定的磁盘挂载到服务器上。使用该接口的前提条件是Lite Server服务器已创建且处于运行状态、或者停止状态，用户具有挂载磁盘的权限，且指定的磁盘已存在且未被其他服务器使用。挂载操作完成后，磁盘将成功挂载到Lite Server服务器上，用户可以访问和使用新增的存储空间。若Lite Server服务器不存在、指定的磁盘不存在或已被使用，或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AttachDevServerVolumeRequest 请求对象
-     * @return AsyncInvoker<AttachDevServerVolumeRequest, AttachDevServerVolumeResponse>
-     */
-    public AsyncInvoker<AttachDevServerVolumeRequest, AttachDevServerVolumeResponse> attachDevServerVolumeAsyncInvoker(
-        AttachDevServerVolumeRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.attachDevServerVolume, hcClient);
-    }
-
-    /**
-     * 批量操作Lite Server实例
-     *
-     * 批量操作Lite Server实例接口用于对多个Lite Server实例进行统一操作，如启动、停止、重启或删除等。该接口适用于以下场景：当需要对多个Lite Server实例进行相同的操作，例如在维护期间批量停止实例、更新配置后批量重启实例或清理不再需要的实例时，用户可通过此接口高效地完成批量操作。使用该接口的前提条件是目标Lite Server实例已存在且用户具有相应的操作权限。操作完成后，所有指定的Lite Server实例将根据请求完成相应的状态变更或被移除，相关资源和配置也将被相应调整或清理。若目标Lite Server实例不存在、用户无权限操作或请求参数不正确，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchDevServersActionRequest 请求对象
-     * @return CompletableFuture<BatchDevServersActionResponse>
-     */
-    public CompletableFuture<BatchDevServersActionResponse> batchDevServersActionAsync(
-        BatchDevServersActionRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.batchDevServersAction);
-    }
-
-    /**
-     * 批量操作Lite Server实例
-     *
-     * 批量操作Lite Server实例接口用于对多个Lite Server实例进行统一操作，如启动、停止、重启或删除等。该接口适用于以下场景：当需要对多个Lite Server实例进行相同的操作，例如在维护期间批量停止实例、更新配置后批量重启实例或清理不再需要的实例时，用户可通过此接口高效地完成批量操作。使用该接口的前提条件是目标Lite Server实例已存在且用户具有相应的操作权限。操作完成后，所有指定的Lite Server实例将根据请求完成相应的状态变更或被移除，相关资源和配置也将被相应调整或清理。若目标Lite Server实例不存在、用户无权限操作或请求参数不正确，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchDevServersActionRequest 请求对象
-     * @return AsyncInvoker<BatchDevServersActionRequest, BatchDevServersActionResponse>
-     */
-    public AsyncInvoker<BatchDevServersActionRequest, BatchDevServersActionResponse> batchDevServersActionAsyncInvoker(
-        BatchDevServersActionRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.batchDevServersAction, hcClient);
-    }
-
-    /**
-     * Lite Server服务器绑定EIP
-     *
-     * Lite Server服务器绑定的EIP接口用于将弹性公网IP（EIP）绑定到Lite Server服务器上。该接口适用于以下场景：当用户需要为Lite Server服务器分配一个固定的公网IP地址，以便从外部网络访问服务器时，可以通过此接口将指定的EIP绑定到服务器上。使用该接口的前提条件是Lite Server服务器已创建且处于运行状态，用户具有绑定EIP的权限，且指定的EIP已存在且未被其他资源使用。绑定操作完成后，EIP将成功绑定到Lite Server服务器上，服务器可以通过该EIP从外部网络访问。若Lite Server服务器不存在、已处于停止状态、指定的EIP不存在或已被使用，或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BindDevServerPublicIPRequest 请求对象
-     * @return CompletableFuture<BindDevServerPublicIPResponse>
-     */
-    public CompletableFuture<BindDevServerPublicIPResponse> bindDevServerPublicIPAsync(
-        BindDevServerPublicIPRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.bindDevServerPublicIP);
-    }
-
-    /**
-     * Lite Server服务器绑定EIP
-     *
-     * Lite Server服务器绑定的EIP接口用于将弹性公网IP（EIP）绑定到Lite Server服务器上。该接口适用于以下场景：当用户需要为Lite Server服务器分配一个固定的公网IP地址，以便从外部网络访问服务器时，可以通过此接口将指定的EIP绑定到服务器上。使用该接口的前提条件是Lite Server服务器已创建且处于运行状态，用户具有绑定EIP的权限，且指定的EIP已存在且未被其他资源使用。绑定操作完成后，EIP将成功绑定到Lite Server服务器上，服务器可以通过该EIP从外部网络访问。若Lite Server服务器不存在、已处于停止状态、指定的EIP不存在或已被使用，或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BindDevServerPublicIPRequest 请求对象
-     * @return AsyncInvoker<BindDevServerPublicIPRequest, BindDevServerPublicIPResponse>
-     */
-    public AsyncInvoker<BindDevServerPublicIPRequest, BindDevServerPublicIPResponse> bindDevServerPublicIPAsyncInvoker(
-        BindDevServerPublicIPRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.bindDevServerPublicIP, hcClient);
-    }
-
-    /**
-     * 切换Lite Server服务器操作系统镜像
-     *
-     * 切换Lite Server服务器操作系统镜像接口用于更换Lite Server服务器当前使用的操作系统镜像。该接口适用于以下场景：当用户需要更换操作系统以适应不同的开发或测试需求时，可以通过此接口切换指定的Lite Server服务器操作系统镜像。使用该接口的前提条件是Lite Server服务器已存在且处于停止状态，用户具有切换操作系统的权限。切换操作完成后，Lite Server服务器将安装新的操作系统镜像，并重新进入运行状态，若Lite Server服务器不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ChangeDevServerOSRequest 请求对象
-     * @return CompletableFuture<ChangeDevServerOSResponse>
-     */
-    public CompletableFuture<ChangeDevServerOSResponse> changeDevServerOSAsync(ChangeDevServerOSRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.changeDevServerOS);
-    }
-
-    /**
-     * 切换Lite Server服务器操作系统镜像
-     *
-     * 切换Lite Server服务器操作系统镜像接口用于更换Lite Server服务器当前使用的操作系统镜像。该接口适用于以下场景：当用户需要更换操作系统以适应不同的开发或测试需求时，可以通过此接口切换指定的Lite Server服务器操作系统镜像。使用该接口的前提条件是Lite Server服务器已存在且处于停止状态，用户具有切换操作系统的权限。切换操作完成后，Lite Server服务器将安装新的操作系统镜像，并重新进入运行状态，若Lite Server服务器不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ChangeDevServerOSRequest 请求对象
-     * @return AsyncInvoker<ChangeDevServerOSRequest, ChangeDevServerOSResponse>
-     */
-    public AsyncInvoker<ChangeDevServerOSRequest, ChangeDevServerOSResponse> changeDevServerOSAsyncInvoker(
-        ChangeDevServerOSRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.changeDevServerOS, hcClient);
-    }
-
-    /**
-     * 切换Lite Server超节点服务器操作系统镜像
-     *
-     * 切换Lite Server超节点服务器操作系统镜像接口用于更换Lite Server超节点服务器当前使用的操作系统镜像。该接口适用于以下场景：当用户需要更换操作系统以适应不同的开发或测试需求时，可以通过此接口切换指定的Lite Server超节点服务器操作系统镜像。使用该接口的前提条件是Lite Server超节点服务器已存在且处于停止状态，用户具有切换操作系统的权限。切换操作完成后，Lite Server超节点服务器将安装新的操作系统镜像，并重新进入运行状态，若Lite Server超节点服务器不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ChangeHyperinstanceOSRequest 请求对象
-     * @return CompletableFuture<ChangeHyperinstanceOSResponse>
-     */
-    public CompletableFuture<ChangeHyperinstanceOSResponse> changeHyperinstanceOSAsync(
-        ChangeHyperinstanceOSRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.changeHyperinstanceOS);
-    }
-
-    /**
-     * 切换Lite Server超节点服务器操作系统镜像
-     *
-     * 切换Lite Server超节点服务器操作系统镜像接口用于更换Lite Server超节点服务器当前使用的操作系统镜像。该接口适用于以下场景：当用户需要更换操作系统以适应不同的开发或测试需求时，可以通过此接口切换指定的Lite Server超节点服务器操作系统镜像。使用该接口的前提条件是Lite Server超节点服务器已存在且处于停止状态，用户具有切换操作系统的权限。切换操作完成后，Lite Server超节点服务器将安装新的操作系统镜像，并重新进入运行状态，若Lite Server超节点服务器不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ChangeHyperinstanceOSRequest 请求对象
-     * @return AsyncInvoker<ChangeHyperinstanceOSRequest, ChangeHyperinstanceOSResponse>
-     */
-    public AsyncInvoker<ChangeHyperinstanceOSRequest, ChangeHyperinstanceOSResponse> changeHyperinstanceOSAsyncInvoker(
-        ChangeHyperinstanceOSRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.changeHyperinstanceOS, hcClient);
-    }
-
-    /**
-     * 创建Lite Server
-     *
-     * 创建Lite Server接口用于创建LiteServer弹性云服务器、裸金属服务器及超节点服务器。该接口适用于以下场景：用户需要根据业务需求快速部署和配置不同类型的服务器资源。使用该接口的前提条件是用户已登录且具有创建Lite Server的权限，并且需要提供服务器类型、规格、网络配置等必要参数。创建操作完成后，系统将返回新创建的Lite Server实例信息，包括实例ID、状态等。若用户无权限、参数配置错误或资源不足，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateDevServerRequest 请求对象
-     * @return CompletableFuture<CreateDevServerResponse>
-     */
-    public CompletableFuture<CreateDevServerResponse> createDevServerAsync(CreateDevServerRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createDevServer);
-    }
-
-    /**
-     * 创建Lite Server
-     *
-     * 创建Lite Server接口用于创建LiteServer弹性云服务器、裸金属服务器及超节点服务器。该接口适用于以下场景：用户需要根据业务需求快速部署和配置不同类型的服务器资源。使用该接口的前提条件是用户已登录且具有创建Lite Server的权限，并且需要提供服务器类型、规格、网络配置等必要参数。创建操作完成后，系统将返回新创建的Lite Server实例信息，包括实例ID、状态等。若用户无权限、参数配置错误或资源不足，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateDevServerRequest 请求对象
-     * @return AsyncInvoker<CreateDevServerRequest, CreateDevServerResponse>
-     */
-    public AsyncInvoker<CreateDevServerRequest, CreateDevServerResponse> createDevServerAsyncInvoker(
-        CreateDevServerRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.createDevServer, hcClient);
-    }
-
-    /**
-     * 创建Lite Server任务
-     *
-     * 创建Lite Server任务接口用于在Lite Server上创建新的任务。该接口适用于以下场景：当用户需要在Lite Server上启动新的开发、测试或部署任务时，可以通过此接口创建并配置任务。使用该接口的前提条件是用户具有创建任务的权限，并且提供的任务配置参数符合要求。创建操作完成后，新的Lite Server任务将被成功创建，并返回任务ID和其他相关信息。若用户无权限操作、提供的参数不正确或系统资源不足，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateDevServerJobRequest 请求对象
-     * @return CompletableFuture<CreateDevServerJobResponse>
-     */
-    public CompletableFuture<CreateDevServerJobResponse> createDevServerJobAsync(CreateDevServerJobRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createDevServerJob);
-    }
-
-    /**
-     * 创建Lite Server任务
-     *
-     * 创建Lite Server任务接口用于在Lite Server上创建新的任务。该接口适用于以下场景：当用户需要在Lite Server上启动新的开发、测试或部署任务时，可以通过此接口创建并配置任务。使用该接口的前提条件是用户具有创建任务的权限，并且提供的任务配置参数符合要求。创建操作完成后，新的Lite Server任务将被成功创建，并返回任务ID和其他相关信息。若用户无权限操作、提供的参数不正确或系统资源不足，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateDevServerJobRequest 请求对象
-     * @return AsyncInvoker<CreateDevServerJobRequest, CreateDevServerJobResponse>
-     */
-    public AsyncInvoker<CreateDevServerJobRequest, CreateDevServerJobResponse> createDevServerJobAsyncInvoker(
-        CreateDevServerJobRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.createDevServerJob, hcClient);
-    }
-
-    /**
-     * 创建Hyper Cluster
-     *
-     * 创建Hyper Cluster接口用于在系统中创建一个新的Hyper Cluster。该接口适用于以下场景：当用户需要使用超节点网络时，可以通过此接口创建Hyper Cluster。使用该接口的前提条件是用户已登录并具有创建Hyper Cluster的权限，且系统中已配置了必要的资源。创建操作完成后，将生成一个新的超节点网络，并返回超节点网络的详细信息，包括ID、名称、子网信息等。若用户无权限操作、系统中缺少必要的资源或配置参数无效，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateHyperClusterRequest 请求对象
-     * @return CompletableFuture<CreateHyperClusterResponse>
-     */
-    public CompletableFuture<CreateHyperClusterResponse> createHyperClusterAsync(CreateHyperClusterRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createHyperCluster);
-    }
-
-    /**
-     * 创建Hyper Cluster
-     *
-     * 创建Hyper Cluster接口用于在系统中创建一个新的Hyper Cluster。该接口适用于以下场景：当用户需要使用超节点网络时，可以通过此接口创建Hyper Cluster。使用该接口的前提条件是用户已登录并具有创建Hyper Cluster的权限，且系统中已配置了必要的资源。创建操作完成后，将生成一个新的超节点网络，并返回超节点网络的详细信息，包括ID、名称、子网信息等。若用户无权限操作、系统中缺少必要的资源或配置参数无效，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateHyperClusterRequest 请求对象
-     * @return AsyncInvoker<CreateHyperClusterRequest, CreateHyperClusterResponse>
-     */
-    public AsyncInvoker<CreateHyperClusterRequest, CreateHyperClusterResponse> createHyperClusterAsyncInvoker(
-        CreateHyperClusterRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.createHyperCluster, hcClient);
-    }
-
-    /**
-     * 创建Lite Server超节点标签
-     *
-     * 创建Lite Server超节点标签接口用于为Lite Server超节点添加自定义标签。该接口适用于以下场景：当用户需要对Lite Server超节点进行分类管理或标记特定信息时，可以通过此接口为指定的超节点创建标签。使用该接口的前提条件是Lite Server超节点已存在，用户具有创建标签的权限。创建操作完成后，标签将被成功添加到指定的超节点上，用户可以通过标签进行快速查找和管理。若Lite Server超节点不存在、标签已存在或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateHyperinstanceTagsRequest 请求对象
-     * @return CompletableFuture<CreateHyperinstanceTagsResponse>
-     */
-    public CompletableFuture<CreateHyperinstanceTagsResponse> createHyperinstanceTagsAsync(
-        CreateHyperinstanceTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createHyperinstanceTags);
-    }
-
-    /**
-     * 创建Lite Server超节点标签
-     *
-     * 创建Lite Server超节点标签接口用于为Lite Server超节点添加自定义标签。该接口适用于以下场景：当用户需要对Lite Server超节点进行分类管理或标记特定信息时，可以通过此接口为指定的超节点创建标签。使用该接口的前提条件是Lite Server超节点已存在，用户具有创建标签的权限。创建操作完成后，标签将被成功添加到指定的超节点上，用户可以通过标签进行快速查找和管理。若Lite Server超节点不存在、标签已存在或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateHyperinstanceTagsRequest 请求对象
-     * @return AsyncInvoker<CreateHyperinstanceTagsRequest, CreateHyperinstanceTagsResponse>
-     */
-    public AsyncInvoker<CreateHyperinstanceTagsRequest, CreateHyperinstanceTagsResponse> createHyperinstanceTagsAsyncInvoker(
-        CreateHyperinstanceTagsRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.createHyperinstanceTags, hcClient);
-    }
-
-    /**
-     * 创建RoCE网络
-     *
-     * 创建RoCE网络接口用于在系统中创建一个新的RoCE网络。该接口适用于以下场景：当用户需要为高性能计算或低延迟应用创建专用的RoCE网络时，可以通过此接口创建并配置RoCE网络。使用该接口的前提条件是用户已登录并具有创建RoCE网络的权限，且系统中已配置了必要的网络资源。创建操作完成后，将生成一个新的RoCE网络，并返回网络的详细信息，包括网络ID、子网信息、配置参数等。若用户无权限操作、系统中缺少必要的网络资源或网络配置参数无效，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateRoceNetworkRequest 请求对象
-     * @return CompletableFuture<CreateRoceNetworkResponse>
-     */
-    public CompletableFuture<CreateRoceNetworkResponse> createRoceNetworkAsync(CreateRoceNetworkRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createRoceNetwork);
-    }
-
-    /**
-     * 创建RoCE网络
-     *
-     * 创建RoCE网络接口用于在系统中创建一个新的RoCE网络。该接口适用于以下场景：当用户需要为高性能计算或低延迟应用创建专用的RoCE网络时，可以通过此接口创建并配置RoCE网络。使用该接口的前提条件是用户已登录并具有创建RoCE网络的权限，且系统中已配置了必要的网络资源。创建操作完成后，将生成一个新的RoCE网络，并返回网络的详细信息，包括网络ID、子网信息、配置参数等。若用户无权限操作、系统中缺少必要的网络资源或网络配置参数无效，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateRoceNetworkRequest 请求对象
-     * @return AsyncInvoker<CreateRoceNetworkRequest, CreateRoceNetworkResponse>
-     */
-    public AsyncInvoker<CreateRoceNetworkRequest, CreateRoceNetworkResponse> createRoceNetworkAsyncInvoker(
-        CreateRoceNetworkRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.createRoceNetwork, hcClient);
-    }
-
-    /**
-     * 删除Lite Server实例
-     *
-     * 删除Lite Server实例接口用于移除已创建的Lite Server实例。该接口适用于以下场景：当Lite Server按需实例不再需要使用时或者创建失败的实例以及处于ERROR状态时，用户可通过此接口删除指定的Lite Server实例。使用该接口的前提条件是Lite Server实例已存在且用户具有管理员权限。删除操作完成后，Lite Server实例将被永久移除，相关资源也将被清理。若Lite Server实例不存在或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteDevServerRequest 请求对象
-     * @return CompletableFuture<DeleteDevServerResponse>
-     */
-    public CompletableFuture<DeleteDevServerResponse> deleteDevServerAsync(DeleteDevServerRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteDevServer);
-    }
-
-    /**
-     * 删除Lite Server实例
-     *
-     * 删除Lite Server实例接口用于移除已创建的Lite Server实例。该接口适用于以下场景：当Lite Server按需实例不再需要使用时或者创建失败的实例以及处于ERROR状态时，用户可通过此接口删除指定的Lite Server实例。使用该接口的前提条件是Lite Server实例已存在且用户具有管理员权限。删除操作完成后，Lite Server实例将被永久移除，相关资源也将被清理。若Lite Server实例不存在或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteDevServerRequest 请求对象
-     * @return AsyncInvoker<DeleteDevServerRequest, DeleteDevServerResponse>
-     */
-    public AsyncInvoker<DeleteDevServerRequest, DeleteDevServerResponse> deleteDevServerAsyncInvoker(
-        DeleteDevServerRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.deleteDevServer, hcClient);
-    }
-
-    /**
-     * 批量删除Lite Server Job
-     *
-     * 批量删除Lite Server Job接口用于批量移除已创建的Lite Server Job。该接口适用于以下场景：当多个Lite Server Job已完成、配置错误或需要清理资源时，用户可以通过此接口批量删除指定的Lite Server Job。使用该接口的前提条件是目标Lite Server Job已存在且用户具有管理员权限。删除操作完成后，指定的Lite Server Job将被永久移除，相关资源和配置也将被清理。若目标Lite Server Job不存在、用户无权限操作或请求参数不正确，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteDevServerJobsRequest 请求对象
-     * @return CompletableFuture<DeleteDevServerJobsResponse>
-     */
-    public CompletableFuture<DeleteDevServerJobsResponse> deleteDevServerJobsAsync(DeleteDevServerJobsRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteDevServerJobs);
-    }
-
-    /**
-     * 批量删除Lite Server Job
-     *
-     * 批量删除Lite Server Job接口用于批量移除已创建的Lite Server Job。该接口适用于以下场景：当多个Lite Server Job已完成、配置错误或需要清理资源时，用户可以通过此接口批量删除指定的Lite Server Job。使用该接口的前提条件是目标Lite Server Job已存在且用户具有管理员权限。删除操作完成后，指定的Lite Server Job将被永久移除，相关资源和配置也将被清理。若目标Lite Server Job不存在、用户无权限操作或请求参数不正确，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteDevServerJobsRequest 请求对象
-     * @return AsyncInvoker<DeleteDevServerJobsRequest, DeleteDevServerJobsResponse>
-     */
-    public AsyncInvoker<DeleteDevServerJobsRequest, DeleteDevServerJobsResponse> deleteDevServerJobsAsyncInvoker(
-        DeleteDevServerJobsRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.deleteDevServerJobs, hcClient);
-    }
-
-    /**
-     * 删除Hyper Cluster实例
-     *
-     * 删除Hyper Cluster实例接口用于移除已创建的Hyper Cluster。该接口适用于以下场景：当超节点网络配置错误或需要清理资源时，用户可通过此接口删除指定的超节点网络。使用该接口的前提条件是Hyper Cluster实例已存在且用户具有管理员权限。删除操作完成后，超节点网络将被永久移除，相关资源和配置也将被清理。若Hyper Cluster实例不存在或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteHyperClusterRequest 请求对象
-     * @return CompletableFuture<DeleteHyperClusterResponse>
-     */
-    public CompletableFuture<DeleteHyperClusterResponse> deleteHyperClusterAsync(DeleteHyperClusterRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteHyperCluster);
-    }
-
-    /**
-     * 删除Hyper Cluster实例
-     *
-     * 删除Hyper Cluster实例接口用于移除已创建的Hyper Cluster。该接口适用于以下场景：当超节点网络配置错误或需要清理资源时，用户可通过此接口删除指定的超节点网络。使用该接口的前提条件是Hyper Cluster实例已存在且用户具有管理员权限。删除操作完成后，超节点网络将被永久移除，相关资源和配置也将被清理。若Hyper Cluster实例不存在或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteHyperClusterRequest 请求对象
-     * @return AsyncInvoker<DeleteHyperClusterRequest, DeleteHyperClusterResponse>
-     */
-    public AsyncInvoker<DeleteHyperClusterRequest, DeleteHyperClusterResponse> deleteHyperClusterAsyncInvoker(
-        DeleteHyperClusterRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.deleteHyperCluster, hcClient);
-    }
-
-    /**
-     * 删除Lite Server超节点实例
-     *
-     * 删除Lite Server超节点实例接口用于删除按需超节点实例同时移除处于ERROR状态的Lite Server超节点实例。该接口适用于以下场景：当超节点实例因创建失败、或其他原因进入ERROR状态；按需超节点实例，用户可以通过此接口删除指定的超节点实例。使用该接口的前提条件是用户已登录并具有删除超节点实例的权限，且指定的超节点实例是按需且处于运行状态、或者处于ERROR状态。删除操作完成后，指定的超节点实例将被永久移除，相关资源也将被清理。若指定的超节点实例不存在、未处于ERROR状态或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteHyperinstanceRequest 请求对象
-     * @return CompletableFuture<DeleteHyperinstanceResponse>
-     */
-    public CompletableFuture<DeleteHyperinstanceResponse> deleteHyperinstanceAsync(DeleteHyperinstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteHyperinstance);
-    }
-
-    /**
-     * 删除Lite Server超节点实例
-     *
-     * 删除Lite Server超节点实例接口用于删除按需超节点实例同时移除处于ERROR状态的Lite Server超节点实例。该接口适用于以下场景：当超节点实例因创建失败、或其他原因进入ERROR状态；按需超节点实例，用户可以通过此接口删除指定的超节点实例。使用该接口的前提条件是用户已登录并具有删除超节点实例的权限，且指定的超节点实例是按需且处于运行状态、或者处于ERROR状态。删除操作完成后，指定的超节点实例将被永久移除，相关资源也将被清理。若指定的超节点实例不存在、未处于ERROR状态或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteHyperinstanceRequest 请求对象
-     * @return AsyncInvoker<DeleteHyperinstanceRequest, DeleteHyperinstanceResponse>
-     */
-    public AsyncInvoker<DeleteHyperinstanceRequest, DeleteHyperinstanceResponse> deleteHyperinstanceAsyncInvoker(
-        DeleteHyperinstanceRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.deleteHyperinstance, hcClient);
-    }
-
-    /**
-     * 删除Lite Server超节点标签
-     *
-     * 删除Lite Server超节点标签接口用于移除已创建的Lite Server超节点标签。该接口适用于以下场景：当用户需要清理不再需要的标签或修正标签错误时，可以通过此接口删除指定的超节点标签。使用该接口的前提条件是Lite Server超节点已存在，且该超节点上已存在要删除的标签，用户具有删除标签的权限。删除操作完成后，指定的标签将从超节点上移除，超节点的其他配置和数据保持不变。若Lite Server超节点不存在、标签不存在或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteHyperinstanceTagsRequest 请求对象
-     * @return CompletableFuture<DeleteHyperinstanceTagsResponse>
-     */
-    public CompletableFuture<DeleteHyperinstanceTagsResponse> deleteHyperinstanceTagsAsync(
-        DeleteHyperinstanceTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteHyperinstanceTags);
-    }
-
-    /**
-     * 删除Lite Server超节点标签
-     *
-     * 删除Lite Server超节点标签接口用于移除已创建的Lite Server超节点标签。该接口适用于以下场景：当用户需要清理不再需要的标签或修正标签错误时，可以通过此接口删除指定的超节点标签。使用该接口的前提条件是Lite Server超节点已存在，且该超节点上已存在要删除的标签，用户具有删除标签的权限。删除操作完成后，指定的标签将从超节点上移除，超节点的其他配置和数据保持不变。若Lite Server超节点不存在、标签不存在或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteHyperinstanceTagsRequest 请求对象
-     * @return AsyncInvoker<DeleteHyperinstanceTagsRequest, DeleteHyperinstanceTagsResponse>
-     */
-    public AsyncInvoker<DeleteHyperinstanceTagsRequest, DeleteHyperinstanceTagsResponse> deleteHyperinstanceTagsAsyncInvoker(
-        DeleteHyperinstanceTagsRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.deleteHyperinstanceTags, hcClient);
-    }
-
-    /**
-     * Lite Server服务器卸载磁盘
-     *
-     * Lite Server服务器卸载磁盘接口用于从Lite Server服务器上卸载已挂载的磁盘。该接口适用于以下场景：当用户需要释放存储资源或重新分配磁盘时，可以通过此接口卸载指定的磁盘。使用该接口的前提条件是Lite Server服务器已创建且处于运行状态、或者停止状态，用户具有卸载磁盘的权限，且指定的磁盘已挂载到服务器上。卸载操作完成后，磁盘将从Lite Server服务器上成功卸载，用户可以将其挂载到其他服务器或进行其他操作。若Lite Server服务器不存在、指定的磁盘未挂载到服务器上，或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DetachDevServerVolumeRequest 请求对象
-     * @return CompletableFuture<DetachDevServerVolumeResponse>
-     */
-    public CompletableFuture<DetachDevServerVolumeResponse> detachDevServerVolumeAsync(
-        DetachDevServerVolumeRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.detachDevServerVolume);
-    }
-
-    /**
-     * Lite Server服务器卸载磁盘
-     *
-     * Lite Server服务器卸载磁盘接口用于从Lite Server服务器上卸载已挂载的磁盘。该接口适用于以下场景：当用户需要释放存储资源或重新分配磁盘时，可以通过此接口卸载指定的磁盘。使用该接口的前提条件是Lite Server服务器已创建且处于运行状态、或者停止状态，用户具有卸载磁盘的权限，且指定的磁盘已挂载到服务器上。卸载操作完成后，磁盘将从Lite Server服务器上成功卸载，用户可以将其挂载到其他服务器或进行其他操作。若Lite Server服务器不存在、指定的磁盘未挂载到服务器上，或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DetachDevServerVolumeRequest 请求对象
-     * @return AsyncInvoker<DetachDevServerVolumeRequest, DetachDevServerVolumeResponse>
-     */
-    public AsyncInvoker<DetachDevServerVolumeRequest, DetachDevServerVolumeResponse> detachDevServerVolumeAsyncInvoker(
-        DetachDevServerVolumeRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.detachDevServerVolume, hcClient);
-    }
-
-    /**
-     * 查询Lite Server镜像详情
-     *
-     * 查询Lite Server镜像详情接口用于获取指定Lite Server镜像的详细信息。该接口适用于以下场景：当用户需要了解某个Lite Server镜像的具体配置和属性，以便在创建或调整Lite Server实例时选择合适的镜像时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询镜像详情的权限，且指定的镜像已存在。查询操作完成后，接口将返回指定Lite Server镜像的详细信息，包括镜像ID、名称、操作系统、版本、创建时间等。若用户无权限操作、指定的镜像不存在或镜像ID无效，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetDevServerImageRequest 请求对象
-     * @return CompletableFuture<GetDevServerImageResponse>
-     */
-    public CompletableFuture<GetDevServerImageResponse> getDevServerImageAsync(GetDevServerImageRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getDevServerImage);
-    }
-
-    /**
-     * 查询Lite Server镜像详情
-     *
-     * 查询Lite Server镜像详情接口用于获取指定Lite Server镜像的详细信息。该接口适用于以下场景：当用户需要了解某个Lite Server镜像的具体配置和属性，以便在创建或调整Lite Server实例时选择合适的镜像时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询镜像详情的权限，且指定的镜像已存在。查询操作完成后，接口将返回指定Lite Server镜像的详细信息，包括镜像ID、名称、操作系统、版本、创建时间等。若用户无权限操作、指定的镜像不存在或镜像ID无效，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetDevServerImageRequest 请求对象
-     * @return AsyncInvoker<GetDevServerImageRequest, GetDevServerImageResponse>
-     */
-    public AsyncInvoker<GetDevServerImageRequest, GetDevServerImageResponse> getDevServerImageAsyncInvoker(
-        GetDevServerImageRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.getDevServerImage, hcClient);
-    }
-
-    /**
-     * 查询Lite Server Job详情
-     *
-     * 查询Lite Server Job详情接口用于获取指定Lite Server Job的详细信息。该接口适用于以下场景：当用户需要查看某个Lite Server Job的执行状态、配置参数、日志信息等详细数据时，可以通过此接口获取相关信息。使用该接口的前提条件是目标Lite Server Job已存在且用户具有查看权限。查询操作完成后，接口将返回指定Lite Server Job的详细信息，包括但不限于Job ID、状态、创建时间、执行时间、配置参数和日志等。若目标Lite Server Job不存在或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetDevServerJobRequest 请求对象
-     * @return CompletableFuture<GetDevServerJobResponse>
-     */
-    public CompletableFuture<GetDevServerJobResponse> getDevServerJobAsync(GetDevServerJobRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getDevServerJob);
-    }
-
-    /**
-     * 查询Lite Server Job详情
-     *
-     * 查询Lite Server Job详情接口用于获取指定Lite Server Job的详细信息。该接口适用于以下场景：当用户需要查看某个Lite Server Job的执行状态、配置参数、日志信息等详细数据时，可以通过此接口获取相关信息。使用该接口的前提条件是目标Lite Server Job已存在且用户具有查看权限。查询操作完成后，接口将返回指定Lite Server Job的详细信息，包括但不限于Job ID、状态、创建时间、执行时间、配置参数和日志等。若目标Lite Server Job不存在或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetDevServerJobRequest 请求对象
-     * @return AsyncInvoker<GetDevServerJobRequest, GetDevServerJobResponse>
-     */
-    public AsyncInvoker<GetDevServerJobRequest, GetDevServerJobResponse> getDevServerJobAsyncInvoker(
-        GetDevServerJobRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.getDevServerJob, hcClient);
-    }
-
-    /**
-     * 获取Lite Server 部署服务详情
-     *
-     * 根据服务id获取Lite Server部署服务详情。该接口适用于以下场景：当用户需要查看部署服务详情，以便查看已部署服务的状态、api等信息时，可以通过此接口获取服务详情。使用该接口的前提条件是用户具有查看服务的权限。查询操作完成后，接口将返回此部署服务的详细信息，包括名称、状态、描述、所用模型、实例详情等信息。若用户无权限操作或无相应id，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetDevServerJobServiceRequest 请求对象
-     * @return CompletableFuture<GetDevServerJobServiceResponse>
-     */
-    public CompletableFuture<GetDevServerJobServiceResponse> getDevServerJobServiceAsync(
-        GetDevServerJobServiceRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getDevServerJobService);
-    }
-
-    /**
-     * 获取Lite Server 部署服务详情
-     *
-     * 根据服务id获取Lite Server部署服务详情。该接口适用于以下场景：当用户需要查看部署服务详情，以便查看已部署服务的状态、api等信息时，可以通过此接口获取服务详情。使用该接口的前提条件是用户具有查看服务的权限。查询操作完成后，接口将返回此部署服务的详细信息，包括名称、状态、描述、所用模型、实例详情等信息。若用户无权限操作或无相应id，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetDevServerJobServiceRequest 请求对象
-     * @return AsyncInvoker<GetDevServerJobServiceRequest, GetDevServerJobServiceResponse>
-     */
-    public AsyncInvoker<GetDevServerJobServiceRequest, GetDevServerJobServiceResponse> getDevServerJobServiceAsyncInvoker(
-        GetDevServerJobServiceRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.getDevServerJobService, hcClient);
-    }
-
-    /**
-     * 获取Lite Server Job模板详情
-     *
-     * 获取Lite Server Job模板详情接口用于获取指定Lite Server Job模板的详细信息。该接口适用于以下场景：当用户需要查看某个特定Job模板的详细配置，以便了解其参数设置、使用说明等信息时，可以通过此接口获取模板详情。查询操作完成后，接口将返回指定模板的详细信息，包括模板ID、名称、描述、配置参数等。若目标模板不存在，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetDevServerJobTemplateRequest 请求对象
-     * @return CompletableFuture<GetDevServerJobTemplateResponse>
-     */
-    public CompletableFuture<GetDevServerJobTemplateResponse> getDevServerJobTemplateAsync(
-        GetDevServerJobTemplateRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getDevServerJobTemplate);
-    }
-
-    /**
-     * 获取Lite Server Job模板详情
-     *
-     * 获取Lite Server Job模板详情接口用于获取指定Lite Server Job模板的详细信息。该接口适用于以下场景：当用户需要查看某个特定Job模板的详细配置，以便了解其参数设置、使用说明等信息时，可以通过此接口获取模板详情。查询操作完成后，接口将返回指定模板的详细信息，包括模板ID、名称、描述、配置参数等。若目标模板不存在，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetDevServerJobTemplateRequest 请求对象
-     * @return AsyncInvoker<GetDevServerJobTemplateRequest, GetDevServerJobTemplateResponse>
-     */
-    public AsyncInvoker<GetDevServerJobTemplateRequest, GetDevServerJobTemplateResponse> getDevServerJobTemplateAsyncInvoker(
-        GetDevServerJobTemplateRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.getDevServerJobTemplate, hcClient);
-    }
-
-    /**
-     * 查询Operation详情
-     *
-     * 查询Operation详情接口用于获取指定Operation的详细信息。该接口适用于以下场景：当用户需要了解某个Operation的具体执行情况和状态，以便进行故障排查或操作审计时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Operation详情的权限，且指定的Operation已存在。查询操作完成后，接口将返回指定Operation的详细信息，包括Operation ID、操作类型、执行状态、开始时间、结束时间、操作结果等。若用户无权限操作、指定的Operation不存在或Operation ID无效，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetDevServerOperationRequest 请求对象
-     * @return CompletableFuture<GetDevServerOperationResponse>
-     */
-    public CompletableFuture<GetDevServerOperationResponse> getDevServerOperationAsync(
-        GetDevServerOperationRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getDevServerOperation);
-    }
-
-    /**
-     * 查询Operation详情
-     *
-     * 查询Operation详情接口用于获取指定Operation的详细信息。该接口适用于以下场景：当用户需要了解某个Operation的具体执行情况和状态，以便进行故障排查或操作审计时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Operation详情的权限，且指定的Operation已存在。查询操作完成后，接口将返回指定Operation的详细信息，包括Operation ID、操作类型、执行状态、开始时间、结束时间、操作结果等。若用户无权限操作、指定的Operation不存在或Operation ID无效，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetDevServerOperationRequest 请求对象
-     * @return AsyncInvoker<GetDevServerOperationRequest, GetDevServerOperationResponse>
-     */
-    public AsyncInvoker<GetDevServerOperationRequest, GetDevServerOperationResponse> getDevServerOperationAsyncInvoker(
-        GetDevServerOperationRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.getDevServerOperation, hcClient);
-    }
-
-    /**
-     * 查询Hyper Cluster实例详情
-     *
-     * 查询Hyper Cluster实例详情接口用于获取指定Hyper Cluster实例的详细信息。该接口适用于以下场景：当用户需要了解某个超节点网络的具体配置和状态，以便进行管理和监控时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Hyper Cluster详情的权限，且指定的超节点网络已存在。查询操作完成后，接口将返回指定超节点网络的详细信息，包括ID、名称、子网信息等。若用户无权限操作、指定的超节点网络不存在或ID无效，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetHyperClusterRequest 请求对象
-     * @return CompletableFuture<GetHyperClusterResponse>
-     */
-    public CompletableFuture<GetHyperClusterResponse> getHyperClusterAsync(GetHyperClusterRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getHyperCluster);
-    }
-
-    /**
-     * 查询Hyper Cluster实例详情
-     *
-     * 查询Hyper Cluster实例详情接口用于获取指定Hyper Cluster实例的详细信息。该接口适用于以下场景：当用户需要了解某个超节点网络的具体配置和状态，以便进行管理和监控时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Hyper Cluster详情的权限，且指定的超节点网络已存在。查询操作完成后，接口将返回指定超节点网络的详细信息，包括ID、名称、子网信息等。若用户无权限操作、指定的超节点网络不存在或ID无效，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetHyperClusterRequest 请求对象
-     * @return AsyncInvoker<GetHyperClusterRequest, GetHyperClusterResponse>
-     */
-    public AsyncInvoker<GetHyperClusterRequest, GetHyperClusterResponse> getHyperClusterAsyncInvoker(
-        GetHyperClusterRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.getHyperCluster, hcClient);
-    }
-
-    /**
-     * 查询指定超节点实例详情
-     *
-     * 查询指定超节点实例详情接口用于获取特定Lite Server超节点实例的详细信息。该接口适用于以下场景：当用户需要查看某个具体超节点实例的配置、状态和使用情况时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询超节点实例的权限，且指定的超节点实例已存在。查询操作完成后，接口将返回指定超节点实例的详细信息，包括实例ID、操作系统、运行状态、资源使用情况等。若用户无权限操作、指定的超节点实例不存在或实例ID无效，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetHyperinstanceRequest 请求对象
-     * @return CompletableFuture<GetHyperinstanceResponse>
-     */
-    public CompletableFuture<GetHyperinstanceResponse> getHyperinstanceAsync(GetHyperinstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getHyperinstance);
-    }
-
-    /**
-     * 查询指定超节点实例详情
-     *
-     * 查询指定超节点实例详情接口用于获取特定Lite Server超节点实例的详细信息。该接口适用于以下场景：当用户需要查看某个具体超节点实例的配置、状态和使用情况时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询超节点实例的权限，且指定的超节点实例已存在。查询操作完成后，接口将返回指定超节点实例的详细信息，包括实例ID、操作系统、运行状态、资源使用情况等。若用户无权限操作、指定的超节点实例不存在或实例ID无效，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetHyperinstanceRequest 请求对象
-     * @return AsyncInvoker<GetHyperinstanceRequest, GetHyperinstanceResponse>
-     */
-    public AsyncInvoker<GetHyperinstanceRequest, GetHyperinstanceResponse> getHyperinstanceAsyncInvoker(
-        GetHyperinstanceRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.getHyperinstance, hcClient);
-    }
-
-    /**
-     * 查询Lite Server超节点扩缩容支持规格列表及容量测算
-     *
-     * 查询Lite Server超节点扩缩容支持规格列表及容量测算接口用于获取Lite Server超节点支持的扩缩容规格列表，并进行容量测算。该接口适用于以下场景：当用户需要了解Lite Server超节点支持的扩缩容选项，以便在调整超节点资源时选择合适的规格，并评估扩缩容后的资源需求时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询超节点扩缩容规格的权限，且指定的超节点已存在。查询操作完成后，接口将返回支持的扩缩容规格列表及容量测算结果，包括规格ID、CPU、内存、存储等详细配置和扩缩容后的资源使用情况。若用户无权限操作、指定的超节点不存在或系统中没有可用的扩缩容规格，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetScaleEvaluationsDevServerRequest 请求对象
-     * @return CompletableFuture<GetScaleEvaluationsDevServerResponse>
-     */
-    public CompletableFuture<GetScaleEvaluationsDevServerResponse> getScaleEvaluationsDevServerAsync(
-        GetScaleEvaluationsDevServerRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getScaleEvaluationsDevServer);
-    }
-
-    /**
-     * 查询Lite Server超节点扩缩容支持规格列表及容量测算
-     *
-     * 查询Lite Server超节点扩缩容支持规格列表及容量测算接口用于获取Lite Server超节点支持的扩缩容规格列表，并进行容量测算。该接口适用于以下场景：当用户需要了解Lite Server超节点支持的扩缩容选项，以便在调整超节点资源时选择合适的规格，并评估扩缩容后的资源需求时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询超节点扩缩容规格的权限，且指定的超节点已存在。查询操作完成后，接口将返回支持的扩缩容规格列表及容量测算结果，包括规格ID、CPU、内存、存储等详细配置和扩缩容后的资源使用情况。若用户无权限操作、指定的超节点不存在或系统中没有可用的扩缩容规格，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetScaleEvaluationsDevServerRequest 请求对象
-     * @return AsyncInvoker<GetScaleEvaluationsDevServerRequest, GetScaleEvaluationsDevServerResponse>
-     */
-    public AsyncInvoker<GetScaleEvaluationsDevServerRequest, GetScaleEvaluationsDevServerResponse> getScaleEvaluationsDevServerAsyncInvoker(
-        GetScaleEvaluationsDevServerRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.getScaleEvaluationsDevServer, hcClient);
-    }
-
-    /**
-     * 查询实例的Tor信息
-     *
-     * 查询实例的Tor信息接口用于获取指定实例的Top-of-Rack（Tor）交换机相关信息。该接口适用于以下场景：当用户需要了解实例连接的Tor交换机的详细信息，以便进行网络配置时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询实例Tor信息的权限，且指定的实例已存在。查询操作完成后，接口将返回指定实例的Tor信息。若用户无权限操作、指定的实例不存在或实例未连接到Tor交换机，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetTopologiesRequest 请求对象
-     * @return CompletableFuture<GetTopologiesResponse>
-     */
-    public CompletableFuture<GetTopologiesResponse> getTopologiesAsync(GetTopologiesRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getTopologies);
-    }
-
-    /**
-     * 查询实例的Tor信息
-     *
-     * 查询实例的Tor信息接口用于获取指定实例的Top-of-Rack（Tor）交换机相关信息。该接口适用于以下场景：当用户需要了解实例连接的Tor交换机的详细信息，以便进行网络配置时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询实例Tor信息的权限，且指定的实例已存在。查询操作完成后，接口将返回指定实例的Tor信息。若用户无权限操作、指定的实例不存在或实例未连接到Tor交换机，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetTopologiesRequest 请求对象
-     * @return AsyncInvoker<GetTopologiesRequest, GetTopologiesResponse>
-     */
-    public AsyncInvoker<GetTopologiesRequest, GetTopologiesResponse> getTopologiesAsyncInvoker(
-        GetTopologiesRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.getTopologies, hcClient);
-    }
-
-    /**
-     * 查询租户Lite Server列表
-     *
-     * 查询租户Lite Server列表接口用于获取指定租户的所有Lite Server实例信息。该接口适用于以下场景：当用户需要查看其租户下所有Lite Server实例的详细信息，以便进行管理和监控时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询租户Lite Server列表的权限。查询操作完成后，接口将返回租户下所有Lite Server实例的详细信息，包括实例ID、名称、状态、资源配置等。若用户无权限操作或租户下没有Lite Server实例，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAllDevServersRequest 请求对象
-     * @return CompletableFuture<ListAllDevServersResponse>
-     */
-    public CompletableFuture<ListAllDevServersResponse> listAllDevServersAsync(ListAllDevServersRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listAllDevServers);
-    }
-
-    /**
-     * 查询租户Lite Server列表
-     *
-     * 查询租户Lite Server列表接口用于获取指定租户的所有Lite Server实例信息。该接口适用于以下场景：当用户需要查看其租户下所有Lite Server实例的详细信息，以便进行管理和监控时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询租户Lite Server列表的权限。查询操作完成后，接口将返回租户下所有Lite Server实例的详细信息，包括实例ID、名称、状态、资源配置等。若用户无权限操作或租户下没有Lite Server实例，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAllDevServersRequest 请求对象
-     * @return AsyncInvoker<ListAllDevServersRequest, ListAllDevServersResponse>
-     */
-    public AsyncInvoker<ListAllDevServersRequest, ListAllDevServersResponse> listAllDevServersAsyncInvoker(
-        ListAllDevServersRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.listAllDevServers, hcClient);
-    }
-
-    /**
-     * 查询租户Hyperinstance列表
-     *
-     * 查询租户Hyperinstance列表接口用于获取指定租户的所有Hyperinstance实例信息。该接口适用于以下场景：当用户需要查看其租户下所有Hyperinstance实例的详细信息，以便进行管理和监控时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询租户Hyperinstance列表的权限。查询操作完成后，接口将返回租户下所有Hyperinstance实例的详细信息，包括实例ID、名称、状态、资源配置等。若用户无权限操作或租户下没有Hyperinstance实例，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAllHyperinstancesRequest 请求对象
-     * @return CompletableFuture<ListAllHyperinstancesResponse>
-     */
-    public CompletableFuture<ListAllHyperinstancesResponse> listAllHyperinstancesAsync(
-        ListAllHyperinstancesRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listAllHyperinstances);
-    }
-
-    /**
-     * 查询租户Hyperinstance列表
-     *
-     * 查询租户Hyperinstance列表接口用于获取指定租户的所有Hyperinstance实例信息。该接口适用于以下场景：当用户需要查看其租户下所有Hyperinstance实例的详细信息，以便进行管理和监控时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询租户Hyperinstance列表的权限。查询操作完成后，接口将返回租户下所有Hyperinstance实例的详细信息，包括实例ID、名称、状态、资源配置等。若用户无权限操作或租户下没有Hyperinstance实例，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAllHyperinstancesRequest 请求对象
-     * @return AsyncInvoker<ListAllHyperinstancesRequest, ListAllHyperinstancesResponse>
-     */
-    public AsyncInvoker<ListAllHyperinstancesRequest, ListAllHyperinstancesResponse> listAllHyperinstancesAsyncInvoker(
-        ListAllHyperinstancesRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.listAllHyperinstances, hcClient);
-    }
-
-    /**
-     * 查询规格列表
-     *
-     * 查询规格列表接口用于获取系统中所有可用的资源规格信息。该接口适用于以下场景：当用户需要了解可用的资源规格，以便在创建或调整Lite Server实例时选择合适的配置时，可以通过此接口获取规格列表。使用该接口的前提条件是用户已登录并具有查询规格的权限。查询操作完成后，接口将返回所有可用的资源规格信息，包括规格ID、CPU、内存、存储等详细配置。若用户无权限操作或系统中没有可用的资源规格，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDevServerFlavorsRequest 请求对象
-     * @return CompletableFuture<ListDevServerFlavorsResponse>
-     */
-    public CompletableFuture<ListDevServerFlavorsResponse> listDevServerFlavorsAsync(
-        ListDevServerFlavorsRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listDevServerFlavors);
-    }
-
-    /**
-     * 查询规格列表
-     *
-     * 查询规格列表接口用于获取系统中所有可用的资源规格信息。该接口适用于以下场景：当用户需要了解可用的资源规格，以便在创建或调整Lite Server实例时选择合适的配置时，可以通过此接口获取规格列表。使用该接口的前提条件是用户已登录并具有查询规格的权限。查询操作完成后，接口将返回所有可用的资源规格信息，包括规格ID、CPU、内存、存储等详细配置。若用户无权限操作或系统中没有可用的资源规格，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDevServerFlavorsRequest 请求对象
-     * @return AsyncInvoker<ListDevServerFlavorsRequest, ListDevServerFlavorsResponse>
-     */
-    public AsyncInvoker<ListDevServerFlavorsRequest, ListDevServerFlavorsResponse> listDevServerFlavorsAsyncInvoker(
-        ListDevServerFlavorsRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.listDevServerFlavors, hcClient);
-    }
-
-    /**
-     * 查询Lite Server镜像列表
-     *
-     * 查询Lite Server镜像列表接口用于获取系统中所有可用的Lite Server镜像信息。该接口适用于以下场景：当用户需要了解可用的Lite Server镜像，以便在创建或调整Lite Server实例时选择合适的镜像时，可以通过此接口获取镜像列表。使用该接口的前提条件是用户已登录并具有查询镜像列表的权限。查询操作完成后，接口将返回所有可用的Lite Server镜像信息，包括镜像ID、名称、架构类型等。若用户无权限操作或系统中没有可用的镜像，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDevServerImagesRequest 请求对象
-     * @return CompletableFuture<ListDevServerImagesResponse>
-     */
-    public CompletableFuture<ListDevServerImagesResponse> listDevServerImagesAsync(ListDevServerImagesRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listDevServerImages);
-    }
-
-    /**
-     * 查询Lite Server镜像列表
-     *
-     * 查询Lite Server镜像列表接口用于获取系统中所有可用的Lite Server镜像信息。该接口适用于以下场景：当用户需要了解可用的Lite Server镜像，以便在创建或调整Lite Server实例时选择合适的镜像时，可以通过此接口获取镜像列表。使用该接口的前提条件是用户已登录并具有查询镜像列表的权限。查询操作完成后，接口将返回所有可用的Lite Server镜像信息，包括镜像ID、名称、架构类型等。若用户无权限操作或系统中没有可用的镜像，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDevServerImagesRequest 请求对象
-     * @return AsyncInvoker<ListDevServerImagesRequest, ListDevServerImagesResponse>
-     */
-    public AsyncInvoker<ListDevServerImagesRequest, ListDevServerImagesResponse> listDevServerImagesAsyncInvoker(
-        ListDevServerImagesRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.listDevServerImages, hcClient);
-    }
-
-    /**
-     * 获取Lite Server Job模板列表
-     *
-     * 获取Lite Server Job模板列表接口用于获取可用的Lite Server Job模板列表。该接口适用于以下场景：当用户需要查看可用的Job模板，以便选择合适的模板来创建新的Lite Server任务时，可以通过此接口获取模板列表。查询操作完成后，接口将返回所有可用的Lite Server Job模板列表，包括模板ID、名称、描述等信息。若系统中无可用模板，接口将返回相应的信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDevServerJobTemplatesRequest 请求对象
-     * @return CompletableFuture<ListDevServerJobTemplatesResponse>
-     */
-    public CompletableFuture<ListDevServerJobTemplatesResponse> listDevServerJobTemplatesAsync(
-        ListDevServerJobTemplatesRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listDevServerJobTemplates);
-    }
-
-    /**
-     * 获取Lite Server Job模板列表
-     *
-     * 获取Lite Server Job模板列表接口用于获取可用的Lite Server Job模板列表。该接口适用于以下场景：当用户需要查看可用的Job模板，以便选择合适的模板来创建新的Lite Server任务时，可以通过此接口获取模板列表。查询操作完成后，接口将返回所有可用的Lite Server Job模板列表，包括模板ID、名称、描述等信息。若系统中无可用模板，接口将返回相应的信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDevServerJobTemplatesRequest 请求对象
-     * @return AsyncInvoker<ListDevServerJobTemplatesRequest, ListDevServerJobTemplatesResponse>
-     */
-    public AsyncInvoker<ListDevServerJobTemplatesRequest, ListDevServerJobTemplatesResponse> listDevServerJobTemplatesAsyncInvoker(
-        ListDevServerJobTemplatesRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.listDevServerJobTemplates, hcClient);
-    }
-
-    /**
-     * 查询Lite Server Job列表
-     *
-     * 查询Lite Server Job列表接口用于获取Lite Server Job的列表信息，并支持按照状态、ID等相关字段进行过滤。该接口适用于以下场景：当用户需要查看多个Lite Server Job的概要信息，例如在监控作业状态、排查问题或进行日常管理时，可以通过此接口获取符合过滤条件的Job列表。使用该接口的前提条件是用户具有查看权限。查询操作完成后，接口将返回符合条件的Lite Server Job列表，包括每个Job的ID、状态、创建时间等基本信息。若用户无权限操作或请求参数不正确，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDevServerJobsRequest 请求对象
-     * @return CompletableFuture<ListDevServerJobsResponse>
-     */
-    public CompletableFuture<ListDevServerJobsResponse> listDevServerJobsAsync(ListDevServerJobsRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listDevServerJobs);
-    }
-
-    /**
-     * 查询Lite Server Job列表
-     *
-     * 查询Lite Server Job列表接口用于获取Lite Server Job的列表信息，并支持按照状态、ID等相关字段进行过滤。该接口适用于以下场景：当用户需要查看多个Lite Server Job的概要信息，例如在监控作业状态、排查问题或进行日常管理时，可以通过此接口获取符合过滤条件的Job列表。使用该接口的前提条件是用户具有查看权限。查询操作完成后，接口将返回符合条件的Lite Server Job列表，包括每个Job的ID、状态、创建时间等基本信息。若用户无权限操作或请求参数不正确，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDevServerJobsRequest 请求对象
-     * @return AsyncInvoker<ListDevServerJobsRequest, ListDevServerJobsResponse>
-     */
-    public AsyncInvoker<ListDevServerJobsRequest, ListDevServerJobsResponse> listDevServerJobsAsyncInvoker(
-        ListDevServerJobsRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.listDevServerJobs, hcClient);
-    }
-
-    /**
-     * 查询已绑定的EIP
-     *
-     * 查询已绑定的EIP接口用于获取已绑定到Lite Server服务器上的弹性公网IP（EIP）信息。该接口适用于以下场景：当用户需要查看Lite Server服务器上已绑定的EIP及其详细信息时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询EIP的权限，且指定的Lite Server服务器已存在。查询操作完成后，接口将返回已绑定到Lite Server服务器上的EIP的详细信息，包括EIP地址、绑定时间、状态等。若Lite Server服务器不存在、未绑定EIP或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDevServerPublicIPRequest 请求对象
-     * @return CompletableFuture<ListDevServerPublicIPResponse>
-     */
-    public CompletableFuture<ListDevServerPublicIPResponse> listDevServerPublicIPAsync(
-        ListDevServerPublicIPRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listDevServerPublicIP);
-    }
-
-    /**
-     * 查询已绑定的EIP
-     *
-     * 查询已绑定的EIP接口用于获取已绑定到Lite Server服务器上的弹性公网IP（EIP）信息。该接口适用于以下场景：当用户需要查看Lite Server服务器上已绑定的EIP及其详细信息时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询EIP的权限，且指定的Lite Server服务器已存在。查询操作完成后，接口将返回已绑定到Lite Server服务器上的EIP的详细信息，包括EIP地址、绑定时间、状态等。若Lite Server服务器不存在、未绑定EIP或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDevServerPublicIPRequest 请求对象
-     * @return AsyncInvoker<ListDevServerPublicIPRequest, ListDevServerPublicIPResponse>
-     */
-    public AsyncInvoker<ListDevServerPublicIPRequest, ListDevServerPublicIPResponse> listDevServerPublicIPAsyncInvoker(
-        ListDevServerPublicIPRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.listDevServerPublicIP, hcClient);
-    }
-
-    /**
-     * 查询用户所有Lite Server实例列表
-     *
-     * 查询用户所有Lite Server实例列表接口用于获取用户名下所有Lite Server实例的详细信息。该接口适用于以下场景：用户需要查看其所有Lite Server实例的状态、配置等信息，以便进行资源管理和监控。使用该接口的前提条件是用户已登录且具有查看Lite Server实例的权限。调用此接口后，系统将返回用户名下所有Lite Server实例的列表，包括实例ID、名称、状态、创建时间等信息。若用户无权限或未登录，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDevServersRequest 请求对象
-     * @return CompletableFuture<ListDevServersResponse>
-     */
-    public CompletableFuture<ListDevServersResponse> listDevServersAsync(ListDevServersRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listDevServers);
-    }
-
-    /**
-     * 查询用户所有Lite Server实例列表
-     *
-     * 查询用户所有Lite Server实例列表接口用于获取用户名下所有Lite Server实例的详细信息。该接口适用于以下场景：用户需要查看其所有Lite Server实例的状态、配置等信息，以便进行资源管理和监控。使用该接口的前提条件是用户已登录且具有查看Lite Server实例的权限。调用此接口后，系统将返回用户名下所有Lite Server实例的列表，包括实例ID、名称、状态、创建时间等信息。若用户无权限或未登录，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDevServersRequest 请求对象
-     * @return AsyncInvoker<ListDevServersRequest, ListDevServersResponse>
-     */
-    public AsyncInvoker<ListDevServersRequest, ListDevServersResponse> listDevServersAsyncInvoker(
-        ListDevServersRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.listDevServers, hcClient);
-    }
-
-    /**
-     * 查询Hyper Cluster详情列表
-     *
-     * 查询Hyper Cluster详情列表接口用于获取所有Hyper Cluster的详细信息。该接口适用于以下场景：当用户需要了解系统中所有超节点网络的配置和状态时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Hyper Cluster详情的权限。查询操作完成后，接口将返回所有超节点网络的详细信息，包括ID、名称、子网信息等。若用户无权限操作或系统中没有Hyper Cluster，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListHyperClusterRequest 请求对象
-     * @return CompletableFuture<ListHyperClusterResponse>
-     */
-    public CompletableFuture<ListHyperClusterResponse> listHyperClusterAsync(ListHyperClusterRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listHyperCluster);
-    }
-
-    /**
-     * 查询Hyper Cluster详情列表
-     *
-     * 查询Hyper Cluster详情列表接口用于获取所有Hyper Cluster的详细信息。该接口适用于以下场景：当用户需要了解系统中所有超节点网络的配置和状态时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Hyper Cluster详情的权限。查询操作完成后，接口将返回所有超节点网络的详细信息，包括ID、名称、子网信息等。若用户无权限操作或系统中没有Hyper Cluster，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListHyperClusterRequest 请求对象
-     * @return AsyncInvoker<ListHyperClusterRequest, ListHyperClusterResponse>
-     */
-    public AsyncInvoker<ListHyperClusterRequest, ListHyperClusterResponse> listHyperClusterAsyncInvoker(
-        ListHyperClusterRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.listHyperCluster, hcClient);
-    }
-
-    /**
-     * 查询超节点hyperinstance-clusters逻辑容量测算结果
-     *
-     * 查询超节点hyperinstance-clusters逻辑容量测算结果接口用于获取指定超节点集群的逻辑容量测算结果。该接口适用于以下场景：当用户需要了解超节点集群的资源使用情况和容量规划，以便进行资源管理和优化时，可以通过此接口获取逻辑容量测算结果。使用该接口的前提条件是用户已登录并具有查询超节点集群逻辑容量的权限，且指定的超节点集群已存在。查询操作完成后，接口将返回指定超节点集群的逻辑容量测算结果，包括可用容量信息。若用户无权限操作、指定的超节点集群不存在或集群ID无效，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListHyperinstanceClustersCapacityRequest 请求对象
-     * @return CompletableFuture<ListHyperinstanceClustersCapacityResponse>
-     */
-    public CompletableFuture<ListHyperinstanceClustersCapacityResponse> listHyperinstanceClustersCapacityAsync(
-        ListHyperinstanceClustersCapacityRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listHyperinstanceClustersCapacity);
-    }
-
-    /**
-     * 查询超节点hyperinstance-clusters逻辑容量测算结果
-     *
-     * 查询超节点hyperinstance-clusters逻辑容量测算结果接口用于获取指定超节点集群的逻辑容量测算结果。该接口适用于以下场景：当用户需要了解超节点集群的资源使用情况和容量规划，以便进行资源管理和优化时，可以通过此接口获取逻辑容量测算结果。使用该接口的前提条件是用户已登录并具有查询超节点集群逻辑容量的权限，且指定的超节点集群已存在。查询操作完成后，接口将返回指定超节点集群的逻辑容量测算结果，包括可用容量信息。若用户无权限操作、指定的超节点集群不存在或集群ID无效，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListHyperinstanceClustersCapacityRequest 请求对象
-     * @return AsyncInvoker<ListHyperinstanceClustersCapacityRequest, ListHyperinstanceClustersCapacityResponse>
-     */
-    public AsyncInvoker<ListHyperinstanceClustersCapacityRequest, ListHyperinstanceClustersCapacityResponse> listHyperinstanceClustersCapacityAsyncInvoker(
-        ListHyperinstanceClustersCapacityRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.listHyperinstanceClustersCapacity, hcClient);
-    }
-
-    /**
-     * 查询用户所有超节点实例详情
-     *
-     * 查询用户所有超节点实例详情接口用于获取用户所有Lite Server超节点实例的详细信息。该接口适用于以下场景：当用户需要查看其所有超节点实例的配置、状态和使用情况时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询超节点实例的权限。查询操作完成后，接口将返回所有超节点实例的详细信息，包括实例ID、操作系统、运行状态、资源使用情况等。若用户无权限操作或没有超节点实例，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListHyperinstancesRequest 请求对象
-     * @return CompletableFuture<ListHyperinstancesResponse>
-     */
-    public CompletableFuture<ListHyperinstancesResponse> listHyperinstancesAsync(ListHyperinstancesRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listHyperinstances);
-    }
-
-    /**
-     * 查询用户所有超节点实例详情
-     *
-     * 查询用户所有超节点实例详情接口用于获取用户所有Lite Server超节点实例的详细信息。该接口适用于以下场景：当用户需要查看其所有超节点实例的配置、状态和使用情况时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询超节点实例的权限。查询操作完成后，接口将返回所有超节点实例的详细信息，包括实例ID、操作系统、运行状态、资源使用情况等。若用户无权限操作或没有超节点实例，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListHyperinstancesRequest 请求对象
-     * @return AsyncInvoker<ListHyperinstancesRequest, ListHyperinstancesResponse>
-     */
-    public AsyncInvoker<ListHyperinstancesRequest, ListHyperinstancesResponse> listHyperinstancesAsyncInvoker(
-        ListHyperinstancesRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.listHyperinstances, hcClient);
-    }
-
-    /**
-     * 查询Lite Server超节点标签
-     *
-     * 查询Lite Server超节点标签接口用于获取Lite Server超节点上的所有标签信息。该接口适用于以下场景：当用户需要查看或管理Lite Server超节点的标签时，可以通过此接口查询指定超节点上的所有标签。使用该接口的前提条件是Lite Server超节点已存在，用户具有查询标签的权限。查询操作完成后，接口将返回超节点上的所有标签信息，包括标签名称和相关属性。若Lite Server超节点不存在或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request QueryHyperinstanceTagsRequest 请求对象
-     * @return CompletableFuture<QueryHyperinstanceTagsResponse>
-     */
-    public CompletableFuture<QueryHyperinstanceTagsResponse> queryHyperinstanceTagsAsync(
-        QueryHyperinstanceTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.queryHyperinstanceTags);
-    }
-
-    /**
-     * 查询Lite Server超节点标签
-     *
-     * 查询Lite Server超节点标签接口用于获取Lite Server超节点上的所有标签信息。该接口适用于以下场景：当用户需要查看或管理Lite Server超节点的标签时，可以通过此接口查询指定超节点上的所有标签。使用该接口的前提条件是Lite Server超节点已存在，用户具有查询标签的权限。查询操作完成后，接口将返回超节点上的所有标签信息，包括标签名称和相关属性。若Lite Server超节点不存在或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request QueryHyperinstanceTagsRequest 请求对象
-     * @return AsyncInvoker<QueryHyperinstanceTagsRequest, QueryHyperinstanceTagsResponse>
-     */
-    public AsyncInvoker<QueryHyperinstanceTagsRequest, QueryHyperinstanceTagsResponse> queryHyperinstanceTagsAsyncInvoker(
-        QueryHyperinstanceTagsRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.queryHyperinstanceTags, hcClient);
-    }
-
-    /**
-     * 重启Lite Server实例
-     *
-     * 重启Lite Server实例接口用于重启正在运行的Lite Server实例。该接口适用于以下场景：当用户需要重启实例以应用配置更改、解决运行问题或进行系统维护时，可以通过此接口重启指定的Lite Server实例。使用该接口的前提条件是Lite Server实例已创建且处于运行状态，用户具有重启实例的权限。重启操作完成后，Lite Server实例将重新启动并进入运行状态，用户可以继续使用实例提供的服务。若Lite Server实例不存在、已处于停止状态或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RebootDevServerRequest 请求对象
-     * @return CompletableFuture<RebootDevServerResponse>
-     */
-    public CompletableFuture<RebootDevServerResponse> rebootDevServerAsync(RebootDevServerRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.rebootDevServer);
-    }
-
-    /**
-     * 重启Lite Server实例
-     *
-     * 重启Lite Server实例接口用于重启正在运行的Lite Server实例。该接口适用于以下场景：当用户需要重启实例以应用配置更改、解决运行问题或进行系统维护时，可以通过此接口重启指定的Lite Server实例。使用该接口的前提条件是Lite Server实例已创建且处于运行状态，用户具有重启实例的权限。重启操作完成后，Lite Server实例将重新启动并进入运行状态，用户可以继续使用实例提供的服务。若Lite Server实例不存在、已处于停止状态或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RebootDevServerRequest 请求对象
-     * @return AsyncInvoker<RebootDevServerRequest, RebootDevServerResponse>
-     */
-    public AsyncInvoker<RebootDevServerRequest, RebootDevServerResponse> rebootDevServerAsyncInvoker(
-        RebootDevServerRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.rebootDevServer, hcClient);
-    }
-
-    /**
-     * 重装Lite Server服务器操作系统镜像
-     *
-     * 重装Lite Server服务器操作系统镜像接口用于重新安装Lite Server服务器的操作系统镜像。该接口适用于以下场景：当用户需要更新操作系统版本、修复系统故障或重新配置系统环境时，可以通过此接口重装指定的Lite Server服务器操作系统镜像。使用该接口的前提条件是Lite Server服务器已存在且处于停止状态，用户具有重装操作系统的权限。重装操作完成后，Lite Server服务器将安装新的操作系统镜像，并重新进入运行状态，若Lite Server服务器不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ReinstallDevServerOSRequest 请求对象
-     * @return CompletableFuture<ReinstallDevServerOSResponse>
-     */
-    public CompletableFuture<ReinstallDevServerOSResponse> reinstallDevServerOSAsync(
-        ReinstallDevServerOSRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.reinstallDevServerOS);
-    }
-
-    /**
-     * 重装Lite Server服务器操作系统镜像
-     *
-     * 重装Lite Server服务器操作系统镜像接口用于重新安装Lite Server服务器的操作系统镜像。该接口适用于以下场景：当用户需要更新操作系统版本、修复系统故障或重新配置系统环境时，可以通过此接口重装指定的Lite Server服务器操作系统镜像。使用该接口的前提条件是Lite Server服务器已存在且处于停止状态，用户具有重装操作系统的权限。重装操作完成后，Lite Server服务器将安装新的操作系统镜像，并重新进入运行状态，若Lite Server服务器不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ReinstallDevServerOSRequest 请求对象
-     * @return AsyncInvoker<ReinstallDevServerOSRequest, ReinstallDevServerOSResponse>
-     */
-    public AsyncInvoker<ReinstallDevServerOSRequest, ReinstallDevServerOSResponse> reinstallDevServerOSAsyncInvoker(
-        ReinstallDevServerOSRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.reinstallDevServerOS, hcClient);
-    }
-
-    /**
-     * 缩容Lite Server超节点
-     *
-     * 缩容Lite Server超节点接口用于减少Lite Server超节点的资源容量。该接口适用于以下场景：当用户需要降低Lite Server超节点的资源使用，以节省成本或优化资源分配时，可以通过此接口进行缩容。使用该接口的前提条件是用户已登录并具有缩容超节点的权限，且指定的超节点已存在且处于运行状态。缩容操作完成后，超节点的资源容量将根据指定的规格进行调整，用户可以立即使用减少后的资源。若用户无权限操作、指定的超节点不存在、超节点已处于最小容量或指定的缩容规格无效，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ScaleDownHyperinstanceRequest 请求对象
-     * @return CompletableFuture<ScaleDownHyperinstanceResponse>
-     */
-    public CompletableFuture<ScaleDownHyperinstanceResponse> scaleDownHyperinstanceAsync(
-        ScaleDownHyperinstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.scaleDownHyperinstance);
-    }
-
-    /**
-     * 缩容Lite Server超节点
-     *
-     * 缩容Lite Server超节点接口用于减少Lite Server超节点的资源容量。该接口适用于以下场景：当用户需要降低Lite Server超节点的资源使用，以节省成本或优化资源分配时，可以通过此接口进行缩容。使用该接口的前提条件是用户已登录并具有缩容超节点的权限，且指定的超节点已存在且处于运行状态。缩容操作完成后，超节点的资源容量将根据指定的规格进行调整，用户可以立即使用减少后的资源。若用户无权限操作、指定的超节点不存在、超节点已处于最小容量或指定的缩容规格无效，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ScaleDownHyperinstanceRequest 请求对象
-     * @return AsyncInvoker<ScaleDownHyperinstanceRequest, ScaleDownHyperinstanceResponse>
-     */
-    public AsyncInvoker<ScaleDownHyperinstanceRequest, ScaleDownHyperinstanceResponse> scaleDownHyperinstanceAsyncInvoker(
-        ScaleDownHyperinstanceRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.scaleDownHyperinstance, hcClient);
-    }
-
-    /**
-     * 扩容Lite Server超节点
-     *
-     * 扩容Lite Server超节点接口用于增加Lite Server超节点的资源容量。该接口适用于以下场景：当用户需要提升Lite Server超节点的性能，以支持更多的负载或更大的数据处理需求时，可以通过此接口进行扩容。使用该接口的前提条件是用户已登录并具有扩容超节点的权限，且指定的超节点已存在且处于运行状态。扩容操作完成后，超节点的资源容量将根据指定的规格进行调整，用户可以立即使用增加的资源。若用户无权限操作、指定的超节点不存在、超节点已处于最大容量或指定的扩容规格无效，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ScaleUpHyperinstanceRequest 请求对象
-     * @return CompletableFuture<ScaleUpHyperinstanceResponse>
-     */
-    public CompletableFuture<ScaleUpHyperinstanceResponse> scaleUpHyperinstanceAsync(
-        ScaleUpHyperinstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.scaleUpHyperinstance);
-    }
-
-    /**
-     * 扩容Lite Server超节点
-     *
-     * 扩容Lite Server超节点接口用于增加Lite Server超节点的资源容量。该接口适用于以下场景：当用户需要提升Lite Server超节点的性能，以支持更多的负载或更大的数据处理需求时，可以通过此接口进行扩容。使用该接口的前提条件是用户已登录并具有扩容超节点的权限，且指定的超节点已存在且处于运行状态。扩容操作完成后，超节点的资源容量将根据指定的规格进行调整，用户可以立即使用增加的资源。若用户无权限操作、指定的超节点不存在、超节点已处于最大容量或指定的扩容规格无效，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ScaleUpHyperinstanceRequest 请求对象
-     * @return AsyncInvoker<ScaleUpHyperinstanceRequest, ScaleUpHyperinstanceResponse>
-     */
-    public AsyncInvoker<ScaleUpHyperinstanceRequest, ScaleUpHyperinstanceResponse> scaleUpHyperinstanceAsyncInvoker(
-        ScaleUpHyperinstanceRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.scaleUpHyperinstance, hcClient);
-    }
-
-    /**
-     * 查询Lite Server实例详情
-     *
-     * 查询Lite Server实例详情接口用于获取指定Lite Server实例的详细信息。该接口适用于以下场景：用户需要查看特定Lite Server实例的配置、状态、网络信息等详细数据，以便进行故障排查、资源管理和监控。使用该接口的前提条件是用户已登录且具有查看Lite Server实例的权限，并且需要提供有效的实例ID。查询操作完成后，系统将返回指定Lite Server实例的详细信息，包括实例ID、名称、状态、配置、网络配置等。若用户无权限、实例ID无效或实例不存在，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowDevServerRequest 请求对象
-     * @return CompletableFuture<ShowDevServerResponse>
-     */
-    public CompletableFuture<ShowDevServerResponse> showDevServerAsync(ShowDevServerRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showDevServer);
-    }
-
-    /**
-     * 查询Lite Server实例详情
-     *
-     * 查询Lite Server实例详情接口用于获取指定Lite Server实例的详细信息。该接口适用于以下场景：用户需要查看特定Lite Server实例的配置、状态、网络信息等详细数据，以便进行故障排查、资源管理和监控。使用该接口的前提条件是用户已登录且具有查看Lite Server实例的权限，并且需要提供有效的实例ID。查询操作完成后，系统将返回指定Lite Server实例的详细信息，包括实例ID、名称、状态、配置、网络配置等。若用户无权限、实例ID无效或实例不存在，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowDevServerRequest 请求对象
-     * @return AsyncInvoker<ShowDevServerRequest, ShowDevServerResponse>
-     */
-    public AsyncInvoker<ShowDevServerRequest, ShowDevServerResponse> showDevServerAsyncInvoker(
-        ShowDevServerRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.showDevServer, hcClient);
-    }
-
-    /**
-     * 启动Lite Server实例
-     *
-     * 启动Lite Server实例接口用于启动已创建但未运行的Lite Server实例。该接口适用于以下场景：当用户需要开始使用Lite Server实例进行开发或测试时，可以通过此接口启动指定的Lite Server实例。使用该接口的前提条件是Lite Server实例已创建且处于停止状态，用户具有启动实例的权限。若Lite Server实例不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request StartDevServerRequest 请求对象
-     * @return CompletableFuture<StartDevServerResponse>
-     */
-    public CompletableFuture<StartDevServerResponse> startDevServerAsync(StartDevServerRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.startDevServer);
-    }
-
-    /**
-     * 启动Lite Server实例
-     *
-     * 启动Lite Server实例接口用于启动已创建但未运行的Lite Server实例。该接口适用于以下场景：当用户需要开始使用Lite Server实例进行开发或测试时，可以通过此接口启动指定的Lite Server实例。使用该接口的前提条件是Lite Server实例已创建且处于停止状态，用户具有启动实例的权限。若Lite Server实例不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request StartDevServerRequest 请求对象
-     * @return AsyncInvoker<StartDevServerRequest, StartDevServerResponse>
-     */
-    public AsyncInvoker<StartDevServerRequest, StartDevServerResponse> startDevServerAsyncInvoker(
-        StartDevServerRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.startDevServer, hcClient);
-    }
-
-    /**
-     * 启动Lite Server超节点服务器
-     *
-     * 启动Lite Server超节点服务器接口用于启动已创建但未运行的Lite Server超节点服务器。该接口适用于以下场景：当用户需要开始使用Lite Server超节点服务器进行开发或测试时，可以通过此接口启动指定的超节点服务器。使用该接口的前提条件是Lite Server超节点服务器已创建且处于停止状态，用户具有启动超节点服务器的权限。启动操作完成后，超节点服务器将进入运行状态，用户可以访问和使用服务器提供的服务。若Lite Server超节点服务器不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request StartHyperinstanceRequest 请求对象
-     * @return CompletableFuture<StartHyperinstanceResponse>
-     */
-    public CompletableFuture<StartHyperinstanceResponse> startHyperinstanceAsync(StartHyperinstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.startHyperinstance);
-    }
-
-    /**
-     * 启动Lite Server超节点服务器
-     *
-     * 启动Lite Server超节点服务器接口用于启动已创建但未运行的Lite Server超节点服务器。该接口适用于以下场景：当用户需要开始使用Lite Server超节点服务器进行开发或测试时，可以通过此接口启动指定的超节点服务器。使用该接口的前提条件是Lite Server超节点服务器已创建且处于停止状态，用户具有启动超节点服务器的权限。启动操作完成后，超节点服务器将进入运行状态，用户可以访问和使用服务器提供的服务。若Lite Server超节点服务器不存在、已处于运行状态或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request StartHyperinstanceRequest 请求对象
-     * @return AsyncInvoker<StartHyperinstanceRequest, StartHyperinstanceResponse>
-     */
-    public AsyncInvoker<StartHyperinstanceRequest, StartHyperinstanceResponse> startHyperinstanceAsyncInvoker(
-        StartHyperinstanceRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.startHyperinstance, hcClient);
-    }
-
-    /**
-     * 停止Lite Server实例
-     *
-     * 停止Lite Server实例接口用于停止正在运行的Lite Server实例。该接口适用于以下场景：当用户需要停止Lite Server实例，以节省资源或进行维护时，可以通过此接口停止指定的Lite Server实例。使用该接口的前提条件是Lite Server实例已创建且处于运行状态，用户具有停止实例的权限。若Lite Server实例不存在、已处于停止状态或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request StopDevServerRequest 请求对象
-     * @return CompletableFuture<StopDevServerResponse>
-     */
-    public CompletableFuture<StopDevServerResponse> stopDevServerAsync(StopDevServerRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.stopDevServer);
-    }
-
-    /**
-     * 停止Lite Server实例
-     *
-     * 停止Lite Server实例接口用于停止正在运行的Lite Server实例。该接口适用于以下场景：当用户需要停止Lite Server实例，以节省资源或进行维护时，可以通过此接口停止指定的Lite Server实例。使用该接口的前提条件是Lite Server实例已创建且处于运行状态，用户具有停止实例的权限。若Lite Server实例不存在、已处于停止状态或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request StopDevServerRequest 请求对象
-     * @return AsyncInvoker<StopDevServerRequest, StopDevServerResponse>
-     */
-    public AsyncInvoker<StopDevServerRequest, StopDevServerResponse> stopDevServerAsyncInvoker(
-        StopDevServerRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.stopDevServer, hcClient);
-    }
-
-    /**
-     * 停止Lite Server超节点服务器
-     *
-     * 停止Lite Server超节点服务器接口用于停止正在运行的Lite Server超节点服务器。该接口适用于以下场景：当用户需要暂停使用Lite Server超节点服务器，以节省资源或进行维护时，可以通过此接口停止指定的超节点服务器。使用该接口的前提条件是Lite Server超节点服务器已创建且处于运行状态或者停止失败状态，用户具有停止超节点服务器的权限。停止操作完成后，超节点服务器将进入停止状态，不再提供服务。若Lite Server超节点服务器不存在、已处于停止状态或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request StopHyperinstanceRequest 请求对象
-     * @return CompletableFuture<StopHyperinstanceResponse>
-     */
-    public CompletableFuture<StopHyperinstanceResponse> stopHyperinstanceAsync(StopHyperinstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.stopHyperinstance);
-    }
-
-    /**
-     * 停止Lite Server超节点服务器
-     *
-     * 停止Lite Server超节点服务器接口用于停止正在运行的Lite Server超节点服务器。该接口适用于以下场景：当用户需要暂停使用Lite Server超节点服务器，以节省资源或进行维护时，可以通过此接口停止指定的超节点服务器。使用该接口的前提条件是Lite Server超节点服务器已创建且处于运行状态或者停止失败状态，用户具有停止超节点服务器的权限。停止操作完成后，超节点服务器将进入停止状态，不再提供服务。若Lite Server超节点服务器不存在、已处于停止状态或用户无权限操作，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request StopHyperinstanceRequest 请求对象
-     * @return AsyncInvoker<StopHyperinstanceRequest, StopHyperinstanceResponse>
-     */
-    public AsyncInvoker<StopHyperinstanceRequest, StopHyperinstanceResponse> stopHyperinstanceAsyncInvoker(
-        StopHyperinstanceRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.stopHyperinstance, hcClient);
-    }
-
-    /**
-     * 实时同步用户指定Lite Server实例状态
-     *
-     * 实时同步用户Lite Server实例状态接口用于实时获取并同步用户Lite Server实例的当前状态。该接口适用于以下场景：用户需要实时监控其Lite Server实例的运行状态，确保实例正常运行或及时发现并处理异常情况。使用该接口的前提条件是用户已登录并具有相应的权限，且Lite Server实例已创建并处于运行状态。接口调用成功后，将返回Lite Server实例的最新状态信息，包括但不限于实例ID、运行状态、资源使用情况等。若用户无权限操作或Lite Server实例不存在，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SyncDevServersRequest 请求对象
-     * @return CompletableFuture<SyncDevServersResponse>
-     */
-    public CompletableFuture<SyncDevServersResponse> syncDevServersAsync(SyncDevServersRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.syncDevServers);
-    }
-
-    /**
-     * 实时同步用户指定Lite Server实例状态
-     *
-     * 实时同步用户Lite Server实例状态接口用于实时获取并同步用户Lite Server实例的当前状态。该接口适用于以下场景：用户需要实时监控其Lite Server实例的运行状态，确保实例正常运行或及时发现并处理异常情况。使用该接口的前提条件是用户已登录并具有相应的权限，且Lite Server实例已创建并处于运行状态。接口调用成功后，将返回Lite Server实例的最新状态信息，包括但不限于实例ID、运行状态、资源使用情况等。若用户无权限操作或Lite Server实例不存在，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SyncDevServersRequest 请求对象
-     * @return AsyncInvoker<SyncDevServersRequest, SyncDevServersResponse>
-     */
-    public AsyncInvoker<SyncDevServersRequest, SyncDevServersResponse> syncDevServersAsyncInvoker(
-        SyncDevServersRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.syncDevServers, hcClient);
-    }
-
-    /**
-     * 修改Lite Server实例名称
-     *
-     * 修改DevServer实例名称接口用于更改已创建的DevServer实例的名称。该接口适用于以下场景：当用户需要对DevServer实例进行重命名以更好地反映实例的功能或用途时，或者在实例名称不再符合当前项目命名规范时进行更新。使用该接口的前提条件是DevServer实例已存在且用户具有对该实例的管理权限。修改操作完成后，实例的新名称将立即生效，并在所有相关视图和记录中更新。若DevServer实例不存在、用户无权限操作或新名称不符合命名规则，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateDevServerRequest 请求对象
-     * @return CompletableFuture<UpdateDevServerResponse>
-     */
-    public CompletableFuture<UpdateDevServerResponse> updateDevServerAsync(UpdateDevServerRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.updateDevServer);
-    }
-
-    /**
-     * 修改Lite Server实例名称
-     *
-     * 修改DevServer实例名称接口用于更改已创建的DevServer实例的名称。该接口适用于以下场景：当用户需要对DevServer实例进行重命名以更好地反映实例的功能或用途时，或者在实例名称不再符合当前项目命名规范时进行更新。使用该接口的前提条件是DevServer实例已存在且用户具有对该实例的管理权限。修改操作完成后，实例的新名称将立即生效，并在所有相关视图和记录中更新。若DevServer实例不存在、用户无权限操作或新名称不符合命名规则，接口将返回相应的错误信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateDevServerRequest 请求对象
-     * @return AsyncInvoker<UpdateDevServerRequest, UpdateDevServerResponse>
-     */
-    public AsyncInvoker<UpdateDevServerRequest, UpdateDevServerResponse> updateDevServerAsyncInvoker(
-        UpdateDevServerRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.updateDevServer, hcClient);
     }
 
     /**

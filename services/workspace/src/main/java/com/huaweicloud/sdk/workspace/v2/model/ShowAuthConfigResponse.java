@@ -55,6 +55,11 @@ public class ShowAuthConfigResponse extends SdkResponse {
     private Boolean smsLoginEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "login_captcha")
+
+    private LoginCaptchaConfig loginCaptcha;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "saml2_auth_config")
 
     private Saml2AuthConfig saml2AuthConfig;
@@ -221,6 +226,32 @@ public class ShowAuthConfigResponse extends SdkResponse {
         this.smsLoginEnabled = smsLoginEnabled;
     }
 
+    public ShowAuthConfigResponse withLoginCaptcha(LoginCaptchaConfig loginCaptcha) {
+        this.loginCaptcha = loginCaptcha;
+        return this;
+    }
+
+    public ShowAuthConfigResponse withLoginCaptcha(Consumer<LoginCaptchaConfig> loginCaptchaSetter) {
+        if (this.loginCaptcha == null) {
+            this.loginCaptcha = new LoginCaptchaConfig();
+            loginCaptchaSetter.accept(this.loginCaptcha);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get loginCaptcha
+     * @return loginCaptcha
+     */
+    public LoginCaptchaConfig getLoginCaptcha() {
+        return loginCaptcha;
+    }
+
+    public void setLoginCaptcha(LoginCaptchaConfig loginCaptcha) {
+        this.loginCaptcha = loginCaptcha;
+    }
+
     public ShowAuthConfigResponse withSaml2AuthConfig(Saml2AuthConfig saml2AuthConfig) {
         this.saml2AuthConfig = saml2AuthConfig;
         return this;
@@ -263,6 +294,7 @@ public class ShowAuthConfigResponse extends SdkResponse {
             && Objects.equals(this.thirdPartyAuthConfig, that.thirdPartyAuthConfig)
             && Objects.equals(this.emergencyLoginMode, that.emergencyLoginMode)
             && Objects.equals(this.smsLoginEnabled, that.smsLoginEnabled)
+            && Objects.equals(this.loginCaptcha, that.loginCaptcha)
             && Objects.equals(this.saml2AuthConfig, that.saml2AuthConfig);
     }
 
@@ -276,6 +308,7 @@ public class ShowAuthConfigResponse extends SdkResponse {
             thirdPartyAuthConfig,
             emergencyLoginMode,
             smsLoginEnabled,
+            loginCaptcha,
             saml2AuthConfig);
     }
 
@@ -293,6 +326,7 @@ public class ShowAuthConfigResponse extends SdkResponse {
         sb.append("    thirdPartyAuthConfig: ").append(toIndentedString(thirdPartyAuthConfig)).append("\n");
         sb.append("    emergencyLoginMode: ").append(toIndentedString(emergencyLoginMode)).append("\n");
         sb.append("    smsLoginEnabled: ").append(toIndentedString(smsLoginEnabled)).append("\n");
+        sb.append("    loginCaptcha: ").append(toIndentedString(loginCaptcha)).append("\n");
         sb.append("    saml2AuthConfig: ").append(toIndentedString(saml2AuthConfig)).append("\n");
         sb.append("}");
         return sb.toString();

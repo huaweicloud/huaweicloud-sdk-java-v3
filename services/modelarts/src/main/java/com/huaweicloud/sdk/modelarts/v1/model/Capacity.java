@@ -22,6 +22,16 @@ public class Capacity {
     private Value maxValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allValue")
+
+    private Value allValue;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allMaxValue")
+
+    private Value allMaxValue;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
 
     private String timestamp;
@@ -83,6 +93,58 @@ public class Capacity {
         this.maxValue = maxValue;
     }
 
+    public Capacity withAllValue(Value allValue) {
+        this.allValue = allValue;
+        return this;
+    }
+
+    public Capacity withAllValue(Consumer<Value> allValueSetter) {
+        if (this.allValue == null) {
+            this.allValue = new Value();
+            allValueSetter.accept(this.allValue);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get allValue
+     * @return allValue
+     */
+    public Value getAllValue() {
+        return allValue;
+    }
+
+    public void setAllValue(Value allValue) {
+        this.allValue = allValue;
+    }
+
+    public Capacity withAllMaxValue(Value allMaxValue) {
+        this.allMaxValue = allMaxValue;
+        return this;
+    }
+
+    public Capacity withAllMaxValue(Consumer<Value> allMaxValueSetter) {
+        if (this.allMaxValue == null) {
+            this.allMaxValue = new Value();
+            allMaxValueSetter.accept(this.allMaxValue);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get allMaxValue
+     * @return allMaxValue
+     */
+    public Value getAllMaxValue() {
+        return allMaxValue;
+    }
+
+    public void setAllMaxValue(Value allMaxValue) {
+        this.allMaxValue = allMaxValue;
+    }
+
     public Capacity withTimestamp(String timestamp) {
         this.timestamp = timestamp;
         return this;
@@ -127,12 +189,13 @@ public class Capacity {
         }
         Capacity that = (Capacity) obj;
         return Objects.equals(this.value, that.value) && Objects.equals(this.maxValue, that.maxValue)
+            && Objects.equals(this.allValue, that.allValue) && Objects.equals(this.allMaxValue, that.allMaxValue)
             && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.window, that.window);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(value, maxValue, timestamp, window);
+        return Objects.hash(value, maxValue, allValue, allMaxValue, timestamp, window);
     }
 
     @Override
@@ -141,6 +204,8 @@ public class Capacity {
         sb.append("class Capacity {\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
         sb.append("    maxValue: ").append(toIndentedString(maxValue)).append("\n");
+        sb.append("    allValue: ").append(toIndentedString(allValue)).append("\n");
+        sb.append("    allMaxValue: ").append(toIndentedString(allMaxValue)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("    window: ").append(toIndentedString(window)).append("\n");
         sb.append("}");

@@ -255,7 +255,7 @@ public class ShowInferServiceClusterResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavors")
 
-    private List<NotebookFlavor> flavors = null;
+    private List<InferFlavor> flavors = null;
 
     /**
      * **参数解释：** 资源池类型。 **取值范围：** - LOGICAL ：逻辑池。 - PHYSICAL ：物理池。
@@ -506,12 +506,12 @@ public class ShowInferServiceClusterResponse extends SdkResponse {
         this.updateAt = updateAt;
     }
 
-    public ShowInferServiceClusterResponse withFlavors(List<NotebookFlavor> flavors) {
+    public ShowInferServiceClusterResponse withFlavors(List<InferFlavor> flavors) {
         this.flavors = flavors;
         return this;
     }
 
-    public ShowInferServiceClusterResponse addFlavorsItem(NotebookFlavor flavorsItem) {
+    public ShowInferServiceClusterResponse addFlavorsItem(InferFlavor flavorsItem) {
         if (this.flavors == null) {
             this.flavors = new ArrayList<>();
         }
@@ -519,7 +519,7 @@ public class ShowInferServiceClusterResponse extends SdkResponse {
         return this;
     }
 
-    public ShowInferServiceClusterResponse withFlavors(Consumer<List<NotebookFlavor>> flavorsSetter) {
+    public ShowInferServiceClusterResponse withFlavors(Consumer<List<InferFlavor>> flavorsSetter) {
         if (this.flavors == null) {
             this.flavors = new ArrayList<>();
         }
@@ -531,11 +531,11 @@ public class ShowInferServiceClusterResponse extends SdkResponse {
      * **参数解释：** 当前专属池支持的规格。
      * @return flavors
      */
-    public List<NotebookFlavor> getFlavors() {
+    public List<InferFlavor> getFlavors() {
         return flavors;
     }
 
-    public void setFlavors(List<NotebookFlavor> flavors) {
+    public void setFlavors(List<InferFlavor> flavors) {
         this.flavors = flavors;
     }
 

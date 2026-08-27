@@ -17,19 +17,19 @@ public class ListPolicyGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_groups")
 
-    private List<PolicyGroupForList> policyGroups = null;
+    private List<PolicyGroupForBaseList> policyGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
     private Integer totalCount;
 
-    public ListPolicyGroupResponse withPolicyGroups(List<PolicyGroupForList> policyGroups) {
+    public ListPolicyGroupResponse withPolicyGroups(List<PolicyGroupForBaseList> policyGroups) {
         this.policyGroups = policyGroups;
         return this;
     }
 
-    public ListPolicyGroupResponse addPolicyGroupsItem(PolicyGroupForList policyGroupsItem) {
+    public ListPolicyGroupResponse addPolicyGroupsItem(PolicyGroupForBaseList policyGroupsItem) {
         if (this.policyGroups == null) {
             this.policyGroups = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ListPolicyGroupResponse extends SdkResponse {
         return this;
     }
 
-    public ListPolicyGroupResponse withPolicyGroups(Consumer<List<PolicyGroupForList>> policyGroupsSetter) {
+    public ListPolicyGroupResponse withPolicyGroups(Consumer<List<PolicyGroupForBaseList>> policyGroupsSetter) {
         if (this.policyGroups == null) {
             this.policyGroups = new ArrayList<>();
         }
@@ -49,11 +49,11 @@ public class ListPolicyGroupResponse extends SdkResponse {
      * 策略组。
      * @return policyGroups
      */
-    public List<PolicyGroupForList> getPolicyGroups() {
+    public List<PolicyGroupForBaseList> getPolicyGroups() {
         return policyGroups;
     }
 
-    public void setPolicyGroups(List<PolicyGroupForList> policyGroups) {
+    public void setPolicyGroups(List<PolicyGroupForBaseList> policyGroups) {
         this.policyGroups = policyGroups;
     }
 

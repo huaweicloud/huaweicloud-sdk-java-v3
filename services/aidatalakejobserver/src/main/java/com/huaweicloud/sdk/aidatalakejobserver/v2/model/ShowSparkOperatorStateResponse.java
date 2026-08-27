@@ -101,7 +101,7 @@ public class ShowSparkOperatorStateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operator_info")
 
-    private Object operatorInfo;
+    private ShowSparkOperatorStateOperationInfo operatorInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
@@ -135,14 +135,15 @@ public class ShowSparkOperatorStateResponse extends SdkResponse {
         this.status = status;
     }
 
-    public ShowSparkOperatorStateResponse withOperatorInfo(Object operatorInfo) {
+    public ShowSparkOperatorStateResponse withOperatorInfo(ShowSparkOperatorStateOperationInfo operatorInfo) {
         this.operatorInfo = operatorInfo;
         return this;
     }
 
-    public ShowSparkOperatorStateResponse withOperatorInfo(Consumer<Object> operatorInfoSetter) {
+    public ShowSparkOperatorStateResponse withOperatorInfo(
+        Consumer<ShowSparkOperatorStateOperationInfo> operatorInfoSetter) {
         if (this.operatorInfo == null) {
-            this.operatorInfo = new Object();
+            this.operatorInfo = new ShowSparkOperatorStateOperationInfo();
             operatorInfoSetter.accept(this.operatorInfo);
         }
 
@@ -150,14 +151,14 @@ public class ShowSparkOperatorStateResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：操作详情描述。
+     * Get operatorInfo
      * @return operatorInfo
      */
-    public Object getOperatorInfo() {
+    public ShowSparkOperatorStateOperationInfo getOperatorInfo() {
         return operatorInfo;
     }
 
-    public void setOperatorInfo(Object operatorInfo) {
+    public void setOperatorInfo(ShowSparkOperatorStateOperationInfo operatorInfo) {
         this.operatorInfo = operatorInfo;
     }
 

@@ -138,6 +138,11 @@ public class SimpleDesktopInfo {
 
     private String poolId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_status")
+
+    private Integer domainStatus;
+
     public SimpleDesktopInfo withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -595,6 +600,23 @@ public class SimpleDesktopInfo {
         this.poolId = poolId;
     }
 
+    public SimpleDesktopInfo withDomainStatus(Integer domainStatus) {
+        this.domainStatus = domainStatus;
+        return this;
+    }
+
+    /**
+     * 加域状态。|- 1 正常。 2 脱域。 3 未上报。
+     * @return domainStatus
+     */
+    public Integer getDomainStatus() {
+        return domainStatus;
+    }
+
+    public void setDomainStatus(Integer domainStatus) {
+        this.domainStatus = domainStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -619,7 +641,8 @@ public class SimpleDesktopInfo {
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.billResourceId, that.billResourceId)
             && Objects.equals(this.status, that.status) && Objects.equals(this.taskStatus, that.taskStatus)
             && Objects.equals(this.availabilityZone, that.availabilityZone)
-            && Objects.equals(this.connectStatus, that.connectStatus) && Objects.equals(this.poolId, that.poolId);
+            && Objects.equals(this.connectStatus, that.connectStatus) && Objects.equals(this.poolId, that.poolId)
+            && Objects.equals(this.domainStatus, that.domainStatus);
     }
 
     @Override
@@ -648,7 +671,8 @@ public class SimpleDesktopInfo {
             taskStatus,
             availabilityZone,
             connectStatus,
-            poolId);
+            poolId,
+            domainStatus);
     }
 
     @Override
@@ -680,6 +704,7 @@ public class SimpleDesktopInfo {
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    connectStatus: ").append(toIndentedString(connectStatus)).append("\n");
         sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
+        sb.append("    domainStatus: ").append(toIndentedString(domainStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

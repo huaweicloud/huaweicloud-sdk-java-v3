@@ -26,19 +26,9 @@ public class AscendInfo {
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ai_core")
+    @JsonProperty(value = "chip")
 
-    private String aiCore;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ai_cpu")
-
-    private String aiCpu;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type_alias")
-
-    private String typeAlias;
+    private Integer chip;
 
     public AscendInfo withNpu(Integer npu) {
         this.npu = npu;
@@ -46,7 +36,7 @@ public class AscendInfo {
     }
 
     /**
-     * **参数解释：** NPU数量。 **取值范围：** 不涉及。
+     * **参数解释**：NPU数量。 **取值范围**：不涉及。
      * @return npu
      */
     public Integer getNpu() {
@@ -63,7 +53,7 @@ public class AscendInfo {
     }
 
     /**
-     * **参数解释：** NPU内存。 **取值范围：** 不涉及。
+     * **参数解释**：NPU内存。 **取值范围**：不涉及。
      * @return npuMemory
      */
     public String getNpuMemory() {
@@ -80,7 +70,7 @@ public class AscendInfo {
     }
 
     /**
-     * **参数解释：** NPU类型。 **取值范围：** 不涉及。
+     * **参数解释**：NPU类型。 **取值范围**：不涉及。
      * @return type
      */
     public String getType() {
@@ -91,55 +81,21 @@ public class AscendInfo {
         this.type = type;
     }
 
-    public AscendInfo withAiCore(String aiCore) {
-        this.aiCore = aiCore;
+    public AscendInfo withChip(Integer chip) {
+        this.chip = chip;
         return this;
     }
 
     /**
-     * **参数解释：** 切分规格中的ai_core。 **取值范围：** 不涉及。
-     * @return aiCore
+     * **参数解释**：NPU设备数。 **取值范围**：不涉及。
+     * @return chip
      */
-    public String getAiCore() {
-        return aiCore;
+    public Integer getChip() {
+        return chip;
     }
 
-    public void setAiCore(String aiCore) {
-        this.aiCore = aiCore;
-    }
-
-    public AscendInfo withAiCpu(String aiCpu) {
-        this.aiCpu = aiCpu;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 切分规格中的ai_cpu。 **取值范围：** 不涉及。
-     * @return aiCpu
-     */
-    public String getAiCpu() {
-        return aiCpu;
-    }
-
-    public void setAiCpu(String aiCpu) {
-        this.aiCpu = aiCpu;
-    }
-
-    public AscendInfo withTypeAlias(String typeAlias) {
-        this.typeAlias = typeAlias;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 区分卡类型，如Snt9b3、Snt9b2 **取值范围：** 不涉及。
-     * @return typeAlias
-     */
-    public String getTypeAlias() {
-        return typeAlias;
-    }
-
-    public void setTypeAlias(String typeAlias) {
-        this.typeAlias = typeAlias;
+    public void setChip(Integer chip) {
+        this.chip = chip;
     }
 
     @Override
@@ -152,13 +108,12 @@ public class AscendInfo {
         }
         AscendInfo that = (AscendInfo) obj;
         return Objects.equals(this.npu, that.npu) && Objects.equals(this.npuMemory, that.npuMemory)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.aiCore, that.aiCore)
-            && Objects.equals(this.aiCpu, that.aiCpu) && Objects.equals(this.typeAlias, that.typeAlias);
+            && Objects.equals(this.type, that.type) && Objects.equals(this.chip, that.chip);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(npu, npuMemory, type, aiCore, aiCpu, typeAlias);
+        return Objects.hash(npu, npuMemory, type, chip);
     }
 
     @Override
@@ -168,9 +123,7 @@ public class AscendInfo {
         sb.append("    npu: ").append(toIndentedString(npu)).append("\n");
         sb.append("    npuMemory: ").append(toIndentedString(npuMemory)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    aiCore: ").append(toIndentedString(aiCore)).append("\n");
-        sb.append("    aiCpu: ").append(toIndentedString(aiCpu)).append("\n");
-        sb.append("    typeAlias: ").append(toIndentedString(typeAlias)).append("\n");
+        sb.append("    chip: ").append(toIndentedString(chip)).append("\n");
         sb.append("}");
         return sb.toString();
     }

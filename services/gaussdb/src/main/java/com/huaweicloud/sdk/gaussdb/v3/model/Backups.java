@@ -157,6 +157,11 @@ public class Backups {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_mode")
+
+    private String backupMode;
+
     public Backups withId(String id) {
         this.id = id;
         return this;
@@ -387,6 +392,23 @@ public class Backups {
         this.description = description;
     }
 
+    public Backups withBackupMode(String backupMode) {
+        this.backupMode = backupMode;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  备份类型。  **取值范围**： - differential：差量备份。 - completed：全量备份。
+     * @return backupMode
+     */
+    public String getBackupMode() {
+        return backupMode;
+    }
+
+    public void setBackupMode(String backupMode) {
+        this.backupMode = backupMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -402,7 +424,8 @@ public class Backups {
             && Objects.equals(this.type, that.type) && Objects.equals(this.size, that.size)
             && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.instanceName, that.instanceName)
-            && Objects.equals(this.backupLevel, that.backupLevel) && Objects.equals(this.description, that.description);
+            && Objects.equals(this.backupLevel, that.backupLevel) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.backupMode, that.backupMode);
     }
 
     @Override
@@ -419,7 +442,8 @@ public class Backups {
             instanceId,
             instanceName,
             backupLevel,
-            description);
+            description,
+            backupMode);
     }
 
     @Override
@@ -439,6 +463,7 @@ public class Backups {
         sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("    backupLevel: ").append(toIndentedString(backupLevel)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    backupMode: ").append(toIndentedString(backupMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

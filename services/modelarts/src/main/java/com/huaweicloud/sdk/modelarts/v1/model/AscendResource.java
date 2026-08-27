@@ -35,6 +35,11 @@ public class AscendResource {
 
     private String aiCpu;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type_alias")
+
+    private String typeAlias;
+
     public AscendResource withNpu(Integer npu) {
         this.npu = npu;
         return this;
@@ -120,6 +125,23 @@ public class AscendResource {
         this.aiCpu = aiCpu;
     }
 
+    public AscendResource withTypeAlias(String typeAlias) {
+        this.typeAlias = typeAlias;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 区分卡类型，如Snt9b3、Snt9b2 **取值范围：** 不涉及。
+     * @return typeAlias
+     */
+    public String getTypeAlias() {
+        return typeAlias;
+    }
+
+    public void setTypeAlias(String typeAlias) {
+        this.typeAlias = typeAlias;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +153,12 @@ public class AscendResource {
         AscendResource that = (AscendResource) obj;
         return Objects.equals(this.npu, that.npu) && Objects.equals(this.npuMemory, that.npuMemory)
             && Objects.equals(this.type, that.type) && Objects.equals(this.aiCore, that.aiCore)
-            && Objects.equals(this.aiCpu, that.aiCpu);
+            && Objects.equals(this.aiCpu, that.aiCpu) && Objects.equals(this.typeAlias, that.typeAlias);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(npu, npuMemory, type, aiCore, aiCpu);
+        return Objects.hash(npu, npuMemory, type, aiCore, aiCpu, typeAlias);
     }
 
     @Override
@@ -148,6 +170,7 @@ public class AscendResource {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    aiCore: ").append(toIndentedString(aiCore)).append("\n");
         sb.append("    aiCpu: ").append(toIndentedString(aiCpu)).append("\n");
+        sb.append("    typeAlias: ").append(toIndentedString(typeAlias)).append("\n");
         sb.append("}");
         return sb.toString();
     }

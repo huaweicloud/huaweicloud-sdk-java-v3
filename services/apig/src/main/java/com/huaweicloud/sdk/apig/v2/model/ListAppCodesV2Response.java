@@ -85,7 +85,7 @@ public class ListAppCodesV2Response extends SdkResponse {
     }
 
     /**
-     * App Code列表
+     * APP Code列表
      * @return appCodes
      */
     public List<AppCodeBaseInfo> getAppCodes() {

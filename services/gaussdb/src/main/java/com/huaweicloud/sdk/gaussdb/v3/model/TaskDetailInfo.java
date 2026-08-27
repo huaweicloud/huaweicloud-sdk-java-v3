@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.gaussdb.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * TaskDetailInfo
@@ -69,6 +72,11 @@ public class TaskDetailInfo {
     @JsonProperty(value = "show_detail")
 
     private Boolean showDetail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extend_fields")
+
+    private Map<String, Object> extendFields = null;
 
     public TaskDetailInfo withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -274,6 +282,39 @@ public class TaskDetailInfo {
         this.showDetail = showDetail;
     }
 
+    public TaskDetailInfo withExtendFields(Map<String, Object> extendFields) {
+        this.extendFields = extendFields;
+        return this;
+    }
+
+    public TaskDetailInfo putExtendFieldsItem(String key, Object extendFieldsItem) {
+        if (this.extendFields == null) {
+            this.extendFields = new HashMap<>();
+        }
+        this.extendFields.put(key, extendFieldsItem);
+        return this;
+    }
+
+    public TaskDetailInfo withExtendFields(Consumer<Map<String, Object>> extendFieldsSetter) {
+        if (this.extendFields == null) {
+            this.extendFields = new HashMap<>();
+        }
+        extendFieldsSetter.accept(this.extendFields);
+        return this;
+    }
+
+    /**
+     * **参数解释**：  任务扩展字段，默认null。
+     * @return extendFields
+     */
+    public Map<String, Object> getExtendFields() {
+        return extendFields;
+    }
+
+    public void setExtendFields(Map<String, Object> extendFields) {
+        this.extendFields = extendFields;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -288,7 +329,8 @@ public class TaskDetailInfo {
             && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.jobName, that.jobName)
             && Objects.equals(this.status, that.status) && Objects.equals(this.process, that.process)
             && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.endedTime, that.endedTime)
-            && Objects.equals(this.failReason, that.failReason) && Objects.equals(this.showDetail, that.showDetail);
+            && Objects.equals(this.failReason, that.failReason) && Objects.equals(this.showDetail, that.showDetail)
+            && Objects.equals(this.extendFields, that.extendFields);
     }
 
     @Override
@@ -304,7 +346,8 @@ public class TaskDetailInfo {
             createdTime,
             endedTime,
             failReason,
-            showDetail);
+            showDetail,
+            extendFields);
     }
 
     @Override
@@ -323,6 +366,7 @@ public class TaskDetailInfo {
         sb.append("    endedTime: ").append(toIndentedString(endedTime)).append("\n");
         sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");
         sb.append("    showDetail: ").append(toIndentedString(showDetail)).append("\n");
+        sb.append("    extendFields: ").append(toIndentedString(extendFields)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -59,7 +59,7 @@ public class ShowSparkJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_config")
 
-    private Object jobConfig;
+    private ShowSparkJobArtifactResponse jobConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_config")
@@ -262,14 +262,14 @@ public class ShowSparkJobResponse extends SdkResponse {
         this.stateMessage = stateMessage;
     }
 
-    public ShowSparkJobResponse withJobConfig(Object jobConfig) {
+    public ShowSparkJobResponse withJobConfig(ShowSparkJobArtifactResponse jobConfig) {
         this.jobConfig = jobConfig;
         return this;
     }
 
-    public ShowSparkJobResponse withJobConfig(Consumer<Object> jobConfigSetter) {
+    public ShowSparkJobResponse withJobConfig(Consumer<ShowSparkJobArtifactResponse> jobConfigSetter) {
         if (this.jobConfig == null) {
-            this.jobConfig = new Object();
+            this.jobConfig = new ShowSparkJobArtifactResponse();
             jobConfigSetter.accept(this.jobConfig);
         }
 
@@ -277,14 +277,14 @@ public class ShowSparkJobResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：作业配置信息，包含作业类型、入口参数、依赖包等信息。
+     * Get jobConfig
      * @return jobConfig
      */
-    public Object getJobConfig() {
+    public ShowSparkJobArtifactResponse getJobConfig() {
         return jobConfig;
     }
 
-    public void setJobConfig(Object jobConfig) {
+    public void setJobConfig(ShowSparkJobArtifactResponse jobConfig) {
         this.jobConfig = jobConfig;
     }
 

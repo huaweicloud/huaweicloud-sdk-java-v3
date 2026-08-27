@@ -115,6 +115,16 @@ public class ContainerNodeInfo {
 
     private String policyGroupName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_container_node")
+
+    private Boolean isContainerNode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private String version;
+
     public ContainerNodeInfo withAgentId(String agentId) {
         this.agentId = agentId;
         return this;
@@ -478,6 +488,40 @@ public class ContainerNodeInfo {
         this.policyGroupName = policyGroupName;
     }
 
+    public ContainerNodeInfo withIsContainerNode(Boolean isContainerNode) {
+        this.isContainerNode = isContainerNode;
+        return this;
+    }
+
+    /**
+     * **参数解释** 是否是容器节点 **取值范围** - true：是容器节点 - false：非容器节点 
+     * @return isContainerNode
+     */
+    public Boolean getIsContainerNode() {
+        return isContainerNode;
+    }
+
+    public void setIsContainerNode(Boolean isContainerNode) {
+        this.isContainerNode = isContainerNode;
+    }
+
+    public ContainerNodeInfo withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 节点开启的防护版本 **取值范围**: - hss.version.null ：无。 - hss.version.basic ：基础版。 - hss.version.advanced ：专业版。 - hss.version.enterprise ：企业版。 - hss.version.premium ：旗舰版。 - hss.version.wtp ：网页防篡改版。 - hss.version.container.enterprise：容器版。 
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -501,7 +545,8 @@ public class ContainerNodeInfo {
             && Objects.equals(this.detectResult, that.detectResult) && Objects.equals(this.asset, that.asset)
             && Objects.equals(this.vulnerability, that.vulnerability) && Objects.equals(this.intrusion, that.intrusion)
             && Objects.equals(this.policyGroupId, that.policyGroupId)
-            && Objects.equals(this.policyGroupName, that.policyGroupName);
+            && Objects.equals(this.policyGroupName, that.policyGroupName)
+            && Objects.equals(this.isContainerNode, that.isContainerNode) && Objects.equals(this.version, that.version);
     }
 
     @Override
@@ -526,7 +571,9 @@ public class ContainerNodeInfo {
             vulnerability,
             intrusion,
             policyGroupId,
-            policyGroupName);
+            policyGroupName,
+            isContainerNode,
+            version);
     }
 
     @Override
@@ -554,6 +601,8 @@ public class ContainerNodeInfo {
         sb.append("    intrusion: ").append(toIndentedString(intrusion)).append("\n");
         sb.append("    policyGroupId: ").append(toIndentedString(policyGroupId)).append("\n");
         sb.append("    policyGroupName: ").append(toIndentedString(policyGroupName)).append("\n");
+        sb.append("    isContainerNode: ").append(toIndentedString(isContainerNode)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
     }

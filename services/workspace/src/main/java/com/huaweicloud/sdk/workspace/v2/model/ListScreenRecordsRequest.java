@@ -26,6 +26,11 @@ public class ListScreenRecordsRequest {
     private String desktopId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_names")
+
+    private String desktopNames;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "username")
 
     private String username;
@@ -113,6 +118,23 @@ public class ListScreenRecordsRequest {
 
     public void setDesktopId(String desktopId) {
         this.desktopId = desktopId;
+    }
+
+    public ListScreenRecordsRequest withDesktopNames(String desktopNames) {
+        this.desktopNames = desktopNames;
+        return this;
+    }
+
+    /**
+     * 桌面名称列表，多个名称用英文逗号分割，最多支持100个桌面名称
+     * @return desktopNames
+     */
+    public String getDesktopNames() {
+        return desktopNames;
+    }
+
+    public void setDesktopNames(String desktopNames) {
+        this.desktopNames = desktopNames;
     }
 
     public ListScreenRecordsRequest withUsername(String username) {
@@ -244,15 +266,26 @@ public class ListScreenRecordsRequest {
         }
         ListScreenRecordsRequest that = (ListScreenRecordsRequest) obj;
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.username, that.username)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.sortField, that.sortField) && Objects.equals(this.sortType, that.sortType);
+            && Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.desktopNames, that.desktopNames)
+            && Objects.equals(this.username, that.username) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.sortField, that.sortField)
+            && Objects.equals(this.sortType, that.sortType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, offset, desktopId, username, status, type, startTime, endTime, sortField, sortType);
+        return Objects.hash(limit,
+            offset,
+            desktopId,
+            desktopNames,
+            username,
+            status,
+            type,
+            startTime,
+            endTime,
+            sortField,
+            sortType);
     }
 
     @Override
@@ -262,6 +295,7 @@ public class ListScreenRecordsRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
+        sb.append("    desktopNames: ").append(toIndentedString(desktopNames)).append("\n");
         sb.append("    username: ").append(toIndentedString(username)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

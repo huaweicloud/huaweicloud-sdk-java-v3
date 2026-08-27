@@ -4581,6 +4581,17 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListContainerNodesRequest::getContainerTags,
                 ListContainerNodesRequest::setContainerTags));
+        builder.<Boolean>withRequestField("container_node",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListContainerNodesRequest::getContainerNode,
+                ListContainerNodesRequest::setContainerNode));
+        builder.<String>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListContainerNodesRequest::getVersion, ListContainerNodesRequest::setVersion));
         builder.<String>withRequestField("region",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

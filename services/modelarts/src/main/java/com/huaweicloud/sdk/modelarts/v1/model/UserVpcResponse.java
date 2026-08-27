@@ -43,6 +43,16 @@ public class UserVpcResponse {
 
     private String portIp;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nat_id")
+
+    private String natId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eip_id")
+
+    private String eipId;
+
     public UserVpcResponse withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -177,6 +187,40 @@ public class UserVpcResponse {
         this.portIp = portIp;
     }
 
+    public UserVpcResponse withNatId(String natId) {
+        this.natId = natId;
+        return this;
+    }
+
+    /**
+     * **参数解释**：NAT ID。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * @return natId
+     */
+    public String getNatId() {
+        return natId;
+    }
+
+    public void setNatId(String natId) {
+        this.natId = natId;
+    }
+
+    public UserVpcResponse withEipId(String eipId) {
+        this.eipId = eipId;
+        return this;
+    }
+
+    /**
+     * **参数解释**：EIP ID。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * @return eipId
+     */
+    public String getEipId() {
+        return eipId;
+    }
+
+    public void setEipId(String eipId) {
+        this.eipId = eipId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -189,12 +233,13 @@ public class UserVpcResponse {
         return Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.securityGroupIds, that.securityGroupIds)
             && Objects.equals(this.connectCidrs, that.connectCidrs) && Objects.equals(this.portId, that.portId)
-            && Objects.equals(this.portIp, that.portIp);
+            && Objects.equals(this.portIp, that.portIp) && Objects.equals(this.natId, that.natId)
+            && Objects.equals(this.eipId, that.eipId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vpcId, subnetId, securityGroupIds, connectCidrs, portId, portIp);
+        return Objects.hash(vpcId, subnetId, securityGroupIds, connectCidrs, portId, portIp, natId, eipId);
     }
 
     @Override
@@ -207,6 +252,8 @@ public class UserVpcResponse {
         sb.append("    connectCidrs: ").append(toIndentedString(connectCidrs)).append("\n");
         sb.append("    portId: ").append(toIndentedString(portId)).append("\n");
         sb.append("    portIp: ").append(toIndentedString(portIp)).append("\n");
+        sb.append("    natId: ").append(toIndentedString(natId)).append("\n");
+        sb.append("    eipId: ").append(toIndentedString(eipId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

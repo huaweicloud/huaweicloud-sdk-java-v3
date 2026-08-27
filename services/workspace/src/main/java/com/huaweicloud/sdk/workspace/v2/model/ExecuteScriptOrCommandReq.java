@@ -44,6 +44,16 @@ public class ExecuteScriptOrCommandReq {
     private List<String> scriptIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "command")
+
+    private String command;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "command_type")
+
+    private String commandType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execution_timeout")
 
     private Integer executionTimeout;
@@ -198,6 +208,40 @@ public class ExecuteScriptOrCommandReq {
         this.scriptIds = scriptIds;
     }
 
+    public ExecuteScriptOrCommandReq withCommand(String command) {
+        this.command = command;
+        return this;
+    }
+
+    /**
+     * 执行的命令行，与script_ids二选一。
+     * @return command
+     */
+    public String getCommand() {
+        return command;
+    }
+
+    public void setCommand(String command) {
+        this.command = command;
+    }
+
+    public ExecuteScriptOrCommandReq withCommandType(String commandType) {
+        this.commandType = commandType;
+        return this;
+    }
+
+    /**
+     * 命令行的类型（POWERSHELL，BAT，SHELL）。
+     * @return commandType
+     */
+    public String getCommandType() {
+        return commandType;
+    }
+
+    public void setCommandType(String commandType) {
+        this.commandType = commandType;
+    }
+
     public ExecuteScriptOrCommandReq withExecutionTimeout(Integer executionTimeout) {
         this.executionTimeout = executionTimeout;
         return this;
@@ -230,6 +274,7 @@ public class ExecuteScriptOrCommandReq {
             && Objects.equals(this.grayResourceIds, that.grayResourceIds)
             && Objects.equals(this.grayFailThreshold, that.grayFailThreshold)
             && Objects.equals(this.resourceIds, that.resourceIds) && Objects.equals(this.scriptIds, that.scriptIds)
+            && Objects.equals(this.command, that.command) && Objects.equals(this.commandType, that.commandType)
             && Objects.equals(this.executionTimeout, that.executionTimeout);
     }
 
@@ -241,6 +286,8 @@ public class ExecuteScriptOrCommandReq {
             grayFailThreshold,
             resourceIds,
             scriptIds,
+            command,
+            commandType,
             executionTimeout);
     }
 
@@ -254,6 +301,8 @@ public class ExecuteScriptOrCommandReq {
         sb.append("    grayFailThreshold: ").append(toIndentedString(grayFailThreshold)).append("\n");
         sb.append("    resourceIds: ").append(toIndentedString(resourceIds)).append("\n");
         sb.append("    scriptIds: ").append(toIndentedString(scriptIds)).append("\n");
+        sb.append("    command: ").append(toIndentedString(command)).append("\n");
+        sb.append("    commandType: ").append(toIndentedString(commandType)).append("\n");
         sb.append("    executionTimeout: ").append(toIndentedString(executionTimeout)).append("\n");
         sb.append("}");
         return sb.toString();

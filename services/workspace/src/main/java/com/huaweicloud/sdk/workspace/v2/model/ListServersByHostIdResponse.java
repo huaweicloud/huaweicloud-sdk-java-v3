@@ -19,6 +19,11 @@ public class ListServersByHostIdResponse extends SdkResponse {
 
     private List<ListServersRspServers> servers = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total")
+
+    private Integer total;
+
     public ListServersByHostIdResponse withServers(List<ListServersRspServers> servers) {
         this.servers = servers;
         return this;
@@ -52,6 +57,23 @@ public class ListServersByHostIdResponse extends SdkResponse {
         this.servers = servers;
     }
 
+    public ListServersByHostIdResponse withTotal(Integer total) {
+        this.total = total;
+        return this;
+    }
+
+    /**
+     * 计算机实例总数。
+     * @return total
+     */
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +83,12 @@ public class ListServersByHostIdResponse extends SdkResponse {
             return false;
         }
         ListServersByHostIdResponse that = (ListServersByHostIdResponse) obj;
-        return Objects.equals(this.servers, that.servers);
+        return Objects.equals(this.servers, that.servers) && Objects.equals(this.total, that.total);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(servers);
+        return Objects.hash(servers, total);
     }
 
     @Override
@@ -74,6 +96,7 @@ public class ListServersByHostIdResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListServersByHostIdResponse {\n");
         sb.append("    servers: ").append(toIndentedString(servers)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("}");
         return sb.toString();
     }

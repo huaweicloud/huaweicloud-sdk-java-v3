@@ -22,7 +22,7 @@ public class ListScreenRecordsTrafficLimitConfigResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configs")
 
-    private List<ScreenRecordsConfigResultReqConfigs> configs = null;
+    private List<UpdateScreenRecordsTrafficLimitConfigRequestBodyConfigs> configs = null;
 
     public ListScreenRecordsTrafficLimitConfigResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
@@ -41,12 +41,14 @@ public class ListScreenRecordsTrafficLimitConfigResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    public ListScreenRecordsTrafficLimitConfigResponse withConfigs(List<ScreenRecordsConfigResultReqConfigs> configs) {
+    public ListScreenRecordsTrafficLimitConfigResponse withConfigs(
+        List<UpdateScreenRecordsTrafficLimitConfigRequestBodyConfigs> configs) {
         this.configs = configs;
         return this;
     }
 
-    public ListScreenRecordsTrafficLimitConfigResponse addConfigsItem(ScreenRecordsConfigResultReqConfigs configsItem) {
+    public ListScreenRecordsTrafficLimitConfigResponse addConfigsItem(
+        UpdateScreenRecordsTrafficLimitConfigRequestBodyConfigs configsItem) {
         if (this.configs == null) {
             this.configs = new ArrayList<>();
         }
@@ -55,7 +57,7 @@ public class ListScreenRecordsTrafficLimitConfigResponse extends SdkResponse {
     }
 
     public ListScreenRecordsTrafficLimitConfigResponse withConfigs(
-        Consumer<List<ScreenRecordsConfigResultReqConfigs>> configsSetter) {
+        Consumer<List<UpdateScreenRecordsTrafficLimitConfigRequestBodyConfigs>> configsSetter) {
         if (this.configs == null) {
             this.configs = new ArrayList<>();
         }
@@ -67,11 +69,11 @@ public class ListScreenRecordsTrafficLimitConfigResponse extends SdkResponse {
      * 录屏记录。
      * @return configs
      */
-    public List<ScreenRecordsConfigResultReqConfigs> getConfigs() {
+    public List<UpdateScreenRecordsTrafficLimitConfigRequestBodyConfigs> getConfigs() {
         return configs;
     }
 
-    public void setConfigs(List<ScreenRecordsConfigResultReqConfigs> configs) {
+    public void setConfigs(List<UpdateScreenRecordsTrafficLimitConfigRequestBodyConfigs> configs) {
         this.configs = configs;
     }
 

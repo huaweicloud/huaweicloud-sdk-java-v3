@@ -307,6 +307,11 @@ public class ListWorkspacesResponse extends SdkResponse {
 
     private Boolean enableUserCreateSnapshot;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "complete_time")
+
+    private String completeTime;
+
     public ListWorkspacesResponse withId(String id) {
         this.id = id;
         return this;
@@ -963,6 +968,23 @@ public class ListWorkspacesResponse extends SdkResponse {
         this.enableUserCreateSnapshot = enableUserCreateSnapshot;
     }
 
+    public ListWorkspacesResponse withCompleteTime(String completeTime) {
+        this.completeTime = completeTime;
+        return this;
+    }
+
+    /**
+     * 开户完成时间。
+     * @return completeTime
+     */
+    public String getCompleteTime() {
+        return completeTime;
+    }
+
+    public void setCompleteTime(String completeTime) {
+        this.completeTime = completeTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -997,7 +1019,8 @@ public class ListWorkspacesResponse extends SdkResponse {
             && Objects.equals(this.siteConfigs, that.siteConfigs) && Objects.equals(this.dcVncIp, that.dcVncIp)
             && Objects.equals(this.isAuthorizedInstallAgent, that.isAuthorizedInstallAgent)
             && Objects.equals(this.isSupportIpv6, that.isSupportIpv6)
-            && Objects.equals(this.enableUserCreateSnapshot, that.enableUserCreateSnapshot);
+            && Objects.equals(this.enableUserCreateSnapshot, that.enableUserCreateSnapshot)
+            && Objects.equals(this.completeTime, that.completeTime);
     }
 
     @Override
@@ -1035,7 +1058,8 @@ public class ListWorkspacesResponse extends SdkResponse {
             dcVncIp,
             isAuthorizedInstallAgent,
             isSupportIpv6,
-            enableUserCreateSnapshot);
+            enableUserCreateSnapshot,
+            completeTime);
     }
 
     @Override
@@ -1078,6 +1102,7 @@ public class ListWorkspacesResponse extends SdkResponse {
         sb.append("    isAuthorizedInstallAgent: ").append(toIndentedString(isAuthorizedInstallAgent)).append("\n");
         sb.append("    isSupportIpv6: ").append(toIndentedString(isSupportIpv6)).append("\n");
         sb.append("    enableUserCreateSnapshot: ").append(toIndentedString(enableUserCreateSnapshot)).append("\n");
+        sb.append("    completeTime: ").append(toIndentedString(completeTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

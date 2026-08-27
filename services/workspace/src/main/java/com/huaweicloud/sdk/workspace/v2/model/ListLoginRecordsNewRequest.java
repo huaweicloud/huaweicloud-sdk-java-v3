@@ -65,6 +65,11 @@ public class ListLoginRecordsNewRequest {
 
     private Integer maxNetworkRtt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private String domain;
+
     public ListLoginRecordsNewRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -260,6 +265,23 @@ public class ListLoginRecordsNewRequest {
         this.maxNetworkRtt = maxNetworkRtt;
     }
 
+    public ListLoginRecordsNewRequest withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
+     * 域名筛选条件，用于根据域名筛选用户连接记录。
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -275,7 +297,7 @@ public class ListLoginRecordsNewRequest {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.minNetworkRtt, that.minNetworkRtt)
-            && Objects.equals(this.maxNetworkRtt, that.maxNetworkRtt);
+            && Objects.equals(this.maxNetworkRtt, that.maxNetworkRtt) && Objects.equals(this.domain, that.domain);
     }
 
     @Override
@@ -290,7 +312,8 @@ public class ListLoginRecordsNewRequest {
             offset,
             limit,
             minNetworkRtt,
-            maxNetworkRtt);
+            maxNetworkRtt,
+            domain);
     }
 
     @Override
@@ -308,6 +331,7 @@ public class ListLoginRecordsNewRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    minNetworkRtt: ").append(toIndentedString(minNetworkRtt)).append("\n");
         sb.append("    maxNetworkRtt: ").append(toIndentedString(maxNetworkRtt)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("}");
         return sb.toString();
     }

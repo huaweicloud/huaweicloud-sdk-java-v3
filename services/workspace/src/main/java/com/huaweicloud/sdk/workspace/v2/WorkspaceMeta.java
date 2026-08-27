@@ -35,6 +35,9 @@ import com.huaweicloud.sdk.workspace.v2.model.ApplyDesktopsInternetResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ApplyInternetReq;
 import com.huaweicloud.sdk.workspace.v2.model.ApplyInternetRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ApplyInternetResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ApplyModelConfigReq;
+import com.huaweicloud.sdk.workspace.v2.model.ApplyModelConfigRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ApplyModelConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ApplySubnetBandwidthReq;
 import com.huaweicloud.sdk.workspace.v2.model.ApplySubnetBandwidthRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ApplySubnetBandwidthResponse;
@@ -63,14 +66,22 @@ import com.huaweicloud.sdk.workspace.v2.model.BatchAttachInstancesReq;
 import com.huaweicloud.sdk.workspace.v2.model.BatchAttachInstancesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchAttachInstancesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchAutoInstallAppsReq;
+import com.huaweicloud.sdk.workspace.v2.model.BatchBindProvidersReq;
+import com.huaweicloud.sdk.workspace.v2.model.BatchBindProvidersRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchBindProvidersResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchChangeDesktopNetworkReq;
 import com.huaweicloud.sdk.workspace.v2.model.BatchChangeDesktopNetworkRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchChangeDesktopNetworkResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchChangeTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchChangeTagsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchCheckDesktopRejoinDomainRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchCheckDesktopRejoinDomainResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchCheckRejoinDomainReq;
 import com.huaweicloud.sdk.workspace.v2.model.BatchCreateDesktopSnapshotReq;
 import com.huaweicloud.sdk.workspace.v2.model.BatchCreateDesktopSnapshotRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchCreateDesktopSnapshotResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchCreateModelRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchCreateModelResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchCreateUsersReq;
 import com.huaweicloud.sdk.workspace.v2.model.BatchCreateUsersRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchCreateUsersResponse;
@@ -95,8 +106,13 @@ import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteJobsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteJobsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteModelRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteModelResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteOtpDevicesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteOtpDevicesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteProvidersReq;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteProvidersRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteProvidersResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteScheduledTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteScreenRecordsRequest;
@@ -135,6 +151,7 @@ import com.huaweicloud.sdk.workspace.v2.model.BatchOperateAppsReq;
 import com.huaweicloud.sdk.workspace.v2.model.BatchOperateJobsReq;
 import com.huaweicloud.sdk.workspace.v2.model.BatchRebuildDesktopsSystemDiskRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchRebuildDesktopsSystemDiskResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchRejoinDomainReq;
 import com.huaweicloud.sdk.workspace.v2.model.BatchRestoreDesktopSnapshotRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchRestoreDesktopSnapshotResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchRestoreSnapshotReq;
@@ -143,6 +160,8 @@ import com.huaweicloud.sdk.workspace.v2.model.BatchRunDesktopsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchSetMaintenanceModeReq;
 import com.huaweicloud.sdk.workspace.v2.model.BatchUpdateAppAuthorizationsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchUpdateAppAuthorizationsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchUpdateDesktopDomainRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchUpdateDesktopDomainResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchUpdateTargetOfPolicyGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchUpdateTargetOfPolicyGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CancelRemoteAssistanceRequest;
@@ -223,6 +242,9 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDomainNewReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDomainNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDomainNewResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateModelGroupReq;
+import com.huaweicloud.sdk.workspace.v2.model.CreateModelGroupRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateModelGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateOrderReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateOrderRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateOrderResponse;
@@ -232,6 +254,9 @@ import com.huaweicloud.sdk.workspace.v2.model.CreatePolicyGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreatePolicyTemplateReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreatePolicyTemplateRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreatePolicyTemplateResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateProviderReq;
+import com.huaweicloud.sdk.workspace.v2.model.CreateProviderRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateProviderResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateRemoteAssistanceRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateRemoteAssistanceResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateResourcePackageOrderReq;
@@ -240,6 +265,7 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateResourcePackagesOrderRespons
 import com.huaweicloud.sdk.workspace.v2.model.CreateScheduledTasksReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateScheduledTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateScheduledTasksResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateScheduledUpgradeTaskRequestBody;
 import com.huaweicloud.sdk.workspace.v2.model.CreateScriptReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateScriptRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateScriptResponse;
@@ -249,9 +275,14 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateSubnetBandwidthChangeOrderRe
 import com.huaweicloud.sdk.workspace.v2.model.CreateTagReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTagRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTagResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateTenantUpgradeStrategyRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateTenantUpgradeStrategyRequestBody;
+import com.huaweicloud.sdk.workspace.v2.model.CreateTenantUpgradeStrategyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTerminalsBindingDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTerminalsBindingDesktopsRequestBody;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTerminalsBindingDesktopsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateUpgradeScheduleTaskRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateUpgradeScheduleTaskResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateUserGroupReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateUserGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateUserGroupResponse;
@@ -279,12 +310,18 @@ import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopsReq;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteExportTaskRequestBody;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteExportTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteExportTasksResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteImChannelRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteImChannelResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteMetricNotifyRuleRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteMetricNotifyRuleResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteModelGroupRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteModelGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteOuRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteOuResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeletePolicyGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeletePolicyGroupResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteProviderRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteProviderResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteRestrictedRuleRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteRestrictedRuleResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteScheduledTasksReq;
@@ -299,9 +336,15 @@ import com.huaweicloud.sdk.workspace.v2.model.DeleteSubnetBandwidthRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteSubnetBandwidthResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTagRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTagResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteTenantUpgradeStrategyRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteTenantUpgradeStrategyRequestBody;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteTenantUpgradeStrategyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTerminalsBindingDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTerminalsBindingDesktopsRequestBody;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTerminalsBindingDesktopsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteUpgradeTaskRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteUpgradeTaskRequestBody;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteUpgradeTaskResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteUserGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteUserGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteUserRequest;
@@ -352,6 +395,9 @@ import com.huaweicloud.sdk.workspace.v2.model.ExecuteScriptByDesktopTagResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExecuteScriptOrCommandReq;
 import com.huaweicloud.sdk.workspace.v2.model.ExecuteScriptOrCommandRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExecuteScriptOrCommandResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ExecuteTriggerUpgradeRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ExecuteTriggerUpgradeRequestBody;
+import com.huaweicloud.sdk.workspace.v2.model.ExecuteTriggerUpgradeResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolReq;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolResponse;
@@ -377,6 +423,10 @@ import com.huaweicloud.sdk.workspace.v2.model.ExportDesktopListNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExportDesktopListNewResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExportDesktopUsageMetricNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExportDesktopUsageMetricNewResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ExportDesktopVersionListRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ExportDesktopVersionListResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ExportHostsDetailRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ExportHostsDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExportIpTemplateRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExportIpTemplateResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExportPolicyGroupsReq;
@@ -384,6 +434,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ExportPolicyGroupsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExportPolicyGroupsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExportScheduledTasksRecordsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExportScheduledTasksRecordsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ExportTenantUpgradeStrategiesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ExportTenantUpgradeStrategiesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExportTerminalsBindingDesktopsInfoNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExportTerminalsBindingDesktopsInfoNewResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExportTerminalsBindingDesktopsTemplateRequest;
@@ -392,6 +444,9 @@ import com.huaweicloud.sdk.workspace.v2.model.ExportUserConnectionNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExportUserConnectionNewResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExportUserGroupUsersNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExportUserGroupUsersNewResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ExportUserGroupsNewReq;
+import com.huaweicloud.sdk.workspace.v2.model.ExportUserGroupsNewRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ExportUserGroupsNewResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExportUserGroupsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExportUserGroupsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExportUserListTemplateRequest;
@@ -433,6 +488,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListAdOusRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAdOusResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListAgenciesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAgenciesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListAgentInstancesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListAgentInstancesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListAgentsInstallConditionRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAgentsInstallConditionResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListAlarmStatisticsRequest;
@@ -447,6 +504,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListAppRuleRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAppRuleResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListAppUserAccessDataRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAppUserAccessDataResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListApplyObjectsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListApplyObjectsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListAppsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAppsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListAvailabilityZonesRequest;
@@ -473,8 +532,12 @@ import com.huaweicloud.sdk.workspace.v2.model.ListDesktopPoolsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopPoolsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopSnapshotRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopSnapshotResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopStatisticsByVersionRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopStatisticsByVersionResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopVersionRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopVersionResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsByTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsByTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsConnectStatusRequest;
@@ -501,10 +564,16 @@ import com.huaweicloud.sdk.workspace.v2.model.ListHostsDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListHostsDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListHourPackagesTypeRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListHourPackagesTypeResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListImChannelsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListImChannelsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListImagesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListImagesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListInconsistentStaticsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListInconsistentStaticsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListInstanceModelGroupsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListInstanceModelGroupsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListInstanceStatisticsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListInstanceStatisticsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListInstancesStatusRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListInstancesStatusResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListInternetRequest;
@@ -529,6 +598,14 @@ import com.huaweicloud.sdk.workspace.v2.model.ListMetricsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricsTrendRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricsTrendResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListModelGroupProvidersRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListModelGroupProvidersResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListModelGroupResourcesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListModelGroupResourcesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListModelGroupsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListModelGroupsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListModelsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListModelsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListNatGatewaysRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListNatGatewaysResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListNatMappingConfigsRequest;
@@ -557,6 +634,13 @@ import com.huaweicloud.sdk.workspace.v2.model.ListProductsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListProductsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListProviderTemplatesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListProviderTemplatesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListProvidersRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListProvidersResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListRemoteModelsReq;
+import com.huaweicloud.sdk.workspace.v2.model.ListRemoteProviderModelsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListRemoteProviderModelsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListResourcePackagesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListResourcePackagesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListRestrictedRuleRequest;
@@ -595,10 +679,16 @@ import com.huaweicloud.sdk.workspace.v2.model.ListSubscribeAiAssistantUsersReque
 import com.huaweicloud.sdk.workspace.v2.model.ListSubscribeAiAssistantUsersResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListTargetOfPolicyGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListTargetOfPolicyGroupResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListTaskApplyObjectsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListTaskApplyObjectsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListTenantConfigsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListTenantConfigsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListTenantProfilesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListTenantProfilesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListTenantUpgradeStrategiesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListTenantUpgradeStrategiesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListTenantVersionConfigRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListTenantVersionConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListTerminalsBindingDesktopsConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListTerminalsBindingDesktopsConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListTerminalsBindingDesktopsRequest;
@@ -607,6 +697,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListTimeZonesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListTimeZonesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUnusedDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUnusedDesktopsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListUpgradeTasksRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListUpgradeTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUsedDesktopInfoReq;
 import com.huaweicloud.sdk.workspace.v2.model.ListUsedDesktopInfoRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUsedDesktopInfoResponse;
@@ -635,6 +727,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListWorkspacesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.LogoffDesktopsReq;
 import com.huaweicloud.sdk.workspace.v2.model.Metric;
 import com.huaweicloud.sdk.workspace.v2.model.MetricsWithTime;
+import com.huaweicloud.sdk.workspace.v2.model.ModelBatchCreateReq;
+import com.huaweicloud.sdk.workspace.v2.model.ModelBatchDeleteReq;
 import com.huaweicloud.sdk.workspace.v2.model.ModifyDesktopAttributesReq;
 import com.huaweicloud.sdk.workspace.v2.model.ModifyEnterpriseIdReq;
 import com.huaweicloud.sdk.workspace.v2.model.ModifyOuNameInfoV2Req;
@@ -651,9 +745,14 @@ import com.huaweicloud.sdk.workspace.v2.model.RebuildDesktopPoolResponse;
 import com.huaweicloud.sdk.workspace.v2.model.RebuildDesktopsReq;
 import com.huaweicloud.sdk.workspace.v2.model.RegisterDomainRequest;
 import com.huaweicloud.sdk.workspace.v2.model.RegisterDomainResponse;
+import com.huaweicloud.sdk.workspace.v2.model.RemoveModelConfigReq;
+import com.huaweicloud.sdk.workspace.v2.model.RemoveModelConfigRequest;
+import com.huaweicloud.sdk.workspace.v2.model.RemoveModelConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ResendEmailReq;
 import com.huaweicloud.sdk.workspace.v2.model.ResetRandomPasswordRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ResetRandomPasswordResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ResetSiteAuthConfigRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ResetSiteAuthConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ResizeDesktopPoolReq;
 import com.huaweicloud.sdk.workspace.v2.model.ResizeDesktopPoolRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ResizeDesktopPoolResponse;
@@ -669,7 +768,9 @@ import com.huaweicloud.sdk.workspace.v2.model.RunActionsOnGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.RunActionsOnGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.RunActionsOnWorkspaceJobRequest;
 import com.huaweicloud.sdk.workspace.v2.model.RunActionsOnWorkspaceJobResponse;
-import com.huaweicloud.sdk.workspace.v2.model.ScreenRecordsConfigResultReq;
+import com.huaweicloud.sdk.workspace.v2.model.SaveImChannelsReq;
+import com.huaweicloud.sdk.workspace.v2.model.SaveImChannelsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.SaveImChannelsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.SendDesktopPoolNotificationsReq;
 import com.huaweicloud.sdk.workspace.v2.model.SendDesktopPoolNotificationsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.SendDesktopPoolNotificationsResponse;
@@ -724,6 +825,12 @@ import com.huaweicloud.sdk.workspace.v2.model.ShowHibernateTypeRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowHibernateTypeResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowJobRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowJobResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowModelGroupRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowModelGroupResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowModelRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowModelResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowProviderRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowProviderResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotaDetailsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotaDetailsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasRequest;
@@ -748,6 +855,10 @@ import com.huaweicloud.sdk.workspace.v2.model.ShowSysprepInfoRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowSysprepInfoResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowTagByDesktopIdRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowTagByDesktopIdResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowTenantVersionConfigRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowTenantVersionConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowUpgradeTaskDetailRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowUpgradeTaskDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowUserAccessStagesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowUserAccessStagesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowUsingSubnetsRequest;
@@ -822,6 +933,12 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdateHostsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateMetricNotifyRuleReq;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateMetricNotifyRuleRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateMetricNotifyRuleResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateModelGroupReq;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateModelGroupRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateModelGroupResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateModelReq;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateModelRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateModelResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateNatMappingConfigsReq;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateNatMappingConfigsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateNatMappingConfigsResponse;
@@ -831,13 +948,18 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdatePoliciesOfPolicyGroupRequest
 import com.huaweicloud.sdk.workspace.v2.model.UpdatePoliciesOfPolicyGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdatePolicyGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdatePolicyGroupResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateProviderReq;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateProviderRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateProviderResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledTasksReq;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledTasksResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledUpgradeTaskRequestBody;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsRequestBody;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsTrafficLimitConfigRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsTrafficLimitConfigRequestBody;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsTrafficLimitConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScriptReq;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScriptRequest;
@@ -845,6 +967,9 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdateScriptResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateShareSpaceConfigReq;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateShareSpaceConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateShareSpaceConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateStrategyApplyObjectsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateStrategyApplyObjectsRequestBody;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateStrategyApplyObjectsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateSubnetBandwidthControlListReq;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateSubnetBandwidthControlListRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateSubnetBandwidthControlListResponse;
@@ -859,11 +984,16 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdateTenantConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTenantConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTenantProfileRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTenantProfileResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateTenantUpgradeStrategyRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateTenantUpgradeStrategyRequestBody;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateTenantUpgradeStrategyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsRequestBody;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateUpgradeTaskRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateUpgradeTaskResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateUploadedAppRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateUploadedAppResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateUserGroupRequest;
@@ -880,7 +1010,11 @@ import com.huaweicloud.sdk.workspace.v2.model.ValidateConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ValidateDcRequestBody;
 import com.huaweicloud.sdk.workspace.v2.model.ValidateDomainControllerRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ValidateDomainControllerResponse;
+import com.huaweicloud.sdk.workspace.v2.model.VerifyProviderReq;
+import com.huaweicloud.sdk.workspace.v2.model.VerifyProviderRequest;
+import com.huaweicloud.sdk.workspace.v2.model.VerifyProviderResponse;
 
+import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -1205,6 +1339,194 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAgenciesRequest::getAction, ListAgenciesRequest::setAction));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAgentInstancesRequest, ListAgentInstancesResponse> listAgentInstances =
+        genForListAgentInstances();
+
+    private static HttpRequestDef<ListAgentInstancesRequest, ListAgentInstancesResponse> genForListAgentInstances() {
+        // basic
+        HttpRequestDef.Builder<ListAgentInstancesRequest, ListAgentInstancesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAgentInstancesRequest.class, ListAgentInstancesResponse.class)
+                .withName("ListAgentInstances")
+                .withUri("/v3/ai-agents/instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("ai_agent_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getAiAgentType,
+                ListAgentInstancesRequest::setAiAgentType));
+        builder.<List<String>>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getRegionId, ListAgentInstancesRequest::setRegionId));
+        builder.<List<String>>withRequestField("agent_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getAgentStatus,
+                ListAgentInstancesRequest::setAgentStatus));
+        builder.<List<String>>withRequestField("desktop_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getDesktopStatus,
+                ListAgentInstancesRequest::setDesktopStatus));
+        builder.<List<String>>withRequestField("desktop_connection",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getDesktopConnection,
+                ListAgentInstancesRequest::setDesktopConnection));
+        builder.<String>withRequestField("model_group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getModelGroupId,
+                ListAgentInstancesRequest::setModelGroupId));
+        builder.<List<String>>withRequestField("channel_config_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getChannelConfigStatus,
+                ListAgentInstancesRequest::setChannelConfigStatus));
+        builder.<String>withRequestField("instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getInstanceName,
+                ListAgentInstancesRequest::setInstanceName));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getInstanceId, ListAgentInstancesRequest::setInstanceId));
+        builder.<String>withRequestField("desktop_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getDesktopId, ListAgentInstancesRequest::setDesktopId));
+        builder.<OffsetDateTime>withRequestField("create_time_start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getCreateTimeStart,
+                ListAgentInstancesRequest::setCreateTimeStart));
+        builder.<OffsetDateTime>withRequestField("create_time_end",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getCreateTimeEnd,
+                ListAgentInstancesRequest::setCreateTimeEnd));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getTags, ListAgentInstancesRequest::setTags));
+        builder.<List<String>>withRequestField("risk_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getRiskType, ListAgentInstancesRequest::setRiskType));
+        builder.<List<String>>withRequestField("model_config_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getModelConfigStatus,
+                ListAgentInstancesRequest::setModelConfigStatus));
+        builder.<String>withRequestField("agent_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getAgentVersion,
+                ListAgentInstancesRequest::setAgentVersion));
+        builder.<String>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getSortField, ListAgentInstancesRequest::setSortField));
+        builder.<String>withRequestField("sort_order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getSortOrder, ListAgentInstancesRequest::setSortOrder));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getOffset, ListAgentInstancesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAgentInstancesRequest::getLimit, ListAgentInstancesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstanceModelGroupsRequest, ListInstanceModelGroupsResponse> listInstanceModelGroups =
+        genForListInstanceModelGroups();
+
+    private static HttpRequestDef<ListInstanceModelGroupsRequest, ListInstanceModelGroupsResponse> genForListInstanceModelGroups() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceModelGroupsRequest, ListInstanceModelGroupsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInstanceModelGroupsRequest.class, ListInstanceModelGroupsResponse.class)
+            .withName("ListInstanceModelGroups")
+            .withUri("/v3/ai-agents/instances/{instance_id}/model-groups")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceModelGroupsRequest::getInstanceId,
+                ListInstanceModelGroupsRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceModelGroupsRequest::getOffset,
+                ListInstanceModelGroupsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceModelGroupsRequest::getLimit, ListInstanceModelGroupsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstanceStatisticsRequest, ListInstanceStatisticsResponse> listInstanceStatistics =
+        genForListInstanceStatistics();
+
+    private static HttpRequestDef<ListInstanceStatisticsRequest, ListInstanceStatisticsResponse> genForListInstanceStatistics() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceStatisticsRequest, ListInstanceStatisticsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInstanceStatisticsRequest.class, ListInstanceStatisticsResponse.class)
+            .withName("ListInstanceStatistics")
+            .withUri("/v3/ai-agents/instances/statistics")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ai_agent_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceStatisticsRequest::getAiAgentType,
+                ListInstanceStatisticsRequest::setAiAgentType));
 
         // response
 
@@ -2609,6 +2931,16 @@ public class WorkspaceMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCertsRequest::getLimit, ListCertsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCertsRequest::getOffset, ListCertsRequest::setOffset));
 
         // response
 
@@ -2660,6 +2992,33 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCertDetailRequest::getCertId, ShowCertDetailRequest::setCertId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCheckDesktopRejoinDomainRequest, BatchCheckDesktopRejoinDomainResponse> batchCheckDesktopRejoinDomain =
+        genForBatchCheckDesktopRejoinDomain();
+
+    private static HttpRequestDef<BatchCheckDesktopRejoinDomainRequest, BatchCheckDesktopRejoinDomainResponse> genForBatchCheckDesktopRejoinDomain() {
+        // basic
+        HttpRequestDef.Builder<BatchCheckDesktopRejoinDomainRequest, BatchCheckDesktopRejoinDomainResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCheckDesktopRejoinDomainRequest.class,
+                    BatchCheckDesktopRejoinDomainResponse.class)
+                .withName("BatchCheckDesktopRejoinDomain")
+                .withUri("/v2/{project_id}/desktops/batch-rejoin-domain/check")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchCheckRejoinDomainReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCheckRejoinDomainReq.class),
+            f -> f.withMarshaller(BatchCheckDesktopRejoinDomainRequest::getBody,
+                BatchCheckDesktopRejoinDomainRequest::setBody));
 
         // response
 
@@ -2893,6 +3252,11 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListLoginRecordsNewRequest::getMaxNetworkRtt,
                 ListLoginRecordsNewRequest::setMaxNetworkRtt));
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLoginRecordsNewRequest::getDomain, ListLoginRecordsNewRequest::setDomain));
 
         // response
 
@@ -3221,6 +3585,30 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchUpdateDesktopDomainRequest, BatchUpdateDesktopDomainResponse> batchUpdateDesktopDomain =
+        genForBatchUpdateDesktopDomain();
+
+    private static HttpRequestDef<BatchUpdateDesktopDomainRequest, BatchUpdateDesktopDomainResponse> genForBatchUpdateDesktopDomain() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateDesktopDomainRequest, BatchUpdateDesktopDomainResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, BatchUpdateDesktopDomainRequest.class, BatchUpdateDesktopDomainResponse.class)
+                .withName("BatchUpdateDesktopDomain")
+                .withUri("/v2/{project_id}/desktops/batch-rejoin-domain")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchRejoinDomainReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchRejoinDomainReq.class),
+            f -> f.withMarshaller(BatchUpdateDesktopDomainRequest::getBody, BatchUpdateDesktopDomainRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CancelRemoteAssistanceRequest, CancelRemoteAssistanceResponse> cancelRemoteAssistance =
         genForCancelRemoteAssistance();
 
@@ -3430,6 +3818,61 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExportDesktopVersionListRequest, ExportDesktopVersionListResponse> exportDesktopVersionList =
+        genForExportDesktopVersionList();
+
+    private static HttpRequestDef<ExportDesktopVersionListRequest, ExportDesktopVersionListResponse> genForExportDesktopVersionList() {
+        // basic
+        HttpRequestDef.Builder<ExportDesktopVersionListRequest, ExportDesktopVersionListResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ExportDesktopVersionListRequest.class, ExportDesktopVersionListResponse.class)
+                .withName("ExportDesktopVersionList")
+                .withUri("/v2/{project_id}/desktops/list-by-version/export")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("agent_version",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDesktopVersionListRequest::getAgentVersion,
+                ExportDesktopVersionListRequest::setAgentVersion));
+        builder.<String>withRequestField("os_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDesktopVersionListRequest::getOsType,
+                ExportDesktopVersionListRequest::setOsType));
+        builder.<String>withRequestField("desktop_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDesktopVersionListRequest::getDesktopId,
+                ExportDesktopVersionListRequest::setDesktopId));
+        builder.<String>withRequestField("desktop_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDesktopVersionListRequest::getDesktopName,
+                ExportDesktopVersionListRequest::setDesktopName));
+        builder.<String>withRequestField("username",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDesktopVersionListRequest::getUsername,
+                ExportDesktopVersionListRequest::setUsername));
+        builder.<ExportDesktopVersionListRequest.LanguageEnum>withRequestField("language",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportDesktopVersionListRequest.LanguageEnum.class),
+            f -> f.withMarshaller(ExportDesktopVersionListRequest::getLanguage,
+                ExportDesktopVersionListRequest::setLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAgentsInstallConditionRequest, ListAgentsInstallConditionResponse> listAgentsInstallCondition =
         genForListAgentsInstallCondition();
 
@@ -3562,6 +4005,88 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDesktopStatisticsByVersionRequest, ListDesktopStatisticsByVersionResponse> listDesktopStatisticsByVersion =
+        genForListDesktopStatisticsByVersion();
+
+    private static HttpRequestDef<ListDesktopStatisticsByVersionRequest, ListDesktopStatisticsByVersionResponse> genForListDesktopStatisticsByVersion() {
+        // basic
+        HttpRequestDef.Builder<ListDesktopStatisticsByVersionRequest, ListDesktopStatisticsByVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListDesktopStatisticsByVersionRequest.class,
+                    ListDesktopStatisticsByVersionResponse.class)
+                .withName("ListDesktopStatisticsByVersion")
+                .withUri("/v2/{project_id}/desktops/statistics/by-version")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("versions",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListDesktopStatisticsByVersionRequest::getVersions,
+                ListDesktopStatisticsByVersionRequest::setVersions));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDesktopVersionRequest, ListDesktopVersionResponse> listDesktopVersion =
+        genForListDesktopVersion();
+
+    private static HttpRequestDef<ListDesktopVersionRequest, ListDesktopVersionResponse> genForListDesktopVersion() {
+        // basic
+        HttpRequestDef.Builder<ListDesktopVersionRequest, ListDesktopVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDesktopVersionRequest.class, ListDesktopVersionResponse.class)
+                .withName("ListDesktopVersion")
+                .withUri("/v2/{project_id}/desktops/list-by-version")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("agent_version",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopVersionRequest::getAgentVersion,
+                ListDesktopVersionRequest::setAgentVersion));
+        builder.<String>withRequestField("os_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopVersionRequest::getOsType, ListDesktopVersionRequest::setOsType));
+        builder.<String>withRequestField("desktop_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopVersionRequest::getDesktopId, ListDesktopVersionRequest::setDesktopId));
+        builder.<String>withRequestField("desktop_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopVersionRequest::getDesktopName,
+                ListDesktopVersionRequest::setDesktopName));
+        builder.<String>withRequestField("username",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopVersionRequest::getUsername, ListDesktopVersionRequest::setUsername));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDesktopVersionRequest::getOffset, ListDesktopVersionRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDesktopVersionRequest::getLimit, ListDesktopVersionRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDesktopsRequest, ListDesktopsResponse> listDesktops = genForListDesktops();
 
     private static HttpRequestDef<ListDesktopsRequest, ListDesktopsResponse> genForListDesktops() {
@@ -3598,6 +4123,11 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDesktopsRequest::getLimit, ListDesktopsRequest::setLimit));
+        builder.<ListDesktopsRequest.DomainStatusEnum>withRequestField("domain_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDesktopsRequest.DomainStatusEnum.class),
+            f -> f.withMarshaller(ListDesktopsRequest::getDomainStatus, ListDesktopsRequest::setDomainStatus));
         builder.<String>withRequestField("pool_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -3712,6 +4242,11 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDesktopsDetailRequest::getUserName, ListDesktopsDetailRequest::setUserName));
+        builder.<String>withRequestField("user_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopsDetailRequest::getUserId, ListDesktopsDetailRequest::setUserId));
         builder.<List<String>>withRequestField("user_names",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -3765,6 +4300,12 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDesktopsDetailRequest::getDesktopType,
                 ListDesktopsDetailRequest::setDesktopType));
+        builder.<ListDesktopsDetailRequest.DomainStatusEnum>withRequestField("domain_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDesktopsDetailRequest.DomainStatusEnum.class),
+            f -> f.withMarshaller(ListDesktopsDetailRequest::getDomainStatus,
+                ListDesktopsDetailRequest::setDomainStatus));
         builder.<String>withRequestField("tag",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -3826,6 +4367,12 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDesktopsDetailRequest::getAvailabilityZone,
                 ListDesktopsDetailRequest::setAvailabilityZone));
+        builder.<String>withRequestField("agent_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopsDetailRequest::getAgentVersion,
+                ListDesktopsDetailRequest::setAgentVersion));
 
         // response
 
@@ -4810,6 +5357,12 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPoolDesktopsDetailRequest::getTag, ListPoolDesktopsDetailRequest::setTag));
+        builder.<ListPoolDesktopsDetailRequest.DomainStatusEnum>withRequestField("domain_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPoolDesktopsDetailRequest.DomainStatusEnum.class),
+            f -> f.withMarshaller(ListPoolDesktopsDetailRequest::getDomainStatus,
+                ListPoolDesktopsDetailRequest::setDomainStatus));
         builder.<Boolean>withRequestField("user_attached",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -5350,6 +5903,12 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportDesktopListNewRequest::getComputerName,
                 ExportDesktopListNewRequest::setComputerName));
+        builder.<List<String>>withRequestField("computer_names",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ExportDesktopListNewRequest::getComputerNames,
+                ExportDesktopListNewRequest::setComputerNames));
         builder.<String>withRequestField("desktop_ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -5406,11 +5965,6 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ExportDesktopListNewRequest.SortTypeEnum.class),
             f -> f.withMarshaller(ExportDesktopListNewRequest::getSortType, ExportDesktopListNewRequest::setSortType));
-        builder.<String>withRequestField("pool_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportDesktopListNewRequest::getPoolId, ExportDesktopListNewRequest::setPoolId));
         builder.<Boolean>withRequestField("user_attached",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -5445,6 +5999,39 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportDesktopListNewRequest::getConnectionStatusVersion,
                 ExportDesktopListNewRequest::setConnectionStatusVersion));
+        builder.<String>withRequestField("pool_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDesktopListNewRequest::getPoolId, ExportDesktopListNewRequest::setPoolId));
+        builder.<Boolean>withRequestField("include_pool",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ExportDesktopListNewRequest::getIncludePool,
+                ExportDesktopListNewRequest::setIncludePool));
+        builder.<String>withRequestField("pool_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDesktopListNewRequest::getPoolName, ExportDesktopListNewRequest::setPoolName));
+        builder.<ExportDesktopListNewRequest.PoolTypeEnum>withRequestField("pool_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportDesktopListNewRequest.PoolTypeEnum.class),
+            f -> f.withMarshaller(ExportDesktopListNewRequest::getPoolType, ExportDesktopListNewRequest::setPoolType));
+        builder.<Boolean>withRequestField("pool_in_maintenance_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ExportDesktopListNewRequest::getPoolInMaintenanceMode,
+                ExportDesktopListNewRequest::setPoolInMaintenanceMode));
+        builder.<String>withRequestField("pool_enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDesktopListNewRequest::getPoolEnterpriseProjectId,
+                ExportDesktopListNewRequest::setPoolEnterpriseProjectId));
 
         // response
 
@@ -5745,6 +6332,11 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListUsersOfGroupRequest::getUserName, ListUsersOfGroupRequest::setUserName));
+        builder.<List<String>>withRequestField("user_names",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListUsersOfGroupRequest::getUserNames, ListUsersOfGroupRequest::setUserNames));
         builder.<String>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -5857,6 +6449,12 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportUserGroupUsersNewRequest::getUserName,
                 ExportUserGroupUsersNewRequest::setUserName));
+        builder.<List<String>>withRequestField("user_names",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ExportUserGroupUsersNewRequest::getUserNames,
+                ExportUserGroupUsersNewRequest::setUserNames));
         builder.<String>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -5887,6 +6485,98 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportUserGroupUsersNewRequest::getEnterpriseProjectId,
                 ExportUserGroupUsersNewRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportHostsDetailRequest, ExportHostsDetailResponse> exportHostsDetail =
+        genForExportHostsDetail();
+
+    private static HttpRequestDef<ExportHostsDetailRequest, ExportHostsDetailResponse> genForExportHostsDetail() {
+        // basic
+        HttpRequestDef.Builder<ExportHostsDetailRequest, ExportHostsDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ExportHostsDetailRequest.class, ExportHostsDetailResponse.class)
+                .withName("ExportHostsDetail")
+                .withUri("/v2/{project_id}/hosts/export")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportHostsDetailRequest::getName, ExportHostsDetailRequest::setName));
+        builder.<String>withRequestField("availability_zone",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportHostsDetailRequest::getAvailabilityZone,
+                ExportHostsDetailRequest::setAvailabilityZone));
+        builder.<String>withRequestField("host_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportHostsDetailRequest::getHostId, ExportHostsDetailRequest::setHostId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportHostsDetailRequest::getEnterpriseProjectId,
+                ExportHostsDetailRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("host_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportHostsDetailRequest::getHostType, ExportHostsDetailRequest::setHostType));
+        builder.<String>withRequestField("host_type_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportHostsDetailRequest::getHostTypeName,
+                ExportHostsDetailRequest::setHostTypeName));
+        builder.<ExportHostsDetailRequest.StateEnum>withRequestField("state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportHostsDetailRequest.StateEnum.class),
+            f -> f.withMarshaller(ExportHostsDetailRequest::getState, ExportHostsDetailRequest::setState));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExportHostsDetailRequest::getLimit, ExportHostsDetailRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExportHostsDetailRequest::getOffset, ExportHostsDetailRequest::setOffset));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportHostsDetailRequest::getMarker, ExportHostsDetailRequest::setMarker));
+        builder.<String>withRequestField("changes_since",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportHostsDetailRequest::getChangesSince,
+                ExportHostsDetailRequest::setChangesSince));
+        builder.<ExportHostsDetailRequest.SortFieldEnum>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportHostsDetailRequest.SortFieldEnum.class),
+            f -> f.withMarshaller(ExportHostsDetailRequest::getSortField, ExportHostsDetailRequest::setSortField));
+        builder.<ExportHostsDetailRequest.SortTypeEnum>withRequestField("sort_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportHostsDetailRequest.SortTypeEnum.class),
+            f -> f.withMarshaller(ExportHostsDetailRequest::getSortType, ExportHostsDetailRequest::setSortType));
+        builder.<ExportHostsDetailRequest.LanguageEnum>withRequestField("language",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportHostsDetailRequest.LanguageEnum.class),
+            f -> f.withMarshaller(ExportHostsDetailRequest::getLanguage, ExportHostsDetailRequest::setLanguage));
 
         // response
 
@@ -5962,6 +6652,16 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListHostsDetailRequest::getChangesSince, ListHostsDetailRequest::setChangesSince));
+        builder.<ListHostsDetailRequest.SortFieldEnum>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListHostsDetailRequest.SortFieldEnum.class),
+            f -> f.withMarshaller(ListHostsDetailRequest::getSortField, ListHostsDetailRequest::setSortField));
+        builder.<ListHostsDetailRequest.SortTypeEnum>withRequestField("sort_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListHostsDetailRequest.SortTypeEnum.class),
+            f -> f.withMarshaller(ListHostsDetailRequest::getSortType, ListHostsDetailRequest::setSortType));
 
         // response
 
@@ -5985,6 +6685,26 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServersByHostIdRequest::getHostId, ListServersByHostIdRequest::setHostId));
+        builder.<ListServersByHostIdRequest.SortFieldEnum>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListServersByHostIdRequest.SortFieldEnum.class),
+            f -> f.withMarshaller(ListServersByHostIdRequest::getSortField, ListServersByHostIdRequest::setSortField));
+        builder.<ListServersByHostIdRequest.SortTypeEnum>withRequestField("sort_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListServersByHostIdRequest.SortTypeEnum.class),
+            f -> f.withMarshaller(ListServersByHostIdRequest::getSortType, ListServersByHostIdRequest::setSortType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListServersByHostIdRequest::getLimit, ListServersByHostIdRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListServersByHostIdRequest::getOffset, ListServersByHostIdRequest::setOffset));
 
         // response
 
@@ -6007,6 +6727,80 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateHostsRequestBody.class),
             f -> f.withMarshaller(UpdateHostsRequest::getBody, UpdateHostsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteImChannelRequest, DeleteImChannelResponse> deleteImChannel =
+        genForDeleteImChannel();
+
+    private static HttpRequestDef<DeleteImChannelRequest, DeleteImChannelResponse> genForDeleteImChannel() {
+        // basic
+        HttpRequestDef.Builder<DeleteImChannelRequest, DeleteImChannelResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteImChannelRequest.class, DeleteImChannelResponse.class)
+                .withName("DeleteImChannel")
+                .withUri("/v3/ai-agents/{id}/im-channels/{platform}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteImChannelRequest::getId, DeleteImChannelRequest::setId));
+        builder.<String>withRequestField("platform",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteImChannelRequest::getPlatform, DeleteImChannelRequest::setPlatform));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListImChannelsRequest, ListImChannelsResponse> listImChannels =
+        genForListImChannels();
+
+    private static HttpRequestDef<ListImChannelsRequest, ListImChannelsResponse> genForListImChannels() {
+        // basic
+        HttpRequestDef.Builder<ListImChannelsRequest, ListImChannelsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListImChannelsRequest.class, ListImChannelsResponse.class)
+                .withName("ListImChannels")
+                .withUri("/v3/ai-agents/{id}/im-channels")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImChannelsRequest::getId, ListImChannelsRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SaveImChannelsRequest, SaveImChannelsResponse> saveImChannels =
+        genForSaveImChannels();
+
+    private static HttpRequestDef<SaveImChannelsRequest, SaveImChannelsResponse> genForSaveImChannels() {
+        // basic
+        HttpRequestDef.Builder<SaveImChannelsRequest, SaveImChannelsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SaveImChannelsRequest.class, SaveImChannelsResponse.class)
+                .withName("SaveImChannels")
+                .withUri("/v3/ai-agents/im-channels")
+                .withContentType("application/json");
+
+        // requests
+        builder.<SaveImChannelsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SaveImChannelsReq.class),
+            f -> f.withMarshaller(SaveImChannelsRequest::getBody, SaveImChannelsRequest::setBody));
 
         // response
 
@@ -6374,6 +7168,476 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJobRequest::getJobId, ShowJobRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ApplyModelConfigRequest, ApplyModelConfigResponse> applyModelConfig =
+        genForApplyModelConfig();
+
+    private static HttpRequestDef<ApplyModelConfigRequest, ApplyModelConfigResponse> genForApplyModelConfig() {
+        // basic
+        HttpRequestDef.Builder<ApplyModelConfigRequest, ApplyModelConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ApplyModelConfigRequest.class, ApplyModelConfigResponse.class)
+                .withName("ApplyModelConfig")
+                .withUri("/v3/ai-agents/model-configs/apply")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ApplyModelConfigReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApplyModelConfigReq.class),
+            f -> f.withMarshaller(ApplyModelConfigRequest::getBody, ApplyModelConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RemoveModelConfigRequest, RemoveModelConfigResponse> removeModelConfig =
+        genForRemoveModelConfig();
+
+    private static HttpRequestDef<RemoveModelConfigRequest, RemoveModelConfigResponse> genForRemoveModelConfig() {
+        // basic
+        HttpRequestDef.Builder<RemoveModelConfigRequest, RemoveModelConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, RemoveModelConfigRequest.class, RemoveModelConfigResponse.class)
+                .withName("RemoveModelConfig")
+                .withUri("/v3/ai-agents/model-configs/apply")
+                .withContentType("application/json");
+
+        // requests
+        builder.<RemoveModelConfigReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RemoveModelConfigReq.class),
+            f -> f.withMarshaller(RemoveModelConfigRequest::getBody, RemoveModelConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchBindProvidersRequest, BatchBindProvidersResponse> batchBindProviders =
+        genForBatchBindProviders();
+
+    private static HttpRequestDef<BatchBindProvidersRequest, BatchBindProvidersResponse> genForBatchBindProviders() {
+        // basic
+        HttpRequestDef.Builder<BatchBindProvidersRequest, BatchBindProvidersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchBindProvidersRequest.class, BatchBindProvidersResponse.class)
+                .withName("BatchBindProviders")
+                .withUri("/v3/ai-agents/model-groups/{group_id}/providers/batch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchBindProvidersRequest::getGroupId, BatchBindProvidersRequest::setGroupId));
+        builder.<BatchBindProvidersReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchBindProvidersReq.class),
+            f -> f.withMarshaller(BatchBindProvidersRequest::getBody, BatchBindProvidersRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteProvidersRequest, BatchDeleteProvidersResponse> batchDeleteProviders =
+        genForBatchDeleteProviders();
+
+    private static HttpRequestDef<BatchDeleteProvidersRequest, BatchDeleteProvidersResponse> genForBatchDeleteProviders() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteProvidersRequest, BatchDeleteProvidersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteProvidersRequest.class, BatchDeleteProvidersResponse.class)
+            .withName("BatchDeleteProviders")
+            .withUri("/v3/ai-agents/model-groups/{group_id}/providers/batch-delete")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteProvidersRequest::getGroupId, BatchDeleteProvidersRequest::setGroupId));
+        builder.<BatchDeleteProvidersReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteProvidersReq.class),
+            f -> f.withMarshaller(BatchDeleteProvidersRequest::getBody, BatchDeleteProvidersRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateModelGroupRequest, CreateModelGroupResponse> createModelGroup =
+        genForCreateModelGroup();
+
+    private static HttpRequestDef<CreateModelGroupRequest, CreateModelGroupResponse> genForCreateModelGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateModelGroupRequest, CreateModelGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateModelGroupRequest.class, CreateModelGroupResponse.class)
+                .withName("CreateModelGroup")
+                .withUri("/v3/ai-agents/model-groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateModelGroupReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateModelGroupReq.class),
+            f -> f.withMarshaller(CreateModelGroupRequest::getBody, CreateModelGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteModelGroupRequest, DeleteModelGroupResponse> deleteModelGroup =
+        genForDeleteModelGroup();
+
+    private static HttpRequestDef<DeleteModelGroupRequest, DeleteModelGroupResponse> genForDeleteModelGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteModelGroupRequest, DeleteModelGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteModelGroupRequest.class, DeleteModelGroupResponse.class)
+                .withName("DeleteModelGroup")
+                .withUri("/v3/ai-agents/model-groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteModelGroupRequest::getGroupId, DeleteModelGroupRequest::setGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListModelGroupProvidersRequest, ListModelGroupProvidersResponse> listModelGroupProviders =
+        genForListModelGroupProviders();
+
+    private static HttpRequestDef<ListModelGroupProvidersRequest, ListModelGroupProvidersResponse> genForListModelGroupProviders() {
+        // basic
+        HttpRequestDef.Builder<ListModelGroupProvidersRequest, ListModelGroupProvidersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListModelGroupProvidersRequest.class, ListModelGroupProvidersResponse.class)
+            .withName("ListModelGroupProviders")
+            .withUri("/v3/ai-agents/model-groups/{group_id}/providers")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListModelGroupProvidersRequest::getGroupId,
+                ListModelGroupProvidersRequest::setGroupId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListModelGroupProvidersRequest::getOffset,
+                ListModelGroupProvidersRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListModelGroupProvidersRequest::getLimit, ListModelGroupProvidersRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListModelGroupResourcesRequest, ListModelGroupResourcesResponse> listModelGroupResources =
+        genForListModelGroupResources();
+
+    private static HttpRequestDef<ListModelGroupResourcesRequest, ListModelGroupResourcesResponse> genForListModelGroupResources() {
+        // basic
+        HttpRequestDef.Builder<ListModelGroupResourcesRequest, ListModelGroupResourcesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListModelGroupResourcesRequest.class, ListModelGroupResourcesResponse.class)
+            .withName("ListModelGroupResources")
+            .withUri("/v3/ai-agents/model-groups/{group_id}/resources")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListModelGroupResourcesRequest::getGroupId,
+                ListModelGroupResourcesRequest::setGroupId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListModelGroupResourcesRequest::getOffset,
+                ListModelGroupResourcesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListModelGroupResourcesRequest::getLimit, ListModelGroupResourcesRequest::setLimit));
+        builder.<ListModelGroupResourcesRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListModelGroupResourcesRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListModelGroupResourcesRequest::getResourceType,
+                ListModelGroupResourcesRequest::setResourceType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListModelGroupsRequest, ListModelGroupsResponse> listModelGroups =
+        genForListModelGroups();
+
+    private static HttpRequestDef<ListModelGroupsRequest, ListModelGroupsResponse> genForListModelGroups() {
+        // basic
+        HttpRequestDef.Builder<ListModelGroupsRequest, ListModelGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListModelGroupsRequest.class, ListModelGroupsResponse.class)
+                .withName("ListModelGroups")
+                .withUri("/v3/ai-agents/model-groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListModelGroupsRequest::getOffset, ListModelGroupsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListModelGroupsRequest::getLimit, ListModelGroupsRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListModelGroupsRequest::getName, ListModelGroupsRequest::setName));
+        builder.<ListModelGroupsRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListModelGroupsRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListModelGroupsRequest::getStatus, ListModelGroupsRequest::setStatus));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowModelGroupRequest, ShowModelGroupResponse> showModelGroup =
+        genForShowModelGroup();
+
+    private static HttpRequestDef<ShowModelGroupRequest, ShowModelGroupResponse> genForShowModelGroup() {
+        // basic
+        HttpRequestDef.Builder<ShowModelGroupRequest, ShowModelGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowModelGroupRequest.class, ShowModelGroupResponse.class)
+                .withName("ShowModelGroup")
+                .withUri("/v3/ai-agents/model-groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModelGroupRequest::getGroupId, ShowModelGroupRequest::setGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateModelGroupRequest, UpdateModelGroupResponse> updateModelGroup =
+        genForUpdateModelGroup();
+
+    private static HttpRequestDef<UpdateModelGroupRequest, UpdateModelGroupResponse> genForUpdateModelGroup() {
+        // basic
+        HttpRequestDef.Builder<UpdateModelGroupRequest, UpdateModelGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateModelGroupRequest.class, UpdateModelGroupResponse.class)
+                .withName("UpdateModelGroup")
+                .withUri("/v3/ai-agents/model-groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateModelGroupRequest::getGroupId, UpdateModelGroupRequest::setGroupId));
+        builder.<UpdateModelGroupReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateModelGroupReq.class),
+            f -> f.withMarshaller(UpdateModelGroupRequest::getBody, UpdateModelGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateModelRequest, BatchCreateModelResponse> batchCreateModel =
+        genForBatchCreateModel();
+
+    private static HttpRequestDef<BatchCreateModelRequest, BatchCreateModelResponse> genForBatchCreateModel() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateModelRequest, BatchCreateModelResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateModelRequest.class, BatchCreateModelResponse.class)
+                .withName("BatchCreateModel")
+                .withUri("/v3/ai-agents/model-providers/{provider_id}/models/batch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateModelRequest::getProviderId, BatchCreateModelRequest::setProviderId));
+        builder.<ModelBatchCreateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModelBatchCreateReq.class),
+            f -> f.withMarshaller(BatchCreateModelRequest::getBody, BatchCreateModelRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteModelRequest, BatchDeleteModelResponse> batchDeleteModel =
+        genForBatchDeleteModel();
+
+    private static HttpRequestDef<BatchDeleteModelRequest, BatchDeleteModelResponse> genForBatchDeleteModel() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteModelRequest, BatchDeleteModelResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteModelRequest.class, BatchDeleteModelResponse.class)
+                .withName("BatchDeleteModel")
+                .withUri("/v3/ai-agents/model-providers/{provider_id}/models/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteModelRequest::getProviderId, BatchDeleteModelRequest::setProviderId));
+        builder.<ModelBatchDeleteReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModelBatchDeleteReq.class),
+            f -> f.withMarshaller(BatchDeleteModelRequest::getBody, BatchDeleteModelRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListModelsRequest, ListModelsResponse> listModels = genForListModels();
+
+    private static HttpRequestDef<ListModelsRequest, ListModelsResponse> genForListModels() {
+        // basic
+        HttpRequestDef.Builder<ListModelsRequest, ListModelsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListModelsRequest.class, ListModelsResponse.class)
+                .withName("ListModels")
+                .withUri("/v3/ai-agents/model-providers/{provider_id}/models")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListModelsRequest::getProviderId, ListModelsRequest::setProviderId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListModelsRequest::getLimit, ListModelsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListModelsRequest::getOffset, ListModelsRequest::setOffset));
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListModelsRequest::getGroupId, ListModelsRequest::setGroupId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListModelsRequest::getName, ListModelsRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowModelRequest, ShowModelResponse> showModel = genForShowModel();
+
+    private static HttpRequestDef<ShowModelRequest, ShowModelResponse> genForShowModel() {
+        // basic
+        HttpRequestDef.Builder<ShowModelRequest, ShowModelResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowModelRequest.class, ShowModelResponse.class)
+                .withName("ShowModel")
+                .withUri("/v3/ai-agents/model-providers/{provider_id}/models/{model_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModelRequest::getProviderId, ShowModelRequest::setProviderId));
+        builder.<String>withRequestField("model_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModelRequest::getModelId, ShowModelRequest::setModelId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateModelRequest, UpdateModelResponse> updateModel = genForUpdateModel();
+
+    private static HttpRequestDef<UpdateModelRequest, UpdateModelResponse> genForUpdateModel() {
+        // basic
+        HttpRequestDef.Builder<UpdateModelRequest, UpdateModelResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateModelRequest.class, UpdateModelResponse.class)
+                .withName("UpdateModel")
+                .withUri("/v3/ai-agents/model-providers/{provider_id}/models/{model_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateModelRequest::getProviderId, UpdateModelRequest::setProviderId));
+        builder.<String>withRequestField("model_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateModelRequest::getModelId, UpdateModelRequest::setModelId));
+        builder.<UpdateModelReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateModelReq.class),
+            f -> f.withMarshaller(UpdateModelRequest::getBody, UpdateModelRequest::setBody));
 
         // response
 
@@ -7995,6 +9259,16 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourcePackagesRequest::getResourceSpecCode,
                 ListResourcePackagesRequest::setResourceSpecCode));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourcePackagesRequest::getLimit, ListResourcePackagesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourcePackagesRequest::getOffset, ListResourcePackagesRequest::setOffset));
 
         // response
 
@@ -8098,6 +9372,215 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(Map.class),
             f -> f.withMarshaller(UpdateTenantProfileRequest::getBody, UpdateTenantProfileRequest::setBody)
                 .withInnerContainerType(Boolean.class));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateProviderRequest, CreateProviderResponse> createProvider =
+        genForCreateProvider();
+
+    private static HttpRequestDef<CreateProviderRequest, CreateProviderResponse> genForCreateProvider() {
+        // basic
+        HttpRequestDef.Builder<CreateProviderRequest, CreateProviderResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateProviderRequest.class, CreateProviderResponse.class)
+                .withName("CreateProvider")
+                .withUri("/v3/ai-agents/model-providers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateProviderReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateProviderReq.class),
+            f -> f.withMarshaller(CreateProviderRequest::getBody, CreateProviderRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteProviderRequest, DeleteProviderResponse> deleteProvider =
+        genForDeleteProvider();
+
+    private static HttpRequestDef<DeleteProviderRequest, DeleteProviderResponse> genForDeleteProvider() {
+        // basic
+        HttpRequestDef.Builder<DeleteProviderRequest, DeleteProviderResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteProviderRequest.class, DeleteProviderResponse.class)
+                .withName("DeleteProvider")
+                .withUri("/v3/ai-agents/model-providers/{provider_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteProviderRequest::getProviderId, DeleteProviderRequest::setProviderId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProviderTemplatesRequest, ListProviderTemplatesResponse> listProviderTemplates =
+        genForListProviderTemplates();
+
+    private static HttpRequestDef<ListProviderTemplatesRequest, ListProviderTemplatesResponse> genForListProviderTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListProviderTemplatesRequest, ListProviderTemplatesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListProviderTemplatesRequest.class, ListProviderTemplatesResponse.class)
+            .withName("ListProviderTemplates")
+            .withUri("/v3/ai-agents/model-provider-templates")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProvidersRequest, ListProvidersResponse> listProviders =
+        genForListProviders();
+
+    private static HttpRequestDef<ListProvidersRequest, ListProvidersResponse> genForListProviders() {
+        // basic
+        HttpRequestDef.Builder<ListProvidersRequest, ListProvidersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProvidersRequest.class, ListProvidersResponse.class)
+                .withName("ListProviders")
+                .withUri("/v3/ai-agents/model-providers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProvidersRequest::getLimit, ListProvidersRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProvidersRequest::getOffset, ListProvidersRequest::setOffset));
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProvidersRequest::getGroupId, ListProvidersRequest::setGroupId));
+        builder.<ListProvidersRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListProvidersRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListProvidersRequest::getStatus, ListProvidersRequest::setStatus));
+        builder.<String>withRequestField("provider_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProvidersRequest::getProviderType, ListProvidersRequest::setProviderType));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProvidersRequest::getName, ListProvidersRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRemoteProviderModelsRequest, ListRemoteProviderModelsResponse> listRemoteProviderModels =
+        genForListRemoteProviderModels();
+
+    private static HttpRequestDef<ListRemoteProviderModelsRequest, ListRemoteProviderModelsResponse> genForListRemoteProviderModels() {
+        // basic
+        HttpRequestDef.Builder<ListRemoteProviderModelsRequest, ListRemoteProviderModelsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ListRemoteProviderModelsRequest.class, ListRemoteProviderModelsResponse.class)
+                .withName("ListRemoteProviderModels")
+                .withUri("/v3/ai-agents/model-providers/remote-models/query")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListRemoteModelsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListRemoteModelsReq.class),
+            f -> f.withMarshaller(ListRemoteProviderModelsRequest::getBody, ListRemoteProviderModelsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowProviderRequest, ShowProviderResponse> showProvider = genForShowProvider();
+
+    private static HttpRequestDef<ShowProviderRequest, ShowProviderResponse> genForShowProvider() {
+        // basic
+        HttpRequestDef.Builder<ShowProviderRequest, ShowProviderResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowProviderRequest.class, ShowProviderResponse.class)
+                .withName("ShowProvider")
+                .withUri("/v3/ai-agents/model-providers/{provider_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProviderRequest::getProviderId, ShowProviderRequest::setProviderId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateProviderRequest, UpdateProviderResponse> updateProvider =
+        genForUpdateProvider();
+
+    private static HttpRequestDef<UpdateProviderRequest, UpdateProviderResponse> genForUpdateProvider() {
+        // basic
+        HttpRequestDef.Builder<UpdateProviderRequest, UpdateProviderResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateProviderRequest.class, UpdateProviderResponse.class)
+                .withName("UpdateProvider")
+                .withUri("/v3/ai-agents/model-providers/{provider_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProviderRequest::getProviderId, UpdateProviderRequest::setProviderId));
+        builder.<UpdateProviderReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateProviderReq.class),
+            f -> f.withMarshaller(UpdateProviderRequest::getBody, UpdateProviderRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<VerifyProviderRequest, VerifyProviderResponse> verifyProvider =
+        genForVerifyProvider();
+
+    private static HttpRequestDef<VerifyProviderRequest, VerifyProviderResponse> genForVerifyProvider() {
+        // basic
+        HttpRequestDef.Builder<VerifyProviderRequest, VerifyProviderResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, VerifyProviderRequest.class, VerifyProviderResponse.class)
+                .withName("VerifyProvider")
+                .withUri("/v3/ai-agents/model-providers/verify")
+                .withContentType("application/json");
+
+        // requests
+        builder.<VerifyProviderReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(VerifyProviderReq.class),
+            f -> f.withMarshaller(VerifyProviderRequest::getBody, VerifyProviderRequest::setBody));
 
         // response
 
@@ -8532,6 +10015,229 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateUpgradeScheduleTaskRequest, CreateUpgradeScheduleTaskResponse> createUpgradeScheduleTask =
+        genForCreateUpgradeScheduleTask();
+
+    private static HttpRequestDef<CreateUpgradeScheduleTaskRequest, CreateUpgradeScheduleTaskResponse> genForCreateUpgradeScheduleTask() {
+        // basic
+        HttpRequestDef.Builder<CreateUpgradeScheduleTaskRequest, CreateUpgradeScheduleTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateUpgradeScheduleTaskRequest.class,
+                    CreateUpgradeScheduleTaskResponse.class)
+                .withName("CreateUpgradeScheduleTask")
+                .withUri("/v2/{project_id}/upgrade-task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateScheduledUpgradeTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateScheduledUpgradeTaskRequestBody.class),
+            f -> f.withMarshaller(CreateUpgradeScheduleTaskRequest::getBody,
+                CreateUpgradeScheduleTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteUpgradeTaskRequest, DeleteUpgradeTaskResponse> deleteUpgradeTask =
+        genForDeleteUpgradeTask();
+
+    private static HttpRequestDef<DeleteUpgradeTaskRequest, DeleteUpgradeTaskResponse> genForDeleteUpgradeTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteUpgradeTaskRequest, DeleteUpgradeTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteUpgradeTaskRequest.class, DeleteUpgradeTaskResponse.class)
+                .withName("DeleteUpgradeTask")
+                .withUri("/v2/{project_id}/upgrade-task/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DeleteUpgradeTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteUpgradeTaskRequestBody.class),
+            f -> f.withMarshaller(DeleteUpgradeTaskRequest::getBody, DeleteUpgradeTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteTriggerUpgradeRequest, ExecuteTriggerUpgradeResponse> executeTriggerUpgrade =
+        genForExecuteTriggerUpgrade();
+
+    private static HttpRequestDef<ExecuteTriggerUpgradeRequest, ExecuteTriggerUpgradeResponse> genForExecuteTriggerUpgrade() {
+        // basic
+        HttpRequestDef.Builder<ExecuteTriggerUpgradeRequest, ExecuteTriggerUpgradeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ExecuteTriggerUpgradeRequest.class, ExecuteTriggerUpgradeResponse.class)
+            .withName("ExecuteTriggerUpgrade")
+            .withUri("/v2/{project_id}/upgrade-task/execute")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ExecuteTriggerUpgradeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExecuteTriggerUpgradeRequestBody.class),
+            f -> f.withMarshaller(ExecuteTriggerUpgradeRequest::getBody, ExecuteTriggerUpgradeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTaskApplyObjectsRequest, ListTaskApplyObjectsResponse> listTaskApplyObjects =
+        genForListTaskApplyObjects();
+
+    private static HttpRequestDef<ListTaskApplyObjectsRequest, ListTaskApplyObjectsResponse> genForListTaskApplyObjects() {
+        // basic
+        HttpRequestDef.Builder<ListTaskApplyObjectsRequest, ListTaskApplyObjectsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListTaskApplyObjectsRequest.class, ListTaskApplyObjectsResponse.class)
+            .withName("ListTaskApplyObjects")
+            .withUri("/v2/{project_id}/upgrade-task/{task_id}/apply-objects")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskApplyObjectsRequest::getTaskId, ListTaskApplyObjectsRequest::setTaskId));
+        builder.<String>withRequestField("object_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskApplyObjectsRequest::getObjectName,
+                ListTaskApplyObjectsRequest::setObjectName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTaskApplyObjectsRequest::getOffset, ListTaskApplyObjectsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTaskApplyObjectsRequest::getLimit, ListTaskApplyObjectsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUpgradeTasksRequest, ListUpgradeTasksResponse> listUpgradeTasks =
+        genForListUpgradeTasks();
+
+    private static HttpRequestDef<ListUpgradeTasksRequest, ListUpgradeTasksResponse> genForListUpgradeTasks() {
+        // basic
+        HttpRequestDef.Builder<ListUpgradeTasksRequest, ListUpgradeTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUpgradeTasksRequest.class, ListUpgradeTasksResponse.class)
+                .withName("ListUpgradeTasks")
+                .withUri("/v2/{project_id}/upgrade-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUpgradeTasksRequest::getTaskId, ListUpgradeTasksRequest::setTaskId));
+        builder.<String>withRequestField("task_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUpgradeTasksRequest::getTaskName, ListUpgradeTasksRequest::setTaskName));
+        builder.<Integer>withRequestField("task_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUpgradeTasksRequest::getTaskType, ListUpgradeTasksRequest::setTaskType));
+        builder.<ListUpgradeTasksRequest.ScheduledTypeEnum>withRequestField("scheduled_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListUpgradeTasksRequest.ScheduledTypeEnum.class),
+            f -> f.withMarshaller(ListUpgradeTasksRequest::getScheduledType,
+                ListUpgradeTasksRequest::setScheduledType));
+        builder.<Integer>withRequestField("is_enable",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUpgradeTasksRequest::getIsEnable, ListUpgradeTasksRequest::setIsEnable));
+        builder.<String>withRequestField("last_execute_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUpgradeTasksRequest::getLastExecuteStatus,
+                ListUpgradeTasksRequest::setLastExecuteStatus));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUpgradeTasksRequest::getOffset, ListUpgradeTasksRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUpgradeTasksRequest::getLimit, ListUpgradeTasksRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowUpgradeTaskDetailRequest, ShowUpgradeTaskDetailResponse> showUpgradeTaskDetail =
+        genForShowUpgradeTaskDetail();
+
+    private static HttpRequestDef<ShowUpgradeTaskDetailRequest, ShowUpgradeTaskDetailResponse> genForShowUpgradeTaskDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowUpgradeTaskDetailRequest, ShowUpgradeTaskDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowUpgradeTaskDetailRequest.class, ShowUpgradeTaskDetailResponse.class)
+            .withName("ShowUpgradeTaskDetail")
+            .withUri("/v2/{project_id}/upgrade-task/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUpgradeTaskDetailRequest::getTaskId, ShowUpgradeTaskDetailRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateUpgradeTaskRequest, UpdateUpgradeTaskResponse> updateUpgradeTask =
+        genForUpdateUpgradeTask();
+
+    private static HttpRequestDef<UpdateUpgradeTaskRequest, UpdateUpgradeTaskResponse> genForUpdateUpgradeTask() {
+        // basic
+        HttpRequestDef.Builder<UpdateUpgradeTaskRequest, UpdateUpgradeTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateUpgradeTaskRequest.class, UpdateUpgradeTaskResponse.class)
+                .withName("UpdateUpgradeTask")
+                .withUri("/v2/{project_id}/upgrade-task/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateUpgradeTaskRequest::getTaskId, UpdateUpgradeTaskRequest::setTaskId));
+        builder.<UpdateScheduledUpgradeTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateScheduledUpgradeTaskRequestBody.class),
+            f -> f.withMarshaller(UpdateUpgradeTaskRequest::getBody, UpdateUpgradeTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteScreenRecordsRequest, BatchDeleteScreenRecordsResponse> batchDeleteScreenRecords =
         genForBatchDeleteScreenRecords();
 
@@ -8663,6 +10369,12 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListScreenRecordsRequest::getDesktopId, ListScreenRecordsRequest::setDesktopId));
+        builder.<String>withRequestField("desktop_names",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScreenRecordsRequest::getDesktopNames,
+                ListScreenRecordsRequest::setDesktopNames));
         builder.<String>withRequestField("username",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -8775,7 +10487,7 @@ public class WorkspaceMeta {
             HttpRequestDef.builder(HttpMethod.PUT, UpdateScreenRecordsRequest.class, UpdateScreenRecordsResponse.class)
                 .withName("UpdateScreenRecords")
                 .withUri("/v2/{project_id}/screen-records/{record_id}")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("record_id",
@@ -8809,10 +10521,10 @@ public class WorkspaceMeta {
                 .withContentType("application/json;charset=utf-8");
 
         // requests
-        builder.<ScreenRecordsConfigResultReq>withRequestField("body",
+        builder.<UpdateScreenRecordsTrafficLimitConfigRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ScreenRecordsConfigResultReq.class),
+            TypeCasts.uncheckedConversion(UpdateScreenRecordsTrafficLimitConfigRequestBody.class),
             f -> f.withMarshaller(UpdateScreenRecordsTrafficLimitConfigRequest::getBody,
                 UpdateScreenRecordsTrafficLimitConfigRequest::setBody));
 
@@ -9483,6 +11195,29 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResetSiteAuthConfigRequest, ResetSiteAuthConfigResponse> resetSiteAuthConfig =
+        genForResetSiteAuthConfig();
+
+    private static HttpRequestDef<ResetSiteAuthConfigRequest, ResetSiteAuthConfigResponse> genForResetSiteAuthConfig() {
+        // basic
+        HttpRequestDef.Builder<ResetSiteAuthConfigRequest, ResetSiteAuthConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ResetSiteAuthConfigRequest.class, ResetSiteAuthConfigResponse.class)
+                .withName("ResetSiteAuthConfig")
+                .withUri("/v2/{project_id}/sites/{site_id}/reset-auth-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("site_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetSiteAuthConfigRequest::getSiteId, ResetSiteAuthConfigRequest::setSiteId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateAccessModeRequest, UpdateAccessModeResponse> updateAccessMode =
         genForUpdateAccessMode();
 
@@ -9892,6 +11627,12 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDesktopUsageMetricRequest::getResourceName,
                 ListDesktopUsageMetricRequest::setResourceName));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopUsageMetricRequest::getResourceId,
+                ListDesktopUsageMetricRequest::setResourceId));
         builder.<Integer>withRequestField("min_idle_days",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -10451,6 +12192,12 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportDesktopUsageMetricNewRequest::getResourceName,
                 ExportDesktopUsageMetricNewRequest::setResourceName));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDesktopUsageMetricNewRequest::getResourceId,
+                ExportDesktopUsageMetricNewRequest::setResourceId));
         builder.<Integer>withRequestField("min_idle_days",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -10629,6 +12376,390 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTenantConfigReq.class),
             f -> f.withMarshaller(UpdateTenantConfigRequest::getBody, UpdateTenantConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTenantUpgradeStrategyRequest, CreateTenantUpgradeStrategyResponse> createTenantUpgradeStrategy =
+        genForCreateTenantUpgradeStrategy();
+
+    private static HttpRequestDef<CreateTenantUpgradeStrategyRequest, CreateTenantUpgradeStrategyResponse> genForCreateTenantUpgradeStrategy() {
+        // basic
+        HttpRequestDef.Builder<CreateTenantUpgradeStrategyRequest, CreateTenantUpgradeStrategyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateTenantUpgradeStrategyRequest.class,
+                    CreateTenantUpgradeStrategyResponse.class)
+                .withName("CreateTenantUpgradeStrategy")
+                .withUri("/v2/{project_id}/upgrade-strategy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateTenantUpgradeStrategyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTenantUpgradeStrategyRequestBody.class),
+            f -> f.withMarshaller(CreateTenantUpgradeStrategyRequest::getBody,
+                CreateTenantUpgradeStrategyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTenantUpgradeStrategyRequest, DeleteTenantUpgradeStrategyResponse> deleteTenantUpgradeStrategy =
+        genForDeleteTenantUpgradeStrategy();
+
+    private static HttpRequestDef<DeleteTenantUpgradeStrategyRequest, DeleteTenantUpgradeStrategyResponse> genForDeleteTenantUpgradeStrategy() {
+        // basic
+        HttpRequestDef.Builder<DeleteTenantUpgradeStrategyRequest, DeleteTenantUpgradeStrategyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DeleteTenantUpgradeStrategyRequest.class,
+                    DeleteTenantUpgradeStrategyResponse.class)
+                .withName("DeleteTenantUpgradeStrategy")
+                .withUri("/v2/{project_id}/upgrade-strategy/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DeleteTenantUpgradeStrategyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteTenantUpgradeStrategyRequestBody.class),
+            f -> f.withMarshaller(DeleteTenantUpgradeStrategyRequest::getBody,
+                DeleteTenantUpgradeStrategyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportTenantUpgradeStrategiesRequest, ExportTenantUpgradeStrategiesResponse> exportTenantUpgradeStrategies =
+        genForExportTenantUpgradeStrategies();
+
+    private static HttpRequestDef<ExportTenantUpgradeStrategiesRequest, ExportTenantUpgradeStrategiesResponse> genForExportTenantUpgradeStrategies() {
+        // basic
+        HttpRequestDef.Builder<ExportTenantUpgradeStrategiesRequest, ExportTenantUpgradeStrategiesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ExportTenantUpgradeStrategiesRequest.class,
+                    ExportTenantUpgradeStrategiesResponse.class)
+                .withName("ExportTenantUpgradeStrategies")
+                .withUri("/v2/{project_id}/upgrade-strategies/export")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("strategy_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportTenantUpgradeStrategiesRequest::getStrategyName,
+                ExportTenantUpgradeStrategiesRequest::setStrategyName));
+        builder.<Integer>withRequestField("strategy_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExportTenantUpgradeStrategiesRequest::getStrategyType,
+                ExportTenantUpgradeStrategiesRequest::setStrategyType));
+        builder.<Integer>withRequestField("is_force_upgrade",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExportTenantUpgradeStrategiesRequest::getIsForceUpgrade,
+                ExportTenantUpgradeStrategiesRequest::setIsForceUpgrade));
+        builder.<Integer>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExportTenantUpgradeStrategiesRequest::getStatus,
+                ExportTenantUpgradeStrategiesRequest::setStatus));
+        builder.<Integer>withRequestField("strategy_priority",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExportTenantUpgradeStrategiesRequest::getStrategyPriority,
+                ExportTenantUpgradeStrategiesRequest::setStrategyPriority));
+        builder.<ExportTenantUpgradeStrategiesRequest.LanguageEnum>withRequestField("language",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportTenantUpgradeStrategiesRequest.LanguageEnum.class),
+            f -> f.withMarshaller(ExportTenantUpgradeStrategiesRequest::getLanguage,
+                ExportTenantUpgradeStrategiesRequest::setLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListApplyObjectsRequest, ListApplyObjectsResponse> listApplyObjects =
+        genForListApplyObjects();
+
+    private static HttpRequestDef<ListApplyObjectsRequest, ListApplyObjectsResponse> genForListApplyObjects() {
+        // basic
+        HttpRequestDef.Builder<ListApplyObjectsRequest, ListApplyObjectsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListApplyObjectsRequest.class, ListApplyObjectsResponse.class)
+                .withName("ListApplyObjects")
+                .withUri("/v2/{project_id}/upgrade-strategy/{strategy_id}/apply-objects")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("strategy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApplyObjectsRequest::getStrategyId, ListApplyObjectsRequest::setStrategyId));
+        builder.<String>withRequestField("object_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApplyObjectsRequest::getObjectName, ListApplyObjectsRequest::setObjectName));
+        builder.<String>withRequestField("object_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApplyObjectsRequest::getObjectType, ListApplyObjectsRequest::setObjectType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApplyObjectsRequest::getOffset, ListApplyObjectsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApplyObjectsRequest::getLimit, ListApplyObjectsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTenantUpgradeStrategiesRequest, ListTenantUpgradeStrategiesResponse> listTenantUpgradeStrategies =
+        genForListTenantUpgradeStrategies();
+
+    private static HttpRequestDef<ListTenantUpgradeStrategiesRequest, ListTenantUpgradeStrategiesResponse> genForListTenantUpgradeStrategies() {
+        // basic
+        HttpRequestDef.Builder<ListTenantUpgradeStrategiesRequest, ListTenantUpgradeStrategiesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListTenantUpgradeStrategiesRequest.class,
+                    ListTenantUpgradeStrategiesResponse.class)
+                .withName("ListTenantUpgradeStrategies")
+                .withUri("/v2/{project_id}/upgrade-strategies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Boolean>withRequestField("is_accurate_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListTenantUpgradeStrategiesRequest::getIsAccurateName,
+                ListTenantUpgradeStrategiesRequest::setIsAccurateName));
+        builder.<String>withRequestField("strategy_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantUpgradeStrategiesRequest::getStrategyName,
+                ListTenantUpgradeStrategiesRequest::setStrategyName));
+        builder.<Integer>withRequestField("strategy_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTenantUpgradeStrategiesRequest::getStrategyType,
+                ListTenantUpgradeStrategiesRequest::setStrategyType));
+        builder.<Integer>withRequestField("is_force_upgrade",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTenantUpgradeStrategiesRequest::getIsForceUpgrade,
+                ListTenantUpgradeStrategiesRequest::setIsForceUpgrade));
+        builder.<Integer>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTenantUpgradeStrategiesRequest::getStatus,
+                ListTenantUpgradeStrategiesRequest::setStatus));
+        builder.<Integer>withRequestField("strategy_priority",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTenantUpgradeStrategiesRequest::getStrategyPriority,
+                ListTenantUpgradeStrategiesRequest::setStrategyPriority));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTenantUpgradeStrategiesRequest::getOffset,
+                ListTenantUpgradeStrategiesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTenantUpgradeStrategiesRequest::getLimit,
+                ListTenantUpgradeStrategiesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateStrategyApplyObjectsRequest, UpdateStrategyApplyObjectsResponse> updateStrategyApplyObjects =
+        genForUpdateStrategyApplyObjects();
+
+    private static HttpRequestDef<UpdateStrategyApplyObjectsRequest, UpdateStrategyApplyObjectsResponse> genForUpdateStrategyApplyObjects() {
+        // basic
+        HttpRequestDef.Builder<UpdateStrategyApplyObjectsRequest, UpdateStrategyApplyObjectsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdateStrategyApplyObjectsRequest.class,
+                    UpdateStrategyApplyObjectsResponse.class)
+                .withName("UpdateStrategyApplyObjects")
+                .withUri("/v2/{project_id}/upgrade-strategy/{strategy_id}/apply-objects")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("strategy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStrategyApplyObjectsRequest::getStrategyId,
+                UpdateStrategyApplyObjectsRequest::setStrategyId));
+        builder.<UpdateStrategyApplyObjectsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateStrategyApplyObjectsRequestBody.class),
+            f -> f.withMarshaller(UpdateStrategyApplyObjectsRequest::getBody,
+                UpdateStrategyApplyObjectsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTenantUpgradeStrategyRequest, UpdateTenantUpgradeStrategyResponse> updateTenantUpgradeStrategy =
+        genForUpdateTenantUpgradeStrategy();
+
+    private static HttpRequestDef<UpdateTenantUpgradeStrategyRequest, UpdateTenantUpgradeStrategyResponse> genForUpdateTenantUpgradeStrategy() {
+        // basic
+        HttpRequestDef.Builder<UpdateTenantUpgradeStrategyRequest, UpdateTenantUpgradeStrategyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateTenantUpgradeStrategyRequest.class,
+                    UpdateTenantUpgradeStrategyResponse.class)
+                .withName("UpdateTenantUpgradeStrategy")
+                .withUri("/v2/{project_id}/upgrade-strategy/{strategy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("strategy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTenantUpgradeStrategyRequest::getStrategyId,
+                UpdateTenantUpgradeStrategyRequest::setStrategyId));
+        builder.<UpdateTenantUpgradeStrategyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateTenantUpgradeStrategyRequestBody.class),
+            f -> f.withMarshaller(UpdateTenantUpgradeStrategyRequest::getBody,
+                UpdateTenantUpgradeStrategyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTenantVersionConfigRequest, ListTenantVersionConfigResponse> listTenantVersionConfig =
+        genForListTenantVersionConfig();
+
+    private static HttpRequestDef<ListTenantVersionConfigRequest, ListTenantVersionConfigResponse> genForListTenantVersionConfig() {
+        // basic
+        HttpRequestDef.Builder<ListTenantVersionConfigRequest, ListTenantVersionConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListTenantVersionConfigRequest.class, ListTenantVersionConfigResponse.class)
+            .withName("ListTenantVersionConfig")
+            .withUri("/v2/{project_id}/version-config")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("version_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTenantVersionConfigRequest::getVersionType,
+                ListTenantVersionConfigRequest::setVersionType));
+        builder.<String>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantVersionConfigRequest::getVersion,
+                ListTenantVersionConfigRequest::setVersion));
+        builder.<Integer>withRequestField("os_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTenantVersionConfigRequest::getOsType,
+                ListTenantVersionConfigRequest::setOsType));
+        builder.<String>withRequestField("version_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantVersionConfigRequest::getVersionStatus,
+                ListTenantVersionConfigRequest::setVersionStatus));
+        builder.<String>withRequestField("publish_time_begin",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantVersionConfigRequest::getPublishTimeBegin,
+                ListTenantVersionConfigRequest::setPublishTimeBegin));
+        builder.<String>withRequestField("publish_time_end",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantVersionConfigRequest::getPublishTimeEnd,
+                ListTenantVersionConfigRequest::setPublishTimeEnd));
+        builder.<String>withRequestField("release_note",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantVersionConfigRequest::getReleaseNote,
+                ListTenantVersionConfigRequest::setReleaseNote));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTenantVersionConfigRequest::getOffset,
+                ListTenantVersionConfigRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTenantVersionConfigRequest::getLimit, ListTenantVersionConfigRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTenantVersionConfigRequest, ShowTenantVersionConfigResponse> showTenantVersionConfig =
+        genForShowTenantVersionConfig();
+
+    private static HttpRequestDef<ShowTenantVersionConfigRequest, ShowTenantVersionConfigResponse> genForShowTenantVersionConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowTenantVersionConfigRequest, ShowTenantVersionConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowTenantVersionConfigRequest.class, ShowTenantVersionConfigResponse.class)
+            .withName("ShowTenantVersionConfig")
+            .withUri("/v2/{project_id}/version-config/{version_config_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("version_config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTenantVersionConfigRequest::getVersionConfigId,
+                ShowTenantVersionConfigRequest::setVersionConfigId));
 
         // response
 
@@ -11525,6 +13656,29 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(SetUserEventsLtsConfigurationsRequestBody.class),
             f -> f.withMarshaller(SetUserEventsLtsConfigurationsRequest::getBody,
                 SetUserEventsLtsConfigurationsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportUserGroupsNewRequest, ExportUserGroupsNewResponse> exportUserGroupsNew =
+        genForExportUserGroupsNew();
+
+    private static HttpRequestDef<ExportUserGroupsNewRequest, ExportUserGroupsNewResponse> genForExportUserGroupsNew() {
+        // basic
+        HttpRequestDef.Builder<ExportUserGroupsNewRequest, ExportUserGroupsNewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExportUserGroupsNewRequest.class, ExportUserGroupsNewResponse.class)
+                .withName("ExportUserGroupsNew")
+                .withUri("/v3/{project_id}/groups/export")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ExportUserGroupsNewReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportUserGroupsNewReq.class),
+            f -> f.withMarshaller(ExportUserGroupsNewRequest::getBody, ExportUserGroupsNewRequest::setBody));
 
         // response
 

@@ -28,7 +28,7 @@ public class RunSparkJobRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_config")
 
-    private Object jobConfig;
+    private SparkJobArtifact jobConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "catalog_name")
@@ -109,14 +109,14 @@ public class RunSparkJobRequestBody {
         this.endpointName = endpointName;
     }
 
-    public RunSparkJobRequestBody withJobConfig(Object jobConfig) {
+    public RunSparkJobRequestBody withJobConfig(SparkJobArtifact jobConfig) {
         this.jobConfig = jobConfig;
         return this;
     }
 
-    public RunSparkJobRequestBody withJobConfig(Consumer<Object> jobConfigSetter) {
+    public RunSparkJobRequestBody withJobConfig(Consumer<SparkJobArtifact> jobConfigSetter) {
         if (this.jobConfig == null) {
-            this.jobConfig = new Object();
+            this.jobConfig = new SparkJobArtifact();
             jobConfigSetter.accept(this.jobConfig);
         }
 
@@ -124,14 +124,14 @@ public class RunSparkJobRequestBody {
     }
 
     /**
-     * **参数解释**：作业配置参数，用于指定Spark作业的类型和执行参数。根据作业类型自动选择对应的参数结构：spark_jar_job对应SparkJarParameter，spark_python_job对应SparkPyParameter，spark_sql_scripting_job对应SparkSqlScriptParameter。 **约束限制**：不涉及。
+     * Get jobConfig
      * @return jobConfig
      */
-    public Object getJobConfig() {
+    public SparkJobArtifact getJobConfig() {
         return jobConfig;
     }
 
-    public void setJobConfig(Object jobConfig) {
+    public void setJobConfig(SparkJobArtifact jobConfig) {
         this.jobConfig = jobConfig;
     }
 

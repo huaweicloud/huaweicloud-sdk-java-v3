@@ -69,6 +69,8 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateProductResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateProtocolConfigRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateProtocolConfigResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateProvisioningTemplateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateProvisioningTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingBacklogPolicyRequest;
@@ -131,6 +133,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProductResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteProtocolConfigRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteProtocolConfigResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProvisioningTemplateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProvisioningTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteQueueRequest;
@@ -201,6 +205,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListProductsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListProductsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListPropertiesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListPropertiesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListProtocolConfigsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListProtocolConfigsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListProvisioningTemplatesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListProvisioningTemplatesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListResourcesByTagsRequest;
@@ -275,6 +281,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowProductResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowProtocolConfigRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowProtocolConfigResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowProvisioningTemplateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowProvisioningTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowQueueRequest;
@@ -333,6 +341,8 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateProductResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdatePropertiesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdatePropertiesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateProtocolConfigRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateProtocolConfigResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateProvisioningTemplateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateProvisioningTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingBacklogPolicyRequest;
@@ -4625,6 +4635,151 @@ public class IoTDAClient {
     public SyncInvoker<UpdatePropertiesRequest, UpdatePropertiesResponse> updatePropertiesInvoker(
         UpdatePropertiesRequest request) {
         return new SyncInvoker<>(request, IoTDAMeta.updateProperties, hcClient);
+    }
+
+    /**
+     * 创建泛协议配置
+     *
+     * 提供创建泛协议配置的功能，仅企业版白名单支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateProtocolConfigRequest 请求对象
+     * @return CreateProtocolConfigResponse
+     */
+    public CreateProtocolConfigResponse createProtocolConfig(CreateProtocolConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.createProtocolConfig);
+    }
+
+    /**
+     * 创建泛协议配置
+     *
+     * 提供创建泛协议配置的功能，仅企业版白名单支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateProtocolConfigRequest 请求对象
+     * @return SyncInvoker<CreateProtocolConfigRequest, CreateProtocolConfigResponse>
+     */
+    public SyncInvoker<CreateProtocolConfigRequest, CreateProtocolConfigResponse> createProtocolConfigInvoker(
+        CreateProtocolConfigRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.createProtocolConfig, hcClient);
+    }
+
+    /**
+     * 删除泛协议配置
+     *
+     * 提供删除泛协议配置的功能，仅企业版白名单支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteProtocolConfigRequest 请求对象
+     * @return DeleteProtocolConfigResponse
+     */
+    public DeleteProtocolConfigResponse deleteProtocolConfig(DeleteProtocolConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteProtocolConfig);
+    }
+
+    /**
+     * 删除泛协议配置
+     *
+     * 提供删除泛协议配置的功能，仅企业版白名单支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteProtocolConfigRequest 请求对象
+     * @return SyncInvoker<DeleteProtocolConfigRequest, DeleteProtocolConfigResponse>
+     */
+    public SyncInvoker<DeleteProtocolConfigRequest, DeleteProtocolConfigResponse> deleteProtocolConfigInvoker(
+        DeleteProtocolConfigRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.deleteProtocolConfig, hcClient);
+    }
+
+    /**
+     * 查询泛协议配置列表
+     *
+     * 提供查询泛协议配置列表的功能，仅企业版白名单支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProtocolConfigsRequest 请求对象
+     * @return ListProtocolConfigsResponse
+     */
+    public ListProtocolConfigsResponse listProtocolConfigs(ListProtocolConfigsRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.listProtocolConfigs);
+    }
+
+    /**
+     * 查询泛协议配置列表
+     *
+     * 提供查询泛协议配置列表的功能，仅企业版白名单支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProtocolConfigsRequest 请求对象
+     * @return SyncInvoker<ListProtocolConfigsRequest, ListProtocolConfigsResponse>
+     */
+    public SyncInvoker<ListProtocolConfigsRequest, ListProtocolConfigsResponse> listProtocolConfigsInvoker(
+        ListProtocolConfigsRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.listProtocolConfigs, hcClient);
+    }
+
+    /**
+     * 查询泛协议配置详情
+     *
+     * 提供查询泛协议配置详情的功能，仅企业版白名单支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProtocolConfigRequest 请求对象
+     * @return ShowProtocolConfigResponse
+     */
+    public ShowProtocolConfigResponse showProtocolConfig(ShowProtocolConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.showProtocolConfig);
+    }
+
+    /**
+     * 查询泛协议配置详情
+     *
+     * 提供查询泛协议配置详情的功能，仅企业版白名单支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProtocolConfigRequest 请求对象
+     * @return SyncInvoker<ShowProtocolConfigRequest, ShowProtocolConfigResponse>
+     */
+    public SyncInvoker<ShowProtocolConfigRequest, ShowProtocolConfigResponse> showProtocolConfigInvoker(
+        ShowProtocolConfigRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.showProtocolConfig, hcClient);
+    }
+
+    /**
+     * 更新泛协议配置
+     *
+     * 提供更新泛协议配置的功能，仅企业版白名单支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateProtocolConfigRequest 请求对象
+     * @return UpdateProtocolConfigResponse
+     */
+    public UpdateProtocolConfigResponse updateProtocolConfig(UpdateProtocolConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.updateProtocolConfig);
+    }
+
+    /**
+     * 更新泛协议配置
+     *
+     * 提供更新泛协议配置的功能，仅企业版白名单支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateProtocolConfigRequest 请求对象
+     * @return SyncInvoker<UpdateProtocolConfigRequest, UpdateProtocolConfigResponse>
+     */
+    public SyncInvoker<UpdateProtocolConfigRequest, UpdateProtocolConfigResponse> updateProtocolConfigInvoker(
+        UpdateProtocolConfigRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.updateProtocolConfig, hcClient);
     }
 
     /**

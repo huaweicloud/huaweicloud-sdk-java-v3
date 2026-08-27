@@ -120,6 +120,11 @@ public class Record {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_id")
+
+    private String desktopId;
+
     public Record withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -494,6 +499,23 @@ public class Record {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public Record withDesktopId(String desktopId) {
+        this.desktopId = desktopId;
+        return this;
+    }
+
+    /**
+     * 桌面ID。
+     * @return desktopId
+     */
+    public String getDesktopId() {
+        return desktopId;
+    }
+
+    public void setDesktopId(String desktopId) {
+        this.desktopId = desktopId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -518,7 +540,8 @@ public class Record {
             && Objects.equals(this.connectionFailureReason, that.connectionFailureReason)
             && Objects.equals(this.networkRtt, that.networkRtt) && Objects.equals(this.e2eRtt, that.e2eRtt)
             && Objects.equals(this.sourceIp, that.sourceIp) && Objects.equals(this.publicIp, that.publicIp)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.desktopId, that.desktopId);
     }
 
     @Override
@@ -544,7 +567,8 @@ public class Record {
             e2eRtt,
             sourceIp,
             publicIp,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            desktopId);
     }
 
     @Override
@@ -573,6 +597,7 @@ public class Record {
         sb.append("    sourceIp: ").append(toIndentedString(sourceIp)).append("\n");
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

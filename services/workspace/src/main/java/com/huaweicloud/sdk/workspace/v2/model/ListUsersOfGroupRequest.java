@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -19,6 +22,11 @@ public class ListUsersOfGroupRequest {
     @JsonProperty(value = "user_name")
 
     private String userName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_names")
+
+    private List<String> userNames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
@@ -137,6 +145,39 @@ public class ListUsersOfGroupRequest {
         this.userName = userName;
     }
 
+    public ListUsersOfGroupRequest withUserNames(List<String> userNames) {
+        this.userNames = userNames;
+        return this;
+    }
+
+    public ListUsersOfGroupRequest addUserNamesItem(String userNamesItem) {
+        if (this.userNames == null) {
+            this.userNames = new ArrayList<>();
+        }
+        this.userNames.add(userNamesItem);
+        return this;
+    }
+
+    public ListUsersOfGroupRequest withUserNames(Consumer<List<String>> userNamesSetter) {
+        if (this.userNames == null) {
+            this.userNames = new ArrayList<>();
+        }
+        userNamesSetter.accept(this.userNames);
+        return this;
+    }
+
+    /**
+     * 用户名列表，支持多用户名查询。
+     * @return userNames
+     */
+    public List<String> getUserNames() {
+        return userNames;
+    }
+
+    public void setUserNames(List<String> userNames) {
+        this.userNames = userNames;
+    }
+
     public ListUsersOfGroupRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -232,7 +273,7 @@ public class ListUsersOfGroupRequest {
     /**
      * 用于分页查询，查询的起始记录序号，从0开始。
      * minimum: 0
-     * maximum: 100000
+     * maximum: 200000
      * @return offset
      */
     public Integer getOffset() {
@@ -252,15 +293,16 @@ public class ListUsersOfGroupRequest {
             return false;
         }
         ListUsersOfGroupRequest that = (ListUsersOfGroupRequest) obj;
-        return Objects.equals(this.userName, that.userName) && Objects.equals(this.groupId, that.groupId)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.activeType, that.activeType)
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.userNames, that.userNames)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.activeType, that.activeType)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, groupId, description, activeType, enterpriseProjectId, limit, offset);
+        return Objects.hash(userName, userNames, groupId, description, activeType, enterpriseProjectId, limit, offset);
     }
 
     @Override
@@ -268,6 +310,7 @@ public class ListUsersOfGroupRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListUsersOfGroupRequest {\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    userNames: ").append(toIndentedString(userNames)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    activeType: ").append(toIndentedString(activeType)).append("\n");
