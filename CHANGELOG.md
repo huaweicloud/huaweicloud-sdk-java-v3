@@ -1,4 +1,10 @@
+# 3.1.214 2026-08-28
+
+Same with v3.1.213.
+
 # 3.1.213 2026-08-27
+
+Deprecated, some packages have not been uploaded to the central repository.
 
 ### HuaweiCloud SDK BMS
 
