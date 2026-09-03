@@ -749,10 +749,15 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowEntityInfoByGuidRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowEntityInfoByGuidResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryDependInstancesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryDependInstancesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryFullTextRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryFullTextResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryJobDependInstancesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryJobDependInstancesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryJobDependInstancesResponseBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryPackageDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryPackageDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactorySupplementDataRequest;
@@ -14078,6 +14083,63 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowFactoryDependInstancesRequest, ShowFactoryDependInstancesResponse> showFactoryDependInstances =
+        genForShowFactoryDependInstances();
+
+    private static HttpRequestDef<ShowFactoryDependInstancesRequest, ShowFactoryDependInstancesResponse> genForShowFactoryDependInstances() {
+        // basic
+        HttpRequestDef.Builder<ShowFactoryDependInstancesRequest, ShowFactoryDependInstancesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowFactoryDependInstancesRequest.class,
+                    ShowFactoryDependInstancesResponse.class)
+                .withName("ShowFactoryDependInstances")
+                .withUri("/v2/{project_id}/factory/instances/{instance_id}/depend-instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowFactoryDependInstancesRequest::getInstanceId,
+                ShowFactoryDependInstancesRequest::setInstanceId));
+        builder.<String>withRequestField("relation",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryDependInstancesRequest::getRelation,
+                ShowFactoryDependInstancesRequest::setRelation));
+        builder.<Integer>withRequestField("depth",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowFactoryDependInstancesRequest::getDepth,
+                ShowFactoryDependInstancesRequest::setDepth));
+        builder.<Boolean>withRequestField("latest",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowFactoryDependInstancesRequest::getLatest,
+                ShowFactoryDependInstancesRequest::setLatest));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryDependInstancesRequest::getWorkspace,
+                ShowFactoryDependInstancesRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryDependInstancesRequest::getXProjectId,
+                ShowFactoryDependInstancesRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowFactoryEnvRequest, ShowFactoryEnvResponse> showFactoryEnv =
         genForShowFactoryEnv();
 
@@ -14212,6 +14274,59 @@ public class DataArtsStudioMeta {
             f -> f.withMarshaller(ShowFactoryFullTextRequest::getWorkspace, ShowFactoryFullTextRequest::setWorkspace));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFactoryJobDependInstancesRequest, ShowFactoryJobDependInstancesResponse> showFactoryJobDependInstances =
+        genForShowFactoryJobDependInstances();
+
+    private static HttpRequestDef<ShowFactoryJobDependInstancesRequest, ShowFactoryJobDependInstancesResponse> genForShowFactoryJobDependInstances() {
+        // basic
+        HttpRequestDef.Builder<ShowFactoryJobDependInstancesRequest, ShowFactoryJobDependInstancesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowFactoryJobDependInstancesRequest.class,
+                    ShowFactoryJobDependInstancesResponse.class)
+                .withName("ShowFactoryJobDependInstances")
+                .withUri("/v2/{project_id}/factory/jobs/{job_name}/depend")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryJobDependInstancesRequest::getJobName,
+                ShowFactoryJobDependInstancesRequest::setJobName));
+        builder.<String>withRequestField("relation",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryJobDependInstancesRequest::getRelation,
+                ShowFactoryJobDependInstancesRequest::setRelation));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryJobDependInstancesRequest::getWorkspace,
+                ShowFactoryJobDependInstancesRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryJobDependInstancesRequest::getXProjectId,
+                ShowFactoryJobDependInstancesRequest::setXProjectId));
+
+        // response
+        builder.<List<ShowFactoryJobDependInstancesResponseBody>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ShowFactoryJobDependInstancesResponse::getBody,
+                    ShowFactoryJobDependInstancesResponse::setBody)
+                .withInnerContainerType(ShowFactoryJobDependInstancesResponseBody.class));
 
         return builder.build();
     }

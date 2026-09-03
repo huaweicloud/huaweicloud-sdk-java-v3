@@ -109,7 +109,7 @@ public class ShowJobRequest {
     }
 
     /**
-     * 该字段仅在verion未设置时生效，true：作业最新提交版本，false：开发态作业（即最新保存版本）。
+     * 该字段仅在version未设置时生效，true：作业最新提交版本，false：开发态作业（即最新保存版本）。
      * @return getJobSubmitVersion
      */
     public Boolean getGetJobSubmitVersion() {

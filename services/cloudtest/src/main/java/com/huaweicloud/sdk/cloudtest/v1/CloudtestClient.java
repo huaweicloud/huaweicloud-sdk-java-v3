@@ -4,6 +4,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.AddCaseResultFourRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddCaseResultFourResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddFeatureRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddFeatureResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.AddOrUpdateTestsuiteInfoUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.AddOrUpdateTestsuiteInfoUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseResultLogRequest;
@@ -88,6 +90,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseCommentRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseCommentResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestReportCustomDetailByUriRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestReportCustomDetailByUriResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestsuiteInfosUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestsuiteInfosUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DownloadStepImageNewRequest;
@@ -318,10 +322,14 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestcaseByPageRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestcaseByPageResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestpointByPageRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestpointByPageResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestsuiteInfoUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestsuiteInfoUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserAccessInfoRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserAccessInfoResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.StartTestsuiteUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.StartTestsuiteUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateAssetTreeRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateAssetTreeResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateBasicAwByIdRequest;
@@ -342,6 +350,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseResultRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseResultResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestReportCustomDetailByUriRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestReportCustomDetailByUriResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestsuiteInfoUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestsuiteInfoUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateUserDnsMappingRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateUserDnsMappingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateVersionTestCaseRequest;
@@ -394,6 +404,36 @@ public class CloudtestClient {
     public SyncInvoker<AddCaseResultFourRequest, AddCaseResultFourResponse> addCaseResultFourInvoker(
         AddCaseResultFourRequest request) {
         return new SyncInvoker<>(request, CloudtestMeta.addCaseResultFour, hcClient);
+    }
+
+    /**
+     * 添加测试套
+     *
+     * 添加测试套
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddOrUpdateTestsuiteInfoUsingRequest 请求对象
+     * @return AddOrUpdateTestsuiteInfoUsingResponse
+     */
+    public AddOrUpdateTestsuiteInfoUsingResponse addOrUpdateTestsuiteInfoUsing(
+        AddOrUpdateTestsuiteInfoUsingRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.addOrUpdateTestsuiteInfoUsing);
+    }
+
+    /**
+     * 添加测试套
+     *
+     * 添加测试套
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddOrUpdateTestsuiteInfoUsingRequest 请求对象
+     * @return SyncInvoker<AddOrUpdateTestsuiteInfoUsingRequest, AddOrUpdateTestsuiteInfoUsingResponse>
+     */
+    public SyncInvoker<AddOrUpdateTestsuiteInfoUsingRequest, AddOrUpdateTestsuiteInfoUsingResponse> addOrUpdateTestsuiteInfoUsingInvoker(
+        AddOrUpdateTestsuiteInfoUsingRequest request) {
+        return new SyncInvoker<>(request, CloudtestMeta.addOrUpdateTestsuiteInfoUsing, hcClient);
     }
 
     /**
@@ -1293,6 +1333,35 @@ public class CloudtestClient {
     public SyncInvoker<DeleteTestReportCustomDetailByUriRequest, DeleteTestReportCustomDetailByUriResponse> deleteTestReportCustomDetailByUriInvoker(
         DeleteTestReportCustomDetailByUriRequest request) {
         return new SyncInvoker<>(request, CloudtestMeta.deleteTestReportCustomDetailByUri, hcClient);
+    }
+
+    /**
+     * 根据任务Id列表批量删除任务
+     *
+     * 根据任务Id列表批量删除任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTestsuiteInfosUsingRequest 请求对象
+     * @return DeleteTestsuiteInfosUsingResponse
+     */
+    public DeleteTestsuiteInfosUsingResponse deleteTestsuiteInfosUsing(DeleteTestsuiteInfosUsingRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.deleteTestsuiteInfosUsing);
+    }
+
+    /**
+     * 根据任务Id列表批量删除任务
+     *
+     * 根据任务Id列表批量删除任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTestsuiteInfosUsingRequest 请求对象
+     * @return SyncInvoker<DeleteTestsuiteInfosUsingRequest, DeleteTestsuiteInfosUsingResponse>
+     */
+    public SyncInvoker<DeleteTestsuiteInfosUsingRequest, DeleteTestsuiteInfosUsingResponse> deleteTestsuiteInfosUsingInvoker(
+        DeleteTestsuiteInfosUsingRequest request) {
+        return new SyncInvoker<>(request, CloudtestMeta.deleteTestsuiteInfosUsing, hcClient);
     }
 
     /**
@@ -4236,6 +4305,35 @@ public class CloudtestClient {
     }
 
     /**
+     * 根据任务id查询任务
+     *
+     * 根据任务id查询任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTestsuiteInfoUsingRequest 请求对象
+     * @return ShowTestsuiteInfoUsingResponse
+     */
+    public ShowTestsuiteInfoUsingResponse showTestsuiteInfoUsing(ShowTestsuiteInfoUsingRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.showTestsuiteInfoUsing);
+    }
+
+    /**
+     * 根据任务id查询任务
+     *
+     * 根据任务id查询任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTestsuiteInfoUsingRequest 请求对象
+     * @return SyncInvoker<ShowTestsuiteInfoUsingRequest, ShowTestsuiteInfoUsingResponse>
+     */
+    public SyncInvoker<ShowTestsuiteInfoUsingRequest, ShowTestsuiteInfoUsingResponse> showTestsuiteInfoUsingInvoker(
+        ShowTestsuiteInfoUsingRequest request) {
+        return new SyncInvoker<>(request, CloudtestMeta.showTestsuiteInfoUsing, hcClient);
+    }
+
+    /**
      * 获取租户订单信息
      *
      * 获取租户订单信息
@@ -4291,6 +4389,35 @@ public class CloudtestClient {
     public SyncInvoker<ShowUserExecuteTestCaseInfoRequest, ShowUserExecuteTestCaseInfoResponse> showUserExecuteTestCaseInfoInvoker(
         ShowUserExecuteTestCaseInfoRequest request) {
         return new SyncInvoker<>(request, CloudtestMeta.showUserExecuteTestCaseInfo, hcClient);
+    }
+
+    /**
+     * 启动测试套
+     *
+     * 启动测试套
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartTestsuiteUsingRequest 请求对象
+     * @return StartTestsuiteUsingResponse
+     */
+    public StartTestsuiteUsingResponse startTestsuiteUsing(StartTestsuiteUsingRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.startTestsuiteUsing);
+    }
+
+    /**
+     * 启动测试套
+     *
+     * 启动测试套
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartTestsuiteUsingRequest 请求对象
+     * @return SyncInvoker<StartTestsuiteUsingRequest, StartTestsuiteUsingResponse>
+     */
+    public SyncInvoker<StartTestsuiteUsingRequest, StartTestsuiteUsingResponse> startTestsuiteUsingInvoker(
+        StartTestsuiteUsingRequest request) {
+        return new SyncInvoker<>(request, CloudtestMeta.startTestsuiteUsing, hcClient);
     }
 
     /**
@@ -4523,6 +4650,35 @@ public class CloudtestClient {
     public SyncInvoker<UpdateTestReportCustomDetailByUriRequest, UpdateTestReportCustomDetailByUriResponse> updateTestReportCustomDetailByUriInvoker(
         UpdateTestReportCustomDetailByUriRequest request) {
         return new SyncInvoker<>(request, CloudtestMeta.updateTestReportCustomDetailByUri, hcClient);
+    }
+
+    /**
+     * 更新测试套
+     *
+     * 更新测试套
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTestsuiteInfoUsingRequest 请求对象
+     * @return UpdateTestsuiteInfoUsingResponse
+     */
+    public UpdateTestsuiteInfoUsingResponse updateTestsuiteInfoUsing(UpdateTestsuiteInfoUsingRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.updateTestsuiteInfoUsing);
+    }
+
+    /**
+     * 更新测试套
+     *
+     * 更新测试套
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTestsuiteInfoUsingRequest 请求对象
+     * @return SyncInvoker<UpdateTestsuiteInfoUsingRequest, UpdateTestsuiteInfoUsingResponse>
+     */
+    public SyncInvoker<UpdateTestsuiteInfoUsingRequest, UpdateTestsuiteInfoUsingResponse> updateTestsuiteInfoUsingInvoker(
+        UpdateTestsuiteInfoUsingRequest request) {
+        return new SyncInvoker<>(request, CloudtestMeta.updateTestsuiteInfoUsing, hcClient);
     }
 
     /**

@@ -911,11 +911,6 @@ public class SmnMeta {
 
         // response
 
-        builder.<String>withResponseField("content-type",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DownloadHttpCertResponse::getContentType, DownloadHttpCertResponse::setContentType));
         return builder.build();
     }
 
@@ -940,12 +935,6 @@ public class SmnMeta {
 
         // response
 
-        builder.<String>withResponseField("content-type",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DownloadHttpSignCertResponse::getContentType,
-                DownloadHttpSignCertResponse::setContentType));
         return builder.build();
     }
 

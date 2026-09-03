@@ -14,6 +14,9 @@ import com.huaweicloud.sdk.evs.v2.model.BatchDeleteVolumeTagsResponse;
 import com.huaweicloud.sdk.evs.v2.model.BatchResizeVolumeRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.BatchResizeVolumesRequest;
 import com.huaweicloud.sdk.evs.v2.model.BatchResizeVolumesResponse;
+import com.huaweicloud.sdk.evs.v2.model.ChangeVolumeChargeModeRequest;
+import com.huaweicloud.sdk.evs.v2.model.ChangeVolumeChargeModeRequestBody;
+import com.huaweicloud.sdk.evs.v2.model.ChangeVolumeChargeModeResponse;
 import com.huaweicloud.sdk.evs.v2.model.CinderAcceptVolumeTransferRequest;
 import com.huaweicloud.sdk.evs.v2.model.CinderAcceptVolumeTransferRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.CinderAcceptVolumeTransferResponse;
@@ -181,6 +184,34 @@ public class EvsMeta {
             f -> f.withMarshaller(BatchResizeVolumesRequest::getBody, BatchResizeVolumesRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeVolumeChargeModeRequest, ChangeVolumeChargeModeResponse> changeVolumeChargeMode =
+        genForChangeVolumeChargeMode();
+
+    private static HttpRequestDef<ChangeVolumeChargeModeRequest, ChangeVolumeChargeModeResponse> genForChangeVolumeChargeMode() {
+        // basic
+        HttpRequestDef.Builder<ChangeVolumeChargeModeRequest, ChangeVolumeChargeModeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ChangeVolumeChargeModeRequest.class, ChangeVolumeChargeModeResponse.class)
+            .withName("ChangeVolumeChargeMode")
+            .withUri("/v2/{project_id}/cloudvolumes/change-charge-mode")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ChangeVolumeChargeModeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeVolumeChargeModeRequestBody.class),
+            f -> f.withMarshaller(ChangeVolumeChargeModeRequest::getBody, ChangeVolumeChargeModeRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ChangeVolumeChargeModeResponse::getBody, ChangeVolumeChargeModeResponse::setBody));
 
         return builder.build();
     }

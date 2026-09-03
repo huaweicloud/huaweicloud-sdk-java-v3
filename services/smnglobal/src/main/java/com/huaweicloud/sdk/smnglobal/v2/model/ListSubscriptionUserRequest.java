@@ -21,7 +21,7 @@ public class ListSubscriptionUserRequest {
     private String name;
 
     /**
-     * 协议。 http：HTTP终端 https：HTTPS终端 sms：短信 email：邮件
+     * 协议。 http：HTTP终端 https：HTTPS终端 sms：短信 email：邮件 callnotify: 语音 wechat: 企业微信机器人 dingding: 钉钉群机器人 feishu: 飞书群机器人 welink: WeLink群机器人 ding_talk_bot: 个人钉钉协议
      */
     public static final class ProtocolEnum {
 
@@ -45,6 +45,36 @@ public class ListSubscriptionUserRequest {
          */
         public static final ProtocolEnum EMAIL = new ProtocolEnum("email");
 
+        /**
+         * Enum CALLNOTIFY for value: "callnotify"
+         */
+        public static final ProtocolEnum CALLNOTIFY = new ProtocolEnum("callnotify");
+
+        /**
+         * Enum WECHAT for value: "wechat"
+         */
+        public static final ProtocolEnum WECHAT = new ProtocolEnum("wechat");
+
+        /**
+         * Enum DINGDING for value: "dingding"
+         */
+        public static final ProtocolEnum DINGDING = new ProtocolEnum("dingding");
+
+        /**
+         * Enum FEISHU for value: "feishu"
+         */
+        public static final ProtocolEnum FEISHU = new ProtocolEnum("feishu");
+
+        /**
+         * Enum WELINK for value: "welink"
+         */
+        public static final ProtocolEnum WELINK = new ProtocolEnum("welink");
+
+        /**
+         * Enum DING_TALK_BOT for value: "ding_talk_bot"
+         */
+        public static final ProtocolEnum DING_TALK_BOT = new ProtocolEnum("ding_talk_bot");
+
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ProtocolEnum> createStaticFields() {
@@ -53,6 +83,12 @@ public class ListSubscriptionUserRequest {
             map.put("https", HTTPS);
             map.put("sms", SMS);
             map.put("email", EMAIL);
+            map.put("callnotify", CALLNOTIFY);
+            map.put("wechat", WECHAT);
+            map.put("dingding", DINGDING);
+            map.put("feishu", FEISHU);
+            map.put("welink", WELINK);
+            map.put("ding_talk_bot", DING_TALK_BOT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -226,7 +262,7 @@ public class ListSubscriptionUserRequest {
     }
 
     /**
-     * 协议。 http：HTTP终端 https：HTTPS终端 sms：短信 email：邮件
+     * 协议。 http：HTTP终端 https：HTTPS终端 sms：短信 email：邮件 callnotify: 语音 wechat: 企业微信机器人 dingding: 钉钉群机器人 feishu: 飞书群机器人 welink: WeLink群机器人 ding_talk_bot: 个人钉钉协议
      * @return protocol
      */
     public ProtocolEnum getProtocol() {
@@ -260,7 +296,7 @@ public class ListSubscriptionUserRequest {
     }
 
     /**
-     * 订阅用户分组。
+     * 订阅用户分组。该字段支持模糊查询。
      * @return group
      */
     public String getGroup() {

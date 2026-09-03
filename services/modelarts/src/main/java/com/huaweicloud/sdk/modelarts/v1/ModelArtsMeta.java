@@ -26,10 +26,13 @@ import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteInferIntranetConnection
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteInferIntranetConnectionsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteInferServicesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteInferServicesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteJobsReq;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolNodesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteTrainingJobRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteTrainingJobResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDevServersActionRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDevServersActionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDrainPoolNodesReq;
@@ -77,6 +80,9 @@ import com.huaweicloud.sdk.modelarts.v1.model.CheckTrainingExperimentRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CheckTrainingExperimentResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CountInferServicesByTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CountInferServicesByTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CountResourceInstancesReq;
+import com.huaweicloud.sdk.modelarts.v1.model.CountTrainingJobsByTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CountTrainingJobsByTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryBody;
@@ -310,6 +316,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListFeaturesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListFeaturesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListFtArtifactsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListFtArtifactsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListHyperClusterRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListHyperClusterResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceClustersCapacityRequest;
@@ -378,8 +386,12 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobEventsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobEventsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobStagesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobStagesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobTasksRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobTasksResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsByTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsByTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowExecutionsRequest;
@@ -395,6 +407,9 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListWorkspaceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ModelArtsAgencyRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ModifyInferIntranetConnectionsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ModifyInferIntranetConnectionsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ModifyTrainingQuotaRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ModifyTrainingQuotasRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ModifyTrainingQuotasResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.NetworkCreationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NetworkUpdateRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NodeBatchMigrationRequest;
@@ -411,6 +426,9 @@ import com.huaweicloud.sdk.modelarts.v1.model.PatchNodePoolResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchPoolRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchPoolResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.PoolUpdateRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.PublishArtifactsBody;
+import com.huaweicloud.sdk.modelarts.v1.model.PublishFtArtifactsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.PublishFtArtifactsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.QueryHyperinstanceTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.QueryHyperinstanceTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.QueryTmsResourceCountRequest;
@@ -425,6 +443,7 @@ import com.huaweicloud.sdk.modelarts.v1.model.RenewLeaseRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.RenewLeaseResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ReportEventBody;
 import com.huaweicloud.sdk.modelarts.v1.model.ResetNodesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ResourceInstancesFilterReq;
 import com.huaweicloud.sdk.modelarts.v1.model.ScaleDownHyperinstanceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ScaleDownHyperinstanceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ScaleUpHyperinstanceRequest;
@@ -464,6 +483,10 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowDevServerRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowDevServerResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowDynamicStorageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowDynamicStorageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowFtDetailRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowFtDetailResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowFtMetricsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowFtMetricsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowImageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowImageResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowInferDeploymentHpaRequest;
@@ -530,16 +553,22 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainJobTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainJobTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingExperimentDetailsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingExperimentDetailsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingFlavorMaxAvailableResourceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingFlavorMaxAvailableResourceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobDetailsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobDetailsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobEnginesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobEnginesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobFlavorsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobFlavorsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobLogsFromAomRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobLogsFromAomResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobLogsPreviewRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobLogsPreviewResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobMetricsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobMetricsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobRoutePlanRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobRoutePlanResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingQuotasRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingQuotasResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowExecutionRequest;
@@ -645,6 +674,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkspaceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ValidateAuthorizationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ValidateAuthorizationRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.ValidateAuthorizationResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ValidateTrainingJobNameRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ValidateTrainingJobNameResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.WorkflowExecution;
 import com.huaweicloud.sdk.modelarts.v1.model.WorkflowMainServiceAuthReq;
 import com.huaweicloud.sdk.modelarts.v1.model.WorkflowParam;
@@ -953,6 +984,29 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteTagRequest.class),
             f -> f.withMarshaller(BatchDeletePoolTagsRequest::getBody, BatchDeletePoolTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteTrainingJobRequest, BatchDeleteTrainingJobResponse> batchDeleteTrainingJob =
+        genForBatchDeleteTrainingJob();
+
+    private static HttpRequestDef<BatchDeleteTrainingJobRequest, BatchDeleteTrainingJobResponse> genForBatchDeleteTrainingJob() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteTrainingJobRequest, BatchDeleteTrainingJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteTrainingJobRequest.class, BatchDeleteTrainingJobResponse.class)
+            .withName("BatchDeleteTrainingJob")
+            .withUri("/v2/{project_id}/training-jobs/batch-delete")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchDeleteJobsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteJobsReq.class),
+            f -> f.withMarshaller(BatchDeleteTrainingJobRequest::getBody, BatchDeleteTrainingJobRequest::setBody));
 
         // response
 
@@ -1556,6 +1610,40 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryTmsResourceCountRequest.class),
             f -> f.withMarshaller(CountInferServicesByTagsRequest::getBody, CountInferServicesByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountTrainingJobsByTagsRequest, CountTrainingJobsByTagsResponse> countTrainingJobsByTags =
+        genForCountTrainingJobsByTags();
+
+    private static HttpRequestDef<CountTrainingJobsByTagsRequest, CountTrainingJobsByTagsResponse> genForCountTrainingJobsByTags() {
+        // basic
+        HttpRequestDef.Builder<CountTrainingJobsByTagsRequest, CountTrainingJobsByTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CountTrainingJobsByTagsRequest.class, CountTrainingJobsByTagsResponse.class)
+            .withName("CountTrainingJobsByTags")
+            .withUri("/v2/{project_id}/modelarts-training-job/resource-instances/count")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CountTrainingJobsByTagsRequest::getLimit, CountTrainingJobsByTagsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CountTrainingJobsByTagsRequest::getOffset,
+                CountTrainingJobsByTagsRequest::setOffset));
+        builder.<CountResourceInstancesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CountResourceInstancesReq.class),
+            f -> f.withMarshaller(CountTrainingJobsByTagsRequest::getBody, CountTrainingJobsByTagsRequest::setBody));
 
         // response
 
@@ -3647,6 +3735,65 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListFtArtifactsRequest, ListFtArtifactsResponse> listFtArtifacts =
+        genForListFtArtifacts();
+
+    private static HttpRequestDef<ListFtArtifactsRequest, ListFtArtifactsResponse> genForListFtArtifacts() {
+        // basic
+        HttpRequestDef.Builder<ListFtArtifactsRequest, ListFtArtifactsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFtArtifactsRequest.class, ListFtArtifactsResponse.class)
+                .withName("ListFtArtifacts")
+                .withUri("/v2/{project_id}/training-jobs/{training_job_id}/ft-artifacts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFtArtifactsRequest::getTrainingJobId, ListFtArtifactsRequest::setTrainingJobId));
+        builder.<Integer>withRequestField("steps",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFtArtifactsRequest::getSteps, ListFtArtifactsRequest::setSteps));
+        builder.<Integer>withRequestField("epoch",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFtArtifactsRequest::getEpoch, ListFtArtifactsRequest::setEpoch));
+        builder.<Double>withRequestField("loss",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Double.class),
+            f -> f.withMarshaller(ListFtArtifactsRequest::getLoss, ListFtArtifactsRequest::setLoss));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFtArtifactsRequest::getStatus, ListFtArtifactsRequest::setStatus));
+        builder.<Boolean>withRequestField("order_by_create_time_asc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListFtArtifactsRequest::getOrderByCreateTimeAsc,
+                ListFtArtifactsRequest::setOrderByCreateTimeAsc));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFtArtifactsRequest::getLimit, ListFtArtifactsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFtArtifactsRequest::getOffset, ListFtArtifactsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListHyperClusterRequest, ListHyperClusterResponse> listHyperCluster =
         genForListHyperCluster();
 
@@ -5256,6 +5403,34 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTrainingJobTagsRequest, ListTrainingJobTagsResponse> listTrainingJobTags =
+        genForListTrainingJobTags();
+
+    private static HttpRequestDef<ListTrainingJobTagsRequest, ListTrainingJobTagsResponse> genForListTrainingJobTags() {
+        // basic
+        HttpRequestDef.Builder<ListTrainingJobTagsRequest, ListTrainingJobTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTrainingJobTagsRequest.class, ListTrainingJobTagsResponse.class)
+                .withName("ListTrainingJobTags")
+                .withUri("/v2/{project_id}/modelarts-training-job/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTrainingJobTagsRequest::getLimit, ListTrainingJobTagsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTrainingJobTagsRequest::getOffset, ListTrainingJobTagsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListTrainingJobTasksRequest, ListTrainingJobTasksResponse> listTrainingJobTasks =
         genForListTrainingJobTasks();
 
@@ -5309,6 +5484,39 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(JobSearches.class),
             f -> f.withMarshaller(ListTrainingJobsRequest::getBody, ListTrainingJobsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTrainingJobsByTagsRequest, ListTrainingJobsByTagsResponse> listTrainingJobsByTags =
+        genForListTrainingJobsByTags();
+
+    private static HttpRequestDef<ListTrainingJobsByTagsRequest, ListTrainingJobsByTagsResponse> genForListTrainingJobsByTags() {
+        // basic
+        HttpRequestDef.Builder<ListTrainingJobsByTagsRequest, ListTrainingJobsByTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListTrainingJobsByTagsRequest.class, ListTrainingJobsByTagsResponse.class)
+            .withName("ListTrainingJobsByTags")
+            .withUri("/v2/{project_id}/modelarts-training-job/resource-instances/filter")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTrainingJobsByTagsRequest::getLimit, ListTrainingJobsByTagsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTrainingJobsByTagsRequest::getOffset, ListTrainingJobsByTagsRequest::setOffset));
+        builder.<ResourceInstancesFilterReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResourceInstancesFilterReq.class),
+            f -> f.withMarshaller(ListTrainingJobsByTagsRequest::getBody, ListTrainingJobsByTagsRequest::setBody));
 
         // response
 
@@ -5461,6 +5669,29 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyTrainingQuotasRequest, ModifyTrainingQuotasResponse> modifyTrainingQuotas =
+        genForModifyTrainingQuotas();
+
+    private static HttpRequestDef<ModifyTrainingQuotasRequest, ModifyTrainingQuotasResponse> genForModifyTrainingQuotas() {
+        // basic
+        HttpRequestDef.Builder<ModifyTrainingQuotasRequest, ModifyTrainingQuotasResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, ModifyTrainingQuotasRequest.class, ModifyTrainingQuotasResponse.class)
+            .withName("ModifyTrainingQuotas")
+            .withUri("/v2/{project_id}/training-quotas")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ModifyTrainingQuotaRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyTrainingQuotaRequest.class),
+            f -> f.withMarshaller(ModifyTrainingQuotasRequest::getBody, ModifyTrainingQuotasRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<NotifyTrainingJobInformationRequest, NotifyTrainingJobInformationResponse> notifyTrainingJobInformation =
         genForNotifyTrainingJobInformation();
 
@@ -5592,6 +5823,35 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PoolUpdateRequest.class),
             f -> f.withMarshaller(PatchPoolRequest::getBody, PatchPoolRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<PublishFtArtifactsRequest, PublishFtArtifactsResponse> publishFtArtifacts =
+        genForPublishFtArtifacts();
+
+    private static HttpRequestDef<PublishFtArtifactsRequest, PublishFtArtifactsResponse> genForPublishFtArtifacts() {
+        // basic
+        HttpRequestDef.Builder<PublishFtArtifactsRequest, PublishFtArtifactsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, PublishFtArtifactsRequest.class, PublishFtArtifactsResponse.class)
+                .withName("PublishFtArtifacts")
+                .withUri("/v2/{project_id}/training-jobs/{training_job_id}/ft-artifacts/publish")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PublishFtArtifactsRequest::getTrainingJobId,
+                PublishFtArtifactsRequest::setTrainingJobId));
+        builder.<PublishArtifactsBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PublishArtifactsBody.class),
+            f -> f.withMarshaller(PublishFtArtifactsRequest::getBody, PublishFtArtifactsRequest::setBody));
 
         // response
 
@@ -6067,6 +6327,51 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDynamicStorageRequest::getStorageId, ShowDynamicStorageRequest::setStorageId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFtDetailRequest, ShowFtDetailResponse> showFtDetail = genForShowFtDetail();
+
+    private static HttpRequestDef<ShowFtDetailRequest, ShowFtDetailResponse> genForShowFtDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowFtDetailRequest, ShowFtDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFtDetailRequest.class, ShowFtDetailResponse.class)
+                .withName("ShowFtDetail")
+                .withUri("/v2/{project_id}/training-jobs/{training_job_id}/ft-detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFtDetailRequest::getTrainingJobId, ShowFtDetailRequest::setTrainingJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFtMetricsRequest, ShowFtMetricsResponse> showFtMetrics =
+        genForShowFtMetrics();
+
+    private static HttpRequestDef<ShowFtMetricsRequest, ShowFtMetricsResponse> genForShowFtMetrics() {
+        // basic
+        HttpRequestDef.Builder<ShowFtMetricsRequest, ShowFtMetricsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFtMetricsRequest.class, ShowFtMetricsResponse.class)
+                .withName("ShowFtMetrics")
+                .withUri("/v2/{project_id}/training-jobs/{training_job_id}/ft-metrics")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFtMetricsRequest::getTrainingJobId, ShowFtMetricsRequest::setTrainingJobId));
 
         // response
 
@@ -6787,6 +7092,39 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowTrainingFlavorMaxAvailableResourceRequest, ShowTrainingFlavorMaxAvailableResourceResponse> showTrainingFlavorMaxAvailableResource =
+        genForShowTrainingFlavorMaxAvailableResource();
+
+    private static HttpRequestDef<ShowTrainingFlavorMaxAvailableResourceRequest, ShowTrainingFlavorMaxAvailableResourceResponse> genForShowTrainingFlavorMaxAvailableResource() {
+        // basic
+        HttpRequestDef.Builder<ShowTrainingFlavorMaxAvailableResourceRequest, ShowTrainingFlavorMaxAvailableResourceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowTrainingFlavorMaxAvailableResourceRequest.class,
+                    ShowTrainingFlavorMaxAvailableResourceResponse.class)
+                .withName("ShowTrainingFlavorMaxAvailableResource")
+                .withUri("/v2/{project_id}/training-pool-flavors")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("flavor_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrainingFlavorMaxAvailableResourceRequest::getFlavorId,
+                ShowTrainingFlavorMaxAvailableResourceRequest::setFlavorId));
+        builder.<String>withRequestField("pool_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrainingFlavorMaxAvailableResourceRequest::getPoolId,
+                ShowTrainingFlavorMaxAvailableResourceRequest::setPoolId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowTrainingJobDetailsRequest, ShowTrainingJobDetailsResponse> showTrainingJobDetails =
         genForShowTrainingJobDetails();
 
@@ -6853,6 +7191,57 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowTrainingJobLogsFromAomRequest, ShowTrainingJobLogsFromAomResponse> showTrainingJobLogsFromAom =
+        genForShowTrainingJobLogsFromAom();
+
+    private static HttpRequestDef<ShowTrainingJobLogsFromAomRequest, ShowTrainingJobLogsFromAomResponse> genForShowTrainingJobLogsFromAom() {
+        // basic
+        HttpRequestDef.Builder<ShowTrainingJobLogsFromAomRequest, ShowTrainingJobLogsFromAomResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowTrainingJobLogsFromAomRequest.class,
+                    ShowTrainingJobLogsFromAomResponse.class)
+                .withName("ShowTrainingJobLogsFromAom")
+                .withUri("/v2/{project_id}/training-jobs/{training_job_id}/logs/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrainingJobLogsFromAomRequest::getTrainingJobId,
+                ShowTrainingJobLogsFromAomRequest::setTrainingJobId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrainingJobLogsFromAomRequest::getTaskId,
+                ShowTrainingJobLogsFromAomRequest::setTaskId));
+        builder.<String>withRequestField("base_line",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrainingJobLogsFromAomRequest::getBaseLine,
+                ShowTrainingJobLogsFromAomRequest::setBaseLine));
+        builder.<Integer>withRequestField("lines",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTrainingJobLogsFromAomRequest::getLines,
+                ShowTrainingJobLogsFromAomRequest::setLines));
+        builder.<ShowTrainingJobLogsFromAomRequest.OrderEnum>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowTrainingJobLogsFromAomRequest.OrderEnum.class),
+            f -> f.withMarshaller(ShowTrainingJobLogsFromAomRequest::getOrder,
+                ShowTrainingJobLogsFromAomRequest::setOrder));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowTrainingJobLogsPreviewRequest, ShowTrainingJobLogsPreviewResponse> showTrainingJobLogsPreview =
         genForShowTrainingJobLogsPreview();
 
@@ -6909,6 +7298,31 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTrainingJobMetricsRequest::getTaskId, ShowTrainingJobMetricsRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTrainingJobRoutePlanRequest, ShowTrainingJobRoutePlanResponse> showTrainingJobRoutePlan =
+        genForShowTrainingJobRoutePlan();
+
+    private static HttpRequestDef<ShowTrainingJobRoutePlanRequest, ShowTrainingJobRoutePlanResponse> genForShowTrainingJobRoutePlan() {
+        // basic
+        HttpRequestDef.Builder<ShowTrainingJobRoutePlanRequest, ShowTrainingJobRoutePlanResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowTrainingJobRoutePlanRequest.class, ShowTrainingJobRoutePlanResponse.class)
+                .withName("ShowTrainingJobRoutePlan")
+                .withUri("/v2/{project_id}/training-jobs/{training_job_id}/route_plan")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrainingJobRoutePlanRequest::getTrainingJobId,
+                ShowTrainingJobRoutePlanRequest::setTrainingJobId));
 
         // response
 
@@ -7687,6 +8101,36 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ValidateAuthorizationRequestBody.class),
             f -> f.withMarshaller(ValidateAuthorizationRequest::getBody, ValidateAuthorizationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ValidateTrainingJobNameRequest, ValidateTrainingJobNameResponse> validateTrainingJobName =
+        genForValidateTrainingJobName();
+
+    private static HttpRequestDef<ValidateTrainingJobNameRequest, ValidateTrainingJobNameResponse> genForValidateTrainingJobName() {
+        // basic
+        HttpRequestDef.Builder<ValidateTrainingJobNameRequest, ValidateTrainingJobNameResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ValidateTrainingJobNameRequest.class, ValidateTrainingJobNameResponse.class)
+            .withName("ValidateTrainingJobName")
+            .withUri("/v2/{project_id}/training-job-names")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ValidateTrainingJobNameRequest::getJobName,
+                ValidateTrainingJobNameRequest::setJobName));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ValidateTrainingJobNameRequest::getWorkspaceId,
+                ValidateTrainingJobNameRequest::setWorkspaceId));
 
         // response
 

@@ -4,6 +4,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.AddCaseResultFourRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddCaseResultFourResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddFeatureRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddFeatureResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.AddOrUpdateTestsuiteInfoUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.AddOrUpdateTestsuiteInfoUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddRelationsInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddResourceInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentRequest;
@@ -118,6 +120,7 @@ import com.huaweicloud.sdk.cloudtest.v1.model.DeleteRelationsByOneCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteRelationsByOneCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteServiceResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTaskParams;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTemplateByIdRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTemplateByIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseCommentRequest;
@@ -125,6 +128,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseCommentResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestReportCustomDetailByUriRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestReportCustomDetailByUriResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestsuiteInfosUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestsuiteInfosUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DownloadStepImageNewRequest;
@@ -384,13 +389,19 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestcaseByPageRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestcaseByPageResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestpointByPageRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestpointByPageResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestsuiteInfoUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestsuiteInfoUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserAccessInfoRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserAccessInfoResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoRequestBody;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.StartTestsuiteUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.StartTestsuiteUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.SubTaskCaseQuery;
 import com.huaweicloud.sdk.cloudtest.v1.model.SubTaskQueryByPageParams;
+import com.huaweicloud.sdk.cloudtest.v1.model.TaskActionParamsV5;
+import com.huaweicloud.sdk.cloudtest.v1.model.TaskInfoV4VoReq;
 import com.huaweicloud.sdk.cloudtest.v1.model.TasksQueryInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestCaseCommentInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestCaseInfo;
@@ -425,6 +436,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseResultRequestBody;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseResultResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestReportCustomDetailByUriRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestReportCustomDetailByUriResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestsuiteInfoUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestsuiteInfoUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateUserDnsMappingRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateUserDnsMappingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateVersionTestCaseRequest;
@@ -478,6 +491,39 @@ public class CloudtestMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddTestCaseResultInfo.class),
             f -> f.withMarshaller(AddCaseResultFourRequest::getBody, AddCaseResultFourRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddOrUpdateTestsuiteInfoUsingRequest, AddOrUpdateTestsuiteInfoUsingResponse> addOrUpdateTestsuiteInfoUsing =
+        genForAddOrUpdateTestsuiteInfoUsing();
+
+    private static HttpRequestDef<AddOrUpdateTestsuiteInfoUsingRequest, AddOrUpdateTestsuiteInfoUsingResponse> genForAddOrUpdateTestsuiteInfoUsing() {
+        // basic
+        HttpRequestDef.Builder<AddOrUpdateTestsuiteInfoUsingRequest, AddOrUpdateTestsuiteInfoUsingResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AddOrUpdateTestsuiteInfoUsingRequest.class,
+                    AddOrUpdateTestsuiteInfoUsingResponse.class)
+                .withName("AddOrUpdateTestsuiteInfoUsing")
+                .withUri("/v1/projects/{service_id}/testsuite")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddOrUpdateTestsuiteInfoUsingRequest::getServiceId,
+                AddOrUpdateTestsuiteInfoUsingRequest::setServiceId));
+        builder.<TaskInfoV4VoReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TaskInfoV4VoReq.class),
+            f -> f.withMarshaller(AddOrUpdateTestsuiteInfoUsingRequest::getBody,
+                AddOrUpdateTestsuiteInfoUsingRequest::setBody));
 
         // response
 
@@ -1457,6 +1503,45 @@ public class CloudtestMeta {
                 DeleteTestReportCustomDetailByUriRequest::setCustomInfoUri));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTestsuiteInfosUsingRequest, DeleteTestsuiteInfosUsingResponse> deleteTestsuiteInfosUsing =
+        genForDeleteTestsuiteInfosUsing();
+
+    private static HttpRequestDef<DeleteTestsuiteInfosUsingRequest, DeleteTestsuiteInfosUsingResponse> genForDeleteTestsuiteInfosUsing() {
+        // basic
+        HttpRequestDef.Builder<DeleteTestsuiteInfosUsingRequest, DeleteTestsuiteInfosUsingResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteTestsuiteInfosUsingRequest.class,
+                    DeleteTestsuiteInfosUsingResponse.class)
+                .withName("DeleteTestsuiteInfosUsing")
+                .withUri("/v1/projects/{service_id}/testsuite")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTestsuiteInfosUsingRequest::getServiceId,
+                DeleteTestsuiteInfosUsingRequest::setServiceId));
+        builder.<DeleteTaskParams>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteTaskParams.class),
+            f -> f.withMarshaller(DeleteTestsuiteInfosUsingRequest::getBody,
+                DeleteTestsuiteInfosUsingRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteTestsuiteInfosUsingResponse::getBody,
+                DeleteTestsuiteInfosUsingResponse::setBody));
 
         return builder.build();
     }
@@ -4759,6 +4844,41 @@ public class CloudtestMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowTestsuiteInfoUsingRequest, ShowTestsuiteInfoUsingResponse> showTestsuiteInfoUsing =
+        genForShowTestsuiteInfoUsing();
+
+    private static HttpRequestDef<ShowTestsuiteInfoUsingRequest, ShowTestsuiteInfoUsingResponse> genForShowTestsuiteInfoUsing() {
+        // basic
+        HttpRequestDef.Builder<ShowTestsuiteInfoUsingRequest, ShowTestsuiteInfoUsingResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowTestsuiteInfoUsingRequest.class, ShowTestsuiteInfoUsingResponse.class)
+            .withName("ShowTestsuiteInfoUsing")
+            .withUri("/v1/projects/{service_id}/testsuite/{suite_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTestsuiteInfoUsingRequest::getServiceId,
+                ShowTestsuiteInfoUsingRequest::setServiceId));
+        builder.<String>withRequestField("suite_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTestsuiteInfoUsingRequest::getSuiteId,
+                ShowTestsuiteInfoUsingRequest::setSuiteId));
+        builder.<String>withRequestField("planId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTestsuiteInfoUsingRequest::getPlanId, ShowTestsuiteInfoUsingRequest::setPlanId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowUserAccessInfoRequest, ShowUserAccessInfoResponse> showUserAccessInfo =
         genForShowUserAccessInfo();
 
@@ -4810,6 +4930,39 @@ public class CloudtestMeta {
             TypeCasts.uncheckedConversion(ShowUserExecuteTestCaseInfoRequestBody.class),
             f -> f.withMarshaller(ShowUserExecuteTestCaseInfoRequest::getBody,
                 ShowUserExecuteTestCaseInfoRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartTestsuiteUsingRequest, StartTestsuiteUsingResponse> startTestsuiteUsing =
+        genForStartTestsuiteUsing();
+
+    private static HttpRequestDef<StartTestsuiteUsingRequest, StartTestsuiteUsingResponse> genForStartTestsuiteUsing() {
+        // basic
+        HttpRequestDef.Builder<StartTestsuiteUsingRequest, StartTestsuiteUsingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StartTestsuiteUsingRequest.class, StartTestsuiteUsingResponse.class)
+                .withName("StartTestsuiteUsing")
+                .withUri("/v1/projects/{service_id}/testsuite/{suite_id}/start")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartTestsuiteUsingRequest::getServiceId, StartTestsuiteUsingRequest::setServiceId));
+        builder.<String>withRequestField("suite_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartTestsuiteUsingRequest::getSuiteId, StartTestsuiteUsingRequest::setSuiteId));
+        builder.<TaskActionParamsV5>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TaskActionParamsV5.class),
+            f -> f.withMarshaller(StartTestsuiteUsingRequest::getBody, StartTestsuiteUsingRequest::setBody));
 
         // response
 
@@ -5100,6 +5253,42 @@ public class CloudtestMeta {
             TypeCasts.uncheckedConversion(TestReportCustomDetailInfo.class),
             f -> f.withMarshaller(UpdateTestReportCustomDetailByUriRequest::getBody,
                 UpdateTestReportCustomDetailByUriRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTestsuiteInfoUsingRequest, UpdateTestsuiteInfoUsingResponse> updateTestsuiteInfoUsing =
+        genForUpdateTestsuiteInfoUsing();
+
+    private static HttpRequestDef<UpdateTestsuiteInfoUsingRequest, UpdateTestsuiteInfoUsingResponse> genForUpdateTestsuiteInfoUsing() {
+        // basic
+        HttpRequestDef.Builder<UpdateTestsuiteInfoUsingRequest, UpdateTestsuiteInfoUsingResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateTestsuiteInfoUsingRequest.class, UpdateTestsuiteInfoUsingResponse.class)
+                .withName("UpdateTestsuiteInfoUsing")
+                .withUri("/v1/projects/{service_id}/testsuite/{suite_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTestsuiteInfoUsingRequest::getServiceId,
+                UpdateTestsuiteInfoUsingRequest::setServiceId));
+        builder.<String>withRequestField("suite_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTestsuiteInfoUsingRequest::getSuiteId,
+                UpdateTestsuiteInfoUsingRequest::setSuiteId));
+        builder.<TaskInfoV4VoReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TaskInfoV4VoReq.class),
+            f -> f.withMarshaller(UpdateTestsuiteInfoUsingRequest::getBody, UpdateTestsuiteInfoUsingRequest::setBody));
 
         // response
 

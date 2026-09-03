@@ -1,0 +1,95 @@
+package com.huaweicloud.sdk.das.v3.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * 连接详情
+ */
+public class ConnectionDetail {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "client_ip")
+
+    private String clientIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
+    public ConnectionDetail withClientIp(String clientIp) {
+        this.clientIp = clientIp;
+        return this;
+    }
+
+    /**
+     * 客户端IP
+     * @return clientIp
+     */
+    public String getClientIp() {
+        return clientIp;
+    }
+
+    public void setClientIp(String clientIp) {
+        this.clientIp = clientIp;
+    }
+
+    public ConnectionDetail withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * 连接数
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        ConnectionDetail that = (ConnectionDetail) obj;
+        return Objects.equals(this.clientIp, that.clientIp) && Objects.equals(this.count, that.count);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(clientIp, count);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ConnectionDetail {\n");
+        sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

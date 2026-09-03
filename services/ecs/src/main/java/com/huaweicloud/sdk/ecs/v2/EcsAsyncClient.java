@@ -303,6 +303,7 @@ public class EcsAsyncClient {
      * @param request AssociateServerVirtualIpRequest 请求对象
      * @return CompletableFuture<AssociateServerVirtualIpResponse>
      */
+    @Deprecated
     public CompletableFuture<AssociateServerVirtualIpResponse> associateServerVirtualIpAsync(
         AssociateServerVirtualIpRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.associateServerVirtualIp);
@@ -324,6 +325,7 @@ public class EcsAsyncClient {
      * @param request AssociateServerVirtualIpRequest 请求对象
      * @return AsyncInvoker<AssociateServerVirtualIpRequest, AssociateServerVirtualIpResponse>
      */
+    @Deprecated
     public AsyncInvoker<AssociateServerVirtualIpRequest, AssociateServerVirtualIpResponse> associateServerVirtualIpAsyncInvoker(
         AssociateServerVirtualIpRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.associateServerVirtualIp, hcClient);
@@ -368,6 +370,7 @@ public class EcsAsyncClient {
      * @param request BatchAddServerGroupMemberRequest 请求对象
      * @return CompletableFuture<BatchAddServerGroupMemberResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchAddServerGroupMemberResponse> batchAddServerGroupMemberAsync(
         BatchAddServerGroupMemberRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.batchAddServerGroupMember);
@@ -383,6 +386,7 @@ public class EcsAsyncClient {
      * @param request BatchAddServerGroupMemberRequest 请求对象
      * @return AsyncInvoker<BatchAddServerGroupMemberRequest, BatchAddServerGroupMemberResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchAddServerGroupMemberRequest, BatchAddServerGroupMemberResponse> batchAddServerGroupMemberAsyncInvoker(
         BatchAddServerGroupMemberRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.batchAddServerGroupMember, hcClient);
@@ -491,6 +495,7 @@ public class EcsAsyncClient {
      * @param request BatchDeleteServerGroupMemberRequest 请求对象
      * @return CompletableFuture<BatchDeleteServerGroupMemberResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchDeleteServerGroupMemberResponse> batchDeleteServerGroupMemberAsync(
         BatchDeleteServerGroupMemberRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.batchDeleteServerGroupMember);
@@ -506,6 +511,7 @@ public class EcsAsyncClient {
      * @param request BatchDeleteServerGroupMemberRequest 请求对象
      * @return AsyncInvoker<BatchDeleteServerGroupMemberRequest, BatchDeleteServerGroupMemberResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchDeleteServerGroupMemberRequest, BatchDeleteServerGroupMemberResponse> batchDeleteServerGroupMemberAsyncInvoker(
         BatchDeleteServerGroupMemberRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.batchDeleteServerGroupMember, hcClient);
@@ -1383,6 +1389,7 @@ public class EcsAsyncClient {
      * @param request DisassociateServerVirtualIpRequest 请求对象
      * @return CompletableFuture<DisassociateServerVirtualIpResponse>
      */
+    @Deprecated
     public CompletableFuture<DisassociateServerVirtualIpResponse> disassociateServerVirtualIpAsync(
         DisassociateServerVirtualIpRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.disassociateServerVirtualIp);
@@ -1400,6 +1407,7 @@ public class EcsAsyncClient {
      * @param request DisassociateServerVirtualIpRequest 请求对象
      * @return AsyncInvoker<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse>
      */
+    @Deprecated
     public AsyncInvoker<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse> disassociateServerVirtualIpAsyncInvoker(
         DisassociateServerVirtualIpRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.disassociateServerVirtualIp, hcClient);
@@ -1992,6 +2000,7 @@ public class EcsAsyncClient {
      * @param request NovaAssociateSecurityGroupRequest 请求对象
      * @return CompletableFuture<NovaAssociateSecurityGroupResponse>
      */
+    @Deprecated
     public CompletableFuture<NovaAssociateSecurityGroupResponse> novaAssociateSecurityGroupAsync(
         NovaAssociateSecurityGroupRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.novaAssociateSecurityGroup);
@@ -2009,6 +2018,7 @@ public class EcsAsyncClient {
      * @param request NovaAssociateSecurityGroupRequest 请求对象
      * @return AsyncInvoker<NovaAssociateSecurityGroupRequest, NovaAssociateSecurityGroupResponse>
      */
+    @Deprecated
     public AsyncInvoker<NovaAssociateSecurityGroupRequest, NovaAssociateSecurityGroupResponse> novaAssociateSecurityGroupAsyncInvoker(
         NovaAssociateSecurityGroupRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.novaAssociateSecurityGroup, hcClient);
@@ -2024,6 +2034,7 @@ public class EcsAsyncClient {
      * @param request NovaAttachInterfaceRequest 请求对象
      * @return CompletableFuture<NovaAttachInterfaceResponse>
      */
+    @Deprecated
     public CompletableFuture<NovaAttachInterfaceResponse> novaAttachInterfaceAsync(NovaAttachInterfaceRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.novaAttachInterface);
     }
@@ -2038,6 +2049,7 @@ public class EcsAsyncClient {
      * @param request NovaAttachInterfaceRequest 请求对象
      * @return AsyncInvoker<NovaAttachInterfaceRequest, NovaAttachInterfaceResponse>
      */
+    @Deprecated
     public AsyncInvoker<NovaAttachInterfaceRequest, NovaAttachInterfaceResponse> novaAttachInterfaceAsyncInvoker(
         NovaAttachInterfaceRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.novaAttachInterface, hcClient);
@@ -2055,6 +2067,7 @@ public class EcsAsyncClient {
      * @param request NovaCreateKeypairRequest 请求对象
      * @return CompletableFuture<NovaCreateKeypairResponse>
      */
+    @Deprecated
     public CompletableFuture<NovaCreateKeypairResponse> novaCreateKeypairAsync(NovaCreateKeypairRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.novaCreateKeypair);
     }
@@ -2071,6 +2084,7 @@ public class EcsAsyncClient {
      * @param request NovaCreateKeypairRequest 请求对象
      * @return AsyncInvoker<NovaCreateKeypairRequest, NovaCreateKeypairResponse>
      */
+    @Deprecated
     public AsyncInvoker<NovaCreateKeypairRequest, NovaCreateKeypairResponse> novaCreateKeypairAsyncInvoker(
         NovaCreateKeypairRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.novaCreateKeypair, hcClient);
@@ -2090,6 +2104,7 @@ public class EcsAsyncClient {
      * @param request NovaCreateServersRequest 请求对象
      * @return CompletableFuture<NovaCreateServersResponse>
      */
+    @Deprecated
     public CompletableFuture<NovaCreateServersResponse> novaCreateServersAsync(NovaCreateServersRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.novaCreateServers);
     }
@@ -2108,6 +2123,7 @@ public class EcsAsyncClient {
      * @param request NovaCreateServersRequest 请求对象
      * @return AsyncInvoker<NovaCreateServersRequest, NovaCreateServersResponse>
      */
+    @Deprecated
     public AsyncInvoker<NovaCreateServersRequest, NovaCreateServersResponse> novaCreateServersAsyncInvoker(
         NovaCreateServersRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.novaCreateServers, hcClient);
@@ -2123,6 +2139,7 @@ public class EcsAsyncClient {
      * @param request NovaDeleteKeypairRequest 请求对象
      * @return CompletableFuture<NovaDeleteKeypairResponse>
      */
+    @Deprecated
     public CompletableFuture<NovaDeleteKeypairResponse> novaDeleteKeypairAsync(NovaDeleteKeypairRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.novaDeleteKeypair);
     }
@@ -2137,6 +2154,7 @@ public class EcsAsyncClient {
      * @param request NovaDeleteKeypairRequest 请求对象
      * @return AsyncInvoker<NovaDeleteKeypairRequest, NovaDeleteKeypairResponse>
      */
+    @Deprecated
     public AsyncInvoker<NovaDeleteKeypairRequest, NovaDeleteKeypairResponse> novaDeleteKeypairAsyncInvoker(
         NovaDeleteKeypairRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.novaDeleteKeypair, hcClient);
@@ -2152,6 +2170,7 @@ public class EcsAsyncClient {
      * @param request NovaDeleteServerRequest 请求对象
      * @return CompletableFuture<NovaDeleteServerResponse>
      */
+    @Deprecated
     public CompletableFuture<NovaDeleteServerResponse> novaDeleteServerAsync(NovaDeleteServerRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.novaDeleteServer);
     }
@@ -2166,6 +2185,7 @@ public class EcsAsyncClient {
      * @param request NovaDeleteServerRequest 请求对象
      * @return AsyncInvoker<NovaDeleteServerRequest, NovaDeleteServerResponse>
      */
+    @Deprecated
     public AsyncInvoker<NovaDeleteServerRequest, NovaDeleteServerResponse> novaDeleteServerAsyncInvoker(
         NovaDeleteServerRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.novaDeleteServer, hcClient);
@@ -2181,6 +2201,7 @@ public class EcsAsyncClient {
      * @param request NovaDisassociateSecurityGroupRequest 请求对象
      * @return CompletableFuture<NovaDisassociateSecurityGroupResponse>
      */
+    @Deprecated
     public CompletableFuture<NovaDisassociateSecurityGroupResponse> novaDisassociateSecurityGroupAsync(
         NovaDisassociateSecurityGroupRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.novaDisassociateSecurityGroup);
@@ -2196,6 +2217,7 @@ public class EcsAsyncClient {
      * @param request NovaDisassociateSecurityGroupRequest 请求对象
      * @return AsyncInvoker<NovaDisassociateSecurityGroupRequest, NovaDisassociateSecurityGroupResponse>
      */
+    @Deprecated
     public AsyncInvoker<NovaDisassociateSecurityGroupRequest, NovaDisassociateSecurityGroupResponse> novaDisassociateSecurityGroupAsyncInvoker(
         NovaDisassociateSecurityGroupRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.novaDisassociateSecurityGroup, hcClient);
@@ -2243,6 +2265,7 @@ public class EcsAsyncClient {
      * @param request NovaListKeypairsRequest 请求对象
      * @return CompletableFuture<NovaListKeypairsResponse>
      */
+    @Deprecated
     public CompletableFuture<NovaListKeypairsResponse> novaListKeypairsAsync(NovaListKeypairsRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.novaListKeypairs);
     }
@@ -2257,6 +2280,7 @@ public class EcsAsyncClient {
      * @param request NovaListKeypairsRequest 请求对象
      * @return AsyncInvoker<NovaListKeypairsRequest, NovaListKeypairsResponse>
      */
+    @Deprecated
     public AsyncInvoker<NovaListKeypairsRequest, NovaListKeypairsResponse> novaListKeypairsAsyncInvoker(
         NovaListKeypairsRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.novaListKeypairs, hcClient);
@@ -2272,6 +2296,7 @@ public class EcsAsyncClient {
      * @param request NovaListServerSecurityGroupsRequest 请求对象
      * @return CompletableFuture<NovaListServerSecurityGroupsResponse>
      */
+    @Deprecated
     public CompletableFuture<NovaListServerSecurityGroupsResponse> novaListServerSecurityGroupsAsync(
         NovaListServerSecurityGroupsRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.novaListServerSecurityGroups);
@@ -2287,6 +2312,7 @@ public class EcsAsyncClient {
      * @param request NovaListServerSecurityGroupsRequest 请求对象
      * @return AsyncInvoker<NovaListServerSecurityGroupsRequest, NovaListServerSecurityGroupsResponse>
      */
+    @Deprecated
     public AsyncInvoker<NovaListServerSecurityGroupsRequest, NovaListServerSecurityGroupsResponse> novaListServerSecurityGroupsAsyncInvoker(
         NovaListServerSecurityGroupsRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.novaListServerSecurityGroups, hcClient);
@@ -2302,6 +2328,7 @@ public class EcsAsyncClient {
      * @param request NovaListServersRequest 请求对象
      * @return CompletableFuture<NovaListServersResponse>
      */
+    @Deprecated
     public CompletableFuture<NovaListServersResponse> novaListServersAsync(NovaListServersRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.novaListServers);
     }
@@ -2316,6 +2343,7 @@ public class EcsAsyncClient {
      * @param request NovaListServersRequest 请求对象
      * @return AsyncInvoker<NovaListServersRequest, NovaListServersResponse>
      */
+    @Deprecated
     public AsyncInvoker<NovaListServersRequest, NovaListServersResponse> novaListServersAsyncInvoker(
         NovaListServersRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.novaListServers, hcClient);
@@ -2331,6 +2359,7 @@ public class EcsAsyncClient {
      * @param request NovaListServersDetailsRequest 请求对象
      * @return CompletableFuture<NovaListServersDetailsResponse>
      */
+    @Deprecated
     public CompletableFuture<NovaListServersDetailsResponse> novaListServersDetailsAsync(
         NovaListServersDetailsRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.novaListServersDetails);
@@ -2346,6 +2375,7 @@ public class EcsAsyncClient {
      * @param request NovaListServersDetailsRequest 请求对象
      * @return AsyncInvoker<NovaListServersDetailsRequest, NovaListServersDetailsResponse>
      */
+    @Deprecated
     public AsyncInvoker<NovaListServersDetailsRequest, NovaListServersDetailsResponse> novaListServersDetailsAsyncInvoker(
         NovaListServersDetailsRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.novaListServersDetails, hcClient);
@@ -2361,6 +2391,7 @@ public class EcsAsyncClient {
      * @param request NovaShowFlavorExtraSpecsRequest 请求对象
      * @return CompletableFuture<NovaShowFlavorExtraSpecsResponse>
      */
+    @Deprecated
     public CompletableFuture<NovaShowFlavorExtraSpecsResponse> novaShowFlavorExtraSpecsAsync(
         NovaShowFlavorExtraSpecsRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.novaShowFlavorExtraSpecs);
@@ -2376,6 +2407,7 @@ public class EcsAsyncClient {
      * @param request NovaShowFlavorExtraSpecsRequest 请求对象
      * @return AsyncInvoker<NovaShowFlavorExtraSpecsRequest, NovaShowFlavorExtraSpecsResponse>
      */
+    @Deprecated
     public AsyncInvoker<NovaShowFlavorExtraSpecsRequest, NovaShowFlavorExtraSpecsResponse> novaShowFlavorExtraSpecsAsyncInvoker(
         NovaShowFlavorExtraSpecsRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.novaShowFlavorExtraSpecs, hcClient);
@@ -2391,6 +2423,7 @@ public class EcsAsyncClient {
      * @param request NovaShowKeypairRequest 请求对象
      * @return CompletableFuture<NovaShowKeypairResponse>
      */
+    @Deprecated
     public CompletableFuture<NovaShowKeypairResponse> novaShowKeypairAsync(NovaShowKeypairRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.novaShowKeypair);
     }
@@ -2405,6 +2438,7 @@ public class EcsAsyncClient {
      * @param request NovaShowKeypairRequest 请求对象
      * @return AsyncInvoker<NovaShowKeypairRequest, NovaShowKeypairResponse>
      */
+    @Deprecated
     public AsyncInvoker<NovaShowKeypairRequest, NovaShowKeypairResponse> novaShowKeypairAsyncInvoker(
         NovaShowKeypairRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.novaShowKeypair, hcClient);
@@ -2420,6 +2454,7 @@ public class EcsAsyncClient {
      * @param request NovaShowServerRequest 请求对象
      * @return CompletableFuture<NovaShowServerResponse>
      */
+    @Deprecated
     public CompletableFuture<NovaShowServerResponse> novaShowServerAsync(NovaShowServerRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.novaShowServer);
     }
@@ -2434,6 +2469,7 @@ public class EcsAsyncClient {
      * @param request NovaShowServerRequest 请求对象
      * @return AsyncInvoker<NovaShowServerRequest, NovaShowServerResponse>
      */
+    @Deprecated
     public AsyncInvoker<NovaShowServerRequest, NovaShowServerResponse> novaShowServerAsyncInvoker(
         NovaShowServerRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.novaShowServer, hcClient);
@@ -2449,6 +2485,7 @@ public class EcsAsyncClient {
      * @param request NovaShowServerInterfaceRequest 请求对象
      * @return CompletableFuture<NovaShowServerInterfaceResponse>
      */
+    @Deprecated
     public CompletableFuture<NovaShowServerInterfaceResponse> novaShowServerInterfaceAsync(
         NovaShowServerInterfaceRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.novaShowServerInterface);
@@ -2464,6 +2501,7 @@ public class EcsAsyncClient {
      * @param request NovaShowServerInterfaceRequest 请求对象
      * @return AsyncInvoker<NovaShowServerInterfaceRequest, NovaShowServerInterfaceResponse>
      */
+    @Deprecated
     public AsyncInvoker<NovaShowServerInterfaceRequest, NovaShowServerInterfaceResponse> novaShowServerInterfaceAsyncInvoker(
         NovaShowServerInterfaceRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.novaShowServerInterface, hcClient);
@@ -2481,6 +2519,7 @@ public class EcsAsyncClient {
      * @param request RegisterServerMonitorRequest 请求对象
      * @return CompletableFuture<RegisterServerMonitorResponse>
      */
+    @Deprecated
     public CompletableFuture<RegisterServerMonitorResponse> registerServerMonitorAsync(
         RegisterServerMonitorRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.registerServerMonitor);
@@ -2498,6 +2537,7 @@ public class EcsAsyncClient {
      * @param request RegisterServerMonitorRequest 请求对象
      * @return AsyncInvoker<RegisterServerMonitorRequest, RegisterServerMonitorResponse>
      */
+    @Deprecated
     public AsyncInvoker<RegisterServerMonitorRequest, RegisterServerMonitorResponse> registerServerMonitorAsyncInvoker(
         RegisterServerMonitorRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.registerServerMonitor, hcClient);

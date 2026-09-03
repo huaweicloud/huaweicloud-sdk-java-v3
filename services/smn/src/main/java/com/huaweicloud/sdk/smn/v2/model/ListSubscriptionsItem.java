@@ -53,6 +53,11 @@ public class ListSubscriptionsItem {
 
     private List<SubscriptionsFilterPolicy> filterPolices = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extension")
+
+    private SubscriptionExtensionResponse extension;
+
     public ListSubscriptionsItem withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
         return this;
@@ -205,6 +210,32 @@ public class ListSubscriptionsItem {
         this.filterPolices = filterPolices;
     }
 
+    public ListSubscriptionsItem withExtension(SubscriptionExtensionResponse extension) {
+        this.extension = extension;
+        return this;
+    }
+
+    public ListSubscriptionsItem withExtension(Consumer<SubscriptionExtensionResponse> extensionSetter) {
+        if (this.extension == null) {
+            this.extension = new SubscriptionExtensionResponse();
+            extensionSetter.accept(this.extension);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get extension
+     * @return extension
+     */
+    public SubscriptionExtensionResponse getExtension() {
+        return extension;
+    }
+
+    public void setExtension(SubscriptionExtensionResponse extension) {
+        this.extension = extension;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -217,12 +248,14 @@ public class ListSubscriptionsItem {
         return Objects.equals(this.topicUrn, that.topicUrn) && Objects.equals(this.protocol, that.protocol)
             && Objects.equals(this.subscriptionUrn, that.subscriptionUrn) && Objects.equals(this.owner, that.owner)
             && Objects.equals(this.endpoint, that.endpoint) && Objects.equals(this.remark, that.remark)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.filterPolices, that.filterPolices);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.filterPolices, that.filterPolices)
+            && Objects.equals(this.extension, that.extension);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(topicUrn, protocol, subscriptionUrn, owner, endpoint, remark, status, filterPolices);
+        return Objects
+            .hash(topicUrn, protocol, subscriptionUrn, owner, endpoint, remark, status, filterPolices, extension);
     }
 
     @Override
@@ -237,6 +270,7 @@ public class ListSubscriptionsItem {
         sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    filterPolices: ").append(toIndentedString(filterPolices)).append("\n");
+        sb.append("    extension: ").append(toIndentedString(extension)).append("\n");
         sb.append("}");
         return sb.toString();
     }

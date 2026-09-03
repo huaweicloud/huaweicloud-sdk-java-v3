@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.evs.v2.model.BatchDeleteVolumeTagsRequest;
 import com.huaweicloud.sdk.evs.v2.model.BatchDeleteVolumeTagsResponse;
 import com.huaweicloud.sdk.evs.v2.model.BatchResizeVolumesRequest;
 import com.huaweicloud.sdk.evs.v2.model.BatchResizeVolumesResponse;
+import com.huaweicloud.sdk.evs.v2.model.ChangeVolumeChargeModeRequest;
+import com.huaweicloud.sdk.evs.v2.model.ChangeVolumeChargeModeResponse;
 import com.huaweicloud.sdk.evs.v2.model.CinderAcceptVolumeTransferRequest;
 import com.huaweicloud.sdk.evs.v2.model.CinderAcceptVolumeTransferResponse;
 import com.huaweicloud.sdk.evs.v2.model.CinderCreateVolumeTransferRequest;
@@ -192,6 +194,35 @@ public class EvsClient {
     public SyncInvoker<BatchResizeVolumesRequest, BatchResizeVolumesResponse> batchResizeVolumesInvoker(
         BatchResizeVolumesRequest request) {
         return new SyncInvoker<>(request, EvsMeta.batchResizeVolumes, hcClient);
+    }
+
+    /**
+     * 修改云硬盘计费模式
+     *
+     * 将挂载状态下的云硬盘的计费模式有按需转成包周期，且到期时间和挂载的虚拟机保持一致。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeVolumeChargeModeRequest 请求对象
+     * @return ChangeVolumeChargeModeResponse
+     */
+    public ChangeVolumeChargeModeResponse changeVolumeChargeMode(ChangeVolumeChargeModeRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.changeVolumeChargeMode);
+    }
+
+    /**
+     * 修改云硬盘计费模式
+     *
+     * 将挂载状态下的云硬盘的计费模式有按需转成包周期，且到期时间和挂载的虚拟机保持一致。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeVolumeChargeModeRequest 请求对象
+     * @return SyncInvoker<ChangeVolumeChargeModeRequest, ChangeVolumeChargeModeResponse>
+     */
+    public SyncInvoker<ChangeVolumeChargeModeRequest, ChangeVolumeChargeModeResponse> changeVolumeChargeModeInvoker(
+        ChangeVolumeChargeModeRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.changeVolumeChargeMode, hcClient);
     }
 
     /**

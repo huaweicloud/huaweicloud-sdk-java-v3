@@ -360,6 +360,11 @@ public class ListDesktopsDetailRequest {
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "without_any_tag")
+
+    private Boolean withoutAnyTag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_version")
 
     private String agentVersion;
@@ -843,6 +848,23 @@ public class ListDesktopsDetailRequest {
         this.availabilityZone = availabilityZone;
     }
 
+    public ListDesktopsDetailRequest withWithoutAnyTag(Boolean withoutAnyTag) {
+        this.withoutAnyTag = withoutAnyTag;
+        return this;
+    }
+
+    /**
+     * 是否过滤不带标签的桌面，为true时只返回不带任何标签的桌面。
+     * @return withoutAnyTag
+     */
+    public Boolean getWithoutAnyTag() {
+        return withoutAnyTag;
+    }
+
+    public void setWithoutAnyTag(Boolean withoutAnyTag) {
+        this.withoutAnyTag = withoutAnyTag;
+    }
+
     public ListDesktopsDetailRequest withAgentVersion(String agentVersion) {
         this.agentVersion = agentVersion;
         return this;
@@ -884,6 +906,7 @@ public class ListDesktopsDetailRequest {
             && Objects.equals(this.isShareDesktop, that.isShareDesktop) && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.isSupportInternet, that.isSupportInternet)
             && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.withoutAnyTag, that.withoutAnyTag)
             && Objects.equals(this.agentVersion, that.agentVersion);
     }
 
@@ -914,6 +937,7 @@ public class ListDesktopsDetailRequest {
             subnetId,
             isSupportInternet,
             availabilityZone,
+            withoutAnyTag,
             agentVersion);
     }
 
@@ -946,6 +970,7 @@ public class ListDesktopsDetailRequest {
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    isSupportInternet: ").append(toIndentedString(isSupportInternet)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    withoutAnyTag: ").append(toIndentedString(withoutAnyTag)).append("\n");
         sb.append("    agentVersion: ").append(toIndentedString(agentVersion)).append("\n");
         sb.append("}");
         return sb.toString();

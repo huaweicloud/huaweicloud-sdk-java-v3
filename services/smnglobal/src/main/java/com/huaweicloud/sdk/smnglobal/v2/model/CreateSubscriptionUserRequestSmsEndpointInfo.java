@@ -15,6 +15,11 @@ public class CreateSubscriptionUserRequestSmsEndpointInfo {
 
     private String endpoint;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "verification_code_enabled")
+
+    private Boolean verificationCodeEnabled;
+
     public CreateSubscriptionUserRequestSmsEndpointInfo withEndpoint(String endpoint) {
         this.endpoint = endpoint;
         return this;
@@ -32,6 +37,23 @@ public class CreateSubscriptionUserRequestSmsEndpointInfo {
         this.endpoint = endpoint;
     }
 
+    public CreateSubscriptionUserRequestSmsEndpointInfo withVerificationCodeEnabled(Boolean verificationCodeEnabled) {
+        this.verificationCodeEnabled = verificationCodeEnabled;
+        return this;
+    }
+
+    /**
+     * 是否启用验证码，默认为false。当protocol值为sms或callnotify，且该字段值设置为true时，发送订阅确认短信为验证码格式；该字段为false或者不存在时，发送的订阅确认短信为超链接格式。当protocol值为其他协议时，该字段不生效
+     * @return verificationCodeEnabled
+     */
+    public Boolean getVerificationCodeEnabled() {
+        return verificationCodeEnabled;
+    }
+
+    public void setVerificationCodeEnabled(Boolean verificationCodeEnabled) {
+        this.verificationCodeEnabled = verificationCodeEnabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,13 @@ public class CreateSubscriptionUserRequestSmsEndpointInfo {
             return false;
         }
         CreateSubscriptionUserRequestSmsEndpointInfo that = (CreateSubscriptionUserRequestSmsEndpointInfo) obj;
-        return Objects.equals(this.endpoint, that.endpoint);
+        return Objects.equals(this.endpoint, that.endpoint)
+            && Objects.equals(this.verificationCodeEnabled, that.verificationCodeEnabled);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(endpoint);
+        return Objects.hash(endpoint, verificationCodeEnabled);
     }
 
     @Override
@@ -54,6 +77,7 @@ public class CreateSubscriptionUserRequestSmsEndpointInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateSubscriptionUserRequestSmsEndpointInfo {\n");
         sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
+        sb.append("    verificationCodeEnabled: ").append(toIndentedString(verificationCodeEnabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

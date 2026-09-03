@@ -623,10 +623,14 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowEntityInfoByGuidRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowEntityInfoByGuidResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryDependInstancesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryDependInstancesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryFullTextRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryFullTextResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryJobDependInstancesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryJobDependInstancesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryPackageDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryPackageDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactorySupplementDataRequest;
@@ -9373,6 +9377,35 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 查询实例的上下游依赖
+     *
+     * 查询实例的上下游依赖
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFactoryDependInstancesRequest 请求对象
+     * @return ShowFactoryDependInstancesResponse
+     */
+    public ShowFactoryDependInstancesResponse showFactoryDependInstances(ShowFactoryDependInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.showFactoryDependInstances);
+    }
+
+    /**
+     * 查询实例的上下游依赖
+     *
+     * 查询实例的上下游依赖
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFactoryDependInstancesRequest 请求对象
+     * @return SyncInvoker<ShowFactoryDependInstancesRequest, ShowFactoryDependInstancesResponse>
+     */
+    public SyncInvoker<ShowFactoryDependInstancesRequest, ShowFactoryDependInstancesResponse> showFactoryDependInstancesInvoker(
+        ShowFactoryDependInstancesRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.showFactoryDependInstances, hcClient);
+    }
+
+    /**
      * 查询环境变量信息
      *
      * 查询环境变量信息
@@ -9428,6 +9461,36 @@ public class DataArtsStudioClient {
     public SyncInvoker<ShowFactoryFullTextRequest, ShowFactoryFullTextResponse> showFactoryFullTextInvoker(
         ShowFactoryFullTextRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.showFactoryFullText, hcClient);
+    }
+
+    /**
+     * 查看作业的上下游依赖关系
+     *
+     * 提供对外接口，查看作业的上下游依赖关系及责任人。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFactoryJobDependInstancesRequest 请求对象
+     * @return ShowFactoryJobDependInstancesResponse
+     */
+    public ShowFactoryJobDependInstancesResponse showFactoryJobDependInstances(
+        ShowFactoryJobDependInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.showFactoryJobDependInstances);
+    }
+
+    /**
+     * 查看作业的上下游依赖关系
+     *
+     * 提供对外接口，查看作业的上下游依赖关系及责任人。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFactoryJobDependInstancesRequest 请求对象
+     * @return SyncInvoker<ShowFactoryJobDependInstancesRequest, ShowFactoryJobDependInstancesResponse>
+     */
+    public SyncInvoker<ShowFactoryJobDependInstancesRequest, ShowFactoryJobDependInstancesResponse> showFactoryJobDependInstancesInvoker(
+        ShowFactoryJobDependInstancesRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.showFactoryJobDependInstances, hcClient);
     }
 
     /**

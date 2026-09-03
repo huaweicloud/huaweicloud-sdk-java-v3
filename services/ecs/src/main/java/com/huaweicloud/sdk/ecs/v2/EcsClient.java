@@ -299,6 +299,7 @@ public class EcsClient {
      * @param request AssociateServerVirtualIpRequest 请求对象
      * @return AssociateServerVirtualIpResponse
      */
+    @Deprecated
     public AssociateServerVirtualIpResponse associateServerVirtualIp(AssociateServerVirtualIpRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.associateServerVirtualIp);
     }
@@ -319,6 +320,7 @@ public class EcsClient {
      * @param request AssociateServerVirtualIpRequest 请求对象
      * @return SyncInvoker<AssociateServerVirtualIpRequest, AssociateServerVirtualIpResponse>
      */
+    @Deprecated
     public SyncInvoker<AssociateServerVirtualIpRequest, AssociateServerVirtualIpResponse> associateServerVirtualIpInvoker(
         AssociateServerVirtualIpRequest request) {
         return new SyncInvoker<>(request, EcsMeta.associateServerVirtualIp, hcClient);
@@ -363,6 +365,7 @@ public class EcsClient {
      * @param request BatchAddServerGroupMemberRequest 请求对象
      * @return BatchAddServerGroupMemberResponse
      */
+    @Deprecated
     public BatchAddServerGroupMemberResponse batchAddServerGroupMember(BatchAddServerGroupMemberRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.batchAddServerGroupMember);
     }
@@ -377,6 +380,7 @@ public class EcsClient {
      * @param request BatchAddServerGroupMemberRequest 请求对象
      * @return SyncInvoker<BatchAddServerGroupMemberRequest, BatchAddServerGroupMemberResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchAddServerGroupMemberRequest, BatchAddServerGroupMemberResponse> batchAddServerGroupMemberInvoker(
         BatchAddServerGroupMemberRequest request) {
         return new SyncInvoker<>(request, EcsMeta.batchAddServerGroupMember, hcClient);
@@ -483,6 +487,7 @@ public class EcsClient {
      * @param request BatchDeleteServerGroupMemberRequest 请求对象
      * @return BatchDeleteServerGroupMemberResponse
      */
+    @Deprecated
     public BatchDeleteServerGroupMemberResponse batchDeleteServerGroupMember(
         BatchDeleteServerGroupMemberRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.batchDeleteServerGroupMember);
@@ -498,6 +503,7 @@ public class EcsClient {
      * @param request BatchDeleteServerGroupMemberRequest 请求对象
      * @return SyncInvoker<BatchDeleteServerGroupMemberRequest, BatchDeleteServerGroupMemberResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchDeleteServerGroupMemberRequest, BatchDeleteServerGroupMemberResponse> batchDeleteServerGroupMemberInvoker(
         BatchDeleteServerGroupMemberRequest request) {
         return new SyncInvoker<>(request, EcsMeta.batchDeleteServerGroupMember, hcClient);
@@ -1360,6 +1366,7 @@ public class EcsClient {
      * @param request DisassociateServerVirtualIpRequest 请求对象
      * @return DisassociateServerVirtualIpResponse
      */
+    @Deprecated
     public DisassociateServerVirtualIpResponse disassociateServerVirtualIp(DisassociateServerVirtualIpRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.disassociateServerVirtualIp);
     }
@@ -1376,6 +1383,7 @@ public class EcsClient {
      * @param request DisassociateServerVirtualIpRequest 请求对象
      * @return SyncInvoker<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse>
      */
+    @Deprecated
     public SyncInvoker<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse> disassociateServerVirtualIpInvoker(
         DisassociateServerVirtualIpRequest request) {
         return new SyncInvoker<>(request, EcsMeta.disassociateServerVirtualIp, hcClient);
@@ -1959,6 +1967,7 @@ public class EcsClient {
      * @param request NovaAssociateSecurityGroupRequest 请求对象
      * @return NovaAssociateSecurityGroupResponse
      */
+    @Deprecated
     public NovaAssociateSecurityGroupResponse novaAssociateSecurityGroup(NovaAssociateSecurityGroupRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaAssociateSecurityGroup);
     }
@@ -1975,6 +1984,7 @@ public class EcsClient {
      * @param request NovaAssociateSecurityGroupRequest 请求对象
      * @return SyncInvoker<NovaAssociateSecurityGroupRequest, NovaAssociateSecurityGroupResponse>
      */
+    @Deprecated
     public SyncInvoker<NovaAssociateSecurityGroupRequest, NovaAssociateSecurityGroupResponse> novaAssociateSecurityGroupInvoker(
         NovaAssociateSecurityGroupRequest request) {
         return new SyncInvoker<>(request, EcsMeta.novaAssociateSecurityGroup, hcClient);
@@ -1990,6 +2000,7 @@ public class EcsClient {
      * @param request NovaAttachInterfaceRequest 请求对象
      * @return NovaAttachInterfaceResponse
      */
+    @Deprecated
     public NovaAttachInterfaceResponse novaAttachInterface(NovaAttachInterfaceRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaAttachInterface);
     }
@@ -2004,6 +2015,7 @@ public class EcsClient {
      * @param request NovaAttachInterfaceRequest 请求对象
      * @return SyncInvoker<NovaAttachInterfaceRequest, NovaAttachInterfaceResponse>
      */
+    @Deprecated
     public SyncInvoker<NovaAttachInterfaceRequest, NovaAttachInterfaceResponse> novaAttachInterfaceInvoker(
         NovaAttachInterfaceRequest request) {
         return new SyncInvoker<>(request, EcsMeta.novaAttachInterface, hcClient);
@@ -2021,6 +2033,7 @@ public class EcsClient {
      * @param request NovaCreateKeypairRequest 请求对象
      * @return NovaCreateKeypairResponse
      */
+    @Deprecated
     public NovaCreateKeypairResponse novaCreateKeypair(NovaCreateKeypairRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaCreateKeypair);
     }
@@ -2037,6 +2050,7 @@ public class EcsClient {
      * @param request NovaCreateKeypairRequest 请求对象
      * @return SyncInvoker<NovaCreateKeypairRequest, NovaCreateKeypairResponse>
      */
+    @Deprecated
     public SyncInvoker<NovaCreateKeypairRequest, NovaCreateKeypairResponse> novaCreateKeypairInvoker(
         NovaCreateKeypairRequest request) {
         return new SyncInvoker<>(request, EcsMeta.novaCreateKeypair, hcClient);
@@ -2056,6 +2070,7 @@ public class EcsClient {
      * @param request NovaCreateServersRequest 请求对象
      * @return NovaCreateServersResponse
      */
+    @Deprecated
     public NovaCreateServersResponse novaCreateServers(NovaCreateServersRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaCreateServers);
     }
@@ -2074,6 +2089,7 @@ public class EcsClient {
      * @param request NovaCreateServersRequest 请求对象
      * @return SyncInvoker<NovaCreateServersRequest, NovaCreateServersResponse>
      */
+    @Deprecated
     public SyncInvoker<NovaCreateServersRequest, NovaCreateServersResponse> novaCreateServersInvoker(
         NovaCreateServersRequest request) {
         return new SyncInvoker<>(request, EcsMeta.novaCreateServers, hcClient);
@@ -2089,6 +2105,7 @@ public class EcsClient {
      * @param request NovaDeleteKeypairRequest 请求对象
      * @return NovaDeleteKeypairResponse
      */
+    @Deprecated
     public NovaDeleteKeypairResponse novaDeleteKeypair(NovaDeleteKeypairRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaDeleteKeypair);
     }
@@ -2103,6 +2120,7 @@ public class EcsClient {
      * @param request NovaDeleteKeypairRequest 请求对象
      * @return SyncInvoker<NovaDeleteKeypairRequest, NovaDeleteKeypairResponse>
      */
+    @Deprecated
     public SyncInvoker<NovaDeleteKeypairRequest, NovaDeleteKeypairResponse> novaDeleteKeypairInvoker(
         NovaDeleteKeypairRequest request) {
         return new SyncInvoker<>(request, EcsMeta.novaDeleteKeypair, hcClient);
@@ -2118,6 +2136,7 @@ public class EcsClient {
      * @param request NovaDeleteServerRequest 请求对象
      * @return NovaDeleteServerResponse
      */
+    @Deprecated
     public NovaDeleteServerResponse novaDeleteServer(NovaDeleteServerRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaDeleteServer);
     }
@@ -2132,6 +2151,7 @@ public class EcsClient {
      * @param request NovaDeleteServerRequest 请求对象
      * @return SyncInvoker<NovaDeleteServerRequest, NovaDeleteServerResponse>
      */
+    @Deprecated
     public SyncInvoker<NovaDeleteServerRequest, NovaDeleteServerResponse> novaDeleteServerInvoker(
         NovaDeleteServerRequest request) {
         return new SyncInvoker<>(request, EcsMeta.novaDeleteServer, hcClient);
@@ -2147,6 +2167,7 @@ public class EcsClient {
      * @param request NovaDisassociateSecurityGroupRequest 请求对象
      * @return NovaDisassociateSecurityGroupResponse
      */
+    @Deprecated
     public NovaDisassociateSecurityGroupResponse novaDisassociateSecurityGroup(
         NovaDisassociateSecurityGroupRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaDisassociateSecurityGroup);
@@ -2162,6 +2183,7 @@ public class EcsClient {
      * @param request NovaDisassociateSecurityGroupRequest 请求对象
      * @return SyncInvoker<NovaDisassociateSecurityGroupRequest, NovaDisassociateSecurityGroupResponse>
      */
+    @Deprecated
     public SyncInvoker<NovaDisassociateSecurityGroupRequest, NovaDisassociateSecurityGroupResponse> novaDisassociateSecurityGroupInvoker(
         NovaDisassociateSecurityGroupRequest request) {
         return new SyncInvoker<>(request, EcsMeta.novaDisassociateSecurityGroup, hcClient);
@@ -2208,6 +2230,7 @@ public class EcsClient {
      * @param request NovaListKeypairsRequest 请求对象
      * @return NovaListKeypairsResponse
      */
+    @Deprecated
     public NovaListKeypairsResponse novaListKeypairs(NovaListKeypairsRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaListKeypairs);
     }
@@ -2222,6 +2245,7 @@ public class EcsClient {
      * @param request NovaListKeypairsRequest 请求对象
      * @return SyncInvoker<NovaListKeypairsRequest, NovaListKeypairsResponse>
      */
+    @Deprecated
     public SyncInvoker<NovaListKeypairsRequest, NovaListKeypairsResponse> novaListKeypairsInvoker(
         NovaListKeypairsRequest request) {
         return new SyncInvoker<>(request, EcsMeta.novaListKeypairs, hcClient);
@@ -2237,6 +2261,7 @@ public class EcsClient {
      * @param request NovaListServerSecurityGroupsRequest 请求对象
      * @return NovaListServerSecurityGroupsResponse
      */
+    @Deprecated
     public NovaListServerSecurityGroupsResponse novaListServerSecurityGroups(
         NovaListServerSecurityGroupsRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaListServerSecurityGroups);
@@ -2252,6 +2277,7 @@ public class EcsClient {
      * @param request NovaListServerSecurityGroupsRequest 请求对象
      * @return SyncInvoker<NovaListServerSecurityGroupsRequest, NovaListServerSecurityGroupsResponse>
      */
+    @Deprecated
     public SyncInvoker<NovaListServerSecurityGroupsRequest, NovaListServerSecurityGroupsResponse> novaListServerSecurityGroupsInvoker(
         NovaListServerSecurityGroupsRequest request) {
         return new SyncInvoker<>(request, EcsMeta.novaListServerSecurityGroups, hcClient);
@@ -2267,6 +2293,7 @@ public class EcsClient {
      * @param request NovaListServersRequest 请求对象
      * @return NovaListServersResponse
      */
+    @Deprecated
     public NovaListServersResponse novaListServers(NovaListServersRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaListServers);
     }
@@ -2281,6 +2308,7 @@ public class EcsClient {
      * @param request NovaListServersRequest 请求对象
      * @return SyncInvoker<NovaListServersRequest, NovaListServersResponse>
      */
+    @Deprecated
     public SyncInvoker<NovaListServersRequest, NovaListServersResponse> novaListServersInvoker(
         NovaListServersRequest request) {
         return new SyncInvoker<>(request, EcsMeta.novaListServers, hcClient);
@@ -2296,6 +2324,7 @@ public class EcsClient {
      * @param request NovaListServersDetailsRequest 请求对象
      * @return NovaListServersDetailsResponse
      */
+    @Deprecated
     public NovaListServersDetailsResponse novaListServersDetails(NovaListServersDetailsRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaListServersDetails);
     }
@@ -2310,6 +2339,7 @@ public class EcsClient {
      * @param request NovaListServersDetailsRequest 请求对象
      * @return SyncInvoker<NovaListServersDetailsRequest, NovaListServersDetailsResponse>
      */
+    @Deprecated
     public SyncInvoker<NovaListServersDetailsRequest, NovaListServersDetailsResponse> novaListServersDetailsInvoker(
         NovaListServersDetailsRequest request) {
         return new SyncInvoker<>(request, EcsMeta.novaListServersDetails, hcClient);
@@ -2325,6 +2355,7 @@ public class EcsClient {
      * @param request NovaShowFlavorExtraSpecsRequest 请求对象
      * @return NovaShowFlavorExtraSpecsResponse
      */
+    @Deprecated
     public NovaShowFlavorExtraSpecsResponse novaShowFlavorExtraSpecs(NovaShowFlavorExtraSpecsRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaShowFlavorExtraSpecs);
     }
@@ -2339,6 +2370,7 @@ public class EcsClient {
      * @param request NovaShowFlavorExtraSpecsRequest 请求对象
      * @return SyncInvoker<NovaShowFlavorExtraSpecsRequest, NovaShowFlavorExtraSpecsResponse>
      */
+    @Deprecated
     public SyncInvoker<NovaShowFlavorExtraSpecsRequest, NovaShowFlavorExtraSpecsResponse> novaShowFlavorExtraSpecsInvoker(
         NovaShowFlavorExtraSpecsRequest request) {
         return new SyncInvoker<>(request, EcsMeta.novaShowFlavorExtraSpecs, hcClient);
@@ -2354,6 +2386,7 @@ public class EcsClient {
      * @param request NovaShowKeypairRequest 请求对象
      * @return NovaShowKeypairResponse
      */
+    @Deprecated
     public NovaShowKeypairResponse novaShowKeypair(NovaShowKeypairRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaShowKeypair);
     }
@@ -2368,6 +2401,7 @@ public class EcsClient {
      * @param request NovaShowKeypairRequest 请求对象
      * @return SyncInvoker<NovaShowKeypairRequest, NovaShowKeypairResponse>
      */
+    @Deprecated
     public SyncInvoker<NovaShowKeypairRequest, NovaShowKeypairResponse> novaShowKeypairInvoker(
         NovaShowKeypairRequest request) {
         return new SyncInvoker<>(request, EcsMeta.novaShowKeypair, hcClient);
@@ -2383,6 +2417,7 @@ public class EcsClient {
      * @param request NovaShowServerRequest 请求对象
      * @return NovaShowServerResponse
      */
+    @Deprecated
     public NovaShowServerResponse novaShowServer(NovaShowServerRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaShowServer);
     }
@@ -2397,6 +2432,7 @@ public class EcsClient {
      * @param request NovaShowServerRequest 请求对象
      * @return SyncInvoker<NovaShowServerRequest, NovaShowServerResponse>
      */
+    @Deprecated
     public SyncInvoker<NovaShowServerRequest, NovaShowServerResponse> novaShowServerInvoker(
         NovaShowServerRequest request) {
         return new SyncInvoker<>(request, EcsMeta.novaShowServer, hcClient);
@@ -2412,6 +2448,7 @@ public class EcsClient {
      * @param request NovaShowServerInterfaceRequest 请求对象
      * @return NovaShowServerInterfaceResponse
      */
+    @Deprecated
     public NovaShowServerInterfaceResponse novaShowServerInterface(NovaShowServerInterfaceRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaShowServerInterface);
     }
@@ -2426,6 +2463,7 @@ public class EcsClient {
      * @param request NovaShowServerInterfaceRequest 请求对象
      * @return SyncInvoker<NovaShowServerInterfaceRequest, NovaShowServerInterfaceResponse>
      */
+    @Deprecated
     public SyncInvoker<NovaShowServerInterfaceRequest, NovaShowServerInterfaceResponse> novaShowServerInterfaceInvoker(
         NovaShowServerInterfaceRequest request) {
         return new SyncInvoker<>(request, EcsMeta.novaShowServerInterface, hcClient);
@@ -2443,6 +2481,7 @@ public class EcsClient {
      * @param request RegisterServerMonitorRequest 请求对象
      * @return RegisterServerMonitorResponse
      */
+    @Deprecated
     public RegisterServerMonitorResponse registerServerMonitor(RegisterServerMonitorRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.registerServerMonitor);
     }
@@ -2459,6 +2498,7 @@ public class EcsClient {
      * @param request RegisterServerMonitorRequest 请求对象
      * @return SyncInvoker<RegisterServerMonitorRequest, RegisterServerMonitorResponse>
      */
+    @Deprecated
     public SyncInvoker<RegisterServerMonitorRequest, RegisterServerMonitorResponse> registerServerMonitorInvoker(
         RegisterServerMonitorRequest request) {
         return new SyncInvoker<>(request, EcsMeta.registerServerMonitor, hcClient);

@@ -623,10 +623,14 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowEntityInfoByGuidRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowEntityInfoByGuidResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryDependInstancesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryDependInstancesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryFullTextRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryFullTextResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryJobDependInstancesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryJobDependInstancesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryPackageDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryPackageDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactorySupplementDataRequest;
@@ -9487,6 +9491,36 @@ public class DataArtsStudioAsyncClient {
     }
 
     /**
+     * 查询实例的上下游依赖
+     *
+     * 查询实例的上下游依赖
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFactoryDependInstancesRequest 请求对象
+     * @return CompletableFuture<ShowFactoryDependInstancesResponse>
+     */
+    public CompletableFuture<ShowFactoryDependInstancesResponse> showFactoryDependInstancesAsync(
+        ShowFactoryDependInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.showFactoryDependInstances);
+    }
+
+    /**
+     * 查询实例的上下游依赖
+     *
+     * 查询实例的上下游依赖
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFactoryDependInstancesRequest 请求对象
+     * @return AsyncInvoker<ShowFactoryDependInstancesRequest, ShowFactoryDependInstancesResponse>
+     */
+    public AsyncInvoker<ShowFactoryDependInstancesRequest, ShowFactoryDependInstancesResponse> showFactoryDependInstancesAsyncInvoker(
+        ShowFactoryDependInstancesRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.showFactoryDependInstances, hcClient);
+    }
+
+    /**
      * 查询环境变量信息
      *
      * 查询环境变量信息
@@ -9542,6 +9576,36 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<ShowFactoryFullTextRequest, ShowFactoryFullTextResponse> showFactoryFullTextAsyncInvoker(
         ShowFactoryFullTextRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.showFactoryFullText, hcClient);
+    }
+
+    /**
+     * 查看作业的上下游依赖关系
+     *
+     * 提供对外接口，查看作业的上下游依赖关系及责任人。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFactoryJobDependInstancesRequest 请求对象
+     * @return CompletableFuture<ShowFactoryJobDependInstancesResponse>
+     */
+    public CompletableFuture<ShowFactoryJobDependInstancesResponse> showFactoryJobDependInstancesAsync(
+        ShowFactoryJobDependInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.showFactoryJobDependInstances);
+    }
+
+    /**
+     * 查看作业的上下游依赖关系
+     *
+     * 提供对外接口，查看作业的上下游依赖关系及责任人。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFactoryJobDependInstancesRequest 请求对象
+     * @return AsyncInvoker<ShowFactoryJobDependInstancesRequest, ShowFactoryJobDependInstancesResponse>
+     */
+    public AsyncInvoker<ShowFactoryJobDependInstancesRequest, ShowFactoryJobDependInstancesResponse> showFactoryJobDependInstancesAsyncInvoker(
+        ShowFactoryJobDependInstancesRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.showFactoryJobDependInstances, hcClient);
     }
 
     /**

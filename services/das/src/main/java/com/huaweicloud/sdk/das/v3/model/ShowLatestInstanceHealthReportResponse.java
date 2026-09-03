@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -21,12 +20,12 @@ public class ShowLatestInstanceHealthReportResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_at")
 
-    private BigDecimal startAt;
+    private Long startAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_at")
 
-    private BigDecimal endAt;
+    private Long endAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
@@ -95,7 +94,7 @@ public class ShowLatestInstanceHealthReportResponse extends SdkResponse {
         this.success = success;
     }
 
-    public ShowLatestInstanceHealthReportResponse withStartAt(BigDecimal startAt) {
+    public ShowLatestInstanceHealthReportResponse withStartAt(Long startAt) {
         this.startAt = startAt;
         return this;
     }
@@ -104,15 +103,15 @@ public class ShowLatestInstanceHealthReportResponse extends SdkResponse {
      * 日报诊断区间的起始时间（Unix timestamp），单位：毫秒
      * @return startAt
      */
-    public BigDecimal getStartAt() {
+    public Long getStartAt() {
         return startAt;
     }
 
-    public void setStartAt(BigDecimal startAt) {
+    public void setStartAt(Long startAt) {
         this.startAt = startAt;
     }
 
-    public ShowLatestInstanceHealthReportResponse withEndAt(BigDecimal endAt) {
+    public ShowLatestInstanceHealthReportResponse withEndAt(Long endAt) {
         this.endAt = endAt;
         return this;
     }
@@ -121,11 +120,11 @@ public class ShowLatestInstanceHealthReportResponse extends SdkResponse {
      * 日报诊断区间的结束时间（Unix timestamp），单位：毫秒
      * @return endAt
      */
-    public BigDecimal getEndAt() {
+    public Long getEndAt() {
         return endAt;
     }
 
-    public void setEndAt(BigDecimal endAt) {
+    public void setEndAt(Long endAt) {
         this.endAt = endAt;
     }
 

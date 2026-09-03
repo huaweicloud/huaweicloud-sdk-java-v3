@@ -15,6 +15,11 @@ public class ListSubscriptionUserResponseSmsEndpointInfo {
 
     private String endpoint;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "verification_code_enabled")
+
+    private Boolean verificationCodeEnabled;
+
     public ListSubscriptionUserResponseSmsEndpointInfo withEndpoint(String endpoint) {
         this.endpoint = endpoint;
         return this;
@@ -32,6 +37,23 @@ public class ListSubscriptionUserResponseSmsEndpointInfo {
         this.endpoint = endpoint;
     }
 
+    public ListSubscriptionUserResponseSmsEndpointInfo withVerificationCodeEnabled(Boolean verificationCodeEnabled) {
+        this.verificationCodeEnabled = verificationCodeEnabled;
+        return this;
+    }
+
+    /**
+     * 是否启用验证码发送确认短信，默认为false。
+     * @return verificationCodeEnabled
+     */
+    public Boolean getVerificationCodeEnabled() {
+        return verificationCodeEnabled;
+    }
+
+    public void setVerificationCodeEnabled(Boolean verificationCodeEnabled) {
+        this.verificationCodeEnabled = verificationCodeEnabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,13 @@ public class ListSubscriptionUserResponseSmsEndpointInfo {
             return false;
         }
         ListSubscriptionUserResponseSmsEndpointInfo that = (ListSubscriptionUserResponseSmsEndpointInfo) obj;
-        return Objects.equals(this.endpoint, that.endpoint);
+        return Objects.equals(this.endpoint, that.endpoint)
+            && Objects.equals(this.verificationCodeEnabled, that.verificationCodeEnabled);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(endpoint);
+        return Objects.hash(endpoint, verificationCodeEnabled);
     }
 
     @Override
@@ -54,6 +77,7 @@ public class ListSubscriptionUserResponseSmsEndpointInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSubscriptionUserResponseSmsEndpointInfo {\n");
         sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
+        sb.append("    verificationCodeEnabled: ").append(toIndentedString(verificationCodeEnabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -26,7 +26,7 @@ public class SetInstanceScheduleEventsRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_schedule_window")
 
-    private Object eventScheduleWindow;
+    private EventScheduleWindow eventScheduleWindow;
 
     public SetInstanceScheduleEventsRequestBody withOperationType(String operationType) {
         this.operationType = operationType;
@@ -79,20 +79,30 @@ public class SetInstanceScheduleEventsRequestBody {
         this.eventInstances = eventInstances;
     }
 
-    public SetInstanceScheduleEventsRequestBody withEventScheduleWindow(Object eventScheduleWindow) {
+    public SetInstanceScheduleEventsRequestBody withEventScheduleWindow(EventScheduleWindow eventScheduleWindow) {
         this.eventScheduleWindow = eventScheduleWindow;
         return this;
     }
 
+    public SetInstanceScheduleEventsRequestBody withEventScheduleWindow(
+        Consumer<EventScheduleWindow> eventScheduleWindowSetter) {
+        if (this.eventScheduleWindow == null) {
+            this.eventScheduleWindow = new EventScheduleWindow();
+            eventScheduleWindowSetter.accept(this.eventScheduleWindow);
+        }
+
+        return this;
+    }
+
     /**
-     * **参数解释**：  事件执行窗口。  **约束限制**：  当operation_type为reservation时，该字段必传。
+     * Get eventScheduleWindow
      * @return eventScheduleWindow
      */
-    public Object getEventScheduleWindow() {
+    public EventScheduleWindow getEventScheduleWindow() {
         return eventScheduleWindow;
     }
 
-    public void setEventScheduleWindow(Object eventScheduleWindow) {
+    public void setEventScheduleWindow(EventScheduleWindow eventScheduleWindow) {
         this.eventScheduleWindow = eventScheduleWindow;
     }
 

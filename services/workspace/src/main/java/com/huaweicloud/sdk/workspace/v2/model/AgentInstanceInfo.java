@@ -129,6 +129,11 @@ public class AgentInstanceInfo {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "security_policy_control")
+
+    private Integer securityPolicyControl;
+
     public AgentInstanceInfo withId(String id) {
         this.id = id;
         return this;
@@ -552,6 +557,25 @@ public class AgentInstanceInfo {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public AgentInstanceInfo withSecurityPolicyControl(Integer securityPolicyControl) {
+        this.securityPolicyControl = securityPolicyControl;
+        return this;
+    }
+
+    /**
+     * 安全策略管控，1=开启，0=关闭
+     * minimum: 0
+     * maximum: 1
+     * @return securityPolicyControl
+     */
+    public Integer getSecurityPolicyControl() {
+        return securityPolicyControl;
+    }
+
+    public void setSecurityPolicyControl(Integer securityPolicyControl) {
+        this.securityPolicyControl = securityPolicyControl;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -575,7 +599,8 @@ public class AgentInstanceInfo {
             && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.imageName, that.imageName)
             && Objects.equals(this.desktopPoolId, that.desktopPoolId) && Objects.equals(this.userName, that.userName)
             && Objects.equals(this.risks, that.risks) && Objects.equals(this.agentVersion, that.agentVersion)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.securityPolicyControl, that.securityPolicyControl);
     }
 
     @Override
@@ -602,7 +627,8 @@ public class AgentInstanceInfo {
             userName,
             risks,
             agentVersion,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            securityPolicyControl);
     }
 
     @Override
@@ -632,6 +658,7 @@ public class AgentInstanceInfo {
         sb.append("    risks: ").append(toIndentedString(risks)).append("\n");
         sb.append("    agentVersion: ").append(toIndentedString(agentVersion)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    securityPolicyControl: ").append(toIndentedString(securityPolicyControl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

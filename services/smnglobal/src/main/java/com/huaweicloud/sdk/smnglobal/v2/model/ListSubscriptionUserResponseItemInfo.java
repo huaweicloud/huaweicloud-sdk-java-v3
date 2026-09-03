@@ -68,6 +68,36 @@ public class ListSubscriptionUserResponseItemInfo {
 
     private ListSubscriptionUserResponseEmailEndpointInfo email;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "callnotify")
+
+    private ListSubscriptionUserResponseCallnotifyEndpointInfo callnotify;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "wechat")
+
+    private ListSubscriptionUserResponseWechatEndpointInfo wechat;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dingding")
+
+    private ListSubscriptionUserResponseDingdingEndpointInfo dingding;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "feishu")
+
+    private ListSubscriptionUserResponseFeishuEndpointInfo feishu;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "welink")
+
+    private ListSubscriptionUserResponseWelinkEndpointInfo welink;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ding_talk_bot")
+
+    private ListSubscriptionUserResponseDingTalkBotEndpointInfo dingTalkBot;
+
     public ListSubscriptionUserResponseItemInfo withId(String id) {
         this.id = id;
         return this;
@@ -311,6 +341,171 @@ public class ListSubscriptionUserResponseItemInfo {
         this.email = email;
     }
 
+    public ListSubscriptionUserResponseItemInfo withCallnotify(
+        ListSubscriptionUserResponseCallnotifyEndpointInfo callnotify) {
+        this.callnotify = callnotify;
+        return this;
+    }
+
+    public ListSubscriptionUserResponseItemInfo withCallnotify(
+        Consumer<ListSubscriptionUserResponseCallnotifyEndpointInfo> callnotifySetter) {
+        if (this.callnotify == null) {
+            this.callnotify = new ListSubscriptionUserResponseCallnotifyEndpointInfo();
+            callnotifySetter.accept(this.callnotify);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get callnotify
+     * @return callnotify
+     */
+    public ListSubscriptionUserResponseCallnotifyEndpointInfo getCallnotify() {
+        return callnotify;
+    }
+
+    public void setCallnotify(ListSubscriptionUserResponseCallnotifyEndpointInfo callnotify) {
+        this.callnotify = callnotify;
+    }
+
+    public ListSubscriptionUserResponseItemInfo withWechat(ListSubscriptionUserResponseWechatEndpointInfo wechat) {
+        this.wechat = wechat;
+        return this;
+    }
+
+    public ListSubscriptionUserResponseItemInfo withWechat(
+        Consumer<ListSubscriptionUserResponseWechatEndpointInfo> wechatSetter) {
+        if (this.wechat == null) {
+            this.wechat = new ListSubscriptionUserResponseWechatEndpointInfo();
+            wechatSetter.accept(this.wechat);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get wechat
+     * @return wechat
+     */
+    public ListSubscriptionUserResponseWechatEndpointInfo getWechat() {
+        return wechat;
+    }
+
+    public void setWechat(ListSubscriptionUserResponseWechatEndpointInfo wechat) {
+        this.wechat = wechat;
+    }
+
+    public ListSubscriptionUserResponseItemInfo withDingding(
+        ListSubscriptionUserResponseDingdingEndpointInfo dingding) {
+        this.dingding = dingding;
+        return this;
+    }
+
+    public ListSubscriptionUserResponseItemInfo withDingding(
+        Consumer<ListSubscriptionUserResponseDingdingEndpointInfo> dingdingSetter) {
+        if (this.dingding == null) {
+            this.dingding = new ListSubscriptionUserResponseDingdingEndpointInfo();
+            dingdingSetter.accept(this.dingding);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get dingding
+     * @return dingding
+     */
+    public ListSubscriptionUserResponseDingdingEndpointInfo getDingding() {
+        return dingding;
+    }
+
+    public void setDingding(ListSubscriptionUserResponseDingdingEndpointInfo dingding) {
+        this.dingding = dingding;
+    }
+
+    public ListSubscriptionUserResponseItemInfo withFeishu(ListSubscriptionUserResponseFeishuEndpointInfo feishu) {
+        this.feishu = feishu;
+        return this;
+    }
+
+    public ListSubscriptionUserResponseItemInfo withFeishu(
+        Consumer<ListSubscriptionUserResponseFeishuEndpointInfo> feishuSetter) {
+        if (this.feishu == null) {
+            this.feishu = new ListSubscriptionUserResponseFeishuEndpointInfo();
+            feishuSetter.accept(this.feishu);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get feishu
+     * @return feishu
+     */
+    public ListSubscriptionUserResponseFeishuEndpointInfo getFeishu() {
+        return feishu;
+    }
+
+    public void setFeishu(ListSubscriptionUserResponseFeishuEndpointInfo feishu) {
+        this.feishu = feishu;
+    }
+
+    public ListSubscriptionUserResponseItemInfo withWelink(ListSubscriptionUserResponseWelinkEndpointInfo welink) {
+        this.welink = welink;
+        return this;
+    }
+
+    public ListSubscriptionUserResponseItemInfo withWelink(
+        Consumer<ListSubscriptionUserResponseWelinkEndpointInfo> welinkSetter) {
+        if (this.welink == null) {
+            this.welink = new ListSubscriptionUserResponseWelinkEndpointInfo();
+            welinkSetter.accept(this.welink);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get welink
+     * @return welink
+     */
+    public ListSubscriptionUserResponseWelinkEndpointInfo getWelink() {
+        return welink;
+    }
+
+    public void setWelink(ListSubscriptionUserResponseWelinkEndpointInfo welink) {
+        this.welink = welink;
+    }
+
+    public ListSubscriptionUserResponseItemInfo withDingTalkBot(
+        ListSubscriptionUserResponseDingTalkBotEndpointInfo dingTalkBot) {
+        this.dingTalkBot = dingTalkBot;
+        return this;
+    }
+
+    public ListSubscriptionUserResponseItemInfo withDingTalkBot(
+        Consumer<ListSubscriptionUserResponseDingTalkBotEndpointInfo> dingTalkBotSetter) {
+        if (this.dingTalkBot == null) {
+            this.dingTalkBot = new ListSubscriptionUserResponseDingTalkBotEndpointInfo();
+            dingTalkBotSetter.accept(this.dingTalkBot);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get dingTalkBot
+     * @return dingTalkBot
+     */
+    public ListSubscriptionUserResponseDingTalkBotEndpointInfo getDingTalkBot() {
+        return dingTalkBot;
+    }
+
+    public void setDingTalkBot(ListSubscriptionUserResponseDingTalkBotEndpointInfo dingTalkBot) {
+        this.dingTalkBot = dingTalkBot;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -325,12 +520,31 @@ public class ListSubscriptionUserResponseItemInfo {
             && Objects.equals(this.group, that.group) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.http, that.http)
             && Objects.equals(this.https, that.https) && Objects.equals(this.sms, that.sms)
-            && Objects.equals(this.email, that.email);
+            && Objects.equals(this.email, that.email) && Objects.equals(this.callnotify, that.callnotify)
+            && Objects.equals(this.wechat, that.wechat) && Objects.equals(this.dingding, that.dingding)
+            && Objects.equals(this.feishu, that.feishu) && Objects.equals(this.welink, that.welink)
+            && Objects.equals(this.dingTalkBot, that.dingTalkBot);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, domainId, name, status, group, createTime, updateTime, http, https, sms, email);
+        return Objects.hash(id,
+            domainId,
+            name,
+            status,
+            group,
+            createTime,
+            updateTime,
+            http,
+            https,
+            sms,
+            email,
+            callnotify,
+            wechat,
+            dingding,
+            feishu,
+            welink,
+            dingTalkBot);
     }
 
     @Override
@@ -348,6 +562,12 @@ public class ListSubscriptionUserResponseItemInfo {
         sb.append("    https: ").append(toIndentedString(https)).append("\n");
         sb.append("    sms: ").append(toIndentedString(sms)).append("\n");
         sb.append("    email: ").append(toIndentedString(email)).append("\n");
+        sb.append("    callnotify: ").append(toIndentedString(callnotify)).append("\n");
+        sb.append("    wechat: ").append(toIndentedString(wechat)).append("\n");
+        sb.append("    dingding: ").append(toIndentedString(dingding)).append("\n");
+        sb.append("    feishu: ").append(toIndentedString(feishu)).append("\n");
+        sb.append("    welink: ").append(toIndentedString(welink)).append("\n");
+        sb.append("    dingTalkBot: ").append(toIndentedString(dingTalkBot)).append("\n");
         sb.append("}");
         return sb.toString();
     }

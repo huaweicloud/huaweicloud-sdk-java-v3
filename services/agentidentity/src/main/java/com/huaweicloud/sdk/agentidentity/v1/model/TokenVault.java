@@ -20,9 +20,19 @@ public class TokenVault {
     private String tokenVaultId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "urn")
+
+    private String urn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kms_configuration")
 
     private KmsConfiguration kmsConfiguration;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_engine_configuration")
+
+    private PolicyEngineConfiguration policyEngineConfiguration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
@@ -51,6 +61,23 @@ public class TokenVault {
         this.tokenVaultId = tokenVaultId;
     }
 
+    public TokenVault withUrn(String urn) {
+        this.urn = urn;
+        return this;
+    }
+
+    /**
+     * TokenVault 对象统一资源标识（URN）。
+     * @return urn
+     */
+    public String getUrn() {
+        return urn;
+    }
+
+    public void setUrn(String urn) {
+        this.urn = urn;
+    }
+
     public TokenVault withKmsConfiguration(KmsConfiguration kmsConfiguration) {
         this.kmsConfiguration = kmsConfiguration;
         return this;
@@ -75,6 +102,33 @@ public class TokenVault {
 
     public void setKmsConfiguration(KmsConfiguration kmsConfiguration) {
         this.kmsConfiguration = kmsConfiguration;
+    }
+
+    public TokenVault withPolicyEngineConfiguration(PolicyEngineConfiguration policyEngineConfiguration) {
+        this.policyEngineConfiguration = policyEngineConfiguration;
+        return this;
+    }
+
+    public TokenVault withPolicyEngineConfiguration(
+        Consumer<PolicyEngineConfiguration> policyEngineConfigurationSetter) {
+        if (this.policyEngineConfiguration == null) {
+            this.policyEngineConfiguration = new PolicyEngineConfiguration();
+            policyEngineConfigurationSetter.accept(this.policyEngineConfiguration);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get policyEngineConfiguration
+     * @return policyEngineConfiguration
+     */
+    public PolicyEngineConfiguration getPolicyEngineConfiguration() {
+        return policyEngineConfiguration;
+    }
+
+    public void setPolicyEngineConfiguration(PolicyEngineConfiguration policyEngineConfiguration) {
+        this.policyEngineConfiguration = policyEngineConfiguration;
     }
 
     public TokenVault withUpdatedAt(OffsetDateTime updatedAt) {
@@ -136,14 +190,15 @@ public class TokenVault {
             return false;
         }
         TokenVault that = (TokenVault) obj;
-        return Objects.equals(this.tokenVaultId, that.tokenVaultId)
+        return Objects.equals(this.tokenVaultId, that.tokenVaultId) && Objects.equals(this.urn, that.urn)
             && Objects.equals(this.kmsConfiguration, that.kmsConfiguration)
+            && Objects.equals(this.policyEngineConfiguration, that.policyEngineConfiguration)
             && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tokenVaultId, kmsConfiguration, updatedAt, tags);
+        return Objects.hash(tokenVaultId, urn, kmsConfiguration, policyEngineConfiguration, updatedAt, tags);
     }
 
     @Override
@@ -151,7 +206,9 @@ public class TokenVault {
         StringBuilder sb = new StringBuilder();
         sb.append("class TokenVault {\n");
         sb.append("    tokenVaultId: ").append(toIndentedString(tokenVaultId)).append("\n");
+        sb.append("    urn: ").append(toIndentedString(urn)).append("\n");
         sb.append("    kmsConfiguration: ").append(toIndentedString(kmsConfiguration)).append("\n");
+        sb.append("    policyEngineConfiguration: ").append(toIndentedString(policyEngineConfiguration)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");

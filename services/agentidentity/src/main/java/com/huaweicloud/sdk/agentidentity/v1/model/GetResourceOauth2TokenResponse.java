@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -106,6 +107,11 @@ public class GetResourceOauth2TokenResponse extends SdkResponse {
 
     private String sessionUri;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expires_at")
+
+    private OffsetDateTime expiresAt;
+
     public GetResourceOauth2TokenResponse withAccessToken(String accessToken) {
         this.accessToken = accessToken;
         return this;
@@ -174,6 +180,23 @@ public class GetResourceOauth2TokenResponse extends SdkResponse {
         this.sessionUri = sessionUri;
     }
 
+    public GetResourceOauth2TokenResponse withExpiresAt(OffsetDateTime expiresAt) {
+        this.expiresAt = expiresAt;
+        return this;
+    }
+
+    /**
+     * Absolute expiration time of the access token in RFC 3339 format, UTC timezone.
+     * @return expiresAt
+     */
+    public OffsetDateTime getExpiresAt() {
+        return expiresAt;
+    }
+
+    public void setExpiresAt(OffsetDateTime expiresAt) {
+        this.expiresAt = expiresAt;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -186,12 +209,12 @@ public class GetResourceOauth2TokenResponse extends SdkResponse {
         return Objects.equals(this.accessToken, that.accessToken)
             && Objects.equals(this.authorizationUrl, that.authorizationUrl)
             && Objects.equals(this.sessionStatus, that.sessionStatus)
-            && Objects.equals(this.sessionUri, that.sessionUri);
+            && Objects.equals(this.sessionUri, that.sessionUri) && Objects.equals(this.expiresAt, that.expiresAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(accessToken, authorizationUrl, sessionStatus, sessionUri);
+        return Objects.hash(accessToken, authorizationUrl, sessionStatus, sessionUri, expiresAt);
     }
 
     @Override
@@ -202,6 +225,7 @@ public class GetResourceOauth2TokenResponse extends SdkResponse {
         sb.append("    authorizationUrl: ").append(toIndentedString(authorizationUrl)).append("\n");
         sb.append("    sessionStatus: ").append(toIndentedString(sessionStatus)).append("\n");
         sb.append("    sessionUri: ").append(toIndentedString(sessionUri)).append("\n");
+        sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

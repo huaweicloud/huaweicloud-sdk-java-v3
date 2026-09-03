@@ -148,6 +148,16 @@ public class AlarmRulesItemsDetails {
 
     private String smnConfigId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_recovery")
+
+    private Boolean enableRecovery;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_persistent_alarm")
+
+    private Boolean enablePersistentAlarm;
+
     public AlarmRulesItemsDetails withName(String name) {
         this.name = name;
         return this;
@@ -671,6 +681,40 @@ public class AlarmRulesItemsDetails {
         this.smnConfigId = smnConfigId;
     }
 
+    public AlarmRulesItemsDetails withEnableRecovery(Boolean enableRecovery) {
+        this.enableRecovery = enableRecovery;
+        return this;
+    }
+
+    /**
+     * 是否启用恢复通知，为true时作业恢复成功后发送恢复通知。
+     * @return enableRecovery
+     */
+    public Boolean getEnableRecovery() {
+        return enableRecovery;
+    }
+
+    public void setEnableRecovery(Boolean enableRecovery) {
+        this.enableRecovery = enableRecovery;
+    }
+
+    public AlarmRulesItemsDetails withEnablePersistentAlarm(Boolean enablePersistentAlarm) {
+        this.enablePersistentAlarm = enablePersistentAlarm;
+        return this;
+    }
+
+    /**
+     * 是否启用持续告警，为true时按发送间隔重复发送告警通知。
+     * @return enablePersistentAlarm
+     */
+    public Boolean getEnablePersistentAlarm() {
+        return enablePersistentAlarm;
+    }
+
+    public void setEnablePersistentAlarm(Boolean enablePersistentAlarm) {
+        this.enablePersistentAlarm = enablePersistentAlarm;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -697,7 +741,9 @@ public class AlarmRulesItemsDetails {
             && Objects.equals(this.maxSendTimes, that.maxSendTimes)
             && Objects.equals(this.sendInterval, that.sendInterval)
             && Objects.equals(this.dutyScheduleId, that.dutyScheduleId)
-            && Objects.equals(this.smnConfigId, that.smnConfigId);
+            && Objects.equals(this.smnConfigId, that.smnConfigId)
+            && Objects.equals(this.enableRecovery, that.enableRecovery)
+            && Objects.equals(this.enablePersistentAlarm, that.enablePersistentAlarm);
     }
 
     @Override
@@ -728,7 +774,9 @@ public class AlarmRulesItemsDetails {
             maxSendTimes,
             sendInterval,
             dutyScheduleId,
-            smnConfigId);
+            smnConfigId,
+            enableRecovery,
+            enablePersistentAlarm);
     }
 
     @Override
@@ -762,6 +810,8 @@ public class AlarmRulesItemsDetails {
         sb.append("    sendInterval: ").append(toIndentedString(sendInterval)).append("\n");
         sb.append("    dutyScheduleId: ").append(toIndentedString(dutyScheduleId)).append("\n");
         sb.append("    smnConfigId: ").append(toIndentedString(smnConfigId)).append("\n");
+        sb.append("    enableRecovery: ").append(toIndentedString(enableRecovery)).append("\n");
+        sb.append("    enablePersistentAlarm: ").append(toIndentedString(enablePersistentAlarm)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -14,12 +14,12 @@ public class WorkloadInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allocated")
 
-    private WorkloadStatistics allocated;
+    private WorkloadStatisticsInfo allocated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue")
 
-    private WorkloadStatistics queue;
+    private WorkloadStatisticsInfo queue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
@@ -31,14 +31,14 @@ public class WorkloadInfo {
 
     private String window;
 
-    public WorkloadInfo withAllocated(WorkloadStatistics allocated) {
+    public WorkloadInfo withAllocated(WorkloadStatisticsInfo allocated) {
         this.allocated = allocated;
         return this;
     }
 
-    public WorkloadInfo withAllocated(Consumer<WorkloadStatistics> allocatedSetter) {
+    public WorkloadInfo withAllocated(Consumer<WorkloadStatisticsInfo> allocatedSetter) {
         if (this.allocated == null) {
-            this.allocated = new WorkloadStatistics();
+            this.allocated = new WorkloadStatisticsInfo();
             allocatedSetter.accept(this.allocated);
         }
 
@@ -49,22 +49,22 @@ public class WorkloadInfo {
      * Get allocated
      * @return allocated
      */
-    public WorkloadStatistics getAllocated() {
+    public WorkloadStatisticsInfo getAllocated() {
         return allocated;
     }
 
-    public void setAllocated(WorkloadStatistics allocated) {
+    public void setAllocated(WorkloadStatisticsInfo allocated) {
         this.allocated = allocated;
     }
 
-    public WorkloadInfo withQueue(WorkloadStatistics queue) {
+    public WorkloadInfo withQueue(WorkloadStatisticsInfo queue) {
         this.queue = queue;
         return this;
     }
 
-    public WorkloadInfo withQueue(Consumer<WorkloadStatistics> queueSetter) {
+    public WorkloadInfo withQueue(Consumer<WorkloadStatisticsInfo> queueSetter) {
         if (this.queue == null) {
-            this.queue = new WorkloadStatistics();
+            this.queue = new WorkloadStatisticsInfo();
             queueSetter.accept(this.queue);
         }
 
@@ -75,11 +75,11 @@ public class WorkloadInfo {
      * Get queue
      * @return queue
      */
-    public WorkloadStatistics getQueue() {
+    public WorkloadStatisticsInfo getQueue() {
         return queue;
     }
 
-    public void setQueue(WorkloadStatistics queue) {
+    public void setQueue(WorkloadStatisticsInfo queue) {
         this.queue = queue;
     }
 

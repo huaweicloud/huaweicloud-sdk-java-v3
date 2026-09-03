@@ -23,6 +23,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolNodesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteTrainingJobRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteTrainingJobResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDevServersActionRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDevServersActionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDrainPoolNodesRequest;
@@ -63,6 +65,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.CheckTrainingExperimentRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CheckTrainingExperimentResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CountInferServicesByTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CountInferServicesByTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CountTrainingJobsByTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CountTrainingJobsByTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryRequest;
@@ -257,6 +261,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListFeaturesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListFeaturesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListFtArtifactsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListFtArtifactsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListHyperClusterRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListHyperClusterResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceClustersCapacityRequest;
@@ -325,8 +331,12 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobEventsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobEventsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobStagesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobStagesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobTasksRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobTasksResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsByTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsByTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowExecutionsRequest;
@@ -341,6 +351,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkspaceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ModifyInferIntranetConnectionsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ModifyInferIntranetConnectionsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ModifyTrainingQuotasRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ModifyTrainingQuotasResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchNetworkRequest;
@@ -349,6 +361,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.PatchNodePoolRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchNodePoolResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchPoolRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchPoolResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.PublishFtArtifactsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.PublishFtArtifactsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.QueryHyperinstanceTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.QueryHyperinstanceTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.RebootDevServerRequest;
@@ -387,6 +401,10 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowDevServerRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowDevServerResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowDynamicStorageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowDynamicStorageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowFtDetailRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowFtDetailResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowFtMetricsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowFtMetricsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowImageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowImageResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowInferDeploymentHpaRequest;
@@ -453,16 +471,22 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainJobTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainJobTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingExperimentDetailsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingExperimentDetailsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingFlavorMaxAvailableResourceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingFlavorMaxAvailableResourceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobDetailsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobDetailsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobEnginesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobEnginesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobFlavorsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobFlavorsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobLogsFromAomRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobLogsFromAomResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobLogsPreviewRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobLogsPreviewResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobMetricsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobMetricsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobRoutePlanRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobRoutePlanResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingQuotasRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingQuotasResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowExecutionRequest;
@@ -553,6 +577,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkspaceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ValidateAuthorizationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ValidateAuthorizationResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ValidateTrainingJobNameRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ValidateTrainingJobNameResponse;
 
 public class ModelArtsClient {
 
@@ -866,6 +892,37 @@ public class ModelArtsClient {
     public SyncInvoker<BatchDeletePoolTagsRequest, BatchDeletePoolTagsResponse> batchDeletePoolTagsInvoker(
         BatchDeletePoolTagsRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.batchDeletePoolTags, hcClient);
+    }
+
+    /**
+     * 批量删除训练作业
+     *
+     * 批量删除训练作业接口用于一次性从ModelArts平台上移除多个已创建的训练作业。
+     * 该接口适用于以下场景：当用户需要集中清理多个已完成或不再需要的训练作业时，可以通过此接口批量删除，避免逐个调用删除接口。使用该接口的前提条件是待删除的训练作业均已存在、属于同一工作空间，且用户具有删除训练作业的权限。删除操作完成后，训练作业将从平台中永久移除，相关资源和配置也将被清理。若待删除作业数量超过100、作业不存在、作业不属于同一工作空间或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteTrainingJobRequest 请求对象
+     * @return BatchDeleteTrainingJobResponse
+     */
+    public BatchDeleteTrainingJobResponse batchDeleteTrainingJob(BatchDeleteTrainingJobRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.batchDeleteTrainingJob);
+    }
+
+    /**
+     * 批量删除训练作业
+     *
+     * 批量删除训练作业接口用于一次性从ModelArts平台上移除多个已创建的训练作业。
+     * 该接口适用于以下场景：当用户需要集中清理多个已完成或不再需要的训练作业时，可以通过此接口批量删除，避免逐个调用删除接口。使用该接口的前提条件是待删除的训练作业均已存在、属于同一工作空间，且用户具有删除训练作业的权限。删除操作完成后，训练作业将从平台中永久移除，相关资源和配置也将被清理。若待删除作业数量超过100、作业不存在、作业不属于同一工作空间或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteTrainingJobRequest 请求对象
+     * @return SyncInvoker<BatchDeleteTrainingJobRequest, BatchDeleteTrainingJobResponse>
+     */
+    public SyncInvoker<BatchDeleteTrainingJobRequest, BatchDeleteTrainingJobResponse> batchDeleteTrainingJobInvoker(
+        BatchDeleteTrainingJobRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.batchDeleteTrainingJob, hcClient);
     }
 
     /**
@@ -1449,6 +1506,37 @@ public class ModelArtsClient {
     public SyncInvoker<CountInferServicesByTagsRequest, CountInferServicesByTagsResponse> countInferServicesByTagsInvoker(
         CountInferServicesByTagsRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.countInferServicesByTags, hcClient);
+    }
+
+    /**
+     * 按标签统计训练作业资源数量
+     *
+     * 按标签统计训练作业资源数量接口用于根据标签等条件查询当前项目下符合条件的训练作业总数。
+     * 该接口适用于以下场景：当用户需要按标签键值、资源名称等条件统计训练作业数量时，可以通过此接口进行查询。使用该接口的前提条件是用户已登录并具有查看训练作业标签的权限。查询操作完成后，平台将返回符合条件的训练作业总数。若用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountTrainingJobsByTagsRequest 请求对象
+     * @return CountTrainingJobsByTagsResponse
+     */
+    public CountTrainingJobsByTagsResponse countTrainingJobsByTags(CountTrainingJobsByTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.countTrainingJobsByTags);
+    }
+
+    /**
+     * 按标签统计训练作业资源数量
+     *
+     * 按标签统计训练作业资源数量接口用于根据标签等条件查询当前项目下符合条件的训练作业总数。
+     * 该接口适用于以下场景：当用户需要按标签键值、资源名称等条件统计训练作业数量时，可以通过此接口进行查询。使用该接口的前提条件是用户已登录并具有查看训练作业标签的权限。查询操作完成后，平台将返回符合条件的训练作业总数。若用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountTrainingJobsByTagsRequest 请求对象
+     * @return SyncInvoker<CountTrainingJobsByTagsRequest, CountTrainingJobsByTagsResponse>
+     */
+    public SyncInvoker<CountTrainingJobsByTagsRequest, CountTrainingJobsByTagsResponse> countTrainingJobsByTagsInvoker(
+        CountTrainingJobsByTagsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.countTrainingJobsByTags, hcClient);
     }
 
     /**
@@ -3575,6 +3663,35 @@ public class ModelArtsClient {
     }
 
     /**
+     * 查询精调训练任务产物列表
+     *
+     * 查询精调训练任务产物列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFtArtifactsRequest 请求对象
+     * @return ListFtArtifactsResponse
+     */
+    public ListFtArtifactsResponse listFtArtifacts(ListFtArtifactsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.listFtArtifacts);
+    }
+
+    /**
+     * 查询精调训练任务产物列表
+     *
+     * 查询精调训练任务产物列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFtArtifactsRequest 请求对象
+     * @return SyncInvoker<ListFtArtifactsRequest, ListFtArtifactsResponse>
+     */
+    public SyncInvoker<ListFtArtifactsRequest, ListFtArtifactsResponse> listFtArtifactsInvoker(
+        ListFtArtifactsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.listFtArtifacts, hcClient);
+    }
+
+    /**
      * 查询Hyper Cluster详情列表
      *
      * 查询Hyper Cluster详情列表接口用于获取所有Hyper Cluster的详细信息。该接口适用于以下场景：当用户需要了解系统中所有超节点网络的配置和状态时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Hyper Cluster详情的权限。查询操作完成后，接口将返回所有超节点网络的详细信息，包括ID、名称、子网信息等。若用户无权限操作或系统中没有Hyper Cluster，接口将返回相应的错误信息。
@@ -4505,6 +4622,37 @@ public class ModelArtsClient {
     }
 
     /**
+     * 查询项目下训练作业标签列表
+     *
+     * 查询项目下训练作业标签列表接口用于获取指定项目下所有训练作业已使用的标签集合，按标签key聚合，每个key下包含所有不同的value。
+     * 该接口适用于以下场景：当用户需要了解项目下训练作业已使用的所有标签键值对，以便进行标签筛选、资源分类或管理时，可以通过此接口获取标签列表。使用该接口的前提条件是用户具有查看标签的权限。查询操作完成后，平台将返回项目下所有训练作业标签的聚合结果，按key分组，每个key下列出该key出现过的所有不同value。若用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTrainingJobTagsRequest 请求对象
+     * @return ListTrainingJobTagsResponse
+     */
+    public ListTrainingJobTagsResponse listTrainingJobTags(ListTrainingJobTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.listTrainingJobTags);
+    }
+
+    /**
+     * 查询项目下训练作业标签列表
+     *
+     * 查询项目下训练作业标签列表接口用于获取指定项目下所有训练作业已使用的标签集合，按标签key聚合，每个key下包含所有不同的value。
+     * 该接口适用于以下场景：当用户需要了解项目下训练作业已使用的所有标签键值对，以便进行标签筛选、资源分类或管理时，可以通过此接口获取标签列表。使用该接口的前提条件是用户具有查看标签的权限。查询操作完成后，平台将返回项目下所有训练作业标签的聚合结果，按key分组，每个key下列出该key出现过的所有不同value。若用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTrainingJobTagsRequest 请求对象
+     * @return SyncInvoker<ListTrainingJobTagsRequest, ListTrainingJobTagsResponse>
+     */
+    public SyncInvoker<ListTrainingJobTagsRequest, ListTrainingJobTagsResponse> listTrainingJobTagsInvoker(
+        ListTrainingJobTagsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.listTrainingJobTags, hcClient);
+    }
+
+    /**
      * 查询训练作业的实例历史调度信息
      *
      * 查询训练作业调度的实例IP、节点IP等信息，可通过schedule_count参数查询具体的某一次调度的实例信息。
@@ -4560,6 +4708,37 @@ public class ModelArtsClient {
     public SyncInvoker<ListTrainingJobsRequest, ListTrainingJobsResponse> listTrainingJobsInvoker(
         ListTrainingJobsRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.listTrainingJobs, hcClient);
+    }
+
+    /**
+     * 查询训练作业资源列表（按标签筛选）
+     *
+     * 查询训练作业资源列表接口用于按标签、资源名称等条件筛选项目下符合条件的训练作业资源，并返回每个作业的标签信息。
+     * 该接口适用于以下场景：当用户需要通过标签或资源名称筛选训练作业，以进行资源分类管理或批量操作时，可以通过此接口获取符合条件的作业资源列表。使用该接口的前提条件是用户具有查看标签的权限。查询操作完成后，平台将返回符合条件的作业资源列表及总数。若标签格式不合法、标签key重复或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTrainingJobsByTagsRequest 请求对象
+     * @return ListTrainingJobsByTagsResponse
+     */
+    public ListTrainingJobsByTagsResponse listTrainingJobsByTags(ListTrainingJobsByTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.listTrainingJobsByTags);
+    }
+
+    /**
+     * 查询训练作业资源列表（按标签筛选）
+     *
+     * 查询训练作业资源列表接口用于按标签、资源名称等条件筛选项目下符合条件的训练作业资源，并返回每个作业的标签信息。
+     * 该接口适用于以下场景：当用户需要通过标签或资源名称筛选训练作业，以进行资源分类管理或批量操作时，可以通过此接口获取符合条件的作业资源列表。使用该接口的前提条件是用户具有查看标签的权限。查询操作完成后，平台将返回符合条件的作业资源列表及总数。若标签格式不合法、标签key重复或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTrainingJobsByTagsRequest 请求对象
+     * @return SyncInvoker<ListTrainingJobsByTagsRequest, ListTrainingJobsByTagsResponse>
+     */
+    public SyncInvoker<ListTrainingJobsByTagsRequest, ListTrainingJobsByTagsResponse> listTrainingJobsByTagsInvoker(
+        ListTrainingJobsByTagsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.listTrainingJobsByTags, hcClient);
     }
 
     /**
@@ -4646,6 +4825,37 @@ public class ModelArtsClient {
     public SyncInvoker<ModifyInferIntranetConnectionsRequest, ModifyInferIntranetConnectionsResponse> modifyInferIntranetConnectionsInvoker(
         ModifyInferIntranetConnectionsRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.modifyInferIntranetConnections, hcClient);
+    }
+
+    /**
+     * 修改训练配额
+     *
+     * 修改训练配额接口用于修改用户在ModelArts服务中的训练资源配额信息。
+     * 该接口适用于以下场景：当管理员需要调整用户的训练资源配额（如作业个数配额、自动老化开关、配额告警通知等）时，可以通过此接口进行修改。使用该接口的前提条件是用户已登录并具有修改配额的权限。修改成功后，用户的训练资源配额将被更新。若用户无权限或配额信息无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyTrainingQuotasRequest 请求对象
+     * @return ModifyTrainingQuotasResponse
+     */
+    public ModifyTrainingQuotasResponse modifyTrainingQuotas(ModifyTrainingQuotasRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.modifyTrainingQuotas);
+    }
+
+    /**
+     * 修改训练配额
+     *
+     * 修改训练配额接口用于修改用户在ModelArts服务中的训练资源配额信息。
+     * 该接口适用于以下场景：当管理员需要调整用户的训练资源配额（如作业个数配额、自动老化开关、配额告警通知等）时，可以通过此接口进行修改。使用该接口的前提条件是用户已登录并具有修改配额的权限。修改成功后，用户的训练资源配额将被更新。若用户无权限或配额信息无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyTrainingQuotasRequest 请求对象
+     * @return SyncInvoker<ModifyTrainingQuotasRequest, ModifyTrainingQuotasResponse>
+     */
+    public SyncInvoker<ModifyTrainingQuotasRequest, ModifyTrainingQuotasResponse> modifyTrainingQuotasInvoker(
+        ModifyTrainingQuotasRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.modifyTrainingQuotas, hcClient);
     }
 
     /**
@@ -4760,6 +4970,35 @@ public class ModelArtsClient {
      */
     public SyncInvoker<PatchPoolRequest, PatchPoolResponse> patchPoolInvoker(PatchPoolRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.patchPool, hcClient);
+    }
+
+    /**
+     * 发布精调训练产物为模型资产
+     *
+     * 训练任务运行成功后，将产生的模型信息发布到资产中心。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PublishFtArtifactsRequest 请求对象
+     * @return PublishFtArtifactsResponse
+     */
+    public PublishFtArtifactsResponse publishFtArtifacts(PublishFtArtifactsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.publishFtArtifacts);
+    }
+
+    /**
+     * 发布精调训练产物为模型资产
+     *
+     * 训练任务运行成功后，将产生的模型信息发布到资产中心。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PublishFtArtifactsRequest 请求对象
+     * @return SyncInvoker<PublishFtArtifactsRequest, PublishFtArtifactsResponse>
+     */
+    public SyncInvoker<PublishFtArtifactsRequest, PublishFtArtifactsResponse> publishFtArtifactsInvoker(
+        PublishFtArtifactsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.publishFtArtifacts, hcClient);
     }
 
     /**
@@ -5260,6 +5499,64 @@ public class ModelArtsClient {
     public SyncInvoker<ShowDynamicStorageRequest, ShowDynamicStorageResponse> showDynamicStorageInvoker(
         ShowDynamicStorageRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.showDynamicStorage, hcClient);
+    }
+
+    /**
+     * 查询精调训练作业详情
+     *
+     * 查询精调训练作业详情接口用于获取ModelArts平台上指定训练作业的详细信息。
+     * 该接口适用于以下场景：当用户需要查看特定训练作业的运行状态和配置信息时，可以通过此接口获取作业详情。使用该接口的前提条件是用户已知训练作业ID，并具有查看作业详情的权限。查询操作完成后，平台将返回包含训练作业的状态、配置、日志等详细信息。若训练作业ID不存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFtDetailRequest 请求对象
+     * @return ShowFtDetailResponse
+     */
+    public ShowFtDetailResponse showFtDetail(ShowFtDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.showFtDetail);
+    }
+
+    /**
+     * 查询精调训练作业详情
+     *
+     * 查询精调训练作业详情接口用于获取ModelArts平台上指定训练作业的详细信息。
+     * 该接口适用于以下场景：当用户需要查看特定训练作业的运行状态和配置信息时，可以通过此接口获取作业详情。使用该接口的前提条件是用户已知训练作业ID，并具有查看作业详情的权限。查询操作完成后，平台将返回包含训练作业的状态、配置、日志等详细信息。若训练作业ID不存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFtDetailRequest 请求对象
+     * @return SyncInvoker<ShowFtDetailRequest, ShowFtDetailResponse>
+     */
+    public SyncInvoker<ShowFtDetailRequest, ShowFtDetailResponse> showFtDetailInvoker(ShowFtDetailRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.showFtDetail, hcClient);
+    }
+
+    /**
+     * 查询精调训练任务指标信息
+     *
+     * 查询精调训练任务指标信息，如：训练loss等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFtMetricsRequest 请求对象
+     * @return ShowFtMetricsResponse
+     */
+    public ShowFtMetricsResponse showFtMetrics(ShowFtMetricsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.showFtMetrics);
+    }
+
+    /**
+     * 查询精调训练任务指标信息
+     *
+     * 查询精调训练任务指标信息，如：训练loss等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFtMetricsRequest 请求对象
+     * @return SyncInvoker<ShowFtMetricsRequest, ShowFtMetricsResponse>
+     */
+    public SyncInvoker<ShowFtMetricsRequest, ShowFtMetricsResponse> showFtMetricsInvoker(ShowFtMetricsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.showFtMetrics, hcClient);
     }
 
     /**
@@ -6040,6 +6337,38 @@ public class ModelArtsClient {
     }
 
     /**
+     * 查询资源池规格最大可用资源
+     *
+     * 查询资源池规格最大可用资源接口用于获取指定资源池中指定资源规格可分配的最大CPU和内存资源。
+     * 该接口适用于以下场景：当用户需要在创建训练作业前了解资源池中某规格的可用资源上限，以便合理选择规格和节点数时，可以通过此接口进行查询。使用该接口的前提条件是用户已知资源池ID和资源规格ID，并具有查看训练资源的权限。查询操作完成后，平台将返回该规格在资源池中的最大可用CPU核数和内存大小。若资源池或规格不存在、或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingFlavorMaxAvailableResourceRequest 请求对象
+     * @return ShowTrainingFlavorMaxAvailableResourceResponse
+     */
+    public ShowTrainingFlavorMaxAvailableResourceResponse showTrainingFlavorMaxAvailableResource(
+        ShowTrainingFlavorMaxAvailableResourceRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.showTrainingFlavorMaxAvailableResource);
+    }
+
+    /**
+     * 查询资源池规格最大可用资源
+     *
+     * 查询资源池规格最大可用资源接口用于获取指定资源池中指定资源规格可分配的最大CPU和内存资源。
+     * 该接口适用于以下场景：当用户需要在创建训练作业前了解资源池中某规格的可用资源上限，以便合理选择规格和节点数时，可以通过此接口进行查询。使用该接口的前提条件是用户已知资源池ID和资源规格ID，并具有查看训练资源的权限。查询操作完成后，平台将返回该规格在资源池中的最大可用CPU核数和内存大小。若资源池或规格不存在、或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingFlavorMaxAvailableResourceRequest 请求对象
+     * @return SyncInvoker<ShowTrainingFlavorMaxAvailableResourceRequest, ShowTrainingFlavorMaxAvailableResourceResponse>
+     */
+    public SyncInvoker<ShowTrainingFlavorMaxAvailableResourceRequest, ShowTrainingFlavorMaxAvailableResourceResponse> showTrainingFlavorMaxAvailableResourceInvoker(
+        ShowTrainingFlavorMaxAvailableResourceRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.showTrainingFlavorMaxAvailableResource, hcClient);
+    }
+
+    /**
      * 查询训练作业详情
      *
      * 查询训练作业详情。
@@ -6127,6 +6456,37 @@ public class ModelArtsClient {
     }
 
     /**
+     * 查询训练作业指定任务的日志
+     *
+     * 查询训练作业指定任务的日志接口用于获取ModelArts平台上指定训练作业任务的实时运行日志。
+     * 该接口适用于以下场景：当用户需要查看特定训练任务的运行日志以便排查问题或监控训练进度时，可以通过此接口获取日志内容。使用该接口的前提条件是用户已知训练作业ID和任务ID，并具有查看日志的权限。查询操作完成后，平台将返回包含日志内容、起止行号等信息。若训练作业ID或任务ID不存在、任务未生成日志或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingJobLogsFromAomRequest 请求对象
+     * @return ShowTrainingJobLogsFromAomResponse
+     */
+    public ShowTrainingJobLogsFromAomResponse showTrainingJobLogsFromAom(ShowTrainingJobLogsFromAomRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.showTrainingJobLogsFromAom);
+    }
+
+    /**
+     * 查询训练作业指定任务的日志
+     *
+     * 查询训练作业指定任务的日志接口用于获取ModelArts平台上指定训练作业任务的实时运行日志。
+     * 该接口适用于以下场景：当用户需要查看特定训练任务的运行日志以便排查问题或监控训练进度时，可以通过此接口获取日志内容。使用该接口的前提条件是用户已知训练作业ID和任务ID，并具有查看日志的权限。查询操作完成后，平台将返回包含日志内容、起止行号等信息。若训练作业ID或任务ID不存在、任务未生成日志或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingJobLogsFromAomRequest 请求对象
+     * @return SyncInvoker<ShowTrainingJobLogsFromAomRequest, ShowTrainingJobLogsFromAomResponse>
+     */
+    public SyncInvoker<ShowTrainingJobLogsFromAomRequest, ShowTrainingJobLogsFromAomResponse> showTrainingJobLogsFromAomInvoker(
+        ShowTrainingJobLogsFromAomRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.showTrainingJobLogsFromAom, hcClient);
+    }
+
+    /**
      * 查询训练作业指定任务的日志（预览）
      *
      * 查询训练作业指定任务的日志（预览）。
@@ -6182,6 +6542,37 @@ public class ModelArtsClient {
     public SyncInvoker<ShowTrainingJobMetricsRequest, ShowTrainingJobMetricsResponse> showTrainingJobMetricsInvoker(
         ShowTrainingJobMetricsRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.showTrainingJobMetrics, hcClient);
+    }
+
+    /**
+     * 查询训练作业的路由规划信息
+     *
+     * 查询训练作业的路由规划信息接口用于获取指定训练作业在Ascend规格专属资源池下的路由规划（rank映射）结果。
+     * 该接口适用于以下场景：当用户在Ascend 910规格专属资源池上创建了多节点（节点数不少于3）训练作业，且需要查询作业实际生效的rank映射关系以进行性能调优或问题定位时，可以通过此接口获取路由规划信息。使用该接口的前提条件是用户已知训练作业ID，并具有查看作业详情的权限。查询操作完成后，平台将返回该作业的路由规划状态与rank映射结果。若训练作业不满足路由规划条件（非Ascend 910规格或节点数少于3），接口将返回状态为failed的默认rank映射结果；若训练作业ID不存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingJobRoutePlanRequest 请求对象
+     * @return ShowTrainingJobRoutePlanResponse
+     */
+    public ShowTrainingJobRoutePlanResponse showTrainingJobRoutePlan(ShowTrainingJobRoutePlanRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.showTrainingJobRoutePlan);
+    }
+
+    /**
+     * 查询训练作业的路由规划信息
+     *
+     * 查询训练作业的路由规划信息接口用于获取指定训练作业在Ascend规格专属资源池下的路由规划（rank映射）结果。
+     * 该接口适用于以下场景：当用户在Ascend 910规格专属资源池上创建了多节点（节点数不少于3）训练作业，且需要查询作业实际生效的rank映射关系以进行性能调优或问题定位时，可以通过此接口获取路由规划信息。使用该接口的前提条件是用户已知训练作业ID，并具有查看作业详情的权限。查询操作完成后，平台将返回该作业的路由规划状态与rank映射结果。若训练作业不满足路由规划条件（非Ascend 910规格或节点数少于3），接口将返回状态为failed的默认rank映射结果；若训练作业ID不存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingJobRoutePlanRequest 请求对象
+     * @return SyncInvoker<ShowTrainingJobRoutePlanRequest, ShowTrainingJobRoutePlanResponse>
+     */
+    public SyncInvoker<ShowTrainingJobRoutePlanRequest, ShowTrainingJobRoutePlanResponse> showTrainingJobRoutePlanInvoker(
+        ShowTrainingJobRoutePlanRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.showTrainingJobRoutePlan, hcClient);
     }
 
     /**
@@ -6966,6 +7357,37 @@ public class ModelArtsClient {
     public SyncInvoker<ValidateAuthorizationRequest, ValidateAuthorizationResponse> validateAuthorizationInvoker(
         ValidateAuthorizationRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.validateAuthorization, hcClient);
+    }
+
+    /**
+     * 校验训练作业名称
+     *
+     * 校验训练作业名称接口用于校验ModelArts平台上创建训练作业的名称是否重复。
+     * 该接口适用于以下场景：当用户需要创建训练作业时，可以通过此接口校验训练作业名称是否存在，新创建的名称不存在时才能创建成功。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ValidateTrainingJobNameRequest 请求对象
+     * @return ValidateTrainingJobNameResponse
+     */
+    public ValidateTrainingJobNameResponse validateTrainingJobName(ValidateTrainingJobNameRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.validateTrainingJobName);
+    }
+
+    /**
+     * 校验训练作业名称
+     *
+     * 校验训练作业名称接口用于校验ModelArts平台上创建训练作业的名称是否重复。
+     * 该接口适用于以下场景：当用户需要创建训练作业时，可以通过此接口校验训练作业名称是否存在，新创建的名称不存在时才能创建成功。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ValidateTrainingJobNameRequest 请求对象
+     * @return SyncInvoker<ValidateTrainingJobNameRequest, ValidateTrainingJobNameResponse>
+     */
+    public SyncInvoker<ValidateTrainingJobNameRequest, ValidateTrainingJobNameResponse> validateTrainingJobNameInvoker(
+        ValidateTrainingJobNameRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.validateTrainingJobName, hcClient);
     }
 
     /**

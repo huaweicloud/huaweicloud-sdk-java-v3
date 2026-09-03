@@ -53,7 +53,6 @@ import okhttp3.Protocol;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-import okhttp3.internal.http.HttpMethod;
 import okio.BufferedSink;
 import okio.Okio;
 import okio.Source;
@@ -249,13 +248,21 @@ public class DefaultHttpClient implements HttpClient {
     private Request buildOkHttpRequestWithoutTextBody(HttpRequest httpRequest, Request.Builder requestBuilder) {
         if (httpRequest.getBody() == null) {
             String method = httpRequest.getMethod().toString();
-            RequestBody body = HttpMethod.requiresRequestBody(method) ?
+            RequestBody body = requiresRequestBody(method) ?
                     createRequestBody(new byte[0], null) : null;
             requestBuilder.method(method, body);
         } else {
             buildStreamRequestBody(httpRequest, requestBuilder);
         }
         return requestBuilder.build();
+    }
+
+    private static boolean requiresRequestBody(String method) {
+        return method.equals("POST")
+            || method.equals("PUT")
+            || method.equals("PATCH")
+            || method.equals("PROPPATCH")
+            || method.equals("REPORT");
     }
 
     private RequestBody createRequestBody(byte[] content, MediaType contentType) {

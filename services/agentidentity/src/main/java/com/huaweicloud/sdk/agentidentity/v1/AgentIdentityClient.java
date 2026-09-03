@@ -6,6 +6,10 @@ import com.huaweicloud.sdk.agentidentity.v1.model.CreateApiKeyCredentialProvider
 import com.huaweicloud.sdk.agentidentity.v1.model.CreateApiKeyCredentialProviderResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.CreateOauth2CredentialProviderRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.CreateOauth2CredentialProviderResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.CreatePolicyEngineRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.CreatePolicyEngineResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.CreatePolicyRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.CreatePolicyResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.CreateStsCredentialProviderRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.CreateStsCredentialProviderResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.CreateWorkloadAccessTokenForJwtRequest;
@@ -20,6 +24,10 @@ import com.huaweicloud.sdk.agentidentity.v1.model.DeleteApiKeyCredentialProvider
 import com.huaweicloud.sdk.agentidentity.v1.model.DeleteApiKeyCredentialProviderResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.DeleteOauth2CredentialProviderRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.DeleteOauth2CredentialProviderResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.DeletePolicyEngineRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.DeletePolicyEngineResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.DeletePolicyRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.DeletePolicyResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.DeleteStsCredentialProviderRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.DeleteStsCredentialProviderResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.DeleteWorkloadIdentityRequest;
@@ -28,6 +36,10 @@ import com.huaweicloud.sdk.agentidentity.v1.model.GetApiKeyCredentialProviderReq
 import com.huaweicloud.sdk.agentidentity.v1.model.GetApiKeyCredentialProviderResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.GetOauth2CredentialProviderRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.GetOauth2CredentialProviderResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.GetPolicyEngineRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.GetPolicyEngineResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.GetPolicyRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.GetPolicyResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.GetResourceApiKeyRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.GetResourceApiKeyResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.GetResourceOauth2TokenRequest;
@@ -44,8 +56,16 @@ import com.huaweicloud.sdk.agentidentity.v1.model.GetWorkloadIdentityRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.GetWorkloadIdentityResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.ListApiKeyCredentialProvidersRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.ListApiKeyCredentialProvidersResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.ListIdentityProvidersRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.ListIdentityProvidersResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.ListOauth2CredentialProvidersRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.ListOauth2CredentialProvidersResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.ListPoliciesRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.ListPoliciesResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.ListPolicyEngineAttachmentsRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.ListPolicyEngineAttachmentsResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.ListPolicyEnginesRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.ListPolicyEnginesResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.ListStsCredentialProvidersRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.ListStsCredentialProvidersResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.ListWorkloadIdentitiesRequest;
@@ -58,8 +78,14 @@ import com.huaweicloud.sdk.agentidentity.v1.model.UpdateApiKeyCredentialProvider
 import com.huaweicloud.sdk.agentidentity.v1.model.UpdateApiKeyCredentialProviderResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.UpdateOauth2CredentialProviderRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.UpdateOauth2CredentialProviderResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.UpdatePolicyEngineRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.UpdatePolicyEngineResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.UpdatePolicyRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.UpdatePolicyResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.UpdateStsCredentialProviderRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.UpdateStsCredentialProviderResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.UpdateTokenVaultRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.UpdateTokenVaultResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.UpdateWorkloadIdentityRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.UpdateWorkloadIdentityResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -345,6 +371,35 @@ public class AgentIdentityClient {
     }
 
     /**
+     * 查询身份提供商
+     *
+     * Lists identity providers.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIdentityProvidersRequest 请求对象
+     * @return ListIdentityProvidersResponse
+     */
+    public ListIdentityProvidersResponse listIdentityProviders(ListIdentityProvidersRequest request) {
+        return hcClient.syncInvokeHttp(request, AgentIdentityMeta.listIdentityProviders);
+    }
+
+    /**
+     * 查询身份提供商
+     *
+     * Lists identity providers.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIdentityProvidersRequest 请求对象
+     * @return SyncInvoker<ListIdentityProvidersRequest, ListIdentityProvidersResponse>
+     */
+    public SyncInvoker<ListIdentityProvidersRequest, ListIdentityProvidersResponse> listIdentityProvidersInvoker(
+        ListIdentityProvidersRequest request) {
+        return new SyncInvoker<>(request, AgentIdentityMeta.listIdentityProviders, hcClient);
+    }
+
+    /**
      * OAuth2.0 Pushed Authorization Request (PAR) standard authorize API
      *
      * Core OAuth2 authorization endpoint following RFC 9126 PAR spec, only accepts authorization request via request_uri parameter to trigger user authorization flow
@@ -552,6 +607,320 @@ public class AgentIdentityClient {
     }
 
     /**
+     * 在指定策略集中创建策略
+     *
+     * Creates a new policy in the specified policy engine.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePolicyRequest 请求对象
+     * @return CreatePolicyResponse
+     */
+    public CreatePolicyResponse createPolicy(CreatePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, AgentIdentityMeta.createPolicy);
+    }
+
+    /**
+     * 在指定策略集中创建策略
+     *
+     * Creates a new policy in the specified policy engine.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePolicyRequest 请求对象
+     * @return SyncInvoker<CreatePolicyRequest, CreatePolicyResponse>
+     */
+    public SyncInvoker<CreatePolicyRequest, CreatePolicyResponse> createPolicyInvoker(CreatePolicyRequest request) {
+        return new SyncInvoker<>(request, AgentIdentityMeta.createPolicy, hcClient);
+    }
+
+    /**
+     * 删除策略
+     *
+     * Deletes a policy.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePolicyRequest 请求对象
+     * @return DeletePolicyResponse
+     */
+    public DeletePolicyResponse deletePolicy(DeletePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, AgentIdentityMeta.deletePolicy);
+    }
+
+    /**
+     * 删除策略
+     *
+     * Deletes a policy.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePolicyRequest 请求对象
+     * @return SyncInvoker<DeletePolicyRequest, DeletePolicyResponse>
+     */
+    public SyncInvoker<DeletePolicyRequest, DeletePolicyResponse> deletePolicyInvoker(DeletePolicyRequest request) {
+        return new SyncInvoker<>(request, AgentIdentityMeta.deletePolicy, hcClient);
+    }
+
+    /**
+     * 查询策略详情
+     *
+     * Gets details of a specific policy.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetPolicyRequest 请求对象
+     * @return GetPolicyResponse
+     */
+    public GetPolicyResponse getPolicy(GetPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, AgentIdentityMeta.getPolicy);
+    }
+
+    /**
+     * 查询策略详情
+     *
+     * Gets details of a specific policy.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetPolicyRequest 请求对象
+     * @return SyncInvoker<GetPolicyRequest, GetPolicyResponse>
+     */
+    public SyncInvoker<GetPolicyRequest, GetPolicyResponse> getPolicyInvoker(GetPolicyRequest request) {
+        return new SyncInvoker<>(request, AgentIdentityMeta.getPolicy, hcClient);
+    }
+
+    /**
+     * 查询策略列表
+     *
+     * Lists policies in the specified policy engine.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPoliciesRequest 请求对象
+     * @return ListPoliciesResponse
+     */
+    public ListPoliciesResponse listPolicies(ListPoliciesRequest request) {
+        return hcClient.syncInvokeHttp(request, AgentIdentityMeta.listPolicies);
+    }
+
+    /**
+     * 查询策略列表
+     *
+     * Lists policies in the specified policy engine.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPoliciesRequest 请求对象
+     * @return SyncInvoker<ListPoliciesRequest, ListPoliciesResponse>
+     */
+    public SyncInvoker<ListPoliciesRequest, ListPoliciesResponse> listPoliciesInvoker(ListPoliciesRequest request) {
+        return new SyncInvoker<>(request, AgentIdentityMeta.listPolicies, hcClient);
+    }
+
+    /**
+     * 更新策略
+     *
+     * Updates an existing policy.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePolicyRequest 请求对象
+     * @return UpdatePolicyResponse
+     */
+    public UpdatePolicyResponse updatePolicy(UpdatePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, AgentIdentityMeta.updatePolicy);
+    }
+
+    /**
+     * 更新策略
+     *
+     * Updates an existing policy.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePolicyRequest 请求对象
+     * @return SyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse>
+     */
+    public SyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse> updatePolicyInvoker(UpdatePolicyRequest request) {
+        return new SyncInvoker<>(request, AgentIdentityMeta.updatePolicy, hcClient);
+    }
+
+    /**
+     * 创建策略集
+     *
+     * Creates a new policy engine.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePolicyEngineRequest 请求对象
+     * @return CreatePolicyEngineResponse
+     */
+    public CreatePolicyEngineResponse createPolicyEngine(CreatePolicyEngineRequest request) {
+        return hcClient.syncInvokeHttp(request, AgentIdentityMeta.createPolicyEngine);
+    }
+
+    /**
+     * 创建策略集
+     *
+     * Creates a new policy engine.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePolicyEngineRequest 请求对象
+     * @return SyncInvoker<CreatePolicyEngineRequest, CreatePolicyEngineResponse>
+     */
+    public SyncInvoker<CreatePolicyEngineRequest, CreatePolicyEngineResponse> createPolicyEngineInvoker(
+        CreatePolicyEngineRequest request) {
+        return new SyncInvoker<>(request, AgentIdentityMeta.createPolicyEngine, hcClient);
+    }
+
+    /**
+     * 删除策略集
+     *
+     * Deletes a policy engine.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePolicyEngineRequest 请求对象
+     * @return DeletePolicyEngineResponse
+     */
+    public DeletePolicyEngineResponse deletePolicyEngine(DeletePolicyEngineRequest request) {
+        return hcClient.syncInvokeHttp(request, AgentIdentityMeta.deletePolicyEngine);
+    }
+
+    /**
+     * 删除策略集
+     *
+     * Deletes a policy engine.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePolicyEngineRequest 请求对象
+     * @return SyncInvoker<DeletePolicyEngineRequest, DeletePolicyEngineResponse>
+     */
+    public SyncInvoker<DeletePolicyEngineRequest, DeletePolicyEngineResponse> deletePolicyEngineInvoker(
+        DeletePolicyEngineRequest request) {
+        return new SyncInvoker<>(request, AgentIdentityMeta.deletePolicyEngine, hcClient);
+    }
+
+    /**
+     * 查询策略集详情
+     *
+     * Gets details of a policy engine.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetPolicyEngineRequest 请求对象
+     * @return GetPolicyEngineResponse
+     */
+    public GetPolicyEngineResponse getPolicyEngine(GetPolicyEngineRequest request) {
+        return hcClient.syncInvokeHttp(request, AgentIdentityMeta.getPolicyEngine);
+    }
+
+    /**
+     * 查询策略集详情
+     *
+     * Gets details of a policy engine.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetPolicyEngineRequest 请求对象
+     * @return SyncInvoker<GetPolicyEngineRequest, GetPolicyEngineResponse>
+     */
+    public SyncInvoker<GetPolicyEngineRequest, GetPolicyEngineResponse> getPolicyEngineInvoker(
+        GetPolicyEngineRequest request) {
+        return new SyncInvoker<>(request, AgentIdentityMeta.getPolicyEngine, hcClient);
+    }
+
+    /**
+     * 查询策略集关联的实体列表
+     *
+     * Lists the entities (gateways and token vaults) attached to the specified policy engine.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPolicyEngineAttachmentsRequest 请求对象
+     * @return ListPolicyEngineAttachmentsResponse
+     */
+    public ListPolicyEngineAttachmentsResponse listPolicyEngineAttachments(ListPolicyEngineAttachmentsRequest request) {
+        return hcClient.syncInvokeHttp(request, AgentIdentityMeta.listPolicyEngineAttachments);
+    }
+
+    /**
+     * 查询策略集关联的实体列表
+     *
+     * Lists the entities (gateways and token vaults) attached to the specified policy engine.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPolicyEngineAttachmentsRequest 请求对象
+     * @return SyncInvoker<ListPolicyEngineAttachmentsRequest, ListPolicyEngineAttachmentsResponse>
+     */
+    public SyncInvoker<ListPolicyEngineAttachmentsRequest, ListPolicyEngineAttachmentsResponse> listPolicyEngineAttachmentsInvoker(
+        ListPolicyEngineAttachmentsRequest request) {
+        return new SyncInvoker<>(request, AgentIdentityMeta.listPolicyEngineAttachments, hcClient);
+    }
+
+    /**
+     * 查询策略集列表
+     *
+     * Lists policy engines.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPolicyEnginesRequest 请求对象
+     * @return ListPolicyEnginesResponse
+     */
+    public ListPolicyEnginesResponse listPolicyEngines(ListPolicyEnginesRequest request) {
+        return hcClient.syncInvokeHttp(request, AgentIdentityMeta.listPolicyEngines);
+    }
+
+    /**
+     * 查询策略集列表
+     *
+     * Lists policy engines.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPolicyEnginesRequest 请求对象
+     * @return SyncInvoker<ListPolicyEnginesRequest, ListPolicyEnginesResponse>
+     */
+    public SyncInvoker<ListPolicyEnginesRequest, ListPolicyEnginesResponse> listPolicyEnginesInvoker(
+        ListPolicyEnginesRequest request) {
+        return new SyncInvoker<>(request, AgentIdentityMeta.listPolicyEngines, hcClient);
+    }
+
+    /**
+     * 更新策略集
+     *
+     * Updates a policy engine (description only).
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePolicyEngineRequest 请求对象
+     * @return UpdatePolicyEngineResponse
+     */
+    public UpdatePolicyEngineResponse updatePolicyEngine(UpdatePolicyEngineRequest request) {
+        return hcClient.syncInvokeHttp(request, AgentIdentityMeta.updatePolicyEngine);
+    }
+
+    /**
+     * 更新策略集
+     *
+     * Updates a policy engine (description only).
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePolicyEngineRequest 请求对象
+     * @return SyncInvoker<UpdatePolicyEngineRequest, UpdatePolicyEngineResponse>
+     */
+    public SyncInvoker<UpdatePolicyEngineRequest, UpdatePolicyEngineResponse> updatePolicyEngineInvoker(
+        UpdatePolicyEngineRequest request) {
+        return new SyncInvoker<>(request, AgentIdentityMeta.updatePolicyEngine, hcClient);
+    }
+
+    /**
      * 创建STS凭证提供者
      *
      * Creates a new STS credential provider.
@@ -722,6 +1091,35 @@ public class AgentIdentityClient {
      */
     public SyncInvoker<GetTokenVaultRequest, GetTokenVaultResponse> getTokenVaultInvoker(GetTokenVaultRequest request) {
         return new SyncInvoker<>(request, AgentIdentityMeta.getTokenVault, hcClient);
+    }
+
+    /**
+     * 更新令牌保管库配置
+     *
+     * Updates the token vault configuration including KMS and policy engine settings.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTokenVaultRequest 请求对象
+     * @return UpdateTokenVaultResponse
+     */
+    public UpdateTokenVaultResponse updateTokenVault(UpdateTokenVaultRequest request) {
+        return hcClient.syncInvokeHttp(request, AgentIdentityMeta.updateTokenVault);
+    }
+
+    /**
+     * 更新令牌保管库配置
+     *
+     * Updates the token vault configuration including KMS and policy engine settings.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTokenVaultRequest 请求对象
+     * @return SyncInvoker<UpdateTokenVaultRequest, UpdateTokenVaultResponse>
+     */
+    public SyncInvoker<UpdateTokenVaultRequest, UpdateTokenVaultResponse> updateTokenVaultInvoker(
+        UpdateTokenVaultRequest request) {
+        return new SyncInvoker<>(request, AgentIdentityMeta.updateTokenVault, hcClient);
     }
 
     /**

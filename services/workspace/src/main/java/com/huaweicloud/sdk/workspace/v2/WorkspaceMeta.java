@@ -50,6 +50,9 @@ import com.huaweicloud.sdk.workspace.v2.model.AssistAuthMethodConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipReq;
 import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipResponse;
+import com.huaweicloud.sdk.workspace.v2.model.AttachDesktopPoolUserReq;
+import com.huaweicloud.sdk.workspace.v2.model.AttachDesktopPoolUserRequest;
+import com.huaweicloud.sdk.workspace.v2.model.AttachDesktopPoolUserResponse;
 import com.huaweicloud.sdk.workspace.v2.model.AttachInstancesReq;
 import com.huaweicloud.sdk.workspace.v2.model.AttachInstancesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AttachInstancesResponse;
@@ -141,6 +144,9 @@ import com.huaweicloud.sdk.workspace.v2.model.BatchInstallAgentRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchInstallAgentResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchInstallAppsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchInstallAppsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchListSkillPackagesReq;
+import com.huaweicloud.sdk.workspace.v2.model.BatchListSkillPackagesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchListSkillPackagesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchLogoffDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchLogoffDesktopsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchModifyQosVolumesReq;
@@ -242,6 +248,9 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDomainNewReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDomainNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDomainNewResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDownloadUrlReq;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDownloadUrlRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDownloadUrlResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateModelGroupReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateModelGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateModelGroupResponse;
@@ -269,6 +278,15 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateScheduledUpgradeTaskRequestB
 import com.huaweicloud.sdk.workspace.v2.model.CreateScriptReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateScriptRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateScriptResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateSkillBindingReq;
+import com.huaweicloud.sdk.workspace.v2.model.CreateSkillBindingsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateSkillBindingsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateSkillPackageReq;
+import com.huaweicloud.sdk.workspace.v2.model.CreateSkillPackageRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateSkillPackageResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateSkillReq;
+import com.huaweicloud.sdk.workspace.v2.model.CreateSkillRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateSkillResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateSubnetBandwidthChangeOrderRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateSubnetBandwidthChangeOrderRequestBody;
 import com.huaweicloud.sdk.workspace.v2.model.CreateSubnetBandwidthChangeOrderResponse;
@@ -283,6 +301,9 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateTerminalsBindingDesktopsRequ
 import com.huaweicloud.sdk.workspace.v2.model.CreateTerminalsBindingDesktopsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateUpgradeScheduleTaskRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateUpgradeScheduleTaskResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateUploadUrlsReq;
+import com.huaweicloud.sdk.workspace.v2.model.CreateUploadUrlsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateUploadUrlsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateUserGroupReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateUserGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateUserGroupResponse;
@@ -331,6 +352,13 @@ import com.huaweicloud.sdk.workspace.v2.model.DeleteScriptRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteScriptResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteSiteRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteSiteResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteSkillBindingReq;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteSkillBindingsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteSkillBindingsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteSkillPackageRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteSkillPackageResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteSkillRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteSkillResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteSubJobsReq;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteSubnetBandwidthRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteSubnetBandwidthResponse;
@@ -407,6 +435,9 @@ import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopVolumeRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopVolumeResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopsVolumesReq;
+import com.huaweicloud.sdk.workspace.v2.model.ExpandSkillPackageRegionReq;
+import com.huaweicloud.sdk.workspace.v2.model.ExpandSkillPackageRegionRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ExpandSkillPackageRegionResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandVolumeReq;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandVolumesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandVolumesResponse;
@@ -514,6 +545,12 @@ import com.huaweicloud.sdk.workspace.v2.model.ListAzsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAzsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListCertsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListCertsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListCommonSkillPackagesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListCommonSkillPackagesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListCommonSkillResourcesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListCommonSkillResourcesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListCommonSkillsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListCommonSkillsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopActionsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopActionsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsRequest;
@@ -572,6 +609,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListInconsistentStaticsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListInconsistentStaticsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListInstanceModelGroupsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListInstanceModelGroupsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListInstanceSkillsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListInstanceSkillsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListInstanceStatisticsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListInstanceStatisticsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListInstancesStatusRequest;
@@ -665,12 +704,20 @@ import com.huaweicloud.sdk.workspace.v2.model.ListScriptsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListScriptsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListSecurityGroupsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListSecurityGroupsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListSecurityPolicyControlResourcesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListSecurityPolicyControlResourcesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListServersByHostIdRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListServersByHostIdResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListSharerProductsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListSharerProductsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListSiteConfigsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListSiteConfigsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListSkillPackagesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListSkillPackagesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListSkillResourcesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListSkillResourcesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListSkillsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListSkillsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListSubnetBandwidthsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListSubnetBandwidthsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListSubnetsRequest;
@@ -748,6 +795,9 @@ import com.huaweicloud.sdk.workspace.v2.model.RegisterDomainResponse;
 import com.huaweicloud.sdk.workspace.v2.model.RemoveModelConfigReq;
 import com.huaweicloud.sdk.workspace.v2.model.RemoveModelConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.RemoveModelConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.RemovePackageRegionReq;
+import com.huaweicloud.sdk.workspace.v2.model.RemoveSkillPackageRegionRequest;
+import com.huaweicloud.sdk.workspace.v2.model.RemoveSkillPackageRegionResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ResendEmailReq;
 import com.huaweicloud.sdk.workspace.v2.model.ResetRandomPasswordRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ResetRandomPasswordResponse;
@@ -803,6 +853,10 @@ import com.huaweicloud.sdk.workspace.v2.model.ShowAzDetailsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowAzDetailsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowCertDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowCertDetailResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowCommonSkillPackageRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowCommonSkillPackageResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowCommonSkillRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowCommonSkillResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopMonitorDataRequest;
@@ -849,6 +903,10 @@ import com.huaweicloud.sdk.workspace.v2.model.ShowScriptRecordDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowScriptRecordDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowShareSpaceConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowShareSpaceConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowSkillPackageRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowSkillPackageResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowSkillRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowSkillResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowSubnetBandwidthControlListRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowSubnetBandwidthControlListResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowSysprepInfoRequest;
@@ -964,9 +1022,18 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsTrafficLimitCon
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScriptReq;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScriptRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScriptResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSecurityPolicyControlReq;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSecurityPolicyControlRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSecurityPolicyControlResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateShareSpaceConfigReq;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateShareSpaceConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateShareSpaceConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSkillPackageReq;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSkillPackageRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSkillPackageResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSkillReq;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSkillRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSkillResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateStrategyApplyObjectsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateStrategyApplyObjectsRequestBody;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateStrategyApplyObjectsResponse;
@@ -1017,6 +1084,7 @@ import com.huaweicloud.sdk.workspace.v2.model.VerifyProviderResponse;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 @SuppressWarnings("unchecked")
 public class WorkspaceMeta {
@@ -3071,6 +3139,92 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCommonSkillsRequest, ListCommonSkillsResponse> listCommonSkills =
+        genForListCommonSkills();
+
+    private static HttpRequestDef<ListCommonSkillsRequest, ListCommonSkillsResponse> genForListCommonSkills() {
+        // basic
+        HttpRequestDef.Builder<ListCommonSkillsRequest, ListCommonSkillsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCommonSkillsRequest.class, ListCommonSkillsResponse.class)
+                .withName("ListCommonSkills")
+                .withUri("/v3/ai-agents/common-skills")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCommonSkillsRequest::getOffset, ListCommonSkillsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCommonSkillsRequest::getLimit, ListCommonSkillsRequest::setLimit));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCommonSkillsRequest::getCategory, ListCommonSkillsRequest::setCategory));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCommonSkillsRequest::getStatus, ListCommonSkillsRequest::setStatus));
+        builder.<String>withRequestField("skill_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCommonSkillsRequest::getSkillName, ListCommonSkillsRequest::setSkillName));
+        builder.<ListCommonSkillsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListCommonSkillsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListCommonSkillsRequest::getXLanguage, ListCommonSkillsRequest::setXLanguage));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCommonSkillsResponse::getXRequestId, ListCommonSkillsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCommonSkillRequest, ShowCommonSkillResponse> showCommonSkill =
+        genForShowCommonSkill();
+
+    private static HttpRequestDef<ShowCommonSkillRequest, ShowCommonSkillResponse> genForShowCommonSkill() {
+        // basic
+        HttpRequestDef.Builder<ShowCommonSkillRequest, ShowCommonSkillResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCommonSkillRequest.class, ShowCommonSkillResponse.class)
+                .withName("ShowCommonSkill")
+                .withUri("/v3/ai-agents/common-skills/{skill_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("skill_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCommonSkillRequest::getSkillId, ShowCommonSkillRequest::setSkillId));
+        builder.<ShowCommonSkillRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowCommonSkillRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowCommonSkillRequest::getXLanguage, ShowCommonSkillRequest::setXLanguage));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowCommonSkillResponse::getXRequestId, ShowCommonSkillResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExportUserLoginInfoNewRequest, ExportUserLoginInfoNewResponse> exportUserLoginInfoNew =
         genForExportUserLoginInfoNew();
 
@@ -4367,6 +4521,12 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDesktopsDetailRequest::getAvailabilityZone,
                 ListDesktopsDetailRequest::setAvailabilityZone));
+        builder.<Boolean>withRequestField("without_any_tag",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDesktopsDetailRequest::getWithoutAnyTag,
+                ListDesktopsDetailRequest::setWithoutAnyTag));
         builder.<String>withRequestField("agent_version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -4879,6 +5039,34 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddDesktopPoolVolumesReq.class),
             f -> f.withMarshaller(AddDesktopPoolVolumesRequest::getBody, AddDesktopPoolVolumesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AttachDesktopPoolUserRequest, AttachDesktopPoolUserResponse> attachDesktopPoolUser =
+        genForAttachDesktopPoolUser();
+
+    private static HttpRequestDef<AttachDesktopPoolUserRequest, AttachDesktopPoolUserResponse> genForAttachDesktopPoolUser() {
+        // basic
+        HttpRequestDef.Builder<AttachDesktopPoolUserRequest, AttachDesktopPoolUserResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AttachDesktopPoolUserRequest.class, AttachDesktopPoolUserResponse.class)
+            .withName("AttachDesktopPoolUser")
+            .withUri("/v2/{project_id}/desktop-pools/{pool_id}/attach")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AttachDesktopPoolUserRequest::getPoolId, AttachDesktopPoolUserRequest::setPoolId));
+        builder.<AttachDesktopPoolUserReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AttachDesktopPoolUserReq.class),
+            f -> f.withMarshaller(AttachDesktopPoolUserRequest::getBody, AttachDesktopPoolUserRequest::setBody));
 
         // response
 
@@ -5926,6 +6114,12 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportDesktopListNewRequest::getTag, ExportDesktopListNewRequest::setTag));
+        builder.<Boolean>withRequestField("without_any_tag",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ExportDesktopListNewRequest::getWithoutAnyTag,
+                ExportDesktopListNewRequest::setWithoutAnyTag));
         builder.<ExportDesktopListNewRequest.LanguageEnum>withRequestField("language",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -11298,6 +11492,1018 @@ public class WorkspaceMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSkillBindingsRequest, CreateSkillBindingsResponse> createSkillBindings =
+        genForCreateSkillBindings();
+
+    private static HttpRequestDef<CreateSkillBindingsRequest, CreateSkillBindingsResponse> genForCreateSkillBindings() {
+        // basic
+        HttpRequestDef.Builder<CreateSkillBindingsRequest, CreateSkillBindingsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSkillBindingsRequest.class, CreateSkillBindingsResponse.class)
+                .withName("CreateSkillBindings")
+                .withUri("/v3/ai-agents/skill-bindings")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateSkillBindingsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateSkillBindingsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateSkillBindingsRequest::getXLanguage, CreateSkillBindingsRequest::setXLanguage));
+        builder.<UUID>withRequestField("X-Client-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UUID.class),
+            f -> f.withMarshaller(CreateSkillBindingsRequest::getXClientToken,
+                CreateSkillBindingsRequest::setXClientToken));
+        builder.<CreateSkillBindingReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSkillBindingReq.class),
+            f -> f.withMarshaller(CreateSkillBindingsRequest::getBody, CreateSkillBindingsRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateSkillBindingsResponse::getXRequestId,
+                CreateSkillBindingsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSkillBindingsRequest, DeleteSkillBindingsResponse> deleteSkillBindings =
+        genForDeleteSkillBindings();
+
+    private static HttpRequestDef<DeleteSkillBindingsRequest, DeleteSkillBindingsResponse> genForDeleteSkillBindings() {
+        // basic
+        HttpRequestDef.Builder<DeleteSkillBindingsRequest, DeleteSkillBindingsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteSkillBindingsRequest.class, DeleteSkillBindingsResponse.class)
+                .withName("DeleteSkillBindings")
+                .withUri("/v3/ai-agents/skill-bindings/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DeleteSkillBindingsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteSkillBindingsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(DeleteSkillBindingsRequest::getXLanguage, DeleteSkillBindingsRequest::setXLanguage));
+        builder.<DeleteSkillBindingReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteSkillBindingReq.class),
+            f -> f.withMarshaller(DeleteSkillBindingsRequest::getBody, DeleteSkillBindingsRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteSkillBindingsResponse::getXRequestId,
+                DeleteSkillBindingsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCommonSkillResourcesRequest, ListCommonSkillResourcesResponse> listCommonSkillResources =
+        genForListCommonSkillResources();
+
+    private static HttpRequestDef<ListCommonSkillResourcesRequest, ListCommonSkillResourcesResponse> genForListCommonSkillResources() {
+        // basic
+        HttpRequestDef.Builder<ListCommonSkillResourcesRequest, ListCommonSkillResourcesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListCommonSkillResourcesRequest.class, ListCommonSkillResourcesResponse.class)
+                .withName("ListCommonSkillResources")
+                .withUri("/v3/ai-agents/common-skills/{skill_id}/resources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("skill_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCommonSkillResourcesRequest::getSkillId,
+                ListCommonSkillResourcesRequest::setSkillId));
+        builder.<String>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCommonSkillResourcesRequest::getVersion,
+                ListCommonSkillResourcesRequest::setVersion));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCommonSkillResourcesRequest::getOffset,
+                ListCommonSkillResourcesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCommonSkillResourcesRequest::getLimit,
+                ListCommonSkillResourcesRequest::setLimit));
+        builder.<ListCommonSkillResourcesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListCommonSkillResourcesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListCommonSkillResourcesRequest::getXLanguage,
+                ListCommonSkillResourcesRequest::setXLanguage));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCommonSkillResourcesResponse::getXRequestId,
+                ListCommonSkillResourcesResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstanceSkillsRequest, ListInstanceSkillsResponse> listInstanceSkills =
+        genForListInstanceSkills();
+
+    private static HttpRequestDef<ListInstanceSkillsRequest, ListInstanceSkillsResponse> genForListInstanceSkills() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceSkillsRequest, ListInstanceSkillsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListInstanceSkillsRequest.class, ListInstanceSkillsResponse.class)
+                .withName("ListInstanceSkills")
+                .withUri("/v3/ai-agents/instances/{instance_id}/skills")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceSkillsRequest::getInstanceId, ListInstanceSkillsRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceSkillsRequest::getOffset, ListInstanceSkillsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceSkillsRequest::getLimit, ListInstanceSkillsRequest::setLimit));
+        builder.<ListInstanceSkillsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListInstanceSkillsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListInstanceSkillsRequest::getXLanguage, ListInstanceSkillsRequest::setXLanguage));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInstanceSkillsResponse::getXRequestId,
+                ListInstanceSkillsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecurityPolicyControlResourcesRequest, ListSecurityPolicyControlResourcesResponse> listSecurityPolicyControlResources =
+        genForListSecurityPolicyControlResources();
+
+    private static HttpRequestDef<ListSecurityPolicyControlResourcesRequest, ListSecurityPolicyControlResourcesResponse> genForListSecurityPolicyControlResources() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityPolicyControlResourcesRequest, ListSecurityPolicyControlResourcesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityPolicyControlResourcesRequest.class,
+                    ListSecurityPolicyControlResourcesResponse.class)
+                .withName("ListSecurityPolicyControlResources")
+                .withUri("/v3/ai-agents/security-policy-control/resources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityPolicyControlResourcesRequest::getOffset,
+                ListSecurityPolicyControlResourcesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityPolicyControlResourcesRequest::getLimit,
+                ListSecurityPolicyControlResourcesRequest::setLimit));
+        builder.<ListSecurityPolicyControlResourcesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityPolicyControlResourcesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListSecurityPolicyControlResourcesRequest::getXLanguage,
+                ListSecurityPolicyControlResourcesRequest::setXLanguage));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSecurityPolicyControlResourcesResponse::getXRequestId,
+                ListSecurityPolicyControlResourcesResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSkillResourcesRequest, ListSkillResourcesResponse> listSkillResources =
+        genForListSkillResources();
+
+    private static HttpRequestDef<ListSkillResourcesRequest, ListSkillResourcesResponse> genForListSkillResources() {
+        // basic
+        HttpRequestDef.Builder<ListSkillResourcesRequest, ListSkillResourcesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSkillResourcesRequest.class, ListSkillResourcesResponse.class)
+                .withName("ListSkillResources")
+                .withUri("/v3/ai-agents/skills/{skill_id}/resources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("skill_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSkillResourcesRequest::getSkillId, ListSkillResourcesRequest::setSkillId));
+        builder.<String>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSkillResourcesRequest::getVersion, ListSkillResourcesRequest::setVersion));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSkillResourcesRequest::getOffset, ListSkillResourcesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSkillResourcesRequest::getLimit, ListSkillResourcesRequest::setLimit));
+        builder.<ListSkillResourcesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSkillResourcesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListSkillResourcesRequest::getXLanguage, ListSkillResourcesRequest::setXLanguage));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSkillResourcesResponse::getXRequestId,
+                ListSkillResourcesResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSecurityPolicyControlRequest, UpdateSecurityPolicyControlResponse> updateSecurityPolicyControl =
+        genForUpdateSecurityPolicyControl();
+
+    private static HttpRequestDef<UpdateSecurityPolicyControlRequest, UpdateSecurityPolicyControlResponse> genForUpdateSecurityPolicyControl() {
+        // basic
+        HttpRequestDef.Builder<UpdateSecurityPolicyControlRequest, UpdateSecurityPolicyControlResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdateSecurityPolicyControlRequest.class,
+                    UpdateSecurityPolicyControlResponse.class)
+                .withName("UpdateSecurityPolicyControl")
+                .withUri("/v3/ai-agents/skills/security-policy-control")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UpdateSecurityPolicyControlRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateSecurityPolicyControlRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UpdateSecurityPolicyControlRequest::getXLanguage,
+                UpdateSecurityPolicyControlRequest::setXLanguage));
+        builder.<UpdateSecurityPolicyControlReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSecurityPolicyControlReq.class),
+            f -> f.withMarshaller(UpdateSecurityPolicyControlRequest::getBody,
+                UpdateSecurityPolicyControlRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateSecurityPolicyControlResponse::getXRequestId,
+                UpdateSecurityPolicyControlResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchListSkillPackagesRequest, BatchListSkillPackagesResponse> batchListSkillPackages =
+        genForBatchListSkillPackages();
+
+    private static HttpRequestDef<BatchListSkillPackagesRequest, BatchListSkillPackagesResponse> genForBatchListSkillPackages() {
+        // basic
+        HttpRequestDef.Builder<BatchListSkillPackagesRequest, BatchListSkillPackagesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchListSkillPackagesRequest.class, BatchListSkillPackagesResponse.class)
+            .withName("BatchListSkillPackages")
+            .withUri("/v3/ai-agents/skill-packages/batch-query")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchListSkillPackagesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchListSkillPackagesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(BatchListSkillPackagesRequest::getXLanguage,
+                BatchListSkillPackagesRequest::setXLanguage));
+        builder.<BatchListSkillPackagesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchListSkillPackagesReq.class),
+            f -> f.withMarshaller(BatchListSkillPackagesRequest::getBody, BatchListSkillPackagesRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchListSkillPackagesResponse::getXRequestId,
+                BatchListSkillPackagesResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDownloadUrlRequest, CreateDownloadUrlResponse> createDownloadUrl =
+        genForCreateDownloadUrl();
+
+    private static HttpRequestDef<CreateDownloadUrlRequest, CreateDownloadUrlResponse> genForCreateDownloadUrl() {
+        // basic
+        HttpRequestDef.Builder<CreateDownloadUrlRequest, CreateDownloadUrlResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDownloadUrlRequest.class, CreateDownloadUrlResponse.class)
+                .withName("CreateDownloadUrl")
+                .withUri("/v3/ai-agents/skills/{skill_id}/packages/{package_id}/download-url")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("skill_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDownloadUrlRequest::getSkillId, CreateDownloadUrlRequest::setSkillId));
+        builder.<String>withRequestField("package_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDownloadUrlRequest::getPackageId, CreateDownloadUrlRequest::setPackageId));
+        builder.<CreateDownloadUrlRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateDownloadUrlRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateDownloadUrlRequest::getXLanguage, CreateDownloadUrlRequest::setXLanguage));
+        builder.<UUID>withRequestField("X-Client-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UUID.class),
+            f -> f.withMarshaller(CreateDownloadUrlRequest::getXClientToken,
+                CreateDownloadUrlRequest::setXClientToken));
+        builder.<CreateDownloadUrlReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDownloadUrlReq.class),
+            f -> f.withMarshaller(CreateDownloadUrlRequest::getBody, CreateDownloadUrlRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateDownloadUrlResponse::getXRequestId, CreateDownloadUrlResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSkillPackageRequest, CreateSkillPackageResponse> createSkillPackage =
+        genForCreateSkillPackage();
+
+    private static HttpRequestDef<CreateSkillPackageRequest, CreateSkillPackageResponse> genForCreateSkillPackage() {
+        // basic
+        HttpRequestDef.Builder<CreateSkillPackageRequest, CreateSkillPackageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSkillPackageRequest.class, CreateSkillPackageResponse.class)
+                .withName("CreateSkillPackage")
+                .withUri("/v3/ai-agents/skills/{skill_id}/packages")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("skill_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSkillPackageRequest::getSkillId, CreateSkillPackageRequest::setSkillId));
+        builder.<CreateSkillPackageRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateSkillPackageRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateSkillPackageRequest::getXLanguage, CreateSkillPackageRequest::setXLanguage));
+        builder.<UUID>withRequestField("X-Client-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UUID.class),
+            f -> f.withMarshaller(CreateSkillPackageRequest::getXClientToken,
+                CreateSkillPackageRequest::setXClientToken));
+        builder.<CreateSkillPackageReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSkillPackageReq.class),
+            f -> f.withMarshaller(CreateSkillPackageRequest::getBody, CreateSkillPackageRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateSkillPackageResponse::getXRequestId,
+                CreateSkillPackageResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateUploadUrlsRequest, CreateUploadUrlsResponse> createUploadUrls =
+        genForCreateUploadUrls();
+
+    private static HttpRequestDef<CreateUploadUrlsRequest, CreateUploadUrlsResponse> genForCreateUploadUrls() {
+        // basic
+        HttpRequestDef.Builder<CreateUploadUrlsRequest, CreateUploadUrlsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateUploadUrlsRequest.class, CreateUploadUrlsResponse.class)
+                .withName("CreateUploadUrls")
+                .withUri("/v3/ai-agents/skill-packages/upload-urls")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateUploadUrlsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateUploadUrlsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateUploadUrlsRequest::getXLanguage, CreateUploadUrlsRequest::setXLanguage));
+        builder.<UUID>withRequestField("X-Client-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UUID.class),
+            f -> f.withMarshaller(CreateUploadUrlsRequest::getXClientToken, CreateUploadUrlsRequest::setXClientToken));
+        builder.<CreateUploadUrlsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateUploadUrlsReq.class),
+            f -> f.withMarshaller(CreateUploadUrlsRequest::getBody, CreateUploadUrlsRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateUploadUrlsResponse::getXRequestId, CreateUploadUrlsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSkillPackageRequest, DeleteSkillPackageResponse> deleteSkillPackage =
+        genForDeleteSkillPackage();
+
+    private static HttpRequestDef<DeleteSkillPackageRequest, DeleteSkillPackageResponse> genForDeleteSkillPackage() {
+        // basic
+        HttpRequestDef.Builder<DeleteSkillPackageRequest, DeleteSkillPackageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSkillPackageRequest.class, DeleteSkillPackageResponse.class)
+                .withName("DeleteSkillPackage")
+                .withUri("/v3/ai-agents/skills/{skill_id}/packages/{package_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("skill_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSkillPackageRequest::getSkillId, DeleteSkillPackageRequest::setSkillId));
+        builder.<String>withRequestField("package_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSkillPackageRequest::getPackageId, DeleteSkillPackageRequest::setPackageId));
+        builder.<DeleteSkillPackageRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteSkillPackageRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(DeleteSkillPackageRequest::getXLanguage, DeleteSkillPackageRequest::setXLanguage));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteSkillPackageResponse::getXRequestId,
+                DeleteSkillPackageResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExpandSkillPackageRegionRequest, ExpandSkillPackageRegionResponse> expandSkillPackageRegion =
+        genForExpandSkillPackageRegion();
+
+    private static HttpRequestDef<ExpandSkillPackageRegionRequest, ExpandSkillPackageRegionResponse> genForExpandSkillPackageRegion() {
+        // basic
+        HttpRequestDef.Builder<ExpandSkillPackageRegionRequest, ExpandSkillPackageRegionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ExpandSkillPackageRegionRequest.class, ExpandSkillPackageRegionResponse.class)
+                .withName("ExpandSkillPackageRegion")
+                .withUri("/v3/ai-agents/skills/{skill_id}/packages/{package_id}/regions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("skill_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExpandSkillPackageRegionRequest::getSkillId,
+                ExpandSkillPackageRegionRequest::setSkillId));
+        builder.<String>withRequestField("package_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExpandSkillPackageRegionRequest::getPackageId,
+                ExpandSkillPackageRegionRequest::setPackageId));
+        builder.<ExpandSkillPackageRegionRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExpandSkillPackageRegionRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ExpandSkillPackageRegionRequest::getXLanguage,
+                ExpandSkillPackageRegionRequest::setXLanguage));
+        builder.<ExpandSkillPackageRegionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExpandSkillPackageRegionReq.class),
+            f -> f.withMarshaller(ExpandSkillPackageRegionRequest::getBody, ExpandSkillPackageRegionRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ExpandSkillPackageRegionResponse::getXRequestId,
+                ExpandSkillPackageRegionResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCommonSkillPackagesRequest, ListCommonSkillPackagesResponse> listCommonSkillPackages =
+        genForListCommonSkillPackages();
+
+    private static HttpRequestDef<ListCommonSkillPackagesRequest, ListCommonSkillPackagesResponse> genForListCommonSkillPackages() {
+        // basic
+        HttpRequestDef.Builder<ListCommonSkillPackagesRequest, ListCommonSkillPackagesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListCommonSkillPackagesRequest.class, ListCommonSkillPackagesResponse.class)
+            .withName("ListCommonSkillPackages")
+            .withUri("/v3/ai-agents/common-skills/{skill_id}/packages")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("skill_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCommonSkillPackagesRequest::getSkillId,
+                ListCommonSkillPackagesRequest::setSkillId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCommonSkillPackagesRequest::getOffset,
+                ListCommonSkillPackagesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCommonSkillPackagesRequest::getLimit, ListCommonSkillPackagesRequest::setLimit));
+        builder.<ListCommonSkillPackagesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListCommonSkillPackagesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListCommonSkillPackagesRequest::getXLanguage,
+                ListCommonSkillPackagesRequest::setXLanguage));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCommonSkillPackagesResponse::getXRequestId,
+                ListCommonSkillPackagesResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSkillPackagesRequest, ListSkillPackagesResponse> listSkillPackages =
+        genForListSkillPackages();
+
+    private static HttpRequestDef<ListSkillPackagesRequest, ListSkillPackagesResponse> genForListSkillPackages() {
+        // basic
+        HttpRequestDef.Builder<ListSkillPackagesRequest, ListSkillPackagesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSkillPackagesRequest.class, ListSkillPackagesResponse.class)
+                .withName("ListSkillPackages")
+                .withUri("/v3/ai-agents/skills/{skill_id}/packages")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("skill_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSkillPackagesRequest::getSkillId, ListSkillPackagesRequest::setSkillId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSkillPackagesRequest::getOffset, ListSkillPackagesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSkillPackagesRequest::getLimit, ListSkillPackagesRequest::setLimit));
+        builder.<ListSkillPackagesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSkillPackagesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListSkillPackagesRequest::getXLanguage, ListSkillPackagesRequest::setXLanguage));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSkillPackagesResponse::getXRequestId, ListSkillPackagesResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RemoveSkillPackageRegionRequest, RemoveSkillPackageRegionResponse> removeSkillPackageRegion =
+        genForRemoveSkillPackageRegion();
+
+    private static HttpRequestDef<RemoveSkillPackageRegionRequest, RemoveSkillPackageRegionResponse> genForRemoveSkillPackageRegion() {
+        // basic
+        HttpRequestDef.Builder<RemoveSkillPackageRegionRequest, RemoveSkillPackageRegionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, RemoveSkillPackageRegionRequest.class, RemoveSkillPackageRegionResponse.class)
+                .withName("RemoveSkillPackageRegion")
+                .withUri("/v3/ai-agents/skills/{skill_id}/packages/{package_id}/regions/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("skill_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveSkillPackageRegionRequest::getSkillId,
+                RemoveSkillPackageRegionRequest::setSkillId));
+        builder.<String>withRequestField("package_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveSkillPackageRegionRequest::getPackageId,
+                RemoveSkillPackageRegionRequest::setPackageId));
+        builder.<RemoveSkillPackageRegionRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RemoveSkillPackageRegionRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(RemoveSkillPackageRegionRequest::getXLanguage,
+                RemoveSkillPackageRegionRequest::setXLanguage));
+        builder.<RemovePackageRegionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RemovePackageRegionReq.class),
+            f -> f.withMarshaller(RemoveSkillPackageRegionRequest::getBody, RemoveSkillPackageRegionRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RemoveSkillPackageRegionResponse::getXRequestId,
+                RemoveSkillPackageRegionResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCommonSkillPackageRequest, ShowCommonSkillPackageResponse> showCommonSkillPackage =
+        genForShowCommonSkillPackage();
+
+    private static HttpRequestDef<ShowCommonSkillPackageRequest, ShowCommonSkillPackageResponse> genForShowCommonSkillPackage() {
+        // basic
+        HttpRequestDef.Builder<ShowCommonSkillPackageRequest, ShowCommonSkillPackageResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowCommonSkillPackageRequest.class, ShowCommonSkillPackageResponse.class)
+            .withName("ShowCommonSkillPackage")
+            .withUri("/v3/ai-agents/common-skills/{skill_id}/packages/{package_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("skill_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCommonSkillPackageRequest::getSkillId,
+                ShowCommonSkillPackageRequest::setSkillId));
+        builder.<String>withRequestField("package_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCommonSkillPackageRequest::getPackageId,
+                ShowCommonSkillPackageRequest::setPackageId));
+        builder.<ShowCommonSkillPackageRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowCommonSkillPackageRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowCommonSkillPackageRequest::getXLanguage,
+                ShowCommonSkillPackageRequest::setXLanguage));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowCommonSkillPackageResponse::getXRequestId,
+                ShowCommonSkillPackageResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSkillPackageRequest, ShowSkillPackageResponse> showSkillPackage =
+        genForShowSkillPackage();
+
+    private static HttpRequestDef<ShowSkillPackageRequest, ShowSkillPackageResponse> genForShowSkillPackage() {
+        // basic
+        HttpRequestDef.Builder<ShowSkillPackageRequest, ShowSkillPackageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSkillPackageRequest.class, ShowSkillPackageResponse.class)
+                .withName("ShowSkillPackage")
+                .withUri("/v3/ai-agents/skills/{skill_id}/packages/{package_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("skill_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSkillPackageRequest::getSkillId, ShowSkillPackageRequest::setSkillId));
+        builder.<String>withRequestField("package_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSkillPackageRequest::getPackageId, ShowSkillPackageRequest::setPackageId));
+        builder.<ShowSkillPackageRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowSkillPackageRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowSkillPackageRequest::getXLanguage, ShowSkillPackageRequest::setXLanguage));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowSkillPackageResponse::getXRequestId, ShowSkillPackageResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSkillPackageRequest, UpdateSkillPackageResponse> updateSkillPackage =
+        genForUpdateSkillPackage();
+
+    private static HttpRequestDef<UpdateSkillPackageRequest, UpdateSkillPackageResponse> genForUpdateSkillPackage() {
+        // basic
+        HttpRequestDef.Builder<UpdateSkillPackageRequest, UpdateSkillPackageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateSkillPackageRequest.class, UpdateSkillPackageResponse.class)
+                .withName("UpdateSkillPackage")
+                .withUri("/v3/ai-agents/skills/{skill_id}/packages/{package_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("skill_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSkillPackageRequest::getSkillId, UpdateSkillPackageRequest::setSkillId));
+        builder.<String>withRequestField("package_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSkillPackageRequest::getPackageId, UpdateSkillPackageRequest::setPackageId));
+        builder.<UpdateSkillPackageRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateSkillPackageRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UpdateSkillPackageRequest::getXLanguage, UpdateSkillPackageRequest::setXLanguage));
+        builder.<UpdateSkillPackageReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSkillPackageReq.class),
+            f -> f.withMarshaller(UpdateSkillPackageRequest::getBody, UpdateSkillPackageRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateSkillPackageResponse::getXRequestId,
+                UpdateSkillPackageResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSkillRequest, CreateSkillResponse> createSkill = genForCreateSkill();
+
+    private static HttpRequestDef<CreateSkillRequest, CreateSkillResponse> genForCreateSkill() {
+        // basic
+        HttpRequestDef.Builder<CreateSkillRequest, CreateSkillResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSkillRequest.class, CreateSkillResponse.class)
+                .withName("CreateSkill")
+                .withUri("/v3/ai-agents/skills")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateSkillRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateSkillRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateSkillRequest::getXLanguage, CreateSkillRequest::setXLanguage));
+        builder.<UUID>withRequestField("X-Client-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UUID.class),
+            f -> f.withMarshaller(CreateSkillRequest::getXClientToken, CreateSkillRequest::setXClientToken));
+        builder.<CreateSkillReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSkillReq.class),
+            f -> f.withMarshaller(CreateSkillRequest::getBody, CreateSkillRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateSkillResponse::getXRequestId, CreateSkillResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSkillRequest, DeleteSkillResponse> deleteSkill = genForDeleteSkill();
+
+    private static HttpRequestDef<DeleteSkillRequest, DeleteSkillResponse> genForDeleteSkill() {
+        // basic
+        HttpRequestDef.Builder<DeleteSkillRequest, DeleteSkillResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSkillRequest.class, DeleteSkillResponse.class)
+                .withName("DeleteSkill")
+                .withUri("/v3/ai-agents/skills/{skill_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("skill_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSkillRequest::getSkillId, DeleteSkillRequest::setSkillId));
+        builder.<DeleteSkillRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteSkillRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(DeleteSkillRequest::getXLanguage, DeleteSkillRequest::setXLanguage));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteSkillResponse::getXRequestId, DeleteSkillResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSkillsRequest, ListSkillsResponse> listSkills = genForListSkills();
+
+    private static HttpRequestDef<ListSkillsRequest, ListSkillsResponse> genForListSkills() {
+        // basic
+        HttpRequestDef.Builder<ListSkillsRequest, ListSkillsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSkillsRequest.class, ListSkillsResponse.class)
+                .withName("ListSkills")
+                .withUri("/v3/ai-agents/skills")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSkillsRequest::getOffset, ListSkillsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSkillsRequest::getLimit, ListSkillsRequest::setLimit));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSkillsRequest::getCategory, ListSkillsRequest::setCategory));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSkillsRequest::getStatus, ListSkillsRequest::setStatus));
+        builder.<String>withRequestField("skill_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSkillsRequest::getSkillName, ListSkillsRequest::setSkillName));
+        builder.<ListSkillsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSkillsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListSkillsRequest::getXLanguage, ListSkillsRequest::setXLanguage));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSkillsResponse::getXRequestId, ListSkillsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSkillRequest, ShowSkillResponse> showSkill = genForShowSkill();
+
+    private static HttpRequestDef<ShowSkillRequest, ShowSkillResponse> genForShowSkill() {
+        // basic
+        HttpRequestDef.Builder<ShowSkillRequest, ShowSkillResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSkillRequest.class, ShowSkillResponse.class)
+                .withName("ShowSkill")
+                .withUri("/v3/ai-agents/skills/{skill_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("skill_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSkillRequest::getSkillId, ShowSkillRequest::setSkillId));
+        builder.<ShowSkillRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowSkillRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowSkillRequest::getXLanguage, ShowSkillRequest::setXLanguage));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowSkillResponse::getXRequestId, ShowSkillResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSkillRequest, UpdateSkillResponse> updateSkill = genForUpdateSkill();
+
+    private static HttpRequestDef<UpdateSkillRequest, UpdateSkillResponse> genForUpdateSkill() {
+        // basic
+        HttpRequestDef.Builder<UpdateSkillRequest, UpdateSkillResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateSkillRequest.class, UpdateSkillResponse.class)
+                .withName("UpdateSkill")
+                .withUri("/v3/ai-agents/skills/{skill_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("skill_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSkillRequest::getSkillId, UpdateSkillRequest::setSkillId));
+        builder.<UpdateSkillRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateSkillRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UpdateSkillRequest::getXLanguage, UpdateSkillRequest::setXLanguage));
+        builder.<UpdateSkillReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSkillReq.class),
+            f -> f.withMarshaller(UpdateSkillRequest::getBody, UpdateSkillRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateSkillResponse::getXRequestId, UpdateSkillResponse::setXRequestId));
         return builder.build();
     }
 

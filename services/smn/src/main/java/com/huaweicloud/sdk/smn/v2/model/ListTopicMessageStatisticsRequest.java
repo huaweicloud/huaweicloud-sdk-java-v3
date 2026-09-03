@@ -48,7 +48,7 @@ public class ListTopicMessageStatisticsRequest {
     }
 
     /**
-     * 起始时间
+     * 起始时间，取UTC时区的整点时间(支持查询近31天的计量数据)。
      * @return startTime
      */
     public String getStartTime() {
@@ -65,7 +65,7 @@ public class ListTopicMessageStatisticsRequest {
     }
 
     /**
-     * 结束时间
+     * 结束时间，取UTC时区的整点时间(支持查询近31天的计量数据)。
      * @return endTime
      */
     public String getEndTime() {

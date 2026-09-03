@@ -31,6 +31,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ApplyWorkspaceRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ApplyWorkspaceResponse;
 import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipResponse;
+import com.huaweicloud.sdk.workspace.v2.model.AttachDesktopPoolUserRequest;
+import com.huaweicloud.sdk.workspace.v2.model.AttachDesktopPoolUserResponse;
 import com.huaweicloud.sdk.workspace.v2.model.AttachInstancesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AttachInstancesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchAddDesktopsTagsRequest;
@@ -97,6 +99,8 @@ import com.huaweicloud.sdk.workspace.v2.model.BatchInstallAgentRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchInstallAgentResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchInstallAppsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchInstallAppsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchListSkillPackagesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchListSkillPackagesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchLogoffDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchLogoffDesktopsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchModifyQosVolumesRequest;
@@ -169,6 +173,8 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDomainNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDomainNewResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDownloadUrlRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDownloadUrlResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateModelGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateModelGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateOrderRequest;
@@ -187,6 +193,12 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateScheduledTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateScriptRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateScriptResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateSkillBindingsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateSkillBindingsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateSkillPackageRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateSkillPackageResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateSkillRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateSkillResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateSubnetBandwidthChangeOrderRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateSubnetBandwidthChangeOrderResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTagRequest;
@@ -197,6 +209,8 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateTerminalsBindingDesktopsRequ
 import com.huaweicloud.sdk.workspace.v2.model.CreateTerminalsBindingDesktopsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateUpgradeScheduleTaskRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateUpgradeScheduleTaskResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateUploadUrlsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateUploadUrlsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateUserGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateUserGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteAppRequest;
@@ -237,6 +251,12 @@ import com.huaweicloud.sdk.workspace.v2.model.DeleteScriptRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteScriptResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteSiteRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteSiteResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteSkillBindingsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteSkillBindingsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteSkillPackageRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteSkillPackageResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteSkillRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteSkillResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteSubnetBandwidthRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteSubnetBandwidthResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTagRequest;
@@ -291,6 +311,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolVolumesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopVolumeRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopVolumeResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ExpandSkillPackageRegionRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ExpandSkillPackageRegionResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandVolumesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExportAppUserAccessDataRequest;
@@ -387,6 +409,12 @@ import com.huaweicloud.sdk.workspace.v2.model.ListAzsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAzsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListCertsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListCertsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListCommonSkillPackagesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListCommonSkillPackagesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListCommonSkillResourcesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListCommonSkillResourcesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListCommonSkillsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListCommonSkillsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopActionsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopActionsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsRequest;
@@ -443,6 +471,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListInconsistentStaticsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListInconsistentStaticsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListInstanceModelGroupsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListInstanceModelGroupsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListInstanceSkillsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListInstanceSkillsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListInstanceStatisticsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListInstanceStatisticsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListInstancesStatusRequest;
@@ -535,12 +565,20 @@ import com.huaweicloud.sdk.workspace.v2.model.ListScriptsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListScriptsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListSecurityGroupsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListSecurityGroupsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListSecurityPolicyControlResourcesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListSecurityPolicyControlResourcesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListServersByHostIdRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListServersByHostIdResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListSharerProductsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListSharerProductsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListSiteConfigsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListSiteConfigsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListSkillPackagesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListSkillPackagesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListSkillResourcesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListSkillResourcesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListSkillsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListSkillsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListSubnetBandwidthsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListSubnetBandwidthsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListSubnetsRequest;
@@ -599,6 +637,8 @@ import com.huaweicloud.sdk.workspace.v2.model.RegisterDomainRequest;
 import com.huaweicloud.sdk.workspace.v2.model.RegisterDomainResponse;
 import com.huaweicloud.sdk.workspace.v2.model.RemoveModelConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.RemoveModelConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.RemoveSkillPackageRegionRequest;
+import com.huaweicloud.sdk.workspace.v2.model.RemoveSkillPackageRegionResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ResetRandomPasswordRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ResetRandomPasswordResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ResetSiteAuthConfigRequest;
@@ -645,6 +685,10 @@ import com.huaweicloud.sdk.workspace.v2.model.ShowAzDetailsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowAzDetailsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowCertDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowCertDetailResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowCommonSkillPackageRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowCommonSkillPackageResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowCommonSkillRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowCommonSkillResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopMonitorDataRequest;
@@ -691,6 +735,10 @@ import com.huaweicloud.sdk.workspace.v2.model.ShowScriptRecordDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowScriptRecordDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowShareSpaceConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowShareSpaceConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowSkillPackageRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowSkillPackageResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowSkillRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowSkillResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowSubnetBandwidthControlListRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowSubnetBandwidthControlListResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowSysprepInfoRequest;
@@ -777,8 +825,14 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsTrafficLimitCon
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsTrafficLimitConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScriptRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScriptResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSecurityPolicyControlRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSecurityPolicyControlResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateShareSpaceConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateShareSpaceConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSkillPackageRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSkillPackageResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSkillRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSkillResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateStrategyApplyObjectsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateStrategyApplyObjectsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateSubnetBandwidthControlListRequest;
@@ -3018,6 +3072,64 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 查询公共技能列表（只读）
+     *
+     * 企业租户查询公共技能列表（只读），支持按分类、状态过滤。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCommonSkillsRequest 请求对象
+     * @return CompletableFuture<ListCommonSkillsResponse>
+     */
+    public CompletableFuture<ListCommonSkillsResponse> listCommonSkillsAsync(ListCommonSkillsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listCommonSkills);
+    }
+
+    /**
+     * 查询公共技能列表（只读）
+     *
+     * 企业租户查询公共技能列表（只读），支持按分类、状态过滤。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCommonSkillsRequest 请求对象
+     * @return AsyncInvoker<ListCommonSkillsRequest, ListCommonSkillsResponse>
+     */
+    public AsyncInvoker<ListCommonSkillsRequest, ListCommonSkillsResponse> listCommonSkillsAsyncInvoker(
+        ListCommonSkillsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listCommonSkills, hcClient);
+    }
+
+    /**
+     * 查询公共技能详情（只读）
+     *
+     * 企业租户查询公共技能详情（只读）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCommonSkillRequest 请求对象
+     * @return CompletableFuture<ShowCommonSkillResponse>
+     */
+    public CompletableFuture<ShowCommonSkillResponse> showCommonSkillAsync(ShowCommonSkillRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showCommonSkill);
+    }
+
+    /**
+     * 查询公共技能详情（只读）
+     *
+     * 企业租户查询公共技能详情（只读）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCommonSkillRequest 请求对象
+     * @return AsyncInvoker<ShowCommonSkillRequest, ShowCommonSkillResponse>
+     */
+    public AsyncInvoker<ShowCommonSkillRequest, ShowCommonSkillResponse> showCommonSkillAsyncInvoker(
+        ShowCommonSkillRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showCommonSkill, hcClient);
+    }
+
+    /**
      * 导出连接记录(待废弃)
      *
      * 该接口用于导出连接记录，待废弃。
@@ -4553,6 +4665,36 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<AddDesktopPoolVolumesRequest, AddDesktopPoolVolumesResponse> addDesktopPoolVolumesAsyncInvoker(
         AddDesktopPoolVolumesRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.addDesktopPoolVolumes, hcClient);
+    }
+
+    /**
+     * 桌面池绑定用户
+     *
+     * 将用户绑定到桌面池。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AttachDesktopPoolUserRequest 请求对象
+     * @return CompletableFuture<AttachDesktopPoolUserResponse>
+     */
+    public CompletableFuture<AttachDesktopPoolUserResponse> attachDesktopPoolUserAsync(
+        AttachDesktopPoolUserRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.attachDesktopPoolUser);
+    }
+
+    /**
+     * 桌面池绑定用户
+     *
+     * 将用户绑定到桌面池。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AttachDesktopPoolUserRequest 请求对象
+     * @return AsyncInvoker<AttachDesktopPoolUserRequest, AttachDesktopPoolUserResponse>
+     */
+    public AsyncInvoker<AttachDesktopPoolUserRequest, AttachDesktopPoolUserResponse> attachDesktopPoolUserAsyncInvoker(
+        AttachDesktopPoolUserRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.attachDesktopPoolUser, hcClient);
     }
 
     /**
@@ -10236,6 +10378,705 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<UpdateSubnetIdsRequest, UpdateSubnetIdsResponse> updateSubnetIdsAsyncInvoker(
         UpdateSubnetIdsRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.updateSubnetIds, hcClient);
+    }
+
+    /**
+     * 创建技能绑定
+     *
+     * 批量绑定技能到实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSkillBindingsRequest 请求对象
+     * @return CompletableFuture<CreateSkillBindingsResponse>
+     */
+    public CompletableFuture<CreateSkillBindingsResponse> createSkillBindingsAsync(CreateSkillBindingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createSkillBindings);
+    }
+
+    /**
+     * 创建技能绑定
+     *
+     * 批量绑定技能到实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSkillBindingsRequest 请求对象
+     * @return AsyncInvoker<CreateSkillBindingsRequest, CreateSkillBindingsResponse>
+     */
+    public AsyncInvoker<CreateSkillBindingsRequest, CreateSkillBindingsResponse> createSkillBindingsAsyncInvoker(
+        CreateSkillBindingsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createSkillBindings, hcClient);
+    }
+
+    /**
+     * 删除技能绑定
+     *
+     * 批量解绑技能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSkillBindingsRequest 请求对象
+     * @return CompletableFuture<DeleteSkillBindingsResponse>
+     */
+    public CompletableFuture<DeleteSkillBindingsResponse> deleteSkillBindingsAsync(DeleteSkillBindingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.deleteSkillBindings);
+    }
+
+    /**
+     * 删除技能绑定
+     *
+     * 批量解绑技能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSkillBindingsRequest 请求对象
+     * @return AsyncInvoker<DeleteSkillBindingsRequest, DeleteSkillBindingsResponse>
+     */
+    public AsyncInvoker<DeleteSkillBindingsRequest, DeleteSkillBindingsResponse> deleteSkillBindingsAsyncInvoker(
+        DeleteSkillBindingsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.deleteSkillBindings, hcClient);
+    }
+
+    /**
+     * 查询公共技能绑定的资源列表
+     *
+     * 查询公共技能绑定的资源列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCommonSkillResourcesRequest 请求对象
+     * @return CompletableFuture<ListCommonSkillResourcesResponse>
+     */
+    public CompletableFuture<ListCommonSkillResourcesResponse> listCommonSkillResourcesAsync(
+        ListCommonSkillResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listCommonSkillResources);
+    }
+
+    /**
+     * 查询公共技能绑定的资源列表
+     *
+     * 查询公共技能绑定的资源列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCommonSkillResourcesRequest 请求对象
+     * @return AsyncInvoker<ListCommonSkillResourcesRequest, ListCommonSkillResourcesResponse>
+     */
+    public AsyncInvoker<ListCommonSkillResourcesRequest, ListCommonSkillResourcesResponse> listCommonSkillResourcesAsyncInvoker(
+        ListCommonSkillResourcesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listCommonSkillResources, hcClient);
+    }
+
+    /**
+     * 查询实例绑定的技能列表
+     *
+     * 查询实例绑定的技能列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceSkillsRequest 请求对象
+     * @return CompletableFuture<ListInstanceSkillsResponse>
+     */
+    public CompletableFuture<ListInstanceSkillsResponse> listInstanceSkillsAsync(ListInstanceSkillsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listInstanceSkills);
+    }
+
+    /**
+     * 查询实例绑定的技能列表
+     *
+     * 查询实例绑定的技能列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceSkillsRequest 请求对象
+     * @return AsyncInvoker<ListInstanceSkillsRequest, ListInstanceSkillsResponse>
+     */
+    public AsyncInvoker<ListInstanceSkillsRequest, ListInstanceSkillsResponse> listInstanceSkillsAsyncInvoker(
+        ListInstanceSkillsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listInstanceSkills, hcClient);
+    }
+
+    /**
+     * 查询安全策略管控资源列表
+     *
+     * 查询安全策略管控的资源列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityPolicyControlResourcesRequest 请求对象
+     * @return CompletableFuture<ListSecurityPolicyControlResourcesResponse>
+     */
+    public CompletableFuture<ListSecurityPolicyControlResourcesResponse> listSecurityPolicyControlResourcesAsync(
+        ListSecurityPolicyControlResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listSecurityPolicyControlResources);
+    }
+
+    /**
+     * 查询安全策略管控资源列表
+     *
+     * 查询安全策略管控的资源列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityPolicyControlResourcesRequest 请求对象
+     * @return AsyncInvoker<ListSecurityPolicyControlResourcesRequest, ListSecurityPolicyControlResourcesResponse>
+     */
+    public AsyncInvoker<ListSecurityPolicyControlResourcesRequest, ListSecurityPolicyControlResourcesResponse> listSecurityPolicyControlResourcesAsyncInvoker(
+        ListSecurityPolicyControlResourcesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listSecurityPolicyControlResources, hcClient);
+    }
+
+    /**
+     * 查询企业技能绑定的资源列表
+     *
+     * 查询企业自研技能绑定的资源列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSkillResourcesRequest 请求对象
+     * @return CompletableFuture<ListSkillResourcesResponse>
+     */
+    public CompletableFuture<ListSkillResourcesResponse> listSkillResourcesAsync(ListSkillResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listSkillResources);
+    }
+
+    /**
+     * 查询企业技能绑定的资源列表
+     *
+     * 查询企业自研技能绑定的资源列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSkillResourcesRequest 请求对象
+     * @return AsyncInvoker<ListSkillResourcesRequest, ListSkillResourcesResponse>
+     */
+    public AsyncInvoker<ListSkillResourcesRequest, ListSkillResourcesResponse> listSkillResourcesAsyncInvoker(
+        ListSkillResourcesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listSkillResources, hcClient);
+    }
+
+    /**
+     * 更新安全策略管控
+     *
+     * 批量更新实例的安全策略管控状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSecurityPolicyControlRequest 请求对象
+     * @return CompletableFuture<UpdateSecurityPolicyControlResponse>
+     */
+    public CompletableFuture<UpdateSecurityPolicyControlResponse> updateSecurityPolicyControlAsync(
+        UpdateSecurityPolicyControlRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateSecurityPolicyControl);
+    }
+
+    /**
+     * 更新安全策略管控
+     *
+     * 批量更新实例的安全策略管控状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSecurityPolicyControlRequest 请求对象
+     * @return AsyncInvoker<UpdateSecurityPolicyControlRequest, UpdateSecurityPolicyControlResponse>
+     */
+    public AsyncInvoker<UpdateSecurityPolicyControlRequest, UpdateSecurityPolicyControlResponse> updateSecurityPolicyControlAsyncInvoker(
+        UpdateSecurityPolicyControlRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateSecurityPolicyControl, hcClient);
+    }
+
+    /**
+     * 批量查询技能包
+     *
+     * 根据技能ID列表批量查询当前生效的技能包信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchListSkillPackagesRequest 请求对象
+     * @return CompletableFuture<BatchListSkillPackagesResponse>
+     */
+    public CompletableFuture<BatchListSkillPackagesResponse> batchListSkillPackagesAsync(
+        BatchListSkillPackagesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchListSkillPackages);
+    }
+
+    /**
+     * 批量查询技能包
+     *
+     * 根据技能ID列表批量查询当前生效的技能包信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchListSkillPackagesRequest 请求对象
+     * @return AsyncInvoker<BatchListSkillPackagesRequest, BatchListSkillPackagesResponse>
+     */
+    public AsyncInvoker<BatchListSkillPackagesRequest, BatchListSkillPackagesResponse> batchListSkillPackagesAsyncInvoker(
+        BatchListSkillPackagesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchListSkillPackages, hcClient);
+    }
+
+    /**
+     * 生成下载地址
+     *
+     * 生成企业自研技能包的OBS预签名下载地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDownloadUrlRequest 请求对象
+     * @return CompletableFuture<CreateDownloadUrlResponse>
+     */
+    public CompletableFuture<CreateDownloadUrlResponse> createDownloadUrlAsync(CreateDownloadUrlRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createDownloadUrl);
+    }
+
+    /**
+     * 生成下载地址
+     *
+     * 生成企业自研技能包的OBS预签名下载地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDownloadUrlRequest 请求对象
+     * @return AsyncInvoker<CreateDownloadUrlRequest, CreateDownloadUrlResponse>
+     */
+    public AsyncInvoker<CreateDownloadUrlRequest, CreateDownloadUrlResponse> createDownloadUrlAsyncInvoker(
+        CreateDownloadUrlRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createDownloadUrl, hcClient);
+    }
+
+    /**
+     * 创建技能包
+     *
+     * 为企业自研技能上传新版本技能包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSkillPackageRequest 请求对象
+     * @return CompletableFuture<CreateSkillPackageResponse>
+     */
+    public CompletableFuture<CreateSkillPackageResponse> createSkillPackageAsync(CreateSkillPackageRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createSkillPackage);
+    }
+
+    /**
+     * 创建技能包
+     *
+     * 为企业自研技能上传新版本技能包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSkillPackageRequest 请求对象
+     * @return AsyncInvoker<CreateSkillPackageRequest, CreateSkillPackageResponse>
+     */
+    public AsyncInvoker<CreateSkillPackageRequest, CreateSkillPackageResponse> createSkillPackageAsyncInvoker(
+        CreateSkillPackageRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createSkillPackage, hcClient);
+    }
+
+    /**
+     * 生成上传地址
+     *
+     * 生成OBS预签名上传地址，用于企业自研技能包上传。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateUploadUrlsRequest 请求对象
+     * @return CompletableFuture<CreateUploadUrlsResponse>
+     */
+    public CompletableFuture<CreateUploadUrlsResponse> createUploadUrlsAsync(CreateUploadUrlsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createUploadUrls);
+    }
+
+    /**
+     * 生成上传地址
+     *
+     * 生成OBS预签名上传地址，用于企业自研技能包上传。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateUploadUrlsRequest 请求对象
+     * @return AsyncInvoker<CreateUploadUrlsRequest, CreateUploadUrlsResponse>
+     */
+    public AsyncInvoker<CreateUploadUrlsRequest, CreateUploadUrlsResponse> createUploadUrlsAsyncInvoker(
+        CreateUploadUrlsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createUploadUrls, hcClient);
+    }
+
+    /**
+     * 删除技能包
+     *
+     * 删除企业自研技能的技能包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSkillPackageRequest 请求对象
+     * @return CompletableFuture<DeleteSkillPackageResponse>
+     */
+    public CompletableFuture<DeleteSkillPackageResponse> deleteSkillPackageAsync(DeleteSkillPackageRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.deleteSkillPackage);
+    }
+
+    /**
+     * 删除技能包
+     *
+     * 删除企业自研技能的技能包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSkillPackageRequest 请求对象
+     * @return AsyncInvoker<DeleteSkillPackageRequest, DeleteSkillPackageResponse>
+     */
+    public AsyncInvoker<DeleteSkillPackageRequest, DeleteSkillPackageResponse> deleteSkillPackageAsyncInvoker(
+        DeleteSkillPackageRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.deleteSkillPackage, hcClient);
+    }
+
+    /**
+     * 扩展技能包区域
+     *
+     * 为企业自研技能包扩展新的OBS区域。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExpandSkillPackageRegionRequest 请求对象
+     * @return CompletableFuture<ExpandSkillPackageRegionResponse>
+     */
+    public CompletableFuture<ExpandSkillPackageRegionResponse> expandSkillPackageRegionAsync(
+        ExpandSkillPackageRegionRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.expandSkillPackageRegion);
+    }
+
+    /**
+     * 扩展技能包区域
+     *
+     * 为企业自研技能包扩展新的OBS区域。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExpandSkillPackageRegionRequest 请求对象
+     * @return AsyncInvoker<ExpandSkillPackageRegionRequest, ExpandSkillPackageRegionResponse>
+     */
+    public AsyncInvoker<ExpandSkillPackageRegionRequest, ExpandSkillPackageRegionResponse> expandSkillPackageRegionAsyncInvoker(
+        ExpandSkillPackageRegionRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.expandSkillPackageRegion, hcClient);
+    }
+
+    /**
+     * 查询公共技能包列表（只读）
+     *
+     * 企业租户查询公共技能的技能包列表（只读）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCommonSkillPackagesRequest 请求对象
+     * @return CompletableFuture<ListCommonSkillPackagesResponse>
+     */
+    public CompletableFuture<ListCommonSkillPackagesResponse> listCommonSkillPackagesAsync(
+        ListCommonSkillPackagesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listCommonSkillPackages);
+    }
+
+    /**
+     * 查询公共技能包列表（只读）
+     *
+     * 企业租户查询公共技能的技能包列表（只读）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCommonSkillPackagesRequest 请求对象
+     * @return AsyncInvoker<ListCommonSkillPackagesRequest, ListCommonSkillPackagesResponse>
+     */
+    public AsyncInvoker<ListCommonSkillPackagesRequest, ListCommonSkillPackagesResponse> listCommonSkillPackagesAsyncInvoker(
+        ListCommonSkillPackagesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listCommonSkillPackages, hcClient);
+    }
+
+    /**
+     * 查询技能包列表
+     *
+     * 查询企业自研技能的技能包列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSkillPackagesRequest 请求对象
+     * @return CompletableFuture<ListSkillPackagesResponse>
+     */
+    public CompletableFuture<ListSkillPackagesResponse> listSkillPackagesAsync(ListSkillPackagesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listSkillPackages);
+    }
+
+    /**
+     * 查询技能包列表
+     *
+     * 查询企业自研技能的技能包列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSkillPackagesRequest 请求对象
+     * @return AsyncInvoker<ListSkillPackagesRequest, ListSkillPackagesResponse>
+     */
+    public AsyncInvoker<ListSkillPackagesRequest, ListSkillPackagesResponse> listSkillPackagesAsyncInvoker(
+        ListSkillPackagesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listSkillPackages, hcClient);
+    }
+
+    /**
+     * 移除技能包区域
+     *
+     * 批量移除企业自研技能包的OBS区域。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoveSkillPackageRegionRequest 请求对象
+     * @return CompletableFuture<RemoveSkillPackageRegionResponse>
+     */
+    public CompletableFuture<RemoveSkillPackageRegionResponse> removeSkillPackageRegionAsync(
+        RemoveSkillPackageRegionRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.removeSkillPackageRegion);
+    }
+
+    /**
+     * 移除技能包区域
+     *
+     * 批量移除企业自研技能包的OBS区域。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoveSkillPackageRegionRequest 请求对象
+     * @return AsyncInvoker<RemoveSkillPackageRegionRequest, RemoveSkillPackageRegionResponse>
+     */
+    public AsyncInvoker<RemoveSkillPackageRegionRequest, RemoveSkillPackageRegionResponse> removeSkillPackageRegionAsyncInvoker(
+        RemoveSkillPackageRegionRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.removeSkillPackageRegion, hcClient);
+    }
+
+    /**
+     * 查询公共技能包详情（只读）
+     *
+     * 企业租户查询公共技能的技能包详情（只读）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCommonSkillPackageRequest 请求对象
+     * @return CompletableFuture<ShowCommonSkillPackageResponse>
+     */
+    public CompletableFuture<ShowCommonSkillPackageResponse> showCommonSkillPackageAsync(
+        ShowCommonSkillPackageRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showCommonSkillPackage);
+    }
+
+    /**
+     * 查询公共技能包详情（只读）
+     *
+     * 企业租户查询公共技能的技能包详情（只读）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCommonSkillPackageRequest 请求对象
+     * @return AsyncInvoker<ShowCommonSkillPackageRequest, ShowCommonSkillPackageResponse>
+     */
+    public AsyncInvoker<ShowCommonSkillPackageRequest, ShowCommonSkillPackageResponse> showCommonSkillPackageAsyncInvoker(
+        ShowCommonSkillPackageRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showCommonSkillPackage, hcClient);
+    }
+
+    /**
+     * 查询技能包详情
+     *
+     * 查询企业自研技能的技能包详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSkillPackageRequest 请求对象
+     * @return CompletableFuture<ShowSkillPackageResponse>
+     */
+    public CompletableFuture<ShowSkillPackageResponse> showSkillPackageAsync(ShowSkillPackageRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showSkillPackage);
+    }
+
+    /**
+     * 查询技能包详情
+     *
+     * 查询企业自研技能的技能包详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSkillPackageRequest 请求对象
+     * @return AsyncInvoker<ShowSkillPackageRequest, ShowSkillPackageResponse>
+     */
+    public AsyncInvoker<ShowSkillPackageRequest, ShowSkillPackageResponse> showSkillPackageAsyncInvoker(
+        ShowSkillPackageRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showSkillPackage, hcClient);
+    }
+
+    /**
+     * 更新技能包
+     *
+     * 更新企业自研技能的技能包信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSkillPackageRequest 请求对象
+     * @return CompletableFuture<UpdateSkillPackageResponse>
+     */
+    public CompletableFuture<UpdateSkillPackageResponse> updateSkillPackageAsync(UpdateSkillPackageRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateSkillPackage);
+    }
+
+    /**
+     * 更新技能包
+     *
+     * 更新企业自研技能的技能包信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSkillPackageRequest 请求对象
+     * @return AsyncInvoker<UpdateSkillPackageRequest, UpdateSkillPackageResponse>
+     */
+    public AsyncInvoker<UpdateSkillPackageRequest, UpdateSkillPackageResponse> updateSkillPackageAsyncInvoker(
+        UpdateSkillPackageRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateSkillPackage, hcClient);
+    }
+
+    /**
+     * 创建企业自研技能
+     *
+     * 创建企业自研技能，支持同时上传技能包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSkillRequest 请求对象
+     * @return CompletableFuture<CreateSkillResponse>
+     */
+    public CompletableFuture<CreateSkillResponse> createSkillAsync(CreateSkillRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createSkill);
+    }
+
+    /**
+     * 创建企业自研技能
+     *
+     * 创建企业自研技能，支持同时上传技能包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSkillRequest 请求对象
+     * @return AsyncInvoker<CreateSkillRequest, CreateSkillResponse>
+     */
+    public AsyncInvoker<CreateSkillRequest, CreateSkillResponse> createSkillAsyncInvoker(CreateSkillRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createSkill, hcClient);
+    }
+
+    /**
+     * 删除企业自研技能
+     *
+     * 删除企业自研技能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSkillRequest 请求对象
+     * @return CompletableFuture<DeleteSkillResponse>
+     */
+    public CompletableFuture<DeleteSkillResponse> deleteSkillAsync(DeleteSkillRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.deleteSkill);
+    }
+
+    /**
+     * 删除企业自研技能
+     *
+     * 删除企业自研技能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSkillRequest 请求对象
+     * @return AsyncInvoker<DeleteSkillRequest, DeleteSkillResponse>
+     */
+    public AsyncInvoker<DeleteSkillRequest, DeleteSkillResponse> deleteSkillAsyncInvoker(DeleteSkillRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.deleteSkill, hcClient);
+    }
+
+    /**
+     * 查询企业自研技能列表
+     *
+     * 查询企业自研技能列表，支持按分类、状态过滤。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSkillsRequest 请求对象
+     * @return CompletableFuture<ListSkillsResponse>
+     */
+    public CompletableFuture<ListSkillsResponse> listSkillsAsync(ListSkillsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listSkills);
+    }
+
+    /**
+     * 查询企业自研技能列表
+     *
+     * 查询企业自研技能列表，支持按分类、状态过滤。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSkillsRequest 请求对象
+     * @return AsyncInvoker<ListSkillsRequest, ListSkillsResponse>
+     */
+    public AsyncInvoker<ListSkillsRequest, ListSkillsResponse> listSkillsAsyncInvoker(ListSkillsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listSkills, hcClient);
+    }
+
+    /**
+     * 查询企业自研技能详情
+     *
+     * 查询企业自研技能详情，包含技能包摘要列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSkillRequest 请求对象
+     * @return CompletableFuture<ShowSkillResponse>
+     */
+    public CompletableFuture<ShowSkillResponse> showSkillAsync(ShowSkillRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showSkill);
+    }
+
+    /**
+     * 查询企业自研技能详情
+     *
+     * 查询企业自研技能详情，包含技能包摘要列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSkillRequest 请求对象
+     * @return AsyncInvoker<ShowSkillRequest, ShowSkillResponse>
+     */
+    public AsyncInvoker<ShowSkillRequest, ShowSkillResponse> showSkillAsyncInvoker(ShowSkillRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showSkill, hcClient);
+    }
+
+    /**
+     * 更新企业自研技能
+     *
+     * 更新企业自研技能信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSkillRequest 请求对象
+     * @return CompletableFuture<UpdateSkillResponse>
+     */
+    public CompletableFuture<UpdateSkillResponse> updateSkillAsync(UpdateSkillRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateSkill);
+    }
+
+    /**
+     * 更新企业自研技能
+     *
+     * 更新企业自研技能信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSkillRequest 请求对象
+     * @return AsyncInvoker<UpdateSkillRequest, UpdateSkillResponse>
+     */
+    public AsyncInvoker<UpdateSkillRequest, UpdateSkillResponse> updateSkillAsyncInvoker(UpdateSkillRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateSkill, hcClient);
     }
 
     /**

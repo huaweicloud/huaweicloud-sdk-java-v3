@@ -86,7 +86,7 @@ public class ScheduleEventInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execution_time_window")
 
-    private Object executionTimeWindow;
+    private ExecuteWindow executionTimeWindow;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_entities")
@@ -331,20 +331,29 @@ public class ScheduleEventInfo {
         this.executeTime = executeTime;
     }
 
-    public ScheduleEventInfo withExecutionTimeWindow(Object executionTimeWindow) {
+    public ScheduleEventInfo withExecutionTimeWindow(ExecuteWindow executionTimeWindow) {
         this.executionTimeWindow = executionTimeWindow;
         return this;
     }
 
+    public ScheduleEventInfo withExecutionTimeWindow(Consumer<ExecuteWindow> executionTimeWindowSetter) {
+        if (this.executionTimeWindow == null) {
+            this.executionTimeWindow = new ExecuteWindow();
+            executionTimeWindowSetter.accept(this.executionTimeWindow);
+        }
+
+        return this;
+    }
+
     /**
-     * **参数解释**：  事件执行窗口。
+     * Get executionTimeWindow
      * @return executionTimeWindow
      */
-    public Object getExecutionTimeWindow() {
+    public ExecuteWindow getExecutionTimeWindow() {
         return executionTimeWindow;
     }
 
-    public void setExecutionTimeWindow(Object executionTimeWindow) {
+    public void setExecutionTimeWindow(ExecuteWindow executionTimeWindow) {
         this.executionTimeWindow = executionTimeWindow;
     }
 

@@ -23,6 +23,11 @@ public class UpdateSubscriptionUserRequestBody {
 
     private List<String> group = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "verification_code")
+
+    private String verificationCode;
+
     public UpdateSubscriptionUserRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -73,6 +78,23 @@ public class UpdateSubscriptionUserRequestBody {
         this.group = group;
     }
 
+    public UpdateSubscriptionUserRequestBody withVerificationCode(String verificationCode) {
+        this.verificationCode = verificationCode;
+        return this;
+    }
+
+    /**
+     * 订阅终端收到的验证码。
+     * @return verificationCode
+     */
+    public String getVerificationCode() {
+        return verificationCode;
+    }
+
+    public void setVerificationCode(String verificationCode) {
+        this.verificationCode = verificationCode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -82,12 +104,13 @@ public class UpdateSubscriptionUserRequestBody {
             return false;
         }
         UpdateSubscriptionUserRequestBody that = (UpdateSubscriptionUserRequestBody) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.group, that.group);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.group, that.group)
+            && Objects.equals(this.verificationCode, that.verificationCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, group);
+        return Objects.hash(name, group, verificationCode);
     }
 
     @Override
@@ -96,6 +119,7 @@ public class UpdateSubscriptionUserRequestBody {
         sb.append("class UpdateSubscriptionUserRequestBody {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    group: ").append(toIndentedString(group)).append("\n");
+        sb.append("    verificationCode: ").append(toIndentedString(verificationCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

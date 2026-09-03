@@ -43,6 +43,11 @@ public class ExportDesktopListNewRequest {
 
     private String tag;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "without_any_tag")
+
+    private Boolean withoutAnyTag;
+
     /**
      * 语言。  - zh_CN：中文 - en_US：英文
      */
@@ -508,7 +513,7 @@ public class ExportDesktopListNewRequest {
     }
 
     /**
-     * 桌面的标签。标签的键和标签的值用“=”连接。
+     * 桌面的标签。标签的键和标签的值用”=”连接。
      * @return tag
      */
     public String getTag() {
@@ -517,6 +522,23 @@ public class ExportDesktopListNewRequest {
 
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+    public ExportDesktopListNewRequest withWithoutAnyTag(Boolean withoutAnyTag) {
+        this.withoutAnyTag = withoutAnyTag;
+        return this;
+    }
+
+    /**
+     * 是否过滤不带标签的桌面，为true时只返回不带任何标签的桌面。
+     * @return withoutAnyTag
+     */
+    public Boolean getWithoutAnyTag() {
+        return withoutAnyTag;
+    }
+
+    public void setWithoutAnyTag(Boolean withoutAnyTag) {
+        this.withoutAnyTag = withoutAnyTag;
     }
 
     public ExportDesktopListNewRequest withLanguage(LanguageEnum language) {
@@ -870,7 +892,7 @@ public class ExportDesktopListNewRequest {
         return Objects.equals(this.computerName, that.computerName)
             && Objects.equals(this.computerNames, that.computerNames) && Objects.equals(this.desktopIp, that.desktopIp)
             && Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.tag, that.tag)
-            && Objects.equals(this.language, that.language)
+            && Objects.equals(this.withoutAnyTag, that.withoutAnyTag) && Objects.equals(this.language, that.language)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.desktopType, that.desktopType) && Objects.equals(this.status, that.status)
             && Objects.equals(this.userNames, that.userNames) && Objects.equals(this.sortField, that.sortField)
@@ -892,6 +914,7 @@ public class ExportDesktopListNewRequest {
             desktopIp,
             desktopId,
             tag,
+            withoutAnyTag,
             language,
             enterpriseProjectId,
             desktopType,
@@ -922,6 +945,7 @@ public class ExportDesktopListNewRequest {
         sb.append("    desktopIp: ").append(toIndentedString(desktopIp)).append("\n");
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    withoutAnyTag: ").append(toIndentedString(withoutAnyTag)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    desktopType: ").append(toIndentedString(desktopType)).append("\n");

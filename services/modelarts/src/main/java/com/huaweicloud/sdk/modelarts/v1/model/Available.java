@@ -19,7 +19,7 @@ public class Available {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxValue")
 
-    private Object maxValue;
+    private Value maxValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
@@ -57,20 +57,29 @@ public class Available {
         this.value = value;
     }
 
-    public Available withMaxValue(Object maxValue) {
+    public Available withMaxValue(Value maxValue) {
         this.maxValue = maxValue;
         return this;
     }
 
+    public Available withMaxValue(Consumer<Value> maxValueSetter) {
+        if (this.maxValue == null) {
+            this.maxValue = new Value();
+            maxValueSetter.accept(this.maxValue);
+        }
+
+        return this;
+    }
+
     /**
-     * 最大弹性资源量减去故障资源和热备节点的资源。
+     * Get maxValue
      * @return maxValue
      */
-    public Object getMaxValue() {
+    public Value getMaxValue() {
         return maxValue;
     }
 
-    public void setMaxValue(Object maxValue) {
+    public void setMaxValue(Value maxValue) {
         this.maxValue = maxValue;
     }
 

@@ -38,6 +38,16 @@ public class HealthReportTableSpaceNewStat {
 
     private List<HealthReportTableSpaceQuerySpecialTablesResp> noIndexTablesResp = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "analyze_success")
+
+    private Boolean analyzeSuccess;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_message")
+
+    private String errorMessage;
+
     public HealthReportTableSpaceNewStat withDatabaseTopResp(
         List<HealthReportTableSpaceQuerySpaceTopResp> databaseTopResp) {
         this.databaseTopResp = databaseTopResp;
@@ -216,6 +226,40 @@ public class HealthReportTableSpaceNewStat {
         this.noIndexTablesResp = noIndexTablesResp;
     }
 
+    public HealthReportTableSpaceNewStat withAnalyzeSuccess(Boolean analyzeSuccess) {
+        this.analyzeSuccess = analyzeSuccess;
+        return this;
+    }
+
+    /**
+     * 统计分析是否成功。
+     * @return analyzeSuccess
+     */
+    public Boolean getAnalyzeSuccess() {
+        return analyzeSuccess;
+    }
+
+    public void setAnalyzeSuccess(Boolean analyzeSuccess) {
+        this.analyzeSuccess = analyzeSuccess;
+    }
+
+    public HealthReportTableSpaceNewStat withErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+        return this;
+    }
+
+    /**
+     * 错误信息。
+     * @return errorMessage
+     */
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -229,13 +273,20 @@ public class HealthReportTableSpaceNewStat {
             && Objects.equals(this.tableTopResp, that.tableTopResp)
             && Objects.equals(this.rapidGrowthTablesResp, that.rapidGrowthTablesResp)
             && Objects.equals(this.noPrimaryTablesResp, that.noPrimaryTablesResp)
-            && Objects.equals(this.noIndexTablesResp, that.noIndexTablesResp);
+            && Objects.equals(this.noIndexTablesResp, that.noIndexTablesResp)
+            && Objects.equals(this.analyzeSuccess, that.analyzeSuccess)
+            && Objects.equals(this.errorMessage, that.errorMessage);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(databaseTopResp, tableTopResp, rapidGrowthTablesResp, noPrimaryTablesResp, noIndexTablesResp);
+        return Objects.hash(databaseTopResp,
+            tableTopResp,
+            rapidGrowthTablesResp,
+            noPrimaryTablesResp,
+            noIndexTablesResp,
+            analyzeSuccess,
+            errorMessage);
     }
 
     @Override
@@ -247,6 +298,8 @@ public class HealthReportTableSpaceNewStat {
         sb.append("    rapidGrowthTablesResp: ").append(toIndentedString(rapidGrowthTablesResp)).append("\n");
         sb.append("    noPrimaryTablesResp: ").append(toIndentedString(noPrimaryTablesResp)).append("\n");
         sb.append("    noIndexTablesResp: ").append(toIndentedString(noIndexTablesResp)).append("\n");
+        sb.append("    analyzeSuccess: ").append(toIndentedString(analyzeSuccess)).append("\n");
+        sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

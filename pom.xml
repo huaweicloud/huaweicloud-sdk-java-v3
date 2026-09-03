@@ -7,7 +7,7 @@
     <packaging>pom</packaging>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk</artifactId>
-    <version>3.1.214</version>
+    <version>3.1.215</version>
     <name>Huawei Cloud SDK for Java Parent</name>
     <description>Huawei Cloud SDK for Java</description>
     <url>https://github.com/huaweicloud/huaweicloud-sdk-java-v3</url>
@@ -44,7 +44,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <snakeyaml.version>2.3</snakeyaml.version>
         <jackson.version>2.15.4</jackson.version>
-        <okhttp.version>4.12.0</okhttp.version>
+        <okhttp-jvm.version>5.3.0</okhttp-jvm.version>
         <bgmprovider.version>1.1.4</bgmprovider.version>
         <junit.version>4.13.1</junit.version>
         <slf4j.version>2.0.17</slf4j.version>
@@ -100,8 +100,8 @@
             </dependency>
             <dependency>
                 <groupId>com.squareup.okhttp3</groupId>
-                <artifactId>okhttp</artifactId>
-                <version>${okhttp.version}</version>
+                <artifactId>okhttp-jvm</artifactId>
+                <version>${okhttp-jvm.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.openeuler</groupId>

@@ -9,6 +9,12 @@ import com.huaweicloud.sdk.agentidentity.v1.model.CreateApiKeyCredentialProvider
 import com.huaweicloud.sdk.agentidentity.v1.model.CreateOauth2CredentialProviderReqBody;
 import com.huaweicloud.sdk.agentidentity.v1.model.CreateOauth2CredentialProviderRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.CreateOauth2CredentialProviderResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.CreatePolicyEngineReqBody;
+import com.huaweicloud.sdk.agentidentity.v1.model.CreatePolicyEngineRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.CreatePolicyEngineResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.CreatePolicyReqBody;
+import com.huaweicloud.sdk.agentidentity.v1.model.CreatePolicyRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.CreatePolicyResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.CreateStsCredentialProviderReqBody;
 import com.huaweicloud.sdk.agentidentity.v1.model.CreateStsCredentialProviderRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.CreateStsCredentialProviderResponse;
@@ -28,6 +34,10 @@ import com.huaweicloud.sdk.agentidentity.v1.model.DeleteApiKeyCredentialProvider
 import com.huaweicloud.sdk.agentidentity.v1.model.DeleteApiKeyCredentialProviderResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.DeleteOauth2CredentialProviderRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.DeleteOauth2CredentialProviderResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.DeletePolicyEngineRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.DeletePolicyEngineResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.DeletePolicyRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.DeletePolicyResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.DeleteStsCredentialProviderRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.DeleteStsCredentialProviderResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.DeleteWorkloadIdentityRequest;
@@ -36,6 +46,10 @@ import com.huaweicloud.sdk.agentidentity.v1.model.GetApiKeyCredentialProviderReq
 import com.huaweicloud.sdk.agentidentity.v1.model.GetApiKeyCredentialProviderResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.GetOauth2CredentialProviderRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.GetOauth2CredentialProviderResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.GetPolicyEngineRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.GetPolicyEngineResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.GetPolicyRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.GetPolicyResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.GetResourceApiKeyRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.GetResourceApiKeyRequestBody;
 import com.huaweicloud.sdk.agentidentity.v1.model.GetResourceApiKeyResponse;
@@ -55,8 +69,16 @@ import com.huaweicloud.sdk.agentidentity.v1.model.GetWorkloadIdentityRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.GetWorkloadIdentityResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.ListApiKeyCredentialProvidersRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.ListApiKeyCredentialProvidersResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.ListIdentityProvidersRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.ListIdentityProvidersResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.ListOauth2CredentialProvidersRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.ListOauth2CredentialProvidersResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.ListPoliciesRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.ListPoliciesResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.ListPolicyEngineAttachmentsRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.ListPolicyEngineAttachmentsResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.ListPolicyEnginesRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.ListPolicyEnginesResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.ListStsCredentialProvidersRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.ListStsCredentialProvidersResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.ListWorkloadIdentitiesRequest;
@@ -65,15 +87,25 @@ import com.huaweicloud.sdk.agentidentity.v1.model.Oauth2AuthorizeRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.Oauth2AuthorizeResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.Oauth2CallbackRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.Oauth2CallbackResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.PolicyEngineType;
 import com.huaweicloud.sdk.agentidentity.v1.model.UpdateApiKeyCredentialProviderReqBody;
 import com.huaweicloud.sdk.agentidentity.v1.model.UpdateApiKeyCredentialProviderRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.UpdateApiKeyCredentialProviderResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.UpdateOauth2CredentialProviderReqBody;
 import com.huaweicloud.sdk.agentidentity.v1.model.UpdateOauth2CredentialProviderRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.UpdateOauth2CredentialProviderResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.UpdatePolicyEngineReqBody;
+import com.huaweicloud.sdk.agentidentity.v1.model.UpdatePolicyEngineRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.UpdatePolicyEngineResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.UpdatePolicyReqBody;
+import com.huaweicloud.sdk.agentidentity.v1.model.UpdatePolicyRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.UpdatePolicyResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.UpdateStsCredentialProviderReqBody;
 import com.huaweicloud.sdk.agentidentity.v1.model.UpdateStsCredentialProviderRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.UpdateStsCredentialProviderResponse;
+import com.huaweicloud.sdk.agentidentity.v1.model.UpdateTokenVaultReqBody;
+import com.huaweicloud.sdk.agentidentity.v1.model.UpdateTokenVaultRequest;
+import com.huaweicloud.sdk.agentidentity.v1.model.UpdateTokenVaultResponse;
 import com.huaweicloud.sdk.agentidentity.v1.model.UpdateWorkloadIdentityReqBody;
 import com.huaweicloud.sdk.agentidentity.v1.model.UpdateWorkloadIdentityRequest;
 import com.huaweicloud.sdk.agentidentity.v1.model.UpdateWorkloadIdentityResponse;
@@ -331,6 +363,24 @@ public class AgentIdentityMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListIdentityProvidersRequest, ListIdentityProvidersResponse> listIdentityProviders =
+        genForListIdentityProviders();
+
+    private static HttpRequestDef<ListIdentityProvidersRequest, ListIdentityProvidersResponse> genForListIdentityProviders() {
+        // basic
+        HttpRequestDef.Builder<ListIdentityProvidersRequest, ListIdentityProvidersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListIdentityProvidersRequest.class, ListIdentityProvidersResponse.class)
+            .withName("ListIdentityProviders")
+            .withUri("/v1/identity-providers")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<Oauth2AuthorizeRequest, Oauth2AuthorizeResponse> oauth2Authorize =
         genForOauth2Authorize();
 
@@ -546,6 +596,323 @@ public class AgentIdentityMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> createPolicy = genForCreatePolicy();
+
+    private static HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> genForCreatePolicy() {
+        // basic
+        HttpRequestDef.Builder<CreatePolicyRequest, CreatePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePolicyRequest.class, CreatePolicyResponse.class)
+                .withName("CreatePolicy")
+                .withUri("/v1/policy-engines/{policy_engine_id}/policies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_engine_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePolicyRequest::getPolicyEngineId, CreatePolicyRequest::setPolicyEngineId));
+        builder.<CreatePolicyReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePolicyReqBody.class),
+            f -> f.withMarshaller(CreatePolicyRequest::getBody, CreatePolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> deletePolicy = genForDeletePolicy();
+
+    private static HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> genForDeletePolicy() {
+        // basic
+        HttpRequestDef.Builder<DeletePolicyRequest, DeletePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePolicyRequest.class, DeletePolicyResponse.class)
+                .withName("DeletePolicy")
+                .withUri("/v1/policy-engines/{policy_engine_id}/policies/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_engine_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePolicyRequest::getPolicyEngineId, DeletePolicyRequest::setPolicyEngineId));
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePolicyRequest::getPolicyId, DeletePolicyRequest::setPolicyId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetPolicyRequest, GetPolicyResponse> getPolicy = genForGetPolicy();
+
+    private static HttpRequestDef<GetPolicyRequest, GetPolicyResponse> genForGetPolicy() {
+        // basic
+        HttpRequestDef.Builder<GetPolicyRequest, GetPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetPolicyRequest.class, GetPolicyResponse.class)
+                .withName("GetPolicy")
+                .withUri("/v1/policy-engines/{policy_engine_id}/policies/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_engine_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetPolicyRequest::getPolicyEngineId, GetPolicyRequest::setPolicyEngineId));
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetPolicyRequest::getPolicyId, GetPolicyRequest::setPolicyId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPoliciesRequest, ListPoliciesResponse> listPolicies = genForListPolicies();
+
+    private static HttpRequestDef<ListPoliciesRequest, ListPoliciesResponse> genForListPolicies() {
+        // basic
+        HttpRequestDef.Builder<ListPoliciesRequest, ListPoliciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPoliciesRequest.class, ListPoliciesResponse.class)
+                .withName("ListPolicies")
+                .withUri("/v1/policy-engines/{policy_engine_id}/policies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_engine_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPoliciesRequest::getPolicyEngineId, ListPoliciesRequest::setPolicyEngineId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPoliciesRequest::getLimit, ListPoliciesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPoliciesRequest::getMarker, ListPoliciesRequest::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePolicyRequest, UpdatePolicyResponse> updatePolicy = genForUpdatePolicy();
+
+    private static HttpRequestDef<UpdatePolicyRequest, UpdatePolicyResponse> genForUpdatePolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdatePolicyRequest, UpdatePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePolicyRequest.class, UpdatePolicyResponse.class)
+                .withName("UpdatePolicy")
+                .withUri("/v1/policy-engines/{policy_engine_id}/policies/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_engine_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePolicyRequest::getPolicyEngineId, UpdatePolicyRequest::setPolicyEngineId));
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePolicyRequest::getPolicyId, UpdatePolicyRequest::setPolicyId));
+        builder.<UpdatePolicyReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePolicyReqBody.class),
+            f -> f.withMarshaller(UpdatePolicyRequest::getBody, UpdatePolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePolicyEngineRequest, CreatePolicyEngineResponse> createPolicyEngine =
+        genForCreatePolicyEngine();
+
+    private static HttpRequestDef<CreatePolicyEngineRequest, CreatePolicyEngineResponse> genForCreatePolicyEngine() {
+        // basic
+        HttpRequestDef.Builder<CreatePolicyEngineRequest, CreatePolicyEngineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePolicyEngineRequest.class, CreatePolicyEngineResponse.class)
+                .withName("CreatePolicyEngine")
+                .withUri("/v1/policy-engines")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreatePolicyEngineReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePolicyEngineReqBody.class),
+            f -> f.withMarshaller(CreatePolicyEngineRequest::getBody, CreatePolicyEngineRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePolicyEngineRequest, DeletePolicyEngineResponse> deletePolicyEngine =
+        genForDeletePolicyEngine();
+
+    private static HttpRequestDef<DeletePolicyEngineRequest, DeletePolicyEngineResponse> genForDeletePolicyEngine() {
+        // basic
+        HttpRequestDef.Builder<DeletePolicyEngineRequest, DeletePolicyEngineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePolicyEngineRequest.class, DeletePolicyEngineResponse.class)
+                .withName("DeletePolicyEngine")
+                .withUri("/v1/policy-engines/{policy_engine_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_engine_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePolicyEngineRequest::getPolicyEngineId,
+                DeletePolicyEngineRequest::setPolicyEngineId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetPolicyEngineRequest, GetPolicyEngineResponse> getPolicyEngine =
+        genForGetPolicyEngine();
+
+    private static HttpRequestDef<GetPolicyEngineRequest, GetPolicyEngineResponse> genForGetPolicyEngine() {
+        // basic
+        HttpRequestDef.Builder<GetPolicyEngineRequest, GetPolicyEngineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetPolicyEngineRequest.class, GetPolicyEngineResponse.class)
+                .withName("GetPolicyEngine")
+                .withUri("/v1/policy-engines/{policy_engine_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_engine_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetPolicyEngineRequest::getPolicyEngineId,
+                GetPolicyEngineRequest::setPolicyEngineId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPolicyEngineAttachmentsRequest, ListPolicyEngineAttachmentsResponse> listPolicyEngineAttachments =
+        genForListPolicyEngineAttachments();
+
+    private static HttpRequestDef<ListPolicyEngineAttachmentsRequest, ListPolicyEngineAttachmentsResponse> genForListPolicyEngineAttachments() {
+        // basic
+        HttpRequestDef.Builder<ListPolicyEngineAttachmentsRequest, ListPolicyEngineAttachmentsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListPolicyEngineAttachmentsRequest.class,
+                    ListPolicyEngineAttachmentsResponse.class)
+                .withName("ListPolicyEngineAttachments")
+                .withUri("/v1/policy-engines/{policy_engine_id}/attachments")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_engine_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyEngineAttachmentsRequest::getPolicyEngineId,
+                ListPolicyEngineAttachmentsRequest::setPolicyEngineId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPolicyEngineAttachmentsRequest::getLimit,
+                ListPolicyEngineAttachmentsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyEngineAttachmentsRequest::getMarker,
+                ListPolicyEngineAttachmentsRequest::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPolicyEnginesRequest, ListPolicyEnginesResponse> listPolicyEngines =
+        genForListPolicyEngines();
+
+    private static HttpRequestDef<ListPolicyEnginesRequest, ListPolicyEnginesResponse> genForListPolicyEngines() {
+        // basic
+        HttpRequestDef.Builder<ListPolicyEnginesRequest, ListPolicyEnginesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPolicyEnginesRequest.class, ListPolicyEnginesResponse.class)
+                .withName("ListPolicyEngines")
+                .withUri("/v1/policy-engines")
+                .withContentType("application/json");
+
+        // requests
+        builder.<PolicyEngineType>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(PolicyEngineType.class),
+            f -> f.withMarshaller(ListPolicyEnginesRequest::getType, ListPolicyEnginesRequest::setType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPolicyEnginesRequest::getLimit, ListPolicyEnginesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyEnginesRequest::getMarker, ListPolicyEnginesRequest::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePolicyEngineRequest, UpdatePolicyEngineResponse> updatePolicyEngine =
+        genForUpdatePolicyEngine();
+
+    private static HttpRequestDef<UpdatePolicyEngineRequest, UpdatePolicyEngineResponse> genForUpdatePolicyEngine() {
+        // basic
+        HttpRequestDef.Builder<UpdatePolicyEngineRequest, UpdatePolicyEngineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePolicyEngineRequest.class, UpdatePolicyEngineResponse.class)
+                .withName("UpdatePolicyEngine")
+                .withUri("/v1/policy-engines/{policy_engine_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_engine_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePolicyEngineRequest::getPolicyEngineId,
+                UpdatePolicyEngineRequest::setPolicyEngineId));
+        builder.<UpdatePolicyEngineReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePolicyEngineReqBody.class),
+            f -> f.withMarshaller(UpdatePolicyEngineRequest::getBody, UpdatePolicyEngineRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateStsCredentialProviderRequest, CreateStsCredentialProviderResponse> createStsCredentialProvider =
         genForCreateStsCredentialProvider();
 
@@ -708,6 +1075,34 @@ public class AgentIdentityMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(GetTokenVaultRequest::getTokenVaultId, GetTokenVaultRequest::setTokenVaultId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTokenVaultRequest, UpdateTokenVaultResponse> updateTokenVault =
+        genForUpdateTokenVault();
+
+    private static HttpRequestDef<UpdateTokenVaultRequest, UpdateTokenVaultResponse> genForUpdateTokenVault() {
+        // basic
+        HttpRequestDef.Builder<UpdateTokenVaultRequest, UpdateTokenVaultResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateTokenVaultRequest.class, UpdateTokenVaultResponse.class)
+                .withName("UpdateTokenVault")
+                .withUri("/v1/token-vaults/{token_vault_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("token_vault_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTokenVaultRequest::getTokenVaultId, UpdateTokenVaultRequest::setTokenVaultId));
+        builder.<UpdateTokenVaultReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateTokenVaultReqBody.class),
+            f -> f.withMarshaller(UpdateTokenVaultRequest::getBody, UpdateTokenVaultRequest::setBody));
 
         // response
 

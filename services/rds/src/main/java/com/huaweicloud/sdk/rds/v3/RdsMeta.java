@@ -85,12 +85,18 @@ import com.huaweicloud.sdk.rds.v3.model.CopyConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.CopyConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.CopyDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.CopyDatabaseResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateBinlogMergeRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateBinlogMergeRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.CreateBinlogMergeResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateDbUserRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateDbUserResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateDiskSpaceDiagnosisRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateDiskSpaceDiagnosisRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.CreateDiskSpaceDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateDistributionRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateDistributionRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.CreateDistributionResponse;
@@ -158,6 +164,9 @@ import com.huaweicloud.sdk.rds.v3.model.DbUserPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteBackupSelectionRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteBackupSelectionRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.DeleteBackupSelectionResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteBinlogMergeRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteBinlogMergeRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.DeleteBinlogMergeResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteDatabaseRequest;
@@ -229,6 +238,8 @@ import com.huaweicloud.sdk.rds.v3.model.FollowerMigrateRequest;
 import com.huaweicloud.sdk.rds.v3.model.GenerateAuditlogDownloadLinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.GetInstancesNoIndexTablesRequest;
 import com.huaweicloud.sdk.rds.v3.model.GetInstancesNoIndexTablesResponse;
+import com.huaweicloud.sdk.rds.v3.model.GetInstancesOpsMetricNamesRequest;
+import com.huaweicloud.sdk.rds.v3.model.GetInstancesOpsMetricNamesResponse;
 import com.huaweicloud.sdk.rds.v3.model.GrantRequest;
 import com.huaweicloud.sdk.rds.v3.model.InstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.InstanceRestartRequsetBody;
@@ -303,6 +314,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListHistoryWaitEventsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListHistoryWaitEventsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInspectionHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInspectionHistoriesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstanceAllProxyVersionRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstanceAllProxyVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceBackupSummaryRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceBackupSummaryResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceDiagnosisRequest;
@@ -382,6 +395,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListReplicationProfilesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListReplicationProfilesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRestoreTimesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRestoreTimesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListRetainBackupsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListRetainBackupsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListScheduleEventsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListScheduleEventsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListScheduleTasksRequest;
@@ -449,6 +464,9 @@ import com.huaweicloud.sdk.rds.v3.model.ModifyJobScheduleRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyJobScheduleRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ModifyJobScheduleResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifyMySqlProxyRouteModeRequest;
+import com.huaweicloud.sdk.rds.v3.model.ModifyNewBackupEncryptRequest;
+import com.huaweicloud.sdk.rds.v3.model.ModifyNewBackupEncryptRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.ModifyNewBackupEncryptResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifyParamRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyPostgresqlHbaConfRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyPostgresqlHbaConfResponse;
@@ -479,6 +497,8 @@ import com.huaweicloud.sdk.rds.v3.model.PostgresqlPreCheckUpgradeMajorVersionReq
 import com.huaweicloud.sdk.rds.v3.model.PostgresqlUserForCreation;
 import com.huaweicloud.sdk.rds.v3.model.PwdResetRequest;
 import com.huaweicloud.sdk.rds.v3.model.QueryDRInfoRequest;
+import com.huaweicloud.sdk.rds.v3.model.QueryNewBackupEncryptionRequest;
+import com.huaweicloud.sdk.rds.v3.model.QueryNewBackupEncryptionResponse;
 import com.huaweicloud.sdk.rds.v3.model.RdsUpgradePrecheckV3Req;
 import com.huaweicloud.sdk.rds.v3.model.RecyclePolicyRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ReduceVolumeRequestBody;
@@ -538,6 +558,9 @@ import com.huaweicloud.sdk.rds.v3.model.SetAutoUpgradePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetBackupPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetBackupPolicyRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.SetBackupPolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetBackupRetainPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetBackupRetainPolicyRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.SetBackupRetainPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetBinlogClearPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetBinlogClearPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetConfigurationRequestBody;
@@ -593,6 +616,13 @@ import com.huaweicloud.sdk.rds.v3.model.ShowBackupDownloadLinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupDownloadLinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupPolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowBackupRetainPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowBackupRetainPolicyRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.ShowBackupRetainPolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowBackupUsageAlarmConfigRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowBackupUsageAlarmConfigResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowBackupUsageExceededInstancesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowBackupUsageExceededInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupUsageRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupUsageResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBinlogClearPolicyRequest;
@@ -601,6 +631,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowDatabaseLevelDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowDatabaseLevelDatabaseResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowDiskSpaceDiagnosisRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowDiskSpaceDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowDnsNameRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowDnsNameResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowDomainNameRequest;
@@ -625,6 +657,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowIntelligentKillSessionStatisticReque
 import com.huaweicloud.sdk.rds.v3.model.ShowIntelligentKillSessionStatisticResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowMsdtcLocalHostRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowMsdtcLocalHostResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowMySqlProxySlowLogListRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowMySqlProxySlowLogListResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowOffSiteBackupPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowOffSiteBackupPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowPostgresqlParamValueRequest;
@@ -645,8 +679,13 @@ import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowRestartPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowRestartPolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowRestoreTablesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowRestoreTablesRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.ShowRestoreTablesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowSqlDiagnosisRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowSqlDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowStorageUsedSpaceRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowStorageUsedSpaceResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowTaskDetailRequest;
@@ -698,6 +737,9 @@ import com.huaweicloud.sdk.rds.v3.model.SwitchDbAgentJobResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchLogReplayRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchLogReplayRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.SwitchLogReplayResponse;
+import com.huaweicloud.sdk.rds.v3.model.SwitchMySqlProxySlowLogRequest;
+import com.huaweicloud.sdk.rds.v3.model.SwitchMySqlProxySlowLogRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.SwitchMySqlProxySlowLogResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitControlReqV3;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitResponse;
@@ -713,6 +755,9 @@ import com.huaweicloud.sdk.rds.v3.model.TransferBackupResponse;
 import com.huaweicloud.sdk.rds.v3.model.UnlockNodeReadonlyStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.UnlockNodeReadonlyStatusRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.UnlockNodeReadonlyStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateBackupUsageAlarmConfigRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateBackupUsageAlarmConfigRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.UpdateBackupUsageAlarmConfigResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDBShrinkRequestBody;
@@ -739,6 +784,9 @@ import com.huaweicloud.sdk.rds.v3.model.UpdateIncreBackupPolicy1RequestBody;
 import com.huaweicloud.sdk.rds.v3.model.UpdateIncreBackupPolicy1Response;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceAliasRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceAliasResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceBackupMethodRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceBackupMethodRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceBackupMethodResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationAsyncRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationAsyncResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationRequest;
@@ -1419,6 +1467,39 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateBinlogMergeRequest, CreateBinlogMergeResponse> createBinlogMerge =
+        genForCreateBinlogMerge();
+
+    private static HttpRequestDef<CreateBinlogMergeRequest, CreateBinlogMergeResponse> genForCreateBinlogMerge() {
+        // basic
+        HttpRequestDef.Builder<CreateBinlogMergeRequest, CreateBinlogMergeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateBinlogMergeRequest.class, CreateBinlogMergeResponse.class)
+                .withName("CreateBinlogMerge")
+                .withUri("/v3/{project_id}/instances/{instance_id}/packlog")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBinlogMergeRequest::getInstanceId, CreateBinlogMergeRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBinlogMergeRequest::getXLanguage, CreateBinlogMergeRequest::setXLanguage));
+        builder.<CreateBinlogMergeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateBinlogMergeRequestBody.class),
+            f -> f.withMarshaller(CreateBinlogMergeRequest::getBody, CreateBinlogMergeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateConfigurationRequest, CreateConfigurationResponse> createConfiguration =
         genForCreateConfiguration();
 
@@ -1441,6 +1522,42 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConfigurationForCreation.class),
             f -> f.withMarshaller(CreateConfigurationRequest::getBody, CreateConfigurationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDiskSpaceDiagnosisRequest, CreateDiskSpaceDiagnosisResponse> createDiskSpaceDiagnosis =
+        genForCreateDiskSpaceDiagnosis();
+
+    private static HttpRequestDef<CreateDiskSpaceDiagnosisRequest, CreateDiskSpaceDiagnosisResponse> genForCreateDiskSpaceDiagnosis() {
+        // basic
+        HttpRequestDef.Builder<CreateDiskSpaceDiagnosisRequest, CreateDiskSpaceDiagnosisResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateDiskSpaceDiagnosisRequest.class, CreateDiskSpaceDiagnosisResponse.class)
+                .withName("CreateDiskSpaceDiagnosis")
+                .withUri("/v3/{project_id}/instances/{instance_id}/diagnosis/disk")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDiskSpaceDiagnosisRequest::getInstanceId,
+                CreateDiskSpaceDiagnosisRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDiskSpaceDiagnosisRequest::getXLanguage,
+                CreateDiskSpaceDiagnosisRequest::setXLanguage));
+        builder.<CreateDiskSpaceDiagnosisRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDiskSpaceDiagnosisRequestBody.class),
+            f -> f.withMarshaller(CreateDiskSpaceDiagnosisRequest::getBody, CreateDiskSpaceDiagnosisRequest::setBody));
 
         // response
 
@@ -1782,6 +1899,39 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteBackupSelectionRequestBody.class),
             f -> f.withMarshaller(DeleteBackupSelectionRequest::getBody, DeleteBackupSelectionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteBinlogMergeRequest, DeleteBinlogMergeResponse> deleteBinlogMerge =
+        genForDeleteBinlogMerge();
+
+    private static HttpRequestDef<DeleteBinlogMergeRequest, DeleteBinlogMergeResponse> genForDeleteBinlogMerge() {
+        // basic
+        HttpRequestDef.Builder<DeleteBinlogMergeRequest, DeleteBinlogMergeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteBinlogMergeRequest.class, DeleteBinlogMergeResponse.class)
+                .withName("DeleteBinlogMerge")
+                .withUri("/v3/{project_id}/instances/{instance_id}/packlog")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBinlogMergeRequest::getInstanceId, DeleteBinlogMergeRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBinlogMergeRequest::getXLanguage, DeleteBinlogMergeRequest::setXLanguage));
+        builder.<DeleteBinlogMergeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteBinlogMergeRequestBody.class),
+            f -> f.withMarshaller(DeleteBinlogMergeRequest::getBody, DeleteBinlogMergeRequest::setBody));
 
         // response
 
@@ -2149,6 +2299,45 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApplyConfigurationRequest.class),
             f -> f.withMarshaller(EnableConfigurationRequest::getBody, EnableConfigurationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetInstancesOpsMetricNamesRequest, GetInstancesOpsMetricNamesResponse> getInstancesOpsMetricNames =
+        genForGetInstancesOpsMetricNames();
+
+    private static HttpRequestDef<GetInstancesOpsMetricNamesRequest, GetInstancesOpsMetricNamesResponse> genForGetInstancesOpsMetricNames() {
+        // basic
+        HttpRequestDef.Builder<GetInstancesOpsMetricNamesRequest, GetInstancesOpsMetricNamesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    GetInstancesOpsMetricNamesRequest.class,
+                    GetInstancesOpsMetricNamesResponse.class)
+                .withName("GetInstancesOpsMetricNames")
+                .withUri("/v3/{project_id}/instances/{instance_id}/ops/metric-names")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetInstancesOpsMetricNamesRequest::getInstanceId,
+                GetInstancesOpsMetricNamesRequest::setInstanceId));
+        builder.<String>withRequestField("metric_group",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetInstancesOpsMetricNamesRequest::getMetricGroup,
+                GetInstancesOpsMetricNamesRequest::setMetricGroup));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetInstancesOpsMetricNamesRequest::getXLanguage,
+                GetInstancesOpsMetricNamesRequest::setXLanguage));
 
         // response
 
@@ -4119,6 +4308,39 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRetainBackupsRequest, ListRetainBackupsResponse> listRetainBackups =
+        genForListRetainBackups();
+
+    private static HttpRequestDef<ListRetainBackupsRequest, ListRetainBackupsResponse> genForListRetainBackups() {
+        // basic
+        HttpRequestDef.Builder<ListRetainBackupsRequest, ListRetainBackupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRetainBackupsRequest.class, ListRetainBackupsResponse.class)
+                .withName("ListRetainBackups")
+                .withUri("/v3/{project_id}/instances/{instance_id}/retain-backups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRetainBackupsRequest::getInstanceId, ListRetainBackupsRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRetainBackupsRequest::getOffset, ListRetainBackupsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRetainBackupsRequest::getLimit, ListRetainBackupsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListScheduleEventsRequest, ListScheduleEventsResponse> listScheduleEvents =
         genForListScheduleEvents();
 
@@ -5059,6 +5281,41 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyNewBackupEncryptRequest, ModifyNewBackupEncryptResponse> modifyNewBackupEncrypt =
+        genForModifyNewBackupEncrypt();
+
+    private static HttpRequestDef<ModifyNewBackupEncryptRequest, ModifyNewBackupEncryptResponse> genForModifyNewBackupEncrypt() {
+        // basic
+        HttpRequestDef.Builder<ModifyNewBackupEncryptRequest, ModifyNewBackupEncryptResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ModifyNewBackupEncryptRequest.class, ModifyNewBackupEncryptResponse.class)
+            .withName("ModifyNewBackupEncrypt")
+            .withUri("/v3/{project_id}/instances/{instance_id}/backups/encryption")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyNewBackupEncryptRequest::getInstanceId,
+                ModifyNewBackupEncryptRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyNewBackupEncryptRequest::getXLanguage,
+                ModifyNewBackupEncryptRequest::setXLanguage));
+        builder.<ModifyNewBackupEncryptRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyNewBackupEncryptRequestBody.class),
+            f -> f.withMarshaller(ModifyNewBackupEncryptRequest::getBody, ModifyNewBackupEncryptRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ModifyPostgresqlHbaConfRequest, ModifyPostgresqlHbaConfResponse> modifyPostgresqlHbaConf =
         genForModifyPostgresqlHbaConf();
 
@@ -5161,6 +5418,37 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReplaceNodeRequest.class),
             f -> f.withMarshaller(NotifyReplaceNodeRequest::getBody, NotifyReplaceNodeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<QueryNewBackupEncryptionRequest, QueryNewBackupEncryptionResponse> queryNewBackupEncryption =
+        genForQueryNewBackupEncryption();
+
+    private static HttpRequestDef<QueryNewBackupEncryptionRequest, QueryNewBackupEncryptionResponse> genForQueryNewBackupEncryption() {
+        // basic
+        HttpRequestDef.Builder<QueryNewBackupEncryptionRequest, QueryNewBackupEncryptionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, QueryNewBackupEncryptionRequest.class, QueryNewBackupEncryptionResponse.class)
+                .withName("QueryNewBackupEncryption")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/encryption")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(QueryNewBackupEncryptionRequest::getInstanceId,
+                QueryNewBackupEncryptionRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(QueryNewBackupEncryptionRequest::getXLanguage,
+                QueryNewBackupEncryptionRequest::setXLanguage));
 
         // response
 
@@ -5494,6 +5782,35 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SetBackupPolicyRequestBody.class),
             f -> f.withMarshaller(SetBackupPolicyRequest::getBody, SetBackupPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetBackupRetainPolicyRequest, SetBackupRetainPolicyResponse> setBackupRetainPolicy =
+        genForSetBackupRetainPolicy();
+
+    private static HttpRequestDef<SetBackupRetainPolicyRequest, SetBackupRetainPolicyResponse> genForSetBackupRetainPolicy() {
+        // basic
+        HttpRequestDef.Builder<SetBackupRetainPolicyRequest, SetBackupRetainPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, SetBackupRetainPolicyRequest.class, SetBackupRetainPolicyResponse.class)
+            .withName("SetBackupRetainPolicy")
+            .withUri("/v3/{project_id}/backup-retain-policy")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetBackupRetainPolicyRequest::getXLanguage,
+                SetBackupRetainPolicyRequest::setXLanguage));
+        builder.<SetBackupRetainPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetBackupRetainPolicyRequestBody.class),
+            f -> f.withMarshaller(SetBackupRetainPolicyRequest::getBody, SetBackupRetainPolicyRequest::setBody));
 
         // response
 
@@ -6053,6 +6370,35 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowBackupRetainPolicyRequest, ShowBackupRetainPolicyResponse> showBackupRetainPolicy =
+        genForShowBackupRetainPolicy();
+
+    private static HttpRequestDef<ShowBackupRetainPolicyRequest, ShowBackupRetainPolicyResponse> genForShowBackupRetainPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowBackupRetainPolicyRequest, ShowBackupRetainPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ShowBackupRetainPolicyRequest.class, ShowBackupRetainPolicyResponse.class)
+            .withName("ShowBackupRetainPolicy")
+            .withUri("/v3/{project_id}/backup-retain-policy")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackupRetainPolicyRequest::getXLanguage,
+                ShowBackupRetainPolicyRequest::setXLanguage));
+        builder.<ShowBackupRetainPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowBackupRetainPolicyRequestBody.class),
+            f -> f.withMarshaller(ShowBackupRetainPolicyRequest::getBody, ShowBackupRetainPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowBackupUsageRequest, ShowBackupUsageResponse> showBackupUsage =
         genForShowBackupUsage();
 
@@ -6075,6 +6421,72 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBackupUsageRequest::getXLanguage, ShowBackupUsageRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBackupUsageAlarmConfigRequest, ShowBackupUsageAlarmConfigResponse> showBackupUsageAlarmConfig =
+        genForShowBackupUsageAlarmConfig();
+
+    private static HttpRequestDef<ShowBackupUsageAlarmConfigRequest, ShowBackupUsageAlarmConfigResponse> genForShowBackupUsageAlarmConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowBackupUsageAlarmConfigRequest, ShowBackupUsageAlarmConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowBackupUsageAlarmConfigRequest.class,
+                    ShowBackupUsageAlarmConfigResponse.class)
+                .withName("ShowBackupUsageAlarmConfig")
+                .withUri("/v3/{project_id}/backups/usage-alarm-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackupUsageAlarmConfigRequest::getXLanguage,
+                ShowBackupUsageAlarmConfigRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBackupUsageExceededInstancesRequest, ShowBackupUsageExceededInstancesResponse> showBackupUsageExceededInstances =
+        genForShowBackupUsageExceededInstances();
+
+    private static HttpRequestDef<ShowBackupUsageExceededInstancesRequest, ShowBackupUsageExceededInstancesResponse> genForShowBackupUsageExceededInstances() {
+        // basic
+        HttpRequestDef.Builder<ShowBackupUsageExceededInstancesRequest, ShowBackupUsageExceededInstancesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowBackupUsageExceededInstancesRequest.class,
+                    ShowBackupUsageExceededInstancesResponse.class)
+                .withName("ShowBackupUsageExceededInstances")
+                .withUri("/v3/{project_id}/backups/usage-alarm/exceeded-instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowBackupUsageExceededInstancesRequest::getLimit,
+                ShowBackupUsageExceededInstancesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowBackupUsageExceededInstancesRequest::getOffset,
+                ShowBackupUsageExceededInstancesRequest::setOffset));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackupUsageExceededInstancesRequest::getXLanguage,
+                ShowBackupUsageExceededInstancesRequest::setXLanguage));
 
         // response
 
@@ -6609,6 +7021,39 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRestartPolicyRequest::getXLanguage, ShowRestartPolicyRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRestoreTablesRequest, ShowRestoreTablesResponse> showRestoreTables =
+        genForShowRestoreTables();
+
+    private static HttpRequestDef<ShowRestoreTablesRequest, ShowRestoreTablesResponse> genForShowRestoreTables() {
+        // basic
+        HttpRequestDef.Builder<ShowRestoreTablesRequest, ShowRestoreTablesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowRestoreTablesRequest.class, ShowRestoreTablesResponse.class)
+                .withName("ShowRestoreTables")
+                .withUri("/v3/{project_id}/instances/{instance_id}/get-restore-tables")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRestoreTablesRequest::getInstanceId, ShowRestoreTablesRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRestoreTablesRequest::getXLanguage, ShowRestoreTablesRequest::setXLanguage));
+        builder.<ShowRestoreTablesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowRestoreTablesRequestBody.class),
+            f -> f.withMarshaller(ShowRestoreTablesRequest::getBody, ShowRestoreTablesRequest::setBody));
 
         // response
 
@@ -7306,6 +7751,39 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateBackupUsageAlarmConfigRequest, UpdateBackupUsageAlarmConfigResponse> updateBackupUsageAlarmConfig =
+        genForUpdateBackupUsageAlarmConfig();
+
+    private static HttpRequestDef<UpdateBackupUsageAlarmConfigRequest, UpdateBackupUsageAlarmConfigResponse> genForUpdateBackupUsageAlarmConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateBackupUsageAlarmConfigRequest, UpdateBackupUsageAlarmConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateBackupUsageAlarmConfigRequest.class,
+                    UpdateBackupUsageAlarmConfigResponse.class)
+                .withName("UpdateBackupUsageAlarmConfig")
+                .withUri("/v3/{project_id}/backups/usage-alarm-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBackupUsageAlarmConfigRequest::getXLanguage,
+                UpdateBackupUsageAlarmConfigRequest::setXLanguage));
+        builder.<UpdateBackupUsageAlarmConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateBackupUsageAlarmConfigRequestBody.class),
+            f -> f.withMarshaller(UpdateBackupUsageAlarmConfigRequest::getBody,
+                UpdateBackupUsageAlarmConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateConfigurationRequest, UpdateConfigurationResponse> updateConfiguration =
         genForUpdateConfiguration();
 
@@ -7462,6 +7940,45 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateRdsInstanceAliasRequest.class),
             f -> f.withMarshaller(UpdateInstanceAliasRequest::getBody, UpdateInstanceAliasRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInstanceBackupMethodRequest, UpdateInstanceBackupMethodResponse> updateInstanceBackupMethod =
+        genForUpdateInstanceBackupMethod();
+
+    private static HttpRequestDef<UpdateInstanceBackupMethodRequest, UpdateInstanceBackupMethodResponse> genForUpdateInstanceBackupMethod() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstanceBackupMethodRequest, UpdateInstanceBackupMethodResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateInstanceBackupMethodRequest.class,
+                    UpdateInstanceBackupMethodResponse.class)
+                .withName("UpdateInstanceBackupMethod")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/method")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceBackupMethodRequest::getInstanceId,
+                UpdateInstanceBackupMethodRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceBackupMethodRequest::getXLanguage,
+                UpdateInstanceBackupMethodRequest::setXLanguage));
+        builder.<UpdateInstanceBackupMethodRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateInstanceBackupMethodRequestBody.class),
+            f -> f.withMarshaller(UpdateInstanceBackupMethodRequest::getBody,
+                UpdateInstanceBackupMethodRequest::setBody));
 
         // response
 
@@ -8402,6 +8919,39 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListInstanceAllProxyVersionRequest, ListInstanceAllProxyVersionResponse> listInstanceAllProxyVersion =
+        genForListInstanceAllProxyVersion();
+
+    private static HttpRequestDef<ListInstanceAllProxyVersionRequest, ListInstanceAllProxyVersionResponse> genForListInstanceAllProxyVersion() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceAllProxyVersionRequest, ListInstanceAllProxyVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInstanceAllProxyVersionRequest.class,
+                    ListInstanceAllProxyVersionResponse.class)
+                .withName("ListInstanceAllProxyVersion")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/engine-version")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceAllProxyVersionRequest::getInstanceId,
+                ListInstanceAllProxyVersionRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceAllProxyVersionRequest::getXLanguage,
+                ListInstanceAllProxyVersionRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ResetPwdRequest, ResetPwdResponse> resetPwd = genForResetPwd();
 
     private static HttpRequestDef<ResetPwdRequest, ResetPwdResponse> genForResetPwd() {
@@ -8525,6 +9075,110 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MysqlReadOnlySwitch.class),
             f -> f.withMarshaller(SetReadOnlySwitchRequest::getBody, SetReadOnlySwitchRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMySqlProxySlowLogListRequest, ShowMySqlProxySlowLogListResponse> showMySqlProxySlowLogList =
+        genForShowMySqlProxySlowLogList();
+
+    private static HttpRequestDef<ShowMySqlProxySlowLogListRequest, ShowMySqlProxySlowLogListResponse> genForShowMySqlProxySlowLogList() {
+        // basic
+        HttpRequestDef.Builder<ShowMySqlProxySlowLogListRequest, ShowMySqlProxySlowLogListResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowMySqlProxySlowLogListRequest.class,
+                    ShowMySqlProxySlowLogListResponse.class)
+                .withName("ShowMySqlProxySlowLogList")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/slow-log")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMySqlProxySlowLogListRequest::getInstanceId,
+                ShowMySqlProxySlowLogListRequest::setInstanceId));
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMySqlProxySlowLogListRequest::getProxyId,
+                ShowMySqlProxySlowLogListRequest::setProxyId));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowMySqlProxySlowLogListRequest::getStartTime,
+                ShowMySqlProxySlowLogListRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowMySqlProxySlowLogListRequest::getEndTime,
+                ShowMySqlProxySlowLogListRequest::setEndTime));
+        builder.<Integer>withRequestField("per_page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowMySqlProxySlowLogListRequest::getPerPage,
+                ShowMySqlProxySlowLogListRequest::setPerPage));
+        builder.<String>withRequestField("line_num",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMySqlProxySlowLogListRequest::getLineNum,
+                ShowMySqlProxySlowLogListRequest::setLineNum));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMySqlProxySlowLogListRequest::getXLanguage,
+                ShowMySqlProxySlowLogListRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchMySqlProxySlowLogRequest, SwitchMySqlProxySlowLogResponse> switchMySqlProxySlowLog =
+        genForSwitchMySqlProxySlowLog();
+
+    private static HttpRequestDef<SwitchMySqlProxySlowLogRequest, SwitchMySqlProxySlowLogResponse> genForSwitchMySqlProxySlowLog() {
+        // basic
+        HttpRequestDef.Builder<SwitchMySqlProxySlowLogRequest, SwitchMySqlProxySlowLogResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, SwitchMySqlProxySlowLogRequest.class, SwitchMySqlProxySlowLogResponse.class)
+            .withName("SwitchMySqlProxySlowLog")
+            .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/slow-log")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchMySqlProxySlowLogRequest::getInstanceId,
+                SwitchMySqlProxySlowLogRequest::setInstanceId));
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchMySqlProxySlowLogRequest::getProxyId,
+                SwitchMySqlProxySlowLogRequest::setProxyId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchMySqlProxySlowLogRequest::getXLanguage,
+                SwitchMySqlProxySlowLogRequest::setXLanguage));
+        builder.<SwitchMySqlProxySlowLogRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SwitchMySqlProxySlowLogRequestBody.class),
+            f -> f.withMarshaller(SwitchMySqlProxySlowLogRequest::getBody, SwitchMySqlProxySlowLogRequest::setBody));
 
         // response
 
@@ -10089,6 +10743,36 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDiskSpaceDiagnosisRequest, ShowDiskSpaceDiagnosisResponse> showDiskSpaceDiagnosis =
+        genForShowDiskSpaceDiagnosis();
+
+    private static HttpRequestDef<ShowDiskSpaceDiagnosisRequest, ShowDiskSpaceDiagnosisResponse> genForShowDiskSpaceDiagnosis() {
+        // basic
+        HttpRequestDef.Builder<ShowDiskSpaceDiagnosisRequest, ShowDiskSpaceDiagnosisResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDiskSpaceDiagnosisRequest.class, ShowDiskSpaceDiagnosisResponse.class)
+            .withName("ShowDiskSpaceDiagnosis")
+            .withUri("/v3/{project_id}/instances/{instance_id}/diagnosis/disk")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDiskSpaceDiagnosisRequest::getInstanceId,
+                ShowDiskSpaceDiagnosisRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDiskSpaceDiagnosisRequest::getXLanguage,
+                ShowDiskSpaceDiagnosisRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowIntelligentKillSessionHistoryRequest, ShowIntelligentKillSessionHistoryResponse> showIntelligentKillSessionHistory =
         genForShowIntelligentKillSessionHistory();
 
@@ -10173,6 +10857,54 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowIntelligentKillSessionStatisticRequest::getXLanguage,
                 ShowIntelligentKillSessionStatisticRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSqlDiagnosisRequest, ShowSqlDiagnosisResponse> showSqlDiagnosis =
+        genForShowSqlDiagnosis();
+
+    private static HttpRequestDef<ShowSqlDiagnosisRequest, ShowSqlDiagnosisResponse> genForShowSqlDiagnosis() {
+        // basic
+        HttpRequestDef.Builder<ShowSqlDiagnosisRequest, ShowSqlDiagnosisResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSqlDiagnosisRequest.class, ShowSqlDiagnosisResponse.class)
+                .withName("ShowSqlDiagnosis")
+                .withUri("/v3/{project_id}/instances/{instance_id}/diagnosis/sql")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlDiagnosisRequest::getInstanceId, ShowSqlDiagnosisRequest::setInstanceId));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlDiagnosisRequest::getCategory, ShowSqlDiagnosisRequest::setCategory));
+        builder.<String>withRequestField("subcategory",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlDiagnosisRequest::getSubcategory, ShowSqlDiagnosisRequest::setSubcategory));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlDiagnosisRequest::getOffset, ShowSqlDiagnosisRequest::setOffset));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlDiagnosisRequest::getLimit, ShowSqlDiagnosisRequest::setLimit));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlDiagnosisRequest::getXLanguage, ShowSqlDiagnosisRequest::setXLanguage));
 
         // response
 

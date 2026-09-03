@@ -15,6 +15,11 @@ public class UpdateSubscriptionRequestBody {
 
     private String remark;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "verification_code")
+
+    private String verificationCode;
+
     public UpdateSubscriptionRequestBody withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -32,6 +37,23 @@ public class UpdateSubscriptionRequestBody {
         this.remark = remark;
     }
 
+    public UpdateSubscriptionRequestBody withVerificationCode(String verificationCode) {
+        this.verificationCode = verificationCode;
+        return this;
+    }
+
+    /**
+     * 订阅终端收到的验证码。
+     * @return verificationCode
+     */
+    public String getVerificationCode() {
+        return verificationCode;
+    }
+
+    public void setVerificationCode(String verificationCode) {
+        this.verificationCode = verificationCode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class UpdateSubscriptionRequestBody {
             return false;
         }
         UpdateSubscriptionRequestBody that = (UpdateSubscriptionRequestBody) obj;
-        return Objects.equals(this.remark, that.remark);
+        return Objects.equals(this.remark, that.remark) && Objects.equals(this.verificationCode, that.verificationCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(remark);
+        return Objects.hash(remark, verificationCode);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class UpdateSubscriptionRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateSubscriptionRequestBody {\n");
         sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
+        sb.append("    verificationCode: ").append(toIndentedString(verificationCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }
