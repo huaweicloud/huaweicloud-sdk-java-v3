@@ -26,7 +26,7 @@ jobs:
         run: |
           token=$(printf "${TOKEN_USERNAME}:${TOKEN_PASSWORD}" | base64)
           curl -o /dev/null --fail -X POST "https://central.sonatype.com/api/v1/publisher/deployments/files" -H "Authorization: Bearer ${token}" -H "Content-Type: application/json" --data-raw "{\"sortField\": \"createdTimestamp\"}"
-          mvn deploy -B -P release -DretryFailedDeploymentCount=10
+          mvn deploy -T 1C -B -P release -DretryFailedDeploymentCount=10
         shell: bash
         env:
           TOKEN_USERNAME: ${{ secrets.TOKEN_USERNAME }}
