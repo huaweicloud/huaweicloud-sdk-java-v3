@@ -10,16 +10,35 @@ import com.huaweicloud.sdk.optverse.v1.model.AuthorizePermissionRequest;
 import com.huaweicloud.sdk.optverse.v1.model.AuthorizePermissionResponse;
 import com.huaweicloud.sdk.optverse.v1.model.BatchDeleteEvolveTaskRequest;
 import com.huaweicloud.sdk.optverse.v1.model.BatchDeleteEvolveTaskResponse;
+import com.huaweicloud.sdk.optverse.v1.model.CancelChatRequest;
+import com.huaweicloud.sdk.optverse.v1.model.CancelChatResponse;
 import com.huaweicloud.sdk.optverse.v1.model.CreateAlgorithmRequest;
 import com.huaweicloud.sdk.optverse.v1.model.CreateAlgorithmResponse;
+import com.huaweicloud.sdk.optverse.v1.model.CreateArtifactsReq;
+import com.huaweicloud.sdk.optverse.v1.model.CreateArtifactsRequest;
+import com.huaweicloud.sdk.optverse.v1.model.CreateArtifactsResponse;
 import com.huaweicloud.sdk.optverse.v1.model.CreateEvolveTaskRequest;
 import com.huaweicloud.sdk.optverse.v1.model.CreateEvolveTaskResponse;
+import com.huaweicloud.sdk.optverse.v1.model.CreateModelServiceReq;
+import com.huaweicloud.sdk.optverse.v1.model.CreateModelServiceRequest;
+import com.huaweicloud.sdk.optverse.v1.model.CreateModelServiceResponse;
+import com.huaweicloud.sdk.optverse.v1.model.CreateModelServiceTaskReq;
+import com.huaweicloud.sdk.optverse.v1.model.CreateModelServiceTaskRequest;
+import com.huaweicloud.sdk.optverse.v1.model.CreateModelServiceTaskResponse;
 import com.huaweicloud.sdk.optverse.v1.model.DeleteAlgorithmFileRequest;
 import com.huaweicloud.sdk.optverse.v1.model.DeleteAlgorithmFileResponse;
 import com.huaweicloud.sdk.optverse.v1.model.DeleteAlgorithmRequest;
 import com.huaweicloud.sdk.optverse.v1.model.DeleteAlgorithmResponse;
+import com.huaweicloud.sdk.optverse.v1.model.DeleteChatRequest;
+import com.huaweicloud.sdk.optverse.v1.model.DeleteChatResponse;
 import com.huaweicloud.sdk.optverse.v1.model.DeleteEvolveTaskRequest;
 import com.huaweicloud.sdk.optverse.v1.model.DeleteEvolveTaskResponse;
+import com.huaweicloud.sdk.optverse.v1.model.DeleteModelAssetRequest;
+import com.huaweicloud.sdk.optverse.v1.model.DeleteModelAssetResponse;
+import com.huaweicloud.sdk.optverse.v1.model.DeleteModelServiceRequest;
+import com.huaweicloud.sdk.optverse.v1.model.DeleteModelServiceResponse;
+import com.huaweicloud.sdk.optverse.v1.model.DownloadFileRequest;
+import com.huaweicloud.sdk.optverse.v1.model.DownloadFileResponse;
 import com.huaweicloud.sdk.optverse.v1.model.EvolveTaskBatchDeleteReq;
 import com.huaweicloud.sdk.optverse.v1.model.EvolveTaskCreateReq;
 import com.huaweicloud.sdk.optverse.v1.model.ImportAlgorithmFileRequest;
@@ -27,8 +46,12 @@ import com.huaweicloud.sdk.optverse.v1.model.ImportAlgorithmFileRequestBody;
 import com.huaweicloud.sdk.optverse.v1.model.ImportAlgorithmFileResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ListAlgorithmsRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ListAlgorithmsResponse;
+import com.huaweicloud.sdk.optverse.v1.model.ListArtifactsRequest;
+import com.huaweicloud.sdk.optverse.v1.model.ListArtifactsResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ListBucketsRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ListBucketsResponse;
+import com.huaweicloud.sdk.optverse.v1.model.ListChatRequest;
+import com.huaweicloud.sdk.optverse.v1.model.ListChatResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ListDirectoryByAlgorithmIdRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ListDirectoryByAlgorithmIdResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ListDirectoryByResultCommitIdRequest;
@@ -37,10 +60,20 @@ import com.huaweicloud.sdk.optverse.v1.model.ListEvolveTaskMetasRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ListEvolveTaskMetasResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ListEvolveTaskStatsRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ListEvolveTaskStatsResponse;
+import com.huaweicloud.sdk.optverse.v1.model.ListModelAssetsRequest;
+import com.huaweicloud.sdk.optverse.v1.model.ListModelAssetsResponse;
+import com.huaweicloud.sdk.optverse.v1.model.ListModelServiceTasksRequest;
+import com.huaweicloud.sdk.optverse.v1.model.ListModelServiceTasksResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ListObjectRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ListObjectResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ListPermissionRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ListPermissionResponse;
+import com.huaweicloud.sdk.optverse.v1.model.PublishChatReq;
+import com.huaweicloud.sdk.optverse.v1.model.PublishChatRequest;
+import com.huaweicloud.sdk.optverse.v1.model.PublishChatResponse;
+import com.huaweicloud.sdk.optverse.v1.model.PublishModelReq;
+import com.huaweicloud.sdk.optverse.v1.model.PublishModelRequest;
+import com.huaweicloud.sdk.optverse.v1.model.PublishModelResponse;
 import com.huaweicloud.sdk.optverse.v1.model.RevokePermissionRequest;
 import com.huaweicloud.sdk.optverse.v1.model.RevokePermissionResponse;
 import com.huaweicloud.sdk.optverse.v1.model.SaveAlgorithmFileRequest;
@@ -50,6 +83,16 @@ import com.huaweicloud.sdk.optverse.v1.model.ShowAlgorithmFileRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ShowAlgorithmFileResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ShowAlgorithmRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ShowAlgorithmResponse;
+import com.huaweicloud.sdk.optverse.v1.model.ShowChatRequest;
+import com.huaweicloud.sdk.optverse.v1.model.ShowChatResponse;
+import com.huaweicloud.sdk.optverse.v1.model.ShowModelAssetDetailRequest;
+import com.huaweicloud.sdk.optverse.v1.model.ShowModelAssetDetailResponse;
+import com.huaweicloud.sdk.optverse.v1.model.ShowModelServiceDetailRequest;
+import com.huaweicloud.sdk.optverse.v1.model.ShowModelServiceDetailResponse;
+import com.huaweicloud.sdk.optverse.v1.model.ShowModelServiceListRequest;
+import com.huaweicloud.sdk.optverse.v1.model.ShowModelServiceListResponse;
+import com.huaweicloud.sdk.optverse.v1.model.ShowModelServiceTaskRequest;
+import com.huaweicloud.sdk.optverse.v1.model.ShowModelServiceTaskResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ShowTaskDetailsRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ShowTaskDetailsResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ShowTaskResultCommitRequest;
@@ -62,13 +105,32 @@ import com.huaweicloud.sdk.optverse.v1.model.ShowTaskRunningLogRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ShowTaskRunningLogResponse;
 import com.huaweicloud.sdk.optverse.v1.model.StartEvolveTaskRequest;
 import com.huaweicloud.sdk.optverse.v1.model.StartEvolveTaskResponse;
+import com.huaweicloud.sdk.optverse.v1.model.StartModelServiceRequest;
+import com.huaweicloud.sdk.optverse.v1.model.StartModelServiceResponse;
 import com.huaweicloud.sdk.optverse.v1.model.StopEvolveTaskRequest;
 import com.huaweicloud.sdk.optverse.v1.model.StopEvolveTaskResponse;
+import com.huaweicloud.sdk.optverse.v1.model.StopModelServiceRequest;
+import com.huaweicloud.sdk.optverse.v1.model.StopModelServiceResponse;
 import com.huaweicloud.sdk.optverse.v1.model.UpdateAlgorithmDto;
 import com.huaweicloud.sdk.optverse.v1.model.UpdateAlgorithmRequest;
 import com.huaweicloud.sdk.optverse.v1.model.UpdateAlgorithmResponse;
+import com.huaweicloud.sdk.optverse.v1.model.UpdateChatReq;
+import com.huaweicloud.sdk.optverse.v1.model.UpdateChatRequest;
+import com.huaweicloud.sdk.optverse.v1.model.UpdateChatResponse;
 import com.huaweicloud.sdk.optverse.v1.model.UpdateEvolveTaskRequest;
 import com.huaweicloud.sdk.optverse.v1.model.UpdateEvolveTaskResponse;
+import com.huaweicloud.sdk.optverse.v1.model.UpdateModelAssetReq;
+import com.huaweicloud.sdk.optverse.v1.model.UpdateModelAssetRequest;
+import com.huaweicloud.sdk.optverse.v1.model.UpdateModelAssetResponse;
+import com.huaweicloud.sdk.optverse.v1.model.UpdateModelServiceReq;
+import com.huaweicloud.sdk.optverse.v1.model.UpdateModelServiceRequest;
+import com.huaweicloud.sdk.optverse.v1.model.UpdateModelServiceResponse;
+import com.huaweicloud.sdk.optverse.v1.model.UploadFileRequest;
+import com.huaweicloud.sdk.optverse.v1.model.UploadFileRequestBody;
+import com.huaweicloud.sdk.optverse.v1.model.UploadFileResponse;
+import com.huaweicloud.sdk.optverse.v1.model.UploadModelServiceTaskFileRequest;
+import com.huaweicloud.sdk.optverse.v1.model.UploadModelServiceTaskFileRequestBody;
+import com.huaweicloud.sdk.optverse.v1.model.UploadModelServiceTaskFileResponse;
 
 import java.util.List;
 
@@ -797,6 +859,799 @@ public class OptVerseMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EvolveTaskCreateReq.class),
             f -> f.withMarshaller(UpdateEvolveTaskRequest::getBody, UpdateEvolveTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteModelAssetRequest, DeleteModelAssetResponse> deleteModelAsset =
+        genForDeleteModelAsset();
+
+    private static HttpRequestDef<DeleteModelAssetRequest, DeleteModelAssetResponse> genForDeleteModelAsset() {
+        // basic
+        HttpRequestDef.Builder<DeleteModelAssetRequest, DeleteModelAssetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteModelAssetRequest.class, DeleteModelAssetResponse.class)
+                .withName("DeleteModelAsset")
+                .withUri("/v1/{project_id}/asset-manager/model-assets/{asset_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("asset_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteModelAssetRequest::getAssetId, DeleteModelAssetRequest::setAssetId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListModelAssetsRequest, ListModelAssetsResponse> listModelAssets =
+        genForListModelAssets();
+
+    private static HttpRequestDef<ListModelAssetsRequest, ListModelAssetsResponse> genForListModelAssets() {
+        // basic
+        HttpRequestDef.Builder<ListModelAssetsRequest, ListModelAssetsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListModelAssetsRequest.class, ListModelAssetsResponse.class)
+                .withName("ListModelAssets")
+                .withUri("/v1/{project_id}/asset-manager/model-assets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("asset_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListModelAssetsRequest::getAssetCode, ListModelAssetsRequest::setAssetCode));
+        builder.<String>withRequestField("asset_source",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListModelAssetsRequest::getAssetSource, ListModelAssetsRequest::setAssetSource));
+        builder.<String>withRequestField("asset_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListModelAssetsRequest::getAssetType, ListModelAssetsRequest::setAssetType));
+        builder.<String>withRequestField("sub_asset_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListModelAssetsRequest::getSubAssetType, ListModelAssetsRequest::setSubAssetType));
+        builder.<String>withRequestField("chat_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListModelAssetsRequest::getChatId, ListModelAssetsRequest::setChatId));
+        builder.<List<String>>withRequestField("asset_actions",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListModelAssetsRequest::getAssetActions, ListModelAssetsRequest::setAssetActions));
+        builder.<String>withRequestField("asset_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListModelAssetsRequest::getAssetName, ListModelAssetsRequest::setAssetName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListModelAssetsRequest::getOffset, ListModelAssetsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListModelAssetsRequest::getLimit, ListModelAssetsRequest::setLimit));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListModelAssetsRequest::getSortDir, ListModelAssetsRequest::setSortDir));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowModelAssetDetailRequest, ShowModelAssetDetailResponse> showModelAssetDetail =
+        genForShowModelAssetDetail();
+
+    private static HttpRequestDef<ShowModelAssetDetailRequest, ShowModelAssetDetailResponse> genForShowModelAssetDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowModelAssetDetailRequest, ShowModelAssetDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowModelAssetDetailRequest.class, ShowModelAssetDetailResponse.class)
+            .withName("ShowModelAssetDetail")
+            .withUri("/v1/{project_id}/asset-manager/model-assets/{asset_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("asset_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModelAssetDetailRequest::getAssetId, ShowModelAssetDetailRequest::setAssetId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateModelAssetRequest, UpdateModelAssetResponse> updateModelAsset =
+        genForUpdateModelAsset();
+
+    private static HttpRequestDef<UpdateModelAssetRequest, UpdateModelAssetResponse> genForUpdateModelAsset() {
+        // basic
+        HttpRequestDef.Builder<UpdateModelAssetRequest, UpdateModelAssetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateModelAssetRequest.class, UpdateModelAssetResponse.class)
+                .withName("UpdateModelAsset")
+                .withUri("/v1/{project_id}/asset-manager/model-assets/{asset_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("asset_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateModelAssetRequest::getAssetId, UpdateModelAssetRequest::setAssetId));
+        builder.<UpdateModelAssetReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateModelAssetReq.class),
+            f -> f.withMarshaller(UpdateModelAssetRequest::getBody, UpdateModelAssetRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CancelChatRequest, CancelChatResponse> cancelChat = genForCancelChat();
+
+    private static HttpRequestDef<CancelChatRequest, CancelChatResponse> genForCancelChat() {
+        // basic
+        HttpRequestDef.Builder<CancelChatRequest, CancelChatResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CancelChatRequest.class, CancelChatResponse.class)
+                .withName("CancelChat")
+                .withUri("/v1/{project_id}/chats/{chat_id}/cancel")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chat_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelChatRequest::getChatId, CancelChatRequest::setChatId));
+        builder.<String>withRequestField("X-Chat-Route-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelChatRequest::getXChatRouteId, CancelChatRequest::setXChatRouteId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateArtifactsRequest, CreateArtifactsResponse> createArtifacts =
+        genForCreateArtifacts();
+
+    private static HttpRequestDef<CreateArtifactsRequest, CreateArtifactsResponse> genForCreateArtifacts() {
+        // basic
+        HttpRequestDef.Builder<CreateArtifactsRequest, CreateArtifactsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateArtifactsRequest.class, CreateArtifactsResponse.class)
+                .withName("CreateArtifacts")
+                .withUri("/v1/{project_id}/chats/{chat_id}/artifacts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chat_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateArtifactsRequest::getChatId, CreateArtifactsRequest::setChatId));
+        builder.<CreateArtifactsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateArtifactsReq.class),
+            f -> f.withMarshaller(CreateArtifactsRequest::getBody, CreateArtifactsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteChatRequest, DeleteChatResponse> deleteChat = genForDeleteChat();
+
+    private static HttpRequestDef<DeleteChatRequest, DeleteChatResponse> genForDeleteChat() {
+        // basic
+        HttpRequestDef.Builder<DeleteChatRequest, DeleteChatResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteChatRequest.class, DeleteChatResponse.class)
+                .withName("DeleteChat")
+                .withUri("/v1/{project_id}/chats/{chat_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chat_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteChatRequest::getChatId, DeleteChatRequest::setChatId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadFileRequest, DownloadFileResponse> downloadFile = genForDownloadFile();
+
+    private static HttpRequestDef<DownloadFileRequest, DownloadFileResponse> genForDownloadFile() {
+        // basic
+        HttpRequestDef.Builder<DownloadFileRequest, DownloadFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, DownloadFileRequest.class, DownloadFileResponse.class)
+                .withName("DownloadFile")
+                .withUri("/v1/{project_id}/chats/{chat_id}/file/{filename}/download")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chat_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadFileRequest::getChatId, DownloadFileRequest::setChatId));
+        builder.<String>withRequestField("filename",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadFileRequest::getFilename, DownloadFileRequest::setFilename));
+        builder.<Boolean>withRequestField("X-Need-Content",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DownloadFileRequest::getXNeedContent, DownloadFileRequest::setXNeedContent));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListArtifactsRequest, ListArtifactsResponse> listArtifacts =
+        genForListArtifacts();
+
+    private static HttpRequestDef<ListArtifactsRequest, ListArtifactsResponse> genForListArtifacts() {
+        // basic
+        HttpRequestDef.Builder<ListArtifactsRequest, ListArtifactsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListArtifactsRequest.class, ListArtifactsResponse.class)
+                .withName("ListArtifacts")
+                .withUri("/v1/{project_id}/chats/{chat_id}/artifacts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chat_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListArtifactsRequest::getChatId, ListArtifactsRequest::setChatId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListChatRequest, ListChatResponse> listChat = genForListChat();
+
+    private static HttpRequestDef<ListChatRequest, ListChatResponse> genForListChat() {
+        // basic
+        HttpRequestDef.Builder<ListChatRequest, ListChatResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListChatRequest.class, ListChatResponse.class)
+                .withName("ListChat")
+                .withUri("/v1/{project_id}/chats")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListChatRequest::getLimit, ListChatRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListChatRequest::getOffset, ListChatRequest::setOffset));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListChatRequest::getSortDir, ListChatRequest::setSortDir));
+        builder.<String>withRequestField("title",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListChatRequest::getTitle, ListChatRequest::setTitle));
+        builder.<String>withRequestField("agent_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListChatRequest::getAgentType, ListChatRequest::setAgentType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<PublishChatRequest, PublishChatResponse> publishChat = genForPublishChat();
+
+    private static HttpRequestDef<PublishChatRequest, PublishChatResponse> genForPublishChat() {
+        // basic
+        HttpRequestDef.Builder<PublishChatRequest, PublishChatResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, PublishChatRequest.class, PublishChatResponse.class)
+                .withName("PublishChat")
+                .withUri("/v1/{project_id}/chats/{chat_id}/publish")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chat_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PublishChatRequest::getChatId, PublishChatRequest::setChatId));
+        builder.<PublishChatReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PublishChatReq.class),
+            f -> f.withMarshaller(PublishChatRequest::getBody, PublishChatRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowChatRequest, ShowChatResponse> showChat = genForShowChat();
+
+    private static HttpRequestDef<ShowChatRequest, ShowChatResponse> genForShowChat() {
+        // basic
+        HttpRequestDef.Builder<ShowChatRequest, ShowChatResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowChatRequest.class, ShowChatResponse.class)
+                .withName("ShowChat")
+                .withUri("/v1/{project_id}/chats/{chat_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chat_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowChatRequest::getChatId, ShowChatRequest::setChatId));
+
+        // response
+
+        builder.<String>withResponseField("X-Chat-Route-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowChatResponse::getXChatRouteId, ShowChatResponse::setXChatRouteId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateChatRequest, UpdateChatResponse> updateChat = genForUpdateChat();
+
+    private static HttpRequestDef<UpdateChatRequest, UpdateChatResponse> genForUpdateChat() {
+        // basic
+        HttpRequestDef.Builder<UpdateChatRequest, UpdateChatResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateChatRequest.class, UpdateChatResponse.class)
+                .withName("UpdateChat")
+                .withUri("/v1/{project_id}/chats/{chat_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chat_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateChatRequest::getChatId, UpdateChatRequest::setChatId));
+        builder.<UpdateChatReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateChatReq.class),
+            f -> f.withMarshaller(UpdateChatRequest::getBody, UpdateChatRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadFileRequest, UploadFileResponse> uploadFile = genForUploadFile();
+
+    private static HttpRequestDef<UploadFileRequest, UploadFileResponse> genForUploadFile() {
+        // basic
+        HttpRequestDef.Builder<UploadFileRequest, UploadFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UploadFileRequest.class, UploadFileResponse.class)
+                .withName("UploadFile")
+                .withUri("/v1/{project_id}/chats/file/upload")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("X-Chat-Route-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadFileRequest::getXChatRouteId, UploadFileRequest::setXChatRouteId));
+        builder.<UploadFileRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadFileRequestBody.class),
+            f -> f.withMarshaller(UploadFileRequest::getBody, UploadFileRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateModelServiceRequest, CreateModelServiceResponse> createModelService =
+        genForCreateModelService();
+
+    private static HttpRequestDef<CreateModelServiceRequest, CreateModelServiceResponse> genForCreateModelService() {
+        // basic
+        HttpRequestDef.Builder<CreateModelServiceRequest, CreateModelServiceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateModelServiceRequest.class, CreateModelServiceResponse.class)
+                .withName("CreateModelService")
+                .withUri("/v1/{project_id}/model-service/services")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateModelServiceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateModelServiceReq.class),
+            f -> f.withMarshaller(CreateModelServiceRequest::getBody, CreateModelServiceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateModelServiceTaskRequest, CreateModelServiceTaskResponse> createModelServiceTask =
+        genForCreateModelServiceTask();
+
+    private static HttpRequestDef<CreateModelServiceTaskRequest, CreateModelServiceTaskResponse> genForCreateModelServiceTask() {
+        // basic
+        HttpRequestDef.Builder<CreateModelServiceTaskRequest, CreateModelServiceTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateModelServiceTaskRequest.class, CreateModelServiceTaskResponse.class)
+            .withName("CreateModelServiceTask")
+            .withUri("/v1/{project_id}/model-service/services/{service_id}/tasks")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateModelServiceTaskRequest::getServiceId,
+                CreateModelServiceTaskRequest::setServiceId));
+        builder.<CreateModelServiceTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateModelServiceTaskReq.class),
+            f -> f.withMarshaller(CreateModelServiceTaskRequest::getBody, CreateModelServiceTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteModelServiceRequest, DeleteModelServiceResponse> deleteModelService =
+        genForDeleteModelService();
+
+    private static HttpRequestDef<DeleteModelServiceRequest, DeleteModelServiceResponse> genForDeleteModelService() {
+        // basic
+        HttpRequestDef.Builder<DeleteModelServiceRequest, DeleteModelServiceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteModelServiceRequest.class, DeleteModelServiceResponse.class)
+                .withName("DeleteModelService")
+                .withUri("/v1/{project_id}/model-service/services/{service_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteModelServiceRequest::getServiceId, DeleteModelServiceRequest::setServiceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListModelServiceTasksRequest, ListModelServiceTasksResponse> listModelServiceTasks =
+        genForListModelServiceTasks();
+
+    private static HttpRequestDef<ListModelServiceTasksRequest, ListModelServiceTasksResponse> genForListModelServiceTasks() {
+        // basic
+        HttpRequestDef.Builder<ListModelServiceTasksRequest, ListModelServiceTasksResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListModelServiceTasksRequest.class, ListModelServiceTasksResponse.class)
+            .withName("ListModelServiceTasks")
+            .withUri("/v1/{project_id}/model-service/services/{service_id}/tasks")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListModelServiceTasksRequest::getServiceId,
+                ListModelServiceTasksRequest::setServiceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowModelServiceDetailRequest, ShowModelServiceDetailResponse> showModelServiceDetail =
+        genForShowModelServiceDetail();
+
+    private static HttpRequestDef<ShowModelServiceDetailRequest, ShowModelServiceDetailResponse> genForShowModelServiceDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowModelServiceDetailRequest, ShowModelServiceDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowModelServiceDetailRequest.class, ShowModelServiceDetailResponse.class)
+            .withName("ShowModelServiceDetail")
+            .withUri("/v1/{project_id}/model-service/services/{service_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModelServiceDetailRequest::getServiceId,
+                ShowModelServiceDetailRequest::setServiceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowModelServiceListRequest, ShowModelServiceListResponse> showModelServiceList =
+        genForShowModelServiceList();
+
+    private static HttpRequestDef<ShowModelServiceListRequest, ShowModelServiceListResponse> genForShowModelServiceList() {
+        // basic
+        HttpRequestDef.Builder<ShowModelServiceListRequest, ShowModelServiceListResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowModelServiceListRequest.class, ShowModelServiceListResponse.class)
+            .withName("ShowModelServiceList")
+            .withUri("/v1/{project_id}/model-service/services")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("infer_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModelServiceListRequest::getInferType,
+                ShowModelServiceListRequest::setInferType));
+        builder.<String>withRequestField("asset_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModelServiceListRequest::getAssetId, ShowModelServiceListRequest::setAssetId));
+        builder.<String>withRequestField("asset_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModelServiceListRequest::getAssetType,
+                ShowModelServiceListRequest::setAssetType));
+        builder.<String>withRequestField("asset_sub_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModelServiceListRequest::getAssetSubType,
+                ShowModelServiceListRequest::setAssetSubType));
+        builder.<String>withRequestField("chip_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModelServiceListRequest::getChipType, ShowModelServiceListRequest::setChipType));
+        builder.<String>withRequestField("platform",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModelServiceListRequest::getPlatform, ShowModelServiceListRequest::setPlatform));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModelServiceListRequest::getStatus, ShowModelServiceListRequest::setStatus));
+        builder.<String>withRequestField("use_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModelServiceListRequest::getUseType, ShowModelServiceListRequest::setUseType));
+        builder.<String>withRequestField("model_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModelServiceListRequest::getModelName,
+                ShowModelServiceListRequest::setModelName));
+        builder.<String>withRequestField("service_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModelServiceListRequest::getServiceName,
+                ShowModelServiceListRequest::setServiceName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowModelServiceListRequest::getOffset, ShowModelServiceListRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowModelServiceListRequest::getLimit, ShowModelServiceListRequest::setLimit));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModelServiceListRequest::getSortDir, ShowModelServiceListRequest::setSortDir));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowModelServiceTaskRequest, ShowModelServiceTaskResponse> showModelServiceTask =
+        genForShowModelServiceTask();
+
+    private static HttpRequestDef<ShowModelServiceTaskRequest, ShowModelServiceTaskResponse> genForShowModelServiceTask() {
+        // basic
+        HttpRequestDef.Builder<ShowModelServiceTaskRequest, ShowModelServiceTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowModelServiceTaskRequest.class, ShowModelServiceTaskResponse.class)
+            .withName("ShowModelServiceTask")
+            .withUri("/v1/{project_id}/model-service/services/{service_id}/tasks/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModelServiceTaskRequest::getServiceId,
+                ShowModelServiceTaskRequest::setServiceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModelServiceTaskRequest::getTaskId, ShowModelServiceTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartModelServiceRequest, StartModelServiceResponse> startModelService =
+        genForStartModelService();
+
+    private static HttpRequestDef<StartModelServiceRequest, StartModelServiceResponse> genForStartModelService() {
+        // basic
+        HttpRequestDef.Builder<StartModelServiceRequest, StartModelServiceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StartModelServiceRequest.class, StartModelServiceResponse.class)
+                .withName("StartModelService")
+                .withUri("/v1/{project_id}/model-service/services/{service_id}/start")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartModelServiceRequest::getServiceId, StartModelServiceRequest::setServiceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopModelServiceRequest, StopModelServiceResponse> stopModelService =
+        genForStopModelService();
+
+    private static HttpRequestDef<StopModelServiceRequest, StopModelServiceResponse> genForStopModelService() {
+        // basic
+        HttpRequestDef.Builder<StopModelServiceRequest, StopModelServiceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopModelServiceRequest.class, StopModelServiceResponse.class)
+                .withName("StopModelService")
+                .withUri("/v1/{project_id}/model-service/services/{service_id}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopModelServiceRequest::getServiceId, StopModelServiceRequest::setServiceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateModelServiceRequest, UpdateModelServiceResponse> updateModelService =
+        genForUpdateModelService();
+
+    private static HttpRequestDef<UpdateModelServiceRequest, UpdateModelServiceResponse> genForUpdateModelService() {
+        // basic
+        HttpRequestDef.Builder<UpdateModelServiceRequest, UpdateModelServiceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateModelServiceRequest.class, UpdateModelServiceResponse.class)
+                .withName("UpdateModelService")
+                .withUri("/v1/{project_id}/model-service/services/{service_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateModelServiceRequest::getServiceId, UpdateModelServiceRequest::setServiceId));
+        builder.<UpdateModelServiceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateModelServiceReq.class),
+            f -> f.withMarshaller(UpdateModelServiceRequest::getBody, UpdateModelServiceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadModelServiceTaskFileRequest, UploadModelServiceTaskFileResponse> uploadModelServiceTaskFile =
+        genForUploadModelServiceTaskFile();
+
+    private static HttpRequestDef<UploadModelServiceTaskFileRequest, UploadModelServiceTaskFileResponse> genForUploadModelServiceTaskFile() {
+        // basic
+        HttpRequestDef.Builder<UploadModelServiceTaskFileRequest, UploadModelServiceTaskFileResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UploadModelServiceTaskFileRequest.class,
+                    UploadModelServiceTaskFileResponse.class)
+                .withName("UploadModelServiceTaskFile")
+                .withUri("/v1/{project_id}/model-service/services/{service_id}/files/upload")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadModelServiceTaskFileRequest::getServiceId,
+                UploadModelServiceTaskFileRequest::setServiceId));
+        builder.<UploadModelServiceTaskFileRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadModelServiceTaskFileRequestBody.class),
+            f -> f.withMarshaller(UploadModelServiceTaskFileRequest::getBody,
+                UploadModelServiceTaskFileRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<PublishModelRequest, PublishModelResponse> publishModel = genForPublishModel();
+
+    private static HttpRequestDef<PublishModelRequest, PublishModelResponse> genForPublishModel() {
+        // basic
+        HttpRequestDef.Builder<PublishModelRequest, PublishModelResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, PublishModelRequest.class, PublishModelResponse.class)
+                .withName("PublishModel")
+                .withUri("/v1/{project_id}/model-train/model/publish")
+                .withContentType("application/json");
+
+        // requests
+        builder.<PublishModelReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PublishModelReq.class),
+            f -> f.withMarshaller(PublishModelRequest::getBody, PublishModelRequest::setBody));
 
         // response
 

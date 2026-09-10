@@ -12,25 +12,25 @@ import java.util.Objects;
 public class CreateOpsEvaluatorResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "evaluator_id")
 
-    private Object body;
+    private String evaluatorId;
 
-    public CreateOpsEvaluatorResponse withBody(Object body) {
-        this.body = body;
+    public CreateOpsEvaluatorResponse withEvaluatorId(String evaluatorId) {
+        this.evaluatorId = evaluatorId;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * **参数解释：** 成功创建后生成的评估器唯一标识符。 **取值范围：** 符合通用唯一识别码(UUID)标准的字符串。 
+     * @return evaluatorId
      */
-    public Object getBody() {
-        return body;
+    public String getEvaluatorId() {
+        return evaluatorId;
     }
 
-    public void setBody(Object body) {
-        this.body = body;
+    public void setEvaluatorId(String evaluatorId) {
+        this.evaluatorId = evaluatorId;
     }
 
     @Override
@@ -42,19 +42,19 @@ public class CreateOpsEvaluatorResponse extends SdkResponse {
             return false;
         }
         CreateOpsEvaluatorResponse that = (CreateOpsEvaluatorResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.evaluatorId, that.evaluatorId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(evaluatorId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateOpsEvaluatorResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    evaluatorId: ").append(toIndentedString(evaluatorId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

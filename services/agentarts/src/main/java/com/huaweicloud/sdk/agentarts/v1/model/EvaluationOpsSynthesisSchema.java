@@ -11,11 +11,6 @@ import java.util.Objects;
 public class EvaluationOpsSynthesisSchema {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -29,23 +24,6 @@ public class EvaluationOpsSynthesisSchema {
     @JsonProperty(value = "synthesis_requirement")
 
     private String synthesisRequirement;
-
-    public EvaluationOpsSynthesisSchema withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /**
-     * **参数解释：**   合成字段的id。 **取值范围：**   由字母、数字、下划线组成。
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public EvaluationOpsSynthesisSchema withName(String name) {
         this.name = name;
@@ -107,21 +85,19 @@ public class EvaluationOpsSynthesisSchema {
             return false;
         }
         EvaluationOpsSynthesisSchema that = (EvaluationOpsSynthesisSchema) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.description, that.description)
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.synthesisRequirement, that.synthesisRequirement);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, synthesisRequirement);
+        return Objects.hash(name, description, synthesisRequirement);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class EvaluationOpsSynthesisSchema {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    synthesisRequirement: ").append(toIndentedString(synthesisRequirement)).append("\n");

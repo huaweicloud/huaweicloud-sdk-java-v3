@@ -15,6 +15,8 @@ import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrResponse;
 import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallResponse;
+import com.huaweicloud.sdk.vpc.v3.model.AttachSubNetworkInterfaceRequest;
+import com.huaweicloud.sdk.vpc.v3.model.AttachSubNetworkInterfaceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateClouddcnSubnetsTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateFirewallTagsRequest;
@@ -25,16 +27,22 @@ import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteClouddcnSubnetsTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteFirewallTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteFirewallTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeletePortTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeletePortTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteSubNetworkInterfaceTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteSubNetworkInterfaceTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CountFirewallsByTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CountFirewallsByTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CountPortsByTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CountPortsByTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CountSubNetworkInterfacesByTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CountSubNetworkInterfacesByTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateClouddcnSubnetRequest;
@@ -51,6 +59,8 @@ import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRuleRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRuleResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateSubNetworkInterfaceTagRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateSubNetworkInterfaceTagResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorFilterRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorFilterResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorFilterRuleRequest;
@@ -81,6 +91,8 @@ import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupRuleRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupRuleResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteSubNetworkInterfaceTagRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteSubNetworkInterfaceTagResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorFilterRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorFilterResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorFilterRuleRequest;
@@ -91,6 +103,8 @@ import com.huaweicloud.sdk.vpc.v3.model.DeleteVirsubnetCidrReservationRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteVirsubnetCidrReservationResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteVpcResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DetachSubNetworkInterfaceRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DetachSubNetworkInterfaceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListAddressGroupRequest;
@@ -121,6 +135,10 @@ import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListSubNetworkInterfaceTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListSubNetworkInterfaceTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListSubNetworkInterfacesByTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListSubNetworkInterfacesByTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSubNetworkInterfacesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSubNetworkInterfacesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorFilterRulesRequest;
@@ -167,6 +185,8 @@ import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRuleRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRuleResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfaceTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfaceTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfacesQuantityRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfacesQuantityResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorFilterRequest;
@@ -277,6 +297,33 @@ public class VpcClient {
     }
 
     /**
+     * 挂载辅助弹性网卡
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AttachSubNetworkInterfaceRequest 请求对象
+     * @return AttachSubNetworkInterfaceResponse
+     */
+    public AttachSubNetworkInterfaceResponse attachSubNetworkInterface(AttachSubNetworkInterfaceRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.attachSubNetworkInterface);
+    }
+
+    /**
+     * 挂载辅助弹性网卡
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AttachSubNetworkInterfaceRequest 请求对象
+     * @return SyncInvoker<AttachSubNetworkInterfaceRequest, AttachSubNetworkInterfaceResponse>
+     */
+    public SyncInvoker<AttachSubNetworkInterfaceRequest, AttachSubNetworkInterfaceResponse> attachSubNetworkInterfaceInvoker(
+        AttachSubNetworkInterfaceRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.attachSubNetworkInterface, hcClient);
+    }
+
+    /**
      * 批量添加端口资源标签
      *
      * 为指定的端口批量添加标签。
@@ -368,6 +415,38 @@ public class VpcClient {
     }
 
     /**
+     * 批量添加辅助弹性网卡资源标签
+     *
+     * 为指定的辅助弹性网卡资源实例批量添加标签。
+     * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateSubNetworkInterfaceTagsRequest 请求对象
+     * @return BatchCreateSubNetworkInterfaceTagsResponse
+     */
+    public BatchCreateSubNetworkInterfaceTagsResponse batchCreateSubNetworkInterfaceTags(
+        BatchCreateSubNetworkInterfaceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.batchCreateSubNetworkInterfaceTags);
+    }
+
+    /**
+     * 批量添加辅助弹性网卡资源标签
+     *
+     * 为指定的辅助弹性网卡资源实例批量添加标签。
+     * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateSubNetworkInterfaceTagsRequest 请求对象
+     * @return SyncInvoker<BatchCreateSubNetworkInterfaceTagsRequest, BatchCreateSubNetworkInterfaceTagsResponse>
+     */
+    public SyncInvoker<BatchCreateSubNetworkInterfaceTagsRequest, BatchCreateSubNetworkInterfaceTagsResponse> batchCreateSubNetworkInterfaceTagsInvoker(
+        BatchCreateSubNetworkInterfaceTagsRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.batchCreateSubNetworkInterfaceTags, hcClient);
+    }
+
+    /**
      * 批量删除端口资源标签
      *
      * 为指定的端口资源实例批量删除标签。
@@ -399,6 +478,38 @@ public class VpcClient {
     }
 
     /**
+     * 批量删除辅助弹性网卡资源标签
+     *
+     * 为指定的辅助弹性网卡资源实例批量删除标签。
+     * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSubNetworkInterfaceTagsRequest 请求对象
+     * @return BatchDeleteSubNetworkInterfaceTagsResponse
+     */
+    public BatchDeleteSubNetworkInterfaceTagsResponse batchDeleteSubNetworkInterfaceTags(
+        BatchDeleteSubNetworkInterfaceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.batchDeleteSubNetworkInterfaceTags);
+    }
+
+    /**
+     * 批量删除辅助弹性网卡资源标签
+     *
+     * 为指定的辅助弹性网卡资源实例批量删除标签。
+     * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSubNetworkInterfaceTagsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteSubNetworkInterfaceTagsRequest, BatchDeleteSubNetworkInterfaceTagsResponse>
+     */
+    public SyncInvoker<BatchDeleteSubNetworkInterfaceTagsRequest, BatchDeleteSubNetworkInterfaceTagsResponse> batchDeleteSubNetworkInterfaceTagsInvoker(
+        BatchDeleteSubNetworkInterfaceTagsRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.batchDeleteSubNetworkInterfaceTags, hcClient);
+    }
+
+    /**
      * 查询端口资源实例数量
      *
      * 使用标签过滤查询端口实例数量。
@@ -425,6 +536,36 @@ public class VpcClient {
     public SyncInvoker<CountPortsByTagsRequest, CountPortsByTagsResponse> countPortsByTagsInvoker(
         CountPortsByTagsRequest request) {
         return new SyncInvoker<>(request, VpcMeta.countPortsByTags, hcClient);
+    }
+
+    /**
+     * 查询辅助弹性网卡资源实例数量
+     *
+     * 使用标签过滤查询辅助弹性网卡实例数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountSubNetworkInterfacesByTagsRequest 请求对象
+     * @return CountSubNetworkInterfacesByTagsResponse
+     */
+    public CountSubNetworkInterfacesByTagsResponse countSubNetworkInterfacesByTags(
+        CountSubNetworkInterfacesByTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.countSubNetworkInterfacesByTags);
+    }
+
+    /**
+     * 查询辅助弹性网卡资源实例数量
+     *
+     * 使用标签过滤查询辅助弹性网卡实例数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountSubNetworkInterfacesByTagsRequest 请求对象
+     * @return SyncInvoker<CountSubNetworkInterfacesByTagsRequest, CountSubNetworkInterfacesByTagsResponse>
+     */
+    public SyncInvoker<CountSubNetworkInterfacesByTagsRequest, CountSubNetworkInterfacesByTagsResponse> countSubNetworkInterfacesByTagsInvoker(
+        CountSubNetworkInterfacesByTagsRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.countSubNetworkInterfacesByTags, hcClient);
     }
 
     /**
@@ -542,6 +683,38 @@ public class VpcClient {
     public SyncInvoker<CreateSubNetworkInterfaceRequest, CreateSubNetworkInterfaceResponse> createSubNetworkInterfaceInvoker(
         CreateSubNetworkInterfaceRequest request) {
         return new SyncInvoker<>(request, VpcMeta.createSubNetworkInterface, hcClient);
+    }
+
+    /**
+     * 添加辅助弹性网卡资源标签
+     *
+     * 给指定辅助弹性网卡资源实例增加标签信息。
+     * 此接口为幂等接口：创建时，如果创建的标签之前已经存在（key相同），则覆盖之前的标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSubNetworkInterfaceTagRequest 请求对象
+     * @return CreateSubNetworkInterfaceTagResponse
+     */
+    public CreateSubNetworkInterfaceTagResponse createSubNetworkInterfaceTag(
+        CreateSubNetworkInterfaceTagRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.createSubNetworkInterfaceTag);
+    }
+
+    /**
+     * 添加辅助弹性网卡资源标签
+     *
+     * 给指定辅助弹性网卡资源实例增加标签信息。
+     * 此接口为幂等接口：创建时，如果创建的标签之前已经存在（key相同），则覆盖之前的标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSubNetworkInterfaceTagRequest 请求对象
+     * @return SyncInvoker<CreateSubNetworkInterfaceTagRequest, CreateSubNetworkInterfaceTagResponse>
+     */
+    public SyncInvoker<CreateSubNetworkInterfaceTagRequest, CreateSubNetworkInterfaceTagResponse> createSubNetworkInterfaceTagInvoker(
+        CreateSubNetworkInterfaceTagRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.createSubNetworkInterfaceTag, hcClient);
     }
 
     /**
@@ -780,6 +953,38 @@ public class VpcClient {
     }
 
     /**
+     * 删除辅助弹性网卡资源标签
+     *
+     * 删除指定辅助弹性网卡资源实例的标签信息
+     * 该接口为幂等接口：删除的key不存在报404，key不能为空或者空字符串。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSubNetworkInterfaceTagRequest 请求对象
+     * @return DeleteSubNetworkInterfaceTagResponse
+     */
+    public DeleteSubNetworkInterfaceTagResponse deleteSubNetworkInterfaceTag(
+        DeleteSubNetworkInterfaceTagRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.deleteSubNetworkInterfaceTag);
+    }
+
+    /**
+     * 删除辅助弹性网卡资源标签
+     *
+     * 删除指定辅助弹性网卡资源实例的标签信息
+     * 该接口为幂等接口：删除的key不存在报404，key不能为空或者空字符串。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSubNetworkInterfaceTagRequest 请求对象
+     * @return SyncInvoker<DeleteSubNetworkInterfaceTagRequest, DeleteSubNetworkInterfaceTagResponse>
+     */
+    public SyncInvoker<DeleteSubNetworkInterfaceTagRequest, DeleteSubNetworkInterfaceTagResponse> deleteSubNetworkInterfaceTagInvoker(
+        DeleteSubNetworkInterfaceTagRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.deleteSubNetworkInterfaceTag, hcClient);
+    }
+
+    /**
      * 删除流量镜像筛选条件
      *
      * 删除流量镜像筛选条件
@@ -895,6 +1100,35 @@ public class VpcClient {
     public SyncInvoker<DeleteVirsubnetCidrReservationRequest, DeleteVirsubnetCidrReservationResponse> deleteVirsubnetCidrReservationInvoker(
         DeleteVirsubnetCidrReservationRequest request) {
         return new SyncInvoker<>(request, VpcMeta.deleteVirsubnetCidrReservation, hcClient);
+    }
+
+    /**
+     * 卸载辅助弹性网卡
+     *
+     * 辅助弹性网卡支持从云服务器网卡之间迁移，用户可以通过此接口从云服务器网卡中解绑辅助弹性网卡，再绑定辅助弹性网卡到其他云服务器网卡上。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DetachSubNetworkInterfaceRequest 请求对象
+     * @return DetachSubNetworkInterfaceResponse
+     */
+    public DetachSubNetworkInterfaceResponse detachSubNetworkInterface(DetachSubNetworkInterfaceRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.detachSubNetworkInterface);
+    }
+
+    /**
+     * 卸载辅助弹性网卡
+     *
+     * 辅助弹性网卡支持从云服务器网卡之间迁移，用户可以通过此接口从云服务器网卡中解绑辅助弹性网卡，再绑定辅助弹性网卡到其他云服务器网卡上。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DetachSubNetworkInterfaceRequest 请求对象
+     * @return SyncInvoker<DetachSubNetworkInterfaceRequest, DetachSubNetworkInterfaceResponse>
+     */
+    public SyncInvoker<DetachSubNetworkInterfaceRequest, DetachSubNetworkInterfaceResponse> detachSubNetworkInterfaceInvoker(
+        DetachSubNetworkInterfaceRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.detachSubNetworkInterface, hcClient);
     }
 
     /**
@@ -1041,6 +1275,35 @@ public class VpcClient {
     }
 
     /**
+     * 查询辅助弹性网卡项目标签
+     *
+     * 查询租户在指定项目下，辅助弹性网卡资源的所有标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubNetworkInterfaceTagsRequest 请求对象
+     * @return ListSubNetworkInterfaceTagsResponse
+     */
+    public ListSubNetworkInterfaceTagsResponse listSubNetworkInterfaceTags(ListSubNetworkInterfaceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.listSubNetworkInterfaceTags);
+    }
+
+    /**
+     * 查询辅助弹性网卡项目标签
+     *
+     * 查询租户在指定项目下，辅助弹性网卡资源的所有标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubNetworkInterfaceTagsRequest 请求对象
+     * @return SyncInvoker<ListSubNetworkInterfaceTagsRequest, ListSubNetworkInterfaceTagsResponse>
+     */
+    public SyncInvoker<ListSubNetworkInterfaceTagsRequest, ListSubNetworkInterfaceTagsResponse> listSubNetworkInterfaceTagsInvoker(
+        ListSubNetworkInterfaceTagsRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.listSubNetworkInterfaceTags, hcClient);
+    }
+
+    /**
      * 查询租户下辅助弹性网卡列表
      *
      * 查询辅助弹性网卡列表，单次查询最多返回2000条数据
@@ -1067,6 +1330,36 @@ public class VpcClient {
     public SyncInvoker<ListSubNetworkInterfacesRequest, ListSubNetworkInterfacesResponse> listSubNetworkInterfacesInvoker(
         ListSubNetworkInterfacesRequest request) {
         return new SyncInvoker<>(request, VpcMeta.listSubNetworkInterfaces, hcClient);
+    }
+
+    /**
+     * 查询辅助弹性网卡资源实例列表
+     *
+     * 使用标签过滤，查询辅助弹性网卡实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubNetworkInterfacesByTagsRequest 请求对象
+     * @return ListSubNetworkInterfacesByTagsResponse
+     */
+    public ListSubNetworkInterfacesByTagsResponse listSubNetworkInterfacesByTags(
+        ListSubNetworkInterfacesByTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.listSubNetworkInterfacesByTags);
+    }
+
+    /**
+     * 查询辅助弹性网卡资源实例列表
+     *
+     * 使用标签过滤，查询辅助弹性网卡实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubNetworkInterfacesByTagsRequest 请求对象
+     * @return SyncInvoker<ListSubNetworkInterfacesByTagsRequest, ListSubNetworkInterfacesByTagsResponse>
+     */
+    public SyncInvoker<ListSubNetworkInterfacesByTagsRequest, ListSubNetworkInterfacesByTagsResponse> listSubNetworkInterfacesByTagsInvoker(
+        ListSubNetworkInterfacesByTagsRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.listSubNetworkInterfacesByTags, hcClient);
     }
 
     /**
@@ -1473,6 +1766,35 @@ public class VpcClient {
     public SyncInvoker<ShowSubNetworkInterfaceRequest, ShowSubNetworkInterfaceResponse> showSubNetworkInterfaceInvoker(
         ShowSubNetworkInterfaceRequest request) {
         return new SyncInvoker<>(request, VpcMeta.showSubNetworkInterface, hcClient);
+    }
+
+    /**
+     * 查询辅助弹性网卡资源标签
+     *
+     * 查询指定辅助弹性网卡实例的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSubNetworkInterfaceTagsRequest 请求对象
+     * @return ShowSubNetworkInterfaceTagsResponse
+     */
+    public ShowSubNetworkInterfaceTagsResponse showSubNetworkInterfaceTags(ShowSubNetworkInterfaceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.showSubNetworkInterfaceTags);
+    }
+
+    /**
+     * 查询辅助弹性网卡资源标签
+     *
+     * 查询指定辅助弹性网卡实例的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSubNetworkInterfaceTagsRequest 请求对象
+     * @return SyncInvoker<ShowSubNetworkInterfaceTagsRequest, ShowSubNetworkInterfaceTagsResponse>
+     */
+    public SyncInvoker<ShowSubNetworkInterfaceTagsRequest, ShowSubNetworkInterfaceTagsResponse> showSubNetworkInterfaceTagsInvoker(
+        ShowSubNetworkInterfaceTagsRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.showSubNetworkInterfaceTags, hcClient);
     }
 
     /**

@@ -20,7 +20,7 @@ public class SearchCoreSpaceMemoriesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private SearchCoreSpaceMemoriesRequestBody body;
+    private MemorySearchReq body;
 
     public SearchCoreSpaceMemoriesRequest withSpaceId(UUID spaceId) {
         this.spaceId = spaceId;
@@ -39,14 +39,14 @@ public class SearchCoreSpaceMemoriesRequest {
         this.spaceId = spaceId;
     }
 
-    public SearchCoreSpaceMemoriesRequest withBody(SearchCoreSpaceMemoriesRequestBody body) {
+    public SearchCoreSpaceMemoriesRequest withBody(MemorySearchReq body) {
         this.body = body;
         return this;
     }
 
-    public SearchCoreSpaceMemoriesRequest withBody(Consumer<SearchCoreSpaceMemoriesRequestBody> bodySetter) {
+    public SearchCoreSpaceMemoriesRequest withBody(Consumer<MemorySearchReq> bodySetter) {
         if (this.body == null) {
-            this.body = new SearchCoreSpaceMemoriesRequestBody();
+            this.body = new MemorySearchReq();
             bodySetter.accept(this.body);
         }
 
@@ -57,11 +57,11 @@ public class SearchCoreSpaceMemoriesRequest {
      * Get body
      * @return body
      */
-    public SearchCoreSpaceMemoriesRequestBody getBody() {
+    public MemorySearchReq getBody() {
         return body;
     }
 
-    public void setBody(SearchCoreSpaceMemoriesRequestBody body) {
+    public void setBody(MemorySearchReq body) {
         this.body = body;
     }
 

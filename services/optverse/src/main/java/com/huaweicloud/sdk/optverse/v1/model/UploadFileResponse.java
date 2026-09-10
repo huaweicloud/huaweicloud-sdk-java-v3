@@ -1,0 +1,73 @@
+package com.huaweicloud.sdk.optverse.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import java.util.Objects;
+
+/**
+ * Response Object
+ */
+public class UploadFileResponse extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "chat_id")
+
+    private String chatId;
+
+    public UploadFileResponse withChatId(String chatId) {
+        this.chatId = chatId;
+        return this;
+    }
+
+    /**
+     * 参数解释： 对话ID。 约束限制： 不涉及 取值范围： 不涉及 默认取值： 不涉及
+     * @return chatId
+     */
+    public String getChatId() {
+        return chatId;
+    }
+
+    public void setChatId(String chatId) {
+        this.chatId = chatId;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        UploadFileResponse that = (UploadFileResponse) obj;
+        return Objects.equals(this.chatId, that.chatId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(chatId);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class UploadFileResponse {\n");
+        sb.append("    chatId: ").append(toIndentedString(chatId)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

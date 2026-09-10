@@ -7,63 +7,39 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * **参数解释：** Space 网络访问配置，公网和私网至少填写一个。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。 
+ * UpdateCoreSpaceNetworkRequestBody
  */
 public class UpdateCoreSpaceNetworkRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "public_access_enable")
+    @JsonProperty(value = "body")
 
-    private Boolean publicAccessEnable;
+    private CreateCoreSpaceNetworkRequestBody body;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "private_access_config")
-
-    private CoreSpacePrivateNetworkRequestBody privateAccessConfig;
-
-    public UpdateCoreSpaceNetworkRequestBody withPublicAccessEnable(Boolean publicAccessEnable) {
-        this.publicAccessEnable = publicAccessEnable;
+    public UpdateCoreSpaceNetworkRequestBody withBody(CreateCoreSpaceNetworkRequestBody body) {
+        this.body = body;
         return this;
     }
 
-    /**
-     * **参数解释：** 是否开启公网访问。 **约束限制：** 不涉及。 **取值范围：** - true: 开启公网访问 - false: 关闭公网访问 **默认取值：** false 
-     * @return publicAccessEnable
-     */
-    public Boolean getPublicAccessEnable() {
-        return publicAccessEnable;
-    }
-
-    public void setPublicAccessEnable(Boolean publicAccessEnable) {
-        this.publicAccessEnable = publicAccessEnable;
-    }
-
-    public UpdateCoreSpaceNetworkRequestBody withPrivateAccessConfig(
-        CoreSpacePrivateNetworkRequestBody privateAccessConfig) {
-        this.privateAccessConfig = privateAccessConfig;
-        return this;
-    }
-
-    public UpdateCoreSpaceNetworkRequestBody withPrivateAccessConfig(
-        Consumer<CoreSpacePrivateNetworkRequestBody> privateAccessConfigSetter) {
-        if (this.privateAccessConfig == null) {
-            this.privateAccessConfig = new CoreSpacePrivateNetworkRequestBody();
-            privateAccessConfigSetter.accept(this.privateAccessConfig);
+    public UpdateCoreSpaceNetworkRequestBody withBody(Consumer<CreateCoreSpaceNetworkRequestBody> bodySetter) {
+        if (this.body == null) {
+            this.body = new CreateCoreSpaceNetworkRequestBody();
+            bodySetter.accept(this.body);
         }
 
         return this;
     }
 
     /**
-     * Get privateAccessConfig
-     * @return privateAccessConfig
+     * Get body
+     * @return body
      */
-    public CoreSpacePrivateNetworkRequestBody getPrivateAccessConfig() {
-        return privateAccessConfig;
+    public CreateCoreSpaceNetworkRequestBody getBody() {
+        return body;
     }
 
-    public void setPrivateAccessConfig(CoreSpacePrivateNetworkRequestBody privateAccessConfig) {
-        this.privateAccessConfig = privateAccessConfig;
+    public void setBody(CreateCoreSpaceNetworkRequestBody body) {
+        this.body = body;
     }
 
     @Override
@@ -75,21 +51,19 @@ public class UpdateCoreSpaceNetworkRequestBody {
             return false;
         }
         UpdateCoreSpaceNetworkRequestBody that = (UpdateCoreSpaceNetworkRequestBody) obj;
-        return Objects.equals(this.publicAccessEnable, that.publicAccessEnable)
-            && Objects.equals(this.privateAccessConfig, that.privateAccessConfig);
+        return Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(publicAccessEnable, privateAccessConfig);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateCoreSpaceNetworkRequestBody {\n");
-        sb.append("    publicAccessEnable: ").append(toIndentedString(publicAccessEnable)).append("\n");
-        sb.append("    privateAccessConfig: ").append(toIndentedString(privateAccessConfig)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

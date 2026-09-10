@@ -12,25 +12,25 @@ import java.util.Objects;
 public class CreateOpsLabelResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "label_id")
+    @JsonProperty(value = "data")
 
-    private String labelId;
+    private String data;
 
-    public CreateOpsLabelResponse withLabelId(String labelId) {
-        this.labelId = labelId;
+    public CreateOpsLabelResponse withData(String data) {
+        this.data = data;
         return this;
     }
 
     /**
-     * **参数解释：** 创建成功的标签唯一标识符（ID）。 **约束限制：** 字符串长度0-64。 **取值范围：** 字符长度0-64。 **默认值：** 不涉及 
-     * @return labelId
+     * **参数解释：** 创建成功的标签唯一标识符（ID）。 **约束限制：** 不涉及。 **取值范围：** 只能由英文字母、数字及连字符(-)组成，长度为0~64个字符。 
+     * @return data
      */
-    public String getLabelId() {
-        return labelId;
+    public String getData() {
+        return data;
     }
 
-    public void setLabelId(String labelId) {
-        this.labelId = labelId;
+    public void setData(String data) {
+        this.data = data;
     }
 
     @Override
@@ -42,19 +42,19 @@ public class CreateOpsLabelResponse extends SdkResponse {
             return false;
         }
         CreateOpsLabelResponse that = (CreateOpsLabelResponse) obj;
-        return Objects.equals(this.labelId, that.labelId);
+        return Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(labelId);
+        return Objects.hash(data);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateOpsLabelResponse {\n");
-        sb.append("    labelId: ").append(toIndentedString(labelId)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

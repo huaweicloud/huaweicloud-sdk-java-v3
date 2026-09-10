@@ -25,7 +25,7 @@ public class ShowLatestDeadLockSnapshot4ApiResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mysql_dead_lock")
 
-    private MySQLDeadLock mysqlDeadLock;
+    private MySQLLatestDeadLock mysqlDeadLock;
 
     public ShowLatestDeadLockSnapshot4ApiResponse withFindLock(Boolean findLock) {
         this.findLock = findLock;
@@ -61,14 +61,14 @@ public class ShowLatestDeadLockSnapshot4ApiResponse extends SdkResponse {
         this.happenTime = happenTime;
     }
 
-    public ShowLatestDeadLockSnapshot4ApiResponse withMysqlDeadLock(MySQLDeadLock mysqlDeadLock) {
+    public ShowLatestDeadLockSnapshot4ApiResponse withMysqlDeadLock(MySQLLatestDeadLock mysqlDeadLock) {
         this.mysqlDeadLock = mysqlDeadLock;
         return this;
     }
 
-    public ShowLatestDeadLockSnapshot4ApiResponse withMysqlDeadLock(Consumer<MySQLDeadLock> mysqlDeadLockSetter) {
+    public ShowLatestDeadLockSnapshot4ApiResponse withMysqlDeadLock(Consumer<MySQLLatestDeadLock> mysqlDeadLockSetter) {
         if (this.mysqlDeadLock == null) {
-            this.mysqlDeadLock = new MySQLDeadLock();
+            this.mysqlDeadLock = new MySQLLatestDeadLock();
             mysqlDeadLockSetter.accept(this.mysqlDeadLock);
         }
 
@@ -79,11 +79,11 @@ public class ShowLatestDeadLockSnapshot4ApiResponse extends SdkResponse {
      * Get mysqlDeadLock
      * @return mysqlDeadLock
      */
-    public MySQLDeadLock getMysqlDeadLock() {
+    public MySQLLatestDeadLock getMysqlDeadLock() {
         return mysqlDeadLock;
     }
 
-    public void setMysqlDeadLock(MySQLDeadLock mysqlDeadLock) {
+    public void setMysqlDeadLock(MySQLLatestDeadLock mysqlDeadLock) {
         this.mysqlDeadLock = mysqlDeadLock;
     }
 

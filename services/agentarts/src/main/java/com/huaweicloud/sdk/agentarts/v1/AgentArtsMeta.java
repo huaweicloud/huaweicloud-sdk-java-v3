@@ -9,12 +9,27 @@ import com.huaweicloud.sdk.agentarts.v1.model.BatchAddOpsEvaluationTaskCustomLab
 import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateCoreGatewayTagsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateCoreGatewayTagsRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateCoreGatewayTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsAgentTuningTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsAgentTuningTaskTagsRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsAgentTuningTaskTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsAnalysisTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsAnalysisTaskTagsRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsAnalysisTaskTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsDatasetItemsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsDatasetItemsRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsDatasetItemsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsModelTuningTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsModelTuningTaskTagsRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsModelTuningTaskTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteCoreGatewayTagsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteCoreGatewayTagsRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteCoreGatewayTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsAgentTuningTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsAgentTuningTaskTagsRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsAgentTuningTaskTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsAnalysisTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsAnalysisTaskTagsRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsAnalysisTaskTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsDatasetItemsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsDatasetItemsRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsDatasetItemsResponse;
@@ -27,6 +42,9 @@ import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsEvaluationTasksRespo
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsEvaluatorRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsEvaluatorRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsEvaluatorResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsModelTuningTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsModelTuningTaskTagsRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsModelTuningTaskTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsSynthesisTasksRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsSynthesisTasksRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsSynthesisTasksResponse;
@@ -58,8 +76,8 @@ import com.huaweicloud.sdk.agentarts.v1.model.CreateCoreRuntimeResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateCoreSpaceApiKeyRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateCoreSpaceApiKeyResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateCoreSpaceCustomizedStrategyRequest;
-import com.huaweicloud.sdk.agentarts.v1.model.CreateCoreSpaceCustomizedStrategyRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateCoreSpaceCustomizedStrategyResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateCoreSpaceMemoryStrategyRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateCoreSpaceRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateCoreSpaceRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateCoreSpaceResponse;
@@ -67,6 +85,12 @@ import com.huaweicloud.sdk.agentarts.v1.model.CreateIngressRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsAgentObservationRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsAgentObservationRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsAgentObservationResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsAgentTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsAgentTuningTaskRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsAgentTuningTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsAnalysisTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsAnalysisTaskRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsAnalysisTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsDatasetRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsDatasetRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsDatasetResponse;
@@ -79,6 +103,12 @@ import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsEvaluatorResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsLabelRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsLabelRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsLabelResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsModelDeploymentRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsModelDeploymentRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsModelDeploymentResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsModelTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsModelTuningTaskRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsModelTuningTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsSynthesisTaskRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsSynthesisTaskRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsSynthesisTaskResponse;
@@ -105,6 +135,10 @@ import com.huaweicloud.sdk.agentarts.v1.model.DeleteCoreSpaceRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteCoreSpaceResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsAgentObservationRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsAgentObservationResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsAgentTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsAgentTuningTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsAnalysisTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsAnalysisTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsDatasetRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsDatasetResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsDatasetVersionRequest;
@@ -118,18 +152,38 @@ import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsEvaluatorRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsEvaluatorResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsEvaluatorVersionRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsEvaluatorVersionResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsModelDeploymentRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsModelDeploymentResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsModelTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsModelTuningTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsSynthesisTaskRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsSynthesisTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ExecuteOpsAgentTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ExecuteOpsAgentTuningTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ExecuteOpsModelTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ExecuteOpsModelTuningTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.GenerateOpsEvaluatorEvaluationStepsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.GenerateOpsEvaluatorEvaluationStepsRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.GenerateOpsEvaluatorEvaluationStepsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.GenerateOpsMultimodalUploadUrlRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.GenerateOpsMultimodalUploadUrlRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.GenerateOpsMultimodalUploadUrlResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ImportOpsDatasetItemsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ImportOpsDatasetItemsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ImportOpsResultsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ImportOpsResultsRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.ImportOpsResultsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.InvokeOpsFineGrainedEvaluationRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.InvokeOpsFineGrainedEvaluationRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.InvokeOpsFineGrainedEvaluationResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListAllCoreGatewayTagsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListAllCoreGatewayTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListAllOpsAgentTuningTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListAllOpsAgentTuningTaskTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListAllOpsAnalysisTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListAllOpsAnalysisTaskTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListAllOpsModelTuningTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListAllOpsModelTuningTaskTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCoreCodeInterpretersRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCoreCodeInterpretersResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCoreGatewayQuotasRequest;
@@ -172,6 +226,24 @@ import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentRuntLogRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentRuntLogResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentSpanMetricRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentSpanMetricResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentTuningTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentTuningTaskTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentTuningTasksByTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentTuningTasksByTagsRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentTuningTasksByTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentTuningTasksRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentTuningTasksResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTaskFailureAffectedSessionsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTaskFailureAffectedSessionsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTaskInstancesRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTaskInstancesResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTaskTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTasksByTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTasksByTagsRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTasksByTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTasksRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTasksResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsDatasetItemsImportTasksRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsDatasetItemsImportTasksResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsDatasetItemsRequest;
@@ -204,8 +276,23 @@ import com.huaweicloud.sdk.agentarts.v1.model.ListOpsEvaluatorVersionsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsEvaluatorsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsEvaluatorsRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsEvaluatorsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsEvolutionQuotasRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsEvolutionQuotasResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsLabelsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsLabelsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelDeploymentsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelDeploymentsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTaskMetricsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTaskMetricsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTaskProductsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTaskProductsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTaskTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTasksByTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTasksByTagsRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTasksByTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTasksRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTasksResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsSessionRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsSessionRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsSessionResponse;
@@ -216,7 +303,12 @@ import com.huaweicloud.sdk.agentarts.v1.model.ListOpsSynthesisTasksResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsTraceRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsTraceRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsTraceResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.MemorySearchReq;
 import com.huaweicloud.sdk.agentarts.v1.model.OpsSchemaInfo;
+import com.huaweicloud.sdk.agentarts.v1.model.PauseOpsAnalysisTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.PauseOpsAnalysisTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.PublishOpsAnalysisTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.PublishOpsAnalysisTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.PublishOpsDatasetVersionRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.PublishOpsDatasetVersionRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.PublishOpsDatasetVersionResponse;
@@ -224,8 +316,9 @@ import com.huaweicloud.sdk.agentarts.v1.model.PublishOpsEvaluatorVersionRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.PublishOpsEvaluatorVersionResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ResetCoreSpaceApiKeyRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ResetCoreSpaceApiKeyResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ResumeOpsAnalysisTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ResumeOpsAnalysisTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.SearchCoreSpaceMemoriesRequest;
-import com.huaweicloud.sdk.agentarts.v1.model.SearchCoreSpaceMemoriesRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.SearchCoreSpaceMemoriesResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowCoreCodeInterpreterRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowCoreCodeInterpreterResponse;
@@ -259,6 +352,16 @@ import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentMetricTrendRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentMetricTrendRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentMetricTrendResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentMetricTypeRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentTuningTaskNumsByTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentTuningTaskNumsByTagsRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentTuningTaskNumsByTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentTuningTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAnalysisTaskNumsByTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAnalysisTaskNumsByTagsRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAnalysisTaskNumsByTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAnalysisTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAnalysisTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsDatasetItemRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsDatasetItemResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsDatasetRequest;
@@ -289,6 +392,13 @@ import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsEvaluatorVersionRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsEvaluatorVersionResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsLabelRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsLabelResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsModelDeploymentRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsModelDeploymentResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsModelTuningTaskNumsByTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsModelTuningTaskNumsByTagsRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsModelTuningTaskNumsByTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsModelTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsModelTuningTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsQuotaRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsQuotaResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsSessionRequest;
@@ -305,8 +415,20 @@ import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsSynthesisTaskRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsSynthesisTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsTraceRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsTraceResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.StartOpsAgentTuningTaskForAnalysisTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.StartOpsAgentTuningTaskForAnalysisTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.StartOpsModelDeploymentRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.StartOpsModelDeploymentResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.StopOpsAgentTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.StopOpsAgentTuningTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.StopOpsAnalysisTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.StopOpsAnalysisTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.StopOpsEvaluationTaskRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.StopOpsEvaluationTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.StopOpsModelDeploymentRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.StopOpsModelDeploymentResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.StopOpsModelTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.StopOpsModelTuningTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.SyncCoreGatewayTargetsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.SyncCoreGatewayTargetsRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.SyncCoreGatewayTargetsResponse;
@@ -342,6 +464,12 @@ import com.huaweicloud.sdk.agentarts.v1.model.UpdateCoreSpaceResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateIngressRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAgentObservationRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAgentObservationResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAgentTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAgentTuningTaskRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAgentTuningTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAnalysisTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAnalysisTaskRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAnalysisTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsDatasetItemRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsDatasetItemRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsDatasetItemResponse;
@@ -360,6 +488,9 @@ import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsEvaluatorTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsLabelRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsLabelRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsLabelResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsModelTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsModelTuningTaskRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsModelTuningTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsResourceTagsRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsSynthesisTaskRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsSynthesisTaskRequestBody;
@@ -695,10 +826,10 @@ public class AgentArtsMeta {
             TypeCasts.uncheckedConversion(UUID.class),
             f -> f.withMarshaller(CreateCoreSpaceCustomizedStrategyRequest::getSpaceId,
                 CreateCoreSpaceCustomizedStrategyRequest::setSpaceId));
-        builder.<CreateCoreSpaceCustomizedStrategyRequestBody>withRequestField("body",
+        builder.<CreateCoreSpaceMemoryStrategyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateCoreSpaceCustomizedStrategyRequestBody.class),
+            TypeCasts.uncheckedConversion(CreateCoreSpaceMemoryStrategyRequestBody.class),
             f -> f.withMarshaller(CreateCoreSpaceCustomizedStrategyRequest::getBody,
                 CreateCoreSpaceCustomizedStrategyRequest::setBody));
 
@@ -1663,10 +1794,10 @@ public class AgentArtsMeta {
             TypeCasts.uncheckedConversion(UUID.class),
             f -> f.withMarshaller(SearchCoreSpaceMemoriesRequest::getSpaceId,
                 SearchCoreSpaceMemoriesRequest::setSpaceId));
-        builder.<SearchCoreSpaceMemoriesRequestBody>withRequestField("body",
+        builder.<MemorySearchReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SearchCoreSpaceMemoriesRequestBody.class),
+            TypeCasts.uncheckedConversion(MemorySearchReq.class),
             f -> f.withMarshaller(SearchCoreSpaceMemoriesRequest::getBody, SearchCoreSpaceMemoriesRequest::setBody));
 
         // response
@@ -2384,6 +2515,612 @@ public class AgentArtsMeta {
             TypeCasts.uncheckedConversion(CreateOpsAgentObservationRequestBody.class),
             f -> f.withMarshaller(UpdateOpsAgentObservationRequest::getBody,
                 UpdateOpsAgentObservationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateOpsAgentTuningTaskRequest, CreateOpsAgentTuningTaskResponse> createOpsAgentTuningTask =
+        genForCreateOpsAgentTuningTask();
+
+    private static HttpRequestDef<CreateOpsAgentTuningTaskRequest, CreateOpsAgentTuningTaskResponse> genForCreateOpsAgentTuningTask() {
+        // basic
+        HttpRequestDef.Builder<CreateOpsAgentTuningTaskRequest, CreateOpsAgentTuningTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateOpsAgentTuningTaskRequest.class, CreateOpsAgentTuningTaskResponse.class)
+                .withName("CreateOpsAgentTuningTask")
+                .withUri("/v1/ops/agent-tuning-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateOpsAgentTuningTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateOpsAgentTuningTaskRequestBody.class),
+            f -> f.withMarshaller(CreateOpsAgentTuningTaskRequest::getBody, CreateOpsAgentTuningTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteOpsAgentTuningTaskRequest, DeleteOpsAgentTuningTaskResponse> deleteOpsAgentTuningTask =
+        genForDeleteOpsAgentTuningTask();
+
+    private static HttpRequestDef<DeleteOpsAgentTuningTaskRequest, DeleteOpsAgentTuningTaskResponse> genForDeleteOpsAgentTuningTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteOpsAgentTuningTaskRequest, DeleteOpsAgentTuningTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteOpsAgentTuningTaskRequest.class,
+                    DeleteOpsAgentTuningTaskResponse.class)
+                .withName("DeleteOpsAgentTuningTask")
+                .withUri("/v1/ops/agent-tuning-tasks/{agent_tuning_task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("agent_tuning_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOpsAgentTuningTaskRequest::getAgentTuningTaskId,
+                DeleteOpsAgentTuningTaskRequest::setAgentTuningTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteOpsAgentTuningTaskRequest, ExecuteOpsAgentTuningTaskResponse> executeOpsAgentTuningTask =
+        genForExecuteOpsAgentTuningTask();
+
+    private static HttpRequestDef<ExecuteOpsAgentTuningTaskRequest, ExecuteOpsAgentTuningTaskResponse> genForExecuteOpsAgentTuningTask() {
+        // basic
+        HttpRequestDef.Builder<ExecuteOpsAgentTuningTaskRequest, ExecuteOpsAgentTuningTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExecuteOpsAgentTuningTaskRequest.class,
+                    ExecuteOpsAgentTuningTaskResponse.class)
+                .withName("ExecuteOpsAgentTuningTask")
+                .withUri("/v1/ops/agent-tuning-tasks/{agent_tuning_task_id}/execute")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("agent_tuning_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteOpsAgentTuningTaskRequest::getAgentTuningTaskId,
+                ExecuteOpsAgentTuningTaskRequest::setAgentTuningTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOpsAgentTuningTasksRequest, ListOpsAgentTuningTasksResponse> listOpsAgentTuningTasks =
+        genForListOpsAgentTuningTasks();
+
+    private static HttpRequestDef<ListOpsAgentTuningTasksRequest, ListOpsAgentTuningTasksResponse> genForListOpsAgentTuningTasks() {
+        // basic
+        HttpRequestDef.Builder<ListOpsAgentTuningTasksRequest, ListOpsAgentTuningTasksResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListOpsAgentTuningTasksRequest.class, ListOpsAgentTuningTasksResponse.class)
+            .withName("ListOpsAgentTuningTasks")
+            .withUri("/v1/ops/agent-tuning-tasks")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsAgentTuningTasksRequest::getOffset,
+                ListOpsAgentTuningTasksRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsAgentTuningTasksRequest::getLimit, ListOpsAgentTuningTasksRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpsAgentTuningTasksRequest::getName, ListOpsAgentTuningTasksRequest::setName));
+        builder.<ListOpsAgentTuningTasksRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListOpsAgentTuningTasksRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListOpsAgentTuningTasksRequest::getType, ListOpsAgentTuningTasksRequest::setType));
+        builder.<ListOpsAgentTuningTasksRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListOpsAgentTuningTasksRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListOpsAgentTuningTasksRequest::getStatus,
+                ListOpsAgentTuningTasksRequest::setStatus));
+        builder.<String>withRequestField("analysis_task_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpsAgentTuningTasksRequest::getAnalysisTaskId,
+                ListOpsAgentTuningTasksRequest::setAnalysisTaskId));
+        builder.<List<String>>withRequestField("tag_key_exists",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListOpsAgentTuningTasksRequest::getTagKeyExists,
+                ListOpsAgentTuningTasksRequest::setTagKeyExists));
+        builder.<List<String>>withRequestField("tag_key_matches",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListOpsAgentTuningTasksRequest::getTagKeyMatches,
+                ListOpsAgentTuningTasksRequest::setTagKeyMatches));
+        builder.<List<String>>withRequestField("tag_value_matches",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListOpsAgentTuningTasksRequest::getTagValueMatches,
+                ListOpsAgentTuningTasksRequest::setTagValueMatches));
+        builder.<String>withRequestField("tag_match_policy",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpsAgentTuningTasksRequest::getTagMatchPolicy,
+                ListOpsAgentTuningTasksRequest::setTagMatchPolicy));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOpsAgentTuningTaskRequest, ShowOpsAgentTuningTaskResponse> showOpsAgentTuningTask =
+        genForShowOpsAgentTuningTask();
+
+    private static HttpRequestDef<ShowOpsAgentTuningTaskRequest, ShowOpsAgentTuningTaskResponse> genForShowOpsAgentTuningTask() {
+        // basic
+        HttpRequestDef.Builder<ShowOpsAgentTuningTaskRequest, ShowOpsAgentTuningTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowOpsAgentTuningTaskRequest.class, ShowOpsAgentTuningTaskResponse.class)
+            .withName("ShowOpsAgentTuningTask")
+            .withUri("/v1/ops/agent-tuning-tasks/{agent_tuning_task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("agent_tuning_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOpsAgentTuningTaskRequest::getAgentTuningTaskId,
+                ShowOpsAgentTuningTaskRequest::setAgentTuningTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopOpsAgentTuningTaskRequest, StopOpsAgentTuningTaskResponse> stopOpsAgentTuningTask =
+        genForStopOpsAgentTuningTask();
+
+    private static HttpRequestDef<StopOpsAgentTuningTaskRequest, StopOpsAgentTuningTaskResponse> genForStopOpsAgentTuningTask() {
+        // basic
+        HttpRequestDef.Builder<StopOpsAgentTuningTaskRequest, StopOpsAgentTuningTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, StopOpsAgentTuningTaskRequest.class, StopOpsAgentTuningTaskResponse.class)
+            .withName("StopOpsAgentTuningTask")
+            .withUri("/v1/ops/agent-tuning-tasks/{agent_tuning_task_id}/stop")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("agent_tuning_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopOpsAgentTuningTaskRequest::getAgentTuningTaskId,
+                StopOpsAgentTuningTaskRequest::setAgentTuningTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateOpsAgentTuningTaskRequest, UpdateOpsAgentTuningTaskResponse> updateOpsAgentTuningTask =
+        genForUpdateOpsAgentTuningTask();
+
+    private static HttpRequestDef<UpdateOpsAgentTuningTaskRequest, UpdateOpsAgentTuningTaskResponse> genForUpdateOpsAgentTuningTask() {
+        // basic
+        HttpRequestDef.Builder<UpdateOpsAgentTuningTaskRequest, UpdateOpsAgentTuningTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateOpsAgentTuningTaskRequest.class, UpdateOpsAgentTuningTaskResponse.class)
+                .withName("UpdateOpsAgentTuningTask")
+                .withUri("/v1/ops/agent-tuning-tasks/{agent_tuning_task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("agent_tuning_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOpsAgentTuningTaskRequest::getAgentTuningTaskId,
+                UpdateOpsAgentTuningTaskRequest::setAgentTuningTaskId));
+        builder.<UpdateOpsAgentTuningTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateOpsAgentTuningTaskRequestBody.class),
+            f -> f.withMarshaller(UpdateOpsAgentTuningTaskRequest::getBody, UpdateOpsAgentTuningTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateOpsAnalysisTaskRequest, CreateOpsAnalysisTaskResponse> createOpsAnalysisTask =
+        genForCreateOpsAnalysisTask();
+
+    private static HttpRequestDef<CreateOpsAnalysisTaskRequest, CreateOpsAnalysisTaskResponse> genForCreateOpsAnalysisTask() {
+        // basic
+        HttpRequestDef.Builder<CreateOpsAnalysisTaskRequest, CreateOpsAnalysisTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateOpsAnalysisTaskRequest.class, CreateOpsAnalysisTaskResponse.class)
+            .withName("CreateOpsAnalysisTask")
+            .withUri("/v1/ops/analysis-tasks")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateOpsAnalysisTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateOpsAnalysisTaskRequestBody.class),
+            f -> f.withMarshaller(CreateOpsAnalysisTaskRequest::getBody, CreateOpsAnalysisTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteOpsAnalysisTaskRequest, DeleteOpsAnalysisTaskResponse> deleteOpsAnalysisTask =
+        genForDeleteOpsAnalysisTask();
+
+    private static HttpRequestDef<DeleteOpsAnalysisTaskRequest, DeleteOpsAnalysisTaskResponse> genForDeleteOpsAnalysisTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteOpsAnalysisTaskRequest, DeleteOpsAnalysisTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteOpsAnalysisTaskRequest.class, DeleteOpsAnalysisTaskResponse.class)
+            .withName("DeleteOpsAnalysisTask")
+            .withUri("/v1/ops/analysis-tasks/{analysis_task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("analysis_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOpsAnalysisTaskRequest::getAnalysisTaskId,
+                DeleteOpsAnalysisTaskRequest::setAnalysisTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOpsAnalysisTaskFailureAffectedSessionsRequest, ListOpsAnalysisTaskFailureAffectedSessionsResponse> listOpsAnalysisTaskFailureAffectedSessions =
+        genForListOpsAnalysisTaskFailureAffectedSessions();
+
+    private static HttpRequestDef<ListOpsAnalysisTaskFailureAffectedSessionsRequest, ListOpsAnalysisTaskFailureAffectedSessionsResponse> genForListOpsAnalysisTaskFailureAffectedSessions() {
+        // basic
+        HttpRequestDef.Builder<ListOpsAnalysisTaskFailureAffectedSessionsRequest, ListOpsAnalysisTaskFailureAffectedSessionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListOpsAnalysisTaskFailureAffectedSessionsRequest.class,
+                    ListOpsAnalysisTaskFailureAffectedSessionsResponse.class)
+                .withName("ListOpsAnalysisTaskFailureAffectedSessions")
+                .withUri("/v1/ops/analysis-tasks/{analysis_task_id}/failures/{error_sub_category_name}/sessions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("analysis_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpsAnalysisTaskFailureAffectedSessionsRequest::getAnalysisTaskId,
+                ListOpsAnalysisTaskFailureAffectedSessionsRequest::setAnalysisTaskId));
+        builder.<String>withRequestField("error_sub_category_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpsAnalysisTaskFailureAffectedSessionsRequest::getErrorSubCategoryName,
+                ListOpsAnalysisTaskFailureAffectedSessionsRequest::setErrorSubCategoryName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsAnalysisTaskFailureAffectedSessionsRequest::getOffset,
+                ListOpsAnalysisTaskFailureAffectedSessionsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsAnalysisTaskFailureAffectedSessionsRequest::getLimit,
+                ListOpsAnalysisTaskFailureAffectedSessionsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOpsAnalysisTaskInstancesRequest, ListOpsAnalysisTaskInstancesResponse> listOpsAnalysisTaskInstances =
+        genForListOpsAnalysisTaskInstances();
+
+    private static HttpRequestDef<ListOpsAnalysisTaskInstancesRequest, ListOpsAnalysisTaskInstancesResponse> genForListOpsAnalysisTaskInstances() {
+        // basic
+        HttpRequestDef.Builder<ListOpsAnalysisTaskInstancesRequest, ListOpsAnalysisTaskInstancesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListOpsAnalysisTaskInstancesRequest.class,
+                    ListOpsAnalysisTaskInstancesResponse.class)
+                .withName("ListOpsAnalysisTaskInstances")
+                .withUri("/v1/ops/analysis-tasks/{analysis_task_id}/task-instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("analysis_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpsAnalysisTaskInstancesRequest::getAnalysisTaskId,
+                ListOpsAnalysisTaskInstancesRequest::setAnalysisTaskId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsAnalysisTaskInstancesRequest::getOffset,
+                ListOpsAnalysisTaskInstancesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsAnalysisTaskInstancesRequest::getLimit,
+                ListOpsAnalysisTaskInstancesRequest::setLimit));
+        builder.<ListOpsAnalysisTaskInstancesRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListOpsAnalysisTaskInstancesRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListOpsAnalysisTaskInstancesRequest::getStatus,
+                ListOpsAnalysisTaskInstancesRequest::setStatus));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOpsAnalysisTasksRequest, ListOpsAnalysisTasksResponse> listOpsAnalysisTasks =
+        genForListOpsAnalysisTasks();
+
+    private static HttpRequestDef<ListOpsAnalysisTasksRequest, ListOpsAnalysisTasksResponse> genForListOpsAnalysisTasks() {
+        // basic
+        HttpRequestDef.Builder<ListOpsAnalysisTasksRequest, ListOpsAnalysisTasksResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListOpsAnalysisTasksRequest.class, ListOpsAnalysisTasksResponse.class)
+            .withName("ListOpsAnalysisTasks")
+            .withUri("/v1/ops/analysis-tasks")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsAnalysisTasksRequest::getOffset, ListOpsAnalysisTasksRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsAnalysisTasksRequest::getLimit, ListOpsAnalysisTasksRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpsAnalysisTasksRequest::getName, ListOpsAnalysisTasksRequest::setName));
+        builder.<ListOpsAnalysisTasksRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListOpsAnalysisTasksRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListOpsAnalysisTasksRequest::getStatus, ListOpsAnalysisTasksRequest::setStatus));
+        builder.<List<String>>withRequestField("tag_key_exists",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListOpsAnalysisTasksRequest::getTagKeyExists,
+                ListOpsAnalysisTasksRequest::setTagKeyExists));
+        builder.<List<String>>withRequestField("tag_key_matches",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListOpsAnalysisTasksRequest::getTagKeyMatches,
+                ListOpsAnalysisTasksRequest::setTagKeyMatches));
+        builder.<List<String>>withRequestField("tag_value_matches",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListOpsAnalysisTasksRequest::getTagValueMatches,
+                ListOpsAnalysisTasksRequest::setTagValueMatches));
+        builder.<String>withRequestField("tag_match_policy",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpsAnalysisTasksRequest::getTagMatchPolicy,
+                ListOpsAnalysisTasksRequest::setTagMatchPolicy));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<PauseOpsAnalysisTaskRequest, PauseOpsAnalysisTaskResponse> pauseOpsAnalysisTask =
+        genForPauseOpsAnalysisTask();
+
+    private static HttpRequestDef<PauseOpsAnalysisTaskRequest, PauseOpsAnalysisTaskResponse> genForPauseOpsAnalysisTask() {
+        // basic
+        HttpRequestDef.Builder<PauseOpsAnalysisTaskRequest, PauseOpsAnalysisTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, PauseOpsAnalysisTaskRequest.class, PauseOpsAnalysisTaskResponse.class)
+            .withName("PauseOpsAnalysisTask")
+            .withUri("/v1/ops/analysis-tasks/{analysis_task_id}/pause")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("analysis_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PauseOpsAnalysisTaskRequest::getAnalysisTaskId,
+                PauseOpsAnalysisTaskRequest::setAnalysisTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<PublishOpsAnalysisTaskRequest, PublishOpsAnalysisTaskResponse> publishOpsAnalysisTask =
+        genForPublishOpsAnalysisTask();
+
+    private static HttpRequestDef<PublishOpsAnalysisTaskRequest, PublishOpsAnalysisTaskResponse> genForPublishOpsAnalysisTask() {
+        // basic
+        HttpRequestDef.Builder<PublishOpsAnalysisTaskRequest, PublishOpsAnalysisTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, PublishOpsAnalysisTaskRequest.class, PublishOpsAnalysisTaskResponse.class)
+            .withName("PublishOpsAnalysisTask")
+            .withUri("/v1/ops/analysis-tasks/{analysis_task_id}/publish")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("analysis_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PublishOpsAnalysisTaskRequest::getAnalysisTaskId,
+                PublishOpsAnalysisTaskRequest::setAnalysisTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResumeOpsAnalysisTaskRequest, ResumeOpsAnalysisTaskResponse> resumeOpsAnalysisTask =
+        genForResumeOpsAnalysisTask();
+
+    private static HttpRequestDef<ResumeOpsAnalysisTaskRequest, ResumeOpsAnalysisTaskResponse> genForResumeOpsAnalysisTask() {
+        // basic
+        HttpRequestDef.Builder<ResumeOpsAnalysisTaskRequest, ResumeOpsAnalysisTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ResumeOpsAnalysisTaskRequest.class, ResumeOpsAnalysisTaskResponse.class)
+            .withName("ResumeOpsAnalysisTask")
+            .withUri("/v1/ops/analysis-tasks/{analysis_task_id}/resume")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("analysis_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResumeOpsAnalysisTaskRequest::getAnalysisTaskId,
+                ResumeOpsAnalysisTaskRequest::setAnalysisTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOpsAnalysisTaskRequest, ShowOpsAnalysisTaskResponse> showOpsAnalysisTask =
+        genForShowOpsAnalysisTask();
+
+    private static HttpRequestDef<ShowOpsAnalysisTaskRequest, ShowOpsAnalysisTaskResponse> genForShowOpsAnalysisTask() {
+        // basic
+        HttpRequestDef.Builder<ShowOpsAnalysisTaskRequest, ShowOpsAnalysisTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowOpsAnalysisTaskRequest.class, ShowOpsAnalysisTaskResponse.class)
+                .withName("ShowOpsAnalysisTask")
+                .withUri("/v1/ops/analysis-tasks/{analysis_task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("analysis_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOpsAnalysisTaskRequest::getAnalysisTaskId,
+                ShowOpsAnalysisTaskRequest::setAnalysisTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartOpsAgentTuningTaskForAnalysisTaskRequest, StartOpsAgentTuningTaskForAnalysisTaskResponse> startOpsAgentTuningTaskForAnalysisTask =
+        genForStartOpsAgentTuningTaskForAnalysisTask();
+
+    private static HttpRequestDef<StartOpsAgentTuningTaskForAnalysisTaskRequest, StartOpsAgentTuningTaskForAnalysisTaskResponse> genForStartOpsAgentTuningTaskForAnalysisTask() {
+        // basic
+        HttpRequestDef.Builder<StartOpsAgentTuningTaskForAnalysisTaskRequest, StartOpsAgentTuningTaskForAnalysisTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    StartOpsAgentTuningTaskForAnalysisTaskRequest.class,
+                    StartOpsAgentTuningTaskForAnalysisTaskResponse.class)
+                .withName("StartOpsAgentTuningTaskForAnalysisTask")
+                .withUri("/v1/ops/analysis-tasks/{analysis_task_id}/tuning")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("analysis_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartOpsAgentTuningTaskForAnalysisTaskRequest::getAnalysisTaskId,
+                StartOpsAgentTuningTaskForAnalysisTaskRequest::setAnalysisTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopOpsAnalysisTaskRequest, StopOpsAnalysisTaskResponse> stopOpsAnalysisTask =
+        genForStopOpsAnalysisTask();
+
+    private static HttpRequestDef<StopOpsAnalysisTaskRequest, StopOpsAnalysisTaskResponse> genForStopOpsAnalysisTask() {
+        // basic
+        HttpRequestDef.Builder<StopOpsAnalysisTaskRequest, StopOpsAnalysisTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopOpsAnalysisTaskRequest.class, StopOpsAnalysisTaskResponse.class)
+                .withName("StopOpsAnalysisTask")
+                .withUri("/v1/ops/analysis-tasks/{analysis_task_id}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("analysis_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopOpsAnalysisTaskRequest::getAnalysisTaskId,
+                StopOpsAnalysisTaskRequest::setAnalysisTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateOpsAnalysisTaskRequest, UpdateOpsAnalysisTaskResponse> updateOpsAnalysisTask =
+        genForUpdateOpsAnalysisTask();
+
+    private static HttpRequestDef<UpdateOpsAnalysisTaskRequest, UpdateOpsAnalysisTaskResponse> genForUpdateOpsAnalysisTask() {
+        // basic
+        HttpRequestDef.Builder<UpdateOpsAnalysisTaskRequest, UpdateOpsAnalysisTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateOpsAnalysisTaskRequest.class, UpdateOpsAnalysisTaskResponse.class)
+            .withName("UpdateOpsAnalysisTask")
+            .withUri("/v1/ops/analysis-tasks/{analysis_task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("analysis_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOpsAnalysisTaskRequest::getAnalysisTaskId,
+                UpdateOpsAnalysisTaskRequest::setAnalysisTaskId));
+        builder.<UpdateOpsAnalysisTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateOpsAnalysisTaskRequestBody.class),
+            f -> f.withMarshaller(UpdateOpsAnalysisTaskRequest::getBody, UpdateOpsAnalysisTaskRequest::setBody));
 
         // response
 
@@ -3307,11 +4044,6 @@ public class AgentArtsMeta {
             f -> f.withMarshaller(CreateOpsEvaluatorRequest::getBody, CreateOpsEvaluatorRequest::setBody));
 
         // response
-        builder.<Object>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            Object.class,
-            f -> f.withMarshaller(CreateOpsEvaluatorResponse::getBody, CreateOpsEvaluatorResponse::setBody));
 
         return builder.build();
     }
@@ -3423,6 +4155,39 @@ public class AgentArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<InvokeOpsFineGrainedEvaluationRequest, InvokeOpsFineGrainedEvaluationResponse> invokeOpsFineGrainedEvaluation =
+        genForInvokeOpsFineGrainedEvaluation();
+
+    private static HttpRequestDef<InvokeOpsFineGrainedEvaluationRequest, InvokeOpsFineGrainedEvaluationResponse> genForInvokeOpsFineGrainedEvaluation() {
+        // basic
+        HttpRequestDef.Builder<InvokeOpsFineGrainedEvaluationRequest, InvokeOpsFineGrainedEvaluationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    InvokeOpsFineGrainedEvaluationRequest.class,
+                    InvokeOpsFineGrainedEvaluationResponse.class)
+                .withName("InvokeOpsFineGrainedEvaluation")
+                .withUri("/v1/ops/evaluators/{evaluator_id}/evaluations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("evaluator_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokeOpsFineGrainedEvaluationRequest::getEvaluatorId,
+                InvokeOpsFineGrainedEvaluationRequest::setEvaluatorId));
+        builder.<InvokeOpsFineGrainedEvaluationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InvokeOpsFineGrainedEvaluationRequestBody.class),
+            f -> f.withMarshaller(InvokeOpsFineGrainedEvaluationRequest::getBody,
+                InvokeOpsFineGrainedEvaluationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListOpsEvaluatorFilterOptionsRequest, ListOpsEvaluatorFilterOptionsResponse> listOpsEvaluatorFilterOptions =
         genForListOpsEvaluatorFilterOptions();
 
@@ -3488,11 +4253,6 @@ public class AgentArtsMeta {
             f -> f.withMarshaller(ListOpsEvaluatorsRequest::getBody, ListOpsEvaluatorsRequest::setBody));
 
         // response
-        builder.<Object>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            Object.class,
-            f -> f.withMarshaller(ListOpsEvaluatorsResponse::getBody, ListOpsEvaluatorsResponse::setBody));
 
         return builder.build();
     }
@@ -3658,6 +4418,597 @@ public class AgentArtsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowOpsEvaluatorTemplateRequest::getTemplateId,
                 ShowOpsEvaluatorTemplateRequest::setTemplateId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOpsEvolutionQuotasRequest, ListOpsEvolutionQuotasResponse> listOpsEvolutionQuotas =
+        genForListOpsEvolutionQuotas();
+
+    private static HttpRequestDef<ListOpsEvolutionQuotasRequest, ListOpsEvolutionQuotasResponse> genForListOpsEvolutionQuotas() {
+        // basic
+        HttpRequestDef.Builder<ListOpsEvolutionQuotasRequest, ListOpsEvolutionQuotasResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListOpsEvolutionQuotasRequest.class, ListOpsEvolutionQuotasResponse.class)
+            .withName("ListOpsEvolutionQuotas")
+            .withUri("/v1/ops/evolution-quotas")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateOpsAgentTuningTaskTagsRequest, BatchCreateOpsAgentTuningTaskTagsResponse> batchCreateOpsAgentTuningTaskTags =
+        genForBatchCreateOpsAgentTuningTaskTags();
+
+    private static HttpRequestDef<BatchCreateOpsAgentTuningTaskTagsRequest, BatchCreateOpsAgentTuningTaskTagsResponse> genForBatchCreateOpsAgentTuningTaskTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateOpsAgentTuningTaskTagsRequest, BatchCreateOpsAgentTuningTaskTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateOpsAgentTuningTaskTagsRequest.class,
+                    BatchCreateOpsAgentTuningTaskTagsResponse.class)
+                .withName("BatchCreateOpsAgentTuningTaskTags")
+                .withUri("/v1/agent-tuning-tasks/{agent_tuning_task_id}/tags/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("agent_tuning_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateOpsAgentTuningTaskTagsRequest::getAgentTuningTaskId,
+                BatchCreateOpsAgentTuningTaskTagsRequest::setAgentTuningTaskId));
+        builder.<BatchCreateOpsAgentTuningTaskTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateOpsAgentTuningTaskTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateOpsAgentTuningTaskTagsRequest::getBody,
+                BatchCreateOpsAgentTuningTaskTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateOpsAnalysisTaskTagsRequest, BatchCreateOpsAnalysisTaskTagsResponse> batchCreateOpsAnalysisTaskTags =
+        genForBatchCreateOpsAnalysisTaskTags();
+
+    private static HttpRequestDef<BatchCreateOpsAnalysisTaskTagsRequest, BatchCreateOpsAnalysisTaskTagsResponse> genForBatchCreateOpsAnalysisTaskTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateOpsAnalysisTaskTagsRequest, BatchCreateOpsAnalysisTaskTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateOpsAnalysisTaskTagsRequest.class,
+                    BatchCreateOpsAnalysisTaskTagsResponse.class)
+                .withName("BatchCreateOpsAnalysisTaskTags")
+                .withUri("/v1/analysis-tasks/{analysis_task_id}/tags/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("analysis_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateOpsAnalysisTaskTagsRequest::getAnalysisTaskId,
+                BatchCreateOpsAnalysisTaskTagsRequest::setAnalysisTaskId));
+        builder.<BatchCreateOpsAnalysisTaskTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateOpsAnalysisTaskTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateOpsAnalysisTaskTagsRequest::getBody,
+                BatchCreateOpsAnalysisTaskTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateOpsModelTuningTaskTagsRequest, BatchCreateOpsModelTuningTaskTagsResponse> batchCreateOpsModelTuningTaskTags =
+        genForBatchCreateOpsModelTuningTaskTags();
+
+    private static HttpRequestDef<BatchCreateOpsModelTuningTaskTagsRequest, BatchCreateOpsModelTuningTaskTagsResponse> genForBatchCreateOpsModelTuningTaskTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateOpsModelTuningTaskTagsRequest, BatchCreateOpsModelTuningTaskTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateOpsModelTuningTaskTagsRequest.class,
+                    BatchCreateOpsModelTuningTaskTagsResponse.class)
+                .withName("BatchCreateOpsModelTuningTaskTags")
+                .withUri("/v1/model-tuning-tasks/{task_id}/tags/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateOpsModelTuningTaskTagsRequest::getTaskId,
+                BatchCreateOpsModelTuningTaskTagsRequest::setTaskId));
+        builder.<BatchCreateOpsModelTuningTaskTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateOpsModelTuningTaskTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateOpsModelTuningTaskTagsRequest::getBody,
+                BatchCreateOpsModelTuningTaskTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteOpsAgentTuningTaskTagsRequest, BatchDeleteOpsAgentTuningTaskTagsResponse> batchDeleteOpsAgentTuningTaskTags =
+        genForBatchDeleteOpsAgentTuningTaskTags();
+
+    private static HttpRequestDef<BatchDeleteOpsAgentTuningTaskTagsRequest, BatchDeleteOpsAgentTuningTaskTagsResponse> genForBatchDeleteOpsAgentTuningTaskTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteOpsAgentTuningTaskTagsRequest, BatchDeleteOpsAgentTuningTaskTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteOpsAgentTuningTaskTagsRequest.class,
+                    BatchDeleteOpsAgentTuningTaskTagsResponse.class)
+                .withName("BatchDeleteOpsAgentTuningTaskTags")
+                .withUri("/v1/agent-tuning-tasks/{agent_tuning_task_id}/tags/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("agent_tuning_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteOpsAgentTuningTaskTagsRequest::getAgentTuningTaskId,
+                BatchDeleteOpsAgentTuningTaskTagsRequest::setAgentTuningTaskId));
+        builder.<BatchDeleteOpsAgentTuningTaskTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteOpsAgentTuningTaskTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteOpsAgentTuningTaskTagsRequest::getBody,
+                BatchDeleteOpsAgentTuningTaskTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteOpsAnalysisTaskTagsRequest, BatchDeleteOpsAnalysisTaskTagsResponse> batchDeleteOpsAnalysisTaskTags =
+        genForBatchDeleteOpsAnalysisTaskTags();
+
+    private static HttpRequestDef<BatchDeleteOpsAnalysisTaskTagsRequest, BatchDeleteOpsAnalysisTaskTagsResponse> genForBatchDeleteOpsAnalysisTaskTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteOpsAnalysisTaskTagsRequest, BatchDeleteOpsAnalysisTaskTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteOpsAnalysisTaskTagsRequest.class,
+                    BatchDeleteOpsAnalysisTaskTagsResponse.class)
+                .withName("BatchDeleteOpsAnalysisTaskTags")
+                .withUri("/v1/analysis-tasks/{analysis_task_id}/tags/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("analysis_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteOpsAnalysisTaskTagsRequest::getAnalysisTaskId,
+                BatchDeleteOpsAnalysisTaskTagsRequest::setAnalysisTaskId));
+        builder.<BatchDeleteOpsAnalysisTaskTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteOpsAnalysisTaskTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteOpsAnalysisTaskTagsRequest::getBody,
+                BatchDeleteOpsAnalysisTaskTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteOpsModelTuningTaskTagsRequest, BatchDeleteOpsModelTuningTaskTagsResponse> batchDeleteOpsModelTuningTaskTags =
+        genForBatchDeleteOpsModelTuningTaskTags();
+
+    private static HttpRequestDef<BatchDeleteOpsModelTuningTaskTagsRequest, BatchDeleteOpsModelTuningTaskTagsResponse> genForBatchDeleteOpsModelTuningTaskTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteOpsModelTuningTaskTagsRequest, BatchDeleteOpsModelTuningTaskTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteOpsModelTuningTaskTagsRequest.class,
+                    BatchDeleteOpsModelTuningTaskTagsResponse.class)
+                .withName("BatchDeleteOpsModelTuningTaskTags")
+                .withUri("/v1/model-tuning-tasks/{task_id}/tags/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteOpsModelTuningTaskTagsRequest::getTaskId,
+                BatchDeleteOpsModelTuningTaskTagsRequest::setTaskId));
+        builder.<BatchDeleteOpsModelTuningTaskTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteOpsModelTuningTaskTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteOpsModelTuningTaskTagsRequest::getBody,
+                BatchDeleteOpsModelTuningTaskTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAllOpsAgentTuningTaskTagsRequest, ListAllOpsAgentTuningTaskTagsResponse> listAllOpsAgentTuningTaskTags =
+        genForListAllOpsAgentTuningTaskTags();
+
+    private static HttpRequestDef<ListAllOpsAgentTuningTaskTagsRequest, ListAllOpsAgentTuningTaskTagsResponse> genForListAllOpsAgentTuningTaskTags() {
+        // basic
+        HttpRequestDef.Builder<ListAllOpsAgentTuningTaskTagsRequest, ListAllOpsAgentTuningTaskTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAllOpsAgentTuningTaskTagsRequest.class,
+                    ListAllOpsAgentTuningTaskTagsResponse.class)
+                .withName("ListAllOpsAgentTuningTaskTags")
+                .withUri("/v1/agent-tuning-tasks/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllOpsAgentTuningTaskTagsRequest::getOffset,
+                ListAllOpsAgentTuningTaskTagsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllOpsAgentTuningTaskTagsRequest::getLimit,
+                ListAllOpsAgentTuningTaskTagsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAllOpsAnalysisTaskTagsRequest, ListAllOpsAnalysisTaskTagsResponse> listAllOpsAnalysisTaskTags =
+        genForListAllOpsAnalysisTaskTags();
+
+    private static HttpRequestDef<ListAllOpsAnalysisTaskTagsRequest, ListAllOpsAnalysisTaskTagsResponse> genForListAllOpsAnalysisTaskTags() {
+        // basic
+        HttpRequestDef.Builder<ListAllOpsAnalysisTaskTagsRequest, ListAllOpsAnalysisTaskTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAllOpsAnalysisTaskTagsRequest.class,
+                    ListAllOpsAnalysisTaskTagsResponse.class)
+                .withName("ListAllOpsAnalysisTaskTags")
+                .withUri("/v1/analysis-tasks/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllOpsAnalysisTaskTagsRequest::getOffset,
+                ListAllOpsAnalysisTaskTagsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllOpsAnalysisTaskTagsRequest::getLimit,
+                ListAllOpsAnalysisTaskTagsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAllOpsModelTuningTaskTagsRequest, ListAllOpsModelTuningTaskTagsResponse> listAllOpsModelTuningTaskTags =
+        genForListAllOpsModelTuningTaskTags();
+
+    private static HttpRequestDef<ListAllOpsModelTuningTaskTagsRequest, ListAllOpsModelTuningTaskTagsResponse> genForListAllOpsModelTuningTaskTags() {
+        // basic
+        HttpRequestDef.Builder<ListAllOpsModelTuningTaskTagsRequest, ListAllOpsModelTuningTaskTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAllOpsModelTuningTaskTagsRequest.class,
+                    ListAllOpsModelTuningTaskTagsResponse.class)
+                .withName("ListAllOpsModelTuningTaskTags")
+                .withUri("/v1/model-tuning-tasks/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllOpsModelTuningTaskTagsRequest::getOffset,
+                ListAllOpsModelTuningTaskTagsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllOpsModelTuningTaskTagsRequest::getLimit,
+                ListAllOpsModelTuningTaskTagsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOpsAgentTuningTaskTagsRequest, ListOpsAgentTuningTaskTagsResponse> listOpsAgentTuningTaskTags =
+        genForListOpsAgentTuningTaskTags();
+
+    private static HttpRequestDef<ListOpsAgentTuningTaskTagsRequest, ListOpsAgentTuningTaskTagsResponse> genForListOpsAgentTuningTaskTags() {
+        // basic
+        HttpRequestDef.Builder<ListOpsAgentTuningTaskTagsRequest, ListOpsAgentTuningTaskTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListOpsAgentTuningTaskTagsRequest.class,
+                    ListOpsAgentTuningTaskTagsResponse.class)
+                .withName("ListOpsAgentTuningTaskTags")
+                .withUri("/v1/agent-tuning-tasks/{agent_tuning_task_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("agent_tuning_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpsAgentTuningTaskTagsRequest::getAgentTuningTaskId,
+                ListOpsAgentTuningTaskTagsRequest::setAgentTuningTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOpsAgentTuningTasksByTagsRequest, ListOpsAgentTuningTasksByTagsResponse> listOpsAgentTuningTasksByTags =
+        genForListOpsAgentTuningTasksByTags();
+
+    private static HttpRequestDef<ListOpsAgentTuningTasksByTagsRequest, ListOpsAgentTuningTasksByTagsResponse> genForListOpsAgentTuningTasksByTags() {
+        // basic
+        HttpRequestDef.Builder<ListOpsAgentTuningTasksByTagsRequest, ListOpsAgentTuningTasksByTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListOpsAgentTuningTasksByTagsRequest.class,
+                    ListOpsAgentTuningTasksByTagsResponse.class)
+                .withName("ListOpsAgentTuningTasksByTags")
+                .withUri("/v1/agent-tuning-tasks/resource-instances/filter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsAgentTuningTasksByTagsRequest::getOffset,
+                ListOpsAgentTuningTasksByTagsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsAgentTuningTasksByTagsRequest::getLimit,
+                ListOpsAgentTuningTasksByTagsRequest::setLimit));
+        builder.<ListOpsAgentTuningTasksByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListOpsAgentTuningTasksByTagsRequestBody.class),
+            f -> f.withMarshaller(ListOpsAgentTuningTasksByTagsRequest::getBody,
+                ListOpsAgentTuningTasksByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOpsAnalysisTaskTagsRequest, ListOpsAnalysisTaskTagsResponse> listOpsAnalysisTaskTags =
+        genForListOpsAnalysisTaskTags();
+
+    private static HttpRequestDef<ListOpsAnalysisTaskTagsRequest, ListOpsAnalysisTaskTagsResponse> genForListOpsAnalysisTaskTags() {
+        // basic
+        HttpRequestDef.Builder<ListOpsAnalysisTaskTagsRequest, ListOpsAnalysisTaskTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListOpsAnalysisTaskTagsRequest.class, ListOpsAnalysisTaskTagsResponse.class)
+            .withName("ListOpsAnalysisTaskTags")
+            .withUri("/v1/analysis-tasks/{analysis_task_id}/tags")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("analysis_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpsAnalysisTaskTagsRequest::getAnalysisTaskId,
+                ListOpsAnalysisTaskTagsRequest::setAnalysisTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOpsAnalysisTasksByTagsRequest, ListOpsAnalysisTasksByTagsResponse> listOpsAnalysisTasksByTags =
+        genForListOpsAnalysisTasksByTags();
+
+    private static HttpRequestDef<ListOpsAnalysisTasksByTagsRequest, ListOpsAnalysisTasksByTagsResponse> genForListOpsAnalysisTasksByTags() {
+        // basic
+        HttpRequestDef.Builder<ListOpsAnalysisTasksByTagsRequest, ListOpsAnalysisTasksByTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListOpsAnalysisTasksByTagsRequest.class,
+                    ListOpsAnalysisTasksByTagsResponse.class)
+                .withName("ListOpsAnalysisTasksByTags")
+                .withUri("/v1/analysis-tasks/resource-instances/filter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsAnalysisTasksByTagsRequest::getOffset,
+                ListOpsAnalysisTasksByTagsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsAnalysisTasksByTagsRequest::getLimit,
+                ListOpsAnalysisTasksByTagsRequest::setLimit));
+        builder.<ListOpsAnalysisTasksByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListOpsAnalysisTasksByTagsRequestBody.class),
+            f -> f.withMarshaller(ListOpsAnalysisTasksByTagsRequest::getBody,
+                ListOpsAnalysisTasksByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOpsModelTuningTaskTagsRequest, ListOpsModelTuningTaskTagsResponse> listOpsModelTuningTaskTags =
+        genForListOpsModelTuningTaskTags();
+
+    private static HttpRequestDef<ListOpsModelTuningTaskTagsRequest, ListOpsModelTuningTaskTagsResponse> genForListOpsModelTuningTaskTags() {
+        // basic
+        HttpRequestDef.Builder<ListOpsModelTuningTaskTagsRequest, ListOpsModelTuningTaskTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListOpsModelTuningTaskTagsRequest.class,
+                    ListOpsModelTuningTaskTagsResponse.class)
+                .withName("ListOpsModelTuningTaskTags")
+                .withUri("/v1/model-tuning-tasks/{task_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpsModelTuningTaskTagsRequest::getTaskId,
+                ListOpsModelTuningTaskTagsRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOpsModelTuningTasksByTagsRequest, ListOpsModelTuningTasksByTagsResponse> listOpsModelTuningTasksByTags =
+        genForListOpsModelTuningTasksByTags();
+
+    private static HttpRequestDef<ListOpsModelTuningTasksByTagsRequest, ListOpsModelTuningTasksByTagsResponse> genForListOpsModelTuningTasksByTags() {
+        // basic
+        HttpRequestDef.Builder<ListOpsModelTuningTasksByTagsRequest, ListOpsModelTuningTasksByTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListOpsModelTuningTasksByTagsRequest.class,
+                    ListOpsModelTuningTasksByTagsResponse.class)
+                .withName("ListOpsModelTuningTasksByTags")
+                .withUri("/v1/model-tuning-tasks/resource-instances/filter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsModelTuningTasksByTagsRequest::getOffset,
+                ListOpsModelTuningTasksByTagsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsModelTuningTasksByTagsRequest::getLimit,
+                ListOpsModelTuningTasksByTagsRequest::setLimit));
+        builder.<ListOpsModelTuningTasksByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListOpsModelTuningTasksByTagsRequestBody.class),
+            f -> f.withMarshaller(ListOpsModelTuningTasksByTagsRequest::getBody,
+                ListOpsModelTuningTasksByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOpsAgentTuningTaskNumsByTagsRequest, ShowOpsAgentTuningTaskNumsByTagsResponse> showOpsAgentTuningTaskNumsByTags =
+        genForShowOpsAgentTuningTaskNumsByTags();
+
+    private static HttpRequestDef<ShowOpsAgentTuningTaskNumsByTagsRequest, ShowOpsAgentTuningTaskNumsByTagsResponse> genForShowOpsAgentTuningTaskNumsByTags() {
+        // basic
+        HttpRequestDef.Builder<ShowOpsAgentTuningTaskNumsByTagsRequest, ShowOpsAgentTuningTaskNumsByTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowOpsAgentTuningTaskNumsByTagsRequest.class,
+                    ShowOpsAgentTuningTaskNumsByTagsResponse.class)
+                .withName("ShowOpsAgentTuningTaskNumsByTags")
+                .withUri("/v1/agent-tuning-tasks/resource-instances/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowOpsAgentTuningTaskNumsByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowOpsAgentTuningTaskNumsByTagsRequestBody.class),
+            f -> f.withMarshaller(ShowOpsAgentTuningTaskNumsByTagsRequest::getBody,
+                ShowOpsAgentTuningTaskNumsByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOpsAnalysisTaskNumsByTagsRequest, ShowOpsAnalysisTaskNumsByTagsResponse> showOpsAnalysisTaskNumsByTags =
+        genForShowOpsAnalysisTaskNumsByTags();
+
+    private static HttpRequestDef<ShowOpsAnalysisTaskNumsByTagsRequest, ShowOpsAnalysisTaskNumsByTagsResponse> genForShowOpsAnalysisTaskNumsByTags() {
+        // basic
+        HttpRequestDef.Builder<ShowOpsAnalysisTaskNumsByTagsRequest, ShowOpsAnalysisTaskNumsByTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowOpsAnalysisTaskNumsByTagsRequest.class,
+                    ShowOpsAnalysisTaskNumsByTagsResponse.class)
+                .withName("ShowOpsAnalysisTaskNumsByTags")
+                .withUri("/v1/analysis-tasks/resource-instances/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowOpsAnalysisTaskNumsByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowOpsAnalysisTaskNumsByTagsRequestBody.class),
+            f -> f.withMarshaller(ShowOpsAnalysisTaskNumsByTagsRequest::getBody,
+                ShowOpsAnalysisTaskNumsByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOpsModelTuningTaskNumsByTagsRequest, ShowOpsModelTuningTaskNumsByTagsResponse> showOpsModelTuningTaskNumsByTags =
+        genForShowOpsModelTuningTaskNumsByTags();
+
+    private static HttpRequestDef<ShowOpsModelTuningTaskNumsByTagsRequest, ShowOpsModelTuningTaskNumsByTagsResponse> genForShowOpsModelTuningTaskNumsByTags() {
+        // basic
+        HttpRequestDef.Builder<ShowOpsModelTuningTaskNumsByTagsRequest, ShowOpsModelTuningTaskNumsByTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowOpsModelTuningTaskNumsByTagsRequest.class,
+                    ShowOpsModelTuningTaskNumsByTagsResponse.class)
+                .withName("ShowOpsModelTuningTaskNumsByTags")
+                .withUri("/v1/model-tuning-tasks/resource-instances/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowOpsModelTuningTaskNumsByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowOpsModelTuningTaskNumsByTagsRequestBody.class),
+            f -> f.withMarshaller(ShowOpsModelTuningTaskNumsByTagsRequest::getBody,
+                ShowOpsModelTuningTaskNumsByTagsRequest::setBody));
 
         // response
 
@@ -3843,7 +5194,7 @@ public class AgentArtsMeta {
                 ListOpsAgentRuntLogRequest::setAgentRunId));
         builder.<String>withRequestField("log_type",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListOpsAgentRuntLogRequest::getLogType, ListOpsAgentRuntLogRequest::setLogType));
         builder.<ListOpsAgentRuntLogRequest.ResourceTypeEnum>withRequestField("resource_type",
@@ -4052,6 +5403,484 @@ public class AgentArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowOpsAgentMetricTrendRequestBody.class),
             f -> f.withMarshaller(ShowOpsAgentMetricTrendRequest::getBody, ShowOpsAgentMetricTrendRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateOpsModelDeploymentRequest, CreateOpsModelDeploymentResponse> createOpsModelDeployment =
+        genForCreateOpsModelDeployment();
+
+    private static HttpRequestDef<CreateOpsModelDeploymentRequest, CreateOpsModelDeploymentResponse> genForCreateOpsModelDeployment() {
+        // basic
+        HttpRequestDef.Builder<CreateOpsModelDeploymentRequest, CreateOpsModelDeploymentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateOpsModelDeploymentRequest.class, CreateOpsModelDeploymentResponse.class)
+                .withName("CreateOpsModelDeployment")
+                .withUri("/v1/ops/model-deployments")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateOpsModelDeploymentRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateOpsModelDeploymentRequestBody.class),
+            f -> f.withMarshaller(CreateOpsModelDeploymentRequest::getBody, CreateOpsModelDeploymentRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteOpsModelDeploymentRequest, DeleteOpsModelDeploymentResponse> deleteOpsModelDeployment =
+        genForDeleteOpsModelDeployment();
+
+    private static HttpRequestDef<DeleteOpsModelDeploymentRequest, DeleteOpsModelDeploymentResponse> genForDeleteOpsModelDeployment() {
+        // basic
+        HttpRequestDef.Builder<DeleteOpsModelDeploymentRequest, DeleteOpsModelDeploymentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteOpsModelDeploymentRequest.class,
+                    DeleteOpsModelDeploymentResponse.class)
+                .withName("DeleteOpsModelDeployment")
+                .withUri("/v1/ops/model-deployments/{deployment_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOpsModelDeploymentRequest::getDeploymentId,
+                DeleteOpsModelDeploymentRequest::setDeploymentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOpsModelDeploymentsRequest, ListOpsModelDeploymentsResponse> listOpsModelDeployments =
+        genForListOpsModelDeployments();
+
+    private static HttpRequestDef<ListOpsModelDeploymentsRequest, ListOpsModelDeploymentsResponse> genForListOpsModelDeployments() {
+        // basic
+        HttpRequestDef.Builder<ListOpsModelDeploymentsRequest, ListOpsModelDeploymentsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListOpsModelDeploymentsRequest.class, ListOpsModelDeploymentsResponse.class)
+            .withName("ListOpsModelDeployments")
+            .withUri("/v1/ops/model-deployments")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsModelDeploymentsRequest::getOffset,
+                ListOpsModelDeploymentsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsModelDeploymentsRequest::getLimit, ListOpsModelDeploymentsRequest::setLimit));
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpsModelDeploymentsRequest::getTaskId,
+                ListOpsModelDeploymentsRequest::setTaskId));
+        builder.<ListOpsModelDeploymentsRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListOpsModelDeploymentsRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListOpsModelDeploymentsRequest::getStatus,
+                ListOpsModelDeploymentsRequest::setStatus));
+        builder.<String>withRequestField("model_service_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpsModelDeploymentsRequest::getModelServiceName,
+                ListOpsModelDeploymentsRequest::setModelServiceName));
+        builder.<String>withRequestField("model_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpsModelDeploymentsRequest::getModelName,
+                ListOpsModelDeploymentsRequest::setModelName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOpsModelDeploymentRequest, ShowOpsModelDeploymentResponse> showOpsModelDeployment =
+        genForShowOpsModelDeployment();
+
+    private static HttpRequestDef<ShowOpsModelDeploymentRequest, ShowOpsModelDeploymentResponse> genForShowOpsModelDeployment() {
+        // basic
+        HttpRequestDef.Builder<ShowOpsModelDeploymentRequest, ShowOpsModelDeploymentResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowOpsModelDeploymentRequest.class, ShowOpsModelDeploymentResponse.class)
+            .withName("ShowOpsModelDeployment")
+            .withUri("/v1/ops/model-deployments/{deployment_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOpsModelDeploymentRequest::getDeploymentId,
+                ShowOpsModelDeploymentRequest::setDeploymentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartOpsModelDeploymentRequest, StartOpsModelDeploymentResponse> startOpsModelDeployment =
+        genForStartOpsModelDeployment();
+
+    private static HttpRequestDef<StartOpsModelDeploymentRequest, StartOpsModelDeploymentResponse> genForStartOpsModelDeployment() {
+        // basic
+        HttpRequestDef.Builder<StartOpsModelDeploymentRequest, StartOpsModelDeploymentResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, StartOpsModelDeploymentRequest.class, StartOpsModelDeploymentResponse.class)
+            .withName("StartOpsModelDeployment")
+            .withUri("/v1/ops/model-deployments/{deployment_id}/start")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartOpsModelDeploymentRequest::getDeploymentId,
+                StartOpsModelDeploymentRequest::setDeploymentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopOpsModelDeploymentRequest, StopOpsModelDeploymentResponse> stopOpsModelDeployment =
+        genForStopOpsModelDeployment();
+
+    private static HttpRequestDef<StopOpsModelDeploymentRequest, StopOpsModelDeploymentResponse> genForStopOpsModelDeployment() {
+        // basic
+        HttpRequestDef.Builder<StopOpsModelDeploymentRequest, StopOpsModelDeploymentResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, StopOpsModelDeploymentRequest.class, StopOpsModelDeploymentResponse.class)
+            .withName("StopOpsModelDeployment")
+            .withUri("/v1/ops/model-deployments/{deployment_id}/stop")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopOpsModelDeploymentRequest::getDeploymentId,
+                StopOpsModelDeploymentRequest::setDeploymentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateOpsModelTuningTaskRequest, CreateOpsModelTuningTaskResponse> createOpsModelTuningTask =
+        genForCreateOpsModelTuningTask();
+
+    private static HttpRequestDef<CreateOpsModelTuningTaskRequest, CreateOpsModelTuningTaskResponse> genForCreateOpsModelTuningTask() {
+        // basic
+        HttpRequestDef.Builder<CreateOpsModelTuningTaskRequest, CreateOpsModelTuningTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateOpsModelTuningTaskRequest.class, CreateOpsModelTuningTaskResponse.class)
+                .withName("CreateOpsModelTuningTask")
+                .withUri("/v1/ops/model-tuning-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateOpsModelTuningTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateOpsModelTuningTaskRequestBody.class),
+            f -> f.withMarshaller(CreateOpsModelTuningTaskRequest::getBody, CreateOpsModelTuningTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteOpsModelTuningTaskRequest, DeleteOpsModelTuningTaskResponse> deleteOpsModelTuningTask =
+        genForDeleteOpsModelTuningTask();
+
+    private static HttpRequestDef<DeleteOpsModelTuningTaskRequest, DeleteOpsModelTuningTaskResponse> genForDeleteOpsModelTuningTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteOpsModelTuningTaskRequest, DeleteOpsModelTuningTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteOpsModelTuningTaskRequest.class,
+                    DeleteOpsModelTuningTaskResponse.class)
+                .withName("DeleteOpsModelTuningTask")
+                .withUri("/v1/ops/model-tuning-tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOpsModelTuningTaskRequest::getTaskId,
+                DeleteOpsModelTuningTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteOpsModelTuningTaskRequest, ExecuteOpsModelTuningTaskResponse> executeOpsModelTuningTask =
+        genForExecuteOpsModelTuningTask();
+
+    private static HttpRequestDef<ExecuteOpsModelTuningTaskRequest, ExecuteOpsModelTuningTaskResponse> genForExecuteOpsModelTuningTask() {
+        // basic
+        HttpRequestDef.Builder<ExecuteOpsModelTuningTaskRequest, ExecuteOpsModelTuningTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExecuteOpsModelTuningTaskRequest.class,
+                    ExecuteOpsModelTuningTaskResponse.class)
+                .withName("ExecuteOpsModelTuningTask")
+                .withUri("/v1/ops/model-tuning-tasks/{task_id}/execute")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteOpsModelTuningTaskRequest::getTaskId,
+                ExecuteOpsModelTuningTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOpsModelTuningTaskMetricsRequest, ListOpsModelTuningTaskMetricsResponse> listOpsModelTuningTaskMetrics =
+        genForListOpsModelTuningTaskMetrics();
+
+    private static HttpRequestDef<ListOpsModelTuningTaskMetricsRequest, ListOpsModelTuningTaskMetricsResponse> genForListOpsModelTuningTaskMetrics() {
+        // basic
+        HttpRequestDef.Builder<ListOpsModelTuningTaskMetricsRequest, ListOpsModelTuningTaskMetricsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListOpsModelTuningTaskMetricsRequest.class,
+                    ListOpsModelTuningTaskMetricsResponse.class)
+                .withName("ListOpsModelTuningTaskMetrics")
+                .withUri("/v1/ops/model-tuning-tasks/{task_id}/metrics")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpsModelTuningTaskMetricsRequest::getTaskId,
+                ListOpsModelTuningTaskMetricsRequest::setTaskId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsModelTuningTaskMetricsRequest::getOffset,
+                ListOpsModelTuningTaskMetricsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsModelTuningTaskMetricsRequest::getLimit,
+                ListOpsModelTuningTaskMetricsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOpsModelTuningTaskProductsRequest, ListOpsModelTuningTaskProductsResponse> listOpsModelTuningTaskProducts =
+        genForListOpsModelTuningTaskProducts();
+
+    private static HttpRequestDef<ListOpsModelTuningTaskProductsRequest, ListOpsModelTuningTaskProductsResponse> genForListOpsModelTuningTaskProducts() {
+        // basic
+        HttpRequestDef.Builder<ListOpsModelTuningTaskProductsRequest, ListOpsModelTuningTaskProductsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListOpsModelTuningTaskProductsRequest.class,
+                    ListOpsModelTuningTaskProductsResponse.class)
+                .withName("ListOpsModelTuningTaskProducts")
+                .withUri("/v1/ops/model-tuning-tasks/{task_id}/products")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpsModelTuningTaskProductsRequest::getTaskId,
+                ListOpsModelTuningTaskProductsRequest::setTaskId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsModelTuningTaskProductsRequest::getOffset,
+                ListOpsModelTuningTaskProductsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsModelTuningTaskProductsRequest::getLimit,
+                ListOpsModelTuningTaskProductsRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpsModelTuningTaskProductsRequest::getName,
+                ListOpsModelTuningTaskProductsRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOpsModelTuningTasksRequest, ListOpsModelTuningTasksResponse> listOpsModelTuningTasks =
+        genForListOpsModelTuningTasks();
+
+    private static HttpRequestDef<ListOpsModelTuningTasksRequest, ListOpsModelTuningTasksResponse> genForListOpsModelTuningTasks() {
+        // basic
+        HttpRequestDef.Builder<ListOpsModelTuningTasksRequest, ListOpsModelTuningTasksResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListOpsModelTuningTasksRequest.class, ListOpsModelTuningTasksResponse.class)
+            .withName("ListOpsModelTuningTasks")
+            .withUri("/v1/ops/model-tuning-tasks")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsModelTuningTasksRequest::getOffset,
+                ListOpsModelTuningTasksRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsModelTuningTasksRequest::getLimit, ListOpsModelTuningTasksRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpsModelTuningTasksRequest::getName, ListOpsModelTuningTasksRequest::setName));
+        builder.<ListOpsModelTuningTasksRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListOpsModelTuningTasksRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListOpsModelTuningTasksRequest::getStatus,
+                ListOpsModelTuningTasksRequest::setStatus));
+        builder.<List<String>>withRequestField("tag_key_exists",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListOpsModelTuningTasksRequest::getTagKeyExists,
+                ListOpsModelTuningTasksRequest::setTagKeyExists));
+        builder.<List<String>>withRequestField("tag_key_matches",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListOpsModelTuningTasksRequest::getTagKeyMatches,
+                ListOpsModelTuningTasksRequest::setTagKeyMatches));
+        builder.<List<String>>withRequestField("tag_value_matches",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListOpsModelTuningTasksRequest::getTagValueMatches,
+                ListOpsModelTuningTasksRequest::setTagValueMatches));
+        builder.<String>withRequestField("tag_match_policy",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpsModelTuningTasksRequest::getTagMatchPolicy,
+                ListOpsModelTuningTasksRequest::setTagMatchPolicy));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOpsModelTuningTaskRequest, ShowOpsModelTuningTaskResponse> showOpsModelTuningTask =
+        genForShowOpsModelTuningTask();
+
+    private static HttpRequestDef<ShowOpsModelTuningTaskRequest, ShowOpsModelTuningTaskResponse> genForShowOpsModelTuningTask() {
+        // basic
+        HttpRequestDef.Builder<ShowOpsModelTuningTaskRequest, ShowOpsModelTuningTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowOpsModelTuningTaskRequest.class, ShowOpsModelTuningTaskResponse.class)
+            .withName("ShowOpsModelTuningTask")
+            .withUri("/v1/ops/model-tuning-tasks/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOpsModelTuningTaskRequest::getTaskId, ShowOpsModelTuningTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopOpsModelTuningTaskRequest, StopOpsModelTuningTaskResponse> stopOpsModelTuningTask =
+        genForStopOpsModelTuningTask();
+
+    private static HttpRequestDef<StopOpsModelTuningTaskRequest, StopOpsModelTuningTaskResponse> genForStopOpsModelTuningTask() {
+        // basic
+        HttpRequestDef.Builder<StopOpsModelTuningTaskRequest, StopOpsModelTuningTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, StopOpsModelTuningTaskRequest.class, StopOpsModelTuningTaskResponse.class)
+            .withName("StopOpsModelTuningTask")
+            .withUri("/v1/ops/model-tuning-tasks/{task_id}/stop")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopOpsModelTuningTaskRequest::getTaskId, StopOpsModelTuningTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateOpsModelTuningTaskRequest, UpdateOpsModelTuningTaskResponse> updateOpsModelTuningTask =
+        genForUpdateOpsModelTuningTask();
+
+    private static HttpRequestDef<UpdateOpsModelTuningTaskRequest, UpdateOpsModelTuningTaskResponse> genForUpdateOpsModelTuningTask() {
+        // basic
+        HttpRequestDef.Builder<UpdateOpsModelTuningTaskRequest, UpdateOpsModelTuningTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateOpsModelTuningTaskRequest.class, UpdateOpsModelTuningTaskResponse.class)
+                .withName("UpdateOpsModelTuningTask")
+                .withUri("/v1/ops/model-tuning-tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOpsModelTuningTaskRequest::getTaskId,
+                UpdateOpsModelTuningTaskRequest::setTaskId));
+        builder.<UpdateOpsModelTuningTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateOpsModelTuningTaskRequestBody.class),
+            f -> f.withMarshaller(UpdateOpsModelTuningTaskRequest::getBody, UpdateOpsModelTuningTaskRequest::setBody));
 
         // response
 
@@ -4496,6 +6325,33 @@ public class AgentArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<GenerateOpsMultimodalUploadUrlRequest, GenerateOpsMultimodalUploadUrlResponse> generateOpsMultimodalUploadUrl =
+        genForGenerateOpsMultimodalUploadUrl();
+
+    private static HttpRequestDef<GenerateOpsMultimodalUploadUrlRequest, GenerateOpsMultimodalUploadUrlResponse> genForGenerateOpsMultimodalUploadUrl() {
+        // basic
+        HttpRequestDef.Builder<GenerateOpsMultimodalUploadUrlRequest, GenerateOpsMultimodalUploadUrlResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    GenerateOpsMultimodalUploadUrlRequest.class,
+                    GenerateOpsMultimodalUploadUrlResponse.class)
+                .withName("GenerateOpsMultimodalUploadUrl")
+                .withUri("/v1/ops/evaluation-multimodal-upload-url")
+                .withContentType("application/json");
+
+        // requests
+        builder.<GenerateOpsMultimodalUploadUrlRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GenerateOpsMultimodalUploadUrlRequestBody.class),
+            f -> f.withMarshaller(GenerateOpsMultimodalUploadUrlRequest::getBody,
+                GenerateOpsMultimodalUploadUrlRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListOpsEvaluationTaskCustomLabelValuesRequest, ListOpsEvaluationTaskCustomLabelValuesResponse> listOpsEvaluationTaskCustomLabelValues =
         genForListOpsEvaluationTaskCustomLabelValues();
 
@@ -4921,11 +6777,6 @@ public class AgentArtsMeta {
             f -> f.withMarshaller(StopOpsEvaluationTaskRequest::getTaskId, StopOpsEvaluationTaskRequest::setTaskId));
 
         // response
-        builder.<Object>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            Object.class,
-            f -> f.withMarshaller(StopOpsEvaluationTaskResponse::getBody, StopOpsEvaluationTaskResponse::setBody));
 
         return builder.build();
     }

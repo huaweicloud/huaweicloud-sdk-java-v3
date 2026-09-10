@@ -71,6 +71,8 @@ import com.huaweicloud.sdk.rds.v3.model.CheckInstanceForUpgradeResponse;
 import com.huaweicloud.sdk.rds.v3.model.CheckWeakPasswordRequest;
 import com.huaweicloud.sdk.rds.v3.model.CheckWeakpwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.CheckWeakpwdResponse;
+import com.huaweicloud.sdk.rds.v3.model.CollectInstanceStatisticRequest;
+import com.huaweicloud.sdk.rds.v3.model.CollectInstanceStatisticResponse;
 import com.huaweicloud.sdk.rds.v3.model.CollectPublicationMonitorRequest;
 import com.huaweicloud.sdk.rds.v3.model.CollectPublicationMonitorResponse;
 import com.huaweicloud.sdk.rds.v3.model.CollectSubscriptionMonitorRequest;
@@ -236,10 +238,14 @@ import com.huaweicloud.sdk.rds.v3.model.FailoverRequest;
 import com.huaweicloud.sdk.rds.v3.model.FailoverStrategyRequest;
 import com.huaweicloud.sdk.rds.v3.model.FollowerMigrateRequest;
 import com.huaweicloud.sdk.rds.v3.model.GenerateAuditlogDownloadLinkRequest;
+import com.huaweicloud.sdk.rds.v3.model.GetAvailableVpcsRequest;
+import com.huaweicloud.sdk.rds.v3.model.GetAvailableVpcsResponse;
 import com.huaweicloud.sdk.rds.v3.model.GetInstancesNoIndexTablesRequest;
 import com.huaweicloud.sdk.rds.v3.model.GetInstancesNoIndexTablesResponse;
 import com.huaweicloud.sdk.rds.v3.model.GetInstancesOpsMetricNamesRequest;
 import com.huaweicloud.sdk.rds.v3.model.GetInstancesOpsMetricNamesResponse;
+import com.huaweicloud.sdk.rds.v3.model.GetInstancesOpsResourceUsageRequest;
+import com.huaweicloud.sdk.rds.v3.model.GetInstancesOpsResourceUsageResponse;
 import com.huaweicloud.sdk.rds.v3.model.GrantRequest;
 import com.huaweicloud.sdk.rds.v3.model.InstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.InstanceRestartRequsetBody;
@@ -266,6 +272,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListBusinessPartnersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListBusinessPartnersResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListCollationsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListCollationsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListComputeResourceRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListComputeResourceResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListConfigurationApplyHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListConfigurationApplyHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListConfigurationsRequest;
@@ -329,6 +337,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListInstancesConfigurationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesResourceMetricsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesResourceMetricsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreRequestBody;
@@ -353,6 +363,9 @@ import com.huaweicloud.sdk.rds.v3.model.ListOffSiteInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListOffSiteInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListOffSiteRestoreTimesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListOffSiteRestoreTimesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListOperateRecordRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListOperateRecordRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.ListOperateRecordResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListPackLogInfosRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPackLogInfosResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlDatabaseSchemasRequest;
@@ -496,6 +509,8 @@ import com.huaweicloud.sdk.rds.v3.model.PostgresqlHbaHistory;
 import com.huaweicloud.sdk.rds.v3.model.PostgresqlPreCheckUpgradeMajorVersionReq;
 import com.huaweicloud.sdk.rds.v3.model.PostgresqlUserForCreation;
 import com.huaweicloud.sdk.rds.v3.model.PwdResetRequest;
+import com.huaweicloud.sdk.rds.v3.model.QueryAutoSqlLimitingRequest;
+import com.huaweicloud.sdk.rds.v3.model.QueryAutoSqlLimitingResponse;
 import com.huaweicloud.sdk.rds.v3.model.QueryDRInfoRequest;
 import com.huaweicloud.sdk.rds.v3.model.QueryNewBackupEncryptionRequest;
 import com.huaweicloud.sdk.rds.v3.model.QueryNewBackupEncryptionResponse;
@@ -594,6 +609,8 @@ import com.huaweicloud.sdk.rds.v3.model.SetSensitiveSlowLogResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetTransferPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetTransferPolicyRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.SetTransferPolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowAgencyPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowAgencyPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowApiVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogDownloadLinkRequest;
@@ -682,6 +699,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowRestartPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowRestoreTablesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowRestoreTablesRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ShowRestoreTablesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowRiskInfoRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowRiskInfoResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowSqlDiagnosisRequest;
@@ -1404,6 +1423,37 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CheckWeakPasswordRequest.class),
             f -> f.withMarshaller(CheckWeakpwdRequest::getBody, CheckWeakpwdRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CollectInstanceStatisticRequest, CollectInstanceStatisticResponse> collectInstanceStatistic =
+        genForCollectInstanceStatistic();
+
+    private static HttpRequestDef<CollectInstanceStatisticRequest, CollectInstanceStatisticResponse> genForCollectInstanceStatistic() {
+        // basic
+        HttpRequestDef.Builder<CollectInstanceStatisticRequest, CollectInstanceStatisticResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, CollectInstanceStatisticRequest.class, CollectInstanceStatisticResponse.class)
+                .withName("CollectInstanceStatistic")
+                .withUri("/v3/{project_id}/instances/statistic")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CollectInstanceStatisticRequest.EngineEnum>withRequestField("engine",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CollectInstanceStatisticRequest.EngineEnum.class),
+            f -> f.withMarshaller(CollectInstanceStatisticRequest::getEngine,
+                CollectInstanceStatisticRequest::setEngine));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectInstanceStatisticRequest::getXLanguage,
+                CollectInstanceStatisticRequest::setXLanguage));
 
         // response
 
@@ -2579,6 +2629,39 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListComputeResourceRequest, ListComputeResourceResponse> listComputeResource =
+        genForListComputeResource();
+
+    private static HttpRequestDef<ListComputeResourceRequest, ListComputeResourceResponse> genForListComputeResource() {
+        // basic
+        HttpRequestDef.Builder<ListComputeResourceRequest, ListComputeResourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListComputeResourceRequest.class, ListComputeResourceResponse.class)
+                .withName("ListComputeResource")
+                .withUri("/v3/{project_id}/resource-package")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListComputeResourceRequest::getLimit, ListComputeResourceRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListComputeResourceRequest::getOffset, ListComputeResourceRequest::setOffset));
+        builder.<String>withRequestField("engine",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListComputeResourceRequest::getEngine, ListComputeResourceRequest::setEngine));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListConfigurationApplyHistoriesRequest, ListConfigurationApplyHistoriesResponse> listConfigurationApplyHistories =
         genForListConfigurationApplyHistories();
 
@@ -3612,6 +3695,63 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse> listInstancesResourceMetrics =
+        genForListInstancesResourceMetrics();
+
+    private static HttpRequestDef<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse> genForListInstancesResourceMetrics() {
+        // basic
+        HttpRequestDef.Builder<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInstancesResourceMetricsRequest.class,
+                    ListInstancesResourceMetricsResponse.class)
+                .withName("ListInstancesResourceMetrics")
+                .withUri("/v3/{project_id}/instances/resource-monitoring")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListInstancesResourceMetricsRequest.EngineEnum>withRequestField("engine",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListInstancesResourceMetricsRequest.EngineEnum.class),
+            f -> f.withMarshaller(ListInstancesResourceMetricsRequest::getEngine,
+                ListInstancesResourceMetricsRequest::setEngine));
+        builder.<String>withRequestField("search_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesResourceMetricsRequest::getSearchField,
+                ListInstancesResourceMetricsRequest::setSearchField));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesResourceMetricsRequest::getOffset,
+                ListInstancesResourceMetricsRequest::setOffset));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesResourceMetricsRequest::getLimit,
+                ListInstancesResourceMetricsRequest::setLimit));
+        builder.<ListInstancesResourceMetricsRequest.OrderEnum>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListInstancesResourceMetricsRequest.OrderEnum.class),
+            f -> f.withMarshaller(ListInstancesResourceMetricsRequest::getOrder,
+                ListInstancesResourceMetricsRequest::setOrder));
+        builder.<ListInstancesResourceMetricsRequest.SortFieldEnum>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListInstancesResourceMetricsRequest.SortFieldEnum.class),
+            f -> f.withMarshaller(ListInstancesResourceMetricsRequest::getSortField,
+                ListInstancesResourceMetricsRequest::setSortField));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListInstancesSupportFastRestoreRequest, ListInstancesSupportFastRestoreResponse> listInstancesSupportFastRestore =
         genForListInstancesSupportFastRestore();
 
@@ -3933,6 +4073,34 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListOffSiteRestoreTimesRequest::getXLanguage,
                 ListOffSiteRestoreTimesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOperateRecordRequest, ListOperateRecordResponse> listOperateRecord =
+        genForListOperateRecord();
+
+    private static HttpRequestDef<ListOperateRecordRequest, ListOperateRecordResponse> genForListOperateRecord() {
+        // basic
+        HttpRequestDef.Builder<ListOperateRecordRequest, ListOperateRecordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListOperateRecordRequest.class, ListOperateRecordResponse.class)
+                .withName("ListOperateRecord")
+                .withUri("/v3/{project_id}/instances/{instance_id}/operate-record")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOperateRecordRequest::getInstanceId, ListOperateRecordRequest::setInstanceId));
+        builder.<ListOperateRecordRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListOperateRecordRequestBody.class),
+            f -> f.withMarshaller(ListOperateRecordRequest::getBody, ListOperateRecordRequest::setBody));
 
         // response
 
@@ -7057,6 +7225,33 @@ public class RdsMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRiskInfoRequest, ShowRiskInfoResponse> showRiskInfo = genForShowRiskInfo();
+
+    private static HttpRequestDef<ShowRiskInfoRequest, ShowRiskInfoResponse> genForShowRiskInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowRiskInfoRequest, ShowRiskInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRiskInfoRequest.class, ShowRiskInfoResponse.class)
+                .withName("ShowRiskInfo")
+                .withUri("/v3/{project_id}/instances/{instance_id}/show-risk-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRiskInfoRequest::getInstanceId, ShowRiskInfoRequest::setInstanceId));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowRiskInfoResponse::getXRequestId, ShowRiskInfoResponse::setXRequestId));
         return builder.build();
     }
 
@@ -10682,6 +10877,75 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<GetInstancesOpsResourceUsageRequest, GetInstancesOpsResourceUsageResponse> getInstancesOpsResourceUsage =
+        genForGetInstancesOpsResourceUsage();
+
+    private static HttpRequestDef<GetInstancesOpsResourceUsageRequest, GetInstancesOpsResourceUsageResponse> genForGetInstancesOpsResourceUsage() {
+        // basic
+        HttpRequestDef.Builder<GetInstancesOpsResourceUsageRequest, GetInstancesOpsResourceUsageResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    GetInstancesOpsResourceUsageRequest.class,
+                    GetInstancesOpsResourceUsageResponse.class)
+                .withName("GetInstancesOpsResourceUsage")
+                .withUri("/v3/{project_id}/instances/{instance_id}/ops/resource-usage")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetInstancesOpsResourceUsageRequest::getInstanceId,
+                GetInstancesOpsResourceUsageRequest::setInstanceId));
+        builder.<GetInstancesOpsResourceUsageRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(GetInstancesOpsResourceUsageRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(GetInstancesOpsResourceUsageRequest::getResourceType,
+                GetInstancesOpsResourceUsageRequest::setResourceType));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetInstancesOpsResourceUsageRequest::getXLanguage,
+                GetInstancesOpsResourceUsageRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<QueryAutoSqlLimitingRequest, QueryAutoSqlLimitingResponse> queryAutoSqlLimiting =
+        genForQueryAutoSqlLimiting();
+
+    private static HttpRequestDef<QueryAutoSqlLimitingRequest, QueryAutoSqlLimitingResponse> genForQueryAutoSqlLimiting() {
+        // basic
+        HttpRequestDef.Builder<QueryAutoSqlLimitingRequest, QueryAutoSqlLimitingResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, QueryAutoSqlLimitingRequest.class, QueryAutoSqlLimitingResponse.class)
+            .withName("QueryAutoSqlLimiting")
+            .withUri("/v3/{project_id}/instances/{instance_id}/ops/auto-sql-limiting")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(QueryAutoSqlLimitingRequest::getInstanceId,
+                QueryAutoSqlLimitingRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(QueryAutoSqlLimitingRequest::getXLanguage,
+                QueryAutoSqlLimitingRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RotateAuditLogRequest, RotateAuditLogResponse> rotateAuditLog =
         genForRotateAuditLog();
 
@@ -10709,6 +10973,34 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RotateAuditLogRequestBody.class),
             f -> f.withMarshaller(RotateAuditLogRequest::getBody, RotateAuditLogRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAgencyPolicyRequest, ShowAgencyPolicyResponse> showAgencyPolicy =
+        genForShowAgencyPolicy();
+
+    private static HttpRequestDef<ShowAgencyPolicyRequest, ShowAgencyPolicyResponse> genForShowAgencyPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowAgencyPolicyRequest, ShowAgencyPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAgencyPolicyRequest.class, ShowAgencyPolicyResponse.class)
+                .withName("ShowAgencyPolicy")
+                .withUri("/v3/{project_id}/agency/{agency_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("agency_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAgencyPolicyRequest::getAgencyName, ShowAgencyPolicyRequest::setAgencyName));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAgencyPolicyRequest::getXLanguage, ShowAgencyPolicyRequest::setXLanguage));
 
         // response
 
@@ -12967,6 +13259,44 @@ public class RdsMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetAvailableVpcsRequest, GetAvailableVpcsResponse> getAvailableVpcs =
+        genForGetAvailableVpcs();
+
+    private static HttpRequestDef<GetAvailableVpcsRequest, GetAvailableVpcsResponse> genForGetAvailableVpcs() {
+        // basic
+        HttpRequestDef.Builder<GetAvailableVpcsRequest, GetAvailableVpcsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetAvailableVpcsRequest.class, GetAvailableVpcsResponse.class)
+                .withName("GetAvailableVpcs")
+                .withUri("/v3/{project_id}/instances/{instance_id}/available-vpcs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetAvailableVpcsRequest::getInstanceId, GetAvailableVpcsRequest::setInstanceId));
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetAvailableVpcsRequest::getVpcId, GetAvailableVpcsRequest::setVpcId));
+        builder.<String>withRequestField("vpc_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetAvailableVpcsRequest::getVpcName, GetAvailableVpcsRequest::setVpcName));
+
+        // response
+
+        builder.<String>withResponseField("X-TRACE-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetAvailableVpcsResponse::getXTraceId, GetAvailableVpcsResponse::setXTraceId));
         return builder.build();
     }
 

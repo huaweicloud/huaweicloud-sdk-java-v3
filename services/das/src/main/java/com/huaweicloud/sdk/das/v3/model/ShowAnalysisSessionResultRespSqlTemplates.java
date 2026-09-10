@@ -29,6 +29,16 @@ public class ShowAnalysisSessionResultRespSqlTemplates {
     private Long totalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "avg_execute_time")
+
+    private Double avgExecuteTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_execute_time")
+
+    private Double totalExecuteTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "top_state_duration_list")
 
     private List<ShowAnalysisSessionResultRespTopStateDuration> topStateDurationList = null;
@@ -87,6 +97,40 @@ public class ShowAnalysisSessionResultRespSqlTemplates {
 
     public void setTotalCount(Long totalCount) {
         this.totalCount = totalCount;
+    }
+
+    public ShowAnalysisSessionResultRespSqlTemplates withAvgExecuteTime(Double avgExecuteTime) {
+        this.avgExecuteTime = avgExecuteTime;
+        return this;
+    }
+
+    /**
+     * 平均执行耗时（秒）
+     * @return avgExecuteTime
+     */
+    public Double getAvgExecuteTime() {
+        return avgExecuteTime;
+    }
+
+    public void setAvgExecuteTime(Double avgExecuteTime) {
+        this.avgExecuteTime = avgExecuteTime;
+    }
+
+    public ShowAnalysisSessionResultRespSqlTemplates withTotalExecuteTime(Double totalExecuteTime) {
+        this.totalExecuteTime = totalExecuteTime;
+        return this;
+    }
+
+    /**
+     * 总执行耗时（秒）
+     * @return totalExecuteTime
+     */
+    public Double getTotalExecuteTime() {
+        return totalExecuteTime;
+    }
+
+    public void setTotalExecuteTime(Double totalExecuteTime) {
+        this.totalExecuteTime = totalExecuteTime;
     }
 
     public ShowAnalysisSessionResultRespSqlTemplates withTopStateDurationList(
@@ -173,13 +217,21 @@ public class ShowAnalysisSessionResultRespSqlTemplates {
         ShowAnalysisSessionResultRespSqlTemplates that = (ShowAnalysisSessionResultRespSqlTemplates) obj;
         return Objects.equals(this.sqlTemplate, that.sqlTemplate)
             && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.avgExecuteTime, that.avgExecuteTime)
+            && Objects.equals(this.totalExecuteTime, that.totalExecuteTime)
             && Objects.equals(this.topStateDurationList, that.topStateDurationList)
             && Objects.equals(this.topTransactionDurationList, that.topTransactionDurationList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sqlTemplate, databaseName, totalCount, topStateDurationList, topTransactionDurationList);
+        return Objects.hash(sqlTemplate,
+            databaseName,
+            totalCount,
+            avgExecuteTime,
+            totalExecuteTime,
+            topStateDurationList,
+            topTransactionDurationList);
     }
 
     @Override
@@ -189,6 +241,8 @@ public class ShowAnalysisSessionResultRespSqlTemplates {
         sb.append("    sqlTemplate: ").append(toIndentedString(sqlTemplate)).append("\n");
         sb.append("    databaseName: ").append(toIndentedString(databaseName)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("    avgExecuteTime: ").append(toIndentedString(avgExecuteTime)).append("\n");
+        sb.append("    totalExecuteTime: ").append(toIndentedString(totalExecuteTime)).append("\n");
         sb.append("    topStateDurationList: ").append(toIndentedString(topStateDurationList)).append("\n");
         sb.append("    topTransactionDurationList: ").append(toIndentedString(topTransactionDurationList)).append("\n");
         sb.append("}");

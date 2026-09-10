@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -68,6 +70,11 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     @JsonProperty(value = "property")
 
     private String property;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_property")
+
+    private Map<String, String> customProperty = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
@@ -324,6 +331,39 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
         this.property = property;
     }
 
+    public ShowCloudPhoneDetailResponse withCustomProperty(Map<String, String> customProperty) {
+        this.customProperty = customProperty;
+        return this;
+    }
+
+    public ShowCloudPhoneDetailResponse putCustomPropertyItem(String key, String customPropertyItem) {
+        if (this.customProperty == null) {
+            this.customProperty = new HashMap<>();
+        }
+        this.customProperty.put(key, customPropertyItem);
+        return this;
+    }
+
+    public ShowCloudPhoneDetailResponse withCustomProperty(Consumer<Map<String, String>> customPropertySetter) {
+        if (this.customProperty == null) {
+            this.customProperty = new HashMap<>();
+        }
+        customPropertySetter.accept(this.customProperty);
+        return this;
+    }
+
+    /**
+     * 云手机用户自定义属性键值对列表。
+     * @return customProperty
+     */
+    public Map<String, String> getCustomProperty() {
+        return customProperty;
+    }
+
+    public void setCustomProperty(Map<String, String> customProperty) {
+        this.customProperty = customProperty;
+    }
+
     public ShowCloudPhoneDetailResponse withMetadata(ShowCloudPhoneDetailResponseBodyMetadata metadata) {
         this.metadata = metadata;
         return this;
@@ -532,7 +572,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
             && Objects.equals(this.vncEnable, that.vncEnable)
             && Objects.equals(this.phoneModelName, that.phoneModelName) && Objects.equals(this.status, that.status)
             && Objects.equals(this.accessInfos, that.accessInfos) && Objects.equals(this.property, that.property)
-            && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.customProperty, that.customProperty) && Objects.equals(this.metadata, that.metadata)
             && Objects.equals(this.phoneDataVolume, that.phoneDataVolume) && Objects.equals(this.imei, that.imei)
             && Objects.equals(this.type, that.type) && Objects.equals(this.trafficType, that.trafficType)
             && Objects.equals(this.volumeMode, that.volumeMode)
@@ -554,6 +594,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
             status,
             accessInfos,
             property,
+            customProperty,
             metadata,
             phoneDataVolume,
             imei,
@@ -581,6 +622,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    accessInfos: ").append(toIndentedString(accessInfos)).append("\n");
         sb.append("    property: ").append(toIndentedString(property)).append("\n");
+        sb.append("    customProperty: ").append(toIndentedString(customProperty)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    phoneDataVolume: ").append(toIndentedString(phoneDataVolume)).append("\n");
         sb.append("    imei: ").append(toIndentedString(imei)).append("\n");

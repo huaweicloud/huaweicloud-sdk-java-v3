@@ -19,11 +19,6 @@ import java.util.function.Consumer;
 public class ShowOpsAgentMetricTypeRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "group_by")
-
-    private List<String> groupBy = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
     private String startTime;
@@ -139,39 +134,6 @@ public class ShowOpsAgentMetricTypeRequestBody {
     @JsonProperty(value = "filter")
 
     private List<MetricFilterParam> filter = null;
-
-    public ShowOpsAgentMetricTypeRequestBody withGroupBy(List<String> groupBy) {
-        this.groupBy = groupBy;
-        return this;
-    }
-
-    public ShowOpsAgentMetricTypeRequestBody addGroupByItem(String groupByItem) {
-        if (this.groupBy == null) {
-            this.groupBy = new ArrayList<>();
-        }
-        this.groupBy.add(groupByItem);
-        return this;
-    }
-
-    public ShowOpsAgentMetricTypeRequestBody withGroupBy(Consumer<List<String>> groupBySetter) {
-        if (this.groupBy == null) {
-            this.groupBy = new ArrayList<>();
-        }
-        groupBySetter.accept(this.groupBy);
-        return this;
-    }
-
-    /**
-     * 分组名
-     * @return groupBy
-     */
-    public List<String> getGroupBy() {
-        return groupBy;
-    }
-
-    public void setGroupBy(List<String> groupBy) {
-        this.groupBy = groupBy;
-    }
 
     public ShowOpsAgentMetricTypeRequestBody withStartTime(String startTime) {
         this.startTime = startTime;
@@ -317,22 +279,21 @@ public class ShowOpsAgentMetricTypeRequestBody {
             return false;
         }
         ShowOpsAgentMetricTypeRequestBody that = (ShowOpsAgentMetricTypeRequestBody) obj;
-        return Objects.equals(this.groupBy, that.groupBy) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.metricName, that.metricName)
-            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceType, that.resourceType)
-            && Objects.equals(this.userId, that.userId) && Objects.equals(this.filter, that.filter);
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.metricName, that.metricName) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.filter, that.filter);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupBy, startTime, endTime, metricName, resourceId, resourceType, userId, filter);
+        return Objects.hash(startTime, endTime, metricName, resourceId, resourceType, userId, filter);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowOpsAgentMetricTypeRequestBody {\n");
-        sb.append("    groupBy: ").append(toIndentedString(groupBy)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");

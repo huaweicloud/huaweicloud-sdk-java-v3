@@ -19,11 +19,6 @@ import java.util.function.Consumer;
 public class ShowOpsAgentMetricTrendRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "group_by")
-
-    private List<String> groupBy = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
     private String startTime;
@@ -140,38 +135,10 @@ public class ShowOpsAgentMetricTrendRequestBody {
 
     private List<MetricFilterParam> filter = null;
 
-    public ShowOpsAgentMetricTrendRequestBody withGroupBy(List<String> groupBy) {
-        this.groupBy = groupBy;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_by")
 
-    public ShowOpsAgentMetricTrendRequestBody addGroupByItem(String groupByItem) {
-        if (this.groupBy == null) {
-            this.groupBy = new ArrayList<>();
-        }
-        this.groupBy.add(groupByItem);
-        return this;
-    }
-
-    public ShowOpsAgentMetricTrendRequestBody withGroupBy(Consumer<List<String>> groupBySetter) {
-        if (this.groupBy == null) {
-            this.groupBy = new ArrayList<>();
-        }
-        groupBySetter.accept(this.groupBy);
-        return this;
-    }
-
-    /**
-     * 分组名
-     * @return groupBy
-     */
-    public List<String> getGroupBy() {
-        return groupBy;
-    }
-
-    public void setGroupBy(List<String> groupBy) {
-        this.groupBy = groupBy;
-    }
+    private List<String> groupBy = null;
 
     public ShowOpsAgentMetricTrendRequestBody withStartTime(String startTime) {
         this.startTime = startTime;
@@ -308,6 +275,39 @@ public class ShowOpsAgentMetricTrendRequestBody {
         this.filter = filter;
     }
 
+    public ShowOpsAgentMetricTrendRequestBody withGroupBy(List<String> groupBy) {
+        this.groupBy = groupBy;
+        return this;
+    }
+
+    public ShowOpsAgentMetricTrendRequestBody addGroupByItem(String groupByItem) {
+        if (this.groupBy == null) {
+            this.groupBy = new ArrayList<>();
+        }
+        this.groupBy.add(groupByItem);
+        return this;
+    }
+
+    public ShowOpsAgentMetricTrendRequestBody withGroupBy(Consumer<List<String>> groupBySetter) {
+        if (this.groupBy == null) {
+            this.groupBy = new ArrayList<>();
+        }
+        groupBySetter.accept(this.groupBy);
+        return this;
+    }
+
+    /**
+     * 分组名
+     * @return groupBy
+     */
+    public List<String> getGroupBy() {
+        return groupBy;
+    }
+
+    public void setGroupBy(List<String> groupBy) {
+        this.groupBy = groupBy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -317,22 +317,21 @@ public class ShowOpsAgentMetricTrendRequestBody {
             return false;
         }
         ShowOpsAgentMetricTrendRequestBody that = (ShowOpsAgentMetricTrendRequestBody) obj;
-        return Objects.equals(this.groupBy, that.groupBy) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.metricName, that.metricName)
-            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceType, that.resourceType)
-            && Objects.equals(this.userId, that.userId) && Objects.equals(this.filter, that.filter);
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.metricName, that.metricName) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.filter, that.filter) && Objects.equals(this.groupBy, that.groupBy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupBy, startTime, endTime, metricName, resourceId, resourceType, userId, filter);
+        return Objects.hash(startTime, endTime, metricName, resourceId, resourceType, userId, filter, groupBy);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowOpsAgentMetricTrendRequestBody {\n");
-        sb.append("    groupBy: ").append(toIndentedString(groupBy)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
@@ -340,6 +339,7 @@ public class ShowOpsAgentMetricTrendRequestBody {
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
         sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
+        sb.append("    groupBy: ").append(toIndentedString(groupBy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

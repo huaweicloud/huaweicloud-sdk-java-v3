@@ -5080,6 +5080,7 @@ public class GaussDBClient {
      * @param request ShowRestoreTablesRequest 请求对象
      * @return ShowRestoreTablesResponse
      */
+    @Deprecated
     public ShowRestoreTablesResponse showRestoreTables(ShowRestoreTablesRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.showRestoreTables);
     }
@@ -5094,6 +5095,7 @@ public class GaussDBClient {
      * @param request ShowRestoreTablesRequest 请求对象
      * @return SyncInvoker<ShowRestoreTablesRequest, ShowRestoreTablesResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowRestoreTablesRequest, ShowRestoreTablesResponse> showRestoreTablesInvoker(
         ShowRestoreTablesRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.showRestoreTables, hcClient);

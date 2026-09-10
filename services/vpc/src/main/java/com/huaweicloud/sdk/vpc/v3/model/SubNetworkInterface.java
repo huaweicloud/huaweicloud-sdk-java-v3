@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 
+ * SubNetworkInterface
  */
 public class SubNetworkInterface {
 
@@ -72,7 +72,7 @@ public class SubNetworkInterface {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<ResourceTag> tags = null;
+    private List<ResponseTag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
@@ -83,6 +83,11 @@ public class SubNetworkInterface {
     @JsonProperty(value = "created_at")
 
     private OffsetDateTime createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updated_at")
+
+    private OffsetDateTime updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allowed_address_pairs")
@@ -120,7 +125,7 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 功能说明：辅助弹性网卡的唯一标识 取值范围：带(-)的标准UUID
+     * **参数解释**： 辅助弹性网卡的资源ID。辅助弹性网卡创建成功后，会生成一个辅助弹性网卡 ID，是辅助弹性网卡对应的唯一标识。 **取值范围**： 带“-”的标准UUID格式。
      * @return id
      */
     public String getId() {
@@ -137,7 +142,7 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 功能说明：虚拟子网ID 取值范围：标准UUID
+     * **参数解释**： 辅助弹性网卡所在的虚拟子网ID。 **取值范围**： 带“-”的标准UUID格式。
      * @return virsubnetId
      */
     public String getVirsubnetId() {
@@ -154,7 +159,7 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 功能说明：辅助弹性网卡的私有IPv4地址 取值范围：必须在虚拟子网的网段内，不填则随机在虚拟子网网段内随机分配
+     * **参数解释**： 辅助弹性网卡的私有IPv4地址。 **取值范围**： 不涉及。
      * @return privateIpAddress
      */
     public String getPrivateIpAddress() {
@@ -171,7 +176,7 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 功能说明：辅助弹性网卡的IPv6地址
+     * **参数解释**： 辅助弹性网卡的私有IPv6地址。 **取值范围**： 不涉及。
      * @return ipv6IpAddress
      */
     public String getIpv6IpAddress() {
@@ -188,7 +193,7 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 功能说明：辅助弹性网卡的mac地址 取值范围：合法的mac地址，系统随机分配
+     * **参数解释**： 辅助弹性网卡的MAC地址。 **取值范围**： 合法的MAC地址，系统随机分配。
      * @return macAddress
      */
     public String getMacAddress() {
@@ -205,7 +210,7 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 功能说明：设备ID 取值范围：标准UUID 
+     * **参数解释**： 辅助弹性网卡的宿主网卡所属的设备ID。 **取值范围**： 带“-”的标准UUID格式。
      * @return parentDeviceId
      */
     public String getParentDeviceId() {
@@ -222,7 +227,7 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 功能说明：宿主网络接口的ID 取值范围：标准UUID
+     * **参数解释**： 辅助弹性网卡所挂载的弹性网卡的ID。 **取值范围**： 带“-”的标准UUID格式。
      * @return parentId
      */
     public String getParentId() {
@@ -239,7 +244,7 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 功能说明：辅助弹性网卡的描述信息 取值范围：0-255个字符，不能包含“<”和“>”
+     * **参数解释**： 辅助弹性网卡的描述信息。 **取值范围**： 0-255个字符，不能包含“<”和“>”。
      * @return description
      */
     public String getDescription() {
@@ -256,7 +261,7 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 功能说明：辅助弹性网卡所属的VPC_ID 取值范围：标准UUID
+     * **参数解释**： 辅助弹性网卡所属VPC的ID。 **取值范围**： 带“-”的标准UUID格式。
      * @return vpcId
      */
     public String getVpcId() {
@@ -273,7 +278,7 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 功能说明：辅助弹性网卡的VLAN ID 取值范围：1-4094 约束：同一个宿主网络接口下唯一
+     * **参数解释**： 辅助弹性网卡的VLAN ID。 **取值范围**： 1-4094
      * @return vlanId
      */
     public Integer getVlanId() {
@@ -306,7 +311,7 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 功能说明：安全组的ID列表；例如：\"security_groups\": [\"a0608cbf-d047-4f54-8b28-cd7b59853fff\"] 取值范围：默认值为系统默认安全组
+     * **参数解释**： 辅助弹性网卡关联的安全组的ID列表。例如：\"security_groups\": [\"a0608cbf-d047-4f54-8b28-cd7b59853fff\"]。 **取值范围**： 如果请求时不指定此参数，辅助弹性网卡创建后会自动关联默认安全组。
      * @return securityGroups
      */
     public List<String> getSecurityGroups() {
@@ -317,12 +322,12 @@ public class SubNetworkInterface {
         this.securityGroups = securityGroups;
     }
 
-    public SubNetworkInterface withTags(List<ResourceTag> tags) {
+    public SubNetworkInterface withTags(List<ResponseTag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public SubNetworkInterface addTagsItem(ResourceTag tagsItem) {
+    public SubNetworkInterface addTagsItem(ResponseTag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -330,7 +335,7 @@ public class SubNetworkInterface {
         return this;
     }
 
-    public SubNetworkInterface withTags(Consumer<List<ResourceTag>> tagsSetter) {
+    public SubNetworkInterface withTags(Consumer<List<ResponseTag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -339,14 +344,14 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 功能说明：辅助弹性网卡的标签列表
+     * **参数解释**： 辅助弹性网卡的标签信息，包括标签键和标签值，可用来分类和标识资源。详情请参见Tag对象。 **取值范围**： 不涉及。
      * @return tags
      */
-    public List<ResourceTag> getTags() {
+    public List<ResponseTag> getTags() {
         return tags;
     }
 
-    public void setTags(List<ResourceTag> tags) {
+    public void setTags(List<ResponseTag> tags) {
         this.tags = tags;
     }
 
@@ -356,7 +361,7 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 功能说明：辅助弹性网卡所属项目ID
+     * **参数解释**： 辅助弹性网卡所属的项目ID。 **取值范围**： 不涉及。
      * @return projectId
      */
     public String getProjectId() {
@@ -373,7 +378,7 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 功能说明：辅助弹性网卡的创建时间 取值范围：UTC时间格式：yyyy-MM-ddTHH:mm:ss
+     * **参数解释**： 辅助弹性网卡的创建时间。 **取值范围**： 不涉及。
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {
@@ -382,6 +387,23 @@ public class SubNetworkInterface {
 
     public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public SubNetworkInterface withUpdatedAt(OffsetDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 辅助弹性网卡的更新时间。 **取值范围**： 不涉及。
+     * @return updatedAt
+     */
+    public OffsetDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(OffsetDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     public SubNetworkInterface withAllowedAddressPairs(List<AllowedAddressPair> allowedAddressPairs) {
@@ -406,7 +428,7 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 1. 扩展属性：IP/Mac对列表，allowed_address_pair参见“allowed_address_pair对象” 2. 使用说明: IP地址不允许为 “0.0.0.0”如果allowed_address_pairs配置地址池较大的CIDR（掩码小于24位），建议为该port配置一个单独的安全组硬件SDN环境不支持ip_address属性配置为CIDR
+     * **参数解释**： 辅助弹性网卡的IP/Mac对列表，详情请参见“AllowedAddressPair”对象表。 **取值范围**： 不涉及。
      * @return allowedAddressPairs
      */
     public List<AllowedAddressPair> getAllowedAddressPairs() {
@@ -423,7 +445,7 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 功能说明：辅助弹性网卡当前状态
+     * **参数解释**： 辅助弹性网卡的状态。 **取值范围**： - NORMAL：表示辅助弹性网卡已挂载在弹性网卡上。 - UNBOUND：表示辅助弹性网卡未挂载在弹性网卡上。
      * @return state
      */
     public String getState() {
@@ -440,7 +462,7 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 功能说明：辅助弹性网卡所属实例ID，例如RDS实例ID
+     * **参数解释**： 辅助弹性网卡所属的云服务实例ID，例如RDS实例ID。 **取值范围**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -457,7 +479,7 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 功能说明：辅助弹性网卡所属实例类型，例如“RDS”
+     * **参数解释**： 辅助弹性网卡所属的云服务实例类型，例如“RDS”。 **取值范围**： 不涉及。
      * @return instanceType
      */
     public String getInstanceType() {
@@ -474,7 +496,7 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 功能说明：辅助弹性网卡所在站点的公网出口信息
+     * **参数解释**： 辅助弹性网卡所在站点的公网出口信息。 **取值范围**： - center：默认值，表示作用域为中心。 - 某个AZ ID：表示作用域为具体的AZ。
      * @return scope
      */
     public String getScope() {
@@ -491,7 +513,7 @@ public class SubNetworkInterface {
     }
 
     /**
-     * 功能说明：辅助弹性网卡安全使能标记，如果不使能则安全组不生效。 取值范围：true（使能），false（不使能）
+     * **参数解释**： 辅助弹性网卡安全使能标记，如果不使能则安全组不生效。 **取值范围**： 不涉及。
      * @return securityEnabled
      */
     public Boolean getSecurityEnabled() {
@@ -519,7 +541,7 @@ public class SubNetworkInterface {
             && Objects.equals(this.description, that.description) && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.vlanId, that.vlanId) && Objects.equals(this.securityGroups, that.securityGroups)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.allowedAddressPairs, that.allowedAddressPairs)
             && Objects.equals(this.state, that.state) && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.instanceType, that.instanceType) && Objects.equals(this.scope, that.scope)
@@ -542,6 +564,7 @@ public class SubNetworkInterface {
             tags,
             projectId,
             createdAt,
+            updatedAt,
             allowedAddressPairs,
             state,
             instanceId,
@@ -568,6 +591,7 @@ public class SubNetworkInterface {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    allowedAddressPairs: ").append(toIndentedString(allowedAddressPairs)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");

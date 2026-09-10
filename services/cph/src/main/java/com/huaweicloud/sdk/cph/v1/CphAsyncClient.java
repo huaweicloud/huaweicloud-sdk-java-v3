@@ -5,6 +5,10 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.cph.v1.model.AddImageMemberRequest;
 import com.huaweicloud.sdk.cph.v1.model.AddImageMemberResponse;
+import com.huaweicloud.sdk.cph.v1.model.AttachShareFilesystemRequest;
+import com.huaweicloud.sdk.cph.v1.model.AttachShareFilesystemResponse;
+import com.huaweicloud.sdk.cph.v1.model.AuthorizeScheduledEventRequest;
+import com.huaweicloud.sdk.cph.v1.model.AuthorizeScheduledEventResponse;
 import com.huaweicloud.sdk.cph.v1.model.BatchCreateTagsRequest;
 import com.huaweicloud.sdk.cph.v1.model.BatchCreateTagsResponse;
 import com.huaweicloud.sdk.cph.v1.model.BatchDeleteTagsRequest;
@@ -33,6 +37,8 @@ import com.huaweicloud.sdk.cph.v1.model.DeleteShareAppsRequest;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareAppsResponse;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareFilesRequest;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareFilesResponse;
+import com.huaweicloud.sdk.cph.v1.model.DetachShareFilesystemRequest;
+import com.huaweicloud.sdk.cph.v1.model.DetachShareFilesystemResponse;
 import com.huaweicloud.sdk.cph.v1.model.ExpandPhoneDataVolumeSizeRequest;
 import com.huaweicloud.sdk.cph.v1.model.ExpandPhoneDataVolumeSizeResponse;
 import com.huaweicloud.sdk.cph.v1.model.ImportTrafficRequest;
@@ -43,6 +49,8 @@ import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneImagesRequest;
 import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneImagesResponse;
 import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneModelsRequest;
 import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneModelsResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneServerModelOfferingsRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneServerModelOfferingsResponse;
 import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneServerModelsRequest;
 import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneServerModelsResponse;
 import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneServersRequest;
@@ -63,6 +71,10 @@ import com.huaweicloud.sdk.cph.v1.model.ListResourceInstancesRequest;
 import com.huaweicloud.sdk.cph.v1.model.ListResourceInstancesResponse;
 import com.huaweicloud.sdk.cph.v1.model.ListResourceTagsRequest;
 import com.huaweicloud.sdk.cph.v1.model.ListResourceTagsResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListScheduledEventsRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListScheduledEventsResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListShareAppsSnapshotRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListShareAppsSnapshotResponse;
 import com.huaweicloud.sdk.cph.v1.model.ListShareFilesRequest;
 import com.huaweicloud.sdk.cph.v1.model.ListShareFilesResponse;
 import com.huaweicloud.sdk.cph.v1.model.PushFileRequest;
@@ -105,6 +117,8 @@ import com.huaweicloud.sdk.cph.v1.model.UpdateKeypairRequest;
 import com.huaweicloud.sdk.cph.v1.model.UpdateKeypairResponse;
 import com.huaweicloud.sdk.cph.v1.model.UpdatePhoneNameRequest;
 import com.huaweicloud.sdk.cph.v1.model.UpdatePhoneNameResponse;
+import com.huaweicloud.sdk.cph.v1.model.UpdateScheduledEventRequest;
+import com.huaweicloud.sdk.cph.v1.model.UpdateScheduledEventResponse;
 import com.huaweicloud.sdk.cph.v1.model.UpdateServerNameRequest;
 import com.huaweicloud.sdk.cph.v1.model.UpdateServerNameResponse;
 
@@ -154,6 +168,66 @@ public class CphAsyncClient {
     public AsyncInvoker<AddImageMemberRequest, AddImageMemberResponse> addImageMemberAsyncInvoker(
         AddImageMemberRequest request) {
         return new AsyncInvoker<>(request, CphMeta.addImageMember, hcClient);
+    }
+
+    /**
+     * 挂载共享文件系统
+     *
+     * 将指定的共享文件系统挂载到多个云手机服务器。单个共享文件系统同时挂载的服务器数量建议不超过50台。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AttachShareFilesystemRequest 请求对象
+     * @return CompletableFuture<AttachShareFilesystemResponse>
+     */
+    public CompletableFuture<AttachShareFilesystemResponse> attachShareFilesystemAsync(
+        AttachShareFilesystemRequest request) {
+        return hcClient.asyncInvokeHttp(request, CphMeta.attachShareFilesystem);
+    }
+
+    /**
+     * 挂载共享文件系统
+     *
+     * 将指定的共享文件系统挂载到多个云手机服务器。单个共享文件系统同时挂载的服务器数量建议不超过50台。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AttachShareFilesystemRequest 请求对象
+     * @return AsyncInvoker<AttachShareFilesystemRequest, AttachShareFilesystemResponse>
+     */
+    public AsyncInvoker<AttachShareFilesystemRequest, AttachShareFilesystemResponse> attachShareFilesystemAsyncInvoker(
+        AttachShareFilesystemRequest request) {
+        return new AsyncInvoker<>(request, CphMeta.attachShareFilesystem, hcClient);
+    }
+
+    /**
+     * 授权计划事件
+     *
+     * 授权计划事件。当系统上报计划事件时，需要对服务器进行“授权维护”操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AuthorizeScheduledEventRequest 请求对象
+     * @return CompletableFuture<AuthorizeScheduledEventResponse>
+     */
+    public CompletableFuture<AuthorizeScheduledEventResponse> authorizeScheduledEventAsync(
+        AuthorizeScheduledEventRequest request) {
+        return hcClient.asyncInvokeHttp(request, CphMeta.authorizeScheduledEvent);
+    }
+
+    /**
+     * 授权计划事件
+     *
+     * 授权计划事件。当系统上报计划事件时，需要对服务器进行“授权维护”操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AuthorizeScheduledEventRequest 请求对象
+     * @return AsyncInvoker<AuthorizeScheduledEventRequest, AuthorizeScheduledEventResponse>
+     */
+    public AsyncInvoker<AuthorizeScheduledEventRequest, AuthorizeScheduledEventResponse> authorizeScheduledEventAsyncInvoker(
+        AuthorizeScheduledEventRequest request) {
+        return new AsyncInvoker<>(request, CphMeta.authorizeScheduledEvent, hcClient);
     }
 
     /**
@@ -217,7 +291,7 @@ public class CphAsyncClient {
     /**
      * 导出云手机数据
      *
-     * 批量导出云手机中的数据。该接口为异步接口。[接口调用前请先确保已完成CPH服务操作OBS桶的委托授权。委托CPH操作OBS桶请参见[委托CPH操作OBS桶](https://support.huaweicloud.com/bestpractice-cph/cph_bp_0050.html)。](tag:hws)
+     * 批量导出云手机中的数据，不支持导出共享应用及其数据文件。该接口为异步接口。[接口调用前请先确保已完成CPH服务操作OBS桶的委托授权。委托CPH操作OBS桶请参见[委托CPH操作OBS桶](https://support.huaweicloud.com/bestpractice-cph/cph_bp_0050.html)。](tag:hws)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -232,7 +306,7 @@ public class CphAsyncClient {
     /**
      * 导出云手机数据
      *
-     * 批量导出云手机中的数据。该接口为异步接口。[接口调用前请先确保已完成CPH服务操作OBS桶的委托授权。委托CPH操作OBS桶请参见[委托CPH操作OBS桶](https://support.huaweicloud.com/bestpractice-cph/cph_bp_0050.html)。](tag:hws)
+     * 批量导出云手机中的数据，不支持导出共享应用及其数据文件。该接口为异步接口。[接口调用前请先确保已完成CPH服务操作OBS桶的委托授权。委托CPH操作OBS桶请参见[委托CPH操作OBS桶](https://support.huaweicloud.com/bestpractice-cph/cph_bp_0050.html)。](tag:hws)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -375,7 +449,7 @@ public class CphAsyncClient {
     /**
      * 创建云手机裸服务器
      *
-     * 该接口创建的服务器仅包含服务器和服务器的镜像，不包含云手机实例和镜像等内容。若需要创建包含云手机实例的服务器，请使用创建云手机服务器接口。
+     * 该接口创建的服务器仅包含服务器和服务器的镜像，不包含云手机实例和镜像等内容。若需创建包含云手机实例的服务器，请使用创建云手机服务器接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -390,7 +464,7 @@ public class CphAsyncClient {
     /**
      * 创建云手机裸服务器
      *
-     * 该接口创建的服务器仅包含服务器和服务器的镜像，不包含云手机实例和镜像等内容。若需要创建包含云手机实例的服务器，请使用创建云手机服务器接口。
+     * 该接口创建的服务器仅包含服务器和服务器的镜像，不包含云手机实例和镜像等内容。若需创建包含云手机实例的服务器，请使用创建云手机服务器接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -584,6 +658,36 @@ public class CphAsyncClient {
     }
 
     /**
+     * 卸载共享文件系统
+     *
+     * 卸载多个云手机服务器上的共享文件系统
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DetachShareFilesystemRequest 请求对象
+     * @return CompletableFuture<DetachShareFilesystemResponse>
+     */
+    public CompletableFuture<DetachShareFilesystemResponse> detachShareFilesystemAsync(
+        DetachShareFilesystemRequest request) {
+        return hcClient.asyncInvokeHttp(request, CphMeta.detachShareFilesystem);
+    }
+
+    /**
+     * 卸载共享文件系统
+     *
+     * 卸载多个云手机服务器上的共享文件系统
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DetachShareFilesystemRequest 请求对象
+     * @return AsyncInvoker<DetachShareFilesystemRequest, DetachShareFilesystemResponse>
+     */
+    public AsyncInvoker<DetachShareFilesystemRequest, DetachShareFilesystemResponse> detachShareFilesystemAsyncInvoker(
+        DetachShareFilesystemRequest request) {
+        return new AsyncInvoker<>(request, CphMeta.detachShareFilesystem, hcClient);
+    }
+
+    /**
      * 扩容云手机数据盘大小
      *
      * 扩容云手机数据盘大小
@@ -702,6 +806,36 @@ public class CphAsyncClient {
     public AsyncInvoker<ListCloudPhoneModelsRequest, ListCloudPhoneModelsResponse> listCloudPhoneModelsAsyncInvoker(
         ListCloudPhoneModelsRequest request) {
         return new AsyncInvoker<>(request, CphMeta.listCloudPhoneModels, hcClient);
+    }
+
+    /**
+     * 查询云手机服务器规格售卖状态列表
+     *
+     * 查询客户有权限的可用区，及可用区内支持的服务器规格售卖状态列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCloudPhoneServerModelOfferingsRequest 请求对象
+     * @return CompletableFuture<ListCloudPhoneServerModelOfferingsResponse>
+     */
+    public CompletableFuture<ListCloudPhoneServerModelOfferingsResponse> listCloudPhoneServerModelOfferingsAsync(
+        ListCloudPhoneServerModelOfferingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CphMeta.listCloudPhoneServerModelOfferings);
+    }
+
+    /**
+     * 查询云手机服务器规格售卖状态列表
+     *
+     * 查询客户有权限的可用区，及可用区内支持的服务器规格售卖状态列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCloudPhoneServerModelOfferingsRequest 请求对象
+     * @return AsyncInvoker<ListCloudPhoneServerModelOfferingsRequest, ListCloudPhoneServerModelOfferingsResponse>
+     */
+    public AsyncInvoker<ListCloudPhoneServerModelOfferingsRequest, ListCloudPhoneServerModelOfferingsResponse> listCloudPhoneServerModelOfferingsAsyncInvoker(
+        ListCloudPhoneServerModelOfferingsRequest request) {
+        return new AsyncInvoker<>(request, CphMeta.listCloudPhoneServerModelOfferings, hcClient);
     }
 
     /**
@@ -997,6 +1131,75 @@ public class CphAsyncClient {
     public AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTagsAsyncInvoker(
         ListResourceTagsRequest request) {
         return new AsyncInvoker<>(request, CphMeta.listResourceTags, hcClient);
+    }
+
+    /**
+     * 查询计划事件列表
+     *
+     * 查询服务器计划事件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledEventsRequest 请求对象
+     * @return CompletableFuture<ListScheduledEventsResponse>
+     */
+    public CompletableFuture<ListScheduledEventsResponse> listScheduledEventsAsync(ListScheduledEventsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CphMeta.listScheduledEvents);
+    }
+
+    /**
+     * 查询计划事件列表
+     *
+     * 查询服务器计划事件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledEventsRequest 请求对象
+     * @return AsyncInvoker<ListScheduledEventsRequest, ListScheduledEventsResponse>
+     */
+    public AsyncInvoker<ListScheduledEventsRequest, ListScheduledEventsResponse> listScheduledEventsAsyncInvoker(
+        ListScheduledEventsRequest request) {
+        return new AsyncInvoker<>(request, CphMeta.listScheduledEvents, hcClient);
+    }
+
+    /**
+     * 查询服务器已安装共享应用列表
+     *
+     * 该接口查询云手机服务器上最新采集的已安装的共享应用快照，采集在云手机服务器上定时每两小时执行一次。
+     * 注意存在以下限制：
+     * 1.云手机服务器安装不同的共享应用数量不能超过10000个，超过限制不会采集该服务器数据。
+     * 2.推送安装的共享应用包名只包含大小写字母、数字、下划线、点，不能以数字和下划线开头，点不能作为结尾且包名中至少有一个点，点后必须以字母开头，长度不超过128。不符合该限制的共享应用包名不会采集。
+     * 3.推送安装的共享应用版本只包含字母、数字、连字符、下划线、点，无空格，不能以连字符、点开头，长度不超过32。不符合该限制的共享应用包版本不会采集。
+     * 4.同一个服务器上同一个已安装的共享应用版本建议不要超过60个。超过会影响该应用的采集。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListShareAppsSnapshotRequest 请求对象
+     * @return CompletableFuture<ListShareAppsSnapshotResponse>
+     */
+    public CompletableFuture<ListShareAppsSnapshotResponse> listShareAppsSnapshotAsync(
+        ListShareAppsSnapshotRequest request) {
+        return hcClient.asyncInvokeHttp(request, CphMeta.listShareAppsSnapshot);
+    }
+
+    /**
+     * 查询服务器已安装共享应用列表
+     *
+     * 该接口查询云手机服务器上最新采集的已安装的共享应用快照，采集在云手机服务器上定时每两小时执行一次。
+     * 注意存在以下限制：
+     * 1.云手机服务器安装不同的共享应用数量不能超过10000个，超过限制不会采集该服务器数据。
+     * 2.推送安装的共享应用包名只包含大小写字母、数字、下划线、点，不能以数字和下划线开头，点不能作为结尾且包名中至少有一个点，点后必须以字母开头，长度不超过128。不符合该限制的共享应用包名不会采集。
+     * 3.推送安装的共享应用版本只包含字母、数字、连字符、下划线、点，无空格，不能以连字符、点开头，长度不超过32。不符合该限制的共享应用包版本不会采集。
+     * 4.同一个服务器上同一个已安装的共享应用版本建议不要超过60个。超过会影响该应用的采集。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListShareAppsSnapshotRequest 请求对象
+     * @return AsyncInvoker<ListShareAppsSnapshotRequest, ListShareAppsSnapshotResponse>
+     */
+    public AsyncInvoker<ListShareAppsSnapshotRequest, ListShareAppsSnapshotResponse> listShareAppsSnapshotAsyncInvoker(
+        ListShareAppsSnapshotRequest request) {
+        return new AsyncInvoker<>(request, CphMeta.listShareAppsSnapshot, hcClient);
     }
 
     /**
@@ -1415,7 +1618,7 @@ public class CphAsyncClient {
     /**
      * 更新共享镜像接受信息
      *
-     * 用户收到共享镜像后，选择接受或拒绝共享镜像。未接受的共享镜像无法使用。
+     * 用户收到共享镜像后，选择接受或者拒绝共享镜像。未接受的共享镜像无法使用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1429,7 +1632,7 @@ public class CphAsyncClient {
     /**
      * 更新共享镜像接受信息
      *
-     * 用户收到共享镜像后，选择接受或拒绝共享镜像。未接受的共享镜像无法使用。
+     * 用户收到共享镜像后，选择接受或者拒绝共享镜像。未接受的共享镜像无法使用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1500,6 +1703,36 @@ public class CphAsyncClient {
     }
 
     /**
+     * 修改计划事件预约时间
+     *
+     * 更新计划事件的执行开始时间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScheduledEventRequest 请求对象
+     * @return CompletableFuture<UpdateScheduledEventResponse>
+     */
+    public CompletableFuture<UpdateScheduledEventResponse> updateScheduledEventAsync(
+        UpdateScheduledEventRequest request) {
+        return hcClient.asyncInvokeHttp(request, CphMeta.updateScheduledEvent);
+    }
+
+    /**
+     * 修改计划事件预约时间
+     *
+     * 更新计划事件的执行开始时间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScheduledEventRequest 请求对象
+     * @return AsyncInvoker<UpdateScheduledEventRequest, UpdateScheduledEventResponse>
+     */
+    public AsyncInvoker<UpdateScheduledEventRequest, UpdateScheduledEventResponse> updateScheduledEventAsyncInvoker(
+        UpdateScheduledEventRequest request) {
+        return new AsyncInvoker<>(request, CphMeta.updateScheduledEvent, hcClient);
+    }
+
+    /**
      * 修改云手机服务器名称
      *
      * 根据serverId修改serverName。
@@ -1532,7 +1765,7 @@ public class CphAsyncClient {
      * 安装apk
      *
      * 在云手机中安装apk。系统会将指定的apk文件下载后直接安装到云手机中。
-     * 支持安装单apk应用和多apk应用。可使用install命令安装单apk应用，一次只支持安装一个apk，如果一次传多个apk只有第一个安装成功；可使用install-multiple命令安装多apk应用（多apk应用为单个应用拆分成多个apk），一次只支持同一个应用的多个apk。该接口为异步接口。[接口调用前请先确保已完成CPH服务操作OBS桶的委托授权。委托CPH操作OBS桶请参见[委托CPH操作OBS桶](https://support.huaweicloud.com/bestpractice-cph/cph_bp_0050.html)。](tag:hws)
+     * 支持安装单apk应用和多apk应用。可使用install命令安装单apk应用，一次只支持安装一个apk，只能传一个apk；可使用install-multiple命令安装多apk应用（多apk应用为单个应用拆分成多个apk），一次只支持同一个应用的多个apk。该接口为异步接口。[接口调用前请先确保已完成CPH服务操作OBS桶的委托授权。委托CPH操作OBS桶请参见[委托CPH操作OBS桶](https://support.huaweicloud.com/bestpractice-cph/cph_bp_0050.html)。](tag:hws)
      * - 管理面性能有限，对相同服务器批量执行的ADB命令，将会阻塞云手机其他任务执行。
      * - 允许安装的apk大小限制为2G（即不可将obs桶内大于2G的apk安装到手机中），超过限制将返回错误。
      * 
@@ -1549,7 +1782,7 @@ public class CphAsyncClient {
      * 安装apk
      *
      * 在云手机中安装apk。系统会将指定的apk文件下载后直接安装到云手机中。
-     * 支持安装单apk应用和多apk应用。可使用install命令安装单apk应用，一次只支持安装一个apk，如果一次传多个apk只有第一个安装成功；可使用install-multiple命令安装多apk应用（多apk应用为单个应用拆分成多个apk），一次只支持同一个应用的多个apk。该接口为异步接口。[接口调用前请先确保已完成CPH服务操作OBS桶的委托授权。委托CPH操作OBS桶请参见[委托CPH操作OBS桶](https://support.huaweicloud.com/bestpractice-cph/cph_bp_0050.html)。](tag:hws)
+     * 支持安装单apk应用和多apk应用。可使用install命令安装单apk应用，一次只支持安装一个apk，只能传一个apk；可使用install-multiple命令安装多apk应用（多apk应用为单个应用拆分成多个apk），一次只支持同一个应用的多个apk。该接口为异步接口。[接口调用前请先确保已完成CPH服务操作OBS桶的委托授权。委托CPH操作OBS桶请参见[委托CPH操作OBS桶](https://support.huaweicloud.com/bestpractice-cph/cph_bp_0050.html)。](tag:hws)
      * - 管理面性能有限，对相同服务器批量执行的ADB命令，将会阻塞云手机其他任务执行。
      * - 允许安装的apk大小限制为2G（即不可将obs桶内大于2G的apk安装到手机中），超过限制将返回错误。
      * 

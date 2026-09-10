@@ -11,6 +11,11 @@ import java.util.Objects;
 public class TbPosInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "schema_name")
+
+    private String schemaName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_name")
 
     private String originName;
@@ -29,6 +34,23 @@ public class TbPosInfo {
     @JsonProperty(value = "end")
 
     private Integer end;
+
+    public TbPosInfo withSchemaName(String schemaName) {
+        this.schemaName = schemaName;
+        return this;
+    }
+
+    /**
+     * Schema名称
+     * @return schemaName
+     */
+    public String getSchemaName() {
+        return schemaName;
+    }
+
+    public void setSchemaName(String schemaName) {
+        this.schemaName = schemaName;
+    }
 
     public TbPosInfo withOriginName(String originName) {
         this.originName = originName;
@@ -107,19 +129,21 @@ public class TbPosInfo {
             return false;
         }
         TbPosInfo that = (TbPosInfo) obj;
-        return Objects.equals(this.originName, that.originName) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.start, that.start) && Objects.equals(this.end, that.end);
+        return Objects.equals(this.schemaName, that.schemaName) && Objects.equals(this.originName, that.originName)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.start, that.start)
+            && Objects.equals(this.end, that.end);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(originName, name, start, end);
+        return Objects.hash(schemaName, originName, name, start, end);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class TbPosInfo {\n");
+        sb.append("    schemaName: ").append(toIndentedString(schemaName)).append("\n");
         sb.append("    originName: ").append(toIndentedString(originName)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    start: ").append(toIndentedString(start)).append("\n");

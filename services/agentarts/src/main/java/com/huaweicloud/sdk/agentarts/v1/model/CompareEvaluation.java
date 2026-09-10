@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 单个评估器的执行结果，包含评分、状态、耗时及token用量等指标。
@@ -134,7 +135,7 @@ public class CompareEvaluation {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "correction")
 
-    private Object correction;
+    private Map<String, OpsCorrection> correction = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retry_count")
@@ -312,8 +313,24 @@ public class CompareEvaluation {
         this.outputTokenUsage = outputTokenUsage;
     }
 
-    public CompareEvaluation withCorrection(Object correction) {
+    public CompareEvaluation withCorrection(Map<String, OpsCorrection> correction) {
         this.correction = correction;
+        return this;
+    }
+
+    public CompareEvaluation putCorrectionItem(String key, OpsCorrection correctionItem) {
+        if (this.correction == null) {
+            this.correction = new HashMap<>();
+        }
+        this.correction.put(key, correctionItem);
+        return this;
+    }
+
+    public CompareEvaluation withCorrection(Consumer<Map<String, OpsCorrection>> correctionSetter) {
+        if (this.correction == null) {
+            this.correction = new HashMap<>();
+        }
+        correctionSetter.accept(this.correction);
         return this;
     }
 
@@ -321,11 +338,11 @@ public class CompareEvaluation {
      * 纠正信息字段，通常为null；预留用于自动纠错或人工校正结果。
      * @return correction
      */
-    public Object getCorrection() {
+    public Map<String, OpsCorrection> getCorrection() {
         return correction;
     }
 
-    public void setCorrection(Object correction) {
+    public void setCorrection(Map<String, OpsCorrection> correction) {
         this.correction = correction;
     }
 

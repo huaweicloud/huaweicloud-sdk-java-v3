@@ -41,6 +41,9 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ApproveResult;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ApproverParam;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AssociateClassificationToEntityRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AssociateClassificationToEntityResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.AssociateConnectionClusterReq;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.AssociateConnectionClusterRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.AssociateConnectionClusterResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AssociateSecurityLevelToEntitieRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AssociateSecurityLevelToEntitieResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AtomicIndexVO;
@@ -48,8 +51,6 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeActionApiToInstanceR
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeActionApiToInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeApiToInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeApiToInstanceResponse;
-import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeDataConnectionRequest;
-import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeDataConnectionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchApproveApplyRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchApproveApplyResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchApproveRequestBody;
@@ -59,6 +60,9 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateClassificationT
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateClassificationToEntitiesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateSecurityLevelToEntitiesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateSecurityLevelToEntitiesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchBindMigrationResourceToWorkspaceRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchBindMigrationResourceToWorkspaceRequestBody;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchBindMigrationResourceToWorkspaceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateDesignTableModelsFromLogicRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateDesignTableModelsFromLogicResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateSecurityPermissionSetMembersRequest;
@@ -88,6 +92,9 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecuritySecrecyLev
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecuritySecrecyLevelsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteTemplatesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteTemplatesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteWorkspacesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteWorkspacesRequestBody;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteWorkspacesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchOfflineRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchOfflineResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchPublishRequest;
@@ -157,10 +164,19 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateBizMetricRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateBizMetricResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateCatalogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateCatalogResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateClusterReq;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateClusterRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateClusterResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateCodeTableRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateCodeTableResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateConnectionReq;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateConnectionRoutesReq;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateConnectionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateConnectionsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDatasourceConnectionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDatasourceConnectionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDatasourceConnectionRoutesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDatasourceConnectionRoutesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAggregationLogicTableRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAggregationLogicTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAtomicIndexRequest;
@@ -273,6 +289,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteCodeTableRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteCodeTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDataconnectionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDatasourceConnectionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDatasourceConnectionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDatasourceConnectionRoutesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDatasourceConnectionRoutesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAggregationLogicTableRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAggregationLogicTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAtomicIndexRequest;
@@ -331,6 +351,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DiagnoseTypeDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DimensionVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DirectoryVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DlsAdmin;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DownloadTaskLogRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DownloadTaskLogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DynamicMaskingPolicyCreateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DynamicMaskingPolicyUpdateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.Entity;
@@ -452,6 +474,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDatabasesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDatabasesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataconnectionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataconnectionsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDatasourceConnectionsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDatasourceConnectionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDerivativeIndexesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDerivativeIndexesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDesignDataLayersRequest;
@@ -574,6 +598,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelRelationsReques
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelRelationsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTaskLogsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTaskLogsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTaskTableReferenceDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTaskTableReferenceDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspaceRolesRequest;
@@ -735,6 +761,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataconnectionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDatamapLineageRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDatamapLineageResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDatasourceConnectionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDatasourceConnectionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDerivativeIndexByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDerivativeIndexByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDesignOperationResultRequest;
@@ -770,6 +798,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceLogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceLogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceResultRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceResultResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowJobMonitorInfoRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowJobMonitorInfoResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowLineageBulkRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowLineageBulkResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowLineageRequest;
@@ -790,6 +820,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQualityTaskDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQualityTaskDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQueuesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQueuesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowRealTimeJobDetailsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowRealTimeJobDetailsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowRelationByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowRelationByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityAdminRequest;
@@ -865,12 +897,15 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateCodeTableRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateCodeTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateCodeTableValuesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateCodeTableValuesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateConnectionHostReq;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataServiceInstanceLtsLogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataServiceInstanceLtsLogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataServiceInstanceObsLogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataServiceInstanceObsLogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataconnectionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDatasourceConnectionHostMessageRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDatasourceConnectionHostMessageResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAggregationLogicTableRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAggregationLogicTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAtomicIndexRequest;
@@ -932,10 +967,13 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateTaskInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateTaskInfoResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateTemplateRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateTemplateResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateWorkSpaceOldRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateWorkSpaceOldResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateWorkSpaceUserOrGroupRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateWorkSpaceUserOrGroupResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateWorkspaceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateWorkspaceResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.WorkspaceDto;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.WorkspaceTransformVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.WorkspaceVO;
 
@@ -1154,6 +1192,51 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AssociateConnectionClusterRequest, AssociateConnectionClusterResponse> associateConnectionCluster =
+        genForAssociateConnectionCluster();
+
+    private static HttpRequestDef<AssociateConnectionClusterRequest, AssociateConnectionClusterResponse> genForAssociateConnectionCluster() {
+        // basic
+        HttpRequestDef.Builder<AssociateConnectionClusterRequest, AssociateConnectionClusterResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AssociateConnectionClusterRequest.class,
+                    AssociateConnectionClusterResponse.class)
+                .withName("AssociateConnectionCluster")
+                .withUri("/v1/{project_id}/migration/connections/{connection_id}/associate-cluster")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateConnectionClusterRequest::getConnectionId,
+                AssociateConnectionClusterRequest::setConnectionId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateConnectionClusterRequest::getWorkspace,
+                AssociateConnectionClusterRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateConnectionClusterRequest::getXProjectId,
+                AssociateConnectionClusterRequest::setXProjectId));
+        builder.<AssociateConnectionClusterReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociateConnectionClusterReq.class),
+            f -> f.withMarshaller(AssociateConnectionClusterRequest::getBody,
+                AssociateConnectionClusterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AssociateSecurityLevelToEntitieRequest, AssociateSecurityLevelToEntitieResponse> associateSecurityLevelToEntitie =
         genForAssociateSecurityLevelToEntitie();
 
@@ -1187,36 +1270,6 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AssociateSecurityLevelToEntitieRequest::getWorkspace,
                 AssociateSecurityLevelToEntitieRequest::setWorkspace));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<AuthorizeDataConnectionRequest, AuthorizeDataConnectionResponse> authorizeDataConnection =
-        genForAuthorizeDataConnection();
-
-    private static HttpRequestDef<AuthorizeDataConnectionRequest, AuthorizeDataConnectionResponse> genForAuthorizeDataConnection() {
-        // basic
-        HttpRequestDef.Builder<AuthorizeDataConnectionRequest, AuthorizeDataConnectionResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, AuthorizeDataConnectionRequest.class, AuthorizeDataConnectionResponse.class)
-            .withName("AuthorizeDataConnection")
-            .withUri("/v1/{project_id}/datasources/authorize_datasource")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("data_connection_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AuthorizeDataConnectionRequest::getDataConnectionId,
-                AuthorizeDataConnectionRequest::setDataConnectionId));
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AuthorizeDataConnectionRequest::getWorkspaceId,
-                AuthorizeDataConnectionRequest::setWorkspaceId));
 
         // response
 
@@ -1357,6 +1410,45 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(BulkSecurityLevel.class),
             f -> f.withMarshaller(BatchAssociateSecurityLevelToEntitiesRequest::getBody,
                 BatchAssociateSecurityLevelToEntitiesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchBindMigrationResourceToWorkspaceRequest, BatchBindMigrationResourceToWorkspaceResponse> batchBindMigrationResourceToWorkspace =
+        genForBatchBindMigrationResourceToWorkspace();
+
+    private static HttpRequestDef<BatchBindMigrationResourceToWorkspaceRequest, BatchBindMigrationResourceToWorkspaceResponse> genForBatchBindMigrationResourceToWorkspace() {
+        // basic
+        HttpRequestDef.Builder<BatchBindMigrationResourceToWorkspaceRequest, BatchBindMigrationResourceToWorkspaceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchBindMigrationResourceToWorkspaceRequest.class,
+                    BatchBindMigrationResourceToWorkspaceResponse.class)
+                .withName("BatchBindMigrationResourceToWorkspace")
+                .withUri("/v1/{project_id}/{instance_id}/migration/batch-bind-workspace")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchBindMigrationResourceToWorkspaceRequest::getInstanceId,
+                BatchBindMigrationResourceToWorkspaceRequest::setInstanceId));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchBindMigrationResourceToWorkspaceRequest::getXProjectId,
+                BatchBindMigrationResourceToWorkspaceRequest::setXProjectId));
+        builder.<BatchBindMigrationResourceToWorkspaceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchBindMigrationResourceToWorkspaceRequestBody.class),
+            f -> f.withMarshaller(BatchBindMigrationResourceToWorkspaceRequest::getBody,
+                BatchBindMigrationResourceToWorkspaceRequest::setBody));
 
         // response
 
@@ -1752,6 +1844,35 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TemplateListRO.class),
             f -> f.withMarshaller(BatchDeleteTemplatesRequest::getBody, BatchDeleteTemplatesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteWorkspacesRequest, BatchDeleteWorkspacesResponse> batchDeleteWorkspaces =
+        genForBatchDeleteWorkspaces();
+
+    private static HttpRequestDef<BatchDeleteWorkspacesRequest, BatchDeleteWorkspacesResponse> genForBatchDeleteWorkspaces() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteWorkspacesRequest, BatchDeleteWorkspacesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteWorkspacesRequest.class, BatchDeleteWorkspacesResponse.class)
+            .withName("BatchDeleteWorkspaces")
+            .withUri("/v1/{project_id}/{instance_id}/workspaces/batch-delete")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteWorkspacesRequest::getInstanceId,
+                BatchDeleteWorkspacesRequest::setInstanceId));
+        builder.<BatchDeleteWorkspacesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteWorkspacesRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteWorkspacesRequest::getBody, BatchDeleteWorkspacesRequest::setBody));
 
         // response
 
@@ -2524,6 +2645,44 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateClusterRequest, CreateClusterResponse> createCluster =
+        genForCreateCluster();
+
+    private static HttpRequestDef<CreateClusterRequest, CreateClusterResponse> genForCreateCluster() {
+        // basic
+        HttpRequestDef.Builder<CreateClusterRequest, CreateClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateClusterRequest.class, CreateClusterResponse.class)
+                .withName("CreateCluster")
+                .withUri("/v1/{project_id}/migration/instances/{instance_id}/clusters")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateClusterRequest::getInstanceId, CreateClusterRequest::setInstanceId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateClusterRequest::getWorkspace, CreateClusterRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateClusterRequest::getXProjectId, CreateClusterRequest::setXProjectId));
+        builder.<CreateClusterReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateClusterReq.class),
+            f -> f.withMarshaller(CreateClusterRequest::getBody, CreateClusterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCodeTableRequest, CreateCodeTableResponse> createCodeTable =
         genForCreateCodeTable();
 
@@ -2579,6 +2738,96 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApigDataSourcesVo.class),
             f -> f.withMarshaller(CreateConnectionsRequest::getBody, CreateConnectionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDatasourceConnectionRequest, CreateDatasourceConnectionResponse> createDatasourceConnection =
+        genForCreateDatasourceConnection();
+
+    private static HttpRequestDef<CreateDatasourceConnectionRequest, CreateDatasourceConnectionResponse> genForCreateDatasourceConnection() {
+        // basic
+        HttpRequestDef.Builder<CreateDatasourceConnectionRequest, CreateDatasourceConnectionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateDatasourceConnectionRequest.class,
+                    CreateDatasourceConnectionResponse.class)
+                .withName("CreateDatasourceConnection")
+                .withUri("/v1/{project_id}/migration/instances/{instance_id}/connections")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDatasourceConnectionRequest::getInstanceId,
+                CreateDatasourceConnectionRequest::setInstanceId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDatasourceConnectionRequest::getWorkspace,
+                CreateDatasourceConnectionRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDatasourceConnectionRequest::getXProjectId,
+                CreateDatasourceConnectionRequest::setXProjectId));
+        builder.<CreateConnectionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateConnectionReq.class),
+            f -> f.withMarshaller(CreateDatasourceConnectionRequest::getBody,
+                CreateDatasourceConnectionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDatasourceConnectionRoutesRequest, CreateDatasourceConnectionRoutesResponse> createDatasourceConnectionRoutes =
+        genForCreateDatasourceConnectionRoutes();
+
+    private static HttpRequestDef<CreateDatasourceConnectionRoutesRequest, CreateDatasourceConnectionRoutesResponse> genForCreateDatasourceConnectionRoutes() {
+        // basic
+        HttpRequestDef.Builder<CreateDatasourceConnectionRoutesRequest, CreateDatasourceConnectionRoutesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateDatasourceConnectionRoutesRequest.class,
+                    CreateDatasourceConnectionRoutesResponse.class)
+                .withName("CreateDatasourceConnectionRoutes")
+                .withUri("/v1/{project_id}/migration/connections/{connection_id}/routes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDatasourceConnectionRoutesRequest::getConnectionId,
+                CreateDatasourceConnectionRoutesRequest::setConnectionId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDatasourceConnectionRoutesRequest::getWorkspace,
+                CreateDatasourceConnectionRoutesRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDatasourceConnectionRoutesRequest::getXProjectId,
+                CreateDatasourceConnectionRoutesRequest::setXProjectId));
+        builder.<CreateConnectionRoutesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateConnectionRoutesReq.class),
+            f -> f.withMarshaller(CreateDatasourceConnectionRoutesRequest::getBody,
+                CreateDatasourceConnectionRoutesRequest::setBody));
 
         // response
 
@@ -4143,6 +4392,96 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteDatasourceConnectionRequest, DeleteDatasourceConnectionResponse> deleteDatasourceConnection =
+        genForDeleteDatasourceConnection();
+
+    private static HttpRequestDef<DeleteDatasourceConnectionRequest, DeleteDatasourceConnectionResponse> genForDeleteDatasourceConnection() {
+        // basic
+        HttpRequestDef.Builder<DeleteDatasourceConnectionRequest, DeleteDatasourceConnectionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteDatasourceConnectionRequest.class,
+                    DeleteDatasourceConnectionResponse.class)
+                .withName("DeleteDatasourceConnection")
+                .withUri("/v1/{project_id}/migration/instances/{instance_id}/connections/{connection_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDatasourceConnectionRequest::getInstanceId,
+                DeleteDatasourceConnectionRequest::setInstanceId));
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDatasourceConnectionRequest::getConnectionId,
+                DeleteDatasourceConnectionRequest::setConnectionId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDatasourceConnectionRequest::getWorkspace,
+                DeleteDatasourceConnectionRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDatasourceConnectionRequest::getXProjectId,
+                DeleteDatasourceConnectionRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDatasourceConnectionRoutesRequest, DeleteDatasourceConnectionRoutesResponse> deleteDatasourceConnectionRoutes =
+        genForDeleteDatasourceConnectionRoutes();
+
+    private static HttpRequestDef<DeleteDatasourceConnectionRoutesRequest, DeleteDatasourceConnectionRoutesResponse> genForDeleteDatasourceConnectionRoutes() {
+        // basic
+        HttpRequestDef.Builder<DeleteDatasourceConnectionRoutesRequest, DeleteDatasourceConnectionRoutesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteDatasourceConnectionRoutesRequest.class,
+                    DeleteDatasourceConnectionRoutesResponse.class)
+                .withName("DeleteDatasourceConnectionRoutes")
+                .withUri("/v1/{project_id}/migration/connections/{connection_id}/routes/{route_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDatasourceConnectionRoutesRequest::getConnectionId,
+                DeleteDatasourceConnectionRoutesRequest::setConnectionId));
+        builder.<String>withRequestField("route_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDatasourceConnectionRoutesRequest::getRouteName,
+                DeleteDatasourceConnectionRoutesRequest::setRouteName));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDatasourceConnectionRoutesRequest::getWorkspace,
+                DeleteDatasourceConnectionRoutesRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDatasourceConnectionRoutesRequest::getXProjectId,
+                DeleteDatasourceConnectionRoutesRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteDesignAggregationLogicTableRequest, DeleteDesignAggregationLogicTableResponse> deleteDesignAggregationLogicTable =
         genForDeleteDesignAggregationLogicTable();
 
@@ -5024,6 +5363,49 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeployFactoryPackagesRequestBody.class),
             f -> f.withMarshaller(DeployFactoryPackagesRequest::getBody, DeployFactoryPackagesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadTaskLogRequest, DownloadTaskLogResponse> downloadTaskLog =
+        genForDownloadTaskLog();
+
+    private static HttpRequestDef<DownloadTaskLogRequest, DownloadTaskLogResponse> genForDownloadTaskLog() {
+        // basic
+        HttpRequestDef.Builder<DownloadTaskLogRequest, DownloadTaskLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, DownloadTaskLogRequest.class, DownloadTaskLogResponse.class)
+                .withName("DownloadTaskLog")
+                .withUri("/v1/{project_id}/migration/tasks/{task_id}/logs/download")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadTaskLogRequest::getTaskId, DownloadTaskLogRequest::setTaskId));
+        builder.<String>withRequestField("path",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadTaskLogRequest::getPath, DownloadTaskLogRequest::setPath));
+        builder.<String>withRequestField("range",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadTaskLogRequest::getRange, DownloadTaskLogRequest::setRange));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadTaskLogRequest::getWorkspace, DownloadTaskLogRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadTaskLogRequest::getXProjectId, DownloadTaskLogRequest::setXProjectId));
 
         // response
 
@@ -7194,6 +7576,63 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDataconnectionsRequest::getWorkspace, ListDataconnectionsRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDatasourceConnectionsRequest, ListDatasourceConnectionsResponse> listDatasourceConnections =
+        genForListDatasourceConnections();
+
+    private static HttpRequestDef<ListDatasourceConnectionsRequest, ListDatasourceConnectionsResponse> genForListDatasourceConnections() {
+        // basic
+        HttpRequestDef.Builder<ListDatasourceConnectionsRequest, ListDatasourceConnectionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListDatasourceConnectionsRequest.class,
+                    ListDatasourceConnectionsResponse.class)
+                .withName("ListDatasourceConnections")
+                .withUri("/v1/{project_id}/migration/instances/{instance_id}/connections")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasourceConnectionsRequest::getInstanceId,
+                ListDatasourceConnectionsRequest::setInstanceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDatasourceConnectionsRequest::getLimit,
+                ListDatasourceConnectionsRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasourceConnectionsRequest::getName,
+                ListDatasourceConnectionsRequest::setName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDatasourceConnectionsRequest::getOffset,
+                ListDatasourceConnectionsRequest::setOffset));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasourceConnectionsRequest::getWorkspace,
+                ListDatasourceConnectionsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasourceConnectionsRequest::getXProjectId,
+                ListDatasourceConnectionsRequest::setXProjectId));
 
         // response
 
@@ -11006,6 +11445,43 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTaskLogsRequest, ListTaskLogsResponse> listTaskLogs = genForListTaskLogs();
+
+    private static HttpRequestDef<ListTaskLogsRequest, ListTaskLogsResponse> genForListTaskLogs() {
+        // basic
+        HttpRequestDef.Builder<ListTaskLogsRequest, ListTaskLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTaskLogsRequest.class, ListTaskLogsResponse.class)
+                .withName("ListTaskLogs")
+                .withUri("/v1/{project_id}/migration/tasks/{task_id}/logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskLogsRequest::getTaskId, ListTaskLogsRequest::setTaskId));
+        builder.<String>withRequestField("path",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskLogsRequest::getPath, ListTaskLogsRequest::setPath));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskLogsRequest::getWorkspace, ListTaskLogsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskLogsRequest::getXProjectId, ListTaskLogsRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListTaskTableReferenceDetailRequest, ListTaskTableReferenceDetailResponse> listTaskTableReferenceDetail =
         genForListTaskTableReferenceDetail();
 
@@ -13806,6 +14282,49 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDatasourceConnectionRequest, ShowDatasourceConnectionResponse> showDatasourceConnection =
+        genForShowDatasourceConnection();
+
+    private static HttpRequestDef<ShowDatasourceConnectionRequest, ShowDatasourceConnectionResponse> genForShowDatasourceConnection() {
+        // basic
+        HttpRequestDef.Builder<ShowDatasourceConnectionRequest, ShowDatasourceConnectionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowDatasourceConnectionRequest.class, ShowDatasourceConnectionResponse.class)
+                .withName("ShowDatasourceConnection")
+                .withUri("/v1/{project_id}/migration/instances/{instance_id}/connections/{connection_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatasourceConnectionRequest::getInstanceId,
+                ShowDatasourceConnectionRequest::setInstanceId));
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatasourceConnectionRequest::getConnectionId,
+                ShowDatasourceConnectionRequest::setConnectionId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatasourceConnectionRequest::getWorkspace,
+                ShowDatasourceConnectionRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatasourceConnectionRequest::getXProjectId,
+                ShowDatasourceConnectionRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDerivativeIndexByIdRequest, ShowDerivativeIndexByIdResponse> showDerivativeIndexById =
         genForShowDerivativeIndexById();
 
@@ -14651,6 +15170,39 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowJobMonitorInfoRequest, ShowJobMonitorInfoResponse> showJobMonitorInfo =
+        genForShowJobMonitorInfo();
+
+    private static HttpRequestDef<ShowJobMonitorInfoRequest, ShowJobMonitorInfoResponse> genForShowJobMonitorInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowJobMonitorInfoRequest, ShowJobMonitorInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowJobMonitorInfoRequest.class, ShowJobMonitorInfoResponse.class)
+                .withName("ShowJobMonitorInfo")
+                .withUri("/v1/{project_id}/migration/tasks/{task_id}/monitor")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobMonitorInfoRequest::getTaskId, ShowJobMonitorInfoRequest::setTaskId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobMonitorInfoRequest::getWorkspace, ShowJobMonitorInfoRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobMonitorInfoRequest::getXProjectId, ShowJobMonitorInfoRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowLineageRequest, ShowLineageResponse> showLineage = genForShowLineage();
 
     private static HttpRequestDef<ShowLineageRequest, ShowLineageResponse> genForShowLineage() {
@@ -14968,6 +15520,42 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowQueuesRequest::getInstance, ShowQueuesRequest::setInstance));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRealTimeJobDetailsRequest, ShowRealTimeJobDetailsResponse> showRealTimeJobDetails =
+        genForShowRealTimeJobDetails();
+
+    private static HttpRequestDef<ShowRealTimeJobDetailsRequest, ShowRealTimeJobDetailsResponse> genForShowRealTimeJobDetails() {
+        // basic
+        HttpRequestDef.Builder<ShowRealTimeJobDetailsRequest, ShowRealTimeJobDetailsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowRealTimeJobDetailsRequest.class, ShowRealTimeJobDetailsResponse.class)
+            .withName("ShowRealTimeJobDetails")
+            .withUri("/v2/{project_id}/factory/real-time-jobs/{job_name}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRealTimeJobDetailsRequest::getJobName,
+                ShowRealTimeJobDetailsRequest::setJobName));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRealTimeJobDetailsRequest::getWorkspace,
+                ShowRealTimeJobDetailsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRealTimeJobDetailsRequest::getXProjectId,
+                ShowRealTimeJobDetailsRequest::setXProjectId));
 
         // response
 
@@ -16206,6 +16794,57 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateDatasourceConnectionHostMessageRequest, UpdateDatasourceConnectionHostMessageResponse> updateDatasourceConnectionHostMessage =
+        genForUpdateDatasourceConnectionHostMessage();
+
+    private static HttpRequestDef<UpdateDatasourceConnectionHostMessageRequest, UpdateDatasourceConnectionHostMessageResponse> genForUpdateDatasourceConnectionHostMessage() {
+        // basic
+        HttpRequestDef.Builder<UpdateDatasourceConnectionHostMessageRequest, UpdateDatasourceConnectionHostMessageResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateDatasourceConnectionHostMessageRequest.class,
+                    UpdateDatasourceConnectionHostMessageResponse.class)
+                .withName("UpdateDatasourceConnectionHostMessage")
+                .withUri("/v1/{project_id}/migration/instances/{instance_id}/connections/{connection_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDatasourceConnectionHostMessageRequest::getInstanceId,
+                UpdateDatasourceConnectionHostMessageRequest::setInstanceId));
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDatasourceConnectionHostMessageRequest::getConnectionId,
+                UpdateDatasourceConnectionHostMessageRequest::setConnectionId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDatasourceConnectionHostMessageRequest::getWorkspace,
+                UpdateDatasourceConnectionHostMessageRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDatasourceConnectionHostMessageRequest::getXProjectId,
+                UpdateDatasourceConnectionHostMessageRequest::setXProjectId));
+        builder.<UpdateConnectionHostReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateConnectionHostReq.class),
+            f -> f.withMarshaller(UpdateDatasourceConnectionHostMessageRequest::getBody,
+                UpdateDatasourceConnectionHostMessageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateDesignAggregationLogicTableRequest, UpdateDesignAggregationLogicTableResponse> updateDesignAggregationLogicTable =
         genForUpdateDesignAggregationLogicTable();
 
@@ -17288,6 +17927,40 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TemplateRO.class),
             f -> f.withMarshaller(UpdateTemplateRequest::getBody, UpdateTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateWorkSpaceOldRequest, UpdateWorkSpaceOldResponse> updateWorkSpaceOld =
+        genForUpdateWorkSpaceOld();
+
+    private static HttpRequestDef<UpdateWorkSpaceOldRequest, UpdateWorkSpaceOldResponse> genForUpdateWorkSpaceOld() {
+        // basic
+        HttpRequestDef.Builder<UpdateWorkSpaceOldRequest, UpdateWorkSpaceOldResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateWorkSpaceOldRequest.class, UpdateWorkSpaceOldResponse.class)
+                .withName("UpdateWorkSpaceOld")
+                .withUri("/v1/{project_id}/{instance_id}/workspace/{workspace_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWorkSpaceOldRequest::getInstanceId, UpdateWorkSpaceOldRequest::setInstanceId));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWorkSpaceOldRequest::getWorkspaceId,
+                UpdateWorkSpaceOldRequest::setWorkspaceId));
+        builder.<WorkspaceDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(WorkspaceDto.class),
+            f -> f.withMarshaller(UpdateWorkSpaceOldRequest::getBody, UpdateWorkSpaceOldRequest::setBody));
 
         // response
 

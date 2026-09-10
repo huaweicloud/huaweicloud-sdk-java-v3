@@ -19,6 +19,11 @@ public class ListImageMembersResponse extends SdkResponse {
 
     private List<ListImageMembersView> members = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private ListCloudPhoneImagesResponseBodyPageInfo pageInfo;
+
     public ListImageMembersResponse withMembers(List<ListImageMembersView> members) {
         this.members = members;
         return this;
@@ -52,6 +57,32 @@ public class ListImageMembersResponse extends SdkResponse {
         this.members = members;
     }
 
+    public ListImageMembersResponse withPageInfo(ListCloudPhoneImagesResponseBodyPageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListImageMembersResponse withPageInfo(Consumer<ListCloudPhoneImagesResponseBodyPageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new ListCloudPhoneImagesResponseBodyPageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public ListCloudPhoneImagesResponseBodyPageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(ListCloudPhoneImagesResponseBodyPageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +92,12 @@ public class ListImageMembersResponse extends SdkResponse {
             return false;
         }
         ListImageMembersResponse that = (ListImageMembersResponse) obj;
-        return Objects.equals(this.members, that.members);
+        return Objects.equals(this.members, that.members) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(members);
+        return Objects.hash(members, pageInfo);
     }
 
     @Override
@@ -74,6 +105,7 @@ public class ListImageMembersResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListImageMembersResponse {\n");
         sb.append("    members: ").append(toIndentedString(members)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

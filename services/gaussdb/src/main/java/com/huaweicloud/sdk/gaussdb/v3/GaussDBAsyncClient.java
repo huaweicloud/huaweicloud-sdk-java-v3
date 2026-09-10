@@ -5160,6 +5160,7 @@ public class GaussDBAsyncClient {
      * @param request ShowRestoreTablesRequest 请求对象
      * @return CompletableFuture<ShowRestoreTablesResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowRestoreTablesResponse> showRestoreTablesAsync(ShowRestoreTablesRequest request) {
         return hcClient.asyncInvokeHttp(request, GaussDBMeta.showRestoreTables);
     }
@@ -5174,6 +5175,7 @@ public class GaussDBAsyncClient {
      * @param request ShowRestoreTablesRequest 请求对象
      * @return AsyncInvoker<ShowRestoreTablesRequest, ShowRestoreTablesResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowRestoreTablesRequest, ShowRestoreTablesResponse> showRestoreTablesAsyncInvoker(
         ShowRestoreTablesRequest request) {
         return new AsyncInvoker<>(request, GaussDBMeta.showRestoreTables, hcClient);

@@ -12,25 +12,25 @@ import java.util.Objects;
 public class UpdateOpsSynthesisTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "id")
 
-    private Object body;
+    private String id;
 
-    public UpdateOpsSynthesisTaskResponse withBody(Object body) {
-        this.body = body;
+    public UpdateOpsSynthesisTaskResponse withId(String id) {
+        this.id = id;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * **参数解释：** 操作成功的合成任务唯一标识符。 **取值范围：** 系统生成的任务ID。 
+     * @return id
      */
-    public Object getBody() {
-        return body;
+    public String getId() {
+        return id;
     }
 
-    public void setBody(Object body) {
-        this.body = body;
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override
@@ -42,19 +42,19 @@ public class UpdateOpsSynthesisTaskResponse extends SdkResponse {
             return false;
         }
         UpdateOpsSynthesisTaskResponse that = (UpdateOpsSynthesisTaskResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateOpsSynthesisTaskResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

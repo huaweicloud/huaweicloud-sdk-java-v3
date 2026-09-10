@@ -7,22 +7,42 @@ import com.huaweicloud.sdk.optverse.v1.model.AuthorizePermissionRequest;
 import com.huaweicloud.sdk.optverse.v1.model.AuthorizePermissionResponse;
 import com.huaweicloud.sdk.optverse.v1.model.BatchDeleteEvolveTaskRequest;
 import com.huaweicloud.sdk.optverse.v1.model.BatchDeleteEvolveTaskResponse;
+import com.huaweicloud.sdk.optverse.v1.model.CancelChatRequest;
+import com.huaweicloud.sdk.optverse.v1.model.CancelChatResponse;
 import com.huaweicloud.sdk.optverse.v1.model.CreateAlgorithmRequest;
 import com.huaweicloud.sdk.optverse.v1.model.CreateAlgorithmResponse;
+import com.huaweicloud.sdk.optverse.v1.model.CreateArtifactsRequest;
+import com.huaweicloud.sdk.optverse.v1.model.CreateArtifactsResponse;
 import com.huaweicloud.sdk.optverse.v1.model.CreateEvolveTaskRequest;
 import com.huaweicloud.sdk.optverse.v1.model.CreateEvolveTaskResponse;
+import com.huaweicloud.sdk.optverse.v1.model.CreateModelServiceRequest;
+import com.huaweicloud.sdk.optverse.v1.model.CreateModelServiceResponse;
+import com.huaweicloud.sdk.optverse.v1.model.CreateModelServiceTaskRequest;
+import com.huaweicloud.sdk.optverse.v1.model.CreateModelServiceTaskResponse;
 import com.huaweicloud.sdk.optverse.v1.model.DeleteAlgorithmFileRequest;
 import com.huaweicloud.sdk.optverse.v1.model.DeleteAlgorithmFileResponse;
 import com.huaweicloud.sdk.optverse.v1.model.DeleteAlgorithmRequest;
 import com.huaweicloud.sdk.optverse.v1.model.DeleteAlgorithmResponse;
+import com.huaweicloud.sdk.optverse.v1.model.DeleteChatRequest;
+import com.huaweicloud.sdk.optverse.v1.model.DeleteChatResponse;
 import com.huaweicloud.sdk.optverse.v1.model.DeleteEvolveTaskRequest;
 import com.huaweicloud.sdk.optverse.v1.model.DeleteEvolveTaskResponse;
+import com.huaweicloud.sdk.optverse.v1.model.DeleteModelAssetRequest;
+import com.huaweicloud.sdk.optverse.v1.model.DeleteModelAssetResponse;
+import com.huaweicloud.sdk.optverse.v1.model.DeleteModelServiceRequest;
+import com.huaweicloud.sdk.optverse.v1.model.DeleteModelServiceResponse;
+import com.huaweicloud.sdk.optverse.v1.model.DownloadFileRequest;
+import com.huaweicloud.sdk.optverse.v1.model.DownloadFileResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ImportAlgorithmFileRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ImportAlgorithmFileResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ListAlgorithmsRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ListAlgorithmsResponse;
+import com.huaweicloud.sdk.optverse.v1.model.ListArtifactsRequest;
+import com.huaweicloud.sdk.optverse.v1.model.ListArtifactsResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ListBucketsRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ListBucketsResponse;
+import com.huaweicloud.sdk.optverse.v1.model.ListChatRequest;
+import com.huaweicloud.sdk.optverse.v1.model.ListChatResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ListDirectoryByAlgorithmIdRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ListDirectoryByAlgorithmIdResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ListDirectoryByResultCommitIdRequest;
@@ -31,10 +51,18 @@ import com.huaweicloud.sdk.optverse.v1.model.ListEvolveTaskMetasRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ListEvolveTaskMetasResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ListEvolveTaskStatsRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ListEvolveTaskStatsResponse;
+import com.huaweicloud.sdk.optverse.v1.model.ListModelAssetsRequest;
+import com.huaweicloud.sdk.optverse.v1.model.ListModelAssetsResponse;
+import com.huaweicloud.sdk.optverse.v1.model.ListModelServiceTasksRequest;
+import com.huaweicloud.sdk.optverse.v1.model.ListModelServiceTasksResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ListObjectRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ListObjectResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ListPermissionRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ListPermissionResponse;
+import com.huaweicloud.sdk.optverse.v1.model.PublishChatRequest;
+import com.huaweicloud.sdk.optverse.v1.model.PublishChatResponse;
+import com.huaweicloud.sdk.optverse.v1.model.PublishModelRequest;
+import com.huaweicloud.sdk.optverse.v1.model.PublishModelResponse;
 import com.huaweicloud.sdk.optverse.v1.model.RevokePermissionRequest;
 import com.huaweicloud.sdk.optverse.v1.model.RevokePermissionResponse;
 import com.huaweicloud.sdk.optverse.v1.model.SaveAlgorithmFileRequest;
@@ -43,6 +71,16 @@ import com.huaweicloud.sdk.optverse.v1.model.ShowAlgorithmFileRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ShowAlgorithmFileResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ShowAlgorithmRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ShowAlgorithmResponse;
+import com.huaweicloud.sdk.optverse.v1.model.ShowChatRequest;
+import com.huaweicloud.sdk.optverse.v1.model.ShowChatResponse;
+import com.huaweicloud.sdk.optverse.v1.model.ShowModelAssetDetailRequest;
+import com.huaweicloud.sdk.optverse.v1.model.ShowModelAssetDetailResponse;
+import com.huaweicloud.sdk.optverse.v1.model.ShowModelServiceDetailRequest;
+import com.huaweicloud.sdk.optverse.v1.model.ShowModelServiceDetailResponse;
+import com.huaweicloud.sdk.optverse.v1.model.ShowModelServiceListRequest;
+import com.huaweicloud.sdk.optverse.v1.model.ShowModelServiceListResponse;
+import com.huaweicloud.sdk.optverse.v1.model.ShowModelServiceTaskRequest;
+import com.huaweicloud.sdk.optverse.v1.model.ShowModelServiceTaskResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ShowTaskDetailsRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ShowTaskDetailsResponse;
 import com.huaweicloud.sdk.optverse.v1.model.ShowTaskResultCommitRequest;
@@ -55,12 +93,26 @@ import com.huaweicloud.sdk.optverse.v1.model.ShowTaskRunningLogRequest;
 import com.huaweicloud.sdk.optverse.v1.model.ShowTaskRunningLogResponse;
 import com.huaweicloud.sdk.optverse.v1.model.StartEvolveTaskRequest;
 import com.huaweicloud.sdk.optverse.v1.model.StartEvolveTaskResponse;
+import com.huaweicloud.sdk.optverse.v1.model.StartModelServiceRequest;
+import com.huaweicloud.sdk.optverse.v1.model.StartModelServiceResponse;
 import com.huaweicloud.sdk.optverse.v1.model.StopEvolveTaskRequest;
 import com.huaweicloud.sdk.optverse.v1.model.StopEvolveTaskResponse;
+import com.huaweicloud.sdk.optverse.v1.model.StopModelServiceRequest;
+import com.huaweicloud.sdk.optverse.v1.model.StopModelServiceResponse;
 import com.huaweicloud.sdk.optverse.v1.model.UpdateAlgorithmRequest;
 import com.huaweicloud.sdk.optverse.v1.model.UpdateAlgorithmResponse;
+import com.huaweicloud.sdk.optverse.v1.model.UpdateChatRequest;
+import com.huaweicloud.sdk.optverse.v1.model.UpdateChatResponse;
 import com.huaweicloud.sdk.optverse.v1.model.UpdateEvolveTaskRequest;
 import com.huaweicloud.sdk.optverse.v1.model.UpdateEvolveTaskResponse;
+import com.huaweicloud.sdk.optverse.v1.model.UpdateModelAssetRequest;
+import com.huaweicloud.sdk.optverse.v1.model.UpdateModelAssetResponse;
+import com.huaweicloud.sdk.optverse.v1.model.UpdateModelServiceRequest;
+import com.huaweicloud.sdk.optverse.v1.model.UpdateModelServiceResponse;
+import com.huaweicloud.sdk.optverse.v1.model.UploadFileRequest;
+import com.huaweicloud.sdk.optverse.v1.model.UploadFileResponse;
+import com.huaweicloud.sdk.optverse.v1.model.UploadModelServiceTaskFileRequest;
+import com.huaweicloud.sdk.optverse.v1.model.UploadModelServiceTaskFileResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -776,6 +828,762 @@ public class OptVerseAsyncClient {
     public AsyncInvoker<UpdateEvolveTaskRequest, UpdateEvolveTaskResponse> updateEvolveTaskAsyncInvoker(
         UpdateEvolveTaskRequest request) {
         return new AsyncInvoker<>(request, OptVerseMeta.updateEvolveTask, hcClient);
+    }
+
+    /**
+     * 删除模型资产
+     *
+     * 删除模型资产。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteModelAssetRequest 请求对象
+     * @return CompletableFuture<DeleteModelAssetResponse>
+     */
+    public CompletableFuture<DeleteModelAssetResponse> deleteModelAssetAsync(DeleteModelAssetRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.deleteModelAsset);
+    }
+
+    /**
+     * 删除模型资产
+     *
+     * 删除模型资产。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteModelAssetRequest 请求对象
+     * @return AsyncInvoker<DeleteModelAssetRequest, DeleteModelAssetResponse>
+     */
+    public AsyncInvoker<DeleteModelAssetRequest, DeleteModelAssetResponse> deleteModelAssetAsyncInvoker(
+        DeleteModelAssetRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.deleteModelAsset, hcClient);
+    }
+
+    /**
+     * 获取模型资产列表
+     *
+     * 获取模型资产列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListModelAssetsRequest 请求对象
+     * @return CompletableFuture<ListModelAssetsResponse>
+     */
+    public CompletableFuture<ListModelAssetsResponse> listModelAssetsAsync(ListModelAssetsRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.listModelAssets);
+    }
+
+    /**
+     * 获取模型资产列表
+     *
+     * 获取模型资产列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListModelAssetsRequest 请求对象
+     * @return AsyncInvoker<ListModelAssetsRequest, ListModelAssetsResponse>
+     */
+    public AsyncInvoker<ListModelAssetsRequest, ListModelAssetsResponse> listModelAssetsAsyncInvoker(
+        ListModelAssetsRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.listModelAssets, hcClient);
+    }
+
+    /**
+     * 查询资产详情
+     *
+     * 查询资产详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowModelAssetDetailRequest 请求对象
+     * @return CompletableFuture<ShowModelAssetDetailResponse>
+     */
+    public CompletableFuture<ShowModelAssetDetailResponse> showModelAssetDetailAsync(
+        ShowModelAssetDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.showModelAssetDetail);
+    }
+
+    /**
+     * 查询资产详情
+     *
+     * 查询资产详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowModelAssetDetailRequest 请求对象
+     * @return AsyncInvoker<ShowModelAssetDetailRequest, ShowModelAssetDetailResponse>
+     */
+    public AsyncInvoker<ShowModelAssetDetailRequest, ShowModelAssetDetailResponse> showModelAssetDetailAsyncInvoker(
+        ShowModelAssetDetailRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.showModelAssetDetail, hcClient);
+    }
+
+    /**
+     * 编辑模型资产
+     *
+     * 编辑模型资产描述。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateModelAssetRequest 请求对象
+     * @return CompletableFuture<UpdateModelAssetResponse>
+     */
+    public CompletableFuture<UpdateModelAssetResponse> updateModelAssetAsync(UpdateModelAssetRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.updateModelAsset);
+    }
+
+    /**
+     * 编辑模型资产
+     *
+     * 编辑模型资产描述。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateModelAssetRequest 请求对象
+     * @return AsyncInvoker<UpdateModelAssetRequest, UpdateModelAssetResponse>
+     */
+    public AsyncInvoker<UpdateModelAssetRequest, UpdateModelAssetResponse> updateModelAssetAsyncInvoker(
+        UpdateModelAssetRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.updateModelAsset, hcClient);
+    }
+
+    /**
+     * 取消对话
+     *
+     * 取消对话。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelChatRequest 请求对象
+     * @return CompletableFuture<CancelChatResponse>
+     */
+    public CompletableFuture<CancelChatResponse> cancelChatAsync(CancelChatRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.cancelChat);
+    }
+
+    /**
+     * 取消对话
+     *
+     * 取消对话。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelChatRequest 请求对象
+     * @return AsyncInvoker<CancelChatRequest, CancelChatResponse>
+     */
+    public AsyncInvoker<CancelChatRequest, CancelChatResponse> cancelChatAsyncInvoker(CancelChatRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.cancelChat, hcClient);
+    }
+
+    /**
+     * 产物中心
+     *
+     * 创建产物中心产物。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateArtifactsRequest 请求对象
+     * @return CompletableFuture<CreateArtifactsResponse>
+     */
+    public CompletableFuture<CreateArtifactsResponse> createArtifactsAsync(CreateArtifactsRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.createArtifacts);
+    }
+
+    /**
+     * 产物中心
+     *
+     * 创建产物中心产物。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateArtifactsRequest 请求对象
+     * @return AsyncInvoker<CreateArtifactsRequest, CreateArtifactsResponse>
+     */
+    public AsyncInvoker<CreateArtifactsRequest, CreateArtifactsResponse> createArtifactsAsyncInvoker(
+        CreateArtifactsRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.createArtifacts, hcClient);
+    }
+
+    /**
+     * 删除对话
+     *
+     * 删除对话。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteChatRequest 请求对象
+     * @return CompletableFuture<DeleteChatResponse>
+     */
+    public CompletableFuture<DeleteChatResponse> deleteChatAsync(DeleteChatRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.deleteChat);
+    }
+
+    /**
+     * 删除对话
+     *
+     * 删除对话。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteChatRequest 请求对象
+     * @return AsyncInvoker<DeleteChatRequest, DeleteChatResponse>
+     */
+    public AsyncInvoker<DeleteChatRequest, DeleteChatResponse> deleteChatAsyncInvoker(DeleteChatRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.deleteChat, hcClient);
+    }
+
+    /**
+     * 下载文件
+     *
+     * 下载文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadFileRequest 请求对象
+     * @return CompletableFuture<DownloadFileResponse>
+     */
+    public CompletableFuture<DownloadFileResponse> downloadFileAsync(DownloadFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.downloadFile);
+    }
+
+    /**
+     * 下载文件
+     *
+     * 下载文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadFileRequest 请求对象
+     * @return AsyncInvoker<DownloadFileRequest, DownloadFileResponse>
+     */
+    public AsyncInvoker<DownloadFileRequest, DownloadFileResponse> downloadFileAsyncInvoker(
+        DownloadFileRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.downloadFile, hcClient);
+    }
+
+    /**
+     * 获取产物中心列表
+     *
+     * 获取产物中心列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListArtifactsRequest 请求对象
+     * @return CompletableFuture<ListArtifactsResponse>
+     */
+    public CompletableFuture<ListArtifactsResponse> listArtifactsAsync(ListArtifactsRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.listArtifacts);
+    }
+
+    /**
+     * 获取产物中心列表
+     *
+     * 获取产物中心列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListArtifactsRequest 请求对象
+     * @return AsyncInvoker<ListArtifactsRequest, ListArtifactsResponse>
+     */
+    public AsyncInvoker<ListArtifactsRequest, ListArtifactsResponse> listArtifactsAsyncInvoker(
+        ListArtifactsRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.listArtifacts, hcClient);
+    }
+
+    /**
+     * 获取对话列表
+     *
+     * 获取对话列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListChatRequest 请求对象
+     * @return CompletableFuture<ListChatResponse>
+     */
+    public CompletableFuture<ListChatResponse> listChatAsync(ListChatRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.listChat);
+    }
+
+    /**
+     * 获取对话列表
+     *
+     * 获取对话列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListChatRequest 请求对象
+     * @return AsyncInvoker<ListChatRequest, ListChatResponse>
+     */
+    public AsyncInvoker<ListChatRequest, ListChatResponse> listChatAsyncInvoker(ListChatRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.listChat, hcClient);
+    }
+
+    /**
+     * 发布助手
+     *
+     * 发布助手。
+     * 发布前会校验当前助手最后一个阶段的文档是否已确认，确认后才可发布。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PublishChatRequest 请求对象
+     * @return CompletableFuture<PublishChatResponse>
+     */
+    public CompletableFuture<PublishChatResponse> publishChatAsync(PublishChatRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.publishChat);
+    }
+
+    /**
+     * 发布助手
+     *
+     * 发布助手。
+     * 发布前会校验当前助手最后一个阶段的文档是否已确认，确认后才可发布。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PublishChatRequest 请求对象
+     * @return AsyncInvoker<PublishChatRequest, PublishChatResponse>
+     */
+    public AsyncInvoker<PublishChatRequest, PublishChatResponse> publishChatAsyncInvoker(PublishChatRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.publishChat, hcClient);
+    }
+
+    /**
+     * 获取对话详情
+     *
+     * 获取对话详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowChatRequest 请求对象
+     * @return CompletableFuture<ShowChatResponse>
+     */
+    public CompletableFuture<ShowChatResponse> showChatAsync(ShowChatRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.showChat);
+    }
+
+    /**
+     * 获取对话详情
+     *
+     * 获取对话详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowChatRequest 请求对象
+     * @return AsyncInvoker<ShowChatRequest, ShowChatResponse>
+     */
+    public AsyncInvoker<ShowChatRequest, ShowChatResponse> showChatAsyncInvoker(ShowChatRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.showChat, hcClient);
+    }
+
+    /**
+     * 更新对话
+     *
+     * 更新对话。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateChatRequest 请求对象
+     * @return CompletableFuture<UpdateChatResponse>
+     */
+    public CompletableFuture<UpdateChatResponse> updateChatAsync(UpdateChatRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.updateChat);
+    }
+
+    /**
+     * 更新对话
+     *
+     * 更新对话。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateChatRequest 请求对象
+     * @return AsyncInvoker<UpdateChatRequest, UpdateChatResponse>
+     */
+    public AsyncInvoker<UpdateChatRequest, UpdateChatResponse> updateChatAsyncInvoker(UpdateChatRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.updateChat, hcClient);
+    }
+
+    /**
+     * 上传文件
+     *
+     * 上传文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadFileRequest 请求对象
+     * @return CompletableFuture<UploadFileResponse>
+     */
+    public CompletableFuture<UploadFileResponse> uploadFileAsync(UploadFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.uploadFile);
+    }
+
+    /**
+     * 上传文件
+     *
+     * 上传文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadFileRequest 请求对象
+     * @return AsyncInvoker<UploadFileRequest, UploadFileResponse>
+     */
+    public AsyncInvoker<UploadFileRequest, UploadFileResponse> uploadFileAsyncInvoker(UploadFileRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.uploadFile, hcClient);
+    }
+
+    /**
+     * 创建模型服务
+     *
+     * 创建模型服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateModelServiceRequest 请求对象
+     * @return CompletableFuture<CreateModelServiceResponse>
+     */
+    public CompletableFuture<CreateModelServiceResponse> createModelServiceAsync(CreateModelServiceRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.createModelService);
+    }
+
+    /**
+     * 创建模型服务
+     *
+     * 创建模型服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateModelServiceRequest 请求对象
+     * @return AsyncInvoker<CreateModelServiceRequest, CreateModelServiceResponse>
+     */
+    public AsyncInvoker<CreateModelServiceRequest, CreateModelServiceResponse> createModelServiceAsyncInvoker(
+        CreateModelServiceRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.createModelService, hcClient);
+    }
+
+    /**
+     * 调用模型服务创建任务
+     *
+     * 调用模型服务创建任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateModelServiceTaskRequest 请求对象
+     * @return CompletableFuture<CreateModelServiceTaskResponse>
+     */
+    public CompletableFuture<CreateModelServiceTaskResponse> createModelServiceTaskAsync(
+        CreateModelServiceTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.createModelServiceTask);
+    }
+
+    /**
+     * 调用模型服务创建任务
+     *
+     * 调用模型服务创建任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateModelServiceTaskRequest 请求对象
+     * @return AsyncInvoker<CreateModelServiceTaskRequest, CreateModelServiceTaskResponse>
+     */
+    public AsyncInvoker<CreateModelServiceTaskRequest, CreateModelServiceTaskResponse> createModelServiceTaskAsyncInvoker(
+        CreateModelServiceTaskRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.createModelServiceTask, hcClient);
+    }
+
+    /**
+     * 删除模型服务
+     *
+     * 删除模型服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteModelServiceRequest 请求对象
+     * @return CompletableFuture<DeleteModelServiceResponse>
+     */
+    public CompletableFuture<DeleteModelServiceResponse> deleteModelServiceAsync(DeleteModelServiceRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.deleteModelService);
+    }
+
+    /**
+     * 删除模型服务
+     *
+     * 删除模型服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteModelServiceRequest 请求对象
+     * @return AsyncInvoker<DeleteModelServiceRequest, DeleteModelServiceResponse>
+     */
+    public AsyncInvoker<DeleteModelServiceRequest, DeleteModelServiceResponse> deleteModelServiceAsyncInvoker(
+        DeleteModelServiceRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.deleteModelService, hcClient);
+    }
+
+    /**
+     * 获取模型服务任务列表
+     *
+     * 获取模型服务任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListModelServiceTasksRequest 请求对象
+     * @return CompletableFuture<ListModelServiceTasksResponse>
+     */
+    public CompletableFuture<ListModelServiceTasksResponse> listModelServiceTasksAsync(
+        ListModelServiceTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.listModelServiceTasks);
+    }
+
+    /**
+     * 获取模型服务任务列表
+     *
+     * 获取模型服务任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListModelServiceTasksRequest 请求对象
+     * @return AsyncInvoker<ListModelServiceTasksRequest, ListModelServiceTasksResponse>
+     */
+    public AsyncInvoker<ListModelServiceTasksRequest, ListModelServiceTasksResponse> listModelServiceTasksAsyncInvoker(
+        ListModelServiceTasksRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.listModelServiceTasks, hcClient);
+    }
+
+    /**
+     * 获取模型服务详情
+     *
+     * 获取模型服务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowModelServiceDetailRequest 请求对象
+     * @return CompletableFuture<ShowModelServiceDetailResponse>
+     */
+    public CompletableFuture<ShowModelServiceDetailResponse> showModelServiceDetailAsync(
+        ShowModelServiceDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.showModelServiceDetail);
+    }
+
+    /**
+     * 获取模型服务详情
+     *
+     * 获取模型服务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowModelServiceDetailRequest 请求对象
+     * @return AsyncInvoker<ShowModelServiceDetailRequest, ShowModelServiceDetailResponse>
+     */
+    public AsyncInvoker<ShowModelServiceDetailRequest, ShowModelServiceDetailResponse> showModelServiceDetailAsyncInvoker(
+        ShowModelServiceDetailRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.showModelServiceDetail, hcClient);
+    }
+
+    /**
+     * 获取模型服务列表
+     *
+     * 获取模型服务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowModelServiceListRequest 请求对象
+     * @return CompletableFuture<ShowModelServiceListResponse>
+     */
+    public CompletableFuture<ShowModelServiceListResponse> showModelServiceListAsync(
+        ShowModelServiceListRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.showModelServiceList);
+    }
+
+    /**
+     * 获取模型服务列表
+     *
+     * 获取模型服务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowModelServiceListRequest 请求对象
+     * @return AsyncInvoker<ShowModelServiceListRequest, ShowModelServiceListResponse>
+     */
+    public AsyncInvoker<ShowModelServiceListRequest, ShowModelServiceListResponse> showModelServiceListAsyncInvoker(
+        ShowModelServiceListRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.showModelServiceList, hcClient);
+    }
+
+    /**
+     * 获取模型服务任务详情
+     *
+     * 获取模型服务任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowModelServiceTaskRequest 请求对象
+     * @return CompletableFuture<ShowModelServiceTaskResponse>
+     */
+    public CompletableFuture<ShowModelServiceTaskResponse> showModelServiceTaskAsync(
+        ShowModelServiceTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.showModelServiceTask);
+    }
+
+    /**
+     * 获取模型服务任务详情
+     *
+     * 获取模型服务任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowModelServiceTaskRequest 请求对象
+     * @return AsyncInvoker<ShowModelServiceTaskRequest, ShowModelServiceTaskResponse>
+     */
+    public AsyncInvoker<ShowModelServiceTaskRequest, ShowModelServiceTaskResponse> showModelServiceTaskAsyncInvoker(
+        ShowModelServiceTaskRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.showModelServiceTask, hcClient);
+    }
+
+    /**
+     * 启动模型服务
+     *
+     * 启动模型服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartModelServiceRequest 请求对象
+     * @return CompletableFuture<StartModelServiceResponse>
+     */
+    public CompletableFuture<StartModelServiceResponse> startModelServiceAsync(StartModelServiceRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.startModelService);
+    }
+
+    /**
+     * 启动模型服务
+     *
+     * 启动模型服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartModelServiceRequest 请求对象
+     * @return AsyncInvoker<StartModelServiceRequest, StartModelServiceResponse>
+     */
+    public AsyncInvoker<StartModelServiceRequest, StartModelServiceResponse> startModelServiceAsyncInvoker(
+        StartModelServiceRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.startModelService, hcClient);
+    }
+
+    /**
+     * 停止模型服务
+     *
+     * 停止模型服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopModelServiceRequest 请求对象
+     * @return CompletableFuture<StopModelServiceResponse>
+     */
+    public CompletableFuture<StopModelServiceResponse> stopModelServiceAsync(StopModelServiceRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.stopModelService);
+    }
+
+    /**
+     * 停止模型服务
+     *
+     * 停止模型服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopModelServiceRequest 请求对象
+     * @return AsyncInvoker<StopModelServiceRequest, StopModelServiceResponse>
+     */
+    public AsyncInvoker<StopModelServiceRequest, StopModelServiceResponse> stopModelServiceAsyncInvoker(
+        StopModelServiceRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.stopModelService, hcClient);
+    }
+
+    /**
+     * 编辑推理服务
+     *
+     * 编辑推理服务，仅支持修改服务名称和服务描述。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateModelServiceRequest 请求对象
+     * @return CompletableFuture<UpdateModelServiceResponse>
+     */
+    public CompletableFuture<UpdateModelServiceResponse> updateModelServiceAsync(UpdateModelServiceRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.updateModelService);
+    }
+
+    /**
+     * 编辑推理服务
+     *
+     * 编辑推理服务，仅支持修改服务名称和服务描述。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateModelServiceRequest 请求对象
+     * @return AsyncInvoker<UpdateModelServiceRequest, UpdateModelServiceResponse>
+     */
+    public AsyncInvoker<UpdateModelServiceRequest, UpdateModelServiceResponse> updateModelServiceAsyncInvoker(
+        UpdateModelServiceRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.updateModelService, hcClient);
+    }
+
+    /**
+     * 上传任务依赖的输入文件
+     *
+     * 上传任务依赖的输入文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadModelServiceTaskFileRequest 请求对象
+     * @return CompletableFuture<UploadModelServiceTaskFileResponse>
+     */
+    public CompletableFuture<UploadModelServiceTaskFileResponse> uploadModelServiceTaskFileAsync(
+        UploadModelServiceTaskFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.uploadModelServiceTaskFile);
+    }
+
+    /**
+     * 上传任务依赖的输入文件
+     *
+     * 上传任务依赖的输入文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadModelServiceTaskFileRequest 请求对象
+     * @return AsyncInvoker<UploadModelServiceTaskFileRequest, UploadModelServiceTaskFileResponse>
+     */
+    public AsyncInvoker<UploadModelServiceTaskFileRequest, UploadModelServiceTaskFileResponse> uploadModelServiceTaskFileAsyncInvoker(
+        UploadModelServiceTaskFileRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.uploadModelServiceTaskFile, hcClient);
+    }
+
+    /**
+     * 发布模型
+     *
+     * 发布训练任务生成的模型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PublishModelRequest 请求对象
+     * @return CompletableFuture<PublishModelResponse>
+     */
+    public CompletableFuture<PublishModelResponse> publishModelAsync(PublishModelRequest request) {
+        return hcClient.asyncInvokeHttp(request, OptVerseMeta.publishModel);
+    }
+
+    /**
+     * 发布模型
+     *
+     * 发布训练任务生成的模型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PublishModelRequest 请求对象
+     * @return AsyncInvoker<PublishModelRequest, PublishModelResponse>
+     */
+    public AsyncInvoker<PublishModelRequest, PublishModelResponse> publishModelAsyncInvoker(
+        PublishModelRequest request) {
+        return new AsyncInvoker<>(request, OptVerseMeta.publishModel, hcClient);
     }
 
     /**

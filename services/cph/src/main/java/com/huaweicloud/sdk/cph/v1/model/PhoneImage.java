@@ -45,6 +45,11 @@ public class PhoneImage {
 
     private Boolean isSupportEncrypt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "receive_status")
+
+    private Integer receiveStatus;
+
     public PhoneImage withImageName(String imageName) {
         this.imageName = imageName;
         return this;
@@ -155,7 +160,7 @@ public class PhoneImage {
     }
 
     /**
-     * 当前镜像是否支持文件级加密
+     * 当前镜像是否支持文件级加密。
      * @return isSupportEncrypt
      */
     public Boolean getIsSupportEncrypt() {
@@ -164,6 +169,23 @@ public class PhoneImage {
 
     public void setIsSupportEncrypt(Boolean isSupportEncrypt) {
         this.isSupportEncrypt = isSupportEncrypt;
+    }
+
+    public PhoneImage withReceiveStatus(Integer receiveStatus) {
+        this.receiveStatus = receiveStatus;
+        return this;
+    }
+
+    /**
+     * 共享镜像接收状态（0: 待接收，1: 已接收，2: 已拒绝）
+     * @return receiveStatus
+     */
+    public Integer getReceiveStatus() {
+        return receiveStatus;
+    }
+
+    public void setReceiveStatus(Integer receiveStatus) {
+        this.receiveStatus = receiveStatus;
     }
 
     @Override
@@ -178,12 +200,13 @@ public class PhoneImage {
         return Objects.equals(this.imageName, that.imageName) && Objects.equals(this.osType, that.osType)
             && Objects.equals(this.isPublic, that.isPublic) && Objects.equals(this.osName, that.osName)
             && Objects.equals(this.imageLabel, that.imageLabel) && Objects.equals(this.imageId, that.imageId)
-            && Objects.equals(this.isSupportEncrypt, that.isSupportEncrypt);
+            && Objects.equals(this.isSupportEncrypt, that.isSupportEncrypt)
+            && Objects.equals(this.receiveStatus, that.receiveStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(imageName, osType, isPublic, osName, imageLabel, imageId, isSupportEncrypt);
+        return Objects.hash(imageName, osType, isPublic, osName, imageLabel, imageId, isSupportEncrypt, receiveStatus);
     }
 
     @Override
@@ -197,6 +220,7 @@ public class PhoneImage {
         sb.append("    imageLabel: ").append(toIndentedString(imageLabel)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    isSupportEncrypt: ").append(toIndentedString(isSupportEncrypt)).append("\n");
+        sb.append("    receiveStatus: ").append(toIndentedString(receiveStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

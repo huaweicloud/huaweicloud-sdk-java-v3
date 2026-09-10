@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -56,6 +58,11 @@ public class ShowOpsEvaluatorResponse extends SdkResponse {
     @JsonProperty(value = "base_info")
 
     private OpsEvaluatorBaseInfo baseInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<OpsTmsTag> tags = null;
 
     public ShowOpsEvaluatorResponse withEvaluatorId(String evaluatorId) {
         this.evaluatorId = evaluatorId;
@@ -230,6 +237,39 @@ public class ShowOpsEvaluatorResponse extends SdkResponse {
         this.baseInfo = baseInfo;
     }
 
+    public ShowOpsEvaluatorResponse withTags(List<OpsTmsTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ShowOpsEvaluatorResponse addTagsItem(OpsTmsTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ShowOpsEvaluatorResponse withTags(Consumer<List<OpsTmsTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * **参数解释** 评估器绑定的TMS标签列表。数组内每个元素为OpsTmsTag对象，包含标签的键值信息。 **约束限制** 不涉及。 **取值范围** 不涉及。 
+     * @return tags
+     */
+    public List<OpsTmsTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<OpsTmsTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -243,7 +283,8 @@ public class ShowOpsEvaluatorResponse extends SdkResponse {
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.evaluatorType, that.evaluatorType) && Objects.equals(this.boxType, that.boxType)
             && Objects.equals(this.builtin, that.builtin) && Objects.equals(this.latestVersion, that.latestVersion)
-            && Objects.equals(this.currentVersion, that.currentVersion) && Objects.equals(this.baseInfo, that.baseInfo);
+            && Objects.equals(this.currentVersion, that.currentVersion) && Objects.equals(this.baseInfo, that.baseInfo)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -256,7 +297,8 @@ public class ShowOpsEvaluatorResponse extends SdkResponse {
             builtin,
             latestVersion,
             currentVersion,
-            baseInfo);
+            baseInfo,
+            tags);
     }
 
     @Override
@@ -272,6 +314,7 @@ public class ShowOpsEvaluatorResponse extends SdkResponse {
         sb.append("    latestVersion: ").append(toIndentedString(latestVersion)).append("\n");
         sb.append("    currentVersion: ").append(toIndentedString(currentVersion)).append("\n");
         sb.append("    baseInfo: ").append(toIndentedString(baseInfo)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

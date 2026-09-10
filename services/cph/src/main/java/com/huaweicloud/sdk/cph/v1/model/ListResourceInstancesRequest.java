@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class ListResourceInstancesRequest {
 
     /**
-     * 资源类型。  - cph-server，云手机服务器
+     * 资源类型。  - cph-server，云手机服务器 [- elastic-cloud-phone, 弹性云手机实例](tag:hws_test)
      */
     public static final class ResourceTypeEnum {
 
@@ -26,11 +26,17 @@ public class ListResourceInstancesRequest {
          */
         public static final ResourceTypeEnum CPH_SERVER = new ResourceTypeEnum("cph-server");
 
+        /**
+         * Enum ELASTIC_CLOUD_PHONE for value: "elastic-cloud-phone"
+         */
+        public static final ResourceTypeEnum ELASTIC_CLOUD_PHONE = new ResourceTypeEnum("elastic-cloud-phone");
+
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ResourceTypeEnum> createStaticFields() {
             Map<String, ResourceTypeEnum> map = new HashMap<>();
             map.put("cph-server", CPH_SERVER);
+            map.put("elastic-cloud-phone", ELASTIC_CLOUD_PHONE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -96,7 +102,7 @@ public class ListResourceInstancesRequest {
     }
 
     /**
-     * 资源类型。  - cph-server，云手机服务器
+     * 资源类型。  - cph-server，云手机服务器 [- elastic-cloud-phone, 弹性云手机实例](tag:hws_test)
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {

@@ -8,6 +8,12 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.cph.v1.model.AddImageMemberRequest;
 import com.huaweicloud.sdk.cph.v1.model.AddImageMemberRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.AddImageMemberResponse;
+import com.huaweicloud.sdk.cph.v1.model.AttachShareFilesystemRequest;
+import com.huaweicloud.sdk.cph.v1.model.AttachShareFilesystemRequestBody;
+import com.huaweicloud.sdk.cph.v1.model.AttachShareFilesystemResponse;
+import com.huaweicloud.sdk.cph.v1.model.AuthorizeScheduledEventRequest;
+import com.huaweicloud.sdk.cph.v1.model.AuthorizeScheduledEventRequestBody;
+import com.huaweicloud.sdk.cph.v1.model.AuthorizeScheduledEventResponse;
 import com.huaweicloud.sdk.cph.v1.model.BatchCreateTagsRequest;
 import com.huaweicloud.sdk.cph.v1.model.BatchCreateTagsRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.BatchCreateTagsResponse;
@@ -48,6 +54,9 @@ import com.huaweicloud.sdk.cph.v1.model.DeleteShareAppsResponse;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareFilesRequest;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareFilesRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareFilesResponse;
+import com.huaweicloud.sdk.cph.v1.model.DetachShareFilesystemRequest;
+import com.huaweicloud.sdk.cph.v1.model.DetachShareFilesystemRequestBody;
+import com.huaweicloud.sdk.cph.v1.model.DetachShareFilesystemResponse;
 import com.huaweicloud.sdk.cph.v1.model.ExpandPhoneDataVolumeSizeRequest;
 import com.huaweicloud.sdk.cph.v1.model.ExpandPhoneDataVolumeSizeRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.ExpandPhoneDataVolumeSizeResponse;
@@ -61,6 +70,8 @@ import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneImagesRequest;
 import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneImagesResponse;
 import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneModelsRequest;
 import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneModelsResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneServerModelOfferingsRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneServerModelOfferingsResponse;
 import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneServerModelsRequest;
 import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneServerModelsResponse;
 import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneServersRequest;
@@ -82,6 +93,10 @@ import com.huaweicloud.sdk.cph.v1.model.ListResourceInstancesRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.ListResourceInstancesResponse;
 import com.huaweicloud.sdk.cph.v1.model.ListResourceTagsRequest;
 import com.huaweicloud.sdk.cph.v1.model.ListResourceTagsResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListScheduledEventsRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListScheduledEventsResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListShareAppsSnapshotRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListShareAppsSnapshotResponse;
 import com.huaweicloud.sdk.cph.v1.model.ListShareFilesRequest;
 import com.huaweicloud.sdk.cph.v1.model.ListShareFilesResponse;
 import com.huaweicloud.sdk.cph.v1.model.PushFileRequest;
@@ -140,9 +155,14 @@ import com.huaweicloud.sdk.cph.v1.model.UpdateKeypairResponse;
 import com.huaweicloud.sdk.cph.v1.model.UpdatePhoneNameRequest;
 import com.huaweicloud.sdk.cph.v1.model.UpdatePhoneNameRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.UpdatePhoneNameResponse;
+import com.huaweicloud.sdk.cph.v1.model.UpdateScheduledEventRequest;
+import com.huaweicloud.sdk.cph.v1.model.UpdateScheduledEventRequestBody;
+import com.huaweicloud.sdk.cph.v1.model.UpdateScheduledEventResponse;
 import com.huaweicloud.sdk.cph.v1.model.UpdateServerNameRequest;
 import com.huaweicloud.sdk.cph.v1.model.UpdateServerNameRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.UpdateServerNameResponse;
+
+import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class CphMeta {
@@ -169,6 +189,58 @@ public class CphMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddImageMemberRequestBody.class),
             f -> f.withMarshaller(AddImageMemberRequest::getBody, AddImageMemberRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AttachShareFilesystemRequest, AttachShareFilesystemResponse> attachShareFilesystem =
+        genForAttachShareFilesystem();
+
+    private static HttpRequestDef<AttachShareFilesystemRequest, AttachShareFilesystemResponse> genForAttachShareFilesystem() {
+        // basic
+        HttpRequestDef.Builder<AttachShareFilesystemRequest, AttachShareFilesystemResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AttachShareFilesystemRequest.class, AttachShareFilesystemResponse.class)
+            .withName("AttachShareFilesystem")
+            .withUri("/v1/{project_id}/servers/attach-share-filesystem")
+            .withContentType("application/json");
+
+        // requests
+        builder.<AttachShareFilesystemRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AttachShareFilesystemRequestBody.class),
+            f -> f.withMarshaller(AttachShareFilesystemRequest::getBody, AttachShareFilesystemRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AuthorizeScheduledEventRequest, AuthorizeScheduledEventResponse> authorizeScheduledEvent =
+        genForAuthorizeScheduledEvent();
+
+    private static HttpRequestDef<AuthorizeScheduledEventRequest, AuthorizeScheduledEventResponse> genForAuthorizeScheduledEvent() {
+        // basic
+        HttpRequestDef.Builder<AuthorizeScheduledEventRequest, AuthorizeScheduledEventResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AuthorizeScheduledEventRequest.class, AuthorizeScheduledEventResponse.class)
+            .withName("AuthorizeScheduledEvent")
+            .withUri("/v1/{project_id}/cloud-phone/scheduled-events/{event_id}/authorize")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("event_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AuthorizeScheduledEventRequest::getEventId,
+                AuthorizeScheduledEventRequest::setEventId));
+        builder.<AuthorizeScheduledEventRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AuthorizeScheduledEventRequestBody.class),
+            f -> f.withMarshaller(AuthorizeScheduledEventRequest::getBody, AuthorizeScheduledEventRequest::setBody));
 
         // response
 
@@ -551,6 +623,29 @@ public class CphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DetachShareFilesystemRequest, DetachShareFilesystemResponse> detachShareFilesystem =
+        genForDetachShareFilesystem();
+
+    private static HttpRequestDef<DetachShareFilesystemRequest, DetachShareFilesystemResponse> genForDetachShareFilesystem() {
+        // basic
+        HttpRequestDef.Builder<DetachShareFilesystemRequest, DetachShareFilesystemResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DetachShareFilesystemRequest.class, DetachShareFilesystemResponse.class)
+            .withName("DetachShareFilesystem")
+            .withUri("/v1/{project_id}/servers/detach-share-filesystem")
+            .withContentType("application/json");
+
+        // requests
+        builder.<DetachShareFilesystemRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DetachShareFilesystemRequestBody.class),
+            f -> f.withMarshaller(DetachShareFilesystemRequest::getBody, DetachShareFilesystemRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExpandPhoneDataVolumeSizeRequest, ExpandPhoneDataVolumeSizeResponse> expandPhoneDataVolumeSize =
         genForExpandPhoneDataVolumeSize();
 
@@ -619,6 +714,16 @@ public class CphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCloudPhoneImagesRequest::getImageType,
                 ListCloudPhoneImagesRequest::setImageType));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudPhoneImagesRequest::getMarker, ListCloudPhoneImagesRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCloudPhoneImagesRequest::getLimit, ListCloudPhoneImagesRequest::setLimit));
 
         // response
 
@@ -658,6 +763,39 @@ public class CphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCloudPhoneServerModelOfferingsRequest, ListCloudPhoneServerModelOfferingsResponse> listCloudPhoneServerModelOfferings =
+        genForListCloudPhoneServerModelOfferings();
+
+    private static HttpRequestDef<ListCloudPhoneServerModelOfferingsRequest, ListCloudPhoneServerModelOfferingsResponse> genForListCloudPhoneServerModelOfferings() {
+        // basic
+        HttpRequestDef.Builder<ListCloudPhoneServerModelOfferingsRequest, ListCloudPhoneServerModelOfferingsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListCloudPhoneServerModelOfferingsRequest.class,
+                    ListCloudPhoneServerModelOfferingsResponse.class)
+                .withName("ListCloudPhoneServerModelOfferings")
+                .withUri("/v1/{project_id}/server-model-offerings")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudPhoneServerModelOfferingsRequest::getMarker,
+                ListCloudPhoneServerModelOfferingsRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCloudPhoneServerModelOfferingsRequest::getLimit,
+                ListCloudPhoneServerModelOfferingsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCloudPhoneServerModelsRequest, ListCloudPhoneServerModelsResponse> listCloudPhoneServerModels =
         genForListCloudPhoneServerModels();
 
@@ -679,6 +817,18 @@ public class CphMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListCloudPhoneServerModelsRequest::getProductType,
                 ListCloudPhoneServerModelsRequest::setProductType));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudPhoneServerModelsRequest::getMarker,
+                ListCloudPhoneServerModelsRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCloudPhoneServerModelsRequest::getLimit,
+                ListCloudPhoneServerModelsRequest::setLimit));
 
         // response
 
@@ -862,6 +1012,16 @@ public class CphMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImageMembersRequest::getImageId, ListImageMembersRequest::setImageId));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageMembersRequest::getMarker, ListImageMembersRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImageMembersRequest::getLimit, ListImageMembersRequest::setLimit));
 
         // response
 
@@ -1051,6 +1211,106 @@ public class CphMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceTagsRequest::getResourceId, ListResourceTagsRequest::setResourceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListScheduledEventsRequest, ListScheduledEventsResponse> listScheduledEvents =
+        genForListScheduledEvents();
+
+    private static HttpRequestDef<ListScheduledEventsRequest, ListScheduledEventsResponse> genForListScheduledEvents() {
+        // basic
+        HttpRequestDef.Builder<ListScheduledEventsRequest, ListScheduledEventsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListScheduledEventsRequest.class, ListScheduledEventsResponse.class)
+                .withName("ListScheduledEvents")
+                .withUri("/v1/{project_id}/cloud-phone/scheduled-events")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getLimit, ListScheduledEventsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getMarker, ListScheduledEventsRequest::setMarker));
+        builder.<String>withRequestField("event_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getEventId, ListScheduledEventsRequest::setEventId));
+        builder.<String>withRequestField("server_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getServerId, ListScheduledEventsRequest::setServerId));
+        builder.<String>withRequestField("publish_since",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getPublishSince,
+                ListScheduledEventsRequest::setPublishSince));
+        builder.<String>withRequestField("publish_until",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getPublishUntil,
+                ListScheduledEventsRequest::setPublishUntil));
+        builder.<List<String>>withRequestField("state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getState, ListScheduledEventsRequest::setState));
+        builder.<List<String>>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getType, ListScheduledEventsRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListShareAppsSnapshotRequest, ListShareAppsSnapshotResponse> listShareAppsSnapshot =
+        genForListShareAppsSnapshot();
+
+    private static HttpRequestDef<ListShareAppsSnapshotRequest, ListShareAppsSnapshotResponse> genForListShareAppsSnapshot() {
+        // basic
+        HttpRequestDef.Builder<ListShareAppsSnapshotRequest, ListShareAppsSnapshotResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListShareAppsSnapshotRequest.class, ListShareAppsSnapshotResponse.class)
+            .withName("ListShareAppsSnapshot")
+            .withUri("/v1/{project_id}/servers/{server_id}/share-apps-snapshot")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListShareAppsSnapshotRequest::getServerId,
+                ListShareAppsSnapshotRequest::setServerId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListShareAppsSnapshotRequest::getLimit, ListShareAppsSnapshotRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListShareAppsSnapshotRequest::getMarker, ListShareAppsSnapshotRequest::setMarker));
+        builder.<String>withRequestField("package_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListShareAppsSnapshotRequest::getPackageName,
+                ListShareAppsSnapshotRequest::setPackageName));
 
         // response
 
@@ -1481,6 +1741,34 @@ public class CphMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePhoneNameRequestBody.class),
             f -> f.withMarshaller(UpdatePhoneNameRequest::getBody, UpdatePhoneNameRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateScheduledEventRequest, UpdateScheduledEventResponse> updateScheduledEvent =
+        genForUpdateScheduledEvent();
+
+    private static HttpRequestDef<UpdateScheduledEventRequest, UpdateScheduledEventResponse> genForUpdateScheduledEvent() {
+        // basic
+        HttpRequestDef.Builder<UpdateScheduledEventRequest, UpdateScheduledEventResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateScheduledEventRequest.class, UpdateScheduledEventResponse.class)
+            .withName("UpdateScheduledEvent")
+            .withUri("/v1/{project_id}/cloud-phone/scheduled-events/{event_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("event_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScheduledEventRequest::getEventId, UpdateScheduledEventRequest::setEventId));
+        builder.<UpdateScheduledEventRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateScheduledEventRequestBody.class),
+            f -> f.withMarshaller(UpdateScheduledEventRequest::getBody, UpdateScheduledEventRequest::setBody));
 
         // response
 

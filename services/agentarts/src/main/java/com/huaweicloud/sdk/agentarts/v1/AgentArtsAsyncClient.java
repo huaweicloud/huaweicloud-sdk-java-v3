@@ -6,10 +6,20 @@ import com.huaweicloud.sdk.agentarts.v1.model.BatchAddOpsEvaluationTaskCustomLab
 import com.huaweicloud.sdk.agentarts.v1.model.BatchAddOpsEvaluationTaskCustomLabelsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateCoreGatewayTagsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateCoreGatewayTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsAgentTuningTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsAgentTuningTaskTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsAnalysisTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsAnalysisTaskTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsDatasetItemsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsDatasetItemsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsModelTuningTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsModelTuningTaskTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteCoreGatewayTagsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteCoreGatewayTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsAgentTuningTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsAgentTuningTaskTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsAnalysisTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsAnalysisTaskTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsDatasetItemsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsDatasetItemsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsDatasetsRequest;
@@ -18,6 +28,8 @@ import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsEvaluationTasksReque
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsEvaluationTasksResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsEvaluatorRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsEvaluatorResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsModelTuningTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsModelTuningTaskTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsSynthesisTasksRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsSynthesisTasksResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchUpdateOpsEvaluationTaskCustomLabelValuesRequest;
@@ -46,6 +58,10 @@ import com.huaweicloud.sdk.agentarts.v1.model.CreateCoreSpaceRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateCoreSpaceResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsAgentObservationRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsAgentObservationResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsAgentTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsAgentTuningTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsAnalysisTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsAnalysisTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsDatasetRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsDatasetResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsEvaluationTaskRequest;
@@ -54,6 +70,10 @@ import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsEvaluatorRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsEvaluatorResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsLabelRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsLabelResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsModelDeploymentRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsModelDeploymentResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsModelTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsModelTuningTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsSynthesisTaskRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsSynthesisTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.DebugOpsEvaluatorRequest;
@@ -78,6 +98,10 @@ import com.huaweicloud.sdk.agentarts.v1.model.DeleteCoreSpaceRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteCoreSpaceResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsAgentObservationRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsAgentObservationResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsAgentTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsAgentTuningTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsAnalysisTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsAnalysisTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsDatasetRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsDatasetResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsDatasetVersionRequest;
@@ -90,16 +114,34 @@ import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsEvaluatorRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsEvaluatorResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsEvaluatorVersionRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsEvaluatorVersionResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsModelDeploymentRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsModelDeploymentResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsModelTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsModelTuningTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsSynthesisTaskRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsSynthesisTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ExecuteOpsAgentTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ExecuteOpsAgentTuningTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ExecuteOpsModelTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ExecuteOpsModelTuningTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.GenerateOpsEvaluatorEvaluationStepsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.GenerateOpsEvaluatorEvaluationStepsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.GenerateOpsMultimodalUploadUrlRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.GenerateOpsMultimodalUploadUrlResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ImportOpsDatasetItemsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ImportOpsDatasetItemsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ImportOpsResultsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ImportOpsResultsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.InvokeOpsFineGrainedEvaluationRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.InvokeOpsFineGrainedEvaluationResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListAllCoreGatewayTagsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListAllCoreGatewayTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListAllOpsAgentTuningTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListAllOpsAgentTuningTaskTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListAllOpsAnalysisTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListAllOpsAnalysisTaskTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListAllOpsModelTuningTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListAllOpsModelTuningTaskTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCoreCodeInterpretersRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCoreCodeInterpretersResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCoreGatewayQuotasRequest;
@@ -140,6 +182,22 @@ import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentRuntLogRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentRuntLogResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentSpanMetricRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentSpanMetricResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentTuningTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentTuningTaskTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentTuningTasksByTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentTuningTasksByTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentTuningTasksRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentTuningTasksResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTaskFailureAffectedSessionsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTaskFailureAffectedSessionsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTaskInstancesRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTaskInstancesResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTaskTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTasksByTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTasksByTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTasksRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAnalysisTasksResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsDatasetItemsImportTasksRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsDatasetItemsImportTasksResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsDatasetItemsRequest;
@@ -168,8 +226,22 @@ import com.huaweicloud.sdk.agentarts.v1.model.ListOpsEvaluatorVersionsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsEvaluatorVersionsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsEvaluatorsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsEvaluatorsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsEvolutionQuotasRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsEvolutionQuotasResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsLabelsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsLabelsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelDeploymentsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelDeploymentsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTaskMetricsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTaskMetricsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTaskProductsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTaskProductsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTaskTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTaskTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTasksByTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTasksByTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTasksRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListOpsModelTuningTasksResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsSessionRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsSessionResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsSynthesisItemsRequest;
@@ -178,12 +250,18 @@ import com.huaweicloud.sdk.agentarts.v1.model.ListOpsSynthesisTasksRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsSynthesisTasksResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsTraceRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsTraceResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.PauseOpsAnalysisTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.PauseOpsAnalysisTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.PublishOpsAnalysisTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.PublishOpsAnalysisTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.PublishOpsDatasetVersionRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.PublishOpsDatasetVersionResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.PublishOpsEvaluatorVersionRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.PublishOpsEvaluatorVersionResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ResetCoreSpaceApiKeyRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ResetCoreSpaceApiKeyResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ResumeOpsAnalysisTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ResumeOpsAnalysisTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.SearchCoreSpaceMemoriesRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.SearchCoreSpaceMemoriesResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowCoreCodeInterpreterRequest;
@@ -214,6 +292,14 @@ import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentMetricTopNRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentMetricTopNResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentMetricTrendRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentMetricTrendResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentTuningTaskNumsByTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentTuningTaskNumsByTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentTuningTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAnalysisTaskNumsByTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAnalysisTaskNumsByTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAnalysisTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAnalysisTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsDatasetItemRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsDatasetItemResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsDatasetRequest;
@@ -244,6 +330,12 @@ import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsEvaluatorVersionRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsEvaluatorVersionResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsLabelRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsLabelResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsModelDeploymentRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsModelDeploymentResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsModelTuningTaskNumsByTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsModelTuningTaskNumsByTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsModelTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsModelTuningTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsQuotaRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsQuotaResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsSessionRequest;
@@ -260,8 +352,20 @@ import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsSynthesisTaskRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsSynthesisTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsTraceRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsTraceResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.StartOpsAgentTuningTaskForAnalysisTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.StartOpsAgentTuningTaskForAnalysisTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.StartOpsModelDeploymentRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.StartOpsModelDeploymentResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.StopOpsAgentTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.StopOpsAgentTuningTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.StopOpsAnalysisTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.StopOpsAnalysisTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.StopOpsEvaluationTaskRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.StopOpsEvaluationTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.StopOpsModelDeploymentRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.StopOpsModelDeploymentResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.StopOpsModelTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.StopOpsModelTuningTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.SyncCoreGatewayTargetsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.SyncCoreGatewayTargetsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.TagOpsTraceLabelRequest;
@@ -286,6 +390,10 @@ import com.huaweicloud.sdk.agentarts.v1.model.UpdateCoreSpaceRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateCoreSpaceResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAgentObservationRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAgentObservationResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAgentTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAgentTuningTaskResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAnalysisTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAnalysisTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsDatasetItemRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsDatasetItemResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsDatasetRequest;
@@ -300,6 +408,8 @@ import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsEvaluatorTagsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsEvaluatorTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsLabelRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsLabelResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsModelTuningTaskRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsModelTuningTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsSynthesisTaskRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsSynthesisTaskResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsTraceFeedbackRequest;
@@ -2313,6 +2423,574 @@ public class AgentArtsAsyncClient {
     }
 
     /**
+     * 创建智能体优化任务
+     *
+     * 本接口用于创建一个全新的智能体优化任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOpsAgentTuningTaskRequest 请求对象
+     * @return CompletableFuture<CreateOpsAgentTuningTaskResponse>
+     */
+    public CompletableFuture<CreateOpsAgentTuningTaskResponse> createOpsAgentTuningTaskAsync(
+        CreateOpsAgentTuningTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.createOpsAgentTuningTask);
+    }
+
+    /**
+     * 创建智能体优化任务
+     *
+     * 本接口用于创建一个全新的智能体优化任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOpsAgentTuningTaskRequest 请求对象
+     * @return AsyncInvoker<CreateOpsAgentTuningTaskRequest, CreateOpsAgentTuningTaskResponse>
+     */
+    public AsyncInvoker<CreateOpsAgentTuningTaskRequest, CreateOpsAgentTuningTaskResponse> createOpsAgentTuningTaskAsyncInvoker(
+        CreateOpsAgentTuningTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.createOpsAgentTuningTask, hcClient);
+    }
+
+    /**
+     * 删除智能体优化任务
+     *
+     * 本接口用于彻底删除指定的智能体优化任务记录，系统会同步清除数据库元数据。删除操作不可恢复，请谨慎操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOpsAgentTuningTaskRequest 请求对象
+     * @return CompletableFuture<DeleteOpsAgentTuningTaskResponse>
+     */
+    public CompletableFuture<DeleteOpsAgentTuningTaskResponse> deleteOpsAgentTuningTaskAsync(
+        DeleteOpsAgentTuningTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.deleteOpsAgentTuningTask);
+    }
+
+    /**
+     * 删除智能体优化任务
+     *
+     * 本接口用于彻底删除指定的智能体优化任务记录，系统会同步清除数据库元数据。删除操作不可恢复，请谨慎操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOpsAgentTuningTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteOpsAgentTuningTaskRequest, DeleteOpsAgentTuningTaskResponse>
+     */
+    public AsyncInvoker<DeleteOpsAgentTuningTaskRequest, DeleteOpsAgentTuningTaskResponse> deleteOpsAgentTuningTaskAsyncInvoker(
+        DeleteOpsAgentTuningTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.deleteOpsAgentTuningTask, hcClient);
+    }
+
+    /**
+     * 执行智能体优化任务
+     *
+     * 本接口用于正式触发处于草稿状态的任务，进入实际优化迭代阶段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteOpsAgentTuningTaskRequest 请求对象
+     * @return CompletableFuture<ExecuteOpsAgentTuningTaskResponse>
+     */
+    public CompletableFuture<ExecuteOpsAgentTuningTaskResponse> executeOpsAgentTuningTaskAsync(
+        ExecuteOpsAgentTuningTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.executeOpsAgentTuningTask);
+    }
+
+    /**
+     * 执行智能体优化任务
+     *
+     * 本接口用于正式触发处于草稿状态的任务，进入实际优化迭代阶段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteOpsAgentTuningTaskRequest 请求对象
+     * @return AsyncInvoker<ExecuteOpsAgentTuningTaskRequest, ExecuteOpsAgentTuningTaskResponse>
+     */
+    public AsyncInvoker<ExecuteOpsAgentTuningTaskRequest, ExecuteOpsAgentTuningTaskResponse> executeOpsAgentTuningTaskAsyncInvoker(
+        ExecuteOpsAgentTuningTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.executeOpsAgentTuningTask, hcClient);
+    }
+
+    /**
+     * 查询智能体优化任务列表
+     *
+     * 本接口用于查询当前租户下的智能体优化任务列表，支持通过任务名称、任务类型和任务状态进行过滤，并支持分页功能。同时，响应中会返回全局状态的分组统计信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsAgentTuningTasksRequest 请求对象
+     * @return CompletableFuture<ListOpsAgentTuningTasksResponse>
+     */
+    public CompletableFuture<ListOpsAgentTuningTasksResponse> listOpsAgentTuningTasksAsync(
+        ListOpsAgentTuningTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listOpsAgentTuningTasks);
+    }
+
+    /**
+     * 查询智能体优化任务列表
+     *
+     * 本接口用于查询当前租户下的智能体优化任务列表，支持通过任务名称、任务类型和任务状态进行过滤，并支持分页功能。同时，响应中会返回全局状态的分组统计信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsAgentTuningTasksRequest 请求对象
+     * @return AsyncInvoker<ListOpsAgentTuningTasksRequest, ListOpsAgentTuningTasksResponse>
+     */
+    public AsyncInvoker<ListOpsAgentTuningTasksRequest, ListOpsAgentTuningTasksResponse> listOpsAgentTuningTasksAsyncInvoker(
+        ListOpsAgentTuningTasksRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listOpsAgentTuningTasks, hcClient);
+    }
+
+    /**
+     * 查询智能体优化任务详情
+     *
+     * 本接口根据唯一ID获取单个智能体优化任务的全量元数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOpsAgentTuningTaskRequest 请求对象
+     * @return CompletableFuture<ShowOpsAgentTuningTaskResponse>
+     */
+    public CompletableFuture<ShowOpsAgentTuningTaskResponse> showOpsAgentTuningTaskAsync(
+        ShowOpsAgentTuningTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.showOpsAgentTuningTask);
+    }
+
+    /**
+     * 查询智能体优化任务详情
+     *
+     * 本接口根据唯一ID获取单个智能体优化任务的全量元数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOpsAgentTuningTaskRequest 请求对象
+     * @return AsyncInvoker<ShowOpsAgentTuningTaskRequest, ShowOpsAgentTuningTaskResponse>
+     */
+    public AsyncInvoker<ShowOpsAgentTuningTaskRequest, ShowOpsAgentTuningTaskResponse> showOpsAgentTuningTaskAsyncInvoker(
+        ShowOpsAgentTuningTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.showOpsAgentTuningTask, hcClient);
+    }
+
+    /**
+     * 停止智能体优化任务
+     *
+     * 本接口用于中断正在运行的智能体优化任务，任务流转为停止状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopOpsAgentTuningTaskRequest 请求对象
+     * @return CompletableFuture<StopOpsAgentTuningTaskResponse>
+     */
+    public CompletableFuture<StopOpsAgentTuningTaskResponse> stopOpsAgentTuningTaskAsync(
+        StopOpsAgentTuningTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.stopOpsAgentTuningTask);
+    }
+
+    /**
+     * 停止智能体优化任务
+     *
+     * 本接口用于中断正在运行的智能体优化任务，任务流转为停止状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopOpsAgentTuningTaskRequest 请求对象
+     * @return AsyncInvoker<StopOpsAgentTuningTaskRequest, StopOpsAgentTuningTaskResponse>
+     */
+    public AsyncInvoker<StopOpsAgentTuningTaskRequest, StopOpsAgentTuningTaskResponse> stopOpsAgentTuningTaskAsyncInvoker(
+        StopOpsAgentTuningTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.stopOpsAgentTuningTask, hcClient);
+    }
+
+    /**
+     * 修改智能体优化任务
+     *
+     * 本接口用于更新指定任务的具体配置。为确保数据的一致性，系统严格限制仅处于“draft（草稿）”状态的任务才允许被修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOpsAgentTuningTaskRequest 请求对象
+     * @return CompletableFuture<UpdateOpsAgentTuningTaskResponse>
+     */
+    public CompletableFuture<UpdateOpsAgentTuningTaskResponse> updateOpsAgentTuningTaskAsync(
+        UpdateOpsAgentTuningTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.updateOpsAgentTuningTask);
+    }
+
+    /**
+     * 修改智能体优化任务
+     *
+     * 本接口用于更新指定任务的具体配置。为确保数据的一致性，系统严格限制仅处于“draft（草稿）”状态的任务才允许被修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOpsAgentTuningTaskRequest 请求对象
+     * @return AsyncInvoker<UpdateOpsAgentTuningTaskRequest, UpdateOpsAgentTuningTaskResponse>
+     */
+    public AsyncInvoker<UpdateOpsAgentTuningTaskRequest, UpdateOpsAgentTuningTaskResponse> updateOpsAgentTuningTaskAsyncInvoker(
+        UpdateOpsAgentTuningTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.updateOpsAgentTuningTask, hcClient);
+    }
+
+    /**
+     * 创建分析任务
+     *
+     * 本接口用于创建一个全新的分析任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOpsAnalysisTaskRequest 请求对象
+     * @return CompletableFuture<CreateOpsAnalysisTaskResponse>
+     */
+    public CompletableFuture<CreateOpsAnalysisTaskResponse> createOpsAnalysisTaskAsync(
+        CreateOpsAnalysisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.createOpsAnalysisTask);
+    }
+
+    /**
+     * 创建分析任务
+     *
+     * 本接口用于创建一个全新的分析任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOpsAnalysisTaskRequest 请求对象
+     * @return AsyncInvoker<CreateOpsAnalysisTaskRequest, CreateOpsAnalysisTaskResponse>
+     */
+    public AsyncInvoker<CreateOpsAnalysisTaskRequest, CreateOpsAnalysisTaskResponse> createOpsAnalysisTaskAsyncInvoker(
+        CreateOpsAnalysisTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.createOpsAnalysisTask, hcClient);
+    }
+
+    /**
+     * 删除分析任务
+     *
+     * 本接口用于彻底删除指定的分析任务记录，系统会同步清除数据库元数据。删除操作不可恢复，请谨慎操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOpsAnalysisTaskRequest 请求对象
+     * @return CompletableFuture<DeleteOpsAnalysisTaskResponse>
+     */
+    public CompletableFuture<DeleteOpsAnalysisTaskResponse> deleteOpsAnalysisTaskAsync(
+        DeleteOpsAnalysisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.deleteOpsAnalysisTask);
+    }
+
+    /**
+     * 删除分析任务
+     *
+     * 本接口用于彻底删除指定的分析任务记录，系统会同步清除数据库元数据。删除操作不可恢复，请谨慎操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOpsAnalysisTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteOpsAnalysisTaskRequest, DeleteOpsAnalysisTaskResponse>
+     */
+    public AsyncInvoker<DeleteOpsAnalysisTaskRequest, DeleteOpsAnalysisTaskResponse> deleteOpsAnalysisTaskAsyncInvoker(
+        DeleteOpsAnalysisTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.deleteOpsAnalysisTask, hcClient);
+    }
+
+    /**
+     * 查询分析任务的结果里的失败会话列表
+     *
+     * 本接口用于查询某个分析任务下、某个具体问题的明细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsAnalysisTaskFailureAffectedSessionsRequest 请求对象
+     * @return CompletableFuture<ListOpsAnalysisTaskFailureAffectedSessionsResponse>
+     */
+    public CompletableFuture<ListOpsAnalysisTaskFailureAffectedSessionsResponse> listOpsAnalysisTaskFailureAffectedSessionsAsync(
+        ListOpsAnalysisTaskFailureAffectedSessionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listOpsAnalysisTaskFailureAffectedSessions);
+    }
+
+    /**
+     * 查询分析任务的结果里的失败会话列表
+     *
+     * 本接口用于查询某个分析任务下、某个具体问题的明细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsAnalysisTaskFailureAffectedSessionsRequest 请求对象
+     * @return AsyncInvoker<ListOpsAnalysisTaskFailureAffectedSessionsRequest, ListOpsAnalysisTaskFailureAffectedSessionsResponse>
+     */
+    public AsyncInvoker<ListOpsAnalysisTaskFailureAffectedSessionsRequest, ListOpsAnalysisTaskFailureAffectedSessionsResponse> listOpsAnalysisTaskFailureAffectedSessionsAsyncInvoker(
+        ListOpsAnalysisTaskFailureAffectedSessionsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listOpsAnalysisTaskFailureAffectedSessions, hcClient);
+    }
+
+    /**
+     * 查询分析任务实例列表
+     *
+     * 本接口用于查询指定分析任务下的任务实例列表，支持通过任务状态进行过滤，并支持分页功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsAnalysisTaskInstancesRequest 请求对象
+     * @return CompletableFuture<ListOpsAnalysisTaskInstancesResponse>
+     */
+    public CompletableFuture<ListOpsAnalysisTaskInstancesResponse> listOpsAnalysisTaskInstancesAsync(
+        ListOpsAnalysisTaskInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listOpsAnalysisTaskInstances);
+    }
+
+    /**
+     * 查询分析任务实例列表
+     *
+     * 本接口用于查询指定分析任务下的任务实例列表，支持通过任务状态进行过滤，并支持分页功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsAnalysisTaskInstancesRequest 请求对象
+     * @return AsyncInvoker<ListOpsAnalysisTaskInstancesRequest, ListOpsAnalysisTaskInstancesResponse>
+     */
+    public AsyncInvoker<ListOpsAnalysisTaskInstancesRequest, ListOpsAnalysisTaskInstancesResponse> listOpsAnalysisTaskInstancesAsyncInvoker(
+        ListOpsAnalysisTaskInstancesRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listOpsAnalysisTaskInstances, hcClient);
+    }
+
+    /**
+     * 查询分析任务列表
+     *
+     * 本接口用于查询当前租户下的分析任务列表，支持通过任务名称、任务状态进行过滤，并支持分页功能。同时，响应中会返回全局状态的分组统计信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsAnalysisTasksRequest 请求对象
+     * @return CompletableFuture<ListOpsAnalysisTasksResponse>
+     */
+    public CompletableFuture<ListOpsAnalysisTasksResponse> listOpsAnalysisTasksAsync(
+        ListOpsAnalysisTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listOpsAnalysisTasks);
+    }
+
+    /**
+     * 查询分析任务列表
+     *
+     * 本接口用于查询当前租户下的分析任务列表，支持通过任务名称、任务状态进行过滤，并支持分页功能。同时，响应中会返回全局状态的分组统计信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsAnalysisTasksRequest 请求对象
+     * @return AsyncInvoker<ListOpsAnalysisTasksRequest, ListOpsAnalysisTasksResponse>
+     */
+    public AsyncInvoker<ListOpsAnalysisTasksRequest, ListOpsAnalysisTasksResponse> listOpsAnalysisTasksAsyncInvoker(
+        ListOpsAnalysisTasksRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listOpsAnalysisTasks, hcClient);
+    }
+
+    /**
+     * 暂停分析任务
+     *
+     * 本接口用于暂停周期运行类型的分析任务，任务流转为暂停状态，在其期间不会触发周期任务的执行
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PauseOpsAnalysisTaskRequest 请求对象
+     * @return CompletableFuture<PauseOpsAnalysisTaskResponse>
+     */
+    public CompletableFuture<PauseOpsAnalysisTaskResponse> pauseOpsAnalysisTaskAsync(
+        PauseOpsAnalysisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.pauseOpsAnalysisTask);
+    }
+
+    /**
+     * 暂停分析任务
+     *
+     * 本接口用于暂停周期运行类型的分析任务，任务流转为暂停状态，在其期间不会触发周期任务的执行
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PauseOpsAnalysisTaskRequest 请求对象
+     * @return AsyncInvoker<PauseOpsAnalysisTaskRequest, PauseOpsAnalysisTaskResponse>
+     */
+    public AsyncInvoker<PauseOpsAnalysisTaskRequest, PauseOpsAnalysisTaskResponse> pauseOpsAnalysisTaskAsyncInvoker(
+        PauseOpsAnalysisTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.pauseOpsAnalysisTask, hcClient);
+    }
+
+    /**
+     * 发布分析任务
+     *
+     * 本接口用于正式发布处于草稿状态的任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PublishOpsAnalysisTaskRequest 请求对象
+     * @return CompletableFuture<PublishOpsAnalysisTaskResponse>
+     */
+    public CompletableFuture<PublishOpsAnalysisTaskResponse> publishOpsAnalysisTaskAsync(
+        PublishOpsAnalysisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.publishOpsAnalysisTask);
+    }
+
+    /**
+     * 发布分析任务
+     *
+     * 本接口用于正式发布处于草稿状态的任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PublishOpsAnalysisTaskRequest 请求对象
+     * @return AsyncInvoker<PublishOpsAnalysisTaskRequest, PublishOpsAnalysisTaskResponse>
+     */
+    public AsyncInvoker<PublishOpsAnalysisTaskRequest, PublishOpsAnalysisTaskResponse> publishOpsAnalysisTaskAsyncInvoker(
+        PublishOpsAnalysisTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.publishOpsAnalysisTask, hcClient);
+    }
+
+    /**
+     * 恢复被暂停的分析任务
+     *
+     * 本接口用于让暂停中的分析任务，恢复为会被触发的运行中状态。仅能作用于暂停状态的重复执行类任务上。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResumeOpsAnalysisTaskRequest 请求对象
+     * @return CompletableFuture<ResumeOpsAnalysisTaskResponse>
+     */
+    public CompletableFuture<ResumeOpsAnalysisTaskResponse> resumeOpsAnalysisTaskAsync(
+        ResumeOpsAnalysisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.resumeOpsAnalysisTask);
+    }
+
+    /**
+     * 恢复被暂停的分析任务
+     *
+     * 本接口用于让暂停中的分析任务，恢复为会被触发的运行中状态。仅能作用于暂停状态的重复执行类任务上。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResumeOpsAnalysisTaskRequest 请求对象
+     * @return AsyncInvoker<ResumeOpsAnalysisTaskRequest, ResumeOpsAnalysisTaskResponse>
+     */
+    public AsyncInvoker<ResumeOpsAnalysisTaskRequest, ResumeOpsAnalysisTaskResponse> resumeOpsAnalysisTaskAsyncInvoker(
+        ResumeOpsAnalysisTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.resumeOpsAnalysisTask, hcClient);
+    }
+
+    /**
+     * 查询分析任务详情
+     *
+     * 本接口根据唯一ID获取单个分析任务的全量元数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOpsAnalysisTaskRequest 请求对象
+     * @return CompletableFuture<ShowOpsAnalysisTaskResponse>
+     */
+    public CompletableFuture<ShowOpsAnalysisTaskResponse> showOpsAnalysisTaskAsync(ShowOpsAnalysisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.showOpsAnalysisTask);
+    }
+
+    /**
+     * 查询分析任务详情
+     *
+     * 本接口根据唯一ID获取单个分析任务的全量元数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOpsAnalysisTaskRequest 请求对象
+     * @return AsyncInvoker<ShowOpsAnalysisTaskRequest, ShowOpsAnalysisTaskResponse>
+     */
+    public AsyncInvoker<ShowOpsAnalysisTaskRequest, ShowOpsAnalysisTaskResponse> showOpsAnalysisTaskAsyncInvoker(
+        ShowOpsAnalysisTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.showOpsAnalysisTask, hcClient);
+    }
+
+    /**
+     * 根据分析任务自动创建智能体优化任务
+     *
+     * 本接口用于根据分析任务自动创建智能体优化任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartOpsAgentTuningTaskForAnalysisTaskRequest 请求对象
+     * @return CompletableFuture<StartOpsAgentTuningTaskForAnalysisTaskResponse>
+     */
+    public CompletableFuture<StartOpsAgentTuningTaskForAnalysisTaskResponse> startOpsAgentTuningTaskForAnalysisTaskAsync(
+        StartOpsAgentTuningTaskForAnalysisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.startOpsAgentTuningTaskForAnalysisTask);
+    }
+
+    /**
+     * 根据分析任务自动创建智能体优化任务
+     *
+     * 本接口用于根据分析任务自动创建智能体优化任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartOpsAgentTuningTaskForAnalysisTaskRequest 请求对象
+     * @return AsyncInvoker<StartOpsAgentTuningTaskForAnalysisTaskRequest, StartOpsAgentTuningTaskForAnalysisTaskResponse>
+     */
+    public AsyncInvoker<StartOpsAgentTuningTaskForAnalysisTaskRequest, StartOpsAgentTuningTaskForAnalysisTaskResponse> startOpsAgentTuningTaskForAnalysisTaskAsyncInvoker(
+        StartOpsAgentTuningTaskForAnalysisTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.startOpsAgentTuningTaskForAnalysisTask, hcClient);
+    }
+
+    /**
+     * 停止分析任务
+     *
+     * 本接口用于中断分析任务，任务流转为停止状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopOpsAnalysisTaskRequest 请求对象
+     * @return CompletableFuture<StopOpsAnalysisTaskResponse>
+     */
+    public CompletableFuture<StopOpsAnalysisTaskResponse> stopOpsAnalysisTaskAsync(StopOpsAnalysisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.stopOpsAnalysisTask);
+    }
+
+    /**
+     * 停止分析任务
+     *
+     * 本接口用于中断分析任务，任务流转为停止状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopOpsAnalysisTaskRequest 请求对象
+     * @return AsyncInvoker<StopOpsAnalysisTaskRequest, StopOpsAnalysisTaskResponse>
+     */
+    public AsyncInvoker<StopOpsAnalysisTaskRequest, StopOpsAnalysisTaskResponse> stopOpsAnalysisTaskAsyncInvoker(
+        StopOpsAnalysisTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.stopOpsAnalysisTask, hcClient);
+    }
+
+    /**
+     * 修改分析任务
+     *
+     * 本接口用于更新指定任务的具体配置。为确保数据的一致性，系统严格限制仅处于“draft（草稿）”状态的任务才允许被修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOpsAnalysisTaskRequest 请求对象
+     * @return CompletableFuture<UpdateOpsAnalysisTaskResponse>
+     */
+    public CompletableFuture<UpdateOpsAnalysisTaskResponse> updateOpsAnalysisTaskAsync(
+        UpdateOpsAnalysisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.updateOpsAnalysisTask);
+    }
+
+    /**
+     * 修改分析任务
+     *
+     * 本接口用于更新指定任务的具体配置。为确保数据的一致性，系统严格限制仅处于“draft（草稿）”状态的任务才允许被修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOpsAnalysisTaskRequest 请求对象
+     * @return AsyncInvoker<UpdateOpsAnalysisTaskRequest, UpdateOpsAnalysisTaskResponse>
+     */
+    public AsyncInvoker<UpdateOpsAnalysisTaskRequest, UpdateOpsAnalysisTaskResponse> updateOpsAnalysisTaskAsyncInvoker(
+        UpdateOpsAnalysisTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.updateOpsAnalysisTask, hcClient);
+    }
+
+    /**
      * 批量添加评测集条目
      *
      * 该接口用于向指定评测集的草稿态批量注入数据行，支持增量添加、覆盖更新或基于历史版本还原数据，并强制校验数据与Schema的符合性。
@@ -3488,6 +4166,58 @@ public class AgentArtsAsyncClient {
     }
 
     /**
+     * 细粒度评估
+     *
+     * 该接口提供细粒度评估能力，基于评估器维度，无需预先创建评测集和评估任务，只需指定评估器并传入待评估数据即可完成评估，评估结果通过流式（SSE）或非流式方式返回。
+     * 
+     * 适用场景：
+     * - 场景1（dataset）：对已有的输入输出数据进行评估评分。
+     * - 场景2（agent）：传入输入调用智能体获取输出后进行评估。
+     * - 场景3（trace）：传入TraceId，从可观测子服务获取trace数据后进行评估。
+     * 
+     * 与现有评估任务流程的区别：
+     * - 无需创建评测集，数据直接在请求中传入。
+     * - 无需创建评估任务，即发即评。
+     * - 评估结果默认不持久化，仅在响应中返回。
+     * - 支持SSE流式返回，评估过程中实时推送结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokeOpsFineGrainedEvaluationRequest 请求对象
+     * @return CompletableFuture<InvokeOpsFineGrainedEvaluationResponse>
+     */
+    public CompletableFuture<InvokeOpsFineGrainedEvaluationResponse> invokeOpsFineGrainedEvaluationAsync(
+        InvokeOpsFineGrainedEvaluationRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.invokeOpsFineGrainedEvaluation);
+    }
+
+    /**
+     * 细粒度评估
+     *
+     * 该接口提供细粒度评估能力，基于评估器维度，无需预先创建评测集和评估任务，只需指定评估器并传入待评估数据即可完成评估，评估结果通过流式（SSE）或非流式方式返回。
+     * 
+     * 适用场景：
+     * - 场景1（dataset）：对已有的输入输出数据进行评估评分。
+     * - 场景2（agent）：传入输入调用智能体获取输出后进行评估。
+     * - 场景3（trace）：传入TraceId，从可观测子服务获取trace数据后进行评估。
+     * 
+     * 与现有评估任务流程的区别：
+     * - 无需创建评测集，数据直接在请求中传入。
+     * - 无需创建评估任务，即发即评。
+     * - 评估结果默认不持久化，仅在响应中返回。
+     * - 支持SSE流式返回，评估过程中实时推送结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokeOpsFineGrainedEvaluationRequest 请求对象
+     * @return AsyncInvoker<InvokeOpsFineGrainedEvaluationRequest, InvokeOpsFineGrainedEvaluationResponse>
+     */
+    public AsyncInvoker<InvokeOpsFineGrainedEvaluationRequest, InvokeOpsFineGrainedEvaluationResponse> invokeOpsFineGrainedEvaluationAsyncInvoker(
+        InvokeOpsFineGrainedEvaluationRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.invokeOpsFineGrainedEvaluation, hcClient);
+    }
+
+    /**
      * 获取评估器筛选选项列表
      *
      * 该接口用于获取评估器列表页面可用的筛选维度及其枚举值。
@@ -3773,6 +4503,576 @@ public class AgentArtsAsyncClient {
     public AsyncInvoker<ShowOpsEvaluatorTemplateRequest, ShowOpsEvaluatorTemplateResponse> showOpsEvaluatorTemplateAsyncInvoker(
         ShowOpsEvaluatorTemplateRequest request) {
         return new AsyncInvoker<>(request, AgentArtsMeta.showOpsEvaluatorTemplate, hcClient);
+    }
+
+    /**
+     * 查询账号配额
+     *
+     * 获取当前认证账号的有效配额信息，包括配额类型、配额值和已使用数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsEvolutionQuotasRequest 请求对象
+     * @return CompletableFuture<ListOpsEvolutionQuotasResponse>
+     */
+    public CompletableFuture<ListOpsEvolutionQuotasResponse> listOpsEvolutionQuotasAsync(
+        ListOpsEvolutionQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listOpsEvolutionQuotas);
+    }
+
+    /**
+     * 查询账号配额
+     *
+     * 获取当前认证账号的有效配额信息，包括配额类型、配额值和已使用数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsEvolutionQuotasRequest 请求对象
+     * @return AsyncInvoker<ListOpsEvolutionQuotasRequest, ListOpsEvolutionQuotasResponse>
+     */
+    public AsyncInvoker<ListOpsEvolutionQuotasRequest, ListOpsEvolutionQuotasResponse> listOpsEvolutionQuotasAsyncInvoker(
+        ListOpsEvolutionQuotasRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listOpsEvolutionQuotas, hcClient);
+    }
+
+    /**
+     * 批量添加智能体优化任务标签
+     *
+     * 批量添加智能体优化任务标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateOpsAgentTuningTaskTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateOpsAgentTuningTaskTagsResponse>
+     */
+    public CompletableFuture<BatchCreateOpsAgentTuningTaskTagsResponse> batchCreateOpsAgentTuningTaskTagsAsync(
+        BatchCreateOpsAgentTuningTaskTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.batchCreateOpsAgentTuningTaskTags);
+    }
+
+    /**
+     * 批量添加智能体优化任务标签
+     *
+     * 批量添加智能体优化任务标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateOpsAgentTuningTaskTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateOpsAgentTuningTaskTagsRequest, BatchCreateOpsAgentTuningTaskTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateOpsAgentTuningTaskTagsRequest, BatchCreateOpsAgentTuningTaskTagsResponse> batchCreateOpsAgentTuningTaskTagsAsyncInvoker(
+        BatchCreateOpsAgentTuningTaskTagsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.batchCreateOpsAgentTuningTaskTags, hcClient);
+    }
+
+    /**
+     * 批量添加分析任务标签
+     *
+     * 批量添加分析任务标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateOpsAnalysisTaskTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateOpsAnalysisTaskTagsResponse>
+     */
+    public CompletableFuture<BatchCreateOpsAnalysisTaskTagsResponse> batchCreateOpsAnalysisTaskTagsAsync(
+        BatchCreateOpsAnalysisTaskTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.batchCreateOpsAnalysisTaskTags);
+    }
+
+    /**
+     * 批量添加分析任务标签
+     *
+     * 批量添加分析任务标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateOpsAnalysisTaskTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateOpsAnalysisTaskTagsRequest, BatchCreateOpsAnalysisTaskTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateOpsAnalysisTaskTagsRequest, BatchCreateOpsAnalysisTaskTagsResponse> batchCreateOpsAnalysisTaskTagsAsyncInvoker(
+        BatchCreateOpsAnalysisTaskTagsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.batchCreateOpsAnalysisTaskTags, hcClient);
+    }
+
+    /**
+     * 批量添加模型优化任务标签
+     *
+     * 批量添加模型优化任务标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateOpsModelTuningTaskTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateOpsModelTuningTaskTagsResponse>
+     */
+    public CompletableFuture<BatchCreateOpsModelTuningTaskTagsResponse> batchCreateOpsModelTuningTaskTagsAsync(
+        BatchCreateOpsModelTuningTaskTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.batchCreateOpsModelTuningTaskTags);
+    }
+
+    /**
+     * 批量添加模型优化任务标签
+     *
+     * 批量添加模型优化任务标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateOpsModelTuningTaskTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateOpsModelTuningTaskTagsRequest, BatchCreateOpsModelTuningTaskTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateOpsModelTuningTaskTagsRequest, BatchCreateOpsModelTuningTaskTagsResponse> batchCreateOpsModelTuningTaskTagsAsyncInvoker(
+        BatchCreateOpsModelTuningTaskTagsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.batchCreateOpsModelTuningTaskTags, hcClient);
+    }
+
+    /**
+     * 批量删除智能体优化任务标签
+     *
+     * 批量删除智能体优化任务标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteOpsAgentTuningTaskTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteOpsAgentTuningTaskTagsResponse>
+     */
+    public CompletableFuture<BatchDeleteOpsAgentTuningTaskTagsResponse> batchDeleteOpsAgentTuningTaskTagsAsync(
+        BatchDeleteOpsAgentTuningTaskTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.batchDeleteOpsAgentTuningTaskTags);
+    }
+
+    /**
+     * 批量删除智能体优化任务标签
+     *
+     * 批量删除智能体优化任务标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteOpsAgentTuningTaskTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteOpsAgentTuningTaskTagsRequest, BatchDeleteOpsAgentTuningTaskTagsResponse>
+     */
+    public AsyncInvoker<BatchDeleteOpsAgentTuningTaskTagsRequest, BatchDeleteOpsAgentTuningTaskTagsResponse> batchDeleteOpsAgentTuningTaskTagsAsyncInvoker(
+        BatchDeleteOpsAgentTuningTaskTagsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.batchDeleteOpsAgentTuningTaskTags, hcClient);
+    }
+
+    /**
+     * 批量删除分析任务标签
+     *
+     * 批量删除分析任务标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteOpsAnalysisTaskTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteOpsAnalysisTaskTagsResponse>
+     */
+    public CompletableFuture<BatchDeleteOpsAnalysisTaskTagsResponse> batchDeleteOpsAnalysisTaskTagsAsync(
+        BatchDeleteOpsAnalysisTaskTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.batchDeleteOpsAnalysisTaskTags);
+    }
+
+    /**
+     * 批量删除分析任务标签
+     *
+     * 批量删除分析任务标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteOpsAnalysisTaskTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteOpsAnalysisTaskTagsRequest, BatchDeleteOpsAnalysisTaskTagsResponse>
+     */
+    public AsyncInvoker<BatchDeleteOpsAnalysisTaskTagsRequest, BatchDeleteOpsAnalysisTaskTagsResponse> batchDeleteOpsAnalysisTaskTagsAsyncInvoker(
+        BatchDeleteOpsAnalysisTaskTagsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.batchDeleteOpsAnalysisTaskTags, hcClient);
+    }
+
+    /**
+     * 批量删除模型优化任务标签
+     *
+     * 批量删除模型优化任务标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteOpsModelTuningTaskTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteOpsModelTuningTaskTagsResponse>
+     */
+    public CompletableFuture<BatchDeleteOpsModelTuningTaskTagsResponse> batchDeleteOpsModelTuningTaskTagsAsync(
+        BatchDeleteOpsModelTuningTaskTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.batchDeleteOpsModelTuningTaskTags);
+    }
+
+    /**
+     * 批量删除模型优化任务标签
+     *
+     * 批量删除模型优化任务标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteOpsModelTuningTaskTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteOpsModelTuningTaskTagsRequest, BatchDeleteOpsModelTuningTaskTagsResponse>
+     */
+    public AsyncInvoker<BatchDeleteOpsModelTuningTaskTagsRequest, BatchDeleteOpsModelTuningTaskTagsResponse> batchDeleteOpsModelTuningTaskTagsAsyncInvoker(
+        BatchDeleteOpsModelTuningTaskTagsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.batchDeleteOpsModelTuningTaskTags, hcClient);
+    }
+
+    /**
+     * 查询账号下所有智能体优化任务标签列表
+     *
+     * 查询账号下所有智能体优化任务标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllOpsAgentTuningTaskTagsRequest 请求对象
+     * @return CompletableFuture<ListAllOpsAgentTuningTaskTagsResponse>
+     */
+    public CompletableFuture<ListAllOpsAgentTuningTaskTagsResponse> listAllOpsAgentTuningTaskTagsAsync(
+        ListAllOpsAgentTuningTaskTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listAllOpsAgentTuningTaskTags);
+    }
+
+    /**
+     * 查询账号下所有智能体优化任务标签列表
+     *
+     * 查询账号下所有智能体优化任务标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllOpsAgentTuningTaskTagsRequest 请求对象
+     * @return AsyncInvoker<ListAllOpsAgentTuningTaskTagsRequest, ListAllOpsAgentTuningTaskTagsResponse>
+     */
+    public AsyncInvoker<ListAllOpsAgentTuningTaskTagsRequest, ListAllOpsAgentTuningTaskTagsResponse> listAllOpsAgentTuningTaskTagsAsyncInvoker(
+        ListAllOpsAgentTuningTaskTagsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listAllOpsAgentTuningTaskTags, hcClient);
+    }
+
+    /**
+     * 查询账号下所有分析任务标签列表
+     *
+     * 查询账号下所有分析任务标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllOpsAnalysisTaskTagsRequest 请求对象
+     * @return CompletableFuture<ListAllOpsAnalysisTaskTagsResponse>
+     */
+    public CompletableFuture<ListAllOpsAnalysisTaskTagsResponse> listAllOpsAnalysisTaskTagsAsync(
+        ListAllOpsAnalysisTaskTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listAllOpsAnalysisTaskTags);
+    }
+
+    /**
+     * 查询账号下所有分析任务标签列表
+     *
+     * 查询账号下所有分析任务标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllOpsAnalysisTaskTagsRequest 请求对象
+     * @return AsyncInvoker<ListAllOpsAnalysisTaskTagsRequest, ListAllOpsAnalysisTaskTagsResponse>
+     */
+    public AsyncInvoker<ListAllOpsAnalysisTaskTagsRequest, ListAllOpsAnalysisTaskTagsResponse> listAllOpsAnalysisTaskTagsAsyncInvoker(
+        ListAllOpsAnalysisTaskTagsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listAllOpsAnalysisTaskTags, hcClient);
+    }
+
+    /**
+     * 查询账号下所有模型优化任务标签列表
+     *
+     * 查询账号下所有模型优化任务标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllOpsModelTuningTaskTagsRequest 请求对象
+     * @return CompletableFuture<ListAllOpsModelTuningTaskTagsResponse>
+     */
+    public CompletableFuture<ListAllOpsModelTuningTaskTagsResponse> listAllOpsModelTuningTaskTagsAsync(
+        ListAllOpsModelTuningTaskTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listAllOpsModelTuningTaskTags);
+    }
+
+    /**
+     * 查询账号下所有模型优化任务标签列表
+     *
+     * 查询账号下所有模型优化任务标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllOpsModelTuningTaskTagsRequest 请求对象
+     * @return AsyncInvoker<ListAllOpsModelTuningTaskTagsRequest, ListAllOpsModelTuningTaskTagsResponse>
+     */
+    public AsyncInvoker<ListAllOpsModelTuningTaskTagsRequest, ListAllOpsModelTuningTaskTagsResponse> listAllOpsModelTuningTaskTagsAsyncInvoker(
+        ListAllOpsModelTuningTaskTagsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listAllOpsModelTuningTaskTags, hcClient);
+    }
+
+    /**
+     * 查询智能体优化任务标签列表
+     *
+     * 查询智能体优化任务标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsAgentTuningTaskTagsRequest 请求对象
+     * @return CompletableFuture<ListOpsAgentTuningTaskTagsResponse>
+     */
+    public CompletableFuture<ListOpsAgentTuningTaskTagsResponse> listOpsAgentTuningTaskTagsAsync(
+        ListOpsAgentTuningTaskTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listOpsAgentTuningTaskTags);
+    }
+
+    /**
+     * 查询智能体优化任务标签列表
+     *
+     * 查询智能体优化任务标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsAgentTuningTaskTagsRequest 请求对象
+     * @return AsyncInvoker<ListOpsAgentTuningTaskTagsRequest, ListOpsAgentTuningTaskTagsResponse>
+     */
+    public AsyncInvoker<ListOpsAgentTuningTaskTagsRequest, ListOpsAgentTuningTaskTagsResponse> listOpsAgentTuningTaskTagsAsyncInvoker(
+        ListOpsAgentTuningTaskTagsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listOpsAgentTuningTaskTags, hcClient);
+    }
+
+    /**
+     * 根据标签查询智能体优化任务列表
+     *
+     * 根据标签查询智能体优化任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsAgentTuningTasksByTagsRequest 请求对象
+     * @return CompletableFuture<ListOpsAgentTuningTasksByTagsResponse>
+     */
+    public CompletableFuture<ListOpsAgentTuningTasksByTagsResponse> listOpsAgentTuningTasksByTagsAsync(
+        ListOpsAgentTuningTasksByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listOpsAgentTuningTasksByTags);
+    }
+
+    /**
+     * 根据标签查询智能体优化任务列表
+     *
+     * 根据标签查询智能体优化任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsAgentTuningTasksByTagsRequest 请求对象
+     * @return AsyncInvoker<ListOpsAgentTuningTasksByTagsRequest, ListOpsAgentTuningTasksByTagsResponse>
+     */
+    public AsyncInvoker<ListOpsAgentTuningTasksByTagsRequest, ListOpsAgentTuningTasksByTagsResponse> listOpsAgentTuningTasksByTagsAsyncInvoker(
+        ListOpsAgentTuningTasksByTagsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listOpsAgentTuningTasksByTags, hcClient);
+    }
+
+    /**
+     * 查询分析任务标签列表
+     *
+     * 查询分析任务标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsAnalysisTaskTagsRequest 请求对象
+     * @return CompletableFuture<ListOpsAnalysisTaskTagsResponse>
+     */
+    public CompletableFuture<ListOpsAnalysisTaskTagsResponse> listOpsAnalysisTaskTagsAsync(
+        ListOpsAnalysisTaskTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listOpsAnalysisTaskTags);
+    }
+
+    /**
+     * 查询分析任务标签列表
+     *
+     * 查询分析任务标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsAnalysisTaskTagsRequest 请求对象
+     * @return AsyncInvoker<ListOpsAnalysisTaskTagsRequest, ListOpsAnalysisTaskTagsResponse>
+     */
+    public AsyncInvoker<ListOpsAnalysisTaskTagsRequest, ListOpsAnalysisTaskTagsResponse> listOpsAnalysisTaskTagsAsyncInvoker(
+        ListOpsAnalysisTaskTagsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listOpsAnalysisTaskTags, hcClient);
+    }
+
+    /**
+     * 根据标签查询分析任务列表
+     *
+     * 根据标签查询分析任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsAnalysisTasksByTagsRequest 请求对象
+     * @return CompletableFuture<ListOpsAnalysisTasksByTagsResponse>
+     */
+    public CompletableFuture<ListOpsAnalysisTasksByTagsResponse> listOpsAnalysisTasksByTagsAsync(
+        ListOpsAnalysisTasksByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listOpsAnalysisTasksByTags);
+    }
+
+    /**
+     * 根据标签查询分析任务列表
+     *
+     * 根据标签查询分析任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsAnalysisTasksByTagsRequest 请求对象
+     * @return AsyncInvoker<ListOpsAnalysisTasksByTagsRequest, ListOpsAnalysisTasksByTagsResponse>
+     */
+    public AsyncInvoker<ListOpsAnalysisTasksByTagsRequest, ListOpsAnalysisTasksByTagsResponse> listOpsAnalysisTasksByTagsAsyncInvoker(
+        ListOpsAnalysisTasksByTagsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listOpsAnalysisTasksByTags, hcClient);
+    }
+
+    /**
+     * 查询模型优化任务标签列表
+     *
+     * 查询模型优化任务标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsModelTuningTaskTagsRequest 请求对象
+     * @return CompletableFuture<ListOpsModelTuningTaskTagsResponse>
+     */
+    public CompletableFuture<ListOpsModelTuningTaskTagsResponse> listOpsModelTuningTaskTagsAsync(
+        ListOpsModelTuningTaskTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listOpsModelTuningTaskTags);
+    }
+
+    /**
+     * 查询模型优化任务标签列表
+     *
+     * 查询模型优化任务标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsModelTuningTaskTagsRequest 请求对象
+     * @return AsyncInvoker<ListOpsModelTuningTaskTagsRequest, ListOpsModelTuningTaskTagsResponse>
+     */
+    public AsyncInvoker<ListOpsModelTuningTaskTagsRequest, ListOpsModelTuningTaskTagsResponse> listOpsModelTuningTaskTagsAsyncInvoker(
+        ListOpsModelTuningTaskTagsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listOpsModelTuningTaskTags, hcClient);
+    }
+
+    /**
+     * 根据标签查询模型优化任务列表
+     *
+     * 根据标签查询模型优化任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsModelTuningTasksByTagsRequest 请求对象
+     * @return CompletableFuture<ListOpsModelTuningTasksByTagsResponse>
+     */
+    public CompletableFuture<ListOpsModelTuningTasksByTagsResponse> listOpsModelTuningTasksByTagsAsync(
+        ListOpsModelTuningTasksByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listOpsModelTuningTasksByTags);
+    }
+
+    /**
+     * 根据标签查询模型优化任务列表
+     *
+     * 根据标签查询模型优化任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsModelTuningTasksByTagsRequest 请求对象
+     * @return AsyncInvoker<ListOpsModelTuningTasksByTagsRequest, ListOpsModelTuningTasksByTagsResponse>
+     */
+    public AsyncInvoker<ListOpsModelTuningTasksByTagsRequest, ListOpsModelTuningTasksByTagsResponse> listOpsModelTuningTasksByTagsAsyncInvoker(
+        ListOpsModelTuningTasksByTagsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listOpsModelTuningTasksByTags, hcClient);
+    }
+
+    /**
+     * 根据标签查询智能体优化任务数量
+     *
+     * 根据标签查询智能体优化任务数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOpsAgentTuningTaskNumsByTagsRequest 请求对象
+     * @return CompletableFuture<ShowOpsAgentTuningTaskNumsByTagsResponse>
+     */
+    public CompletableFuture<ShowOpsAgentTuningTaskNumsByTagsResponse> showOpsAgentTuningTaskNumsByTagsAsync(
+        ShowOpsAgentTuningTaskNumsByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.showOpsAgentTuningTaskNumsByTags);
+    }
+
+    /**
+     * 根据标签查询智能体优化任务数量
+     *
+     * 根据标签查询智能体优化任务数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOpsAgentTuningTaskNumsByTagsRequest 请求对象
+     * @return AsyncInvoker<ShowOpsAgentTuningTaskNumsByTagsRequest, ShowOpsAgentTuningTaskNumsByTagsResponse>
+     */
+    public AsyncInvoker<ShowOpsAgentTuningTaskNumsByTagsRequest, ShowOpsAgentTuningTaskNumsByTagsResponse> showOpsAgentTuningTaskNumsByTagsAsyncInvoker(
+        ShowOpsAgentTuningTaskNumsByTagsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.showOpsAgentTuningTaskNumsByTags, hcClient);
+    }
+
+    /**
+     * 根据标签查询分析任务数量
+     *
+     * 根据标签查询分析任务数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOpsAnalysisTaskNumsByTagsRequest 请求对象
+     * @return CompletableFuture<ShowOpsAnalysisTaskNumsByTagsResponse>
+     */
+    public CompletableFuture<ShowOpsAnalysisTaskNumsByTagsResponse> showOpsAnalysisTaskNumsByTagsAsync(
+        ShowOpsAnalysisTaskNumsByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.showOpsAnalysisTaskNumsByTags);
+    }
+
+    /**
+     * 根据标签查询分析任务数量
+     *
+     * 根据标签查询分析任务数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOpsAnalysisTaskNumsByTagsRequest 请求对象
+     * @return AsyncInvoker<ShowOpsAnalysisTaskNumsByTagsRequest, ShowOpsAnalysisTaskNumsByTagsResponse>
+     */
+    public AsyncInvoker<ShowOpsAnalysisTaskNumsByTagsRequest, ShowOpsAnalysisTaskNumsByTagsResponse> showOpsAnalysisTaskNumsByTagsAsyncInvoker(
+        ShowOpsAnalysisTaskNumsByTagsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.showOpsAnalysisTaskNumsByTags, hcClient);
+    }
+
+    /**
+     * 根据标签查询模型优化任务数量
+     *
+     * 根据标签查询模型优化任务数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOpsModelTuningTaskNumsByTagsRequest 请求对象
+     * @return CompletableFuture<ShowOpsModelTuningTaskNumsByTagsResponse>
+     */
+    public CompletableFuture<ShowOpsModelTuningTaskNumsByTagsResponse> showOpsModelTuningTaskNumsByTagsAsync(
+        ShowOpsModelTuningTaskNumsByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.showOpsModelTuningTaskNumsByTags);
+    }
+
+    /**
+     * 根据标签查询模型优化任务数量
+     *
+     * 根据标签查询模型优化任务数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOpsModelTuningTaskNumsByTagsRequest 请求对象
+     * @return AsyncInvoker<ShowOpsModelTuningTaskNumsByTagsRequest, ShowOpsModelTuningTaskNumsByTagsResponse>
+     */
+    public AsyncInvoker<ShowOpsModelTuningTaskNumsByTagsRequest, ShowOpsModelTuningTaskNumsByTagsResponse> showOpsModelTuningTaskNumsByTagsAsyncInvoker(
+        ShowOpsModelTuningTaskNumsByTagsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.showOpsModelTuningTaskNumsByTags, hcClient);
     }
 
     /**
@@ -4101,7 +5401,7 @@ public class AgentArtsAsyncClient {
     }
 
     /**
-     * 查询单个指标的topN接口
+     * 查询指标的topN
      *
      * 查询单个指标的topN接口
      * 
@@ -4116,7 +5416,7 @@ public class AgentArtsAsyncClient {
     }
 
     /**
-     * 查询单个指标的topN接口
+     * 查询指标的topN
      *
      * 查询单个指标的topN接口
      * 
@@ -4131,7 +5431,7 @@ public class AgentArtsAsyncClient {
     }
 
     /**
-     * 查询某个指标的趋势图接口
+     * 查询指标趋势图
      *
      * 查询某个指标的趋势图接口
      * 
@@ -4146,7 +5446,7 @@ public class AgentArtsAsyncClient {
     }
 
     /**
-     * 查询某个指标的趋势图接口
+     * 查询指标趋势图
      *
      * 查询某个指标的趋势图接口
      * 
@@ -4158,6 +5458,458 @@ public class AgentArtsAsyncClient {
     public AsyncInvoker<ShowOpsAgentMetricTrendRequest, ShowOpsAgentMetricTrendResponse> showOpsAgentMetricTrendAsyncInvoker(
         ShowOpsAgentMetricTrendRequest request) {
         return new AsyncInvoker<>(request, AgentArtsMeta.showOpsAgentMetricTrend, hcClient);
+    }
+
+    /**
+     * 创建模型部署
+     *
+     * 本接口用于将模型产物发布为在线推理服务，需指定底层ModelArts资源（资源池、规格、实例数）与鉴权配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOpsModelDeploymentRequest 请求对象
+     * @return CompletableFuture<CreateOpsModelDeploymentResponse>
+     */
+    public CompletableFuture<CreateOpsModelDeploymentResponse> createOpsModelDeploymentAsync(
+        CreateOpsModelDeploymentRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.createOpsModelDeployment);
+    }
+
+    /**
+     * 创建模型部署
+     *
+     * 本接口用于将模型产物发布为在线推理服务，需指定底层ModelArts资源（资源池、规格、实例数）与鉴权配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOpsModelDeploymentRequest 请求对象
+     * @return AsyncInvoker<CreateOpsModelDeploymentRequest, CreateOpsModelDeploymentResponse>
+     */
+    public AsyncInvoker<CreateOpsModelDeploymentRequest, CreateOpsModelDeploymentResponse> createOpsModelDeploymentAsyncInvoker(
+        CreateOpsModelDeploymentRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.createOpsModelDeployment, hcClient);
+    }
+
+    /**
+     * 删除模型部署
+     *
+     * 本接口用于彻底销毁指定的模型优化任务模型部署实例。除了清除数据库记录，还会联动底层平台彻底释放挂载的算力空间，操作不可逆。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOpsModelDeploymentRequest 请求对象
+     * @return CompletableFuture<DeleteOpsModelDeploymentResponse>
+     */
+    public CompletableFuture<DeleteOpsModelDeploymentResponse> deleteOpsModelDeploymentAsync(
+        DeleteOpsModelDeploymentRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.deleteOpsModelDeployment);
+    }
+
+    /**
+     * 删除模型部署
+     *
+     * 本接口用于彻底销毁指定的模型优化任务模型部署实例。除了清除数据库记录，还会联动底层平台彻底释放挂载的算力空间，操作不可逆。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOpsModelDeploymentRequest 请求对象
+     * @return AsyncInvoker<DeleteOpsModelDeploymentRequest, DeleteOpsModelDeploymentResponse>
+     */
+    public AsyncInvoker<DeleteOpsModelDeploymentRequest, DeleteOpsModelDeploymentResponse> deleteOpsModelDeploymentAsyncInvoker(
+        DeleteOpsModelDeploymentRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.deleteOpsModelDeployment, hcClient);
+    }
+
+    /**
+     * 查询模型部署列表
+     *
+     * 本接口用于分页查询当前租户下的模型部署任务列表，支持按任务ID、状态、名称等多维度过滤，并返回全局状态统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsModelDeploymentsRequest 请求对象
+     * @return CompletableFuture<ListOpsModelDeploymentsResponse>
+     */
+    public CompletableFuture<ListOpsModelDeploymentsResponse> listOpsModelDeploymentsAsync(
+        ListOpsModelDeploymentsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listOpsModelDeployments);
+    }
+
+    /**
+     * 查询模型部署列表
+     *
+     * 本接口用于分页查询当前租户下的模型部署任务列表，支持按任务ID、状态、名称等多维度过滤，并返回全局状态统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsModelDeploymentsRequest 请求对象
+     * @return AsyncInvoker<ListOpsModelDeploymentsRequest, ListOpsModelDeploymentsResponse>
+     */
+    public AsyncInvoker<ListOpsModelDeploymentsRequest, ListOpsModelDeploymentsResponse> listOpsModelDeploymentsAsyncInvoker(
+        ListOpsModelDeploymentsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listOpsModelDeployments, hcClient);
+    }
+
+    /**
+     * 查询模型部署详情
+     *
+     * 本接口用于精确获取某个指定部署任务的全景元数据。与列表查询相比，它无需复杂过滤，直接通过唯一的 deployment_id 命中目标，返回包括绑定的智能体信息、上下游服务ID、最新运行状态以及最终生成的推理API调用地址等核心字段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOpsModelDeploymentRequest 请求对象
+     * @return CompletableFuture<ShowOpsModelDeploymentResponse>
+     */
+    public CompletableFuture<ShowOpsModelDeploymentResponse> showOpsModelDeploymentAsync(
+        ShowOpsModelDeploymentRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.showOpsModelDeployment);
+    }
+
+    /**
+     * 查询模型部署详情
+     *
+     * 本接口用于精确获取某个指定部署任务的全景元数据。与列表查询相比，它无需复杂过滤，直接通过唯一的 deployment_id 命中目标，返回包括绑定的智能体信息、上下游服务ID、最新运行状态以及最终生成的推理API调用地址等核心字段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOpsModelDeploymentRequest 请求对象
+     * @return AsyncInvoker<ShowOpsModelDeploymentRequest, ShowOpsModelDeploymentResponse>
+     */
+    public AsyncInvoker<ShowOpsModelDeploymentRequest, ShowOpsModelDeploymentResponse> showOpsModelDeploymentAsyncInvoker(
+        ShowOpsModelDeploymentRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.showOpsModelDeployment, hcClient);
+    }
+
+    /**
+     * 启动模型部署
+     *
+     * 本接口用于启动已停止（stopped）的部署任务。系统会直接读取历史保留的资源与规格配置，重新向底层申请算力拉起服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartOpsModelDeploymentRequest 请求对象
+     * @return CompletableFuture<StartOpsModelDeploymentResponse>
+     */
+    public CompletableFuture<StartOpsModelDeploymentResponse> startOpsModelDeploymentAsync(
+        StartOpsModelDeploymentRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.startOpsModelDeployment);
+    }
+
+    /**
+     * 启动模型部署
+     *
+     * 本接口用于启动已停止（stopped）的部署任务。系统会直接读取历史保留的资源与规格配置，重新向底层申请算力拉起服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartOpsModelDeploymentRequest 请求对象
+     * @return AsyncInvoker<StartOpsModelDeploymentRequest, StartOpsModelDeploymentResponse>
+     */
+    public AsyncInvoker<StartOpsModelDeploymentRequest, StartOpsModelDeploymentResponse> startOpsModelDeploymentAsyncInvoker(
+        StartOpsModelDeploymentRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.startOpsModelDeployment, hcClient);
+    }
+
+    /**
+     * 停止模型部署
+     *
+     * 本接口用于对运行中的服务执行“软下线”。任务停止后将释放计算实例以停止计费，但会保留部署配置与服务端点记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopOpsModelDeploymentRequest 请求对象
+     * @return CompletableFuture<StopOpsModelDeploymentResponse>
+     */
+    public CompletableFuture<StopOpsModelDeploymentResponse> stopOpsModelDeploymentAsync(
+        StopOpsModelDeploymentRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.stopOpsModelDeployment);
+    }
+
+    /**
+     * 停止模型部署
+     *
+     * 本接口用于对运行中的服务执行“软下线”。任务停止后将释放计算实例以停止计费，但会保留部署配置与服务端点记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopOpsModelDeploymentRequest 请求对象
+     * @return AsyncInvoker<StopOpsModelDeploymentRequest, StopOpsModelDeploymentResponse>
+     */
+    public AsyncInvoker<StopOpsModelDeploymentRequest, StopOpsModelDeploymentResponse> stopOpsModelDeploymentAsyncInvoker(
+        StopOpsModelDeploymentRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.stopOpsModelDeployment, hcClient);
+    }
+
+    /**
+     * 创建模型优化任务
+     *
+     * 本接口用于创建一个全新的模型优化任务。并配置训练任务中所使用的大模型、数据集与超参配置。
+     * 智能体优化的目的是对智能体或工作流中的大模型进行端到端的定向调优，通过强化学习算法提升模型在特定业务场景下的推理与表达能力。任务创建后默认进入“草稿”状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOpsModelTuningTaskRequest 请求对象
+     * @return CompletableFuture<CreateOpsModelTuningTaskResponse>
+     */
+    public CompletableFuture<CreateOpsModelTuningTaskResponse> createOpsModelTuningTaskAsync(
+        CreateOpsModelTuningTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.createOpsModelTuningTask);
+    }
+
+    /**
+     * 创建模型优化任务
+     *
+     * 本接口用于创建一个全新的模型优化任务。并配置训练任务中所使用的大模型、数据集与超参配置。
+     * 智能体优化的目的是对智能体或工作流中的大模型进行端到端的定向调优，通过强化学习算法提升模型在特定业务场景下的推理与表达能力。任务创建后默认进入“草稿”状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOpsModelTuningTaskRequest 请求对象
+     * @return AsyncInvoker<CreateOpsModelTuningTaskRequest, CreateOpsModelTuningTaskResponse>
+     */
+    public AsyncInvoker<CreateOpsModelTuningTaskRequest, CreateOpsModelTuningTaskResponse> createOpsModelTuningTaskAsyncInvoker(
+        CreateOpsModelTuningTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.createOpsModelTuningTask, hcClient);
+    }
+
+    /**
+     * 删除模型优化任务
+     *
+     * 本接口用于彻底删除指定的模型优化任务记录，系统会同步清除数据库元数据并通知底层平台清理相关临时空间。删除操作不可恢复，请谨慎操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOpsModelTuningTaskRequest 请求对象
+     * @return CompletableFuture<DeleteOpsModelTuningTaskResponse>
+     */
+    public CompletableFuture<DeleteOpsModelTuningTaskResponse> deleteOpsModelTuningTaskAsync(
+        DeleteOpsModelTuningTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.deleteOpsModelTuningTask);
+    }
+
+    /**
+     * 删除模型优化任务
+     *
+     * 本接口用于彻底删除指定的模型优化任务记录，系统会同步清除数据库元数据并通知底层平台清理相关临时空间。删除操作不可恢复，请谨慎操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOpsModelTuningTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteOpsModelTuningTaskRequest, DeleteOpsModelTuningTaskResponse>
+     */
+    public AsyncInvoker<DeleteOpsModelTuningTaskRequest, DeleteOpsModelTuningTaskResponse> deleteOpsModelTuningTaskAsyncInvoker(
+        DeleteOpsModelTuningTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.deleteOpsModelTuningTask, hcClient);
+    }
+
+    /**
+     * 执行模型优化任务
+     *
+     * 本接口用于正式触发处于草稿状态的任务，系统接单后将向底层计算平台正式提交训练作业，进入实际的算力调度与模型迭代阶段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteOpsModelTuningTaskRequest 请求对象
+     * @return CompletableFuture<ExecuteOpsModelTuningTaskResponse>
+     */
+    public CompletableFuture<ExecuteOpsModelTuningTaskResponse> executeOpsModelTuningTaskAsync(
+        ExecuteOpsModelTuningTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.executeOpsModelTuningTask);
+    }
+
+    /**
+     * 执行模型优化任务
+     *
+     * 本接口用于正式触发处于草稿状态的任务，系统接单后将向底层计算平台正式提交训练作业，进入实际的算力调度与模型迭代阶段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteOpsModelTuningTaskRequest 请求对象
+     * @return AsyncInvoker<ExecuteOpsModelTuningTaskRequest, ExecuteOpsModelTuningTaskResponse>
+     */
+    public AsyncInvoker<ExecuteOpsModelTuningTaskRequest, ExecuteOpsModelTuningTaskResponse> executeOpsModelTuningTaskAsyncInvoker(
+        ExecuteOpsModelTuningTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.executeOpsModelTuningTask, hcClient);
+    }
+
+    /**
+     * 查询模型优化任务指标列表
+     *
+     * 本接口用于拉取训练过程中产生的核心评估指标数据，通常按迭代步数（Step/Epoch）时序返回。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsModelTuningTaskMetricsRequest 请求对象
+     * @return CompletableFuture<ListOpsModelTuningTaskMetricsResponse>
+     */
+    public CompletableFuture<ListOpsModelTuningTaskMetricsResponse> listOpsModelTuningTaskMetricsAsync(
+        ListOpsModelTuningTaskMetricsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listOpsModelTuningTaskMetrics);
+    }
+
+    /**
+     * 查询模型优化任务指标列表
+     *
+     * 本接口用于拉取训练过程中产生的核心评估指标数据，通常按迭代步数（Step/Epoch）时序返回。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsModelTuningTaskMetricsRequest 请求对象
+     * @return AsyncInvoker<ListOpsModelTuningTaskMetricsRequest, ListOpsModelTuningTaskMetricsResponse>
+     */
+    public AsyncInvoker<ListOpsModelTuningTaskMetricsRequest, ListOpsModelTuningTaskMetricsResponse> listOpsModelTuningTaskMetricsAsyncInvoker(
+        ListOpsModelTuningTaskMetricsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listOpsModelTuningTaskMetrics, hcClient);
+    }
+
+    /**
+     * 查询模型优化任务产物列表
+     *
+     * 本接口用于检索任务成功结束后生成的全部模型产物（Checkpoints/最终模型文件），包含产物的唯一标识、版本号及存储位置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsModelTuningTaskProductsRequest 请求对象
+     * @return CompletableFuture<ListOpsModelTuningTaskProductsResponse>
+     */
+    public CompletableFuture<ListOpsModelTuningTaskProductsResponse> listOpsModelTuningTaskProductsAsync(
+        ListOpsModelTuningTaskProductsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listOpsModelTuningTaskProducts);
+    }
+
+    /**
+     * 查询模型优化任务产物列表
+     *
+     * 本接口用于检索任务成功结束后生成的全部模型产物（Checkpoints/最终模型文件），包含产物的唯一标识、版本号及存储位置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsModelTuningTaskProductsRequest 请求对象
+     * @return AsyncInvoker<ListOpsModelTuningTaskProductsRequest, ListOpsModelTuningTaskProductsResponse>
+     */
+    public AsyncInvoker<ListOpsModelTuningTaskProductsRequest, ListOpsModelTuningTaskProductsResponse> listOpsModelTuningTaskProductsAsyncInvoker(
+        ListOpsModelTuningTaskProductsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listOpsModelTuningTaskProducts, hcClient);
+    }
+
+    /**
+     * 查询模型优化任务列表
+     *
+     * 本接口用于查询当前租户下的模型优化任务列表，支持通过任务名称和任务状态进行过滤，并支持分页功能。同时，响应中会返回全局状态的分组统计信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsModelTuningTasksRequest 请求对象
+     * @return CompletableFuture<ListOpsModelTuningTasksResponse>
+     */
+    public CompletableFuture<ListOpsModelTuningTasksResponse> listOpsModelTuningTasksAsync(
+        ListOpsModelTuningTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listOpsModelTuningTasks);
+    }
+
+    /**
+     * 查询模型优化任务列表
+     *
+     * 本接口用于查询当前租户下的模型优化任务列表，支持通过任务名称和任务状态进行过滤，并支持分页功能。同时，响应中会返回全局状态的分组统计信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOpsModelTuningTasksRequest 请求对象
+     * @return AsyncInvoker<ListOpsModelTuningTasksRequest, ListOpsModelTuningTasksResponse>
+     */
+    public AsyncInvoker<ListOpsModelTuningTasksRequest, ListOpsModelTuningTasksResponse> listOpsModelTuningTasksAsyncInvoker(
+        ListOpsModelTuningTasksRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listOpsModelTuningTasks, hcClient);
+    }
+
+    /**
+     * 查询模型优化任务详情
+     *
+     * 本接口根据唯一ID获取单个模型优化任务的全量元数据，涵盖底层算力配置、详尽的超参数设定、数据集绑定及实时运行状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOpsModelTuningTaskRequest 请求对象
+     * @return CompletableFuture<ShowOpsModelTuningTaskResponse>
+     */
+    public CompletableFuture<ShowOpsModelTuningTaskResponse> showOpsModelTuningTaskAsync(
+        ShowOpsModelTuningTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.showOpsModelTuningTask);
+    }
+
+    /**
+     * 查询模型优化任务详情
+     *
+     * 本接口根据唯一ID获取单个模型优化任务的全量元数据，涵盖底层算力配置、详尽的超参数设定、数据集绑定及实时运行状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOpsModelTuningTaskRequest 请求对象
+     * @return AsyncInvoker<ShowOpsModelTuningTaskRequest, ShowOpsModelTuningTaskResponse>
+     */
+    public AsyncInvoker<ShowOpsModelTuningTaskRequest, ShowOpsModelTuningTaskResponse> showOpsModelTuningTaskAsyncInvoker(
+        ShowOpsModelTuningTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.showOpsModelTuningTask, hcClient);
+    }
+
+    /**
+     * 停止模型优化任务
+     *
+     * 本接口用于中断正在运行的训练任务。执行后将立刻中止算力消耗并释放底层的GPU/NPU资源，任务流转为停止状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopOpsModelTuningTaskRequest 请求对象
+     * @return CompletableFuture<StopOpsModelTuningTaskResponse>
+     */
+    public CompletableFuture<StopOpsModelTuningTaskResponse> stopOpsModelTuningTaskAsync(
+        StopOpsModelTuningTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.stopOpsModelTuningTask);
+    }
+
+    /**
+     * 停止模型优化任务
+     *
+     * 本接口用于中断正在运行的训练任务。执行后将立刻中止算力消耗并释放底层的GPU/NPU资源，任务流转为停止状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopOpsModelTuningTaskRequest 请求对象
+     * @return AsyncInvoker<StopOpsModelTuningTaskRequest, StopOpsModelTuningTaskResponse>
+     */
+    public AsyncInvoker<StopOpsModelTuningTaskRequest, StopOpsModelTuningTaskResponse> stopOpsModelTuningTaskAsyncInvoker(
+        StopOpsModelTuningTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.stopOpsModelTuningTask, hcClient);
+    }
+
+    /**
+     * 修改模型优化任务
+     *
+     * 本接口用于更新指定任务的具体配置。为确保训练逻辑与数据的一致性，系统严格限制仅处于“draft（草稿）”状态的任务才允许被修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOpsModelTuningTaskRequest 请求对象
+     * @return CompletableFuture<UpdateOpsModelTuningTaskResponse>
+     */
+    public CompletableFuture<UpdateOpsModelTuningTaskResponse> updateOpsModelTuningTaskAsync(
+        UpdateOpsModelTuningTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.updateOpsModelTuningTask);
+    }
+
+    /**
+     * 修改模型优化任务
+     *
+     * 本接口用于更新指定任务的具体配置。为确保训练逻辑与数据的一致性，系统严格限制仅处于“draft（草稿）”状态的任务才允许被修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOpsModelTuningTaskRequest 请求对象
+     * @return AsyncInvoker<UpdateOpsModelTuningTaskRequest, UpdateOpsModelTuningTaskResponse>
+     */
+    public AsyncInvoker<UpdateOpsModelTuningTaskRequest, UpdateOpsModelTuningTaskResponse> updateOpsModelTuningTaskAsyncInvoker(
+        UpdateOpsModelTuningTaskRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.updateOpsModelTuningTask, hcClient);
     }
 
     /**
@@ -4637,6 +6389,52 @@ public class AgentArtsAsyncClient {
     public AsyncInvoker<DeleteOpsEvaluationTaskCustomLabelsRequest, DeleteOpsEvaluationTaskCustomLabelsResponse> deleteOpsEvaluationTaskCustomLabelsAsyncInvoker(
         DeleteOpsEvaluationTaskCustomLabelsRequest request) {
         return new AsyncInvoker<>(request, AgentArtsMeta.deleteOpsEvaluationTaskCustomLabels, hcClient);
+    }
+
+    /**
+     * 获取多模态文件上传地址
+     *
+     * 该接口用于生成OBS预签名上传链接和对应的OBS路径，供用户上传多模态文件（如PPT等）。
+     * 用户使用返回的上传链接将文件上传至OBS后，可在细粒度评估接口中传入OBS路径进行评估。
+     * **约束限制：**
+     * - 同一用户未使用的上传链接数量上限为5个。
+     * - 上传链接有效期为15分钟。
+     * - 单个文件大小上限100MB。
+     * - file_suffix仅支持ppt和pptx。
+     * **典型应用场景：**
+     * 用户在使用PPT整体质量评估器进行评估前，先调用该接口获取上传地址，将PPT文件上传至OBS，然后在细粒度评估接口中传入OBS路径完成评估。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateOpsMultimodalUploadUrlRequest 请求对象
+     * @return CompletableFuture<GenerateOpsMultimodalUploadUrlResponse>
+     */
+    public CompletableFuture<GenerateOpsMultimodalUploadUrlResponse> generateOpsMultimodalUploadUrlAsync(
+        GenerateOpsMultimodalUploadUrlRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.generateOpsMultimodalUploadUrl);
+    }
+
+    /**
+     * 获取多模态文件上传地址
+     *
+     * 该接口用于生成OBS预签名上传链接和对应的OBS路径，供用户上传多模态文件（如PPT等）。
+     * 用户使用返回的上传链接将文件上传至OBS后，可在细粒度评估接口中传入OBS路径进行评估。
+     * **约束限制：**
+     * - 同一用户未使用的上传链接数量上限为5个。
+     * - 上传链接有效期为15分钟。
+     * - 单个文件大小上限100MB。
+     * - file_suffix仅支持ppt和pptx。
+     * **典型应用场景：**
+     * 用户在使用PPT整体质量评估器进行评估前，先调用该接口获取上传地址，将PPT文件上传至OBS，然后在细粒度评估接口中传入OBS路径完成评估。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateOpsMultimodalUploadUrlRequest 请求对象
+     * @return AsyncInvoker<GenerateOpsMultimodalUploadUrlRequest, GenerateOpsMultimodalUploadUrlResponse>
+     */
+    public AsyncInvoker<GenerateOpsMultimodalUploadUrlRequest, GenerateOpsMultimodalUploadUrlResponse> generateOpsMultimodalUploadUrlAsyncInvoker(
+        GenerateOpsMultimodalUploadUrlRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.generateOpsMultimodalUploadUrl, hcClient);
     }
 
     /**
@@ -5160,7 +6958,7 @@ public class AgentArtsAsyncClient {
     }
 
     /**
-     * trace数据打标签
+     * Trace数据标注
      *
      * trace数据打标签
      * 
@@ -5174,7 +6972,7 @@ public class AgentArtsAsyncClient {
     }
 
     /**
-     * trace数据打标签
+     * Trace数据标注
      *
      * trace数据打标签
      * 
@@ -5189,9 +6987,9 @@ public class AgentArtsAsyncClient {
     }
 
     /**
-     * trace数据点赞点踩
+     * trace数据点赞、点踩
      *
-     * trace数据点赞点踩
+     * trace数据点赞、点踩
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5204,9 +7002,9 @@ public class AgentArtsAsyncClient {
     }
 
     /**
-     * trace数据点赞点踩
+     * trace数据点赞、点踩
      *
-     * trace数据点赞点踩
+     * trace数据点赞、点踩
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

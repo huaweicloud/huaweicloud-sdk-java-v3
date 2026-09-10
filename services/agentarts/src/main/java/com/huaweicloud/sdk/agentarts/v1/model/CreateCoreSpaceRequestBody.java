@@ -202,7 +202,7 @@ public class CreateCoreSpaceRequestBody {
     }
 
     /**
-     * **参数解释：** 空间访问Key。 **约束限制：** 不涉及。 **取值范围：** 由英文字母、数字、\"-\"组成的字符串。 **默认取值：** 不涉及。
+     * **参数解释：**  空间访问Key。 **约束限制：**  不涉及。 **取值范围：**  由英文字母、数字、\"-\"组成的字符串。 **默认取值：** 不涉及。 
      * @return apiKeyId
      */
     public String getApiKeyId() {

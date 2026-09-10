@@ -21,7 +21,7 @@ public class ResetCloudPhoneRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phones")
 
-    private List<PhoneProperty> phones = null;
+    private List<ResetPhoneProperty> phones = null;
 
     public ResetCloudPhoneRequestBody withImageId(String imageId) {
         this.imageId = imageId;
@@ -40,12 +40,12 @@ public class ResetCloudPhoneRequestBody {
         this.imageId = imageId;
     }
 
-    public ResetCloudPhoneRequestBody withPhones(List<PhoneProperty> phones) {
+    public ResetCloudPhoneRequestBody withPhones(List<ResetPhoneProperty> phones) {
         this.phones = phones;
         return this;
     }
 
-    public ResetCloudPhoneRequestBody addPhonesItem(PhoneProperty phonesItem) {
+    public ResetCloudPhoneRequestBody addPhonesItem(ResetPhoneProperty phonesItem) {
         if (this.phones == null) {
             this.phones = new ArrayList<>();
         }
@@ -53,7 +53,7 @@ public class ResetCloudPhoneRequestBody {
         return this;
     }
 
-    public ResetCloudPhoneRequestBody withPhones(Consumer<List<PhoneProperty>> phonesSetter) {
+    public ResetCloudPhoneRequestBody withPhones(Consumer<List<ResetPhoneProperty>> phonesSetter) {
         if (this.phones == null) {
             this.phones = new ArrayList<>();
         }
@@ -65,11 +65,11 @@ public class ResetCloudPhoneRequestBody {
      * 云手机列表。
      * @return phones
      */
-    public List<PhoneProperty> getPhones() {
+    public List<ResetPhoneProperty> getPhones() {
         return phones;
     }
 
-    public void setPhones(List<PhoneProperty> phones) {
+    public void setPhones(List<ResetPhoneProperty> phones) {
         this.phones = phones;
     }
 

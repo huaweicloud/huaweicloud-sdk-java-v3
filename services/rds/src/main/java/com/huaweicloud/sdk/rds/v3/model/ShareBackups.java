@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ShareBackups
@@ -68,7 +69,7 @@ public class ShareBackups {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
 
-    private Object datastore;
+    private ShareBackupDatastore datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
@@ -262,20 +263,29 @@ public class ShareBackups {
         this.instanceStatus = instanceStatus;
     }
 
-    public ShareBackups withDatastore(Object datastore) {
+    public ShareBackups withDatastore(ShareBackupDatastore datastore) {
         this.datastore = datastore;
         return this;
     }
 
+    public ShareBackups withDatastore(Consumer<ShareBackupDatastore> datastoreSetter) {
+        if (this.datastore == null) {
+            this.datastore = new ShareBackupDatastore();
+            datastoreSetter.accept(this.datastore);
+        }
+
+        return this;
+    }
+
     /**
-     * 数据库版本信息。
+     * Get datastore
      * @return datastore
      */
-    public Object getDatastore() {
+    public ShareBackupDatastore getDatastore() {
         return datastore;
     }
 
-    public void setDatastore(Object datastore) {
+    public void setDatastore(ShareBackupDatastore datastore) {
         this.datastore = datastore;
     }
 

@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -40,6 +42,11 @@ public class EvaluationOpsSynthesisTaskSummary {
     @JsonProperty(value = "scenario_description")
 
     private String scenarioDescription;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "stats")
+
+    private List<SynthesisTaskStats> stats = null;
 
     /**
      * **参数解释：**   合成任务当前的生命周期状态。 **约束限制：**   枚举类型。 **取值范围：**   pending, running, completed, failed, stopped。 **默认取值：**   pending。 
@@ -221,7 +228,7 @@ public class EvaluationOpsSynthesisTaskSummary {
     }
 
     /**
-     * **参数解释：** 场景的友好展示名称。 **约束限制：** 1-4000字符。 **取值范围：** 如 \"基于种子数据泛化\"。 **默认取值：** 不涉及。
+     * **参数解释：**   场景的友好展示名称。 **约束限制：**   1-4000字符。 **取值范围：**   如 \"基于种子数据泛化\"。 **默认取值：**   不涉及。 
      * @return scenarioName
      */
     public String getScenarioName() {
@@ -247,6 +254,39 @@ public class EvaluationOpsSynthesisTaskSummary {
 
     public void setScenarioDescription(String scenarioDescription) {
         this.scenarioDescription = scenarioDescription;
+    }
+
+    public EvaluationOpsSynthesisTaskSummary withStats(List<SynthesisTaskStats> stats) {
+        this.stats = stats;
+        return this;
+    }
+
+    public EvaluationOpsSynthesisTaskSummary addStatsItem(SynthesisTaskStats statsItem) {
+        if (this.stats == null) {
+            this.stats = new ArrayList<>();
+        }
+        this.stats.add(statsItem);
+        return this;
+    }
+
+    public EvaluationOpsSynthesisTaskSummary withStats(Consumer<List<SynthesisTaskStats>> statsSetter) {
+        if (this.stats == null) {
+            this.stats = new ArrayList<>();
+        }
+        statsSetter.accept(this.stats);
+        return this;
+    }
+
+    /**
+     * **参数解释：**   合成任务的运行状态统计列表。 **约束限制：**   数组类型。 **取值范围：**   不涉及。 **默认取值：**   不涉及。 
+     * @return stats
+     */
+    public List<SynthesisTaskStats> getStats() {
+        return stats;
+    }
+
+    public void setStats(List<SynthesisTaskStats> stats) {
+        this.stats = stats;
     }
 
     public EvaluationOpsSynthesisTaskSummary withStatus(StatusEnum status) {
@@ -414,8 +454,8 @@ public class EvaluationOpsSynthesisTaskSummary {
             && Objects.equals(this.scenarioType, that.scenarioType)
             && Objects.equals(this.scenarioName, that.scenarioName)
             && Objects.equals(this.scenarioDescription, that.scenarioDescription)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.progress, that.progress)
-            && Objects.equals(this.sampleCount, that.sampleCount)
+            && Objects.equals(this.stats, that.stats) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.progress, that.progress) && Objects.equals(this.sampleCount, that.sampleCount)
             && Objects.equals(this.generatedCount, that.generatedCount)
             && Objects.equals(this.modelConfig, that.modelConfig) && Objects.equals(this.seedData, that.seedData)
             && Objects.equals(this.baseInfo, that.baseInfo);
@@ -428,6 +468,7 @@ public class EvaluationOpsSynthesisTaskSummary {
             scenarioType,
             scenarioName,
             scenarioDescription,
+            stats,
             status,
             progress,
             sampleCount,
@@ -446,6 +487,7 @@ public class EvaluationOpsSynthesisTaskSummary {
         sb.append("    scenarioType: ").append(toIndentedString(scenarioType)).append("\n");
         sb.append("    scenarioName: ").append(toIndentedString(scenarioName)).append("\n");
         sb.append("    scenarioDescription: ").append(toIndentedString(scenarioDescription)).append("\n");
+        sb.append("    stats: ").append(toIndentedString(stats)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
         sb.append("    sampleCount: ").append(toIndentedString(sampleCount)).append("\n");

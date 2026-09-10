@@ -24,6 +24,11 @@ public class ListCloudPhoneServerModelsResponse extends SdkResponse {
 
     private List<ServerModel> serverModels = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private ListCloudPhoneServerModelsResponseBodyPageInfo pageInfo;
+
     public ListCloudPhoneServerModelsResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -74,6 +79,33 @@ public class ListCloudPhoneServerModelsResponse extends SdkResponse {
         this.serverModels = serverModels;
     }
 
+    public ListCloudPhoneServerModelsResponse withPageInfo(ListCloudPhoneServerModelsResponseBodyPageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListCloudPhoneServerModelsResponse withPageInfo(
+        Consumer<ListCloudPhoneServerModelsResponseBodyPageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new ListCloudPhoneServerModelsResponseBodyPageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public ListCloudPhoneServerModelsResponseBodyPageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(ListCloudPhoneServerModelsResponseBodyPageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +115,13 @@ public class ListCloudPhoneServerModelsResponse extends SdkResponse {
             return false;
         }
         ListCloudPhoneServerModelsResponse that = (ListCloudPhoneServerModelsResponse) obj;
-        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.serverModels, that.serverModels);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.serverModels, that.serverModels)
+            && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, serverModels);
+        return Objects.hash(requestId, serverModels, pageInfo);
     }
 
     @Override
@@ -97,6 +130,7 @@ public class ListCloudPhoneServerModelsResponse extends SdkResponse {
         sb.append("class ListCloudPhoneServerModelsResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    serverModels: ").append(toIndentedString(serverModels)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

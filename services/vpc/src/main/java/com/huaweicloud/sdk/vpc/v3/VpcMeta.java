@@ -23,6 +23,9 @@ import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrResponse;
 import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallResponse;
+import com.huaweicloud.sdk.vpc.v3.model.AttachSubNetworkInterfaceRequest;
+import com.huaweicloud.sdk.vpc.v3.model.AttachSubNetworkInterfaceRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.AttachSubNetworkInterfaceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateClouddcnSubnetsTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateFirewallTagsRequest;
@@ -38,6 +41,9 @@ import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteClouddcnSubnetsTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteFirewallTagsRequest;
@@ -47,12 +53,18 @@ import com.huaweicloud.sdk.vpc.v3.model.BatchDeletePortTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeletePortTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeletePortTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteSubNetworkInterfaceTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteSubNetworkInterfaceTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteSubNetworkInterfaceTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CountFirewallsByTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CountFirewallsByTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CountFirewallsByTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CountPortsByTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CountPortsByTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CountPortsByTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CountSubNetworkInterfacesByTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CountSubNetworkInterfacesByTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.CountSubNetworkInterfacesByTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupResponse;
@@ -77,6 +89,9 @@ import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRuleResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSubNetworkInterfaceRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateSubNetworkInterfaceTagRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateSubNetworkInterfaceTagRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.CreateSubNetworkInterfaceTagResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorFilterRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorFilterRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorFilterResponse;
@@ -112,6 +127,8 @@ import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupRuleRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupRuleResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteSubNetworkInterfaceTagRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteSubNetworkInterfaceTagResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorFilterRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorFilterResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorFilterRuleRequest;
@@ -122,6 +139,8 @@ import com.huaweicloud.sdk.vpc.v3.model.DeleteVirsubnetCidrReservationRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteVirsubnetCidrReservationResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteVpcResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DetachSubNetworkInterfaceRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DetachSubNetworkInterfaceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallResponse;
@@ -156,6 +175,11 @@ import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListSubNetworkInterfaceTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListSubNetworkInterfaceTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListSubNetworkInterfacesByTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListSubNetworkInterfacesByTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.ListSubNetworkInterfacesByTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSubNetworkInterfacesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSubNetworkInterfacesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorFilterRulesRequest;
@@ -207,6 +231,8 @@ import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRuleRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRuleResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfaceTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfaceTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfacesQuantityRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfacesQuantityResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorFilterRequest;
@@ -321,6 +347,39 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AttachSubNetworkInterfaceRequest, AttachSubNetworkInterfaceResponse> attachSubNetworkInterface =
+        genForAttachSubNetworkInterface();
+
+    private static HttpRequestDef<AttachSubNetworkInterfaceRequest, AttachSubNetworkInterfaceResponse> genForAttachSubNetworkInterface() {
+        // basic
+        HttpRequestDef.Builder<AttachSubNetworkInterfaceRequest, AttachSubNetworkInterfaceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AttachSubNetworkInterfaceRequest.class,
+                    AttachSubNetworkInterfaceResponse.class)
+                .withName("AttachSubNetworkInterface")
+                .withUri("/v3/{project_id}/vpc/sub-network-interfaces/{sub_network_interface_id}/attach")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("sub_network_interface_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AttachSubNetworkInterfaceRequest::getSubNetworkInterfaceId,
+                AttachSubNetworkInterfaceRequest::setSubNetworkInterfaceId));
+        builder.<AttachSubNetworkInterfaceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AttachSubNetworkInterfaceRequestBody.class),
+            f -> f.withMarshaller(AttachSubNetworkInterfaceRequest::getBody,
+                AttachSubNetworkInterfaceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchCreatePortTagsRequest, BatchCreatePortTagsResponse> batchCreatePortTags =
         genForBatchCreatePortTags();
 
@@ -409,6 +468,39 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchCreateSubNetworkInterfaceTagsRequest, BatchCreateSubNetworkInterfaceTagsResponse> batchCreateSubNetworkInterfaceTags =
+        genForBatchCreateSubNetworkInterfaceTags();
+
+    private static HttpRequestDef<BatchCreateSubNetworkInterfaceTagsRequest, BatchCreateSubNetworkInterfaceTagsResponse> genForBatchCreateSubNetworkInterfaceTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateSubNetworkInterfaceTagsRequest, BatchCreateSubNetworkInterfaceTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateSubNetworkInterfaceTagsRequest.class,
+                    BatchCreateSubNetworkInterfaceTagsResponse.class)
+                .withName("BatchCreateSubNetworkInterfaceTags")
+                .withUri("/v3/{project_id}/sub-network-interfaces/{sub_network_interface_id}/tags/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("sub_network_interface_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateSubNetworkInterfaceTagsRequest::getSubNetworkInterfaceId,
+                BatchCreateSubNetworkInterfaceTagsRequest::setSubNetworkInterfaceId));
+        builder.<BatchCreateSubNetworkInterfaceTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchCreateSubNetworkInterfaceTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateSubNetworkInterfaceTagsRequest::getBody,
+                BatchCreateSubNetworkInterfaceTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeletePortTagsRequest, BatchDeletePortTagsResponse> batchDeletePortTags =
         genForBatchDeletePortTags();
 
@@ -437,6 +529,39 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDeleteSubNetworkInterfaceTagsRequest, BatchDeleteSubNetworkInterfaceTagsResponse> batchDeleteSubNetworkInterfaceTags =
+        genForBatchDeleteSubNetworkInterfaceTags();
+
+    private static HttpRequestDef<BatchDeleteSubNetworkInterfaceTagsRequest, BatchDeleteSubNetworkInterfaceTagsResponse> genForBatchDeleteSubNetworkInterfaceTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteSubNetworkInterfaceTagsRequest, BatchDeleteSubNetworkInterfaceTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteSubNetworkInterfaceTagsRequest.class,
+                    BatchDeleteSubNetworkInterfaceTagsResponse.class)
+                .withName("BatchDeleteSubNetworkInterfaceTags")
+                .withUri("/v3/{project_id}/sub-network-interfaces/{sub_network_interface_id}/tags/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("sub_network_interface_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteSubNetworkInterfaceTagsRequest::getSubNetworkInterfaceId,
+                BatchDeleteSubNetworkInterfaceTagsRequest::setSubNetworkInterfaceId));
+        builder.<BatchDeleteSubNetworkInterfaceTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchDeleteSubNetworkInterfaceTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteSubNetworkInterfaceTagsRequest::getBody,
+                BatchDeleteSubNetworkInterfaceTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CountPortsByTagsRequest, CountPortsByTagsResponse> countPortsByTags =
         genForCountPortsByTags();
 
@@ -454,6 +579,33 @@ public class VpcMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CountPortsByTagsRequestBody.class),
             f -> f.withMarshaller(CountPortsByTagsRequest::getBody, CountPortsByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountSubNetworkInterfacesByTagsRequest, CountSubNetworkInterfacesByTagsResponse> countSubNetworkInterfacesByTags =
+        genForCountSubNetworkInterfacesByTags();
+
+    private static HttpRequestDef<CountSubNetworkInterfacesByTagsRequest, CountSubNetworkInterfacesByTagsResponse> genForCountSubNetworkInterfacesByTags() {
+        // basic
+        HttpRequestDef.Builder<CountSubNetworkInterfacesByTagsRequest, CountSubNetworkInterfacesByTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CountSubNetworkInterfacesByTagsRequest.class,
+                    CountSubNetworkInterfacesByTagsResponse.class)
+                .withName("CountSubNetworkInterfacesByTags")
+                .withUri("/v3/{project_id}/sub-network-interfaces/resource-instances/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CountSubNetworkInterfacesByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CountSubNetworkInterfacesByTagsRequestBody.class),
+            f -> f.withMarshaller(CountSubNetworkInterfacesByTagsRequest::getBody,
+                CountSubNetworkInterfacesByTagsRequest::setBody));
 
         // response
 
@@ -555,6 +707,39 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(CreateSubNetworkInterfaceRequestBody.class),
             f -> f.withMarshaller(CreateSubNetworkInterfaceRequest::getBody,
                 CreateSubNetworkInterfaceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSubNetworkInterfaceTagRequest, CreateSubNetworkInterfaceTagResponse> createSubNetworkInterfaceTag =
+        genForCreateSubNetworkInterfaceTag();
+
+    private static HttpRequestDef<CreateSubNetworkInterfaceTagRequest, CreateSubNetworkInterfaceTagResponse> genForCreateSubNetworkInterfaceTag() {
+        // basic
+        HttpRequestDef.Builder<CreateSubNetworkInterfaceTagRequest, CreateSubNetworkInterfaceTagResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateSubNetworkInterfaceTagRequest.class,
+                    CreateSubNetworkInterfaceTagResponse.class)
+                .withName("CreateSubNetworkInterfaceTag")
+                .withUri("/v3/{project_id}/sub-network-interfaces/{sub_network_interface_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("sub_network_interface_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSubNetworkInterfaceTagRequest::getSubNetworkInterfaceId,
+                CreateSubNetworkInterfaceTagRequest::setSubNetworkInterfaceId));
+        builder.<CreateSubNetworkInterfaceTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSubNetworkInterfaceTagRequestBody.class),
+            f -> f.withMarshaller(CreateSubNetworkInterfaceTagRequest::getBody,
+                CreateSubNetworkInterfaceTagRequest::setBody));
 
         // response
 
@@ -772,6 +957,39 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteSubNetworkInterfaceTagRequest, DeleteSubNetworkInterfaceTagResponse> deleteSubNetworkInterfaceTag =
+        genForDeleteSubNetworkInterfaceTag();
+
+    private static HttpRequestDef<DeleteSubNetworkInterfaceTagRequest, DeleteSubNetworkInterfaceTagResponse> genForDeleteSubNetworkInterfaceTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteSubNetworkInterfaceTagRequest, DeleteSubNetworkInterfaceTagResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteSubNetworkInterfaceTagRequest.class,
+                    DeleteSubNetworkInterfaceTagResponse.class)
+                .withName("DeleteSubNetworkInterfaceTag")
+                .withUri("/v3/{project_id}/sub-network-interfaces/{sub_network_interface_id}/tags/{tag_key}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("sub_network_interface_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSubNetworkInterfaceTagRequest::getSubNetworkInterfaceId,
+                DeleteSubNetworkInterfaceTagRequest::setSubNetworkInterfaceId));
+        builder.<String>withRequestField("tag_key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSubNetworkInterfaceTagRequest::getTagKey,
+                DeleteSubNetworkInterfaceTagRequest::setTagKey));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteTrafficMirrorFilterRequest, DeleteTrafficMirrorFilterResponse> deleteTrafficMirrorFilter =
         genForDeleteTrafficMirrorFilter();
 
@@ -874,6 +1092,33 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteVirsubnetCidrReservationRequest::getVirsubnetCidrReservationId,
                 DeleteVirsubnetCidrReservationRequest::setVirsubnetCidrReservationId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DetachSubNetworkInterfaceRequest, DetachSubNetworkInterfaceResponse> detachSubNetworkInterface =
+        genForDetachSubNetworkInterface();
+
+    private static HttpRequestDef<DetachSubNetworkInterfaceRequest, DetachSubNetworkInterfaceResponse> genForDetachSubNetworkInterface() {
+        // basic
+        HttpRequestDef.Builder<DetachSubNetworkInterfaceRequest, DetachSubNetworkInterfaceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DetachSubNetworkInterfaceRequest.class,
+                    DetachSubNetworkInterfaceResponse.class)
+                .withName("DetachSubNetworkInterface")
+                .withUri("/v3/{project_id}/vpc/sub-network-interfaces/{sub_network_interface_id}/detach")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("sub_network_interface_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetachSubNetworkInterfaceRequest::getSubNetworkInterfaceId,
+                DetachSubNetworkInterfaceRequest::setSubNetworkInterfaceId));
 
         // response
 
@@ -1201,6 +1446,27 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSubNetworkInterfaceTagsRequest, ListSubNetworkInterfaceTagsResponse> listSubNetworkInterfaceTags =
+        genForListSubNetworkInterfaceTags();
+
+    private static HttpRequestDef<ListSubNetworkInterfaceTagsRequest, ListSubNetworkInterfaceTagsResponse> genForListSubNetworkInterfaceTags() {
+        // basic
+        HttpRequestDef.Builder<ListSubNetworkInterfaceTagsRequest, ListSubNetworkInterfaceTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSubNetworkInterfaceTagsRequest.class,
+                    ListSubNetworkInterfaceTagsResponse.class)
+                .withName("ListSubNetworkInterfaceTags")
+                .withUri("/v3/{project_id}/sub-network-interfaces/tags")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSubNetworkInterfacesRequest, ListSubNetworkInterfacesResponse> listSubNetworkInterfaces =
         genForListSubNetworkInterfaces();
 
@@ -1267,6 +1533,45 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getParentId,
                 ListSubNetworkInterfacesRequest::setParentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSubNetworkInterfacesByTagsRequest, ListSubNetworkInterfacesByTagsResponse> listSubNetworkInterfacesByTags =
+        genForListSubNetworkInterfacesByTags();
+
+    private static HttpRequestDef<ListSubNetworkInterfacesByTagsRequest, ListSubNetworkInterfacesByTagsResponse> genForListSubNetworkInterfacesByTags() {
+        // basic
+        HttpRequestDef.Builder<ListSubNetworkInterfacesByTagsRequest, ListSubNetworkInterfacesByTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListSubNetworkInterfacesByTagsRequest.class,
+                    ListSubNetworkInterfacesByTagsResponse.class)
+                .withName("ListSubNetworkInterfacesByTags")
+                .withUri("/v3/{project_id}/sub-network-interfaces/resource-instances/filter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubNetworkInterfacesByTagsRequest::getLimit,
+                ListSubNetworkInterfacesByTagsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSubNetworkInterfacesByTagsRequest::getOffset,
+                ListSubNetworkInterfacesByTagsRequest::setOffset));
+        builder.<ListSubNetworkInterfacesByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSubNetworkInterfacesByTagsRequestBody.class),
+            f -> f.withMarshaller(ListSubNetworkInterfacesByTagsRequest::getBody,
+                ListSubNetworkInterfacesByTagsRequest::setBody));
 
         // response
 
@@ -1894,6 +2199,33 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSubNetworkInterfaceRequest::getSubNetworkInterfaceId,
                 ShowSubNetworkInterfaceRequest::setSubNetworkInterfaceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSubNetworkInterfaceTagsRequest, ShowSubNetworkInterfaceTagsResponse> showSubNetworkInterfaceTags =
+        genForShowSubNetworkInterfaceTags();
+
+    private static HttpRequestDef<ShowSubNetworkInterfaceTagsRequest, ShowSubNetworkInterfaceTagsResponse> genForShowSubNetworkInterfaceTags() {
+        // basic
+        HttpRequestDef.Builder<ShowSubNetworkInterfaceTagsRequest, ShowSubNetworkInterfaceTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSubNetworkInterfaceTagsRequest.class,
+                    ShowSubNetworkInterfaceTagsResponse.class)
+                .withName("ShowSubNetworkInterfaceTags")
+                .withUri("/v3/{project_id}/sub-network-interfaces/{sub_network_interface_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("sub_network_interface_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSubNetworkInterfaceTagsRequest::getSubNetworkInterfaceId,
+                ShowSubNetworkInterfaceTagsRequest::setSubNetworkInterfaceId));
 
         // response
 

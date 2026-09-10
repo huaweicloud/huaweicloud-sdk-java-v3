@@ -34,7 +34,7 @@ public class SetBackupRetainPolicyRequestBody {
     }
 
     /**
-     * **参数解释**  自动备份保留策略。NONE不保留，LAST保留最后一个，ALL全部保留。  **约束限制**  不涉及       **取值范围**  NONE、LAST、ALL  **默认取值**  不涉及。
+     * **参数解释**  自动备份保留策略。NONE不保留，LAST保留最后一个，ALL全部保留。  **约束限制**  不涉及  **取值范围**  NONE、LAST、ALL  **默认取值**  不涉及。
      * @return auto
      */
     public String getAuto() {
@@ -51,7 +51,7 @@ public class SetBackupRetainPolicyRequestBody {
     }
 
     /**
-     * **参数解释**  手动备份保留策略。NONE不保留，LAST保留最后一个，ALL全部保留。  **约束限制**  不涉及      **取值范围**  NONE、LAST、ALL  **默认取值**  不涉及。
+     * **参数解释**  手动备份保留策略。NONE不保留，LAST保留最后一个，ALL全部保留。  **约束限制**  不涉及  **取值范围**  NONE、LAST、ALL  **默认取值**  不涉及。
      * @return manual
      */
     public String getManual() {

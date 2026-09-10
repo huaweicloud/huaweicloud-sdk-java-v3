@@ -8,6 +8,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.modelarts.v1.model.AcceptScheduledEventRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.AcceptScheduledEventResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.Algorithm;
+import com.huaweicloud.sdk.modelarts.v1.model.AttachDevServerPortRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.AttachDevServerPortResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.AttachDevServerPortsRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.AttachDevServerVolumeRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.AttachDevServerVolumeResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.AttachDynamicStorageRequest;
@@ -237,6 +240,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowSubscriptionRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowSubscriptionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkspaceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DetachDevServerPortRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DetachDevServerPortResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DetachDevServerVolumeRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DetachDevServerVolumeResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DetachDynamicStorageRequest;
@@ -394,6 +399,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsByTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsByTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListUsersRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListUsersResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowExecutionsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowExecutionsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowStepExecutionRequest;
@@ -727,6 +734,34 @@ public class ModelArtsMeta {
             String.class,
             f -> f.withMarshaller(AcceptScheduledEventResponse::getXRequestId,
                 AcceptScheduledEventResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AttachDevServerPortRequest, AttachDevServerPortResponse> attachDevServerPort =
+        genForAttachDevServerPort();
+
+    private static HttpRequestDef<AttachDevServerPortRequest, AttachDevServerPortResponse> genForAttachDevServerPort() {
+        // basic
+        HttpRequestDef.Builder<AttachDevServerPortRequest, AttachDevServerPortResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AttachDevServerPortRequest.class, AttachDevServerPortResponse.class)
+                .withName("AttachDevServerPort")
+                .withUri("/v1/{project_id}/dev-servers/{id}/attach-ports")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AttachDevServerPortRequest::getId, AttachDevServerPortRequest::setId));
+        builder.<AttachDevServerPortsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AttachDevServerPortsRequestBody.class),
+            f -> f.withMarshaller(AttachDevServerPortRequest::getBody, AttachDevServerPortRequest::setBody));
+
+        // response
+
         return builder.build();
     }
 
@@ -2961,6 +2996,34 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteWorkspaceRequest::getWorkspaceId, DeleteWorkspaceRequest::setWorkspaceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DetachDevServerPortRequest, DetachDevServerPortResponse> detachDevServerPort =
+        genForDetachDevServerPort();
+
+    private static HttpRequestDef<DetachDevServerPortRequest, DetachDevServerPortResponse> genForDetachDevServerPort() {
+        // basic
+        HttpRequestDef.Builder<DetachDevServerPortRequest, DetachDevServerPortResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DetachDevServerPortRequest.class, DetachDevServerPortResponse.class)
+            .withName("DetachDevServerPort")
+            .withUri("/v1/{project_id}/dev-servers/{id}/detach-ports/{port_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetachDevServerPortRequest::getId, DetachDevServerPortRequest::setId));
+        builder.<String>withRequestField("port_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetachDevServerPortRequest::getPortId, DetachDevServerPortRequest::setPortId));
 
         // response
 
@@ -5517,6 +5580,23 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResourceInstancesFilterReq.class),
             f -> f.withMarshaller(ListTrainingJobsByTagsRequest::getBody, ListTrainingJobsByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUsersRequest, ListUsersResponse> listUsers = genForListUsers();
+
+    private static HttpRequestDef<ListUsersRequest, ListUsersResponse> genForListUsers() {
+        // basic
+        HttpRequestDef.Builder<ListUsersRequest, ListUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUsersRequest.class, ListUsersResponse.class)
+                .withName("ListUsers")
+                .withUri("/v1/{project_id}/workspaces/users/list")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

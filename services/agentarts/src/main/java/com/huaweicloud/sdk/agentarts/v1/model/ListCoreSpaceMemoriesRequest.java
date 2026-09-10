@@ -490,9 +490,9 @@ public class ListCoreSpaceMemoriesRequest {
     }
 
     /**
-     * **参数解释：** 限制数量。 **约束限制：** 不涉及。 **取值范围：** 正整数，最大值1000。 **默认取值：** 1000。
+     * **参数解释：** 限制数量。 **约束限制：** 不涉及。 **取值范围：** 正整数，最大值100。 **默认取值：** 100。
      * minimum: 1
-     * maximum: 1000
+     * maximum: 100
      * @return limit
      */
     public Integer getLimit() {

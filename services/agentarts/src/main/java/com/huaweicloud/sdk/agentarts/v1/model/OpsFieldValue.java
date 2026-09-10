@@ -11,6 +11,16 @@ import java.util.Objects;
 public class OpsFieldValue {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key")
+
+    private String key;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
     private String type;
@@ -24,6 +34,45 @@ public class OpsFieldValue {
     @JsonProperty(value = "value")
 
     private Object value;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "required")
+
+    private Boolean required;
+
+    public OpsFieldValue withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 唯一标识。 **取值范围：** 符合通用唯一识别码(UUID)标准的字符串。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public OpsFieldValue withKey(String key) {
+        this.key = key;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 字段名。 **取值范围：** 标准的字符串。
+     * @return key
+     */
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public OpsFieldValue withType(String type) {
         this.type = type;
@@ -76,6 +125,23 @@ public class OpsFieldValue {
         this.value = value;
     }
 
+    public OpsFieldValue withRequired(Boolean required) {
+        this.required = required;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 字段是否必填。 **取值范围：** 布尔值，true或者false。
+     * @return required
+     */
+    public Boolean getRequired() {
+        return required;
+    }
+
+    public void setRequired(Boolean required) {
+        this.required = required;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -85,22 +151,26 @@ public class OpsFieldValue {
             return false;
         }
         OpsFieldValue that = (OpsFieldValue) obj;
-        return Objects.equals(this.type, that.type) && Objects.equals(this.contentType, that.contentType)
-            && Objects.equals(this.value, that.value);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.key, that.key)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.contentType, that.contentType)
+            && Objects.equals(this.value, that.value) && Objects.equals(this.required, that.required);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, contentType, value);
+        return Objects.hash(id, key, type, contentType, value, required);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class OpsFieldValue {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    required: ").append(toIndentedString(required)).append("\n");
         sb.append("}");
         return sb.toString();
     }

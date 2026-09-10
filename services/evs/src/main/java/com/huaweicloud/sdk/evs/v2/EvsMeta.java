@@ -92,7 +92,6 @@ import com.huaweicloud.sdk.evs.v2.model.ShowVolumeTagsResponse;
 import com.huaweicloud.sdk.evs.v2.model.UnsubscribePostpaidVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.UnsubscribePostpaidVolumeResponse;
 import com.huaweicloud.sdk.evs.v2.model.UnsubscribeVolumeRequestBody;
-import com.huaweicloud.sdk.evs.v2.model.UnsubscribeVolumeResponseBody;
 import com.huaweicloud.sdk.evs.v2.model.UpdateRecyclePolicyRequest;
 import com.huaweicloud.sdk.evs.v2.model.UpdateRecyclePolicyResponse;
 import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotRequest;
@@ -101,8 +100,6 @@ import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotResponse;
 import com.huaweicloud.sdk.evs.v2.model.UpdateVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.UpdateVolumeRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.UpdateVolumeResponse;
-
-import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class EvsMeta {
@@ -1118,13 +1115,12 @@ public class EvsMeta {
                 UnsubscribePostpaidVolumeRequest::setBody));
 
         // response
-        builder.<List<UnsubscribeVolumeResponseBody>>withResponseField("body",
+        builder.<Object>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f
-                .withMarshaller(UnsubscribePostpaidVolumeResponse::getBody, UnsubscribePostpaidVolumeResponse::setBody)
-                .withInnerContainerType(UnsubscribeVolumeResponseBody.class));
+            Object.class,
+            f -> f.withMarshaller(UnsubscribePostpaidVolumeResponse::getBody,
+                UnsubscribePostpaidVolumeResponse::setBody));
 
         return builder.build();
     }

@@ -55,6 +55,8 @@ import com.huaweicloud.sdk.rds.v3.model.CheckInstanceForUpgradeRequest;
 import com.huaweicloud.sdk.rds.v3.model.CheckInstanceForUpgradeResponse;
 import com.huaweicloud.sdk.rds.v3.model.CheckWeakpwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.CheckWeakpwdResponse;
+import com.huaweicloud.sdk.rds.v3.model.CollectInstanceStatisticRequest;
+import com.huaweicloud.sdk.rds.v3.model.CollectInstanceStatisticResponse;
 import com.huaweicloud.sdk.rds.v3.model.CollectPublicationMonitorRequest;
 import com.huaweicloud.sdk.rds.v3.model.CollectPublicationMonitorResponse;
 import com.huaweicloud.sdk.rds.v3.model.CollectSubscriptionMonitorRequest;
@@ -175,10 +177,14 @@ import com.huaweicloud.sdk.rds.v3.model.ExecutePrivilegeDatabaseUserRoleRequest;
 import com.huaweicloud.sdk.rds.v3.model.ExecutePrivilegeDatabaseUserRoleResponse;
 import com.huaweicloud.sdk.rds.v3.model.ExecuteRevokeDatabaseUserRoleRequest;
 import com.huaweicloud.sdk.rds.v3.model.ExecuteRevokeDatabaseUserRoleResponse;
+import com.huaweicloud.sdk.rds.v3.model.GetAvailableVpcsRequest;
+import com.huaweicloud.sdk.rds.v3.model.GetAvailableVpcsResponse;
 import com.huaweicloud.sdk.rds.v3.model.GetInstancesNoIndexTablesRequest;
 import com.huaweicloud.sdk.rds.v3.model.GetInstancesNoIndexTablesResponse;
 import com.huaweicloud.sdk.rds.v3.model.GetInstancesOpsMetricNamesRequest;
 import com.huaweicloud.sdk.rds.v3.model.GetInstancesOpsMetricNamesResponse;
+import com.huaweicloud.sdk.rds.v3.model.GetInstancesOpsResourceUsageRequest;
+import com.huaweicloud.sdk.rds.v3.model.GetInstancesOpsResourceUsageResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListApiVersionNewRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListApiVersionNewResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListApiVersionRequest;
@@ -201,6 +207,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListBusinessPartnersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListBusinessPartnersResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListCollationsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListCollationsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListComputeResourceRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListComputeResourceResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListConfigurationApplyHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListConfigurationApplyHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListConfigurationsRequest;
@@ -264,6 +272,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListInstancesConfigurationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesResourceMetricsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesResourceMetricsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreResponse;
@@ -287,6 +297,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListOffSiteInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListOffSiteInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListOffSiteRestoreTimesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListOffSiteRestoreTimesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListOperateRecordRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListOperateRecordResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListPackLogInfosRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPackLogInfosResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlDatabaseSchemasRequest;
@@ -399,6 +411,8 @@ import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeResponse;
 import com.huaweicloud.sdk.rds.v3.model.NotifyReplaceNodeRequest;
 import com.huaweicloud.sdk.rds.v3.model.NotifyReplaceNodeResponse;
+import com.huaweicloud.sdk.rds.v3.model.QueryAutoSqlLimitingRequest;
+import com.huaweicloud.sdk.rds.v3.model.QueryAutoSqlLimitingResponse;
 import com.huaweicloud.sdk.rds.v3.model.QueryNewBackupEncryptionRequest;
 import com.huaweicloud.sdk.rds.v3.model.QueryNewBackupEncryptionResponse;
 import com.huaweicloud.sdk.rds.v3.model.RefreshPublicationSnapshotRequest;
@@ -473,6 +487,8 @@ import com.huaweicloud.sdk.rds.v3.model.SetSensitiveSlowLogRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetSensitiveSlowLogResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetTransferPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetTransferPolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowAgencyPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowAgencyPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowApiVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogDownloadLinkRequest;
@@ -559,6 +575,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowRestartPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowRestartPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowRestoreTablesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowRestoreTablesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowRiskInfoRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowRiskInfoResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowSqlDiagnosisRequest;
@@ -1225,6 +1243,36 @@ public class RdsAsyncClient {
     public AsyncInvoker<CheckWeakpwdRequest, CheckWeakpwdResponse> checkWeakpwdAsyncInvoker(
         CheckWeakpwdRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.checkWeakpwd, hcClient);
+    }
+
+    /**
+     * 总览页面实例统计
+     *
+     * 总览页面实例统计
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CollectInstanceStatisticRequest 请求对象
+     * @return CompletableFuture<CollectInstanceStatisticResponse>
+     */
+    public CompletableFuture<CollectInstanceStatisticResponse> collectInstanceStatisticAsync(
+        CollectInstanceStatisticRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.collectInstanceStatistic);
+    }
+
+    /**
+     * 总览页面实例统计
+     *
+     * 总览页面实例统计
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CollectInstanceStatisticRequest 请求对象
+     * @return AsyncInvoker<CollectInstanceStatisticRequest, CollectInstanceStatisticResponse>
+     */
+    public AsyncInvoker<CollectInstanceStatisticRequest, CollectInstanceStatisticResponse> collectInstanceStatisticAsyncInvoker(
+        CollectInstanceStatisticRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.collectInstanceStatistic, hcClient);
     }
 
     /**
@@ -2250,6 +2298,35 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 获取资源包详情
+     *
+     * 获取资源包详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListComputeResourceRequest 请求对象
+     * @return CompletableFuture<ListComputeResourceResponse>
+     */
+    public CompletableFuture<ListComputeResourceResponse> listComputeResourceAsync(ListComputeResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listComputeResource);
+    }
+
+    /**
+     * 获取资源包详情
+     *
+     * 获取资源包详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListComputeResourceRequest 请求对象
+     * @return AsyncInvoker<ListComputeResourceRequest, ListComputeResourceResponse>
+     */
+    public AsyncInvoker<ListComputeResourceRequest, ListComputeResourceResponse> listComputeResourceAsyncInvoker(
+        ListComputeResourceRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listComputeResource, hcClient);
+    }
+
+    /**
      * 查询参数组应用历史
      *
      * 查询参数组应用历史
@@ -2923,6 +3000,36 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 查询监控大盘列表
+     *
+     * 查询监控大盘列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesResourceMetricsRequest 请求对象
+     * @return CompletableFuture<ListInstancesResourceMetricsResponse>
+     */
+    public CompletableFuture<ListInstancesResourceMetricsResponse> listInstancesResourceMetricsAsync(
+        ListInstancesResourceMetricsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listInstancesResourceMetrics);
+    }
+
+    /**
+     * 查询监控大盘列表
+     *
+     * 查询监控大盘列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesResourceMetricsRequest 请求对象
+     * @return AsyncInvoker<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse>
+     */
+    public AsyncInvoker<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse> listInstancesResourceMetricsAsyncInvoker(
+        ListInstancesResourceMetricsRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listInstancesResourceMetrics, hcClient);
+    }
+
+    /**
      * 获取实例是否能使用极速恢复
      *
      * 批量获取实例是否能在库表恢复时使用极速恢复。
@@ -3161,6 +3268,35 @@ public class RdsAsyncClient {
     public AsyncInvoker<ListOffSiteRestoreTimesRequest, ListOffSiteRestoreTimesResponse> listOffSiteRestoreTimesAsyncInvoker(
         ListOffSiteRestoreTimesRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.listOffSiteRestoreTimes, hcClient);
+    }
+
+    /**
+     * 查询指定实例的操作记录
+     *
+     * 查询指定实例的操作记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOperateRecordRequest 请求对象
+     * @return CompletableFuture<ListOperateRecordResponse>
+     */
+    public CompletableFuture<ListOperateRecordResponse> listOperateRecordAsync(ListOperateRecordRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listOperateRecord);
+    }
+
+    /**
+     * 查询指定实例的操作记录
+     *
+     * 查询指定实例的操作记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOperateRecordRequest 请求对象
+     * @return AsyncInvoker<ListOperateRecordRequest, ListOperateRecordResponse>
+     */
+    public AsyncInvoker<ListOperateRecordRequest, ListOperateRecordResponse> listOperateRecordAsyncInvoker(
+        ListOperateRecordRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listOperateRecord, hcClient);
     }
 
     /**
@@ -5827,6 +5963,35 @@ public class RdsAsyncClient {
     public AsyncInvoker<ShowRestoreTablesRequest, ShowRestoreTablesResponse> showRestoreTablesAsyncInvoker(
         ShowRestoreTablesRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.showRestoreTables, hcClient);
+    }
+
+    /**
+     * 查询指定实例的风险版本信息
+     *
+     * 查询指定实例的风险版本信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRiskInfoRequest 请求对象
+     * @return CompletableFuture<ShowRiskInfoResponse>
+     */
+    public CompletableFuture<ShowRiskInfoResponse> showRiskInfoAsync(ShowRiskInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showRiskInfo);
+    }
+
+    /**
+     * 查询指定实例的风险版本信息
+     *
+     * 查询指定实例的风险版本信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRiskInfoRequest 请求对象
+     * @return AsyncInvoker<ShowRiskInfoRequest, ShowRiskInfoResponse>
+     */
+    public AsyncInvoker<ShowRiskInfoRequest, ShowRiskInfoResponse> showRiskInfoAsyncInvoker(
+        ShowRiskInfoRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.showRiskInfo, hcClient);
     }
 
     /**
@@ -8907,6 +9072,66 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 查询资源利用率
+     *
+     * 查询资源利用率
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetInstancesOpsResourceUsageRequest 请求对象
+     * @return CompletableFuture<GetInstancesOpsResourceUsageResponse>
+     */
+    public CompletableFuture<GetInstancesOpsResourceUsageResponse> getInstancesOpsResourceUsageAsync(
+        GetInstancesOpsResourceUsageRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.getInstancesOpsResourceUsage);
+    }
+
+    /**
+     * 查询资源利用率
+     *
+     * 查询资源利用率
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetInstancesOpsResourceUsageRequest 请求对象
+     * @return AsyncInvoker<GetInstancesOpsResourceUsageRequest, GetInstancesOpsResourceUsageResponse>
+     */
+    public AsyncInvoker<GetInstancesOpsResourceUsageRequest, GetInstancesOpsResourceUsageResponse> getInstancesOpsResourceUsageAsyncInvoker(
+        GetInstancesOpsResourceUsageRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.getInstancesOpsResourceUsage, hcClient);
+    }
+
+    /**
+     * 查询自治限流规则
+     *
+     * 查询自治限流规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request QueryAutoSqlLimitingRequest 请求对象
+     * @return CompletableFuture<QueryAutoSqlLimitingResponse>
+     */
+    public CompletableFuture<QueryAutoSqlLimitingResponse> queryAutoSqlLimitingAsync(
+        QueryAutoSqlLimitingRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.queryAutoSqlLimiting);
+    }
+
+    /**
+     * 查询自治限流规则
+     *
+     * 查询自治限流规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request QueryAutoSqlLimitingRequest 请求对象
+     * @return AsyncInvoker<QueryAutoSqlLimitingRequest, QueryAutoSqlLimitingResponse>
+     */
+    public AsyncInvoker<QueryAutoSqlLimitingRequest, QueryAutoSqlLimitingResponse> queryAutoSqlLimitingAsyncInvoker(
+        QueryAutoSqlLimitingRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.queryAutoSqlLimiting, hcClient);
+    }
+
+    /**
      * 触发审计日志轮转
      *
      * 触发审计日志轮转
@@ -8933,6 +9158,35 @@ public class RdsAsyncClient {
     public AsyncInvoker<RotateAuditLogRequest, RotateAuditLogResponse> rotateAuditLogAsyncInvoker(
         RotateAuditLogRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.rotateAuditLog, hcClient);
+    }
+
+    /**
+     * 查询可收缩委托策略
+     *
+     * 查询可收缩委托策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgencyPolicyRequest 请求对象
+     * @return CompletableFuture<ShowAgencyPolicyResponse>
+     */
+    public CompletableFuture<ShowAgencyPolicyResponse> showAgencyPolicyAsync(ShowAgencyPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showAgencyPolicy);
+    }
+
+    /**
+     * 查询可收缩委托策略
+     *
+     * 查询可收缩委托策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgencyPolicyRequest 请求对象
+     * @return AsyncInvoker<ShowAgencyPolicyRequest, ShowAgencyPolicyResponse>
+     */
+    public AsyncInvoker<ShowAgencyPolicyRequest, ShowAgencyPolicyResponse> showAgencyPolicyAsyncInvoker(
+        ShowAgencyPolicyRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.showAgencyPolicy, hcClient);
     }
 
     /**
@@ -10735,6 +10989,35 @@ public class RdsAsyncClient {
     public AsyncInvoker<ValidateInstanceConnectionRequest, ValidateInstanceConnectionResponse> validateInstanceConnectionAsyncInvoker(
         ValidateInstanceConnectionRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.validateInstanceConnection, hcClient);
+    }
+
+    /**
+     * 根据实例ID和管理网子网信息，返回可用的数据子网
+     *
+     * 根据实例ID和管理网子网信息，返回可用的数据子网。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetAvailableVpcsRequest 请求对象
+     * @return CompletableFuture<GetAvailableVpcsResponse>
+     */
+    public CompletableFuture<GetAvailableVpcsResponse> getAvailableVpcsAsync(GetAvailableVpcsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.getAvailableVpcs);
+    }
+
+    /**
+     * 根据实例ID和管理网子网信息，返回可用的数据子网
+     *
+     * 根据实例ID和管理网子网信息，返回可用的数据子网。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetAvailableVpcsRequest 请求对象
+     * @return AsyncInvoker<GetAvailableVpcsRequest, GetAvailableVpcsResponse>
+     */
+    public AsyncInvoker<GetAvailableVpcsRequest, GetAvailableVpcsResponse> getAvailableVpcsAsyncInvoker(
+        GetAvailableVpcsRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.getAvailableVpcs, hcClient);
     }
 
 }

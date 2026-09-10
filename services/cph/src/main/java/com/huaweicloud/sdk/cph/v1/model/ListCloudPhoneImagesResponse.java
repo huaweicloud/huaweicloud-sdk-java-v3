@@ -24,6 +24,11 @@ public class ListCloudPhoneImagesResponse extends SdkResponse {
 
     private List<PhoneImage> phoneImages = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private ListCloudPhoneImagesResponseBodyPageInfo pageInfo;
+
     public ListCloudPhoneImagesResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -74,6 +79,33 @@ public class ListCloudPhoneImagesResponse extends SdkResponse {
         this.phoneImages = phoneImages;
     }
 
+    public ListCloudPhoneImagesResponse withPageInfo(ListCloudPhoneImagesResponseBodyPageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListCloudPhoneImagesResponse withPageInfo(
+        Consumer<ListCloudPhoneImagesResponseBodyPageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new ListCloudPhoneImagesResponseBodyPageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public ListCloudPhoneImagesResponseBodyPageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(ListCloudPhoneImagesResponseBodyPageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +115,13 @@ public class ListCloudPhoneImagesResponse extends SdkResponse {
             return false;
         }
         ListCloudPhoneImagesResponse that = (ListCloudPhoneImagesResponse) obj;
-        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.phoneImages, that.phoneImages);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.phoneImages, that.phoneImages)
+            && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, phoneImages);
+        return Objects.hash(requestId, phoneImages, pageInfo);
     }
 
     @Override
@@ -97,6 +130,7 @@ public class ListCloudPhoneImagesResponse extends SdkResponse {
         sb.append("class ListCloudPhoneImagesResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    phoneImages: ").append(toIndentedString(phoneImages)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

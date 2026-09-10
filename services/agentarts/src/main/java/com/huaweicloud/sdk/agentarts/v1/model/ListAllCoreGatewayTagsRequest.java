@@ -45,9 +45,9 @@ public class ListAllCoreGatewayTagsRequest {
     }
 
     /**
-     * **参数解释：** 查询记录数。 **约束限制：** 必须为正整数。 **取值范围：** 1-1000。 **默认取值：** 1000。 
+     * **参数解释：** 查询记录数。 **约束限制：** 必须为正整数。 **取值范围：** 1-100。 **默认取值：** 100。 
      * minimum: 1
-     * maximum: 1000
+     * maximum: 100
      * @return limit
      */
     public Integer getLimit() {

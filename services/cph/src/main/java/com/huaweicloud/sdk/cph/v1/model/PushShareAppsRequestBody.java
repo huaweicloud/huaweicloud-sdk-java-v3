@@ -130,7 +130,7 @@ public class PushShareAppsRequestBody {
     }
 
     /**
-     * 云手机服务器ID列表。传入的服务器id个数范围为[1, 100]。
+     * 云手机服务器ID列表。传入的服务器id个数范围为[1, 20]。
      * @return serverIds
      */
     public List<String> getServerIds() {

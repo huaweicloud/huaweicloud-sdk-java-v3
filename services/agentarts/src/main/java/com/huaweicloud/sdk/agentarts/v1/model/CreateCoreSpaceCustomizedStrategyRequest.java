@@ -20,7 +20,7 @@ public class CreateCoreSpaceCustomizedStrategyRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateCoreSpaceCustomizedStrategyRequestBody body;
+    private CreateCoreSpaceMemoryStrategyRequestBody body;
 
     public CreateCoreSpaceCustomizedStrategyRequest withSpaceId(UUID spaceId) {
         this.spaceId = spaceId;
@@ -39,15 +39,15 @@ public class CreateCoreSpaceCustomizedStrategyRequest {
         this.spaceId = spaceId;
     }
 
-    public CreateCoreSpaceCustomizedStrategyRequest withBody(CreateCoreSpaceCustomizedStrategyRequestBody body) {
+    public CreateCoreSpaceCustomizedStrategyRequest withBody(CreateCoreSpaceMemoryStrategyRequestBody body) {
         this.body = body;
         return this;
     }
 
     public CreateCoreSpaceCustomizedStrategyRequest withBody(
-        Consumer<CreateCoreSpaceCustomizedStrategyRequestBody> bodySetter) {
+        Consumer<CreateCoreSpaceMemoryStrategyRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateCoreSpaceCustomizedStrategyRequestBody();
+            this.body = new CreateCoreSpaceMemoryStrategyRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -58,11 +58,11 @@ public class CreateCoreSpaceCustomizedStrategyRequest {
      * Get body
      * @return body
      */
-    public CreateCoreSpaceCustomizedStrategyRequestBody getBody() {
+    public CreateCoreSpaceMemoryStrategyRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateCoreSpaceCustomizedStrategyRequestBody body) {
+    public void setBody(CreateCoreSpaceMemoryStrategyRequestBody body) {
         this.body = body;
     }
 

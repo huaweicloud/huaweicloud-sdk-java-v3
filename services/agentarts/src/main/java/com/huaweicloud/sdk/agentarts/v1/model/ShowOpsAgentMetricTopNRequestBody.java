@@ -19,11 +19,6 @@ import java.util.function.Consumer;
 public class ShowOpsAgentMetricTopNRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "group_by")
-
-    private List<String> groupBy = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
     private String startTime;
@@ -139,44 +134,6 @@ public class ShowOpsAgentMetricTopNRequestBody {
     @JsonProperty(value = "filter")
 
     private List<MetricFilterParam> filter = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "top_number")
-
-    private Integer topNumber;
-
-    public ShowOpsAgentMetricTopNRequestBody withGroupBy(List<String> groupBy) {
-        this.groupBy = groupBy;
-        return this;
-    }
-
-    public ShowOpsAgentMetricTopNRequestBody addGroupByItem(String groupByItem) {
-        if (this.groupBy == null) {
-            this.groupBy = new ArrayList<>();
-        }
-        this.groupBy.add(groupByItem);
-        return this;
-    }
-
-    public ShowOpsAgentMetricTopNRequestBody withGroupBy(Consumer<List<String>> groupBySetter) {
-        if (this.groupBy == null) {
-            this.groupBy = new ArrayList<>();
-        }
-        groupBySetter.accept(this.groupBy);
-        return this;
-    }
-
-    /**
-     * 分组名
-     * @return groupBy
-     */
-    public List<String> getGroupBy() {
-        return groupBy;
-    }
-
-    public void setGroupBy(List<String> groupBy) {
-        this.groupBy = groupBy;
-    }
 
     public ShowOpsAgentMetricTopNRequestBody withStartTime(String startTime) {
         this.startTime = startTime;
@@ -313,25 +270,6 @@ public class ShowOpsAgentMetricTopNRequestBody {
         this.filter = filter;
     }
 
-    public ShowOpsAgentMetricTopNRequestBody withTopNumber(Integer topNumber) {
-        this.topNumber = topNumber;
-        return this;
-    }
-
-    /**
-     * 待返回top数量
-     * minimum: 0
-     * maximum: 100
-     * @return topNumber
-     */
-    public Integer getTopNumber() {
-        return topNumber;
-    }
-
-    public void setTopNumber(Integer topNumber) {
-        this.topNumber = topNumber;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -341,24 +279,21 @@ public class ShowOpsAgentMetricTopNRequestBody {
             return false;
         }
         ShowOpsAgentMetricTopNRequestBody that = (ShowOpsAgentMetricTopNRequestBody) obj;
-        return Objects.equals(this.groupBy, that.groupBy) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.metricName, that.metricName)
-            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceType, that.resourceType)
-            && Objects.equals(this.userId, that.userId) && Objects.equals(this.filter, that.filter)
-            && Objects.equals(this.topNumber, that.topNumber);
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.metricName, that.metricName) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.filter, that.filter);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(groupBy, startTime, endTime, metricName, resourceId, resourceType, userId, filter, topNumber);
+        return Objects.hash(startTime, endTime, metricName, resourceId, resourceType, userId, filter);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowOpsAgentMetricTopNRequestBody {\n");
-        sb.append("    groupBy: ").append(toIndentedString(groupBy)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
@@ -366,7 +301,6 @@ public class ShowOpsAgentMetricTopNRequestBody {
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
         sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
-        sb.append("    topNumber: ").append(toIndentedString(topNumber)).append("\n");
         sb.append("}");
         return sb.toString();
     }

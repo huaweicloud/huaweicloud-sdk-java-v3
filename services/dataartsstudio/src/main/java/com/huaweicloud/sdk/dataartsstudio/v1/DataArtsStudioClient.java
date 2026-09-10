@@ -15,14 +15,14 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ApplySecurityTableAuthorityRe
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ApplySecurityTableAuthorityResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AssociateClassificationToEntityRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AssociateClassificationToEntityResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.AssociateConnectionClusterRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.AssociateConnectionClusterResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AssociateSecurityLevelToEntitieRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AssociateSecurityLevelToEntitieResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeActionApiToInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeActionApiToInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeApiToInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeApiToInstanceResponse;
-import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeDataConnectionRequest;
-import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeDataConnectionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchApproveApplyRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchApproveApplyResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchApproveSecurityApplicationsRequest;
@@ -31,6 +31,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateClassificationT
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateClassificationToEntitiesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateSecurityLevelToEntitiesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateSecurityLevelToEntitiesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchBindMigrationResourceToWorkspaceRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchBindMigrationResourceToWorkspaceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateDesignTableModelsFromLogicRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateDesignTableModelsFromLogicResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateSecurityPermissionSetMembersRequest;
@@ -53,6 +55,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecuritySecrecyLev
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecuritySecrecyLevelsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteTemplatesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteTemplatesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteWorkspacesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteWorkspacesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchOfflineRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchOfflineResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchPublishRequest;
@@ -103,10 +107,16 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateBizMetricRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateBizMetricResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateCatalogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateCatalogResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateClusterRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateClusterResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateCodeTableRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateCodeTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateConnectionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateConnectionsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDatasourceConnectionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDatasourceConnectionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDatasourceConnectionRoutesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDatasourceConnectionRoutesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAggregationLogicTableRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAggregationLogicTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAtomicIndexRequest;
@@ -203,6 +213,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteCodeTableRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteCodeTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDataconnectionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDatasourceConnectionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDatasourceConnectionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDatasourceConnectionRoutesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDatasourceConnectionRoutesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAggregationLogicTableRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAggregationLogicTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAtomicIndexRequest;
@@ -255,6 +269,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteWorkspaceusersRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteWorkspaceusersResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeployFactoryPackagesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeployFactoryPackagesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DownloadTaskLogRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DownloadTaskLogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteSecurityDiagnoseRequest;
@@ -357,6 +373,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDatabasesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDatabasesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataconnectionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataconnectionsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDatasourceConnectionsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDatasourceConnectionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDerivativeIndexesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDerivativeIndexesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDesignDataLayersRequest;
@@ -477,6 +495,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelRelationsReques
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelRelationsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTaskLogsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTaskLogsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTaskTableReferenceDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTaskTableReferenceDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspaceRolesRequest;
@@ -609,6 +629,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataconnectionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDatamapLineageRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDatamapLineageResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDatasourceConnectionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDatasourceConnectionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDerivativeIndexByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDerivativeIndexByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDesignOperationResultRequest;
@@ -643,6 +665,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceLogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceLogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceResultRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceResultResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowJobMonitorInfoRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowJobMonitorInfoResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowLineageBulkRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowLineageBulkResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowLineageRequest;
@@ -663,6 +687,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQualityTaskDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQualityTaskDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQueuesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQueuesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowRealTimeJobDetailsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowRealTimeJobDetailsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowRelationByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowRelationByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityAdminRequest;
@@ -735,6 +761,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataServiceInstanceObsL
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataServiceInstanceObsLogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataconnectionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDatasourceConnectionHostMessageRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDatasourceConnectionHostMessageResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAggregationLogicTableRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAggregationLogicTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAtomicIndexRequest;
@@ -793,6 +821,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateTaskInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateTaskInfoResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateTemplateRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateTemplateResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateWorkSpaceOldRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateWorkSpaceOldResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateWorkSpaceUserOrGroupRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateWorkSpaceUserOrGroupResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateWorkspaceRequest;
@@ -986,6 +1016,35 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 绑定集群
+     *
+     * 该API用于在已创建的资源组网络连接中绑定集群。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssociateConnectionClusterRequest 请求对象
+     * @return AssociateConnectionClusterResponse
+     */
+    public AssociateConnectionClusterResponse associateConnectionCluster(AssociateConnectionClusterRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.associateConnectionCluster);
+    }
+
+    /**
+     * 绑定集群
+     *
+     * 该API用于在已创建的资源组网络连接中绑定集群。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssociateConnectionClusterRequest 请求对象
+     * @return SyncInvoker<AssociateConnectionClusterRequest, AssociateConnectionClusterResponse>
+     */
+    public SyncInvoker<AssociateConnectionClusterRequest, AssociateConnectionClusterResponse> associateConnectionClusterInvoker(
+        AssociateConnectionClusterRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.associateConnectionCluster, hcClient);
+    }
+
+    /**
      * 资产关联密级
      *
      * 关联资产到密级，资产关联指定密级
@@ -1013,35 +1072,6 @@ public class DataArtsStudioClient {
     public SyncInvoker<AssociateSecurityLevelToEntitieRequest, AssociateSecurityLevelToEntitieResponse> associateSecurityLevelToEntitieInvoker(
         AssociateSecurityLevelToEntitieRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.associateSecurityLevelToEntitie, hcClient);
-    }
-
-    /**
-     * 数据连接跨空间授权
-     *
-     * 数据连接跨空间授权。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AuthorizeDataConnectionRequest 请求对象
-     * @return AuthorizeDataConnectionResponse
-     */
-    public AuthorizeDataConnectionResponse authorizeDataConnection(AuthorizeDataConnectionRequest request) {
-        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.authorizeDataConnection);
-    }
-
-    /**
-     * 数据连接跨空间授权
-     *
-     * 数据连接跨空间授权。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AuthorizeDataConnectionRequest 请求对象
-     * @return SyncInvoker<AuthorizeDataConnectionRequest, AuthorizeDataConnectionResponse>
-     */
-    public SyncInvoker<AuthorizeDataConnectionRequest, AuthorizeDataConnectionResponse> authorizeDataConnectionInvoker(
-        AuthorizeDataConnectionRequest request) {
-        return new SyncInvoker<>(request, DataArtsStudioMeta.authorizeDataConnection, hcClient);
     }
 
     /**
@@ -1161,6 +1191,36 @@ public class DataArtsStudioClient {
     public SyncInvoker<BatchAssociateSecurityLevelToEntitiesRequest, BatchAssociateSecurityLevelToEntitiesResponse> batchAssociateSecurityLevelToEntitiesInvoker(
         BatchAssociateSecurityLevelToEntitiesRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.batchAssociateSecurityLevelToEntities, hcClient);
+    }
+
+    /**
+     * 批量关联或取消关联数据集成资源到工作空间
+     *
+     * 批量关联或取消关联数据集成资源到工作空间，通过workspaces中的action字段区分操作类型。action为band表示关联，action为remove表示取消关联。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchBindMigrationResourceToWorkspaceRequest 请求对象
+     * @return BatchBindMigrationResourceToWorkspaceResponse
+     */
+    public BatchBindMigrationResourceToWorkspaceResponse batchBindMigrationResourceToWorkspace(
+        BatchBindMigrationResourceToWorkspaceRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.batchBindMigrationResourceToWorkspace);
+    }
+
+    /**
+     * 批量关联或取消关联数据集成资源到工作空间
+     *
+     * 批量关联或取消关联数据集成资源到工作空间，通过workspaces中的action字段区分操作类型。action为band表示关联，action为remove表示取消关联。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchBindMigrationResourceToWorkspaceRequest 请求对象
+     * @return SyncInvoker<BatchBindMigrationResourceToWorkspaceRequest, BatchBindMigrationResourceToWorkspaceResponse>
+     */
+    public SyncInvoker<BatchBindMigrationResourceToWorkspaceRequest, BatchBindMigrationResourceToWorkspaceResponse> batchBindMigrationResourceToWorkspaceInvoker(
+        BatchBindMigrationResourceToWorkspaceRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.batchBindMigrationResourceToWorkspace, hcClient);
     }
 
     /**
@@ -1501,6 +1561,35 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 删除工作空间
+     *
+     * 删除工作空间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteWorkspacesRequest 请求对象
+     * @return BatchDeleteWorkspacesResponse
+     */
+    public BatchDeleteWorkspacesResponse batchDeleteWorkspaces(BatchDeleteWorkspacesRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.batchDeleteWorkspaces);
+    }
+
+    /**
+     * 删除工作空间
+     *
+     * 删除工作空间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteWorkspacesRequest 请求对象
+     * @return SyncInvoker<BatchDeleteWorkspacesRequest, BatchDeleteWorkspacesResponse>
+     */
+    public SyncInvoker<BatchDeleteWorkspacesRequest, BatchDeleteWorkspacesResponse> batchDeleteWorkspacesInvoker(
+        BatchDeleteWorkspacesRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.batchDeleteWorkspaces, hcClient);
+    }
+
+    /**
      * 批量下线
      *
      * 批量下线。
@@ -1676,7 +1765,7 @@ public class DataArtsStudioClient {
     /**
      * 撤销任务包
      *
-     * 撤销任务包
+     * 目前支持发布包管理中相关包的撤销，支持撤销多个任务包。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1690,7 +1779,7 @@ public class DataArtsStudioClient {
     /**
      * 撤销任务包
      *
-     * 撤销任务包
+     * 目前支持发布包管理中相关包的撤销，支持撤销多个任务包。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2196,6 +2285,34 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 创建集群
+     *
+     * 该API用于创建集群，该集群将会绑定用户指定的计算资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateClusterRequest 请求对象
+     * @return CreateClusterResponse
+     */
+    public CreateClusterResponse createCluster(CreateClusterRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.createCluster);
+    }
+
+    /**
+     * 创建集群
+     *
+     * 该API用于创建集群，该集群将会绑定用户指定的计算资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateClusterRequest 请求对象
+     * @return SyncInvoker<CreateClusterRequest, CreateClusterResponse>
+     */
+    public SyncInvoker<CreateClusterRequest, CreateClusterResponse> createClusterInvoker(CreateClusterRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.createCluster, hcClient);
+    }
+
+    /**
      * 创建码表
      *
      * 创建码表。
@@ -2251,6 +2368,65 @@ public class DataArtsStudioClient {
     public SyncInvoker<CreateConnectionsRequest, CreateConnectionsResponse> createConnectionsInvoker(
         CreateConnectionsRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.createConnections, hcClient);
+    }
+
+    /**
+     * 创建资源组网络连接
+     *
+     * 该API用于创建与其他服务的资源组网络连接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDatasourceConnectionRequest 请求对象
+     * @return CreateDatasourceConnectionResponse
+     */
+    public CreateDatasourceConnectionResponse createDatasourceConnection(CreateDatasourceConnectionRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.createDatasourceConnection);
+    }
+
+    /**
+     * 创建资源组网络连接
+     *
+     * 该API用于创建与其他服务的资源组网络连接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDatasourceConnectionRequest 请求对象
+     * @return SyncInvoker<CreateDatasourceConnectionRequest, CreateDatasourceConnectionResponse>
+     */
+    public SyncInvoker<CreateDatasourceConnectionRequest, CreateDatasourceConnectionResponse> createDatasourceConnectionInvoker(
+        CreateDatasourceConnectionRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.createDatasourceConnection, hcClient);
+    }
+
+    /**
+     * 创建路由
+     *
+     * 该API用于给资源组网络连接添加路由。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDatasourceConnectionRoutesRequest 请求对象
+     * @return CreateDatasourceConnectionRoutesResponse
+     */
+    public CreateDatasourceConnectionRoutesResponse createDatasourceConnectionRoutes(
+        CreateDatasourceConnectionRoutesRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.createDatasourceConnectionRoutes);
+    }
+
+    /**
+     * 创建路由
+     *
+     * 该API用于给资源组网络连接添加路由。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDatasourceConnectionRoutesRequest 请求对象
+     * @return SyncInvoker<CreateDatasourceConnectionRoutesRequest, CreateDatasourceConnectionRoutesResponse>
+     */
+    public SyncInvoker<CreateDatasourceConnectionRoutesRequest, CreateDatasourceConnectionRoutesResponse> createDatasourceConnectionRoutesInvoker(
+        CreateDatasourceConnectionRoutesRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.createDatasourceConnectionRoutes, hcClient);
     }
 
     /**
@@ -2548,7 +2724,7 @@ public class DataArtsStudioClient {
     /**
      * 创建补数据实例
      *
-     * 创建补数据实例
+     * 创建一个补数据实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2563,7 +2739,7 @@ public class DataArtsStudioClient {
     /**
      * 创建补数据实例
      *
-     * 创建补数据实例
+     * 创建一个补数据实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3595,6 +3771,65 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 删除资源组网络连接
+     *
+     * 该API用于删除已创建的DLI资源组网络连接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDatasourceConnectionRequest 请求对象
+     * @return DeleteDatasourceConnectionResponse
+     */
+    public DeleteDatasourceConnectionResponse deleteDatasourceConnection(DeleteDatasourceConnectionRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.deleteDatasourceConnection);
+    }
+
+    /**
+     * 删除资源组网络连接
+     *
+     * 该API用于删除已创建的DLI资源组网络连接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDatasourceConnectionRequest 请求对象
+     * @return SyncInvoker<DeleteDatasourceConnectionRequest, DeleteDatasourceConnectionResponse>
+     */
+    public SyncInvoker<DeleteDatasourceConnectionRequest, DeleteDatasourceConnectionResponse> deleteDatasourceConnectionInvoker(
+        DeleteDatasourceConnectionRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.deleteDatasourceConnection, hcClient);
+    }
+
+    /**
+     * 删除路由
+     *
+     * 该API用于删除资源组网络连接添加的路由。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDatasourceConnectionRoutesRequest 请求对象
+     * @return DeleteDatasourceConnectionRoutesResponse
+     */
+    public DeleteDatasourceConnectionRoutesResponse deleteDatasourceConnectionRoutes(
+        DeleteDatasourceConnectionRoutesRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.deleteDatasourceConnectionRoutes);
+    }
+
+    /**
+     * 删除路由
+     *
+     * 该API用于删除资源组网络连接添加的路由。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDatasourceConnectionRoutesRequest 请求对象
+     * @return SyncInvoker<DeleteDatasourceConnectionRoutesRequest, DeleteDatasourceConnectionRoutesResponse>
+     */
+    public SyncInvoker<DeleteDatasourceConnectionRoutesRequest, DeleteDatasourceConnectionRoutesResponse> deleteDatasourceConnectionRoutesInvoker(
+        DeleteDatasourceConnectionRoutesRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.deleteDatasourceConnectionRoutes, hcClient);
+    }
+
+    /**
      * 删除汇总表
      *
      * 批量删除汇总表，只能删除状态为草稿、已线下、已驳回的表。
@@ -4327,7 +4562,7 @@ public class DataArtsStudioClient {
     /**
      * 发布任务包
      *
-     * 发布任务包
+     * 目前支持发布包管理中相关包的发布，支持发布多个任务包。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4341,7 +4576,7 @@ public class DataArtsStudioClient {
     /**
      * 发布任务包
      *
-     * 发布任务包
+     * 目前支持发布包管理中相关包的发布，支持发布多个任务包。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4351,6 +4586,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<DeployFactoryPackagesRequest, DeployFactoryPackagesResponse> deployFactoryPackagesInvoker(
         DeployFactoryPackagesRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.deployFactoryPackages, hcClient);
+    }
+
+    /**
+     * 下载实时处理集成作业日志
+     *
+     * 获取range范围的日志内容，最多10MB。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadTaskLogRequest 请求对象
+     * @return DownloadTaskLogResponse
+     */
+    public DownloadTaskLogResponse downloadTaskLog(DownloadTaskLogRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.downloadTaskLog);
+    }
+
+    /**
+     * 下载实时处理集成作业日志
+     *
+     * 获取range范围的日志内容，最多10MB。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadTaskLogRequest 请求对象
+     * @return SyncInvoker<DownloadTaskLogRequest, DownloadTaskLogResponse>
+     */
+    public SyncInvoker<DownloadTaskLogRequest, DownloadTaskLogResponse> downloadTaskLogInvoker(
+        DownloadTaskLogRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.downloadTaskLog, hcClient);
     }
 
     /**
@@ -5648,6 +5912,35 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 查询资源组网络连接列表
+     *
+     * 该API用于查询该用户已创建的DLI资源组网络连接列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatasourceConnectionsRequest 请求对象
+     * @return ListDatasourceConnectionsResponse
+     */
+    public ListDatasourceConnectionsResponse listDatasourceConnections(ListDatasourceConnectionsRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.listDatasourceConnections);
+    }
+
+    /**
+     * 查询资源组网络连接列表
+     *
+     * 该API用于查询该用户已创建的DLI资源组网络连接列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatasourceConnectionsRequest 请求对象
+     * @return SyncInvoker<ListDatasourceConnectionsRequest, ListDatasourceConnectionsResponse>
+     */
+    public SyncInvoker<ListDatasourceConnectionsRequest, ListDatasourceConnectionsResponse> listDatasourceConnectionsInvoker(
+        ListDatasourceConnectionsRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.listDatasourceConnections, hcClient);
+    }
+
+    /**
      * 查找衍生指标
      *
      * 通过中英文名称、创建者、审核人、状态、修改时间、l3Id分页查找衍生指标信息。
@@ -5882,7 +6175,7 @@ public class DataArtsStudioClient {
     /**
      * 查询告警通知记录
      *
-     * 查询告警通知记录
+     * 此接口可以查询指定时间段内的告警通知记录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5896,7 +6189,7 @@ public class DataArtsStudioClient {
     /**
      * 查询告警通知记录
      *
-     * 查询告警通知记录
+     * 此接口可以查询指定时间段内的告警通知记录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5940,7 +6233,7 @@ public class DataArtsStudioClient {
     /**
      * 查询指定作业的实例列表
      *
-     * 查询指定作业的实例列表
+     * 根据作业名称精确查询作业实例列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5955,7 +6248,7 @@ public class DataArtsStudioClient {
     /**
      * 查询指定作业的实例列表
      *
-     * 查询指定作业的实例列表
+     * 根据作业名称精确查询作业实例列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6028,7 +6321,7 @@ public class DataArtsStudioClient {
     /**
      * 查询发布包列表
      *
-     * 查询发布包列表
+     * 用于查询发布包的列表信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6042,7 +6335,7 @@ public class DataArtsStudioClient {
     /**
      * 查询发布包列表
      *
-     * 查询发布包列表
+     * 用于查询发布包的列表信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6116,7 +6409,7 @@ public class DataArtsStudioClient {
     /**
      * 查询任务完成情况
      *
-     * 查询任务完成情况
+     * 查询任务完成情况。包括今天，昨天以及近7天的平均任务完成情况。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6130,7 +6423,7 @@ public class DataArtsStudioClient {
     /**
      * 查询任务完成情况
      *
-     * 查询任务完成情况
+     * 查询任务完成情况。包括今天，昨天以及近7天的平均任务完成情况。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6145,7 +6438,7 @@ public class DataArtsStudioClient {
     /**
      * 查询实例运行状态
      *
-     * 查询实例运行状态
+     * 此接口可以查询实例运行状态，包括当天、昨天、前天以及近7天的实例状态情况。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6159,7 +6452,7 @@ public class DataArtsStudioClient {
     /**
      * 查询实例运行状态
      *
-     * 查询实例运行状态
+     * 此接口可以查询实例运行状态，包括当天、昨天、前天以及近7天的实例状态情况。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7376,9 +7669,37 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 查询实时处理集成作业日志列表
+     *
+     * 查询实时处理集成作业日志列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTaskLogsRequest 请求对象
+     * @return ListTaskLogsResponse
+     */
+    public ListTaskLogsResponse listTaskLogs(ListTaskLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.listTaskLogs);
+    }
+
+    /**
+     * 查询实时处理集成作业日志列表
+     *
+     * 查询实时处理集成作业日志列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTaskLogsRequest 请求对象
+     * @return SyncInvoker<ListTaskLogsRequest, ListTaskLogsResponse>
+     */
+    public SyncInvoker<ListTaskLogsRequest, ListTaskLogsResponse> listTaskLogsInvoker(ListTaskLogsRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.listTaskLogs, hcClient);
+    }
+
+    /**
      * 查询单表的作业表引用详情
      *
-     * 根据表名查询该表被哪些作业引用的详细信息，支持按输入输出类型、工作空间等条件筛选。
+     * 查询表被作业（调度中）引用详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7393,7 +7714,7 @@ public class DataArtsStudioClient {
     /**
      * 查询单表的作业表引用详情
      *
-     * 根据表名查询该表被哪些作业引用的详细信息，支持按输入输出类型、工作空间等条件筛选。
+     * 查询表被作业（调度中）引用详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7816,7 +8137,7 @@ public class DataArtsStudioClient {
     /**
      * 重跑作业实例
      *
-     * 支持重跑作业实例以及上下游的作业实例。
+     * 支持重跑作业实例以及上下游的作业实例。该接口功能处于邀测阶段，后续将随功能公测逐步开放。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7830,7 +8151,7 @@ public class DataArtsStudioClient {
     /**
      * 重跑作业实例
      *
-     * 支持重跑作业实例以及上下游的作业实例。
+     * 支持重跑作业实例以及上下游的作业实例。该接口功能处于邀测阶段，后续将随功能公测逐步开放。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8337,6 +8658,7 @@ public class DataArtsStudioClient {
     /**
      * 设置作业标签
      *
+     * 此接口可以设置作业标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8350,6 +8672,7 @@ public class DataArtsStudioClient {
     /**
      * 设置作业标签
      *
+     * 此接口可以设置作业标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -9175,6 +9498,35 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 查询资源组网络连接
+     *
+     * 该API用于查询该用户已创建的DLI资源组网络连接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDatasourceConnectionRequest 请求对象
+     * @return ShowDatasourceConnectionResponse
+     */
+    public ShowDatasourceConnectionResponse showDatasourceConnection(ShowDatasourceConnectionRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.showDatasourceConnection);
+    }
+
+    /**
+     * 查询资源组网络连接
+     *
+     * 该API用于查询该用户已创建的DLI资源组网络连接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDatasourceConnectionRequest 请求对象
+     * @return SyncInvoker<ShowDatasourceConnectionRequest, ShowDatasourceConnectionResponse>
+     */
+    public SyncInvoker<ShowDatasourceConnectionRequest, ShowDatasourceConnectionResponse> showDatasourceConnectionInvoker(
+        ShowDatasourceConnectionRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.showDatasourceConnection, hcClient);
+    }
+
+    /**
      * 查看衍生指标详情
      *
      * 通过ID获取衍生详情信息。
@@ -9496,7 +9848,7 @@ public class DataArtsStudioClient {
     /**
      * 查询指定发布包详情
      *
-     * 查询指定发布包详情
+     * 用于查询指定的发布包详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -9510,7 +9862,7 @@ public class DataArtsStudioClient {
     /**
      * 查询指定发布包详情
      *
-     * 查询指定发布包详情
+     * 用于查询指定的发布包详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -9525,7 +9877,7 @@ public class DataArtsStudioClient {
     /**
      * 查询补数据实例
      *
-     * 查询补数据实例
+     * 查询补数据实例列表，支持分页查询。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -9539,7 +9891,7 @@ public class DataArtsStudioClient {
     /**
      * 查询补数据实例
      *
-     * 查询补数据实例
+     * 查询补数据实例列表，支持分页查询。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -9665,6 +10017,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<ShowInstanceResultRequest, ShowInstanceResultResponse> showInstanceResultInvoker(
         ShowInstanceResultRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.showInstanceResult, hcClient);
+    }
+
+    /**
+     * 查询实时处理集成作业监控指标
+     *
+     * 查询实时处理集成作业的子任务监控指标结果，包括各子任务的吞吐量、延迟等运行指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowJobMonitorInfoRequest 请求对象
+     * @return ShowJobMonitorInfoResponse
+     */
+    public ShowJobMonitorInfoResponse showJobMonitorInfo(ShowJobMonitorInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.showJobMonitorInfo);
+    }
+
+    /**
+     * 查询实时处理集成作业监控指标
+     *
+     * 查询实时处理集成作业的子任务监控指标结果，包括各子任务的吞吐量、延迟等运行指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowJobMonitorInfoRequest 请求对象
+     * @return SyncInvoker<ShowJobMonitorInfoRequest, ShowJobMonitorInfoResponse>
+     */
+    public SyncInvoker<ShowJobMonitorInfoRequest, ShowJobMonitorInfoResponse> showJobMonitorInfoInvoker(
+        ShowJobMonitorInfoRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.showJobMonitorInfo, hcClient);
     }
 
     /**
@@ -9953,6 +10334,37 @@ public class DataArtsStudioClient {
      */
     public SyncInvoker<ShowQueuesRequest, ShowQueuesResponse> showQueuesInvoker(ShowQueuesRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.showQueues, hcClient);
+    }
+
+    /**
+     * 查询实时作业详情
+     *
+     * 查询实时作业的详细监控信息，包括作业运行状态、引擎版本、追踪URL及各子任务详情。
+     * 仅支持一键入湖（OneClickCDC）类型的实时作业。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRealTimeJobDetailsRequest 请求对象
+     * @return ShowRealTimeJobDetailsResponse
+     */
+    public ShowRealTimeJobDetailsResponse showRealTimeJobDetails(ShowRealTimeJobDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.showRealTimeJobDetails);
+    }
+
+    /**
+     * 查询实时作业详情
+     *
+     * 查询实时作业的详细监控信息，包括作业运行状态、引擎版本、追踪URL及各子任务详情。
+     * 仅支持一键入湖（OneClickCDC）类型的实时作业。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRealTimeJobDetailsRequest 请求对象
+     * @return SyncInvoker<ShowRealTimeJobDetailsRequest, ShowRealTimeJobDetailsResponse>
+     */
+    public SyncInvoker<ShowRealTimeJobDetailsRequest, ShowRealTimeJobDetailsResponse> showRealTimeJobDetailsInvoker(
+        ShowRealTimeJobDetailsRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.showRealTimeJobDetails, hcClient);
     }
 
     /**
@@ -10687,7 +11099,7 @@ public class DataArtsStudioClient {
     /**
      * 停止补数据实例
      *
-     * 停止补数据实例
+     * 停止指定的补数据实例。只有补数据实例的状态是运行中，才能停止补数据实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -10702,7 +11114,7 @@ public class DataArtsStudioClient {
     /**
      * 停止补数据实例
      *
-     * 停止补数据实例
+     * 停止指定的补数据实例。只有补数据实例的状态是运行中，才能停止补数据实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -10977,6 +11389,36 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 修改资源组网络连接的主机信息
+     *
+     * 该API用于在DLI资源组网络连接中修改数据源主机信息，仅支持全量覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDatasourceConnectionHostMessageRequest 请求对象
+     * @return UpdateDatasourceConnectionHostMessageResponse
+     */
+    public UpdateDatasourceConnectionHostMessageResponse updateDatasourceConnectionHostMessage(
+        UpdateDatasourceConnectionHostMessageRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.updateDatasourceConnectionHostMessage);
+    }
+
+    /**
+     * 修改资源组网络连接的主机信息
+     *
+     * 该API用于在DLI资源组网络连接中修改数据源主机信息，仅支持全量覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDatasourceConnectionHostMessageRequest 请求对象
+     * @return SyncInvoker<UpdateDatasourceConnectionHostMessageRequest, UpdateDatasourceConnectionHostMessageResponse>
+     */
+    public SyncInvoker<UpdateDatasourceConnectionHostMessageRequest, UpdateDatasourceConnectionHostMessageResponse> updateDatasourceConnectionHostMessageInvoker(
+        UpdateDatasourceConnectionHostMessageRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.updateDatasourceConnectionHostMessage, hcClient);
+    }
+
+    /**
      * 更新汇总表
      *
      * 更新汇总表。
@@ -11241,7 +11683,7 @@ public class DataArtsStudioClient {
     /**
      * 修改作业名称
      *
-     * 修改作业名称
+     * 对作业名称进行重命名操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -11255,7 +11697,7 @@ public class DataArtsStudioClient {
     /**
      * 修改作业名称
      *
-     * 修改作业名称
+     * 对作业名称进行重命名操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -11824,6 +12266,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<UpdateTemplateRequest, UpdateTemplateResponse> updateTemplateInvoker(
         UpdateTemplateRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.updateTemplate, hcClient);
+    }
+
+    /**
+     * 修改工作空间
+     *
+     * 修改工作空间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWorkSpaceOldRequest 请求对象
+     * @return UpdateWorkSpaceOldResponse
+     */
+    public UpdateWorkSpaceOldResponse updateWorkSpaceOld(UpdateWorkSpaceOldRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.updateWorkSpaceOld);
+    }
+
+    /**
+     * 修改工作空间
+     *
+     * 修改工作空间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWorkSpaceOldRequest 请求对象
+     * @return SyncInvoker<UpdateWorkSpaceOldRequest, UpdateWorkSpaceOldResponse>
+     */
+    public SyncInvoker<UpdateWorkSpaceOldRequest, UpdateWorkSpaceOldResponse> updateWorkSpaceOldInvoker(
+        UpdateWorkSpaceOldRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.updateWorkSpaceOld, hcClient);
     }
 
     /**

@@ -22,7 +22,7 @@ public class CreateDiskSpaceDiagnosisResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：   下发结果。  **约束限制**：   不涉及。  **取值范围**：  - success 代表后台开始诊断。  **默认取值**：   不涉及。
+     * **参数解释**：  下发结果。  **约束限制**：  不涉及。  **取值范围**：  - success 代表后台开始诊断。  **默认取值**：  不涉及。
      * @return result
      */
     public String getResult() {

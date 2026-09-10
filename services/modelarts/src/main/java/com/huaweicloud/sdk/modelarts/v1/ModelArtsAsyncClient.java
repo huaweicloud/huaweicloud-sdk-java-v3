@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.modelarts.v1.model.AcceptScheduledEventRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.AcceptScheduledEventResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.AttachDevServerPortRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.AttachDevServerPortResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.AttachDevServerVolumeRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.AttachDevServerVolumeResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.AttachDynamicStorageRequest;
@@ -201,6 +203,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowSubscriptionRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowSubscriptionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkspaceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DetachDevServerPortRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DetachDevServerPortResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DetachDevServerVolumeRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DetachDevServerVolumeResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DetachDynamicStorageRequest;
@@ -339,6 +343,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsByTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsByTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListUsersRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListUsersResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowExecutionsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowExecutionsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowStepExecutionRequest;
@@ -623,6 +629,35 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<AcceptScheduledEventRequest, AcceptScheduledEventResponse> acceptScheduledEventAsyncInvoker(
         AcceptScheduledEventRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.acceptScheduledEvent, hcClient);
+    }
+
+    /**
+     * Lite Server服务器挂载网卡
+     *
+     * Lite Server服务器挂载网卡
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AttachDevServerPortRequest 请求对象
+     * @return CompletableFuture<AttachDevServerPortResponse>
+     */
+    public CompletableFuture<AttachDevServerPortResponse> attachDevServerPortAsync(AttachDevServerPortRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.attachDevServerPort);
+    }
+
+    /**
+     * Lite Server服务器挂载网卡
+     *
+     * Lite Server服务器挂载网卡
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AttachDevServerPortRequest 请求对象
+     * @return AsyncInvoker<AttachDevServerPortRequest, AttachDevServerPortResponse>
+     */
+    public AsyncInvoker<AttachDevServerPortRequest, AttachDevServerPortResponse> attachDevServerPortAsyncInvoker(
+        AttachDevServerPortRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.attachDevServerPort, hcClient);
     }
 
     /**
@@ -2969,6 +3004,35 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * Lite Server服务器卸载网卡
+     *
+     * Lite Server服务器卸载网卡接口用于从服务器中移除指定的网络接口卡。该接口适用于以下场景：当服务器需要进行硬件维护、资源回收或网络配置调整时，用户可通过此接口卸载不再使用的网卡设备。使用该接口的前提条件是目标网卡已正确安装并处于可操作状态，且用户具有系统管理员权限。卸载操作完成后，网卡将从服务器配置中移除，相关驱动和网络参数也将被清除。若目标网卡不存在、用户权限不足或服务器处于运行状态，接口将返回对应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DetachDevServerPortRequest 请求对象
+     * @return CompletableFuture<DetachDevServerPortResponse>
+     */
+    public CompletableFuture<DetachDevServerPortResponse> detachDevServerPortAsync(DetachDevServerPortRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.detachDevServerPort);
+    }
+
+    /**
+     * Lite Server服务器卸载网卡
+     *
+     * Lite Server服务器卸载网卡接口用于从服务器中移除指定的网络接口卡。该接口适用于以下场景：当服务器需要进行硬件维护、资源回收或网络配置调整时，用户可通过此接口卸载不再使用的网卡设备。使用该接口的前提条件是目标网卡已正确安装并处于可操作状态，且用户具有系统管理员权限。卸载操作完成后，网卡将从服务器配置中移除，相关驱动和网络参数也将被清除。若目标网卡不存在、用户权限不足或服务器处于运行状态，接口将返回对应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DetachDevServerPortRequest 请求对象
+     * @return AsyncInvoker<DetachDevServerPortRequest, DetachDevServerPortResponse>
+     */
+    public AsyncInvoker<DetachDevServerPortRequest, DetachDevServerPortResponse> detachDevServerPortAsyncInvoker(
+        DetachDevServerPortRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.detachDevServerPort, hcClient);
+    }
+
+    /**
      * Lite Server服务器卸载磁盘
      *
      * Lite Server服务器卸载磁盘接口用于从Lite Server服务器上卸载已挂载的磁盘。该接口适用于以下场景：当用户需要释放存储资源或重新分配磁盘时，可以通过此接口卸载指定的磁盘。使用该接口的前提条件是Lite Server服务器已创建且处于运行状态、或者停止状态，用户具有卸载磁盘的权限，且指定的磁盘已挂载到服务器上。卸载操作完成后，磁盘将从Lite Server服务器上成功卸载，用户可以将其挂载到其他服务器或进行其他操作。若Lite Server服务器不存在、指定的磁盘未挂载到服务器上，或用户无权限操作，接口将返回相应的错误信息。
@@ -4804,6 +4868,34 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<ListTrainingJobsByTagsRequest, ListTrainingJobsByTagsResponse> listTrainingJobsByTagsAsyncInvoker(
         ListTrainingJobsByTagsRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.listTrainingJobsByTags, hcClient);
+    }
+
+    /**
+     * 查询用户列表
+     *
+     * 查询用户列表接口用于获取系统中用户的列表信息。该接口适用于以下场景：当需要查看系统中所有用户或根据特定条件筛选用户时，管理员或系统可以通过此接口查询用户列表。使用该接口的前提条件是用户已存在且查询者具有相应的权限。查询操作完成后，接口将返回符合条件的用户列表；若系统中无用户或查询者无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUsersRequest 请求对象
+     * @return CompletableFuture<ListUsersResponse>
+     */
+    public CompletableFuture<ListUsersResponse> listUsersAsync(ListUsersRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listUsers);
+    }
+
+    /**
+     * 查询用户列表
+     *
+     * 查询用户列表接口用于获取系统中用户的列表信息。该接口适用于以下场景：当需要查看系统中所有用户或根据特定条件筛选用户时，管理员或系统可以通过此接口查询用户列表。使用该接口的前提条件是用户已存在且查询者具有相应的权限。查询操作完成后，接口将返回符合条件的用户列表；若系统中无用户或查询者无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUsersRequest 请求对象
+     * @return AsyncInvoker<ListUsersRequest, ListUsersResponse>
+     */
+    public AsyncInvoker<ListUsersRequest, ListUsersResponse> listUsersAsyncInvoker(ListUsersRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listUsers, hcClient);
     }
 
     /**

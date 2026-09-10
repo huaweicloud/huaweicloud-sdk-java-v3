@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -17,26 +14,10 @@ public class UnsubscribePostpaidVolumeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<UnsubscribeVolumeResponseBody> body = null;
+    private Object body;
 
-    public UnsubscribePostpaidVolumeResponse withBody(List<UnsubscribeVolumeResponseBody> body) {
+    public UnsubscribePostpaidVolumeResponse withBody(Object body) {
         this.body = body;
-        return this;
-    }
-
-    public UnsubscribePostpaidVolumeResponse addBodyItem(UnsubscribeVolumeResponseBody bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
-        this.body.add(bodyItem);
-        return this;
-    }
-
-    public UnsubscribePostpaidVolumeResponse withBody(Consumer<List<UnsubscribeVolumeResponseBody>> bodySetter) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
-        bodySetter.accept(this.body);
         return this;
     }
 
@@ -44,11 +25,11 @@ public class UnsubscribePostpaidVolumeResponse extends SdkResponse {
      * Get body
      * @return body
      */
-    public List<UnsubscribeVolumeResponseBody> getBody() {
+    public Object getBody() {
         return body;
     }
 
-    public void setBody(List<UnsubscribeVolumeResponseBody> body) {
+    public void setBody(Object body) {
         this.body = body;
     }
 
