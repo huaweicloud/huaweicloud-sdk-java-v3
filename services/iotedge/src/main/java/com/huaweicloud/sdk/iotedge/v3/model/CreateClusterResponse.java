@@ -37,6 +37,21 @@ public class CreateClusterResponse extends SdkResponse {
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_upgradeable")
+
+    private Boolean isUpgradeable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_type")
+
+    private String clusterType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_addr")
+
+    private String clusterAddr;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
@@ -45,11 +60,6 @@ public class CreateClusterResponse extends SdkResponse {
     @JsonProperty(value = "update_time")
 
     private String updateTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_upgradeable")
-
-    private Boolean isUpgradeable;
 
     public CreateClusterResponse withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -136,6 +146,57 @@ public class CreateClusterResponse extends SdkResponse {
         this.state = state;
     }
 
+    public CreateClusterResponse withIsUpgradeable(Boolean isUpgradeable) {
+        this.isUpgradeable = isUpgradeable;
+        return this;
+    }
+
+    /**
+     * 是否可升级
+     * @return isUpgradeable
+     */
+    public Boolean getIsUpgradeable() {
+        return isUpgradeable;
+    }
+
+    public void setIsUpgradeable(Boolean isUpgradeable) {
+        this.isUpgradeable = isUpgradeable;
+    }
+
+    public CreateClusterResponse withClusterType(String clusterType) {
+        this.clusterType = clusterType;
+        return this;
+    }
+
+    /**
+     * 集群类型
+     * @return clusterType
+     */
+    public String getClusterType() {
+        return clusterType;
+    }
+
+    public void setClusterType(String clusterType) {
+        this.clusterType = clusterType;
+    }
+
+    public CreateClusterResponse withClusterAddr(String clusterAddr) {
+        this.clusterAddr = clusterAddr;
+        return this;
+    }
+
+    /**
+     * 集群地址
+     * @return clusterAddr
+     */
+    public String getClusterAddr() {
+        return clusterAddr;
+    }
+
+    public void setClusterAddr(String clusterAddr) {
+        this.clusterAddr = clusterAddr;
+    }
+
     public CreateClusterResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -170,23 +231,6 @@ public class CreateClusterResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    public CreateClusterResponse withIsUpgradeable(Boolean isUpgradeable) {
-        this.isUpgradeable = isUpgradeable;
-        return this;
-    }
-
-    /**
-     * 是否可升级
-     * @return isUpgradeable
-     */
-    public Boolean getIsUpgradeable() {
-        return isUpgradeable;
-    }
-
-    public void setIsUpgradeable(Boolean isUpgradeable) {
-        this.isUpgradeable = isUpgradeable;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -198,14 +242,23 @@ public class CreateClusterResponse extends SdkResponse {
         CreateClusterResponse that = (CreateClusterResponse) obj;
         return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.clusterName, that.clusterName)
             && Objects.equals(this.description, that.description) && Objects.equals(this.version, that.version)
-            && Objects.equals(this.state, that.state) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.isUpgradeable, that.isUpgradeable);
+            && Objects.equals(this.state, that.state) && Objects.equals(this.isUpgradeable, that.isUpgradeable)
+            && Objects.equals(this.clusterType, that.clusterType) && Objects.equals(this.clusterAddr, that.clusterAddr)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, clusterName, description, version, state, createTime, updateTime, isUpgradeable);
+        return Objects.hash(clusterId,
+            clusterName,
+            description,
+            version,
+            state,
+            isUpgradeable,
+            clusterType,
+            clusterAddr,
+            createTime,
+            updateTime);
     }
 
     @Override
@@ -217,9 +270,11 @@ public class CreateClusterResponse extends SdkResponse {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    isUpgradeable: ").append(toIndentedString(isUpgradeable)).append("\n");
+        sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");
+        sb.append("    clusterAddr: ").append(toIndentedString(clusterAddr)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
-        sb.append("    isUpgradeable: ").append(toIndentedString(isUpgradeable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

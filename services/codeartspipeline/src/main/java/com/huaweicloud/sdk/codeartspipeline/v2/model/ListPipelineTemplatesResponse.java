@@ -17,24 +17,24 @@ public class ListPipelineTemplatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private Integer offset;
+    private Long offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private Integer limit;
+    private Long limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
-    private Integer total;
+    private Long total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "templates")
 
     private List<PipelineTemplateSimpleVO> templates = null;
 
-    public ListPipelineTemplatesResponse withOffset(Integer offset) {
+    public ListPipelineTemplatesResponse withOffset(Long offset) {
         this.offset = offset;
         return this;
     }
@@ -43,15 +43,15 @@ public class ListPipelineTemplatesResponse extends SdkResponse {
      * **参数解释**： 起始偏移。 **取值范围**： 不涉及。 
      * @return offset
      */
-    public Integer getOffset() {
+    public Long getOffset() {
         return offset;
     }
 
-    public void setOffset(Integer offset) {
+    public void setOffset(Long offset) {
         this.offset = offset;
     }
 
-    public ListPipelineTemplatesResponse withLimit(Integer limit) {
+    public ListPipelineTemplatesResponse withLimit(Long limit) {
         this.limit = limit;
         return this;
     }
@@ -60,15 +60,15 @@ public class ListPipelineTemplatesResponse extends SdkResponse {
      * **参数解释**： 查询大小。 **取值范围**： 不涉及。 
      * @return limit
      */
-    public Integer getLimit() {
+    public Long getLimit() {
         return limit;
     }
 
-    public void setLimit(Integer limit) {
+    public void setLimit(Long limit) {
         this.limit = limit;
     }
 
-    public ListPipelineTemplatesResponse withTotal(Integer total) {
+    public ListPipelineTemplatesResponse withTotal(Long total) {
         this.total = total;
         return this;
     }
@@ -77,11 +77,11 @@ public class ListPipelineTemplatesResponse extends SdkResponse {
      * **参数解释**： 记录总数。 **取值范围**： 不涉及。 
      * @return total
      */
-    public Integer getTotal() {
+    public Long getTotal() {
         return total;
     }
 
-    public void setTotal(Integer total) {
+    public void setTotal(Long total) {
         this.total = total;
     }
 

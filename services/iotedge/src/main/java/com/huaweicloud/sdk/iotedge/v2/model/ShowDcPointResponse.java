@@ -53,6 +53,11 @@ public class ShowDcPointResponse extends SdkResponse {
     private ProcessingConfigDTO processingConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "active")
+
+    private Boolean active;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
@@ -207,6 +212,23 @@ public class ShowDcPointResponse extends SdkResponse {
         this.processingConfig = processingConfig;
     }
 
+    public ShowDcPointResponse withActive(Boolean active) {
+        this.active = active;
+        return this;
+    }
+
+    /**
+     * 点位启停状态
+     * @return active
+     */
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
     public ShowDcPointResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -254,7 +276,7 @@ public class ShowDcPointResponse extends SdkResponse {
             && Objects.equals(this.collectionConfig, that.collectionConfig)
             && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.property, that.property)
             && Objects.equals(this.dataType, that.dataType) && Objects.equals(this.dsId, that.dsId)
-            && Objects.equals(this.processingConfig, that.processingConfig)
+            && Objects.equals(this.processingConfig, that.processingConfig) && Objects.equals(this.active, that.active)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
@@ -268,6 +290,7 @@ public class ShowDcPointResponse extends SdkResponse {
             dataType,
             dsId,
             processingConfig,
+            active,
             createTime,
             updateTime);
     }
@@ -284,6 +307,7 @@ public class ShowDcPointResponse extends SdkResponse {
         sb.append("    dataType: ").append(toIndentedString(dataType)).append("\n");
         sb.append("    dsId: ").append(toIndentedString(dsId)).append("\n");
         sb.append("    processingConfig: ").append(toIndentedString(processingConfig)).append("\n");
+        sb.append("    active: ").append(toIndentedString(active)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");

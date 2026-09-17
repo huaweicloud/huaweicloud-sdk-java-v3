@@ -45,7 +45,7 @@ public class ListAutopilotClusterMasterSnapshotTasksResponse extends SdkResponse
     }
 
     /**
-     * api版本，默认为v3.1
+     * **参数解释：** API版本，默认为v3.1 **约束限制：** 不涉及 **取值范围：** - v3.1  **默认取值：** v3.1 
      * @return apiVersion
      */
     public String getApiVersion() {
@@ -62,7 +62,7 @@ public class ListAutopilotClusterMasterSnapshotTasksResponse extends SdkResponse
     }
 
     /**
-     * 任务类型
+     * **参数解释：** 任务类型 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return kind
      */
     public String getKind() {
@@ -121,7 +121,7 @@ public class ListAutopilotClusterMasterSnapshotTasksResponse extends SdkResponse
     }
 
     /**
-     * 备份任务列表
+     * **参数解释：** 备份任务列表 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return items
      */
     public List<SnapshotTask> getItems() {

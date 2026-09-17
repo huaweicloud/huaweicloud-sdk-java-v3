@@ -92,7 +92,7 @@ public class ListDatabaseUsersRequest {
     }
 
     /**
-     * **参数解释**： 查询角色还是用户。 **约束限制**： 不涉及。 **取值范围**： ROLE：表示查询所有角色。  USER：表示查询所有用户。 **默认取值**： 不涉及。
+     * **参数解释**： 查询角色还是用户。 **约束限制**： 不涉及。 **取值范围**： ROLE：表示查询所有角色。 USER：表示查询所有用户。 **默认取值**： 不涉及。
      * @return type
      */
     public String getType() {
@@ -109,7 +109,7 @@ public class ListDatabaseUsersRequest {
     }
 
     /**
-     * **参数解释**： 用户类型，COMMON、IAM或者OneAccess。 **约束限制**： 不涉及。 **取值范围**： COMMON：表示普通数据库用户。  IAM：表示IAM同步的数据库用户。 OneAccess: 表示OneAccess用户。 **默认取值**： 不涉及。
+     * **参数解释**： 用户类型，COMMON、IAM或者OneAccess。 **约束限制**： 不涉及。 **取值范围**： COMMON：表示普通数据库用户。 IAM：表示IAM同步的数据库用户。 OneAccess: 表示OneAccess用户。 **默认取值**： 不涉及。
      * @return userType
      */
     public String getUserType() {

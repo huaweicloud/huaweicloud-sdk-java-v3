@@ -11,9 +11,55 @@ import java.util.Objects;
 public class UpdateOfflineCacheConfigsDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publish_order")
+
+    private String publishOrder;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "period")
+
+    private Integer period;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "capacity")
 
     private Integer capacity;
+
+    public UpdateOfflineCacheConfigsDTO withPublishOrder(String publishOrder) {
+        this.publishOrder = publishOrder;
+        return this;
+    }
+
+    /**
+     * 数据上报优先级，可选项：realtime_first实时数据优先sequential按时序上报，默认realtime_first
+     * @return publishOrder
+     */
+    public String getPublishOrder() {
+        return publishOrder;
+    }
+
+    public void setPublishOrder(String publishOrder) {
+        this.publishOrder = publishOrder;
+    }
+
+    public UpdateOfflineCacheConfigsDTO withPeriod(Integer period) {
+        this.period = period;
+        return this;
+    }
+
+    /**
+     * 节点离线缓存数据的储存天数，默认7，取值范围-1~14，-1表示存储天数没有限制
+     * minimum: -1
+     * maximum: 14
+     * @return period
+     */
+    public Integer getPeriod() {
+        return period;
+    }
+
+    public void setPeriod(Integer period) {
+        this.period = period;
+    }
 
     public UpdateOfflineCacheConfigsDTO withCapacity(Integer capacity) {
         this.capacity = capacity;
@@ -21,9 +67,9 @@ public class UpdateOfflineCacheConfigsDTO {
     }
 
     /**
-     * 节点离线缓存容量，单位MB，默认2048，取值范围500-65536
+     * 节点离线缓存容量，单位MB，默认2048，取值范围500-1048576
      * minimum: 500
-     * maximum: 65536
+     * maximum: 1048576
      * @return capacity
      */
     public Integer getCapacity() {
@@ -43,18 +89,21 @@ public class UpdateOfflineCacheConfigsDTO {
             return false;
         }
         UpdateOfflineCacheConfigsDTO that = (UpdateOfflineCacheConfigsDTO) obj;
-        return Objects.equals(this.capacity, that.capacity);
+        return Objects.equals(this.publishOrder, that.publishOrder) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.capacity, that.capacity);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(capacity);
+        return Objects.hash(publishOrder, period, capacity);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateOfflineCacheConfigsDTO {\n");
+        sb.append("    publishOrder: ").append(toIndentedString(publishOrder)).append("\n");
+        sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
         sb.append("}");
         return sb.toString();

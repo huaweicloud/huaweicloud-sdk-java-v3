@@ -40,7 +40,7 @@ public class ListClusterUpgradeFeatureGatesResponse extends SdkResponse {
     }
 
     /**
-     * API版本
+     * **参数解释：** API版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return apiVersion
      */
     public String getApiVersion() {
@@ -57,7 +57,7 @@ public class ListClusterUpgradeFeatureGatesResponse extends SdkResponse {
     }
 
     /**
-     * 资源类型
+     * **参数解释：** 资源类型 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return kind
      */
     public String getKind() {
@@ -118,7 +118,7 @@ public class ListClusterUpgradeFeatureGatesResponse extends SdkResponse {
     }
 
     /**
-     * 特性开关信息,格式为key/value键值对。 - Key: 目前有下列值：DisplayPreCheckDetail(展示所有集群升级前检查项详情),EvsSnapshot(使用EVS快照备份集群), LabelForSkippedNode(支持为集群升级过程中跳过的节点打标签), UpgradeStrategy(集群升级策略) - Value: Support 支持,Disable 关闭,Default 使用CCE服务默认规则判断
+     * **参数解释：** 特性开关信息,格式为key/value键值对。 - Key: 目前有下列值：DisplayPreCheckDetail(展示所有集群升级前检查项详情),EvsSnapshot(使用EVS快照备份集群), LabelForSkippedNode(支持为集群升级过程中跳过的节点打标签), UpgradeStrategy(集群升级策略) - Value: Support 支持,Disable 关闭,Default 使用CCE服务默认规则判断  **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return upgradeFeatureGates
      */
     public Map<String, String> getUpgradeFeatureGates() {

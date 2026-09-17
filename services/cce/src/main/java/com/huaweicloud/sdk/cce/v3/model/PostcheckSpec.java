@@ -31,7 +31,7 @@ public class PostcheckSpec {
     }
 
     /**
-     * 集群ID
+     * **参数解释：** 集群ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return clusterID
      */
     public String getClusterID() {
@@ -48,7 +48,7 @@ public class PostcheckSpec {
     }
 
     /**
-     * 集群升级源版本
+     * **参数解释：** 升级前的集群版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return clusterVersion
      */
     public String getClusterVersion() {
@@ -65,7 +65,7 @@ public class PostcheckSpec {
     }
 
     /**
-     * 集群升级目标版本
+     * **参数解释：** 当前集群版本 **约束限制：** 不涉及 **取值范围：** CCE支持的集群版本 **默认取值：** 不涉及
      * @return targetVersion
      */
     public String getTargetVersion() {

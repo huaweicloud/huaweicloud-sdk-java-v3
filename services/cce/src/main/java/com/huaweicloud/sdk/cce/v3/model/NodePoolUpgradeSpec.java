@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 同步点池请求详细参数
+ * 同步节点池请求详细参数
  */
 public class NodePoolUpgradeSpec {
 
@@ -46,7 +46,7 @@ public class NodePoolUpgradeSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodeTemplate")
 
-    private NodeTemplate nodeTemplate;
+    private UpgradeNodePoolSpecNodeTemplate nodeTemplate;
 
     public NodePoolUpgradeSpec withMaxUnavailable(Integer maxUnavailable) {
         this.maxUnavailable = maxUnavailable;
@@ -184,14 +184,14 @@ public class NodePoolUpgradeSpec {
         this.nodePoolID = nodePoolID;
     }
 
-    public NodePoolUpgradeSpec withNodeTemplate(NodeTemplate nodeTemplate) {
+    public NodePoolUpgradeSpec withNodeTemplate(UpgradeNodePoolSpecNodeTemplate nodeTemplate) {
         this.nodeTemplate = nodeTemplate;
         return this;
     }
 
-    public NodePoolUpgradeSpec withNodeTemplate(Consumer<NodeTemplate> nodeTemplateSetter) {
+    public NodePoolUpgradeSpec withNodeTemplate(Consumer<UpgradeNodePoolSpecNodeTemplate> nodeTemplateSetter) {
         if (this.nodeTemplate == null) {
-            this.nodeTemplate = new NodeTemplate();
+            this.nodeTemplate = new UpgradeNodePoolSpecNodeTemplate();
             nodeTemplateSetter.accept(this.nodeTemplate);
         }
 
@@ -202,11 +202,11 @@ public class NodePoolUpgradeSpec {
      * Get nodeTemplate
      * @return nodeTemplate
      */
-    public NodeTemplate getNodeTemplate() {
+    public UpgradeNodePoolSpecNodeTemplate getNodeTemplate() {
         return nodeTemplate;
     }
 
-    public void setNodeTemplate(NodeTemplate nodeTemplate) {
+    public void setNodeTemplate(UpgradeNodePoolSpecNodeTemplate nodeTemplate) {
         this.nodeTemplate = nodeTemplate;
     }
 

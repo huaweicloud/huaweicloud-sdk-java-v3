@@ -171,7 +171,7 @@ public class AlarmSubUpdateRequest {
     }
 
     /**
-     * **参数解释**：  语言。  **取值范围**：  不涉及。
+     * **参数解释**： 语言。 **取值范围**： 不涉及。
      * @return language
      */
     public String getLanguage() {

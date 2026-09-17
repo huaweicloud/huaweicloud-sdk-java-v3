@@ -1712,6 +1712,7 @@ public class DdsAsyncClient {
      * @param request ListErrorLogsRequest 请求对象
      * @return CompletableFuture<ListErrorLogsResponse>
      */
+    @Deprecated
     public CompletableFuture<ListErrorLogsResponse> listErrorLogsAsync(ListErrorLogsRequest request) {
         return hcClient.asyncInvokeHttp(request, DdsMeta.listErrorLogs);
     }
@@ -1726,6 +1727,7 @@ public class DdsAsyncClient {
      * @param request ListErrorLogsRequest 请求对象
      * @return AsyncInvoker<ListErrorLogsRequest, ListErrorLogsResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListErrorLogsRequest, ListErrorLogsResponse> listErrorLogsAsyncInvoker(
         ListErrorLogsRequest request) {
         return new AsyncInvoker<>(request, DdsMeta.listErrorLogs, hcClient);
@@ -1770,6 +1772,7 @@ public class DdsAsyncClient {
      * @param request ListFlavorsRequest 请求对象
      * @return CompletableFuture<ListFlavorsResponse>
      */
+    @Deprecated
     public CompletableFuture<ListFlavorsResponse> listFlavorsAsync(ListFlavorsRequest request) {
         return hcClient.asyncInvokeHttp(request, DdsMeta.listFlavors);
     }
@@ -1784,6 +1787,7 @@ public class DdsAsyncClient {
      * @param request ListFlavorsRequest 请求对象
      * @return AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsAsyncInvoker(ListFlavorsRequest request) {
         return new AsyncInvoker<>(request, DdsMeta.listFlavors, hcClient);
     }
@@ -2178,6 +2182,7 @@ public class DdsAsyncClient {
      * @param request ListSlowLogsRequest 请求对象
      * @return CompletableFuture<ListSlowLogsResponse>
      */
+    @Deprecated
     public CompletableFuture<ListSlowLogsResponse> listSlowLogsAsync(ListSlowLogsRequest request) {
         return hcClient.asyncInvokeHttp(request, DdsMeta.listSlowLogs);
     }
@@ -2192,6 +2197,7 @@ public class DdsAsyncClient {
      * @param request ListSlowLogsRequest 请求对象
      * @return AsyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse> listSlowLogsAsyncInvoker(
         ListSlowLogsRequest request) {
         return new AsyncInvoker<>(request, DdsMeta.listSlowLogs, hcClient);

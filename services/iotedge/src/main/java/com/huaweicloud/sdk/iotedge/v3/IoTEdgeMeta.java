@@ -16,9 +16,12 @@ import com.huaweicloud.sdk.iotedge.v3.model.CreateAppVersionRequestBody;
 import com.huaweicloud.sdk.iotedge.v3.model.CreateAppVersionResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.CreateClusterInstallCmdRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.CreateClusterInstallCmdResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.CreateClusterNodesInstallCmdRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.CreateClusterNodesInstallCmdResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.CreateClusterRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.CreateClusterRequestDTO;
 import com.huaweicloud.sdk.iotedge.v3.model.CreateClusterResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.CreateNodesInstallCmdV3RequestBody;
 import com.huaweicloud.sdk.iotedge.v3.model.DeleteAppInstanceRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.DeleteAppInstanceResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.DeleteAppRequest;
@@ -29,6 +32,8 @@ import com.huaweicloud.sdk.iotedge.v3.model.DeleteClusterRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.DeleteClusterResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.DownloadAppVersionRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.DownloadAppVersionResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.InvokeKubeApiRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.InvokeKubeApiResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.ListAppImageRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.ListAppImageResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.ListAppInstanceHistoryRequest;
@@ -39,17 +44,30 @@ import com.huaweicloud.sdk.iotedge.v3.model.ListAppVersionsRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.ListAppVersionsResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.ListAppsRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.ListAppsResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.ListClusterNamespacesRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.ListClusterNamespacesResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.ListClusterNodesRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.ListClusterNodesResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.ListClustersRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.ListClustersResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.ShowAppRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.ShowAppResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.ShowAppVersionRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.ShowAppVersionResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.ShowClusterNodeRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.ShowClusterNodeResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.ShowClusterRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.ShowClusterResourcesRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.ShowClusterResourcesResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.ShowClusterResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.UpdateAppInstanceRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.UpdateAppInstanceRequestDTO;
 import com.huaweicloud.sdk.iotedge.v3.model.UpdateAppInstanceResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.UpdateResourceBindingRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.UpdateResourceBindingResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.UpdateResourceBody;
+
+import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class IoTEdgeMeta {
@@ -94,11 +112,6 @@ public class IoTEdgeMeta {
             f -> f.withMarshaller(DeleteAppRequest::getAppId, DeleteAppRequest::setAppId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteAppResponse::getBody, DeleteAppResponse::setBody));
 
         return builder.build();
     }
@@ -225,11 +238,6 @@ public class IoTEdgeMeta {
             f -> f.withMarshaller(DeleteAppInstanceRequest::getNamespace, DeleteAppInstanceRequest::setNamespace));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteAppInstanceResponse::getBody, DeleteAppInstanceResponse::setBody));
 
         return builder.build();
     }
@@ -384,11 +392,6 @@ public class IoTEdgeMeta {
             f -> f.withMarshaller(DeleteAppVersionRequest::getVersion, DeleteAppVersionRequest::setVersion));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteAppVersionResponse::getBody, DeleteAppVersionResponse::setBody));
 
         return builder.build();
     }
@@ -600,11 +603,6 @@ public class IoTEdgeMeta {
             f -> f.withMarshaller(DeleteClusterRequest::getClusterId, DeleteClusterRequest::setClusterId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteClusterResponse::getBody, DeleteClusterResponse::setBody));
 
         return builder.build();
     }
@@ -630,6 +628,11 @@ public class IoTEdgeMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListClustersRequest::getState, ListClustersRequest::setState));
+        builder.<List<String>>withRequestField("cluster_ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListClustersRequest::getClusterIds, ListClustersRequest::setClusterIds));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -662,6 +665,210 @@ public class IoTEdgeMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowClusterRequest::getClusterId, ShowClusterRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClusterResourcesRequest, ShowClusterResourcesResponse> showClusterResources =
+        genForShowClusterResources();
+
+    private static HttpRequestDef<ShowClusterResourcesRequest, ShowClusterResourcesResponse> genForShowClusterResources() {
+        // basic
+        HttpRequestDef.Builder<ShowClusterResourcesRequest, ShowClusterResourcesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowClusterResourcesRequest.class, ShowClusterResourcesResponse.class)
+            .withName("ShowClusterResources")
+            .withUri("/v3/{project_id}/resources")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_group",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterResourcesRequest::getResourceGroup,
+                ShowClusterResourcesRequest::setResourceGroup));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowClusterResourcesRequest::getOffset, ShowClusterResourcesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowClusterResourcesRequest::getLimit, ShowClusterResourcesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateResourceBindingRequest, UpdateResourceBindingResponse> updateResourceBinding =
+        genForUpdateResourceBinding();
+
+    private static HttpRequestDef<UpdateResourceBindingRequest, UpdateResourceBindingResponse> genForUpdateResourceBinding() {
+        // basic
+        HttpRequestDef.Builder<UpdateResourceBindingRequest, UpdateResourceBindingResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateResourceBindingRequest.class, UpdateResourceBindingResponse.class)
+            .withName("UpdateResourceBinding")
+            .withUri("/v3/{project_id}/resources/{resource_id}/cluster")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateResourceBindingRequest::getResourceId,
+                UpdateResourceBindingRequest::setResourceId));
+        builder.<UpdateResourceBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateResourceBody.class),
+            f -> f.withMarshaller(UpdateResourceBindingRequest::getBody, UpdateResourceBindingRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<InvokeKubeApiRequest, InvokeKubeApiResponse> invokeKubeApi =
+        genForInvokeKubeApi();
+
+    private static HttpRequestDef<InvokeKubeApiRequest, InvokeKubeApiResponse> genForInvokeKubeApi() {
+        // basic
+        HttpRequestDef.Builder<InvokeKubeApiRequest, InvokeKubeApiResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, InvokeKubeApiRequest.class, InvokeKubeApiResponse.class)
+                .withName("InvokeKubeApi")
+                .withUri("/v3/{project_id}/clusters/{cluster_id}/api-proxy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokeKubeApiRequest::getClusterId, InvokeKubeApiRequest::setClusterId));
+        builder.<String>withRequestField("X-Forward-Target",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokeKubeApiRequest::getXForwardTarget, InvokeKubeApiRequest::setXForwardTarget));
+        builder.<String>withRequestField("X-Forward-Headers",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokeKubeApiRequest::getXForwardHeaders, InvokeKubeApiRequest::setXForwardHeaders));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClusterNamespacesRequest, ListClusterNamespacesResponse> listClusterNamespaces =
+        genForListClusterNamespaces();
+
+    private static HttpRequestDef<ListClusterNamespacesRequest, ListClusterNamespacesResponse> genForListClusterNamespaces() {
+        // basic
+        HttpRequestDef.Builder<ListClusterNamespacesRequest, ListClusterNamespacesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListClusterNamespacesRequest.class, ListClusterNamespacesResponse.class)
+            .withName("ListClusterNamespaces")
+            .withUri("/v3/{project_id}/clusters/{cluster_id}/namespaces")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterNamespacesRequest::getClusterId,
+                ListClusterNamespacesRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateClusterNodesInstallCmdRequest, CreateClusterNodesInstallCmdResponse> createClusterNodesInstallCmd =
+        genForCreateClusterNodesInstallCmd();
+
+    private static HttpRequestDef<CreateClusterNodesInstallCmdRequest, CreateClusterNodesInstallCmdResponse> genForCreateClusterNodesInstallCmd() {
+        // basic
+        HttpRequestDef.Builder<CreateClusterNodesInstallCmdRequest, CreateClusterNodesInstallCmdResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateClusterNodesInstallCmdRequest.class,
+                    CreateClusterNodesInstallCmdResponse.class)
+                .withName("CreateClusterNodesInstallCmd")
+                .withUri("/v3/{project_id}/clusters/{cluster_id}/nodes/install-cmd")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateClusterNodesInstallCmdRequest::getClusterId,
+                CreateClusterNodesInstallCmdRequest::setClusterId));
+        builder.<CreateNodesInstallCmdV3RequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateNodesInstallCmdV3RequestBody.class),
+            f -> f.withMarshaller(CreateClusterNodesInstallCmdRequest::getBody,
+                CreateClusterNodesInstallCmdRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClusterNodesRequest, ListClusterNodesResponse> listClusterNodes =
+        genForListClusterNodes();
+
+    private static HttpRequestDef<ListClusterNodesRequest, ListClusterNodesResponse> genForListClusterNodes() {
+        // basic
+        HttpRequestDef.Builder<ListClusterNodesRequest, ListClusterNodesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListClusterNodesRequest.class, ListClusterNodesResponse.class)
+                .withName("ListClusterNodes")
+                .withUri("/v3/{project_id}/clusters/{cluster_id}/nodes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterNodesRequest::getClusterId, ListClusterNodesRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClusterNodeRequest, ShowClusterNodeResponse> showClusterNode =
+        genForShowClusterNode();
+
+    private static HttpRequestDef<ShowClusterNodeRequest, ShowClusterNodeResponse> genForShowClusterNode() {
+        // basic
+        HttpRequestDef.Builder<ShowClusterNodeRequest, ShowClusterNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowClusterNodeRequest.class, ShowClusterNodeResponse.class)
+                .withName("ShowClusterNode")
+                .withUri("/v3/{project_id}/clusters/{cluster_id}/nodes/{node_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterNodeRequest::getClusterId, ShowClusterNodeRequest::setClusterId));
+        builder.<String>withRequestField("node_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterNodeRequest::getNodeName, ShowClusterNodeRequest::setNodeName));
 
         // response
 

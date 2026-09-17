@@ -27,7 +27,7 @@ public class SkippedCheckItemList {
     }
 
     /**
-     * 跳过的检查项名称
+     * **参数解释：** 跳过检查的项目名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return name
      */
     public String getName() {

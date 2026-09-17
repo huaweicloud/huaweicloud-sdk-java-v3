@@ -20,6 +20,11 @@ public class Nic {
 
     private String ip;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mask_len")
+
+    private Integer maskLen;
+
     public Nic withEth(String eth) {
         this.eth = eth;
         return this;
@@ -54,6 +59,25 @@ public class Nic {
         this.ip = ip;
     }
 
+    public Nic withMaskLen(Integer maskLen) {
+        this.maskLen = maskLen;
+        return this;
+    }
+
+    /**
+     * 子网掩码的位数
+     * minimum: 0
+     * maximum: 32
+     * @return maskLen
+     */
+    public Integer getMaskLen() {
+        return maskLen;
+    }
+
+    public void setMaskLen(Integer maskLen) {
+        this.maskLen = maskLen;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +87,13 @@ public class Nic {
             return false;
         }
         Nic that = (Nic) obj;
-        return Objects.equals(this.eth, that.eth) && Objects.equals(this.ip, that.ip);
+        return Objects.equals(this.eth, that.eth) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.maskLen, that.maskLen);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eth, ip);
+        return Objects.hash(eth, ip, maskLen);
     }
 
     @Override
@@ -77,6 +102,7 @@ public class Nic {
         sb.append("class Nic {\n");
         sb.append("    eth: ").append(toIndentedString(eth)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    maskLen: ").append(toIndentedString(maskLen)).append("\n");
         sb.append("}");
         return sb.toString();
     }

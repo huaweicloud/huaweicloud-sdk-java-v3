@@ -65,6 +65,11 @@ public class CreateEdgeApplicationRequestDTO {
          */
         public static final FunctionTypeEnum DATA_COLLECTION = new FunctionTypeEnum("DATA_COLLECTION");
 
+        /**
+         * Enum MODEL_INFERENCE for value: "MODEL_INFERENCE"
+         */
+        public static final FunctionTypeEnum MODEL_INFERENCE = new FunctionTypeEnum("MODEL_INFERENCE");
+
         private static final Map<String, FunctionTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FunctionTypeEnum> createStaticFields() {
@@ -75,6 +80,7 @@ public class CreateEdgeApplicationRequestDTO {
             map.put("GATEWAY_MANAGER", GATEWAY_MANAGER);
             map.put("COMPOSITE_APPLICATION", COMPOSITE_APPLICATION);
             map.put("DATA_COLLECTION", DATA_COLLECTION);
+            map.put("MODEL_INFERENCE", MODEL_INFERENCE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -133,6 +139,11 @@ public class CreateEdgeApplicationRequestDTO {
     @JsonProperty(value = "protocol")
 
     private String protocol;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "delivered_app")
+
+    private Boolean deliveredApp;
 
     public CreateEdgeApplicationRequestDTO withEdgeAppId(String edgeAppId) {
         this.edgeAppId = edgeAppId;
@@ -219,6 +230,23 @@ public class CreateEdgeApplicationRequestDTO {
         this.protocol = protocol;
     }
 
+    public CreateEdgeApplicationRequestDTO withDeliveredApp(Boolean deliveredApp) {
+        this.deliveredApp = deliveredApp;
+        return this;
+    }
+
+    /**
+     * 是否是下发到端侧网关上应用。
+     * @return deliveredApp
+     */
+    public Boolean getDeliveredApp() {
+        return deliveredApp;
+    }
+
+    public void setDeliveredApp(Boolean deliveredApp) {
+        this.deliveredApp = deliveredApp;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -230,12 +258,13 @@ public class CreateEdgeApplicationRequestDTO {
         CreateEdgeApplicationRequestDTO that = (CreateEdgeApplicationRequestDTO) obj;
         return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.edgeAppName, that.edgeAppName)
             && Objects.equals(this.description, that.description)
-            && Objects.equals(this.functionType, that.functionType) && Objects.equals(this.protocol, that.protocol);
+            && Objects.equals(this.functionType, that.functionType) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.deliveredApp, that.deliveredApp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(edgeAppId, edgeAppName, description, functionType, protocol);
+        return Objects.hash(edgeAppId, edgeAppName, description, functionType, protocol, deliveredApp);
     }
 
     @Override
@@ -247,6 +276,7 @@ public class CreateEdgeApplicationRequestDTO {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    functionType: ").append(toIndentedString(functionType)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
+        sb.append("    deliveredApp: ").append(toIndentedString(deliveredApp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

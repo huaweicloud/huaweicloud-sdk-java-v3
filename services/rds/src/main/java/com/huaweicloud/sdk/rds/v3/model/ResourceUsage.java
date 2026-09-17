@@ -13,24 +13,24 @@ public class ResourceUsage {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
-    private Float value;
+    private Double value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
-    private Float total;
+    private Double total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "contrast")
 
-    private Float contrast;
+    private Double contrast;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
 
     private String unit;
 
-    public ResourceUsage withValue(Float value) {
+    public ResourceUsage withValue(Double value) {
         this.value = value;
         return this;
     }
@@ -39,15 +39,15 @@ public class ResourceUsage {
      * 当前使用量。
      * @return value
      */
-    public Float getValue() {
+    public Double getValue() {
         return value;
     }
 
-    public void setValue(Float value) {
+    public void setValue(Double value) {
         this.value = value;
     }
 
-    public ResourceUsage withTotal(Float total) {
+    public ResourceUsage withTotal(Double total) {
         this.total = total;
         return this;
     }
@@ -56,15 +56,15 @@ public class ResourceUsage {
      * 总量。
      * @return total
      */
-    public Float getTotal() {
+    public Double getTotal() {
         return total;
     }
 
-    public void setTotal(Float total) {
+    public void setTotal(Double total) {
         this.total = total;
     }
 
-    public ResourceUsage withContrast(Float contrast) {
+    public ResourceUsage withContrast(Double contrast) {
         this.contrast = contrast;
         return this;
     }
@@ -73,11 +73,11 @@ public class ResourceUsage {
      * 对比值。
      * @return contrast
      */
-    public Float getContrast() {
+    public Double getContrast() {
         return contrast;
     }
 
-    public void setContrast(Float contrast) {
+    public void setContrast(Double contrast) {
         this.contrast = contrast;
     }
 

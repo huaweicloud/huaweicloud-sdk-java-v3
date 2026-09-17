@@ -331,6 +331,7 @@ public class GaussDBforNoSQLClient {
      * @param request ApplyConfigurationRequest 请求对象
      * @return ApplyConfigurationResponse
      */
+    @Deprecated
     public ApplyConfigurationResponse applyConfiguration(ApplyConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.applyConfiguration);
     }
@@ -345,6 +346,7 @@ public class GaussDBforNoSQLClient {
      * @param request ApplyConfigurationRequest 请求对象
      * @return SyncInvoker<ApplyConfigurationRequest, ApplyConfigurationResponse>
      */
+    @Deprecated
     public SyncInvoker<ApplyConfigurationRequest, ApplyConfigurationResponse> applyConfigurationInvoker(
         ApplyConfigurationRequest request) {
         return new SyncInvoker<>(request, GaussDBforNoSQLMeta.applyConfiguration, hcClient);
@@ -1433,6 +1435,7 @@ public class GaussDBforNoSQLClient {
      * @param request ListConfigurationsRequest 请求对象
      * @return ListConfigurationsResponse
      */
+    @Deprecated
     public ListConfigurationsResponse listConfigurations(ListConfigurationsRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.listConfigurations);
     }
@@ -1447,6 +1450,7 @@ public class GaussDBforNoSQLClient {
      * @param request ListConfigurationsRequest 请求对象
      * @return SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>
      */
+    @Deprecated
     public SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurationsInvoker(
         ListConfigurationsRequest request) {
         return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listConfigurations, hcClient);
@@ -1654,7 +1658,7 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
-     * 查询指定条件下的所有实例规格信息
+     * 查询所有实例规格信息
      *
      * 查询指定条件下的所有实例规格信息。
      * 
@@ -1663,12 +1667,13 @@ public class GaussDBforNoSQLClient {
      * @param request ListFlavorsRequest 请求对象
      * @return ListFlavorsResponse
      */
+    @Deprecated
     public ListFlavorsResponse listFlavors(ListFlavorsRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.listFlavors);
     }
 
     /**
-     * 查询指定条件下的所有实例规格信息
+     * 查询所有实例规格信息
      *
      * 查询指定条件下的所有实例规格信息。
      * 
@@ -1677,6 +1682,7 @@ public class GaussDBforNoSQLClient {
      * @param request ListFlavorsRequest 请求对象
      * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
      */
+    @Deprecated
     public SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsInvoker(ListFlavorsRequest request) {
         return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listFlavors, hcClient);
     }
@@ -1894,6 +1900,7 @@ public class GaussDBforNoSQLClient {
      * @param request ListInstancesByTagsRequest 请求对象
      * @return ListInstancesByTagsResponse
      */
+    @Deprecated
     public ListInstancesByTagsResponse listInstancesByTags(ListInstancesByTagsRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.listInstancesByTags);
     }
@@ -1908,6 +1915,7 @@ public class GaussDBforNoSQLClient {
      * @param request ListInstancesByTagsRequest 请求对象
      * @return SyncInvoker<ListInstancesByTagsRequest, ListInstancesByTagsResponse>
      */
+    @Deprecated
     public SyncInvoker<ListInstancesByTagsRequest, ListInstancesByTagsResponse> listInstancesByTagsInvoker(
         ListInstancesByTagsRequest request) {
         return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listInstancesByTags, hcClient);
@@ -2329,6 +2337,7 @@ public class GaussDBforNoSQLClient {
      * @param request ListSlowLogsRequest 请求对象
      * @return ListSlowLogsResponse
      */
+    @Deprecated
     public ListSlowLogsResponse listSlowLogs(ListSlowLogsRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.listSlowLogs);
     }
@@ -2343,6 +2352,7 @@ public class GaussDBforNoSQLClient {
      * @param request ListSlowLogsRequest 请求对象
      * @return SyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse>
      */
+    @Deprecated
     public SyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse> listSlowLogsInvoker(ListSlowLogsRequest request) {
         return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listSlowLogs, hcClient);
     }
@@ -3380,6 +3390,7 @@ public class GaussDBforNoSQLClient {
      * @param request ShowBackupPolicyRequest 请求对象
      * @return ShowBackupPolicyResponse
      */
+    @Deprecated
     public ShowBackupPolicyResponse showBackupPolicy(ShowBackupPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.showBackupPolicy);
     }
@@ -3394,6 +3405,7 @@ public class GaussDBforNoSQLClient {
      * @param request ShowBackupPolicyRequest 请求对象
      * @return SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicyInvoker(
         ShowBackupPolicyRequest request) {
         return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showBackupPolicy, hcClient);
@@ -3497,6 +3509,7 @@ public class GaussDBforNoSQLClient {
      * @param request ShowErrorLogRequest 请求对象
      * @return ShowErrorLogResponse
      */
+    @Deprecated
     public ShowErrorLogResponse showErrorLog(ShowErrorLogRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.showErrorLog);
     }
@@ -3511,6 +3524,7 @@ public class GaussDBforNoSQLClient {
      * @param request ShowErrorLogRequest 请求对象
      * @return SyncInvoker<ShowErrorLogRequest, ShowErrorLogResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowErrorLogRequest, ShowErrorLogResponse> showErrorLogInvoker(ShowErrorLogRequest request) {
         return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showErrorLog, hcClient);
     }
@@ -4478,6 +4492,7 @@ public class GaussDBforNoSQLClient {
      * @param request UpdateInstanceConfigurationRequest 请求对象
      * @return UpdateInstanceConfigurationResponse
      */
+    @Deprecated
     public UpdateInstanceConfigurationResponse updateInstanceConfiguration(UpdateInstanceConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.updateInstanceConfiguration);
     }
@@ -4492,6 +4507,7 @@ public class GaussDBforNoSQLClient {
      * @param request UpdateInstanceConfigurationRequest 请求对象
      * @return SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> updateInstanceConfigurationInvoker(
         UpdateInstanceConfigurationRequest request) {
         return new SyncInvoker<>(request, GaussDBforNoSQLMeta.updateInstanceConfiguration, hcClient);

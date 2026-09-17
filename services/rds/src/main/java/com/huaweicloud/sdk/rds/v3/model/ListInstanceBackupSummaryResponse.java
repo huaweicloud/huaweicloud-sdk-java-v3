@@ -20,9 +20,9 @@ public class ListInstanceBackupSummaryResponse extends SdkResponse {
     private List<InstanceBackupSummary> infos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total_count")
+    @JsonProperty(value = "total")
 
-    private Integer totalCount;
+    private Integer total;
 
     public ListInstanceBackupSummaryResponse withInfos(List<InstanceBackupSummary> infos) {
         this.infos = infos;
@@ -57,21 +57,21 @@ public class ListInstanceBackupSummaryResponse extends SdkResponse {
         this.infos = infos;
     }
 
-    public ListInstanceBackupSummaryResponse withTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
+    public ListInstanceBackupSummaryResponse withTotal(Integer total) {
+        this.total = total;
         return this;
     }
 
     /**
      * **参数解释**：  总记录数。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
-     * @return totalCount
+     * @return total
      */
-    public Integer getTotalCount() {
-        return totalCount;
+    public Integer getTotal() {
+        return total;
     }
 
-    public void setTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
+    public void setTotal(Integer total) {
+        this.total = total;
     }
 
     @Override
@@ -83,12 +83,12 @@ public class ListInstanceBackupSummaryResponse extends SdkResponse {
             return false;
         }
         ListInstanceBackupSummaryResponse that = (ListInstanceBackupSummaryResponse) obj;
-        return Objects.equals(this.infos, that.infos) && Objects.equals(this.totalCount, that.totalCount);
+        return Objects.equals(this.infos, that.infos) && Objects.equals(this.total, that.total);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(infos, totalCount);
+        return Objects.hash(infos, total);
     }
 
     @Override
@@ -96,7 +96,7 @@ public class ListInstanceBackupSummaryResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListInstanceBackupSummaryResponse {\n");
         sb.append("    infos: ").append(toIndentedString(infos)).append("\n");
-        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("}");
         return sb.toString();
     }

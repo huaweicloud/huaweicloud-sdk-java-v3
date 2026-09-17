@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 插件限制检查状态
+ * **参数解释：** 插件限制检查状态 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
  */
 public class AddonCheckStatus {
 
@@ -29,7 +29,7 @@ public class AddonCheckStatus {
     }
 
     /**
-     * 状态，取值如下 - Init: 初始化 - Running 运行中 - Success 成功 - Failed 失败
+     * **参数解释：** 状态 **约束限制：** 不涉及 **取值范围：** - Init：初始化 - Running：运行中 - Success：成功 - Failed：失败  **默认取值：** 不涉及
      * @return phase
      */
     public String getPhase() {
@@ -62,7 +62,7 @@ public class AddonCheckStatus {
     }
 
     /**
-     * 检查项状态集合
+     * **参数解释：** 检查项状态集合 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return itemsStatus
      */
     public List<PreCheckItemStatus> getItemsStatus() {

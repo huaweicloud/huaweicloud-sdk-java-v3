@@ -6,6 +6,8 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.dws.v2.model.AddExceptRuleReq;
+import com.huaweicloud.sdk.dws.v2.model.AddOperationalTaskRequest;
+import com.huaweicloud.sdk.dws.v2.model.AddOperationalTaskResponse;
 import com.huaweicloud.sdk.dws.v2.model.AddQueueUserListRequest;
 import com.huaweicloud.sdk.dws.v2.model.AddQueueUserListResponse;
 import com.huaweicloud.sdk.dws.v2.model.AddWorkloadPlanStageRequest;
@@ -45,6 +47,11 @@ import com.huaweicloud.sdk.dws.v2.model.CheckDisasterNameRequest;
 import com.huaweicloud.sdk.dws.v2.model.CheckDisasterNameResponse;
 import com.huaweicloud.sdk.dws.v2.model.CheckGrowClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.CheckGrowClusterResponse;
+import com.huaweicloud.sdk.dws.v2.model.CheckInstanceStorageRequest;
+import com.huaweicloud.sdk.dws.v2.model.CheckInstanceStorageResponse;
+import com.huaweicloud.sdk.dws.v2.model.CheckSnapshotReq;
+import com.huaweicloud.sdk.dws.v2.model.CheckSnapshotRequest;
+import com.huaweicloud.sdk.dws.v2.model.CheckSnapshotResponse;
 import com.huaweicloud.sdk.dws.v2.model.CheckTableRestoreRequest;
 import com.huaweicloud.sdk.dws.v2.model.CheckTableRestoreRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.CheckTableRestoreResponse;
@@ -119,6 +126,8 @@ import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterPlanRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterResponse;
+import com.huaweicloud.sdk.dws.v2.model.DeleteOperationalTaskRequest;
+import com.huaweicloud.sdk.dws.v2.model.DeleteOperationalTaskResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteQueueUserListRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteQueueUserListResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotPolicyRequest;
@@ -175,6 +184,8 @@ import com.huaweicloud.sdk.dws.v2.model.ExtDataSourceReq;
 import com.huaweicloud.sdk.dws.v2.model.HostOverviewResponse;
 import com.huaweicloud.sdk.dws.v2.model.IndicatorInfo;
 import com.huaweicloud.sdk.dws.v2.model.LinkCopyReq;
+import com.huaweicloud.sdk.dws.v2.model.ListActionsRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListActionsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListAlarmConfigsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListAlarmConfigsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListAlarmDetailRequest;
@@ -205,6 +216,8 @@ import com.huaweicloud.sdk.dws.v2.model.ListClusterNodesRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterNodesResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterScaleInNumbersRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterScaleInNumbersResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListClusterSecurityConfigurationsRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListClusterSecurityConfigurationsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterSnapshotsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterSnapshotsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterTagsRequest;
@@ -221,14 +234,20 @@ import com.huaweicloud.sdk.dws.v2.model.ListDatabaseObjectsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListDatabaseObjectsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListDatabaseUserAuthoritiesRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListDatabaseUserAuthoritiesResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListDatabaseUserRolesRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListDatabaseUserRolesResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListDatabaseUsersRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListDatabaseUsersResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListDisasterRecoverRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListDisasterRecoverResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListDssPoolsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListDssPoolsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListElbsInfoRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListElbsInfoResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListElbsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListElbsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListEpsRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListEpsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListEventSpecsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListEventSpecsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListEventSubsRequest;
@@ -265,6 +284,10 @@ import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListNodeTypesRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListNodeTypesResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListOperationalTaskDetailRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListOperationalTaskDetailResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListOperationalTaskRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListOperationalTaskResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListPlanExecLogsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListPlanExecLogsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListQueriesRequest;
@@ -274,6 +297,8 @@ import com.huaweicloud.sdk.dws.v2.model.ListQuotasRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListQuotasResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListRedistributionSchemaRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListRedistributionSchemaResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListResourceByTagRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListResourceByTagResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListSchemasRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListSchemasResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotDetailsRequest;
@@ -320,12 +345,19 @@ import com.huaweicloud.sdk.dws.v2.model.ModifyClusterNameResponse;
 import com.huaweicloud.sdk.dws.v2.model.ModifyClusterTimezoneRequest;
 import com.huaweicloud.sdk.dws.v2.model.ModifyClusterTimezoneResponse;
 import com.huaweicloud.sdk.dws.v2.model.NetResp;
+import com.huaweicloud.sdk.dws.v2.model.OperationalTaskConfiguration;
+import com.huaweicloud.sdk.dws.v2.model.OperationalTaskIdListRequest;
+import com.huaweicloud.sdk.dws.v2.model.OperationalTaskRequest;
 import com.huaweicloud.sdk.dws.v2.model.PauseDisasterRecoveryRequest;
 import com.huaweicloud.sdk.dws.v2.model.PauseDisasterRecoveryResponse;
+import com.huaweicloud.sdk.dws.v2.model.PauseOperationalTaskRequest;
+import com.huaweicloud.sdk.dws.v2.model.PauseOperationalTaskResponse;
 import com.huaweicloud.sdk.dws.v2.model.ReconfigureExtDataSourceActionReq;
 import com.huaweicloud.sdk.dws.v2.model.RedisPriorityConf;
 import com.huaweicloud.sdk.dws.v2.model.RedistributionConf;
 import com.huaweicloud.sdk.dws.v2.model.RedistributionReq;
+import com.huaweicloud.sdk.dws.v2.model.RefreshOperationalTaskRequest;
+import com.huaweicloud.sdk.dws.v2.model.RefreshOperationalTaskResponse;
 import com.huaweicloud.sdk.dws.v2.model.ResetPasswordRequest;
 import com.huaweicloud.sdk.dws.v2.model.ResetPasswordRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.ResetPasswordResponse;
@@ -352,6 +384,8 @@ import com.huaweicloud.sdk.dws.v2.model.RestoreRedistributionResponse;
 import com.huaweicloud.sdk.dws.v2.model.RestoreTableRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestoreTableRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.RestoreTableResponse;
+import com.huaweicloud.sdk.dws.v2.model.ResumeOperationalTaskRequest;
+import com.huaweicloud.sdk.dws.v2.model.ResumeOperationalTaskResponse;
 import com.huaweicloud.sdk.dws.v2.model.RotateKeyRequest;
 import com.huaweicloud.sdk.dws.v2.model.RotateKeyRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.RotateKeyResponse;
@@ -383,6 +417,8 @@ import com.huaweicloud.sdk.dws.v2.model.ShowDisasterProgressRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowDisasterProgressResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowInstanceResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowOperationalTaskConfigRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowOperationalTaskConfigResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowQueryDetailRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowQueryDetailResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowResizePreparationRequest;
@@ -423,6 +459,8 @@ import com.huaweicloud.sdk.dws.v2.model.SwitchoverDisasterRecoveryRequest;
 import com.huaweicloud.sdk.dws.v2.model.SwitchoverDisasterRecoveryResponse;
 import com.huaweicloud.sdk.dws.v2.model.SyncIamUsersRequest;
 import com.huaweicloud.sdk.dws.v2.model.SyncIamUsersResponse;
+import com.huaweicloud.sdk.dws.v2.model.TagFilterRequestBody;
+import com.huaweicloud.sdk.dws.v2.model.TaskInfo;
 import com.huaweicloud.sdk.dws.v2.model.TrendQueryDataResp;
 import com.huaweicloud.sdk.dws.v2.model.UpdateAlarmSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateAlarmSubResponse;
@@ -449,6 +487,10 @@ import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateMaintenanceWindowRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateMaintenanceWindowResponse;
+import com.huaweicloud.sdk.dws.v2.model.UpdateOperationalTaskConfigRequest;
+import com.huaweicloud.sdk.dws.v2.model.UpdateOperationalTaskConfigResponse;
+import com.huaweicloud.sdk.dws.v2.model.UpdateOperationalTaskRequest;
+import com.huaweicloud.sdk.dws.v2.model.UpdateOperationalTaskResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateQueueBaseInfoRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateQueueBaseInfoResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateQueueResourcesRequest;
@@ -463,7 +505,11 @@ import com.huaweicloud.sdk.dws.v2.model.UpdateWorkloadQueueReq;
 import com.huaweicloud.sdk.dws.v2.model.UpdateWorkloadRuleRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateWorkloadRuleResponse;
 import com.huaweicloud.sdk.dws.v2.model.UserAuthorityReq;
+import com.huaweicloud.sdk.dws.v2.model.V1DiskExtExpandReq;
 import com.huaweicloud.sdk.dws.v2.model.V2CreateClusterReq;
+import com.huaweicloud.sdk.dws.v2.model.ValidateDbDataReq;
+import com.huaweicloud.sdk.dws.v2.model.ValidateDbDataRequest;
+import com.huaweicloud.sdk.dws.v2.model.ValidateDbDataResponse;
 import com.huaweicloud.sdk.dws.v2.model.WorkloadPlanReq;
 import com.huaweicloud.sdk.dws.v2.model.WorkloadPlanStageIdReq;
 import com.huaweicloud.sdk.dws.v2.model.WorkloadPlanStageReq;
@@ -477,6 +523,34 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class DwsMeta {
+
+    public static final HttpRequestDef<AddOperationalTaskRequest, AddOperationalTaskResponse> addOperationalTask =
+        genForAddOperationalTask();
+
+    private static HttpRequestDef<AddOperationalTaskRequest, AddOperationalTaskResponse> genForAddOperationalTask() {
+        // basic
+        HttpRequestDef.Builder<AddOperationalTaskRequest, AddOperationalTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddOperationalTaskRequest.class, AddOperationalTaskResponse.class)
+                .withName("AddOperationalTask")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/operational-tasks")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddOperationalTaskRequest::getClusterId, AddOperationalTaskRequest::setClusterId));
+        builder.<OperationalTaskRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OperationalTaskRequest.class),
+            f -> f.withMarshaller(AddOperationalTaskRequest::getBody, AddOperationalTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<AddQueueUserListRequest, AddQueueUserListResponse> addQueueUserList =
         genForAddQueueUserList();
@@ -941,6 +1015,58 @@ public class DwsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeClusterRequestBody.class),
             f -> f.withMarshaller(CheckGrowClusterRequest::getBody, CheckGrowClusterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckInstanceStorageRequest, CheckInstanceStorageResponse> checkInstanceStorage =
+        genForCheckInstanceStorage();
+
+    private static HttpRequestDef<CheckInstanceStorageRequest, CheckInstanceStorageResponse> genForCheckInstanceStorage() {
+        // basic
+        HttpRequestDef.Builder<CheckInstanceStorageRequest, CheckInstanceStorageResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CheckInstanceStorageRequest.class, CheckInstanceStorageResponse.class)
+            .withName("CheckInstanceStorage")
+            .withUri("/v1/{project_id}/clusters/{cluster_id}/check-instance-storage")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckInstanceStorageRequest::getClusterId,
+                CheckInstanceStorageRequest::setClusterId));
+        builder.<V1DiskExtExpandReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(V1DiskExtExpandReq.class),
+            f -> f.withMarshaller(CheckInstanceStorageRequest::getBody, CheckInstanceStorageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckSnapshotRequest, CheckSnapshotResponse> checkSnapshot =
+        genForCheckSnapshot();
+
+    private static HttpRequestDef<CheckSnapshotRequest, CheckSnapshotResponse> genForCheckSnapshot() {
+        // basic
+        HttpRequestDef.Builder<CheckSnapshotRequest, CheckSnapshotResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckSnapshotRequest.class, CheckSnapshotResponse.class)
+                .withName("CheckSnapshot")
+                .withUri("/v1/{project_id}/snapshots/check")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CheckSnapshotReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CheckSnapshotReq.class),
+            f -> f.withMarshaller(CheckSnapshotRequest::getBody, CheckSnapshotRequest::setBody));
 
         // response
 
@@ -1718,6 +1844,35 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteOperationalTaskRequest, DeleteOperationalTaskResponse> deleteOperationalTask =
+        genForDeleteOperationalTask();
+
+    private static HttpRequestDef<DeleteOperationalTaskRequest, DeleteOperationalTaskResponse> genForDeleteOperationalTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteOperationalTaskRequest, DeleteOperationalTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DeleteOperationalTaskRequest.class, DeleteOperationalTaskResponse.class)
+            .withName("DeleteOperationalTask")
+            .withUri("/v1/{project_id}/clusters/{cluster_id}/operational-tasks/batch-delete")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOperationalTaskRequest::getClusterId,
+                DeleteOperationalTaskRequest::setClusterId));
+        builder.<OperationalTaskIdListRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OperationalTaskIdListRequest.class),
+            f -> f.withMarshaller(DeleteOperationalTaskRequest::getBody, DeleteOperationalTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteQueueUserListRequest, DeleteQueueUserListResponse> deleteQueueUserList =
         genForDeleteQueueUserList();
 
@@ -2385,6 +2540,33 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListActionsRequest, ListActionsResponse> listActions = genForListActions();
+
+    private static HttpRequestDef<ListActionsRequest, ListActionsResponse> genForListActions() {
+        // basic
+        HttpRequestDef.Builder<ListActionsRequest, ListActionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListActionsRequest.class, ListActionsResponse.class)
+                .withName("ListActions")
+                .withUri("/v1/{project_id}/actions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListActionsRequest::getLimit, ListActionsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListActionsRequest::getOffset, ListActionsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAlarmConfigsRequest, ListAlarmConfigsResponse> listAlarmConfigs =
         genForListAlarmConfigs();
 
@@ -2881,6 +3063,51 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListClusterSecurityConfigurationsRequest, ListClusterSecurityConfigurationsResponse> listClusterSecurityConfigurations =
+        genForListClusterSecurityConfigurations();
+
+    private static HttpRequestDef<ListClusterSecurityConfigurationsRequest, ListClusterSecurityConfigurationsResponse> genForListClusterSecurityConfigurations() {
+        // basic
+        HttpRequestDef.Builder<ListClusterSecurityConfigurationsRequest, ListClusterSecurityConfigurationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListClusterSecurityConfigurationsRequest.class,
+                    ListClusterSecurityConfigurationsResponse.class)
+                .withName("ListClusterSecurityConfigurations")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/security-configurations/{configuration_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterSecurityConfigurationsRequest::getClusterId,
+                ListClusterSecurityConfigurationsRequest::setClusterId));
+        builder.<String>withRequestField("configuration_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterSecurityConfigurationsRequest::getConfigurationId,
+                ListClusterSecurityConfigurationsRequest::setConfigurationId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListClusterSecurityConfigurationsRequest::getLimit,
+                ListClusterSecurityConfigurationsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListClusterSecurityConfigurationsRequest::getOffset,
+                ListClusterSecurityConfigurationsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListClusterSnapshotsRequest, ListClusterSnapshotsResponse> listClusterSnapshots =
         genForListClusterSnapshots();
 
@@ -3183,6 +3410,51 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDatabaseUserRolesRequest, ListDatabaseUserRolesResponse> listDatabaseUserRoles =
+        genForListDatabaseUserRoles();
+
+    private static HttpRequestDef<ListDatabaseUserRolesRequest, ListDatabaseUserRolesResponse> genForListDatabaseUserRoles() {
+        // basic
+        HttpRequestDef.Builder<ListDatabaseUserRolesRequest, ListDatabaseUserRolesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDatabaseUserRolesRequest.class, ListDatabaseUserRolesResponse.class)
+            .withName("ListDatabaseUserRoles")
+            .withUri("/v1/{project_id}/clusters/{cluster_id}/db-manager/users/{name}/roles")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseUserRolesRequest::getClusterId,
+                ListDatabaseUserRolesRequest::setClusterId));
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseUserRolesRequest::getName, ListDatabaseUserRolesRequest::setName));
+        builder.<String>withRequestField("query_all",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseUserRolesRequest::getQueryAll,
+                ListDatabaseUserRolesRequest::setQueryAll));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseUserRolesRequest::getOffset, ListDatabaseUserRolesRequest::setOffset));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseUserRolesRequest::getLimit, ListDatabaseUserRolesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDatabaseUsersRequest, ListDatabaseUsersResponse> listDatabaseUsers =
         genForListDatabaseUsers();
 
@@ -3294,6 +3566,70 @@ public class DwsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListElbsRequest::getClusterId, ListElbsRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListElbsInfoRequest, ListElbsInfoResponse> listElbsInfo = genForListElbsInfo();
+
+    private static HttpRequestDef<ListElbsInfoRequest, ListElbsInfoResponse> genForListElbsInfo() {
+        // basic
+        HttpRequestDef.Builder<ListElbsInfoRequest, ListElbsInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListElbsInfoRequest.class, ListElbsInfoResponse.class)
+                .withName("ListElbsInfo")
+                .withUri("/v2/{project_id}/elbs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListElbsInfoRequest::getVpcId, ListElbsInfoRequest::setVpcId));
+        builder.<String>withRequestField("subnet_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListElbsInfoRequest::getSubnetId, ListElbsInfoRequest::setSubnetId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListElbsInfoRequest::getLimit, ListElbsInfoRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListElbsInfoRequest::getOffset, ListElbsInfoRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEpsRequest, ListEpsResponse> listEps = genForListEps();
+
+    private static HttpRequestDef<ListEpsRequest, ListEpsResponse> genForListEps() {
+        // basic
+        HttpRequestDef.Builder<ListEpsRequest, ListEpsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEpsRequest.class, ListEpsResponse.class)
+                .withName("ListEps")
+                .withUri("/v1/{project_id}/enterprise-projects")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEpsRequest::getOffset, ListEpsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEpsRequest::getLimit, ListEpsRequest::setLimit));
 
         // response
 
@@ -3991,6 +4327,118 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListOperationalTaskRequest, ListOperationalTaskResponse> listOperationalTask =
+        genForListOperationalTask();
+
+    private static HttpRequestDef<ListOperationalTaskRequest, ListOperationalTaskResponse> genForListOperationalTask() {
+        // basic
+        HttpRequestDef.Builder<ListOperationalTaskRequest, ListOperationalTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListOperationalTaskRequest.class, ListOperationalTaskResponse.class)
+                .withName("ListOperationalTask")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/operational-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOperationalTaskRequest::getClusterId, ListOperationalTaskRequest::setClusterId));
+        builder.<String>withRequestField("time_zone",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOperationalTaskRequest::getTimeZone, ListOperationalTaskRequest::setTimeZone));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOperationalTaskRequest::getType, ListOperationalTaskRequest::setType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOperationalTaskRequest::getLimit, ListOperationalTaskRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOperationalTaskRequest::getOffset, ListOperationalTaskRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOperationalTaskDetailRequest, ListOperationalTaskDetailResponse> listOperationalTaskDetail =
+        genForListOperationalTaskDetail();
+
+    private static HttpRequestDef<ListOperationalTaskDetailRequest, ListOperationalTaskDetailResponse> genForListOperationalTaskDetail() {
+        // basic
+        HttpRequestDef.Builder<ListOperationalTaskDetailRequest, ListOperationalTaskDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListOperationalTaskDetailRequest.class,
+                    ListOperationalTaskDetailResponse.class)
+                .withName("ListOperationalTaskDetail")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/operational-tasks/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOperationalTaskDetailRequest::getClusterId,
+                ListOperationalTaskDetailRequest::setClusterId));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOperationalTaskDetailRequest::getCategory,
+                ListOperationalTaskDetailRequest::setCategory));
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOperationalTaskDetailRequest::getTaskId,
+                ListOperationalTaskDetailRequest::setTaskId));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOperationalTaskDetailRequest::getStatus,
+                ListOperationalTaskDetailRequest::setStatus));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOperationalTaskDetailRequest::getStartTime,
+                ListOperationalTaskDetailRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOperationalTaskDetailRequest::getEndTime,
+                ListOperationalTaskDetailRequest::setEndTime));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOperationalTaskDetailRequest::getLimit,
+                ListOperationalTaskDetailRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOperationalTaskDetailRequest::getOffset,
+                ListOperationalTaskDetailRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListPlanExecLogsRequest, ListPlanExecLogsResponse> listPlanExecLogs =
         genForListPlanExecLogs();
 
@@ -4116,6 +4564,39 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRedistributionSchemaRequest::getSchemaName,
                 ListRedistributionSchemaRequest::setSchemaName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResourceByTagRequest, ListResourceByTagResponse> listResourceByTag =
+        genForListResourceByTag();
+
+    private static HttpRequestDef<ListResourceByTagRequest, ListResourceByTagResponse> genForListResourceByTag() {
+        // basic
+        HttpRequestDef.Builder<ListResourceByTagRequest, ListResourceByTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListResourceByTagRequest.class, ListResourceByTagResponse.class)
+                .withName("ListResourceByTag")
+                .withUri("/v1/{project_id}/clusters/resource-instances/tag-filter")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceByTagRequest::getLimit, ListResourceByTagRequest::setLimit));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceByTagRequest::getOffset, ListResourceByTagRequest::setOffset));
+        builder.<TagFilterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TagFilterRequestBody.class),
+            f -> f.withMarshaller(ListResourceByTagRequest::getBody, ListResourceByTagRequest::setBody));
 
         // response
 
@@ -4827,6 +5308,59 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<PauseOperationalTaskRequest, PauseOperationalTaskResponse> pauseOperationalTask =
+        genForPauseOperationalTask();
+
+    private static HttpRequestDef<PauseOperationalTaskRequest, PauseOperationalTaskResponse> genForPauseOperationalTask() {
+        // basic
+        HttpRequestDef.Builder<PauseOperationalTaskRequest, PauseOperationalTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, PauseOperationalTaskRequest.class, PauseOperationalTaskResponse.class)
+            .withName("PauseOperationalTask")
+            .withUri("/v1/{project_id}/clusters/{cluster_id}/operational-tasks/batch-pause")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PauseOperationalTaskRequest::getClusterId,
+                PauseOperationalTaskRequest::setClusterId));
+        builder.<OperationalTaskIdListRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OperationalTaskIdListRequest.class),
+            f -> f.withMarshaller(PauseOperationalTaskRequest::getBody, PauseOperationalTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RefreshOperationalTaskRequest, RefreshOperationalTaskResponse> refreshOperationalTask =
+        genForRefreshOperationalTask();
+
+    private static HttpRequestDef<RefreshOperationalTaskRequest, RefreshOperationalTaskResponse> genForRefreshOperationalTask() {
+        // basic
+        HttpRequestDef.Builder<RefreshOperationalTaskRequest, RefreshOperationalTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RefreshOperationalTaskRequest.class, RefreshOperationalTaskResponse.class)
+            .withName("RefreshOperationalTask")
+            .withUri("/v1/{project_id}/clusters/{cluster_id}/operational-tasks/sync")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RefreshOperationalTaskRequest::getClusterId,
+                RefreshOperationalTaskRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword =
         genForResetPassword();
 
@@ -5099,6 +5633,35 @@ public class DwsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestoreTableRequestBody.class),
             f -> f.withMarshaller(RestoreTableRequest::getBody, RestoreTableRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResumeOperationalTaskRequest, ResumeOperationalTaskResponse> resumeOperationalTask =
+        genForResumeOperationalTask();
+
+    private static HttpRequestDef<ResumeOperationalTaskRequest, ResumeOperationalTaskResponse> genForResumeOperationalTask() {
+        // basic
+        HttpRequestDef.Builder<ResumeOperationalTaskRequest, ResumeOperationalTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ResumeOperationalTaskRequest.class, ResumeOperationalTaskResponse.class)
+            .withName("ResumeOperationalTask")
+            .withUri("/v1/{project_id}/clusters/{cluster_id}/operational-tasks/batch-resume")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResumeOperationalTaskRequest::getClusterId,
+                ResumeOperationalTaskRequest::setClusterId));
+        builder.<OperationalTaskIdListRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OperationalTaskIdListRequest.class),
+            f -> f.withMarshaller(ResumeOperationalTaskRequest::getBody, ResumeOperationalTaskRequest::setBody));
 
         // response
 
@@ -5547,6 +6110,33 @@ public class DwsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, ShowInstanceRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOperationalTaskConfigRequest, ShowOperationalTaskConfigResponse> showOperationalTaskConfig =
+        genForShowOperationalTaskConfig();
+
+    private static HttpRequestDef<ShowOperationalTaskConfigRequest, ShowOperationalTaskConfigResponse> genForShowOperationalTaskConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowOperationalTaskConfigRequest, ShowOperationalTaskConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowOperationalTaskConfigRequest.class,
+                    ShowOperationalTaskConfigResponse.class)
+                .withName("ShowOperationalTaskConfig")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/operational-tasks/configuration")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOperationalTaskConfigRequest::getClusterId,
+                ShowOperationalTaskConfigRequest::setClusterId));
 
         // response
 
@@ -6413,6 +7003,73 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateOperationalTaskRequest, UpdateOperationalTaskResponse> updateOperationalTask =
+        genForUpdateOperationalTask();
+
+    private static HttpRequestDef<UpdateOperationalTaskRequest, UpdateOperationalTaskResponse> genForUpdateOperationalTask() {
+        // basic
+        HttpRequestDef.Builder<UpdateOperationalTaskRequest, UpdateOperationalTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpdateOperationalTaskRequest.class, UpdateOperationalTaskResponse.class)
+            .withName("UpdateOperationalTask")
+            .withUri("/v1/{project_id}/cluster/{cluster_id}/operational-tasks/{task_id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOperationalTaskRequest::getClusterId,
+                UpdateOperationalTaskRequest::setClusterId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOperationalTaskRequest::getTaskId, UpdateOperationalTaskRequest::setTaskId));
+        builder.<TaskInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(TaskInfo.class),
+            f -> f.withMarshaller(UpdateOperationalTaskRequest::getBody, UpdateOperationalTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateOperationalTaskConfigRequest, UpdateOperationalTaskConfigResponse> updateOperationalTaskConfig =
+        genForUpdateOperationalTaskConfig();
+
+    private static HttpRequestDef<UpdateOperationalTaskConfigRequest, UpdateOperationalTaskConfigResponse> genForUpdateOperationalTaskConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateOperationalTaskConfigRequest, UpdateOperationalTaskConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateOperationalTaskConfigRequest.class,
+                    UpdateOperationalTaskConfigResponse.class)
+                .withName("UpdateOperationalTaskConfig")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/operational-tasks/configuration")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOperationalTaskConfigRequest::getClusterId,
+                UpdateOperationalTaskConfigRequest::setClusterId));
+        builder.<OperationalTaskConfiguration>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OperationalTaskConfiguration.class),
+            f -> f.withMarshaller(UpdateOperationalTaskConfigRequest::getBody,
+                UpdateOperationalTaskConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateQueueBaseInfoRequest, UpdateQueueBaseInfoResponse> updateQueueBaseInfo =
         genForUpdateQueueBaseInfo();
 
@@ -6615,6 +7272,39 @@ public class DwsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AddExceptRuleReq.class),
             f -> f.withMarshaller(UpdateWorkloadRuleRequest::getBody, UpdateWorkloadRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ValidateDbDataRequest, ValidateDbDataResponse> validateDbData =
+        genForValidateDbData();
+
+    private static HttpRequestDef<ValidateDbDataRequest, ValidateDbDataResponse> genForValidateDbData() {
+        // basic
+        HttpRequestDef.Builder<ValidateDbDataRequest, ValidateDbDataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ValidateDbDataRequest.class, ValidateDbDataResponse.class)
+                .withName("ValidateDbData")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/{database}/validate")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ValidateDbDataRequest::getClusterId, ValidateDbDataRequest::setClusterId));
+        builder.<String>withRequestField("database",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ValidateDbDataRequest::getDatabase, ValidateDbDataRequest::setDatabase));
+        builder.<ValidateDbDataReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ValidateDbDataReq.class),
+            f -> f.withMarshaller(ValidateDbDataRequest::getBody, ValidateDbDataRequest::setBody));
 
         // response
 

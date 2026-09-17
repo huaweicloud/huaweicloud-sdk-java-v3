@@ -42,7 +42,7 @@ public class ClusterUpgradeResponseAction {
     }
 
     /**
-     * 当前集群版本
+     * **参数解释：** 当前集群版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return version
      */
     public String getVersion() {
@@ -59,7 +59,7 @@ public class ClusterUpgradeResponseAction {
     }
 
     /**
-     * 目标集群版本，例如\"v1.23\"
+     * **参数解释：** 目标集群版本，例如\"v1.23\" **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return targetVersion
      */
     public String getTargetVersion() {
@@ -76,7 +76,7 @@ public class ClusterUpgradeResponseAction {
     }
 
     /**
-     * 目标集群的平台版本号，表示集群版本(version)下的内部版本，不支持用户指定。
+     * **参数解释：** 目标集群的平台版本号，表示集群版本(version)下的内部版本，不支持用户指定。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return targetPlatformVersion
      */
     public String getTargetPlatformVersion() {
@@ -119,7 +119,7 @@ public class ClusterUpgradeResponseAction {
     }
 
     /**
-     * 升级过程中指定的集群配置
+     * **参数解释：** 升级过程中指定的集群配置 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return config
      */
     public Object getConfig() {

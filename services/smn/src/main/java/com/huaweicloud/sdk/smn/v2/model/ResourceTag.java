@@ -26,7 +26,7 @@ public class ResourceTag {
     }
 
     /**
-     * 键。  - 最大长度127个unicode字符。  - key不能为空。
+     * 键。  - 最大长度128个unicode字符。  - key不能为空。
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class ResourceTag {
     }
 
     /**
-     * 值。  - 每个值最大长度255个unicode字符。
+     * 值。  - 每个值最大长度256个unicode字符。
      * @return value
      */
     public String getValue() {

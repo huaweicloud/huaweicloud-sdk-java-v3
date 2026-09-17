@@ -31,7 +31,7 @@ public class ContainerPortDTO {
     }
 
     /**
-     * 构成一堆映射的容器端口
+     * 构成一对映射的容器端口
      * minimum: 1
      * maximum: 65535
      * @return containerPort

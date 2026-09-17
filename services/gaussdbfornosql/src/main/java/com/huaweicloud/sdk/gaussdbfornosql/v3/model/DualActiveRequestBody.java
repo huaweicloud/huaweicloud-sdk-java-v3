@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 参数解释 搭建双活的目标实例信息。 约束限制 不涉及。 取值范围 不涉及。 默认取值 不涉及。
@@ -20,13 +23,18 @@ public class DualActiveRequestBody {
 
     private String destinationInstanceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tables")
+
+    private List<String> tables = null;
+
     public DualActiveRequestBody withDestinationRegion(String destinationRegion) {
         this.destinationRegion = destinationRegion;
         return this;
     }
 
     /**
-     * 参数解释 搭建双活目标实例所在的region。 约束限制 不涉及。 取值范围 不涉及。 默认取值 不涉及。
+     * **参数解释：** 搭建双活目标实例所在的region。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return destinationRegion
      */
     public String getDestinationRegion() {
@@ -43,7 +51,7 @@ public class DualActiveRequestBody {
     }
 
     /**
-     * 参数解释 搭建双活目标实例ID。 约束限制 不涉及。 取值范围 不涉及。 默认取值 不涉及。
+     * **参数解释：** 搭建双活目标实例ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return destinationInstanceId
      */
     public String getDestinationInstanceId() {
@@ -52,6 +60,39 @@ public class DualActiveRequestBody {
 
     public void setDestinationInstanceId(String destinationInstanceId) {
         this.destinationInstanceId = destinationInstanceId;
+    }
+
+    public DualActiveRequestBody withTables(List<String> tables) {
+        this.tables = tables;
+        return this;
+    }
+
+    public DualActiveRequestBody addTablesItem(String tablesItem) {
+        if (this.tables == null) {
+            this.tables = new ArrayList<>();
+        }
+        this.tables.add(tablesItem);
+        return this;
+    }
+
+    public DualActiveRequestBody withTables(Consumer<List<String>> tablesSetter) {
+        if (this.tables == null) {
+            this.tables = new ArrayList<>();
+        }
+        tablesSetter.accept(this.tables);
+        return this;
+    }
+
+    /**
+     * Get tables
+     * @return tables
+     */
+    public List<String> getTables() {
+        return tables;
+    }
+
+    public void setTables(List<String> tables) {
+        this.tables = tables;
     }
 
     @Override
@@ -64,12 +105,13 @@ public class DualActiveRequestBody {
         }
         DualActiveRequestBody that = (DualActiveRequestBody) obj;
         return Objects.equals(this.destinationRegion, that.destinationRegion)
-            && Objects.equals(this.destinationInstanceId, that.destinationInstanceId);
+            && Objects.equals(this.destinationInstanceId, that.destinationInstanceId)
+            && Objects.equals(this.tables, that.tables);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(destinationRegion, destinationInstanceId);
+        return Objects.hash(destinationRegion, destinationInstanceId, tables);
     }
 
     @Override
@@ -78,6 +120,7 @@ public class DualActiveRequestBody {
         sb.append("class DualActiveRequestBody {\n");
         sb.append("    destinationRegion: ").append(toIndentedString(destinationRegion)).append("\n");
         sb.append("    destinationInstanceId: ").append(toIndentedString(destinationInstanceId)).append("\n");
+        sb.append("    tables: ").append(toIndentedString(tables)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -42,7 +42,7 @@ public class PrecheckClusterTask {
     }
 
     /**
-     * api版本，默认为v3
+     * **参数解释：** API版本，默认为v3 **约束限制：** 不涉及 **取值范围：** - v3  **默认取值：** v3 
      * @return apiVersion
      */
     public String getApiVersion() {
@@ -59,7 +59,7 @@ public class PrecheckClusterTask {
     }
 
     /**
-     * 资源类型，默认为PreCheckTask
+     * **参数解释：** 资源类型，默认为PreCheckTask **约束限制：** 不涉及 **取值范围：** - PreCheckTask  **默认取值：** PreCheckTask 
      * @return kind
      */
     public String getKind() {

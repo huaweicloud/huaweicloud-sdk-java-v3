@@ -11,8 +11,12 @@ import com.huaweicloud.sdk.rc.v1.model.CountAllResourcesRequest;
 import com.huaweicloud.sdk.rc.v1.model.CountAllResourcesResponse;
 import com.huaweicloud.sdk.rc.v1.model.CreateResourceGroupRequest;
 import com.huaweicloud.sdk.rc.v1.model.CreateResourceGroupResponse;
+import com.huaweicloud.sdk.rc.v1.model.CreateStoredQueryRequest;
+import com.huaweicloud.sdk.rc.v1.model.CreateStoredQueryResponse;
 import com.huaweicloud.sdk.rc.v1.model.DeleteResourceGroupRequest;
 import com.huaweicloud.sdk.rc.v1.model.DeleteResourceGroupResponse;
+import com.huaweicloud.sdk.rc.v1.model.DeleteStoredQueryRequest;
+import com.huaweicloud.sdk.rc.v1.model.DeleteStoredQueryResponse;
 import com.huaweicloud.sdk.rc.v1.model.ListAllProvidersRequest;
 import com.huaweicloud.sdk.rc.v1.model.ListAllProvidersResponse;
 import com.huaweicloud.sdk.rc.v1.model.ListAllResourcesRequest;
@@ -23,8 +27,14 @@ import com.huaweicloud.sdk.rc.v1.model.ListResourceGroupsRequest;
 import com.huaweicloud.sdk.rc.v1.model.ListResourceGroupsResponse;
 import com.huaweicloud.sdk.rc.v1.model.ListResourcesRequest;
 import com.huaweicloud.sdk.rc.v1.model.ListResourcesResponse;
+import com.huaweicloud.sdk.rc.v1.model.ListSchemasRequest;
+import com.huaweicloud.sdk.rc.v1.model.ListSchemasResponse;
+import com.huaweicloud.sdk.rc.v1.model.ListStoredQueriesRequest;
+import com.huaweicloud.sdk.rc.v1.model.ListStoredQueriesResponse;
 import com.huaweicloud.sdk.rc.v1.model.RemoveResourceFromGroupRequest;
 import com.huaweicloud.sdk.rc.v1.model.RemoveResourceFromGroupResponse;
+import com.huaweicloud.sdk.rc.v1.model.RunQueryRequest;
+import com.huaweicloud.sdk.rc.v1.model.RunQueryResponse;
 import com.huaweicloud.sdk.rc.v1.model.ShowResourceByIdRequest;
 import com.huaweicloud.sdk.rc.v1.model.ShowResourceByIdResponse;
 import com.huaweicloud.sdk.rc.v1.model.ShowResourceDetailRequest;
@@ -33,8 +43,12 @@ import com.huaweicloud.sdk.rc.v1.model.ShowResourceGroupRequest;
 import com.huaweicloud.sdk.rc.v1.model.ShowResourceGroupResponse;
 import com.huaweicloud.sdk.rc.v1.model.ShowResourceRelationsRequest;
 import com.huaweicloud.sdk.rc.v1.model.ShowResourceRelationsResponse;
+import com.huaweicloud.sdk.rc.v1.model.ShowStoredQueryRequest;
+import com.huaweicloud.sdk.rc.v1.model.ShowStoredQueryResponse;
 import com.huaweicloud.sdk.rc.v1.model.UpdateResourceGroupRequest;
 import com.huaweicloud.sdk.rc.v1.model.UpdateResourceGroupResponse;
+import com.huaweicloud.sdk.rc.v1.model.UpdateStoredQueryRequest;
+import com.huaweicloud.sdk.rc.v1.model.UpdateStoredQueryResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -253,6 +267,207 @@ public class RcAsyncClient {
     public AsyncInvoker<UpdateResourceGroupRequest, UpdateResourceGroupResponse> updateResourceGroupAsyncInvoker(
         UpdateResourceGroupRequest request) {
         return new AsyncInvoker<>(request, RcMeta.updateResourceGroup, hcClient);
+    }
+
+    /**
+     * 创建高级查询
+     *
+     * Create Resource Query Language
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateStoredQueryRequest 请求对象
+     * @return CompletableFuture<CreateStoredQueryResponse>
+     */
+    public CompletableFuture<CreateStoredQueryResponse> createStoredQueryAsync(CreateStoredQueryRequest request) {
+        return hcClient.asyncInvokeHttp(request, RcMeta.createStoredQuery);
+    }
+
+    /**
+     * 创建高级查询
+     *
+     * Create Resource Query Language
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateStoredQueryRequest 请求对象
+     * @return AsyncInvoker<CreateStoredQueryRequest, CreateStoredQueryResponse>
+     */
+    public AsyncInvoker<CreateStoredQueryRequest, CreateStoredQueryResponse> createStoredQueryAsyncInvoker(
+        CreateStoredQueryRequest request) {
+        return new AsyncInvoker<>(request, RcMeta.createStoredQuery, hcClient);
+    }
+
+    /**
+     * 删除高级查询
+     *
+     * Select resources by SQL
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteStoredQueryRequest 请求对象
+     * @return CompletableFuture<DeleteStoredQueryResponse>
+     */
+    public CompletableFuture<DeleteStoredQueryResponse> deleteStoredQueryAsync(DeleteStoredQueryRequest request) {
+        return hcClient.asyncInvokeHttp(request, RcMeta.deleteStoredQuery);
+    }
+
+    /**
+     * 删除高级查询
+     *
+     * Select resources by SQL
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteStoredQueryRequest 请求对象
+     * @return AsyncInvoker<DeleteStoredQueryRequest, DeleteStoredQueryResponse>
+     */
+    public AsyncInvoker<DeleteStoredQueryRequest, DeleteStoredQueryResponse> deleteStoredQueryAsyncInvoker(
+        DeleteStoredQueryRequest request) {
+        return new AsyncInvoker<>(request, RcMeta.deleteStoredQuery, hcClient);
+    }
+
+    /**
+     * 列举高级查询Schema
+     *
+     * List Schemas
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSchemasRequest 请求对象
+     * @return CompletableFuture<ListSchemasResponse>
+     */
+    public CompletableFuture<ListSchemasResponse> listSchemasAsync(ListSchemasRequest request) {
+        return hcClient.asyncInvokeHttp(request, RcMeta.listSchemas);
+    }
+
+    /**
+     * 列举高级查询Schema
+     *
+     * List Schemas
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSchemasRequest 请求对象
+     * @return AsyncInvoker<ListSchemasRequest, ListSchemasResponse>
+     */
+    public AsyncInvoker<ListSchemasRequest, ListSchemasResponse> listSchemasAsyncInvoker(ListSchemasRequest request) {
+        return new AsyncInvoker<>(request, RcMeta.listSchemas, hcClient);
+    }
+
+    /**
+     * 列出高级查询
+     *
+     * List Resource Query Language
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListStoredQueriesRequest 请求对象
+     * @return CompletableFuture<ListStoredQueriesResponse>
+     */
+    public CompletableFuture<ListStoredQueriesResponse> listStoredQueriesAsync(ListStoredQueriesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RcMeta.listStoredQueries);
+    }
+
+    /**
+     * 列出高级查询
+     *
+     * List Resource Query Language
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListStoredQueriesRequest 请求对象
+     * @return AsyncInvoker<ListStoredQueriesRequest, ListStoredQueriesResponse>
+     */
+    public AsyncInvoker<ListStoredQueriesRequest, ListStoredQueriesResponse> listStoredQueriesAsyncInvoker(
+        ListStoredQueriesRequest request) {
+        return new AsyncInvoker<>(request, RcMeta.listStoredQueries, hcClient);
+    }
+
+    /**
+     * 运行高级查询
+     *
+     * Run Resource Query Language
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunQueryRequest 请求对象
+     * @return CompletableFuture<RunQueryResponse>
+     */
+    public CompletableFuture<RunQueryResponse> runQueryAsync(RunQueryRequest request) {
+        return hcClient.asyncInvokeHttp(request, RcMeta.runQuery);
+    }
+
+    /**
+     * 运行高级查询
+     *
+     * Run Resource Query Language
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunQueryRequest 请求对象
+     * @return AsyncInvoker<RunQueryRequest, RunQueryResponse>
+     */
+    public AsyncInvoker<RunQueryRequest, RunQueryResponse> runQueryAsyncInvoker(RunQueryRequest request) {
+        return new AsyncInvoker<>(request, RcMeta.runQuery, hcClient);
+    }
+
+    /**
+     * 查询单个高级查询
+     *
+     * Show Resource Query Language
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStoredQueryRequest 请求对象
+     * @return CompletableFuture<ShowStoredQueryResponse>
+     */
+    public CompletableFuture<ShowStoredQueryResponse> showStoredQueryAsync(ShowStoredQueryRequest request) {
+        return hcClient.asyncInvokeHttp(request, RcMeta.showStoredQuery);
+    }
+
+    /**
+     * 查询单个高级查询
+     *
+     * Show Resource Query Language
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStoredQueryRequest 请求对象
+     * @return AsyncInvoker<ShowStoredQueryRequest, ShowStoredQueryResponse>
+     */
+    public AsyncInvoker<ShowStoredQueryRequest, ShowStoredQueryResponse> showStoredQueryAsyncInvoker(
+        ShowStoredQueryRequest request) {
+        return new AsyncInvoker<>(request, RcMeta.showStoredQuery, hcClient);
+    }
+
+    /**
+     * 更新单个高级查询
+     *
+     * Update Resource Query Language
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateStoredQueryRequest 请求对象
+     * @return CompletableFuture<UpdateStoredQueryResponse>
+     */
+    public CompletableFuture<UpdateStoredQueryResponse> updateStoredQueryAsync(UpdateStoredQueryRequest request) {
+        return hcClient.asyncInvokeHttp(request, RcMeta.updateStoredQuery);
+    }
+
+    /**
+     * 更新单个高级查询
+     *
+     * Update Resource Query Language
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateStoredQueryRequest 请求对象
+     * @return AsyncInvoker<UpdateStoredQueryRequest, UpdateStoredQueryResponse>
+     */
+    public AsyncInvoker<UpdateStoredQueryRequest, UpdateStoredQueryResponse> updateStoredQueryAsyncInvoker(
+        UpdateStoredQueryRequest request) {
+        return new AsyncInvoker<>(request, RcMeta.updateStoredQuery, hcClient);
     }
 
     /**

@@ -40,6 +40,11 @@ public class UpdateScheduleResponse extends SdkResponse {
     private Boolean enabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reset_current_task")
+
+    private Boolean resetCurrentTask;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
     private Long startTime;
@@ -147,6 +152,23 @@ public class UpdateScheduleResponse extends SdkResponse {
 
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public UpdateScheduleResponse withResetCurrentTask(Boolean resetCurrentTask) {
+        this.resetCurrentTask = resetCurrentTask;
+        return this;
+    }
+
+    /**
+     * 是否立即执行
+     * @return resetCurrentTask
+     */
+    public Boolean getResetCurrentTask() {
+        return resetCurrentTask;
+    }
+
+    public void setResetCurrentTask(Boolean resetCurrentTask) {
+        this.resetCurrentTask = resetCurrentTask;
     }
 
     public UpdateScheduleResponse withStartTime(Long startTime) {
@@ -276,14 +298,26 @@ public class UpdateScheduleResponse extends SdkResponse {
         UpdateScheduleResponse that = (UpdateScheduleResponse) obj;
         return Objects.equals(this.scheduleId, that.scheduleId) && Objects.equals(this.nodeId, that.nodeId)
             && Objects.equals(this.name, that.name) && Objects.equals(this.cycleType, that.cycleType)
-            && Objects.equals(this.enabled, that.enabled) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.priority, that.priority)
-            && Objects.equals(this.daily, that.daily) && Objects.equals(this.tasks, that.tasks);
+            && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.resetCurrentTask, that.resetCurrentTask)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.daily, that.daily)
+            && Objects.equals(this.tasks, that.tasks);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(scheduleId, nodeId, name, cycleType, enabled, startTime, endTime, priority, daily, tasks);
+        return Objects.hash(scheduleId,
+            nodeId,
+            name,
+            cycleType,
+            enabled,
+            resetCurrentTask,
+            startTime,
+            endTime,
+            priority,
+            daily,
+            tasks);
     }
 
     @Override
@@ -295,6 +329,7 @@ public class UpdateScheduleResponse extends SdkResponse {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    cycleType: ").append(toIndentedString(cycleType)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+        sb.append("    resetCurrentTask: ").append(toIndentedString(resetCurrentTask)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");

@@ -389,6 +389,11 @@ public class ClusterSpec {
 
     private CertificateAuthority certificateAuthority;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "secretConfig")
+
+    private SecretConfig secretConfig;
+
     public ClusterSpec withCategory(CategoryEnum category) {
         this.category = category;
         return this;
@@ -1070,6 +1075,32 @@ public class ClusterSpec {
         this.certificateAuthority = certificateAuthority;
     }
 
+    public ClusterSpec withSecretConfig(SecretConfig secretConfig) {
+        this.secretConfig = secretConfig;
+        return this;
+    }
+
+    public ClusterSpec withSecretConfig(Consumer<SecretConfig> secretConfigSetter) {
+        if (this.secretConfig == null) {
+            this.secretConfig = new SecretConfig();
+            secretConfigSetter.accept(this.secretConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get secretConfig
+     * @return secretConfig
+     */
+    public SecretConfig getSecretConfig() {
+        return secretConfig;
+    }
+
+    public void setSecretConfig(SecretConfig secretConfig) {
+        this.secretConfig = secretConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1102,7 +1133,8 @@ public class ClusterSpec {
             && Objects.equals(this.configurationsOverride, that.configurationsOverride)
             && Objects.equals(this.clusterOps, that.clusterOps)
             && Objects.equals(this.encryptionConfig, that.encryptionConfig)
-            && Objects.equals(this.certificateAuthority, that.certificateAuthority);
+            && Objects.equals(this.certificateAuthority, that.certificateAuthority)
+            && Objects.equals(this.secretConfig, that.secretConfig);
     }
 
     @Override
@@ -1137,7 +1169,8 @@ public class ClusterSpec {
             configurationsOverride,
             clusterOps,
             encryptionConfig,
-            certificateAuthority);
+            certificateAuthority,
+            secretConfig);
     }
 
     @Override
@@ -1177,6 +1210,7 @@ public class ClusterSpec {
         sb.append("    clusterOps: ").append(toIndentedString(clusterOps)).append("\n");
         sb.append("    encryptionConfig: ").append(toIndentedString(encryptionConfig)).append("\n");
         sb.append("    certificateAuthority: ").append(toIndentedString(certificateAuthority)).append("\n");
+        sb.append("    secretConfig: ").append(toIndentedString(secretConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

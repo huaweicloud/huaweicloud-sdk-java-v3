@@ -39,7 +39,7 @@ public class ContainerSettingsDTO {
     private List<VolumeDTO> volumes = null;
 
     /**
-     * NPU类型, D310:昇腾310推理卡，D910:昇腾910训练卡;D310P：昇腾710或者310P加速卡
+     * NPU类型
      */
     public static final class NpuTypeEnum {
 
@@ -120,7 +120,7 @@ public class ContainerSettingsDTO {
     private NpuTypeEnum npuType;
 
     /**
-     * NPU算力切分模板,昇腾D310Pro，支持：vir01、vir02、vir02_1c、vir04、vir04_4c_dvpp、vir04_3c、vir04_3c_ndvpp 昇腾D910芯片支持:vir01|vir02|vir04|vir08 可在对应芯片的机器上通过npu-smi info -t template-info命令查询其详细信息
+     * NPU算力切分模板，可在对应芯片的机器上通过npu-smi info -t template-info命令查询其详细信息
      */
     public static final class VnpuTemplateEnum {
 
@@ -339,7 +339,7 @@ public class ContainerSettingsDTO {
     }
 
     /**
-     * NPU类型, D310:昇腾310推理卡，D910:昇腾910训练卡;D310P：昇腾710或者310P加速卡
+     * NPU类型
      * @return npuType
      */
     public NpuTypeEnum getNpuType() {
@@ -356,7 +356,7 @@ public class ContainerSettingsDTO {
     }
 
     /**
-     * NPU算力切分模板,昇腾D310Pro，支持：vir01、vir02、vir02_1c、vir04、vir04_4c_dvpp、vir04_3c、vir04_3c_ndvpp 昇腾D910芯片支持:vir01|vir02|vir04|vir08 可在对应芯片的机器上通过npu-smi info -t template-info命令查询其详细信息
+     * NPU算力切分模板，可在对应芯片的机器上通过npu-smi info -t template-info命令查询其详细信息
      * @return vnpuTemplate
      */
     public VnpuTemplateEnum getVnpuTemplate() {

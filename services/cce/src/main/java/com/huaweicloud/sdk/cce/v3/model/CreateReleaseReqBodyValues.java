@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 模板实例的值
+ * **参数解释：** 模板实例的值 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
  */
 public class CreateReleaseReqBodyValues {
 
@@ -26,7 +26,7 @@ public class CreateReleaseReqBodyValues {
     }
 
     /**
-     * 镜像拉取策略
+     * **参数解释：** 镜像拉取策略 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return imagePullPolicy
      */
     public String getImagePullPolicy() {
@@ -43,7 +43,7 @@ public class CreateReleaseReqBodyValues {
     }
 
     /**
-     * 镜像标签
+     * **参数解释：** 镜像标签 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return imageTag
      */
     public String getImageTag() {

@@ -17,6 +17,11 @@ public class RemoveNodeRequest {
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "removeNodeSystemSecurityGroup")
+
+    private Boolean removeNodeSystemSecurityGroup;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private RemoveNodesTask body;
@@ -36,6 +41,23 @@ public class RemoveNodeRequest {
 
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
+    }
+
+    public RemoveNodeRequest withRemoveNodeSystemSecurityGroup(Boolean removeNodeSystemSecurityGroup) {
+        this.removeNodeSystemSecurityGroup = removeNodeSystemSecurityGroup;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 移除节点时是否解绑节点默认安全组。 **约束限制**： 不涉及 **取值范围**： - false：移除节点时保留节点默认安全组 - true：移除节点时解绑节点默认安全组  **默认取值**： false
+     * @return removeNodeSystemSecurityGroup
+     */
+    public Boolean getRemoveNodeSystemSecurityGroup() {
+        return removeNodeSystemSecurityGroup;
+    }
+
+    public void setRemoveNodeSystemSecurityGroup(Boolean removeNodeSystemSecurityGroup) {
+        this.removeNodeSystemSecurityGroup = removeNodeSystemSecurityGroup;
     }
 
     public RemoveNodeRequest withBody(RemoveNodesTask body) {
@@ -73,12 +95,14 @@ public class RemoveNodeRequest {
             return false;
         }
         RemoveNodeRequest that = (RemoveNodeRequest) obj;
-        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.removeNodeSystemSecurityGroup, that.removeNodeSystemSecurityGroup)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, body);
+        return Objects.hash(clusterId, removeNodeSystemSecurityGroup, body);
     }
 
     @Override
@@ -86,6 +110,9 @@ public class RemoveNodeRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class RemoveNodeRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    removeNodeSystemSecurityGroup: ")
+            .append(toIndentedString(removeNodeSystemSecurityGroup))
+            .append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

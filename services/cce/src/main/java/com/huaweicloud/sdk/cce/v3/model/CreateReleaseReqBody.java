@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建模板实例的请求体
+ * **参数解释：** 创建模板实例的请求体 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
  */
 public class CreateReleaseReqBody {
 
@@ -52,7 +52,7 @@ public class CreateReleaseReqBody {
     }
 
     /**
-     * 模板ID
+     * **参数解释：** 模板ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return chartId
      */
     public String getChartId() {
@@ -69,7 +69,7 @@ public class CreateReleaseReqBody {
     }
 
     /**
-     * 模板实例描述
+     * **参数解释：** 模板实例描述 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return description
      */
     public String getDescription() {
@@ -86,7 +86,7 @@ public class CreateReleaseReqBody {
     }
 
     /**
-     * 模板实例名称
+     * **参数解释：** 模板实例名称 **约束限制：** 由小写字母开头，中间由小写字母、数字和中划线(-)组成，以小写字母或数字结尾 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return name
      */
     public String getName() {
@@ -103,7 +103,7 @@ public class CreateReleaseReqBody {
     }
 
     /**
-     * 模板实例所在的命名空间
+     * **参数解释：** 模板实例所在的命名空间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return namespace
      */
     public String getNamespace() {
@@ -120,7 +120,7 @@ public class CreateReleaseReqBody {
     }
 
     /**
-     * 模板实例版本号
+     * **参数解释：** 模板实例版本号 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return version
      */
     public String getVersion() {

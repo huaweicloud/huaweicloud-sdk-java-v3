@@ -26,7 +26,7 @@ public class WorkloadResourceQueue {
     }
 
     /**
-     * **参数解释**： 工作负载队列短查询加速开关。 **约束限制**： 不涉及。 **取值范围**： - on：开启 - off：关闭 **默认取值**： on
+     * **参数解释**： 工作负载队列短查询加速开关。 **约束限制**： 不涉及。 **取值范围**： - on：开启 - off：关闭  **默认取值**： on
      * @return shortQueryOptimize
      */
     public String getShortQueryOptimize() {

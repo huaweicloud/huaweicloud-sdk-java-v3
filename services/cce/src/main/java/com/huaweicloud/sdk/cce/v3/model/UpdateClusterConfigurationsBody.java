@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 更新指定集群配置参数内容请求体
+ * **参数解释：** 更新指定集群配置参数内容请求体 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
  */
 public class UpdateClusterConfigurationsBody {
 
@@ -37,7 +37,7 @@ public class UpdateClusterConfigurationsBody {
     }
 
     /**
-     * API版本，固定值**v3**
+     * **参数解释：** API版本，固定值**v3** **约束限制：** 固定值 **取值范围：** - v3  **默认取值：** v3 
      * @return apiVersion
      */
     public String getApiVersion() {
@@ -54,7 +54,7 @@ public class UpdateClusterConfigurationsBody {
     }
 
     /**
-     * API类型，固定值**Configuration**
+     * **参数解释：** API类型，固定值**Configuration** **约束限制：** 固定值 **取值范围：** - Configuration  **默认取值：** Configuration 
      * @return kind
      */
     public String getKind() {

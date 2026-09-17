@@ -67,7 +67,7 @@ public class WorkFlowStatus {
     }
 
     /**
-     * 升级流程中的各个任务项的执行状态
+     * **参数解释：** 升级流程中的各个任务项的执行状态 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return pointStatuses
      */
     public List<PointStatus> getPointStatuses() {
@@ -100,7 +100,7 @@ public class WorkFlowStatus {
     }
 
     /**
-     * 表示该升级流程的任务执行线路
+     * **参数解释：** 表示该升级流程的任务执行线路 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return lineStatuses
      */
     public List<LineStatus> getLineStatuses() {

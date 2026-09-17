@@ -104,6 +104,16 @@ public class CreateEdgeNodeResponse extends SdkResponse {
 
     private String metricReport;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iotda_south_access")
+
+    private String iotdaSouthAccess;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os_type")
+
+    private String osType;
+
     public CreateEdgeNodeResponse withEdgeNodeId(String edgeNodeId) {
         this.edgeNodeId = edgeNodeId;
         return this;
@@ -229,7 +239,7 @@ public class CreateEdgeNodeResponse extends SdkResponse {
     }
 
     /**
-     * 节点所属资源类型：advanced|standard
+     * 边缘节点类型：lite|advanced|standard。lite表示基础版边缘节点，advanced或standard表示专业版边缘节点。
      * @return type
      */
     public String getType() {
@@ -460,6 +470,40 @@ public class CreateEdgeNodeResponse extends SdkResponse {
         this.metricReport = metricReport;
     }
 
+    public CreateEdgeNodeResponse withIotdaSouthAccess(String iotdaSouthAccess) {
+        this.iotdaSouthAccess = iotdaSouthAccess;
+        return this;
+    }
+
+    /**
+     * iotda南向接入地址
+     * @return iotdaSouthAccess
+     */
+    public String getIotdaSouthAccess() {
+        return iotdaSouthAccess;
+    }
+
+    public void setIotdaSouthAccess(String iotdaSouthAccess) {
+        this.iotdaSouthAccess = iotdaSouthAccess;
+    }
+
+    public CreateEdgeNodeResponse withOsType(String osType) {
+        this.osType = osType;
+        return this;
+    }
+
+    /**
+     * 边缘节点系统类型。包括：generalLinux通用系统，openHarmony鸿蒙系统。
+     * @return osType
+     */
+    public String getOsType() {
+        return osType;
+    }
+
+    public void setOsType(String osType) {
+        this.osType = osType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -480,7 +524,8 @@ public class CreateEdgeNodeResponse extends SdkResponse {
             && Objects.equals(this.deviceDataFormat, that.deviceDataFormat)
             && Objects.equals(this.automaticUpgrade, that.automaticUpgrade)
             && Objects.equals(this.deviceDataRecord, that.deviceDataRecord)
-            && Objects.equals(this.metricReport, that.metricReport);
+            && Objects.equals(this.metricReport, that.metricReport)
+            && Objects.equals(this.iotdaSouthAccess, that.iotdaSouthAccess) && Objects.equals(this.osType, that.osType);
     }
 
     @Override
@@ -502,7 +547,9 @@ public class CreateEdgeNodeResponse extends SdkResponse {
             deviceDataFormat,
             automaticUpgrade,
             deviceDataRecord,
-            metricReport);
+            metricReport,
+            iotdaSouthAccess,
+            osType);
     }
 
     @Override
@@ -527,6 +574,8 @@ public class CreateEdgeNodeResponse extends SdkResponse {
         sb.append("    automaticUpgrade: ").append(toIndentedString(automaticUpgrade)).append("\n");
         sb.append("    deviceDataRecord: ").append(toIndentedString(deviceDataRecord)).append("\n");
         sb.append("    metricReport: ").append(toIndentedString(metricReport)).append("\n");
+        sb.append("    iotdaSouthAccess: ").append(toIndentedString(iotdaSouthAccess)).append("\n");
+        sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

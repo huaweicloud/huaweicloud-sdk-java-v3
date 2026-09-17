@@ -11,6 +11,8 @@ import com.huaweicloud.sdk.iotedge.v3.model.CreateAppVersionRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.CreateAppVersionResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.CreateClusterInstallCmdRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.CreateClusterInstallCmdResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.CreateClusterNodesInstallCmdRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.CreateClusterNodesInstallCmdResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.CreateClusterRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.CreateClusterResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.DeleteAppInstanceRequest;
@@ -23,6 +25,8 @@ import com.huaweicloud.sdk.iotedge.v3.model.DeleteClusterRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.DeleteClusterResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.DownloadAppVersionRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.DownloadAppVersionResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.InvokeKubeApiRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.InvokeKubeApiResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.ListAppImageRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.ListAppImageResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.ListAppInstanceHistoryRequest;
@@ -33,16 +37,26 @@ import com.huaweicloud.sdk.iotedge.v3.model.ListAppVersionsRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.ListAppVersionsResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.ListAppsRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.ListAppsResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.ListClusterNamespacesRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.ListClusterNamespacesResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.ListClusterNodesRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.ListClusterNodesResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.ListClustersRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.ListClustersResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.ShowAppRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.ShowAppResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.ShowAppVersionRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.ShowAppVersionResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.ShowClusterNodeRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.ShowClusterNodeResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.ShowClusterRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.ShowClusterResourcesRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.ShowClusterResourcesResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.ShowClusterResponse;
 import com.huaweicloud.sdk.iotedge.v3.model.UpdateAppInstanceRequest;
 import com.huaweicloud.sdk.iotedge.v3.model.UpdateAppInstanceResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.UpdateResourceBindingRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.UpdateResourceBindingResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -634,6 +648,213 @@ public class IoTEdgeAsyncClient {
      */
     public AsyncInvoker<ShowClusterRequest, ShowClusterResponse> showClusterAsyncInvoker(ShowClusterRequest request) {
         return new AsyncInvoker<>(request, IoTEdgeMeta.showCluster, hcClient);
+    }
+
+    /**
+     * 查询资源列表-企业版
+     *
+     * 查询资源列表-企业版
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClusterResourcesRequest 请求对象
+     * @return CompletableFuture<ShowClusterResourcesResponse>
+     */
+    public CompletableFuture<ShowClusterResourcesResponse> showClusterResourcesAsync(
+        ShowClusterResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.showClusterResources);
+    }
+
+    /**
+     * 查询资源列表-企业版
+     *
+     * 查询资源列表-企业版
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClusterResourcesRequest 请求对象
+     * @return AsyncInvoker<ShowClusterResourcesRequest, ShowClusterResourcesResponse>
+     */
+    public AsyncInvoker<ShowClusterResourcesRequest, ShowClusterResourcesResponse> showClusterResourcesAsyncInvoker(
+        ShowClusterResourcesRequest request) {
+        return new AsyncInvoker<>(request, IoTEdgeMeta.showClusterResources, hcClient);
+    }
+
+    /**
+     * 更改资源绑定信息-企业版
+     *
+     * 更改资源绑定信息-企业版
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateResourceBindingRequest 请求对象
+     * @return CompletableFuture<UpdateResourceBindingResponse>
+     */
+    public CompletableFuture<UpdateResourceBindingResponse> updateResourceBindingAsync(
+        UpdateResourceBindingRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.updateResourceBinding);
+    }
+
+    /**
+     * 更改资源绑定信息-企业版
+     *
+     * 更改资源绑定信息-企业版
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateResourceBindingRequest 请求对象
+     * @return AsyncInvoker<UpdateResourceBindingRequest, UpdateResourceBindingResponse>
+     */
+    public AsyncInvoker<UpdateResourceBindingRequest, UpdateResourceBindingResponse> updateResourceBindingAsyncInvoker(
+        UpdateResourceBindingRequest request) {
+        return new AsyncInvoker<>(request, IoTEdgeMeta.updateResourceBinding, hcClient);
+    }
+
+    /**
+     * 转发k8s API
+     *
+     * 转发k8s API。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokeKubeApiRequest 请求对象
+     * @return CompletableFuture<InvokeKubeApiResponse>
+     */
+    public CompletableFuture<InvokeKubeApiResponse> invokeKubeApiAsync(InvokeKubeApiRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.invokeKubeApi);
+    }
+
+    /**
+     * 转发k8s API
+     *
+     * 转发k8s API。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokeKubeApiRequest 请求对象
+     * @return AsyncInvoker<InvokeKubeApiRequest, InvokeKubeApiResponse>
+     */
+    public AsyncInvoker<InvokeKubeApiRequest, InvokeKubeApiResponse> invokeKubeApiAsyncInvoker(
+        InvokeKubeApiRequest request) {
+        return new AsyncInvoker<>(request, IoTEdgeMeta.invokeKubeApi, hcClient);
+    }
+
+    /**
+     * 查询命名空间列表
+     *
+     * 应用服务器可调用此接口查询命名空间列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClusterNamespacesRequest 请求对象
+     * @return CompletableFuture<ListClusterNamespacesResponse>
+     */
+    public CompletableFuture<ListClusterNamespacesResponse> listClusterNamespacesAsync(
+        ListClusterNamespacesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.listClusterNamespaces);
+    }
+
+    /**
+     * 查询命名空间列表
+     *
+     * 应用服务器可调用此接口查询命名空间列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClusterNamespacesRequest 请求对象
+     * @return AsyncInvoker<ListClusterNamespacesRequest, ListClusterNamespacesResponse>
+     */
+    public AsyncInvoker<ListClusterNamespacesRequest, ListClusterNamespacesResponse> listClusterNamespacesAsyncInvoker(
+        ListClusterNamespacesRequest request) {
+        return new AsyncInvoker<>(request, IoTEdgeMeta.listClusterNamespaces, hcClient);
+    }
+
+    /**
+     * 生成安装集群节点的安装命令
+     *
+     * 生成安装集群节点的安装命令。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateClusterNodesInstallCmdRequest 请求对象
+     * @return CompletableFuture<CreateClusterNodesInstallCmdResponse>
+     */
+    public CompletableFuture<CreateClusterNodesInstallCmdResponse> createClusterNodesInstallCmdAsync(
+        CreateClusterNodesInstallCmdRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.createClusterNodesInstallCmd);
+    }
+
+    /**
+     * 生成安装集群节点的安装命令
+     *
+     * 生成安装集群节点的安装命令。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateClusterNodesInstallCmdRequest 请求对象
+     * @return AsyncInvoker<CreateClusterNodesInstallCmdRequest, CreateClusterNodesInstallCmdResponse>
+     */
+    public AsyncInvoker<CreateClusterNodesInstallCmdRequest, CreateClusterNodesInstallCmdResponse> createClusterNodesInstallCmdAsyncInvoker(
+        CreateClusterNodesInstallCmdRequest request) {
+        return new AsyncInvoker<>(request, IoTEdgeMeta.createClusterNodesInstallCmd, hcClient);
+    }
+
+    /**
+     * 查询集群的节点列表
+     *
+     * 应用服务器可调用此接口查询集群的节点列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClusterNodesRequest 请求对象
+     * @return CompletableFuture<ListClusterNodesResponse>
+     */
+    public CompletableFuture<ListClusterNodesResponse> listClusterNodesAsync(ListClusterNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.listClusterNodes);
+    }
+
+    /**
+     * 查询集群的节点列表
+     *
+     * 应用服务器可调用此接口查询集群的节点列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClusterNodesRequest 请求对象
+     * @return AsyncInvoker<ListClusterNodesRequest, ListClusterNodesResponse>
+     */
+    public AsyncInvoker<ListClusterNodesRequest, ListClusterNodesResponse> listClusterNodesAsyncInvoker(
+        ListClusterNodesRequest request) {
+        return new AsyncInvoker<>(request, IoTEdgeMeta.listClusterNodes, hcClient);
+    }
+
+    /**
+     * 查询集群的节点详情
+     *
+     * 应用服务器可调用此接口查询集群的节点详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClusterNodeRequest 请求对象
+     * @return CompletableFuture<ShowClusterNodeResponse>
+     */
+    public CompletableFuture<ShowClusterNodeResponse> showClusterNodeAsync(ShowClusterNodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.showClusterNode);
+    }
+
+    /**
+     * 查询集群的节点详情
+     *
+     * 应用服务器可调用此接口查询集群的节点详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClusterNodeRequest 请求对象
+     * @return AsyncInvoker<ShowClusterNodeRequest, ShowClusterNodeResponse>
+     */
+    public AsyncInvoker<ShowClusterNodeRequest, ShowClusterNodeResponse> showClusterNodeAsyncInvoker(
+        ShowClusterNodeRequest request) {
+        return new AsyncInvoker<>(request, IoTEdgeMeta.showClusterNode, hcClient);
     }
 
 }

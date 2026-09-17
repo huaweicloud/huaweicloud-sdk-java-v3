@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 升级后确认元数据
+ * **参数解释：** 升级后确认元数据 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
  */
 public class PostcheckCluserResponseMetadata {
 
@@ -21,7 +21,7 @@ public class PostcheckCluserResponseMetadata {
     }
 
     /**
-     * 任务ID
+     * **参数解释：** 任务ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return uid
      */
     public String getUid() {

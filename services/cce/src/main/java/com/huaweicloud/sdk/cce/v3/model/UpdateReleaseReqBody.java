@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 更新模板实例的请求体
+ * **参数解释：** 更新模板实例的请求体 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
  */
 public class UpdateReleaseReqBody {
 
@@ -22,7 +22,7 @@ public class UpdateReleaseReqBody {
     private String chartId;
 
     /**
-     * 更新操作，升级为upgrade，回退为rollback
+     * **参数解释：** 更新操作，升级为upgrade，回退为rollback **约束限制：** 不涉及 **取值范围：** - upgrade：升级 - rollback：回退  **默认取值：** 不涉及
      */
     public static final class ActionEnum {
 
@@ -112,7 +112,7 @@ public class UpdateReleaseReqBody {
     }
 
     /**
-     * 模板ID
+     * **参数解释：** 模板ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return chartId
      */
     public String getChartId() {
@@ -129,7 +129,7 @@ public class UpdateReleaseReqBody {
     }
 
     /**
-     * 更新操作，升级为upgrade，回退为rollback
+     * **参数解释：** 更新操作，升级为upgrade，回退为rollback **约束限制：** 不涉及 **取值范围：** - upgrade：升级 - rollback：回退  **默认取值：** 不涉及
      * @return action
      */
     public ActionEnum getAction() {

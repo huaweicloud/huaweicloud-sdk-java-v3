@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 节点限制检查状态
+ * **参数解释：** 节点限制检查状态 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
  */
 public class NodeCheckStatus {
 
@@ -29,7 +29,7 @@ public class NodeCheckStatus {
     }
 
     /**
-     * 状态，取值如下 - Init: 初始化 - Running 运行中 - Success 成功 - Failed 失败
+     * **参数解释：** 状态 **约束限制：** 不涉及 **取值范围：** - Init：初始化 - Running：运行中 - Success：成功 - Failed：失败  **默认取值：** 不涉及
      * @return phase
      */
     public String getPhase() {
@@ -62,7 +62,7 @@ public class NodeCheckStatus {
     }
 
     /**
-     * 节点检查状态
+     * **参数解释：** 节点检查状态 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return nodeStageStatus
      */
     public List<NodeStageStatus> getNodeStageStatus() {

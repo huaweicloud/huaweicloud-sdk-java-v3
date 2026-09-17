@@ -29,9 +29,12 @@ import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.http.HttpResponse;
+import com.huaweicloud.sdk.core.internal.model.AssumeAgencyWithOidcRequestBody;
+import com.huaweicloud.sdk.core.internal.model.AssumeAgencyWithOidcResponse;
 import com.huaweicloud.sdk.core.internal.model.CreateTemporaryAccessKeyByTokenRequestBody;
 import com.huaweicloud.sdk.core.internal.model.CreateTemporaryAccessKeyByTokenResponse;
 import com.huaweicloud.sdk.core.internal.model.CreateTokenWithIdTokenResponse;
+import com.huaweicloud.sdk.core.internal.model.Credential;
 import com.huaweicloud.sdk.core.internal.model.GetIdTokenAuthParams;
 import com.huaweicloud.sdk.core.internal.model.GetIdTokenIdTokenBody;
 import com.huaweicloud.sdk.core.internal.model.GetIdTokenRequestBody;
@@ -56,9 +59,13 @@ public class IamHelper {
 
     private static final String CREATE_TEMPORARY_ACCESS_KEY_BY_TOKEN_URI = "/v3.0/OS-CREDENTIAL/securitytokens";
 
+    private static final String ASSUME_AGENCY_WITH_OIDC_URI = "/v5/agencies/assume-with-oidc";
+
     private static final Logger LOGGER = LoggerFactory.getLogger(IamHelper.class);
 
     private static final Map<String, String> ENDPOINTS = processEndpoints();
+
+    private static final Map<String, String> STS_ENDPOINTS = processStsEndpoints();
 
     private static Map<String, String> processEndpoints() {
         try (InputStream inputStream = IamHelper.class.getClassLoader()
@@ -71,6 +78,21 @@ public class IamHelper {
             });
         } catch (Exception e) {
             LOGGER.warn("load iam endpoints error, %s", e);
+            return new HashMap<>();
+        }
+    }
+
+    private static Map<String, String> processStsEndpoints() {
+        try (InputStream inputStream = IamHelper.class.getClassLoader()
+                .getResourceAsStream("sts_endpoints.json")) {
+            if (inputStream == null) {
+                LOGGER.warn("cannot find sts endpoints config file, use default");
+                return new HashMap<>();
+            }
+            return JsonUtils.fromStream(inputStream, new TypeReference<Map<String, String>>() {
+            });
+        } catch (Exception e) {
+            LOGGER.warn("load sts endpoints error, %s", e);
             return new HashMap<>();
         }
     }
@@ -90,6 +112,17 @@ public class IamHelper {
             return ENDPOINTS.get(regionId);
         }
         return Constants.DEFAULT_IAM_ENDPOINT;
+    }
+
+    public static String getStsEndpoint(String regionId) {
+        String env = System.getenv(Constants.STS_ENDPOINT_ENV_NAME);
+        if (StringUtils.isNotEmpty(env)) {
+            return env;
+        }
+        if (StringUtils.isNotEmpty(regionId) && STS_ENDPOINTS.containsKey(regionId)) {
+            return STS_ENDPOINTS.get(regionId);
+        }
+        return Constants.DEFAULT_STS_ENDPOINT;
     }
 
     private static HttpRequest getCreateTokenWithIdTokenRequest(
@@ -179,5 +212,39 @@ public class IamHelper {
                 httpResponse.getBodyAsString(), CreateTemporaryAccessKeyByTokenResponse.class));
         response.setHttpStatusCode(httpResponse.getStatusCode());
         return response;
+    }
+
+    public static Credential assumeAgencyWithOidc(HttpClient client,
+                                                   String providerUrn, String agencyUrn,
+                                                   String agencySessionName, String idToken,
+                                                   int durationSeconds, String policy,
+                                                   List<String> policyIds, String regionId) {
+        AssumeAgencyWithOidcRequestBody body = new AssumeAgencyWithOidcRequestBody()
+                .withProviderUrn(providerUrn)
+                .withAgencyUrn(agencyUrn)
+                .withAgencySessionName(agencySessionName)
+                .withIdToken(idToken)
+                .withDurationSeconds(durationSeconds)
+                .withPolicy(policy)
+                .withPolicyIds(policyIds);
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .withEndpoint(getStsEndpoint(regionId))
+                .withContentType(Constants.MEDIATYPE.APPLICATION_JSON_UTF8)
+                .withMethod(HttpMethod.POST)
+                .withPath(ASSUME_AGENCY_WITH_OIDC_URI)
+                .withBodyAsString(JsonUtils.toJSON(body))
+                .build();
+
+        HttpResponse httpResponse = client.syncInvokeHttp(request);
+        if (httpResponse.getStatusCode() >= 400) {
+            throw ServiceResponseException.mapException(
+                    httpResponse.getStatusCode(), ExceptionUtils.extractErrorMessage(httpResponse));
+        }
+
+        AssumeAgencyWithOidcResponse response = Objects.requireNonNull(JsonUtils.toObject(
+                httpResponse.getBodyAsString(), AssumeAgencyWithOidcResponse.class));
+        response.setHttpStatusCode(httpResponse.getStatusCode());
+        return response.getCredentials();
     }
 }

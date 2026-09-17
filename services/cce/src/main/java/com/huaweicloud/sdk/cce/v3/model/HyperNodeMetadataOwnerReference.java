@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 属主对象
+ * **参数解释**： 属主对象 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
  */
 public class HyperNodeMetadataOwnerReference {
 
@@ -26,7 +26,7 @@ public class HyperNodeMetadataOwnerReference {
     }
 
     /**
-     * **参数解释**： 节点池名称
+     * **参数解释**： 节点池名称 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return nodepoolName
      */
     public String getNodepoolName() {
@@ -43,7 +43,7 @@ public class HyperNodeMetadataOwnerReference {
     }
 
     /**
-     * **参数解释**： 节点池UID
+     * **参数解释**： 节点池ID **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return nodepoolID
      */
     public String getNodepoolID() {

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 集群升级任务类型： Cluster: 集群升级任务 PreCheck: 集群升级预检查任务 Rollback: 集群升级回归任务 Snapshot: 集群升级快照任务 PostCheck: 集群升级后检查任务 
+ * **参数解释：** 集群升级任务类型 **约束限制：** 不涉及 **取值范围：** - Cluster：集群升级任务 - PreCheck：集群升级预检查任务 - Rollback：集群升级回归任务 - Snapshot：集群升级快照任务 - PostCheck：集群升级后检查任务  **默认取值：** 不涉及 
  */
 public class TaskType {
 

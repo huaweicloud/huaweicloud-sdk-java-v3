@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * **参数解释**： 逻辑集群缩容请求体。  **约束限制**：  必须是非空值。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
+ * **参数解释**： 逻辑集群缩容请求体。 **约束限制**：  必须是非空值。  **取值范围**： 不涉及。 **默认取值**：  不涉及。
  */
 public class ShrinkLogicalClusterRequestBody {
 
@@ -55,7 +55,7 @@ public class ShrinkLogicalClusterRequestBody {
     }
 
     /**
-     * **参数解释**： 缩容主机环信息。  **约束限制**：  与shrink_node_num缩容节点个数两个参数任选其一，两者都存在，优先取cluster_rings缩容主机环信息参数。 **取值范围**：  不涉及。 **默认取值**：  不涉及。
+     * **参数解释**： 缩容主机环信息。 **约束限制**：  与shrink_node_num缩容节点个数两个参数任选其一，两者都存在，优先取cluster_rings缩容主机环信息参数。 **取值范围**： 不涉及。 **默认取值**：  不涉及。
      * @return clusterRings
      */
     public List<ClusterRing> getClusterRings() {
@@ -72,7 +72,7 @@ public class ShrinkLogicalClusterRequestBody {
     }
 
     /**
-     * **参数解释**： 重分布并发配置数。  **约束限制**：  不涉及。 **取值范围**：  1~200。 **默认取值**：  4。
+     * **参数解释**： 重分布并发配置数。 **约束限制**：  不涉及。 **取值范围**： 1~200。 **默认取值**：  4。
      * @return parallelJobs
      */
     public Integer getParallelJobs() {
@@ -89,7 +89,7 @@ public class ShrinkLogicalClusterRequestBody {
     }
 
     /**
-     * **参数解释**：  缩容模式。 **约束限制**：  不涉及。 **取值范围**：  read-only：离线模式 insert：在线模式 **默认取值**：  insert
+     * **参数解释**： 缩容模式。 **约束限制**：  不涉及。 **取值范围**： read-only：离线模式 insert：在线模式 **默认取值**：  insert
      * @return mode
      */
     public String getMode() {
@@ -106,7 +106,7 @@ public class ShrinkLogicalClusterRequestBody {
     }
 
     /**
-     * **参数解释**： 缩容节点个数。 **约束限制**：  与cluster_rings缩容主机环信息两个参数任选其一，两者都存在，优先取cluster_rings缩容主机环信息参数。 **取值范围**：  不涉及。 **默认取值**：  不涉及。
+     * **参数解释**： 缩容节点个数。 **约束限制**：  与cluster_rings缩容主机环信息两个参数任选其一，两者都存在，优先取cluster_rings缩容主机环信息参数。 **取值范围**： 不涉及。 **默认取值**：  不涉及。
      * @return shrinkNodeNum
      */
     public Integer getShrinkNodeNum() {

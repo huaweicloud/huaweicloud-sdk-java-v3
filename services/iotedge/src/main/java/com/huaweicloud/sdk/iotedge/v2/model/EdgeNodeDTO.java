@@ -59,9 +59,19 @@ public class EdgeNodeDTO {
     private List<String> ips = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "software_version")
+
+    private String softwareVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_group_id")
+
+    private String nodeGroupId;
 
     public EdgeNodeDTO withEdgeNodeId(String edgeNodeId) {
         this.edgeNodeId = edgeNodeId;
@@ -154,7 +164,7 @@ public class EdgeNodeDTO {
     }
 
     /**
-     * 节点所属资源类型：advanced|standard
+     * 边缘节点类型：lite|advanced|standard。lite表示基础版边缘节点，advanced或standard表示专业版边缘节点。
      * @return type
      */
     public String getType() {
@@ -264,6 +274,23 @@ public class EdgeNodeDTO {
         this.ips = ips;
     }
 
+    public EdgeNodeDTO withSoftwareVersion(String softwareVersion) {
+        this.softwareVersion = softwareVersion;
+        return this;
+    }
+
+    /**
+     * 节点软件版本
+     * @return softwareVersion
+     */
+    public String getSoftwareVersion() {
+        return softwareVersion;
+    }
+
+    public void setSoftwareVersion(String softwareVersion) {
+        this.softwareVersion = softwareVersion;
+    }
+
     public EdgeNodeDTO withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -281,6 +308,23 @@ public class EdgeNodeDTO {
         this.createTime = createTime;
     }
 
+    public EdgeNodeDTO withNodeGroupId(String nodeGroupId) {
+        this.nodeGroupId = nodeGroupId;
+        return this;
+    }
+
+    /**
+     * 节点组ID
+     * @return nodeGroupId
+     */
+    public String getNodeGroupId() {
+        return nodeGroupId;
+    }
+
+    public void setNodeGroupId(String nodeGroupId) {
+        this.nodeGroupId = nodeGroupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -295,13 +339,24 @@ public class EdgeNodeDTO {
             && Objects.equals(this.spaceId, that.spaceId) && Objects.equals(this.type, that.type)
             && Objects.equals(this.resourceIds, that.resourceIds)
             && Objects.equals(this.resourceSpecTypes, that.resourceSpecTypes) && Objects.equals(this.ips, that.ips)
-            && Objects.equals(this.createTime, that.createTime);
+            && Objects.equals(this.softwareVersion, that.softwareVersion)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.nodeGroupId, that.nodeGroupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(edgeNodeId, name, state, instanceId, spaceId, type, resourceIds, resourceSpecTypes, ips, createTime);
+        return Objects.hash(edgeNodeId,
+            name,
+            state,
+            instanceId,
+            spaceId,
+            type,
+            resourceIds,
+            resourceSpecTypes,
+            ips,
+            softwareVersion,
+            createTime,
+            nodeGroupId);
     }
 
     @Override
@@ -317,7 +372,9 @@ public class EdgeNodeDTO {
         sb.append("    resourceIds: ").append(toIndentedString(resourceIds)).append("\n");
         sb.append("    resourceSpecTypes: ").append(toIndentedString(resourceSpecTypes)).append("\n");
         sb.append("    ips: ").append(toIndentedString(ips)).append("\n");
+        sb.append("    softwareVersion: ").append(toIndentedString(softwareVersion)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    nodeGroupId: ").append(toIndentedString(nodeGroupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -16,11 +16,14 @@ import com.huaweicloud.sdk.iotedge.v2.model.AddGeneralOtTemplateRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.AddGeneralOtTemplateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.AddOtTemplatesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.AddOtTemplatesResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.AssociateNodeRequestBody;
 import com.huaweicloud.sdk.iotedge.v2.model.AuthorizeNa2NodesRequestDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchAssociateNaToNodesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchAssociateNaToNodesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchConfirmConfigsNewRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchConfirmConfigsNewResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.BatchConfirmConfigsRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.BatchConfirmConfigsResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchImportConfigsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchImportConfigsRequestBody;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchImportConfigsResponse;
@@ -40,8 +43,14 @@ import com.huaweicloud.sdk.iotedge.v2.model.BatchListModulesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchListModulesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchListOtTemplatesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchListOtTemplatesResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.BindNodeRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.BindNodeResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ConfirmIaConfigsRequestBody;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateAppConfigsTemplatesReqDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateChannelRequestDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateClientNodeRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateClientNodeRequestDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateClientNodeResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateDcDsReqDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateDcPointReqDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateDcPointRequest;
@@ -66,10 +75,17 @@ import com.huaweicloud.sdk.iotedge.v2.model.CreateInstallCmdResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateModuleRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateModuleResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateOtTemplatesReqDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.CreatePushChannelRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.CreatePushChannelResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateReinstallCmdRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateReinstallCmdRequestBody;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateReinstallCmdResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateRouterReqDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateScheduleReqDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateScheduleRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateScheduleResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateUpgradeCmdRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateUpgradeCmdResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteAppConfigsTemplateRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteAppConfigsTemplateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcDsRequest;
@@ -97,6 +113,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.DeleteNaRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteNaResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteOtTemplateRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteOtTemplateResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.DeletePushChannelRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.DeletePushChannelResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteScheduleRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteScheduleResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeviceControlDefaultValuesReqDTO;
@@ -110,8 +128,18 @@ import com.huaweicloud.sdk.iotedge.v2.model.ExecuteDeviceControlsSetResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ImportPointsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ImportPointsRequestBody;
 import com.huaweicloud.sdk.iotedge.v2.model.ImportPointsResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokeDeleteProxyRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokeDeleteProxyResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokeGetProxyRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokeGetProxyResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.InvokeModuleMsgRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.InvokeModuleMsgResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokePatchProxyRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokePatchProxyResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokePostProxyRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokePostProxyResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokePutProxyRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokePutProxyResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListDevicesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListDevicesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListEdgeNodesRequest;
@@ -126,6 +154,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.ListNasRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListNasResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListPropertyActiveControlsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListPropertyActiveControlsResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.ListPushChannelsRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.ListPushChannelsResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListRoutesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListRoutesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.SetDeviceControlDefaultValuesRequest;
@@ -144,6 +174,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeHostsInfoRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeHostsInfoResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeSoftwareVersionRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeSoftwareVersionResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowIaConfigRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowIaConfigResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowModuleRequest;
@@ -162,6 +194,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.ShowProductConfigRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowProductConfigResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.SynchronizeDcConfigsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.SynchronizeDcConfigsResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateClientNodeRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateClientNodeResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateDcDsReqDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateDcDsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateDcDsResponse;
@@ -197,6 +231,7 @@ import com.huaweicloud.sdk.iotedge.v2.model.UpdateModuleStateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateNaRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateNaRequestDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateNaResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateNodeChannelRequestDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateNodeReqDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateRoutesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateRoutesResponse;
@@ -254,11 +289,72 @@ public class IoTEdgeMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateInstallCmdRequest::getArch, CreateInstallCmdRequest::setArch));
+        builder.<Boolean>withRequestField("enable_tpm",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(CreateInstallCmdRequest::getEnableTpm, CreateInstallCmdRequest::setEnableTpm));
         builder.<CreateInstallCmdRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateInstallCmdRequestDTO.class),
             f -> f.withMarshaller(CreateInstallCmdRequest::getBody, CreateInstallCmdRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateReinstallCmdRequest, CreateReinstallCmdResponse> createReinstallCmd =
+        genForCreateReinstallCmd();
+
+    private static HttpRequestDef<CreateReinstallCmdRequest, CreateReinstallCmdResponse> genForCreateReinstallCmd() {
+        // basic
+        HttpRequestDef.Builder<CreateReinstallCmdRequest, CreateReinstallCmdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateReinstallCmdRequest.class, CreateReinstallCmdResponse.class)
+                .withName("CreateReinstallCmd")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/reinstall")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateReinstallCmdRequest::getEdgeNodeId, CreateReinstallCmdRequest::setEdgeNodeId));
+        builder.<Boolean>withRequestField("enable_tpm",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(CreateReinstallCmdRequest::getEnableTpm, CreateReinstallCmdRequest::setEnableTpm));
+        builder.<CreateReinstallCmdRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateReinstallCmdRequestBody.class),
+            f -> f.withMarshaller(CreateReinstallCmdRequest::getBody, CreateReinstallCmdRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateUpgradeCmdRequest, CreateUpgradeCmdResponse> createUpgradeCmd =
+        genForCreateUpgradeCmd();
+
+    private static HttpRequestDef<CreateUpgradeCmdRequest, CreateUpgradeCmdResponse> genForCreateUpgradeCmd() {
+        // basic
+        HttpRequestDef.Builder<CreateUpgradeCmdRequest, CreateUpgradeCmdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateUpgradeCmdRequest.class, CreateUpgradeCmdResponse.class)
+                .withName("CreateUpgradeCmd")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateUpgradeCmdRequest::getEdgeNodeId, CreateUpgradeCmdRequest::setEdgeNodeId));
 
         // response
 
@@ -290,11 +386,6 @@ public class IoTEdgeMeta {
                 DeleteEdgeNodeRequest::setDeleteExternalNode));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteEdgeNodeResponse::getBody, DeleteEdgeNodeResponse::setBody));
 
         return builder.build();
     }
@@ -341,6 +432,11 @@ public class IoTEdgeMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListEdgeNodesRequest::getNodeIds, ListEdgeNodesRequest::setNodeIds));
+        builder.<String>withRequestField("app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEdgeNodesRequest::getAppId, ListEdgeNodesRequest::setAppId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -425,6 +521,121 @@ public class IoTEdgeMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNodeReqDTO.class),
             f -> f.withMarshaller(UpdateEdgeNodeRequest::getBody, UpdateEdgeNodeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateClientNodeRequest, CreateClientNodeResponse> createClientNode =
+        genForCreateClientNode();
+
+    private static HttpRequestDef<CreateClientNodeRequest, CreateClientNodeResponse> genForCreateClientNode() {
+        // basic
+        HttpRequestDef.Builder<CreateClientNodeRequest, CreateClientNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateClientNodeRequest.class, CreateClientNodeResponse.class)
+                .withName("CreateClientNode")
+                .withUri("/v2/{project_id}/push-channels/{channel_id}/client-nodes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateClientNodeRequest::getChannelId, CreateClientNodeRequest::setChannelId));
+        builder.<CreateClientNodeRequestDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateClientNodeRequestDTO.class),
+            f -> f.withMarshaller(CreateClientNodeRequest::getBody, CreateClientNodeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateClientNodeRequest, UpdateClientNodeResponse> updateClientNode =
+        genForUpdateClientNode();
+
+    private static HttpRequestDef<UpdateClientNodeRequest, UpdateClientNodeResponse> genForUpdateClientNode() {
+        // basic
+        HttpRequestDef.Builder<UpdateClientNodeRequest, UpdateClientNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateClientNodeRequest.class, UpdateClientNodeResponse.class)
+                .withName("UpdateClientNode")
+                .withUri("/v2/{project_id}/push-channels/{channel_id}/client-nodes/{node_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClientNodeRequest::getChannelId, UpdateClientNodeRequest::setChannelId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClientNodeRequest::getNodeId, UpdateClientNodeRequest::setNodeId));
+        builder.<UpdateNodeChannelRequestDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateNodeChannelRequestDTO.class),
+            f -> f.withMarshaller(UpdateClientNodeRequest::getBody, UpdateClientNodeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEdgeNodeSoftwareVersionRequest, ShowEdgeNodeSoftwareVersionResponse> showEdgeNodeSoftwareVersion =
+        genForShowEdgeNodeSoftwareVersion();
+
+    private static HttpRequestDef<ShowEdgeNodeSoftwareVersionRequest, ShowEdgeNodeSoftwareVersionResponse> genForShowEdgeNodeSoftwareVersion() {
+        // basic
+        HttpRequestDef.Builder<ShowEdgeNodeSoftwareVersionRequest, ShowEdgeNodeSoftwareVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowEdgeNodeSoftwareVersionRequest.class,
+                    ShowEdgeNodeSoftwareVersionResponse.class)
+                .withName("ShowEdgeNodeSoftwareVersion")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/software-versions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEdgeNodeSoftwareVersionRequest::getEdgeNodeId,
+                ShowEdgeNodeSoftwareVersionRequest::setEdgeNodeId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BindNodeRequest, BindNodeResponse> bindNode = genForBindNode();
+
+    private static HttpRequestDef<BindNodeRequest, BindNodeResponse> genForBindNode() {
+        // basic
+        HttpRequestDef.Builder<BindNodeRequest, BindNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BindNodeRequest.class, BindNodeResponse.class)
+                .withName("BindNode")
+                .withUri("/v2/{project_id}/resources/{resource_id}/bind")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BindNodeRequest::getResourceId, BindNodeRequest::setResourceId));
+        builder.<AssociateNodeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociateNodeRequestBody.class),
+            f -> f.withMarshaller(BindNodeRequest::getBody, BindNodeRequest::setBody));
 
         // response
 
@@ -580,12 +791,6 @@ public class IoTEdgeMeta {
                 SetDeviceControlDefaultValuesRequest::setBody));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(SetDeviceControlDefaultValuesResponse::getBody,
-                SetDeviceControlDefaultValuesResponse::setBody));
 
         return builder.build();
     }
@@ -640,11 +845,6 @@ public class IoTEdgeMeta {
             f -> f.withMarshaller(DeleteDeviceRequest::getDeviceId, DeleteDeviceRequest::setDeviceId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteDeviceResponse::getBody, DeleteDeviceResponse::setBody));
 
         return builder.build();
     }
@@ -675,6 +875,16 @@ public class IoTEdgeMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDevicesRequest::getDeviceName, ListDevicesRequest::setDeviceName));
+        builder.<String>withRequestField("module_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevicesRequest::getModuleId, ListDevicesRequest::setModuleId));
+        builder.<String>withRequestField("device_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevicesRequest::getDeviceId, ListDevicesRequest::setDeviceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -787,12 +997,6 @@ public class IoTEdgeMeta {
         // requests
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(AddGeneralAppConfigsTemplateResponse::getBody,
-                AddGeneralAppConfigsTemplateResponse::setBody));
 
         return builder.build();
     }
@@ -853,12 +1057,6 @@ public class IoTEdgeMeta {
                 DeleteAppConfigsTemplateRequest::setTplId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteAppConfigsTemplateResponse::getBody,
-                DeleteAppConfigsTemplateResponse::setBody));
 
         return builder.build();
     }
@@ -924,6 +1122,17 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(BatchListEdgeAppsRequest.FunctionTypeEnum.class),
             f -> f.withMarshaller(BatchListEdgeAppsRequest::getFunctionType,
                 BatchListEdgeAppsRequest::setFunctionType));
+        builder.<List<String>>withRequestField("function_types",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchListEdgeAppsRequest::getFunctionTypes,
+                BatchListEdgeAppsRequest::setFunctionTypes));
+        builder.<String>withRequestField("protocol",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchListEdgeAppsRequest::getProtocol, BatchListEdgeAppsRequest::setProtocol));
 
         // response
 
@@ -972,11 +1181,6 @@ public class IoTEdgeMeta {
             f -> f.withMarshaller(DeleteEdgeAppRequest::getEdgeAppId, DeleteEdgeAppRequest::setEdgeAppId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteEdgeAppResponse::getBody, DeleteEdgeAppResponse::setBody));
 
         return builder.build();
     }
@@ -1057,6 +1261,12 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(BatchListEdgeAppVersionsRequest.StateEnum.class),
             f -> f.withMarshaller(BatchListEdgeAppVersionsRequest::getState,
                 BatchListEdgeAppVersionsRequest::setState));
+        builder.<BatchListEdgeAppVersionsRequest.DeployTypeEnum>withRequestField("deploy_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchListEdgeAppVersionsRequest.DeployTypeEnum.class),
+            f -> f.withMarshaller(BatchListEdgeAppVersionsRequest::getDeployType,
+                BatchListEdgeAppVersionsRequest::setDeployType));
 
         // response
 
@@ -1125,12 +1335,6 @@ public class IoTEdgeMeta {
                 DeleteEdgeApplicationVersionRequest::setVersion));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteEdgeApplicationVersionResponse::getBody,
-                DeleteEdgeApplicationVersionResponse::setBody));
 
         return builder.build();
     }
@@ -1268,6 +1472,11 @@ public class IoTEdgeMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchListDcDsRequest::getModuleId, BatchListDcDsRequest::setModuleId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchListDcDsRequest::getName, BatchListDcDsRequest::setName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1334,11 +1543,6 @@ public class IoTEdgeMeta {
             f -> f.withMarshaller(DeleteDcDsRequest::getDsId, DeleteDcDsRequest::setDsId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteDcDsResponse::getBody, DeleteDcDsResponse::setBody));
 
         return builder.build();
     }
@@ -1395,11 +1599,6 @@ public class IoTEdgeMeta {
             f -> f.withMarshaller(SynchronizeDcConfigsRequest::getDsId, SynchronizeDcConfigsRequest::setDsId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(SynchronizeDcConfigsResponse::getBody, SynchronizeDcConfigsResponse::setBody));
 
         return builder.build();
     }
@@ -1425,6 +1624,11 @@ public class IoTEdgeMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateDcDsRequest::getDsId, UpdateDcDsRequest::setDsId));
+        builder.<Boolean>withRequestField("update_name_only",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(UpdateDcDsRequest::getUpdateNameOnly, UpdateDcDsRequest::setUpdateNameOnly));
         builder.<UpdateDcDsReqDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1521,6 +1725,11 @@ public class IoTEdgeMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchListDcPointsRequest::getDeviceId, BatchListDcPointsRequest::setDeviceId));
+        builder.<Boolean>withRequestField("active",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(BatchListDcPointsRequest::getActive, BatchListDcPointsRequest::setActive));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1609,11 +1818,6 @@ public class IoTEdgeMeta {
             f -> f.withMarshaller(DeleteDcPointRequest::getProperty, DeleteDcPointRequest::setProperty));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteDcPointResponse::getBody, DeleteDcPointResponse::setBody));
 
         return builder.build();
     }
@@ -1786,11 +1990,6 @@ public class IoTEdgeMeta {
                 DeleteExternalEntityRequest::setExternalId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteExternalEntityResponse::getBody, DeleteExternalEntityResponse::setBody));
 
         return builder.build();
     }
@@ -1900,6 +2099,23 @@ public class IoTEdgeMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchListModulesRequest.FunctionTypeEnum.class),
             f -> f.withMarshaller(BatchListModulesRequest::getFunctionType, BatchListModulesRequest::setFunctionType));
+        builder.<List<String>>withRequestField("function_types",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchListModulesRequest::getFunctionTypes,
+                BatchListModulesRequest::setFunctionTypes));
+        builder.<List<String>>withRequestField("protocol_types",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchListModulesRequest::getProtocolTypes,
+                BatchListModulesRequest::setProtocolTypes));
+        builder.<String>withRequestField("module_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchListModulesRequest::getModuleName, BatchListModulesRequest::setModuleName));
 
         // response
 
@@ -1956,11 +2172,6 @@ public class IoTEdgeMeta {
             f -> f.withMarshaller(DeleteModuleRequest::getModuleId, DeleteModuleRequest::setModuleId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteModuleResponse::getBody, DeleteModuleResponse::setBody));
 
         return builder.build();
     }
@@ -2225,11 +2436,6 @@ public class IoTEdgeMeta {
         // requests
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(AddGeneralOtTemplateResponse::getBody, AddGeneralOtTemplateResponse::setBody));
 
         return builder.build();
     }
@@ -2304,11 +2510,6 @@ public class IoTEdgeMeta {
             f -> f.withMarshaller(DeleteOtTemplateRequest::getTplId, DeleteOtTemplateRequest::setTplId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteOtTemplateResponse::getBody, DeleteOtTemplateResponse::setBody));
 
         return builder.build();
     }
@@ -2369,11 +2570,6 @@ public class IoTEdgeMeta {
             f -> f.withMarshaller(ImportPointsRequest::getBody, ImportPointsRequest::setBody));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ImportPointsResponse::getBody, ImportPointsResponse::setBody));
 
         return builder.build();
     }
@@ -2485,11 +2681,6 @@ public class IoTEdgeMeta {
             f -> f.withMarshaller(DeleteScheduleRequest::getScheduleId, DeleteScheduleRequest::setScheduleId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteScheduleResponse::getBody, DeleteScheduleResponse::setBody));
 
         return builder.build();
     }
@@ -2521,6 +2712,259 @@ public class IoTEdgeMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateScheduleReqDTO.class),
             f -> f.withMarshaller(UpdateScheduleRequest::getBody, UpdateScheduleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<InvokeDeleteProxyRequest, InvokeDeleteProxyResponse> invokeDeleteProxy =
+        genForInvokeDeleteProxy();
+
+    private static HttpRequestDef<InvokeDeleteProxyRequest, InvokeDeleteProxyResponse> genForInvokeDeleteProxy() {
+        // basic
+        HttpRequestDef.Builder<InvokeDeleteProxyRequest, InvokeDeleteProxyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, InvokeDeleteProxyRequest.class, InvokeDeleteProxyResponse.class)
+                .withName("InvokeDeleteProxy")
+                .withUri("/v2/{project_id}/edge-nodes/{node_id}/ias/{ia_id}/api")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokeDeleteProxyRequest::getNodeId, InvokeDeleteProxyRequest::setNodeId));
+        builder.<String>withRequestField("ia_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokeDeleteProxyRequest::getIaId, InvokeDeleteProxyRequest::setIaId));
+        builder.<String>withRequestField("ia_uri",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokeDeleteProxyRequest::getIaUri, InvokeDeleteProxyRequest::setIaUri));
+        builder.<Object>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Object.class),
+            f -> f.withMarshaller(InvokeDeleteProxyRequest::getBody, InvokeDeleteProxyRequest::setBody));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(InvokeDeleteProxyResponse::getBody, InvokeDeleteProxyResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<InvokeGetProxyRequest, InvokeGetProxyResponse> invokeGetProxy =
+        genForInvokeGetProxy();
+
+    private static HttpRequestDef<InvokeGetProxyRequest, InvokeGetProxyResponse> genForInvokeGetProxy() {
+        // basic
+        HttpRequestDef.Builder<InvokeGetProxyRequest, InvokeGetProxyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, InvokeGetProxyRequest.class, InvokeGetProxyResponse.class)
+                .withName("InvokeGetProxy")
+                .withUri("/v2/{project_id}/edge-nodes/{node_id}/ias/{ia_id}/api")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokeGetProxyRequest::getNodeId, InvokeGetProxyRequest::setNodeId));
+        builder.<String>withRequestField("ia_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokeGetProxyRequest::getIaId, InvokeGetProxyRequest::setIaId));
+        builder.<String>withRequestField("ia_uri",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokeGetProxyRequest::getIaUri, InvokeGetProxyRequest::setIaUri));
+        builder.<Object>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Object.class),
+            f -> f.withMarshaller(InvokeGetProxyRequest::getBody, InvokeGetProxyRequest::setBody));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(InvokeGetProxyResponse::getBody, InvokeGetProxyResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<InvokePatchProxyRequest, InvokePatchProxyResponse> invokePatchProxy =
+        genForInvokePatchProxy();
+
+    private static HttpRequestDef<InvokePatchProxyRequest, InvokePatchProxyResponse> genForInvokePatchProxy() {
+        // basic
+        HttpRequestDef.Builder<InvokePatchProxyRequest, InvokePatchProxyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, InvokePatchProxyRequest.class, InvokePatchProxyResponse.class)
+                .withName("InvokePatchProxy")
+                .withUri("/v2/{project_id}/edge-nodes/{node_id}/ias/{ia_id}/api")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokePatchProxyRequest::getNodeId, InvokePatchProxyRequest::setNodeId));
+        builder.<String>withRequestField("ia_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokePatchProxyRequest::getIaId, InvokePatchProxyRequest::setIaId));
+        builder.<String>withRequestField("ia_uri",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokePatchProxyRequest::getIaUri, InvokePatchProxyRequest::setIaUri));
+        builder.<Object>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Object.class),
+            f -> f.withMarshaller(InvokePatchProxyRequest::getBody, InvokePatchProxyRequest::setBody));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(InvokePatchProxyResponse::getBody, InvokePatchProxyResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<InvokePostProxyRequest, InvokePostProxyResponse> invokePostProxy =
+        genForInvokePostProxy();
+
+    private static HttpRequestDef<InvokePostProxyRequest, InvokePostProxyResponse> genForInvokePostProxy() {
+        // basic
+        HttpRequestDef.Builder<InvokePostProxyRequest, InvokePostProxyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, InvokePostProxyRequest.class, InvokePostProxyResponse.class)
+                .withName("InvokePostProxy")
+                .withUri("/v2/{project_id}/edge-nodes/{node_id}/ias/{ia_id}/api")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokePostProxyRequest::getNodeId, InvokePostProxyRequest::setNodeId));
+        builder.<String>withRequestField("ia_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokePostProxyRequest::getIaId, InvokePostProxyRequest::setIaId));
+        builder.<String>withRequestField("ia_uri",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokePostProxyRequest::getIaUri, InvokePostProxyRequest::setIaUri));
+        builder.<Object>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Object.class),
+            f -> f.withMarshaller(InvokePostProxyRequest::getBody, InvokePostProxyRequest::setBody));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(InvokePostProxyResponse::getBody, InvokePostProxyResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<InvokePutProxyRequest, InvokePutProxyResponse> invokePutProxy =
+        genForInvokePutProxy();
+
+    private static HttpRequestDef<InvokePutProxyRequest, InvokePutProxyResponse> genForInvokePutProxy() {
+        // basic
+        HttpRequestDef.Builder<InvokePutProxyRequest, InvokePutProxyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, InvokePutProxyRequest.class, InvokePutProxyResponse.class)
+                .withName("InvokePutProxy")
+                .withUri("/v2/{project_id}/edge-nodes/{node_id}/ias/{ia_id}/api")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokePutProxyRequest::getNodeId, InvokePutProxyRequest::setNodeId));
+        builder.<String>withRequestField("ia_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokePutProxyRequest::getIaId, InvokePutProxyRequest::setIaId));
+        builder.<String>withRequestField("ia_uri",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokePutProxyRequest::getIaUri, InvokePutProxyRequest::setIaUri));
+        builder.<Object>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Object.class),
+            f -> f.withMarshaller(InvokePutProxyRequest::getBody, InvokePutProxyRequest::setBody));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(InvokePutProxyResponse::getBody, InvokePutProxyResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchConfirmConfigsRequest, BatchConfirmConfigsResponse> batchConfirmConfigs =
+        genForBatchConfirmConfigs();
+
+    private static HttpRequestDef<BatchConfirmConfigsRequest, BatchConfirmConfigsResponse> genForBatchConfirmConfigs() {
+        // basic
+        HttpRequestDef.Builder<BatchConfirmConfigsRequest, BatchConfirmConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchConfirmConfigsRequest.class, BatchConfirmConfigsResponse.class)
+                .withName("BatchConfirmConfigs")
+                .withUri("/v2/{project_id}/edge-nodes/{node_id}/ias/{ia_id}/configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchConfirmConfigsRequest::getNodeId, BatchConfirmConfigsRequest::setNodeId));
+        builder.<String>withRequestField("ia_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchConfirmConfigsRequest::getIaId, BatchConfirmConfigsRequest::setIaId));
+        builder.<String>withRequestField("action",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchConfirmConfigsRequest::getAction, BatchConfirmConfigsRequest::setAction));
+        builder.<ConfirmIaConfigsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ConfirmIaConfigsRequestBody.class),
+            f -> f.withMarshaller(BatchConfirmConfigsRequest::getBody, BatchConfirmConfigsRequest::setBody));
 
         // response
 
@@ -2622,11 +3066,6 @@ public class IoTEdgeMeta {
             f -> f.withMarshaller(DeleteIaConfigRequest::getConfigId, DeleteIaConfigRequest::setConfigId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteIaConfigResponse::getBody, DeleteIaConfigResponse::setBody));
 
         return builder.build();
     }
@@ -2791,11 +3230,6 @@ public class IoTEdgeMeta {
             f -> f.withMarshaller(DeleteNaRequest::getNaId, DeleteNaRequest::setNaId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteNaResponse::getBody, DeleteNaResponse::setBody));
 
         return builder.build();
     }
@@ -2908,6 +3342,80 @@ public class IoTEdgeMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNaRequestDTO.class),
             f -> f.withMarshaller(UpdateNaRequest::getBody, UpdateNaRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePushChannelRequest, CreatePushChannelResponse> createPushChannel =
+        genForCreatePushChannel();
+
+    private static HttpRequestDef<CreatePushChannelRequest, CreatePushChannelResponse> genForCreatePushChannel() {
+        // basic
+        HttpRequestDef.Builder<CreatePushChannelRequest, CreatePushChannelResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePushChannelRequest.class, CreatePushChannelResponse.class)
+                .withName("CreatePushChannel")
+                .withUri("/v2/{project_id}/push-channels")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateChannelRequestDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateChannelRequestDTO.class),
+            f -> f.withMarshaller(CreatePushChannelRequest::getBody, CreatePushChannelRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePushChannelRequest, DeletePushChannelResponse> deletePushChannel =
+        genForDeletePushChannel();
+
+    private static HttpRequestDef<DeletePushChannelRequest, DeletePushChannelResponse> genForDeletePushChannel() {
+        // basic
+        HttpRequestDef.Builder<DeletePushChannelRequest, DeletePushChannelResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePushChannelRequest.class, DeletePushChannelResponse.class)
+                .withName("DeletePushChannel")
+                .withUri("/v2/{project_id}/push-channels/{channel_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("channel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePushChannelRequest::getChannelId, DeletePushChannelRequest::setChannelId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPushChannelsRequest, ListPushChannelsResponse> listPushChannels =
+        genForListPushChannels();
+
+    private static HttpRequestDef<ListPushChannelsRequest, ListPushChannelsResponse> genForListPushChannels() {
+        // basic
+        HttpRequestDef.Builder<ListPushChannelsRequest, ListPushChannelsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPushChannelsRequest.class, ListPushChannelsResponse.class)
+                .withName("ListPushChannels")
+                .withUri("/v2/{project_id}/push-channels")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPushChannelsRequest::getOffset, ListPushChannelsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPushChannelsRequest::getLimit, ListPushChannelsRequest::setLimit));
 
         // response
 

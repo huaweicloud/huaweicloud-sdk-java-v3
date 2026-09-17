@@ -26,6 +26,8 @@ import com.huaweicloud.sdk.bss.v2.model.CreateSubCustomerRequest;
 import com.huaweicloud.sdk.bss.v2.model.CreateSubCustomerResponse;
 import com.huaweicloud.sdk.bss.v2.model.CreateSubEnterpriseAccountRequest;
 import com.huaweicloud.sdk.bss.v2.model.CreateSubEnterpriseAccountResponse;
+import com.huaweicloud.sdk.bss.v2.model.ListBusinessDiscountInfoRequest;
+import com.huaweicloud.sdk.bss.v2.model.ListBusinessDiscountInfoResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListCitiesRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListCitiesResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListConsumeSubCustomersRequest;
@@ -700,6 +702,36 @@ public class BssAsyncClient {
     public AsyncInvoker<CreateSubEnterpriseAccountRequest, CreateSubEnterpriseAccountResponse> createSubEnterpriseAccountAsyncInvoker(
         CreateSubEnterpriseAccountRequest request) {
         return new AsyncInvoker<>(request, BssMeta.createSubEnterpriseAccount, hcClient);
+    }
+
+    /**
+     * 查询商务折扣信息
+     *
+     * 功能描述：默认查询华为云框架商务（正在生效），支持产品报价项/分类报价项分页查询，返回全量阶梯折扣及站点区域信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBusinessDiscountInfoRequest 请求对象
+     * @return CompletableFuture<ListBusinessDiscountInfoResponse>
+     */
+    public CompletableFuture<ListBusinessDiscountInfoResponse> listBusinessDiscountInfoAsync(
+        ListBusinessDiscountInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listBusinessDiscountInfo);
+    }
+
+    /**
+     * 查询商务折扣信息
+     *
+     * 功能描述：默认查询华为云框架商务（正在生效），支持产品报价项/分类报价项分页查询，返回全量阶梯折扣及站点区域信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBusinessDiscountInfoRequest 请求对象
+     * @return AsyncInvoker<ListBusinessDiscountInfoRequest, ListBusinessDiscountInfoResponse>
+     */
+    public AsyncInvoker<ListBusinessDiscountInfoRequest, ListBusinessDiscountInfoResponse> listBusinessDiscountInfoAsyncInvoker(
+        ListBusinessDiscountInfoRequest request) {
+        return new AsyncInvoker<>(request, BssMeta.listBusinessDiscountInfo, hcClient);
     }
 
     /**

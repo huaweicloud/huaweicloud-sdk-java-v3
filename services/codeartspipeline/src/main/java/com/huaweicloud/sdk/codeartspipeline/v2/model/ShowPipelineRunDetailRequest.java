@@ -25,6 +25,11 @@ public class ShowPipelineRunDetailRequest {
 
     private String pipelineRunId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pipeline_run_number")
+
+    private String pipelineRunNumber;
+
     public ShowPipelineRunDetailRequest withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -76,6 +81,23 @@ public class ShowPipelineRunDetailRequest {
         this.pipelineRunId = pipelineRunId;
     }
 
+    public ShowPipelineRunDetailRequest withPipelineRunNumber(String pipelineRunNumber) {
+        this.pipelineRunNumber = pipelineRunNumber;
+        return this;
+    }
+
+    /**
+     * 流水线运行编号
+     * @return pipelineRunNumber
+     */
+    public String getPipelineRunNumber() {
+        return pipelineRunNumber;
+    }
+
+    public void setPipelineRunNumber(String pipelineRunNumber) {
+        this.pipelineRunNumber = pipelineRunNumber;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,13 @@ public class ShowPipelineRunDetailRequest {
         }
         ShowPipelineRunDetailRequest that = (ShowPipelineRunDetailRequest) obj;
         return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.pipelineId, that.pipelineId)
-            && Objects.equals(this.pipelineRunId, that.pipelineRunId);
+            && Objects.equals(this.pipelineRunId, that.pipelineRunId)
+            && Objects.equals(this.pipelineRunNumber, that.pipelineRunNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, pipelineId, pipelineRunId);
+        return Objects.hash(projectId, pipelineId, pipelineRunId, pipelineRunNumber);
     }
 
     @Override
@@ -101,6 +124,7 @@ public class ShowPipelineRunDetailRequest {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
         sb.append("    pipelineRunId: ").append(toIndentedString(pipelineRunId)).append("\n");
+        sb.append("    pipelineRunNumber: ").append(toIndentedString(pipelineRunNumber)).append("\n");
         sb.append("}");
         return sb.toString();
     }

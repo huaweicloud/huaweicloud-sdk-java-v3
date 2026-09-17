@@ -43,7 +43,7 @@ public class DeleteEdgeNodeRequest {
     }
 
     /**
-     * 是否同时删除外部节点（仅对高级版有效），默认为false不删除IEF侧的边缘节点
+     * 是否同时删除外部节点（仅对专业版有效），默认为false不删除IEF侧的边缘节点
      * @return deleteExternalNode
      */
     public Boolean getDeleteExternalNode() {

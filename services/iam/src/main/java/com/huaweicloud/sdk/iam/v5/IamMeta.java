@@ -75,6 +75,8 @@ import com.huaweicloud.sdk.iam.v5.model.DeleteSAMLProviderV5Request;
 import com.huaweicloud.sdk.iam.v5.model.DeleteSAMLProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.DeleteServiceLinkedAgencyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.DeleteServiceLinkedAgencyV5Response;
+import com.huaweicloud.sdk.iam.v5.model.DeleteServiceSpecificCredentialV5Request;
+import com.huaweicloud.sdk.iam.v5.model.DeleteServiceSpecificCredentialV5Response;
 import com.huaweicloud.sdk.iam.v5.model.DeleteUserV5Request;
 import com.huaweicloud.sdk.iam.v5.model.DeleteUserV5Response;
 import com.huaweicloud.sdk.iam.v5.model.DeleteVirtualMfaDeviceV5Request;
@@ -140,6 +142,10 @@ import com.huaweicloud.sdk.iam.v5.model.ListSAMLProvidersV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ListSAMLProvidersV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ListServicePrincipalsV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ListServicePrincipalsV5Response;
+import com.huaweicloud.sdk.iam.v5.model.ListServiceSpecificCredentialSupportedServicesV5Request;
+import com.huaweicloud.sdk.iam.v5.model.ListServiceSpecificCredentialSupportedServicesV5Response;
+import com.huaweicloud.sdk.iam.v5.model.ListServiceSpecificCredentialsV5Request;
+import com.huaweicloud.sdk.iam.v5.model.ListServiceSpecificCredentialsV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ListUsersV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ListUsersV5Response;
 import com.huaweicloud.sdk.iam.v5.model.RemoveClientIDFromOIDCProviderReqBody;
@@ -203,6 +209,9 @@ import com.huaweicloud.sdk.iam.v5.model.UpdatePasswordPolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdateSAMLProviderReqBody;
 import com.huaweicloud.sdk.iam.v5.model.UpdateSAMLProviderV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdateSAMLProviderV5Response;
+import com.huaweicloud.sdk.iam.v5.model.UpdateServiceSpecificCredentialReq;
+import com.huaweicloud.sdk.iam.v5.model.UpdateServiceSpecificCredentialV5Request;
+import com.huaweicloud.sdk.iam.v5.model.UpdateServiceSpecificCredentialV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdateTrustPolicyReqBody;
 import com.huaweicloud.sdk.iam.v5.model.UpdateTrustPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdateTrustPolicyV5Response;
@@ -2116,6 +2125,168 @@ public class IamMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePasswordPolicyReqBody.class),
             f -> f.withMarshaller(UpdatePasswordPolicyV5Request::getBody, UpdatePasswordPolicyV5Request::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteServiceSpecificCredentialV5Request, DeleteServiceSpecificCredentialV5Response> deleteServiceSpecificCredentialV5 =
+        genForDeleteServiceSpecificCredentialV5();
+
+    private static HttpRequestDef<DeleteServiceSpecificCredentialV5Request, DeleteServiceSpecificCredentialV5Response> genForDeleteServiceSpecificCredentialV5() {
+        // basic
+        HttpRequestDef.Builder<DeleteServiceSpecificCredentialV5Request, DeleteServiceSpecificCredentialV5Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteServiceSpecificCredentialV5Request.class,
+                    DeleteServiceSpecificCredentialV5Response.class)
+                .withName("DeleteServiceSpecificCredentialV5")
+                .withUri("/v5/users/{user_id}/service-specific-credentials/{credential_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("credential_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteServiceSpecificCredentialV5Request::getCredentialId,
+                DeleteServiceSpecificCredentialV5Request::setCredentialId));
+        builder.<String>withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteServiceSpecificCredentialV5Request::getUserId,
+                DeleteServiceSpecificCredentialV5Request::setUserId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListServiceSpecificCredentialSupportedServicesV5Request, ListServiceSpecificCredentialSupportedServicesV5Response> listServiceSpecificCredentialSupportedServicesV5 =
+        genForListServiceSpecificCredentialSupportedServicesV5();
+
+    private static HttpRequestDef<ListServiceSpecificCredentialSupportedServicesV5Request, ListServiceSpecificCredentialSupportedServicesV5Response> genForListServiceSpecificCredentialSupportedServicesV5() {
+        // basic
+        HttpRequestDef.Builder<ListServiceSpecificCredentialSupportedServicesV5Request, ListServiceSpecificCredentialSupportedServicesV5Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListServiceSpecificCredentialSupportedServicesV5Request.class,
+                    ListServiceSpecificCredentialSupportedServicesV5Response.class)
+                .withName("ListServiceSpecificCredentialSupportedServicesV5")
+                .withUri("/v5/service-specific-credentials/supported-services")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServiceSpecificCredentialSupportedServicesV5Request::getMarker,
+                ListServiceSpecificCredentialSupportedServicesV5Request::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListServiceSpecificCredentialSupportedServicesV5Request::getLimit,
+                ListServiceSpecificCredentialSupportedServicesV5Request::setLimit));
+        builder.<ListServiceSpecificCredentialSupportedServicesV5Request.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListServiceSpecificCredentialSupportedServicesV5Request.XLanguageEnum.class),
+            f -> f.withMarshaller(ListServiceSpecificCredentialSupportedServicesV5Request::getXLanguage,
+                ListServiceSpecificCredentialSupportedServicesV5Request::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListServiceSpecificCredentialsV5Request, ListServiceSpecificCredentialsV5Response> listServiceSpecificCredentialsV5 =
+        genForListServiceSpecificCredentialsV5();
+
+    private static HttpRequestDef<ListServiceSpecificCredentialsV5Request, ListServiceSpecificCredentialsV5Response> genForListServiceSpecificCredentialsV5() {
+        // basic
+        HttpRequestDef.Builder<ListServiceSpecificCredentialsV5Request, ListServiceSpecificCredentialsV5Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListServiceSpecificCredentialsV5Request.class,
+                    ListServiceSpecificCredentialsV5Response.class)
+                .withName("ListServiceSpecificCredentialsV5")
+                .withUri("/v5/service-specific-credentials")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("user_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServiceSpecificCredentialsV5Request::getUserId,
+                ListServiceSpecificCredentialsV5Request::setUserId));
+        builder.<String>withRequestField("service_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServiceSpecificCredentialsV5Request::getServiceName,
+                ListServiceSpecificCredentialsV5Request::setServiceName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListServiceSpecificCredentialsV5Request::getLimit,
+                ListServiceSpecificCredentialsV5Request::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServiceSpecificCredentialsV5Request::getMarker,
+                ListServiceSpecificCredentialsV5Request::setMarker));
+        builder.<ListServiceSpecificCredentialsV5Request.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListServiceSpecificCredentialsV5Request.XLanguageEnum.class),
+            f -> f.withMarshaller(ListServiceSpecificCredentialsV5Request::getXLanguage,
+                ListServiceSpecificCredentialsV5Request::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateServiceSpecificCredentialV5Request, UpdateServiceSpecificCredentialV5Response> updateServiceSpecificCredentialV5 =
+        genForUpdateServiceSpecificCredentialV5();
+
+    private static HttpRequestDef<UpdateServiceSpecificCredentialV5Request, UpdateServiceSpecificCredentialV5Response> genForUpdateServiceSpecificCredentialV5() {
+        // basic
+        HttpRequestDef.Builder<UpdateServiceSpecificCredentialV5Request, UpdateServiceSpecificCredentialV5Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateServiceSpecificCredentialV5Request.class,
+                    UpdateServiceSpecificCredentialV5Response.class)
+                .withName("UpdateServiceSpecificCredentialV5")
+                .withUri("/v5/users/{user_id}/service-specific-credentials/{credential_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateServiceSpecificCredentialV5Request::getUserId,
+                UpdateServiceSpecificCredentialV5Request::setUserId));
+        builder.<String>withRequestField("credential_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateServiceSpecificCredentialV5Request::getCredentialId,
+                UpdateServiceSpecificCredentialV5Request::setCredentialId));
+        builder.<UpdateServiceSpecificCredentialReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateServiceSpecificCredentialReq.class),
+            f -> f.withMarshaller(UpdateServiceSpecificCredentialV5Request::getBody,
+                UpdateServiceSpecificCredentialV5Request::setBody));
 
         // response
 

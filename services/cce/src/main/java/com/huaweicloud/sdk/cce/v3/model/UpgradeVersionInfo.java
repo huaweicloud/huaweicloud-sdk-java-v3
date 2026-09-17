@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 版本信息
+ * **参数解释：** 版本信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
  */
 public class UpgradeVersionInfo {
 
@@ -39,7 +39,7 @@ public class UpgradeVersionInfo {
     }
 
     /**
-     * 正式版本号，如：v1.19.10
+     * **参数解释：** 正式版本号，如：v1.19.10 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return release
      */
     public String getRelease() {
@@ -56,7 +56,7 @@ public class UpgradeVersionInfo {
     }
 
     /**
-     * 补丁版本号，如r0
+     * **参数解释：** 补丁版本号，如r0 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return patch
      */
     public String getPatch() {
@@ -73,7 +73,7 @@ public class UpgradeVersionInfo {
     }
 
     /**
-     * 推荐升级的目标补丁版本号，如r0
+     * **参数解释：** 推荐升级的目标补丁版本号，如r0 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return suggestPatch
      */
     public String getSuggestPatch() {
@@ -106,7 +106,7 @@ public class UpgradeVersionInfo {
     }
 
     /**
-     * 升级目标版本集合
+     * **参数解释：** 升级目标版本集合 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return targetVersions
      */
     public List<String> getTargetVersions() {

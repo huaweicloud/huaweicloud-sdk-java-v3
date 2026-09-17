@@ -210,6 +210,11 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
 
     private String tplId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pre_upgrade_probe")
+
+    private PreUpgradeProbeDTO preUpgradeProbe;
+
     public ShowEdgeApplicationVersionResponse withEdgeAppId(String edgeAppId) {
         this.edgeAppId = edgeAppId;
         return this;
@@ -725,6 +730,32 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.tplId = tplId;
     }
 
+    public ShowEdgeApplicationVersionResponse withPreUpgradeProbe(PreUpgradeProbeDTO preUpgradeProbe) {
+        this.preUpgradeProbe = preUpgradeProbe;
+        return this;
+    }
+
+    public ShowEdgeApplicationVersionResponse withPreUpgradeProbe(Consumer<PreUpgradeProbeDTO> preUpgradeProbeSetter) {
+        if (this.preUpgradeProbe == null) {
+            this.preUpgradeProbe = new PreUpgradeProbeDTO();
+            preUpgradeProbeSetter.accept(this.preUpgradeProbe);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get preUpgradeProbe
+     * @return preUpgradeProbe
+     */
+    public PreUpgradeProbeDTO getPreUpgradeProbe() {
+        return preUpgradeProbe;
+    }
+
+    public void setPreUpgradeProbe(PreUpgradeProbeDTO preUpgradeProbe) {
+        this.preUpgradeProbe = preUpgradeProbe;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -747,7 +778,7 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
             && Objects.equals(this.outputs, that.outputs) && Objects.equals(this.inputs, that.inputs)
             && Objects.equals(this.services, that.services) && Objects.equals(this.publishTime, that.publishTime)
             && Objects.equals(this.offShelfTime, that.offShelfTime) && Objects.equals(this.supplier, that.supplier)
-            && Objects.equals(this.tplId, that.tplId);
+            && Objects.equals(this.tplId, that.tplId) && Objects.equals(this.preUpgradeProbe, that.preUpgradeProbe);
     }
 
     @Override
@@ -774,7 +805,8 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
             publishTime,
             offShelfTime,
             supplier,
-            tplId);
+            tplId,
+            preUpgradeProbe);
     }
 
     @Override
@@ -804,6 +836,7 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         sb.append("    offShelfTime: ").append(toIndentedString(offShelfTime)).append("\n");
         sb.append("    supplier: ").append(toIndentedString(supplier)).append("\n");
         sb.append("    tplId: ").append(toIndentedString(tplId)).append("\n");
+        sb.append("    preUpgradeProbe: ").append(toIndentedString(preUpgradeProbe)).append("\n");
         sb.append("}");
         return sb.toString();
     }

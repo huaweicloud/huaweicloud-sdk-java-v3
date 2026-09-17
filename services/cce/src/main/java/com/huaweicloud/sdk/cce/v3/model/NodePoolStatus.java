@@ -39,6 +39,16 @@ public class NodePoolStatus {
     private Integer activeNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repairingNode")
+
+    private Integer repairingNode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repairFailedNode")
+
+    private Integer repairFailedNode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configurationSyncedNodeCount")
 
     private Integer configurationSyncedNodeCount;
@@ -208,7 +218,7 @@ public class NodePoolStatus {
     }
 
     /**
-     * **参数解释**： 当前节点池中就绪的节点数量。 **取值范围**： 不涉及
+     * **参数解释**： 当前节点池中就绪的节点数量。 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return activeNode
      */
     public Integer getActiveNode() {
@@ -217,6 +227,40 @@ public class NodePoolStatus {
 
     public void setActiveNode(Integer activeNode) {
         this.activeNode = activeNode;
+    }
+
+    public NodePoolStatus withRepairingNode(Integer repairingNode) {
+        this.repairingNode = repairingNode;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 当前节点池中修复中的节点数量。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
+     * @return repairingNode
+     */
+    public Integer getRepairingNode() {
+        return repairingNode;
+    }
+
+    public void setRepairingNode(Integer repairingNode) {
+        this.repairingNode = repairingNode;
+    }
+
+    public NodePoolStatus withRepairFailedNode(Integer repairFailedNode) {
+        this.repairFailedNode = repairFailedNode;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 当前节点池中修复失败的节点数量。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
+     * @return repairFailedNode
+     */
+    public Integer getRepairFailedNode() {
+        return repairFailedNode;
+    }
+
+    public void setRepairFailedNode(Integer repairFailedNode) {
+        this.repairFailedNode = repairFailedNode;
     }
 
     public NodePoolStatus withConfigurationSyncedNodeCount(Integer configurationSyncedNodeCount) {
@@ -348,6 +392,8 @@ public class NodePoolStatus {
         return Objects.equals(this.currentNode, that.currentNode)
             && Objects.equals(this.creatingNode, that.creatingNode)
             && Objects.equals(this.deletingNode, that.deletingNode) && Objects.equals(this.activeNode, that.activeNode)
+            && Objects.equals(this.repairingNode, that.repairingNode)
+            && Objects.equals(this.repairFailedNode, that.repairFailedNode)
             && Objects.equals(this.configurationSyncedNodeCount, that.configurationSyncedNodeCount)
             && Objects.equals(this.phase, that.phase) && Objects.equals(this.jobId, that.jobId)
             && Objects.equals(this.conditions, that.conditions)
@@ -360,6 +406,8 @@ public class NodePoolStatus {
             creatingNode,
             deletingNode,
             activeNode,
+            repairingNode,
+            repairFailedNode,
             configurationSyncedNodeCount,
             phase,
             jobId,
@@ -375,6 +423,8 @@ public class NodePoolStatus {
         sb.append("    creatingNode: ").append(toIndentedString(creatingNode)).append("\n");
         sb.append("    deletingNode: ").append(toIndentedString(deletingNode)).append("\n");
         sb.append("    activeNode: ").append(toIndentedString(activeNode)).append("\n");
+        sb.append("    repairingNode: ").append(toIndentedString(repairingNode)).append("\n");
+        sb.append("    repairFailedNode: ").append(toIndentedString(repairFailedNode)).append("\n");
         sb.append("    configurationSyncedNodeCount: ")
             .append(toIndentedString(configurationSyncedNodeCount))
             .append("\n");

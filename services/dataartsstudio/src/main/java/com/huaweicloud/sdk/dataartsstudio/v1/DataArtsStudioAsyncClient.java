@@ -1540,7 +1540,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 批量删除规则模板
      *
-     * 批量删除规则模板
+     * 批量删除规则模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1555,7 +1555,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 批量删除规则模板
      *
-     * 批量删除规则模板
+     * 批量删除规则模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2540,7 +2540,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 新建衍生指标
      *
-     * 根据参数，新建衍生指标指标。
+     * 根据参数，新建衍生指标。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2555,7 +2555,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 新建衍生指标
      *
-     * 根据参数，新建衍生指标指标。
+     * 根据参数，新建衍生指标。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3429,7 +3429,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 创建规则模板
      *
-     * 创建规则模板
+     * 创建规则模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3443,7 +3443,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 创建规则模板
      *
-     * 创建规则模板
+     * 创建规则模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5601,7 +5601,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取作业目录
      *
-     * 获取作业目录
+     * 获取作业目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5615,7 +5615,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取作业目录
      *
-     * 获取作业目录
+     * 获取作业目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5716,7 +5716,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取对账作业列表
      *
-     * 获取对账作业列表
+     * 获取对账作业列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5730,7 +5730,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取对账作业列表
      *
-     * 获取对账作业列表
+     * 获取对账作业列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6575,7 +6575,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取任务执行结果列表
      *
-     * 获取任务执行结果列表
+     * 获取任务执行结果列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6589,7 +6589,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取任务执行结果列表
      *
-     * 获取任务执行结果列表
+     * 获取任务执行结果列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6720,7 +6720,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取质量作业列表
      *
-     * 获取质量作业列表
+     * 获取质量作业列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6734,7 +6734,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取质量作业列表
      *
-     * 获取质量作业列表
+     * 获取质量作业列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6749,6 +6749,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取质量作业列表V1
      *
+     * 批量查询数据质量作业，返回质量作业列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6763,6 +6764,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取质量作业列表V1
      *
+     * 批量查询数据质量作业，返回质量作业列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6777,7 +6779,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取规则模板列表
      *
-     * 分页获取规则模板列表
+     * 分页获取规则模板列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6792,7 +6794,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取规则模板列表
      *
-     * 分页获取规则模板列表
+     * 分页获取规则模板列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8325,7 +8327,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 查找原子指标
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找原子指标信息看，中英文名称支持模糊查询。
+     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找原子指标信息，中英文名称支持模糊查询。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8339,7 +8341,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 查找原子指标
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找原子指标信息看，中英文名称支持模糊查询。
+     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找原子指标信息，中英文名称支持模糊查询。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -9380,7 +9382,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取对账作业详情
      *
-     * 获取对账作业详情
+     * 获取对账作业详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -9395,7 +9397,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取对账作业详情
      *
-     * 获取对账作业详情
+     * 获取对账作业详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -10117,7 +10119,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取实例结果
      *
-     * 获取实例结果
+     * 获取实例结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -10131,7 +10133,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取实例结果
      *
-     * 获取实例结果
+     * 获取实例结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -10407,7 +10409,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取质量作业详情
      *
-     * 获取质量作业详情
+     * 获取质量作业详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -10422,7 +10424,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取质量作业详情
      *
-     * 获取质量作业详情
+     * 获取质量作业详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -11118,7 +11120,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取规则模板详情
      *
-     * 获取规则模板详情
+     * 获取规则模板详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -11132,7 +11134,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取规则模板详情
      *
-     * 获取规则模板详情
+     * 获取规则模板详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -12394,7 +12396,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 更新规则模板
      *
-     * 更新规则模板
+     * 更新规则模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -12408,7 +12410,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 更新规则模板
      *
-     * 更新规则模板
+     * 更新规则模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

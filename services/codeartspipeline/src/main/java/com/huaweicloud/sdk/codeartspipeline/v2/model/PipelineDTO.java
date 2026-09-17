@@ -83,6 +83,41 @@ public class PipelineDTO {
 
     private Integer securityLevel;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disable_release_branch_management")
+
+    private Boolean disableReleaseBranchManagement;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execution_plans")
+
+    private List<Object> executionPlans = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cancel_strategy")
+
+    private Object cancelStrategy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "confidentiality_code")
+
+    private String confidentialityCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_name")
+
+    private String agencyName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "variable_group_ids")
+
+    private List<String> variableGroupIds = null;
+
     public PipelineDTO withName(String name) {
         this.name = name;
         return this;
@@ -340,7 +375,7 @@ public class PipelineDTO {
     }
 
     /**
-     * **参数解释**： 复制场景使用，为流水线组ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及。 
+     * **参数解释**： 复制场景使用，为原流水线ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及。 
      * @return id
      */
     public String getId() {
@@ -394,6 +429,157 @@ public class PipelineDTO {
         this.securityLevel = securityLevel;
     }
 
+    public PipelineDTO withDisableReleaseBranchManagement(Boolean disableReleaseBranchManagement) {
+        this.disableReleaseBranchManagement = disableReleaseBranchManagement;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否禁用自动生成阶段，仅变更流水线适用。默认值为false，即默认启用自动生成阶段。 **约束限制**： 不涉及。 **取值范围**： - true：禁用自动生成阶段。 - false：启用自动生成阶段。 **默认取值**： false。 
+     * @return disableReleaseBranchManagement
+     */
+    public Boolean getDisableReleaseBranchManagement() {
+        return disableReleaseBranchManagement;
+    }
+
+    public void setDisableReleaseBranchManagement(Boolean disableReleaseBranchManagement) {
+        this.disableReleaseBranchManagement = disableReleaseBranchManagement;
+    }
+
+    public PipelineDTO withExecutionPlans(List<Object> executionPlans) {
+        this.executionPlans = executionPlans;
+        return this;
+    }
+
+    public PipelineDTO addExecutionPlansItem(Object executionPlansItem) {
+        if (this.executionPlans == null) {
+            this.executionPlans = new ArrayList<>();
+        }
+        this.executionPlans.add(executionPlansItem);
+        return this;
+    }
+
+    public PipelineDTO withExecutionPlans(Consumer<List<Object>> executionPlansSetter) {
+        if (this.executionPlans == null) {
+            this.executionPlans = new ArrayList<>();
+        }
+        executionPlansSetter.accept(this.executionPlans);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 流水线执行计划列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+     * @return executionPlans
+     */
+    public List<Object> getExecutionPlans() {
+        return executionPlans;
+    }
+
+    public void setExecutionPlans(List<Object> executionPlans) {
+        this.executionPlans = executionPlans;
+    }
+
+    public PipelineDTO withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 项目ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及。 
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
+    public PipelineDTO withCancelStrategy(Object cancelStrategy) {
+        this.cancelStrategy = cancelStrategy;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 流水线取消运行策略。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+     * @return cancelStrategy
+     */
+    public Object getCancelStrategy() {
+        return cancelStrategy;
+    }
+
+    public void setCancelStrategy(Object cancelStrategy) {
+        this.cancelStrategy = cancelStrategy;
+    }
+
+    public PipelineDTO withConfidentialityCode(String confidentialityCode) {
+        this.confidentialityCode = confidentialityCode;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 流水线密级code。 **约束限制**： 非涉密场景不涉及，涉密场景必填。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+     * @return confidentialityCode
+     */
+    public String getConfidentialityCode() {
+        return confidentialityCode;
+    }
+
+    public void setConfidentialityCode(String confidentialityCode) {
+        this.confidentialityCode = confidentialityCode;
+    }
+
+    public PipelineDTO withAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 委托名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+     * @return agencyName
+     */
+    public String getAgencyName() {
+        return agencyName;
+    }
+
+    public void setAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+    }
+
+    public PipelineDTO withVariableGroupIds(List<String> variableGroupIds) {
+        this.variableGroupIds = variableGroupIds;
+        return this;
+    }
+
+    public PipelineDTO addVariableGroupIdsItem(String variableGroupIdsItem) {
+        if (this.variableGroupIds == null) {
+            this.variableGroupIds = new ArrayList<>();
+        }
+        this.variableGroupIds.add(variableGroupIdsItem);
+        return this;
+    }
+
+    public PipelineDTO withVariableGroupIds(Consumer<List<String>> variableGroupIdsSetter) {
+        if (this.variableGroupIds == null) {
+            this.variableGroupIds = new ArrayList<>();
+        }
+        variableGroupIdsSetter.accept(this.variableGroupIds);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 关联的通用参数组ID列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+     * @return variableGroupIds
+     */
+    public List<String> getVariableGroupIds() {
+        return variableGroupIds;
+    }
+
+    public void setVariableGroupIds(List<String> variableGroupIds) {
+        this.variableGroupIds = variableGroupIds;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -411,7 +597,14 @@ public class PipelineDTO {
             && Objects.equals(this.definition, that.definition) && Objects.equals(this.projectName, that.projectName)
             && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.id, that.id)
             && Objects.equals(this.concurrencyControl, that.concurrencyControl)
-            && Objects.equals(this.securityLevel, that.securityLevel);
+            && Objects.equals(this.securityLevel, that.securityLevel)
+            && Objects.equals(this.disableReleaseBranchManagement, that.disableReleaseBranchManagement)
+            && Objects.equals(this.executionPlans, that.executionPlans)
+            && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.cancelStrategy, that.cancelStrategy)
+            && Objects.equals(this.confidentialityCode, that.confidentialityCode)
+            && Objects.equals(this.agencyName, that.agencyName)
+            && Objects.equals(this.variableGroupIds, that.variableGroupIds);
     }
 
     @Override
@@ -429,7 +622,14 @@ public class PipelineDTO {
             groupId,
             id,
             concurrencyControl,
-            securityLevel);
+            securityLevel,
+            disableReleaseBranchManagement,
+            executionPlans,
+            projectId,
+            cancelStrategy,
+            confidentialityCode,
+            agencyName,
+            variableGroupIds);
     }
 
     @Override
@@ -450,6 +650,15 @@ public class PipelineDTO {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    concurrencyControl: ").append(toIndentedString(concurrencyControl)).append("\n");
         sb.append("    securityLevel: ").append(toIndentedString(securityLevel)).append("\n");
+        sb.append("    disableReleaseBranchManagement: ")
+            .append(toIndentedString(disableReleaseBranchManagement))
+            .append("\n");
+        sb.append("    executionPlans: ").append(toIndentedString(executionPlans)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    cancelStrategy: ").append(toIndentedString(cancelStrategy)).append("\n");
+        sb.append("    confidentialityCode: ").append(toIndentedString(confidentialityCode)).append("\n");
+        sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
+        sb.append("    variableGroupIds: ").append(toIndentedString(variableGroupIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

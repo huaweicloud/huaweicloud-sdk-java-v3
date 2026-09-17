@@ -21,6 +21,11 @@ public class ResizeInstanceRequestBody {
 
     private Boolean isAutoPay;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_force_resize")
+
+    private Boolean isForceResize;
+
     public ResizeInstanceRequestBody withResize(ResizeInstanceOption resize) {
         this.resize = resize;
         return this;
@@ -53,7 +58,7 @@ public class ResizeInstanceRequestBody {
     }
 
     /**
-     * 变更包年包月实例规格时可指定，表示是否自动从账户中支付，此字段不影响自动续订的支付方式。 - 对于降低规格场景，该字段无效。 - 对于扩大规格场景：   - true，表示自动从账户中支付。   - false，表示手动从账户中支付，默认为该方式。
+     * **参数解释：** 变更包年包月实例规格时可指定，表示是否自动从账户中支付，此字段不影响自动续订的支付方式。 **约束限制：** 对于降低规格场景，该字段无效。 **取值范围：** 对于扩大规格场景： - true，表示自动从账户中支付。 - false，表示手动从账户中支付，默认为该方式。 **默认取值：** false。
      * @return isAutoPay
      */
     public Boolean getIsAutoPay() {
@@ -62,6 +67,23 @@ public class ResizeInstanceRequestBody {
 
     public void setIsAutoPay(Boolean isAutoPay) {
         this.isAutoPay = isAutoPay;
+    }
+
+    public ResizeInstanceRequestBody withIsForceResize(Boolean isForceResize) {
+        this.isForceResize = isForceResize;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 标识是否进行强制规格变更操作。 **约束限制：** 集群的dds mongos节点和只读节点不支持强制规格变更。 **取值范围：** 对于规格变更： - true，表示执行强制规格变更。 - 不传此参数，表示执行正常规格变更。 **默认取值：** 不传此参数。
+     * @return isForceResize
+     */
+    public Boolean getIsForceResize() {
+        return isForceResize;
+    }
+
+    public void setIsForceResize(Boolean isForceResize) {
+        this.isForceResize = isForceResize;
     }
 
     @Override
@@ -73,12 +95,13 @@ public class ResizeInstanceRequestBody {
             return false;
         }
         ResizeInstanceRequestBody that = (ResizeInstanceRequestBody) obj;
-        return Objects.equals(this.resize, that.resize) && Objects.equals(this.isAutoPay, that.isAutoPay);
+        return Objects.equals(this.resize, that.resize) && Objects.equals(this.isAutoPay, that.isAutoPay)
+            && Objects.equals(this.isForceResize, that.isForceResize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resize, isAutoPay);
+        return Objects.hash(resize, isAutoPay, isForceResize);
     }
 
     @Override
@@ -87,6 +110,7 @@ public class ResizeInstanceRequestBody {
         sb.append("class ResizeInstanceRequestBody {\n");
         sb.append("    resize: ").append(toIndentedString(resize)).append("\n");
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
+        sb.append("    isForceResize: ").append(toIndentedString(isForceResize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 升级状态信息
+ * **参数解释：** 升级状态信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
  */
 public class UpgradeInfoStatus {
 
@@ -31,7 +31,7 @@ public class UpgradeInfoStatus {
     }
 
     /**
-     * 升级任务状态. > Init：初始化 > Running：运行中 > Pause：暂停 > Success：成功 > Failed：失败 
+     * **参数解释：** 升级任务状态 **约束限制：** 不涉及 **取值范围：** - Init：初始化 - Running：运行中 - Pause：暂停 - Success：成功 - Failed：失败  **默认取值：** 不涉及
      * @return phase
      */
     public String getPhase() {
@@ -48,7 +48,7 @@ public class UpgradeInfoStatus {
     }
 
     /**
-     * 升级任务进度
+     * **参数解释：** 升级任务进度 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return progress
      */
     public String getProgress() {
@@ -65,7 +65,7 @@ public class UpgradeInfoStatus {
     }
 
     /**
-     * 升级任务结束时间
+     * **参数解释：** 升级任务结束时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return completionTime
      */
     public String getCompletionTime() {

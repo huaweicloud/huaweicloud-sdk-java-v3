@@ -411,7 +411,7 @@ public class Dataset {
     }
 
     /**
-     * 数据集的描述信息
+     * 数据集描述信息。最大长度为4000个字符。
      * @return description
      */
     public String getDescription() {

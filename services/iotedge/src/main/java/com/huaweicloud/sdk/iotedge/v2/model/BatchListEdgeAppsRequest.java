@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -146,6 +149,11 @@ public class BatchListEdgeAppsRequest {
          */
         public static final FunctionTypeEnum DATA_COLLECTION = new FunctionTypeEnum("DATA_COLLECTION");
 
+        /**
+         * Enum MODEL_INFERENCE for value: "MODEL_INFERENCE"
+         */
+        public static final FunctionTypeEnum MODEL_INFERENCE = new FunctionTypeEnum("MODEL_INFERENCE");
+
         private static final Map<String, FunctionTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FunctionTypeEnum> createStaticFields() {
@@ -156,6 +164,7 @@ public class BatchListEdgeAppsRequest {
             map.put("GATEWAY_MANAGER", GATEWAY_MANAGER);
             map.put("COMPOSITE_APPLICATION", COMPOSITE_APPLICATION);
             map.put("DATA_COLLECTION", DATA_COLLECTION);
+            map.put("MODEL_INFERENCE", MODEL_INFERENCE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -210,6 +219,16 @@ public class BatchListEdgeAppsRequest {
 
     private FunctionTypeEnum functionType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "function_types")
+
+    private List<String> functionTypes = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protocol")
+
+    private String protocol;
+
     public BatchListEdgeAppsRequest withEdgeAppId(String edgeAppId) {
         this.edgeAppId = edgeAppId;
         return this;
@@ -233,7 +252,7 @@ public class BatchListEdgeAppsRequest {
     }
 
     /**
-     * 查询的起始位置，取值范围为非负整数，默认为0
+     * 查询的起始位置，取值范围为非负整数，默认为0。
      * minimum: 0
      * maximum: 1000000
      * @return offset
@@ -252,7 +271,7 @@ public class BatchListEdgeAppsRequest {
     }
 
     /**
-     * 每页记录数，默认值为10，取值区间为1-1000
+     * 每页记录数，默认值为10，取值区间为1-1000。
      * minimum: 0
      * maximum: 1000000
      * @return limit
@@ -299,6 +318,56 @@ public class BatchListEdgeAppsRequest {
         this.functionType = functionType;
     }
 
+    public BatchListEdgeAppsRequest withFunctionTypes(List<String> functionTypes) {
+        this.functionTypes = functionTypes;
+        return this;
+    }
+
+    public BatchListEdgeAppsRequest addFunctionTypesItem(String functionTypesItem) {
+        if (this.functionTypes == null) {
+            this.functionTypes = new ArrayList<>();
+        }
+        this.functionTypes.add(functionTypesItem);
+        return this;
+    }
+
+    public BatchListEdgeAppsRequest withFunctionTypes(Consumer<List<String>> functionTypesSetter) {
+        if (this.functionTypes == null) {
+            this.functionTypes = new ArrayList<>();
+        }
+        functionTypesSetter.accept(this.functionTypes);
+        return this;
+    }
+
+    /**
+     * 功能类型列表
+     * @return functionTypes
+     */
+    public List<String> getFunctionTypes() {
+        return functionTypes;
+    }
+
+    public void setFunctionTypes(List<String> functionTypes) {
+        this.functionTypes = functionTypes;
+    }
+
+    public BatchListEdgeAppsRequest withProtocol(String protocol) {
+        this.protocol = protocol;
+        return this;
+    }
+
+    /**
+     * 驱动协议类型搜索关键字
+     * @return protocol
+     */
+    public String getProtocol() {
+        return protocol;
+    }
+
+    public void setProtocol(String protocol) {
+        this.protocol = protocol;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -310,12 +379,13 @@ public class BatchListEdgeAppsRequest {
         BatchListEdgeAppsRequest that = (BatchListEdgeAppsRequest) obj;
         return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.appType, that.appType)
-            && Objects.equals(this.functionType, that.functionType);
+            && Objects.equals(this.functionType, that.functionType)
+            && Objects.equals(this.functionTypes, that.functionTypes) && Objects.equals(this.protocol, that.protocol);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(edgeAppId, offset, limit, appType, functionType);
+        return Objects.hash(edgeAppId, offset, limit, appType, functionType, functionTypes, protocol);
     }
 
     @Override
@@ -327,6 +397,8 @@ public class BatchListEdgeAppsRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
         sb.append("    functionType: ").append(toIndentedString(functionType)).append("\n");
+        sb.append("    functionTypes: ").append(toIndentedString(functionTypes)).append("\n");
+        sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -28,6 +28,16 @@ public class CreateOpsDatasetRequestBody {
 
     private List<CreateOpsSchemaRequest> schemas = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "use_default_schema")
+
+    private Boolean useDefaultSchema;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<OpsTmsTag> tags = null;
+
     public CreateOpsDatasetRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -95,6 +105,56 @@ public class CreateOpsDatasetRequestBody {
         this.schemas = schemas;
     }
 
+    public CreateOpsDatasetRequestBody withUseDefaultSchema(Boolean useDefaultSchema) {
+        this.useDefaultSchema = useDefaultSchema;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否使用平台默认的字段定义。为true时使用默认Schema，此时可不传schemas。 **约束限制：** 不涉及。 **取值范围：** - true：使用默认字段定义 - false：使用自定义字段定义 **默认取值：** false。
+     * @return useDefaultSchema
+     */
+    public Boolean getUseDefaultSchema() {
+        return useDefaultSchema;
+    }
+
+    public void setUseDefaultSchema(Boolean useDefaultSchema) {
+        this.useDefaultSchema = useDefaultSchema;
+    }
+
+    public CreateOpsDatasetRequestBody withTags(List<OpsTmsTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateOpsDatasetRequestBody addTagsItem(OpsTmsTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateOpsDatasetRequestBody withTags(Consumer<List<OpsTmsTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 创建评测集时绑定的TMS标签列表，默认为空列表。 **约束限制：** 数组长度0到50。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return tags
+     */
+    public List<OpsTmsTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<OpsTmsTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -105,12 +165,13 @@ public class CreateOpsDatasetRequestBody {
         }
         CreateOpsDatasetRequestBody that = (CreateOpsDatasetRequestBody) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.schemas, that.schemas);
+            && Objects.equals(this.schemas, that.schemas)
+            && Objects.equals(this.useDefaultSchema, that.useDefaultSchema) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, schemas);
+        return Objects.hash(name, description, schemas, useDefaultSchema, tags);
     }
 
     @Override
@@ -120,6 +181,8 @@ public class CreateOpsDatasetRequestBody {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    schemas: ").append(toIndentedString(schemas)).append("\n");
+        sb.append("    useDefaultSchema: ").append(toIndentedString(useDefaultSchema)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

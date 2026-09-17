@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.dws.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.dws.v2.model.AddOperationalTaskRequest;
+import com.huaweicloud.sdk.dws.v2.model.AddOperationalTaskResponse;
 import com.huaweicloud.sdk.dws.v2.model.AddQueueUserListRequest;
 import com.huaweicloud.sdk.dws.v2.model.AddQueueUserListResponse;
 import com.huaweicloud.sdk.dws.v2.model.AddWorkloadPlanStageRequest;
@@ -35,6 +37,10 @@ import com.huaweicloud.sdk.dws.v2.model.CheckDisasterNameRequest;
 import com.huaweicloud.sdk.dws.v2.model.CheckDisasterNameResponse;
 import com.huaweicloud.sdk.dws.v2.model.CheckGrowClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.CheckGrowClusterResponse;
+import com.huaweicloud.sdk.dws.v2.model.CheckInstanceStorageRequest;
+import com.huaweicloud.sdk.dws.v2.model.CheckInstanceStorageResponse;
+import com.huaweicloud.sdk.dws.v2.model.CheckSnapshotRequest;
+import com.huaweicloud.sdk.dws.v2.model.CheckSnapshotResponse;
 import com.huaweicloud.sdk.dws.v2.model.CheckTableRestoreRequest;
 import com.huaweicloud.sdk.dws.v2.model.CheckTableRestoreResponse;
 import com.huaweicloud.sdk.dws.v2.model.ConvertToLogicalClusterRequest;
@@ -91,6 +97,8 @@ import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterPlanRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterResponse;
+import com.huaweicloud.sdk.dws.v2.model.DeleteOperationalTaskRequest;
+import com.huaweicloud.sdk.dws.v2.model.DeleteOperationalTaskResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteQueueUserListRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteQueueUserListResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotPolicyRequest;
@@ -135,6 +143,8 @@ import com.huaweicloud.sdk.dws.v2.model.ExportDatabaseUsersRequest;
 import com.huaweicloud.sdk.dws.v2.model.ExportDatabaseUsersResponse;
 import com.huaweicloud.sdk.dws.v2.model.ExportUserAuthorityRequest;
 import com.huaweicloud.sdk.dws.v2.model.ExportUserAuthorityResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListActionsRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListActionsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListAlarmConfigsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListAlarmConfigsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListAlarmDetailRequest;
@@ -165,6 +175,8 @@ import com.huaweicloud.sdk.dws.v2.model.ListClusterNodesRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterNodesResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterScaleInNumbersRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterScaleInNumbersResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListClusterSecurityConfigurationsRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListClusterSecurityConfigurationsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterSnapshotsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterSnapshotsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterTagsRequest;
@@ -181,14 +193,20 @@ import com.huaweicloud.sdk.dws.v2.model.ListDatabaseObjectsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListDatabaseObjectsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListDatabaseUserAuthoritiesRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListDatabaseUserAuthoritiesResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListDatabaseUserRolesRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListDatabaseUserRolesResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListDatabaseUsersRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListDatabaseUsersResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListDisasterRecoverRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListDisasterRecoverResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListDssPoolsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListDssPoolsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListElbsInfoRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListElbsInfoResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListElbsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListElbsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListEpsRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListEpsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListEventSpecsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListEventSpecsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListEventSubsRequest;
@@ -225,6 +243,10 @@ import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListNodeTypesRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListNodeTypesResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListOperationalTaskDetailRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListOperationalTaskDetailResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListOperationalTaskRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListOperationalTaskResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListPlanExecLogsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListPlanExecLogsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListQueriesRequest;
@@ -233,6 +255,8 @@ import com.huaweicloud.sdk.dws.v2.model.ListQuotasRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListQuotasResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListRedistributionSchemaRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListRedistributionSchemaResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListResourceByTagRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListResourceByTagResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListSchemasRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListSchemasResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotDetailsRequest;
@@ -277,6 +301,10 @@ import com.huaweicloud.sdk.dws.v2.model.ModifyClusterTimezoneRequest;
 import com.huaweicloud.sdk.dws.v2.model.ModifyClusterTimezoneResponse;
 import com.huaweicloud.sdk.dws.v2.model.PauseDisasterRecoveryRequest;
 import com.huaweicloud.sdk.dws.v2.model.PauseDisasterRecoveryResponse;
+import com.huaweicloud.sdk.dws.v2.model.PauseOperationalTaskRequest;
+import com.huaweicloud.sdk.dws.v2.model.PauseOperationalTaskResponse;
+import com.huaweicloud.sdk.dws.v2.model.RefreshOperationalTaskRequest;
+import com.huaweicloud.sdk.dws.v2.model.RefreshOperationalTaskResponse;
 import com.huaweicloud.sdk.dws.v2.model.ResetPasswordRequest;
 import com.huaweicloud.sdk.dws.v2.model.ResetPasswordResponse;
 import com.huaweicloud.sdk.dws.v2.model.ResizeClusterRequest;
@@ -297,6 +325,8 @@ import com.huaweicloud.sdk.dws.v2.model.RestoreRedistributionRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestoreRedistributionResponse;
 import com.huaweicloud.sdk.dws.v2.model.RestoreTableRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestoreTableResponse;
+import com.huaweicloud.sdk.dws.v2.model.ResumeOperationalTaskRequest;
+import com.huaweicloud.sdk.dws.v2.model.ResumeOperationalTaskResponse;
 import com.huaweicloud.sdk.dws.v2.model.RotateKeyRequest;
 import com.huaweicloud.sdk.dws.v2.model.RotateKeyResponse;
 import com.huaweicloud.sdk.dws.v2.model.SaveClusterDescriptionInfoRequest;
@@ -327,6 +357,8 @@ import com.huaweicloud.sdk.dws.v2.model.ShowDisasterProgressRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowDisasterProgressResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowInstanceResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowOperationalTaskConfigRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowOperationalTaskConfigResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowQueryDetailRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowQueryDetailResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowResizePreparationRequest;
@@ -387,6 +419,10 @@ import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateMaintenanceWindowRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateMaintenanceWindowResponse;
+import com.huaweicloud.sdk.dws.v2.model.UpdateOperationalTaskConfigRequest;
+import com.huaweicloud.sdk.dws.v2.model.UpdateOperationalTaskConfigResponse;
+import com.huaweicloud.sdk.dws.v2.model.UpdateOperationalTaskRequest;
+import com.huaweicloud.sdk.dws.v2.model.UpdateOperationalTaskResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateQueueBaseInfoRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateQueueBaseInfoResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateQueueResourcesRequest;
@@ -399,6 +435,8 @@ import com.huaweicloud.sdk.dws.v2.model.UpdateWorkloadPlanStageRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateWorkloadPlanStageResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateWorkloadRuleRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateWorkloadRuleResponse;
+import com.huaweicloud.sdk.dws.v2.model.ValidateDbDataRequest;
+import com.huaweicloud.sdk.dws.v2.model.ValidateDbDataResponse;
 
 public class DwsClient {
 
@@ -411,6 +449,35 @@ public class DwsClient {
     public static ClientBuilder<DwsClient> newBuilder() {
         ClientBuilder<DwsClient> clientBuilder = new ClientBuilder<>(DwsClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 新增调度任务
+     *
+     * 新增调度任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddOperationalTaskRequest 请求对象
+     * @return AddOperationalTaskResponse
+     */
+    public AddOperationalTaskResponse addOperationalTask(AddOperationalTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.addOperationalTask);
+    }
+
+    /**
+     * 新增调度任务
+     *
+     * 新增调度任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddOperationalTaskRequest 请求对象
+     * @return SyncInvoker<AddOperationalTaskRequest, AddOperationalTaskResponse>
+     */
+    public SyncInvoker<AddOperationalTaskRequest, AddOperationalTaskResponse> addOperationalTaskInvoker(
+        AddOperationalTaskRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.addOperationalTask, hcClient);
     }
 
     /**
@@ -716,9 +783,9 @@ public class DwsClient {
     /**
      * 解除只读
      *
-     * 当集群进入只读状态时，无法进行数据库相关操作，用户可以在管理控制台解除集群的只读状态。触发只读状态可能是由于磁盘使用率过高，因此需要对集群数据进行清理或扩容。 
-     *  **约束限制**：
-     *  解除只读支持1.7.2及以上版本。
+     * 当集群进入只读状态时，无法进行数据库相关操作，用户可以调用该API解除集群的只读状态。触发只读状态可能是由于磁盘使用率过高，因此需要先对集群数据进行清理或扩容再解除只读。 
+     * **约束限制**：
+     * 解除只读支持1.7.2及以上版本。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -732,9 +799,9 @@ public class DwsClient {
     /**
      * 解除只读
      *
-     * 当集群进入只读状态时，无法进行数据库相关操作，用户可以在管理控制台解除集群的只读状态。触发只读状态可能是由于磁盘使用率过高，因此需要对集群数据进行清理或扩容。 
-     *  **约束限制**：
-     *  解除只读支持1.7.2及以上版本。
+     * 当集群进入只读状态时，无法进行数据库相关操作，用户可以调用该API解除集群的只读状态。触发只读状态可能是由于磁盘使用率过高，因此需要先对集群数据进行清理或扩容再解除只读。 
+     * **约束限制**：
+     * 解除只读支持1.7.2及以上版本。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -888,6 +955,63 @@ public class DwsClient {
     public SyncInvoker<CheckGrowClusterRequest, CheckGrowClusterResponse> checkGrowClusterInvoker(
         CheckGrowClusterRequest request) {
         return new SyncInvoker<>(request, DwsMeta.checkGrowCluster, hcClient);
+    }
+
+    /**
+     * 磁盘扩容前检查
+     *
+     * 磁盘扩容前检查。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckInstanceStorageRequest 请求对象
+     * @return CheckInstanceStorageResponse
+     */
+    public CheckInstanceStorageResponse checkInstanceStorage(CheckInstanceStorageRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.checkInstanceStorage);
+    }
+
+    /**
+     * 磁盘扩容前检查
+     *
+     * 磁盘扩容前检查。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckInstanceStorageRequest 请求对象
+     * @return SyncInvoker<CheckInstanceStorageRequest, CheckInstanceStorageResponse>
+     */
+    public SyncInvoker<CheckInstanceStorageRequest, CheckInstanceStorageResponse> checkInstanceStorageInvoker(
+        CheckInstanceStorageRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.checkInstanceStorage, hcClient);
+    }
+
+    /**
+     * 检验快照信息
+     *
+     * 检验快照信息，状态码200时校验成功。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckSnapshotRequest 请求对象
+     * @return CheckSnapshotResponse
+     */
+    public CheckSnapshotResponse checkSnapshot(CheckSnapshotRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.checkSnapshot);
+    }
+
+    /**
+     * 检验快照信息
+     *
+     * 检验快照信息，状态码200时校验成功。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckSnapshotRequest 请求对象
+     * @return SyncInvoker<CheckSnapshotRequest, CheckSnapshotResponse>
+     */
+    public SyncInvoker<CheckSnapshotRequest, CheckSnapshotResponse> checkSnapshotInvoker(CheckSnapshotRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.checkSnapshot, hcClient);
     }
 
     /**
@@ -1633,7 +1757,7 @@ public class DwsClient {
     }
 
     /**
-     * 删除订阅事件
+     * 删除订阅的事件
      *
      * 删除订阅的事件。
      * 
@@ -1647,7 +1771,7 @@ public class DwsClient {
     }
 
     /**
-     * 删除订阅事件
+     * 删除订阅的事件
      *
      * 删除订阅的事件。
      * 
@@ -1717,6 +1841,35 @@ public class DwsClient {
     public SyncInvoker<DeleteLogicalClusterPlanRequest, DeleteLogicalClusterPlanResponse> deleteLogicalClusterPlanInvoker(
         DeleteLogicalClusterPlanRequest request) {
         return new SyncInvoker<>(request, DwsMeta.deleteLogicalClusterPlan, hcClient);
+    }
+
+    /**
+     * 批量删除调度任务
+     *
+     * 批量删除调度任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOperationalTaskRequest 请求对象
+     * @return DeleteOperationalTaskResponse
+     */
+    public DeleteOperationalTaskResponse deleteOperationalTask(DeleteOperationalTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.deleteOperationalTask);
+    }
+
+    /**
+     * 批量删除调度任务
+     *
+     * 批量删除调度任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOperationalTaskRequest 请求对象
+     * @return SyncInvoker<DeleteOperationalTaskRequest, DeleteOperationalTaskResponse>
+     */
+    public SyncInvoker<DeleteOperationalTaskRequest, DeleteOperationalTaskResponse> deleteOperationalTaskInvoker(
+        DeleteOperationalTaskRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.deleteOperationalTask, hcClient);
     }
 
     /**
@@ -2296,7 +2449,7 @@ public class DwsClient {
      * 磁盘扩容
      *
      * 随着客户业务的发展，磁盘空间往往最先出现资源瓶颈，在其他资源尚且充足的情况下，通过磁盘扩容可快速缓解存储资源瓶颈现象，操作过程中无需暂停业务，并且不会造成CPU、内存等资源浪费。  
-     *  **约束限制**：
+     * **约束限制**：
      * 磁盘扩容功能仅8.1.1.203及以上版本支持，并且创建集群规格需要为云数仓SSD云盘或实时数仓类型。  
      * 按需+折扣套餐包消费模式下，存储扩容后超出折扣套餐包部分将按需收费。
      * 
@@ -2313,7 +2466,7 @@ public class DwsClient {
      * 磁盘扩容
      *
      * 随着客户业务的发展，磁盘空间往往最先出现资源瓶颈，在其他资源尚且充足的情况下，通过磁盘扩容可快速缓解存储资源瓶颈现象，操作过程中无需暂停业务，并且不会造成CPU、内存等资源浪费。  
-     *  **约束限制**：
+     * **约束限制**：
      * 磁盘扩容功能仅8.1.1.203及以上版本支持，并且创建集群规格需要为云数仓SSD云盘或实时数仓类型。  
      * 按需+折扣套餐包消费模式下，存储扩容后超出折扣套餐包部分将按需收费。
      * 
@@ -2383,6 +2536,34 @@ public class DwsClient {
     public SyncInvoker<ExportUserAuthorityRequest, ExportUserAuthorityResponse> exportUserAuthorityInvoker(
         ExportUserAuthorityRequest request) {
         return new SyncInvoker<>(request, DwsMeta.exportUserAuthority, hcClient);
+    }
+
+    /**
+     * 查询租户白名单
+     *
+     * 查询租户白名单。仅返回当前用户支持的灰度特性，集群列表等基础功能不受白名单控制，所有用户均可以使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListActionsRequest 请求对象
+     * @return ListActionsResponse
+     */
+    public ListActionsResponse listActions(ListActionsRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.listActions);
+    }
+
+    /**
+     * 查询租户白名单
+     *
+     * 查询租户白名单。仅返回当前用户支持的灰度特性，集群列表等基础功能不受白名单控制，所有用户均可以使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListActionsRequest 请求对象
+     * @return SyncInvoker<ListActionsRequest, ListActionsResponse>
+     */
+    public SyncInvoker<ListActionsRequest, ListActionsResponse> listActionsInvoker(ListActionsRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.listActions, hcClient);
     }
 
     /**
@@ -2501,9 +2682,9 @@ public class DwsClient {
     }
 
     /**
-     * 查询日志记录
+     * 查询审计日志转储执行记录
      *
-     * 查询审计日志记录。
+     * 查询审计日志转储执行记录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2515,9 +2696,9 @@ public class DwsClient {
     }
 
     /**
-     * 查询日志记录
+     * 查询审计日志转储执行记录
      *
-     * 查询审计日志记录。
+     * 查询审计日志转储执行记录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2820,6 +3001,36 @@ public class DwsClient {
     }
 
     /**
+     * 查询集群安全参数配置
+     *
+     * 查询集群安全参数配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClusterSecurityConfigurationsRequest 请求对象
+     * @return ListClusterSecurityConfigurationsResponse
+     */
+    public ListClusterSecurityConfigurationsResponse listClusterSecurityConfigurations(
+        ListClusterSecurityConfigurationsRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.listClusterSecurityConfigurations);
+    }
+
+    /**
+     * 查询集群安全参数配置
+     *
+     * 查询集群安全参数配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClusterSecurityConfigurationsRequest 请求对象
+     * @return SyncInvoker<ListClusterSecurityConfigurationsRequest, ListClusterSecurityConfigurationsResponse>
+     */
+    public SyncInvoker<ListClusterSecurityConfigurationsRequest, ListClusterSecurityConfigurationsResponse> listClusterSecurityConfigurationsInvoker(
+        ListClusterSecurityConfigurationsRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.listClusterSecurityConfigurations, hcClient);
+    }
+
+    /**
      * 查询集群快照列表
      *
      * 该接口用于查询集群快照列表。
@@ -3056,6 +3267,35 @@ public class DwsClient {
     }
 
     /**
+     * 查询用户所属角色
+     *
+     * 查询用户所属角色。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatabaseUserRolesRequest 请求对象
+     * @return ListDatabaseUserRolesResponse
+     */
+    public ListDatabaseUserRolesResponse listDatabaseUserRoles(ListDatabaseUserRolesRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.listDatabaseUserRoles);
+    }
+
+    /**
+     * 查询用户所属角色
+     *
+     * 查询用户所属角色。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatabaseUserRolesRequest 请求对象
+     * @return SyncInvoker<ListDatabaseUserRolesRequest, ListDatabaseUserRolesResponse>
+     */
+    public SyncInvoker<ListDatabaseUserRolesRequest, ListDatabaseUserRolesResponse> listDatabaseUserRolesInvoker(
+        ListDatabaseUserRolesRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.listDatabaseUserRoles, hcClient);
+    }
+
+    /**
      * 查询所有数据库用户/角色
      *
      * 查询所有数据库用户/角色。
@@ -3169,6 +3409,62 @@ public class DwsClient {
      */
     public SyncInvoker<ListElbsRequest, ListElbsResponse> listElbsInvoker(ListElbsRequest request) {
         return new SyncInvoker<>(request, DwsMeta.listElbs, hcClient);
+    }
+
+    /**
+     * 查询可用弹性负载均衡列表
+     *
+     * 查询可用弹性负载均衡列表，该接口是对ELB提供的openapi的封装，针对DWS进行了部分筛选，且不含已经被其它dws集群绑定的弹性负载均衡器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListElbsInfoRequest 请求对象
+     * @return ListElbsInfoResponse
+     */
+    public ListElbsInfoResponse listElbsInfo(ListElbsInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.listElbsInfo);
+    }
+
+    /**
+     * 查询可用弹性负载均衡列表
+     *
+     * 查询可用弹性负载均衡列表，该接口是对ELB提供的openapi的封装，针对DWS进行了部分筛选，且不含已经被其它dws集群绑定的弹性负载均衡器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListElbsInfoRequest 请求对象
+     * @return SyncInvoker<ListElbsInfoRequest, ListElbsInfoResponse>
+     */
+    public SyncInvoker<ListElbsInfoRequest, ListElbsInfoResponse> listElbsInfoInvoker(ListElbsInfoRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.listElbsInfo, hcClient);
+    }
+
+    /**
+     * 查询所有集群的企业项目信息
+     *
+     * 查询所有集群的企业项目信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEpsRequest 请求对象
+     * @return ListEpsResponse
+     */
+    public ListEpsResponse listEps(ListEpsRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.listEps);
+    }
+
+    /**
+     * 查询所有集群的企业项目信息
+     *
+     * 查询所有集群的企业项目信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEpsRequest 请求对象
+     * @return SyncInvoker<ListEpsRequest, ListEpsResponse>
+     */
+    public SyncInvoker<ListEpsRequest, ListEpsResponse> listEpsInvoker(ListEpsRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.listEps, hcClient);
     }
 
     /**
@@ -3687,6 +3983,64 @@ public class DwsClient {
     }
 
     /**
+     * 查询运维任务列表
+     *
+     * 查询运维任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOperationalTaskRequest 请求对象
+     * @return ListOperationalTaskResponse
+     */
+    public ListOperationalTaskResponse listOperationalTask(ListOperationalTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.listOperationalTask);
+    }
+
+    /**
+     * 查询运维任务列表
+     *
+     * 查询运维任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOperationalTaskRequest 请求对象
+     * @return SyncInvoker<ListOperationalTaskRequest, ListOperationalTaskResponse>
+     */
+    public SyncInvoker<ListOperationalTaskRequest, ListOperationalTaskResponse> listOperationalTaskInvoker(
+        ListOperationalTaskRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.listOperationalTask, hcClient);
+    }
+
+    /**
+     * 获取运维任务执行信息
+     *
+     * 获取运维任务执行信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOperationalTaskDetailRequest 请求对象
+     * @return ListOperationalTaskDetailResponse
+     */
+    public ListOperationalTaskDetailResponse listOperationalTaskDetail(ListOperationalTaskDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.listOperationalTaskDetail);
+    }
+
+    /**
+     * 获取运维任务执行信息
+     *
+     * 获取运维任务执行信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOperationalTaskDetailRequest 请求对象
+     * @return SyncInvoker<ListOperationalTaskDetailRequest, ListOperationalTaskDetailResponse>
+     */
+    public SyncInvoker<ListOperationalTaskDetailRequest, ListOperationalTaskDetailResponse> listOperationalTaskDetailInvoker(
+        ListOperationalTaskDetailRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.listOperationalTaskDetail, hcClient);
+    }
+
+    /**
      * 查看计划执行日志
      *
      * 查看计划执行日志。
@@ -3798,6 +4152,35 @@ public class DwsClient {
     public SyncInvoker<ListRedistributionSchemaRequest, ListRedistributionSchemaResponse> listRedistributionSchemaInvoker(
         ListRedistributionSchemaRequest request) {
         return new SyncInvoker<>(request, DwsMeta.listRedistributionSchema, hcClient);
+    }
+
+    /**
+     * 使用标签查询集群
+     *
+     * 使用标签查询集群。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceByTagRequest 请求对象
+     * @return ListResourceByTagResponse
+     */
+    public ListResourceByTagResponse listResourceByTag(ListResourceByTagRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.listResourceByTag);
+    }
+
+    /**
+     * 使用标签查询集群
+     *
+     * 使用标签查询集群。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceByTagRequest 请求对象
+     * @return SyncInvoker<ListResourceByTagRequest, ListResourceByTagResponse>
+     */
+    public SyncInvoker<ListResourceByTagRequest, ListResourceByTagResponse> listResourceByTagInvoker(
+        ListResourceByTagRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.listResourceByTag, hcClient);
     }
 
     /**
@@ -3916,9 +4299,9 @@ public class DwsClient {
     }
 
     /**
-     * 快照统计信息
+     * 查询快照统计信息
      *
-     * 快照统计信息。
+     * 查询快照统计信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3930,9 +4313,9 @@ public class DwsClient {
     }
 
     /**
-     * 快照统计信息
+     * 查询快照统计信息
      *
-     * 快照统计信息。
+     * 查询快照统计信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3973,7 +4356,7 @@ public class DwsClient {
     }
 
     /**
-     * 查询资源统计信息列表
+     * 查询当前可用资源数
      *
      * 查询当前可用资源数量，其中包括“可用集群和总集群（个）”、“可用节点和总节点（个）”、“总容量（GB）”。
      * 
@@ -3987,7 +4370,7 @@ public class DwsClient {
     }
 
     /**
-     * 查询资源统计信息列表
+     * 查询当前可用资源数
      *
      * 查询当前可用资源数量，其中包括“可用集群和总集群（个）”、“可用节点和总节点（个）”、“总容量（GB）”。
      * 
@@ -4459,6 +4842,64 @@ public class DwsClient {
     }
 
     /**
+     * 批量暂停调度任务
+     *
+     * 批量暂停调度任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PauseOperationalTaskRequest 请求对象
+     * @return PauseOperationalTaskResponse
+     */
+    public PauseOperationalTaskResponse pauseOperationalTask(PauseOperationalTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.pauseOperationalTask);
+    }
+
+    /**
+     * 批量暂停调度任务
+     *
+     * 批量暂停调度任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PauseOperationalTaskRequest 请求对象
+     * @return SyncInvoker<PauseOperationalTaskRequest, PauseOperationalTaskResponse>
+     */
+    public SyncInvoker<PauseOperationalTaskRequest, PauseOperationalTaskResponse> pauseOperationalTaskInvoker(
+        PauseOperationalTaskRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.pauseOperationalTask, hcClient);
+    }
+
+    /**
+     * 同步当前集群运维任务状态
+     *
+     * 同步当前集群运维任务状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RefreshOperationalTaskRequest 请求对象
+     * @return RefreshOperationalTaskResponse
+     */
+    public RefreshOperationalTaskResponse refreshOperationalTask(RefreshOperationalTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.refreshOperationalTask);
+    }
+
+    /**
+     * 同步当前集群运维任务状态
+     *
+     * 同步当前集群运维任务状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RefreshOperationalTaskRequest 请求对象
+     * @return SyncInvoker<RefreshOperationalTaskRequest, RefreshOperationalTaskResponse>
+     */
+    public SyncInvoker<RefreshOperationalTaskRequest, RefreshOperationalTaskResponse> refreshOperationalTaskInvoker(
+        RefreshOperationalTaskRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.refreshOperationalTask, hcClient);
+    }
+
+    /**
      * 重置密码
      *
      * 重置集群管理员密码。
@@ -4756,6 +5197,35 @@ public class DwsClient {
      */
     public SyncInvoker<RestoreTableRequest, RestoreTableResponse> restoreTableInvoker(RestoreTableRequest request) {
         return new SyncInvoker<>(request, DwsMeta.restoreTable, hcClient);
+    }
+
+    /**
+     * 批量恢复调度任务
+     *
+     * 批量恢复调度任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResumeOperationalTaskRequest 请求对象
+     * @return ResumeOperationalTaskResponse
+     */
+    public ResumeOperationalTaskResponse resumeOperationalTask(ResumeOperationalTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.resumeOperationalTask);
+    }
+
+    /**
+     * 批量恢复调度任务
+     *
+     * 批量恢复调度任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResumeOperationalTaskRequest 请求对象
+     * @return SyncInvoker<ResumeOperationalTaskRequest, ResumeOperationalTaskResponse>
+     */
+    public SyncInvoker<ResumeOperationalTaskRequest, ResumeOperationalTaskResponse> resumeOperationalTaskInvoker(
+        ResumeOperationalTaskRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.resumeOperationalTask, hcClient);
     }
 
     /**
@@ -5206,6 +5676,35 @@ public class DwsClient {
     }
 
     /**
+     * 查询调度运维任务公共配置
+     *
+     * 查询调度运维任务公共配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOperationalTaskConfigRequest 请求对象
+     * @return ShowOperationalTaskConfigResponse
+     */
+    public ShowOperationalTaskConfigResponse showOperationalTaskConfig(ShowOperationalTaskConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.showOperationalTaskConfig);
+    }
+
+    /**
+     * 查询调度运维任务公共配置
+     *
+     * 查询调度运维任务公共配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOperationalTaskConfigRequest 请求对象
+     * @return SyncInvoker<ShowOperationalTaskConfigRequest, ShowOperationalTaskConfigResponse>
+     */
+    public SyncInvoker<ShowOperationalTaskConfigRequest, ShowOperationalTaskConfigResponse> showOperationalTaskConfigInvoker(
+        ShowOperationalTaskConfigRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.showOperationalTaskConfig, hcClient);
+    }
+
+    /**
      * 查询SQL执行信息
      *
      * 查询SQL执行信息。
@@ -5264,9 +5763,9 @@ public class DwsClient {
     }
 
     /**
-     * 查询资源统计
+     * 查询资源统计信息
      *
-     * 该接口用于查询资源统计。
+     * 该接口用于查询资源统计信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5278,9 +5777,9 @@ public class DwsClient {
     }
 
     /**
-     * 查询资源统计
+     * 查询资源统计信息
      *
-     * 该接口用于查询资源统计。
+     * 该接口用于查询资源统计信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5660,8 +6159,8 @@ public class DwsClient {
      *
      * 当集群状态为“非均衡”时会出现某些节点主实例增多，从而负载压力较大。这种情况下集群状态是正常的，但整体性能要低于均衡状态。可进行集群主备恢复操作将集群状态切换为“可用”状态。  
      * **约束限制**：
-     *  集群主备恢复仅8.1.1.202及以上版本支持。 
-     *  集群主备恢复将会短暂中断业务，中断时间根据用户自身业务量所决定，建议用户在业务低峰期执行此操作。
+     * 集群主备恢复仅8.1.1.202及以上版本支持。
+     * 集群主备恢复将会短暂中断业务，中断时间根据用户自身业务量所决定，建议用户在业务低峰期执行此操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5677,8 +6176,8 @@ public class DwsClient {
      *
      * 当集群状态为“非均衡”时会出现某些节点主实例增多，从而负载压力较大。这种情况下集群状态是正常的，但整体性能要低于均衡状态。可进行集群主备恢复操作将集群状态切换为“可用”状态。  
      * **约束限制**：
-     *  集群主备恢复仅8.1.1.202及以上版本支持。 
-     *  集群主备恢复将会短暂中断业务，中断时间根据用户自身业务量所决定，建议用户在业务低峰期执行此操作。
+     * 集群主备恢复仅8.1.1.202及以上版本支持。
+     * 集群主备恢复将会短暂中断业务，中断时间根据用户自身业务量所决定，建议用户在业务低峰期执行此操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5727,8 +6226,8 @@ public class DwsClient {
      * 容灾状态为“运行中”时可以执行灾备切换操作。
      * 灾备切换需要一定时间，在此期间，原生产集群将不可用。
      * 不同场景下进行灾备切换，RPO（Recovery Point Object，灾难发生后，系统和数据必须恢复到的时间点要求。）说明如下：
-     *   生产集群在“可用”的状态下，RPO&#x3D;0。
-     *   生产集群在“不可用”的状态下，无法保证RPO&#x3D;0，但数据至少可恢复到生产集群“最近容灾成功时间”。
+     * 生产集群在“可用”的状态下，RPO&#x3D;0。
+     * 生产集群在“不可用”的状态下，无法保证RPO&#x3D;0，但数据至少可恢复到生产集群“最近容灾成功时间”。
      * 仅支持DWS 2.0集群。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -5748,8 +6247,8 @@ public class DwsClient {
      * 容灾状态为“运行中”时可以执行灾备切换操作。
      * 灾备切换需要一定时间，在此期间，原生产集群将不可用。
      * 不同场景下进行灾备切换，RPO（Recovery Point Object，灾难发生后，系统和数据必须恢复到的时间点要求。）说明如下：
-     *   生产集群在“可用”的状态下，RPO&#x3D;0。
-     *   生产集群在“不可用”的状态下，无法保证RPO&#x3D;0，但数据至少可恢复到生产集群“最近容灾成功时间”。
+     * 生产集群在“可用”的状态下，RPO&#x3D;0。
+     * 生产集群在“不可用”的状态下，无法保证RPO&#x3D;0，但数据至少可恢复到生产集群“最近容灾成功时间”。
      * 仅支持DWS 2.0集群。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -6120,6 +6619,64 @@ public class DwsClient {
     }
 
     /**
+     * 修改调度任务
+     *
+     * 修改调度任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOperationalTaskRequest 请求对象
+     * @return UpdateOperationalTaskResponse
+     */
+    public UpdateOperationalTaskResponse updateOperationalTask(UpdateOperationalTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.updateOperationalTask);
+    }
+
+    /**
+     * 修改调度任务
+     *
+     * 修改调度任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOperationalTaskRequest 请求对象
+     * @return SyncInvoker<UpdateOperationalTaskRequest, UpdateOperationalTaskResponse>
+     */
+    public SyncInvoker<UpdateOperationalTaskRequest, UpdateOperationalTaskResponse> updateOperationalTaskInvoker(
+        UpdateOperationalTaskRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.updateOperationalTask, hcClient);
+    }
+
+    /**
+     * 修改调度运维任务公共配置
+     *
+     * 修改调度运维任务公共配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOperationalTaskConfigRequest 请求对象
+     * @return UpdateOperationalTaskConfigResponse
+     */
+    public UpdateOperationalTaskConfigResponse updateOperationalTaskConfig(UpdateOperationalTaskConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.updateOperationalTaskConfig);
+    }
+
+    /**
+     * 修改调度运维任务公共配置
+     *
+     * 修改调度运维任务公共配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOperationalTaskConfigRequest 请求对象
+     * @return SyncInvoker<UpdateOperationalTaskConfigRequest, UpdateOperationalTaskConfigResponse>
+     */
+    public SyncInvoker<UpdateOperationalTaskConfigRequest, UpdateOperationalTaskConfigResponse> updateOperationalTaskConfigInvoker(
+        UpdateOperationalTaskConfigRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.updateOperationalTaskConfig, hcClient);
+    }
+
+    /**
      * 更新资源池基础信息
      *
      * 更新资源池基础信息。
@@ -6291,6 +6848,35 @@ public class DwsClient {
     public SyncInvoker<UpdateWorkloadRuleRequest, UpdateWorkloadRuleResponse> updateWorkloadRuleInvoker(
         UpdateWorkloadRuleRequest request) {
         return new SyncInvoker<>(request, DwsMeta.updateWorkloadRule, hcClient);
+    }
+
+    /**
+     * 校验schema或table列表数据
+     *
+     * 传入schema或table列表数据，返回存在的数据列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ValidateDbDataRequest 请求对象
+     * @return ValidateDbDataResponse
+     */
+    public ValidateDbDataResponse validateDbData(ValidateDbDataRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.validateDbData);
+    }
+
+    /**
+     * 校验schema或table列表数据
+     *
+     * 传入schema或table列表数据，返回存在的数据列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ValidateDbDataRequest 请求对象
+     * @return SyncInvoker<ValidateDbDataRequest, ValidateDbDataResponse>
+     */
+    public SyncInvoker<ValidateDbDataRequest, ValidateDbDataResponse> validateDbDataInvoker(
+        ValidateDbDataRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.validateDbData, hcClient);
     }
 
 }

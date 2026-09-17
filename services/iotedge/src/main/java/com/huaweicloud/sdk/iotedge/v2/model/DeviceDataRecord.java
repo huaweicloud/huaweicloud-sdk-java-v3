@@ -69,7 +69,7 @@ public class DeviceDataRecord {
     }
 
     /**
-     * 配置开关，true启用数据打印，false不启用数据打印
+     * 配置开关，on启用数据打印，off不启用数据打印
      * @return state
      */
     public String getState() {

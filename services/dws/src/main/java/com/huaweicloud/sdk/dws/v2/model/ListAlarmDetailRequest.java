@@ -97,7 +97,7 @@ public class ListAlarmDetailRequest {
     }
 
     /**
-     * **参数解释**：  开始UTC时间，单位精确到毫秒。  **取值范围**：  不涉及。
+     * **参数解释**： 开始UTC时间，单位精确到毫秒。 **取值范围**： 不涉及。
      * @return from
      */
     public Long getFrom() {
@@ -114,7 +114,7 @@ public class ListAlarmDetailRequest {
     }
 
     /**
-     * **参数解释**：  结束UTC时间，单位精确到毫秒。  **取值范围**：  不涉及。
+     * **参数解释**： 结束UTC时间，单位精确到毫秒。 **取值范围**： 不涉及。
      * @return to
      */
     public Long getTo() {
@@ -131,7 +131,7 @@ public class ListAlarmDetailRequest {
     }
 
     /**
-     * **参数解释**：  查询前N天到当前时间范围内的告警。  **约束限制**： 不涉及。 **取值范围**： 大于0。
+     * **参数解释**： 查询前N天到当前时间范围内的告警。 **约束限制**： 不涉及。 **取值范围**： 大于0。
      * @return recentDay
      */
     public Integer getRecentDay() {

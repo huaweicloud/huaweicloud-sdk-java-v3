@@ -31,7 +31,7 @@ public class UpdateChartRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 上传模板的配置参数，示例如下：\"{\\\"override\\\":true,\\\"skip_lint\\\":true,\\\"source\\\":\\\"package\\\"}\" - skip_lint: whether lint uploaded chart - override: whether override existed chart - visible: update chart visible
+     * **参数解释：** 上传模板的配置参数，示例如下：\"{\\\"override\\\":true,\\\"skip_lint\\\":true,\\\"source\\\":\\\"package\\\"}\"。 **约束限制：** 不涉及 **取值范围：** - skip_lint：是否验证上传的模板 - override：是否覆盖已存在的模板 - visible：模板是否可见  **默认取值：** 不涉及
      * @return parameters
      */
     public String getParameters() {
@@ -48,7 +48,7 @@ public class UpdateChartRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 模板包文件
+     * **参数解释：** 模板包文件。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return content
      */
     public FormDataFilePart getContent() {

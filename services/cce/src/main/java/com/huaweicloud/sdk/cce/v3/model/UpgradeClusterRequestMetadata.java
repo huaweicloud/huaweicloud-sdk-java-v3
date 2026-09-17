@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * UpgradeClusterRequestMetadata
+ * **参数解释：** 集群升级请求元数据。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
  */
 public class UpgradeClusterRequestMetadata {
 
@@ -26,7 +26,7 @@ public class UpgradeClusterRequestMetadata {
     }
 
     /**
-     * api版本，默认为v3
+     * **参数解释：** API版本，固定值\"v3\"，该值不可修改。 **约束限制：** 该值不可修改 **取值范围：** - v3  **默认取值：** v3
      * @return apiVersion
      */
     public String getApiVersion() {
@@ -43,7 +43,7 @@ public class UpgradeClusterRequestMetadata {
     }
 
     /**
-     * 资源类型，默认为UpgradeTask
+     * **参数解释：** API类型，固定值\"UpgradeTask\"，该值不可修改。 **约束限制：** 该值不可修改 **取值范围：** - UpgradeTask  **默认取值：** UpgradeTask
      * @return kind
      */
     public String getKind() {

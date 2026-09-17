@@ -14,9 +14,31 @@ import java.util.function.Consumer;
 public class OpsTurnInput {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "turn_id")
+
+    private String turnId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fields")
 
     private List<OpsFieldValueInput> fields = null;
+
+    public OpsTurnInput withTurnId(String turnId) {
+        this.turnId = turnId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 轮次的唯一标识符，不传时系统自动生成。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。 
+     * @return turnId
+     */
+    public String getTurnId() {
+        return turnId;
+    }
+
+    public void setTurnId(String turnId) {
+        this.turnId = turnId;
+    }
 
     public OpsTurnInput withFields(List<OpsFieldValueInput> fields) {
         this.fields = fields;
@@ -60,18 +82,19 @@ public class OpsTurnInput {
             return false;
         }
         OpsTurnInput that = (OpsTurnInput) obj;
-        return Objects.equals(this.fields, that.fields);
+        return Objects.equals(this.turnId, that.turnId) && Objects.equals(this.fields, that.fields);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fields);
+        return Objects.hash(turnId, fields);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class OpsTurnInput {\n");
+        sb.append("    turnId: ").append(toIndentedString(turnId)).append("\n");
         sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
         sb.append("}");
         return sb.toString();

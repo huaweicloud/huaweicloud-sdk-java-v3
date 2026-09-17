@@ -5,10 +5,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -46,7 +44,7 @@ public class EvaluationOpsSynthesisTaskSummary {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stats")
 
-    private List<SynthesisTaskStats> stats = null;
+    private Object stats;
 
     /**
      * **参数解释：**   合成任务当前的生命周期状态。 **约束限制：**   枚举类型。 **取值范围：**   pending, running, completed, failed, stopped。 **默认取值：**   pending。 
@@ -142,19 +140,14 @@ public class EvaluationOpsSynthesisTaskSummary {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "progress")
+    @JsonProperty(value = "error_message")
 
-    private Integer progress;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sample_count")
-
-    private Integer sampleCount;
+    private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "generated_count")
+    @JsonProperty(value = "is_free")
 
-    private Integer generatedCount;
+    private Boolean isFree;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model_config")
@@ -256,24 +249,8 @@ public class EvaluationOpsSynthesisTaskSummary {
         this.scenarioDescription = scenarioDescription;
     }
 
-    public EvaluationOpsSynthesisTaskSummary withStats(List<SynthesisTaskStats> stats) {
+    public EvaluationOpsSynthesisTaskSummary withStats(Object stats) {
         this.stats = stats;
-        return this;
-    }
-
-    public EvaluationOpsSynthesisTaskSummary addStatsItem(SynthesisTaskStats statsItem) {
-        if (this.stats == null) {
-            this.stats = new ArrayList<>();
-        }
-        this.stats.add(statsItem);
-        return this;
-    }
-
-    public EvaluationOpsSynthesisTaskSummary withStats(Consumer<List<SynthesisTaskStats>> statsSetter) {
-        if (this.stats == null) {
-            this.stats = new ArrayList<>();
-        }
-        statsSetter.accept(this.stats);
         return this;
     }
 
@@ -281,11 +258,11 @@ public class EvaluationOpsSynthesisTaskSummary {
      * **参数解释：**   合成任务的运行状态统计列表。 **约束限制：**   数组类型。 **取值范围：**   不涉及。 **默认取值：**   不涉及。 
      * @return stats
      */
-    public List<SynthesisTaskStats> getStats() {
+    public Object getStats() {
         return stats;
     }
 
-    public void setStats(List<SynthesisTaskStats> stats) {
+    public void setStats(Object stats) {
         this.stats = stats;
     }
 
@@ -306,61 +283,38 @@ public class EvaluationOpsSynthesisTaskSummary {
         this.status = status;
     }
 
-    public EvaluationOpsSynthesisTaskSummary withProgress(Integer progress) {
-        this.progress = progress;
+    public EvaluationOpsSynthesisTaskSummary withErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
         return this;
     }
 
     /**
-     * **参数解释：**   当前合成进度百分比。 **约束限制：**   0-100 整数。 **取值范围：**   0-100。 **默认取值：**   0。 
-     * minimum: 0
-     * maximum: 100
-     * @return progress
+     * **参数解释：**   任务失败时的错误信息。 **约束限制：**   不涉及。 **取值范围：**   不涉及。 **默认取值：**   不涉及。 
+     * @return errorMessage
      */
-    public Integer getProgress() {
-        return progress;
+    public String getErrorMessage() {
+        return errorMessage;
     }
 
-    public void setProgress(Integer progress) {
-        this.progress = progress;
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
     }
 
-    public EvaluationOpsSynthesisTaskSummary withSampleCount(Integer sampleCount) {
-        this.sampleCount = sampleCount;
+    public EvaluationOpsSynthesisTaskSummary withIsFree(Boolean isFree) {
+        this.isFree = isFree;
         return this;
     }
 
     /**
-     * **参数解释：**   预设需要生成的总样本数量。 **约束限制：**   1-500整数。 **取值范围：**   1-500。 **默认取值：**   1。 
-     * minimum: 1
-     * maximum: 500
-     * @return sampleCount
+     * **参数解释：**   是否使用免费额度创建的任务。 **约束限制：**   不涉及。 **取值范围：**   - true：免费任务 - false：付费任务 **默认取值：**   不涉及。 
+     * @return isFree
      */
-    public Integer getSampleCount() {
-        return sampleCount;
+    public Boolean getIsFree() {
+        return isFree;
     }
 
-    public void setSampleCount(Integer sampleCount) {
-        this.sampleCount = sampleCount;
-    }
-
-    public EvaluationOpsSynthesisTaskSummary withGeneratedCount(Integer generatedCount) {
-        this.generatedCount = generatedCount;
-        return this;
-    }
-
-    /**
-     * **参数解释：**   截至当前已生成的有效样本数。 **约束限制：**   不大于sample_count。 **取值范围：**   0-500。 **默认取值：**   0。 
-     * minimum: 0
-     * maximum: 500
-     * @return generatedCount
-     */
-    public Integer getGeneratedCount() {
-        return generatedCount;
-    }
-
-    public void setGeneratedCount(Integer generatedCount) {
-        this.generatedCount = generatedCount;
+    public void setIsFree(Boolean isFree) {
+        this.isFree = isFree;
     }
 
     public EvaluationOpsSynthesisTaskSummary withModelConfig(EvaluationOpsModelConfig modelConfig) {
@@ -455,8 +409,7 @@ public class EvaluationOpsSynthesisTaskSummary {
             && Objects.equals(this.scenarioName, that.scenarioName)
             && Objects.equals(this.scenarioDescription, that.scenarioDescription)
             && Objects.equals(this.stats, that.stats) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.progress, that.progress) && Objects.equals(this.sampleCount, that.sampleCount)
-            && Objects.equals(this.generatedCount, that.generatedCount)
+            && Objects.equals(this.errorMessage, that.errorMessage) && Objects.equals(this.isFree, that.isFree)
             && Objects.equals(this.modelConfig, that.modelConfig) && Objects.equals(this.seedData, that.seedData)
             && Objects.equals(this.baseInfo, that.baseInfo);
     }
@@ -470,9 +423,8 @@ public class EvaluationOpsSynthesisTaskSummary {
             scenarioDescription,
             stats,
             status,
-            progress,
-            sampleCount,
-            generatedCount,
+            errorMessage,
+            isFree,
             modelConfig,
             seedData,
             baseInfo);
@@ -489,9 +441,8 @@ public class EvaluationOpsSynthesisTaskSummary {
         sb.append("    scenarioDescription: ").append(toIndentedString(scenarioDescription)).append("\n");
         sb.append("    stats: ").append(toIndentedString(stats)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
-        sb.append("    sampleCount: ").append(toIndentedString(sampleCount)).append("\n");
-        sb.append("    generatedCount: ").append(toIndentedString(generatedCount)).append("\n");
+        sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+        sb.append("    isFree: ").append(toIndentedString(isFree)).append("\n");
         sb.append("    modelConfig: ").append(toIndentedString(modelConfig)).append("\n");
         sb.append("    seedData: ").append(toIndentedString(seedData)).append("\n");
         sb.append("    baseInfo: ").append(toIndentedString(baseInfo)).append("\n");

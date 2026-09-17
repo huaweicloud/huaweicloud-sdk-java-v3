@@ -25,6 +25,11 @@ public class OfflineCacheConfigsDTO {
 
     private Integer capacity;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "channel_cache_state")
+
+    private String channelCacheState;
+
     public OfflineCacheConfigsDTO withPublishOrder(String publishOrder) {
         this.publishOrder = publishOrder;
         return this;
@@ -67,9 +72,9 @@ public class OfflineCacheConfigsDTO {
     }
 
     /**
-     * 节点离线缓存容量，单位MB，默认2048，取值范围500-8192
+     * 节点离线缓存容量，单位MB，默认2048，取值范围500-1048576
      * minimum: 500
-     * maximum: 8192
+     * maximum: 1048576
      * @return capacity
      */
     public Integer getCapacity() {
@@ -78,6 +83,23 @@ public class OfflineCacheConfigsDTO {
 
     public void setCapacity(Integer capacity) {
         this.capacity = capacity;
+    }
+
+    public OfflineCacheConfigsDTO withChannelCacheState(String channelCacheState) {
+        this.channelCacheState = channelCacheState;
+        return this;
+    }
+
+    /**
+     * 路由转发开启离线缓存
+     * @return channelCacheState
+     */
+    public String getChannelCacheState() {
+        return channelCacheState;
+    }
+
+    public void setChannelCacheState(String channelCacheState) {
+        this.channelCacheState = channelCacheState;
     }
 
     @Override
@@ -90,12 +112,13 @@ public class OfflineCacheConfigsDTO {
         }
         OfflineCacheConfigsDTO that = (OfflineCacheConfigsDTO) obj;
         return Objects.equals(this.publishOrder, that.publishOrder) && Objects.equals(this.period, that.period)
-            && Objects.equals(this.capacity, that.capacity);
+            && Objects.equals(this.capacity, that.capacity)
+            && Objects.equals(this.channelCacheState, that.channelCacheState);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(publishOrder, period, capacity);
+        return Objects.hash(publishOrder, period, capacity, channelCacheState);
     }
 
     @Override
@@ -105,6 +128,7 @@ public class OfflineCacheConfigsDTO {
         sb.append("    publishOrder: ").append(toIndentedString(publishOrder)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
+        sb.append("    channelCacheState: ").append(toIndentedString(channelCacheState)).append("\n");
         sb.append("}");
         return sb.toString();
     }

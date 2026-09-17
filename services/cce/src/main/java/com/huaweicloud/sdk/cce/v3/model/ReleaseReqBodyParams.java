@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 模板实例参数
+ * **参数解释：** 模板实例参数 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
  */
 public class ReleaseReqBodyParams {
 
@@ -56,7 +56,7 @@ public class ReleaseReqBodyParams {
     }
 
     /**
-     * 开启后，仅验证模板参数，不进行安装
+     * **参数解释：** 开启后，仅验证模板参数，不进行安装 **约束限制：** 不涉及 **取值范围：** - true：仅验证 - false：正常安装  **默认取值：** false
      * @return dryRun
      */
     public Boolean getDryRun() {
@@ -73,7 +73,7 @@ public class ReleaseReqBodyParams {
     }
 
     /**
-     * 实例名称模板
+     * **参数解释：** 实例名称模板 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return nameTemplate
      */
     public String getNameTemplate() {
@@ -90,7 +90,7 @@ public class ReleaseReqBodyParams {
     }
 
     /**
-     * 安装时是否禁用hooks
+     * **参数解释：** 安装时是否禁用hooks **约束限制：** 不涉及 **取值范围：** - true：禁用hooks - false：不禁用hooks  **默认取值：** false
      * @return noHooks
      */
     public Boolean getNoHooks() {
@@ -107,7 +107,7 @@ public class ReleaseReqBodyParams {
     }
 
     /**
-     * 模板实例更新时是否保留values，该字段仅在更新指定模板实例时生效
+     * **参数解释：** 模板实例更新时是否保留values，该字段仅在更新指定模板实例时生效 **约束限制：** 不涉及 **取值范围：** - true：保留values - false：不保留values  **默认取值：** false
      * @return replace
      */
     public Boolean getReplace() {
@@ -124,7 +124,7 @@ public class ReleaseReqBodyParams {
     }
 
     /**
-     * 模板实例更新时是否重建实例，该字段仅在更新指定模板实例时生效
+     * **参数解释：** 模板实例更新时是否重建实例，该字段仅在更新指定模板实例时生效 **约束限制：** 不涉及 **取值范围：** - true：重建实例 - false：不重建实例  **默认取值：** false
      * @return recreate
      */
     public Boolean getRecreate() {
@@ -141,7 +141,7 @@ public class ReleaseReqBodyParams {
     }
 
     /**
-     * 模板实例更新时是否重置values，该字段仅在更新指定模板实例时生效
+     * **参数解释：** 模板实例更新时是否重置values，该字段仅在更新指定模板实例时生效 **约束限制：** 不涉及 **取值范围：** - true：重置values - false：不重置values  **默认取值：** false
      * @return resetValues
      */
     public Boolean getResetValues() {
@@ -158,7 +158,7 @@ public class ReleaseReqBodyParams {
     }
 
     /**
-     * 回滚实例的版本
+     * **参数解释：** 回滚实例的版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return releaseVersion
      */
     public Integer getReleaseVersion() {
@@ -175,7 +175,7 @@ public class ReleaseReqBodyParams {
     }
 
     /**
-     * 更新或者删除时启用hooks
+     * **参数解释：** 更新或者删除时启用hooks **约束限制：** 不涉及 **取值范围：** - true：启用hooks - false：不启用hooks  **默认取值：** false
      * @return includeHooks
      */
     public Boolean getIncludeHooks() {

@@ -24,6 +24,11 @@ public class ListOpsSynthesisTasksResponse extends SdkResponse {
 
     private Integer total;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_task_status")
+
+    private ListOpsSynthesisTasksResponseBodyTotalTaskStatus totalTaskStatus;
+
     public ListOpsSynthesisTasksResponse withSyntheses(List<EvaluationOpsSynthesisTaskSummary> syntheses) {
         this.syntheses = syntheses;
         return this;
@@ -77,6 +82,34 @@ public class ListOpsSynthesisTasksResponse extends SdkResponse {
         this.total = total;
     }
 
+    public ListOpsSynthesisTasksResponse withTotalTaskStatus(
+        ListOpsSynthesisTasksResponseBodyTotalTaskStatus totalTaskStatus) {
+        this.totalTaskStatus = totalTaskStatus;
+        return this;
+    }
+
+    public ListOpsSynthesisTasksResponse withTotalTaskStatus(
+        Consumer<ListOpsSynthesisTasksResponseBodyTotalTaskStatus> totalTaskStatusSetter) {
+        if (this.totalTaskStatus == null) {
+            this.totalTaskStatus = new ListOpsSynthesisTasksResponseBodyTotalTaskStatus();
+            totalTaskStatusSetter.accept(this.totalTaskStatus);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get totalTaskStatus
+     * @return totalTaskStatus
+     */
+    public ListOpsSynthesisTasksResponseBodyTotalTaskStatus getTotalTaskStatus() {
+        return totalTaskStatus;
+    }
+
+    public void setTotalTaskStatus(ListOpsSynthesisTasksResponseBodyTotalTaskStatus totalTaskStatus) {
+        this.totalTaskStatus = totalTaskStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +119,13 @@ public class ListOpsSynthesisTasksResponse extends SdkResponse {
             return false;
         }
         ListOpsSynthesisTasksResponse that = (ListOpsSynthesisTasksResponse) obj;
-        return Objects.equals(this.syntheses, that.syntheses) && Objects.equals(this.total, that.total);
+        return Objects.equals(this.syntheses, that.syntheses) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.totalTaskStatus, that.totalTaskStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(syntheses, total);
+        return Objects.hash(syntheses, total, totalTaskStatus);
     }
 
     @Override
@@ -100,6 +134,7 @@ public class ListOpsSynthesisTasksResponse extends SdkResponse {
         sb.append("class ListOpsSynthesisTasksResponse {\n");
         sb.append("    syntheses: ").append(toIndentedString(syntheses)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    totalTaskStatus: ").append(toIndentedString(totalTaskStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

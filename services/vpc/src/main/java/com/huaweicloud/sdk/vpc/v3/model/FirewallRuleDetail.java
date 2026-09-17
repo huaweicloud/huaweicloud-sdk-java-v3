@@ -31,11 +31,6 @@ public class FirewallRuleDetail {
     private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_id")
-
-    private String projectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
 
     private String protocol;
@@ -146,23 +141,6 @@ public class FirewallRuleDetail {
 
     public void setAction(String action) {
         this.action = action;
-    }
-
-    public FirewallRuleDetail withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    /**
-     * 功能说明：资源所属项目ID
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
     }
 
     public FirewallRuleDetail withProtocol(String protocol) {
@@ -329,8 +307,7 @@ public class FirewallRuleDetail {
         FirewallRuleDetail that = (FirewallRuleDetail) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description) && Objects.equals(this.action, that.action)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.protocol, that.protocol)
-            && Objects.equals(this.ipVersion, that.ipVersion)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.ipVersion, that.ipVersion)
             && Objects.equals(this.sourceIpAddress, that.sourceIpAddress)
             && Objects.equals(this.destinationIpAddress, that.destinationIpAddress)
             && Objects.equals(this.sourcePort, that.sourcePort)
@@ -346,7 +323,6 @@ public class FirewallRuleDetail {
             name,
             description,
             action,
-            projectId,
             protocol,
             ipVersion,
             sourceIpAddress,
@@ -366,7 +342,6 @@ public class FirewallRuleDetail {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    sourceIpAddress: ").append(toIndentedString(sourceIpAddress)).append("\n");

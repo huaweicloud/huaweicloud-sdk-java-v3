@@ -22,7 +22,7 @@ public class ShowRedisDisabledCommandsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
-    private String totalCount;
+    private Integer totalCount;
 
     /**
      * 禁用类型。
@@ -109,7 +109,7 @@ public class ShowRedisDisabledCommandsResponse extends SdkResponse {
 
     private List<RedisDisabledCommandsDetail> keys = null;
 
-    public ShowRedisDisabledCommandsResponse withTotalCount(String totalCount) {
+    public ShowRedisDisabledCommandsResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
@@ -118,11 +118,11 @@ public class ShowRedisDisabledCommandsResponse extends SdkResponse {
      * 总数。
      * @return totalCount
      */
-    public String getTotalCount() {
+    public Integer getTotalCount() {
         return totalCount;
     }
 
-    public void setTotalCount(String totalCount) {
+    public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
 

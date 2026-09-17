@@ -30,6 +30,16 @@ public class LogQuery {
 
     private String sort;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Long offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "level")
+
+    private String level;
+
     public LogQuery withStartOffset(Long startOffset) {
         this.startOffset = startOffset;
         return this;
@@ -98,6 +108,40 @@ public class LogQuery {
         this.sort = sort;
     }
 
+    public LogQuery withOffset(Long offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 日志偏移量。仅查询Jenkins日志时使用，其余场景请使用start_offset和end_offset。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+     * @return offset
+     */
+    public Long getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Long offset) {
+        this.offset = offset;
+    }
+
+    public LogQuery withLevel(String level) {
+        this.level = level;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 日志级别。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+     * @return level
+     */
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +152,13 @@ public class LogQuery {
         }
         LogQuery that = (LogQuery) obj;
         return Objects.equals(this.startOffset, that.startOffset) && Objects.equals(this.endOffset, that.endOffset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sort, that.sort);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sort, that.sort)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.level, that.level);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startOffset, endOffset, limit, sort);
+        return Objects.hash(startOffset, endOffset, limit, sort, offset, level);
     }
 
     @Override
@@ -124,6 +169,8 @@ public class LogQuery {
         sb.append("    endOffset: ").append(toIndentedString(endOffset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    level: ").append(toIndentedString(level)).append("\n");
         sb.append("}");
         return sb.toString();
     }

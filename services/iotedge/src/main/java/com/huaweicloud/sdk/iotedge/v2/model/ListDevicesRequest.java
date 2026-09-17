@@ -26,6 +26,16 @@ public class ListDevicesRequest {
     private String deviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "module_id")
+
+    private String moduleId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "device_id")
+
+    private String deviceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -58,7 +68,7 @@ public class ListDevicesRequest {
     }
 
     /**
-     * 父设备ID,对应之前的gatewayId的概念，传该参数时代表查询网关下的子设备，不传代表查询网关直连设备
+     * 父设备ID,对应之前的gatewayId的概念，传该参数时代表查询网关下的子设备，不传代表节点下的
      * @return gatewayId
      */
     public String getGatewayId() {
@@ -84,6 +94,40 @@ public class ListDevicesRequest {
 
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
+    }
+
+    public ListDevicesRequest withModuleId(String moduleId) {
+        this.moduleId = moduleId;
+        return this;
+    }
+
+    /**
+     * 设备所属的模块id
+     * @return moduleId
+     */
+    public String getModuleId() {
+        return moduleId;
+    }
+
+    public void setModuleId(String moduleId) {
+        this.moduleId = moduleId;
+    }
+
+    public ListDevicesRequest withDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+        return this;
+    }
+
+    /**
+     * 设备ID
+     * @return deviceId
+     */
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
     }
 
     public ListDevicesRequest withOffset(Integer offset) {
@@ -134,13 +178,14 @@ public class ListDevicesRequest {
         }
         ListDevicesRequest that = (ListDevicesRequest) obj;
         return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.gatewayId, that.gatewayId)
-            && Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.moduleId, that.moduleId)
+            && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(edgeNodeId, gatewayId, deviceName, offset, limit);
+        return Objects.hash(edgeNodeId, gatewayId, deviceName, moduleId, deviceId, offset, limit);
     }
 
     @Override
@@ -150,6 +195,8 @@ public class ListDevicesRequest {
         sb.append("    edgeNodeId: ").append(toIndentedString(edgeNodeId)).append("\n");
         sb.append("    gatewayId: ").append(toIndentedString(gatewayId)).append("\n");
         sb.append("    deviceName: ").append(toIndentedString(deviceName)).append("\n");
+        sb.append("    moduleId: ").append(toIndentedString(moduleId)).append("\n");
+        sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

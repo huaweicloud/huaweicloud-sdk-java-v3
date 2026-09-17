@@ -20,6 +20,11 @@ public class ShowNodePoolRequest {
 
     private String nodepoolId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "advanceStatus")
+
+    private Boolean advanceStatus;
+
     public ShowNodePoolRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -54,6 +59,23 @@ public class ShowNodePoolRequest {
         this.nodepoolId = nodepoolId;
     }
 
+    public ShowNodePoolRequest withAdvanceStatus(Boolean advanceStatus) {
+        this.advanceStatus = advanceStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 节点池conditions是否反映整个节点池整体状态。 **约束限制：** 不涉及 **取值范围：** - true: 节点池的conditions反映整个节点池整体状态。 - false: 节点池的conditions仅反映默认伸缩组的状态。  **默认取值：** 不指定时默认为false
+     * @return advanceStatus
+     */
+    public Boolean getAdvanceStatus() {
+        return advanceStatus;
+    }
+
+    public void setAdvanceStatus(Boolean advanceStatus) {
+        this.advanceStatus = advanceStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class ShowNodePoolRequest {
             return false;
         }
         ShowNodePoolRequest that = (ShowNodePoolRequest) obj;
-        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.nodepoolId, that.nodepoolId);
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.nodepoolId, that.nodepoolId)
+            && Objects.equals(this.advanceStatus, that.advanceStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, nodepoolId);
+        return Objects.hash(clusterId, nodepoolId, advanceStatus);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class ShowNodePoolRequest {
         sb.append("class ShowNodePoolRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    nodepoolId: ").append(toIndentedString(nodepoolId)).append("\n");
+        sb.append("    advanceStatus: ").append(toIndentedString(advanceStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

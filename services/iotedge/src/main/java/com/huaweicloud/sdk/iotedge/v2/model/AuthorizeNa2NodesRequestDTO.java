@@ -21,7 +21,7 @@ public class AuthorizeNa2NodesRequestDTO {
     }
 
     /**
-     * 授权北向NA信息到边缘节点的请求结构体
+     * 授权北向NA信息到边缘节点的请求结构体。示例：[\"node_id1\"]
      * @return nodeIds
      */
     public Object getNodeIds() {

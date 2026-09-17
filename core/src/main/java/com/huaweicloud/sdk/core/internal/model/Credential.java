@@ -42,15 +42,15 @@ public class Credential {
     private Long expiresAt;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @JsonAlias({"access", "accessKeyId"})
+    @JsonAlias({"access", "accessKeyId", "access_key_id"})
     private String access;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @JsonAlias({"secret", "secretAccessKey"})
+    @JsonAlias({"secret", "secretAccessKey", "secret_access_key"})
     private String secret;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @JsonAlias({"securitytoken", "securityToken"})
+    @JsonAlias({"securitytoken", "securityToken", "security_token"})
     private String securityToken;
 
     public Long getExpiresAt() {

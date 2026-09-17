@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * AccessRomaInfo
+ * 接入方式为ROMA的鉴权信息结构体
  */
 public class AccessRomaInfo {
 

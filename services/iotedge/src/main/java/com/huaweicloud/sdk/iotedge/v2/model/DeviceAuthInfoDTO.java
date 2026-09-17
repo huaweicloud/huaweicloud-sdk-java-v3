@@ -32,7 +32,7 @@ public class DeviceAuthInfoDTO {
     }
 
     /**
-     * 边缘节点认证方式，不填默认为密钥认证接入方式(SECRET)。
+     * 边缘节点认证方式。
      * @return authType
      */
     public String getAuthType() {

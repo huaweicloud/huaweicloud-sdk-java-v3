@@ -1,0 +1,189 @@
+package com.huaweicloud.sdk.das.v3.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * Request Object
+ */
+public class ListInstanceEmergencyLogsRequest {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_id")
+
+    private String nodeId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_time")
+
+    private Long startTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "end_time")
+
+    private Long endTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cur_page")
+
+    private Integer curPage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "per_page")
+
+    private Integer perPage;
+
+    public ListInstanceEmergencyLogsRequest withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 实例ID
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public ListInstanceEmergencyLogsRequest withNodeId(String nodeId) {
+        this.nodeId = nodeId;
+        return this;
+    }
+
+    /**
+     * 节点ID
+     * @return nodeId
+     */
+    public String getNodeId() {
+        return nodeId;
+    }
+
+    public void setNodeId(String nodeId) {
+        this.nodeId = nodeId;
+    }
+
+    public ListInstanceEmergencyLogsRequest withStartTime(Long startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    /**
+     * 开始时间（Unix时间戳，毫秒）
+     * @return startTime
+     */
+    public Long getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Long startTime) {
+        this.startTime = startTime;
+    }
+
+    public ListInstanceEmergencyLogsRequest withEndTime(Long endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+
+    /**
+     * 结束时间（Unix时间戳，毫秒）
+     * @return endTime
+     */
+    public Long getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Long endTime) {
+        this.endTime = endTime;
+    }
+
+    public ListInstanceEmergencyLogsRequest withCurPage(Integer curPage) {
+        this.curPage = curPage;
+        return this;
+    }
+
+    /**
+     * 当前页码
+     * @return curPage
+     */
+    public Integer getCurPage() {
+        return curPage;
+    }
+
+    public void setCurPage(Integer curPage) {
+        this.curPage = curPage;
+    }
+
+    public ListInstanceEmergencyLogsRequest withPerPage(Integer perPage) {
+        this.perPage = perPage;
+        return this;
+    }
+
+    /**
+     * 每页记录数
+     * @return perPage
+     */
+    public Integer getPerPage() {
+        return perPage;
+    }
+
+    public void setPerPage(Integer perPage) {
+        this.perPage = perPage;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        ListInstanceEmergencyLogsRequest that = (ListInstanceEmergencyLogsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.curPage, that.curPage) && Objects.equals(this.perPage, that.perPage);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(instanceId, nodeId, startTime, endTime, curPage, perPage);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ListInstanceEmergencyLogsRequest {\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    curPage: ").append(toIndentedString(curPage)).append("\n");
+        sb.append("    perPage: ").append(toIndentedString(perPage)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

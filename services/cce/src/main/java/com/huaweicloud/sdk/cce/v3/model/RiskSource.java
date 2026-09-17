@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 风险项来源
+ * **参数解释：** 风险项来源。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
  */
 public class RiskSource {
 
@@ -55,7 +55,7 @@ public class RiskSource {
     }
 
     /**
-     * 配置风险项
+     * **参数解释：** 配置风险项。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return configurationRisks
      */
     public List<ConfigurationRisks> getConfigurationRisks() {
@@ -88,7 +88,7 @@ public class RiskSource {
     }
 
     /**
-     * 废弃API风险
+     * **参数解释：** 废弃API风险。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return deprecatedAPIRisks
      */
     public List<DeprecatedAPIRisks> getDeprecatedAPIRisks() {
@@ -121,7 +121,7 @@ public class RiskSource {
     }
 
     /**
-     * 节点风险
+     * **参数解释：** 节点风险。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return nodeRisks
      */
     public List<NodeRisks> getNodeRisks() {
@@ -154,7 +154,7 @@ public class RiskSource {
     }
 
     /**
-     * 插件风险
+     * **参数解释：** 插件风险。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return addonRisks
      */
     public List<AddonRisks> getAddonRisks() {

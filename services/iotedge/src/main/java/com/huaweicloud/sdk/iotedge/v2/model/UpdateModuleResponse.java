@@ -52,6 +52,16 @@ public class UpdateModuleResponse extends SdkResponse {
         public static final StateEnum RUNNING = new StateEnum("RUNNING");
 
         /**
+         * Enum UPGRADE_PRELOADING for value: "UPGRADE_PRELOADING"
+         */
+        public static final StateEnum UPGRADE_PRELOADING = new StateEnum("UPGRADE_PRELOADING");
+
+        /**
+         * Enum UPGRADE_PRELOADED for value: "UPGRADE_PRELOADED"
+         */
+        public static final StateEnum UPGRADE_PRELOADED = new StateEnum("UPGRADE_PRELOADED");
+
+        /**
          * Enum FAILED for value: "FAILED"
          */
         public static final StateEnum FAILED = new StateEnum("FAILED");
@@ -84,6 +94,8 @@ public class UpdateModuleResponse extends SdkResponse {
             map.put("PENDING_DELETE", PENDING_DELETE);
             map.put("DELETE_FAILED", DELETE_FAILED);
             map.put("RUNNING", RUNNING);
+            map.put("UPGRADE_PRELOADING", UPGRADE_PRELOADING);
+            map.put("UPGRADE_PRELOADED", UPGRADE_PRELOADED);
             map.put("FAILED", FAILED);
             map.put("SUCCEEDED", SUCCEEDED);
             map.put("UNKNOWN", UNKNOWN);
@@ -142,6 +154,11 @@ public class UpdateModuleResponse extends SdkResponse {
     @JsonProperty(value = "state")
 
     private StateEnum state;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "liveness_state")
+
+    private String livenessState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "control_status")
@@ -289,6 +306,11 @@ public class UpdateModuleResponse extends SdkResponse {
          */
         public static final FunctionTypeEnum DATA_COLLECTION = new FunctionTypeEnum("DATA_COLLECTION");
 
+        /**
+         * Enum MODEL_INFERENCE for value: "MODEL_INFERENCE"
+         */
+        public static final FunctionTypeEnum MODEL_INFERENCE = new FunctionTypeEnum("MODEL_INFERENCE");
+
         private static final Map<String, FunctionTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FunctionTypeEnum> createStaticFields() {
@@ -299,6 +321,7 @@ public class UpdateModuleResponse extends SdkResponse {
             map.put("GATEWAY_MANAGER", GATEWAY_MANAGER);
             map.put("COMPOSITE_APPLICATION", COMPOSITE_APPLICATION);
             map.put("DATA_COLLECTION", DATA_COLLECTION);
+            map.put("MODEL_INFERENCE", MODEL_INFERENCE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -402,6 +425,23 @@ public class UpdateModuleResponse extends SdkResponse {
 
     public void setState(StateEnum state) {
         this.state = state;
+    }
+
+    public UpdateModuleResponse withLivenessState(String livenessState) {
+        this.livenessState = livenessState;
+        return this;
+    }
+
+    /**
+     * 模块健康状态
+     * @return livenessState
+     */
+    public String getLivenessState() {
+        return livenessState;
+    }
+
+    public void setLivenessState(String livenessState) {
+        this.livenessState = livenessState;
     }
 
     public UpdateModuleResponse withControlStatus(String controlStatus) {
@@ -550,11 +590,11 @@ public class UpdateModuleResponse extends SdkResponse {
         }
         UpdateModuleResponse that = (UpdateModuleResponse) obj;
         return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.appVersion, that.appVersion)
-            && Objects.equals(this.state, that.state) && Objects.equals(this.controlStatus, that.controlStatus)
-            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.moduleName, that.moduleName)
-            && Objects.equals(this.moduleId, that.moduleId) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.appType, that.appType)
-            && Objects.equals(this.functionType, that.functionType);
+            && Objects.equals(this.state, that.state) && Objects.equals(this.livenessState, that.livenessState)
+            && Objects.equals(this.controlStatus, that.controlStatus) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.moduleName, that.moduleName) && Objects.equals(this.moduleId, that.moduleId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.appType, that.appType) && Objects.equals(this.functionType, that.functionType);
     }
 
     @Override
@@ -562,6 +602,7 @@ public class UpdateModuleResponse extends SdkResponse {
         return Objects.hash(edgeAppId,
             appVersion,
             state,
+            livenessState,
             controlStatus,
             nodeId,
             moduleName,
@@ -579,6 +620,7 @@ public class UpdateModuleResponse extends SdkResponse {
         sb.append("    edgeAppId: ").append(toIndentedString(edgeAppId)).append("\n");
         sb.append("    appVersion: ").append(toIndentedString(appVersion)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    livenessState: ").append(toIndentedString(livenessState)).append("\n");
         sb.append("    controlStatus: ").append(toIndentedString(controlStatus)).append("\n");
         sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
         sb.append("    moduleName: ").append(toIndentedString(moduleName)).append("\n");

@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 插件安装/升级-request结构体
+ * **参数解释**： 插件安装/升级请求结构体。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
  */
 public class InstanceRequest {
 
@@ -37,7 +37,7 @@ public class InstanceRequest {
     }
 
     /**
-     * API类型，固定值“Addon”，该值不可修改，该字段传入无效。
+     * **参数解释**： API类型，固定值\"Addon\"，该值不可修改，该字段传入无效。 **约束限制**： 该值不可修改 **取值范围**： - Addon  **默认取值**： Addon
      * @return kind
      */
     public String getKind() {
@@ -54,7 +54,7 @@ public class InstanceRequest {
     }
 
     /**
-     * API版本，固定值“v3”，该值不可修改，该字段传入无效。
+     * **参数解释**： API版本，固定值\"v3\"，该值不可修改，该字段传入无效。 **约束限制**： 该值不可修改 **取值范围**： - v3  **默认取值**： v3
      * @return apiVersion
      */
     public String getApiVersion() {

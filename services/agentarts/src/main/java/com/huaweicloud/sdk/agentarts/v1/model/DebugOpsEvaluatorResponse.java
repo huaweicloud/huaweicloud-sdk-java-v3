@@ -46,6 +46,61 @@ public class DebugOpsEvaluatorResponse extends SdkResponse {
 
     private Integer latency;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "account_id")
+
+    private String accountId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_id")
+
+    private String taskId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "item_id")
+
+    private String itemId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "session_id")
+
+    private String sessionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "evaluator_id")
+
+    private String evaluatorId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "evaluator_version")
+
+    private String evaluatorVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "evaluator_type")
+
+    private Integer evaluatorType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "evaluator_turn_type")
+
+    private String evaluatorTurnType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "evaluator_content_type")
+
+    private String evaluatorContentType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_free")
+
+    private Boolean isFree;
+
     public DebugOpsEvaluatorResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
@@ -175,6 +230,193 @@ public class DebugOpsEvaluatorResponse extends SdkResponse {
         this.latency = latency;
     }
 
+    public DebugOpsEvaluatorResponse withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 评估结果记录ID。 
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public DebugOpsEvaluatorResponse withAccountId(String accountId) {
+        this.accountId = accountId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 租户账号ID。 
+     * @return accountId
+     */
+    public String getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    public DebugOpsEvaluatorResponse withTaskId(String taskId) {
+        this.taskId = taskId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 任务ID。 
+     * @return taskId
+     */
+    public String getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
+    }
+
+    public DebugOpsEvaluatorResponse withItemId(String itemId) {
+        this.itemId = itemId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 条目ID。 
+     * @return itemId
+     */
+    public String getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
+    }
+
+    public DebugOpsEvaluatorResponse withSessionId(String sessionId) {
+        this.sessionId = sessionId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 会话ID。 
+     * @return sessionId
+     */
+    public String getSessionId() {
+        return sessionId;
+    }
+
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+    }
+
+    public DebugOpsEvaluatorResponse withEvaluatorId(String evaluatorId) {
+        this.evaluatorId = evaluatorId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 评估器ID。 
+     * @return evaluatorId
+     */
+    public String getEvaluatorId() {
+        return evaluatorId;
+    }
+
+    public void setEvaluatorId(String evaluatorId) {
+        this.evaluatorId = evaluatorId;
+    }
+
+    public DebugOpsEvaluatorResponse withEvaluatorVersion(String evaluatorVersion) {
+        this.evaluatorVersion = evaluatorVersion;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 评估器版本号。 
+     * @return evaluatorVersion
+     */
+    public String getEvaluatorVersion() {
+        return evaluatorVersion;
+    }
+
+    public void setEvaluatorVersion(String evaluatorVersion) {
+        this.evaluatorVersion = evaluatorVersion;
+    }
+
+    public DebugOpsEvaluatorResponse withEvaluatorType(Integer evaluatorType) {
+        this.evaluatorType = evaluatorType;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 评估器类型。 
+     * @return evaluatorType
+     */
+    public Integer getEvaluatorType() {
+        return evaluatorType;
+    }
+
+    public void setEvaluatorType(Integer evaluatorType) {
+        this.evaluatorType = evaluatorType;
+    }
+
+    public DebugOpsEvaluatorResponse withEvaluatorTurnType(String evaluatorTurnType) {
+        this.evaluatorTurnType = evaluatorTurnType;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 评估器轮次类型。 
+     * @return evaluatorTurnType
+     */
+    public String getEvaluatorTurnType() {
+        return evaluatorTurnType;
+    }
+
+    public void setEvaluatorTurnType(String evaluatorTurnType) {
+        this.evaluatorTurnType = evaluatorTurnType;
+    }
+
+    public DebugOpsEvaluatorResponse withEvaluatorContentType(String evaluatorContentType) {
+        this.evaluatorContentType = evaluatorContentType;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 评估内容类型。 
+     * @return evaluatorContentType
+     */
+    public String getEvaluatorContentType() {
+        return evaluatorContentType;
+    }
+
+    public void setEvaluatorContentType(String evaluatorContentType) {
+        this.evaluatorContentType = evaluatorContentType;
+    }
+
+    public DebugOpsEvaluatorResponse withIsFree(Boolean isFree) {
+        this.isFree = isFree;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否免费任务。 
+     * @return isFree
+     */
+    public Boolean getIsFree() {
+        return isFree;
+    }
+
+    public void setIsFree(Boolean isFree) {
+        this.isFree = isFree;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -188,12 +430,37 @@ public class DebugOpsEvaluatorResponse extends SdkResponse {
             && Objects.equals(this.score, that.score) && Objects.equals(this.reason, that.reason)
             && Objects.equals(this.inputTokenUsage, that.inputTokenUsage)
             && Objects.equals(this.outputTokenUsage, that.outputTokenUsage)
-            && Objects.equals(this.latency, that.latency);
+            && Objects.equals(this.latency, that.latency) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.accountId, that.accountId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.itemId, that.itemId) && Objects.equals(this.sessionId, that.sessionId)
+            && Objects.equals(this.evaluatorId, that.evaluatorId)
+            && Objects.equals(this.evaluatorVersion, that.evaluatorVersion)
+            && Objects.equals(this.evaluatorType, that.evaluatorType)
+            && Objects.equals(this.evaluatorTurnType, that.evaluatorTurnType)
+            && Objects.equals(this.evaluatorContentType, that.evaluatorContentType)
+            && Objects.equals(this.isFree, that.isFree);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(statusCode, error, score, reason, inputTokenUsage, outputTokenUsage, latency);
+        return Objects.hash(statusCode,
+            error,
+            score,
+            reason,
+            inputTokenUsage,
+            outputTokenUsage,
+            latency,
+            id,
+            accountId,
+            taskId,
+            itemId,
+            sessionId,
+            evaluatorId,
+            evaluatorVersion,
+            evaluatorType,
+            evaluatorTurnType,
+            evaluatorContentType,
+            isFree);
     }
 
     @Override
@@ -207,6 +474,17 @@ public class DebugOpsEvaluatorResponse extends SdkResponse {
         sb.append("    inputTokenUsage: ").append(toIndentedString(inputTokenUsage)).append("\n");
         sb.append("    outputTokenUsage: ").append(toIndentedString(outputTokenUsage)).append("\n");
         sb.append("    latency: ").append(toIndentedString(latency)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+        sb.append("    itemId: ").append(toIndentedString(itemId)).append("\n");
+        sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
+        sb.append("    evaluatorId: ").append(toIndentedString(evaluatorId)).append("\n");
+        sb.append("    evaluatorVersion: ").append(toIndentedString(evaluatorVersion)).append("\n");
+        sb.append("    evaluatorType: ").append(toIndentedString(evaluatorType)).append("\n");
+        sb.append("    evaluatorTurnType: ").append(toIndentedString(evaluatorTurnType)).append("\n");
+        sb.append("    evaluatorContentType: ").append(toIndentedString(evaluatorContentType)).append("\n");
+        sb.append("    isFree: ").append(toIndentedString(isFree)).append("\n");
         sb.append("}");
         return sb.toString();
     }

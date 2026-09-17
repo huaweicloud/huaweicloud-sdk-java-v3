@@ -12,9 +12,9 @@ import java.util.function.Consumer;
 public class InstanceBackupSummary {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
+    @JsonProperty(value = "instance_id")
 
-    private String id;
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -22,9 +22,9 @@ public class InstanceBackupSummary {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "backup_use_space")
+    @JsonProperty(value = "backup_used_space")
 
-    private Double backupUseSpace;
+    private Double backupUsedSpace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
@@ -32,25 +32,25 @@ public class InstanceBackupSummary {
     private InstanceBackupDatastore datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "spaces")
+    @JsonProperty(value = "space")
 
-    private Spaces spaces;
+    private Space space;
 
-    public InstanceBackupSummary withId(String id) {
-        this.id = id;
+    public InstanceBackupSummary withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
         return this;
     }
 
     /**
      * **参数解释**：  实例ID。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
-     * @return id
+     * @return instanceId
      */
-    public String getId() {
-        return id;
+    public String getInstanceId() {
+        return instanceId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
     }
 
     public InstanceBackupSummary withName(String name) {
@@ -70,21 +70,21 @@ public class InstanceBackupSummary {
         this.name = name;
     }
 
-    public InstanceBackupSummary withBackupUseSpace(Double backupUseSpace) {
-        this.backupUseSpace = backupUseSpace;
+    public InstanceBackupSummary withBackupUsedSpace(Double backupUsedSpace) {
+        this.backupUsedSpace = backupUsedSpace;
         return this;
     }
 
     /**
      * **参数解释**：  备份用量，单位MB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
-     * @return backupUseSpace
+     * @return backupUsedSpace
      */
-    public Double getBackupUseSpace() {
-        return backupUseSpace;
+    public Double getBackupUsedSpace() {
+        return backupUsedSpace;
     }
 
-    public void setBackupUseSpace(Double backupUseSpace) {
-        this.backupUseSpace = backupUseSpace;
+    public void setBackupUsedSpace(Double backupUsedSpace) {
+        this.backupUsedSpace = backupUsedSpace;
     }
 
     public InstanceBackupSummary withDatastore(InstanceBackupDatastore datastore) {
@@ -113,30 +113,30 @@ public class InstanceBackupSummary {
         this.datastore = datastore;
     }
 
-    public InstanceBackupSummary withSpaces(Spaces spaces) {
-        this.spaces = spaces;
+    public InstanceBackupSummary withSpace(Space space) {
+        this.space = space;
         return this;
     }
 
-    public InstanceBackupSummary withSpaces(Consumer<Spaces> spacesSetter) {
-        if (this.spaces == null) {
-            this.spaces = new Spaces();
-            spacesSetter.accept(this.spaces);
+    public InstanceBackupSummary withSpace(Consumer<Space> spaceSetter) {
+        if (this.space == null) {
+            this.space = new Space();
+            spaceSetter.accept(this.space);
         }
 
         return this;
     }
 
     /**
-     * Get spaces
-     * @return spaces
+     * Get space
+     * @return space
      */
-    public Spaces getSpaces() {
-        return spaces;
+    public Space getSpace() {
+        return space;
     }
 
-    public void setSpaces(Spaces spaces) {
-        this.spaces = spaces;
+    public void setSpace(Space space) {
+        this.space = space;
     }
 
     @Override
@@ -148,25 +148,25 @@ public class InstanceBackupSummary {
             return false;
         }
         InstanceBackupSummary that = (InstanceBackupSummary) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.backupUseSpace, that.backupUseSpace)
-            && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.spaces, that.spaces);
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.backupUsedSpace, that.backupUsedSpace)
+            && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.space, that.space);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, backupUseSpace, datastore, spaces);
+        return Objects.hash(instanceId, name, backupUsedSpace, datastore, space);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class InstanceBackupSummary {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    backupUseSpace: ").append(toIndentedString(backupUseSpace)).append("\n");
+        sb.append("    backupUsedSpace: ").append(toIndentedString(backupUsedSpace)).append("\n");
         sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
-        sb.append("    spaces: ").append(toIndentedString(spaces)).append("\n");
+        sb.append("    space: ").append(toIndentedString(space)).append("\n");
         sb.append("}");
         return sb.toString();
     }

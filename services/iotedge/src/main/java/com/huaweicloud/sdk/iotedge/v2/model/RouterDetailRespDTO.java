@@ -45,6 +45,11 @@ public class RouterDetailRespDTO {
 
     private Boolean available;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public RouterDetailRespDTO withRouteId(String routeId) {
         this.routeId = routeId;
         return this;
@@ -164,6 +169,23 @@ public class RouterDetailRespDTO {
         this.available = available;
     }
 
+    public RouterDetailRespDTO withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 路由类型：standard|customized
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -176,12 +198,12 @@ public class RouterDetailRespDTO {
         return Objects.equals(this.routeId, that.routeId) && Objects.equals(this.inputModuleId, that.inputModuleId)
             && Objects.equals(this.outputModuleId, that.outputModuleId) && Objects.equals(this.input, that.input)
             && Objects.equals(this.output, that.output) && Objects.equals(this.sql, that.sql)
-            && Objects.equals(this.available, that.available);
+            && Objects.equals(this.available, that.available) && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(routeId, inputModuleId, outputModuleId, input, output, sql, available);
+        return Objects.hash(routeId, inputModuleId, outputModuleId, input, output, sql, available, type);
     }
 
     @Override
@@ -195,6 +217,7 @@ public class RouterDetailRespDTO {
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
         sb.append("    sql: ").append(toIndentedString(sql)).append("\n");
         sb.append("    available: ").append(toIndentedString(available)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 插件基本信息，集合类的元素类型，包含一组由不同名称定义的属性。
+ * **参数解释**： 插件基本信息，集合类的元素类型，包含一组由不同名称定义的属性。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
  */
 public class AddonMetadata {
 
@@ -55,7 +55,7 @@ public class AddonMetadata {
     }
 
     /**
-     * 唯一id标识
+     * **参数解释**： 插件实例唯一ID标识，创建成功后系统自动生成。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return uid
      */
     public String getUid() {
@@ -72,7 +72,7 @@ public class AddonMetadata {
     }
 
     /**
-     * 插件名称
+     * **参数解释**： 插件名称 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return name
      */
     public String getName() {
@@ -89,7 +89,7 @@ public class AddonMetadata {
     }
 
     /**
-     * 插件别名
+     * **参数解释**： 插件别名。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return alias
      */
     public String getAlias() {
@@ -122,7 +122,7 @@ public class AddonMetadata {
     }
 
     /**
-     * 插件标签，key/value对格式，接口保留字段，填写不会生效
+     * **参数解释**： 插件标签，key/value对格式，接口保留字段，填写不会生效。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return labels
      */
     public Map<String, String> getLabels() {
@@ -155,7 +155,7 @@ public class AddonMetadata {
     }
 
     /**
-     * 插件注解，由key/value组成 - 安装：固定值为{\"addon.install/type\":\"install\"} - 升级：固定值为{\"addon.upgrade/type\":\"upgrade\"} 
+     * **参数解释**： 插件注解，由key/value组成。 **约束限制**： 不涉及 **取值范围**： - 安装时固定值为{\"addon.install/type\":\"install\"} - 升级时固定值为{\"addon.upgrade/type\":\"upgrade\"}  **默认取值**： 不涉及
      * @return annotations
      */
     public Map<String, String> getAnnotations() {
@@ -172,7 +172,7 @@ public class AddonMetadata {
     }
 
     /**
-     * 更新时间
+     * **参数解释**： 更新时间 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return updateTimestamp
      */
     public LocalDate getUpdateTimestamp() {
@@ -189,7 +189,7 @@ public class AddonMetadata {
     }
 
     /**
-     * 创建时间
+     * **参数解释**： 创建时间，创建成功后系统自动生成，填写无效。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return creationTimestamp
      */
     public LocalDate getCreationTimestamp() {

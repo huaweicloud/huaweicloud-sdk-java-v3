@@ -49,6 +49,11 @@ public class ListResourcesRequest {
 
     private String marker;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
     public ListResourcesRequest withProvider(String provider) {
         this.provider = provider;
         return this;
@@ -186,6 +191,23 @@ public class ListResourcesRequest {
         this.marker = marker;
     }
 
+    public ListResourcesRequest withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 资源组ID
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -198,12 +220,12 @@ public class ListResourcesRequest {
         return Objects.equals(this.provider, that.provider) && Objects.equals(this.type, that.type)
             && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.epId, that.epId)
             && Objects.equals(this.tag, that.tag) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.marker, that.marker);
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(provider, type, regionId, epId, tag, limit, marker);
+        return Objects.hash(provider, type, regionId, epId, tag, limit, marker, groupId);
     }
 
     @Override
@@ -217,6 +239,7 @@ public class ListResourcesRequest {
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -26,6 +26,11 @@ public class CreateClusterRequestDTO {
 
     private ClusterNodeConfig clusterNodeConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_type")
+
+    private String clusterType;
+
     public CreateClusterRequestDTO withClusterName(String clusterName) {
         this.clusterName = clusterName;
         return this;
@@ -86,6 +91,23 @@ public class CreateClusterRequestDTO {
         this.clusterNodeConfig = clusterNodeConfig;
     }
 
+    public CreateClusterRequestDTO withClusterType(String clusterType) {
+        this.clusterType = clusterType;
+        return this;
+    }
+
+    /**
+     * 集群类型
+     * @return clusterType
+     */
+    public String getClusterType() {
+        return clusterType;
+    }
+
+    public void setClusterType(String clusterType) {
+        this.clusterType = clusterType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -96,12 +118,13 @@ public class CreateClusterRequestDTO {
         }
         CreateClusterRequestDTO that = (CreateClusterRequestDTO) obj;
         return Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.clusterNodeConfig, that.clusterNodeConfig);
+            && Objects.equals(this.clusterNodeConfig, that.clusterNodeConfig)
+            && Objects.equals(this.clusterType, that.clusterType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterName, description, clusterNodeConfig);
+        return Objects.hash(clusterName, description, clusterNodeConfig, clusterType);
     }
 
     @Override
@@ -111,6 +134,7 @@ public class CreateClusterRequestDTO {
         sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    clusterNodeConfig: ").append(toIndentedString(clusterNodeConfig)).append("\n");
+        sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

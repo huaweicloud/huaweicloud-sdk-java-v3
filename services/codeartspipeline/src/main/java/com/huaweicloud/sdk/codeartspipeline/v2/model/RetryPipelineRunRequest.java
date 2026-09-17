@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -24,6 +25,11 @@ public class RetryPipelineRunRequest {
     @JsonProperty(value = "pipeline_run_id")
 
     private String pipelineRunId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private RetryPipelineRequest body;
 
     public RetryPipelineRunRequest withProjectId(String projectId) {
         this.projectId = projectId;
@@ -76,6 +82,32 @@ public class RetryPipelineRunRequest {
         this.pipelineRunId = pipelineRunId;
     }
 
+    public RetryPipelineRunRequest withBody(RetryPipelineRequest body) {
+        this.body = body;
+        return this;
+    }
+
+    public RetryPipelineRunRequest withBody(Consumer<RetryPipelineRequest> bodySetter) {
+        if (this.body == null) {
+            this.body = new RetryPipelineRequest();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public RetryPipelineRequest getBody() {
+        return body;
+    }
+
+    public void setBody(RetryPipelineRequest body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +118,12 @@ public class RetryPipelineRunRequest {
         }
         RetryPipelineRunRequest that = (RetryPipelineRunRequest) obj;
         return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.pipelineId, that.pipelineId)
-            && Objects.equals(this.pipelineRunId, that.pipelineRunId);
+            && Objects.equals(this.pipelineRunId, that.pipelineRunId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, pipelineId, pipelineRunId);
+        return Objects.hash(projectId, pipelineId, pipelineRunId, body);
     }
 
     @Override
@@ -101,6 +133,7 @@ public class RetryPipelineRunRequest {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
         sb.append("    pipelineRunId: ").append(toIndentedString(pipelineRunId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

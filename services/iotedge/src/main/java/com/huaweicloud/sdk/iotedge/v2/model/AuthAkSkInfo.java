@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * AuthAkSkInfo
+ * AK/SK鉴权信息结构体
  */
 public class AuthAkSkInfo {
 
@@ -21,7 +21,7 @@ public class AuthAkSkInfo {
     }
 
     /**
-     * 鉴权秘钥
+     * 鉴权密钥
      * @return secret
      */
     public String getSecret() {

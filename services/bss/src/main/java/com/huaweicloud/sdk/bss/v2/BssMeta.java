@@ -8,6 +8,7 @@ import com.huaweicloud.sdk.bss.v2.model.ApplyIndividualRealnameAuthsReq;
 import com.huaweicloud.sdk.bss.v2.model.AutoRenewalResourcesReq;
 import com.huaweicloud.sdk.bss.v2.model.AutoRenewalResourcesRequest;
 import com.huaweicloud.sdk.bss.v2.model.AutoRenewalResourcesResponse;
+import com.huaweicloud.sdk.bss.v2.model.BusinessDiscountQueryReq;
 import com.huaweicloud.sdk.bss.v2.model.CancelAutoRenewalResourcesRequest;
 import com.huaweicloud.sdk.bss.v2.model.CancelAutoRenewalResourcesResponse;
 import com.huaweicloud.sdk.bss.v2.model.CancelCustomerOrderReq;
@@ -38,6 +39,8 @@ import com.huaweicloud.sdk.bss.v2.model.CreateSubCustomerRequest;
 import com.huaweicloud.sdk.bss.v2.model.CreateSubCustomerResponse;
 import com.huaweicloud.sdk.bss.v2.model.CreateSubEnterpriseAccountRequest;
 import com.huaweicloud.sdk.bss.v2.model.CreateSubEnterpriseAccountResponse;
+import com.huaweicloud.sdk.bss.v2.model.ListBusinessDiscountInfoRequest;
+import com.huaweicloud.sdk.bss.v2.model.ListBusinessDiscountInfoResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListCitiesRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListCitiesResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListConsumeSubCustomersReq;
@@ -562,6 +565,36 @@ public class BssMeta {
             TypeCasts.uncheckedConversion(CreateSubCustomerReqV2.class),
             f -> f.withMarshaller(CreateSubEnterpriseAccountRequest::getBody,
                 CreateSubEnterpriseAccountRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBusinessDiscountInfoRequest, ListBusinessDiscountInfoResponse> listBusinessDiscountInfo =
+        genForListBusinessDiscountInfo();
+
+    private static HttpRequestDef<ListBusinessDiscountInfoRequest, ListBusinessDiscountInfoResponse> genForListBusinessDiscountInfo() {
+        // basic
+        HttpRequestDef.Builder<ListBusinessDiscountInfoRequest, ListBusinessDiscountInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ListBusinessDiscountInfoRequest.class, ListBusinessDiscountInfoResponse.class)
+                .withName("ListBusinessDiscountInfo")
+                .withUri("/v2/promotions/business/discount-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBusinessDiscountInfoRequest::getXLanguage,
+                ListBusinessDiscountInfoRequest::setXLanguage));
+        builder.<BusinessDiscountQueryReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BusinessDiscountQueryReq.class),
+            f -> f.withMarshaller(ListBusinessDiscountInfoRequest::getBody, ListBusinessDiscountInfoRequest::setBody));
 
         // response
 

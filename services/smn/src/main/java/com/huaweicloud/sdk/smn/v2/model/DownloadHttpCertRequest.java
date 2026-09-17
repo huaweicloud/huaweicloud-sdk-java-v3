@@ -47,7 +47,7 @@ public class DownloadHttpCertRequest implements ProgressRequest {
     }
 
     /**
-     * 证书文件ID名称，格式为SMN-{RegionID}-{UUID}.pem
+     * 证书文件ID名称，格式为SMN_{RegionID}_{UUID}.pem
      * @return certificateId
      */
     public String getCertificateId() {

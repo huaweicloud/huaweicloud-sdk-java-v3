@@ -150,6 +150,9 @@ import com.huaweicloud.sdk.cce.v3.model.GetResourceTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.HibernateClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.HibernateClusterResponse;
 import com.huaweicloud.sdk.cce.v3.model.HyperNode;
+import com.huaweicloud.sdk.cce.v3.model.InPlaceMigrate;
+import com.huaweicloud.sdk.cce.v3.model.InplaceMigrateNodeRequest;
+import com.huaweicloud.sdk.cce.v3.model.InplaceMigrateNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.InstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAccessPolicyRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAccessPolicyResponse;
@@ -1177,6 +1180,11 @@ public class CceMeta {
             f -> f.withMarshaller(DeleteAddonInstanceRequest::getClusterId, DeleteAddonInstanceRequest::setClusterId));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteAddonInstanceResponse::getBody, DeleteAddonInstanceResponse::setBody));
 
         return builder.build();
     }
@@ -1463,6 +1471,11 @@ public class CceMeta {
             f -> f.withMarshaller(DeleteReleaseRequest::getShowResources, DeleteReleaseRequest::setShowResources));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteReleaseResponse::getBody, DeleteReleaseResponse::setBody));
 
         return builder.build();
     }
@@ -1717,6 +1730,41 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(HibernateClusterRequest::getClusterId, HibernateClusterRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<InplaceMigrateNodeRequest, InplaceMigrateNodeResponse> inplaceMigrateNode =
+        genForInplaceMigrateNode();
+
+    private static HttpRequestDef<InplaceMigrateNodeRequest, InplaceMigrateNodeResponse> genForInplaceMigrateNode() {
+        // basic
+        HttpRequestDef.Builder<InplaceMigrateNodeRequest, InplaceMigrateNodeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, InplaceMigrateNodeRequest.class, InplaceMigrateNodeResponse.class)
+            .withName("InplaceMigrateNode")
+            .withUri(
+                "/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/operation/in-place-migrateto/{target_cluster_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InplaceMigrateNodeRequest::getClusterId, InplaceMigrateNodeRequest::setClusterId));
+        builder.<String>withRequestField("target_cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InplaceMigrateNodeRequest::getTargetClusterId,
+                InplaceMigrateNodeRequest::setTargetClusterId));
+        builder.<InPlaceMigrate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InPlaceMigrate.class),
+            f -> f.withMarshaller(InplaceMigrateNodeRequest::getBody, InplaceMigrateNodeRequest::setBody));
 
         // response
 
@@ -2021,6 +2069,11 @@ public class CceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNodePoolsRequest::getShowDefaultNodePool,
                 ListNodePoolsRequest::setShowDefaultNodePool));
+        builder.<Boolean>withRequestField("advanceStatus",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListNodePoolsRequest::getAdvanceStatus, ListNodePoolsRequest::setAdvanceStatus));
 
         // response
 
@@ -2365,6 +2418,12 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RemoveNodeRequest::getClusterId, RemoveNodeRequest::setClusterId));
+        builder.<Boolean>withRequestField("removeNodeSystemSecurityGroup",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(RemoveNodeRequest::getRemoveNodeSystemSecurityGroup,
+                RemoveNodeRequest::setRemoveNodeSystemSecurityGroup));
         builder.<RemoveNodesTask>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2959,6 +3018,11 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowNodePoolRequest::getNodepoolId, ShowNodePoolRequest::setNodepoolId));
+        builder.<Boolean>withRequestField("advanceStatus",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowNodePoolRequest::getAdvanceStatus, ShowNodePoolRequest::setAdvanceStatus));
 
         // response
 

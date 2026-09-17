@@ -46,7 +46,7 @@ public class QuotaResource {
     }
 
     /**
-     * 资源类型
+     * **参数解释：** 资源类型 **约束限制：** 不涉及 **取值范围：** - cluster：表示集群配额  **默认取值：** 不涉及 
      * @return quotaKey
      */
     public String getQuotaKey() {
@@ -63,7 +63,7 @@ public class QuotaResource {
     }
 
     /**
-     * 配额值
+     * **参数解释：** 资源配额值 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return quotaLimit
      */
     public Integer getQuotaLimit() {
@@ -80,7 +80,7 @@ public class QuotaResource {
     }
 
     /**
-     * 已创建的资源个数
+     * **参数解释：** 已创建的资源个数 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return used
      */
     public Integer getUsed() {
@@ -97,7 +97,7 @@ public class QuotaResource {
     }
 
     /**
-     * 单位
+     * **参数解释：** 资源单位 **约束限制：** 不涉及 **取值范围：** - count：个数  **默认取值：** 不涉及 
      * @return unit
      */
     public String getUnit() {
@@ -114,7 +114,7 @@ public class QuotaResource {
     }
 
     /**
-     * 局点ID。若资源不涉及此参数，则不返回该参数。
+     * **参数解释：** 局点ID。若资源不涉及此参数，则不返回该参数。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return regionId
      */
     public String getRegionId() {
@@ -131,7 +131,7 @@ public class QuotaResource {
     }
 
     /**
-     * 可用区ID。若资源不涉及此参数，则不返回该参数。
+     * **参数解释：** 可用区ID。若资源不涉及此参数，则不返回该参数。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return availabilityZoneId
      */
     public String getAvailabilityZoneId() {

@@ -34,6 +34,11 @@ public class NodePoolSpecUpdate {
     private NodePoolNodeAutoscaling autoscaling;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repairPolicy")
+
+    private NodePoolRepairPolicy repairPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodeManagementUpdate")
 
     private NodeManagement nodeManagementUpdate;
@@ -147,6 +152,32 @@ public class NodePoolSpecUpdate {
 
     public void setAutoscaling(NodePoolNodeAutoscaling autoscaling) {
         this.autoscaling = autoscaling;
+    }
+
+    public NodePoolSpecUpdate withRepairPolicy(NodePoolRepairPolicy repairPolicy) {
+        this.repairPolicy = repairPolicy;
+        return this;
+    }
+
+    public NodePoolSpecUpdate withRepairPolicy(Consumer<NodePoolRepairPolicy> repairPolicySetter) {
+        if (this.repairPolicy == null) {
+            this.repairPolicy = new NodePoolRepairPolicy();
+            repairPolicySetter.accept(this.repairPolicy);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get repairPolicy
+     * @return repairPolicy
+     */
+    public NodePoolRepairPolicy getRepairPolicy() {
+        return repairPolicy;
+    }
+
+    public void setRepairPolicy(NodePoolRepairPolicy repairPolicy) {
+        this.repairPolicy = repairPolicy;
     }
 
     public NodePoolSpecUpdate withNodeManagementUpdate(NodeManagement nodeManagementUpdate) {
@@ -305,6 +336,7 @@ public class NodePoolSpecUpdate {
             && Objects.equals(this.initialNodeCount, that.initialNodeCount)
             && Objects.equals(this.ignoreInitialNodeCount, that.ignoreInitialNodeCount)
             && Objects.equals(this.autoscaling, that.autoscaling)
+            && Objects.equals(this.repairPolicy, that.repairPolicy)
             && Objects.equals(this.nodeManagementUpdate, that.nodeManagementUpdate)
             && Objects.equals(this.customSecurityGroups, that.customSecurityGroups)
             && Objects.equals(this.taintPolicyOnExistingNodes, that.taintPolicyOnExistingNodes)
@@ -319,6 +351,7 @@ public class NodePoolSpecUpdate {
             initialNodeCount,
             ignoreInitialNodeCount,
             autoscaling,
+            repairPolicy,
             nodeManagementUpdate,
             customSecurityGroups,
             taintPolicyOnExistingNodes,
@@ -335,6 +368,7 @@ public class NodePoolSpecUpdate {
         sb.append("    initialNodeCount: ").append(toIndentedString(initialNodeCount)).append("\n");
         sb.append("    ignoreInitialNodeCount: ").append(toIndentedString(ignoreInitialNodeCount)).append("\n");
         sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
+        sb.append("    repairPolicy: ").append(toIndentedString(repairPolicy)).append("\n");
         sb.append("    nodeManagementUpdate: ").append(toIndentedString(nodeManagementUpdate)).append("\n");
         sb.append("    customSecurityGroups: ").append(toIndentedString(customSecurityGroups)).append("\n");
         sb.append("    taintPolicyOnExistingNodes: ").append(toIndentedString(taintPolicyOnExistingNodes)).append("\n");

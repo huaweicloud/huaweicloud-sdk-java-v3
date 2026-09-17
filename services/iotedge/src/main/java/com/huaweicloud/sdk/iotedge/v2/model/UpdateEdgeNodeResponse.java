@@ -189,6 +189,31 @@ public class UpdateEdgeNodeResponse extends SdkResponse {
 
     private String metricReport;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iotda_south_access")
+
+    private String iotdaSouthAccess;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tpm_info")
+
+    private TPMInfoDTO tpmInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "runtime_info")
+
+    private RuntimeInfoDTO runtimeInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os_type")
+
+    private String osType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_group_id")
+
+    private String nodeGroupId;
+
     public UpdateEdgeNodeResponse withLogConfigs(List<LogConfigDTO> logConfigs) {
         this.logConfigs = logConfigs;
         return this;
@@ -472,7 +497,7 @@ public class UpdateEdgeNodeResponse extends SdkResponse {
     }
 
     /**
-     * 边缘应用id，只允许数字、英文小写、中划线，切必须以字母或数字结尾
+     * 边缘应用id，只允许数字、英文小写、中划线，且必须以字母或数字结尾
      * @return softwareVersion
      */
     public String getSoftwareVersion() {
@@ -523,7 +548,7 @@ public class UpdateEdgeNodeResponse extends SdkResponse {
     }
 
     /**
-     * 边缘节点操作系统名称
+     * 边缘节点操作系统。例如：Ubuntu 20.04；CentOS 7.9。不同于os_type边缘节点系统类型。
      * @return osName
      */
     public String getOsName() {
@@ -540,7 +565,7 @@ public class UpdateEdgeNodeResponse extends SdkResponse {
     }
 
     /**
-     * 边缘节点操作系统架构
+     * 边缘节点系统架构。包括：arm64，arm32，x86_64。
      * @return arch
      */
     public String getArch() {
@@ -624,7 +649,7 @@ public class UpdateEdgeNodeResponse extends SdkResponse {
     }
 
     /**
-     * AI加速卡类型，如华为昇腾AI加速卡NPU、图像处理加速卡GPU。
+     * AI加速卡类型，如昇腾AI加速卡NPU、图像处理加速卡GPU。
      * @return aiCardType
      */
     public String getAiCardType() {
@@ -675,7 +700,7 @@ public class UpdateEdgeNodeResponse extends SdkResponse {
     }
 
     /**
-     * 节点所属资源类型：advanced|standard
+     * 边缘节点类型：lite|advanced|standard。lite表示基础版边缘节点，advanced或standard表示专业版边缘节点。
      * @return type
      */
     public String getType() {
@@ -709,7 +734,7 @@ public class UpdateEdgeNodeResponse extends SdkResponse {
     }
 
     /**
-     * 节点的可靠性等级。
+     * 节点的可靠性等级，LOW表示中级别，MEDIUM表示高级别。详细功能请参考“用户指南>管理边缘节点>注册节点”。
      * @return reliabilityLevel
      */
     public String getReliabilityLevel() {
@@ -911,6 +936,109 @@ public class UpdateEdgeNodeResponse extends SdkResponse {
         this.metricReport = metricReport;
     }
 
+    public UpdateEdgeNodeResponse withIotdaSouthAccess(String iotdaSouthAccess) {
+        this.iotdaSouthAccess = iotdaSouthAccess;
+        return this;
+    }
+
+    /**
+     * iotda南向接入地址
+     * @return iotdaSouthAccess
+     */
+    public String getIotdaSouthAccess() {
+        return iotdaSouthAccess;
+    }
+
+    public void setIotdaSouthAccess(String iotdaSouthAccess) {
+        this.iotdaSouthAccess = iotdaSouthAccess;
+    }
+
+    public UpdateEdgeNodeResponse withTpmInfo(TPMInfoDTO tpmInfo) {
+        this.tpmInfo = tpmInfo;
+        return this;
+    }
+
+    public UpdateEdgeNodeResponse withTpmInfo(Consumer<TPMInfoDTO> tpmInfoSetter) {
+        if (this.tpmInfo == null) {
+            this.tpmInfo = new TPMInfoDTO();
+            tpmInfoSetter.accept(this.tpmInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get tpmInfo
+     * @return tpmInfo
+     */
+    public TPMInfoDTO getTpmInfo() {
+        return tpmInfo;
+    }
+
+    public void setTpmInfo(TPMInfoDTO tpmInfo) {
+        this.tpmInfo = tpmInfo;
+    }
+
+    public UpdateEdgeNodeResponse withRuntimeInfo(RuntimeInfoDTO runtimeInfo) {
+        this.runtimeInfo = runtimeInfo;
+        return this;
+    }
+
+    public UpdateEdgeNodeResponse withRuntimeInfo(Consumer<RuntimeInfoDTO> runtimeInfoSetter) {
+        if (this.runtimeInfo == null) {
+            this.runtimeInfo = new RuntimeInfoDTO();
+            runtimeInfoSetter.accept(this.runtimeInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get runtimeInfo
+     * @return runtimeInfo
+     */
+    public RuntimeInfoDTO getRuntimeInfo() {
+        return runtimeInfo;
+    }
+
+    public void setRuntimeInfo(RuntimeInfoDTO runtimeInfo) {
+        this.runtimeInfo = runtimeInfo;
+    }
+
+    public UpdateEdgeNodeResponse withOsType(String osType) {
+        this.osType = osType;
+        return this;
+    }
+
+    /**
+     * 边缘节点系统类型。包括：generalLinux通用系统，openHarmony鸿蒙系统。
+     * @return osType
+     */
+    public String getOsType() {
+        return osType;
+    }
+
+    public void setOsType(String osType) {
+        this.osType = osType;
+    }
+
+    public UpdateEdgeNodeResponse withNodeGroupId(String nodeGroupId) {
+        this.nodeGroupId = nodeGroupId;
+        return this;
+    }
+
+    /**
+     * 节点组ID
+     * @return nodeGroupId
+     */
+    public String getNodeGroupId() {
+        return nodeGroupId;
+    }
+
+    public void setNodeGroupId(String nodeGroupId) {
+        this.nodeGroupId = nodeGroupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -944,7 +1072,10 @@ public class UpdateEdgeNodeResponse extends SdkResponse {
             && Objects.equals(this.deviceDataFormat, that.deviceDataFormat)
             && Objects.equals(this.automaticUpgrade, that.automaticUpgrade)
             && Objects.equals(this.deviceDataRecord, that.deviceDataRecord)
-            && Objects.equals(this.metricReport, that.metricReport);
+            && Objects.equals(this.metricReport, that.metricReport)
+            && Objects.equals(this.iotdaSouthAccess, that.iotdaSouthAccess)
+            && Objects.equals(this.tpmInfo, that.tpmInfo) && Objects.equals(this.runtimeInfo, that.runtimeInfo)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.nodeGroupId, that.nodeGroupId);
     }
 
     @Override
@@ -983,7 +1114,12 @@ public class UpdateEdgeNodeResponse extends SdkResponse {
             deviceDataFormat,
             automaticUpgrade,
             deviceDataRecord,
-            metricReport);
+            metricReport,
+            iotdaSouthAccess,
+            tpmInfo,
+            runtimeInfo,
+            osType,
+            nodeGroupId);
     }
 
     @Override
@@ -1025,6 +1161,11 @@ public class UpdateEdgeNodeResponse extends SdkResponse {
         sb.append("    automaticUpgrade: ").append(toIndentedString(automaticUpgrade)).append("\n");
         sb.append("    deviceDataRecord: ").append(toIndentedString(deviceDataRecord)).append("\n");
         sb.append("    metricReport: ").append(toIndentedString(metricReport)).append("\n");
+        sb.append("    iotdaSouthAccess: ").append(toIndentedString(iotdaSouthAccess)).append("\n");
+        sb.append("    tpmInfo: ").append(toIndentedString(tpmInfo)).append("\n");
+        sb.append("    runtimeInfo: ").append(toIndentedString(runtimeInfo)).append("\n");
+        sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
+        sb.append("    nodeGroupId: ").append(toIndentedString(nodeGroupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

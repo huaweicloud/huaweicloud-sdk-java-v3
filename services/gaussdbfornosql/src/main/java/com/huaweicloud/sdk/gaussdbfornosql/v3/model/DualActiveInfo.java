@@ -38,7 +38,7 @@ public class DualActiveInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_instance_node_num")
 
-    private String destinationInstanceNodeNum;
+    private Integer destinationInstanceNodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination_instance_spec_code")
@@ -130,7 +130,7 @@ public class DualActiveInfo {
         this.destinationInstanceName = destinationInstanceName;
     }
 
-    public DualActiveInfo withDestinationInstanceNodeNum(String destinationInstanceNodeNum) {
+    public DualActiveInfo withDestinationInstanceNodeNum(Integer destinationInstanceNodeNum) {
         this.destinationInstanceNodeNum = destinationInstanceNodeNum;
         return this;
     }
@@ -139,11 +139,11 @@ public class DualActiveInfo {
      * **参数解释：** 双活对端实例节点数量。 **取值范围：** 不涉及。
      * @return destinationInstanceNodeNum
      */
-    public String getDestinationInstanceNodeNum() {
+    public Integer getDestinationInstanceNodeNum() {
         return destinationInstanceNodeNum;
     }
 
-    public void setDestinationInstanceNodeNum(String destinationInstanceNodeNum) {
+    public void setDestinationInstanceNodeNum(Integer destinationInstanceNodeNum) {
         this.destinationInstanceNodeNum = destinationInstanceNodeNum;
     }
 

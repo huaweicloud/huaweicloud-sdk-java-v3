@@ -1,13 +1,13 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-import com.huaweicloud.sdk.core.SdkStreamResponse;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
  * Response Object
  */
-public class ShowPointTemplateResponse extends SdkStreamResponse {
+public class ShowPointTemplateResponse extends SdkResponse {
 
     @Override
     public boolean equals(java.lang.Object obj) {

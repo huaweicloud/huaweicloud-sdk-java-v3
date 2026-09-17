@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.agentarts.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -17,9 +19,9 @@ public class CreateOpsEvaluatorRequestBody {
     private Integer evaluatorType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "turn_type")
+    @JsonProperty(value = "tags")
 
-    private String turnType;
+    private List<OpsTmsTag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_version")
@@ -55,21 +57,37 @@ public class CreateOpsEvaluatorRequestBody {
         this.evaluatorType = evaluatorType;
     }
 
-    public CreateOpsEvaluatorRequestBody withTurnType(String turnType) {
-        this.turnType = turnType;
+    public CreateOpsEvaluatorRequestBody withTags(List<OpsTmsTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateOpsEvaluatorRequestBody addTagsItem(OpsTmsTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateOpsEvaluatorRequestBody withTags(Consumer<List<OpsTmsTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
         return this;
     }
 
     /**
-     * **参数解释：** 评估器的轮次类型。 **约束限制：** 长度为0到100个字符。 **取值范围：** - single: 单轮评估器 - multi: 多轮评估器 **默认取值：** 不涉及。 
-     * @return turnType
+     * **参数解释：** 创建评估器时绑定的TMS标签列表。数组内每个元素为OpsTmsTag对象，包含标签的键值信息。 **约束限制：** 数组元素最小数量为0，最大数量为50。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return tags
      */
-    public String getTurnType() {
-        return turnType;
+    public List<OpsTmsTag> getTags() {
+        return tags;
     }
 
-    public void setTurnType(String turnType) {
-        this.turnType = turnType;
+    public void setTags(List<OpsTmsTag> tags) {
+        this.tags = tags;
     }
 
     public CreateOpsEvaluatorRequestBody withCurrentVersion(EvaluationOpsCurrentVersion currentVersion) {
@@ -142,14 +160,14 @@ public class CreateOpsEvaluatorRequestBody {
             return false;
         }
         CreateOpsEvaluatorRequestBody that = (CreateOpsEvaluatorRequestBody) obj;
-        return Objects.equals(this.evaluatorType, that.evaluatorType) && Objects.equals(this.turnType, that.turnType)
+        return Objects.equals(this.evaluatorType, that.evaluatorType) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.currentVersion, that.currentVersion) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(evaluatorType, turnType, currentVersion, name, description);
+        return Objects.hash(evaluatorType, tags, currentVersion, name, description);
     }
 
     @Override
@@ -157,7 +175,7 @@ public class CreateOpsEvaluatorRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateOpsEvaluatorRequestBody {\n");
         sb.append("    evaluatorType: ").append(toIndentedString(evaluatorType)).append("\n");
-        sb.append("    turnType: ").append(toIndentedString(turnType)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    currentVersion: ").append(toIndentedString(currentVersion)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

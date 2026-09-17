@@ -125,6 +125,93 @@ public class TableMeta {
 
     private String comments;
 
+    /**
+     * **参数解释:** 表格式。支持{HIVE,ICEBERG,LANCE,PAIMON}，默认值为HIVE **约束限制:** 可选值为：HIVE, ICEBERG, LANCE,PAIMON
+     */
+    public static final class TableFormatEnum {
+
+        /**
+         * Enum HIVE for value: "HIVE"
+         */
+        public static final TableFormatEnum HIVE = new TableFormatEnum("HIVE");
+
+        /**
+         * Enum ICEBERG for value: "ICEBERG"
+         */
+        public static final TableFormatEnum ICEBERG = new TableFormatEnum("ICEBERG");
+
+        /**
+         * Enum LANCE for value: "LANCE"
+         */
+        public static final TableFormatEnum LANCE = new TableFormatEnum("LANCE");
+
+        /**
+         * Enum PAIMON for value: "PAIMON"
+         */
+        public static final TableFormatEnum PAIMON = new TableFormatEnum("PAIMON");
+
+        private static final Map<String, TableFormatEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TableFormatEnum> createStaticFields() {
+            Map<String, TableFormatEnum> map = new HashMap<>();
+            map.put("HIVE", HIVE);
+            map.put("ICEBERG", ICEBERG);
+            map.put("LANCE", LANCE);
+            map.put("PAIMON", PAIMON);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TableFormatEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TableFormatEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TableFormatEnum(value));
+        }
+
+        public static TableFormatEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TableFormatEnum) {
+                return this.value.equals(((TableFormatEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "table_format")
+
+    private TableFormatEnum tableFormat;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "columns")
 
@@ -220,6 +307,23 @@ public class TableMeta {
         this.comments = comments;
     }
 
+    public TableMeta withTableFormat(TableFormatEnum tableFormat) {
+        this.tableFormat = tableFormat;
+        return this;
+    }
+
+    /**
+     * **参数解释:** 表格式。支持{HIVE,ICEBERG,LANCE,PAIMON}，默认值为HIVE **约束限制:** 可选值为：HIVE, ICEBERG, LANCE,PAIMON
+     * @return tableFormat
+     */
+    public TableFormatEnum getTableFormat() {
+        return tableFormat;
+    }
+
+    public void setTableFormat(TableFormatEnum tableFormat) {
+        this.tableFormat = tableFormat;
+    }
+
     public TableMeta withColumns(List<Column> columns) {
         this.columns = columns;
         return this;
@@ -298,12 +402,14 @@ public class TableMeta {
         return Objects.equals(this.catalogName, that.catalogName)
             && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
             && Objects.equals(this.tableType, that.tableType) && Objects.equals(this.comments, that.comments)
-            && Objects.equals(this.columns, that.columns) && Objects.equals(this.partitionKeys, that.partitionKeys);
+            && Objects.equals(this.tableFormat, that.tableFormat) && Objects.equals(this.columns, that.columns)
+            && Objects.equals(this.partitionKeys, that.partitionKeys);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(catalogName, databaseName, tableName, tableType, comments, columns, partitionKeys);
+        return Objects
+            .hash(catalogName, databaseName, tableName, tableType, comments, tableFormat, columns, partitionKeys);
     }
 
     @Override
@@ -315,6 +421,7 @@ public class TableMeta {
         sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
         sb.append("    tableType: ").append(toIndentedString(tableType)).append("\n");
         sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
+        sb.append("    tableFormat: ").append(toIndentedString(tableFormat)).append("\n");
         sb.append("    columns: ").append(toIndentedString(columns)).append("\n");
         sb.append("    partitionKeys: ").append(toIndentedString(partitionKeys)).append("\n");
         sb.append("}");

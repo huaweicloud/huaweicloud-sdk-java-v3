@@ -26,7 +26,7 @@ public class EdgeAppInstanceDTO {
     }
 
     /**
-     * 边缘应用id，只允许数字、英文小写、中划线，切必须以字母或数字结尾
+     * 边缘应用id，只允许数字、英文小写、中划线，且必须以字母或数字结尾
      * @return edgeAppId
      */
     public String getEdgeAppId() {
@@ -43,7 +43,7 @@ public class EdgeAppInstanceDTO {
     }
 
     /**
-     * 边缘应用版本，只允许数字、英文小写、中划线，切必须以字母或数字结尾
+     * 边缘应用版本，只允许数字、英文小写、中划线，且必须以字母或数字结尾
      * @return appVersion
      */
     public String getAppVersion() {

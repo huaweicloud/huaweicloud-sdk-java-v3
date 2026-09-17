@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 升级任务元数据
+ * **参数解释：** 升级任务元数据 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
  */
 public class UpgradeTaskMetadata {
 
@@ -31,7 +31,7 @@ public class UpgradeTaskMetadata {
     }
 
     /**
-     * 升级任务ID
+     * **参数解释：** 升级任务ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return uid
      */
     public String getUid() {
@@ -48,7 +48,7 @@ public class UpgradeTaskMetadata {
     }
 
     /**
-     * 任务创建时间
+     * **参数解释：** 任务创建时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return creationTimestamp
      */
     public String getCreationTimestamp() {
@@ -65,7 +65,7 @@ public class UpgradeTaskMetadata {
     }
 
     /**
-     * 任务更新时间
+     * **参数解释：** 任务更新时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return updateTimestamp
      */
     public String getUpdateTimestamp() {

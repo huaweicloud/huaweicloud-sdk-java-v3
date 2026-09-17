@@ -16,6 +16,104 @@ import java.util.Objects;
 public class CreateOpsSchemaRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    /**
+     * **参数解释：** 字段的内容类型。 **约束限制：** 不涉及。 **取值范围：** - text：纯文本 - image：图片 - audio：音频 - video：视频 - file：文件 **默认取值：** 不涉及。
+     */
+    public static final class ContentTypeEnum {
+
+        /**
+         * Enum TEXT for value: "text"
+         */
+        public static final ContentTypeEnum TEXT = new ContentTypeEnum("text");
+
+        /**
+         * Enum IMAGE for value: "image"
+         */
+        public static final ContentTypeEnum IMAGE = new ContentTypeEnum("image");
+
+        /**
+         * Enum AUDIO for value: "audio"
+         */
+        public static final ContentTypeEnum AUDIO = new ContentTypeEnum("audio");
+
+        /**
+         * Enum VIDEO for value: "video"
+         */
+        public static final ContentTypeEnum VIDEO = new ContentTypeEnum("video");
+
+        /**
+         * Enum FILE for value: "file"
+         */
+        public static final ContentTypeEnum FILE = new ContentTypeEnum("file");
+
+        private static final Map<String, ContentTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ContentTypeEnum> createStaticFields() {
+            Map<String, ContentTypeEnum> map = new HashMap<>();
+            map.put("text", TEXT);
+            map.put("image", IMAGE);
+            map.put("audio", AUDIO);
+            map.put("video", VIDEO);
+            map.put("file", FILE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ContentTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ContentTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ContentTypeEnum(value));
+        }
+
+        public static ContentTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ContentTypeEnum) {
+                return this.value.equals(((ContentTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "content_type")
+
+    private ContentTypeEnum contentType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -117,6 +215,40 @@ public class CreateOpsSchemaRequest {
 
     private String description;
 
+    public CreateOpsSchemaRequest withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 字段的唯一标识符。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public CreateOpsSchemaRequest withContentType(ContentTypeEnum contentType) {
+        this.contentType = contentType;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 字段的内容类型。 **约束限制：** 不涉及。 **取值范围：** - text：纯文本 - image：图片 - audio：音频 - video：视频 - file：文件 **默认取值：** 不涉及。
+     * @return contentType
+     */
+    public ContentTypeEnum getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(ContentTypeEnum contentType) {
+        this.contentType = contentType;
+    }
+
     public CreateOpsSchemaRequest withName(String name) {
         this.name = name;
         return this;
@@ -194,19 +326,22 @@ public class CreateOpsSchemaRequest {
             return false;
         }
         CreateOpsSchemaRequest that = (CreateOpsSchemaRequest) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.contentType, that.contentType)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
             && Objects.equals(this.isRequired, that.isRequired) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, isRequired, description);
+        return Objects.hash(id, contentType, name, type, isRequired, description);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateOpsSchemaRequest {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    isRequired: ").append(toIndentedString(isRequired)).append("\n");

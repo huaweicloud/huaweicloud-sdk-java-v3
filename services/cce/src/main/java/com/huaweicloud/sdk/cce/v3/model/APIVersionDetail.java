@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * API版本的详细信息
+ * **参数解释：** API版本的详细信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
  */
 public class APIVersionDetail {
 
@@ -34,7 +34,7 @@ public class APIVersionDetail {
     private String minVersion;
 
     /**
-     * API版本的状态。 可以是： - CURRENT这是使用的API的首选版本； - SUPPORTED：这是一个较老的，但仍然支持的API版本； - DEPRECATED：一个被废弃的API版本，该版本将被删除
+     * **参数解释：** API版本的状态。 **约束限制：** 不涉及 **取值范围：** - CURRENT：这是使用的API的首选版本 - SUPPORTED：这是一个较老的，但仍然支持的API版本 - DEPRECATED：一个被废弃的API版本，该版本将被删除  **默认取值：** 不涉及
      */
     public static final class StatusEnum {
 
@@ -130,7 +130,7 @@ public class APIVersionDetail {
     }
 
     /**
-     * API版本ID。例如v3。
+     * **参数解释：** API版本ID，例如v3。 **约束限制：** 由服务端配置指定，用户不可修改 **取值范围：** - v3 - v3.1  **默认取值：** 不涉及
      * @return id
      */
     public String getId() {
@@ -163,7 +163,7 @@ public class APIVersionDetail {
     }
 
     /**
-     * API版本的URL链接信息。
+     * **参数解释：** API版本的URL链接信息。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return links
      */
     public List<APIVersionLink> getLinks() {
@@ -180,7 +180,7 @@ public class APIVersionDetail {
     }
 
     /**
-     * 如果API的这个版本支持微版本，则支持最小的微版本。如果不支持微版本，这将是空字符串。
+     * **参数解释：** 如果API的这个版本支持微版本，则支持最小的微版本。如果不支持微版本，这将是空字符串。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return minVersion
      */
     public String getMinVersion() {
@@ -197,7 +197,7 @@ public class APIVersionDetail {
     }
 
     /**
-     * API版本的状态。 可以是： - CURRENT这是使用的API的首选版本； - SUPPORTED：这是一个较老的，但仍然支持的API版本； - DEPRECATED：一个被废弃的API版本，该版本将被删除
+     * **参数解释：** API版本的状态。 **约束限制：** 不涉及 **取值范围：** - CURRENT：这是使用的API的首选版本 - SUPPORTED：这是一个较老的，但仍然支持的API版本 - DEPRECATED：一个被废弃的API版本，该版本将被删除  **默认取值：** 不涉及
      * @return status
      */
     public StatusEnum getStatus() {
@@ -214,7 +214,7 @@ public class APIVersionDetail {
     }
 
     /**
-     * API发布时间（UTC格式）。例如API版本为v3时，值为'2018-09-15 00:00:00Z'。
+     * **参数解释：** API发布时间（UTC格式）。例如API版本为v3时，值为'2018-09-15 00:00:00Z'。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return updated
      */
     public String getUpdated() {
@@ -231,7 +231,7 @@ public class APIVersionDetail {
     }
 
     /**
-     * 如果API的这个版本支持微版本，则支持最大的微版本。如果不支持微版本，这将是空字符串。
+     * **参数解释：** 如果API的这个版本支持微版本，则支持最大的微版本。如果不支持微版本，这将是空字符串。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return version
      */
     public String getVersion() {

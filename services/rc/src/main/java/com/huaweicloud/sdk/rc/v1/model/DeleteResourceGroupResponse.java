@@ -32,14 +32,14 @@ public class DeleteResourceGroupResponse extends SdkResponse {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_time")
+    @JsonProperty(value = "created")
 
-    private String createTime;
+    private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_time")
+    @JsonProperty(value = "updated")
 
-    private String updateTime;
+    private String updated;
 
     public DeleteResourceGroupResponse withGroupId(String groupId) {
         this.groupId = groupId;
@@ -109,38 +109,38 @@ public class DeleteResourceGroupResponse extends SdkResponse {
         this.description = description;
     }
 
-    public DeleteResourceGroupResponse withCreateTime(String createTime) {
-        this.createTime = createTime;
+    public DeleteResourceGroupResponse withCreated(String created) {
+        this.created = created;
         return this;
     }
 
     /**
-     * Get createTime
-     * @return createTime
+     * Get created
+     * @return created
      */
-    public String getCreateTime() {
-        return createTime;
+    public String getCreated() {
+        return created;
     }
 
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime;
+    public void setCreated(String created) {
+        this.created = created;
     }
 
-    public DeleteResourceGroupResponse withUpdateTime(String updateTime) {
-        this.updateTime = updateTime;
+    public DeleteResourceGroupResponse withUpdated(String updated) {
+        this.updated = updated;
         return this;
     }
 
     /**
-     * Get updateTime
-     * @return updateTime
+     * Get updated
+     * @return updated
      */
-    public String getUpdateTime() {
-        return updateTime;
+    public String getUpdated() {
+        return updated;
     }
 
-    public void setUpdateTime(String updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdated(String updated) {
+        this.updated = updated;
     }
 
     @Override
@@ -154,12 +154,12 @@ public class DeleteResourceGroupResponse extends SdkResponse {
         DeleteResourceGroupResponse that = (DeleteResourceGroupResponse) obj;
         return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.domainId, that.domainId)
             && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.created, that.created) && Objects.equals(this.updated, that.updated);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupId, domainId, groupName, description, createTime, updateTime);
+        return Objects.hash(groupId, domainId, groupName, description, created, updated);
     }
 
     @Override
@@ -170,8 +170,8 @@ public class DeleteResourceGroupResponse extends SdkResponse {
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    created: ").append(toIndentedString(created)).append("\n");
+        sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("}");
         return sb.toString();
     }

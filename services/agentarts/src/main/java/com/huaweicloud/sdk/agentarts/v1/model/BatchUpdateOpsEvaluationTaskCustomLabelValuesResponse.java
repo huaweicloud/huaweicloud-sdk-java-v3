@@ -12,25 +12,47 @@ import java.util.Objects;
 public class BatchUpdateOpsEvaluationTaskCustomLabelValuesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "msg")
 
-    private Object body;
+    private String msg;
 
-    public BatchUpdateOpsEvaluationTaskCustomLabelValuesResponse withBody(Object body) {
-        this.body = body;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "code")
+
+    private Integer code;
+
+    public BatchUpdateOpsEvaluationTaskCustomLabelValuesResponse withMsg(String msg) {
+        this.msg = msg;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * **参数解释：** 提示信息。 **约束限制：** 不涉及。 **取值范围：** 固定为 update tag value succeed。
+     * @return msg
      */
-    public Object getBody() {
-        return body;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setBody(Object body) {
-        this.body = body;
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public BatchUpdateOpsEvaluationTaskCustomLabelValuesResponse withCode(Integer code) {
+        this.code = code;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 业务状态码。 **约束限制：** 不涉及。 **取值范围：** 固定为 200。
+     * @return code
+     */
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
     }
 
     @Override
@@ -43,19 +65,20 @@ public class BatchUpdateOpsEvaluationTaskCustomLabelValuesResponse extends SdkRe
         }
         BatchUpdateOpsEvaluationTaskCustomLabelValuesResponse that =
             (BatchUpdateOpsEvaluationTaskCustomLabelValuesResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.msg, that.msg) && Objects.equals(this.code, that.code);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(msg, code);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchUpdateOpsEvaluationTaskCustomLabelValuesResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
         sb.append("}");
         return sb.toString();
     }

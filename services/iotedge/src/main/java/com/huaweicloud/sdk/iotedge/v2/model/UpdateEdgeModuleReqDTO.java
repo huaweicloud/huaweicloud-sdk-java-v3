@@ -26,11 +26,6 @@ public class UpdateEdgeModuleReqDTO {
 
     private String moduleName;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "container_settings")
-
-    private ContainerSettingsReqDTO containerSettings;
-
     /**
      * 模块期望状态: RUNNING(升级后期望模块运行)，STOPPED(升级后期望模块停止)，空值默认继承升级前模块期望状态
      */
@@ -106,6 +101,16 @@ public class UpdateEdgeModuleReqDTO {
 
     private DesiredStateEnum desiredState;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_settings")
+
+    private ContainerSettingsReqDTO containerSettings;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "force_upgrade")
+
+    private Boolean forceUpgrade;
+
     public UpdateEdgeModuleReqDTO withAppVersion(String appVersion) {
         this.appVersion = appVersion;
         return this;
@@ -140,6 +145,23 @@ public class UpdateEdgeModuleReqDTO {
         this.moduleName = moduleName;
     }
 
+    public UpdateEdgeModuleReqDTO withDesiredState(DesiredStateEnum desiredState) {
+        this.desiredState = desiredState;
+        return this;
+    }
+
+    /**
+     * 模块期望状态: RUNNING(升级后期望模块运行)，STOPPED(升级后期望模块停止)，空值默认继承升级前模块期望状态
+     * @return desiredState
+     */
+    public DesiredStateEnum getDesiredState() {
+        return desiredState;
+    }
+
+    public void setDesiredState(DesiredStateEnum desiredState) {
+        this.desiredState = desiredState;
+    }
+
     public UpdateEdgeModuleReqDTO withContainerSettings(ContainerSettingsReqDTO containerSettings) {
         this.containerSettings = containerSettings;
         return this;
@@ -166,21 +188,21 @@ public class UpdateEdgeModuleReqDTO {
         this.containerSettings = containerSettings;
     }
 
-    public UpdateEdgeModuleReqDTO withDesiredState(DesiredStateEnum desiredState) {
-        this.desiredState = desiredState;
+    public UpdateEdgeModuleReqDTO withForceUpgrade(Boolean forceUpgrade) {
+        this.forceUpgrade = forceUpgrade;
         return this;
     }
 
     /**
-     * 模块期望状态: RUNNING(升级后期望模块运行)，STOPPED(升级后期望模块停止)，空值默认继承升级前模块期望状态
-     * @return desiredState
+     * 是否强制升级
+     * @return forceUpgrade
      */
-    public DesiredStateEnum getDesiredState() {
-        return desiredState;
+    public Boolean getForceUpgrade() {
+        return forceUpgrade;
     }
 
-    public void setDesiredState(DesiredStateEnum desiredState) {
-        this.desiredState = desiredState;
+    public void setForceUpgrade(Boolean forceUpgrade) {
+        this.forceUpgrade = forceUpgrade;
     }
 
     @Override
@@ -193,13 +215,14 @@ public class UpdateEdgeModuleReqDTO {
         }
         UpdateEdgeModuleReqDTO that = (UpdateEdgeModuleReqDTO) obj;
         return Objects.equals(this.appVersion, that.appVersion) && Objects.equals(this.moduleName, that.moduleName)
+            && Objects.equals(this.desiredState, that.desiredState)
             && Objects.equals(this.containerSettings, that.containerSettings)
-            && Objects.equals(this.desiredState, that.desiredState);
+            && Objects.equals(this.forceUpgrade, that.forceUpgrade);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(appVersion, moduleName, containerSettings, desiredState);
+        return Objects.hash(appVersion, moduleName, desiredState, containerSettings, forceUpgrade);
     }
 
     @Override
@@ -208,8 +231,9 @@ public class UpdateEdgeModuleReqDTO {
         sb.append("class UpdateEdgeModuleReqDTO {\n");
         sb.append("    appVersion: ").append(toIndentedString(appVersion)).append("\n");
         sb.append("    moduleName: ").append(toIndentedString(moduleName)).append("\n");
-        sb.append("    containerSettings: ").append(toIndentedString(containerSettings)).append("\n");
         sb.append("    desiredState: ").append(toIndentedString(desiredState)).append("\n");
+        sb.append("    containerSettings: ").append(toIndentedString(containerSettings)).append("\n");
+        sb.append("    forceUpgrade: ").append(toIndentedString(forceUpgrade)).append("\n");
         sb.append("}");
         return sb.toString();
     }

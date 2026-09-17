@@ -14,6 +14,8 @@ import java.util.stream.Collectors;
 
 public class OptVerseRegion {
 
+    public static final Region CN_EAST_3 = new Region("cn-east-3", "https://optverse.cn-east-3.myhuaweicloud.com");
+
     public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://optverse.cn-north-4.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("OPTVERSE");
@@ -22,6 +24,7 @@ public class OptVerseRegion {
 
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
+        map.put("cn-east-3", CN_EAST_3);
         map.put("cn-north-4", CN_NORTH_4);
         return Collections.unmodifiableMap(map);
     }

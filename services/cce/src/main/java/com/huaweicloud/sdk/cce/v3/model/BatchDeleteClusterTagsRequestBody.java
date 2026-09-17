@@ -40,7 +40,7 @@ public class BatchDeleteClusterTagsRequestBody {
     }
 
     /**
-     * 待删除的集群资源标签列表。
+     * **参数解释：** 待删除的集群资源标签列表。 **约束限制：** 删除时仅需指定key，value将被忽略。 **取值范围：** 1-20个ResourceDeleteTag对象。 **默认取值：** 不涉及
      * @return tags
      */
     public List<ResourceDeleteTag> getTags() {

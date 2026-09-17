@@ -115,6 +115,11 @@ public class NodePoolSpec {
     private NodePoolNodeAutoscaling autoscaling;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repairPolicy")
+
+    private NodePoolRepairPolicy repairPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodeManagement")
 
     private NodeManagement nodeManagement;
@@ -233,6 +238,32 @@ public class NodePoolSpec {
 
     public void setAutoscaling(NodePoolNodeAutoscaling autoscaling) {
         this.autoscaling = autoscaling;
+    }
+
+    public NodePoolSpec withRepairPolicy(NodePoolRepairPolicy repairPolicy) {
+        this.repairPolicy = repairPolicy;
+        return this;
+    }
+
+    public NodePoolSpec withRepairPolicy(Consumer<NodePoolRepairPolicy> repairPolicySetter) {
+        if (this.repairPolicy == null) {
+            this.repairPolicy = new NodePoolRepairPolicy();
+            repairPolicySetter.accept(this.repairPolicy);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get repairPolicy
+     * @return repairPolicy
+     */
+    public NodePoolRepairPolicy getRepairPolicy() {
+        return repairPolicy;
+    }
+
+    public void setRepairPolicy(NodePoolRepairPolicy repairPolicy) {
+        this.repairPolicy = repairPolicy;
     }
 
     public NodePoolSpec withNodeManagement(NodeManagement nodeManagement) {
@@ -423,6 +454,7 @@ public class NodePoolSpec {
         return Objects.equals(this.type, that.type) && Objects.equals(this.nodeTemplate, that.nodeTemplate)
             && Objects.equals(this.initialNodeCount, that.initialNodeCount)
             && Objects.equals(this.autoscaling, that.autoscaling)
+            && Objects.equals(this.repairPolicy, that.repairPolicy)
             && Objects.equals(this.nodeManagement, that.nodeManagement)
             && Objects.equals(this.podSecurityGroups, that.podSecurityGroups)
             && Objects.equals(this.extensionScaleGroups, that.extensionScaleGroups)
@@ -438,6 +470,7 @@ public class NodePoolSpec {
             nodeTemplate,
             initialNodeCount,
             autoscaling,
+            repairPolicy,
             nodeManagement,
             podSecurityGroups,
             extensionScaleGroups,
@@ -455,6 +488,7 @@ public class NodePoolSpec {
         sb.append("    nodeTemplate: ").append(toIndentedString(nodeTemplate)).append("\n");
         sb.append("    initialNodeCount: ").append(toIndentedString(initialNodeCount)).append("\n");
         sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
+        sb.append("    repairPolicy: ").append(toIndentedString(repairPolicy)).append("\n");
         sb.append("    nodeManagement: ").append(toIndentedString(nodeManagement)).append("\n");
         sb.append("    podSecurityGroups: ").append(toIndentedString(podSecurityGroups)).append("\n");
         sb.append("    extensionScaleGroups: ").append(toIndentedString(extensionScaleGroups)).append("\n");

@@ -16,14 +16,29 @@ import java.util.function.Consumer;
 public class ShowOpsDatasetVersionResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_by")
+
+    private OpsEvaluationUserInfo createdBy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reference_count")
+
+    private Integer referenceCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private String version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "can_delete")
+
+    private Boolean canDelete;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version_num")
@@ -50,6 +65,32 @@ public class ShowOpsDatasetVersionResponse extends SdkResponse {
 
     private OffsetDateTime createdAt;
 
+    public ShowOpsDatasetVersionResponse withCreatedBy(OpsEvaluationUserInfo createdBy) {
+        this.createdBy = createdBy;
+        return this;
+    }
+
+    public ShowOpsDatasetVersionResponse withCreatedBy(Consumer<OpsEvaluationUserInfo> createdBySetter) {
+        if (this.createdBy == null) {
+            this.createdBy = new OpsEvaluationUserInfo();
+            createdBySetter.accept(this.createdBy);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get createdBy
+     * @return createdBy
+     */
+    public OpsEvaluationUserInfo getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(OpsEvaluationUserInfo createdBy) {
+        this.createdBy = createdBy;
+    }
+
     public ShowOpsDatasetVersionResponse withId(String id) {
         this.id = id;
         return this;
@@ -67,6 +108,25 @@ public class ShowOpsDatasetVersionResponse extends SdkResponse {
         this.id = id;
     }
 
+    public ShowOpsDatasetVersionResponse withReferenceCount(Integer referenceCount) {
+        this.referenceCount = referenceCount;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 该版本被评估任务引用的次数。 **约束限制：** 不涉及。 **取值范围：** 0~2147483647。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return referenceCount
+     */
+    public Integer getReferenceCount() {
+        return referenceCount;
+    }
+
+    public void setReferenceCount(Integer referenceCount) {
+        this.referenceCount = referenceCount;
+    }
+
     public ShowOpsDatasetVersionResponse withVersion(String version) {
         this.version = version;
         return this;
@@ -82,6 +142,23 @@ public class ShowOpsDatasetVersionResponse extends SdkResponse {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public ShowOpsDatasetVersionResponse withCanDelete(Boolean canDelete) {
+        this.canDelete = canDelete;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 该版本是否允许被删除。存在被评估任务引用的版本不可删除。 **约束限制：** 不涉及。 **取值范围：** - true：可删除 - false：不可删除
+     * @return canDelete
+     */
+    public Boolean getCanDelete() {
+        return canDelete;
+    }
+
+    public void setCanDelete(Boolean canDelete) {
+        this.canDelete = canDelete;
     }
 
     public ShowOpsDatasetVersionResponse withVersionNum(Integer versionNum) {
@@ -198,24 +275,37 @@ public class ShowOpsDatasetVersionResponse extends SdkResponse {
             return false;
         }
         ShowOpsDatasetVersionResponse that = (ShowOpsDatasetVersionResponse) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.version, that.version)
-            && Objects.equals(this.versionNum, that.versionNum) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.itemCount, that.itemCount)
+        return Objects.equals(this.createdBy, that.createdBy) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.referenceCount, that.referenceCount) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.canDelete, that.canDelete) && Objects.equals(this.versionNum, that.versionNum)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.itemCount, that.itemCount)
             && Objects.equals(this.schemaSnapshot, that.schemaSnapshot)
             && Objects.equals(this.createdAt, that.createdAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, version, versionNum, description, itemCount, schemaSnapshot, createdAt);
+        return Objects.hash(createdBy,
+            id,
+            referenceCount,
+            version,
+            canDelete,
+            versionNum,
+            description,
+            itemCount,
+            schemaSnapshot,
+            createdAt);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowOpsDatasetVersionResponse {\n");
+        sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    referenceCount: ").append(toIndentedString(referenceCount)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    canDelete: ").append(toIndentedString(canDelete)).append("\n");
         sb.append("    versionNum: ").append(toIndentedString(versionNum)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    itemCount: ").append(toIndentedString(itemCount)).append("\n");

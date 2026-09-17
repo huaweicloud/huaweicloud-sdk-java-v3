@@ -32,8 +32,8 @@ public class PointScalingDTO {
 
     /**
      * 缩放的倍率
-     * minimum: -1E+4
-     * maximum: 1E+4
+     * minimum: -2E+4
+     * maximum: 2E+4
      * @return ratio
      */
     public Double getRatio() {

@@ -100,16 +100,6 @@ public class EvaluationOpsSeedDataCreateConfig {
 
     private String datasetVersionId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "file_name")
-
-    private String fileName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "obs_tmp_file_id")
-
-    private String obsTmpFileId;
-
     public EvaluationOpsSeedDataCreateConfig withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -161,40 +151,6 @@ public class EvaluationOpsSeedDataCreateConfig {
         this.datasetVersionId = datasetVersionId;
     }
 
-    public EvaluationOpsSeedDataCreateConfig withFileName(String fileName) {
-        this.fileName = fileName;
-        return this;
-    }
-
-    /**
-     * **参数解释：**   上传的种子数据文件的原始名称。 **约束限制：**   1-200个字符，当type为file时必填。 **取值范围：**   1-200个字符，合法的文件名。 **默认取值：**   不涉及。 
-     * @return fileName
-     */
-    public String getFileName() {
-        return fileName;
-    }
-
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
-
-    public EvaluationOpsSeedDataCreateConfig withObsTmpFileId(String obsTmpFileId) {
-        this.obsTmpFileId = obsTmpFileId;
-        return this;
-    }
-
-    /**
-     * **参数解释：**   种子数据文件在OBS中的临时存储路径。 **约束限制：**   最大长度10000字符。 **取值范围：**   OBS路径字符串。 **默认取值：**   不涉及。 
-     * @return obsTmpFileId
-     */
-    public String getObsTmpFileId() {
-        return obsTmpFileId;
-    }
-
-    public void setObsTmpFileId(String obsTmpFileId) {
-        this.obsTmpFileId = obsTmpFileId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -205,13 +161,12 @@ public class EvaluationOpsSeedDataCreateConfig {
         }
         EvaluationOpsSeedDataCreateConfig that = (EvaluationOpsSeedDataCreateConfig) obj;
         return Objects.equals(this.type, that.type) && Objects.equals(this.datasetId, that.datasetId)
-            && Objects.equals(this.datasetVersionId, that.datasetVersionId)
-            && Objects.equals(this.fileName, that.fileName) && Objects.equals(this.obsTmpFileId, that.obsTmpFileId);
+            && Objects.equals(this.datasetVersionId, that.datasetVersionId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, datasetId, datasetVersionId, fileName, obsTmpFileId);
+        return Objects.hash(type, datasetId, datasetVersionId);
     }
 
     @Override
@@ -221,8 +176,6 @@ public class EvaluationOpsSeedDataCreateConfig {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    datasetId: ").append(toIndentedString(datasetId)).append("\n");
         sb.append("    datasetVersionId: ").append(toIndentedString(datasetVersionId)).append("\n");
-        sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
-        sb.append("    obsTmpFileId: ").append(toIndentedString(obsTmpFileId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

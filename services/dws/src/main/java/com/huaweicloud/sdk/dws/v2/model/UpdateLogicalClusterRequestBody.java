@@ -67,7 +67,7 @@ public class UpdateLogicalClusterRequestBody {
     }
 
     /**
-     * **参数解释**： 重分布模式。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 重分布模式。 **约束限制**： 不涉及。 **取值范围**： - null：离线模式 - read-only：离线模式 - insert：在线模式  **默认取值**： 不涉及。
      * @return mode
      */
     public String getMode() {

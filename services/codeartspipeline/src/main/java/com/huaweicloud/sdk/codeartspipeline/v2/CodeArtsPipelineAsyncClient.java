@@ -1,11 +1,15 @@
 package com.huaweicloud.sdk.codeartspipeline.v2;
 
+import com.huaweicloud.sdk.codeartspipeline.v2.model.AcceptCheckpointRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.AcceptCheckpointResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.AcceptManualReviewRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.AcceptManualReviewResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchMovePipelineToGroupRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchMovePipelineToGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesLatestStatusRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesLatestStatusResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateAlertPolicyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateAlertPolicyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateBasicPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateIdRequest;
@@ -16,6 +20,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineGroupRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineNewRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineNewResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineTagRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineTagResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineTemplateRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineTemplateResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePluginDraftRequest;
@@ -28,14 +34,20 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateRuleRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateRuleResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateVariableGroupRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateVariableGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteActionsRunPipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteActionsRunPipelineResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteAlertPolicyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteAlertPolicyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteBasicPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineGroupRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineTagRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineTagResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineTemplateRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineTemplateResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePluginDraftRequest;
@@ -46,6 +58,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteRuleRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteRuleResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteVariableGroupRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteVariableGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.InvokeEndpointProxyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.InvokeEndpointProxyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListActionsPipelineRunsByRunIdsRequest;
@@ -68,6 +82,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineRunsRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineRunsResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineSimpleInfoRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineSimpleInfoResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineTagRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineTagResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineTemplatesRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineTemplatesResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelinesRequest;
@@ -90,6 +106,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ListStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListTemplatesRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListTemplatesResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListVariableGroupsRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListVariableGroupsResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginBindRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginBindResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginDraftRequest;
@@ -110,6 +128,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.RunPipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RunPipelineResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowActionsRunsDetailRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowActionsRunsDetailResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowAlertPolicyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowAlertPolicyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowBasicPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusRequest;
@@ -148,6 +168,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowTemplateDetailRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowTemplateDetailResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowVariableGroupDetailRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowVariableGroupDetailResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.StartNewPipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.StartNewPipelineResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.StopPipelineNewRequest;
@@ -196,6 +218,35 @@ public class CodeArtsPipelineAsyncClient {
         ClientBuilder<CodeArtsPipelineAsyncClient> clientBuilder =
             new ClientBuilder<>(CodeArtsPipelineAsyncClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 手动卡点通过
+     *
+     * 手动卡点通过
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AcceptCheckpointRequest 请求对象
+     * @return CompletableFuture<AcceptCheckpointResponse>
+     */
+    public CompletableFuture<AcceptCheckpointResponse> acceptCheckpointAsync(AcceptCheckpointRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.acceptCheckpoint);
+    }
+
+    /**
+     * 手动卡点通过
+     *
+     * 手动卡点通过
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AcceptCheckpointRequest 请求对象
+     * @return AsyncInvoker<AcceptCheckpointRequest, AcceptCheckpointResponse>
+     */
+    public AsyncInvoker<AcceptCheckpointRequest, AcceptCheckpointResponse> acceptCheckpointAsyncInvoker(
+        AcceptCheckpointRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.acceptCheckpoint, hcClient);
     }
 
     /**
@@ -285,6 +336,35 @@ public class CodeArtsPipelineAsyncClient {
     public AsyncInvoker<BatchShowPipelinesLatestStatusRequest, BatchShowPipelinesLatestStatusResponse> batchShowPipelinesLatestStatusAsyncInvoker(
         BatchShowPipelinesLatestStatusRequest request) {
         return new AsyncInvoker<>(request, CodeArtsPipelineMeta.batchShowPipelinesLatestStatus, hcClient);
+    }
+
+    /**
+     * 创建告警策略
+     *
+     * 创建流水线告警策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAlertPolicyRequest 请求对象
+     * @return CompletableFuture<CreateAlertPolicyResponse>
+     */
+    public CompletableFuture<CreateAlertPolicyResponse> createAlertPolicyAsync(CreateAlertPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.createAlertPolicy);
+    }
+
+    /**
+     * 创建告警策略
+     *
+     * 创建流水线告警策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAlertPolicyRequest 请求对象
+     * @return AsyncInvoker<CreateAlertPolicyRequest, CreateAlertPolicyResponse>
+     */
+    public AsyncInvoker<CreateAlertPolicyRequest, CreateAlertPolicyResponse> createAlertPolicyAsyncInvoker(
+        CreateAlertPolicyRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.createAlertPolicy, hcClient);
     }
 
     /**
@@ -432,6 +512,35 @@ public class CodeArtsPipelineAsyncClient {
     public AsyncInvoker<CreatePipelineNewRequest, CreatePipelineNewResponse> createPipelineNewAsyncInvoker(
         CreatePipelineNewRequest request) {
         return new AsyncInvoker<>(request, CodeArtsPipelineMeta.createPipelineNew, hcClient);
+    }
+
+    /**
+     * 新建流水线标签
+     *
+     * 新建流水线标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePipelineTagRequest 请求对象
+     * @return CompletableFuture<CreatePipelineTagResponse>
+     */
+    public CompletableFuture<CreatePipelineTagResponse> createPipelineTagAsync(CreatePipelineTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.createPipelineTag);
+    }
+
+    /**
+     * 新建流水线标签
+     *
+     * 新建流水线标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePipelineTagRequest 请求对象
+     * @return AsyncInvoker<CreatePipelineTagRequest, CreatePipelineTagResponse>
+     */
+    public AsyncInvoker<CreatePipelineTagRequest, CreatePipelineTagResponse> createPipelineTagAsyncInvoker(
+        CreatePipelineTagRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.createPipelineTag, hcClient);
     }
 
     /**
@@ -609,6 +718,64 @@ public class CodeArtsPipelineAsyncClient {
     }
 
     /**
+     * 创建参数组
+     *
+     * 创建参数组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateVariableGroupRequest 请求对象
+     * @return CompletableFuture<CreateVariableGroupResponse>
+     */
+    public CompletableFuture<CreateVariableGroupResponse> createVariableGroupAsync(CreateVariableGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.createVariableGroup);
+    }
+
+    /**
+     * 创建参数组
+     *
+     * 创建参数组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateVariableGroupRequest 请求对象
+     * @return AsyncInvoker<CreateVariableGroupRequest, CreateVariableGroupResponse>
+     */
+    public AsyncInvoker<CreateVariableGroupRequest, CreateVariableGroupResponse> createVariableGroupAsyncInvoker(
+        CreateVariableGroupRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.createVariableGroup, hcClient);
+    }
+
+    /**
+     * 删除告警策略
+     *
+     * 删除流水线告警策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAlertPolicyRequest 请求对象
+     * @return CompletableFuture<DeleteAlertPolicyResponse>
+     */
+    public CompletableFuture<DeleteAlertPolicyResponse> deleteAlertPolicyAsync(DeleteAlertPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.deleteAlertPolicy);
+    }
+
+    /**
+     * 删除告警策略
+     *
+     * 删除流水线告警策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAlertPolicyRequest 请求对象
+     * @return AsyncInvoker<DeleteAlertPolicyRequest, DeleteAlertPolicyResponse>
+     */
+    public AsyncInvoker<DeleteAlertPolicyRequest, DeleteAlertPolicyResponse> deleteAlertPolicyAsyncInvoker(
+        DeleteAlertPolicyRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.deleteAlertPolicy, hcClient);
+    }
+
+    /**
      * 删除基础插件
      *
      * 删除基础插件
@@ -693,6 +860,35 @@ public class CodeArtsPipelineAsyncClient {
     public AsyncInvoker<DeletePipelineGroupRequest, DeletePipelineGroupResponse> deletePipelineGroupAsyncInvoker(
         DeletePipelineGroupRequest request) {
         return new AsyncInvoker<>(request, CodeArtsPipelineMeta.deletePipelineGroup, hcClient);
+    }
+
+    /**
+     * 删除流水线标签
+     *
+     * 删除流水线标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePipelineTagRequest 请求对象
+     * @return CompletableFuture<DeletePipelineTagResponse>
+     */
+    public CompletableFuture<DeletePipelineTagResponse> deletePipelineTagAsync(DeletePipelineTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.deletePipelineTag);
+    }
+
+    /**
+     * 删除流水线标签
+     *
+     * 删除流水线标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePipelineTagRequest 请求对象
+     * @return AsyncInvoker<DeletePipelineTagRequest, DeletePipelineTagResponse>
+     */
+    public AsyncInvoker<DeletePipelineTagRequest, DeletePipelineTagResponse> deletePipelineTagAsyncInvoker(
+        DeletePipelineTagRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.deletePipelineTag, hcClient);
     }
 
     /**
@@ -838,6 +1034,35 @@ public class CodeArtsPipelineAsyncClient {
     public AsyncInvoker<DeleteStrategyRequest, DeleteStrategyResponse> deleteStrategyAsyncInvoker(
         DeleteStrategyRequest request) {
         return new AsyncInvoker<>(request, CodeArtsPipelineMeta.deleteStrategy, hcClient);
+    }
+
+    /**
+     * 删除参数组
+     *
+     * 删除参数组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteVariableGroupRequest 请求对象
+     * @return CompletableFuture<DeleteVariableGroupResponse>
+     */
+    public CompletableFuture<DeleteVariableGroupResponse> deleteVariableGroupAsync(DeleteVariableGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.deleteVariableGroup);
+    }
+
+    /**
+     * 删除参数组
+     *
+     * 删除参数组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteVariableGroupRequest 请求对象
+     * @return AsyncInvoker<DeleteVariableGroupRequest, DeleteVariableGroupResponse>
+     */
+    public AsyncInvoker<DeleteVariableGroupRequest, DeleteVariableGroupResponse> deleteVariableGroupAsyncInvoker(
+        DeleteVariableGroupRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.deleteVariableGroup, hcClient);
     }
 
     /**
@@ -1074,6 +1299,35 @@ public class CodeArtsPipelineAsyncClient {
     public AsyncInvoker<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse> listPipelineSimpleInfoAsyncInvoker(
         ListPipelineSimpleInfoRequest request) {
         return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listPipelineSimpleInfo, hcClient);
+    }
+
+    /**
+     * 查询流水线标签列表
+     *
+     * 查询流水线标签列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPipelineTagRequest 请求对象
+     * @return CompletableFuture<ListPipelineTagResponse>
+     */
+    public CompletableFuture<ListPipelineTagResponse> listPipelineTagAsync(ListPipelineTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.listPipelineTag);
+    }
+
+    /**
+     * 查询流水线标签列表
+     *
+     * 查询流水线标签列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPipelineTagRequest 请求对象
+     * @return AsyncInvoker<ListPipelineTagRequest, ListPipelineTagResponse>
+     */
+    public AsyncInvoker<ListPipelineTagRequest, ListPipelineTagResponse> listPipelineTagAsyncInvoker(
+        ListPipelineTagRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listPipelineTag, hcClient);
     }
 
     /**
@@ -1397,6 +1651,35 @@ public class CodeArtsPipelineAsyncClient {
     }
 
     /**
+     * 查询参数组列表
+     *
+     * 查询参数组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVariableGroupsRequest 请求对象
+     * @return CompletableFuture<ListVariableGroupsResponse>
+     */
+    public CompletableFuture<ListVariableGroupsResponse> listVariableGroupsAsync(ListVariableGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.listVariableGroups);
+    }
+
+    /**
+     * 查询参数组列表
+     *
+     * 查询参数组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVariableGroupsRequest 请求对象
+     * @return AsyncInvoker<ListVariableGroupsRequest, ListVariableGroupsResponse>
+     */
+    public AsyncInvoker<ListVariableGroupsRequest, ListVariableGroupsResponse> listVariableGroupsAsyncInvoker(
+        ListVariableGroupsRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listVariableGroups, hcClient);
+    }
+
+    /**
      * 发布插件
      *
      * 发布插件
@@ -1596,6 +1879,35 @@ public class CodeArtsPipelineAsyncClient {
      */
     public AsyncInvoker<RunPipelineRequest, RunPipelineResponse> runPipelineAsyncInvoker(RunPipelineRequest request) {
         return new AsyncInvoker<>(request, CodeArtsPipelineMeta.runPipeline, hcClient);
+    }
+
+    /**
+     * 查询告警策略详情
+     *
+     * 查询流水线告警策略详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAlertPolicyRequest 请求对象
+     * @return CompletableFuture<ShowAlertPolicyResponse>
+     */
+    public CompletableFuture<ShowAlertPolicyResponse> showAlertPolicyAsync(ShowAlertPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.showAlertPolicy);
+    }
+
+    /**
+     * 查询告警策略详情
+     *
+     * 查询流水线告警策略详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAlertPolicyRequest 请求对象
+     * @return AsyncInvoker<ShowAlertPolicyRequest, ShowAlertPolicyResponse>
+     */
+    public AsyncInvoker<ShowAlertPolicyRequest, ShowAlertPolicyResponse> showAlertPolicyAsyncInvoker(
+        ShowAlertPolicyRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showAlertPolicy, hcClient);
     }
 
     /**
@@ -1980,7 +2292,7 @@ public class CodeArtsPipelineAsyncClient {
     }
 
     /**
-     * 
+     * 查询项目级策略详情
      *
      * 查询项目级策略详情
      * 
@@ -1994,7 +2306,7 @@ public class CodeArtsPipelineAsyncClient {
     }
 
     /**
-     * 
+     * 查询项目级策略详情
      *
      * 查询项目级策略详情
      * 
@@ -2150,6 +2462,36 @@ public class CodeArtsPipelineAsyncClient {
     public AsyncInvoker<ShowTemplateDetailRequest, ShowTemplateDetailResponse> showTemplateDetailAsyncInvoker(
         ShowTemplateDetailRequest request) {
         return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showTemplateDetail, hcClient);
+    }
+
+    /**
+     * 查询参数组详情
+     *
+     * 查询参数组详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVariableGroupDetailRequest 请求对象
+     * @return CompletableFuture<ShowVariableGroupDetailResponse>
+     */
+    public CompletableFuture<ShowVariableGroupDetailResponse> showVariableGroupDetailAsync(
+        ShowVariableGroupDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.showVariableGroupDetail);
+    }
+
+    /**
+     * 查询参数组详情
+     *
+     * 查询参数组详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVariableGroupDetailRequest 请求对象
+     * @return AsyncInvoker<ShowVariableGroupDetailRequest, ShowVariableGroupDetailResponse>
+     */
+    public AsyncInvoker<ShowVariableGroupDetailRequest, ShowVariableGroupDetailResponse> showVariableGroupDetailAsyncInvoker(
+        ShowVariableGroupDetailRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showVariableGroupDetail, hcClient);
     }
 
     /**

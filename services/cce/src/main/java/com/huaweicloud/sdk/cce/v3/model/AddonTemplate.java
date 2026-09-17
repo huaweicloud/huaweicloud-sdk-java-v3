@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 插件模板详情-response结构体
+ * **参数解释**： 插件模板详情。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
  */
 public class AddonTemplate {
 
@@ -37,7 +37,7 @@ public class AddonTemplate {
     }
 
     /**
-     * API类型，固定值“Addon”，该值不可修改。
+     * **参数解释**： API类型，固定值\"Addon\"，该值不可修改。 **约束限制**： 该值不可修改 **取值范围**： - Addon  **默认取值**： Addon
      * @return kind
      */
     public String getKind() {
@@ -54,7 +54,7 @@ public class AddonTemplate {
     }
 
     /**
-     * API版本，固定值“v3”，该值不可修改。
+     * **参数解释**： API版本，固定值\"v3\"，该值不可修改。 **约束限制**： 该值不可修改 **取值范围**： - v3  **默认取值**： v3
      * @return apiVersion
      */
     public String getApiVersion() {

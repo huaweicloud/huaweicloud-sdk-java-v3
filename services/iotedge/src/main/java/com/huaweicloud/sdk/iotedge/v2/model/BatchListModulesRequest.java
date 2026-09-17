@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -131,6 +134,26 @@ public class BatchListModulesRequest {
          */
         public static final FunctionTypeEnum ON_PREMISE_INTEGRATION = new FunctionTypeEnum("ON_PREMISE_INTEGRATION");
 
+        /**
+         * Enum GATEWAY_MANAGER for value: "GATEWAY_MANAGER"
+         */
+        public static final FunctionTypeEnum GATEWAY_MANAGER = new FunctionTypeEnum("GATEWAY_MANAGER");
+
+        /**
+         * Enum COMPOSITE_APPLICATION for value: "COMPOSITE_APPLICATION"
+         */
+        public static final FunctionTypeEnum COMPOSITE_APPLICATION = new FunctionTypeEnum("COMPOSITE_APPLICATION");
+
+        /**
+         * Enum DATA_COLLECTION for value: "DATA_COLLECTION"
+         */
+        public static final FunctionTypeEnum DATA_COLLECTION = new FunctionTypeEnum("DATA_COLLECTION");
+
+        /**
+         * Enum MODEL_INFERENCE for value: "MODEL_INFERENCE"
+         */
+        public static final FunctionTypeEnum MODEL_INFERENCE = new FunctionTypeEnum("MODEL_INFERENCE");
+
         private static final Map<String, FunctionTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FunctionTypeEnum> createStaticFields() {
@@ -138,6 +161,10 @@ public class BatchListModulesRequest {
             map.put("DATA_PROCESSING", DATA_PROCESSING);
             map.put("PROTOCOL_PARSING", PROTOCOL_PARSING);
             map.put("ON_PREMISE_INTEGRATION", ON_PREMISE_INTEGRATION);
+            map.put("GATEWAY_MANAGER", GATEWAY_MANAGER);
+            map.put("COMPOSITE_APPLICATION", COMPOSITE_APPLICATION);
+            map.put("DATA_COLLECTION", DATA_COLLECTION);
+            map.put("MODEL_INFERENCE", MODEL_INFERENCE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -191,6 +218,21 @@ public class BatchListModulesRequest {
     @JsonProperty(value = "function_type")
 
     private FunctionTypeEnum functionType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "function_types")
+
+    private List<String> functionTypes = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protocol_types")
+
+    private List<String> protocolTypes = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "module_name")
+
+    private String moduleName;
 
     public BatchListModulesRequest withEdgeNodeId(String edgeNodeId) {
         this.edgeNodeId = edgeNodeId;
@@ -281,6 +323,89 @@ public class BatchListModulesRequest {
         this.functionType = functionType;
     }
 
+    public BatchListModulesRequest withFunctionTypes(List<String> functionTypes) {
+        this.functionTypes = functionTypes;
+        return this;
+    }
+
+    public BatchListModulesRequest addFunctionTypesItem(String functionTypesItem) {
+        if (this.functionTypes == null) {
+            this.functionTypes = new ArrayList<>();
+        }
+        this.functionTypes.add(functionTypesItem);
+        return this;
+    }
+
+    public BatchListModulesRequest withFunctionTypes(Consumer<List<String>> functionTypesSetter) {
+        if (this.functionTypes == null) {
+            this.functionTypes = new ArrayList<>();
+        }
+        functionTypesSetter.accept(this.functionTypes);
+        return this;
+    }
+
+    /**
+     * 功能类型列表
+     * @return functionTypes
+     */
+    public List<String> getFunctionTypes() {
+        return functionTypes;
+    }
+
+    public void setFunctionTypes(List<String> functionTypes) {
+        this.functionTypes = functionTypes;
+    }
+
+    public BatchListModulesRequest withProtocolTypes(List<String> protocolTypes) {
+        this.protocolTypes = protocolTypes;
+        return this;
+    }
+
+    public BatchListModulesRequest addProtocolTypesItem(String protocolTypesItem) {
+        if (this.protocolTypes == null) {
+            this.protocolTypes = new ArrayList<>();
+        }
+        this.protocolTypes.add(protocolTypesItem);
+        return this;
+    }
+
+    public BatchListModulesRequest withProtocolTypes(Consumer<List<String>> protocolTypesSetter) {
+        if (this.protocolTypes == null) {
+            this.protocolTypes = new ArrayList<>();
+        }
+        protocolTypesSetter.accept(this.protocolTypes);
+        return this;
+    }
+
+    /**
+     * 协议类型列表
+     * @return protocolTypes
+     */
+    public List<String> getProtocolTypes() {
+        return protocolTypes;
+    }
+
+    public void setProtocolTypes(List<String> protocolTypes) {
+        this.protocolTypes = protocolTypes;
+    }
+
+    public BatchListModulesRequest withModuleName(String moduleName) {
+        this.moduleName = moduleName;
+        return this;
+    }
+
+    /**
+     * 边缘模块名称
+     * @return moduleName
+     */
+    public String getModuleName() {
+        return moduleName;
+    }
+
+    public void setModuleName(String moduleName) {
+        this.moduleName = moduleName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -292,12 +417,15 @@ public class BatchListModulesRequest {
         BatchListModulesRequest that = (BatchListModulesRequest) obj;
         return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.appType, that.appType)
-            && Objects.equals(this.functionType, that.functionType);
+            && Objects.equals(this.functionType, that.functionType)
+            && Objects.equals(this.functionTypes, that.functionTypes)
+            && Objects.equals(this.protocolTypes, that.protocolTypes)
+            && Objects.equals(this.moduleName, that.moduleName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(edgeNodeId, offset, limit, appType, functionType);
+        return Objects.hash(edgeNodeId, offset, limit, appType, functionType, functionTypes, protocolTypes, moduleName);
     }
 
     @Override
@@ -309,6 +437,9 @@ public class BatchListModulesRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
         sb.append("    functionType: ").append(toIndentedString(functionType)).append("\n");
+        sb.append("    functionTypes: ").append(toIndentedString(functionTypes)).append("\n");
+        sb.append("    protocolTypes: ").append(toIndentedString(protocolTypes)).append("\n");
+        sb.append("    moduleName: ").append(toIndentedString(moduleName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -102,7 +102,7 @@ public class ListSchemasRequest {
     }
 
     /**
-     * **参数解释**： 排序字段。 **约束限制**： 不涉及。 **取值范围**： ASC：表示按升序排序。  DESC：表示按降序排序。 **默认取值**： 不涉及。
+     * **参数解释**： 排序字段。 **约束限制**： 不涉及。 **取值范围**： ASC：表示按升序排序。 DESC：表示按降序排序。 **默认取值**： 不涉及。
      * @return sortDir
      */
     public String getSortDir() {

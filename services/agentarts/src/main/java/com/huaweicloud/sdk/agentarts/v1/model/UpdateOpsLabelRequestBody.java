@@ -19,11 +19,6 @@ public class UpdateOpsLabelRequestBody {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
-    private String type;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -48,23 +43,6 @@ public class UpdateOpsLabelRequestBody {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public UpdateOpsLabelRequestBody withType(String type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 标签的类型（如 free-text 等）。 **约束限制：** 字符串长度为0到100个字符。 **取值范围：** 不涉及。 **默认取值：** 不涉及。 
-     * @return type
-     */
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public UpdateOpsLabelRequestBody withDescription(String description) {
@@ -126,13 +104,13 @@ public class UpdateOpsLabelRequestBody {
             return false;
         }
         UpdateOpsLabelRequestBody that = (UpdateOpsLabelRequestBody) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.enums, that.enums);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enums, that.enums);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, description, enums);
+        return Objects.hash(name, description, enums);
     }
 
     @Override
@@ -140,7 +118,6 @@ public class UpdateOpsLabelRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateOpsLabelRequestBody {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enums: ").append(toIndentedString(enums)).append("\n");
         sb.append("}");

@@ -22,6 +22,11 @@ public class UpdateDcDsRequest {
     private String dsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_name_only")
+
+    private Boolean updateNameOnly;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private UpdateDcDsReqDTO body;
@@ -60,6 +65,23 @@ public class UpdateDcDsRequest {
         this.dsId = dsId;
     }
 
+    public UpdateDcDsRequest withUpdateNameOnly(Boolean updateNameOnly) {
+        this.updateNameOnly = updateNameOnly;
+        return this;
+    }
+
+    /**
+     * 指此配置是否只更新了名称，默认值为false。 - true: 配置中只更新了名称 - false: 配置中包含其他配置参数更新 
+     * @return updateNameOnly
+     */
+    public Boolean getUpdateNameOnly() {
+        return updateNameOnly;
+    }
+
+    public void setUpdateNameOnly(Boolean updateNameOnly) {
+        this.updateNameOnly = updateNameOnly;
+    }
+
     public UpdateDcDsRequest withBody(UpdateDcDsReqDTO body) {
         this.body = body;
         return this;
@@ -96,12 +118,12 @@ public class UpdateDcDsRequest {
         }
         UpdateDcDsRequest that = (UpdateDcDsRequest) obj;
         return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.dsId, that.dsId)
-            && Objects.equals(this.body, that.body);
+            && Objects.equals(this.updateNameOnly, that.updateNameOnly) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(edgeNodeId, dsId, body);
+        return Objects.hash(edgeNodeId, dsId, updateNameOnly, body);
     }
 
     @Override
@@ -110,6 +132,7 @@ public class UpdateDcDsRequest {
         sb.append("class UpdateDcDsRequest {\n");
         sb.append("    edgeNodeId: ").append(toIndentedString(edgeNodeId)).append("\n");
         sb.append("    dsId: ").append(toIndentedString(dsId)).append("\n");
+        sb.append("    updateNameOnly: ").append(toIndentedString(updateNameOnly)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

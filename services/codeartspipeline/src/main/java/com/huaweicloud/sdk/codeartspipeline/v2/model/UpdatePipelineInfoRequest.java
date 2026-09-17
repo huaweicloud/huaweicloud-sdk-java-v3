@@ -22,7 +22,7 @@ public class UpdatePipelineInfoRequest {
     private String pipelineId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "componentId")
+    @JsonProperty(value = "component_id")
 
     private String componentId;
 

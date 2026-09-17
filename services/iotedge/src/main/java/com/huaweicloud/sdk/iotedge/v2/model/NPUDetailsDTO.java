@@ -71,7 +71,7 @@ public class NPUDetailsDTO {
     }
 
     /**
-     * 华为AI加速卡型号，如D310推理卡、D310P推理卡、D910训练卡。
+     * AI加速卡型号，如D310推理卡、D310P推理卡、D910训练卡。
      * @return npuType
      */
     public String getNpuType() {

@@ -33,7 +33,7 @@ public class InfluxdbSlowLogDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cost_time")
 
-    private String costTime;
+    private Integer costTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_time")
@@ -123,7 +123,7 @@ public class InfluxdbSlowLogDetail {
         this.operateType = operateType;
     }
 
-    public InfluxdbSlowLogDetail withCostTime(String costTime) {
+    public InfluxdbSlowLogDetail withCostTime(Integer costTime) {
         this.costTime = costTime;
         return this;
     }
@@ -132,11 +132,11 @@ public class InfluxdbSlowLogDetail {
      * 执行时间。单位：ms
      * @return costTime
      */
-    public String getCostTime() {
+    public Integer getCostTime() {
         return costTime;
     }
 
-    public void setCostTime(String costTime) {
+    public void setCostTime(Integer costTime) {
         this.costTime = costTime;
     }
 

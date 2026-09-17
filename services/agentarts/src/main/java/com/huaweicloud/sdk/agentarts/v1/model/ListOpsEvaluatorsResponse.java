@@ -15,21 +15,72 @@ import java.util.function.Consumer;
 public class ListOpsEvaluatorsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_number")
+
+    private Integer pageNumber;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_size")
+
+    private Integer pageSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "evaluators")
 
-    private List<ListOpsEvaluatorsResponseBodyEvaluators> evaluators = null;
+    private List<OpsListEvaluatorsInfo> evaluators = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
     private Integer total;
 
-    public ListOpsEvaluatorsResponse withEvaluators(List<ListOpsEvaluatorsResponseBodyEvaluators> evaluators) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_pages")
+
+    private Long totalPages;
+
+    public ListOpsEvaluatorsResponse withPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 当前页码。 **约束限制：** 不涉及。 **取值范围：** 正整数。
+     * @return pageNumber
+     */
+    public Integer getPageNumber() {
+        return pageNumber;
+    }
+
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+    }
+
+    public ListOpsEvaluatorsResponse withPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 每页返回的记录条数。 **约束限制：** 不涉及。 **取值范围：** 1~100。
+     * minimum: 1
+     * maximum: 100
+     * @return pageSize
+     */
+    public Integer getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public ListOpsEvaluatorsResponse withEvaluators(List<OpsListEvaluatorsInfo> evaluators) {
         this.evaluators = evaluators;
         return this;
     }
 
-    public ListOpsEvaluatorsResponse addEvaluatorsItem(ListOpsEvaluatorsResponseBodyEvaluators evaluatorsItem) {
+    public ListOpsEvaluatorsResponse addEvaluatorsItem(OpsListEvaluatorsInfo evaluatorsItem) {
         if (this.evaluators == null) {
             this.evaluators = new ArrayList<>();
         }
@@ -37,8 +88,7 @@ public class ListOpsEvaluatorsResponse extends SdkResponse {
         return this;
     }
 
-    public ListOpsEvaluatorsResponse withEvaluators(
-        Consumer<List<ListOpsEvaluatorsResponseBodyEvaluators>> evaluatorsSetter) {
+    public ListOpsEvaluatorsResponse withEvaluators(Consumer<List<OpsListEvaluatorsInfo>> evaluatorsSetter) {
         if (this.evaluators == null) {
             this.evaluators = new ArrayList<>();
         }
@@ -50,11 +100,11 @@ public class ListOpsEvaluatorsResponse extends SdkResponse {
      * **参数解释** 包含评估器元数据、配置信息及状态的详细信息列表。 **取值范围** 元素参考内部定义。 
      * @return evaluators
      */
-    public List<ListOpsEvaluatorsResponseBodyEvaluators> getEvaluators() {
+    public List<OpsListEvaluatorsInfo> getEvaluators() {
         return evaluators;
     }
 
-    public void setEvaluators(List<ListOpsEvaluatorsResponseBodyEvaluators> evaluators) {
+    public void setEvaluators(List<OpsListEvaluatorsInfo> evaluators) {
         this.evaluators = evaluators;
     }
 
@@ -77,6 +127,23 @@ public class ListOpsEvaluatorsResponse extends SdkResponse {
         this.total = total;
     }
 
+    public ListOpsEvaluatorsResponse withTotalPages(Long totalPages) {
+        this.totalPages = totalPages;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 总页数。 **约束限制：** 不涉及。 **取值范围：** 非负整数。
+     * @return totalPages
+     */
+    public Long getTotalPages() {
+        return totalPages;
+    }
+
+    public void setTotalPages(Long totalPages) {
+        this.totalPages = totalPages;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,20 +153,25 @@ public class ListOpsEvaluatorsResponse extends SdkResponse {
             return false;
         }
         ListOpsEvaluatorsResponse that = (ListOpsEvaluatorsResponse) obj;
-        return Objects.equals(this.evaluators, that.evaluators) && Objects.equals(this.total, that.total);
+        return Objects.equals(this.pageNumber, that.pageNumber) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.evaluators, that.evaluators) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.totalPages, that.totalPages);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(evaluators, total);
+        return Objects.hash(pageNumber, pageSize, evaluators, total, totalPages);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListOpsEvaluatorsResponse {\n");
+        sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
+        sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
         sb.append("    evaluators: ").append(toIndentedString(evaluators)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    totalPages: ").append(toIndentedString(totalPages)).append("\n");
         sb.append("}");
         return sb.toString();
     }

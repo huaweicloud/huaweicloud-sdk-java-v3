@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 集群升级流程的执行状态： Init: 表示该升级流程中还未有任何任务开始运行 Running: 表示该升级流程中已有任务开始执行 Pending: 表示该升级流程中有任务执行失败 Success: 表示该升级流程中所有任务都已执行成功 Cancel: 表示该升级流程已被取消 
+ * **参数解释：** 集群升级流程的执行状态 **约束限制：** 不涉及 **取值范围：** - Init：表示该升级流程中还未有任何任务开始运行 - Running：表示该升级流程中已有任务开始执行 - Pending：表示该升级流程中有任务执行失败 - Success：表示该升级流程中所有任务都已执行成功 - Cancel：表示该升级流程已被取消  **默认取值：** 不涉及
  */
 public class WorkFlowPhase {
 

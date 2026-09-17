@@ -167,6 +167,16 @@ public class ShowOpsSynthesisTaskResponse extends SdkResponse {
 
     private EvaluationOpsTaskBaseInfo baseInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_message")
+
+    private String errorMessage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_free")
+
+    private Boolean isFree;
+
     public ShowOpsSynthesisTaskResponse withId(String id) {
         this.id = id;
         return this;
@@ -432,6 +442,40 @@ public class ShowOpsSynthesisTaskResponse extends SdkResponse {
         this.baseInfo = baseInfo;
     }
 
+    public ShowOpsSynthesisTaskResponse withErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 任务失败时的错误信息。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。 
+     * @return errorMessage
+     */
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
+    public ShowOpsSynthesisTaskResponse withIsFree(Boolean isFree) {
+        this.isFree = isFree;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否使用免费额度创建的任务。 **约束限制：** 不涉及。 **取值范围：** - true：免费任务 - false：付费任务 **默认取值：** 不涉及。 
+     * @return isFree
+     */
+    public Boolean getIsFree() {
+        return isFree;
+    }
+
+    public void setIsFree(Boolean isFree) {
+        this.isFree = isFree;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -448,7 +492,8 @@ public class ShowOpsSynthesisTaskResponse extends SdkResponse {
             && Objects.equals(this.status, that.status) && Objects.equals(this.stats, that.stats)
             && Objects.equals(this.usage, that.usage) && Objects.equals(this.modelConfig, that.modelConfig)
             && Objects.equals(this.seedData, that.seedData) && Objects.equals(this.schemas, that.schemas)
-            && Objects.equals(this.baseInfo, that.baseInfo);
+            && Objects.equals(this.baseInfo, that.baseInfo) && Objects.equals(this.errorMessage, that.errorMessage)
+            && Objects.equals(this.isFree, that.isFree);
     }
 
     @Override
@@ -464,7 +509,9 @@ public class ShowOpsSynthesisTaskResponse extends SdkResponse {
             modelConfig,
             seedData,
             schemas,
-            baseInfo);
+            baseInfo,
+            errorMessage,
+            isFree);
     }
 
     @Override
@@ -483,6 +530,8 @@ public class ShowOpsSynthesisTaskResponse extends SdkResponse {
         sb.append("    seedData: ").append(toIndentedString(seedData)).append("\n");
         sb.append("    schemas: ").append(toIndentedString(schemas)).append("\n");
         sb.append("    baseInfo: ").append(toIndentedString(baseInfo)).append("\n");
+        sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+        sb.append("    isFree: ").append(toIndentedString(isFree)).append("\n");
         sb.append("}");
         return sb.toString();
     }

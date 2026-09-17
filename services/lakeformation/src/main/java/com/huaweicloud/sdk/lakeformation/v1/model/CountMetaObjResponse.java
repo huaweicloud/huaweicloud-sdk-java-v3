@@ -42,6 +42,11 @@ public class CountMetaObjResponse extends SdkResponse {
     private Long partitionsCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "datasets_count")
+
+    private Long datasetsCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indexes_count")
 
     private Long indexesCount;
@@ -148,6 +153,24 @@ public class CountMetaObjResponse extends SdkResponse {
         this.partitionsCount = partitionsCount;
     }
 
+    public CountMetaObjResponse withDatasetsCount(Long datasetsCount) {
+        this.datasetsCount = datasetsCount;
+        return this;
+    }
+
+    /**
+     * 数据集数量
+     * minimum: 0
+     * @return datasetsCount
+     */
+    public Long getDatasetsCount() {
+        return datasetsCount;
+    }
+
+    public void setDatasetsCount(Long datasetsCount) {
+        this.datasetsCount = datasetsCount;
+    }
+
     public CountMetaObjResponse withIndexesCount(Long indexesCount) {
         this.indexesCount = indexesCount;
         return this;
@@ -180,6 +203,7 @@ public class CountMetaObjResponse extends SdkResponse {
             && Objects.equals(this.databasesCount, that.databasesCount)
             && Objects.equals(this.tablesCount, that.tablesCount)
             && Objects.equals(this.partitionsCount, that.partitionsCount)
+            && Objects.equals(this.datasetsCount, that.datasetsCount)
             && Objects.equals(this.indexesCount, that.indexesCount);
     }
 
@@ -191,6 +215,7 @@ public class CountMetaObjResponse extends SdkResponse {
             databasesCount,
             tablesCount,
             partitionsCount,
+            datasetsCount,
             indexesCount);
     }
 
@@ -204,6 +229,7 @@ public class CountMetaObjResponse extends SdkResponse {
         sb.append("    databasesCount: ").append(toIndentedString(databasesCount)).append("\n");
         sb.append("    tablesCount: ").append(toIndentedString(tablesCount)).append("\n");
         sb.append("    partitionsCount: ").append(toIndentedString(partitionsCount)).append("\n");
+        sb.append("    datasetsCount: ").append(toIndentedString(datasetsCount)).append("\n");
         sb.append("    indexesCount: ").append(toIndentedString(indexesCount)).append("\n");
         sb.append("}");
         return sb.toString();

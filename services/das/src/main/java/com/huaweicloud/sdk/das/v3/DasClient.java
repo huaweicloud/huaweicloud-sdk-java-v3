@@ -11,6 +11,8 @@ import com.huaweicloud.sdk.das.v3.model.AddInstanceGroupRequest;
 import com.huaweicloud.sdk.das.v3.model.AddInstanceGroupResponse;
 import com.huaweicloud.sdk.das.v3.model.AddInstanceToGroupRequest;
 import com.huaweicloud.sdk.das.v3.model.AddInstanceToGroupResponse;
+import com.huaweicloud.sdk.das.v3.model.AddRequest;
+import com.huaweicloud.sdk.das.v3.model.AddResponse;
 import com.huaweicloud.sdk.das.v3.model.AddSqlLimitingRecordNewRequest;
 import com.huaweicloud.sdk.das.v3.model.AddSqlLimitingRecordNewResponse;
 import com.huaweicloud.sdk.das.v3.model.AddTasksNewRequest;
@@ -21,12 +23,16 @@ import com.huaweicloud.sdk.das.v3.model.BatchDeleteConnectionNewRequest;
 import com.huaweicloud.sdk.das.v3.model.BatchDeleteConnectionNewResponse;
 import com.huaweicloud.sdk.das.v3.model.BatchSendEmailRequest;
 import com.huaweicloud.sdk.das.v3.model.BatchSendEmailResponse;
+import com.huaweicloud.sdk.das.v3.model.BatchSetSqlLimitingSwitchRequest;
+import com.huaweicloud.sdk.das.v3.model.BatchSetSqlLimitingSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.BatchSetSqlSwitchNewRequest;
 import com.huaweicloud.sdk.das.v3.model.BatchSetSqlSwitchNewResponse;
 import com.huaweicloud.sdk.das.v3.model.BatchSubscribeReportRequest;
 import com.huaweicloud.sdk.das.v3.model.BatchSubscribeReportResponse;
 import com.huaweicloud.sdk.das.v3.model.CancelConnectionProcessRequest;
 import com.huaweicloud.sdk.das.v3.model.CancelConnectionProcessResponse;
+import com.huaweicloud.sdk.das.v3.model.CancelInstanceProcessRequest;
+import com.huaweicloud.sdk.das.v3.model.CancelInstanceProcessResponse;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsResponse;
 import com.huaweicloud.sdk.das.v3.model.CancelShareNewRequest;
@@ -37,6 +43,8 @@ import com.huaweicloud.sdk.das.v3.model.ChangeDeadLockSwitchNewRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeDeadLockSwitchNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeFullDeadLockSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeFullDeadLockSwitchResponse;
+import com.huaweicloud.sdk.das.v3.model.ChangeKillTaskSwitchRequest;
+import com.huaweicloud.sdk.das.v3.model.ChangeKillTaskSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangePaymentModeNewRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangePaymentModeNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeQuotaNewRequest;
@@ -53,8 +61,12 @@ import com.huaweicloud.sdk.das.v3.model.CheckCredentialRequest;
 import com.huaweicloud.sdk.das.v3.model.CheckCredentialResponse;
 import com.huaweicloud.sdk.das.v3.model.CheckHealthReportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.CheckHealthReportTaskResponse;
+import com.huaweicloud.sdk.das.v3.model.CompareSlowLogTemplatesRequest;
+import com.huaweicloud.sdk.das.v3.model.CompareSlowLogTemplatesResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateBinlogTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateBinlogTaskResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateConnectionRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateConnectionResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateDbsConnectionRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateDbsConnectionResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateFullSqlBucketRequest;
@@ -69,8 +81,18 @@ import com.huaweicloud.sdk.das.v3.model.CreateInstanceConnectionRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateInstanceConnectionResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateInstanceHealthReportTaskNewRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateInstanceHealthReportTaskNewResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateKillTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateKillTaskResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateMissingIndexExportTaskNewRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateMissingIndexExportTaskNewResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateObsBucketRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateObsBucketResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateSharedConnectionRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateSharedConnectionResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateSlowLogExportTaskNewRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateSlowLogExportTaskNewResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateSnapshotsRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateSnapshotsResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateSpaceAnalysisTaskRequest;
@@ -81,6 +103,8 @@ import com.huaweicloud.sdk.das.v3.model.CreateTuningRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateTuningResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateWdrReportRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateWdrReportResponse;
+import com.huaweicloud.sdk.das.v3.model.DeleteAllSessionsRequest;
+import com.huaweicloud.sdk.das.v3.model.DeleteAllSessionsResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteBinlogTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteBinlogTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteDbObjNewRequest;
@@ -91,6 +115,8 @@ import com.huaweicloud.sdk.das.v3.model.DeleteEmailTemplateRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteEmailTemplateResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteExportTaskNewRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteExportTaskNewResponse;
+import com.huaweicloud.sdk.das.v3.model.DeleteExportTaskObsFileNewRequest;
+import com.huaweicloud.sdk.das.v3.model.DeleteExportTaskObsFileNewResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteFullSqlExportTaskObsFileRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteFullSqlExportTaskObsFileResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteHistoryTransactionExportTaskRequest;
@@ -101,6 +127,8 @@ import com.huaweicloud.sdk.das.v3.model.DeleteProcessRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteProcessResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteSqlLimitRulesResponse;
+import com.huaweicloud.sdk.das.v3.model.DeleteSqlLimitingRecordRequest;
+import com.huaweicloud.sdk.das.v3.model.DeleteSqlLimitingRecordResponse;
 import com.huaweicloud.sdk.das.v3.model.EnableQuotaRequest;
 import com.huaweicloud.sdk.das.v3.model.EnableQuotaResponse;
 import com.huaweicloud.sdk.das.v3.model.ExecuteExportTaskRequest;
@@ -117,8 +145,12 @@ import com.huaweicloud.sdk.das.v3.model.ExecuteTestConnectionNewRequest;
 import com.huaweicloud.sdk.das.v3.model.ExecuteTestConnectionNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ExecuteTuningRequest;
 import com.huaweicloud.sdk.das.v3.model.ExecuteTuningResponse;
+import com.huaweicloud.sdk.das.v3.model.ExportBinlogRequest;
+import com.huaweicloud.sdk.das.v3.model.ExportBinlogResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportFullSqlDetailsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportFullSqlDetailsResponse;
+import com.huaweicloud.sdk.das.v3.model.ExportFullSqlRequest;
+import com.huaweicloud.sdk.das.v3.model.ExportFullSqlResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportInstanceListNewRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportInstanceListNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowQueryLogsRequest;
@@ -139,10 +171,14 @@ import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTrendDetailsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTrendDetailsResponse;
 import com.huaweicloud.sdk.das.v3.model.ImportExportObsObjectsRequest;
 import com.huaweicloud.sdk.das.v3.model.ImportExportObsObjectsResponse;
+import com.huaweicloud.sdk.das.v3.model.InvokeSlowLogArchiveRequest;
+import com.huaweicloud.sdk.das.v3.model.InvokeSlowLogArchiveResponse;
 import com.huaweicloud.sdk.das.v3.model.InvokeWdrReportRequest;
 import com.huaweicloud.sdk.das.v3.model.InvokeWdrReportResponse;
 import com.huaweicloud.sdk.das.v3.model.ListAllTypeInstancesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListAllTypeInstancesResponse;
+import com.huaweicloud.sdk.das.v3.model.ListAnalysisResultRequest;
+import com.huaweicloud.sdk.das.v3.model.ListAnalysisResultResponse;
 import com.huaweicloud.sdk.das.v3.model.ListApiVersionsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListApiVersionsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListAutoIncrementUsageRequest;
@@ -151,12 +187,18 @@ import com.huaweicloud.sdk.das.v3.model.ListBinlogExportsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListBinlogExportsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListBinlogFilesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListBinlogFilesResponse;
+import com.huaweicloud.sdk.das.v3.model.ListBucketNameRequest;
+import com.huaweicloud.sdk.das.v3.model.ListBucketNameResponse;
 import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesResponse;
 import com.huaweicloud.sdk.das.v3.model.ListConnectionProcessesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListConnectionProcessesResponse;
+import com.huaweicloud.sdk.das.v3.model.ListConnectionRequest;
+import com.huaweicloud.sdk.das.v3.model.ListConnectionResponse;
 import com.huaweicloud.sdk.das.v3.model.ListConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListConnectionsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListDatabaseInfosRequest;
+import com.huaweicloud.sdk.das.v3.model.ListDatabaseInfosResponse;
 import com.huaweicloud.sdk.das.v3.model.ListDatabaseObjectsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListDatabaseObjectsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListDbNamesRequest;
@@ -171,22 +213,40 @@ import com.huaweicloud.sdk.das.v3.model.ListEmailRecordRequest;
 import com.huaweicloud.sdk.das.v3.model.ListEmailRecordResponse;
 import com.huaweicloud.sdk.das.v3.model.ListEmailTemplateRequest;
 import com.huaweicloud.sdk.das.v3.model.ListEmailTemplateResponse;
+import com.huaweicloud.sdk.das.v3.model.ListEmergencyLogsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListEmergencyLogsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListEnterpriseProjectsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListEnterpriseProjectsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListExceptionMetricsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListExceptionMetricsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListFullDeadLocksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListFullDeadLocksResponse;
 import com.huaweicloud.sdk.das.v3.model.ListFullSqlExportTasksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListFullSqlExportTasksResponse;
+import com.huaweicloud.sdk.das.v3.model.ListFullSqlTasksApiRequest;
+import com.huaweicloud.sdk.das.v3.model.ListFullSqlTasksApiResponse;
 import com.huaweicloud.sdk.das.v3.model.ListFullSqlTasksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListFullSqlTasksResponse;
+import com.huaweicloud.sdk.das.v3.model.ListGaussDbInstanceConfigurationsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListGaussDbInstanceConfigurationsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.ListHistoryTransactionExportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.ListHistoryTransactionExportTaskResponse;
+import com.huaweicloud.sdk.das.v3.model.ListHistoryTransactionsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListHistoryTransactionsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListIndexUsageDetailsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListIndexUsageDetailsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListIndexUsageExportTasksRequest;
+import com.huaweicloud.sdk.das.v3.model.ListIndexUsageExportTasksResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInspectionReportRequest;
 import com.huaweicloud.sdk.das.v3.model.ListInspectionReportResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceDistributionRequest;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceDistributionResponse;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceEmergencyLogsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceEmergencyLogsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceGroupRequest;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceGroupResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceHealthReportTasksRequest;
@@ -195,8 +255,16 @@ import com.huaweicloud.sdk.das.v3.model.ListInstanceMultiNodesSingleMetricReques
 import com.huaweicloud.sdk.das.v3.model.ListInstanceMultiNodesSingleMetricResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceNodesInfoRequest;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceNodesInfoResponse;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceProcessesRequest;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceProcessesResponse;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceSubscriptionRequest;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceSubscriptionResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceTopSlowLogRequest;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceTopSlowLogResponse;
+import com.huaweicloud.sdk.das.v3.model.ListInstancesApiRequest;
+import com.huaweicloud.sdk.das.v3.model.ListInstancesApiResponse;
+import com.huaweicloud.sdk.das.v3.model.ListKillProcessHistoryRequest;
+import com.huaweicloud.sdk.das.v3.model.ListKillProcessHistoryResponse;
 import com.huaweicloud.sdk.das.v3.model.ListLockBlockingDbRequest;
 import com.huaweicloud.sdk.das.v3.model.ListLockBlockingDbResponse;
 import com.huaweicloud.sdk.das.v3.model.ListLockBlockingDetailRequest;
@@ -205,18 +273,40 @@ import com.huaweicloud.sdk.das.v3.model.ListLockBlockingRelationshipRequest;
 import com.huaweicloud.sdk.das.v3.model.ListLockBlockingRelationshipResponse;
 import com.huaweicloud.sdk.das.v3.model.ListMetadataLocksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListMetadataLocksResponse;
+import com.huaweicloud.sdk.das.v3.model.ListMissingIndexDetailsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListMissingIndexDetailsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListMissingIndexExportTasksRequest;
+import com.huaweicloud.sdk.das.v3.model.ListMissingIndexExportTasksResponse;
 import com.huaweicloud.sdk.das.v3.model.ListNotSetChargeModeInstanceRequest;
 import com.huaweicloud.sdk.das.v3.model.ListNotSetChargeModeInstanceResponse;
+import com.huaweicloud.sdk.das.v3.model.ListObsBucketsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListObsBucketsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListObsObjectsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListObsObjectsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListPostgresProcessesRequest;
+import com.huaweicloud.sdk.das.v3.model.ListPostgresProcessesResponse;
 import com.huaweicloud.sdk.das.v3.model.ListProcessesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListProcessesResponse;
+import com.huaweicloud.sdk.das.v3.model.ListRapidGrowthTablesRequest;
+import com.huaweicloud.sdk.das.v3.model.ListRapidGrowthTablesResponse;
+import com.huaweicloud.sdk.das.v3.model.ListRdsInstanceConfigurationsNewRequest;
+import com.huaweicloud.sdk.das.v3.model.ListRdsInstanceConfigurationsNewResponse;
+import com.huaweicloud.sdk.das.v3.model.ListRiskItemsApiRequest;
+import com.huaweicloud.sdk.das.v3.model.ListRiskItemsApiResponse;
 import com.huaweicloud.sdk.das.v3.model.ListRiskItemsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListRiskItemsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListRiskTrendRequest;
 import com.huaweicloud.sdk.das.v3.model.ListRiskTrendResponse;
+import com.huaweicloud.sdk.das.v3.model.ListRisksRequest;
+import com.huaweicloud.sdk.das.v3.model.ListRisksResponse;
 import com.huaweicloud.sdk.das.v3.model.ListSchemaNamesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListSchemaNamesResponse;
 import com.huaweicloud.sdk.das.v3.model.ListSharedConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListSharedConnectionsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListSlowLogArchivesRequest;
+import com.huaweicloud.sdk.das.v3.model.ListSlowLogArchivesResponse;
+import com.huaweicloud.sdk.das.v3.model.ListSlowLogExportTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.ListSlowLogExportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.ListSmnTopicsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListSmnTopicsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListSnapshots4ApiRequest;
@@ -235,6 +325,12 @@ import com.huaweicloud.sdk.das.v3.model.ListSqlTemplateDatabasesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListSqlTemplateDatabasesResponse;
 import com.huaweicloud.sdk.das.v3.model.ListSqlTemplatesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListSqlTemplatesResponse;
+import com.huaweicloud.sdk.das.v3.model.ListSubUsersRequest;
+import com.huaweicloud.sdk.das.v3.model.ListSubUsersResponse;
+import com.huaweicloud.sdk.das.v3.model.ListSupportedMetricNamesRequest;
+import com.huaweicloud.sdk.das.v3.model.ListSupportedMetricNamesResponse;
+import com.huaweicloud.sdk.das.v3.model.ListSupportedMetricsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListSupportedMetricsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListTasksByBatchIdRequest;
 import com.huaweicloud.sdk.das.v3.model.ListTasksByBatchIdResponse;
 import com.huaweicloud.sdk.das.v3.model.ListTasksBySqlTemplateIdRequest;
@@ -251,14 +347,30 @@ import com.huaweicloud.sdk.das.v3.model.ListUserInstanceListRequest;
 import com.huaweicloud.sdk.das.v3.model.ListUserInstanceListResponse;
 import com.huaweicloud.sdk.das.v3.model.LoginBuiltInAccountRequest;
 import com.huaweicloud.sdk.das.v3.model.LoginBuiltInAccountResponse;
+import com.huaweicloud.sdk.das.v3.model.LoginRequest;
+import com.huaweicloud.sdk.das.v3.model.LoginResponse;
 import com.huaweicloud.sdk.das.v3.model.LogoffBuiltInAccountRequest;
 import com.huaweicloud.sdk.das.v3.model.LogoffBuiltInAccountResponse;
+import com.huaweicloud.sdk.das.v3.model.ModifyConnectionRequest;
+import com.huaweicloud.sdk.das.v3.model.ModifyConnectionResponse;
 import com.huaweicloud.sdk.das.v3.model.ParseDeadLockRequest;
 import com.huaweicloud.sdk.das.v3.model.ParseDeadLockResponse;
+import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRuleNewRequest;
+import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRuleNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesResponse;
+import com.huaweicloud.sdk.das.v3.model.PreviewSessionForKillProcessTaskNewRequest;
+import com.huaweicloud.sdk.das.v3.model.PreviewSessionForKillProcessTaskNewResponse;
+import com.huaweicloud.sdk.das.v3.model.PutGlobalPrivacyNewRequest;
+import com.huaweicloud.sdk.das.v3.model.PutGlobalPrivacyNewResponse;
+import com.huaweicloud.sdk.das.v3.model.RecollectIndexUsageNewRequest;
+import com.huaweicloud.sdk.das.v3.model.RecollectIndexUsageNewResponse;
+import com.huaweicloud.sdk.das.v3.model.RecollectMissingIndexNewRequest;
+import com.huaweicloud.sdk.das.v3.model.RecollectMissingIndexNewResponse;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.RetryBinlogPartRequest;
+import com.huaweicloud.sdk.das.v3.model.RetryBinlogPartResponse;
 import com.huaweicloud.sdk.das.v3.model.RetryBinlogTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.RetryBinlogTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.SaveCredentialForBatchInspectionRequest;
@@ -273,8 +385,26 @@ import com.huaweicloud.sdk.das.v3.model.SearchErrorInfoSource4ApiRequest;
 import com.huaweicloud.sdk.das.v3.model.SearchErrorInfoSource4ApiResponse;
 import com.huaweicloud.sdk.das.v3.model.SearchNewRequest;
 import com.huaweicloud.sdk.das.v3.model.SearchNewResponse;
+import com.huaweicloud.sdk.das.v3.model.SetFullDeadLockSwitchNewRequest;
+import com.huaweicloud.sdk.das.v3.model.SetFullDeadLockSwitchNewResponse;
+import com.huaweicloud.sdk.das.v3.model.SetHistoryTransactionSwitchNewRequest;
+import com.huaweicloud.sdk.das.v3.model.SetHistoryTransactionSwitchNewResponse;
+import com.huaweicloud.sdk.das.v3.model.SetIndexUsageSwitchNewRequest;
+import com.huaweicloud.sdk.das.v3.model.SetIndexUsageSwitchNewResponse;
 import com.huaweicloud.sdk.das.v3.model.SetLockBlockingSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.SetLockBlockingSwitchResponse;
+import com.huaweicloud.sdk.das.v3.model.SetLongHistoryTransactionSwitchNewRequest;
+import com.huaweicloud.sdk.das.v3.model.SetLongHistoryTransactionSwitchNewResponse;
+import com.huaweicloud.sdk.das.v3.model.SetMetricThresholdNewRequest;
+import com.huaweicloud.sdk.das.v3.model.SetMetricThresholdNewResponse;
+import com.huaweicloud.sdk.das.v3.model.SetMissingIndexSwitchNewRequest;
+import com.huaweicloud.sdk.das.v3.model.SetMissingIndexSwitchNewResponse;
+import com.huaweicloud.sdk.das.v3.model.SetRapidGrowthThresholdNewRequest;
+import com.huaweicloud.sdk.das.v3.model.SetRapidGrowthThresholdNewResponse;
+import com.huaweicloud.sdk.das.v3.model.SetSlowLogSwitchNewRequest;
+import com.huaweicloud.sdk.das.v3.model.SetSlowLogSwitchNewResponse;
+import com.huaweicloud.sdk.das.v3.model.SetSqlLimitingSwitchNewRequest;
+import com.huaweicloud.sdk.das.v3.model.SetSqlLimitingSwitchNewResponse;
 import com.huaweicloud.sdk.das.v3.model.SetSqlSwitchNewRequest;
 import com.huaweicloud.sdk.das.v3.model.SetSqlSwitchNewResponse;
 import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricRequest;
@@ -293,6 +423,8 @@ import com.huaweicloud.sdk.das.v3.model.ShowBinlogTaskInfoRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowBinlogTaskInfoResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowClouddbaGetSearchPathFlagNewRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowClouddbaGetSearchPathFlagNewResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowConnectionDetailRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowConnectionDetailResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowCredentialRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowCredentialResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDasCloudDbaPriceRequest;
@@ -303,6 +435,8 @@ import com.huaweicloud.sdk.das.v3.model.ShowDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDdsConnectionStatRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDdsConnectionStatResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowDdsSlowLogTrendRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowDdsSlowLogTrendResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDeadLockAnalysisResultRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDeadLockAnalysisResultResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDeadLockOriginDataRequest;
@@ -335,6 +469,8 @@ import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchNewRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowFullSqlSampleRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowFullSqlSampleResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowGlobalPrivacyNewRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowGlobalPrivacyNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowHealthReportSettingsRequest;
@@ -343,8 +479,16 @@ import com.huaweicloud.sdk.das.v3.model.ShowHistoryTransactionExportTaskInfoRequ
 import com.huaweicloud.sdk.das.v3.model.ShowHistoryTransactionExportTaskInfoResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowHistoryTransactionSwitchNewRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowHistoryTransactionSwitchNewResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowIamUserRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowIamUserResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowIndexUsageStatisticsRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowIndexUsageStatisticsResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowIndexUsageSwitchNewRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowIndexUsageSwitchNewResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowIndexUsageTrendRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowIndexUsageTrendResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowInstanceDistributionRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowInstanceDistributionResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReport4ApiRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReport4ApiResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportRequest;
@@ -357,6 +501,10 @@ import com.huaweicloud.sdk.das.v3.model.ShowInstanceMetricRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceMetricResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceNodesInfoRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceNodesInfoResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowInstanceTopSlowLogRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowInstanceTopSlowLogResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowIsAdminUserNewRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowIsAdminUserNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowIsSignedProtocolRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowIsSignedProtocolResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowKillProcessTaskRequest;
@@ -369,6 +517,8 @@ import com.huaweicloud.sdk.das.v3.model.ShowLatestDeadLockSnapshotRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowLatestDeadLockSnapshotResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowLatestInstanceHealthReportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowLatestInstanceHealthReportResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowLatestSpaceRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowLatestSpaceResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingStatisticsRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingStatisticsResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingSwitchRequest;
@@ -383,16 +533,48 @@ import com.huaweicloud.sdk.das.v3.model.ShowMetaLockSnapshotRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowMetaLockSnapshotResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowMetricNamesSupportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowMetricNamesSupportResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowMetricThresholdRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowMetricThresholdResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowMissingIndexScriptRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowMissingIndexScriptResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowMissingIndexStatisticsRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowMissingIndexStatisticsResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowMissingIndexSwitchRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowMissingIndexSwitchResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowMissingIndexTrendRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowMissingIndexTrendResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowNameListRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowNameListResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowNodeMetricsRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowNodeMetricsResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowObsBucketAclRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowObsBucketAclResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowOpeningInfoRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowOpeningInfoResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowRiskTrendRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowRiskTrendResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowSensitiveOperationSwitchNewRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowSensitiveOperationSwitchNewResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowSingleMetricRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowSingleMetricResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSingleTemplateTrendRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSingleTemplateTrendResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowSlowLogArchiveLinkRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowSlowLogArchiveLinkResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowSlowLogDetailSampleRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowSlowLogDetailSampleResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowSlowLogStatisticsNewRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowSlowLogStatisticsNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSlowLogSwitchNewRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSlowLogSwitchNewResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowSlowLogTopInfoNewRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowSlowLogTopInfoNewResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowSlowLogTrendNewRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowSlowLogTrendNewResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowSpaceTrendRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowSpaceTrendResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlExecutionPlanRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlExecutionPlanResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlExplainRequest;
@@ -401,6 +583,12 @@ import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitJobInfoRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitJobInfoResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitSwitchStatusResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitingInfoRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitingInfoResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitingJobInfoRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitingJobInfoResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitingRecordRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitingRecordResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitingSwitchNewRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitingSwitchNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlSwitchStatusRequest;
@@ -411,6 +599,12 @@ import com.huaweicloud.sdk.das.v3.model.ShowSupportKeyStringRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSupportKeyStringResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSupportedEnginesRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSupportedEnginesResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowTopDataRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowTopDataResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowTopSlowLogRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowTopSlowLogResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowTopTrendRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowTopTrendResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowTransactionSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowTransactionSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowTuningRequest;
@@ -429,10 +623,16 @@ import com.huaweicloud.sdk.das.v3.model.StartAnalysisSessionRequest;
 import com.huaweicloud.sdk.das.v3.model.StartAnalysisSessionResponse;
 import com.huaweicloud.sdk.das.v3.model.StopBinlogTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.StopBinlogTaskResponse;
+import com.huaweicloud.sdk.das.v3.model.StopKillTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.StopKillTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.SubscribeInstanceReportNewRequest;
 import com.huaweicloud.sdk.das.v3.model.SubscribeInstanceReportNewResponse;
 import com.huaweicloud.sdk.das.v3.model.SwitchFullsqlSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.SwitchFullsqlSwitchResponse;
+import com.huaweicloud.sdk.das.v3.model.SwitchSqlLimitingRuleNewRequest;
+import com.huaweicloud.sdk.das.v3.model.SwitchSqlLimitingRuleNewResponse;
+import com.huaweicloud.sdk.das.v3.model.SyncConnectionsNewRequest;
+import com.huaweicloud.sdk.das.v3.model.SyncConnectionsNewResponse;
 import com.huaweicloud.sdk.das.v3.model.SynchronizeInstanceListNewRequest;
 import com.huaweicloud.sdk.das.v3.model.SynchronizeInstanceListNewResponse;
 import com.huaweicloud.sdk.das.v3.model.SynchronizeInstancesRequest;
@@ -453,10 +653,14 @@ import com.huaweicloud.sdk.das.v3.model.UpdateInstanceGroupRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateInstanceGroupResponse;
 import com.huaweicloud.sdk.das.v3.model.UpdateSearchPathFlagRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateSearchPathFlagResponse;
+import com.huaweicloud.sdk.das.v3.model.UpdateSensitiveOperationSwitchRequest;
+import com.huaweicloud.sdk.das.v3.model.UpdateSensitiveOperationSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.UpdateSharedInfoNewRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateSharedInfoNewResponse;
 import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesResponse;
+import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitingRecordNewRequest;
+import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitingRecordNewResponse;
 import com.huaweicloud.sdk.das.v3.model.VerifyConnectionNewRequest;
 import com.huaweicloud.sdk.das.v3.model.VerifyConnectionNewResponse;
 
@@ -716,6 +920,34 @@ public class DasClient {
     /**
      * 创建全量SQL明细解析任务
      *
+     * Add
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddRequest 请求对象
+     * @return AddResponse
+     */
+    public AddResponse add(AddRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.add);
+    }
+
+    /**
+     * 创建全量SQL明细解析任务
+     *
+     * Add
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddRequest 请求对象
+     * @return SyncInvoker<AddRequest, AddResponse>
+     */
+    public SyncInvoker<AddRequest, AddResponse> addInvoker(AddRequest request) {
+        return new SyncInvoker<>(request, DasMeta.add, hcClient);
+    }
+
+    /**
+     * 创建全量SQL明细解析任务
+     *
      * 创建全量SQL明细解析任务
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -768,6 +1000,35 @@ public class DasClient {
     public SyncInvoker<BatchAddFullSqlTasksRequest, BatchAddFullSqlTasksResponse> batchAddFullSqlTasksInvoker(
         BatchAddFullSqlTasksRequest request) {
         return new SyncInvoker<>(request, DasMeta.batchAddFullSqlTasks, hcClient);
+    }
+
+    /**
+     * 批量设置SQL限流开关
+     *
+     * Sql Limitbatch Set Switch New
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchSetSqlLimitingSwitchRequest 请求对象
+     * @return BatchSetSqlLimitingSwitchResponse
+     */
+    public BatchSetSqlLimitingSwitchResponse batchSetSqlLimitingSwitch(BatchSetSqlLimitingSwitchRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.batchSetSqlLimitingSwitch);
+    }
+
+    /**
+     * 批量设置SQL限流开关
+     *
+     * Sql Limitbatch Set Switch New
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchSetSqlLimitingSwitchRequest 请求对象
+     * @return SyncInvoker<BatchSetSqlLimitingSwitchRequest, BatchSetSqlLimitingSwitchResponse>
+     */
+    public SyncInvoker<BatchSetSqlLimitingSwitchRequest, BatchSetSqlLimitingSwitchResponse> batchSetSqlLimitingSwitchInvoker(
+        BatchSetSqlLimitingSwitchRequest request) {
+        return new SyncInvoker<>(request, DasMeta.batchSetSqlLimitingSwitch, hcClient);
     }
 
     /**
@@ -829,6 +1090,64 @@ public class DasClient {
     }
 
     /**
+     * 删除会话
+     *
+     * 删除会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelInstanceProcessRequest 请求对象
+     * @return CancelInstanceProcessResponse
+     */
+    public CancelInstanceProcessResponse cancelInstanceProcess(CancelInstanceProcessRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.cancelInstanceProcess);
+    }
+
+    /**
+     * 删除会话
+     *
+     * 删除会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelInstanceProcessRequest 请求对象
+     * @return SyncInvoker<CancelInstanceProcessRequest, CancelInstanceProcessResponse>
+     */
+    public SyncInvoker<CancelInstanceProcessRequest, CancelInstanceProcessResponse> cancelInstanceProcessInvoker(
+        CancelInstanceProcessRequest request) {
+        return new SyncInvoker<>(request, DasMeta.cancelInstanceProcess, hcClient);
+    }
+
+    /**
+     * 设置自治限流开关
+     *
+     * Change Kill Task Switch
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeKillTaskSwitchRequest 请求对象
+     * @return ChangeKillTaskSwitchResponse
+     */
+    public ChangeKillTaskSwitchResponse changeKillTaskSwitch(ChangeKillTaskSwitchRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.changeKillTaskSwitch);
+    }
+
+    /**
+     * 设置自治限流开关
+     *
+     * Change Kill Task Switch
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeKillTaskSwitchRequest 请求对象
+     * @return SyncInvoker<ChangeKillTaskSwitchRequest, ChangeKillTaskSwitchResponse>
+     */
+    public SyncInvoker<ChangeKillTaskSwitchRequest, ChangeKillTaskSwitchResponse> changeKillTaskSwitchInvoker(
+        ChangeKillTaskSwitchRequest request) {
+        return new SyncInvoker<>(request, DasMeta.changeKillTaskSwitch, hcClient);
+    }
+
+    /**
      * 修改配额
      *
      * 修改配额
@@ -887,6 +1206,35 @@ public class DasClient {
     }
 
     /**
+     * 对比慢日志模板列表
+     *
+     * 对比慢日志模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CompareSlowLogTemplatesRequest 请求对象
+     * @return CompareSlowLogTemplatesResponse
+     */
+    public CompareSlowLogTemplatesResponse compareSlowLogTemplates(CompareSlowLogTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.compareSlowLogTemplates);
+    }
+
+    /**
+     * 对比慢日志模板列表
+     *
+     * 对比慢日志模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CompareSlowLogTemplatesRequest 请求对象
+     * @return SyncInvoker<CompareSlowLogTemplatesRequest, CompareSlowLogTemplatesResponse>
+     */
+    public SyncInvoker<CompareSlowLogTemplatesRequest, CompareSlowLogTemplatesResponse> compareSlowLogTemplatesInvoker(
+        CompareSlowLogTemplatesRequest request) {
+        return new SyncInvoker<>(request, DasMeta.compareSlowLogTemplates, hcClient);
+    }
+
+    /**
      * 创建binlog解析任务
      *
      * 创建binlog解析任务
@@ -913,6 +1261,35 @@ public class DasClient {
     public SyncInvoker<CreateBinlogTaskRequest, CreateBinlogTaskResponse> createBinlogTaskInvoker(
         CreateBinlogTaskRequest request) {
         return new SyncInvoker<>(request, DasMeta.createBinlogTask, hcClient);
+    }
+
+    /**
+     * 创建实例连接
+     *
+     * 创建实例连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateConnectionRequest 请求对象
+     * @return CreateConnectionResponse
+     */
+    public CreateConnectionResponse createConnection(CreateConnectionRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.createConnection);
+    }
+
+    /**
+     * 创建实例连接
+     *
+     * 创建实例连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateConnectionRequest 请求对象
+     * @return SyncInvoker<CreateConnectionRequest, CreateConnectionResponse>
+     */
+    public SyncInvoker<CreateConnectionRequest, CreateConnectionResponse> createConnectionInvoker(
+        CreateConnectionRequest request) {
+        return new SyncInvoker<>(request, DasMeta.createConnection, hcClient);
     }
 
     /**
@@ -1034,6 +1411,152 @@ public class DasClient {
     }
 
     /**
+     * 添加自动kill会话任务
+     *
+     * Create Kill Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateKillTaskRequest 请求对象
+     * @return CreateKillTaskResponse
+     */
+    public CreateKillTaskResponse createKillTask(CreateKillTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.createKillTask);
+    }
+
+    /**
+     * 添加自动kill会话任务
+     *
+     * Create Kill Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateKillTaskRequest 请求对象
+     * @return SyncInvoker<CreateKillTaskRequest, CreateKillTaskResponse>
+     */
+    public SyncInvoker<CreateKillTaskRequest, CreateKillTaskResponse> createKillTaskInvoker(
+        CreateKillTaskRequest request) {
+        return new SyncInvoker<>(request, DasMeta.createKillTask, hcClient);
+    }
+
+    /**
+     * 创建缺失索引导出任务
+     *
+     * 创建缺失索引导出任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateMissingIndexExportTaskNewRequest 请求对象
+     * @return CreateMissingIndexExportTaskNewResponse
+     */
+    public CreateMissingIndexExportTaskNewResponse createMissingIndexExportTaskNew(
+        CreateMissingIndexExportTaskNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.createMissingIndexExportTaskNew);
+    }
+
+    /**
+     * 创建缺失索引导出任务
+     *
+     * 创建缺失索引导出任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateMissingIndexExportTaskNewRequest 请求对象
+     * @return SyncInvoker<CreateMissingIndexExportTaskNewRequest, CreateMissingIndexExportTaskNewResponse>
+     */
+    public SyncInvoker<CreateMissingIndexExportTaskNewRequest, CreateMissingIndexExportTaskNewResponse> createMissingIndexExportTaskNewInvoker(
+        CreateMissingIndexExportTaskNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.createMissingIndexExportTaskNew, hcClient);
+    }
+
+    /**
+     * 创建OBS桶
+     *
+     * Create Obs Bucket
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateObsBucketRequest 请求对象
+     * @return CreateObsBucketResponse
+     */
+    public CreateObsBucketResponse createObsBucket(CreateObsBucketRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.createObsBucket);
+    }
+
+    /**
+     * 创建OBS桶
+     *
+     * Create Obs Bucket
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateObsBucketRequest 请求对象
+     * @return SyncInvoker<CreateObsBucketRequest, CreateObsBucketResponse>
+     */
+    public SyncInvoker<CreateObsBucketRequest, CreateObsBucketResponse> createObsBucketInvoker(
+        CreateObsBucketRequest request) {
+        return new SyncInvoker<>(request, DasMeta.createObsBucket, hcClient);
+    }
+
+    /**
+     * 创建共享链接
+     *
+     * 创建共享链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSharedConnectionRequest 请求对象
+     * @return CreateSharedConnectionResponse
+     */
+    public CreateSharedConnectionResponse createSharedConnection(CreateSharedConnectionRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.createSharedConnection);
+    }
+
+    /**
+     * 创建共享链接
+     *
+     * 创建共享链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSharedConnectionRequest 请求对象
+     * @return SyncInvoker<CreateSharedConnectionRequest, CreateSharedConnectionResponse>
+     */
+    public SyncInvoker<CreateSharedConnectionRequest, CreateSharedConnectionResponse> createSharedConnectionInvoker(
+        CreateSharedConnectionRequest request) {
+        return new SyncInvoker<>(request, DasMeta.createSharedConnection, hcClient);
+    }
+
+    /**
+     * 创建慢日志导出任务
+     *
+     * 创建慢日志导出任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSlowLogExportTaskNewRequest 请求对象
+     * @return CreateSlowLogExportTaskNewResponse
+     */
+    public CreateSlowLogExportTaskNewResponse createSlowLogExportTaskNew(CreateSlowLogExportTaskNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.createSlowLogExportTaskNew);
+    }
+
+    /**
+     * 创建慢日志导出任务
+     *
+     * 创建慢日志导出任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSlowLogExportTaskNewRequest 请求对象
+     * @return SyncInvoker<CreateSlowLogExportTaskNewRequest, CreateSlowLogExportTaskNewResponse>
+     */
+    public SyncInvoker<CreateSlowLogExportTaskNewRequest, CreateSlowLogExportTaskNewResponse> createSlowLogExportTaskNewInvoker(
+        CreateSlowLogExportTaskNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.createSlowLogExportTaskNew, hcClient);
+    }
+
+    /**
      * 触发WDR
      *
      * 触发WDR
@@ -1060,6 +1583,35 @@ public class DasClient {
     public SyncInvoker<CreateWdrReportRequest, CreateWdrReportResponse> createWdrReportInvoker(
         CreateWdrReportRequest request) {
         return new SyncInvoker<>(request, DasMeta.createWdrReport, hcClient);
+    }
+
+    /**
+     * 一键kill所有会话
+     *
+     * Delete All Sessions
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAllSessionsRequest 请求对象
+     * @return DeleteAllSessionsResponse
+     */
+    public DeleteAllSessionsResponse deleteAllSessions(DeleteAllSessionsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.deleteAllSessions);
+    }
+
+    /**
+     * 一键kill所有会话
+     *
+     * Delete All Sessions
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAllSessionsRequest 请求对象
+     * @return SyncInvoker<DeleteAllSessionsRequest, DeleteAllSessionsResponse>
+     */
+    public SyncInvoker<DeleteAllSessionsRequest, DeleteAllSessionsResponse> deleteAllSessionsInvoker(
+        DeleteAllSessionsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.deleteAllSessions, hcClient);
     }
 
     /**
@@ -1150,6 +1702,35 @@ public class DasClient {
     }
 
     /**
+     * 删除导出任务OBS文件
+     *
+     * 删除导出任务OBS文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteExportTaskObsFileNewRequest 请求对象
+     * @return DeleteExportTaskObsFileNewResponse
+     */
+    public DeleteExportTaskObsFileNewResponse deleteExportTaskObsFileNew(DeleteExportTaskObsFileNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.deleteExportTaskObsFileNew);
+    }
+
+    /**
+     * 删除导出任务OBS文件
+     *
+     * 删除导出任务OBS文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteExportTaskObsFileNewRequest 请求对象
+     * @return SyncInvoker<DeleteExportTaskObsFileNewRequest, DeleteExportTaskObsFileNewResponse>
+     */
+    public SyncInvoker<DeleteExportTaskObsFileNewRequest, DeleteExportTaskObsFileNewResponse> deleteExportTaskObsFileNewInvoker(
+        DeleteExportTaskObsFileNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.deleteExportTaskObsFileNew, hcClient);
+    }
+
+    /**
      * 删除全量SQL导出任务OBS文件
      *
      * 删除全量SQL导出任务OBS文件
@@ -1177,6 +1758,35 @@ public class DasClient {
     public SyncInvoker<DeleteFullSqlExportTaskObsFileRequest, DeleteFullSqlExportTaskObsFileResponse> deleteFullSqlExportTaskObsFileInvoker(
         DeleteFullSqlExportTaskObsFileRequest request) {
         return new SyncInvoker<>(request, DasMeta.deleteFullSqlExportTaskObsFile, hcClient);
+    }
+
+    /**
+     * 删除SQL限流记录
+     *
+     * 删除SQL限流记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSqlLimitingRecordRequest 请求对象
+     * @return DeleteSqlLimitingRecordResponse
+     */
+    public DeleteSqlLimitingRecordResponse deleteSqlLimitingRecord(DeleteSqlLimitingRecordRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.deleteSqlLimitingRecord);
+    }
+
+    /**
+     * 删除SQL限流记录
+     *
+     * 删除SQL限流记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSqlLimitingRecordRequest 请求对象
+     * @return SyncInvoker<DeleteSqlLimitingRecordRequest, DeleteSqlLimitingRecordResponse>
+     */
+    public SyncInvoker<DeleteSqlLimitingRecordRequest, DeleteSqlLimitingRecordResponse> deleteSqlLimitingRecordInvoker(
+        DeleteSqlLimitingRecordRequest request) {
+        return new SyncInvoker<>(request, DasMeta.deleteSqlLimitingRecord, hcClient);
     }
 
     /**
@@ -1352,6 +1962,62 @@ public class DasClient {
     }
 
     /**
+     * 导出binlog解析结果
+     *
+     * 导出binlog解析结果到OBS桶
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportBinlogRequest 请求对象
+     * @return ExportBinlogResponse
+     */
+    public ExportBinlogResponse exportBinlog(ExportBinlogRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.exportBinlog);
+    }
+
+    /**
+     * 导出binlog解析结果
+     *
+     * 导出binlog解析结果到OBS桶
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportBinlogRequest 请求对象
+     * @return SyncInvoker<ExportBinlogRequest, ExportBinlogResponse>
+     */
+    public SyncInvoker<ExportBinlogRequest, ExportBinlogResponse> exportBinlogInvoker(ExportBinlogRequest request) {
+        return new SyncInvoker<>(request, DasMeta.exportBinlog, hcClient);
+    }
+
+    /**
+     * 创建导出全量SQL任务
+     *
+     * Console Full Sql Export
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportFullSqlRequest 请求对象
+     * @return ExportFullSqlResponse
+     */
+    public ExportFullSqlResponse exportFullSql(ExportFullSqlRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.exportFullSql);
+    }
+
+    /**
+     * 创建导出全量SQL任务
+     *
+     * Console Full Sql Export
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportFullSqlRequest 请求对象
+     * @return SyncInvoker<ExportFullSqlRequest, ExportFullSqlResponse>
+     */
+    public SyncInvoker<ExportFullSqlRequest, ExportFullSqlResponse> exportFullSqlInvoker(ExportFullSqlRequest request) {
+        return new SyncInvoker<>(request, DasMeta.exportFullSql, hcClient);
+    }
+
+    /**
      * 导出实例列表
      *
      * 导出实例列表
@@ -1407,6 +2073,35 @@ public class DasClient {
     public SyncInvoker<ImportExportObsObjectsRequest, ImportExportObsObjectsResponse> importExportObsObjectsInvoker(
         ImportExportObsObjectsRequest request) {
         return new SyncInvoker<>(request, DasMeta.importExportObsObjects, hcClient);
+    }
+
+    /**
+     * 触发慢日志归档
+     *
+     * 触发慢日志归档
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokeSlowLogArchiveRequest 请求对象
+     * @return InvokeSlowLogArchiveResponse
+     */
+    public InvokeSlowLogArchiveResponse invokeSlowLogArchive(InvokeSlowLogArchiveRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.invokeSlowLogArchive);
+    }
+
+    /**
+     * 触发慢日志归档
+     *
+     * 触发慢日志归档
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokeSlowLogArchiveRequest 请求对象
+     * @return SyncInvoker<InvokeSlowLogArchiveRequest, InvokeSlowLogArchiveResponse>
+     */
+    public SyncInvoker<InvokeSlowLogArchiveRequest, InvokeSlowLogArchiveResponse> invokeSlowLogArchiveInvoker(
+        InvokeSlowLogArchiveRequest request) {
+        return new SyncInvoker<>(request, DasMeta.invokeSlowLogArchive, hcClient);
     }
 
     /**
@@ -1526,6 +2221,64 @@ public class DasClient {
     }
 
     /**
+     * 获取OBS桶列表
+     *
+     * 获取全量SQL导出使用的OBS桶列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBucketNameRequest 请求对象
+     * @return ListBucketNameResponse
+     */
+    public ListBucketNameResponse listBucketName(ListBucketNameRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listBucketName);
+    }
+
+    /**
+     * 获取OBS桶列表
+     *
+     * 获取全量SQL导出使用的OBS桶列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBucketNameRequest 请求对象
+     * @return SyncInvoker<ListBucketNameRequest, ListBucketNameResponse>
+     */
+    public SyncInvoker<ListBucketNameRequest, ListBucketNameResponse> listBucketNameInvoker(
+        ListBucketNameRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listBucketName, hcClient);
+    }
+
+    /**
+     * 查询实例连接列表
+     *
+     * 查询实例连接列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConnectionRequest 请求对象
+     * @return ListConnectionResponse
+     */
+    public ListConnectionResponse listConnection(ListConnectionRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listConnection);
+    }
+
+    /**
+     * 查询实例连接列表
+     *
+     * 查询实例连接列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConnectionRequest 请求对象
+     * @return SyncInvoker<ListConnectionRequest, ListConnectionResponse>
+     */
+    public SyncInvoker<ListConnectionRequest, ListConnectionResponse> listConnectionInvoker(
+        ListConnectionRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listConnection, hcClient);
+    }
+
+    /**
      * 查询实例会话
      *
      * 查询实例会话
@@ -1642,6 +2395,93 @@ public class DasClient {
     }
 
     /**
+     * 查询紧急日志
+     *
+     * 查询紧急日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEmergencyLogsRequest 请求对象
+     * @return ListEmergencyLogsResponse
+     */
+    public ListEmergencyLogsResponse listEmergencyLogs(ListEmergencyLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listEmergencyLogs);
+    }
+
+    /**
+     * 查询紧急日志
+     *
+     * 查询紧急日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEmergencyLogsRequest 请求对象
+     * @return SyncInvoker<ListEmergencyLogsRequest, ListEmergencyLogsResponse>
+     */
+    public SyncInvoker<ListEmergencyLogsRequest, ListEmergencyLogsResponse> listEmergencyLogsInvoker(
+        ListEmergencyLogsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listEmergencyLogs, hcClient);
+    }
+
+    /**
+     * 获取企业项目列表
+     *
+     * 获取企业项目列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEnterpriseProjectsRequest 请求对象
+     * @return ListEnterpriseProjectsResponse
+     */
+    public ListEnterpriseProjectsResponse listEnterpriseProjects(ListEnterpriseProjectsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listEnterpriseProjects);
+    }
+
+    /**
+     * 获取企业项目列表
+     *
+     * 获取企业项目列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEnterpriseProjectsRequest 请求对象
+     * @return SyncInvoker<ListEnterpriseProjectsRequest, ListEnterpriseProjectsResponse>
+     */
+    public SyncInvoker<ListEnterpriseProjectsRequest, ListEnterpriseProjectsResponse> listEnterpriseProjectsInvoker(
+        ListEnterpriseProjectsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listEnterpriseProjects, hcClient);
+    }
+
+    /**
+     * 查询异常检测指标数据
+     *
+     * Exception Analyze Query Metrics New
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListExceptionMetricsRequest 请求对象
+     * @return ListExceptionMetricsResponse
+     */
+    public ListExceptionMetricsResponse listExceptionMetrics(ListExceptionMetricsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listExceptionMetrics);
+    }
+
+    /**
+     * 查询异常检测指标数据
+     *
+     * Exception Analyze Query Metrics New
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListExceptionMetricsRequest 请求对象
+     * @return SyncInvoker<ListExceptionMetricsRequest, ListExceptionMetricsResponse>
+     */
+    public SyncInvoker<ListExceptionMetricsRequest, ListExceptionMetricsResponse> listExceptionMetricsInvoker(
+        ListExceptionMetricsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listExceptionMetrics, hcClient);
+    }
+
+    /**
      * 获取完整死锁列表
      *
      * 获取完整死锁列表
@@ -1700,6 +2540,181 @@ public class DasClient {
     }
 
     /**
+     * 查询全量SQL明细解析任务
+     *
+     * Fullsql Tasks
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFullSqlTasksApiRequest 请求对象
+     * @return ListFullSqlTasksApiResponse
+     */
+    public ListFullSqlTasksApiResponse listFullSqlTasksApi(ListFullSqlTasksApiRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listFullSqlTasksApi);
+    }
+
+    /**
+     * 查询全量SQL明细解析任务
+     *
+     * Fullsql Tasks
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFullSqlTasksApiRequest 请求对象
+     * @return SyncInvoker<ListFullSqlTasksApiRequest, ListFullSqlTasksApiResponse>
+     */
+    public SyncInvoker<ListFullSqlTasksApiRequest, ListFullSqlTasksApiResponse> listFullSqlTasksApiInvoker(
+        ListFullSqlTasksApiRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listFullSqlTasksApi, hcClient);
+    }
+
+    /**
+     * 查询GaussDB实例参数
+     *
+     * 查询GaussDB实例参数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGaussDbInstanceConfigurationsRequest 请求对象
+     * @return ListGaussDbInstanceConfigurationsResponse
+     */
+    public ListGaussDbInstanceConfigurationsResponse listGaussDbInstanceConfigurations(
+        ListGaussDbInstanceConfigurationsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listGaussDbInstanceConfigurations);
+    }
+
+    /**
+     * 查询GaussDB实例参数
+     *
+     * 查询GaussDB实例参数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGaussDbInstanceConfigurationsRequest 请求对象
+     * @return SyncInvoker<ListGaussDbInstanceConfigurationsRequest, ListGaussDbInstanceConfigurationsResponse>
+     */
+    public SyncInvoker<ListGaussDbInstanceConfigurationsRequest, ListGaussDbInstanceConfigurationsResponse> listGaussDbInstanceConfigurationsInvoker(
+        ListGaussDbInstanceConfigurationsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listGaussDbInstanceConfigurations, hcClient);
+    }
+
+    /**
+     * 获取历史事务列表
+     *
+     * 获取历史事务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHistoryTransactionsRequest 请求对象
+     * @return ListHistoryTransactionsResponse
+     */
+    public ListHistoryTransactionsResponse listHistoryTransactions(ListHistoryTransactionsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listHistoryTransactions);
+    }
+
+    /**
+     * 获取历史事务列表
+     *
+     * 获取历史事务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHistoryTransactionsRequest 请求对象
+     * @return SyncInvoker<ListHistoryTransactionsRequest, ListHistoryTransactionsResponse>
+     */
+    public SyncInvoker<ListHistoryTransactionsRequest, ListHistoryTransactionsResponse> listHistoryTransactionsInvoker(
+        ListHistoryTransactionsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listHistoryTransactions, hcClient);
+    }
+
+    /**
+     * 获取索引使用详情列表
+     *
+     * 获取索引使用详情列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIndexUsageDetailsRequest 请求对象
+     * @return ListIndexUsageDetailsResponse
+     */
+    public ListIndexUsageDetailsResponse listIndexUsageDetails(ListIndexUsageDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listIndexUsageDetails);
+    }
+
+    /**
+     * 获取索引使用详情列表
+     *
+     * 获取索引使用详情列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIndexUsageDetailsRequest 请求对象
+     * @return SyncInvoker<ListIndexUsageDetailsRequest, ListIndexUsageDetailsResponse>
+     */
+    public SyncInvoker<ListIndexUsageDetailsRequest, ListIndexUsageDetailsResponse> listIndexUsageDetailsInvoker(
+        ListIndexUsageDetailsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listIndexUsageDetails, hcClient);
+    }
+
+    /**
+     * 获取索引使用导出任务列表
+     *
+     * 获取索引使用导出任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIndexUsageExportTasksRequest 请求对象
+     * @return ListIndexUsageExportTasksResponse
+     */
+    public ListIndexUsageExportTasksResponse listIndexUsageExportTasks(ListIndexUsageExportTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listIndexUsageExportTasks);
+    }
+
+    /**
+     * 获取索引使用导出任务列表
+     *
+     * 获取索引使用导出任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIndexUsageExportTasksRequest 请求对象
+     * @return SyncInvoker<ListIndexUsageExportTasksRequest, ListIndexUsageExportTasksResponse>
+     */
+    public SyncInvoker<ListIndexUsageExportTasksRequest, ListIndexUsageExportTasksResponse> listIndexUsageExportTasksInvoker(
+        ListIndexUsageExportTasksRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listIndexUsageExportTasks, hcClient);
+    }
+
+    /**
+     * 查询实例紧急日志
+     *
+     * 查询实例紧急日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceEmergencyLogsRequest 请求对象
+     * @return ListInstanceEmergencyLogsResponse
+     */
+    public ListInstanceEmergencyLogsResponse listInstanceEmergencyLogs(ListInstanceEmergencyLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listInstanceEmergencyLogs);
+    }
+
+    /**
+     * 查询实例紧急日志
+     *
+     * 查询实例紧急日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceEmergencyLogsRequest 请求对象
+     * @return SyncInvoker<ListInstanceEmergencyLogsRequest, ListInstanceEmergencyLogsResponse>
+     */
+    public SyncInvoker<ListInstanceEmergencyLogsRequest, ListInstanceEmergencyLogsResponse> listInstanceEmergencyLogsInvoker(
+        ListInstanceEmergencyLogsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listInstanceEmergencyLogs, hcClient);
+    }
+
+    /**
      * 获取实例健康报告任务列表
      *
      * 获取实例健康报告任务列表
@@ -1730,6 +2745,180 @@ public class DasClient {
     }
 
     /**
+     * 查询进程列表
+     *
+     * 查询进程列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceProcessesRequest 请求对象
+     * @return ListInstanceProcessesResponse
+     */
+    public ListInstanceProcessesResponse listInstanceProcesses(ListInstanceProcessesRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listInstanceProcesses);
+    }
+
+    /**
+     * 查询进程列表
+     *
+     * 查询进程列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceProcessesRequest 请求对象
+     * @return SyncInvoker<ListInstanceProcessesRequest, ListInstanceProcessesResponse>
+     */
+    public SyncInvoker<ListInstanceProcessesRequest, ListInstanceProcessesResponse> listInstanceProcessesInvoker(
+        ListInstanceProcessesRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listInstanceProcesses, hcClient);
+    }
+
+    /**
+     * 获取实例订阅列表
+     *
+     * 获取实例健康报告订阅列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceSubscriptionRequest 请求对象
+     * @return ListInstanceSubscriptionResponse
+     */
+    public ListInstanceSubscriptionResponse listInstanceSubscription(ListInstanceSubscriptionRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listInstanceSubscription);
+    }
+
+    /**
+     * 获取实例订阅列表
+     *
+     * 获取实例健康报告订阅列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceSubscriptionRequest 请求对象
+     * @return SyncInvoker<ListInstanceSubscriptionRequest, ListInstanceSubscriptionResponse>
+     */
+    public SyncInvoker<ListInstanceSubscriptionRequest, ListInstanceSubscriptionResponse> listInstanceSubscriptionInvoker(
+        ListInstanceSubscriptionRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listInstanceSubscription, hcClient);
+    }
+
+    /**
+     * 获取实例列表
+     *
+     * 获取实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesApiRequest 请求对象
+     * @return ListInstancesApiResponse
+     */
+    public ListInstancesApiResponse listInstancesApi(ListInstancesApiRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listInstancesApi);
+    }
+
+    /**
+     * 获取实例列表
+     *
+     * 获取实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesApiRequest 请求对象
+     * @return SyncInvoker<ListInstancesApiRequest, ListInstancesApiResponse>
+     */
+    public SyncInvoker<ListInstancesApiRequest, ListInstancesApiResponse> listInstancesApiInvoker(
+        ListInstancesApiRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listInstancesApi, hcClient);
+    }
+
+    /**
+     * 查询Kill进程历史
+     *
+     * 查询Kill进程历史
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListKillProcessHistoryRequest 请求对象
+     * @return ListKillProcessHistoryResponse
+     */
+    public ListKillProcessHistoryResponse listKillProcessHistory(ListKillProcessHistoryRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listKillProcessHistory);
+    }
+
+    /**
+     * 查询Kill进程历史
+     *
+     * 查询Kill进程历史
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListKillProcessHistoryRequest 请求对象
+     * @return SyncInvoker<ListKillProcessHistoryRequest, ListKillProcessHistoryResponse>
+     */
+    public SyncInvoker<ListKillProcessHistoryRequest, ListKillProcessHistoryResponse> listKillProcessHistoryInvoker(
+        ListKillProcessHistoryRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listKillProcessHistory, hcClient);
+    }
+
+    /**
+     * 获取缺失索引详情列表
+     *
+     * 获取缺失索引详情列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMissingIndexDetailsRequest 请求对象
+     * @return ListMissingIndexDetailsResponse
+     */
+    public ListMissingIndexDetailsResponse listMissingIndexDetails(ListMissingIndexDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listMissingIndexDetails);
+    }
+
+    /**
+     * 获取缺失索引详情列表
+     *
+     * 获取缺失索引详情列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMissingIndexDetailsRequest 请求对象
+     * @return SyncInvoker<ListMissingIndexDetailsRequest, ListMissingIndexDetailsResponse>
+     */
+    public SyncInvoker<ListMissingIndexDetailsRequest, ListMissingIndexDetailsResponse> listMissingIndexDetailsInvoker(
+        ListMissingIndexDetailsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listMissingIndexDetails, hcClient);
+    }
+
+    /**
+     * 获取缺失索引导出任务列表
+     *
+     * 获取缺失索引导出任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMissingIndexExportTasksRequest 请求对象
+     * @return ListMissingIndexExportTasksResponse
+     */
+    public ListMissingIndexExportTasksResponse listMissingIndexExportTasks(ListMissingIndexExportTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listMissingIndexExportTasks);
+    }
+
+    /**
+     * 获取缺失索引导出任务列表
+     *
+     * 获取缺失索引导出任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMissingIndexExportTasksRequest 请求对象
+     * @return SyncInvoker<ListMissingIndexExportTasksRequest, ListMissingIndexExportTasksResponse>
+     */
+    public SyncInvoker<ListMissingIndexExportTasksRequest, ListMissingIndexExportTasksResponse> listMissingIndexExportTasksInvoker(
+        ListMissingIndexExportTasksRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listMissingIndexExportTasks, hcClient);
+    }
+
+    /**
      * 获取未设置付费的实例列表
      *
      * 获取未设置付费的实例列表
@@ -1757,6 +2946,209 @@ public class DasClient {
     public SyncInvoker<ListNotSetChargeModeInstanceRequest, ListNotSetChargeModeInstanceResponse> listNotSetChargeModeInstanceInvoker(
         ListNotSetChargeModeInstanceRequest request) {
         return new SyncInvoker<>(request, DasMeta.listNotSetChargeModeInstance, hcClient);
+    }
+
+    /**
+     * 获取OBS桶列表
+     *
+     * New Das Get Obs Buckets List
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListObsBucketsRequest 请求对象
+     * @return ListObsBucketsResponse
+     */
+    public ListObsBucketsResponse listObsBuckets(ListObsBucketsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listObsBuckets);
+    }
+
+    /**
+     * 获取OBS桶列表
+     *
+     * New Das Get Obs Buckets List
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListObsBucketsRequest 请求对象
+     * @return SyncInvoker<ListObsBucketsRequest, ListObsBucketsResponse>
+     */
+    public SyncInvoker<ListObsBucketsRequest, ListObsBucketsResponse> listObsBucketsInvoker(
+        ListObsBucketsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listObsBuckets, hcClient);
+    }
+
+    /**
+     * 查询OBS对象列表
+     *
+     * 查询OBS对象列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListObsObjectsRequest 请求对象
+     * @return ListObsObjectsResponse
+     */
+    public ListObsObjectsResponse listObsObjects(ListObsObjectsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listObsObjects);
+    }
+
+    /**
+     * 查询OBS对象列表
+     *
+     * 查询OBS对象列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListObsObjectsRequest 请求对象
+     * @return SyncInvoker<ListObsObjectsRequest, ListObsObjectsResponse>
+     */
+    public SyncInvoker<ListObsObjectsRequest, ListObsObjectsResponse> listObsObjectsInvoker(
+        ListObsObjectsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listObsObjects, hcClient);
+    }
+
+    /**
+     * PostgreSQL查询进程列表
+     *
+     * PostgreSQL查询进程列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPostgresProcessesRequest 请求对象
+     * @return ListPostgresProcessesResponse
+     */
+    public ListPostgresProcessesResponse listPostgresProcesses(ListPostgresProcessesRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listPostgresProcesses);
+    }
+
+    /**
+     * PostgreSQL查询进程列表
+     *
+     * PostgreSQL查询进程列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPostgresProcessesRequest 请求对象
+     * @return SyncInvoker<ListPostgresProcessesRequest, ListPostgresProcessesResponse>
+     */
+    public SyncInvoker<ListPostgresProcessesRequest, ListPostgresProcessesResponse> listPostgresProcessesInvoker(
+        ListPostgresProcessesRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listPostgresProcesses, hcClient);
+    }
+
+    /**
+     * 获取快速增长表
+     *
+     * 获取快速增长表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRapidGrowthTablesRequest 请求对象
+     * @return ListRapidGrowthTablesResponse
+     */
+    public ListRapidGrowthTablesResponse listRapidGrowthTables(ListRapidGrowthTablesRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listRapidGrowthTables);
+    }
+
+    /**
+     * 获取快速增长表
+     *
+     * 获取快速增长表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRapidGrowthTablesRequest 请求对象
+     * @return SyncInvoker<ListRapidGrowthTablesRequest, ListRapidGrowthTablesResponse>
+     */
+    public SyncInvoker<ListRapidGrowthTablesRequest, ListRapidGrowthTablesResponse> listRapidGrowthTablesInvoker(
+        ListRapidGrowthTablesRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listRapidGrowthTables, hcClient);
+    }
+
+    /**
+     * 查询RDS实例参数
+     *
+     * 查询RDS实例参数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRdsInstanceConfigurationsNewRequest 请求对象
+     * @return ListRdsInstanceConfigurationsNewResponse
+     */
+    public ListRdsInstanceConfigurationsNewResponse listRdsInstanceConfigurationsNew(
+        ListRdsInstanceConfigurationsNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listRdsInstanceConfigurationsNew);
+    }
+
+    /**
+     * 查询RDS实例参数
+     *
+     * 查询RDS实例参数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRdsInstanceConfigurationsNewRequest 请求对象
+     * @return SyncInvoker<ListRdsInstanceConfigurationsNewRequest, ListRdsInstanceConfigurationsNewResponse>
+     */
+    public SyncInvoker<ListRdsInstanceConfigurationsNewRequest, ListRdsInstanceConfigurationsNewResponse> listRdsInstanceConfigurationsNewInvoker(
+        ListRdsInstanceConfigurationsNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listRdsInstanceConfigurationsNew, hcClient);
+    }
+
+    /**
+     * 获取风险项
+     *
+     * 获取风险项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRiskItemsApiRequest 请求对象
+     * @return ListRiskItemsApiResponse
+     */
+    public ListRiskItemsApiResponse listRiskItemsApi(ListRiskItemsApiRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listRiskItemsApi);
+    }
+
+    /**
+     * 获取风险项
+     *
+     * 获取风险项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRiskItemsApiRequest 请求对象
+     * @return SyncInvoker<ListRiskItemsApiRequest, ListRiskItemsApiResponse>
+     */
+    public SyncInvoker<ListRiskItemsApiRequest, ListRiskItemsApiResponse> listRiskItemsApiInvoker(
+        ListRiskItemsApiRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listRiskItemsApi, hcClient);
+    }
+
+    /**
+     * 查询风险列表
+     *
+     * 查询风险列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRisksRequest 请求对象
+     * @return ListRisksResponse
+     */
+    public ListRisksResponse listRisks(ListRisksRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listRisks);
+    }
+
+    /**
+     * 查询风险列表
+     *
+     * 查询风险列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRisksRequest 请求对象
+     * @return SyncInvoker<ListRisksRequest, ListRisksResponse>
+     */
+    public SyncInvoker<ListRisksRequest, ListRisksResponse> listRisksInvoker(ListRisksRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listRisks, hcClient);
     }
 
     /**
@@ -1815,6 +3207,64 @@ public class DasClient {
     public SyncInvoker<ListSharedConnectionsRequest, ListSharedConnectionsResponse> listSharedConnectionsInvoker(
         ListSharedConnectionsRequest request) {
         return new SyncInvoker<>(request, DasMeta.listSharedConnections, hcClient);
+    }
+
+    /**
+     * 获取慢日志归档列表
+     *
+     * 获取慢日志归档列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSlowLogArchivesRequest 请求对象
+     * @return ListSlowLogArchivesResponse
+     */
+    public ListSlowLogArchivesResponse listSlowLogArchives(ListSlowLogArchivesRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listSlowLogArchives);
+    }
+
+    /**
+     * 获取慢日志归档列表
+     *
+     * 获取慢日志归档列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSlowLogArchivesRequest 请求对象
+     * @return SyncInvoker<ListSlowLogArchivesRequest, ListSlowLogArchivesResponse>
+     */
+    public SyncInvoker<ListSlowLogArchivesRequest, ListSlowLogArchivesResponse> listSlowLogArchivesInvoker(
+        ListSlowLogArchivesRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listSlowLogArchives, hcClient);
+    }
+
+    /**
+     * 获取慢日志导出任务列表
+     *
+     * 获取慢日志导出任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSlowLogExportTaskRequest 请求对象
+     * @return ListSlowLogExportTaskResponse
+     */
+    public ListSlowLogExportTaskResponse listSlowLogExportTask(ListSlowLogExportTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listSlowLogExportTask);
+    }
+
+    /**
+     * 获取慢日志导出任务列表
+     *
+     * 获取慢日志导出任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSlowLogExportTaskRequest 请求对象
+     * @return SyncInvoker<ListSlowLogExportTaskRequest, ListSlowLogExportTaskResponse>
+     */
+    public SyncInvoker<ListSlowLogExportTaskRequest, ListSlowLogExportTaskResponse> listSlowLogExportTaskInvoker(
+        ListSlowLogExportTaskRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listSlowLogExportTask, hcClient);
     }
 
     /**
@@ -1991,6 +3441,92 @@ public class DasClient {
     }
 
     /**
+     * 获取子用户
+     *
+     * 获取子用户
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubUsersRequest 请求对象
+     * @return ListSubUsersResponse
+     */
+    public ListSubUsersResponse listSubUsers(ListSubUsersRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listSubUsers);
+    }
+
+    /**
+     * 获取子用户
+     *
+     * 获取子用户
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubUsersRequest 请求对象
+     * @return SyncInvoker<ListSubUsersRequest, ListSubUsersResponse>
+     */
+    public SyncInvoker<ListSubUsersRequest, ListSubUsersResponse> listSubUsersInvoker(ListSubUsersRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listSubUsers, hcClient);
+    }
+
+    /**
+     * 多节点单指标支持指标信息
+     *
+     * Metric Names Support New
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSupportedMetricNamesRequest 请求对象
+     * @return ListSupportedMetricNamesResponse
+     */
+    public ListSupportedMetricNamesResponse listSupportedMetricNames(ListSupportedMetricNamesRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listSupportedMetricNames);
+    }
+
+    /**
+     * 多节点单指标支持指标信息
+     *
+     * Metric Names Support New
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSupportedMetricNamesRequest 请求对象
+     * @return SyncInvoker<ListSupportedMetricNamesRequest, ListSupportedMetricNamesResponse>
+     */
+    public SyncInvoker<ListSupportedMetricNamesRequest, ListSupportedMetricNamesResponse> listSupportedMetricNamesInvoker(
+        ListSupportedMetricNamesRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listSupportedMetricNames, hcClient);
+    }
+
+    /**
+     * 查询支持异常检测的指标名
+     *
+     * Exception Analyze Supported Metrics New
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSupportedMetricsRequest 请求对象
+     * @return ListSupportedMetricsResponse
+     */
+    public ListSupportedMetricsResponse listSupportedMetrics(ListSupportedMetricsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listSupportedMetrics);
+    }
+
+    /**
+     * 查询支持异常检测的指标名
+     *
+     * Exception Analyze Supported Metrics New
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSupportedMetricsRequest 请求对象
+     * @return SyncInvoker<ListSupportedMetricsRequest, ListSupportedMetricsResponse>
+     */
+    public SyncInvoker<ListSupportedMetricsRequest, ListSupportedMetricsResponse> listSupportedMetricsInvoker(
+        ListSupportedMetricsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listSupportedMetrics, hcClient);
+    }
+
+    /**
      * 按批次ID查询全量SQL任务
      *
      * 按批次ID查询全量SQL任务
@@ -2134,6 +3670,238 @@ public class DasClient {
     public SyncInvoker<ListUserInstanceListRequest, ListUserInstanceListResponse> listUserInstanceListInvoker(
         ListUserInstanceListRequest request) {
         return new SyncInvoker<>(request, DasMeta.listUserInstanceList, hcClient);
+    }
+
+    /**
+     * 实例级登录
+     *
+     * Login
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request LoginRequest 请求对象
+     * @return LoginResponse
+     */
+    public LoginResponse login(LoginRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.login);
+    }
+
+    /**
+     * 实例级登录
+     *
+     * Login
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request LoginRequest 请求对象
+     * @return SyncInvoker<LoginRequest, LoginResponse>
+     */
+    public SyncInvoker<LoginRequest, LoginResponse> loginInvoker(LoginRequest request) {
+        return new SyncInvoker<>(request, DasMeta.login, hcClient);
+    }
+
+    /**
+     * 修改实例连接
+     *
+     * 修改实例连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyConnectionRequest 请求对象
+     * @return ModifyConnectionResponse
+     */
+    public ModifyConnectionResponse modifyConnection(ModifyConnectionRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.modifyConnection);
+    }
+
+    /**
+     * 修改实例连接
+     *
+     * 修改实例连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyConnectionRequest 请求对象
+     * @return SyncInvoker<ModifyConnectionRequest, ModifyConnectionResponse>
+     */
+    public SyncInvoker<ModifyConnectionRequest, ModifyConnectionResponse> modifyConnectionInvoker(
+        ModifyConnectionRequest request) {
+        return new SyncInvoker<>(request, DasMeta.modifyConnection, hcClient);
+    }
+
+    /**
+     * 解析SQL限流规则
+     *
+     * 解析SQL限流规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ParseSqlLimitRuleNewRequest 请求对象
+     * @return ParseSqlLimitRuleNewResponse
+     */
+    public ParseSqlLimitRuleNewResponse parseSqlLimitRuleNew(ParseSqlLimitRuleNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.parseSqlLimitRuleNew);
+    }
+
+    /**
+     * 解析SQL限流规则
+     *
+     * 解析SQL限流规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ParseSqlLimitRuleNewRequest 请求对象
+     * @return SyncInvoker<ParseSqlLimitRuleNewRequest, ParseSqlLimitRuleNewResponse>
+     */
+    public SyncInvoker<ParseSqlLimitRuleNewRequest, ParseSqlLimitRuleNewResponse> parseSqlLimitRuleNewInvoker(
+        ParseSqlLimitRuleNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.parseSqlLimitRuleNew, hcClient);
+    }
+
+    /**
+     * 预览Kill进程任务的会话
+     *
+     * 预览Kill进程任务的会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PreviewSessionForKillProcessTaskNewRequest 请求对象
+     * @return PreviewSessionForKillProcessTaskNewResponse
+     */
+    public PreviewSessionForKillProcessTaskNewResponse previewSessionForKillProcessTaskNew(
+        PreviewSessionForKillProcessTaskNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.previewSessionForKillProcessTaskNew);
+    }
+
+    /**
+     * 预览Kill进程任务的会话
+     *
+     * 预览Kill进程任务的会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PreviewSessionForKillProcessTaskNewRequest 请求对象
+     * @return SyncInvoker<PreviewSessionForKillProcessTaskNewRequest, PreviewSessionForKillProcessTaskNewResponse>
+     */
+    public SyncInvoker<PreviewSessionForKillProcessTaskNewRequest, PreviewSessionForKillProcessTaskNewResponse> previewSessionForKillProcessTaskNewInvoker(
+        PreviewSessionForKillProcessTaskNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.previewSessionForKillProcessTaskNew, hcClient);
+    }
+
+    /**
+     * 设置全局隐私
+     *
+     * 设置全局隐私
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PutGlobalPrivacyNewRequest 请求对象
+     * @return PutGlobalPrivacyNewResponse
+     */
+    public PutGlobalPrivacyNewResponse putGlobalPrivacyNew(PutGlobalPrivacyNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.putGlobalPrivacyNew);
+    }
+
+    /**
+     * 设置全局隐私
+     *
+     * 设置全局隐私
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PutGlobalPrivacyNewRequest 请求对象
+     * @return SyncInvoker<PutGlobalPrivacyNewRequest, PutGlobalPrivacyNewResponse>
+     */
+    public SyncInvoker<PutGlobalPrivacyNewRequest, PutGlobalPrivacyNewResponse> putGlobalPrivacyNewInvoker(
+        PutGlobalPrivacyNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.putGlobalPrivacyNew, hcClient);
+    }
+
+    /**
+     * 重新收集索引使用
+     *
+     * 重新收集索引使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RecollectIndexUsageNewRequest 请求对象
+     * @return RecollectIndexUsageNewResponse
+     */
+    public RecollectIndexUsageNewResponse recollectIndexUsageNew(RecollectIndexUsageNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.recollectIndexUsageNew);
+    }
+
+    /**
+     * 重新收集索引使用
+     *
+     * 重新收集索引使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RecollectIndexUsageNewRequest 请求对象
+     * @return SyncInvoker<RecollectIndexUsageNewRequest, RecollectIndexUsageNewResponse>
+     */
+    public SyncInvoker<RecollectIndexUsageNewRequest, RecollectIndexUsageNewResponse> recollectIndexUsageNewInvoker(
+        RecollectIndexUsageNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.recollectIndexUsageNew, hcClient);
+    }
+
+    /**
+     * 重新收集缺失索引
+     *
+     * 重新收集缺失索引
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RecollectMissingIndexNewRequest 请求对象
+     * @return RecollectMissingIndexNewResponse
+     */
+    public RecollectMissingIndexNewResponse recollectMissingIndexNew(RecollectMissingIndexNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.recollectMissingIndexNew);
+    }
+
+    /**
+     * 重新收集缺失索引
+     *
+     * 重新收集缺失索引
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RecollectMissingIndexNewRequest 请求对象
+     * @return SyncInvoker<RecollectMissingIndexNewRequest, RecollectMissingIndexNewResponse>
+     */
+    public SyncInvoker<RecollectMissingIndexNewRequest, RecollectMissingIndexNewResponse> recollectMissingIndexNewInvoker(
+        RecollectMissingIndexNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.recollectMissingIndexNew, hcClient);
+    }
+
+    /**
+     * 重试binlog解析任务部分
+     *
+     * 重试binlog解析任务部分
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryBinlogPartRequest 请求对象
+     * @return RetryBinlogPartResponse
+     */
+    public RetryBinlogPartResponse retryBinlogPart(RetryBinlogPartRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.retryBinlogPart);
+    }
+
+    /**
+     * 重试binlog解析任务部分
+     *
+     * 重试binlog解析任务部分
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryBinlogPartRequest 请求对象
+     * @return SyncInvoker<RetryBinlogPartRequest, RetryBinlogPartResponse>
+     */
+    public SyncInvoker<RetryBinlogPartRequest, RetryBinlogPartResponse> retryBinlogPartInvoker(
+        RetryBinlogPartRequest request) {
+        return new SyncInvoker<>(request, DasMeta.retryBinlogPart, hcClient);
     }
 
     /**
@@ -2281,6 +4049,269 @@ public class DasClient {
     }
 
     /**
+     * 设置完整死锁开关
+     *
+     * 设置完整死锁开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetFullDeadLockSwitchNewRequest 请求对象
+     * @return SetFullDeadLockSwitchNewResponse
+     */
+    public SetFullDeadLockSwitchNewResponse setFullDeadLockSwitchNew(SetFullDeadLockSwitchNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.setFullDeadLockSwitchNew);
+    }
+
+    /**
+     * 设置完整死锁开关
+     *
+     * 设置完整死锁开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetFullDeadLockSwitchNewRequest 请求对象
+     * @return SyncInvoker<SetFullDeadLockSwitchNewRequest, SetFullDeadLockSwitchNewResponse>
+     */
+    public SyncInvoker<SetFullDeadLockSwitchNewRequest, SetFullDeadLockSwitchNewResponse> setFullDeadLockSwitchNewInvoker(
+        SetFullDeadLockSwitchNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.setFullDeadLockSwitchNew, hcClient);
+    }
+
+    /**
+     * 设置历史事务开关
+     *
+     * 设置历史事务开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetHistoryTransactionSwitchNewRequest 请求对象
+     * @return SetHistoryTransactionSwitchNewResponse
+     */
+    public SetHistoryTransactionSwitchNewResponse setHistoryTransactionSwitchNew(
+        SetHistoryTransactionSwitchNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.setHistoryTransactionSwitchNew);
+    }
+
+    /**
+     * 设置历史事务开关
+     *
+     * 设置历史事务开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetHistoryTransactionSwitchNewRequest 请求对象
+     * @return SyncInvoker<SetHistoryTransactionSwitchNewRequest, SetHistoryTransactionSwitchNewResponse>
+     */
+    public SyncInvoker<SetHistoryTransactionSwitchNewRequest, SetHistoryTransactionSwitchNewResponse> setHistoryTransactionSwitchNewInvoker(
+        SetHistoryTransactionSwitchNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.setHistoryTransactionSwitchNew, hcClient);
+    }
+
+    /**
+     * 设置索引使用开关
+     *
+     * 设置索引使用开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetIndexUsageSwitchNewRequest 请求对象
+     * @return SetIndexUsageSwitchNewResponse
+     */
+    public SetIndexUsageSwitchNewResponse setIndexUsageSwitchNew(SetIndexUsageSwitchNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.setIndexUsageSwitchNew);
+    }
+
+    /**
+     * 设置索引使用开关
+     *
+     * 设置索引使用开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetIndexUsageSwitchNewRequest 请求对象
+     * @return SyncInvoker<SetIndexUsageSwitchNewRequest, SetIndexUsageSwitchNewResponse>
+     */
+    public SyncInvoker<SetIndexUsageSwitchNewRequest, SetIndexUsageSwitchNewResponse> setIndexUsageSwitchNewInvoker(
+        SetIndexUsageSwitchNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.setIndexUsageSwitchNew, hcClient);
+    }
+
+    /**
+     * 设置长历史事务开关
+     *
+     * 设置长历史事务开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetLongHistoryTransactionSwitchNewRequest 请求对象
+     * @return SetLongHistoryTransactionSwitchNewResponse
+     */
+    public SetLongHistoryTransactionSwitchNewResponse setLongHistoryTransactionSwitchNew(
+        SetLongHistoryTransactionSwitchNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.setLongHistoryTransactionSwitchNew);
+    }
+
+    /**
+     * 设置长历史事务开关
+     *
+     * 设置长历史事务开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetLongHistoryTransactionSwitchNewRequest 请求对象
+     * @return SyncInvoker<SetLongHistoryTransactionSwitchNewRequest, SetLongHistoryTransactionSwitchNewResponse>
+     */
+    public SyncInvoker<SetLongHistoryTransactionSwitchNewRequest, SetLongHistoryTransactionSwitchNewResponse> setLongHistoryTransactionSwitchNewInvoker(
+        SetLongHistoryTransactionSwitchNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.setLongHistoryTransactionSwitchNew, hcClient);
+    }
+
+    /**
+     * 设置指标阈值
+     *
+     * 设置指标阈值
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetMetricThresholdNewRequest 请求对象
+     * @return SetMetricThresholdNewResponse
+     */
+    public SetMetricThresholdNewResponse setMetricThresholdNew(SetMetricThresholdNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.setMetricThresholdNew);
+    }
+
+    /**
+     * 设置指标阈值
+     *
+     * 设置指标阈值
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetMetricThresholdNewRequest 请求对象
+     * @return SyncInvoker<SetMetricThresholdNewRequest, SetMetricThresholdNewResponse>
+     */
+    public SyncInvoker<SetMetricThresholdNewRequest, SetMetricThresholdNewResponse> setMetricThresholdNewInvoker(
+        SetMetricThresholdNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.setMetricThresholdNew, hcClient);
+    }
+
+    /**
+     * 设置缺失索引开关
+     *
+     * 设置缺失索引开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetMissingIndexSwitchNewRequest 请求对象
+     * @return SetMissingIndexSwitchNewResponse
+     */
+    public SetMissingIndexSwitchNewResponse setMissingIndexSwitchNew(SetMissingIndexSwitchNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.setMissingIndexSwitchNew);
+    }
+
+    /**
+     * 设置缺失索引开关
+     *
+     * 设置缺失索引开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetMissingIndexSwitchNewRequest 请求对象
+     * @return SyncInvoker<SetMissingIndexSwitchNewRequest, SetMissingIndexSwitchNewResponse>
+     */
+    public SyncInvoker<SetMissingIndexSwitchNewRequest, SetMissingIndexSwitchNewResponse> setMissingIndexSwitchNewInvoker(
+        SetMissingIndexSwitchNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.setMissingIndexSwitchNew, hcClient);
+    }
+
+    /**
+     * 设置快速增长阈值
+     *
+     * 设置快速增长阈值
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetRapidGrowthThresholdNewRequest 请求对象
+     * @return SetRapidGrowthThresholdNewResponse
+     */
+    public SetRapidGrowthThresholdNewResponse setRapidGrowthThresholdNew(SetRapidGrowthThresholdNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.setRapidGrowthThresholdNew);
+    }
+
+    /**
+     * 设置快速增长阈值
+     *
+     * 设置快速增长阈值
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetRapidGrowthThresholdNewRequest 请求对象
+     * @return SyncInvoker<SetRapidGrowthThresholdNewRequest, SetRapidGrowthThresholdNewResponse>
+     */
+    public SyncInvoker<SetRapidGrowthThresholdNewRequest, SetRapidGrowthThresholdNewResponse> setRapidGrowthThresholdNewInvoker(
+        SetRapidGrowthThresholdNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.setRapidGrowthThresholdNew, hcClient);
+    }
+
+    /**
+     * 设置慢日志开关
+     *
+     * 设置慢日志开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetSlowLogSwitchNewRequest 请求对象
+     * @return SetSlowLogSwitchNewResponse
+     */
+    public SetSlowLogSwitchNewResponse setSlowLogSwitchNew(SetSlowLogSwitchNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.setSlowLogSwitchNew);
+    }
+
+    /**
+     * 设置慢日志开关
+     *
+     * 设置慢日志开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetSlowLogSwitchNewRequest 请求对象
+     * @return SyncInvoker<SetSlowLogSwitchNewRequest, SetSlowLogSwitchNewResponse>
+     */
+    public SyncInvoker<SetSlowLogSwitchNewRequest, SetSlowLogSwitchNewResponse> setSlowLogSwitchNewInvoker(
+        SetSlowLogSwitchNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.setSlowLogSwitchNew, hcClient);
+    }
+
+    /**
+     * 设置SQL限流开关
+     *
+     * 设置SQL限流开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetSqlLimitingSwitchNewRequest 请求对象
+     * @return SetSqlLimitingSwitchNewResponse
+     */
+    public SetSqlLimitingSwitchNewResponse setSqlLimitingSwitchNew(SetSqlLimitingSwitchNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.setSqlLimitingSwitchNew);
+    }
+
+    /**
+     * 设置SQL限流开关
+     *
+     * 设置SQL限流开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetSqlLimitingSwitchNewRequest 请求对象
+     * @return SyncInvoker<SetSqlLimitingSwitchNewRequest, SetSqlLimitingSwitchNewResponse>
+     */
+    public SyncInvoker<SetSqlLimitingSwitchNewRequest, SetSqlLimitingSwitchNewResponse> setSqlLimitingSwitchNewInvoker(
+        SetSqlLimitingSwitchNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.setSqlLimitingSwitchNew, hcClient);
+    }
+
+    /**
      * 设置SQL开关
      *
      * 设置SQL开关
@@ -2397,6 +4428,35 @@ public class DasClient {
     }
 
     /**
+     * 查询实例连接详情
+     *
+     * 查询实例连接详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConnectionDetailRequest 请求对象
+     * @return ShowConnectionDetailResponse
+     */
+    public ShowConnectionDetailResponse showConnectionDetail(ShowConnectionDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showConnectionDetail);
+    }
+
+    /**
+     * 查询实例连接详情
+     *
+     * 查询实例连接详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConnectionDetailRequest 请求对象
+     * @return SyncInvoker<ShowConnectionDetailRequest, ShowConnectionDetailResponse>
+     */
+    public SyncInvoker<ShowConnectionDetailRequest, ShowConnectionDetailResponse> showConnectionDetailInvoker(
+        ShowConnectionDetailRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showConnectionDetail, hcClient);
+    }
+
+    /**
      * DDS连接统计
      *
      * DDS连接统计
@@ -2423,6 +4483,35 @@ public class DasClient {
     public SyncInvoker<ShowDdsConnectionStatRequest, ShowDdsConnectionStatResponse> showDdsConnectionStatInvoker(
         ShowDdsConnectionStatRequest request) {
         return new SyncInvoker<>(request, DasMeta.showDdsConnectionStat, hcClient);
+    }
+
+    /**
+     * 获取DDS慢日志趋势
+     *
+     * 获取DDS慢日志趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDdsSlowLogTrendRequest 请求对象
+     * @return ShowDdsSlowLogTrendResponse
+     */
+    public ShowDdsSlowLogTrendResponse showDdsSlowLogTrend(ShowDdsSlowLogTrendRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showDdsSlowLogTrend);
+    }
+
+    /**
+     * 获取DDS慢日志趋势
+     *
+     * 获取DDS慢日志趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDdsSlowLogTrendRequest 请求对象
+     * @return SyncInvoker<ShowDdsSlowLogTrendRequest, ShowDdsSlowLogTrendResponse>
+     */
+    public SyncInvoker<ShowDdsSlowLogTrendRequest, ShowDdsSlowLogTrendResponse> showDdsSlowLogTrendInvoker(
+        ShowDdsSlowLogTrendRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showDdsSlowLogTrend, hcClient);
     }
 
     /**
@@ -2689,6 +4778,150 @@ public class DasClient {
     }
 
     /**
+     * 获取全量SQL样本
+     *
+     * Full Sql Sample
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFullSqlSampleRequest 请求对象
+     * @return ShowFullSqlSampleResponse
+     */
+    public ShowFullSqlSampleResponse showFullSqlSample(ShowFullSqlSampleRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showFullSqlSample);
+    }
+
+    /**
+     * 获取全量SQL样本
+     *
+     * Full Sql Sample
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFullSqlSampleRequest 请求对象
+     * @return SyncInvoker<ShowFullSqlSampleRequest, ShowFullSqlSampleResponse>
+     */
+    public SyncInvoker<ShowFullSqlSampleRequest, ShowFullSqlSampleResponse> showFullSqlSampleInvoker(
+        ShowFullSqlSampleRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showFullSqlSample, hcClient);
+    }
+
+    /**
+     * 获取IAM用户信息
+     *
+     * Query Iam User New
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIamUserRequest 请求对象
+     * @return ShowIamUserResponse
+     */
+    public ShowIamUserResponse showIamUser(ShowIamUserRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showIamUser);
+    }
+
+    /**
+     * 获取IAM用户信息
+     *
+     * Query Iam User New
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIamUserRequest 请求对象
+     * @return SyncInvoker<ShowIamUserRequest, ShowIamUserResponse>
+     */
+    public SyncInvoker<ShowIamUserRequest, ShowIamUserResponse> showIamUserInvoker(ShowIamUserRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showIamUser, hcClient);
+    }
+
+    /**
+     * 获取索引使用统计
+     *
+     * 获取索引使用统计
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIndexUsageStatisticsRequest 请求对象
+     * @return ShowIndexUsageStatisticsResponse
+     */
+    public ShowIndexUsageStatisticsResponse showIndexUsageStatistics(ShowIndexUsageStatisticsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showIndexUsageStatistics);
+    }
+
+    /**
+     * 获取索引使用统计
+     *
+     * 获取索引使用统计
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIndexUsageStatisticsRequest 请求对象
+     * @return SyncInvoker<ShowIndexUsageStatisticsRequest, ShowIndexUsageStatisticsResponse>
+     */
+    public SyncInvoker<ShowIndexUsageStatisticsRequest, ShowIndexUsageStatisticsResponse> showIndexUsageStatisticsInvoker(
+        ShowIndexUsageStatisticsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showIndexUsageStatistics, hcClient);
+    }
+
+    /**
+     * 获取索引使用趋势
+     *
+     * 获取索引使用趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIndexUsageTrendRequest 请求对象
+     * @return ShowIndexUsageTrendResponse
+     */
+    public ShowIndexUsageTrendResponse showIndexUsageTrend(ShowIndexUsageTrendRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showIndexUsageTrend);
+    }
+
+    /**
+     * 获取索引使用趋势
+     *
+     * 获取索引使用趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIndexUsageTrendRequest 请求对象
+     * @return SyncInvoker<ShowIndexUsageTrendRequest, ShowIndexUsageTrendResponse>
+     */
+    public SyncInvoker<ShowIndexUsageTrendRequest, ShowIndexUsageTrendResponse> showIndexUsageTrendInvoker(
+        ShowIndexUsageTrendRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showIndexUsageTrend, hcClient);
+    }
+
+    /**
+     * 获取实例分布
+     *
+     * 获取实例分布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceDistributionRequest 请求对象
+     * @return ShowInstanceDistributionResponse
+     */
+    public ShowInstanceDistributionResponse showInstanceDistribution(ShowInstanceDistributionRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showInstanceDistribution);
+    }
+
+    /**
+     * 获取实例分布
+     *
+     * 获取实例分布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceDistributionRequest 请求对象
+     * @return SyncInvoker<ShowInstanceDistributionRequest, ShowInstanceDistributionResponse>
+     */
+    public SyncInvoker<ShowInstanceDistributionRequest, ShowInstanceDistributionResponse> showInstanceDistributionInvoker(
+        ShowInstanceDistributionRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showInstanceDistribution, hcClient);
+    }
+
+    /**
      * 获取实例健康报告
      *
      * 获取实例健康报告
@@ -2835,6 +5068,64 @@ public class DasClient {
     }
 
     /**
+     * TOP慢SQL列表
+     *
+     * Ins Get Top Slow Log New
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceTopSlowLogRequest 请求对象
+     * @return ShowInstanceTopSlowLogResponse
+     */
+    public ShowInstanceTopSlowLogResponse showInstanceTopSlowLog(ShowInstanceTopSlowLogRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showInstanceTopSlowLog);
+    }
+
+    /**
+     * TOP慢SQL列表
+     *
+     * Ins Get Top Slow Log New
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceTopSlowLogRequest 请求对象
+     * @return SyncInvoker<ShowInstanceTopSlowLogRequest, ShowInstanceTopSlowLogResponse>
+     */
+    public SyncInvoker<ShowInstanceTopSlowLogRequest, ShowInstanceTopSlowLogResponse> showInstanceTopSlowLogInvoker(
+        ShowInstanceTopSlowLogRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showInstanceTopSlowLog, hcClient);
+    }
+
+    /**
+     * 是否为IAM主账号
+     *
+     * 是否为IAM主账号
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIsAdminUserNewRequest 请求对象
+     * @return ShowIsAdminUserNewResponse
+     */
+    public ShowIsAdminUserNewResponse showIsAdminUserNew(ShowIsAdminUserNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showIsAdminUserNew);
+    }
+
+    /**
+     * 是否为IAM主账号
+     *
+     * 是否为IAM主账号
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIsAdminUserNewRequest 请求对象
+     * @return SyncInvoker<ShowIsAdminUserNewRequest, ShowIsAdminUserNewResponse>
+     */
+    public SyncInvoker<ShowIsAdminUserNewRequest, ShowIsAdminUserNewResponse> showIsAdminUserNewInvoker(
+        ShowIsAdminUserNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showIsAdminUserNew, hcClient);
+    }
+
+    /**
      * 是否签署数据安全协议
      *
      * 是否签署数据安全协议
@@ -2923,6 +5214,35 @@ public class DasClient {
     }
 
     /**
+     * 获取最新空间
+     *
+     * 获取最新空间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLatestSpaceRequest 请求对象
+     * @return ShowLatestSpaceResponse
+     */
+    public ShowLatestSpaceResponse showLatestSpace(ShowLatestSpaceRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showLatestSpace);
+    }
+
+    /**
+     * 获取最新空间
+     *
+     * 获取最新空间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLatestSpaceRequest 请求对象
+     * @return SyncInvoker<ShowLatestSpaceRequest, ShowLatestSpaceResponse>
+     */
+    public SyncInvoker<ShowLatestSpaceRequest, ShowLatestSpaceResponse> showLatestSpaceInvoker(
+        ShowLatestSpaceRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showLatestSpace, hcClient);
+    }
+
+    /**
      * 查询元数据锁
      *
      * 查询元数据锁
@@ -2980,6 +5300,209 @@ public class DasClient {
     }
 
     /**
+     * 获取指标阈值
+     *
+     * 获取指标阈值
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMetricThresholdRequest 请求对象
+     * @return ShowMetricThresholdResponse
+     */
+    public ShowMetricThresholdResponse showMetricThreshold(ShowMetricThresholdRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showMetricThreshold);
+    }
+
+    /**
+     * 获取指标阈值
+     *
+     * 获取指标阈值
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMetricThresholdRequest 请求对象
+     * @return SyncInvoker<ShowMetricThresholdRequest, ShowMetricThresholdResponse>
+     */
+    public SyncInvoker<ShowMetricThresholdRequest, ShowMetricThresholdResponse> showMetricThresholdInvoker(
+        ShowMetricThresholdRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showMetricThreshold, hcClient);
+    }
+
+    /**
+     * 获取缺失索引脚本
+     *
+     * 获取缺失索引脚本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMissingIndexScriptRequest 请求对象
+     * @return ShowMissingIndexScriptResponse
+     */
+    public ShowMissingIndexScriptResponse showMissingIndexScript(ShowMissingIndexScriptRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showMissingIndexScript);
+    }
+
+    /**
+     * 获取缺失索引脚本
+     *
+     * 获取缺失索引脚本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMissingIndexScriptRequest 请求对象
+     * @return SyncInvoker<ShowMissingIndexScriptRequest, ShowMissingIndexScriptResponse>
+     */
+    public SyncInvoker<ShowMissingIndexScriptRequest, ShowMissingIndexScriptResponse> showMissingIndexScriptInvoker(
+        ShowMissingIndexScriptRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showMissingIndexScript, hcClient);
+    }
+
+    /**
+     * 获取缺失索引统计
+     *
+     * 获取缺失索引统计
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMissingIndexStatisticsRequest 请求对象
+     * @return ShowMissingIndexStatisticsResponse
+     */
+    public ShowMissingIndexStatisticsResponse showMissingIndexStatistics(ShowMissingIndexStatisticsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showMissingIndexStatistics);
+    }
+
+    /**
+     * 获取缺失索引统计
+     *
+     * 获取缺失索引统计
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMissingIndexStatisticsRequest 请求对象
+     * @return SyncInvoker<ShowMissingIndexStatisticsRequest, ShowMissingIndexStatisticsResponse>
+     */
+    public SyncInvoker<ShowMissingIndexStatisticsRequest, ShowMissingIndexStatisticsResponse> showMissingIndexStatisticsInvoker(
+        ShowMissingIndexStatisticsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showMissingIndexStatistics, hcClient);
+    }
+
+    /**
+     * 获取缺失索引开关
+     *
+     * 获取缺失索引开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMissingIndexSwitchRequest 请求对象
+     * @return ShowMissingIndexSwitchResponse
+     */
+    public ShowMissingIndexSwitchResponse showMissingIndexSwitch(ShowMissingIndexSwitchRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showMissingIndexSwitch);
+    }
+
+    /**
+     * 获取缺失索引开关
+     *
+     * 获取缺失索引开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMissingIndexSwitchRequest 请求对象
+     * @return SyncInvoker<ShowMissingIndexSwitchRequest, ShowMissingIndexSwitchResponse>
+     */
+    public SyncInvoker<ShowMissingIndexSwitchRequest, ShowMissingIndexSwitchResponse> showMissingIndexSwitchInvoker(
+        ShowMissingIndexSwitchRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showMissingIndexSwitch, hcClient);
+    }
+
+    /**
+     * 获取缺失索引趋势
+     *
+     * 获取缺失索引趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMissingIndexTrendRequest 请求对象
+     * @return ShowMissingIndexTrendResponse
+     */
+    public ShowMissingIndexTrendResponse showMissingIndexTrend(ShowMissingIndexTrendRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showMissingIndexTrend);
+    }
+
+    /**
+     * 获取缺失索引趋势
+     *
+     * 获取缺失索引趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMissingIndexTrendRequest 请求对象
+     * @return SyncInvoker<ShowMissingIndexTrendRequest, ShowMissingIndexTrendResponse>
+     */
+    public SyncInvoker<ShowMissingIndexTrendRequest, ShowMissingIndexTrendResponse> showMissingIndexTrendInvoker(
+        ShowMissingIndexTrendRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showMissingIndexTrend, hcClient);
+    }
+
+    /**
+     * 查询性能指标
+     *
+     * Query
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowNodeMetricsRequest 请求对象
+     * @return ShowNodeMetricsResponse
+     */
+    public ShowNodeMetricsResponse showNodeMetrics(ShowNodeMetricsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showNodeMetrics);
+    }
+
+    /**
+     * 查询性能指标
+     *
+     * Query
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowNodeMetricsRequest 请求对象
+     * @return SyncInvoker<ShowNodeMetricsRequest, ShowNodeMetricsResponse>
+     */
+    public SyncInvoker<ShowNodeMetricsRequest, ShowNodeMetricsResponse> showNodeMetricsInvoker(
+        ShowNodeMetricsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showNodeMetrics, hcClient);
+    }
+
+    /**
+     * 查询OBS桶ACL
+     *
+     * 查询OBS桶ACL
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowObsBucketAclRequest 请求对象
+     * @return ShowObsBucketAclResponse
+     */
+    public ShowObsBucketAclResponse showObsBucketAcl(ShowObsBucketAclRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showObsBucketAcl);
+    }
+
+    /**
+     * 查询OBS桶ACL
+     *
+     * 查询OBS桶ACL
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowObsBucketAclRequest 请求对象
+     * @return SyncInvoker<ShowObsBucketAclRequest, ShowObsBucketAclResponse>
+     */
+    public SyncInvoker<ShowObsBucketAclRequest, ShowObsBucketAclResponse> showObsBucketAclInvoker(
+        ShowObsBucketAclRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showObsBucketAcl, hcClient);
+    }
+
+    /**
      * 获取开通信息
      *
      * 获取开通信息
@@ -3009,6 +5532,93 @@ public class DasClient {
     }
 
     /**
+     * 查询风险趋势
+     *
+     * 查询风险趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRiskTrendRequest 请求对象
+     * @return ShowRiskTrendResponse
+     */
+    public ShowRiskTrendResponse showRiskTrend(ShowRiskTrendRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showRiskTrend);
+    }
+
+    /**
+     * 查询风险趋势
+     *
+     * 查询风险趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRiskTrendRequest 请求对象
+     * @return SyncInvoker<ShowRiskTrendRequest, ShowRiskTrendResponse>
+     */
+    public SyncInvoker<ShowRiskTrendRequest, ShowRiskTrendResponse> showRiskTrendInvoker(ShowRiskTrendRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showRiskTrend, hcClient);
+    }
+
+    /**
+     * 查询敏感操作开关
+     *
+     * 查询敏感操作开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSensitiveOperationSwitchNewRequest 请求对象
+     * @return ShowSensitiveOperationSwitchNewResponse
+     */
+    public ShowSensitiveOperationSwitchNewResponse showSensitiveOperationSwitchNew(
+        ShowSensitiveOperationSwitchNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showSensitiveOperationSwitchNew);
+    }
+
+    /**
+     * 查询敏感操作开关
+     *
+     * 查询敏感操作开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSensitiveOperationSwitchNewRequest 请求对象
+     * @return SyncInvoker<ShowSensitiveOperationSwitchNewRequest, ShowSensitiveOperationSwitchNewResponse>
+     */
+    public SyncInvoker<ShowSensitiveOperationSwitchNewRequest, ShowSensitiveOperationSwitchNewResponse> showSensitiveOperationSwitchNewInvoker(
+        ShowSensitiveOperationSwitchNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showSensitiveOperationSwitchNew, hcClient);
+    }
+
+    /**
+     * 获取多节点单指标数据
+     *
+     * Query Single Metric New
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSingleMetricRequest 请求对象
+     * @return ShowSingleMetricResponse
+     */
+    public ShowSingleMetricResponse showSingleMetric(ShowSingleMetricRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showSingleMetric);
+    }
+
+    /**
+     * 获取多节点单指标数据
+     *
+     * Query Single Metric New
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSingleMetricRequest 请求对象
+     * @return SyncInvoker<ShowSingleMetricRequest, ShowSingleMetricResponse>
+     */
+    public SyncInvoker<ShowSingleMetricRequest, ShowSingleMetricResponse> showSingleMetricInvoker(
+        ShowSingleMetricRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showSingleMetric, hcClient);
+    }
+
+    /**
      * 查询单个模板趋势
      *
      * 查询单个模板趋势
@@ -3035,6 +5645,267 @@ public class DasClient {
     public SyncInvoker<ShowSingleTemplateTrendRequest, ShowSingleTemplateTrendResponse> showSingleTemplateTrendInvoker(
         ShowSingleTemplateTrendRequest request) {
         return new SyncInvoker<>(request, DasMeta.showSingleTemplateTrend, hcClient);
+    }
+
+    /**
+     * 获取慢日志归档链接
+     *
+     * 获取慢日志归档链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlowLogArchiveLinkRequest 请求对象
+     * @return ShowSlowLogArchiveLinkResponse
+     */
+    public ShowSlowLogArchiveLinkResponse showSlowLogArchiveLink(ShowSlowLogArchiveLinkRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showSlowLogArchiveLink);
+    }
+
+    /**
+     * 获取慢日志归档链接
+     *
+     * 获取慢日志归档链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlowLogArchiveLinkRequest 请求对象
+     * @return SyncInvoker<ShowSlowLogArchiveLinkRequest, ShowSlowLogArchiveLinkResponse>
+     */
+    public SyncInvoker<ShowSlowLogArchiveLinkRequest, ShowSlowLogArchiveLinkResponse> showSlowLogArchiveLinkInvoker(
+        ShowSlowLogArchiveLinkRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showSlowLogArchiveLink, hcClient);
+    }
+
+    /**
+     * 获取慢日志明细样例
+     *
+     * 获取指定SQL模板的慢日志明细样例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlowLogDetailSampleRequest 请求对象
+     * @return ShowSlowLogDetailSampleResponse
+     */
+    public ShowSlowLogDetailSampleResponse showSlowLogDetailSample(ShowSlowLogDetailSampleRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showSlowLogDetailSample);
+    }
+
+    /**
+     * 获取慢日志明细样例
+     *
+     * 获取指定SQL模板的慢日志明细样例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlowLogDetailSampleRequest 请求对象
+     * @return SyncInvoker<ShowSlowLogDetailSampleRequest, ShowSlowLogDetailSampleResponse>
+     */
+    public SyncInvoker<ShowSlowLogDetailSampleRequest, ShowSlowLogDetailSampleResponse> showSlowLogDetailSampleInvoker(
+        ShowSlowLogDetailSampleRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showSlowLogDetailSample, hcClient);
+    }
+
+    /**
+     * 获取慢日志统计
+     *
+     * 获取慢日志统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlowLogStatisticsNewRequest 请求对象
+     * @return ShowSlowLogStatisticsNewResponse
+     */
+    public ShowSlowLogStatisticsNewResponse showSlowLogStatisticsNew(ShowSlowLogStatisticsNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showSlowLogStatisticsNew);
+    }
+
+    /**
+     * 获取慢日志统计
+     *
+     * 获取慢日志统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlowLogStatisticsNewRequest 请求对象
+     * @return SyncInvoker<ShowSlowLogStatisticsNewRequest, ShowSlowLogStatisticsNewResponse>
+     */
+    public SyncInvoker<ShowSlowLogStatisticsNewRequest, ShowSlowLogStatisticsNewResponse> showSlowLogStatisticsNewInvoker(
+        ShowSlowLogStatisticsNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showSlowLogStatisticsNew, hcClient);
+    }
+
+    /**
+     * 获取慢日志Top信息
+     *
+     * 获取慢日志Top用户、Top IP、Top数据库信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlowLogTopInfoNewRequest 请求对象
+     * @return ShowSlowLogTopInfoNewResponse
+     */
+    public ShowSlowLogTopInfoNewResponse showSlowLogTopInfoNew(ShowSlowLogTopInfoNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showSlowLogTopInfoNew);
+    }
+
+    /**
+     * 获取慢日志Top信息
+     *
+     * 获取慢日志Top用户、Top IP、Top数据库信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlowLogTopInfoNewRequest 请求对象
+     * @return SyncInvoker<ShowSlowLogTopInfoNewRequest, ShowSlowLogTopInfoNewResponse>
+     */
+    public SyncInvoker<ShowSlowLogTopInfoNewRequest, ShowSlowLogTopInfoNewResponse> showSlowLogTopInfoNewInvoker(
+        ShowSlowLogTopInfoNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showSlowLogTopInfoNew, hcClient);
+    }
+
+    /**
+     * 获取慢日志趋势
+     *
+     * 获取慢日志趋势数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlowLogTrendNewRequest 请求对象
+     * @return ShowSlowLogTrendNewResponse
+     */
+    public ShowSlowLogTrendNewResponse showSlowLogTrendNew(ShowSlowLogTrendNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showSlowLogTrendNew);
+    }
+
+    /**
+     * 获取慢日志趋势
+     *
+     * 获取慢日志趋势数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlowLogTrendNewRequest 请求对象
+     * @return SyncInvoker<ShowSlowLogTrendNewRequest, ShowSlowLogTrendNewResponse>
+     */
+    public SyncInvoker<ShowSlowLogTrendNewRequest, ShowSlowLogTrendNewResponse> showSlowLogTrendNewInvoker(
+        ShowSlowLogTrendNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showSlowLogTrendNew, hcClient);
+    }
+
+    /**
+     * 获取空间趋势
+     *
+     * 获取空间趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSpaceTrendRequest 请求对象
+     * @return ShowSpaceTrendResponse
+     */
+    public ShowSpaceTrendResponse showSpaceTrend(ShowSpaceTrendRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showSpaceTrend);
+    }
+
+    /**
+     * 获取空间趋势
+     *
+     * 获取空间趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSpaceTrendRequest 请求对象
+     * @return SyncInvoker<ShowSpaceTrendRequest, ShowSpaceTrendResponse>
+     */
+    public SyncInvoker<ShowSpaceTrendRequest, ShowSpaceTrendResponse> showSpaceTrendInvoker(
+        ShowSpaceTrendRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showSpaceTrend, hcClient);
+    }
+
+    /**
+     * 使用SQL限流信息
+     *
+     * 使用SQL限流信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSqlLimitingInfoRequest 请求对象
+     * @return ShowSqlLimitingInfoResponse
+     */
+    public ShowSqlLimitingInfoResponse showSqlLimitingInfo(ShowSqlLimitingInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showSqlLimitingInfo);
+    }
+
+    /**
+     * 使用SQL限流信息
+     *
+     * 使用SQL限流信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSqlLimitingInfoRequest 请求对象
+     * @return SyncInvoker<ShowSqlLimitingInfoRequest, ShowSqlLimitingInfoResponse>
+     */
+    public SyncInvoker<ShowSqlLimitingInfoRequest, ShowSqlLimitingInfoResponse> showSqlLimitingInfoInvoker(
+        ShowSqlLimitingInfoRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showSqlLimitingInfo, hcClient);
+    }
+
+    /**
+     * 获取SQL限流任务信息
+     *
+     * 获取SQL限流任务信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSqlLimitingJobInfoRequest 请求对象
+     * @return ShowSqlLimitingJobInfoResponse
+     */
+    public ShowSqlLimitingJobInfoResponse showSqlLimitingJobInfo(ShowSqlLimitingJobInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showSqlLimitingJobInfo);
+    }
+
+    /**
+     * 获取SQL限流任务信息
+     *
+     * 获取SQL限流任务信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSqlLimitingJobInfoRequest 请求对象
+     * @return SyncInvoker<ShowSqlLimitingJobInfoRequest, ShowSqlLimitingJobInfoResponse>
+     */
+    public SyncInvoker<ShowSqlLimitingJobInfoRequest, ShowSqlLimitingJobInfoResponse> showSqlLimitingJobInfoInvoker(
+        ShowSqlLimitingJobInfoRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showSqlLimitingJobInfo, hcClient);
+    }
+
+    /**
+     * 获取SQL限流记录
+     *
+     * 获取SQL限流记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSqlLimitingRecordRequest 请求对象
+     * @return ShowSqlLimitingRecordResponse
+     */
+    public ShowSqlLimitingRecordResponse showSqlLimitingRecord(ShowSqlLimitingRecordRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showSqlLimitingRecord);
+    }
+
+    /**
+     * 获取SQL限流记录
+     *
+     * 获取SQL限流记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSqlLimitingRecordRequest 请求对象
+     * @return SyncInvoker<ShowSqlLimitingRecordRequest, ShowSqlLimitingRecordResponse>
+     */
+    public SyncInvoker<ShowSqlLimitingRecordRequest, ShowSqlLimitingRecordResponse> showSqlLimitingRecordInvoker(
+        ShowSqlLimitingRecordRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showSqlLimitingRecord, hcClient);
     }
 
     /**
@@ -3093,6 +5964,91 @@ public class DasClient {
     public SyncInvoker<ShowSupportKeyStringRequest, ShowSupportKeyStringResponse> showSupportKeyStringInvoker(
         ShowSupportKeyStringRequest request) {
         return new SyncInvoker<>(request, DasMeta.showSupportKeyString, hcClient);
+    }
+
+    /**
+     * 获取Top数据
+     *
+     * 获取Top数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTopDataRequest 请求对象
+     * @return ShowTopDataResponse
+     */
+    public ShowTopDataResponse showTopData(ShowTopDataRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showTopData);
+    }
+
+    /**
+     * 获取Top数据
+     *
+     * 获取Top数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTopDataRequest 请求对象
+     * @return SyncInvoker<ShowTopDataRequest, ShowTopDataResponse>
+     */
+    public SyncInvoker<ShowTopDataRequest, ShowTopDataResponse> showTopDataInvoker(ShowTopDataRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showTopData, hcClient);
+    }
+
+    /**
+     * 获取Top慢日志
+     *
+     * 获取Top慢日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTopSlowLogRequest 请求对象
+     * @return ShowTopSlowLogResponse
+     */
+    public ShowTopSlowLogResponse showTopSlowLog(ShowTopSlowLogRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showTopSlowLog);
+    }
+
+    /**
+     * 获取Top慢日志
+     *
+     * 获取Top慢日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTopSlowLogRequest 请求对象
+     * @return SyncInvoker<ShowTopSlowLogRequest, ShowTopSlowLogResponse>
+     */
+    public SyncInvoker<ShowTopSlowLogRequest, ShowTopSlowLogResponse> showTopSlowLogInvoker(
+        ShowTopSlowLogRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showTopSlowLog, hcClient);
+    }
+
+    /**
+     * 查询Top库表趋势
+     *
+     * Console Get Top Trend New
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTopTrendRequest 请求对象
+     * @return ShowTopTrendResponse
+     */
+    public ShowTopTrendResponse showTopTrend(ShowTopTrendRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showTopTrend);
+    }
+
+    /**
+     * 查询Top库表趋势
+     *
+     * Console Get Top Trend New
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTopTrendRequest 请求对象
+     * @return SyncInvoker<ShowTopTrendRequest, ShowTopTrendResponse>
+     */
+    public SyncInvoker<ShowTopTrendRequest, ShowTopTrendResponse> showTopTrendInvoker(ShowTopTrendRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showTopTrend, hcClient);
     }
 
     /**
@@ -3241,6 +6197,34 @@ public class DasClient {
     }
 
     /**
+     * 终止自动kill会话任务
+     *
+     * Stop Kill Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopKillTaskRequest 请求对象
+     * @return StopKillTaskResponse
+     */
+    public StopKillTaskResponse stopKillTask(StopKillTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.stopKillTask);
+    }
+
+    /**
+     * 终止自动kill会话任务
+     *
+     * Stop Kill Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopKillTaskRequest 请求对象
+     * @return SyncInvoker<StopKillTaskRequest, StopKillTaskResponse>
+     */
+    public SyncInvoker<StopKillTaskRequest, StopKillTaskResponse> stopKillTaskInvoker(StopKillTaskRequest request) {
+        return new SyncInvoker<>(request, DasMeta.stopKillTask, hcClient);
+    }
+
+    /**
      * 订阅实例报告
      *
      * 订阅实例报告
@@ -3267,6 +6251,64 @@ public class DasClient {
     public SyncInvoker<SubscribeInstanceReportNewRequest, SubscribeInstanceReportNewResponse> subscribeInstanceReportNewInvoker(
         SubscribeInstanceReportNewRequest request) {
         return new SyncInvoker<>(request, DasMeta.subscribeInstanceReportNew, hcClient);
+    }
+
+    /**
+     * 切换SQL限流规则
+     *
+     * 切换SQL限流规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchSqlLimitingRuleNewRequest 请求对象
+     * @return SwitchSqlLimitingRuleNewResponse
+     */
+    public SwitchSqlLimitingRuleNewResponse switchSqlLimitingRuleNew(SwitchSqlLimitingRuleNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.switchSqlLimitingRuleNew);
+    }
+
+    /**
+     * 切换SQL限流规则
+     *
+     * 切换SQL限流规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchSqlLimitingRuleNewRequest 请求对象
+     * @return SyncInvoker<SwitchSqlLimitingRuleNewRequest, SwitchSqlLimitingRuleNewResponse>
+     */
+    public SyncInvoker<SwitchSqlLimitingRuleNewRequest, SwitchSqlLimitingRuleNewResponse> switchSqlLimitingRuleNewInvoker(
+        SwitchSqlLimitingRuleNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.switchSqlLimitingRuleNew, hcClient);
+    }
+
+    /**
+     * 同步连接
+     *
+     * 同步连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncConnectionsNewRequest 请求对象
+     * @return SyncConnectionsNewResponse
+     */
+    public SyncConnectionsNewResponse syncConnectionsNew(SyncConnectionsNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.syncConnectionsNew);
+    }
+
+    /**
+     * 同步连接
+     *
+     * 同步连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncConnectionsNewRequest 请求对象
+     * @return SyncInvoker<SyncConnectionsNewRequest, SyncConnectionsNewResponse>
+     */
+    public SyncInvoker<SyncConnectionsNewRequest, SyncConnectionsNewResponse> syncConnectionsNewInvoker(
+        SyncConnectionsNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.syncConnectionsNew, hcClient);
     }
 
     /**
@@ -3387,6 +6429,36 @@ public class DasClient {
     }
 
     /**
+     * 敏感操作开关
+     *
+     * 敏感操作开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSensitiveOperationSwitchRequest 请求对象
+     * @return UpdateSensitiveOperationSwitchResponse
+     */
+    public UpdateSensitiveOperationSwitchResponse updateSensitiveOperationSwitch(
+        UpdateSensitiveOperationSwitchRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.updateSensitiveOperationSwitch);
+    }
+
+    /**
+     * 敏感操作开关
+     *
+     * 敏感操作开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSensitiveOperationSwitchRequest 请求对象
+     * @return SyncInvoker<UpdateSensitiveOperationSwitchRequest, UpdateSensitiveOperationSwitchResponse>
+     */
+    public SyncInvoker<UpdateSensitiveOperationSwitchRequest, UpdateSensitiveOperationSwitchResponse> updateSensitiveOperationSwitchInvoker(
+        UpdateSensitiveOperationSwitchRequest request) {
+        return new SyncInvoker<>(request, DasMeta.updateSensitiveOperationSwitch, hcClient);
+    }
+
+    /**
      * 更新共享信息
      *
      * 更新共享信息
@@ -3413,6 +6485,35 @@ public class DasClient {
     public SyncInvoker<UpdateSharedInfoNewRequest, UpdateSharedInfoNewResponse> updateSharedInfoNewInvoker(
         UpdateSharedInfoNewRequest request) {
         return new SyncInvoker<>(request, DasMeta.updateSharedInfoNew, hcClient);
+    }
+
+    /**
+     * 更新SQL限流记录
+     *
+     * 更新SQL限流记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSqlLimitingRecordNewRequest 请求对象
+     * @return UpdateSqlLimitingRecordNewResponse
+     */
+    public UpdateSqlLimitingRecordNewResponse updateSqlLimitingRecordNew(UpdateSqlLimitingRecordNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.updateSqlLimitingRecordNew);
+    }
+
+    /**
+     * 更新SQL限流记录
+     *
+     * 更新SQL限流记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSqlLimitingRecordNewRequest 请求对象
+     * @return SyncInvoker<UpdateSqlLimitingRecordNewRequest, UpdateSqlLimitingRecordNewResponse>
+     */
+    public SyncInvoker<UpdateSqlLimitingRecordNewRequest, UpdateSqlLimitingRecordNewResponse> updateSqlLimitingRecordNewInvoker(
+        UpdateSqlLimitingRecordNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.updateSqlLimitingRecordNew, hcClient);
     }
 
     /**
@@ -4607,6 +7708,35 @@ public class DasClient {
     }
 
     /**
+     * 获取分析结果
+     *
+     * 获取分析结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAnalysisResultRequest 请求对象
+     * @return ListAnalysisResultResponse
+     */
+    public ListAnalysisResultResponse listAnalysisResult(ListAnalysisResultRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listAnalysisResult);
+    }
+
+    /**
+     * 获取分析结果
+     *
+     * 获取分析结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAnalysisResultRequest 请求对象
+     * @return SyncInvoker<ListAnalysisResultRequest, ListAnalysisResultResponse>
+     */
+    public SyncInvoker<ListAnalysisResultRequest, ListAnalysisResultResponse> listAnalysisResultInvoker(
+        ListAnalysisResultRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listAnalysisResult, hcClient);
+    }
+
+    /**
      * 查询自增配额
      *
      * 查询自增配额
@@ -4662,6 +7792,35 @@ public class DasClient {
     public SyncInvoker<ListCloudDbaInstancesRequest, ListCloudDbaInstancesResponse> listCloudDbaInstancesInvoker(
         ListCloudDbaInstancesRequest request) {
         return new SyncInvoker<>(request, DasMeta.listCloudDbaInstances, hcClient);
+    }
+
+    /**
+     * 获取数据库相关的cpu和内存信息
+     *
+     * 获取数据库相关的cpu和内存信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatabaseInfosRequest 请求对象
+     * @return ListDatabaseInfosResponse
+     */
+    public ListDatabaseInfosResponse listDatabaseInfos(ListDatabaseInfosRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listDatabaseInfos);
+    }
+
+    /**
+     * 获取数据库相关的cpu和内存信息
+     *
+     * 获取数据库相关的cpu和内存信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatabaseInfosRequest 请求对象
+     * @return SyncInvoker<ListDatabaseInfosRequest, ListDatabaseInfosResponse>
+     */
+    public SyncInvoker<ListDatabaseInfosRequest, ListDatabaseInfosResponse> listDatabaseInfosInvoker(
+        ListDatabaseInfosRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listDatabaseInfos, hcClient);
     }
 
     /**

@@ -30,6 +30,21 @@ public class ListPipelinesResponse extends SdkResponse {
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "current_system_time")
+
+    private Long currentSystemTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "highest_confidentiality")
+
+    private ListPipelinesPageHighestConfidentiality highestConfidentiality;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "number_of_hidden_data")
+
+    private Long numberOfHiddenData;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipelines")
 
     private List<ListPipelinesPagePipelines> pipelines = null;
@@ -85,6 +100,68 @@ public class ListPipelinesResponse extends SdkResponse {
         this.total = total;
     }
 
+    public ListPipelinesResponse withCurrentSystemTime(Long currentSystemTime) {
+        this.currentSystemTime = currentSystemTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 当前系统时间。 **取值范围**： 不涉及。 
+     * @return currentSystemTime
+     */
+    public Long getCurrentSystemTime() {
+        return currentSystemTime;
+    }
+
+    public void setCurrentSystemTime(Long currentSystemTime) {
+        this.currentSystemTime = currentSystemTime;
+    }
+
+    public ListPipelinesResponse withHighestConfidentiality(
+        ListPipelinesPageHighestConfidentiality highestConfidentiality) {
+        this.highestConfidentiality = highestConfidentiality;
+        return this;
+    }
+
+    public ListPipelinesResponse withHighestConfidentiality(
+        Consumer<ListPipelinesPageHighestConfidentiality> highestConfidentialitySetter) {
+        if (this.highestConfidentiality == null) {
+            this.highestConfidentiality = new ListPipelinesPageHighestConfidentiality();
+            highestConfidentialitySetter.accept(this.highestConfidentiality);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get highestConfidentiality
+     * @return highestConfidentiality
+     */
+    public ListPipelinesPageHighestConfidentiality getHighestConfidentiality() {
+        return highestConfidentiality;
+    }
+
+    public void setHighestConfidentiality(ListPipelinesPageHighestConfidentiality highestConfidentiality) {
+        this.highestConfidentiality = highestConfidentiality;
+    }
+
+    public ListPipelinesResponse withNumberOfHiddenData(Long numberOfHiddenData) {
+        this.numberOfHiddenData = numberOfHiddenData;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 隐藏数据数量。 **约束限制**： 非涉密场景无该字段。 **取值范围**： 不涉及。 
+     * @return numberOfHiddenData
+     */
+    public Long getNumberOfHiddenData() {
+        return numberOfHiddenData;
+    }
+
+    public void setNumberOfHiddenData(Long numberOfHiddenData) {
+        this.numberOfHiddenData = numberOfHiddenData;
+    }
+
     public ListPipelinesResponse withPipelines(List<ListPipelinesPagePipelines> pipelines) {
         this.pipelines = pipelines;
         return this;
@@ -128,12 +205,16 @@ public class ListPipelinesResponse extends SdkResponse {
         }
         ListPipelinesResponse that = (ListPipelinesResponse) obj;
         return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.total, that.total) && Objects.equals(this.pipelines, that.pipelines);
+            && Objects.equals(this.total, that.total) && Objects.equals(this.currentSystemTime, that.currentSystemTime)
+            && Objects.equals(this.highestConfidentiality, that.highestConfidentiality)
+            && Objects.equals(this.numberOfHiddenData, that.numberOfHiddenData)
+            && Objects.equals(this.pipelines, that.pipelines);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, total, pipelines);
+        return Objects
+            .hash(offset, limit, total, currentSystemTime, highestConfidentiality, numberOfHiddenData, pipelines);
     }
 
     @Override
@@ -143,6 +224,9 @@ public class ListPipelinesResponse extends SdkResponse {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    currentSystemTime: ").append(toIndentedString(currentSystemTime)).append("\n");
+        sb.append("    highestConfidentiality: ").append(toIndentedString(highestConfidentiality)).append("\n");
+        sb.append("    numberOfHiddenData: ").append(toIndentedString(numberOfHiddenData)).append("\n");
         sb.append("    pipelines: ").append(toIndentedString(pipelines)).append("\n");
         sb.append("}");
         return sb.toString();

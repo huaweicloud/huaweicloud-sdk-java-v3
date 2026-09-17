@@ -34,6 +34,21 @@ public class ListOpsEvaluatorTemplatesResponse extends SdkResponse {
 
     private String msg;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_number")
+
+    private Integer pageNumber;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_size")
+
+    private Integer pageSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_pages")
+
+    private Long totalPages;
+
     public ListOpsEvaluatorTemplatesResponse withEvaluatorTemplates(
         List<ListOpsEvaluatorTemplatesResponseBodyEvaluatorTemplates> evaluatorTemplates) {
         this.evaluatorTemplates = evaluatorTemplates;
@@ -126,6 +141,59 @@ public class ListOpsEvaluatorTemplatesResponse extends SdkResponse {
         this.msg = msg;
     }
 
+    public ListOpsEvaluatorTemplatesResponse withPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 当前页码。 **约束限制：** 不涉及。 **取值范围：** 正整数。 
+     * @return pageNumber
+     */
+    public Integer getPageNumber() {
+        return pageNumber;
+    }
+
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+    }
+
+    public ListOpsEvaluatorTemplatesResponse withPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 每页返回的记录条数。 **约束限制：** 不涉及。 **取值范围：** 1~100。 
+     * minimum: 1
+     * maximum: 100
+     * @return pageSize
+     */
+    public Integer getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public ListOpsEvaluatorTemplatesResponse withTotalPages(Long totalPages) {
+        this.totalPages = totalPages;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 总页数。 **约束限制：** 不涉及。 **取值范围：** 非负整数。 
+     * @return totalPages
+     */
+    public Long getTotalPages() {
+        return totalPages;
+    }
+
+    public void setTotalPages(Long totalPages) {
+        this.totalPages = totalPages;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -137,12 +205,13 @@ public class ListOpsEvaluatorTemplatesResponse extends SdkResponse {
         ListOpsEvaluatorTemplatesResponse that = (ListOpsEvaluatorTemplatesResponse) obj;
         return Objects.equals(this.evaluatorTemplates, that.evaluatorTemplates)
             && Objects.equals(this.total, that.total) && Objects.equals(this.code, that.code)
-            && Objects.equals(this.msg, that.msg);
+            && Objects.equals(this.msg, that.msg) && Objects.equals(this.pageNumber, that.pageNumber)
+            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.totalPages, that.totalPages);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(evaluatorTemplates, total, code, msg);
+        return Objects.hash(evaluatorTemplates, total, code, msg, pageNumber, pageSize, totalPages);
     }
 
     @Override
@@ -153,6 +222,9 @@ public class ListOpsEvaluatorTemplatesResponse extends SdkResponse {
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    code: ").append(toIndentedString(code)).append("\n");
         sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
+        sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
+        sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
+        sb.append("    totalPages: ").append(toIndentedString(totalPages)).append("\n");
         sb.append("}");
         return sb.toString();
     }

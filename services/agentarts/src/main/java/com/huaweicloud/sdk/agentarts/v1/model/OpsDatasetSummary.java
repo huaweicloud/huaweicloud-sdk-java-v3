@@ -53,6 +53,36 @@ public class OpsDatasetSummary {
 
     private OpsBaseInfo baseInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "latest_version_id")
+
+    private String latestVersionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "turn_type")
+
+    private String turnType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_preset")
+
+    private Boolean isPreset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "can_delete")
+
+    private Boolean canDelete;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reference_count")
+
+    private Integer referenceCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<OpsTmsTag> tags = null;
+
     public OpsDatasetSummary withId(String id) {
         this.id = id;
         return this;
@@ -216,6 +246,126 @@ public class OpsDatasetSummary {
         this.baseInfo = baseInfo;
     }
 
+    public OpsDatasetSummary withLatestVersionId(String latestVersionId) {
+        this.latestVersionId = latestVersionId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 该评测集当前已发布的最新版本号uuid。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 
+     * @return latestVersionId
+     */
+    public String getLatestVersionId() {
+        return latestVersionId;
+    }
+
+    public void setLatestVersionId(String latestVersionId) {
+        this.latestVersionId = latestVersionId;
+    }
+
+    public OpsDatasetSummary withTurnType(String turnType) {
+        this.turnType = turnType;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 该评测集对话轮次（turn）的类型。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 
+     * @return turnType
+     */
+    public String getTurnType() {
+        return turnType;
+    }
+
+    public void setTurnType(String turnType) {
+        this.turnType = turnType;
+    }
+
+    public OpsDatasetSummary withIsPreset(Boolean isPreset) {
+        this.isPreset = isPreset;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 该评测集是否预置。 **约束限制：** 不涉及。 **取值范围：** - true: 评测集为预置 - false: 评测集为非预置 
+     * @return isPreset
+     */
+    public Boolean getIsPreset() {
+        return isPreset;
+    }
+
+    public void setIsPreset(Boolean isPreset) {
+        this.isPreset = isPreset;
+    }
+
+    public OpsDatasetSummary withCanDelete(Boolean canDelete) {
+        this.canDelete = canDelete;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 该评测集是否能删除。 **约束限制：** 不涉及。 **取值范围：** - true: 可以删除 - false: 不可删除 
+     * @return canDelete
+     */
+    public Boolean getCanDelete() {
+        return canDelete;
+    }
+
+    public void setCanDelete(Boolean canDelete) {
+        this.canDelete = canDelete;
+    }
+
+    public OpsDatasetSummary withReferenceCount(Integer referenceCount) {
+        this.referenceCount = referenceCount;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 评测集被引用次数。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return referenceCount
+     */
+    public Integer getReferenceCount() {
+        return referenceCount;
+    }
+
+    public void setReferenceCount(Integer referenceCount) {
+        this.referenceCount = referenceCount;
+    }
+
+    public OpsDatasetSummary withTags(List<OpsTmsTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public OpsDatasetSummary addTagsItem(OpsTmsTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public OpsDatasetSummary withTags(Consumer<List<OpsTmsTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 评测集绑定的TMS标签列表。数组内每个元素为OpsTmsTag对象，包含标签的键值信息。 **约束限制：** 不涉及。
+     * @return tags
+     */
+    public List<OpsTmsTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<OpsTmsTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -229,12 +379,29 @@ public class OpsDatasetSummary {
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.latestVersion, that.latestVersion) && Objects.equals(this.itemCount, that.itemCount)
             && Objects.equals(this.changeUncommitted, that.changeUncommitted)
-            && Objects.equals(this.schemas, that.schemas) && Objects.equals(this.baseInfo, that.baseInfo);
+            && Objects.equals(this.schemas, that.schemas) && Objects.equals(this.baseInfo, that.baseInfo)
+            && Objects.equals(this.latestVersionId, that.latestVersionId)
+            && Objects.equals(this.turnType, that.turnType) && Objects.equals(this.isPreset, that.isPreset)
+            && Objects.equals(this.canDelete, that.canDelete)
+            && Objects.equals(this.referenceCount, that.referenceCount) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, latestVersion, itemCount, changeUncommitted, schemas, baseInfo);
+        return Objects.hash(id,
+            name,
+            description,
+            latestVersion,
+            itemCount,
+            changeUncommitted,
+            schemas,
+            baseInfo,
+            latestVersionId,
+            turnType,
+            isPreset,
+            canDelete,
+            referenceCount,
+            tags);
     }
 
     @Override
@@ -249,6 +416,12 @@ public class OpsDatasetSummary {
         sb.append("    changeUncommitted: ").append(toIndentedString(changeUncommitted)).append("\n");
         sb.append("    schemas: ").append(toIndentedString(schemas)).append("\n");
         sb.append("    baseInfo: ").append(toIndentedString(baseInfo)).append("\n");
+        sb.append("    latestVersionId: ").append(toIndentedString(latestVersionId)).append("\n");
+        sb.append("    turnType: ").append(toIndentedString(turnType)).append("\n");
+        sb.append("    isPreset: ").append(toIndentedString(isPreset)).append("\n");
+        sb.append("    canDelete: ").append(toIndentedString(canDelete)).append("\n");
+        sb.append("    referenceCount: ").append(toIndentedString(referenceCount)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

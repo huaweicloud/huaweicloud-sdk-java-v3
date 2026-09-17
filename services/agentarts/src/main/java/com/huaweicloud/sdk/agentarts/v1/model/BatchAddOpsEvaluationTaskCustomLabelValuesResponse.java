@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -13,34 +12,47 @@ import java.util.function.Consumer;
 public class BatchAddOpsEvaluationTaskCustomLabelValuesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "msg")
 
-    private BatchTagValueMsg body;
+    private String msg;
 
-    public BatchAddOpsEvaluationTaskCustomLabelValuesResponse withBody(BatchTagValueMsg body) {
-        this.body = body;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "code")
 
-    public BatchAddOpsEvaluationTaskCustomLabelValuesResponse withBody(Consumer<BatchTagValueMsg> bodySetter) {
-        if (this.body == null) {
-            this.body = new BatchTagValueMsg();
-            bodySetter.accept(this.body);
-        }
+    private String code;
 
+    public BatchAddOpsEvaluationTaskCustomLabelValuesResponse withMsg(String msg) {
+        this.msg = msg;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * **参数解释：** 返回的结果的msg。 **约束限制：** 不涉及。 
+     * @return msg
      */
-    public BatchTagValueMsg getBody() {
-        return body;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setBody(BatchTagValueMsg body) {
-        this.body = body;
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public BatchAddOpsEvaluationTaskCustomLabelValuesResponse withCode(String code) {
+        this.code = code;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 返回的结果的code。 **约束限制：** 不涉及。 
+     * @return code
+     */
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     @Override
@@ -53,19 +65,20 @@ public class BatchAddOpsEvaluationTaskCustomLabelValuesResponse extends SdkRespo
         }
         BatchAddOpsEvaluationTaskCustomLabelValuesResponse that =
             (BatchAddOpsEvaluationTaskCustomLabelValuesResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.msg, that.msg) && Objects.equals(this.code, that.code);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(msg, code);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchAddOpsEvaluationTaskCustomLabelValuesResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
         sb.append("}");
         return sb.toString();
     }

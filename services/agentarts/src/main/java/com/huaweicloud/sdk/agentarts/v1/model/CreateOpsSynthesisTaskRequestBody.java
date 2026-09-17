@@ -19,6 +19,11 @@ import java.util.function.Consumer;
 public class CreateOpsSynthesisTaskRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "account_id")
+
+    private String accountId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -191,6 +196,23 @@ public class CreateOpsSynthesisTaskRequestBody {
     @JsonProperty(value = "sample_count")
 
     private Integer sampleCount;
+
+    public CreateOpsSynthesisTaskRequestBody withAccountId(String accountId) {
+        this.accountId = accountId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 租户账号ID。 **约束限制：** 不涉及。 **取值范围：** 由英文字母、数字及连字符(-)、下划线(_)组成的0~64个字符的字符串。 **默认取值：** 不涉及。
+     * @return accountId
+     */
+    public String getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
 
     public CreateOpsSynthesisTaskRequestBody withName(String name) {
         this.name = name;
@@ -373,7 +395,8 @@ public class CreateOpsSynthesisTaskRequestBody {
             return false;
         }
         CreateOpsSynthesisTaskRequestBody that = (CreateOpsSynthesisTaskRequestBody) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.scenarioType, that.scenarioType)
+        return Objects.equals(this.accountId, that.accountId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.scenarioType, that.scenarioType)
             && Objects.equals(this.scenarioDescription, that.scenarioDescription)
             && Objects.equals(this.status, that.status) && Objects.equals(this.modelConfig, that.modelConfig)
             && Objects.equals(this.seedData, that.seedData) && Objects.equals(this.schemas, that.schemas)
@@ -382,14 +405,22 @@ public class CreateOpsSynthesisTaskRequestBody {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(name, scenarioType, scenarioDescription, status, modelConfig, seedData, schemas, sampleCount);
+        return Objects.hash(accountId,
+            name,
+            scenarioType,
+            scenarioDescription,
+            status,
+            modelConfig,
+            seedData,
+            schemas,
+            sampleCount);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateOpsSynthesisTaskRequestBody {\n");
+        sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    scenarioType: ").append(toIndentedString(scenarioType)).append("\n");
         sb.append("    scenarioDescription: ").append(toIndentedString(scenarioDescription)).append("\n");

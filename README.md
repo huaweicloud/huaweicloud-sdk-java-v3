@@ -149,7 +149,7 @@ import com.huaweicloud.sdk.vpc.v2.region.VpcRegion;
 public class Application {
     public static void main(String[] args) {
         // Configure authentication
-        // Authentication can be configured through environment variables and other methods. Please refer to Chapter 2.4 Authentication Management
+        // Authentication can be configured through environment variables and other methods. Please refer to Chapter 2.5 Authentication Management
         ICredential auth = new BasicCredentials()
                 .withAk(System.getenv("HUAWEICLOUD_SDK_AK"))
                 .withSk(System.getenv("HUAWEICLOUD_SDK_SK"));
@@ -201,7 +201,7 @@ public class Application {
     public static void main(String[] args) {
         // Configure authentication
         ICredential auth = new BasicCredentials()
-                // Authentication can be configured through environment variables and other methods. Please refer to Chapter 2.4 Authentication Management
+                // Authentication can be configured through environment variables and other methods. Please refer to Chapter 2.5 Authentication Management
                 .withAk(System.getenv("HUAWEICLOUD_SDK_AK"))
                 .withSk(System.getenv("HUAWEICLOUD_SDK_SK"))
                 // If projectId is not filled in, the SDK will automatically call the IAM service to query the project id corresponding to the region.
@@ -307,12 +307,13 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/blob/m
     * [2.1 Use Temporary AK&SK](#22-use-temporary-aksk-top)
     * [2.2 Use Permanent AK&SK](#21-use-permanent-aksk-top)
     * [2.3 Use IdpId&IdTokenFile](#23-use-idpididtokenfile-top)
-    * [2.4 Authentication Management](#24-authentication-management-top)
-        * [2.4.1 Environment Variables](#241-environment-variables-top)
-        * [2.4.2 Profile](#242-profile-top)
-        * [2.4.3 Metadata](#243-metadata-top)
-        * [2.4.4 Pod Identity](#244-pod-identity-top)
-        * [2.4.5 Provider Chain](#245-provider-chain-top)
+    * [2.4 Use OIDC Agency Authentication](#24-use-oidc-agency-authentication-top)
+    * [2.5 Authentication Management](#25-authentication-management-top)
+        * [2.5.1 Environment Variables](#251-environment-variables-top)
+        * [2.5.2 Profile](#252-profile-top)
+        * [2.5.3 Metadata](#253-metadata-top)
+        * [2.5.4 Pod Identity](#254-pod-identity-top)
+        * [2.5.5 Provider Chain](#255-provider-chain-top)
 * [3. Client Initialization](#3-client-initialization-top)
     * [3.1 Initialize the client with specified Endpoint](#31-initialize-the-serviceclient-with-specified-endpoint-top)
     * [3.2 Initialize the client with specified Region (Recommended)](#32-initialize-the-serviceclient-with-specified-region-recommended-top)
@@ -449,6 +450,7 @@ The following authentications are supported:
 - temporary AK&SK + SecurityToken
 - permanent AK&SK
 - IdpId&IdTokenFile
+- OIDC Agency Authentication
 
 **Parameter description**:
 
@@ -557,7 +559,57 @@ GlobalCredentials globalCredentials = new GlobalCredentials()
     .withDomainId(domainId);
 ```
 
-#### 2.4 Authentication Management [:top:](#user-manual-top)
+#### 2.4 Use OIDC Agency Authentication [:top:](#user-manual-top)
+
+Obtain temporary security credentials through OIDC identity provider token and trust agency. See: [AssumeAgencyWithOIDC](https://support.huaweicloud.com/api-iam5/AssumeAgencyWithOIDC.html)
+
+**Authentication Parameters**:
+
+- `providerUrn` URN of the OIDC provider, format: `iam::{account_id}:oidcProvider:{provider_name}`
+- `agencyUrn` URN of the target agency, format: `iam::{account_id}:agency:{agency_name}`
+- `agencySessionName` Session name for the agency
+- `idToken` OIDC ID token string from the identity provider, supplied by the application at runtime (short-lived JWT, not via env var)
+- `oidcIdTokenFile` Optional, file path containing the OIDC ID token. Alternative to `idToken` for scenarios where the token is periodically refreshed to a file. If both are set, `idToken` takes precedence.
+- `durationSeconds` Optional, validity period of temporary credentials (in seconds), range [900,43200], default 3600
+- `policy` Optional, inline policy to restrict permissions
+- `policyIds` Optional, list of policy IDs to restrict permissions
+- `iamEndpoint` Optional, IAM endpoint, default `https://iam.myhuaweicloud.com`
+- `projectId` Optional, project ID for regional services. If not set, SDK auto-obtains it via IAM API
+- `domainId` Optional, account ID for global services. If not set, SDK auto-obtains it via IAM/STS API
+
+The SDK internally handles the `POST /v5/agencies/assume-with-oidc` call to obtain temporary credentials. You only need to set OIDC parameters when constructing Credentials.
+
+``` java
+import com.huaweicloud.sdk.core.auth.BasicCredentials;
+import com.huaweicloud.sdk.core.auth.GlobalCredentials;
+import java.util.Arrays;
+
+// Regional service
+// If projectId is not set, SDK auto-obtains it via IAM API using the temporary credential
+BasicCredentials basicCredentials = new BasicCredentials()
+    .withIdToken(idToken)                                           // OIDC ID Token
+    .withProviderUrn("iam::account_id:oidcProvider:provider_name")  // providerUrn
+    .withAgencyUrn("iam::account_id:agency:agency_name")            // agencyUrn
+    .withAgencySessionName("session_name")                          // agencySessionName
+    .withDurationSeconds(3600);                                     // optional, default 3600
+    // .withProjectId(projectId)                                     // optional, skip auto-obtain
+    // .withIamEndpoint("https://iam.myhuaweicloud.com")            // optional
+    // .withPolicy("{\"Version\":\"5.0\"}")                          // optional, restrict permissions
+    // .withPolicyIds(Arrays.asList("p1", "p2"))                     // optional, preset policies
+    // .withOidcIdTokenFile("/path/to/id_token_file")               // optional, alternative to idToken
+
+// Global service
+// If domainId is not set, SDK auto-obtains it via IAM/STS API
+GlobalCredentials globalCredentials = new GlobalCredentials()
+    .withIdToken(idToken)
+    .withProviderUrn("iam::account_id:oidcProvider:provider_name")
+    .withAgencyUrn("iam::account_id:agency:agency_name")
+    .withAgencySessionName("session_name")
+    .withDurationSeconds(3600);
+    // .withDomainId(domainId)                                       // optional, skip auto-obtain
+```
+
+#### 2.5 Authentication Management [:top:](#user-manual-top)
 
 Getting Authentication from providers is supported since `v3.0.97`
 
@@ -565,7 +617,7 @@ Getting Authentication from providers is supported since `v3.0.97`
 
 **Global services** use `XxxCredentialProvider.getGlobalCredentialXxxProvider()`
 
-##### 2.4.1 Environment Variables [:top:](#user-manual-top)
+##### 2.5.1 Environment Variables [:top:](#user-manual-top)
 
 **AK/SK Auth**
 
@@ -644,7 +696,7 @@ EnvCredentialProvider globalProvider = EnvCredentialProvider.getGlobalCredential
 ICredential globalCred = globalProvider.getCredentials();
 ```
 
-##### 2.4.2 Profile [:top:](#user-manual-top)
+##### 2.5.2 Profile [:top:](#user-manual-top)
 
 The profile will be read from the user's home directory by default, linux`~/.huaweicloud/credentials`,windows`C:\Users\USER_NAME\.huaweicloud\credentials`, the path to the profile can be modified by configuring the environment variable `HUAWEICLOUD_SDK_CREDENTIALS_FILE`
 
@@ -725,7 +777,7 @@ ProfileCredentialProvider globalProvider = ProfileCredentialProvider.getGlobalCr
 ICredential globalCred = globalProvider.getCredentials();
 ```
 
-##### 2.4.3 Metadata [:top:](#user-manual-top)
+##### 2.5.3 Metadata [:top:](#user-manual-top)
 
 Get temporary AK/SK and securitytoken from instance's metadata. Refer to the [Obtaining Metadata](https://support.huaweicloud.com/intl/en-us/usermanual-ecs/ecs_03_0166.html) for more information.
 
@@ -744,7 +796,7 @@ MetadataCredentialProvider globalProvider = MetadataCredentialProvider.getGlobal
 ICredential globalCred = globalProvider.getCredentials();
 ```
 
-##### 2.4.4 Pod Identity [:top:](#user-manual-top)
+##### 2.5.4 Pod Identity [:top:](#user-manual-top)
 
 Starting from version `3.1.191`, obtaining temporary AK/SK and security token using Pod Identity in CCE clusters is supported.
 
@@ -762,7 +814,7 @@ PodIdentityCredentialProvider globalProvider = PodIdentityCredentialProvider.glo
 ICredential globalCredentials = globalProvider.getCredentials();
 ```
 
-##### 2.4.5 Provider Chain [:top:](#user-manual-top)
+##### 2.5.5 Provider Chain [:top:](#user-manual-top)
 
 When creating a service client without credentials, try to load authentication in the order **Environment Variables -> Profile -> Metadata -> Pod Identity**
 

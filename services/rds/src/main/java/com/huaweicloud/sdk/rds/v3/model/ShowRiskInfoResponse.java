@@ -17,19 +17,19 @@ public class ShowRiskInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "risks")
 
-    private List<EngineRiskDesc> risks = null;
+    private List<ShowRiskInfoEngineRiskDesc> risks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
 
     private String xRequestId;
 
-    public ShowRiskInfoResponse withRisks(List<EngineRiskDesc> risks) {
+    public ShowRiskInfoResponse withRisks(List<ShowRiskInfoEngineRiskDesc> risks) {
         this.risks = risks;
         return this;
     }
 
-    public ShowRiskInfoResponse addRisksItem(EngineRiskDesc risksItem) {
+    public ShowRiskInfoResponse addRisksItem(ShowRiskInfoEngineRiskDesc risksItem) {
         if (this.risks == null) {
             this.risks = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ShowRiskInfoResponse extends SdkResponse {
         return this;
     }
 
-    public ShowRiskInfoResponse withRisks(Consumer<List<EngineRiskDesc>> risksSetter) {
+    public ShowRiskInfoResponse withRisks(Consumer<List<ShowRiskInfoEngineRiskDesc>> risksSetter) {
         if (this.risks == null) {
             this.risks = new ArrayList<>();
         }
@@ -49,11 +49,11 @@ public class ShowRiskInfoResponse extends SdkResponse {
      * 风险版本信息
      * @return risks
      */
-    public List<EngineRiskDesc> getRisks() {
+    public List<ShowRiskInfoEngineRiskDesc> getRisks() {
         return risks;
     }
 
-    public void setRisks(List<EngineRiskDesc> risks) {
+    public void setRisks(List<ShowRiskInfoEngineRiskDesc> risks) {
         this.risks = risks;
     }
 

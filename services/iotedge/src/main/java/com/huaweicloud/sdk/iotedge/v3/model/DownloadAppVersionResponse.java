@@ -1,13 +1,13 @@
 package com.huaweicloud.sdk.iotedge.v3.model;
 
-import com.huaweicloud.sdk.core.SdkStreamResponse;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
  * Response Object
  */
-public class DownloadAppVersionResponse extends SdkStreamResponse {
+public class DownloadAppVersionResponse extends SdkResponse {
 
     @Override
     public boolean equals(java.lang.Object obj) {

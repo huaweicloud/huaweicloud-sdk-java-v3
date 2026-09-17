@@ -166,6 +166,11 @@ public class CreateEdgeApplicationVersionDTO {
 
     private String tplId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pre_upgrade_probe")
+
+    private PreUpgradeProbeDTO preUpgradeProbe;
+
     public CreateEdgeApplicationVersionDTO withVersion(String version) {
         this.version = version;
         return this;
@@ -336,7 +341,7 @@ public class CreateEdgeApplicationVersionDTO {
     }
 
     /**
-     * 架构
+     * 架构（x86_64|arm32|arm64）,示例：[\"x86_64\"]
      * @return arch
      */
     public Object getArch() {
@@ -466,6 +471,32 @@ public class CreateEdgeApplicationVersionDTO {
         this.tplId = tplId;
     }
 
+    public CreateEdgeApplicationVersionDTO withPreUpgradeProbe(PreUpgradeProbeDTO preUpgradeProbe) {
+        this.preUpgradeProbe = preUpgradeProbe;
+        return this;
+    }
+
+    public CreateEdgeApplicationVersionDTO withPreUpgradeProbe(Consumer<PreUpgradeProbeDTO> preUpgradeProbeSetter) {
+        if (this.preUpgradeProbe == null) {
+            this.preUpgradeProbe = new PreUpgradeProbeDTO();
+            preUpgradeProbeSetter.accept(this.preUpgradeProbe);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get preUpgradeProbe
+     * @return preUpgradeProbe
+     */
+    public PreUpgradeProbeDTO getPreUpgradeProbe() {
+        return preUpgradeProbe;
+    }
+
+    public void setPreUpgradeProbe(PreUpgradeProbeDTO preUpgradeProbe) {
+        this.preUpgradeProbe = preUpgradeProbe;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -484,7 +515,7 @@ public class CreateEdgeApplicationVersionDTO {
             && Objects.equals(this.command, that.command) && Objects.equals(this.args, that.args)
             && Objects.equals(this.outputs, that.outputs) && Objects.equals(this.inputs, that.inputs)
             && Objects.equals(this.services, that.services) && Objects.equals(this.supplier, that.supplier)
-            && Objects.equals(this.tplId, that.tplId);
+            && Objects.equals(this.tplId, that.tplId) && Objects.equals(this.preUpgradeProbe, that.preUpgradeProbe);
     }
 
     @Override
@@ -504,7 +535,8 @@ public class CreateEdgeApplicationVersionDTO {
             inputs,
             services,
             supplier,
-            tplId);
+            tplId,
+            preUpgradeProbe);
     }
 
     @Override
@@ -527,6 +559,7 @@ public class CreateEdgeApplicationVersionDTO {
         sb.append("    services: ").append(toIndentedString(services)).append("\n");
         sb.append("    supplier: ").append(toIndentedString(supplier)).append("\n");
         sb.append("    tplId: ").append(toIndentedString(tplId)).append("\n");
+        sb.append("    preUpgradeProbe: ").append(toIndentedString(preUpgradeProbe)).append("\n");
         sb.append("}");
         return sb.toString();
     }

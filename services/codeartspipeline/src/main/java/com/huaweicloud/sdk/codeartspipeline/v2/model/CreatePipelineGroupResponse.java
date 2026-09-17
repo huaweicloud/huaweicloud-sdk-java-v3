@@ -70,6 +70,16 @@ public class CreatePipelineGroupResponse extends SdkResponse {
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pipeline_count")
+
+    private Integer pipelineCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "no_group_count")
+
+    private Integer noGroupCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "children")
 
     private List<PipelineGroupVo> children = null;
@@ -261,6 +271,40 @@ public class CreatePipelineGroupResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
+    public CreatePipelineGroupResponse withPipelineCount(Integer pipelineCount) {
+        this.pipelineCount = pipelineCount;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 分组下的流水线总数。 **取值范围**： 不涉及。 
+     * @return pipelineCount
+     */
+    public Integer getPipelineCount() {
+        return pipelineCount;
+    }
+
+    public void setPipelineCount(Integer pipelineCount) {
+        this.pipelineCount = pipelineCount;
+    }
+
+    public CreatePipelineGroupResponse withNoGroupCount(Integer noGroupCount) {
+        this.noGroupCount = noGroupCount;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 未分组的流水线数量。 **取值范围**： 不涉及。 
+     * @return noGroupCount
+     */
+    public Integer getNoGroupCount() {
+        return noGroupCount;
+    }
+
+    public void setNoGroupCount(Integer noGroupCount) {
+        this.noGroupCount = noGroupCount;
+    }
+
     public CreatePipelineGroupResponse withChildren(List<PipelineGroupVo> children) {
         this.children = children;
         return this;
@@ -308,7 +352,9 @@ public class CreatePipelineGroupResponse extends SdkResponse {
             && Objects.equals(this.parentId, that.parentId) && Objects.equals(this.pathId, that.pathId)
             && Objects.equals(this.ordinal, that.ordinal) && Objects.equals(this.creator, that.creator)
             && Objects.equals(this.updater, that.updater) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.children, that.children);
+            && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.pipelineCount, that.pipelineCount)
+            && Objects.equals(this.noGroupCount, that.noGroupCount) && Objects.equals(this.children, that.children);
     }
 
     @Override
@@ -324,6 +370,8 @@ public class CreatePipelineGroupResponse extends SdkResponse {
             updater,
             createTime,
             updateTime,
+            pipelineCount,
+            noGroupCount,
             children);
     }
 
@@ -342,6 +390,8 @@ public class CreatePipelineGroupResponse extends SdkResponse {
         sb.append("    updater: ").append(toIndentedString(updater)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    pipelineCount: ").append(toIndentedString(pipelineCount)).append("\n");
+        sb.append("    noGroupCount: ").append(toIndentedString(noGroupCount)).append("\n");
         sb.append("    children: ").append(toIndentedString(children)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -41,7 +41,7 @@ public class ShowQuotasResponse extends SdkResponse {
     }
 
     /**
-     * 资源
+     * **参数解释：** 资源配额列表 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return quotas
      */
     public List<QuotaResource> getQuotas() {

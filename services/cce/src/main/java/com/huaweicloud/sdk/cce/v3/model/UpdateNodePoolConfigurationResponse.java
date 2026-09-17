@@ -43,7 +43,7 @@ public class UpdateNodePoolConfigurationResponse extends SdkResponse {
     }
 
     /**
-     * API版本
+     * **参数解释：** API版本，固定值**v3** **约束限制：** 固定值 **取值范围：** - v3  **默认取值：** v3 
      * @return apiVersion
      */
     public String getApiVersion() {
@@ -60,7 +60,7 @@ public class UpdateNodePoolConfigurationResponse extends SdkResponse {
     }
 
     /**
-     * API类型，固定值**Configuration**
+     * **参数解释：** API类型，固定值**Configuration** **约束限制：** 固定值 **取值范围：** - Configuration  **默认取值：** Configuration 
      * @return kind
      */
     public String getKind() {
@@ -129,7 +129,7 @@ public class UpdateNodePoolConfigurationResponse extends SdkResponse {
     }
 
     /**
-     * Configuration的状态信息
+     * **参数解释：** Configuration的状态信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return status
      */
     public Object getStatus() {

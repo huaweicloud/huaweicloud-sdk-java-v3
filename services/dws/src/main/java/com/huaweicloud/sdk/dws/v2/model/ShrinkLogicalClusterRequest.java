@@ -49,7 +49,7 @@ public class ShrinkLogicalClusterRequest {
     }
 
     /**
-     * **参数解释**： 逻辑集群id。  **约束限制**： 必须是有效的dws逻辑集群ID。  **取值范围**：  36位UUID。  **默认取值**：  不涉及。
+     * **参数解释**： 逻辑集群id。 **约束限制**： 必须是有效的dws逻辑集群ID。  **取值范围**： 36位UUID。 **默认取值**： 不涉及。
      * @return logicalClusterId
      */
     public String getLogicalClusterId() {

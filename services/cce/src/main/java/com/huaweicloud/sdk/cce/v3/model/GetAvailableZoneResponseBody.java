@@ -39,7 +39,7 @@ public class GetAvailableZoneResponseBody {
     private List<String> azGroupIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "PublicBorderGroup")
+    @JsonProperty(value = "publicBorderGroup")
 
     private String publicBorderGroup;
 

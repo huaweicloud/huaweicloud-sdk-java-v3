@@ -22,6 +22,11 @@ public class CreateInstallCmdRequest {
     private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_tpm")
+
+    private Boolean enableTpm;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private CreateInstallCmdRequestDTO body;
@@ -60,6 +65,23 @@ public class CreateInstallCmdRequest {
         this.arch = arch;
     }
 
+    public CreateInstallCmdRequest withEnableTpm(Boolean enableTpm) {
+        this.enableTpm = enableTpm;
+        return this;
+    }
+
+    /**
+     * 是否启用TPM
+     * @return enableTpm
+     */
+    public Boolean getEnableTpm() {
+        return enableTpm;
+    }
+
+    public void setEnableTpm(Boolean enableTpm) {
+        this.enableTpm = enableTpm;
+    }
+
     public CreateInstallCmdRequest withBody(CreateInstallCmdRequestDTO body) {
         this.body = body;
         return this;
@@ -96,12 +118,12 @@ public class CreateInstallCmdRequest {
         }
         CreateInstallCmdRequest that = (CreateInstallCmdRequest) obj;
         return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.arch, that.arch)
-            && Objects.equals(this.body, that.body);
+            && Objects.equals(this.enableTpm, that.enableTpm) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(edgeNodeId, arch, body);
+        return Objects.hash(edgeNodeId, arch, enableTpm, body);
     }
 
     @Override
@@ -110,6 +132,7 @@ public class CreateInstallCmdRequest {
         sb.append("class CreateInstallCmdRequest {\n");
         sb.append("    edgeNodeId: ").append(toIndentedString(edgeNodeId)).append("\n");
         sb.append("    arch: ").append(toIndentedString(arch)).append("\n");
+        sb.append("    enableTpm: ").append(toIndentedString(enableTpm)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

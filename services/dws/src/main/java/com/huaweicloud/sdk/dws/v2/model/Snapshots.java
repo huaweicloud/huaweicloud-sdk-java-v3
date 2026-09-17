@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.dws.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -141,86 +136,10 @@ public class Snapshots {
 
     private Boolean fineGrainedBackup;
 
-    /**
-     * **参数解释**： 备份等级。 **取值范围**： 不涉及。
-     */
-    public static final class BackupLevelEnum {
-
-        /**
-         * Enum CLUSTER for value: "cluster"
-         */
-        public static final BackupLevelEnum CLUSTER = new BackupLevelEnum("cluster");
-
-        /**
-         * Enum SCHEMA for value: "schema"
-         */
-        public static final BackupLevelEnum SCHEMA = new BackupLevelEnum("schema");
-
-        /**
-         * Enum TABLE for value: "table"
-         */
-        public static final BackupLevelEnum TABLE = new BackupLevelEnum("table");
-
-        private static final Map<String, BackupLevelEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, BackupLevelEnum> createStaticFields() {
-            Map<String, BackupLevelEnum> map = new HashMap<>();
-            map.put("cluster", CLUSTER);
-            map.put("schema", SCHEMA);
-            map.put("table", TABLE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        BackupLevelEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static BackupLevelEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BackupLevelEnum(value));
-        }
-
-        public static BackupLevelEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof BackupLevelEnum) {
-                return this.value.equals(((BackupLevelEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_level")
 
-    private BackupLevelEnum backupLevel;
+    private String backupLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fine_grained_backup_detail")
@@ -686,20 +605,20 @@ public class Snapshots {
         this.fineGrainedBackup = fineGrainedBackup;
     }
 
-    public Snapshots withBackupLevel(BackupLevelEnum backupLevel) {
+    public Snapshots withBackupLevel(String backupLevel) {
         this.backupLevel = backupLevel;
         return this;
     }
 
     /**
-     * **参数解释**： 备份等级。 **取值范围**： 不涉及。
+     * **参数解释**： 备份等级。 **取值范围**： - cluster：集群级 - schema：schema级 - table：表级
      * @return backupLevel
      */
-    public BackupLevelEnum getBackupLevel() {
+    public String getBackupLevel() {
         return backupLevel;
     }
 
-    public void setBackupLevel(BackupLevelEnum backupLevel) {
+    public void setBackupLevel(String backupLevel) {
         this.backupLevel = backupLevel;
     }
 

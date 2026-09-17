@@ -42,7 +42,7 @@ public class UpdateReleaseRequest {
     }
 
     /**
-     * 模板实例名称
+     * **参数解释：** 模板实例名称。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return name
      */
     public String getName() {
@@ -59,7 +59,7 @@ public class UpdateReleaseRequest {
     }
 
     /**
-     * 模板实例所在的命名空间
+     * **参数解释：** 模板实例所在的命名空间。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return namespace
      */
     public String getNamespace() {

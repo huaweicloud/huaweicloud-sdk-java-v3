@@ -143,6 +143,11 @@ public class EdgeNodeCreation {
 
     private String metricReport;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iotda_south_access")
+
+    private String iotdaSouthAccess;
+
     public EdgeNodeCreation withEdgeNodeId(String edgeNodeId) {
         this.edgeNodeId = edgeNodeId;
         return this;
@@ -183,7 +188,7 @@ public class EdgeNodeCreation {
     }
 
     /**
-     * 节点所属资源类型：advanced|standard
+     * 边缘节点类型：lite|advanced|standard。lite表示基础版边缘节点，advanced或standard表示专业版边缘节点。
      * @return type
      */
     public String getType() {
@@ -236,7 +241,7 @@ public class EdgeNodeCreation {
     }
 
     /**
-     * 系统架构。包括：arm64，arm32，x86_64。
+     * 边缘节点系统架构。包括：arm64，arm32，x86_64。
      * @return arch
      */
     public String getArch() {
@@ -253,7 +258,7 @@ public class EdgeNodeCreation {
     }
 
     /**
-     * 系统类型。包括：generalLinux通用系统，openHarmony。
+     * 边缘节点系统类型。包括：generalLinux通用系统，openHarmony鸿蒙系统。
      * @return osType
      */
     public String getOsType() {
@@ -354,7 +359,7 @@ public class EdgeNodeCreation {
     }
 
     /**
-     * 节点的可靠性等级。
+     * 节点的可靠性等级，LOW表示中级别，MEDIUM表示高级别。详细功能请参考“用户指南>管理边缘节点>注册节点”。
      * @return reliabilityLevel
      */
     public String getReliabilityLevel() {
@@ -390,7 +395,7 @@ public class EdgeNodeCreation {
     }
 
     /**
-     * AI加速卡类型，如华为昇腾AI加速卡NPU、图像处理加速卡GPU。
+     * AI加速卡类型，如昇腾AI加速卡NPU、图像处理加速卡GPU。
      * @return aiCardType
      */
     public String getAiCardType() {
@@ -466,7 +471,7 @@ public class EdgeNodeCreation {
     }
 
     /**
-     * 边缘节点在IEF日志配置参数，仅高级版支持。
+     * 边缘节点在IEF日志配置参数，仅专业版支持。
      * @return logConfigs
      */
     public List<LogConfigDTO> getLogConfigs() {
@@ -499,7 +504,7 @@ public class EdgeNodeCreation {
     }
 
     /**
-     * 用户预置第三方边缘应用
+     * 需要自动安装的边缘应用。此处可填写控制台“应用管理”页面中列出的业务应用与驱动应用。
      * @return apps
      */
     public List<EdgeAppInstanceDTO> getApps() {
@@ -673,6 +678,23 @@ public class EdgeNodeCreation {
         this.metricReport = metricReport;
     }
 
+    public EdgeNodeCreation withIotdaSouthAccess(String iotdaSouthAccess) {
+        this.iotdaSouthAccess = iotdaSouthAccess;
+        return this;
+    }
+
+    /**
+     * iotda的南向接入地址
+     * @return iotdaSouthAccess
+     */
+    public String getIotdaSouthAccess() {
+        return iotdaSouthAccess;
+    }
+
+    public void setIotdaSouthAccess(String iotdaSouthAccess) {
+        this.iotdaSouthAccess = iotdaSouthAccess;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -700,7 +722,8 @@ public class EdgeNodeCreation {
             && Objects.equals(this.deviceDataFormat, that.deviceDataFormat)
             && Objects.equals(this.automaticUpgrade, that.automaticUpgrade)
             && Objects.equals(this.deviceDataRecord, that.deviceDataRecord)
-            && Objects.equals(this.metricReport, that.metricReport);
+            && Objects.equals(this.metricReport, that.metricReport)
+            && Objects.equals(this.iotdaSouthAccess, that.iotdaSouthAccess);
     }
 
     @Override
@@ -730,7 +753,8 @@ public class EdgeNodeCreation {
             deviceDataFormat,
             automaticUpgrade,
             deviceDataRecord,
-            metricReport);
+            metricReport,
+            iotdaSouthAccess);
     }
 
     @Override
@@ -763,6 +787,7 @@ public class EdgeNodeCreation {
         sb.append("    automaticUpgrade: ").append(toIndentedString(automaticUpgrade)).append("\n");
         sb.append("    deviceDataRecord: ").append(toIndentedString(deviceDataRecord)).append("\n");
         sb.append("    metricReport: ").append(toIndentedString(metricReport)).append("\n");
+        sb.append("    iotdaSouthAccess: ").append(toIndentedString(iotdaSouthAccess)).append("\n");
         sb.append("}");
         return sb.toString();
     }

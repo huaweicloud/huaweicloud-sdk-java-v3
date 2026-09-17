@@ -40,13 +40,18 @@ public class HyperNodeStatus {
 
     private Integer activeNode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isStatic")
+
+    private Boolean isStatic;
+
     public HyperNodeStatus withPhase(String phase) {
         this.phase = phase;
         return this;
     }
 
     /**
-     * **参数解释** 超节点状态 **取值范围** - provisioning: 创建中。 - active: 整体可用，代表超节点下所有节点都可用。 - partially-available: 超节点下存在不可用节点时会从 active 转成此状态。 - error: 错误状态。 - deleting: 删除中。 - reinstalling: 重置中。 - scaling: 扩容或缩容中。
+     * **参数解释**： 超节点状态 **约束限制**： 不涉及 **取值范围**： - provisioning：创建中。 - active：整体可用，代表超节点下所有节点都可用。 - partially-available：超节点下存在不可用节点时会从 active 转成此状态。 - error：错误状态。 - deleting：删除中。 - reinstalling：重置中。 - scaling：扩容或缩容中。  **默认取值**： 不涉及
      * @return phase
      */
     public String getPhase() {
@@ -63,7 +68,7 @@ public class HyperNodeStatus {
     }
 
     /**
-     * **参数解释** 超节点实例 ID
+     * **参数解释**： 超节点ID **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return instanceID
      */
     public String getInstanceID() {
@@ -80,7 +85,7 @@ public class HyperNodeStatus {
     }
 
     /**
-     * **参数解释** 超节点下节点总数
+     * **参数解释**： 超节点下节点总数 **约束限制**： 不涉及 **取值范围**： 大于等于0的整数 **默认取值**： 不涉及
      * @return currentNode
      */
     public Integer getCurrentNode() {
@@ -97,7 +102,7 @@ public class HyperNodeStatus {
     }
 
     /**
-     * **参数解释** 超节点下处于删除中的节点数
+     * **参数解释**： 超节点下处于删除中的节点数 **约束限制**： 不涉及 **取值范围**： 大于等于0的整数 **默认取值**： 不涉及
      * @return deletingNode
      */
     public Integer getDeletingNode() {
@@ -114,7 +119,7 @@ public class HyperNodeStatus {
     }
 
     /**
-     * **参数解释** 超节点下处于创建中的节点数
+     * **参数解释**： 超节点下处于创建中的节点数 **约束限制**： 不涉及 **取值范围**： 大于等于0的整数 **默认取值**： 不涉及
      * @return creatingNode
      */
     public Integer getCreatingNode() {
@@ -131,7 +136,7 @@ public class HyperNodeStatus {
     }
 
     /**
-     * **参数解释** 超节点下处于可用状态的节点数
+     * **参数解释**： 超节点下处于可用状态的节点数 **约束限制**： 不涉及 **取值范围**： 大于等于0的整数 **默认取值**： 不涉及
      * @return activeNode
      */
     public Integer getActiveNode() {
@@ -140,6 +145,23 @@ public class HyperNodeStatus {
 
     public void setActiveNode(Integer activeNode) {
         this.activeNode = activeNode;
+    }
+
+    public HyperNodeStatus withIsStatic(Boolean isStatic) {
+        this.isStatic = isStatic;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 超节点是否为纳管节点。纳管节点指用户已有的存量服务器接入CCE集群，而非由CCE自动创建的ECS/BMS。 **约束限制**： 不涉及 **取值范围**： - true：纳管节点，服务器在加入集群前已存在，删除超节点时不会释放底层云服务器资源。 - false：CCE创建的节点，生命周期由CCE管理，删除时会释放底层资源。 **默认取值**： false
+     * @return isStatic
+     */
+    public Boolean getIsStatic() {
+        return isStatic;
+    }
+
+    public void setIsStatic(Boolean isStatic) {
+        this.isStatic = isStatic;
     }
 
     @Override
@@ -154,12 +176,13 @@ public class HyperNodeStatus {
         return Objects.equals(this.phase, that.phase) && Objects.equals(this.instanceID, that.instanceID)
             && Objects.equals(this.currentNode, that.currentNode)
             && Objects.equals(this.deletingNode, that.deletingNode)
-            && Objects.equals(this.creatingNode, that.creatingNode) && Objects.equals(this.activeNode, that.activeNode);
+            && Objects.equals(this.creatingNode, that.creatingNode) && Objects.equals(this.activeNode, that.activeNode)
+            && Objects.equals(this.isStatic, that.isStatic);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(phase, instanceID, currentNode, deletingNode, creatingNode, activeNode);
+        return Objects.hash(phase, instanceID, currentNode, deletingNode, creatingNode, activeNode, isStatic);
     }
 
     @Override
@@ -172,6 +195,7 @@ public class HyperNodeStatus {
         sb.append("    deletingNode: ").append(toIndentedString(deletingNode)).append("\n");
         sb.append("    creatingNode: ").append(toIndentedString(creatingNode)).append("\n");
         sb.append("    activeNode: ").append(toIndentedString(activeNode)).append("\n");
+        sb.append("    isStatic: ").append(toIndentedString(isStatic)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -51,7 +51,7 @@ public class ConfigurationRisks {
     }
 
     /**
-     * 组件名称
+     * **参数解释：** 组件名称。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return _package
      */
     public String getPackage() {
@@ -68,7 +68,7 @@ public class ConfigurationRisks {
     }
 
     /**
-     * 涉及文件路径
+     * **参数解释：** 涉及文件路径。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return sourceFile
      */
     public String getSourceFile() {
@@ -85,7 +85,7 @@ public class ConfigurationRisks {
     }
 
     /**
-     * 节点信息
+     * **参数解释：** 节点信息。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return nodeMsg
      */
     public String getNodeMsg() {
@@ -102,7 +102,7 @@ public class ConfigurationRisks {
     }
 
     /**
-     * 参数值
+     * **参数解释：** 参数值。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return field
      */
     public String getField() {
@@ -119,7 +119,7 @@ public class ConfigurationRisks {
     }
 
     /**
-     * 修改操作类型
+     * **参数解释：** 修改操作类型。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return operation
      */
     public String getOperation() {
@@ -136,7 +136,7 @@ public class ConfigurationRisks {
     }
 
     /**
-     * 原始值
+     * **参数解释：** 原始值。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return originalValue
      */
     public String getOriginalValue() {
@@ -153,7 +153,7 @@ public class ConfigurationRisks {
     }
 
     /**
-     * 当前值
+     * **参数解释：** 当前值。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return value
      */
     public String getValue() {

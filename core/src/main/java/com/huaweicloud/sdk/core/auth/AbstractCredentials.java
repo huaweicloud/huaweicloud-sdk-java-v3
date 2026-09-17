@@ -29,6 +29,7 @@ import com.huaweicloud.sdk.core.internal.model.Credential;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 import com.huaweicloud.sdk.core.utils.TimeUtils;
 
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -67,6 +68,23 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
     private final AtomicBoolean done = new AtomicBoolean(false);
 
     protected long expireAt;
+
+    // OIDC agency fields
+    private String idToken;
+
+    private String oidcIdTokenFile;
+
+    private String providerUrn;
+
+    private String agencyUrn;
+
+    private String agencySessionName;
+
+    private Integer durationSeconds;
+
+    private String policy;
+
+    private List<String> policyIds;
 
     public static final Function<HttpRequest, Boolean> DEFAULT_DERIVED_PREDICATE = httpRequest ->
             !httpRequest.getEndpoint().replace(Constants.HTTPS_SCHEME + "://", "")
@@ -186,6 +204,144 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
     }
 
     /**
+     * @param idToken OIDC id_token for OIDC agency authentication
+     * @return DerivedT with idToken set
+     */
+    public T withIdToken(String idToken) {
+        this.idToken = idToken;
+        return toDerivedT();
+    }
+
+    /**
+     * @param providerUrn OIDC provider URN
+     * @return DerivedT with providerUrn set
+     */
+    public T withProviderUrn(String providerUrn) {
+        this.providerUrn = providerUrn;
+        return toDerivedT();
+    }
+
+    /**
+     * @param agencyUrn agency URN
+     * @return DerivedT with agencyUrn set
+     */
+    public T withAgencyUrn(String agencyUrn) {
+        this.agencyUrn = agencyUrn;
+        return toDerivedT();
+    }
+
+    /**
+     * @param agencySessionName agency session name
+     * @return DerivedT with agencySessionName set
+     */
+    public T withAgencySessionName(String agencySessionName) {
+        this.agencySessionName = agencySessionName;
+        return toDerivedT();
+    }
+
+    /**
+     * @param durationSeconds duration seconds for temporary credential
+     * @return DerivedT with durationSeconds set
+     */
+    public T withDurationSeconds(Integer durationSeconds) {
+        this.durationSeconds = durationSeconds;
+        return toDerivedT();
+    }
+
+    /**
+     * @param policy policy JSON string
+     * @return DerivedT with policy set
+     */
+    public T withPolicy(String policy) {
+        this.policy = policy;
+        return toDerivedT();
+    }
+
+    /**
+     * @param policyIds list of policy IDs
+     * @return DerivedT with policyIds set
+     */
+    public T withPolicyIds(List<String> policyIds) {
+        this.policyIds = policyIds;
+        return toDerivedT();
+    }
+
+    public String getIdToken() {
+        return idToken;
+    }
+
+    public void setIdToken(String idToken) {
+        this.idToken = idToken;
+    }
+
+    public String getOidcIdTokenFile() {
+        return oidcIdTokenFile;
+    }
+
+    public void setOidcIdTokenFile(String oidcIdTokenFile) {
+        this.oidcIdTokenFile = oidcIdTokenFile;
+    }
+
+    public T withOidcIdTokenFile(String oidcIdTokenFile) {
+        this.oidcIdTokenFile = oidcIdTokenFile;
+        return toDerivedT();
+    }
+
+    public String getProviderUrn() {
+        return providerUrn;
+    }
+
+    public void setProviderUrn(String providerUrn) {
+        this.providerUrn = providerUrn;
+    }
+
+    public String getAgencyUrn() {
+        return agencyUrn;
+    }
+
+    public void setAgencyUrn(String agencyUrn) {
+        this.agencyUrn = agencyUrn;
+    }
+
+    public String getAgencySessionName() {
+        return agencySessionName;
+    }
+
+    public void setAgencySessionName(String agencySessionName) {
+        this.agencySessionName = agencySessionName;
+    }
+
+    public Integer getDurationSeconds() {
+        return durationSeconds;
+    }
+
+    public void setDurationSeconds(Integer durationSeconds) {
+        this.durationSeconds = durationSeconds;
+    }
+
+    public String getPolicy() {
+        return policy;
+    }
+
+    public void setPolicy(String policy) {
+        this.policy = policy;
+    }
+
+    public List<String> getPolicyIds() {
+        return policyIds;
+    }
+
+    public void setPolicyIds(List<String> policyIds) {
+        this.policyIds = policyIds;
+    }
+
+    protected boolean isOidcAgencyAuth() {
+        return StringUtils.isNotEmpty(providerUrn)
+                && StringUtils.isNotEmpty(agencyUrn)
+                && StringUtils.isNotEmpty(agencySessionName);
+    }
+
+    /**
      * @param iamEndpoint optional property
      * @return DerivedT with iamEndpoint set
      */
@@ -275,7 +431,9 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
         // Compatibility Handling
         doOnce(() -> {
             if (stsAccessor == null) {
-                if (idpId != null && idTokenFile != null) {
+                if (isOidcAgencyAuth()) {
+                    stsAccessor = new OidcAgencyAccessor();
+                } else if (idpId != null && idTokenFile != null) {
                     stsAccessor = new FederalAccessor();
                 } else if (ak == null && sk == null) {
                     stsAccessor = new MetadataAccessor();
@@ -285,8 +443,20 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
 
         if (needRefreshSts()) {
             AccessorOptions options = new AccessorOptions.Builder()
-                    .iamEndpoint(getUsedIamEndpoint()).httpClient(httpClient)
-                    .idpId(idpId).idTokenFile(idTokenFile).build();
+                    .iamEndpoint(getUsedIamEndpoint())
+                    .httpClient(httpClient)
+                    .idpId(idpId)
+                    .idTokenFile(idTokenFile)
+                    .idToken(idToken)
+                    .oidcIdTokenFile(oidcIdTokenFile)
+                    .providerUrn(providerUrn)
+                    .agencyUrn(agencyUrn)
+                    .agencySessionName(agencySessionName)
+                    .durationSeconds(durationSeconds)
+                    .policy(policy)
+                    .policyIds(policyIds)
+                    .regionId(regionId)
+                    .build();
             updateSts(stsAccessor.getCredential(options));
         }
     }
@@ -307,6 +477,12 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
     protected void updateSts(Credential credential) {
         if (credential == null) {
             throw new SdkException("update temp credential failed, credential is null");
+        }
+        if (StringUtils.isEmpty(credential.getAccess()) || StringUtils.isEmpty(credential.getSecret())) {
+            throw new SdkException("update temp credential failed, access or secret is null");
+        }
+        if (credential.getExpiresAt() == null) {
+            throw new SdkException("update temp credential failed, expiresAt is null");
         }
         ak = credential.getAccess();
         sk = credential.getSecret();

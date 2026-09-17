@@ -70,6 +70,11 @@ public class SlowLogDetail {
 
     private String lineNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "index_recommendation")
+
+    private String indexRecommendation;
+
     public SlowLogDetail withNodeName(String nodeName) {
         this.nodeName = nodeName;
         return this;
@@ -274,6 +279,23 @@ public class SlowLogDetail {
         this.lineNum = lineNum;
     }
 
+    public SlowLogDetail withIndexRecommendation(String indexRecommendation) {
+        this.indexRecommendation = indexRecommendation;
+        return this;
+    }
+
+    /**
+     * 推荐的创建索引命令。使用此命令创建索引可优化该慢查询语句。如果结果为空，说明不需要推荐索引，或AI未识别出可优化的索引。
+     * @return indexRecommendation
+     */
+    public String getIndexRecommendation() {
+        return indexRecommendation;
+    }
+
+    public void setIndexRecommendation(String indexRecommendation) {
+        this.indexRecommendation = indexRecommendation;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -289,7 +311,8 @@ public class SlowLogDetail {
             && Objects.equals(this.lockTime, that.lockTime) && Objects.equals(this.docsReturned, that.docsReturned)
             && Objects.equals(this.docsScanned, that.docsScanned) && Objects.equals(this.database, that.database)
             && Objects.equals(this.collection, that.collection) && Objects.equals(this.logTime, that.logTime)
-            && Objects.equals(this.lineNum, that.lineNum);
+            && Objects.equals(this.lineNum, that.lineNum)
+            && Objects.equals(this.indexRecommendation, that.indexRecommendation);
     }
 
     @Override
@@ -305,7 +328,8 @@ public class SlowLogDetail {
             database,
             collection,
             logTime,
-            lineNum);
+            lineNum,
+            indexRecommendation);
     }
 
     @Override
@@ -324,6 +348,7 @@ public class SlowLogDetail {
         sb.append("    collection: ").append(toIndentedString(collection)).append("\n");
         sb.append("    logTime: ").append(toIndentedString(logTime)).append("\n");
         sb.append("    lineNum: ").append(toIndentedString(lineNum)).append("\n");
+        sb.append("    indexRecommendation: ").append(toIndentedString(indexRecommendation)).append("\n");
         sb.append("}");
         return sb.toString();
     }

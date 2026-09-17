@@ -62,7 +62,7 @@ public class UpdateRoutesRequest {
     }
 
     /**
-     * Get body
+     * 创建路由请求结构体
      * @return body
      */
     public List<CreateRouterReqDTO> getBody() {

@@ -15,6 +15,11 @@ import java.util.function.Consumer;
 public class ShowOpsDatasetResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<OpsTmsTag> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
@@ -25,9 +30,19 @@ public class ShowOpsDatasetResponse extends SdkResponse {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "can_delete")
+
+    private Boolean canDelete;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_preset")
+
+    private Boolean isPreset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "latest_version")
@@ -35,9 +50,19 @@ public class ShowOpsDatasetResponse extends SdkResponse {
     private String latestVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "turn_type")
+
+    private String turnType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "latest_version_id")
 
     private String latestVersionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reference_count")
+
+    private Integer referenceCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "item_count")
@@ -63,6 +88,39 @@ public class ShowOpsDatasetResponse extends SdkResponse {
     @JsonProperty(value = "base_info")
 
     private OpsBaseInfo baseInfo;
+
+    public ShowOpsDatasetResponse withTags(List<OpsTmsTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ShowOpsDatasetResponse addTagsItem(OpsTmsTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ShowOpsDatasetResponse withTags(Consumer<List<OpsTmsTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 评测集绑定的TMS标签列表。列表元素为OpsTmsTag对象，参考OpsTmsTag结构定义。 **约束限制：** 不涉及。
+     * @return tags
+     */
+    public List<OpsTmsTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<OpsTmsTag> tags) {
+        this.tags = tags;
+    }
 
     public ShowOpsDatasetResponse withId(String id) {
         this.id = id;
@@ -98,6 +156,23 @@ public class ShowOpsDatasetResponse extends SdkResponse {
         this.name = name;
     }
 
+    public ShowOpsDatasetResponse withCanDelete(Boolean canDelete) {
+        this.canDelete = canDelete;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 该评测集是否能删除。 **约束限制：** 不涉及。 **取值范围：** - true：可删除 - false：不可删除
+     * @return canDelete
+     */
+    public Boolean getCanDelete() {
+        return canDelete;
+    }
+
+    public void setCanDelete(Boolean canDelete) {
+        this.canDelete = canDelete;
+    }
+
     public ShowOpsDatasetResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -113,6 +188,23 @@ public class ShowOpsDatasetResponse extends SdkResponse {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public ShowOpsDatasetResponse withIsPreset(Boolean isPreset) {
+        this.isPreset = isPreset;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 该评测集是否预置。 **约束限制：** 不涉及。 **取值范围：** - true：已预置 - false：非预置
+     * @return isPreset
+     */
+    public Boolean getIsPreset() {
+        return isPreset;
+    }
+
+    public void setIsPreset(Boolean isPreset) {
+        this.isPreset = isPreset;
     }
 
     public ShowOpsDatasetResponse withLatestVersion(String latestVersion) {
@@ -132,6 +224,23 @@ public class ShowOpsDatasetResponse extends SdkResponse {
         this.latestVersion = latestVersion;
     }
 
+    public ShowOpsDatasetResponse withTurnType(String turnType) {
+        this.turnType = turnType;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 该评测集对话轮次（turn）的类型。 **约束限制：** 不涉及。 **取值范围：** 不涉及。
+     * @return turnType
+     */
+    public String getTurnType() {
+        return turnType;
+    }
+
+    public void setTurnType(String turnType) {
+        this.turnType = turnType;
+    }
+
     public ShowOpsDatasetResponse withLatestVersionId(String latestVersionId) {
         this.latestVersionId = latestVersionId;
         return this;
@@ -147,6 +256,25 @@ public class ShowOpsDatasetResponse extends SdkResponse {
 
     public void setLatestVersionId(String latestVersionId) {
         this.latestVersionId = latestVersionId;
+    }
+
+    public ShowOpsDatasetResponse withReferenceCount(Integer referenceCount) {
+        this.referenceCount = referenceCount;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 评测集被引用次数。 **约束限制：** 不涉及。 **取值范围：** 0到2147483647。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return referenceCount
+     */
+    public Integer getReferenceCount() {
+        return referenceCount;
+    }
+
+    public void setReferenceCount(Integer referenceCount) {
+        this.referenceCount = referenceCount;
     }
 
     public ShowOpsDatasetResponse withItemCount(Integer itemCount) {
@@ -286,10 +414,12 @@ public class ShowOpsDatasetResponse extends SdkResponse {
             return false;
         }
         ShowOpsDatasetResponse that = (ShowOpsDatasetResponse) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.description, that.description)
-            && Objects.equals(this.latestVersion, that.latestVersion)
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.canDelete, that.canDelete)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.isPreset, that.isPreset)
+            && Objects.equals(this.latestVersion, that.latestVersion) && Objects.equals(this.turnType, that.turnType)
             && Objects.equals(this.latestVersionId, that.latestVersionId)
+            && Objects.equals(this.referenceCount, that.referenceCount)
             && Objects.equals(this.itemCount, that.itemCount)
             && Objects.equals(this.changeUncommitted, that.changeUncommitted)
             && Objects.equals(this.schemas, that.schemas) && Objects.equals(this.versions, that.versions)
@@ -298,11 +428,16 @@ public class ShowOpsDatasetResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
+        return Objects.hash(tags,
+            id,
             name,
+            canDelete,
             description,
+            isPreset,
             latestVersion,
+            turnType,
             latestVersionId,
+            referenceCount,
             itemCount,
             changeUncommitted,
             schemas,
@@ -314,11 +449,16 @@ public class ShowOpsDatasetResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowOpsDatasetResponse {\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    canDelete: ").append(toIndentedString(canDelete)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    isPreset: ").append(toIndentedString(isPreset)).append("\n");
         sb.append("    latestVersion: ").append(toIndentedString(latestVersion)).append("\n");
+        sb.append("    turnType: ").append(toIndentedString(turnType)).append("\n");
         sb.append("    latestVersionId: ").append(toIndentedString(latestVersionId)).append("\n");
+        sb.append("    referenceCount: ").append(toIndentedString(referenceCount)).append("\n");
         sb.append("    itemCount: ").append(toIndentedString(itemCount)).append("\n");
         sb.append("    changeUncommitted: ").append(toIndentedString(changeUncommitted)).append("\n");
         sb.append("    schemas: ").append(toIndentedString(schemas)).append("\n");

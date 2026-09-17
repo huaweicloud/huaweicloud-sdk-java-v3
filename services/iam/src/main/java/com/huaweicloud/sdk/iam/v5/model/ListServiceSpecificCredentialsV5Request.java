@@ -1,0 +1,245 @@
+package com.huaweicloud.sdk.iam.v5.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+/**
+ * Request Object
+ */
+public class ListServiceSpecificCredentialsV5Request {
+
+    /**
+     * 选择接口返回的信息的语言，可以为中文（\"zh-cn\"）或英文（\"en-us\"），默认为中文。
+     */
+    public static final class XLanguageEnum {
+
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
+        public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
+
+        /**
+         * Enum EN_US for value: "en-us"
+         */
+        public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
+
+        private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, XLanguageEnum> createStaticFields() {
+            Map<String, XLanguageEnum> map = new HashMap<>();
+            map.put("zh-cn", ZH_CN);
+            map.put("en-us", EN_US);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        XLanguageEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static XLanguageEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XLanguageEnum(value));
+        }
+
+        public static XLanguageEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof XLanguageEnum) {
+                return this.value.equals(((XLanguageEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Language")
+
+    private XLanguageEnum xLanguage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_id")
+
+    private String userId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_name")
+
+    private String serviceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
+    public ListServiceSpecificCredentialsV5Request withXLanguage(XLanguageEnum xLanguage) {
+        this.xLanguage = xLanguage;
+        return this;
+    }
+
+    /**
+     * 选择接口返回的信息的语言，可以为中文（\"zh-cn\"）或英文（\"en-us\"），默认为中文。
+     * @return xLanguage
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Language")
+    public XLanguageEnum getXLanguage() {
+        return xLanguage;
+    }
+
+    public void setXLanguage(XLanguageEnum xLanguage) {
+        this.xLanguage = xLanguage;
+    }
+
+    public ListServiceSpecificCredentialsV5Request withUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+
+    /**
+     * IAM用户ID。
+     * @return userId
+     */
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public ListServiceSpecificCredentialsV5Request withServiceName(String serviceName) {
+        this.serviceName = serviceName;
+        return this;
+    }
+
+    /**
+     * 将结果过滤为仅包含指定服务的凭证。
+     * @return serviceName
+     */
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
+    }
+
+    public ListServiceSpecificCredentialsV5Request withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页显示的条目数量，范围为1到200条，默认为100条。
+     * minimum: 1
+     * maximum: 200
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListServiceSpecificCredentialsV5Request withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * 分页标记，长度为4到400个字符，只包含字母、数字、\"+\"、\"/\"、\"=\"、\"-\"和\"_\"的字符串。
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        ListServiceSpecificCredentialsV5Request that = (ListServiceSpecificCredentialsV5Request) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(xLanguage, userId, serviceName, limit, marker);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ListServiceSpecificCredentialsV5Request {\n");
+        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
+        sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+        sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

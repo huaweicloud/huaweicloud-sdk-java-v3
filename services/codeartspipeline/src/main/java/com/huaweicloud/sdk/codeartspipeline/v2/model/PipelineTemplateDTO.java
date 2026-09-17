@@ -53,6 +53,11 @@ public class PipelineTemplateDTO {
 
     private Boolean isShowSource;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "manifest_version")
+
+    private String manifestVersion;
+
     public PipelineTemplateDTO withName(String name) {
         this.name = name;
         return this;
@@ -205,6 +210,23 @@ public class PipelineTemplateDTO {
         this.isShowSource = isShowSource;
     }
 
+    public PipelineTemplateDTO withManifestVersion(String manifestVersion) {
+        this.manifestVersion = manifestVersion;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 模板manifest版本。 **约束限制**： 不涉及。 **取值范围**： - 3.0：CLASSIC版本。 - 2.0.0：YAML版本。 - 4.0：PAC版本。 - 5.0：DATAOPS版本。 - 6.0：GITCODE_ACTIONS_NEW版本。 **默认取值**： 3.0。 
+     * @return manifestVersion
+     */
+    public String getManifestVersion() {
+        return manifestVersion;
+    }
+
+    public void setManifestVersion(String manifestVersion) {
+        this.manifestVersion = manifestVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -217,12 +239,21 @@ public class PipelineTemplateDTO {
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.language, that.language) && Objects.equals(this.variables, that.variables)
             && Objects.equals(this.definition, that.definition) && Objects.equals(this.isSystem, that.isSystem)
-            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.isShowSource, that.isShowSource);
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.isShowSource, that.isShowSource)
+            && Objects.equals(this.manifestVersion, that.manifestVersion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, language, variables, definition, isSystem, domainId, isShowSource);
+        return Objects.hash(name,
+            description,
+            language,
+            variables,
+            definition,
+            isSystem,
+            domainId,
+            isShowSource,
+            manifestVersion);
     }
 
     @Override
@@ -237,6 +268,7 @@ public class PipelineTemplateDTO {
         sb.append("    isSystem: ").append(toIndentedString(isSystem)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    isShowSource: ").append(toIndentedString(isShowSource)).append("\n");
+        sb.append("    manifestVersion: ").append(toIndentedString(manifestVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

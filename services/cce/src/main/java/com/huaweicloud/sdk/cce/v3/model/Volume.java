@@ -148,7 +148,7 @@ public class Volume {
     }
 
     /**
-     * 磁盘扩展参数，取值请参见创建云服务器中“extendparam”参数的描述。 [链接请参见[创建云服务器](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0020212668.html)](tag:hws) [链接请参见[创建云服务器](https://support.huaweicloud.com/intl/zh-cn/api-ecs/zh-cn_topic_0020212668.html)](tag:hws_hk) 
+     * **参数解释**： 磁盘扩展参数，取值请参见创建云服务器中“extendparam”参数的描述。 [链接请参见[创建磁盘的extendparam字段数据结构说明](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0167957246.html#section8)。](tag:hws) [链接请参见[创建磁盘的extendparam字段数据结构说明](https://support.huaweicloud.com/intl/zh-cn/api-ecs/zh-cn_topic_0167957246.html#section8)。](tag:hws_hk)  **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return extendParam
      */
     public Map<String, Object> getExtendParam() {

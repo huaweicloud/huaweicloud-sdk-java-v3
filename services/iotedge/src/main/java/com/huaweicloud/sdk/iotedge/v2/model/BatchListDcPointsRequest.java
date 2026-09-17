@@ -41,6 +41,11 @@ public class BatchListDcPointsRequest {
     private String deviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "active")
+
+    private Boolean active;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -152,6 +157,23 @@ public class BatchListDcPointsRequest {
         this.deviceId = deviceId;
     }
 
+    public BatchListDcPointsRequest withActive(Boolean active) {
+        this.active = active;
+        return this;
+    }
+
+    /**
+     * 点位启停状态筛选
+     * @return active
+     */
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
     public BatchListDcPointsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -202,12 +224,13 @@ public class BatchListDcPointsRequest {
         return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.dsId, that.dsId)
             && Objects.equals(this.pointId, that.pointId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.property, that.property) && Objects.equals(this.deviceId, that.deviceId)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.active, that.active) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(edgeNodeId, dsId, pointId, name, property, deviceId, offset, limit);
+        return Objects.hash(edgeNodeId, dsId, pointId, name, property, deviceId, active, offset, limit);
     }
 
     @Override
@@ -220,6 +243,7 @@ public class BatchListDcPointsRequest {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    property: ").append(toIndentedString(property)).append("\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
+        sb.append("    active: ").append(toIndentedString(active)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

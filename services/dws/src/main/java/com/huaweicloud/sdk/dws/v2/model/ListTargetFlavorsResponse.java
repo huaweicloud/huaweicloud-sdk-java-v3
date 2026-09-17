@@ -85,7 +85,7 @@ public class ListTargetFlavorsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 规格变更模式。 **取值范围**： online：在线模式； offline：离线模式； all：在线模式、离线模式都支持。
+     * **参数解释**： 规格变更模式。 **约束限制**： 不涉及。 **取值范围**： - online：在线模式； - offline：离线模式； - all：在线模式、离线模式都支持。 **默认取值**： offline
      * @return changeMode
      */
     public String getChangeMode() {

@@ -14,8 +14,12 @@ import com.huaweicloud.sdk.rc.v1.model.CountAllResourcesRequest;
 import com.huaweicloud.sdk.rc.v1.model.CountAllResourcesResponse;
 import com.huaweicloud.sdk.rc.v1.model.CreateResourceGroupRequest;
 import com.huaweicloud.sdk.rc.v1.model.CreateResourceGroupResponse;
+import com.huaweicloud.sdk.rc.v1.model.CreateStoredQueryRequest;
+import com.huaweicloud.sdk.rc.v1.model.CreateStoredQueryResponse;
 import com.huaweicloud.sdk.rc.v1.model.DeleteResourceGroupRequest;
 import com.huaweicloud.sdk.rc.v1.model.DeleteResourceGroupResponse;
+import com.huaweicloud.sdk.rc.v1.model.DeleteStoredQueryRequest;
+import com.huaweicloud.sdk.rc.v1.model.DeleteStoredQueryResponse;
 import com.huaweicloud.sdk.rc.v1.model.GenericResourceGroupRequestBody;
 import com.huaweicloud.sdk.rc.v1.model.ListAllProvidersRequest;
 import com.huaweicloud.sdk.rc.v1.model.ListAllProvidersResponse;
@@ -27,9 +31,16 @@ import com.huaweicloud.sdk.rc.v1.model.ListResourceGroupsRequest;
 import com.huaweicloud.sdk.rc.v1.model.ListResourceGroupsResponse;
 import com.huaweicloud.sdk.rc.v1.model.ListResourcesRequest;
 import com.huaweicloud.sdk.rc.v1.model.ListResourcesResponse;
+import com.huaweicloud.sdk.rc.v1.model.ListSchemasRequest;
+import com.huaweicloud.sdk.rc.v1.model.ListSchemasResponse;
+import com.huaweicloud.sdk.rc.v1.model.ListStoredQueriesRequest;
+import com.huaweicloud.sdk.rc.v1.model.ListStoredQueriesResponse;
+import com.huaweicloud.sdk.rc.v1.model.QueryRunRequestBody;
 import com.huaweicloud.sdk.rc.v1.model.RemoveResourceFromGroupRequest;
 import com.huaweicloud.sdk.rc.v1.model.RemoveResourceFromGroupResponse;
 import com.huaweicloud.sdk.rc.v1.model.ResourceSummaryResponseItem;
+import com.huaweicloud.sdk.rc.v1.model.RunQueryRequest;
+import com.huaweicloud.sdk.rc.v1.model.RunQueryResponse;
 import com.huaweicloud.sdk.rc.v1.model.ShowResourceByIdRequest;
 import com.huaweicloud.sdk.rc.v1.model.ShowResourceByIdResponse;
 import com.huaweicloud.sdk.rc.v1.model.ShowResourceDetailRequest;
@@ -38,9 +49,14 @@ import com.huaweicloud.sdk.rc.v1.model.ShowResourceGroupRequest;
 import com.huaweicloud.sdk.rc.v1.model.ShowResourceGroupResponse;
 import com.huaweicloud.sdk.rc.v1.model.ShowResourceRelationsRequest;
 import com.huaweicloud.sdk.rc.v1.model.ShowResourceRelationsResponse;
+import com.huaweicloud.sdk.rc.v1.model.ShowStoredQueryRequest;
+import com.huaweicloud.sdk.rc.v1.model.ShowStoredQueryResponse;
+import com.huaweicloud.sdk.rc.v1.model.StoredQueryRequestBody;
 import com.huaweicloud.sdk.rc.v1.model.UpdateResourceGroupRequest;
 import com.huaweicloud.sdk.rc.v1.model.UpdateResourceGroupRequestBody;
 import com.huaweicloud.sdk.rc.v1.model.UpdateResourceGroupResponse;
+import com.huaweicloud.sdk.rc.v1.model.UpdateStoredQueryRequest;
+import com.huaweicloud.sdk.rc.v1.model.UpdateStoredQueryResponse;
 
 import java.util.List;
 import java.util.Map;
@@ -225,6 +241,185 @@ public class RcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateResourceGroupRequestBody.class),
             f -> f.withMarshaller(UpdateResourceGroupRequest::getBody, UpdateResourceGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateStoredQueryRequest, CreateStoredQueryResponse> createStoredQuery =
+        genForCreateStoredQuery();
+
+    private static HttpRequestDef<CreateStoredQueryRequest, CreateStoredQueryResponse> genForCreateStoredQuery() {
+        // basic
+        HttpRequestDef.Builder<CreateStoredQueryRequest, CreateStoredQueryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateStoredQueryRequest.class, CreateStoredQueryResponse.class)
+                .withName("CreateStoredQuery")
+                .withUri("/v1/resource-center/stored-queries")
+                .withContentType("application/json");
+
+        // requests
+        builder.<StoredQueryRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StoredQueryRequestBody.class),
+            f -> f.withMarshaller(CreateStoredQueryRequest::getBody, CreateStoredQueryRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteStoredQueryRequest, DeleteStoredQueryResponse> deleteStoredQuery =
+        genForDeleteStoredQuery();
+
+    private static HttpRequestDef<DeleteStoredQueryRequest, DeleteStoredQueryResponse> genForDeleteStoredQuery() {
+        // basic
+        HttpRequestDef.Builder<DeleteStoredQueryRequest, DeleteStoredQueryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteStoredQueryRequest.class, DeleteStoredQueryResponse.class)
+                .withName("DeleteStoredQuery")
+                .withUri("/v1/resource-center/stored-queries/{query_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("query_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStoredQueryRequest::getQueryId, DeleteStoredQueryRequest::setQueryId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSchemasRequest, ListSchemasResponse> listSchemas = genForListSchemas();
+
+    private static HttpRequestDef<ListSchemasRequest, ListSchemasResponse> genForListSchemas() {
+        // basic
+        HttpRequestDef.Builder<ListSchemasRequest, ListSchemasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSchemasRequest.class, ListSchemasResponse.class)
+                .withName("ListSchemas")
+                .withUri("/v1/resource-center/schemas")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSchemasRequest::getLimit, ListSchemasRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSchemasRequest::getMarker, ListSchemasRequest::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListStoredQueriesRequest, ListStoredQueriesResponse> listStoredQueries =
+        genForListStoredQueries();
+
+    private static HttpRequestDef<ListStoredQueriesRequest, ListStoredQueriesResponse> genForListStoredQueries() {
+        // basic
+        HttpRequestDef.Builder<ListStoredQueriesRequest, ListStoredQueriesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListStoredQueriesRequest.class, ListStoredQueriesResponse.class)
+                .withName("ListStoredQueries")
+                .withUri("/v1/resource-center/stored-queries")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListStoredQueriesRequest::getLimit, ListStoredQueriesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStoredQueriesRequest::getMarker, ListStoredQueriesRequest::setMarker));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStoredQueriesRequest::getName, ListStoredQueriesRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RunQueryRequest, RunQueryResponse> runQuery = genForRunQuery();
+
+    private static HttpRequestDef<RunQueryRequest, RunQueryResponse> genForRunQuery() {
+        // basic
+        HttpRequestDef.Builder<RunQueryRequest, RunQueryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RunQueryRequest.class, RunQueryResponse.class)
+                .withName("RunQuery")
+                .withUri("/v1/resource-center/run-query")
+                .withContentType("application/json");
+
+        // requests
+        builder.<QueryRunRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(QueryRunRequestBody.class),
+            f -> f.withMarshaller(RunQueryRequest::getBody, RunQueryRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowStoredQueryRequest, ShowStoredQueryResponse> showStoredQuery =
+        genForShowStoredQuery();
+
+    private static HttpRequestDef<ShowStoredQueryRequest, ShowStoredQueryResponse> genForShowStoredQuery() {
+        // basic
+        HttpRequestDef.Builder<ShowStoredQueryRequest, ShowStoredQueryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowStoredQueryRequest.class, ShowStoredQueryResponse.class)
+                .withName("ShowStoredQuery")
+                .withUri("/v1/resource-center/stored-queries/{query_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("query_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStoredQueryRequest::getQueryId, ShowStoredQueryRequest::setQueryId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateStoredQueryRequest, UpdateStoredQueryResponse> updateStoredQuery =
+        genForUpdateStoredQuery();
+
+    private static HttpRequestDef<UpdateStoredQueryRequest, UpdateStoredQueryResponse> genForUpdateStoredQuery() {
+        // basic
+        HttpRequestDef.Builder<UpdateStoredQueryRequest, UpdateStoredQueryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateStoredQueryRequest.class, UpdateStoredQueryResponse.class)
+                .withName("UpdateStoredQuery")
+                .withUri("/v1/resource-center/stored-queries/{query_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("query_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStoredQueryRequest::getQueryId, UpdateStoredQueryRequest::setQueryId));
+        builder.<StoredQueryRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StoredQueryRequestBody.class),
+            f -> f.withMarshaller(UpdateStoredQueryRequest::getBody, UpdateStoredQueryRequest::setBody));
 
         // response
 
@@ -580,6 +775,11 @@ public class RcMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourcesRequest::getMarker, ListResourcesRequest::setMarker));
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourcesRequest::getGroupId, ListResourcesRequest::setGroupId));
 
         // response
 

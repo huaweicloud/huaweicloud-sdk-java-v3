@@ -142,6 +142,8 @@ public final class Constants {
 
     public static final String IAM_ENDPOINT_ENV_NAME = "HUAWEICLOUD_SDK_IAM_ENDPOINT";
 
+    public static final String DEFAULT_STS_ENDPOINT = "https://sts.cn-north-4.myhuaweicloud.com";
+
     public static final String STS_ENDPOINT_ENV_NAME = "HUAWEICLOUD_SDK_STS_ENDPOINT";
 
     public static final String STS_ENDPOINT_PROPERTY_NAME = "com.huaweicloud.sdk.sts.endpoint";

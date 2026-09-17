@@ -20,6 +20,11 @@ public class ListNodePoolsRequest {
 
     private String showDefaultNodePool;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "advanceStatus")
+
+    private Boolean advanceStatus;
+
     public ListNodePoolsRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -54,6 +59,23 @@ public class ListNodePoolsRequest {
         this.showDefaultNodePool = showDefaultNodePool;
     }
 
+    public ListNodePoolsRequest withAdvanceStatus(Boolean advanceStatus) {
+        this.advanceStatus = advanceStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 节点池conditions是否反映整个节点池整体状态。 **约束限制：** 不涉及 **取值范围：** - true: 节点池的conditions反映整个节点池整体状态。 - false: 节点池的conditions仅反映默认伸缩组的状态。  **默认取值：** 不指定时默认为false
+     * @return advanceStatus
+     */
+    public Boolean getAdvanceStatus() {
+        return advanceStatus;
+    }
+
+    public void setAdvanceStatus(Boolean advanceStatus) {
+        this.advanceStatus = advanceStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +86,13 @@ public class ListNodePoolsRequest {
         }
         ListNodePoolsRequest that = (ListNodePoolsRequest) obj;
         return Objects.equals(this.clusterId, that.clusterId)
-            && Objects.equals(this.showDefaultNodePool, that.showDefaultNodePool);
+            && Objects.equals(this.showDefaultNodePool, that.showDefaultNodePool)
+            && Objects.equals(this.advanceStatus, that.advanceStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, showDefaultNodePool);
+        return Objects.hash(clusterId, showDefaultNodePool, advanceStatus);
     }
 
     @Override
@@ -78,6 +101,7 @@ public class ListNodePoolsRequest {
         sb.append("class ListNodePoolsRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    showDefaultNodePool: ").append(toIndentedString(showDefaultNodePool)).append("\n");
+        sb.append("    advanceStatus: ").append(toIndentedString(advanceStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

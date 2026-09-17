@@ -39,6 +39,11 @@ public class NodeTemplate {
     private Login login;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "volumeConfig")
+
+    private VolumeConfig volumeConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rootVolume")
 
     private Volume rootVolume;
@@ -288,6 +293,32 @@ public class NodeTemplate {
 
     public void setLogin(Login login) {
         this.login = login;
+    }
+
+    public NodeTemplate withVolumeConfig(VolumeConfig volumeConfig) {
+        this.volumeConfig = volumeConfig;
+        return this;
+    }
+
+    public NodeTemplate withVolumeConfig(Consumer<VolumeConfig> volumeConfigSetter) {
+        if (this.volumeConfig == null) {
+            this.volumeConfig = new VolumeConfig();
+            volumeConfigSetter.accept(this.volumeConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get volumeConfig
+     * @return volumeConfig
+     */
+    public VolumeConfig getVolumeConfig() {
+        return volumeConfig;
+    }
+
+    public void setVolumeConfig(VolumeConfig volumeConfig) {
+        this.volumeConfig = volumeConfig;
     }
 
     public NodeTemplate withRootVolume(Volume rootVolume) {
@@ -826,10 +857,11 @@ public class NodeTemplate {
         NodeTemplate that = (NodeTemplate) obj;
         return Objects.equals(this.flavor, that.flavor) && Objects.equals(this.az, that.az)
             && Objects.equals(this.os, that.os) && Objects.equals(this.login, that.login)
-            && Objects.equals(this.rootVolume, that.rootVolume) && Objects.equals(this.dataVolumes, that.dataVolumes)
-            && Objects.equals(this.storage, that.storage) && Objects.equals(this.publicIP, that.publicIP)
-            && Objects.equals(this.nodeNicSpec, that.nodeNicSpec) && Objects.equals(this.count, that.count)
-            && Objects.equals(this.billingMode, that.billingMode) && Objects.equals(this.taints, that.taints)
+            && Objects.equals(this.volumeConfig, that.volumeConfig) && Objects.equals(this.rootVolume, that.rootVolume)
+            && Objects.equals(this.dataVolumes, that.dataVolumes) && Objects.equals(this.storage, that.storage)
+            && Objects.equals(this.publicIP, that.publicIP) && Objects.equals(this.nodeNicSpec, that.nodeNicSpec)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.billingMode, that.billingMode)
+            && Objects.equals(this.taints, that.taints)
             && Objects.equals(this.waitPostInstallFinish, that.waitPostInstallFinish)
             && Objects.equals(this.k8sTags, that.k8sTags) && Objects.equals(this.ecsGroupId, that.ecsGroupId)
             && Objects.equals(this.dedicatedHostId, that.dedicatedHostId)
@@ -849,6 +881,7 @@ public class NodeTemplate {
             az,
             os,
             login,
+            volumeConfig,
             rootVolume,
             dataVolumes,
             storage,
@@ -880,6 +913,7 @@ public class NodeTemplate {
         sb.append("    az: ").append(toIndentedString(az)).append("\n");
         sb.append("    os: ").append(toIndentedString(os)).append("\n");
         sb.append("    login: ").append(toIndentedString(login)).append("\n");
+        sb.append("    volumeConfig: ").append(toIndentedString(volumeConfig)).append("\n");
         sb.append("    rootVolume: ").append(toIndentedString(rootVolume)).append("\n");
         sb.append("    dataVolumes: ").append(toIndentedString(dataVolumes)).append("\n");
         sb.append("    storage: ").append(toIndentedString(storage)).append("\n");

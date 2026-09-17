@@ -1,0 +1,72 @@
+package com.huaweicloud.sdk.dws.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * 磁盘扩容检查请求体。
+ */
+public class V1DiskExtExpandReq {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_size")
+
+    private Integer newSize;
+
+    public V1DiskExtExpandReq withNewSize(Integer newSize) {
+        this.newSize = newSize;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 磁盘扩容后单节点存储容量。 **约束限制**： 不涉及。 **取值范围**： 大于等于10。 **默认取值**： 不涉及。
+     * @return newSize
+     */
+    public Integer getNewSize() {
+        return newSize;
+    }
+
+    public void setNewSize(Integer newSize) {
+        this.newSize = newSize;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        V1DiskExtExpandReq that = (V1DiskExtExpandReq) obj;
+        return Objects.equals(this.newSize, that.newSize);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(newSize);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class V1DiskExtExpandReq {\n");
+        sb.append("    newSize: ").append(toIndentedString(newSize)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

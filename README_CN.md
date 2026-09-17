@@ -305,12 +305,13 @@ public class Application {
     * [2.1 使用临时 AK 和 SK](#21-使用临时-ak-和-sk-top)
     * [2.2 使用永久 AK 和 SK](#22-使用永久-ak-和-sk-top)
     * [2.3 使用 IdpId 和 IdTokenFile](#23-使用-idpid-和-idtokenfile-top)
-    * [2.4 认证信息管理](#24-认证信息管理-top)
-        * [2.4.1 环境变量](#241-环境变量-top)
-        * [2.4.2 配置文件](#242-配置文件-top)
-        * [2.4.3 实例元数据](#243-实例元数据-top)
-        * [2.4.4 容器组身份](#244-容器组身份-top)
-        * [2.4.5 认证信息提供链](#245-认证信息提供链-top)
+    * [2.4 使用 OIDC 委托认证](#24-使用-oidc-委托认证-top)
+    * [2.5 认证信息管理](#25-认证信息管理-top)
+        * [2.5.1 环境变量](#251-环境变量-top)
+        * [2.5.2 配置文件](#252-配置文件-top)
+        * [2.5.3 实例元数据](#253-实例元数据-top)
+        * [2.5.4 容器组身份](#254-容器组身份-top)
+        * [2.5.5 认证信息提供链](#255-认证信息提供链-top)
 * [3. 客户端初始化](#3-客户端初始化-top)
     * [3.1 指定云服务 Endpoint 方式](#31-指定云服务-endpoint-方式-top)
     * [3.2 指定 Region 方式（推荐）](#32-指定-region-方式-推荐-top)
@@ -447,6 +448,7 @@ Global 级服务使用 GlobalCredentials 初始化，需要提供 domainId 。
 - 临时 AK&SK&SecurityToken 认证
 - 永久 AK&SK 认证
 - IdpId&IdTokenFile 认证
+- OIDC 委托认证
 
 #### 2.1 使用临时 AK 和 SK [:top:](#用户手册-top)
 
@@ -551,7 +553,57 @@ GlobalCredentials globalCredentials = new GlobalCredentials()
     .withDomainId(domainId);
 ```
 
-#### 2.4 认证信息管理 [:top:](#用户手册-top)
+#### 2.4 使用 OIDC 委托认证 [:top:](#用户手册-top)
+
+通过OIDC身份提供商令牌和信任委托获取临时安全凭证，可参考文档：[通过使用OIDC协议SSO的信任委托获取临时安全凭证](https://support.huaweicloud.com/api-iam5/AssumeAgencyWithOIDC.html)
+
+**认证参数说明**：
+
+- `providerUrn` OIDC提供商的URN，格式为 `iam::{account_id}:oidcProvider:{provider_name}`
+- `agencyUrn` 目标信任委托的URN，格式为 `iam::{account_id}:agency:{agency_name}`
+- `agencySessionName` 信任委托会话的会话名
+- `idToken` 由身份提供商提供的OIDC令牌字符串，由业务方持有并定期刷新（短期 JWT，不建议走环境变量）
+- `oidcIdTokenFile` 可选，存放OIDC ID Token的文件路径。与 `idToken` 二选一，适用于Token定期刷新写入文件的场景。同时设置时 `idToken` 优先。
+- `durationSeconds` 可选，临时安全凭证的有效时间（单位：秒），取值范围[900,43200]，默认3600
+- `policy` 可选，自定义策略，限制本次会话获得的临时安全凭证的权限范围
+- `policyIds` 可选，预置策略列表，限制本次会话获得的临时安全凭证的权限范围
+- `iamEndpoint` 可选，IAM 终端节点，默认 `https://iam.myhuaweicloud.com`
+- `projectId` 可选，云服务所在项目 ID。不传时SDK自动通过IAM接口获取
+- `domainId` 可选，华为云账号 ID。不传时SDK自动通过IAM接口获取
+
+SDK内部自动完成 `POST /v5/agencies/assume-with-oidc` 调用获取临时凭证，业务方只需在构建 Credentials 时设置 OIDC 参数即可，无需手动调用 Accessor。
+
+``` java
+import com.huaweicloud.sdk.core.auth.BasicCredentials;
+import com.huaweicloud.sdk.core.auth.GlobalCredentials;
+import java.util.Arrays;
+
+// Region级服务
+// 不传 projectId 时，SDK 会自动用临时凭证调 IAM 接口获取
+BasicCredentials basicCredentials = new BasicCredentials()
+    .withIdToken(idToken)                                           // OIDC ID Token
+    .withProviderUrn("iam::account_id:oidcProvider:provider_name")  // providerUrn
+    .withAgencyUrn("iam::account_id:agency:agency_name")            // agencyUrn
+    .withAgencySessionName("session_name")                          // agencySessionName
+    .withDurationSeconds(3600);                                     // 可选，默认3600
+    // .withProjectId(projectId)                                     // 可选，手动指定可跳过自动获取
+    // .withIamEndpoint("https://iam.myhuaweicloud.com")            // 可选
+    // .withPolicy("{\"Version\":\"5.0\"}")                          // 可选，限制权限
+    // .withPolicyIds(Arrays.asList("p1", "p2"))                     // 可选，预置策略
+    // .withOidcIdTokenFile("/path/to/id_token_file")               // 可选，从文件读取ID Token
+
+// Global级服务
+// 不传 domainId 时，SDK 会自动通过 IAM/STS 接口获取
+GlobalCredentials globalCredentials = new GlobalCredentials()
+    .withIdToken(idToken)
+    .withProviderUrn("iam::account_id:oidcProvider:provider_name")
+    .withAgencyUrn("iam::account_id:agency:agency_name")
+    .withAgencySessionName("session_name")
+    .withDurationSeconds(3600);
+    // .withDomainId(domainId)                                       // 可选，手动指定可跳过自动获取
+```
+
+#### 2.5 认证信息管理 [:top:](#用户手册-top)
 
 从**3.0.97**版本起，支持从各类提供器中获取认证信息
 
@@ -559,7 +611,7 @@ GlobalCredentials globalCredentials = new GlobalCredentials()
 
 **Global级服务** 请使用 `XxxCredentialProvider.getGlobalCredentialXxxProvider()`
 
-##### 2.4.1 环境变量 [:top:](#用户手册-top)
+##### 2.5.1 环境变量 [:top:](#用户手册-top)
 
 **AK/SK认证**
 
@@ -638,7 +690,7 @@ EnvCredentialProvider globalProvider = EnvCredentialProvider.getGlobalCredential
 ICredential globalCred = globalProvider.getCredentials();
 ```
 
-##### 2.4.2 配置文件 [:top:](#用户手册-top)
+##### 2.5.2 配置文件 [:top:](#用户手册-top)
 
 默认会从用户主目录下读取认证信息配置文件，linux为`~/.huaweicloud/credentials`，windows为`C:\Users\USER_NAME\.huaweicloud\credentials`，可以通过配置环境变量`HUAWEICLOUD_SDK_CREDENTIALS_FILE`来修改默认文件的路径
 
@@ -719,7 +771,7 @@ ProfileCredentialProvider globalProvider = ProfileCredentialProvider.getGlobalCr
 ICredential globalCred = globalProvider.getCredentials();
 ```
 
-##### 2.4.3 实例元数据 [:top:](#用户手册-top)
+##### 2.5.3 实例元数据 [:top:](#用户手册-top)
 
 从实例元数据获取临时AK/SK和securitytoken，关于元数据获取请参阅：[元数据获取](https://support.huaweicloud.com/usermanual-ecs/ecs_03_0166.html)
 
@@ -738,7 +790,7 @@ MetadataCredentialProvider globalProvider = MetadataCredentialProvider.getGlobal
 ICredential globalCred = globalProvider.getCredentials();
 ```
 
-##### 2.4.4 容器组身份 [:top:](#用户手册-top)
+##### 2.5.4 容器组身份 [:top:](#用户手册-top)
 
 自`3.1.191`版本起，支持在CCE集群中使用容器组身份（Pod Identity）获取临时AK/SK和securitytoken。
 
@@ -756,7 +808,7 @@ PodIdentityCredentialProvider globalProvider = PodIdentityCredentialProvider.glo
 ICredential globalCredentials = globalProvider.getCredentials();
 ```
 
-##### 2.4.5 认证信息提供链 [:top:](#用户手册-top)
+##### 2.5.5 认证信息提供链 [:top:](#用户手册-top)
 
 在创建服务客户端，未显式指定认证信息时，按照顺序 **环境变量 -> 配置文件 -> 实例元数据 -> 容器身份组** 尝试加载认证信息
 

@@ -188,7 +188,7 @@ public class QueryDcDsBriefRespDTO {
     }
 
     /**
-     * 应用ID
+     * 应用名称
      * @return edgeAppName
      */
     public String getEdgeAppName() {

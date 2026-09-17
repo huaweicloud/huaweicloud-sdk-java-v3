@@ -40,7 +40,7 @@ public class ListAutopilotPreCheckTasksResponse extends SdkResponse {
     }
 
     /**
-     * api版本，默认为v3
+     * **参数解释：** API版本，默认为v3 **约束限制：** 不涉及 **取值范围：** - v3  **默认取值：** v3 
      * @return apiVersion
      */
     public String getApiVersion() {
@@ -57,7 +57,7 @@ public class ListAutopilotPreCheckTasksResponse extends SdkResponse {
     }
 
     /**
-     * 类型
+     * **参数解释：** 类型 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return kind
      */
     public String getKind() {
@@ -116,7 +116,7 @@ public class ListAutopilotPreCheckTasksResponse extends SdkResponse {
     }
 
     /**
-     * 集群检查任务列表
+     * **参数解释：** 集群检查任务列表 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return items
      */
     public List<PrecheckClusterTask> getItems() {

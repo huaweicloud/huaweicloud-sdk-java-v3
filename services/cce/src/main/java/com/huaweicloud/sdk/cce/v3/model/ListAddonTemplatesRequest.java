@@ -21,7 +21,7 @@ public class ListAddonTemplatesRequest {
     }
 
     /**
-     * 指定的插件名称或插件别名，不填写则查询列表。
+     * **参数解释**： 指定的插件名称或插件别名，不填写则查询列表。 **约束限制**： 不涉及 **取值范围**： 以字母或数字开头和结尾，支持字母、数字、连字符(-)、下划线(_)和点号(.)，长度范围2~30位。 **默认取值**： 不涉及
      * @return addonTemplateName
      */
     public String getAddonTemplateName() {

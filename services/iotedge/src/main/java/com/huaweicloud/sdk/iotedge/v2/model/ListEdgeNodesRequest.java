@@ -44,6 +44,11 @@ public class ListEdgeNodesRequest {
     private List<String> nodeIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_id")
+
+    private String appId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -76,7 +81,7 @@ public class ListEdgeNodesRequest {
     }
 
     /**
-     * 节点状态,OFFLINE|ONLINE|UNINSTALLED|INSTALLED|DELETING|UPGRADING
+     * 节点状态,OFFLINE|ONLINE|UNINSTALLED|INSTALLED|DELETING|UPGRADING|FROZEN
      * @return state
      */
     public String getState() {
@@ -171,6 +176,23 @@ public class ListEdgeNodesRequest {
         this.nodeIds = nodeIds;
     }
 
+    public ListEdgeNodesRequest withAppId(String appId) {
+        this.appId = appId;
+        return this;
+    }
+
+    /**
+     * 应用ID，查询部署了该应用的节点列表。
+     * @return appId
+     */
+    public String getAppId() {
+        return appId;
+    }
+
+    public void setAppId(String appId) {
+        this.appId = appId;
+    }
+
     public ListEdgeNodesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -221,12 +243,13 @@ public class ListEdgeNodesRequest {
         return Objects.equals(this.name, that.name) && Objects.equals(this.state, that.state)
             && Objects.equals(this.type, that.type) && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.spaceId, that.spaceId) && Objects.equals(this.nodeIds, that.nodeIds)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, state, type, instanceId, spaceId, nodeIds, offset, limit);
+        return Objects.hash(name, state, type, instanceId, spaceId, nodeIds, appId, offset, limit);
     }
 
     @Override
@@ -239,6 +262,7 @@ public class ListEdgeNodesRequest {
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    spaceId: ").append(toIndentedString(spaceId)).append("\n");
         sb.append("    nodeIds: ").append(toIndentedString(nodeIds)).append("\n");
+        sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

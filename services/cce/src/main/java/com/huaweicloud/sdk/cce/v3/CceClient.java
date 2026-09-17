@@ -126,6 +126,8 @@ import com.huaweicloud.sdk.cce.v3.model.GetResourceTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetResourceTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.HibernateClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.HibernateClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.InplaceMigrateNodeRequest;
+import com.huaweicloud.sdk.cce.v3.model.InplaceMigrateNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAccessPolicyRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAccessPolicyResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonInstancesRequest;
@@ -857,9 +859,9 @@ public class CceClient {
     }
 
     /**
-     * 获取集群证书
+     * 获取集群访问证书
      *
-     * 该API用于获取指定集群的证书信息。
+     * 该API用于获取指定集群的访问证书信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -871,9 +873,9 @@ public class CceClient {
     }
 
     /**
-     * 获取集群证书
+     * 获取集群访问证书
      *
-     * 该API用于获取指定集群的证书信息。
+     * 该API用于获取指定集群的访问证书信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1723,6 +1725,39 @@ public class CceClient {
     }
 
     /**
+     * 节点腾挪
+     *
+     * 该API用于在指定集群下腾挪节点到另一集群。
+     * 
+     * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InplaceMigrateNodeRequest 请求对象
+     * @return InplaceMigrateNodeResponse
+     */
+    public InplaceMigrateNodeResponse inplaceMigrateNode(InplaceMigrateNodeRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.inplaceMigrateNode);
+    }
+
+    /**
+     * 节点腾挪
+     *
+     * 该API用于在指定集群下腾挪节点到另一集群。
+     * 
+     * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InplaceMigrateNodeRequest 请求对象
+     * @return SyncInvoker<InplaceMigrateNodeRequest, InplaceMigrateNodeResponse>
+     */
+    public SyncInvoker<InplaceMigrateNodeRequest, InplaceMigrateNodeResponse> inplaceMigrateNodeInvoker(
+        InplaceMigrateNodeRequest request) {
+        return new SyncInvoker<>(request, CceMeta.inplaceMigrateNode, hcClient);
+    }
+
+    /**
      * 获取访问策略列表
      *
      * 该API用于获取访问策略列表。
@@ -2502,9 +2537,9 @@ public class CceClient {
     }
 
     /**
-     * 吊销用户的集群证书
+     * 吊销集群访问证书
      *
-     * 该API用于吊销指定集群的用户证书
+     * 该API用于吊销指定集群的访问证书
      * 
      * &gt; 吊销操作完成后，此证书申请人之前下载的证书和 kubectl 配置文件无法再用于连接集群。此证书申请人可以重新下载证书或 kubectl 配置文件，并使用新下载的文件连接集群
      * 
@@ -2518,9 +2553,9 @@ public class CceClient {
     }
 
     /**
-     * 吊销用户的集群证书
+     * 吊销集群访问证书
      *
-     * 该API用于吊销指定集群的用户证书
+     * 该API用于吊销指定集群的访问证书
      * 
      * &gt; 吊销操作完成后，此证书申请人之前下载的证书和 kubectl 配置文件无法再用于连接集群。此证书申请人可以重新下载证书或 kubectl 配置文件，并使用新下载的文件连接集群
      * 
@@ -2564,11 +2599,11 @@ public class CceClient {
     }
 
     /**
-     * 轮转用户的集群证书
+     * 轮转集群证书
      *
      * 该API用于轮转指定集群的证书
      * 
-     * &gt; 只支持1.19及以上集群版本
+     * &gt; 只支持1.15.11及以上集群版本
      * &gt; 操作完成后，用户集群组件的证书有效期会续期5年。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -2581,11 +2616,11 @@ public class CceClient {
     }
 
     /**
-     * 轮转用户的集群证书
+     * 轮转集群证书
      *
      * 该API用于轮转指定集群的证书
      * 
-     * &gt; 只支持1.19及以上集群版本
+     * &gt; 只支持1.15.11及以上集群版本
      * &gt; 操作完成后，用户集群组件的证书有效期会续期5年。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.

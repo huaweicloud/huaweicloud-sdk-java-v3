@@ -21,6 +21,11 @@ public class BatchListDcDsRequest {
     private String moduleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -62,6 +67,23 @@ public class BatchListDcDsRequest {
 
     public void setModuleId(String moduleId) {
         this.moduleId = moduleId;
+    }
+
+    public BatchListDcDsRequest withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 采集数据源名称，允许中、数字、英文大小写、下划线、中划线
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public BatchListDcDsRequest withOffset(Integer offset) {
@@ -112,12 +134,13 @@ public class BatchListDcDsRequest {
         }
         BatchListDcDsRequest that = (BatchListDcDsRequest) obj;
         return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.moduleId, that.moduleId)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.name, that.name) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(edgeNodeId, moduleId, offset, limit);
+        return Objects.hash(edgeNodeId, moduleId, name, offset, limit);
     }
 
     @Override
@@ -126,6 +149,7 @@ public class BatchListDcDsRequest {
         sb.append("class BatchListDcDsRequest {\n");
         sb.append("    edgeNodeId: ").append(toIndentedString(edgeNodeId)).append("\n");
         sb.append("    moduleId: ").append(toIndentedString(moduleId)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

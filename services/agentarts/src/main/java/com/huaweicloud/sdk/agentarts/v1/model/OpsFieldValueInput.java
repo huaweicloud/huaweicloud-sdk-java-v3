@@ -11,6 +11,16 @@ import java.util.Objects;
 public class OpsFieldValueInput {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "required")
+
+    private Boolean required;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
 
     private String key;
@@ -29,6 +39,40 @@ public class OpsFieldValueInput {
     @JsonProperty(value = "value")
 
     private String value;
+
+    public OpsFieldValueInput withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 字段的唯一标识符。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。 
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public OpsFieldValueInput withRequired(Boolean required) {
+        this.required = required;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 该字段在写入数据时是否必填。 **约束限制：** 不涉及。 **取值范围：** - true：必填 - false：可选 **默认取值：** 不涉及。 
+     * @return required
+     */
+    public Boolean getRequired() {
+        return required;
+    }
+
+    public void setRequired(Boolean required) {
+        this.required = required;
+    }
 
     public OpsFieldValueInput withKey(String key) {
         this.key = key;
@@ -107,19 +151,22 @@ public class OpsFieldValueInput {
             return false;
         }
         OpsFieldValueInput that = (OpsFieldValueInput) obj;
-        return Objects.equals(this.key, that.key) && Objects.equals(this.type, that.type)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.required, that.required)
+            && Objects.equals(this.key, that.key) && Objects.equals(this.type, that.type)
             && Objects.equals(this.contentType, that.contentType) && Objects.equals(this.value, that.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(key, type, contentType, value);
+        return Objects.hash(id, required, key, type, contentType, value);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class OpsFieldValueInput {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    required: ").append(toIndentedString(required)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");

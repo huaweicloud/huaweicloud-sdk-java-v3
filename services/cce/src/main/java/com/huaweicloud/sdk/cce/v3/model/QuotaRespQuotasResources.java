@@ -31,7 +31,7 @@ public class QuotaRespQuotasResources {
     }
 
     /**
-     * **参数解释**： 类型 **取值范围**： - Charts：配额类型为模板 
+     * **参数解释：** 类型 **约束限制：** 不涉及 **取值范围：** - Charts：配额类型为模板  **默认取值：** 不涉及
      * @return type
      */
     public String getType() {
@@ -48,7 +48,7 @@ public class QuotaRespQuotasResources {
     }
 
     /**
-     * 配额
+     * **参数解释：** 配额 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return quota
      */
     public Integer getQuota() {
@@ -65,7 +65,7 @@ public class QuotaRespQuotasResources {
     }
 
     /**
-     * 已使用量
+     * **参数解释：** 已使用量 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return used
      */
     public Integer getUsed() {

@@ -57,6 +57,8 @@ import com.huaweicloud.sdk.iam.v5.model.DeleteSAMLProviderV5Request;
 import com.huaweicloud.sdk.iam.v5.model.DeleteSAMLProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.DeleteServiceLinkedAgencyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.DeleteServiceLinkedAgencyV5Response;
+import com.huaweicloud.sdk.iam.v5.model.DeleteServiceSpecificCredentialV5Request;
+import com.huaweicloud.sdk.iam.v5.model.DeleteServiceSpecificCredentialV5Response;
 import com.huaweicloud.sdk.iam.v5.model.DeleteUserV5Request;
 import com.huaweicloud.sdk.iam.v5.model.DeleteUserV5Response;
 import com.huaweicloud.sdk.iam.v5.model.DeleteVirtualMfaDeviceV5Request;
@@ -117,6 +119,10 @@ import com.huaweicloud.sdk.iam.v5.model.ListSAMLProvidersV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ListSAMLProvidersV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ListServicePrincipalsV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ListServicePrincipalsV5Response;
+import com.huaweicloud.sdk.iam.v5.model.ListServiceSpecificCredentialSupportedServicesV5Request;
+import com.huaweicloud.sdk.iam.v5.model.ListServiceSpecificCredentialSupportedServicesV5Response;
+import com.huaweicloud.sdk.iam.v5.model.ListServiceSpecificCredentialsV5Request;
+import com.huaweicloud.sdk.iam.v5.model.ListServiceSpecificCredentialsV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ListUsersV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ListUsersV5Response;
 import com.huaweicloud.sdk.iam.v5.model.RemoveClientIDFromOIDCProviderV5Request;
@@ -167,6 +173,8 @@ import com.huaweicloud.sdk.iam.v5.model.UpdatePasswordPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdatePasswordPolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdateSAMLProviderV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdateSAMLProviderV5Response;
+import com.huaweicloud.sdk.iam.v5.model.UpdateServiceSpecificCredentialV5Request;
+import com.huaweicloud.sdk.iam.v5.model.UpdateServiceSpecificCredentialV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdateTrustPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdateTrustPolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdateUserV5Request;
@@ -2228,6 +2236,126 @@ public class IamAsyncClient {
     public AsyncInvoker<UpdatePasswordPolicyV5Request, UpdatePasswordPolicyV5Response> updatePasswordPolicyV5AsyncInvoker(
         UpdatePasswordPolicyV5Request request) {
         return new AsyncInvoker<>(request, IamMeta.updatePasswordPolicyV5, hcClient);
+    }
+
+    /**
+     * 删除服务专属凭证
+     *
+     * 该接口可以用于删除服务专属凭证。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteServiceSpecificCredentialV5Request 请求对象
+     * @return CompletableFuture<DeleteServiceSpecificCredentialV5Response>
+     */
+    public CompletableFuture<DeleteServiceSpecificCredentialV5Response> deleteServiceSpecificCredentialV5Async(
+        DeleteServiceSpecificCredentialV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.deleteServiceSpecificCredentialV5);
+    }
+
+    /**
+     * 删除服务专属凭证
+     *
+     * 该接口可以用于删除服务专属凭证。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteServiceSpecificCredentialV5Request 请求对象
+     * @return AsyncInvoker<DeleteServiceSpecificCredentialV5Request, DeleteServiceSpecificCredentialV5Response>
+     */
+    public AsyncInvoker<DeleteServiceSpecificCredentialV5Request, DeleteServiceSpecificCredentialV5Response> deleteServiceSpecificCredentialV5AsyncInvoker(
+        DeleteServiceSpecificCredentialV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.deleteServiceSpecificCredentialV5, hcClient);
+    }
+
+    /**
+     * 查询支持服务专属凭证的云服务列表
+     *
+     * 该接口可以用于查询支持服务专属凭证的云服务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServiceSpecificCredentialSupportedServicesV5Request 请求对象
+     * @return CompletableFuture<ListServiceSpecificCredentialSupportedServicesV5Response>
+     */
+    public CompletableFuture<ListServiceSpecificCredentialSupportedServicesV5Response> listServiceSpecificCredentialSupportedServicesV5Async(
+        ListServiceSpecificCredentialSupportedServicesV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.listServiceSpecificCredentialSupportedServicesV5);
+    }
+
+    /**
+     * 查询支持服务专属凭证的云服务列表
+     *
+     * 该接口可以用于查询支持服务专属凭证的云服务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServiceSpecificCredentialSupportedServicesV5Request 请求对象
+     * @return AsyncInvoker<ListServiceSpecificCredentialSupportedServicesV5Request, ListServiceSpecificCredentialSupportedServicesV5Response>
+     */
+    public AsyncInvoker<ListServiceSpecificCredentialSupportedServicesV5Request, ListServiceSpecificCredentialSupportedServicesV5Response> listServiceSpecificCredentialSupportedServicesV5AsyncInvoker(
+        ListServiceSpecificCredentialSupportedServicesV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.listServiceSpecificCredentialSupportedServicesV5, hcClient);
+    }
+
+    /**
+     * 查询服务专属凭证列表
+     *
+     * 该接口可以用于查询服务专属凭证列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServiceSpecificCredentialsV5Request 请求对象
+     * @return CompletableFuture<ListServiceSpecificCredentialsV5Response>
+     */
+    public CompletableFuture<ListServiceSpecificCredentialsV5Response> listServiceSpecificCredentialsV5Async(
+        ListServiceSpecificCredentialsV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.listServiceSpecificCredentialsV5);
+    }
+
+    /**
+     * 查询服务专属凭证列表
+     *
+     * 该接口可以用于查询服务专属凭证列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServiceSpecificCredentialsV5Request 请求对象
+     * @return AsyncInvoker<ListServiceSpecificCredentialsV5Request, ListServiceSpecificCredentialsV5Response>
+     */
+    public AsyncInvoker<ListServiceSpecificCredentialsV5Request, ListServiceSpecificCredentialsV5Response> listServiceSpecificCredentialsV5AsyncInvoker(
+        ListServiceSpecificCredentialsV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.listServiceSpecificCredentialsV5, hcClient);
+    }
+
+    /**
+     * 更新服务专属凭证
+     *
+     * 该接口可以用于更新服务专属凭证的状态或描述。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateServiceSpecificCredentialV5Request 请求对象
+     * @return CompletableFuture<UpdateServiceSpecificCredentialV5Response>
+     */
+    public CompletableFuture<UpdateServiceSpecificCredentialV5Response> updateServiceSpecificCredentialV5Async(
+        UpdateServiceSpecificCredentialV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.updateServiceSpecificCredentialV5);
+    }
+
+    /**
+     * 更新服务专属凭证
+     *
+     * 该接口可以用于更新服务专属凭证的状态或描述。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateServiceSpecificCredentialV5Request 请求对象
+     * @return AsyncInvoker<UpdateServiceSpecificCredentialV5Request, UpdateServiceSpecificCredentialV5Response>
+     */
+    public AsyncInvoker<UpdateServiceSpecificCredentialV5Request, UpdateServiceSpecificCredentialV5Response> updateServiceSpecificCredentialV5AsyncInvoker(
+        UpdateServiceSpecificCredentialV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.updateServiceSpecificCredentialV5, hcClient);
     }
 
     /**

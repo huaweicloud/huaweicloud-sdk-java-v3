@@ -81,7 +81,7 @@ public class PipelineTemplateSimpleVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_show_source")
 
-    private String isShowSource;
+    private Boolean isShowSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stages")
@@ -309,7 +309,7 @@ public class PipelineTemplateSimpleVO {
         this.isCollect = isCollect;
     }
 
-    public PipelineTemplateSimpleVO withIsShowSource(String isShowSource) {
+    public PipelineTemplateSimpleVO withIsShowSource(Boolean isShowSource) {
         this.isShowSource = isShowSource;
         return this;
     }
@@ -318,11 +318,11 @@ public class PipelineTemplateSimpleVO {
      * **参数解释**： 是否展示流水线源。 **取值范围**： - true：展示流水线源。 - false：不展示流水线源。 
      * @return isShowSource
      */
-    public String getIsShowSource() {
+    public Boolean getIsShowSource() {
         return isShowSource;
     }
 
-    public void setIsShowSource(String isShowSource) {
+    public void setIsShowSource(Boolean isShowSource) {
         this.isShowSource = isShowSource;
     }
 

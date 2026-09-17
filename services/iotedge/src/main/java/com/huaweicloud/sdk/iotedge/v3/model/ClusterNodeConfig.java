@@ -19,9 +19,24 @@ public class ClusterNodeConfig {
     private String masterNodeVip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dmz_vip")
+
+    private String dmzVip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "interface_name")
+
+    private String interfaceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "master_nodes")
 
     private List<NodeConfig> masterNodes = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dmz_nodes")
+
+    private List<NodeConfig> dmzNodes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "work_nodes")
@@ -43,6 +58,40 @@ public class ClusterNodeConfig {
 
     public void setMasterNodeVip(String masterNodeVip) {
         this.masterNodeVip = masterNodeVip;
+    }
+
+    public ClusterNodeConfig withDmzVip(String dmzVip) {
+        this.dmzVip = dmzVip;
+        return this;
+    }
+
+    /**
+     * dmz区worker节点虚拟ip
+     * @return dmzVip
+     */
+    public String getDmzVip() {
+        return dmzVip;
+    }
+
+    public void setDmzVip(String dmzVip) {
+        this.dmzVip = dmzVip;
+    }
+
+    public ClusterNodeConfig withInterfaceName(String interfaceName) {
+        this.interfaceName = interfaceName;
+        return this;
+    }
+
+    /**
+     * 网卡名称
+     * @return interfaceName
+     */
+    public String getInterfaceName() {
+        return interfaceName;
+    }
+
+    public void setInterfaceName(String interfaceName) {
+        this.interfaceName = interfaceName;
     }
 
     public ClusterNodeConfig withMasterNodes(List<NodeConfig> masterNodes) {
@@ -78,6 +127,39 @@ public class ClusterNodeConfig {
         this.masterNodes = masterNodes;
     }
 
+    public ClusterNodeConfig withDmzNodes(List<NodeConfig> dmzNodes) {
+        this.dmzNodes = dmzNodes;
+        return this;
+    }
+
+    public ClusterNodeConfig addDmzNodesItem(NodeConfig dmzNodesItem) {
+        if (this.dmzNodes == null) {
+            this.dmzNodes = new ArrayList<>();
+        }
+        this.dmzNodes.add(dmzNodesItem);
+        return this;
+    }
+
+    public ClusterNodeConfig withDmzNodes(Consumer<List<NodeConfig>> dmzNodesSetter) {
+        if (this.dmzNodes == null) {
+            this.dmzNodes = new ArrayList<>();
+        }
+        dmzNodesSetter.accept(this.dmzNodes);
+        return this;
+    }
+
+    /**
+     * dmz区worker节点数
+     * @return dmzNodes
+     */
+    public List<NodeConfig> getDmzNodes() {
+        return dmzNodes;
+    }
+
+    public void setDmzNodes(List<NodeConfig> dmzNodes) {
+        this.dmzNodes = dmzNodes;
+    }
+
     public ClusterNodeConfig withWorkNodes(List<NodeConfig> workNodes) {
         this.workNodes = workNodes;
         return this;
@@ -100,7 +182,7 @@ public class ClusterNodeConfig {
     }
 
     /**
-     * work节点数
+     * trust区worker节点数
      * @return workNodes
      */
     public List<NodeConfig> getWorkNodes() {
@@ -120,13 +202,15 @@ public class ClusterNodeConfig {
             return false;
         }
         ClusterNodeConfig that = (ClusterNodeConfig) obj;
-        return Objects.equals(this.masterNodeVip, that.masterNodeVip)
-            && Objects.equals(this.masterNodes, that.masterNodes) && Objects.equals(this.workNodes, that.workNodes);
+        return Objects.equals(this.masterNodeVip, that.masterNodeVip) && Objects.equals(this.dmzVip, that.dmzVip)
+            && Objects.equals(this.interfaceName, that.interfaceName)
+            && Objects.equals(this.masterNodes, that.masterNodes) && Objects.equals(this.dmzNodes, that.dmzNodes)
+            && Objects.equals(this.workNodes, that.workNodes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(masterNodeVip, masterNodes, workNodes);
+        return Objects.hash(masterNodeVip, dmzVip, interfaceName, masterNodes, dmzNodes, workNodes);
     }
 
     @Override
@@ -134,7 +218,10 @@ public class ClusterNodeConfig {
         StringBuilder sb = new StringBuilder();
         sb.append("class ClusterNodeConfig {\n");
         sb.append("    masterNodeVip: ").append(toIndentedString(masterNodeVip)).append("\n");
+        sb.append("    dmzVip: ").append(toIndentedString(dmzVip)).append("\n");
+        sb.append("    interfaceName: ").append(toIndentedString(interfaceName)).append("\n");
         sb.append("    masterNodes: ").append(toIndentedString(masterNodes)).append("\n");
+        sb.append("    dmzNodes: ").append(toIndentedString(dmzNodes)).append("\n");
         sb.append("    workNodes: ").append(toIndentedString(workNodes)).append("\n");
         sb.append("}");
         return sb.toString();

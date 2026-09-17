@@ -42,7 +42,7 @@ public class UpgradeWorkFlow {
     }
 
     /**
-     * API类型，固定值“WorkFlowTask”，该值不可修改。 
+     * **参数解释：** API类型，固定值\"WorkFlowTask\"，该值不可修改。 **约束限制：** 固定值 **取值范围：** - WorkFlowTask  **默认取值：** WorkFlowTask 
      * @return kind
      */
     public String getKind() {
@@ -59,7 +59,7 @@ public class UpgradeWorkFlow {
     }
 
     /**
-     * API版本，固定值“v3”，该值不可修改。 
+     * **参数解释：** API版本，固定值\"v3\"，该值不可修改。 **约束限制：** 固定值 **取值范围：** - v3  **默认取值：** v3 
      * @return apiVersion
      */
     public String getApiVersion() {

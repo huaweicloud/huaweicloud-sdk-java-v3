@@ -12,25 +12,25 @@ import java.util.Objects;
 public class ImportOpsResultsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "dataset_id")
 
-    private Object body;
+    private String datasetId;
 
-    public ImportOpsResultsResponse withBody(Object body) {
-        this.body = body;
+    public ImportOpsResultsResponse withDatasetId(String datasetId) {
+        this.datasetId = datasetId;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * **参数解释：** 数据导入完成后承载结果的目标评测集ID。 **取值范围：** 符合通用唯一识别码(UUID)标准的字符串。 
+     * @return datasetId
      */
-    public Object getBody() {
-        return body;
+    public String getDatasetId() {
+        return datasetId;
     }
 
-    public void setBody(Object body) {
-        this.body = body;
+    public void setDatasetId(String datasetId) {
+        this.datasetId = datasetId;
     }
 
     @Override
@@ -42,19 +42,19 @@ public class ImportOpsResultsResponse extends SdkResponse {
             return false;
         }
         ImportOpsResultsResponse that = (ImportOpsResultsResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.datasetId, that.datasetId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(datasetId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ImportOpsResultsResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    datasetId: ").append(toIndentedString(datasetId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

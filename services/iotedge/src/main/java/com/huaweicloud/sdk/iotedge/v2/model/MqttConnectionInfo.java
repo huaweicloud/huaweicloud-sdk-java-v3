@@ -107,7 +107,7 @@ public class MqttConnectionInfo {
     }
 
     /**
-     * 证书秘钥
+     * 证书密钥
      * @return privateKey
      */
     public String getPrivateKey() {

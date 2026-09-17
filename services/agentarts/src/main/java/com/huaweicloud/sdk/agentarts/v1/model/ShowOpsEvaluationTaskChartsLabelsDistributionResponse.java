@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -12,25 +15,42 @@ import java.util.Objects;
 public class ShowOpsEvaluationTaskChartsLabelsDistributionResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "data")
 
-    private Object body;
+    private List<OpsChartsTagDistributionItem> data = null;
 
-    public ShowOpsEvaluationTaskChartsLabelsDistributionResponse withBody(Object body) {
-        this.body = body;
+    public ShowOpsEvaluationTaskChartsLabelsDistributionResponse withData(List<OpsChartsTagDistributionItem> data) {
+        this.data = data;
+        return this;
+    }
+
+    public ShowOpsEvaluationTaskChartsLabelsDistributionResponse addDataItem(OpsChartsTagDistributionItem dataItem) {
+        if (this.data == null) {
+            this.data = new ArrayList<>();
+        }
+        this.data.add(dataItem);
+        return this;
+    }
+
+    public ShowOpsEvaluationTaskChartsLabelsDistributionResponse withData(
+        Consumer<List<OpsChartsTagDistributionItem>> dataSetter) {
+        if (this.data == null) {
+            this.data = new ArrayList<>();
+        }
+        dataSetter.accept(this.data);
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * **参数解释：** 标签分布统计列表。 **约束限制：** 不涉及。
+     * @return data
      */
-    public Object getBody() {
-        return body;
+    public List<OpsChartsTagDistributionItem> getData() {
+        return data;
     }
 
-    public void setBody(Object body) {
-        this.body = body;
+    public void setData(List<OpsChartsTagDistributionItem> data) {
+        this.data = data;
     }
 
     @Override
@@ -43,19 +63,19 @@ public class ShowOpsEvaluationTaskChartsLabelsDistributionResponse extends SdkRe
         }
         ShowOpsEvaluationTaskChartsLabelsDistributionResponse that =
             (ShowOpsEvaluationTaskChartsLabelsDistributionResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(data);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowOpsEvaluationTaskChartsLabelsDistributionResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

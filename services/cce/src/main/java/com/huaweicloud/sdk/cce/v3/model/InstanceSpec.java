@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * spec是集合类的元素类型，内容为插件实例具体信息
+ * **参数解释**： spec是集合类的元素类型，内容为插件实例具体信息。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
  */
 public class InstanceSpec {
 
@@ -61,7 +61,7 @@ public class InstanceSpec {
     }
 
     /**
-     * 集群id
+     * **参数解释**： 集群ID **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return clusterID
      */
     public String getClusterID() {
@@ -78,7 +78,7 @@ public class InstanceSpec {
     }
 
     /**
-     * 插件模板版本号，如1.0.0
+     * **参数解释**： 插件模板版本号，如1.0.0。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return version
      */
     public String getVersion() {
@@ -95,7 +95,7 @@ public class InstanceSpec {
     }
 
     /**
-     * 插件模板名称，如coredns
+     * **参数解释**： 插件模板名称，如coredns。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return addonTemplateName
      */
     public String getAddonTemplateName() {
@@ -112,7 +112,7 @@ public class InstanceSpec {
     }
 
     /**
-     * **参数解释：** 插件模板类型 **约束限制：** 不涉及 **取值范围：** - helm: 表示使用Helm包进行部署的模板类型 - static: 表示静态模板类型  **默认取值：** 不涉及
+     * **参数解释**： 插件模板类型。 **约束限制**： 不涉及 **取值范围**： - helm：表示使用Helm包进行部署的模板类型 - static：表示静态模板类型  **默认取值**： 不涉及
      * @return addonTemplateType
      */
     public String getAddonTemplateType() {
@@ -129,7 +129,7 @@ public class InstanceSpec {
     }
 
     /**
-     * 插件模板logo图片的地址
+     * **参数解释**： 插件模板logo图片的地址。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return addonTemplateLogo
      */
     public String getAddonTemplateLogo() {
@@ -162,7 +162,7 @@ public class InstanceSpec {
     }
 
     /**
-     * 插件模板所属类型
+     * **参数解释**： 插件模板所属类型。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return addonTemplateLabels
      */
     public List<String> getAddonTemplateLabels() {
@@ -179,7 +179,7 @@ public class InstanceSpec {
     }
 
     /**
-     * 插件模板描述
+     * **参数解释**： 插件模板描述。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return description
      */
     public String getDescription() {
@@ -212,7 +212,7 @@ public class InstanceSpec {
     }
 
     /**
-     * 插件模板安装参数（各插件不同），请根据具体插件模板信息填写安装参数。
+     * **参数解释**： 插件模板安装参数（各插件不同），请根据具体插件模板信息填写安装参数。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return values
      */
     public Map<String, Object> getValues() {

@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,20 +17,27 @@ public class GetClusterFlavorSpecsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clusterFlavorSpecs")
 
-    private ClusterFlavorSpecification clusterFlavorSpecs;
+    private List<ClusterFlavorSpecification> clusterFlavorSpecs = null;
 
-    public GetClusterFlavorSpecsResponse withClusterFlavorSpecs(ClusterFlavorSpecification clusterFlavorSpecs) {
+    public GetClusterFlavorSpecsResponse withClusterFlavorSpecs(List<ClusterFlavorSpecification> clusterFlavorSpecs) {
         this.clusterFlavorSpecs = clusterFlavorSpecs;
         return this;
     }
 
-    public GetClusterFlavorSpecsResponse withClusterFlavorSpecs(
-        Consumer<ClusterFlavorSpecification> clusterFlavorSpecsSetter) {
+    public GetClusterFlavorSpecsResponse addClusterFlavorSpecsItem(ClusterFlavorSpecification clusterFlavorSpecsItem) {
         if (this.clusterFlavorSpecs == null) {
-            this.clusterFlavorSpecs = new ClusterFlavorSpecification();
-            clusterFlavorSpecsSetter.accept(this.clusterFlavorSpecs);
+            this.clusterFlavorSpecs = new ArrayList<>();
         }
+        this.clusterFlavorSpecs.add(clusterFlavorSpecsItem);
+        return this;
+    }
 
+    public GetClusterFlavorSpecsResponse withClusterFlavorSpecs(
+        Consumer<List<ClusterFlavorSpecification>> clusterFlavorSpecsSetter) {
+        if (this.clusterFlavorSpecs == null) {
+            this.clusterFlavorSpecs = new ArrayList<>();
+        }
+        clusterFlavorSpecsSetter.accept(this.clusterFlavorSpecs);
         return this;
     }
 
@@ -36,11 +45,11 @@ public class GetClusterFlavorSpecsResponse extends SdkResponse {
      * Get clusterFlavorSpecs
      * @return clusterFlavorSpecs
      */
-    public ClusterFlavorSpecification getClusterFlavorSpecs() {
+    public List<ClusterFlavorSpecification> getClusterFlavorSpecs() {
         return clusterFlavorSpecs;
     }
 
-    public void setClusterFlavorSpecs(ClusterFlavorSpecification clusterFlavorSpecs) {
+    public void setClusterFlavorSpecs(List<ClusterFlavorSpecification> clusterFlavorSpecs) {
         this.clusterFlavorSpecs = clusterFlavorSpecs;
     }
 

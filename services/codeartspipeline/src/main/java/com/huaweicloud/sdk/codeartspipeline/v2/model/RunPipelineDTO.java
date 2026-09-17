@@ -38,6 +38,16 @@ public class RunPipelineDTO {
 
     private List<String> chooseStages = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_hook")
+
+    private Boolean subHook;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execution_plan_id")
+
+    private String executionPlanId;
+
     public RunPipelineDTO withSources(List<RunPipelineDTOSources> sources) {
         this.sources = sources;
         return this;
@@ -187,6 +197,40 @@ public class RunPipelineDTO {
         this.chooseStages = chooseStages;
     }
 
+    public RunPipelineDTO withSubHook(Boolean subHook) {
+        this.subHook = subHook;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否为子流水线触发。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+     * @return subHook
+     */
+    public Boolean getSubHook() {
+        return subHook;
+    }
+
+    public void setSubHook(Boolean subHook) {
+        this.subHook = subHook;
+    }
+
+    public RunPipelineDTO withExecutionPlanId(String executionPlanId) {
+        this.executionPlanId = executionPlanId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 使用哪一个执行方案运行流水线。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+     * @return executionPlanId
+     */
+    public String getExecutionPlanId() {
+        return executionPlanId;
+    }
+
+    public void setExecutionPlanId(String executionPlanId) {
+        this.executionPlanId = executionPlanId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -198,12 +242,13 @@ public class RunPipelineDTO {
         RunPipelineDTO that = (RunPipelineDTO) obj;
         return Objects.equals(this.sources, that.sources) && Objects.equals(this.description, that.description)
             && Objects.equals(this.variables, that.variables) && Objects.equals(this.chooseJobs, that.chooseJobs)
-            && Objects.equals(this.chooseStages, that.chooseStages);
+            && Objects.equals(this.chooseStages, that.chooseStages) && Objects.equals(this.subHook, that.subHook)
+            && Objects.equals(this.executionPlanId, that.executionPlanId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sources, description, variables, chooseJobs, chooseStages);
+        return Objects.hash(sources, description, variables, chooseJobs, chooseStages, subHook, executionPlanId);
     }
 
     @Override
@@ -215,6 +260,8 @@ public class RunPipelineDTO {
         sb.append("    variables: ").append(toIndentedString(variables)).append("\n");
         sb.append("    chooseJobs: ").append(toIndentedString(chooseJobs)).append("\n");
         sb.append("    chooseStages: ").append(toIndentedString(chooseStages)).append("\n");
+        sb.append("    subHook: ").append(toIndentedString(subHook)).append("\n");
+        sb.append("    executionPlanId: ").append(toIndentedString(executionPlanId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

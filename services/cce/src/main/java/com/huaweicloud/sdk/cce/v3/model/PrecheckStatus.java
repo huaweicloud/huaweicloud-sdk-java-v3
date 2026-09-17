@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 升级前检查状态
+ * **参数解释：** 升级前检查状态 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
  */
 public class PrecheckStatus {
 
@@ -47,7 +47,7 @@ public class PrecheckStatus {
     }
 
     /**
-     * 状态，取值如下 - Init: 初始化 - Running 运行中 - Success 成功 - Failed 失败 - Error 错误
+     * **参数解释：** 状态 **约束限制：** 不涉及 **取值范围：** - Init：初始化 - Running：运行中 - Success：成功 - Failed：失败 - Error：错误  **默认取值：** 不涉及
      * @return phase
      */
     public String getPhase() {
@@ -64,7 +64,7 @@ public class PrecheckStatus {
     }
 
     /**
-     * 检查结果过期时间
+     * **参数解释：** 检查结果过期时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return expireTimeStamp
      */
     public String getExpireTimeStamp() {
@@ -81,7 +81,7 @@ public class PrecheckStatus {
     }
 
     /**
-     * 信息，一般是执行错误的日志信息
+     * **参数解释：** 信息，一般是执行错误的日志信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return message
      */
     public String getMessage() {

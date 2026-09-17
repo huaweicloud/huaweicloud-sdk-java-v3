@@ -155,6 +155,10 @@ public class HcClient implements CustomizationConfigure {
         return httpConfig;
     }
 
+    public HttpClient getHttpClient() {
+        return httpClient;
+    }
+
     public HcClient overrideEndpoints(List<String> endpoints) {
         return new HcClient(this).withEndpoints(endpoints);
     }

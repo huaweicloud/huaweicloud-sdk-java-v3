@@ -60,6 +60,11 @@ public class QueryApplicationBriefResponseDTO {
 
     private String edgeAppName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "delivered_app")
+
+    private Boolean deliveredApp;
+
     public QueryApplicationBriefResponseDTO withEdgeAppId(String edgeAppId) {
         this.edgeAppId = edgeAppId;
         return this;
@@ -230,6 +235,23 @@ public class QueryApplicationBriefResponseDTO {
         this.edgeAppName = edgeAppName;
     }
 
+    public QueryApplicationBriefResponseDTO withDeliveredApp(Boolean deliveredApp) {
+        this.deliveredApp = deliveredApp;
+        return this;
+    }
+
+    /**
+     * 是否是下发到端侧网关上应用。
+     * @return deliveredApp
+     */
+    public Boolean getDeliveredApp() {
+        return deliveredApp;
+    }
+
+    public void setDeliveredApp(Boolean deliveredApp) {
+        this.deliveredApp = deliveredApp;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -244,7 +266,8 @@ public class QueryApplicationBriefResponseDTO {
             && Objects.equals(this.lastPublishedVersion, that.lastPublishedVersion)
             && Objects.equals(this.appType, that.appType) && Objects.equals(this.functionType, that.functionType)
             && Objects.equals(this.deployType, that.deployType) && Objects.equals(this.protocol, that.protocol)
-            && Objects.equals(this.edgeAppName, that.edgeAppName);
+            && Objects.equals(this.edgeAppName, that.edgeAppName)
+            && Objects.equals(this.deliveredApp, that.deliveredApp);
     }
 
     @Override
@@ -258,7 +281,8 @@ public class QueryApplicationBriefResponseDTO {
             functionType,
             deployType,
             protocol,
-            edgeAppName);
+            edgeAppName,
+            deliveredApp);
     }
 
     @Override
@@ -275,6 +299,7 @@ public class QueryApplicationBriefResponseDTO {
         sb.append("    deployType: ").append(toIndentedString(deployType)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    edgeAppName: ").append(toIndentedString(edgeAppName)).append("\n");
+        sb.append("    deliveredApp: ").append(toIndentedString(deliveredApp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

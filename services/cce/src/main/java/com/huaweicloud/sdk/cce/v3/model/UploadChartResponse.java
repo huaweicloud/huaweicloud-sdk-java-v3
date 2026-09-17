@@ -82,7 +82,7 @@ public class UploadChartResponse extends SdkResponse {
     }
 
     /**
-     * 模板ID
+     * **参数解释：** 模板ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return id
      */
     public String getId() {
@@ -99,7 +99,7 @@ public class UploadChartResponse extends SdkResponse {
     }
 
     /**
-     * 模板名称
+     * **参数解释：** 模板名称 **约束限制：** 最长64个字符 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return name
      */
     public String getName() {
@@ -116,7 +116,7 @@ public class UploadChartResponse extends SdkResponse {
     }
 
     /**
-     * 模板值
+     * **参数解释：** 模板值 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return values
      */
     public String getValues() {
@@ -133,7 +133,7 @@ public class UploadChartResponse extends SdkResponse {
     }
 
     /**
-     * 模板翻译资源
+     * **参数解释：** 模板翻译资源 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return translate
      */
     public String getTranslate() {
@@ -150,7 +150,7 @@ public class UploadChartResponse extends SdkResponse {
     }
 
     /**
-     * 模板介绍
+     * **参数解释：** 模板介绍 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return instruction
      */
     public String getInstruction() {
@@ -167,7 +167,7 @@ public class UploadChartResponse extends SdkResponse {
     }
 
     /**
-     * 模板版本
+     * **参数解释：** 模板版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return version
      */
     public String getVersion() {
@@ -184,7 +184,7 @@ public class UploadChartResponse extends SdkResponse {
     }
 
     /**
-     * 模板描述
+     * **参数解释：** 模板描述 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return description
      */
     public String getDescription() {
@@ -201,7 +201,7 @@ public class UploadChartResponse extends SdkResponse {
     }
 
     /**
-     * 模板的来源
+     * **参数解释：** 模板的来源 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return source
      */
     public String getSource() {
@@ -218,7 +218,7 @@ public class UploadChartResponse extends SdkResponse {
     }
 
     /**
-     * 模板的图标链接
+     * **参数解释：** 模板的图标链接 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return iconUrl
      */
     public String getIconUrl() {
@@ -235,7 +235,7 @@ public class UploadChartResponse extends SdkResponse {
     }
 
     /**
-     * 是否公开模板
+     * **参数解释：** 是否公开模板 **约束限制：** 不涉及 **取值范围：** - true：公开模板 - false：不公开模板  **默认取值：** false
      * @return _public
      */
     public Boolean getPublic() {
@@ -252,7 +252,7 @@ public class UploadChartResponse extends SdkResponse {
     }
 
     /**
-     * 模板的链接
+     * **参数解释：** 模板的链接 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return chartUrl
      */
     public String getChartUrl() {
@@ -269,7 +269,7 @@ public class UploadChartResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间
+     * **参数解释：** 创建时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return createAt
      */
     public String getCreateAt() {
@@ -286,7 +286,7 @@ public class UploadChartResponse extends SdkResponse {
     }
 
     /**
-     * 更新时间
+     * **参数解释：** 更新时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return updateAt
      */
     public String getUpdateAt() {

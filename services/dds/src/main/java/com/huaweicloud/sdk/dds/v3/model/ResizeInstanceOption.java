@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class ResizeInstanceOption {
 
     /**
-     * 对象类型。 - 对于集群实例，该参数为必选。变更mongos节点规格时，取值为“mongos”；变更单个shard组规格、或者批量变更多个shard组规格时，取值为“shard”，变更config组规格时，取值为\"config\"。 - 对于副本集实例，不传该参数。变更readonly节点规格时,取值为“readonly”。 - 对于单节点实例，不传该参数。
+     * **参数解释：** 对象类型。 **约束限制：** - 对于集群实例，该参数为必选。变更mongos节点规格时，取值为“mongos”；变更单个shard组规格、或者批量变更多个shard组规格时，取值为“shard”，变更config组规格时，取值为\"config\"。 - 对于副本集实例，不传该参数。变更readonly节点规格时,取值为“readonly”。 - 对于单节点实例，不传该参数。 **取值范围：** - mongos - shard - config - readonly **默认取值：** 不涉及。
      */
     public static final class TargetTypeEnum {
 
@@ -126,7 +126,7 @@ public class ResizeInstanceOption {
     }
 
     /**
-     * 对象类型。 - 对于集群实例，该参数为必选。变更mongos节点规格时，取值为“mongos”；变更单个shard组规格、或者批量变更多个shard组规格时，取值为“shard”，变更config组规格时，取值为\"config\"。 - 对于副本集实例，不传该参数。变更readonly节点规格时,取值为“readonly”。 - 对于单节点实例，不传该参数。
+     * **参数解释：** 对象类型。 **约束限制：** - 对于集群实例，该参数为必选。变更mongos节点规格时，取值为“mongos”；变更单个shard组规格、或者批量变更多个shard组规格时，取值为“shard”，变更config组规格时，取值为\"config\"。 - 对于副本集实例，不传该参数。变更readonly节点规格时,取值为“readonly”。 - 对于单节点实例，不传该参数。 **取值范围：** - mongos - shard - config - readonly **默认取值：** 不涉及。
      * @return targetType
      */
     public TargetTypeEnum getTargetType() {
@@ -143,7 +143,7 @@ public class ResizeInstanceOption {
     }
 
     /**
-     * 待变更规格的节点ID或实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 - 对于集群实例，变更mongos节点规格时，取值为mongos节点ID；变更单个shard组规格时，取值为shard组ID；批量变更多个shard组规格时，不传该参数；变更config组规格时，取值为config组的ID。 - 对于副本集实例，取值为相应的实例ID。变更readonly节点规格时，取值为readonly节点ID。 - 对于单节点实例，取值为相应的实例ID。
+     * **参数解释：** 待变更规格的节点ID或实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 **约束限制：** 不涉及。 **取值范围：** - 对于集群实例，变更mongos节点规格时，取值为mongos节点ID；变更单个shard组规格时，取值为shard组ID；批量变更多个shard组规格时，不传该参数；变更config组规格时，取值为config组的ID。 - 对于副本集实例，取值为相应的实例ID。变更readonly节点规格时，取值为readonly节点ID。 - 对于单节点实例，取值为相应的实例ID。 **默认取值：** 不涉及。
      * @return targetId
      */
     public String getTargetId() {
@@ -176,7 +176,7 @@ public class ResizeInstanceOption {
     }
 
     /**
-     * 待变更规格的节点组ID列表，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 - 对于集群实例，变更mongos节点规格时，不传该参数；变更单个shard组规格时，不传该参数；变更config组规格时，不传该参数；批量变更多个shard组规格时，取值为相应的多个shard组ID，最多支持16个shard组批量变更。 - 对于副本集实例，不传该参数。 - 对于单节点实例，不传该参数。
+     * **参数解释：** 待变更规格的节点组ID列表，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 **约束限制：** - 对于集群实例，变更mongos节点规格时，不传该参数；变更单个shard组规格时，不传该参数；变更config组规格时，不传该参数；批量变更多个shard组规格时，取值为相应的多个shard组ID，最多支持16个shard组批量变更。 - 对于副本集实例，不传该参数。 - 对于单节点实例，不传该参数。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return targetIds
      */
     public List<String> getTargetIds() {
@@ -193,7 +193,7 @@ public class ResizeInstanceOption {
     }
 
     /**
-     * 变更至新规格的资源规格编码。
+     * **参数解释：** 变更至新规格的资源规格编码。获取方法请参见查询数据库规格-QueryingDatabaseSpecifications中响应参数“flavors.spec_code”的值。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return targetSpecCode
      */
     public String getTargetSpecCode() {

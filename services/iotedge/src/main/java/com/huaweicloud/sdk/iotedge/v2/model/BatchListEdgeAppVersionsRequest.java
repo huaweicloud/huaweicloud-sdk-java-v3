@@ -51,9 +51,9 @@ public class BatchListEdgeAppVersionsRequest {
         public static final AiCardTypeEnum NPU = new AiCardTypeEnum("NPU");
 
         /**
-         * Enum UNEQUIPPED for value: "unEquipped"
+         * Enum UNEQUIPPED for value: "UNEQUIPPED"
          */
-        public static final AiCardTypeEnum UNEQUIPPED = new AiCardTypeEnum("unEquipped");
+        public static final AiCardTypeEnum UNEQUIPPED = new AiCardTypeEnum("UNEQUIPPED");
 
         private static final Map<String, AiCardTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -61,7 +61,7 @@ public class BatchListEdgeAppVersionsRequest {
             Map<String, AiCardTypeEnum> map = new HashMap<>();
             map.put("GPU", GPU);
             map.put("NPU", NPU);
-            map.put("unEquipped", UNEQUIPPED);
+            map.put("UNEQUIPPED", UNEQUIPPED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -278,6 +278,81 @@ public class BatchListEdgeAppVersionsRequest {
 
     private StateEnum state;
 
+    /**
+     * 应用部署类型
+     */
+    public static final class DeployTypeEnum {
+
+        /**
+         * Enum DOCKER for value: "docker"
+         */
+        public static final DeployTypeEnum DOCKER = new DeployTypeEnum("docker");
+
+        /**
+         * Enum PROCESS for value: "process"
+         */
+        public static final DeployTypeEnum PROCESS = new DeployTypeEnum("process");
+
+        private static final Map<String, DeployTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DeployTypeEnum> createStaticFields() {
+            Map<String, DeployTypeEnum> map = new HashMap<>();
+            map.put("docker", DOCKER);
+            map.put("process", PROCESS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        DeployTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static DeployTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeployTypeEnum(value));
+        }
+
+        public static DeployTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DeployTypeEnum) {
+                return this.value.equals(((DeployTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deploy_type")
+
+    private DeployTypeEnum deployType;
+
     public BatchListEdgeAppVersionsRequest withEdgeAppId(String edgeAppId) {
         this.edgeAppId = edgeAppId;
         return this;
@@ -401,6 +476,23 @@ public class BatchListEdgeAppVersionsRequest {
         this.state = state;
     }
 
+    public BatchListEdgeAppVersionsRequest withDeployType(DeployTypeEnum deployType) {
+        this.deployType = deployType;
+        return this;
+    }
+
+    /**
+     * 应用部署类型
+     * @return deployType
+     */
+    public DeployTypeEnum getDeployType() {
+        return deployType;
+    }
+
+    public void setDeployType(DeployTypeEnum deployType) {
+        this.deployType = deployType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -413,12 +505,12 @@ public class BatchListEdgeAppVersionsRequest {
         return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.version, that.version)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.aiCardType, that.aiCardType) && Objects.equals(this.arch, that.arch)
-            && Objects.equals(this.state, that.state);
+            && Objects.equals(this.state, that.state) && Objects.equals(this.deployType, that.deployType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(edgeAppId, version, offset, limit, aiCardType, arch, state);
+        return Objects.hash(edgeAppId, version, offset, limit, aiCardType, arch, state, deployType);
     }
 
     @Override
@@ -432,6 +524,7 @@ public class BatchListEdgeAppVersionsRequest {
         sb.append("    aiCardType: ").append(toIndentedString(aiCardType)).append("\n");
         sb.append("    arch: ").append(toIndentedString(arch)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    deployType: ").append(toIndentedString(deployType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

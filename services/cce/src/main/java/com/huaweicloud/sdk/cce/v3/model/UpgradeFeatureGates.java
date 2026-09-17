@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 集群升级特性开关
+ * **参数解释：** 集群升级特性开关 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
  */
 public class UpgradeFeatureGates {
 
@@ -21,7 +21,7 @@ public class UpgradeFeatureGates {
     }
 
     /**
-     * 集群升级Console界面是否支持V4版本，该字段一般由CCE Console使用。
+     * **参数解释：** 集群升级Console界面是否支持V4版本，该字段一般由CCE Console使用。 **约束限制：** 不涉及 **取值范围：** - true：支持V4版本 - false：不支持V4版本  **默认取值：** 不涉及 
      * @return supportUpgradePageV4
      */
     public Boolean getSupportUpgradePageV4() {

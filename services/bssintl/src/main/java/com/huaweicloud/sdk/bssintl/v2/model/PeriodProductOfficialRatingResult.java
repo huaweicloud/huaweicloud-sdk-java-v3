@@ -31,6 +31,16 @@ public class PeriodProductOfficialRatingResult {
 
     private Integer measureId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "installment_official_website_amount")
+
+    private String installmentOfficialWebsiteAmount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "installment_period_type")
+
+    private Integer installmentPeriodType;
+
     public PeriodProductOfficialRatingResult withId(String id) {
         this.id = id;
         return this;
@@ -99,6 +109,41 @@ public class PeriodProductOfficialRatingResult {
         this.measureId = measureId;
     }
 
+    public PeriodProductOfficialRatingResult withInstallmentOfficialWebsiteAmount(
+        String installmentOfficialWebsiteAmount) {
+        this.installmentOfficialWebsiteAmount = installmentOfficialWebsiteAmount;
+        return this;
+    }
+
+    /**
+     * 分期金额的官网价。 说明：暂只支持ECS产品。
+     * @return installmentOfficialWebsiteAmount
+     */
+    public String getInstallmentOfficialWebsiteAmount() {
+        return installmentOfficialWebsiteAmount;
+    }
+
+    public void setInstallmentOfficialWebsiteAmount(String installmentOfficialWebsiteAmount) {
+        this.installmentOfficialWebsiteAmount = installmentOfficialWebsiteAmount;
+    }
+
+    public PeriodProductOfficialRatingResult withInstallmentPeriodType(Integer installmentPeriodType) {
+        this.installmentPeriodType = installmentPeriodType;
+        return this;
+    }
+
+    /**
+     * 分期付款的周期类型。 2：月。说明：暂只支持ECS产品。
+     * @return installmentPeriodType
+     */
+    public Integer getInstallmentPeriodType() {
+        return installmentPeriodType;
+    }
+
+    public void setInstallmentPeriodType(Integer installmentPeriodType) {
+        this.installmentPeriodType = installmentPeriodType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -110,12 +155,19 @@ public class PeriodProductOfficialRatingResult {
         PeriodProductOfficialRatingResult that = (PeriodProductOfficialRatingResult) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.productId, that.productId)
             && Objects.equals(this.officialWebsiteAmount, that.officialWebsiteAmount)
-            && Objects.equals(this.measureId, that.measureId);
+            && Objects.equals(this.measureId, that.measureId)
+            && Objects.equals(this.installmentOfficialWebsiteAmount, that.installmentOfficialWebsiteAmount)
+            && Objects.equals(this.installmentPeriodType, that.installmentPeriodType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, productId, officialWebsiteAmount, measureId);
+        return Objects.hash(id,
+            productId,
+            officialWebsiteAmount,
+            measureId,
+            installmentOfficialWebsiteAmount,
+            installmentPeriodType);
     }
 
     @Override
@@ -126,6 +178,10 @@ public class PeriodProductOfficialRatingResult {
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    officialWebsiteAmount: ").append(toIndentedString(officialWebsiteAmount)).append("\n");
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
+        sb.append("    installmentOfficialWebsiteAmount: ")
+            .append(toIndentedString(installmentOfficialWebsiteAmount))
+            .append("\n");
+        sb.append("    installmentPeriodType: ").append(toIndentedString(installmentPeriodType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

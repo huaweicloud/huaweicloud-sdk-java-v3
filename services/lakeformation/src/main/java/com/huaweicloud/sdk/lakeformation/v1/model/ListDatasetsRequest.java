@@ -46,6 +46,11 @@ public class ListDatasetsRequest {
     private String namePartern;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name_pattern")
+
+    private String namePattern;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "format")
 
     private String format;
@@ -160,7 +165,7 @@ public class ListDatasetsRequest {
     }
 
     /**
-     * **参数解释:** 数据集名称通配符，用于模糊查询。 **约束限制:** 只能包含中文、字母、数字和_|*.-特殊字符，且长度为1~256个字符。 **取值范围:** 长度为1~256个字符
+     * **参数解释:** 冗余字段，后续删除。数据集名称通配符，用于模糊查询。 **约束限制:** 只能包含中文、字母、数字和_|*.-特殊字符，且长度为1~256个字符。 **取值范围:** 长度为1~256个字符
      * @return namePartern
      */
     public String getNamePartern() {
@@ -169,6 +174,23 @@ public class ListDatasetsRequest {
 
     public void setNamePartern(String namePartern) {
         this.namePartern = namePartern;
+    }
+
+    public ListDatasetsRequest withNamePattern(String namePattern) {
+        this.namePattern = namePattern;
+        return this;
+    }
+
+    /**
+     * **参数解释:** 数据集名称通配符，用于模糊查询。 **约束限制:** 只能包含中文、字母、数字和_|*.-特殊字符，且长度为1~256个字符。 **取值范围:** 长度为1~256个字符
+     * @return namePattern
+     */
+    public String getNamePattern() {
+        return namePattern;
+    }
+
+    public void setNamePattern(String namePattern) {
+        this.namePattern = namePattern;
     }
 
     public ListDatasetsRequest withFormat(String format) {
@@ -200,12 +222,14 @@ public class ListDatasetsRequest {
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
             && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.marker, that.marker) && Objects.equals(this.reversePage, that.reversePage)
-            && Objects.equals(this.namePartern, that.namePartern) && Objects.equals(this.format, that.format);
+            && Objects.equals(this.namePartern, that.namePartern) && Objects.equals(this.namePattern, that.namePattern)
+            && Objects.equals(this.format, that.format);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, catalogName, databaseName, limit, marker, reversePage, namePartern, format);
+        return Objects
+            .hash(instanceId, catalogName, databaseName, limit, marker, reversePage, namePartern, namePattern, format);
     }
 
     @Override
@@ -219,6 +243,7 @@ public class ListDatasetsRequest {
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    reversePage: ").append(toIndentedString(reversePage)).append("\n");
         sb.append("    namePartern: ").append(toIndentedString(namePartern)).append("\n");
+        sb.append("    namePattern: ").append(toIndentedString(namePattern)).append("\n");
         sb.append("    format: ").append(toIndentedString(format)).append("\n");
         sb.append("}");
         return sb.toString();

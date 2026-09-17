@@ -34,6 +34,11 @@ public class CreateIpdProjectIssueParam {
     private String srcDomain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "feature_set")
+
+    private String featureSet;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "submitted_by")
 
     private String submittedBy;
@@ -108,6 +113,36 @@ public class CreateIpdProjectIssueParam {
 
     private String needBreak;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "category_layer_id")
+
+    private String categoryLayerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "parent_id")
+
+    private String parentId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ir2rr")
+
+    private String ir2rr;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "us2rr")
+
+    private String us2rr;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "link")
+
+    private String link;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ir2feature")
+
+    private String ir2feature;
+
     public CreateIpdProjectIssueParam withTitle(String title) {
         this.title = title;
         return this;
@@ -174,6 +209,23 @@ public class CreateIpdProjectIssueParam {
 
     public void setSrcDomain(String srcDomain) {
         this.srcDomain = srcDomain;
+    }
+
+    public CreateIpdProjectIssueParam withFeatureSet(String featureSet) {
+        this.featureSet = featureSet;
+        return this;
+    }
+
+    /**
+     * 所属特性集，适用于SF类型工作项
+     * @return featureSet
+     */
+    public String getFeatureSet() {
+        return featureSet;
+    }
+
+    public void setFeatureSet(String featureSet) {
+        this.featureSet = featureSet;
     }
 
     public CreateIpdProjectIssueParam withSubmittedBy(String submittedBy) {
@@ -463,6 +515,108 @@ public class CreateIpdProjectIssueParam {
         this.needBreak = needBreak;
     }
 
+    public CreateIpdProjectIssueParam withCategoryLayerId(String categoryLayerId) {
+        this.categoryLayerId = categoryLayerId;
+        return this;
+    }
+
+    /**
+     * 工作项层级ID
+     * @return categoryLayerId
+     */
+    public String getCategoryLayerId() {
+        return categoryLayerId;
+    }
+
+    public void setCategoryLayerId(String categoryLayerId) {
+        this.categoryLayerId = categoryLayerId;
+    }
+
+    public CreateIpdProjectIssueParam withParentId(String parentId) {
+        this.parentId = parentId;
+        return this;
+    }
+
+    /**
+     * 父工作项ID
+     * @return parentId
+     */
+    public String getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(String parentId) {
+        this.parentId = parentId;
+    }
+
+    public CreateIpdProjectIssueParam withIr2rr(String ir2rr) {
+        this.ir2rr = ir2rr;
+        return this;
+    }
+
+    /**
+     * IR关联的RR的ID
+     * @return ir2rr
+     */
+    public String getIr2rr() {
+        return ir2rr;
+    }
+
+    public void setIr2rr(String ir2rr) {
+        this.ir2rr = ir2rr;
+    }
+
+    public CreateIpdProjectIssueParam withUs2rr(String us2rr) {
+        this.us2rr = us2rr;
+        return this;
+    }
+
+    /**
+     * US关联的RR的ID
+     * @return us2rr
+     */
+    public String getUs2rr() {
+        return us2rr;
+    }
+
+    public void setUs2rr(String us2rr) {
+        this.us2rr = us2rr;
+    }
+
+    public CreateIpdProjectIssueParam withLink(String link) {
+        this.link = link;
+        return this;
+    }
+
+    /**
+     * 关联工作项ID，多值使用英文逗号分隔
+     * @return link
+     */
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public CreateIpdProjectIssueParam withIr2feature(String ir2feature) {
+        this.ir2feature = ir2feature;
+        return this;
+    }
+
+    /**
+     * IR关联的SF的ID
+     * @return ir2feature
+     */
+    public String getIr2feature() {
+        return ir2feature;
+    }
+
+    public void setIr2feature(String ir2feature) {
+        this.ir2feature = ir2feature;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -474,8 +628,8 @@ public class CreateIpdProjectIssueParam {
         CreateIpdProjectIssueParam that = (CreateIpdProjectIssueParam) obj;
         return Objects.equals(this.title, that.title) && Objects.equals(this.description, that.description)
             && Objects.equals(this.status, that.status) && Objects.equals(this.srcDomain, that.srcDomain)
-            && Objects.equals(this.submittedBy, that.submittedBy) && Objects.equals(this.domainId, that.domainId)
-            && Objects.equals(this.recipient, that.recipient)
+            && Objects.equals(this.featureSet, that.featureSet) && Objects.equals(this.submittedBy, that.submittedBy)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.recipient, that.recipient)
             && Objects.equals(this.expectDeliveryTime, that.expectDeliveryTime)
             && Objects.equals(this.priority, that.priority) && Objects.equals(this.assignedCc, that.assignedCc)
             && Objects.equals(this.category, that.category) && Objects.equals(this.assignee, that.assignee)
@@ -484,7 +638,11 @@ public class CreateIpdProjectIssueParam {
             && Objects.equals(this.planEndDate, that.planEndDate)
             && Objects.equals(this.workloadManDay, that.workloadManDay)
             && Objects.equals(this.businessDomain, that.businessDomain)
-            && Objects.equals(this.needBreak, that.needBreak);
+            && Objects.equals(this.needBreak, that.needBreak)
+            && Objects.equals(this.categoryLayerId, that.categoryLayerId)
+            && Objects.equals(this.parentId, that.parentId) && Objects.equals(this.ir2rr, that.ir2rr)
+            && Objects.equals(this.us2rr, that.us2rr) && Objects.equals(this.link, that.link)
+            && Objects.equals(this.ir2feature, that.ir2feature);
     }
 
     @Override
@@ -493,6 +651,7 @@ public class CreateIpdProjectIssueParam {
             description,
             status,
             srcDomain,
+            featureSet,
             submittedBy,
             domainId,
             recipient,
@@ -507,7 +666,13 @@ public class CreateIpdProjectIssueParam {
             planEndDate,
             workloadManDay,
             businessDomain,
-            needBreak);
+            needBreak,
+            categoryLayerId,
+            parentId,
+            ir2rr,
+            us2rr,
+            link,
+            ir2feature);
     }
 
     @Override
@@ -518,6 +683,7 @@ public class CreateIpdProjectIssueParam {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    srcDomain: ").append(toIndentedString(srcDomain)).append("\n");
+        sb.append("    featureSet: ").append(toIndentedString(featureSet)).append("\n");
         sb.append("    submittedBy: ").append(toIndentedString(submittedBy)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    recipient: ").append(toIndentedString(recipient)).append("\n");
@@ -533,6 +699,12 @@ public class CreateIpdProjectIssueParam {
         sb.append("    workloadManDay: ").append(toIndentedString(workloadManDay)).append("\n");
         sb.append("    businessDomain: ").append(toIndentedString(businessDomain)).append("\n");
         sb.append("    needBreak: ").append(toIndentedString(needBreak)).append("\n");
+        sb.append("    categoryLayerId: ").append(toIndentedString(categoryLayerId)).append("\n");
+        sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
+        sb.append("    ir2rr: ").append(toIndentedString(ir2rr)).append("\n");
+        sb.append("    us2rr: ").append(toIndentedString(us2rr)).append("\n");
+        sb.append("    link: ").append(toIndentedString(link)).append("\n");
+        sb.append("    ir2feature: ").append(toIndentedString(ir2feature)).append("\n");
         sb.append("}");
         return sb.toString();
     }

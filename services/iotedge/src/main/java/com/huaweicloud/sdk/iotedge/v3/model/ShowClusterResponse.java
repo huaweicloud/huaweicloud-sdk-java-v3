@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -45,6 +46,36 @@ public class ShowClusterResponse extends SdkResponse {
     @JsonProperty(value = "arch")
 
     private String arch;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "license")
+
+    private LicenseInfo license;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_id")
+
+    private String resourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_type")
+
+    private String clusterType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kubernetes_version")
+
+    private String kubernetesVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "license_status")
+
+    private String licenseStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_addr")
+
+    private String clusterAddr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -175,6 +206,117 @@ public class ShowClusterResponse extends SdkResponse {
         this.arch = arch;
     }
 
+    public ShowClusterResponse withLicense(LicenseInfo license) {
+        this.license = license;
+        return this;
+    }
+
+    public ShowClusterResponse withLicense(Consumer<LicenseInfo> licenseSetter) {
+        if (this.license == null) {
+            this.license = new LicenseInfo();
+            licenseSetter.accept(this.license);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get license
+     * @return license
+     */
+    public LicenseInfo getLicense() {
+        return license;
+    }
+
+    public void setLicense(LicenseInfo license) {
+        this.license = license;
+    }
+
+    public ShowClusterResponse withResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
+
+    /**
+     * 资源id
+     * @return resourceId
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
+    public ShowClusterResponse withClusterType(String clusterType) {
+        this.clusterType = clusterType;
+        return this;
+    }
+
+    /**
+     * 集群类型
+     * @return clusterType
+     */
+    public String getClusterType() {
+        return clusterType;
+    }
+
+    public void setClusterType(String clusterType) {
+        this.clusterType = clusterType;
+    }
+
+    public ShowClusterResponse withKubernetesVersion(String kubernetesVersion) {
+        this.kubernetesVersion = kubernetesVersion;
+        return this;
+    }
+
+    /**
+     * kubernetes版本
+     * @return kubernetesVersion
+     */
+    public String getKubernetesVersion() {
+        return kubernetesVersion;
+    }
+
+    public void setKubernetesVersion(String kubernetesVersion) {
+        this.kubernetesVersion = kubernetesVersion;
+    }
+
+    public ShowClusterResponse withLicenseStatus(String licenseStatus) {
+        this.licenseStatus = licenseStatus;
+        return this;
+    }
+
+    /**
+     * 集群license状态
+     * @return licenseStatus
+     */
+    public String getLicenseStatus() {
+        return licenseStatus;
+    }
+
+    public void setLicenseStatus(String licenseStatus) {
+        this.licenseStatus = licenseStatus;
+    }
+
+    public ShowClusterResponse withClusterAddr(String clusterAddr) {
+        this.clusterAddr = clusterAddr;
+        return this;
+    }
+
+    /**
+     * 集群地址
+     * @return clusterAddr
+     */
+    public String getClusterAddr() {
+        return clusterAddr;
+    }
+
+    public void setClusterAddr(String clusterAddr) {
+        this.clusterAddr = clusterAddr;
+    }
+
     public ShowClusterResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -221,13 +363,31 @@ public class ShowClusterResponse extends SdkResponse {
         return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.clusterName, that.clusterName)
             && Objects.equals(this.description, that.description) && Objects.equals(this.version, that.version)
             && Objects.equals(this.state, that.state) && Objects.equals(this.os, that.os)
-            && Objects.equals(this.arch, that.arch) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.arch, that.arch) && Objects.equals(this.license, that.license)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.clusterType, that.clusterType)
+            && Objects.equals(this.kubernetesVersion, that.kubernetesVersion)
+            && Objects.equals(this.licenseStatus, that.licenseStatus)
+            && Objects.equals(this.clusterAddr, that.clusterAddr) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, clusterName, description, version, state, os, arch, createTime, updateTime);
+        return Objects.hash(clusterId,
+            clusterName,
+            description,
+            version,
+            state,
+            os,
+            arch,
+            license,
+            resourceId,
+            clusterType,
+            kubernetesVersion,
+            licenseStatus,
+            clusterAddr,
+            createTime,
+            updateTime);
     }
 
     @Override
@@ -241,6 +401,12 @@ public class ShowClusterResponse extends SdkResponse {
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    os: ").append(toIndentedString(os)).append("\n");
         sb.append("    arch: ").append(toIndentedString(arch)).append("\n");
+        sb.append("    license: ").append(toIndentedString(license)).append("\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
+        sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");
+        sb.append("    kubernetesVersion: ").append(toIndentedString(kubernetesVersion)).append("\n");
+        sb.append("    licenseStatus: ").append(toIndentedString(licenseStatus)).append("\n");
+        sb.append("    clusterAddr: ").append(toIndentedString(clusterAddr)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");

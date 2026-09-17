@@ -48,6 +48,11 @@ public class ClusterInformationSpec {
 
     private Boolean deletionProtection;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "secretConfig")
+
+    private SecretConfigUpdate secretConfig;
+
     public ClusterInformationSpec withAgencyName(String agencyName) {
         this.agencyName = agencyName;
         return this;
@@ -210,6 +215,32 @@ public class ClusterInformationSpec {
         this.deletionProtection = deletionProtection;
     }
 
+    public ClusterInformationSpec withSecretConfig(SecretConfigUpdate secretConfig) {
+        this.secretConfig = secretConfig;
+        return this;
+    }
+
+    public ClusterInformationSpec withSecretConfig(Consumer<SecretConfigUpdate> secretConfigSetter) {
+        if (this.secretConfig == null) {
+            this.secretConfig = new SecretConfigUpdate();
+            secretConfigSetter.accept(this.secretConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get secretConfig
+     * @return secretConfig
+     */
+    public SecretConfigUpdate getSecretConfig() {
+        return secretConfig;
+    }
+
+    public void setSecretConfig(SecretConfigUpdate secretConfig) {
+        this.secretConfig = secretConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -223,13 +254,20 @@ public class ClusterInformationSpec {
             && Objects.equals(this.customSan, that.customSan)
             && Objects.equals(this.containerNetwork, that.containerNetwork)
             && Objects.equals(this.eniNetwork, that.eniNetwork) && Objects.equals(this.hostNetwork, that.hostNetwork)
-            && Objects.equals(this.deletionProtection, that.deletionProtection);
+            && Objects.equals(this.deletionProtection, that.deletionProtection)
+            && Objects.equals(this.secretConfig, that.secretConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(agencyName, description, customSan, containerNetwork, eniNetwork, hostNetwork, deletionProtection);
+        return Objects.hash(agencyName,
+            description,
+            customSan,
+            containerNetwork,
+            eniNetwork,
+            hostNetwork,
+            deletionProtection,
+            secretConfig);
     }
 
     @Override
@@ -243,6 +281,7 @@ public class ClusterInformationSpec {
         sb.append("    eniNetwork: ").append(toIndentedString(eniNetwork)).append("\n");
         sb.append("    hostNetwork: ").append(toIndentedString(hostNetwork)).append("\n");
         sb.append("    deletionProtection: ").append(toIndentedString(deletionProtection)).append("\n");
+        sb.append("    secretConfig: ").append(toIndentedString(secretConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

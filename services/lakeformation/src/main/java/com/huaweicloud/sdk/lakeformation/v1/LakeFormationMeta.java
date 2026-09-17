@@ -1409,6 +1409,11 @@ public class LakeFormationMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDatasetsRequest::getNamePartern, ListDatasetsRequest::setNamePartern));
+        builder.<String>withRequestField("name_pattern",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasetsRequest::getNamePattern, ListDatasetsRequest::setNamePattern));
         builder.<String>withRequestField("format",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

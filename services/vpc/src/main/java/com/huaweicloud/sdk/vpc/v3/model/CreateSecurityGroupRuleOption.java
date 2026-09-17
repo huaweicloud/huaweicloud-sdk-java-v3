@@ -63,7 +63,7 @@ public class CreateSecurityGroupRuleOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
 
-    private String priority;
+    private Integer priority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
@@ -240,7 +240,7 @@ public class CreateSecurityGroupRuleOption {
         this.action = action;
     }
 
-    public CreateSecurityGroupRuleOption withPriority(String priority) {
+    public CreateSecurityGroupRuleOption withPriority(Integer priority) {
         this.priority = priority;
         return this;
     }
@@ -249,11 +249,11 @@ public class CreateSecurityGroupRuleOption {
      * 功能说明：规则在安全组中的优先级 取值范围：1~100，1代表最高优先级 约束：默认值为100
      * @return priority
      */
-    public String getPriority() {
+    public Integer getPriority() {
         return priority;
     }
 
-    public void setPriority(String priority) {
+    public void setPriority(Integer priority) {
         this.priority = priority;
     }
 

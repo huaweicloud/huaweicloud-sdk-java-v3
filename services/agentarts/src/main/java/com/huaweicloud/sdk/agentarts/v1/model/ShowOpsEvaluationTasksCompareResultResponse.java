@@ -19,11 +19,6 @@ public class ShowOpsEvaluationTasksCompareResultResponse extends SdkResponse {
 
     private List<CompareResultItem> data = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total")
-
-    private Integer total;
-
     public ShowOpsEvaluationTasksCompareResultResponse withData(List<CompareResultItem> data) {
         this.data = data;
         return this;
@@ -57,25 +52,6 @@ public class ShowOpsEvaluationTasksCompareResultResponse extends SdkResponse {
         this.data = data;
     }
 
-    public ShowOpsEvaluationTasksCompareResultResponse withTotal(Integer total) {
-        this.total = total;
-        return this;
-    }
-
-    /**
-     * **参数解释：**             符合查询过滤条件的总记录数。           **约束限制：**             整型数值。           **取值范围：**             0-500。           **默认取值：**             不涉及。
-     * minimum: 0
-     * maximum: 500
-     * @return total
-     */
-    public Integer getTotal() {
-        return total;
-    }
-
-    public void setTotal(Integer total) {
-        this.total = total;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -85,12 +61,12 @@ public class ShowOpsEvaluationTasksCompareResultResponse extends SdkResponse {
             return false;
         }
         ShowOpsEvaluationTasksCompareResultResponse that = (ShowOpsEvaluationTasksCompareResultResponse) obj;
-        return Objects.equals(this.data, that.data) && Objects.equals(this.total, that.total);
+        return Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(data, total);
+        return Objects.hash(data);
     }
 
     @Override
@@ -98,7 +74,6 @@ public class ShowOpsEvaluationTasksCompareResultResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowOpsEvaluationTasksCompareResultResponse {\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
-        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("}");
         return sb.toString();
     }

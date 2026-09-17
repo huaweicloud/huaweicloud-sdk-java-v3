@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.iotedge.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -19,6 +22,11 @@ public class ListClustersRequest {
     @JsonProperty(value = "state")
 
     private String state;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_ids")
+
+    private List<String> clusterIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -62,6 +70,39 @@ public class ListClustersRequest {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public ListClustersRequest withClusterIds(List<String> clusterIds) {
+        this.clusterIds = clusterIds;
+        return this;
+    }
+
+    public ListClustersRequest addClusterIdsItem(String clusterIdsItem) {
+        if (this.clusterIds == null) {
+            this.clusterIds = new ArrayList<>();
+        }
+        this.clusterIds.add(clusterIdsItem);
+        return this;
+    }
+
+    public ListClustersRequest withClusterIds(Consumer<List<String>> clusterIdsSetter) {
+        if (this.clusterIds == null) {
+            this.clusterIds = new ArrayList<>();
+        }
+        clusterIdsSetter.accept(this.clusterIds);
+        return this;
+    }
+
+    /**
+     * 边缘集群ID列表
+     * @return clusterIds
+     */
+    public List<String> getClusterIds() {
+        return clusterIds;
+    }
+
+    public void setClusterIds(List<String> clusterIds) {
+        this.clusterIds = clusterIds;
     }
 
     public ListClustersRequest withLimit(Integer limit) {
@@ -112,12 +153,13 @@ public class ListClustersRequest {
         }
         ListClustersRequest that = (ListClustersRequest) obj;
         return Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.state, that.state)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.clusterIds, that.clusterIds) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterName, state, limit, offset);
+        return Objects.hash(clusterName, state, clusterIds, limit, offset);
     }
 
     @Override
@@ -126,6 +168,7 @@ public class ListClustersRequest {
         sb.append("class ListClustersRequest {\n");
         sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    clusterIds: ").append(toIndentedString(clusterIds)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");

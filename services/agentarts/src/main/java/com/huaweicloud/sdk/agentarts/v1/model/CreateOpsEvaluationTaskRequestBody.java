@@ -5,8 +5,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -15,6 +18,31 @@ import java.util.function.Consumer;
  * **参数解释：** 创建评估任务的请求体，定义了任务的核心元数据及执行逻辑。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
  */
 public class CreateOpsEvaluationTaskRequestBody {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "account_id")
+
+    private String accountId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "creator")
+
+    private String creator;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_id")
+
+    private String domainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "run_at")
+
+    private OffsetDateTime runAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<OpsTmsTag> tags = null;
 
     /**
      * **参数解释：** 评估模式，指定任务是在线评估还是离线评估，影响任务的执行环境和策略。 **约束限制：** 字符串类型，最小长度为1，最大长度为36。 **取值范围：** 枚举值：OFFLINE（离线）、ONLINE（在线）。字符最小长度为1，最大长度为36。 **默认取值：** OFFLINE。
@@ -216,6 +244,107 @@ public class CreateOpsEvaluationTaskRequestBody {
     @JsonProperty(value = "evaluation_object_config")
 
     private Object evaluationObjectConfig;
+
+    public CreateOpsEvaluationTaskRequestBody withAccountId(String accountId) {
+        this.accountId = accountId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 租户账号ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return accountId
+     */
+    public String getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    public CreateOpsEvaluationTaskRequestBody withCreator(String creator) {
+        this.creator = creator;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 创建人用户名。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return creator
+     */
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+
+    public CreateOpsEvaluationTaskRequestBody withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 租户域ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
+    public CreateOpsEvaluationTaskRequestBody withRunAt(OffsetDateTime runAt) {
+        this.runAt = runAt;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 计划执行时间。 **约束限制：** 不涉及。 **取值范围：** ISO 8601 时间格式，长度范围为0~40。 **默认取值：** 不涉及。
+     * @return runAt
+     */
+    public OffsetDateTime getRunAt() {
+        return runAt;
+    }
+
+    public void setRunAt(OffsetDateTime runAt) {
+        this.runAt = runAt;
+    }
+
+    public CreateOpsEvaluationTaskRequestBody withTags(List<OpsTmsTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateOpsEvaluationTaskRequestBody addTagsItem(OpsTmsTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateOpsEvaluationTaskRequestBody withTags(Consumer<List<OpsTmsTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 创建评估任务时绑定的TMS标签列表。 **约束限制：** 数组长度0到50。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return tags
+     */
+    public List<OpsTmsTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<OpsTmsTag> tags) {
+        this.tags = tags;
+    }
 
     public CreateOpsEvaluationTaskRequestBody withEvalMode(EvalModeEnum evalMode) {
         this.evalMode = evalMode;
@@ -431,8 +560,11 @@ public class CreateOpsEvaluationTaskRequestBody {
             return false;
         }
         CreateOpsEvaluationTaskRequestBody that = (CreateOpsEvaluationTaskRequestBody) obj;
-        return Objects.equals(this.evalMode, that.evalMode) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.datasetId, that.datasetId)
+        return Objects.equals(this.accountId, that.accountId) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.runAt, that.runAt)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.evalMode, that.evalMode)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.datasetId, that.datasetId)
             && Objects.equals(this.datasetVersion, that.datasetVersion)
             && Objects.equals(this.humanReadVersion, that.humanReadVersion)
             && Objects.equals(this.datasetName, that.datasetName)
@@ -444,7 +576,12 @@ public class CreateOpsEvaluationTaskRequestBody {
 
     @Override
     public int hashCode() {
-        return Objects.hash(evalMode,
+        return Objects.hash(accountId,
+            creator,
+            domainId,
+            runAt,
+            tags,
+            evalMode,
             name,
             description,
             datasetId,
@@ -461,6 +598,11 @@ public class CreateOpsEvaluationTaskRequestBody {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateOpsEvaluationTaskRequestBody {\n");
+        sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+        sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    runAt: ").append(toIndentedString(runAt)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    evalMode: ").append(toIndentedString(evalMode)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

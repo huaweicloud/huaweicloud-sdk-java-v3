@@ -1,5 +1,7 @@
 package com.huaweicloud.sdk.codeartspipeline.v2;
 
+import com.huaweicloud.sdk.codeartspipeline.v2.model.AcceptCheckpointRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.AcceptCheckpointResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.AcceptManualReviewRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.AcceptManualReviewResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ActionsManualRunPipelineDTO;
@@ -7,11 +9,14 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ActionsPipelineRunsPollingQ
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ActionsPipelineRunsQueryDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ActionsReRunPipelineDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.AgentPluginInfoQueryDTO;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.AlertPolicyDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchMovePipelineToGroupRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchMovePipelineToGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesLatestStatusRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesLatestStatusResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BusinessTypePluginsQueryDTO;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateAlertPolicyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateAlertPolicyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateBasicPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateIdRequest;
@@ -22,6 +27,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineGroupRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineNewRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineNewResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineTagRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineTagResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineTemplateRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineTemplateResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePluginDraftRequest;
@@ -36,14 +43,22 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateRuleResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateRuleSetReq;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateTagReq;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateVariableGroupReq;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateVariableGroupRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateVariableGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteActionsRunPipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteActionsRunPipelineResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteAlertPolicyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteAlertPolicyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteBasicPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineGroupRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineTagRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineTagResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineTemplateRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineTemplateResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePluginDraftRequest;
@@ -54,6 +69,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteRuleRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteRuleResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteVariableGroupRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteVariableGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.EndpointProxyParam;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.InvokeEndpointProxyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.InvokeEndpointProxyResponse;
@@ -80,6 +97,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineRunsResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineSimpleInfoRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineSimpleInfoRequestBody;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineSimpleInfoResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineTagRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineTagResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineTemplatesQuery;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineTemplatesRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineTemplatesResponse;
@@ -103,6 +122,9 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ListStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListTemplatesRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListTemplatesResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListVariableGroupsReq;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListVariableGroupsRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListVariableGroupsResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.LogQuery;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineByTemplateDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineDTO;
@@ -112,6 +134,7 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineGroupUpdateDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineGroupVo;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineLatestRun;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineMoveToGroupResponseVo;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineTagResp;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineTemplateDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PluginBasicDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PluginDTO;
@@ -131,6 +154,7 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.RejectManualReviewRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RejectManualReviewResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RemovePipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RemovePipelineResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.RetryPipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RetryPipelineRunRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RetryPipelineRunResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RetryRunActionsPipelineRequest;
@@ -142,6 +166,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.RunPipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RunPipelineResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowActionsRunsDetailRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowActionsRunsDetailResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowAlertPolicyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowAlertPolicyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowBasicPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusRequest;
@@ -180,6 +206,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowTemplateDetailRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowTemplateDetailResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowVariableGroupDetailRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowVariableGroupDetailResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.StagePluginsQueryDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.StartNewPipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.StartNewPipelineResponse;
@@ -230,6 +258,46 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class CodeArtsPipelineMeta {
 
+    public static final HttpRequestDef<AcceptCheckpointRequest, AcceptCheckpointResponse> acceptCheckpoint =
+        genForAcceptCheckpoint();
+
+    private static HttpRequestDef<AcceptCheckpointRequest, AcceptCheckpointResponse> genForAcceptCheckpoint() {
+        // basic
+        HttpRequestDef.Builder<AcceptCheckpointRequest, AcceptCheckpointResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AcceptCheckpointRequest.class, AcceptCheckpointResponse.class)
+            .withName("AcceptCheckpoint")
+            .withUri(
+                "/v5/{project_id}/api/pipelines/{pipeline_id}/pipeline-runs/{pipeline_run_id}/steps/{step_run_id}/manual/pass")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("step_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptCheckpointRequest::getStepRunId, AcceptCheckpointRequest::setStepRunId));
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptCheckpointRequest::getProjectId, AcceptCheckpointRequest::setProjectId));
+        builder.<String>withRequestField("pipeline_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptCheckpointRequest::getPipelineId, AcceptCheckpointRequest::setPipelineId));
+        builder.<String>withRequestField("pipeline_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptCheckpointRequest::getPipelineRunId,
+                AcceptCheckpointRequest::setPipelineRunId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AcceptManualReviewRequest, AcceptManualReviewResponse> acceptManualReview =
         genForAcceptManualReview();
 
@@ -269,6 +337,12 @@ public class CodeArtsPipelineMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AcceptManualReviewRequest::getStepRunId, AcceptManualReviewRequest::setStepRunId));
+        builder.<String>withRequestField("approval_description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptManualReviewRequest::getApprovalDescription,
+                AcceptManualReviewRequest::setApprovalDescription));
 
         // response
 
@@ -350,6 +424,34 @@ public class CodeArtsPipelineMeta {
                 .withMarshaller(BatchShowPipelinesLatestStatusResponse::getBody,
                     BatchShowPipelinesLatestStatusResponse::setBody)
                 .withInnerContainerType(PipelineLatestRun.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAlertPolicyRequest, CreateAlertPolicyResponse> createAlertPolicy =
+        genForCreateAlertPolicy();
+
+    private static HttpRequestDef<CreateAlertPolicyRequest, CreateAlertPolicyResponse> genForCreateAlertPolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateAlertPolicyRequest, CreateAlertPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAlertPolicyRequest.class, CreateAlertPolicyResponse.class)
+                .withName("CreateAlertPolicy")
+                .withUri("/v5/{tenant_id}/api/alert/policies")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("tenant_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAlertPolicyRequest::getTenantId, CreateAlertPolicyRequest::setTenantId));
+        builder.<AlertPolicyDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AlertPolicyDTO.class),
+            f -> f.withMarshaller(CreateAlertPolicyRequest::getBody, CreateAlertPolicyRequest::setBody));
+
+        // response
 
         return builder.build();
     }
@@ -511,6 +613,34 @@ public class CodeArtsPipelineMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PipelineDTO.class),
             f -> f.withMarshaller(CreatePipelineNewRequest::getBody, CreatePipelineNewRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePipelineTagRequest, CreatePipelineTagResponse> createPipelineTag =
+        genForCreatePipelineTag();
+
+    private static HttpRequestDef<CreatePipelineTagRequest, CreatePipelineTagResponse> genForCreatePipelineTag() {
+        // basic
+        HttpRequestDef.Builder<CreatePipelineTagRequest, CreatePipelineTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePipelineTagRequest.class, CreatePipelineTagResponse.class)
+                .withName("CreatePipelineTag")
+                .withUri("/v5/{project_id}/api/pipeline-tag/create")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePipelineTagRequest::getProjectId, CreatePipelineTagRequest::setProjectId));
+        builder.<CreateTagReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTagReq.class),
+            f -> f.withMarshaller(CreatePipelineTagRequest::getBody, CreatePipelineTagRequest::setBody));
 
         // response
 
@@ -700,6 +830,62 @@ public class CodeArtsPipelineMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateVariableGroupRequest, CreateVariableGroupResponse> createVariableGroup =
+        genForCreateVariableGroup();
+
+    private static HttpRequestDef<CreateVariableGroupRequest, CreateVariableGroupResponse> genForCreateVariableGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateVariableGroupRequest, CreateVariableGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateVariableGroupRequest.class, CreateVariableGroupResponse.class)
+                .withName("CreateVariableGroup")
+                .withUri("/v5/{project_id}/api/pipeline/variable/group/create")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateVariableGroupRequest::getProjectId, CreateVariableGroupRequest::setProjectId));
+        builder.<CreateVariableGroupReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateVariableGroupReq.class),
+            f -> f.withMarshaller(CreateVariableGroupRequest::getBody, CreateVariableGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAlertPolicyRequest, DeleteAlertPolicyResponse> deleteAlertPolicy =
+        genForDeleteAlertPolicy();
+
+    private static HttpRequestDef<DeleteAlertPolicyRequest, DeleteAlertPolicyResponse> genForDeleteAlertPolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteAlertPolicyRequest, DeleteAlertPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAlertPolicyRequest.class, DeleteAlertPolicyResponse.class)
+                .withName("DeleteAlertPolicy")
+                .withUri("/v5/{tenant_id}/api/alert/policies/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("tenant_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAlertPolicyRequest::getTenantId, DeleteAlertPolicyRequest::setTenantId));
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAlertPolicyRequest::getPolicyId, DeleteAlertPolicyRequest::setPolicyId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteBasicPluginRequest, DeleteBasicPluginResponse> deleteBasicPlugin =
         genForDeleteBasicPlugin();
 
@@ -793,6 +979,34 @@ public class CodeArtsPipelineMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeletePipelineGroupRequest::getId, DeletePipelineGroupRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePipelineTagRequest, DeletePipelineTagResponse> deletePipelineTag =
+        genForDeletePipelineTag();
+
+    private static HttpRequestDef<DeletePipelineTagRequest, DeletePipelineTagResponse> genForDeletePipelineTag() {
+        // basic
+        HttpRequestDef.Builder<DeletePipelineTagRequest, DeletePipelineTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePipelineTagRequest.class, DeletePipelineTagResponse.class)
+                .withName("DeletePipelineTag")
+                .withUri("/v5/{project_id}/api/pipeline-tag/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePipelineTagRequest::getProjectId, DeletePipelineTagRequest::setProjectId));
+        builder.<String>withRequestField("tagId",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePipelineTagRequest::getTagId, DeletePipelineTagRequest::setTagId));
 
         // response
 
@@ -950,6 +1164,34 @@ public class CodeArtsPipelineMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteStrategyRequest::getDomainId, DeleteStrategyRequest::setDomainId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteVariableGroupRequest, DeleteVariableGroupResponse> deleteVariableGroup =
+        genForDeleteVariableGroup();
+
+    private static HttpRequestDef<DeleteVariableGroupRequest, DeleteVariableGroupResponse> genForDeleteVariableGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteVariableGroupRequest, DeleteVariableGroupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteVariableGroupRequest.class, DeleteVariableGroupResponse.class)
+            .withName("DeleteVariableGroup")
+            .withUri("/v5/{project_id}/api/pipeline/variable/group/delete")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVariableGroupRequest::getProjectId, DeleteVariableGroupRequest::setProjectId));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVariableGroupRequest::getId, DeleteVariableGroupRequest::setId));
 
         // response
 
@@ -1260,6 +1502,40 @@ public class CodeArtsPipelineMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPipelineTagRequest, ListPipelineTagResponse> listPipelineTag =
+        genForListPipelineTag();
+
+    private static HttpRequestDef<ListPipelineTagRequest, ListPipelineTagResponse> genForListPipelineTag() {
+        // basic
+        HttpRequestDef.Builder<ListPipelineTagRequest, ListPipelineTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPipelineTagRequest.class, ListPipelineTagResponse.class)
+                .withName("ListPipelineTag")
+                .withUri("/v5/{project_id}/api/pipeline-tag/list")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPipelineTagRequest::getProjectId, ListPipelineTagRequest::setProjectId));
+        builder.<String>withRequestField("proj_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPipelineTagRequest::getProjId, ListPipelineTagRequest::setProjId));
+
+        // response
+        builder.<List<PipelineTagResp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPipelineTagResponse::getBody, ListPipelineTagResponse::setBody)
+                .withInnerContainerType(PipelineTagResp.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse> listPipelineTemplates =
         genForListPipelineTemplates();
 
@@ -1280,7 +1556,7 @@ public class CodeArtsPipelineMeta {
                 ListPipelineTemplatesRequest::setTenantId));
         builder.<ListPipelineTemplatesQuery>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListPipelineTemplatesQuery.class),
             f -> f.withMarshaller(ListPipelineTemplatesRequest::getBody, ListPipelineTemplatesRequest::setBody));
 
@@ -1720,6 +1996,34 @@ public class CodeArtsPipelineMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListVariableGroupsRequest, ListVariableGroupsResponse> listVariableGroups =
+        genForListVariableGroups();
+
+    private static HttpRequestDef<ListVariableGroupsRequest, ListVariableGroupsResponse> genForListVariableGroups() {
+        // basic
+        HttpRequestDef.Builder<ListVariableGroupsRequest, ListVariableGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListVariableGroupsRequest.class, ListVariableGroupsResponse.class)
+                .withName("ListVariableGroups")
+                .withUri("/v5/{project_id}/api/pipeline/variable/group/list")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVariableGroupsRequest::getProjectId, ListVariableGroupsRequest::setProjectId));
+        builder.<ListVariableGroupsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListVariableGroupsReq.class),
+            f -> f.withMarshaller(ListVariableGroupsRequest::getBody, ListVariableGroupsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<PublishPluginRequest, PublishPluginResponse> publishPlugin =
         genForPublishPlugin();
 
@@ -1858,6 +2162,12 @@ public class CodeArtsPipelineMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RejectManualReviewRequest::getPipelineRunId,
                 RejectManualReviewRequest::setPipelineRunId));
+        builder.<String>withRequestField("approval_description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RejectManualReviewRequest::getApprovalDescription,
+                RejectManualReviewRequest::setApprovalDescription));
 
         // response
 
@@ -1896,7 +2206,7 @@ public class CodeArtsPipelineMeta {
             HttpRequestDef.builder(HttpMethod.PUT, RetryPipelineRunRequest.class, RetryPipelineRunResponse.class)
                 .withName("RetryPipelineRun")
                 .withUri("/v5/{project_id}/api/pipelines/{pipeline_id}/pipeline-runs/{pipeline_run_id}/retry")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("project_id",
@@ -1915,6 +2225,11 @@ public class CodeArtsPipelineMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RetryPipelineRunRequest::getPipelineRunId,
                 RetryPipelineRunRequest::setPipelineRunId));
+        builder.<RetryPipelineRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RetryPipelineRequest.class),
+            f -> f.withMarshaller(RetryPipelineRunRequest::getBody, RetryPipelineRunRequest::setBody));
 
         // response
 
@@ -1947,6 +2262,34 @@ public class CodeArtsPipelineMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(RunPipelineDTO.class),
             f -> f.withMarshaller(RunPipelineRequest::getBody, RunPipelineRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAlertPolicyRequest, ShowAlertPolicyResponse> showAlertPolicy =
+        genForShowAlertPolicy();
+
+    private static HttpRequestDef<ShowAlertPolicyRequest, ShowAlertPolicyResponse> genForShowAlertPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowAlertPolicyRequest, ShowAlertPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAlertPolicyRequest.class, ShowAlertPolicyResponse.class)
+                .withName("ShowAlertPolicy")
+                .withUri("/v5/{tenant_id}/api/alert/policies/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("tenant_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAlertPolicyRequest::getTenantId, ShowAlertPolicyRequest::setTenantId));
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAlertPolicyRequest::getPolicyId, ShowAlertPolicyRequest::setPolicyId));
 
         // response
 
@@ -2182,6 +2525,12 @@ public class CodeArtsPipelineMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPipelineRunDetailRequest::getPipelineRunId,
                 ShowPipelineRunDetailRequest::setPipelineRunId));
+        builder.<String>withRequestField("pipeline_run_number",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipelineRunDetailRequest::getPipelineRunNumber,
+                ShowPipelineRunDetailRequest::setPipelineRunNumber));
 
         // response
 
@@ -2580,6 +2929,35 @@ public class CodeArtsPipelineMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowVariableGroupDetailRequest, ShowVariableGroupDetailResponse> showVariableGroupDetail =
+        genForShowVariableGroupDetail();
+
+    private static HttpRequestDef<ShowVariableGroupDetailRequest, ShowVariableGroupDetailResponse> genForShowVariableGroupDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowVariableGroupDetailRequest, ShowVariableGroupDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowVariableGroupDetailRequest.class, ShowVariableGroupDetailResponse.class)
+            .withName("ShowVariableGroupDetail")
+            .withUri("/v5/{project_id}/api/pipeline/variable/group/{id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVariableGroupDetailRequest::getProjectId,
+                ShowVariableGroupDetailRequest::setProjectId));
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVariableGroupDetailRequest::getId, ShowVariableGroupDetailRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StartNewPipelineRequest, StartNewPipelineResponse> startNewPipeline =
         genForStartNewPipeline();
 
@@ -2785,7 +3163,7 @@ public class CodeArtsPipelineMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdatePipelineInfoRequest::getPipelineId, UpdatePipelineInfoRequest::setPipelineId));
-        builder.<String>withRequestField("componentId",
+        builder.<String>withRequestField("component_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),

@@ -46,6 +46,11 @@ public class CreateDcPointReqDTO {
 
     private ProcessingConfigDTO processingConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "active")
+
+    private Boolean active;
+
     public CreateDcPointReqDTO withPointId(String pointId) {
         this.pointId = pointId;
         return this;
@@ -174,6 +179,23 @@ public class CreateDcPointReqDTO {
         this.processingConfig = processingConfig;
     }
 
+    public CreateDcPointReqDTO withActive(Boolean active) {
+        this.active = active;
+        return this;
+    }
+
+    /**
+     * 点位启停状态，默认开启
+     * @return active
+     */
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -187,12 +209,12 @@ public class CreateDcPointReqDTO {
             && Objects.equals(this.dataType, that.dataType)
             && Objects.equals(this.collectionConfig, that.collectionConfig)
             && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.property, that.property)
-            && Objects.equals(this.processingConfig, that.processingConfig);
+            && Objects.equals(this.processingConfig, that.processingConfig) && Objects.equals(this.active, that.active);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pointId, name, dataType, collectionConfig, deviceId, property, processingConfig);
+        return Objects.hash(pointId, name, dataType, collectionConfig, deviceId, property, processingConfig, active);
     }
 
     @Override
@@ -206,6 +228,7 @@ public class CreateDcPointReqDTO {
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
         sb.append("    property: ").append(toIndentedString(property)).append("\n");
         sb.append("    processingConfig: ").append(toIndentedString(processingConfig)).append("\n");
+        sb.append("    active: ").append(toIndentedString(active)).append("\n");
         sb.append("}");
         return sb.toString();
     }

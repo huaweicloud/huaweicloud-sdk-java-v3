@@ -47,7 +47,7 @@ public class DownloadAutopilotChartRequest implements ProgressRequest {
     }
 
     /**
-     * 模板的ID
+     * **参数解释：** 模板的ID。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return chartId
      */
     public String getChartId() {

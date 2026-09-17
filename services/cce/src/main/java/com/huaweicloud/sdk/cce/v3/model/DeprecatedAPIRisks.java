@@ -26,7 +26,7 @@ public class DeprecatedAPIRisks {
     }
 
     /**
-     * 请求路径，如/apis/policy/v1beta1/podsecuritypolicies
+     * **参数解释：** 请求路径，如/apis/policy/v1beta1/podsecuritypolicies。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return url
      */
     public String getUrl() {
@@ -43,7 +43,7 @@ public class DeprecatedAPIRisks {
     }
 
     /**
-     * 客户端信息
+     * **参数解释：** 客户端信息。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return userAgent
      */
     public String getUserAgent() {

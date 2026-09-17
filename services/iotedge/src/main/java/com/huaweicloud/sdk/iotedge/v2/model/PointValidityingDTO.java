@@ -13,49 +13,67 @@ public class PointValidityingDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min")
 
-    private Long min;
+    private Object min;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max")
 
-    private Long max;
+    private Object max;
 
-    public PointValidityingDTO withMin(Long min) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "outlier_filtering")
+
+    private Boolean outlierFiltering;
+
+    public PointValidityingDTO withMin(Object min) {
         this.min = min;
         return this;
     }
 
     /**
      * 点位上报值的最小值，小于该值则上报告警
-     * minimum: -9007199254740991
-     * maximum: 9007199254740991
      * @return min
      */
-    public Long getMin() {
+    public Object getMin() {
         return min;
     }
 
-    public void setMin(Long min) {
+    public void setMin(Object min) {
         this.min = min;
     }
 
-    public PointValidityingDTO withMax(Long max) {
+    public PointValidityingDTO withMax(Object max) {
         this.max = max;
         return this;
     }
 
     /**
      * 点位上报值的最大值，大于该值则上报告警
-     * minimum: -9007199254740992
-     * maximum: 9007199254740992
      * @return max
      */
-    public Long getMax() {
+    public Object getMax() {
         return max;
     }
 
-    public void setMax(Long max) {
+    public void setMax(Object max) {
         this.max = max;
+    }
+
+    public PointValidityingDTO withOutlierFiltering(Boolean outlierFiltering) {
+        this.outlierFiltering = outlierFiltering;
+        return this;
+    }
+
+    /**
+     * 异常值过滤
+     * @return outlierFiltering
+     */
+    public Boolean getOutlierFiltering() {
+        return outlierFiltering;
+    }
+
+    public void setOutlierFiltering(Boolean outlierFiltering) {
+        this.outlierFiltering = outlierFiltering;
     }
 
     @Override
@@ -67,12 +85,13 @@ public class PointValidityingDTO {
             return false;
         }
         PointValidityingDTO that = (PointValidityingDTO) obj;
-        return Objects.equals(this.min, that.min) && Objects.equals(this.max, that.max);
+        return Objects.equals(this.min, that.min) && Objects.equals(this.max, that.max)
+            && Objects.equals(this.outlierFiltering, that.outlierFiltering);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(min, max);
+        return Objects.hash(min, max, outlierFiltering);
     }
 
     @Override
@@ -81,6 +100,7 @@ public class PointValidityingDTO {
         sb.append("class PointValidityingDTO {\n");
         sb.append("    min: ").append(toIndentedString(min)).append("\n");
         sb.append("    max: ").append(toIndentedString(max)).append("\n");
+        sb.append("    outlierFiltering: ").append(toIndentedString(outlierFiltering)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.BatchAssociateNaToNodesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchAssociateNaToNodesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchConfirmConfigsNewRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchConfirmConfigsNewResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.BatchConfirmConfigsRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.BatchConfirmConfigsResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchImportConfigsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchImportConfigsResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchListAppConfigsTemplatesRequest;
@@ -35,6 +37,10 @@ import com.huaweicloud.sdk.iotedge.v2.model.BatchListModulesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchListModulesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchListOtTemplatesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchListOtTemplatesResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.BindNodeRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.BindNodeResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateClientNodeRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateClientNodeResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateDcPointRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateDcPointResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateDsRequest;
@@ -51,8 +57,14 @@ import com.huaweicloud.sdk.iotedge.v2.model.CreateInstallCmdRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateInstallCmdResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateModuleRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateModuleResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.CreatePushChannelRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.CreatePushChannelResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateReinstallCmdRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateReinstallCmdResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateScheduleRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateScheduleResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateUpgradeCmdRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateUpgradeCmdResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteAppConfigsTemplateRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteAppConfigsTemplateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcDsRequest;
@@ -79,6 +91,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.DeleteNaRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteNaResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteOtTemplateRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteOtTemplateResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.DeletePushChannelRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.DeletePushChannelResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteScheduleRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteScheduleResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ExecuteDeviceControlsReleaseRequest;
@@ -87,8 +101,18 @@ import com.huaweicloud.sdk.iotedge.v2.model.ExecuteDeviceControlsSetRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ExecuteDeviceControlsSetResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ImportPointsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ImportPointsResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokeDeleteProxyRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokeDeleteProxyResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokeGetProxyRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokeGetProxyResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.InvokeModuleMsgRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.InvokeModuleMsgResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokePatchProxyRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokePatchProxyResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokePostProxyRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokePostProxyResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokePutProxyRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokePutProxyResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListDevicesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListDevicesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListEdgeNodesRequest;
@@ -103,6 +127,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.ListNasRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListNasResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListPropertyActiveControlsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListPropertyActiveControlsResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.ListPushChannelsRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.ListPushChannelsResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListRoutesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListRoutesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.SetDeviceControlDefaultValuesRequest;
@@ -121,6 +147,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeHostsInfoRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeHostsInfoResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeSoftwareVersionRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeSoftwareVersionResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowIaConfigRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowIaConfigResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowModuleRequest;
@@ -139,6 +167,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.ShowProductConfigRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowProductConfigResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.SynchronizeDcConfigsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.SynchronizeDcConfigsResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateClientNodeRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateClientNodeResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateDcDsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateDcDsResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateDcPointRequest;
@@ -237,6 +267,64 @@ public class IoTEdgeClient {
     public SyncInvoker<CreateInstallCmdRequest, CreateInstallCmdResponse> createInstallCmdInvoker(
         CreateInstallCmdRequest request) {
         return new SyncInvoker<>(request, IoTEdgeMeta.createInstallCmd, hcClient);
+    }
+
+    /**
+     * 生成边缘节点重新安装命令
+     *
+     * 生成边缘节点重新安装命令，命令有效时间30分钟，超过后需要重新生成
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateReinstallCmdRequest 请求对象
+     * @return CreateReinstallCmdResponse
+     */
+    public CreateReinstallCmdResponse createReinstallCmd(CreateReinstallCmdRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.createReinstallCmd);
+    }
+
+    /**
+     * 生成边缘节点重新安装命令
+     *
+     * 生成边缘节点重新安装命令，命令有效时间30分钟，超过后需要重新生成
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateReinstallCmdRequest 请求对象
+     * @return SyncInvoker<CreateReinstallCmdRequest, CreateReinstallCmdResponse>
+     */
+    public SyncInvoker<CreateReinstallCmdRequest, CreateReinstallCmdResponse> createReinstallCmdInvoker(
+        CreateReinstallCmdRequest request) {
+        return new SyncInvoker<>(request, IoTEdgeMeta.createReinstallCmd, hcClient);
+    }
+
+    /**
+     * 生成边缘节点升级命令
+     *
+     * 生成边缘节点升级命令，命令有效时间30分钟，超过后需要重新生成
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateUpgradeCmdRequest 请求对象
+     * @return CreateUpgradeCmdResponse
+     */
+    public CreateUpgradeCmdResponse createUpgradeCmd(CreateUpgradeCmdRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.createUpgradeCmd);
+    }
+
+    /**
+     * 生成边缘节点升级命令
+     *
+     * 生成边缘节点升级命令，命令有效时间30分钟，超过后需要重新生成
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateUpgradeCmdRequest 请求对象
+     * @return SyncInvoker<CreateUpgradeCmdRequest, CreateUpgradeCmdResponse>
+     */
+    public SyncInvoker<CreateUpgradeCmdRequest, CreateUpgradeCmdResponse> createUpgradeCmdInvoker(
+        CreateUpgradeCmdRequest request) {
+        return new SyncInvoker<>(request, IoTEdgeMeta.createUpgradeCmd, hcClient);
     }
 
     /**
@@ -380,6 +468,121 @@ public class IoTEdgeClient {
     public SyncInvoker<UpdateEdgeNodeRequest, UpdateEdgeNodeResponse> updateEdgeNodeInvoker(
         UpdateEdgeNodeRequest request) {
         return new SyncInvoker<>(request, IoTEdgeMeta.updateEdgeNode, hcClient);
+    }
+
+    /**
+     * 分配推送通道到客户端节点
+     *
+     * 分配推送通道到客户端节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateClientNodeRequest 请求对象
+     * @return CreateClientNodeResponse
+     */
+    public CreateClientNodeResponse createClientNode(CreateClientNodeRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.createClientNode);
+    }
+
+    /**
+     * 分配推送通道到客户端节点
+     *
+     * 分配推送通道到客户端节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateClientNodeRequest 请求对象
+     * @return SyncInvoker<CreateClientNodeRequest, CreateClientNodeResponse>
+     */
+    public SyncInvoker<CreateClientNodeRequest, CreateClientNodeResponse> createClientNodeInvoker(
+        CreateClientNodeRequest request) {
+        return new SyncInvoker<>(request, IoTEdgeMeta.createClientNode, hcClient);
+    }
+
+    /**
+     * 修改已分配节点通道的详情
+     *
+     * 修改已分配节点通道的详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClientNodeRequest 请求对象
+     * @return UpdateClientNodeResponse
+     */
+    public UpdateClientNodeResponse updateClientNode(UpdateClientNodeRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.updateClientNode);
+    }
+
+    /**
+     * 修改已分配节点通道的详情
+     *
+     * 修改已分配节点通道的详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClientNodeRequest 请求对象
+     * @return SyncInvoker<UpdateClientNodeRequest, UpdateClientNodeResponse>
+     */
+    public SyncInvoker<UpdateClientNodeRequest, UpdateClientNodeResponse> updateClientNodeInvoker(
+        UpdateClientNodeRequest request) {
+        return new SyncInvoker<>(request, IoTEdgeMeta.updateClientNode, hcClient);
+    }
+
+    /**
+     * 查询当前边缘软件版本
+     *
+     * 查询当前边缘软件版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEdgeNodeSoftwareVersionRequest 请求对象
+     * @return ShowEdgeNodeSoftwareVersionResponse
+     */
+    public ShowEdgeNodeSoftwareVersionResponse showEdgeNodeSoftwareVersion(ShowEdgeNodeSoftwareVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.showEdgeNodeSoftwareVersion);
+    }
+
+    /**
+     * 查询当前边缘软件版本
+     *
+     * 查询当前边缘软件版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEdgeNodeSoftwareVersionRequest 请求对象
+     * @return SyncInvoker<ShowEdgeNodeSoftwareVersionRequest, ShowEdgeNodeSoftwareVersionResponse>
+     */
+    public SyncInvoker<ShowEdgeNodeSoftwareVersionRequest, ShowEdgeNodeSoftwareVersionResponse> showEdgeNodeSoftwareVersionInvoker(
+        ShowEdgeNodeSoftwareVersionRequest request) {
+        return new SyncInvoker<>(request, IoTEdgeMeta.showEdgeNodeSoftwareVersion, hcClient);
+    }
+
+    /**
+     * 绑定节点-专业版
+     *
+     * 绑定节点-专业版
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindNodeRequest 请求对象
+     * @return BindNodeResponse
+     */
+    public BindNodeResponse bindNode(BindNodeRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.bindNode);
+    }
+
+    /**
+     * 绑定节点-专业版
+     *
+     * 绑定节点-专业版
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindNodeRequest 请求对象
+     * @return SyncInvoker<BindNodeRequest, BindNodeResponse>
+     */
+    public SyncInvoker<BindNodeRequest, BindNodeResponse> bindNodeInvoker(BindNodeRequest request) {
+        return new SyncInvoker<>(request, IoTEdgeMeta.bindNode, hcClient);
     }
 
     /**
@@ -1708,7 +1911,7 @@ public class IoTEdgeClient {
     /**
      * 修改边缘模块
      *
-     * 用户通过Console接口查询指定边缘节点上指定边缘模块
+     * 用户通过Console接口修改指定边缘节点上指定边缘模块
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1722,7 +1925,7 @@ public class IoTEdgeClient {
     /**
      * 修改边缘模块
      *
-     * 用户通过Console接口查询指定边缘节点上指定边缘模块
+     * 用户通过Console接口修改指定边缘节点上指定边缘模块
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2079,9 +2282,9 @@ public class IoTEdgeClient {
     }
 
     /**
-     * 查询点位表模板文件
+     * 导出点位表文件
      *
-     * 查询点位表模板文件
+     * 导出点位表文件
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2093,9 +2296,9 @@ public class IoTEdgeClient {
     }
 
     /**
-     * 查询点位表模板文件
+     * 导出点位表文件
      *
-     * 查询点位表模板文件
+     * 导出点位表文件
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2194,6 +2397,182 @@ public class IoTEdgeClient {
     }
 
     /**
+     * DELETE方法的代理
+     *
+     * 北向NA调用南向第三方应用的DELETE方法时使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokeDeleteProxyRequest 请求对象
+     * @return InvokeDeleteProxyResponse
+     */
+    public InvokeDeleteProxyResponse invokeDeleteProxy(InvokeDeleteProxyRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.invokeDeleteProxy);
+    }
+
+    /**
+     * DELETE方法的代理
+     *
+     * 北向NA调用南向第三方应用的DELETE方法时使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokeDeleteProxyRequest 请求对象
+     * @return SyncInvoker<InvokeDeleteProxyRequest, InvokeDeleteProxyResponse>
+     */
+    public SyncInvoker<InvokeDeleteProxyRequest, InvokeDeleteProxyResponse> invokeDeleteProxyInvoker(
+        InvokeDeleteProxyRequest request) {
+        return new SyncInvoker<>(request, IoTEdgeMeta.invokeDeleteProxy, hcClient);
+    }
+
+    /**
+     * GET方法的代理
+     *
+     * 北向NA调用南向第三方应用的GET方法时使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokeGetProxyRequest 请求对象
+     * @return InvokeGetProxyResponse
+     */
+    public InvokeGetProxyResponse invokeGetProxy(InvokeGetProxyRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.invokeGetProxy);
+    }
+
+    /**
+     * GET方法的代理
+     *
+     * 北向NA调用南向第三方应用的GET方法时使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokeGetProxyRequest 请求对象
+     * @return SyncInvoker<InvokeGetProxyRequest, InvokeGetProxyResponse>
+     */
+    public SyncInvoker<InvokeGetProxyRequest, InvokeGetProxyResponse> invokeGetProxyInvoker(
+        InvokeGetProxyRequest request) {
+        return new SyncInvoker<>(request, IoTEdgeMeta.invokeGetProxy, hcClient);
+    }
+
+    /**
+     * PATCH方法的代理
+     *
+     * 北向NA调用南向第三方应用的PATCH方法时使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokePatchProxyRequest 请求对象
+     * @return InvokePatchProxyResponse
+     */
+    public InvokePatchProxyResponse invokePatchProxy(InvokePatchProxyRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.invokePatchProxy);
+    }
+
+    /**
+     * PATCH方法的代理
+     *
+     * 北向NA调用南向第三方应用的PATCH方法时使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokePatchProxyRequest 请求对象
+     * @return SyncInvoker<InvokePatchProxyRequest, InvokePatchProxyResponse>
+     */
+    public SyncInvoker<InvokePatchProxyRequest, InvokePatchProxyResponse> invokePatchProxyInvoker(
+        InvokePatchProxyRequest request) {
+        return new SyncInvoker<>(request, IoTEdgeMeta.invokePatchProxy, hcClient);
+    }
+
+    /**
+     * POST方法的代理
+     *
+     * 北向NA调用南向第三方应用的POST方法时使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokePostProxyRequest 请求对象
+     * @return InvokePostProxyResponse
+     */
+    public InvokePostProxyResponse invokePostProxy(InvokePostProxyRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.invokePostProxy);
+    }
+
+    /**
+     * POST方法的代理
+     *
+     * 北向NA调用南向第三方应用的POST方法时使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokePostProxyRequest 请求对象
+     * @return SyncInvoker<InvokePostProxyRequest, InvokePostProxyResponse>
+     */
+    public SyncInvoker<InvokePostProxyRequest, InvokePostProxyResponse> invokePostProxyInvoker(
+        InvokePostProxyRequest request) {
+        return new SyncInvoker<>(request, IoTEdgeMeta.invokePostProxy, hcClient);
+    }
+
+    /**
+     * PUT方法的代理
+     *
+     * 北向NA调用南向第三方应用的PUT方法时使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokePutProxyRequest 请求对象
+     * @return InvokePutProxyResponse
+     */
+    public InvokePutProxyResponse invokePutProxy(InvokePutProxyRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.invokePutProxy);
+    }
+
+    /**
+     * PUT方法的代理
+     *
+     * 北向NA调用南向第三方应用的PUT方法时使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokePutProxyRequest 请求对象
+     * @return SyncInvoker<InvokePutProxyRequest, InvokePutProxyResponse>
+     */
+    public SyncInvoker<InvokePutProxyRequest, InvokePutProxyResponse> invokePutProxyInvoker(
+        InvokePutProxyRequest request) {
+        return new SyncInvoker<>(request, IoTEdgeMeta.invokePutProxy, hcClient);
+    }
+
+    /**
+     * 南向3rdIA对配置项下发进行确认
+     *
+     * 南向3rdIA对配置项下发进行确认
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchConfirmConfigsRequest 请求对象
+     * @return BatchConfirmConfigsResponse
+     */
+    @Deprecated
+    public BatchConfirmConfigsResponse batchConfirmConfigs(BatchConfirmConfigsRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.batchConfirmConfigs);
+    }
+
+    /**
+     * 南向3rdIA对配置项下发进行确认
+     *
+     * 南向3rdIA对配置项下发进行确认
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchConfirmConfigsRequest 请求对象
+     * @return SyncInvoker<BatchConfirmConfigsRequest, BatchConfirmConfigsResponse>
+     */
+    @Deprecated
+    public SyncInvoker<BatchConfirmConfigsRequest, BatchConfirmConfigsResponse> batchConfirmConfigsInvoker(
+        BatchConfirmConfigsRequest request) {
+        return new SyncInvoker<>(request, IoTEdgeMeta.batchConfirmConfigs, hcClient);
+    }
+
+    /**
      * 批量确认南向3rdIA配置项
      *
      * 南向3rdIA对下发的配置项进行批量确认
@@ -2225,7 +2604,7 @@ public class IoTEdgeClient {
     /**
      * 批量导入南向3rdIA配置项
      *
-     * 批量导入南向3rdIA配置项
+     * 用户批量上传/导入南向3rdIA配置项
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2239,7 +2618,7 @@ public class IoTEdgeClient {
     /**
      * 批量导入南向3rdIA配置项
      *
-     * 批量导入南向3rdIA配置项
+     * 用户批量上传/导入南向3rdIA配置项
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2368,8 +2747,7 @@ public class IoTEdgeClient {
     /**
      * 授权北向NA信息到边缘节点
      *
-     * 批量授权北向NA信息到边缘节点。
-     * 已授权的边缘节点上的南向IA应用，可以通过部署在边缘节点上的api网关访问北向NA提供的接口。
+     * 授权北向NA信息到边缘节点
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2383,8 +2761,7 @@ public class IoTEdgeClient {
     /**
      * 授权北向NA信息到边缘节点
      *
-     * 批量授权北向NA信息到边缘节点。
-     * 已授权的边缘节点上的南向IA应用，可以通过部署在边缘节点上的api网关访问北向NA提供的接口。
+     * 授权北向NA信息到边缘节点
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2399,7 +2776,7 @@ public class IoTEdgeClient {
     /**
      * 删除北向NA信息
      *
-     * 删除北向NA信息，如果有边缘节点已分配该NA信息，会通知到该边缘节点。
+     * 删除北向NA信息，如果有边缘节点已分配该NA信息，会通知到边缘节点
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2413,7 +2790,7 @@ public class IoTEdgeClient {
     /**
      * 删除北向NA信息
      *
-     * 删除北向NA信息，如果有边缘节点已分配该NA信息，会通知到该边缘节点。
+     * 删除北向NA信息，如果有边缘节点已分配该NA信息，会通知到边缘节点
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2512,7 +2889,7 @@ public class IoTEdgeClient {
     /**
      * 创建&amp;更新北向NA信息
      *
-     * 创建&amp;更新北向NA信息，当更新北向NA信息时，会通知到已分配该北向NA的所有边缘节点。
+     * 创建&amp;更新北向NA信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2526,7 +2903,7 @@ public class IoTEdgeClient {
     /**
      * 创建&amp;更新北向NA信息
      *
-     * 创建&amp;更新北向NA信息，当更新北向NA信息时，会通知到已分配该北向NA的所有边缘节点。
+     * 创建&amp;更新北向NA信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2535,6 +2912,93 @@ public class IoTEdgeClient {
      */
     public SyncInvoker<UpdateNaRequest, UpdateNaResponse> updateNaInvoker(UpdateNaRequest request) {
         return new SyncInvoker<>(request, IoTEdgeMeta.updateNa, hcClient);
+    }
+
+    /**
+     * 创建外部推送通道
+     *
+     * 创建外部推送通道
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePushChannelRequest 请求对象
+     * @return CreatePushChannelResponse
+     */
+    public CreatePushChannelResponse createPushChannel(CreatePushChannelRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.createPushChannel);
+    }
+
+    /**
+     * 创建外部推送通道
+     *
+     * 创建外部推送通道
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePushChannelRequest 请求对象
+     * @return SyncInvoker<CreatePushChannelRequest, CreatePushChannelResponse>
+     */
+    public SyncInvoker<CreatePushChannelRequest, CreatePushChannelResponse> createPushChannelInvoker(
+        CreatePushChannelRequest request) {
+        return new SyncInvoker<>(request, IoTEdgeMeta.createPushChannel, hcClient);
+    }
+
+    /**
+     * 删除外部推送通道
+     *
+     * 删除查询外部推送通道
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePushChannelRequest 请求对象
+     * @return DeletePushChannelResponse
+     */
+    public DeletePushChannelResponse deletePushChannel(DeletePushChannelRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.deletePushChannel);
+    }
+
+    /**
+     * 删除外部推送通道
+     *
+     * 删除查询外部推送通道
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePushChannelRequest 请求对象
+     * @return SyncInvoker<DeletePushChannelRequest, DeletePushChannelResponse>
+     */
+    public SyncInvoker<DeletePushChannelRequest, DeletePushChannelResponse> deletePushChannelInvoker(
+        DeletePushChannelRequest request) {
+        return new SyncInvoker<>(request, IoTEdgeMeta.deletePushChannel, hcClient);
+    }
+
+    /**
+     * 查询推送通道列表
+     *
+     * 查询推送通道列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPushChannelsRequest 请求对象
+     * @return ListPushChannelsResponse
+     */
+    public ListPushChannelsResponse listPushChannels(ListPushChannelsRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.listPushChannels);
+    }
+
+    /**
+     * 查询推送通道列表
+     *
+     * 查询推送通道列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPushChannelsRequest 请求对象
+     * @return SyncInvoker<ListPushChannelsRequest, ListPushChannelsResponse>
+     */
+    public SyncInvoker<ListPushChannelsRequest, ListPushChannelsResponse> listPushChannelsInvoker(
+        ListPushChannelsRequest request) {
+        return new SyncInvoker<>(request, IoTEdgeMeta.listPushChannels, hcClient);
     }
 
 }

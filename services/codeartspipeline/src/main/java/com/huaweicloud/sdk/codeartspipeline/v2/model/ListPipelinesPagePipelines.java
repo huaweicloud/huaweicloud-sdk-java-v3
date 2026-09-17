@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.codeartspipeline.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -70,6 +72,21 @@ public class ListPipelinesPagePipelines {
     @JsonProperty(value = "security_level")
 
     private Integer securityLevel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "banned")
+
+    private Boolean banned;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tag_list")
+
+    private List<ListPipelinesPageTagList> tagList = null;
 
     public ListPipelinesPagePipelines withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
@@ -284,6 +301,73 @@ public class ListPipelinesPagePipelines {
         this.securityLevel = securityLevel;
     }
 
+    public ListPipelinesPagePipelines withBanned(Boolean banned) {
+        this.banned = banned;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否禁用流水线。 **取值范围**： - true：流水线已禁用。 - false：流水线未禁用。 
+     * @return banned
+     */
+    public Boolean getBanned() {
+        return banned;
+    }
+
+    public void setBanned(Boolean banned) {
+        this.banned = banned;
+    }
+
+    public ListPipelinesPagePipelines withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 流水线描述。 **取值范围**： 不涉及。 
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public ListPipelinesPagePipelines withTagList(List<ListPipelinesPageTagList> tagList) {
+        this.tagList = tagList;
+        return this;
+    }
+
+    public ListPipelinesPagePipelines addTagListItem(ListPipelinesPageTagList tagListItem) {
+        if (this.tagList == null) {
+            this.tagList = new ArrayList<>();
+        }
+        this.tagList.add(tagListItem);
+        return this;
+    }
+
+    public ListPipelinesPagePipelines withTagList(Consumer<List<ListPipelinesPageTagList>> tagListSetter) {
+        if (this.tagList == null) {
+            this.tagList = new ArrayList<>();
+        }
+        tagListSetter.accept(this.tagList);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 流水线标签列表。 **取值范围**： 不涉及。 
+     * @return tagList
+     */
+    public List<ListPipelinesPageTagList> getTagList() {
+        return tagList;
+    }
+
+    public void setTagList(List<ListPipelinesPageTagList> tagList) {
+        this.tagList = tagList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -300,7 +384,8 @@ public class ListPipelinesPagePipelines {
             && Objects.equals(this.manifestVersion, that.manifestVersion)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.latestRun, that.latestRun)
             && Objects.equals(this.convertSign, that.convertSign)
-            && Objects.equals(this.securityLevel, that.securityLevel);
+            && Objects.equals(this.securityLevel, that.securityLevel) && Objects.equals(this.banned, that.banned)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.tagList, that.tagList);
     }
 
     @Override
@@ -316,7 +401,10 @@ public class ListPipelinesPagePipelines {
             createTime,
             latestRun,
             convertSign,
-            securityLevel);
+            securityLevel,
+            banned,
+            description,
+            tagList);
     }
 
     @Override
@@ -335,6 +423,9 @@ public class ListPipelinesPagePipelines {
         sb.append("    latestRun: ").append(toIndentedString(latestRun)).append("\n");
         sb.append("    convertSign: ").append(toIndentedString(convertSign)).append("\n");
         sb.append("    securityLevel: ").append(toIndentedString(securityLevel)).append("\n");
+        sb.append("    banned: ").append(toIndentedString(banned)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    tagList: ").append(toIndentedString(tagList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -24,6 +24,11 @@ public class UpdateScheduleReqDTO {
     private Boolean enabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reset_current_task")
+
+    private Boolean resetCurrentTask;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
     private Long startTime;
@@ -82,6 +87,23 @@ public class UpdateScheduleReqDTO {
         this.enabled = enabled;
     }
 
+    public UpdateScheduleReqDTO withResetCurrentTask(Boolean resetCurrentTask) {
+        this.resetCurrentTask = resetCurrentTask;
+        return this;
+    }
+
+    /**
+     * 是否立即执行
+     * @return resetCurrentTask
+     */
+    public Boolean getResetCurrentTask() {
+        return resetCurrentTask;
+    }
+
+    public void setResetCurrentTask(Boolean resetCurrentTask) {
+        this.resetCurrentTask = resetCurrentTask;
+    }
+
     public UpdateScheduleReqDTO withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
@@ -90,7 +112,7 @@ public class UpdateScheduleReqDTO {
     /**
      * 调度计划起始时间，毫秒级别的时间戳
      * minimum: 0
-     * maximum: 4828176000000
+     * maximum: 7983849600000
      * @return startTime
      */
     public Long getStartTime() {
@@ -109,7 +131,7 @@ public class UpdateScheduleReqDTO {
     /**
      * 调度计划结束时间，毫秒级别的时间戳
      * minimum: 0
-     * maximum: 4828176000000
+     * maximum: 7983849600000
      * @return endTime
      */
     public Long getEndTime() {
@@ -208,6 +230,7 @@ public class UpdateScheduleReqDTO {
         }
         UpdateScheduleReqDTO that = (UpdateScheduleReqDTO) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.resetCurrentTask, that.resetCurrentTask)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
             && Objects.equals(this.priority, that.priority) && Objects.equals(this.daily, that.daily)
             && Objects.equals(this.tasks, that.tasks);
@@ -215,7 +238,7 @@ public class UpdateScheduleReqDTO {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, enabled, startTime, endTime, priority, daily, tasks);
+        return Objects.hash(name, enabled, resetCurrentTask, startTime, endTime, priority, daily, tasks);
     }
 
     @Override
@@ -224,6 +247,7 @@ public class UpdateScheduleReqDTO {
         sb.append("class UpdateScheduleReqDTO {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+        sb.append("    resetCurrentTask: ").append(toIndentedString(resetCurrentTask)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");

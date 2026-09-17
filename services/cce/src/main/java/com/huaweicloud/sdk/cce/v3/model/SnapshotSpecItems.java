@@ -46,7 +46,7 @@ public class SnapshotSpecItems {
     }
 
     /**
-     * 子任务ID
+     * **参数解释：** 子任务ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return id
      */
     public String getId() {
@@ -97,7 +97,7 @@ public class SnapshotSpecItems {
     }
 
     /**
-     * 任务创建时间
+     * **参数解释：** 任务创建时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return creationTimestamp
      */
     public String getCreationTimestamp() {
@@ -114,7 +114,7 @@ public class SnapshotSpecItems {
     }
 
     /**
-     * 任务更新时间
+     * **参数解释：** 任务更新时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return updateTimestamp
      */
     public String getUpdateTimestamp() {
@@ -131,7 +131,7 @@ public class SnapshotSpecItems {
     }
 
     /**
-     * 信息
+     * **参数解释：** 信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return message
      */
     public String getMessage() {

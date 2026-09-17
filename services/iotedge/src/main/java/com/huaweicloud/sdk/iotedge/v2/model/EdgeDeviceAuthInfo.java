@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 设备接入类型（已废弃）
+ * 设备接入类型。
  */
 public class EdgeDeviceAuthInfo {
 

@@ -80,6 +80,13 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
         return CompletableFuture.supplyAsync(() -> {
             checkRequiredIdpParams();
 
+            if (isOidcAgencyAuth()) {
+                if (this.regionId == null) {
+                    this.regionId = regionId;
+                }
+                processSts(hcClient.getHttpClient());
+            }
+
             if (StringUtils.isNotEmpty(projectId)) {
                 return this;
             }
@@ -91,7 +98,7 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
                 cacheName = getIdpId() + regionId;
             }
 
-            if (cache.containsKey(cacheName)) {
+            if (cacheName != null && cache.containsKey(cacheName)) {
                 projectId = cache.get(cacheName);
                 return this;
             }
@@ -198,7 +205,15 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
                 .withIdTokenFile(getIdTokenFile())
                 .withDerivedPredicate(getDerivedPredicate())
                 .withIamEndpoint(getIamEndpoint())
-                .withSecurityToken(getSecurityToken());
+                .withSecurityToken(getSecurityToken())
+                .withIdToken(getIdToken())
+                .withOidcIdTokenFile(getOidcIdTokenFile())
+                .withProviderUrn(getProviderUrn())
+                .withAgencyUrn(getAgencyUrn())
+                .withAgencySessionName(getAgencySessionName())
+                .withDurationSeconds(getDurationSeconds())
+                .withPolicy(getPolicy())
+                .withPolicyIds(getPolicyIds());
 
         credentials.processDerivedAuthParams(derivedAuthServiceName, regionId);
         return credentials;

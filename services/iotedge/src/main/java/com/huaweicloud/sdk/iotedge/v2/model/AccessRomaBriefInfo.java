@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * AccessRomaBriefInfo
+ * ROMA接入鉴权信息
  */
 public class AccessRomaBriefInfo {
 

@@ -109,6 +109,11 @@ public class CreateInstanceRequestBody {
     private RestoreInfo restoreInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dr_info")
+
+    private DRInfo drInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
 
     private String port;
@@ -498,6 +503,32 @@ public class CreateInstanceRequestBody {
         this.restoreInfo = restoreInfo;
     }
 
+    public CreateInstanceRequestBody withDrInfo(DRInfo drInfo) {
+        this.drInfo = drInfo;
+        return this;
+    }
+
+    public CreateInstanceRequestBody withDrInfo(Consumer<DRInfo> drInfoSetter) {
+        if (this.drInfo == null) {
+            this.drInfo = new DRInfo();
+            drInfoSetter.accept(this.drInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get drInfo
+     * @return drInfo
+     */
+    public DRInfo getDrInfo() {
+        return drInfo;
+    }
+
+    public void setDrInfo(DRInfo drInfo) {
+        this.drInfo = drInfo;
+    }
+
     public CreateInstanceRequestBody withPort(String port) {
         this.port = port;
         return this;
@@ -590,7 +621,8 @@ public class CreateInstanceRequestBody {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.dedicatedResourceId, that.dedicatedResourceId)
             && Objects.equals(this.sslOption, that.sslOption) && Objects.equals(this.chargeInfo, that.chargeInfo)
-            && Objects.equals(this.restoreInfo, that.restoreInfo) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.restoreInfo, that.restoreInfo) && Objects.equals(this.drInfo, that.drInfo)
+            && Objects.equals(this.port, that.port)
             && Objects.equals(this.availabilityZoneDetail, that.availabilityZoneDetail)
             && Objects.equals(this.lbAccessControlSettings, that.lbAccessControlSettings);
     }
@@ -616,6 +648,7 @@ public class CreateInstanceRequestBody {
             sslOption,
             chargeInfo,
             restoreInfo,
+            drInfo,
             port,
             availabilityZoneDetail,
             lbAccessControlSettings);
@@ -644,6 +677,7 @@ public class CreateInstanceRequestBody {
         sb.append("    sslOption: ").append(toIndentedString(sslOption)).append("\n");
         sb.append("    chargeInfo: ").append(toIndentedString(chargeInfo)).append("\n");
         sb.append("    restoreInfo: ").append(toIndentedString(restoreInfo)).append("\n");
+        sb.append("    drInfo: ").append(toIndentedString(drInfo)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    availabilityZoneDetail: ").append(toIndentedString(availabilityZoneDetail)).append("\n");
         sb.append("    lbAccessControlSettings: ").append(toIndentedString(lbAccessControlSettings)).append("\n");

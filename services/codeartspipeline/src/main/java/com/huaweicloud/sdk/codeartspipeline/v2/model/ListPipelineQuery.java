@@ -69,6 +69,31 @@ public class ListPipelineQuery {
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pipeline_run_update_time")
+
+    private String pipelineRunUpdateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "exclude_pipeline_id")
+
+    private String excludePipelineId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "include_pipeline_id")
+
+    private String includePipelineId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tag_list")
+
+    private List<String> tagList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "manifest_version_list")
+
+    private List<String> manifestVersionList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Long offset;
@@ -112,6 +137,11 @@ public class ListPipelineQuery {
     @JsonProperty(value = "security_level_list")
 
     private List<Integer> securityLevelList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dev_uc_security_level_list")
+
+    private List<Integer> devUcSecurityLevelList = null;
 
     public ListPipelineQuery withProjectId(String projectId) {
         this.projectId = projectId;
@@ -364,6 +394,123 @@ public class ListPipelineQuery {
         this.endTime = endTime;
     }
 
+    public ListPipelineQuery withPipelineRunUpdateTime(String pipelineRunUpdateTime) {
+        this.pipelineRunUpdateTime = pipelineRunUpdateTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 流水线运行更新时间。 **约束限制**： 不涉及。 **取值范围**： 时间戳或yyyy-MM-dd HH:mm:ss格式。 **默认取值**： 不涉及。 
+     * @return pipelineRunUpdateTime
+     */
+    public String getPipelineRunUpdateTime() {
+        return pipelineRunUpdateTime;
+    }
+
+    public void setPipelineRunUpdateTime(String pipelineRunUpdateTime) {
+        this.pipelineRunUpdateTime = pipelineRunUpdateTime;
+    }
+
+    public ListPipelineQuery withExcludePipelineId(String excludePipelineId) {
+        this.excludePipelineId = excludePipelineId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 排除的流水线ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及。 
+     * @return excludePipelineId
+     */
+    public String getExcludePipelineId() {
+        return excludePipelineId;
+    }
+
+    public void setExcludePipelineId(String excludePipelineId) {
+        this.excludePipelineId = excludePipelineId;
+    }
+
+    public ListPipelineQuery withIncludePipelineId(String includePipelineId) {
+        this.includePipelineId = includePipelineId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 包含的流水线ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及。 
+     * @return includePipelineId
+     */
+    public String getIncludePipelineId() {
+        return includePipelineId;
+    }
+
+    public void setIncludePipelineId(String includePipelineId) {
+        this.includePipelineId = includePipelineId;
+    }
+
+    public ListPipelineQuery withTagList(List<String> tagList) {
+        this.tagList = tagList;
+        return this;
+    }
+
+    public ListPipelineQuery addTagListItem(String tagListItem) {
+        if (this.tagList == null) {
+            this.tagList = new ArrayList<>();
+        }
+        this.tagList.add(tagListItem);
+        return this;
+    }
+
+    public ListPipelineQuery withTagList(Consumer<List<String>> tagListSetter) {
+        if (this.tagList == null) {
+            this.tagList = new ArrayList<>();
+        }
+        tagListSetter.accept(this.tagList);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 流水线标签列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+     * @return tagList
+     */
+    public List<String> getTagList() {
+        return tagList;
+    }
+
+    public void setTagList(List<String> tagList) {
+        this.tagList = tagList;
+    }
+
+    public ListPipelineQuery withManifestVersionList(List<String> manifestVersionList) {
+        this.manifestVersionList = manifestVersionList;
+        return this;
+    }
+
+    public ListPipelineQuery addManifestVersionListItem(String manifestVersionListItem) {
+        if (this.manifestVersionList == null) {
+            this.manifestVersionList = new ArrayList<>();
+        }
+        this.manifestVersionList.add(manifestVersionListItem);
+        return this;
+    }
+
+    public ListPipelineQuery withManifestVersionList(Consumer<List<String>> manifestVersionListSetter) {
+        if (this.manifestVersionList == null) {
+            this.manifestVersionList = new ArrayList<>();
+        }
+        manifestVersionListSetter.accept(this.manifestVersionList);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 流水线版本列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+     * @return manifestVersionList
+     */
+    public List<String> getManifestVersionList() {
+        return manifestVersionList;
+    }
+
+    public void setManifestVersionList(List<String> manifestVersionList) {
+        this.manifestVersionList = manifestVersionList;
+    }
+
     public ListPipelineQuery withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -533,6 +680,39 @@ public class ListPipelineQuery {
         this.securityLevelList = securityLevelList;
     }
 
+    public ListPipelineQuery withDevUcSecurityLevelList(List<Integer> devUcSecurityLevelList) {
+        this.devUcSecurityLevelList = devUcSecurityLevelList;
+        return this;
+    }
+
+    public ListPipelineQuery addDevUcSecurityLevelListItem(Integer devUcSecurityLevelListItem) {
+        if (this.devUcSecurityLevelList == null) {
+            this.devUcSecurityLevelList = new ArrayList<>();
+        }
+        this.devUcSecurityLevelList.add(devUcSecurityLevelListItem);
+        return this;
+    }
+
+    public ListPipelineQuery withDevUcSecurityLevelList(Consumer<List<Integer>> devUcSecurityLevelListSetter) {
+        if (this.devUcSecurityLevelList == null) {
+            this.devUcSecurityLevelList = new ArrayList<>();
+        }
+        devUcSecurityLevelListSetter.accept(this.devUcSecurityLevelList);
+        return this;
+    }
+
+    /**
+     * **参数解释**： DevUC流水线密级列表。 **约束限制**： 非涉密场景无该字段。 **取值范围**： 零及以上正整数。 0：未设置密级。 1：最低密级。 **默认取值**： 不涉及。 
+     * @return devUcSecurityLevelList
+     */
+    public List<Integer> getDevUcSecurityLevelList() {
+        return devUcSecurityLevelList;
+    }
+
+    public void setDevUcSecurityLevelList(List<Integer> devUcSecurityLevelList) {
+        this.devUcSecurityLevelList = devUcSecurityLevelList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -547,12 +727,18 @@ public class ListPipelineQuery {
             && Objects.equals(this.status, that.status) && Objects.equals(this.isPublish, that.isPublish)
             && Objects.equals(this.creatorId, that.creatorId) && Objects.equals(this.creatorIds, that.creatorIds)
             && Objects.equals(this.executorIds, that.executorIds) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sortKey, that.sortKey)
-            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.groupPathId, that.groupPathId)
-            && Objects.equals(this.byGroup, that.byGroup) && Objects.equals(this.isBanned, that.isBanned)
-            && Objects.equals(this.queryNew, that.queryNew)
-            && Objects.equals(this.securityLevelList, that.securityLevelList);
+            && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.pipelineRunUpdateTime, that.pipelineRunUpdateTime)
+            && Objects.equals(this.excludePipelineId, that.excludePipelineId)
+            && Objects.equals(this.includePipelineId, that.includePipelineId)
+            && Objects.equals(this.tagList, that.tagList)
+            && Objects.equals(this.manifestVersionList, that.manifestVersionList)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.groupPathId, that.groupPathId) && Objects.equals(this.byGroup, that.byGroup)
+            && Objects.equals(this.isBanned, that.isBanned) && Objects.equals(this.queryNew, that.queryNew)
+            && Objects.equals(this.securityLevelList, that.securityLevelList)
+            && Objects.equals(this.devUcSecurityLevelList, that.devUcSecurityLevelList);
     }
 
     @Override
@@ -568,6 +754,11 @@ public class ListPipelineQuery {
             executorIds,
             startTime,
             endTime,
+            pipelineRunUpdateTime,
+            excludePipelineId,
+            includePipelineId,
+            tagList,
+            manifestVersionList,
             offset,
             limit,
             sortKey,
@@ -576,7 +767,8 @@ public class ListPipelineQuery {
             byGroup,
             isBanned,
             queryNew,
-            securityLevelList);
+            securityLevelList,
+            devUcSecurityLevelList);
     }
 
     @Override
@@ -594,6 +786,11 @@ public class ListPipelineQuery {
         sb.append("    executorIds: ").append(toIndentedString(executorIds)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    pipelineRunUpdateTime: ").append(toIndentedString(pipelineRunUpdateTime)).append("\n");
+        sb.append("    excludePipelineId: ").append(toIndentedString(excludePipelineId)).append("\n");
+        sb.append("    includePipelineId: ").append(toIndentedString(includePipelineId)).append("\n");
+        sb.append("    tagList: ").append(toIndentedString(tagList)).append("\n");
+        sb.append("    manifestVersionList: ").append(toIndentedString(manifestVersionList)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
@@ -603,6 +800,7 @@ public class ListPipelineQuery {
         sb.append("    isBanned: ").append(toIndentedString(isBanned)).append("\n");
         sb.append("    queryNew: ").append(toIndentedString(queryNew)).append("\n");
         sb.append("    securityLevelList: ").append(toIndentedString(securityLevelList)).append("\n");
+        sb.append("    devUcSecurityLevelList: ").append(toIndentedString(devUcSecurityLevelList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

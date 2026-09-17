@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * WorkFlowSpec
+ * **参数解释：** 集群升级流程配置信息。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
  */
 public class WorkFlowSpec {
 
@@ -31,7 +31,7 @@ public class WorkFlowSpec {
     }
 
     /**
-     * 集群ID，资源唯一标识，创建成功后自动生成，填写无效
+     * **参数解释：** 集群ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return clusterID
      */
     public String getClusterID() {
@@ -48,7 +48,7 @@ public class WorkFlowSpec {
     }
 
     /**
-     * 本次集群升级的当前版本 
+     * **参数解释：** 当前集群版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return clusterVersion
      */
     public String getClusterVersion() {
@@ -65,7 +65,7 @@ public class WorkFlowSpec {
     }
 
     /**
-     * 本次集群升级的目标版本 
+     * **参数解释：** 本次集群升级的目标版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return targetVersion
      */
     public String getTargetVersion() {

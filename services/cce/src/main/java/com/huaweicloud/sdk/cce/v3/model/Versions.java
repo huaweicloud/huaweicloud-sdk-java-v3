@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 具体插件版本信息
+ * **参数解释**： 具体插件版本信息。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
  */
 public class Versions {
 
@@ -55,7 +55,7 @@ public class Versions {
     }
 
     /**
-     * 插件版本号
+     * **参数解释**： 插件版本号。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return version
      */
     public String getVersion() {
@@ -72,7 +72,7 @@ public class Versions {
     }
 
     /**
-     * 插件安装参数
+     * **参数解释**： 插件安装参数。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return input
      */
     public Object getInput() {
@@ -89,7 +89,7 @@ public class Versions {
     }
 
     /**
-     * 是否为稳定版本
+     * **参数解释**： 是否为稳定版本。 **约束限制**： 不涉及 **取值范围**： - true：稳定版本 - false：非稳定版本  **默认取值**： 不涉及
      * @return stable
      */
     public Boolean getStable() {
@@ -106,7 +106,7 @@ public class Versions {
     }
 
     /**
-     * 供界面使用的翻译信息
+     * **参数解释**： 供界面使用的翻译信息。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return translate
      */
     public Object getTranslate() {
@@ -139,7 +139,7 @@ public class Versions {
     }
 
     /**
-     * 支持集群版本号
+     * **参数解释**： 支持集群版本号。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return supportVersions
      */
     public List<SupportVersions> getSupportVersions() {
@@ -156,7 +156,7 @@ public class Versions {
     }
 
     /**
-     * 创建时间
+     * **参数解释**： 创建时间。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return creationTimestamp
      */
     public LocalDate getCreationTimestamp() {
@@ -173,7 +173,7 @@ public class Versions {
     }
 
     /**
-     * 更新时间
+     * **参数解释**： 更新时间。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return updateTimestamp
      */
     public LocalDate getUpdateTimestamp() {

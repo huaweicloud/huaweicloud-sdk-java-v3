@@ -11,9 +11,31 @@ import java.util.Objects;
 public class UpdateDesireds {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "device_name")
+
+    private String deviceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config")
 
     private Object config;
+
+    public UpdateDesireds withDeviceName(String deviceName) {
+        this.deviceName = deviceName;
+        return this;
+    }
+
+    /**
+     * 设备名称。
+     * @return deviceName
+     */
+    public String getDeviceName() {
+        return deviceName;
+    }
+
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
+    }
 
     public UpdateDesireds withConfig(Object config) {
         this.config = config;
@@ -41,18 +63,19 @@ public class UpdateDesireds {
             return false;
         }
         UpdateDesireds that = (UpdateDesireds) obj;
-        return Objects.equals(this.config, that.config);
+        return Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.config, that.config);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(config);
+        return Objects.hash(deviceName, config);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateDesireds {\n");
+        sb.append("    deviceName: ").append(toIndentedString(deviceName)).append("\n");
         sb.append("    config: ").append(toIndentedString(config)).append("\n");
         sb.append("}");
         return sb.toString();

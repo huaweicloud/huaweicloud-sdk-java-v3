@@ -16,6 +16,16 @@ public class ContainerSettingsReqDTO {
 
     private ContainerConfigsReqDTO configs;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_envs")
+
+    private Object customEnvs;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extra_hosts")
+
+    private Object extraHosts;
+
     public ContainerSettingsReqDTO withConfigs(ContainerConfigsReqDTO configs) {
         this.configs = configs;
         return this;
@@ -42,6 +52,40 @@ public class ContainerSettingsReqDTO {
         this.configs = configs;
     }
 
+    public ContainerSettingsReqDTO withCustomEnvs(Object customEnvs) {
+        this.customEnvs = customEnvs;
+        return this;
+    }
+
+    /**
+     * 自定义环境变量
+     * @return customEnvs
+     */
+    public Object getCustomEnvs() {
+        return customEnvs;
+    }
+
+    public void setCustomEnvs(Object customEnvs) {
+        this.customEnvs = customEnvs;
+    }
+
+    public ContainerSettingsReqDTO withExtraHosts(Object extraHosts) {
+        this.extraHosts = extraHosts;
+        return this;
+    }
+
+    /**
+     * 域名解析配置集合。示例：[{\"hostname\":\"endpoint\",\"ip\":\"127.0.0.1\"}]
+     * @return extraHosts
+     */
+    public Object getExtraHosts() {
+        return extraHosts;
+    }
+
+    public void setExtraHosts(Object extraHosts) {
+        this.extraHosts = extraHosts;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -51,12 +95,13 @@ public class ContainerSettingsReqDTO {
             return false;
         }
         ContainerSettingsReqDTO that = (ContainerSettingsReqDTO) obj;
-        return Objects.equals(this.configs, that.configs);
+        return Objects.equals(this.configs, that.configs) && Objects.equals(this.customEnvs, that.customEnvs)
+            && Objects.equals(this.extraHosts, that.extraHosts);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(configs);
+        return Objects.hash(configs, customEnvs, extraHosts);
     }
 
     @Override
@@ -64,6 +109,8 @@ public class ContainerSettingsReqDTO {
         StringBuilder sb = new StringBuilder();
         sb.append("class ContainerSettingsReqDTO {\n");
         sb.append("    configs: ").append(toIndentedString(configs)).append("\n");
+        sb.append("    customEnvs: ").append(toIndentedString(customEnvs)).append("\n");
+        sb.append("    extraHosts: ").append(toIndentedString(extraHosts)).append("\n");
         sb.append("}");
         return sb.toString();
     }

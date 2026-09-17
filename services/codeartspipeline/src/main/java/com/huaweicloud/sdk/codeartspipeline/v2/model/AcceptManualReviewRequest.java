@@ -35,6 +35,11 @@ public class AcceptManualReviewRequest {
 
     private String stepRunId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "approval_description")
+
+    private String approvalDescription;
+
     public AcceptManualReviewRequest withJobRunId(String jobRunId) {
         this.jobRunId = jobRunId;
         return this;
@@ -120,6 +125,23 @@ public class AcceptManualReviewRequest {
         this.stepRunId = stepRunId;
     }
 
+    public AcceptManualReviewRequest withApprovalDescription(String approvalDescription) {
+        this.approvalDescription = approvalDescription;
+        return this;
+    }
+
+    /**
+     * 审核意见
+     * @return approvalDescription
+     */
+    public String getApprovalDescription() {
+        return approvalDescription;
+    }
+
+    public void setApprovalDescription(String approvalDescription) {
+        this.approvalDescription = approvalDescription;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +153,13 @@ public class AcceptManualReviewRequest {
         AcceptManualReviewRequest that = (AcceptManualReviewRequest) obj;
         return Objects.equals(this.jobRunId, that.jobRunId) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.pipelineId, that.pipelineId)
-            && Objects.equals(this.pipelineRunId, that.pipelineRunId) && Objects.equals(this.stepRunId, that.stepRunId);
+            && Objects.equals(this.pipelineRunId, that.pipelineRunId) && Objects.equals(this.stepRunId, that.stepRunId)
+            && Objects.equals(this.approvalDescription, that.approvalDescription);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobRunId, projectId, pipelineId, pipelineRunId, stepRunId);
+        return Objects.hash(jobRunId, projectId, pipelineId, pipelineRunId, stepRunId, approvalDescription);
     }
 
     @Override
@@ -148,6 +171,7 @@ public class AcceptManualReviewRequest {
         sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
         sb.append("    pipelineRunId: ").append(toIndentedString(pipelineRunId)).append("\n");
         sb.append("    stepRunId: ").append(toIndentedString(stepRunId)).append("\n");
+        sb.append("    approvalDescription: ").append(toIndentedString(approvalDescription)).append("\n");
         sb.append("}");
         return sb.toString();
     }

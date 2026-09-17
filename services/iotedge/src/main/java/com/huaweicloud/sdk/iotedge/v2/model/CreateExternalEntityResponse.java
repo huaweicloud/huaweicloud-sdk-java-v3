@@ -103,7 +103,7 @@ public class CreateExternalEntityResponse extends SdkResponse {
     }
 
     /**
-     * 接入协议类型
+     * 接入协议类型：MQTT，HTTP。
      * @return protocol
      */
     public String getProtocol() {

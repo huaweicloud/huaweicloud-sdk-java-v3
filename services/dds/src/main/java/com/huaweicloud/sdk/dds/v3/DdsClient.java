@@ -1699,6 +1699,7 @@ public class DdsClient {
      * @param request ListErrorLogsRequest 请求对象
      * @return ListErrorLogsResponse
      */
+    @Deprecated
     public ListErrorLogsResponse listErrorLogs(ListErrorLogsRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.listErrorLogs);
     }
@@ -1713,6 +1714,7 @@ public class DdsClient {
      * @param request ListErrorLogsRequest 请求对象
      * @return SyncInvoker<ListErrorLogsRequest, ListErrorLogsResponse>
      */
+    @Deprecated
     public SyncInvoker<ListErrorLogsRequest, ListErrorLogsResponse> listErrorLogsInvoker(ListErrorLogsRequest request) {
         return new SyncInvoker<>(request, DdsMeta.listErrorLogs, hcClient);
     }
@@ -1756,6 +1758,7 @@ public class DdsClient {
      * @param request ListFlavorsRequest 请求对象
      * @return ListFlavorsResponse
      */
+    @Deprecated
     public ListFlavorsResponse listFlavors(ListFlavorsRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.listFlavors);
     }
@@ -1770,6 +1773,7 @@ public class DdsClient {
      * @param request ListFlavorsRequest 请求对象
      * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
      */
+    @Deprecated
     public SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsInvoker(ListFlavorsRequest request) {
         return new SyncInvoker<>(request, DdsMeta.listFlavors, hcClient);
     }
@@ -2159,6 +2163,7 @@ public class DdsClient {
      * @param request ListSlowLogsRequest 请求对象
      * @return ListSlowLogsResponse
      */
+    @Deprecated
     public ListSlowLogsResponse listSlowLogs(ListSlowLogsRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.listSlowLogs);
     }
@@ -2173,6 +2178,7 @@ public class DdsClient {
      * @param request ListSlowLogsRequest 请求对象
      * @return SyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse>
      */
+    @Deprecated
     public SyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse> listSlowLogsInvoker(ListSlowLogsRequest request) {
         return new SyncInvoker<>(request, DdsMeta.listSlowLogs, hcClient);
     }

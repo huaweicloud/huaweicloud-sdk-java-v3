@@ -20,6 +20,11 @@ public class Volume {
 
     private Integer capacity;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iops")
+
+    private Integer iops;
+
     public Volume withVolume(String volume) {
         this.volume = volume;
         return this;
@@ -54,6 +59,23 @@ public class Volume {
         this.capacity = capacity;
     }
 
+    public Volume withIops(Integer iops) {
+        this.iops = iops;
+        return this;
+    }
+
+    /**
+     * **参数解释**： ESSD2磁盘IOPS值。  **约束限制**： 仅磁盘类型为ESSD2时必填。 **取值范围**： 100~256000 **默认取值**： 不涉及。
+     * @return iops
+     */
+    public Integer getIops() {
+        return iops;
+    }
+
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class Volume {
             return false;
         }
         Volume that = (Volume) obj;
-        return Objects.equals(this.volume, that.volume) && Objects.equals(this.capacity, that.capacity);
+        return Objects.equals(this.volume, that.volume) && Objects.equals(this.capacity, that.capacity)
+            && Objects.equals(this.iops, that.iops);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(volume, capacity);
+        return Objects.hash(volume, capacity, iops);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class Volume {
         sb.append("class Volume {\n");
         sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
         sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
+        sb.append("    iops: ").append(toIndentedString(iops)).append("\n");
         sb.append("}");
         return sb.toString();
     }
