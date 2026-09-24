@@ -305,9 +305,9 @@ public class OptVerseAsyncClient {
     }
 
     /**
-     * 保存算法文件
+     * 上传算法文件（ZIP包）
      *
-     * 保存算法文件
+     * 上传算法文件（ZIP包）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -319,9 +319,9 @@ public class OptVerseAsyncClient {
     }
 
     /**
-     * 保存算法文件
+     * 上传算法文件（ZIP包）
      *
-     * 保存算法文件
+     * 上传算法文件（ZIP包）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -481,9 +481,9 @@ public class OptVerseAsyncClient {
     }
 
     /**
-     * 保存算法文件
+     * 上传算法文件
      *
-     * 保存算法文件
+     * 上传算法文件
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -495,9 +495,9 @@ public class OptVerseAsyncClient {
     }
 
     /**
-     * 保存算法文件
+     * 上传算法文件
      *
-     * 保存算法文件
+     * 上传算法文件
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

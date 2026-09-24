@@ -1913,6 +1913,11 @@ public class CodeArtsRepoMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ShowReviewSettingRequest::getWithDefaultReviewCategories,
                 ShowReviewSettingRequest::setWithDefaultReviewCategories));
+        builder.<Boolean>withRequestField("take_effect",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowReviewSettingRequest::getTakeEffect, ShowReviewSettingRequest::setTakeEffect));
 
         // response
 

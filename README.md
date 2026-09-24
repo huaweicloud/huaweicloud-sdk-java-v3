@@ -561,23 +561,22 @@ GlobalCredentials globalCredentials = new GlobalCredentials()
 
 #### 2.4 Use OIDC Agency Authentication [:top:](#user-manual-top)
 
-Obtain temporary security credentials through OIDC identity provider token and trust agency. See: [AssumeAgencyWithOIDC](https://support.huaweicloud.com/api-iam5/AssumeAgencyWithOIDC.html)
+Since `3.1.217`, supports obtaining temporary security credentials through OIDC identity provider token and trust agency. See: [AssumeAgencyWithOIDC](https://support.huaweicloud.com/api-iam5/AssumeAgencyWithOIDC.html)
+
+The SDK internally calls the STS service API to obtain temporary credentials. You only need to set OIDC parameters when constructing Credentials.
 
 **Authentication Parameters**:
 
-- `providerUrn` URN of the OIDC provider, format: `iam::{account_id}:oidcProvider:{provider_name}`
-- `agencyUrn` URN of the target agency, format: `iam::{account_id}:agency:{agency_name}`
-- `agencySessionName` Session name for the agency
-- `idToken` OIDC ID token string from the identity provider, supplied by the application at runtime (short-lived JWT, not via env var)
-- `oidcIdTokenFile` Optional, file path containing the OIDC ID token. Alternative to `idToken` for scenarios where the token is periodically refreshed to a file. If both are set, `idToken` takes precedence.
-- `durationSeconds` Optional, validity period of temporary credentials (in seconds), range [900,43200], default 3600
-- `policy` Optional, inline policy to restrict permissions
-- `policyIds` Optional, list of policy IDs to restrict permissions
-- `iamEndpoint` Optional, IAM endpoint, default `https://iam.myhuaweicloud.com`
-- `projectId` Optional, project ID for regional services. If not set, SDK auto-obtains it via IAM API
-- `domainId` Optional, account ID for global services. If not set, SDK auto-obtains it via IAM/STS API
+- `providerUrn` - Required, URN of the OIDC provider, e.g. `iam::account_id:oidcProvider:provider_name`
+- `agencyUrn` - Required, URN of the target agency, e.g. `iam::account_id:agency:agency_name`
+- `agencySessionName` - Required, session name for the agency
+- `idToken` - Conditionally required, at least one of `idToken` and `oidcIdTokenFile` must be set. If both are set, `idToken` takes precedence
+- `oidcIdTokenFile` - Conditionally required, at least one of `idToken` and `oidcIdTokenFile` must be set
+- `durationSeconds` - Optional, validity period of temporary credentials (in seconds), range [900, 43200], default 3600
+- `policy` - Optional, inline policy JSON string to restrict permissions
+- `policyIds` - Optional, list of managed policy IDs
 
-The SDK internally handles the `POST /v5/agencies/assume-with-oidc` call to obtain temporary credentials. You only need to set OIDC parameters when constructing Credentials.
+> The STS endpoint can be configured via the environment variable `HUAWEICLOUD_SDK_STS_ENDPOINT`, default is `https://sts.cn-north-4.myhuaweicloud.com`.
 
 ``` java
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
@@ -585,28 +584,23 @@ import com.huaweicloud.sdk.core.auth.GlobalCredentials;
 import java.util.Arrays;
 
 // Regional service
-// If projectId is not set, SDK auto-obtains it via IAM API using the temporary credential
 BasicCredentials basicCredentials = new BasicCredentials()
-    .withIdToken(idToken)                                           // OIDC ID Token
-    .withProviderUrn("iam::account_id:oidcProvider:provider_name")  // providerUrn
-    .withAgencyUrn("iam::account_id:agency:agency_name")            // agencyUrn
-    .withAgencySessionName("session_name")                          // agencySessionName
+    .withIdToken(idToken)                                           // at least one of idToken/oidcIdTokenFile
+    .withProviderUrn(providerUrn)
+    .withAgencyUrn(agencyUrn)
+    .withAgencySessionName("session_name")
+    // .withOidcIdTokenFile("/path/to/id_token_file")               // optional, read ID Token from file
+    // .withPolicy("{\"Version\":\"5.0\",\"Statement\":[]}")         // optional, JSON string
+    // .withPolicyIds(Arrays.asList("policy-id-1", "policy-id-2"))   // optional, list of policy IDs
     .withDurationSeconds(3600);                                     // optional, default 3600
-    // .withProjectId(projectId)                                     // optional, skip auto-obtain
-    // .withIamEndpoint("https://iam.myhuaweicloud.com")            // optional
-    // .withPolicy("{\"Version\":\"5.0\"}")                          // optional, restrict permissions
-    // .withPolicyIds(Arrays.asList("p1", "p2"))                     // optional, preset policies
-    // .withOidcIdTokenFile("/path/to/id_token_file")               // optional, alternative to idToken
 
 // Global service
-// If domainId is not set, SDK auto-obtains it via IAM/STS API
 GlobalCredentials globalCredentials = new GlobalCredentials()
     .withIdToken(idToken)
-    .withProviderUrn("iam::account_id:oidcProvider:provider_name")
-    .withAgencyUrn("iam::account_id:agency:agency_name")
+    .withProviderUrn(providerUrn)
+    .withAgencyUrn(agencyUrn)
     .withAgencySessionName("session_name")
     .withDurationSeconds(3600);
-    // .withDomainId(domainId)                                       // optional, skip auto-obtain
 ```
 
 #### 2.5 Authentication Management [:top:](#user-manual-top)

@@ -20,6 +20,11 @@ public class ShowReviewSettingRequest {
 
     private Boolean withDefaultReviewCategories;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "take_effect")
+
+    private Boolean takeEffect;
+
     public ShowReviewSettingRequest withRepositoryId(Integer repositoryId) {
         this.repositoryId = repositoryId;
         return this;
@@ -56,6 +61,23 @@ public class ShowReviewSettingRequest {
         this.withDefaultReviewCategories = withDefaultReviewCategories;
     }
 
+    public ShowReviewSettingRequest withTakeEffect(Boolean takeEffect) {
+        this.takeEffect = takeEffect;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 设置是否继承上层配置。 **取值范围：** - true, 返回从上层继承配置。 - false, 只返回自身配置。
+     * @return takeEffect
+     */
+    public Boolean getTakeEffect() {
+        return takeEffect;
+    }
+
+    public void setTakeEffect(Boolean takeEffect) {
+        this.takeEffect = takeEffect;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -66,12 +88,13 @@ public class ShowReviewSettingRequest {
         }
         ShowReviewSettingRequest that = (ShowReviewSettingRequest) obj;
         return Objects.equals(this.repositoryId, that.repositoryId)
-            && Objects.equals(this.withDefaultReviewCategories, that.withDefaultReviewCategories);
+            && Objects.equals(this.withDefaultReviewCategories, that.withDefaultReviewCategories)
+            && Objects.equals(this.takeEffect, that.takeEffect);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(repositoryId, withDefaultReviewCategories);
+        return Objects.hash(repositoryId, withDefaultReviewCategories, takeEffect);
     }
 
     @Override
@@ -82,6 +105,7 @@ public class ShowReviewSettingRequest {
         sb.append("    withDefaultReviewCategories: ")
             .append(toIndentedString(withDefaultReviewCategories))
             .append("\n");
+        sb.append("    takeEffect: ").append(toIndentedString(takeEffect)).append("\n");
         sb.append("}");
         return sb.toString();
     }

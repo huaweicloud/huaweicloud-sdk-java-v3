@@ -63,7 +63,7 @@ public class ResourceCreate {
     }
 
     /**
-     * 待备份资源id
+     * **参数解释：** 待备份资源ID，获取方法请参见[查询存储库绑定资源信息](ShowVault.xml)，[查询资源可保护性](ShowProtectable.xml) **约束限制：** 需要该资源暂未绑定到存储库中，且属于可备份的状态 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return id
      */
     public String getId() {

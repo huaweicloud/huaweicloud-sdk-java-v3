@@ -56,6 +56,11 @@ public class OpExtraInfo {
 
     private OpExtendInfoVaultDelete vaultDelete;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_expiration_time")
+
+    private OpExtendInfoUpdateExpirationTime updateExpirationTime;
+
     public OpExtraInfo withBackup(OpExtendInfoBckup backup) {
         this.backup = backup;
         return this;
@@ -290,6 +295,32 @@ public class OpExtraInfo {
         this.vaultDelete = vaultDelete;
     }
 
+    public OpExtraInfo withUpdateExpirationTime(OpExtendInfoUpdateExpirationTime updateExpirationTime) {
+        this.updateExpirationTime = updateExpirationTime;
+        return this;
+    }
+
+    public OpExtraInfo withUpdateExpirationTime(Consumer<OpExtendInfoUpdateExpirationTime> updateExpirationTimeSetter) {
+        if (this.updateExpirationTime == null) {
+            this.updateExpirationTime = new OpExtendInfoUpdateExpirationTime();
+            updateExpirationTimeSetter.accept(this.updateExpirationTime);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get updateExpirationTime
+     * @return updateExpirationTime
+     */
+    public OpExtendInfoUpdateExpirationTime getUpdateExpirationTime() {
+        return updateExpirationTime;
+    }
+
+    public void setUpdateExpirationTime(OpExtendInfoUpdateExpirationTime updateExpirationTime) {
+        this.updateExpirationTime = updateExpirationTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -303,12 +334,22 @@ public class OpExtraInfo {
             && Objects.equals(this.delete, that.delete) && Objects.equals(this.sync, that.sync)
             && Objects.equals(this.removeResources, that.removeResources)
             && Objects.equals(this.replication, that.replication) && Objects.equals(this.resource, that.resource)
-            && Objects.equals(this.restore, that.restore) && Objects.equals(this.vaultDelete, that.vaultDelete);
+            && Objects.equals(this.restore, that.restore) && Objects.equals(this.vaultDelete, that.vaultDelete)
+            && Objects.equals(this.updateExpirationTime, that.updateExpirationTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(backup, common, delete, sync, removeResources, replication, resource, restore, vaultDelete);
+        return Objects.hash(backup,
+            common,
+            delete,
+            sync,
+            removeResources,
+            replication,
+            resource,
+            restore,
+            vaultDelete,
+            updateExpirationTime);
     }
 
     @Override
@@ -324,6 +365,7 @@ public class OpExtraInfo {
         sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
         sb.append("    restore: ").append(toIndentedString(restore)).append("\n");
         sb.append("    vaultDelete: ").append(toIndentedString(vaultDelete)).append("\n");
+        sb.append("    updateExpirationTime: ").append(toIndentedString(updateExpirationTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

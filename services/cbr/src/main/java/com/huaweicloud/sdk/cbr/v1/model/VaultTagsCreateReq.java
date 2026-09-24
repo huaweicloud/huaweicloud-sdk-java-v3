@@ -7,23 +7,23 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 
+ * VaultTagsCreateReq
  */
 public class VaultTagsCreateReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag")
 
-    private Tag tag;
+    private TagCreate tag;
 
-    public VaultTagsCreateReq withTag(Tag tag) {
+    public VaultTagsCreateReq withTag(TagCreate tag) {
         this.tag = tag;
         return this;
     }
 
-    public VaultTagsCreateReq withTag(Consumer<Tag> tagSetter) {
+    public VaultTagsCreateReq withTag(Consumer<TagCreate> tagSetter) {
         if (this.tag == null) {
-            this.tag = new Tag();
+            this.tag = new TagCreate();
             tagSetter.accept(this.tag);
         }
 
@@ -34,11 +34,11 @@ public class VaultTagsCreateReq {
      * Get tag
      * @return tag
      */
-    public Tag getTag() {
+    public TagCreate getTag() {
         return tag;
     }
 
-    public void setTag(Tag tag) {
+    public void setTag(TagCreate tag) {
         this.tag = tag;
     }
 

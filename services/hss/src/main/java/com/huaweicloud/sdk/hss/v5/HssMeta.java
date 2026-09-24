@@ -3082,6 +3082,45 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAlarmWhiteListHostDetailRequest, ListAlarmWhiteListHostDetailResponse> listAlarmWhiteListHostDetail =
+        genForListAlarmWhiteListHostDetail();
+
+    private static HttpRequestDef<ListAlarmWhiteListHostDetailRequest, ListAlarmWhiteListHostDetailResponse> genForListAlarmWhiteListHostDetail() {
+        // basic
+        HttpRequestDef.Builder<ListAlarmWhiteListHostDetailRequest, ListAlarmWhiteListHostDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAlarmWhiteListHostDetailRequest.class,
+                    ListAlarmWhiteListHostDetailResponse.class)
+                .withName("ListAlarmWhiteListHostDetail")
+                .withUri("/v5/{project_id}/event/white-list/rule/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmWhiteListHostDetailRequest::getEnterpriseProjectId,
+                ListAlarmWhiteListHostDetailRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmWhiteListHostDetailRequest::getRuleId,
+                ListAlarmWhiteListHostDetailRequest::setRuleId));
+        builder.<String>withRequestField("region",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmWhiteListHostDetailRequest::getRegion,
+                ListAlarmWhiteListHostDetailRequest::setRegion));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAppChangeHistoriesRequest, ListAppChangeHistoriesResponse> listAppChangeHistories =
         genForListAppChangeHistories();
 
@@ -4581,17 +4620,17 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListContainerNodesRequest::getContainerTags,
                 ListContainerNodesRequest::setContainerTags));
+        builder.<String>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListContainerNodesRequest::getVersion, ListContainerNodesRequest::setVersion));
         builder.<Boolean>withRequestField("container_node",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListContainerNodesRequest::getContainerNode,
                 ListContainerNodesRequest::setContainerNode));
-        builder.<String>withRequestField("version",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListContainerNodesRequest::getVersion, ListContainerNodesRequest::setVersion));
         builder.<String>withRequestField("region",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -10051,6 +10090,42 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SyncSecurityGroupPoliciesRequest::getEnterpriseProjectId,
                 SyncSecurityGroupPoliciesRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAlarmWhiteListHostRequest, UpdateAlarmWhiteListHostResponse> updateAlarmWhiteListHost =
+        genForUpdateAlarmWhiteListHost();
+
+    private static HttpRequestDef<UpdateAlarmWhiteListHostRequest, UpdateAlarmWhiteListHostResponse> genForUpdateAlarmWhiteListHost() {
+        // basic
+        HttpRequestDef.Builder<UpdateAlarmWhiteListHostRequest, UpdateAlarmWhiteListHostResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateAlarmWhiteListHostRequest.class, UpdateAlarmWhiteListHostResponse.class)
+                .withName("UpdateAlarmWhiteListHost")
+                .withUri("/v5/{project_id}/event/white-list/alarm")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAlarmWhiteListHostRequest::getEnterpriseProjectId,
+                UpdateAlarmWhiteListHostRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("region",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAlarmWhiteListHostRequest::getRegion,
+                UpdateAlarmWhiteListHostRequest::setRegion));
+        builder.<UpdateAlarmWhiteListRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAlarmWhiteListRequestInfo.class),
+            f -> f.withMarshaller(UpdateAlarmWhiteListHostRequest::getBody, UpdateAlarmWhiteListHostRequest::setBody));
 
         // response
 
@@ -15640,81 +15715,6 @@ public class HssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCustomRuleConfigRequestInfo.class),
             f -> f.withMarshaller(UpdateCustomRuleConfigRequest::getBody, UpdateCustomRuleConfigRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListAlarmWhiteListHostDetailRequest, ListAlarmWhiteListHostDetailResponse> listAlarmWhiteListHostDetail =
-        genForListAlarmWhiteListHostDetail();
-
-    private static HttpRequestDef<ListAlarmWhiteListHostDetailRequest, ListAlarmWhiteListHostDetailResponse> genForListAlarmWhiteListHostDetail() {
-        // basic
-        HttpRequestDef.Builder<ListAlarmWhiteListHostDetailRequest, ListAlarmWhiteListHostDetailResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ListAlarmWhiteListHostDetailRequest.class,
-                    ListAlarmWhiteListHostDetailResponse.class)
-                .withName("ListAlarmWhiteListHostDetail")
-                .withUri("/v5/{project_id}/event/white-list/rule/detail")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAlarmWhiteListHostDetailRequest::getEnterpriseProjectId,
-                ListAlarmWhiteListHostDetailRequest::setEnterpriseProjectId));
-        builder.<String>withRequestField("rule_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAlarmWhiteListHostDetailRequest::getRuleId,
-                ListAlarmWhiteListHostDetailRequest::setRuleId));
-        builder.<String>withRequestField("region",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAlarmWhiteListHostDetailRequest::getRegion,
-                ListAlarmWhiteListHostDetailRequest::setRegion));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateAlarmWhiteListHostRequest, UpdateAlarmWhiteListHostResponse> updateAlarmWhiteListHost =
-        genForUpdateAlarmWhiteListHost();
-
-    private static HttpRequestDef<UpdateAlarmWhiteListHostRequest, UpdateAlarmWhiteListHostResponse> genForUpdateAlarmWhiteListHost() {
-        // basic
-        HttpRequestDef.Builder<UpdateAlarmWhiteListHostRequest, UpdateAlarmWhiteListHostResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.PUT, UpdateAlarmWhiteListHostRequest.class, UpdateAlarmWhiteListHostResponse.class)
-                .withName("UpdateAlarmWhiteListHost")
-                .withUri("/v5/{project_id}/event/white-list/alarm")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAlarmWhiteListHostRequest::getEnterpriseProjectId,
-                UpdateAlarmWhiteListHostRequest::setEnterpriseProjectId));
-        builder.<String>withRequestField("region",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAlarmWhiteListHostRequest::getRegion,
-                UpdateAlarmWhiteListHostRequest::setRegion));
-        builder.<UpdateAlarmWhiteListRequestInfo>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateAlarmWhiteListRequestInfo.class),
-            f -> f.withMarshaller(UpdateAlarmWhiteListHostRequest::getBody, UpdateAlarmWhiteListHostRequest::setBody));
 
         // response
 

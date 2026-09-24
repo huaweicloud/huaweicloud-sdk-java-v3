@@ -15,6 +15,16 @@ public class ListOpsEvaluatorVersionsRequest {
 
     private String evaluatorId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public ListOpsEvaluatorVersionsRequest withEvaluatorId(String evaluatorId) {
         this.evaluatorId = evaluatorId;
         return this;
@@ -32,6 +42,44 @@ public class ListOpsEvaluatorVersionsRequest {
         this.evaluatorId = evaluatorId;
     }
 
+    public ListOpsEvaluatorVersionsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 分页查询的起始偏移量。用于指定从满足条件的第几条记录开始返回，常与 limit参数配合实现分页功能。 **约束限制：** 与limit参数配合使用实现分页查询。 **取值范围：** 0~10000。 **默认取值：** 0。
+     * minimum: 0
+     * maximum: 10000
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListOpsEvaluatorVersionsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 单次查询返回的最大记录数量。用于控制分页查询时每页显示的数据条数。 **约束限制：** 与offset参数配合使用实现分页查询。 **取值范围：** 1-100。 **默认取值：** 100。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +89,13 @@ public class ListOpsEvaluatorVersionsRequest {
             return false;
         }
         ListOpsEvaluatorVersionsRequest that = (ListOpsEvaluatorVersionsRequest) obj;
-        return Objects.equals(this.evaluatorId, that.evaluatorId);
+        return Objects.equals(this.evaluatorId, that.evaluatorId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(evaluatorId);
+        return Objects.hash(evaluatorId, offset, limit);
     }
 
     @Override
@@ -54,6 +103,8 @@ public class ListOpsEvaluatorVersionsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListOpsEvaluatorVersionsRequest {\n");
         sb.append("    evaluatorId: ").append(toIndentedString(evaluatorId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

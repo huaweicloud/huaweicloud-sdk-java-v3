@@ -15,9 +15,31 @@ import java.util.function.Consumer;
 public class ListOpsEvaluatorVersionsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total")
+
+    private Integer total;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "versions")
 
     private List<ListOpsEvaluatorVersionsResponseBodyVersions> versions = null;
+
+    public ListOpsEvaluatorVersionsResponse withTotal(Integer total) {
+        this.total = total;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 数据总数。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 
+     * @return total
+     */
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
 
     public ListOpsEvaluatorVersionsResponse withVersions(List<ListOpsEvaluatorVersionsResponseBodyVersions> versions) {
         this.versions = versions;
@@ -62,18 +84,19 @@ public class ListOpsEvaluatorVersionsResponse extends SdkResponse {
             return false;
         }
         ListOpsEvaluatorVersionsResponse that = (ListOpsEvaluatorVersionsResponse) obj;
-        return Objects.equals(this.versions, that.versions);
+        return Objects.equals(this.total, that.total) && Objects.equals(this.versions, that.versions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(versions);
+        return Objects.hash(total, versions);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListOpsEvaluatorVersionsResponse {\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    versions: ").append(toIndentedString(versions)).append("\n");
         sb.append("}");
         return sb.toString();

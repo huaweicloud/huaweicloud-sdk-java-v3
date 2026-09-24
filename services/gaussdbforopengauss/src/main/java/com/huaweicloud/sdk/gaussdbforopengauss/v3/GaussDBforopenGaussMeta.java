@@ -347,6 +347,9 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlLimitTaskRequestB
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlLimitTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlPlanActionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlPlanActionResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlRecommendRulesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlRecommendRulesRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlRecommendRulesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlTraceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlTraceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesRequest;
@@ -9652,6 +9655,41 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QuerySqlPlanStateRequest.class),
             f -> f.withMarshaller(ListSqlPlanActionRequest::getBody, ListSqlPlanActionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSqlRecommendRulesRequest, ListSqlRecommendRulesResponse> listSqlRecommendRules =
+        genForListSqlRecommendRules();
+
+    private static HttpRequestDef<ListSqlRecommendRulesRequest, ListSqlRecommendRulesResponse> genForListSqlRecommendRules() {
+        // basic
+        HttpRequestDef.Builder<ListSqlRecommendRulesRequest, ListSqlRecommendRulesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListSqlRecommendRulesRequest.class, ListSqlRecommendRulesResponse.class)
+            .withName("ListSqlRecommendRules")
+            .withUri("/v3/{project_id}/instances/{instance_id}/limit-task/recommend-rule")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSqlRecommendRulesRequest::getInstanceId,
+                ListSqlRecommendRulesRequest::setInstanceId));
+        builder.<ListSqlRecommendRulesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSqlRecommendRulesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListSqlRecommendRulesRequest::getXLanguage,
+                ListSqlRecommendRulesRequest::setXLanguage));
+        builder.<ListSqlRecommendRulesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListSqlRecommendRulesRequestBody.class),
+            f -> f.withMarshaller(ListSqlRecommendRulesRequest::getBody, ListSqlRecommendRulesRequest::setBody));
 
         // response
 

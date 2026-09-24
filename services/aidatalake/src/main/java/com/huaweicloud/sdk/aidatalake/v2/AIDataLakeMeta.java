@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.aidatalake.v2;
 import com.huaweicloud.sdk.aidatalake.v2.model.AuraStatementOperatorMetrics;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelAuraSqlStatementRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelAuraSqlStatementResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.CancelRayJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.CancelRayJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelSparkJobRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelSparkJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelSparkSqlRequest;
@@ -20,6 +22,8 @@ import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraSqlSessionsRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraSqlSessionsResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraStatementRecordsRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraStatementRecordsResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListRayJobsRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListRayJobsResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListSparkJobsRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListSparkJobsResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListSparkSqlsRequest;
@@ -29,6 +33,9 @@ import com.huaweicloud.sdk.aidatalake.v2.model.PreviewSparkSqlResultResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.RestartSparkSqlClusterRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.RestartSparkSqlClusterRequestBody;
 import com.huaweicloud.sdk.aidatalake.v2.model.RestartSparkSqlClusterResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.RunRayJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.RunRayJobRequestBody;
+import com.huaweicloud.sdk.aidatalake.v2.model.RunRayJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.RunSparkJobRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.RunSparkJobRequestBody;
 import com.huaweicloud.sdk.aidatalake.v2.model.RunSparkJobResponse;
@@ -43,6 +50,8 @@ import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraStatementOperatorMetricsR
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraStatementOperatorMetricsResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraStatementQueryMetricsRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraStatementQueryMetricsResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowRayJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowRayJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowSparkJobRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowSparkJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowSparkJobStateRequest;
@@ -592,6 +601,159 @@ public class AIDataLakeMeta {
                 .withMarshaller(ShowAuraStatementQueryMetricsResponse::getBody,
                     ShowAuraStatementQueryMetricsResponse::setBody)
                 .withInnerContainerType(StatementQueryMetrics.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CancelRayJobRequest, CancelRayJobResponse> cancelRayJob = genForCancelRayJob();
+
+    private static HttpRequestDef<CancelRayJobRequest, CancelRayJobResponse> genForCancelRayJob() {
+        // basic
+        HttpRequestDef.Builder<CancelRayJobRequest, CancelRayJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CancelRayJobRequest.class, CancelRayJobResponse.class)
+                .withName("CancelRayJob")
+                .withUri("/v2/workspaces/{workspace_id}/ray-jobs/{job_id}/cancel")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelRayJobRequest::getWorkspaceId, CancelRayJobRequest::setWorkspaceId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelRayJobRequest::getJobId, CancelRayJobRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRayJobsRequest, ListRayJobsResponse> listRayJobs = genForListRayJobs();
+
+    private static HttpRequestDef<ListRayJobsRequest, ListRayJobsResponse> genForListRayJobs() {
+        // basic
+        HttpRequestDef.Builder<ListRayJobsRequest, ListRayJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRayJobsRequest.class, ListRayJobsResponse.class)
+                .withName("ListRayJobs")
+                .withUri("/v2/workspaces/{workspace_id}/ray-jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRayJobsRequest::getWorkspaceId, ListRayJobsRequest::setWorkspaceId));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRayJobsRequest::getMarker, ListRayJobsRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRayJobsRequest::getLimit, ListRayJobsRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRayJobsRequest::getName, ListRayJobsRequest::setName));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRayJobsRequest::getId, ListRayJobsRequest::setId));
+        builder.<String>withRequestField("endpoint_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRayJobsRequest::getEndpointName, ListRayJobsRequest::setEndpointName));
+        builder.<String>withRequestField("federation_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRayJobsRequest::getFederationName, ListRayJobsRequest::setFederationName));
+        builder.<Long>withRequestField("create_time_before",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListRayJobsRequest::getCreateTimeBefore, ListRayJobsRequest::setCreateTimeBefore));
+        builder.<Long>withRequestField("create_time_after",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListRayJobsRequest::getCreateTimeAfter, ListRayJobsRequest::setCreateTimeAfter));
+        builder.<List<String>>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRayJobsRequest::getStatus, ListRayJobsRequest::setStatus));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RunRayJobRequest, RunRayJobResponse> runRayJob = genForRunRayJob();
+
+    private static HttpRequestDef<RunRayJobRequest, RunRayJobResponse> genForRunRayJob() {
+        // basic
+        HttpRequestDef.Builder<RunRayJobRequest, RunRayJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RunRayJobRequest.class, RunRayJobResponse.class)
+                .withName("RunRayJob")
+                .withUri("/v2/workspaces/{workspace_id}/ray-jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunRayJobRequest::getWorkspaceId, RunRayJobRequest::setWorkspaceId));
+        builder.<String>withRequestField("X-Client-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunRayJobRequest::getXClientToken, RunRayJobRequest::setXClientToken));
+        builder.<RunRayJobRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RunRayJobRequestBody.class),
+            f -> f.withMarshaller(RunRayJobRequest::getBody, RunRayJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRayJobRequest, ShowRayJobResponse> showRayJob = genForShowRayJob();
+
+    private static HttpRequestDef<ShowRayJobRequest, ShowRayJobResponse> genForShowRayJob() {
+        // basic
+        HttpRequestDef.Builder<ShowRayJobRequest, ShowRayJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRayJobRequest.class, ShowRayJobResponse.class)
+                .withName("ShowRayJob")
+                .withUri("/v2/workspaces/{workspace_id}/ray-jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRayJobRequest::getWorkspaceId, ShowRayJobRequest::setWorkspaceId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRayJobRequest::getJobId, ShowRayJobRequest::setJobId));
+
+        // response
 
         return builder.build();
     }

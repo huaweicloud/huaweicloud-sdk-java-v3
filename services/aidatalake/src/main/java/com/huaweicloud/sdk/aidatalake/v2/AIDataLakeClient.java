@@ -2,6 +2,8 @@ package com.huaweicloud.sdk.aidatalake.v2;
 
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelAuraSqlStatementRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelAuraSqlStatementResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.CancelRayJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.CancelRayJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelSparkJobRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelSparkJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelSparkSqlRequest;
@@ -18,6 +20,8 @@ import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraSqlSessionsRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraSqlSessionsResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraStatementRecordsRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraStatementRecordsResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListRayJobsRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListRayJobsResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListSparkJobsRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListSparkJobsResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListSparkSqlsRequest;
@@ -26,6 +30,8 @@ import com.huaweicloud.sdk.aidatalake.v2.model.PreviewSparkSqlResultRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.PreviewSparkSqlResultResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.RestartSparkSqlClusterRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.RestartSparkSqlClusterResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.RunRayJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.RunRayJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.RunSparkJobRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.RunSparkJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.RunSparkSqlRequest;
@@ -38,6 +44,8 @@ import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraStatementOperatorMetricsR
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraStatementOperatorMetricsResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraStatementQueryMetricsRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraStatementQueryMetricsResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowRayJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowRayJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowSparkJobRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowSparkJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowSparkJobStateRequest;
@@ -419,6 +427,118 @@ public class AIDataLakeClient {
     public SyncInvoker<ShowAuraStatementQueryMetricsRequest, ShowAuraStatementQueryMetricsResponse> showAuraStatementQueryMetricsInvoker(
         ShowAuraStatementQueryMetricsRequest request) {
         return new SyncInvoker<>(request, AIDataLakeMeta.showAuraStatementQueryMetrics, hcClient);
+    }
+
+    /**
+     * 取消作业运行
+     *
+     * 取消作业运行。主要使用于取消运行Ray Job场景。本接口为异步接口，当前取消作业运行请求下发成功后会返回job_id，此时取消作业运行并没有立即完成，需要通过调用[查看Ray作业详情](ShowRayJob.xml)查询Job状态，当Job状态为CANCELED时代表取消作业运行成功。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelRayJobRequest 请求对象
+     * @return CancelRayJobResponse
+     */
+    public CancelRayJobResponse cancelRayJob(CancelRayJobRequest request) {
+        return hcClient.syncInvokeHttp(request, AIDataLakeMeta.cancelRayJob);
+    }
+
+    /**
+     * 取消作业运行
+     *
+     * 取消作业运行。主要使用于取消运行Ray Job场景。本接口为异步接口，当前取消作业运行请求下发成功后会返回job_id，此时取消作业运行并没有立即完成，需要通过调用[查看Ray作业详情](ShowRayJob.xml)查询Job状态，当Job状态为CANCELED时代表取消作业运行成功。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelRayJobRequest 请求对象
+     * @return SyncInvoker<CancelRayJobRequest, CancelRayJobResponse>
+     */
+    public SyncInvoker<CancelRayJobRequest, CancelRayJobResponse> cancelRayJobInvoker(CancelRayJobRequest request) {
+        return new SyncInvoker<>(request, AIDataLakeMeta.cancelRayJob, hcClient);
+    }
+
+    /**
+     * 查询Ray作业列表
+     *
+     * 列举所有Ray作业。列举工作空间下的作业，分页返回。本接口为同步接口，当前列举所有Ray作业请求下发后会返回结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRayJobsRequest 请求对象
+     * @return ListRayJobsResponse
+     */
+    public ListRayJobsResponse listRayJobs(ListRayJobsRequest request) {
+        return hcClient.syncInvokeHttp(request, AIDataLakeMeta.listRayJobs);
+    }
+
+    /**
+     * 查询Ray作业列表
+     *
+     * 列举所有Ray作业。列举工作空间下的作业，分页返回。本接口为同步接口，当前列举所有Ray作业请求下发后会返回结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRayJobsRequest 请求对象
+     * @return SyncInvoker<ListRayJobsRequest, ListRayJobsResponse>
+     */
+    public SyncInvoker<ListRayJobsRequest, ListRayJobsResponse> listRayJobsInvoker(ListRayJobsRequest request) {
+        return new SyncInvoker<>(request, AIDataLakeMeta.listRayJobs, hcClient);
+    }
+
+    /**
+     * 运行作业
+     *
+     * 运行Ray作业。本接口为异步接口，当前运行作业请求下发成功后会返回job_id，此时运行作业并没有立即完成，需要通过调用[查看Ray作业详情](ShowRayJob.xml)查询Job状态，当Job状态为SUCCEEDED时代表运行作业成功。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunRayJobRequest 请求对象
+     * @return RunRayJobResponse
+     */
+    public RunRayJobResponse runRayJob(RunRayJobRequest request) {
+        return hcClient.syncInvokeHttp(request, AIDataLakeMeta.runRayJob);
+    }
+
+    /**
+     * 运行作业
+     *
+     * 运行Ray作业。本接口为异步接口，当前运行作业请求下发成功后会返回job_id，此时运行作业并没有立即完成，需要通过调用[查看Ray作业详情](ShowRayJob.xml)查询Job状态，当Job状态为SUCCEEDED时代表运行作业成功。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunRayJobRequest 请求对象
+     * @return SyncInvoker<RunRayJobRequest, RunRayJobResponse>
+     */
+    public SyncInvoker<RunRayJobRequest, RunRayJobResponse> runRayJobInvoker(RunRayJobRequest request) {
+        return new SyncInvoker<>(request, AIDataLakeMeta.runRayJob, hcClient);
+    }
+
+    /**
+     * 查看Ray作业详情
+     *
+     * 查看Ray作业详情。本接口为同步接口，当前查看Ray作业详情请求下发成功后会返回结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRayJobRequest 请求对象
+     * @return ShowRayJobResponse
+     */
+    public ShowRayJobResponse showRayJob(ShowRayJobRequest request) {
+        return hcClient.syncInvokeHttp(request, AIDataLakeMeta.showRayJob);
+    }
+
+    /**
+     * 查看Ray作业详情
+     *
+     * 查看Ray作业详情。本接口为同步接口，当前查看Ray作业详情请求下发成功后会返回结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRayJobRequest 请求对象
+     * @return SyncInvoker<ShowRayJobRequest, ShowRayJobResponse>
+     */
+    public SyncInvoker<ShowRayJobRequest, ShowRayJobResponse> showRayJobInvoker(ShowRayJobRequest request) {
+        return new SyncInvoker<>(request, AIDataLakeMeta.showRayJob, hcClient);
     }
 
     /**

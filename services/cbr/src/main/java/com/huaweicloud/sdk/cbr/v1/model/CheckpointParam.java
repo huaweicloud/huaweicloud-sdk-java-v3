@@ -43,13 +43,18 @@ public class CheckpointParam {
 
     private List<Resource> resourceDetails = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retention_duration_days")
+
+    private Integer retentionDurationDays;
+
     public CheckpointParam withAutoTrigger(Boolean autoTrigger) {
         this.autoTrigger = autoTrigger;
         return this;
     }
 
     /**
-     * 是否自动触发,true:自动触发，false：非自动触发。
+     * 是否自动触发,true：自动触发，false：非自动触发。
      * @return autoTrigger
      */
     public Boolean getAutoTrigger() {
@@ -83,7 +88,7 @@ public class CheckpointParam {
     }
 
     /**
-     * 是否增量备份，true:增量备份，false：非增量备份。
+     * 是否增量备份，true：增量备份，false：非增量备份。
      * @return incremental
      */
     public Boolean getIncremental() {
@@ -177,6 +182,23 @@ public class CheckpointParam {
         this.resourceDetails = resourceDetails;
     }
 
+    public CheckpointParam withRetentionDurationDays(Integer retentionDurationDays) {
+        this.retentionDurationDays = retentionDurationDays;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 手动备份的保留时长，单位为天。设置该参数后，备份副本将在保留时长到期后自动删除。用于为手动备份设置自动过期时间，避免手动备份堆积导致存储容量浪费。不设置此参数时，备份将永久保留。 **约束限制**： 当auto_trigger为true时不支持传此参数，自动备份的保留时间由关联的备份策略指定。auto_trigger不传或为false时支持指定此参数。 **取值范围**： -  1~36500：指定保留天数，备份将在创建时间 + 该天数后到期并自动删除。 - -1：永久保留，备份不会自动过期。  **默认取值**： -1 > 该特性目前处于公测阶段，部分Region可能无法使用
+     * @return retentionDurationDays
+     */
+    public Integer getRetentionDurationDays() {
+        return retentionDurationDays;
+    }
+
+    public void setRetentionDurationDays(Integer retentionDurationDays) {
+        this.retentionDurationDays = retentionDurationDays;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -189,12 +211,14 @@ public class CheckpointParam {
         return Objects.equals(this.autoTrigger, that.autoTrigger) && Objects.equals(this.description, that.description)
             && Objects.equals(this.incremental, that.incremental) && Objects.equals(this.name, that.name)
             && Objects.equals(this.resources, that.resources)
-            && Objects.equals(this.resourceDetails, that.resourceDetails);
+            && Objects.equals(this.resourceDetails, that.resourceDetails)
+            && Objects.equals(this.retentionDurationDays, that.retentionDurationDays);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(autoTrigger, description, incremental, name, resources, resourceDetails);
+        return Objects
+            .hash(autoTrigger, description, incremental, name, resources, resourceDetails, retentionDurationDays);
     }
 
     @Override
@@ -207,6 +231,7 @@ public class CheckpointParam {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
         sb.append("    resourceDetails: ").append(toIndentedString(resourceDetails)).append("\n");
+        sb.append("    retentionDurationDays: ").append(toIndentedString(retentionDurationDays)).append("\n");
         sb.append("}");
         return sb.toString();
     }

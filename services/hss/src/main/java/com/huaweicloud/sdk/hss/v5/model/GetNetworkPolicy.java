@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.hss.v5.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.OffsetDateTime;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -35,7 +34,7 @@ public class GetNetworkPolicy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private OffsetDateTime createTime;
+    private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deploy_status")
@@ -119,7 +118,7 @@ public class GetNetworkPolicy {
         this.policyContent = policyContent;
     }
 
-    public GetNetworkPolicy withCreateTime(OffsetDateTime createTime) {
+    public GetNetworkPolicy withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -128,11 +127,11 @@ public class GetNetworkPolicy {
      * 创建时间
      * @return createTime
      */
-    public OffsetDateTime getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(OffsetDateTime createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 

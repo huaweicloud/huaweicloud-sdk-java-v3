@@ -54,6 +54,11 @@ public class ShowMetadataResponse extends SdkResponse {
 
     private List<String> volumes = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workspace")
+
+    private String workspace;
+
     public ShowMetadataResponse withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
@@ -238,6 +243,23 @@ public class ShowMetadataResponse extends SdkResponse {
         this.volumes = volumes;
     }
 
+    public ShowMetadataResponse withWorkspace(String workspace) {
+        this.workspace = workspace;
+        return this;
+    }
+
+    /**
+     * 云桌面信息，取值范围不涉及。
+     * @return workspace
+     */
+    public String getWorkspace() {
+        return workspace;
+    }
+
+    public void setWorkspace(String workspace) {
+        this.workspace = workspace;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -250,12 +272,13 @@ public class ShowMetadataResponse extends SdkResponse {
         return Objects.equals(this.backupId, that.backupId) && Objects.equals(this.backups, that.backups)
             && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.floatingips, that.floatingips)
             && Objects.equals(this._interface, that._interface) && Objects.equals(this.ports, that.ports)
-            && Objects.equals(this.server, that.server) && Objects.equals(this.volumes, that.volumes);
+            && Objects.equals(this.server, that.server) && Objects.equals(this.volumes, that.volumes)
+            && Objects.equals(this.workspace, that.workspace);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(backupId, backups, flavor, floatingips, _interface, ports, server, volumes);
+        return Objects.hash(backupId, backups, flavor, floatingips, _interface, ports, server, volumes, workspace);
     }
 
     @Override
@@ -270,6 +293,7 @@ public class ShowMetadataResponse extends SdkResponse {
         sb.append("    ports: ").append(toIndentedString(ports)).append("\n");
         sb.append("    server: ").append(toIndentedString(server)).append("\n");
         sb.append("    volumes: ").append(toIndentedString(volumes)).append("\n");
+        sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("}");
         return sb.toString();
     }

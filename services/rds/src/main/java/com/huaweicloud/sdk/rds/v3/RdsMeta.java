@@ -228,6 +228,9 @@ import com.huaweicloud.sdk.rds.v3.model.EnableConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.EnableConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.EnlargeVolumeRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ErrorlogForLtsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ExecuteOptimizeTableSpaceRequest;
+import com.huaweicloud.sdk.rds.v3.model.ExecuteOptimizeTableSpaceRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.ExecuteOptimizeTableSpaceResponse;
 import com.huaweicloud.sdk.rds.v3.model.ExecutePrivilegeDatabaseUserRoleRequest;
 import com.huaweicloud.sdk.rds.v3.model.ExecutePrivilegeDatabaseUserRoleResponse;
 import com.huaweicloud.sdk.rds.v3.model.ExecuteRevokeDatabaseUserRoleRequest;
@@ -262,6 +265,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedDbUsersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedDbUsersResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedSqlserverDbUsersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedSqlserverDbUsersResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListAutoScalingHistoryRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListAutoScalingHistoryResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListAutoScalingPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListBackupTransfersRequest;
@@ -514,6 +519,7 @@ import com.huaweicloud.sdk.rds.v3.model.QueryAutoSqlLimitingResponse;
 import com.huaweicloud.sdk.rds.v3.model.QueryDRInfoRequest;
 import com.huaweicloud.sdk.rds.v3.model.QueryNewBackupEncryptionRequest;
 import com.huaweicloud.sdk.rds.v3.model.QueryNewBackupEncryptionResponse;
+import com.huaweicloud.sdk.rds.v3.model.RdsDBFaultPolicyReq;
 import com.huaweicloud.sdk.rds.v3.model.RdsUpgradePrecheckV3Req;
 import com.huaweicloud.sdk.rds.v3.model.RecyclePolicyRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ReduceVolumeRequestBody;
@@ -568,6 +574,9 @@ import com.huaweicloud.sdk.rds.v3.model.SetAuditlogPolicyRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.SetAuditlogPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetAutoEnlargePolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetAutoScalingPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetAutoScalingPolicyRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.SetAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetAutoUpgradePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetAutoUpgradePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetBackupPolicyRequest;
@@ -598,6 +607,8 @@ import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetPostgresqlDbUserPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetPostgresqlDbUserPwdResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetRdsDBFaultPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetRdsDBFaultPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetReadOnlySwitchRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetReadOnlySwitchResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetSecondLevelMonitorRequest;
@@ -625,6 +636,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowAutoUpgradePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoUpgradePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableBuildDrInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableBuildDrInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowAvailableCorsVpcsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowAvailableCorsVpcsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupConfigRequest;
@@ -756,6 +769,9 @@ import com.huaweicloud.sdk.rds.v3.model.SwitchDbAgentJobResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchLogReplayRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchLogReplayRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.SwitchLogReplayResponse;
+import com.huaweicloud.sdk.rds.v3.model.SwitchMySqlProxyEipRequest;
+import com.huaweicloud.sdk.rds.v3.model.SwitchMySqlProxyEipRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.SwitchMySqlProxyEipResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchMySqlProxySlowLogRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchMySqlProxySlowLogRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.SwitchMySqlProxySlowLogResponse;
@@ -813,6 +829,9 @@ import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceNameRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceNameResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateInstancesProxyPortRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateInstancesProxyPortRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.UpdateInstancesProxyPortResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePortRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePortResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlDatabaseRequest;
@@ -2355,6 +2374,45 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExecuteOptimizeTableSpaceRequest, ExecuteOptimizeTableSpaceResponse> executeOptimizeTableSpace =
+        genForExecuteOptimizeTableSpace();
+
+    private static HttpRequestDef<ExecuteOptimizeTableSpaceRequest, ExecuteOptimizeTableSpaceResponse> genForExecuteOptimizeTableSpace() {
+        // basic
+        HttpRequestDef.Builder<ExecuteOptimizeTableSpaceRequest, ExecuteOptimizeTableSpaceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExecuteOptimizeTableSpaceRequest.class,
+                    ExecuteOptimizeTableSpaceResponse.class)
+                .withName("ExecuteOptimizeTableSpace")
+                .withUri("/v3/{project_id}/instances/{instance_id}/optimize/table")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteOptimizeTableSpaceRequest::getInstanceId,
+                ExecuteOptimizeTableSpaceRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteOptimizeTableSpaceRequest::getXLanguage,
+                ExecuteOptimizeTableSpaceRequest::setXLanguage));
+        builder.<ExecuteOptimizeTableSpaceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExecuteOptimizeTableSpaceRequestBody.class),
+            f -> f.withMarshaller(ExecuteOptimizeTableSpaceRequest::getBody,
+                ExecuteOptimizeTableSpaceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<GetInstancesOpsMetricNamesRequest, GetInstancesOpsMetricNamesResponse> getInstancesOpsMetricNames =
         genForGetInstancesOpsMetricNames();
 
@@ -2436,6 +2494,52 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAuditlogsRequest::getXLanguage, ListAuditlogsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAutoScalingHistoryRequest, ListAutoScalingHistoryResponse> listAutoScalingHistory =
+        genForListAutoScalingHistory();
+
+    private static HttpRequestDef<ListAutoScalingHistoryRequest, ListAutoScalingHistoryResponse> genForListAutoScalingHistory() {
+        // basic
+        HttpRequestDef.Builder<ListAutoScalingHistoryRequest, ListAutoScalingHistoryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAutoScalingHistoryRequest.class, ListAutoScalingHistoryResponse.class)
+            .withName("ListAutoScalingHistory")
+            .withUri("/v3/{project_id}/instances/{instance_id}/auto-scaling/history")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutoScalingHistoryRequest::getInstanceId,
+                ListAutoScalingHistoryRequest::setInstanceId));
+        builder.<String>withRequestField("strategy_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutoScalingHistoryRequest::getStrategyType,
+                ListAutoScalingHistoryRequest::setStrategyType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAutoScalingHistoryRequest::getOffset, ListAutoScalingHistoryRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAutoScalingHistoryRequest::getLimit, ListAutoScalingHistoryRequest::setLimit));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutoScalingHistoryRequest::getXLanguage,
+                ListAutoScalingHistoryRequest::setXLanguage));
 
         // response
 
@@ -5888,6 +5992,41 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetAutoScalingPolicyRequest, SetAutoScalingPolicyResponse> setAutoScalingPolicy =
+        genForSetAutoScalingPolicy();
+
+    private static HttpRequestDef<SetAutoScalingPolicyRequest, SetAutoScalingPolicyResponse> genForSetAutoScalingPolicy() {
+        // basic
+        HttpRequestDef.Builder<SetAutoScalingPolicyRequest, SetAutoScalingPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, SetAutoScalingPolicyRequest.class, SetAutoScalingPolicyResponse.class)
+            .withName("SetAutoScalingPolicy")
+            .withUri("/v3/{project_id}/instances/{instance_id}/auto-scaling/policy")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetAutoScalingPolicyRequest::getInstanceId,
+                SetAutoScalingPolicyRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetAutoScalingPolicyRequest::getXLanguage,
+                SetAutoScalingPolicyRequest::setXLanguage));
+        builder.<SetAutoScalingPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetAutoScalingPolicyRequestBody.class),
+            f -> f.withMarshaller(SetAutoScalingPolicyRequest::getBody, SetAutoScalingPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetAutoUpgradePolicyRequest, SetAutoUpgradePolicyResponse> setAutoUpgradePolicy =
         genForSetAutoUpgradePolicy();
 
@@ -6119,6 +6258,40 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SetOffSiteBackupPolicyRequestBody.class),
             f -> f.withMarshaller(SetOffSiteBackupPolicyRequest::getBody, SetOffSiteBackupPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetRdsDBFaultPolicyRequest, SetRdsDBFaultPolicyResponse> setRdsDBFaultPolicy =
+        genForSetRdsDBFaultPolicy();
+
+    private static HttpRequestDef<SetRdsDBFaultPolicyRequest, SetRdsDBFaultPolicyResponse> genForSetRdsDBFaultPolicy() {
+        // basic
+        HttpRequestDef.Builder<SetRdsDBFaultPolicyRequest, SetRdsDBFaultPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetRdsDBFaultPolicyRequest.class, SetRdsDBFaultPolicyResponse.class)
+                .withName("SetRdsDBFaultPolicy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/failover/db-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetRdsDBFaultPolicyRequest::getInstanceId,
+                SetRdsDBFaultPolicyRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetRdsDBFaultPolicyRequest::getXLanguage, SetRdsDBFaultPolicyRequest::setXLanguage));
+        builder.<RdsDBFaultPolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RdsDBFaultPolicyReq.class),
+            f -> f.withMarshaller(SetRdsDBFaultPolicyRequest::getBody, SetRdsDBFaultPolicyRequest::setBody));
 
         // response
 
@@ -6416,6 +6589,30 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAvailableBuildDrInstanceRequest::getXLanguage,
                 ShowAvailableBuildDrInstanceRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAvailableCorsVpcsRequest, ShowAvailableCorsVpcsResponse> showAvailableCorsVpcs =
+        genForShowAvailableCorsVpcs();
+
+    private static HttpRequestDef<ShowAvailableCorsVpcsRequest, ShowAvailableCorsVpcsResponse> genForShowAvailableCorsVpcs() {
+        // basic
+        HttpRequestDef.Builder<ShowAvailableCorsVpcsRequest, ShowAvailableCorsVpcsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAvailableCorsVpcsRequest.class, ShowAvailableCorsVpcsResponse.class)
+            .withName("ShowAvailableCorsVpcs")
+            .withUri("/v3/{project_id}/instances/available-cors-vpcs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAvailableCorsVpcsRequest::getXLanguage,
+                ShowAvailableCorsVpcsRequest::setXLanguage));
 
         // response
 
@@ -9339,6 +9536,45 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SwitchMySqlProxyEipRequest, SwitchMySqlProxyEipResponse> switchMySqlProxyEip =
+        genForSwitchMySqlProxyEip();
+
+    private static HttpRequestDef<SwitchMySqlProxyEipRequest, SwitchMySqlProxyEipResponse> genForSwitchMySqlProxyEip() {
+        // basic
+        HttpRequestDef.Builder<SwitchMySqlProxyEipRequest, SwitchMySqlProxyEipResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SwitchMySqlProxyEipRequest.class, SwitchMySqlProxyEipResponse.class)
+                .withName("SwitchMySqlProxyEip")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/bind")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchMySqlProxyEipRequest::getInstanceId,
+                SwitchMySqlProxyEipRequest::setInstanceId));
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchMySqlProxyEipRequest::getProxyId, SwitchMySqlProxyEipRequest::setProxyId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchMySqlProxyEipRequest::getXLanguage, SwitchMySqlProxyEipRequest::setXLanguage));
+        builder.<SwitchMySqlProxyEipRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SwitchMySqlProxyEipRequestBody.class),
+            f -> f.withMarshaller(SwitchMySqlProxyEipRequest::getBody, SwitchMySqlProxyEipRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SwitchMySqlProxySlowLogRequest, SwitchMySqlProxySlowLogResponse> switchMySqlProxySlowLog =
         genForSwitchMySqlProxySlowLog();
 
@@ -9470,6 +9706,48 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SetHostPrivilegeRequestV3.class),
             f -> f.withMarshaller(UpdateHostPrivilegeRequest::getBody, UpdateHostPrivilegeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInstancesProxyPortRequest, UpdateInstancesProxyPortResponse> updateInstancesProxyPort =
+        genForUpdateInstancesProxyPort();
+
+    private static HttpRequestDef<UpdateInstancesProxyPortRequest, UpdateInstancesProxyPortResponse> genForUpdateInstancesProxyPort() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstancesProxyPortRequest, UpdateInstancesProxyPortResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateInstancesProxyPortRequest.class, UpdateInstancesProxyPortResponse.class)
+                .withName("UpdateInstancesProxyPort")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/port")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstancesProxyPortRequest::getInstanceId,
+                UpdateInstancesProxyPortRequest::setInstanceId));
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstancesProxyPortRequest::getProxyId,
+                UpdateInstancesProxyPortRequest::setProxyId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstancesProxyPortRequest::getXLanguage,
+                UpdateInstancesProxyPortRequest::setXLanguage));
+        builder.<UpdateInstancesProxyPortRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateInstancesProxyPortRequestBody.class),
+            f -> f.withMarshaller(UpdateInstancesProxyPortRequest::getBody, UpdateInstancesProxyPortRequest::setBody));
 
         // response
 

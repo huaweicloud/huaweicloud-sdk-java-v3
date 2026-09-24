@@ -32,7 +32,7 @@ public class ShowRedisPitrPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 标识Redis实例是否开启指定时间点恢复。 “true”，表示实例开启Redis指定时间点恢复功能。 “false”，表示实例不启用Redis指定时间点恢复功能。
+     * **参数解释：** 标识Redis实例是否开启指定时间点恢复。 **取值范围：**  - “true”，表示实例开启Redis指定时间点恢复功能。  - “false”，表示实例不启用Redis指定时间点恢复功能。
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -49,7 +49,7 @@ public class ShowRedisPitrPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 数据备份的时间间隔，该数据备份控制redis实例可恢复时间点的间隔，仅在开启时返回。
+     * **参数解释：** 数据备份的时间间隔，该数据备份控制redis实例可恢复时间点的间隔，仅在开启时返回。 **取值范围：** 不涉及。
      * @return interval
      */
     public Integer getInterval() {
@@ -66,7 +66,7 @@ public class ShowRedisPitrPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 指定已生成的备份文件可以保存的天数，仅在开启时返回。
+     * **参数解释：** 指定已生成的备份文件可以保存的天数，仅在开启时返回。 **取值范围：** 不涉及。
      * @return keepDays
      */
     public Integer getKeepDays() {

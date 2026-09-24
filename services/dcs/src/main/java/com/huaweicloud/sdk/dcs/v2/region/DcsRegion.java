@@ -82,6 +82,15 @@ public class DcsRegion {
 
     public static final Region CN_NORTH_12 = new Region("cn-north-12", "https://dcs.cn-north-12.myhuaweicloud.com");
 
+    public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://dcs.cn-south-4.myhuaweicloud.com");
+
+    public static final Region CN_SOUTHWEST_3 =
+        new Region("cn-southwest-3", "https://dcs.cn-southwest-3.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_11 = new Region("cn-north-11", "https://dcs.cn-north-11.myhuaweicloud.com");
+
+    public static final Region AF_NORTH_1 = new Region("af-north-1", "https://dcs.af-north-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DCS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -118,6 +127,10 @@ public class DcsRegion {
         map.put("cn-east-4", CN_EAST_4);
         map.put("ap-southeast-5", AP_SOUTHEAST_5);
         map.put("cn-north-12", CN_NORTH_12);
+        map.put("cn-south-4", CN_SOUTH_4);
+        map.put("cn-southwest-3", CN_SOUTHWEST_3);
+        map.put("cn-north-11", CN_NORTH_11);
+        map.put("af-north-1", AF_NORTH_1);
         return Collections.unmodifiableMap(map);
     }
 

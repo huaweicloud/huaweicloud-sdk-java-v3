@@ -27,7 +27,7 @@ public class ListBusinessDiscountInfoRequest {
     }
 
     /**
-     * 忽略大小写，中文：zh_cn 英文：en_us。缺省为zh_cn
+     * 语言，非必填，忽略大小写，中文：zh_cn 英文：en_us。缺省为zh_cn
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

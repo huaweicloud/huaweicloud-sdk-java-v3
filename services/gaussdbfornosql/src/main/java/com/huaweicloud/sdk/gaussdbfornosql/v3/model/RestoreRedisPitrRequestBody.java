@@ -21,7 +21,7 @@ public class RestoreRedisPitrRequestBody {
     }
 
     /**
-     * 恢复的指定时间点, 格式为yyyy-mm-ddThh:mm:ssZ字符串格式，T指某个时间的开始，Z指时区偏移量。  获取方法请参见 查询Redis可恢复时间点 中响应“restore_time”字段下参数的值。
+     * **参数解释：** 恢复的指定时间点, 格式为yyyy-mm-ddThh:mm:ssZ字符串格式，T指某个时间的开始，Z指时区偏移量。 获取方法请参见 查询Redis可恢复时间点 中响应“restore_time”字段下参数的值。 **取值范围：** 不涉及。
      * @return restoreTime
      */
     public String getRestoreTime() {

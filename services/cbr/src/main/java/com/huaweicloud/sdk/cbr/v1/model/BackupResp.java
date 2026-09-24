@@ -100,6 +100,11 @@ public class BackupResp {
 
     private String resourceType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scheduled_operation_id")
+
+    private String scheduledOperationId;
+
     /**
      * 备份状态 - available: 可用 - protecting: 保护中 - deleting: 删除中 - restoring: 恢复中 - error: 异常 - waiting_protect: 等待保护 - waiting_delete: 等待删除 - waiting_restore: 等待恢复
      */
@@ -532,6 +537,23 @@ public class BackupResp {
         this.resourceType = resourceType;
     }
 
+    public BackupResp withScheduledOperationId(String scheduledOperationId) {
+        this.scheduledOperationId = scheduledOperationId;
+        return this;
+    }
+
+    /**
+     * 策略ID，取值范围不涉及。
+     * @return scheduledOperationId
+     */
+    public String getScheduledOperationId() {
+        return scheduledOperationId;
+    }
+
+    public void setScheduledOperationId(String scheduledOperationId) {
+        this.scheduledOperationId = scheduledOperationId;
+    }
+
     public BackupResp withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -734,8 +756,10 @@ public class BackupResp {
             && Objects.equals(this.protectedAt, that.protectedAt) && Objects.equals(this.resourceAz, that.resourceAz)
             && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
             && Objects.equals(this.resourceSize, that.resourceSize)
-            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.vaultId, that.vaultId)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.scheduledOperationId, that.scheduledOperationId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.vaultId, that.vaultId)
             && Objects.equals(this.replicationRecords, that.replicationRecords)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.providerId, that.providerId) && Objects.equals(this.children, that.children)
@@ -760,6 +784,7 @@ public class BackupResp {
             resourceName,
             resourceSize,
             resourceType,
+            scheduledOperationId,
             status,
             updatedAt,
             vaultId,
@@ -791,6 +816,7 @@ public class BackupResp {
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    resourceSize: ").append(toIndentedString(resourceSize)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
+        sb.append("    scheduledOperationId: ").append(toIndentedString(scheduledOperationId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    vaultId: ").append(toIndentedString(vaultId)).append("\n");

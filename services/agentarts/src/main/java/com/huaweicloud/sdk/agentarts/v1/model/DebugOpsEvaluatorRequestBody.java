@@ -26,6 +26,26 @@ public class DebugOpsEvaluatorRequestBody {
 
     private EvaluationOpsLLMConfig llmConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "evaluator_content_type")
+
+    private String evaluatorContentType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "evaluator_id")
+
+    private String evaluatorId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "evaluator_version")
+
+    private String evaluatorVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "geval_config")
+
+    private DebugOpsEvaluatorRequestBodyGevalConfig gevalConfig;
+
     public DebugOpsEvaluatorRequestBody withType(String type) {
         this.type = type;
         return this;
@@ -86,6 +106,84 @@ public class DebugOpsEvaluatorRequestBody {
         this.llmConfig = llmConfig;
     }
 
+    public DebugOpsEvaluatorRequestBody withEvaluatorContentType(String evaluatorContentType) {
+        this.evaluatorContentType = evaluatorContentType;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 评估器的内容类型。 **约束限制：** 不涉及。 **取值范围：** - text：文本 - trajectory：轨迹 **默认取值：** 不涉及。 
+     * @return evaluatorContentType
+     */
+    public String getEvaluatorContentType() {
+        return evaluatorContentType;
+    }
+
+    public void setEvaluatorContentType(String evaluatorContentType) {
+        this.evaluatorContentType = evaluatorContentType;
+    }
+
+    public DebugOpsEvaluatorRequestBody withEvaluatorId(String evaluatorId) {
+        this.evaluatorId = evaluatorId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 待调试评估器的唯一标识符。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。不传时表示纯调试模式，不关联已保存的评估器；传值时调试完成后可直接关联该评估器。 
+     * @return evaluatorId
+     */
+    public String getEvaluatorId() {
+        return evaluatorId;
+    }
+
+    public void setEvaluatorId(String evaluatorId) {
+        this.evaluatorId = evaluatorId;
+    }
+
+    public DebugOpsEvaluatorRequestBody withEvaluatorVersion(String evaluatorVersion) {
+        this.evaluatorVersion = evaluatorVersion;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 待调试评估器的版本号。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。不传时使用该评估器的最新版本；传值时调试指定的评估器版本。 
+     * @return evaluatorVersion
+     */
+    public String getEvaluatorVersion() {
+        return evaluatorVersion;
+    }
+
+    public void setEvaluatorVersion(String evaluatorVersion) {
+        this.evaluatorVersion = evaluatorVersion;
+    }
+
+    public DebugOpsEvaluatorRequestBody withGevalConfig(DebugOpsEvaluatorRequestBodyGevalConfig gevalConfig) {
+        this.gevalConfig = gevalConfig;
+        return this;
+    }
+
+    public DebugOpsEvaluatorRequestBody withGevalConfig(
+        Consumer<DebugOpsEvaluatorRequestBodyGevalConfig> gevalConfigSetter) {
+        if (this.gevalConfig == null) {
+            this.gevalConfig = new DebugOpsEvaluatorRequestBodyGevalConfig();
+            gevalConfigSetter.accept(this.gevalConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get gevalConfig
+     * @return gevalConfig
+     */
+    public DebugOpsEvaluatorRequestBodyGevalConfig getGevalConfig() {
+        return gevalConfig;
+    }
+
+    public void setGevalConfig(DebugOpsEvaluatorRequestBodyGevalConfig gevalConfig) {
+        this.gevalConfig = gevalConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -96,12 +194,17 @@ public class DebugOpsEvaluatorRequestBody {
         }
         DebugOpsEvaluatorRequestBody that = (DebugOpsEvaluatorRequestBody) obj;
         return Objects.equals(this.type, that.type) && Objects.equals(this.turnType, that.turnType)
-            && Objects.equals(this.llmConfig, that.llmConfig);
+            && Objects.equals(this.llmConfig, that.llmConfig)
+            && Objects.equals(this.evaluatorContentType, that.evaluatorContentType)
+            && Objects.equals(this.evaluatorId, that.evaluatorId)
+            && Objects.equals(this.evaluatorVersion, that.evaluatorVersion)
+            && Objects.equals(this.gevalConfig, that.gevalConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, turnType, llmConfig);
+        return Objects
+            .hash(type, turnType, llmConfig, evaluatorContentType, evaluatorId, evaluatorVersion, gevalConfig);
     }
 
     @Override
@@ -111,6 +214,10 @@ public class DebugOpsEvaluatorRequestBody {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    turnType: ").append(toIndentedString(turnType)).append("\n");
         sb.append("    llmConfig: ").append(toIndentedString(llmConfig)).append("\n");
+        sb.append("    evaluatorContentType: ").append(toIndentedString(evaluatorContentType)).append("\n");
+        sb.append("    evaluatorId: ").append(toIndentedString(evaluatorId)).append("\n");
+        sb.append("    evaluatorVersion: ").append(toIndentedString(evaluatorVersion)).append("\n");
+        sb.append("    gevalConfig: ").append(toIndentedString(gevalConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

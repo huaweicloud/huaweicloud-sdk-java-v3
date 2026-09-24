@@ -17,6 +17,11 @@ public class GenerateOpsEvaluatorEvaluationStepsRequestBody {
     private String criteria;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "language")
+
+    private String language;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model_config")
 
     private GenerateOpsEvaluatorEvaluationStepsRequestBodyModelConfig modelConfig;
@@ -36,6 +41,23 @@ public class GenerateOpsEvaluatorEvaluationStepsRequestBody {
 
     public void setCriteria(String criteria) {
         this.criteria = criteria;
+    }
+
+    public GenerateOpsEvaluatorEvaluationStepsRequestBody withLanguage(String language) {
+        this.language = language;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 生成评估步骤使用的语言。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。 
+     * @return language
+     */
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
     }
 
     public GenerateOpsEvaluatorEvaluationStepsRequestBody withModelConfig(
@@ -75,12 +97,13 @@ public class GenerateOpsEvaluatorEvaluationStepsRequestBody {
             return false;
         }
         GenerateOpsEvaluatorEvaluationStepsRequestBody that = (GenerateOpsEvaluatorEvaluationStepsRequestBody) obj;
-        return Objects.equals(this.criteria, that.criteria) && Objects.equals(this.modelConfig, that.modelConfig);
+        return Objects.equals(this.criteria, that.criteria) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.modelConfig, that.modelConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(criteria, modelConfig);
+        return Objects.hash(criteria, language, modelConfig);
     }
 
     @Override
@@ -88,6 +111,7 @@ public class GenerateOpsEvaluatorEvaluationStepsRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class GenerateOpsEvaluatorEvaluationStepsRequestBody {\n");
         sb.append("    criteria: ").append(toIndentedString(criteria)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    modelConfig: ").append(toIndentedString(modelConfig)).append("\n");
         sb.append("}");
         return sb.toString();

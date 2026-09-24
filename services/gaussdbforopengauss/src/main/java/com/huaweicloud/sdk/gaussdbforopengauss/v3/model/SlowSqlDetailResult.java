@@ -68,12 +68,12 @@ public class SlowSqlDetailResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    private Integer startTime;
+    private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "finish_time")
 
-    private Integer finishTime;
+    private String finishTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "returned_rows")
@@ -98,22 +98,22 @@ public class SlowSqlDetailResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_time")
 
-    private Integer totalTime;
+    private String totalTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu_time")
 
-    private Integer cpuTime;
+    private String cpuTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plan_time")
 
-    private Integer planTime;
+    private String planTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "io_time")
 
-    private Integer ioTime;
+    private String ioTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_count")
@@ -123,7 +123,7 @@ public class SlowSqlDetailResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_time")
 
-    private Integer lockTime;
+    private String lockTime;
 
     public SlowSqlDetailResult withDbName(String dbName) {
         this.dbName = dbName;
@@ -312,37 +312,37 @@ public class SlowSqlDetailResult {
         this.queryPlan = queryPlan;
     }
 
-    public SlowSqlDetailResult withStartTime(Integer startTime) {
+    public SlowSqlDetailResult withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
     /**
-     * **参数解释**: 开始时间UTC时间。 **取值范围**: 格式为yyyy-mm-ddThh:mm:ss+0000。
+     * **参数解释**: 开始时间UTC时间，格式为yyyy-mm-ddThh:mm:ss+0000。 **取值范围**: 不涉及。
      * @return startTime
      */
-    public Integer getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Integer startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
-    public SlowSqlDetailResult withFinishTime(Integer finishTime) {
+    public SlowSqlDetailResult withFinishTime(String finishTime) {
         this.finishTime = finishTime;
         return this;
     }
 
     /**
-     * **参数解释**: 结束时间UTC时间。 **取值范围**: 格式为yyyy-mm-ddThh:mm:ss+0000。
+     * **参数解释**: 结束时间UTC时间，格式为yyyy-mm-ddThh:mm:ss+0000。 **取值范围**: 不涉及。
      * @return finishTime
      */
-    public Integer getFinishTime() {
+    public String getFinishTime() {
         return finishTime;
     }
 
-    public void setFinishTime(Integer finishTime) {
+    public void setFinishTime(String finishTime) {
         this.finishTime = finishTime;
     }
 
@@ -414,7 +414,7 @@ public class SlowSqlDetailResult {
         this.hitPages = hitPages;
     }
 
-    public SlowSqlDetailResult withTotalTime(Integer totalTime) {
+    public SlowSqlDetailResult withTotalTime(String totalTime) {
         this.totalTime = totalTime;
         return this;
     }
@@ -423,15 +423,15 @@ public class SlowSqlDetailResult {
      * **参数解释**: 总耗时（单位：微秒）。 **取值范围**: 不涉及。
      * @return totalTime
      */
-    public Integer getTotalTime() {
+    public String getTotalTime() {
         return totalTime;
     }
 
-    public void setTotalTime(Integer totalTime) {
+    public void setTotalTime(String totalTime) {
         this.totalTime = totalTime;
     }
 
-    public SlowSqlDetailResult withCpuTime(Integer cpuTime) {
+    public SlowSqlDetailResult withCpuTime(String cpuTime) {
         this.cpuTime = cpuTime;
         return this;
     }
@@ -440,15 +440,15 @@ public class SlowSqlDetailResult {
      * **参数解释**: CPU耗时（单位：微秒）。 **取值范围**: 不涉及。
      * @return cpuTime
      */
-    public Integer getCpuTime() {
+    public String getCpuTime() {
         return cpuTime;
     }
 
-    public void setCpuTime(Integer cpuTime) {
+    public void setCpuTime(String cpuTime) {
         this.cpuTime = cpuTime;
     }
 
-    public SlowSqlDetailResult withPlanTime(Integer planTime) {
+    public SlowSqlDetailResult withPlanTime(String planTime) {
         this.planTime = planTime;
         return this;
     }
@@ -457,15 +457,15 @@ public class SlowSqlDetailResult {
      * **参数解释**: 计划耗时（单位：微秒）。 **取值范围**: 不涉及。
      * @return planTime
      */
-    public Integer getPlanTime() {
+    public String getPlanTime() {
         return planTime;
     }
 
-    public void setPlanTime(Integer planTime) {
+    public void setPlanTime(String planTime) {
         this.planTime = planTime;
     }
 
-    public SlowSqlDetailResult withIoTime(Integer ioTime) {
+    public SlowSqlDetailResult withIoTime(String ioTime) {
         this.ioTime = ioTime;
         return this;
     }
@@ -474,11 +474,11 @@ public class SlowSqlDetailResult {
      * **参数解释**: IO耗时（单位：微秒）。 **取值范围**: 不涉及。
      * @return ioTime
      */
-    public Integer getIoTime() {
+    public String getIoTime() {
         return ioTime;
     }
 
-    public void setIoTime(Integer ioTime) {
+    public void setIoTime(String ioTime) {
         this.ioTime = ioTime;
     }
 
@@ -499,7 +499,7 @@ public class SlowSqlDetailResult {
         this.lockCount = lockCount;
     }
 
-    public SlowSqlDetailResult withLockTime(Integer lockTime) {
+    public SlowSqlDetailResult withLockTime(String lockTime) {
         this.lockTime = lockTime;
         return this;
     }
@@ -508,11 +508,11 @@ public class SlowSqlDetailResult {
      * **参数解释**: 加锁耗时(单位：微秒)。 **取值范围**: 不涉及。
      * @return lockTime
      */
-    public Integer getLockTime() {
+    public String getLockTime() {
         return lockTime;
     }
 
-    public void setLockTime(Integer lockTime) {
+    public void setLockTime(String lockTime) {
         this.lockTime = lockTime;
     }
 

@@ -158,6 +158,9 @@ import com.huaweicloud.sdk.cbr.v1.model.UpdateAgentRequest;
 import com.huaweicloud.sdk.cbr.v1.model.UpdateAgentResponse;
 import com.huaweicloud.sdk.cbr.v1.model.UpdateBackupRequest;
 import com.huaweicloud.sdk.cbr.v1.model.UpdateBackupResponse;
+import com.huaweicloud.sdk.cbr.v1.model.UpdateExpirationTimeReq;
+import com.huaweicloud.sdk.cbr.v1.model.UpdateExpirationTimeRequest;
+import com.huaweicloud.sdk.cbr.v1.model.UpdateExpirationTimeResponse;
 import com.huaweicloud.sdk.cbr.v1.model.UpdateMember;
 import com.huaweicloud.sdk.cbr.v1.model.UpdateMemberStatusRequest;
 import com.huaweicloud.sdk.cbr.v1.model.UpdateMemberStatusResponse;
@@ -2231,6 +2234,34 @@ public class CbrMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BackupUpdateReq.class),
             f -> f.withMarshaller(UpdateBackupRequest::getBody, UpdateBackupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateExpirationTimeRequest, UpdateExpirationTimeResponse> updateExpirationTime =
+        genForUpdateExpirationTime();
+
+    private static HttpRequestDef<UpdateExpirationTimeRequest, UpdateExpirationTimeResponse> genForUpdateExpirationTime() {
+        // basic
+        HttpRequestDef.Builder<UpdateExpirationTimeRequest, UpdateExpirationTimeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateExpirationTimeRequest.class, UpdateExpirationTimeResponse.class)
+            .withName("UpdateExpirationTime")
+            .withUri("/v3/{project_id}/vaults/{vault_id}/update-backup-expiration-time")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("vault_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateExpirationTimeRequest::getVaultId, UpdateExpirationTimeRequest::setVaultId));
+        builder.<UpdateExpirationTimeReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateExpirationTimeReq.class),
+            f -> f.withMarshaller(UpdateExpirationTimeRequest::getBody, UpdateExpirationTimeRequest::setBody));
 
         // response
 

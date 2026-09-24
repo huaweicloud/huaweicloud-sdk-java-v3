@@ -39,7 +39,7 @@ public class OrganizationPolicyUpdate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_trigger")
 
-    private PolicyTriggerReq policyTrigger;
+    private PolicyTriggerUpdateReq policyTrigger;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "effective_scope")
@@ -141,14 +141,14 @@ public class OrganizationPolicyUpdate {
         this.policyOperationDefinition = policyOperationDefinition;
     }
 
-    public OrganizationPolicyUpdate withPolicyTrigger(PolicyTriggerReq policyTrigger) {
+    public OrganizationPolicyUpdate withPolicyTrigger(PolicyTriggerUpdateReq policyTrigger) {
         this.policyTrigger = policyTrigger;
         return this;
     }
 
-    public OrganizationPolicyUpdate withPolicyTrigger(Consumer<PolicyTriggerReq> policyTriggerSetter) {
+    public OrganizationPolicyUpdate withPolicyTrigger(Consumer<PolicyTriggerUpdateReq> policyTriggerSetter) {
         if (this.policyTrigger == null) {
-            this.policyTrigger = new PolicyTriggerReq();
+            this.policyTrigger = new PolicyTriggerUpdateReq();
             policyTriggerSetter.accept(this.policyTrigger);
         }
 
@@ -159,11 +159,11 @@ public class OrganizationPolicyUpdate {
      * Get policyTrigger
      * @return policyTrigger
      */
-    public PolicyTriggerReq getPolicyTrigger() {
+    public PolicyTriggerUpdateReq getPolicyTrigger() {
         return policyTrigger;
     }
 
-    public void setPolicyTrigger(PolicyTriggerReq policyTrigger) {
+    public void setPolicyTrigger(PolicyTriggerUpdateReq policyTrigger) {
         this.policyTrigger = policyTrigger;
     }
 

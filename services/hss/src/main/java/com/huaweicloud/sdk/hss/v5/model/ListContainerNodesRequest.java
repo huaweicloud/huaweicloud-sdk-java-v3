@@ -51,14 +51,14 @@ public class ListContainerNodesRequest {
     private String containerTags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "container_node")
-
-    private Boolean containerNode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private String version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_node")
+
+    private Boolean containerNode;
 
     public ListContainerNodesRequest withRegion(String region) {
         this.region = region;
@@ -200,6 +200,23 @@ public class ListContainerNodesRequest {
         this.containerTags = containerTags;
     }
 
+    public ListContainerNodesRequest withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 查询是否是容器节点 **约束限制**: 不涉及 **取值范围**: - hss.version.null：无。 - hss.version.basic：基础版。 - hss.version.advanced：专业版。 - hss.version.enterprise：企业版。 - hss.version.premium：旗舰版。 - hss.version.wtp：网页防篡改版。 - hss.version.container.enterprise：容器版。  **默认取值**: 不涉及 
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
     public ListContainerNodesRequest withContainerNode(Boolean containerNode) {
         this.containerNode = containerNode;
         return this;
@@ -217,23 +234,6 @@ public class ListContainerNodesRequest {
         this.containerNode = containerNode;
     }
 
-    public ListContainerNodesRequest withVersion(String version) {
-        this.version = version;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 节点开启的防护版本 **约束限制**: 不涉及 **取值范围**: - hss.version.null ：无。 - hss.version.basic ：基础版。 - hss.version.advanced ：专业版。 - hss.version.enterprise ：企业版。 - hss.version.premium ：旗舰版。 - hss.version.wtp ：网页防篡改版。 - hss.version.container.enterprise：容器版。              **默认取值**: 不涉及 
-     * @return version
-     */
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -248,8 +248,8 @@ public class ListContainerNodesRequest {
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.agentStatus, that.agentStatus)
             && Objects.equals(this.protectStatus, that.protectStatus)
-            && Objects.equals(this.containerTags, that.containerTags)
-            && Objects.equals(this.containerNode, that.containerNode) && Objects.equals(this.version, that.version);
+            && Objects.equals(this.containerTags, that.containerTags) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.containerNode, that.containerNode);
     }
 
     @Override
@@ -262,8 +262,8 @@ public class ListContainerNodesRequest {
             agentStatus,
             protectStatus,
             containerTags,
-            containerNode,
-            version);
+            version,
+            containerNode);
     }
 
     @Override
@@ -278,8 +278,8 @@ public class ListContainerNodesRequest {
         sb.append("    agentStatus: ").append(toIndentedString(agentStatus)).append("\n");
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
         sb.append("    containerTags: ").append(toIndentedString(containerTags)).append("\n");
-        sb.append("    containerNode: ").append(toIndentedString(containerNode)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    containerNode: ").append(toIndentedString(containerNode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

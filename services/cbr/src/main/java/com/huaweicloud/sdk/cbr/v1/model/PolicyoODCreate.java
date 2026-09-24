@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * PolicyoODCreate
@@ -69,6 +70,11 @@ public class PolicyoODCreate {
     @JsonProperty(value = "cross_account_urn")
 
     private String crossAccountUrn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "advanced_retention_rules")
+
+    private PolicyAdvancedRetentionRules advancedRetentionRules;
 
     public PolicyoODCreate withDayBackups(Integer dayBackups) {
         this.dayBackups = dayBackups;
@@ -286,6 +292,33 @@ public class PolicyoODCreate {
         this.crossAccountUrn = crossAccountUrn;
     }
 
+    public PolicyoODCreate withAdvancedRetentionRules(PolicyAdvancedRetentionRules advancedRetentionRules) {
+        this.advancedRetentionRules = advancedRetentionRules;
+        return this;
+    }
+
+    public PolicyoODCreate withAdvancedRetentionRules(
+        Consumer<PolicyAdvancedRetentionRules> advancedRetentionRulesSetter) {
+        if (this.advancedRetentionRules == null) {
+            this.advancedRetentionRules = new PolicyAdvancedRetentionRules();
+            advancedRetentionRulesSetter.accept(this.advancedRetentionRules);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get advancedRetentionRules
+     * @return advancedRetentionRules
+     */
+    public PolicyAdvancedRetentionRules getAdvancedRetentionRules() {
+        return advancedRetentionRules;
+    }
+
+    public void setAdvancedRetentionRules(PolicyAdvancedRetentionRules advancedRetentionRules) {
+        this.advancedRetentionRules = advancedRetentionRules;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -304,7 +337,8 @@ public class PolicyoODCreate {
             && Objects.equals(this.timezone, that.timezone) && Objects.equals(this.weekBackups, that.weekBackups)
             && Objects.equals(this.yearBackups, that.yearBackups)
             && Objects.equals(this.fullBackupInterval, that.fullBackupInterval)
-            && Objects.equals(this.crossAccountUrn, that.crossAccountUrn);
+            && Objects.equals(this.crossAccountUrn, that.crossAccountUrn)
+            && Objects.equals(this.advancedRetentionRules, that.advancedRetentionRules);
     }
 
     @Override
@@ -320,7 +354,8 @@ public class PolicyoODCreate {
             weekBackups,
             yearBackups,
             fullBackupInterval,
-            crossAccountUrn);
+            crossAccountUrn,
+            advancedRetentionRules);
     }
 
     @Override
@@ -339,6 +374,7 @@ public class PolicyoODCreate {
         sb.append("    yearBackups: ").append(toIndentedString(yearBackups)).append("\n");
         sb.append("    fullBackupInterval: ").append(toIndentedString(fullBackupInterval)).append("\n");
         sb.append("    crossAccountUrn: ").append(toIndentedString(crossAccountUrn)).append("\n");
+        sb.append("    advancedRetentionRules: ").append(toIndentedString(advancedRetentionRules)).append("\n");
         sb.append("}");
         return sb.toString();
     }

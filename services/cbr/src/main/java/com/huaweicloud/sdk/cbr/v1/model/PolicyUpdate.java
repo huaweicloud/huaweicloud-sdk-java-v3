@@ -29,7 +29,7 @@ public class PolicyUpdate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger")
 
-    private PolicyTriggerReq trigger;
+    private PolicyTriggerUpdateReq trigger;
 
     public PolicyUpdate withEnabled(Boolean enabled) {
         this.enabled = enabled;
@@ -91,14 +91,14 @@ public class PolicyUpdate {
         this.operationDefinition = operationDefinition;
     }
 
-    public PolicyUpdate withTrigger(PolicyTriggerReq trigger) {
+    public PolicyUpdate withTrigger(PolicyTriggerUpdateReq trigger) {
         this.trigger = trigger;
         return this;
     }
 
-    public PolicyUpdate withTrigger(Consumer<PolicyTriggerReq> triggerSetter) {
+    public PolicyUpdate withTrigger(Consumer<PolicyTriggerUpdateReq> triggerSetter) {
         if (this.trigger == null) {
-            this.trigger = new PolicyTriggerReq();
+            this.trigger = new PolicyTriggerUpdateReq();
             triggerSetter.accept(this.trigger);
         }
 
@@ -109,11 +109,11 @@ public class PolicyUpdate {
      * Get trigger
      * @return trigger
      */
-    public PolicyTriggerReq getTrigger() {
+    public PolicyTriggerUpdateReq getTrigger() {
         return trigger;
     }
 
-    public void setTrigger(PolicyTriggerReq trigger) {
+    public void setTrigger(PolicyTriggerUpdateReq trigger) {
         this.trigger = trigger;
     }
 

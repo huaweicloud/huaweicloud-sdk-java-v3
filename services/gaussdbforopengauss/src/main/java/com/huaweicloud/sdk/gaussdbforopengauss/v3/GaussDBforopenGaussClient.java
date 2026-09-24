@@ -293,6 +293,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlLimitTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlLimitTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlPlanActionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlPlanActionResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlRecommendRulesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlRecommendRulesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlTraceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlTraceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesRequest;
@@ -7846,6 +7848,35 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ListSqlPlanActionRequest, ListSqlPlanActionResponse> listSqlPlanActionInvoker(
         ListSqlPlanActionRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listSqlPlanAction, hcClient);
+    }
+
+    /**
+     * 获取SQL限流推荐规则
+     *
+     * 获取SQL限流推荐规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlRecommendRulesRequest 请求对象
+     * @return ListSqlRecommendRulesResponse
+     */
+    public ListSqlRecommendRulesResponse listSqlRecommendRules(ListSqlRecommendRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listSqlRecommendRules);
+    }
+
+    /**
+     * 获取SQL限流推荐规则
+     *
+     * 获取SQL限流推荐规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlRecommendRulesRequest 请求对象
+     * @return SyncInvoker<ListSqlRecommendRulesRequest, ListSqlRecommendRulesResponse>
+     */
+    public SyncInvoker<ListSqlRecommendRulesRequest, ListSqlRecommendRulesResponse> listSqlRecommendRulesInvoker(
+        ListSqlRecommendRulesRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listSqlRecommendRules, hcClient);
     }
 
     /**

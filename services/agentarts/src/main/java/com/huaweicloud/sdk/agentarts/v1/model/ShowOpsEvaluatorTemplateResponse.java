@@ -13,9 +13,55 @@ import java.util.function.Consumer;
 public class ShowOpsEvaluatorTemplateResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "code")
+
+    private Integer code;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "msg")
+
+    private String msg;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template")
 
     private ShowOpsEvaluatorTemplateResponseBodyTemplate template;
+
+    public ShowOpsEvaluatorTemplateResponse withCode(Integer code) {
+        this.code = code;
+        return this;
+    }
+
+    /**
+     * **参数解释：** API执行状态码。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return code
+     */
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
+    public ShowOpsEvaluatorTemplateResponse withMsg(String msg) {
+        this.msg = msg;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 响应状态描述信息。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 
+     * @return msg
+     */
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
     public ShowOpsEvaluatorTemplateResponse withTemplate(ShowOpsEvaluatorTemplateResponseBodyTemplate template) {
         this.template = template;
@@ -53,18 +99,21 @@ public class ShowOpsEvaluatorTemplateResponse extends SdkResponse {
             return false;
         }
         ShowOpsEvaluatorTemplateResponse that = (ShowOpsEvaluatorTemplateResponse) obj;
-        return Objects.equals(this.template, that.template);
+        return Objects.equals(this.code, that.code) && Objects.equals(this.msg, that.msg)
+            && Objects.equals(this.template, that.template);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(template);
+        return Objects.hash(code, msg, template);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowOpsEvaluatorTemplateResponse {\n");
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
         sb.append("    template: ").append(toIndentedString(template)).append("\n");
         sb.append("}");
         return sb.toString();

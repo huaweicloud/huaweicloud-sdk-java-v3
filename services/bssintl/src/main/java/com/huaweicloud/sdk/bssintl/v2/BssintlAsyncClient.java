@@ -60,6 +60,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.ListRateOnPeriodDetailRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListRateOnPeriodDetailResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListRenewRateOnPeriodRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListRenewRateOnPeriodResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ListResourceSpecsPriceRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ListResourceSpecsPriceResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListResourceSpecsRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListResourceSpecsResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListResourceTypesRequest;
@@ -1047,6 +1049,36 @@ public class BssintlAsyncClient {
     public AsyncInvoker<ListResourceSpecsRequest, ListResourceSpecsResponse> listResourceSpecsAsyncInvoker(
         ListResourceSpecsRequest request) {
         return new AsyncInvoker<>(request, BssintlMeta.listResourceSpecs, hcClient);
+    }
+
+    /**
+     * 查询云服务类型资源规格定价
+     *
+     * 客户或伙伴在自建平台查询云服务类型资源规格定价，辅助购买决策
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceSpecsPriceRequest 请求对象
+     * @return CompletableFuture<ListResourceSpecsPriceResponse>
+     */
+    public CompletableFuture<ListResourceSpecsPriceResponse> listResourceSpecsPriceAsync(
+        ListResourceSpecsPriceRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssintlMeta.listResourceSpecsPrice);
+    }
+
+    /**
+     * 查询云服务类型资源规格定价
+     *
+     * 客户或伙伴在自建平台查询云服务类型资源规格定价，辅助购买决策
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceSpecsPriceRequest 请求对象
+     * @return AsyncInvoker<ListResourceSpecsPriceRequest, ListResourceSpecsPriceResponse>
+     */
+    public AsyncInvoker<ListResourceSpecsPriceRequest, ListResourceSpecsPriceResponse> listResourceSpecsPriceAsyncInvoker(
+        ListResourceSpecsPriceRequest request) {
+        return new AsyncInvoker<>(request, BssintlMeta.listResourceSpecsPrice, hcClient);
     }
 
     /**

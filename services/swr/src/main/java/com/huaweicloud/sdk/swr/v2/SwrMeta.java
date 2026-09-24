@@ -228,6 +228,10 @@ import com.huaweicloud.sdk.swr.v2.model.ListInstanceWebhookJobsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceWebhookJobsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceWebhooksRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceWebhooksResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListInternalEndpointConnectionsRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListInternalEndpointConnectionsResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListInternalEndpointPermissionsRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListInternalEndpointPermissionsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListNamespaceRepositoriesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListNamespaceRepositoriesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListNamespaceTagsRequest;
@@ -373,6 +377,12 @@ import com.huaweicloud.sdk.swr.v2.model.UpdateInstanceSignPolicyRequest;
 import com.huaweicloud.sdk.swr.v2.model.UpdateInstanceSignPolicyResponse;
 import com.huaweicloud.sdk.swr.v2.model.UpdateInstanceWebhookRequest;
 import com.huaweicloud.sdk.swr.v2.model.UpdateInstanceWebhookResponse;
+import com.huaweicloud.sdk.swr.v2.model.UpdateInternalEndpointConnectionsRequest;
+import com.huaweicloud.sdk.swr.v2.model.UpdateInternalEndpointConnectionsRequestBody;
+import com.huaweicloud.sdk.swr.v2.model.UpdateInternalEndpointConnectionsResponse;
+import com.huaweicloud.sdk.swr.v2.model.UpdateInternalEndpointPermissionsRequest;
+import com.huaweicloud.sdk.swr.v2.model.UpdateInternalEndpointPermissionsRequestBody;
+import com.huaweicloud.sdk.swr.v2.model.UpdateInternalEndpointPermissionsResponse;
 import com.huaweicloud.sdk.swr.v2.model.UpdateLongTermCredentialRequestBody;
 import com.huaweicloud.sdk.swr.v2.model.UpdateNamespaceAuthRequest;
 import com.huaweicloud.sdk.swr.v2.model.UpdateNamespaceAuthResponse;
@@ -5397,6 +5407,102 @@ public class SwrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListInternalEndpointConnectionsRequest, ListInternalEndpointConnectionsResponse> listInternalEndpointConnections =
+        genForListInternalEndpointConnections();
+
+    private static HttpRequestDef<ListInternalEndpointConnectionsRequest, ListInternalEndpointConnectionsResponse> genForListInternalEndpointConnections() {
+        // basic
+        HttpRequestDef.Builder<ListInternalEndpointConnectionsRequest, ListInternalEndpointConnectionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInternalEndpointConnectionsRequest.class,
+                    ListInternalEndpointConnectionsResponse.class)
+                .withName("ListInternalEndpointConnections")
+                .withUri("/v2/{project_id}/instances/{instance_id}/internal-endpoint/connections")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInternalEndpointConnectionsRequest::getInstanceId,
+                ListInternalEndpointConnectionsRequest::setInstanceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInternalEndpointConnectionsRequest::getLimit,
+                ListInternalEndpointConnectionsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInternalEndpointConnectionsRequest::getOffset,
+                ListInternalEndpointConnectionsRequest::setOffset));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInternalEndpointConnectionsRequest::getStatus,
+                ListInternalEndpointConnectionsRequest::setStatus));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInternalEndpointConnectionsRequest::getId,
+                ListInternalEndpointConnectionsRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInternalEndpointPermissionsRequest, ListInternalEndpointPermissionsResponse> listInternalEndpointPermissions =
+        genForListInternalEndpointPermissions();
+
+    private static HttpRequestDef<ListInternalEndpointPermissionsRequest, ListInternalEndpointPermissionsResponse> genForListInternalEndpointPermissions() {
+        // basic
+        HttpRequestDef.Builder<ListInternalEndpointPermissionsRequest, ListInternalEndpointPermissionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInternalEndpointPermissionsRequest.class,
+                    ListInternalEndpointPermissionsResponse.class)
+                .withName("ListInternalEndpointPermissions")
+                .withUri("/v2/{project_id}/instances/{instance_id}/internal-endpoint/permissions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInternalEndpointPermissionsRequest::getInstanceId,
+                ListInternalEndpointPermissionsRequest::setInstanceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInternalEndpointPermissionsRequest::getLimit,
+                ListInternalEndpointPermissionsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInternalEndpointPermissionsRequest::getOffset,
+                ListInternalEndpointPermissionsRequest::setOffset));
+        builder.<String>withRequestField("permission",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInternalEndpointPermissionsRequest::getPermission,
+                ListInternalEndpointPermissionsRequest::setPermission));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListNamespaceRepositoriesRequest, ListNamespaceRepositoriesResponse> listNamespaceRepositories =
         genForListNamespaceRepositories();
 
@@ -6764,6 +6870,72 @@ public class SwrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateWebhookPolicyRequestBody.class),
             f -> f.withMarshaller(UpdateInstanceWebhookRequest::getBody, UpdateInstanceWebhookRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInternalEndpointConnectionsRequest, UpdateInternalEndpointConnectionsResponse> updateInternalEndpointConnections =
+        genForUpdateInternalEndpointConnections();
+
+    private static HttpRequestDef<UpdateInternalEndpointConnectionsRequest, UpdateInternalEndpointConnectionsResponse> genForUpdateInternalEndpointConnections() {
+        // basic
+        HttpRequestDef.Builder<UpdateInternalEndpointConnectionsRequest, UpdateInternalEndpointConnectionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdateInternalEndpointConnectionsRequest.class,
+                    UpdateInternalEndpointConnectionsResponse.class)
+                .withName("UpdateInternalEndpointConnections")
+                .withUri("/v2/{project_id}/instances/{instance_id}/internal-endpoint/connections/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInternalEndpointConnectionsRequest::getInstanceId,
+                UpdateInternalEndpointConnectionsRequest::setInstanceId));
+        builder.<UpdateInternalEndpointConnectionsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateInternalEndpointConnectionsRequestBody.class),
+            f -> f.withMarshaller(UpdateInternalEndpointConnectionsRequest::getBody,
+                UpdateInternalEndpointConnectionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInternalEndpointPermissionsRequest, UpdateInternalEndpointPermissionsResponse> updateInternalEndpointPermissions =
+        genForUpdateInternalEndpointPermissions();
+
+    private static HttpRequestDef<UpdateInternalEndpointPermissionsRequest, UpdateInternalEndpointPermissionsResponse> genForUpdateInternalEndpointPermissions() {
+        // basic
+        HttpRequestDef.Builder<UpdateInternalEndpointPermissionsRequest, UpdateInternalEndpointPermissionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdateInternalEndpointPermissionsRequest.class,
+                    UpdateInternalEndpointPermissionsResponse.class)
+                .withName("UpdateInternalEndpointPermissions")
+                .withUri("/v2/{project_id}/instances/{instance_id}/internal-endpoint/permissions/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInternalEndpointPermissionsRequest::getInstanceId,
+                UpdateInternalEndpointPermissionsRequest::setInstanceId));
+        builder.<UpdateInternalEndpointPermissionsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateInternalEndpointPermissionsRequestBody.class),
+            f -> f.withMarshaller(UpdateInternalEndpointPermissionsRequest::getBody,
+                UpdateInternalEndpointPermissionsRequest::setBody));
 
         // response
 

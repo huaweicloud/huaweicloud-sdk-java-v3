@@ -173,6 +173,8 @@ import com.huaweicloud.sdk.rds.v3.model.DownloadSlowlogRequest;
 import com.huaweicloud.sdk.rds.v3.model.DownloadSlowlogResponse;
 import com.huaweicloud.sdk.rds.v3.model.EnableConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.EnableConfigurationResponse;
+import com.huaweicloud.sdk.rds.v3.model.ExecuteOptimizeTableSpaceRequest;
+import com.huaweicloud.sdk.rds.v3.model.ExecuteOptimizeTableSpaceResponse;
 import com.huaweicloud.sdk.rds.v3.model.ExecutePrivilegeDatabaseUserRoleRequest;
 import com.huaweicloud.sdk.rds.v3.model.ExecutePrivilegeDatabaseUserRoleResponse;
 import com.huaweicloud.sdk.rds.v3.model.ExecuteRevokeDatabaseUserRoleRequest;
@@ -197,6 +199,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedDbUsersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedDbUsersResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedSqlserverDbUsersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedSqlserverDbUsersResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListAutoScalingHistoryRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListAutoScalingHistoryResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListAutoScalingPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListBackupTransfersRequest;
@@ -453,6 +457,8 @@ import com.huaweicloud.sdk.rds.v3.model.SetAuditlogPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetAuditlogPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetAutoEnlargePolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetAutoScalingPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetAutoUpgradePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetAutoUpgradePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetBackupPolicyRequest;
@@ -477,6 +483,8 @@ import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetPostgresqlDbUserPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetPostgresqlDbUserPwdResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetRdsDBFaultPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetRdsDBFaultPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetReadOnlySwitchRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetReadOnlySwitchResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetSecondLevelMonitorRequest;
@@ -503,6 +511,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowAutoUpgradePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoUpgradePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableBuildDrInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableBuildDrInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowAvailableCorsVpcsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowAvailableCorsVpcsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupConfigRequest;
@@ -621,6 +631,8 @@ import com.huaweicloud.sdk.rds.v3.model.SwitchDbAgentJobRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchDbAgentJobResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchLogReplayRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchLogReplayResponse;
+import com.huaweicloud.sdk.rds.v3.model.SwitchMySqlProxyEipRequest;
+import com.huaweicloud.sdk.rds.v3.model.SwitchMySqlProxyEipResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchMySqlProxySlowLogRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchMySqlProxySlowLogResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitRequest;
@@ -663,6 +675,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceNameRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceNameResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateInstancesProxyPortRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateInstancesProxyPortResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePortRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePortResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlDatabaseRequest;
@@ -2123,6 +2137,36 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 清理表碎片空间
+     *
+     * 清理表碎片空间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteOptimizeTableSpaceRequest 请求对象
+     * @return CompletableFuture<ExecuteOptimizeTableSpaceResponse>
+     */
+    public CompletableFuture<ExecuteOptimizeTableSpaceResponse> executeOptimizeTableSpaceAsync(
+        ExecuteOptimizeTableSpaceRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.executeOptimizeTableSpace);
+    }
+
+    /**
+     * 清理表碎片空间
+     *
+     * 清理表碎片空间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteOptimizeTableSpaceRequest 请求对象
+     * @return AsyncInvoker<ExecuteOptimizeTableSpaceRequest, ExecuteOptimizeTableSpaceResponse>
+     */
+    public AsyncInvoker<ExecuteOptimizeTableSpaceRequest, ExecuteOptimizeTableSpaceResponse> executeOptimizeTableSpaceAsyncInvoker(
+        ExecuteOptimizeTableSpaceRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.executeOptimizeTableSpace, hcClient);
+    }
+
+    /**
      * 查询实例CES监控指标名称列表
      *
      * 查询实例CES监控指标名称列表
@@ -2179,6 +2223,36 @@ public class RdsAsyncClient {
     public AsyncInvoker<ListAuditlogsRequest, ListAuditlogsResponse> listAuditlogsAsyncInvoker(
         ListAuditlogsRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.listAuditlogs, hcClient);
+    }
+
+    /**
+     * 查询自动变配历史
+     *
+     * 查询自动变配历史。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAutoScalingHistoryRequest 请求对象
+     * @return CompletableFuture<ListAutoScalingHistoryResponse>
+     */
+    public CompletableFuture<ListAutoScalingHistoryResponse> listAutoScalingHistoryAsync(
+        ListAutoScalingHistoryRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listAutoScalingHistory);
+    }
+
+    /**
+     * 查询自动变配历史
+     *
+     * 查询自动变配历史。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAutoScalingHistoryRequest 请求对象
+     * @return AsyncInvoker<ListAutoScalingHistoryRequest, ListAutoScalingHistoryResponse>
+     */
+    public AsyncInvoker<ListAutoScalingHistoryRequest, ListAutoScalingHistoryResponse> listAutoScalingHistoryAsyncInvoker(
+        ListAutoScalingHistoryRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listAutoScalingHistory, hcClient);
     }
 
     /**
@@ -4693,6 +4767,36 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 修改自动变配策略
+     *
+     * 修改自动变配的策略，包括自动升配和降配。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetAutoScalingPolicyRequest 请求对象
+     * @return CompletableFuture<SetAutoScalingPolicyResponse>
+     */
+    public CompletableFuture<SetAutoScalingPolicyResponse> setAutoScalingPolicyAsync(
+        SetAutoScalingPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.setAutoScalingPolicy);
+    }
+
+    /**
+     * 修改自动变配策略
+     *
+     * 修改自动变配的策略，包括自动升配和降配。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetAutoScalingPolicyRequest 请求对象
+     * @return AsyncInvoker<SetAutoScalingPolicyRequest, SetAutoScalingPolicyResponse>
+     */
+    public AsyncInvoker<SetAutoScalingPolicyRequest, SetAutoScalingPolicyResponse> setAutoScalingPolicyAsyncInvoker(
+        SetAutoScalingPolicyRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.setAutoScalingPolicy, hcClient);
+    }
+
+    /**
      * 设置实例内核小版本自动升级策略
      *
      * 设置实例内核小版本自动升级策略
@@ -4898,6 +5002,35 @@ public class RdsAsyncClient {
     public AsyncInvoker<SetOffSiteBackupPolicyRequest, SetOffSiteBackupPolicyResponse> setOffSiteBackupPolicyAsyncInvoker(
         SetOffSiteBackupPolicyRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.setOffSiteBackupPolicy, hcClient);
+    }
+
+    /**
+     * 设置内核故障的处理策略
+     *
+     * 设置内核故障的处理策略：优先切换或优先修复。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetRdsDBFaultPolicyRequest 请求对象
+     * @return CompletableFuture<SetRdsDBFaultPolicyResponse>
+     */
+    public CompletableFuture<SetRdsDBFaultPolicyResponse> setRdsDBFaultPolicyAsync(SetRdsDBFaultPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.setRdsDBFaultPolicy);
+    }
+
+    /**
+     * 设置内核故障的处理策略
+     *
+     * 设置内核故障的处理策略：优先切换或优先修复。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetRdsDBFaultPolicyRequest 请求对象
+     * @return AsyncInvoker<SetRdsDBFaultPolicyRequest, SetRdsDBFaultPolicyResponse>
+     */
+    public AsyncInvoker<SetRdsDBFaultPolicyRequest, SetRdsDBFaultPolicyResponse> setRdsDBFaultPolicyAsyncInvoker(
+        SetRdsDBFaultPolicyRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.setRdsDBFaultPolicy, hcClient);
     }
 
     /**
@@ -5168,6 +5301,36 @@ public class RdsAsyncClient {
     public AsyncInvoker<ShowAvailableBuildDrInstanceRequest, ShowAvailableBuildDrInstanceResponse> showAvailableBuildDrInstanceAsyncInvoker(
         ShowAvailableBuildDrInstanceRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.showAvailableBuildDrInstance, hcClient);
+    }
+
+    /**
+     * 查询云耀实例的VPC服务信息
+     *
+     * 查询云耀实例的VPC服务信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvailableCorsVpcsRequest 请求对象
+     * @return CompletableFuture<ShowAvailableCorsVpcsResponse>
+     */
+    public CompletableFuture<ShowAvailableCorsVpcsResponse> showAvailableCorsVpcsAsync(
+        ShowAvailableCorsVpcsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showAvailableCorsVpcs);
+    }
+
+    /**
+     * 查询云耀实例的VPC服务信息
+     *
+     * 查询云耀实例的VPC服务信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvailableCorsVpcsRequest 请求对象
+     * @return AsyncInvoker<ShowAvailableCorsVpcsRequest, ShowAvailableCorsVpcsResponse>
+     */
+    public AsyncInvoker<ShowAvailableCorsVpcsRequest, ShowAvailableCorsVpcsResponse> showAvailableCorsVpcsAsyncInvoker(
+        ShowAvailableCorsVpcsRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.showAvailableCorsVpcs, hcClient);
     }
 
     /**
@@ -7810,6 +7973,35 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 数据库代理绑定解绑弹性公网IP
+     *
+     * 数据库代理绑定解绑弹性公网IP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchMySqlProxyEipRequest 请求对象
+     * @return CompletableFuture<SwitchMySqlProxyEipResponse>
+     */
+    public CompletableFuture<SwitchMySqlProxyEipResponse> switchMySqlProxyEipAsync(SwitchMySqlProxyEipRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.switchMySqlProxyEip);
+    }
+
+    /**
+     * 数据库代理绑定解绑弹性公网IP
+     *
+     * 数据库代理绑定解绑弹性公网IP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchMySqlProxyEipRequest 请求对象
+     * @return AsyncInvoker<SwitchMySqlProxyEipRequest, SwitchMySqlProxyEipResponse>
+     */
+    public AsyncInvoker<SwitchMySqlProxyEipRequest, SwitchMySqlProxyEipResponse> switchMySqlProxyEipAsyncInvoker(
+        SwitchMySqlProxyEipRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.switchMySqlProxyEip, hcClient);
+    }
+
+    /**
      * 更改数据库代理慢日志上报开关
      *
      * 更改数据库代理慢日志上报开关。
@@ -7924,6 +8116,36 @@ public class RdsAsyncClient {
     public AsyncInvoker<UpdateHostPrivilegeRequest, UpdateHostPrivilegeResponse> updateHostPrivilegeAsyncInvoker(
         UpdateHostPrivilegeRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.updateHostPrivilege, hcClient);
+    }
+
+    /**
+     * 修改数据库代理端口号
+     *
+     * 修改数据库代理端口号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInstancesProxyPortRequest 请求对象
+     * @return CompletableFuture<UpdateInstancesProxyPortResponse>
+     */
+    public CompletableFuture<UpdateInstancesProxyPortResponse> updateInstancesProxyPortAsync(
+        UpdateInstancesProxyPortRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.updateInstancesProxyPort);
+    }
+
+    /**
+     * 修改数据库代理端口号
+     *
+     * 修改数据库代理端口号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInstancesProxyPortRequest 请求对象
+     * @return AsyncInvoker<UpdateInstancesProxyPortRequest, UpdateInstancesProxyPortResponse>
+     */
+    public AsyncInvoker<UpdateInstancesProxyPortRequest, UpdateInstancesProxyPortResponse> updateInstancesProxyPortAsyncInvoker(
+        UpdateInstancesProxyPortRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.updateInstancesProxyPort, hcClient);
     }
 
     /**

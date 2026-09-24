@@ -199,6 +199,10 @@ import com.huaweicloud.sdk.swr.v2.model.ListInstanceWebhookJobsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceWebhookJobsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceWebhooksRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceWebhooksResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListInternalEndpointConnectionsRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListInternalEndpointConnectionsResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListInternalEndpointPermissionsRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListInternalEndpointPermissionsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListNamespaceRepositoriesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListNamespaceRepositoriesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListNamespaceTagsRequest;
@@ -331,6 +335,10 @@ import com.huaweicloud.sdk.swr.v2.model.UpdateInstanceSignPolicyRequest;
 import com.huaweicloud.sdk.swr.v2.model.UpdateInstanceSignPolicyResponse;
 import com.huaweicloud.sdk.swr.v2.model.UpdateInstanceWebhookRequest;
 import com.huaweicloud.sdk.swr.v2.model.UpdateInstanceWebhookResponse;
+import com.huaweicloud.sdk.swr.v2.model.UpdateInternalEndpointConnectionsRequest;
+import com.huaweicloud.sdk.swr.v2.model.UpdateInternalEndpointConnectionsResponse;
+import com.huaweicloud.sdk.swr.v2.model.UpdateInternalEndpointPermissionsRequest;
+import com.huaweicloud.sdk.swr.v2.model.UpdateInternalEndpointPermissionsResponse;
 import com.huaweicloud.sdk.swr.v2.model.UpdateNamespaceAuthRequest;
 import com.huaweicloud.sdk.swr.v2.model.UpdateNamespaceAuthResponse;
 import com.huaweicloud.sdk.swr.v2.model.UpdateRepoDomainsRequest;
@@ -4190,6 +4198,66 @@ public class SwrClient {
     }
 
     /**
+     * 查询内网访问连接列表
+     *
+     * 查询内网访问连接列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInternalEndpointConnectionsRequest 请求对象
+     * @return ListInternalEndpointConnectionsResponse
+     */
+    public ListInternalEndpointConnectionsResponse listInternalEndpointConnections(
+        ListInternalEndpointConnectionsRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.listInternalEndpointConnections);
+    }
+
+    /**
+     * 查询内网访问连接列表
+     *
+     * 查询内网访问连接列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInternalEndpointConnectionsRequest 请求对象
+     * @return SyncInvoker<ListInternalEndpointConnectionsRequest, ListInternalEndpointConnectionsResponse>
+     */
+    public SyncInvoker<ListInternalEndpointConnectionsRequest, ListInternalEndpointConnectionsResponse> listInternalEndpointConnectionsInvoker(
+        ListInternalEndpointConnectionsRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.listInternalEndpointConnections, hcClient);
+    }
+
+    /**
+     * 查询内网访问白名单列表
+     *
+     * 查询内网访问白名单列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInternalEndpointPermissionsRequest 请求对象
+     * @return ListInternalEndpointPermissionsResponse
+     */
+    public ListInternalEndpointPermissionsResponse listInternalEndpointPermissions(
+        ListInternalEndpointPermissionsRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.listInternalEndpointPermissions);
+    }
+
+    /**
+     * 查询内网访问白名单列表
+     *
+     * 查询内网访问白名单列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInternalEndpointPermissionsRequest 请求对象
+     * @return SyncInvoker<ListInternalEndpointPermissionsRequest, ListInternalEndpointPermissionsResponse>
+     */
+    public SyncInvoker<ListInternalEndpointPermissionsRequest, ListInternalEndpointPermissionsResponse> listInternalEndpointPermissionsInvoker(
+        ListInternalEndpointPermissionsRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.listInternalEndpointPermissions, hcClient);
+    }
+
+    /**
      * 获取命名空间下所有制品仓库列表
      *
      * 获取命名空间下所有制品仓库列表
@@ -5295,6 +5363,66 @@ public class SwrClient {
     public SyncInvoker<UpdateInstanceWebhookRequest, UpdateInstanceWebhookResponse> updateInstanceWebhookInvoker(
         UpdateInstanceWebhookRequest request) {
         return new SyncInvoker<>(request, SwrMeta.updateInstanceWebhook, hcClient);
+    }
+
+    /**
+     * 允许或拒绝内网访问连接
+     *
+     * 允许或拒绝内网访问连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInternalEndpointConnectionsRequest 请求对象
+     * @return UpdateInternalEndpointConnectionsResponse
+     */
+    public UpdateInternalEndpointConnectionsResponse updateInternalEndpointConnections(
+        UpdateInternalEndpointConnectionsRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.updateInternalEndpointConnections);
+    }
+
+    /**
+     * 允许或拒绝内网访问连接
+     *
+     * 允许或拒绝内网访问连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInternalEndpointConnectionsRequest 请求对象
+     * @return SyncInvoker<UpdateInternalEndpointConnectionsRequest, UpdateInternalEndpointConnectionsResponse>
+     */
+    public SyncInvoker<UpdateInternalEndpointConnectionsRequest, UpdateInternalEndpointConnectionsResponse> updateInternalEndpointConnectionsInvoker(
+        UpdateInternalEndpointConnectionsRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.updateInternalEndpointConnections, hcClient);
+    }
+
+    /**
+     * 添加或移除内网访问白名单
+     *
+     * 添加或移除内网访问白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInternalEndpointPermissionsRequest 请求对象
+     * @return UpdateInternalEndpointPermissionsResponse
+     */
+    public UpdateInternalEndpointPermissionsResponse updateInternalEndpointPermissions(
+        UpdateInternalEndpointPermissionsRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.updateInternalEndpointPermissions);
+    }
+
+    /**
+     * 添加或移除内网访问白名单
+     *
+     * 添加或移除内网访问白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInternalEndpointPermissionsRequest 请求对象
+     * @return SyncInvoker<UpdateInternalEndpointPermissionsRequest, UpdateInternalEndpointPermissionsResponse>
+     */
+    public SyncInvoker<UpdateInternalEndpointPermissionsRequest, UpdateInternalEndpointPermissionsResponse> updateInternalEndpointPermissionsInvoker(
+        UpdateInternalEndpointPermissionsRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.updateInternalEndpointPermissions, hcClient);
     }
 
 }

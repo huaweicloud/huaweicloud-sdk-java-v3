@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.cbr.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
@@ -18,7 +21,7 @@ public class TagsResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "values")
 
-    private String values;
+    private List<String> values = null;
 
     public TagsResp withKey(String key) {
         this.key = key;
@@ -37,8 +40,24 @@ public class TagsResp {
         this.key = key;
     }
 
-    public TagsResp withValues(String values) {
+    public TagsResp withValues(List<String> values) {
         this.values = values;
+        return this;
+    }
+
+    public TagsResp addValuesItem(String valuesItem) {
+        if (this.values == null) {
+            this.values = new ArrayList<>();
+        }
+        this.values.add(valuesItem);
+        return this;
+    }
+
+    public TagsResp withValues(Consumer<List<String>> valuesSetter) {
+        if (this.values == null) {
+            this.values = new ArrayList<>();
+        }
+        valuesSetter.accept(this.values);
         return this;
     }
 
@@ -46,11 +65,11 @@ public class TagsResp {
      * 值列表。  value最大长度43个字符。  value可以为空字符串。  key只能由中文，字母，数字，“-”，“_”组成。
      * @return values
      */
-    public String getValues() {
+    public List<String> getValues() {
         return values;
     }
 
-    public void setValues(String values) {
+    public void setValues(List<String> values) {
         this.values = values;
     }
 

@@ -555,23 +555,22 @@ GlobalCredentials globalCredentials = new GlobalCredentials()
 
 #### 2.4 使用 OIDC 委托认证 [:top:](#用户手册-top)
 
-通过OIDC身份提供商令牌和信任委托获取临时安全凭证，可参考文档：[通过使用OIDC协议SSO的信任委托获取临时安全凭证](https://support.huaweicloud.com/api-iam5/AssumeAgencyWithOIDC.html)
+自`3.1.217`版本起，支持通过OIDC身份提供商令牌和信任委托获取临时安全凭证。可参考文档：[通过使用OIDC协议SSO的信任委托获取临时安全凭证](https://support.huaweicloud.com/api-iam5/AssumeAgencyWithOIDC.html)
+
+SDK内部自动调用 STS 服务接口获取临时凭证，业务方只需在构建 Credentials 时设置 OIDC 参数即可。
 
 **认证参数说明**：
 
-- `providerUrn` OIDC提供商的URN，格式为 `iam::{account_id}:oidcProvider:{provider_name}`
-- `agencyUrn` 目标信任委托的URN，格式为 `iam::{account_id}:agency:{agency_name}`
-- `agencySessionName` 信任委托会话的会话名
-- `idToken` 由身份提供商提供的OIDC令牌字符串，由业务方持有并定期刷新（短期 JWT，不建议走环境变量）
-- `oidcIdTokenFile` 可选，存放OIDC ID Token的文件路径。与 `idToken` 二选一，适用于Token定期刷新写入文件的场景。同时设置时 `idToken` 优先。
-- `durationSeconds` 可选，临时安全凭证的有效时间（单位：秒），取值范围[900,43200]，默认3600
-- `policy` 可选，自定义策略，限制本次会话获得的临时安全凭证的权限范围
-- `policyIds` 可选，预置策略列表，限制本次会话获得的临时安全凭证的权限范围
-- `iamEndpoint` 可选，IAM 终端节点，默认 `https://iam.myhuaweicloud.com`
-- `projectId` 可选，云服务所在项目 ID。不传时SDK自动通过IAM接口获取
-- `domainId` 可选，华为云账号 ID。不传时SDK自动通过IAM接口获取
+- `providerUrn` - 必填，OIDC提供商的URN，例如 `iam::account_id:oidcProvider:provider_name`
+- `agencyUrn` - 必填，目标信任委托的URN，例如 `iam::account_id:agency:agency_name`
+- `agencySessionName` - 必填，信任委托会话的会话名
+- `idToken` - 条件必填，与 `oidcIdTokenFile` 至少设置一个，同时设置时优先使用 `idToken`
+- `oidcIdTokenFile` - 条件必填，与 `idToken` 至少设置一个
+- `durationSeconds` - 可选，临时凭证有效时间（秒），取值范围[900,43200]，默认3600
+- `policy` - 可选，自定义策略JSON字符串，限制临时凭证权限范围
+- `policyIds` - 可选，预置策略ID列表
 
-SDK内部自动完成 `POST /v5/agencies/assume-with-oidc` 调用获取临时凭证，业务方只需在构建 Credentials 时设置 OIDC 参数即可，无需手动调用 Accessor。
+> SDK通过环境变量 `HUAWEICLOUD_SDK_STS_ENDPOINT` 配置STS终端节点，默认 `https://sts.cn-north-4.myhuaweicloud.com`。
 
 ``` java
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
@@ -579,28 +578,23 @@ import com.huaweicloud.sdk.core.auth.GlobalCredentials;
 import java.util.Arrays;
 
 // Region级服务
-// 不传 projectId 时，SDK 会自动用临时凭证调 IAM 接口获取
 BasicCredentials basicCredentials = new BasicCredentials()
-    .withIdToken(idToken)                                           // OIDC ID Token
-    .withProviderUrn("iam::account_id:oidcProvider:provider_name")  // providerUrn
-    .withAgencyUrn("iam::account_id:agency:agency_name")            // agencyUrn
-    .withAgencySessionName("session_name")                          // agencySessionName
-    .withDurationSeconds(3600);                                     // 可选，默认3600
-    // .withProjectId(projectId)                                     // 可选，手动指定可跳过自动获取
-    // .withIamEndpoint("https://iam.myhuaweicloud.com")            // 可选
-    // .withPolicy("{\"Version\":\"5.0\"}")                          // 可选，限制权限
-    // .withPolicyIds(Arrays.asList("p1", "p2"))                     // 可选，预置策略
+    .withIdToken(idToken)                                           // 与 oidcIdTokenFile 至少设置一个
+    .withProviderUrn(providerUrn)
+    .withAgencyUrn(agencyUrn)
+    .withAgencySessionName("session_name")
     // .withOidcIdTokenFile("/path/to/id_token_file")               // 可选，从文件读取ID Token
+    // .withPolicy("{\"Version\":\"5.0\",\"Statement\":[]}")         // 可选，JSON字符串
+    // .withPolicyIds(Arrays.asList("policy-id-1", "policy-id-2"))   // 可选，策略ID列表
+    .withDurationSeconds(3600);                                     // 可选，默认3600
 
 // Global级服务
-// 不传 domainId 时，SDK 会自动通过 IAM/STS 接口获取
 GlobalCredentials globalCredentials = new GlobalCredentials()
     .withIdToken(idToken)
-    .withProviderUrn("iam::account_id:oidcProvider:provider_name")
-    .withAgencyUrn("iam::account_id:agency:agency_name")
+    .withProviderUrn(providerUrn)
+    .withAgencyUrn(agencyUrn)
     .withAgencySessionName("session_name")
     .withDurationSeconds(3600);
-    // .withDomainId(domainId)                                       // 可选，手动指定可跳过自动获取
 ```
 
 #### 2.5 认证信息管理 [:top:](#用户手册-top)

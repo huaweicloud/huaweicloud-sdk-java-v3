@@ -1083,6 +1083,7 @@ public class ImsAsyncClient {
      * @param request ShowJobRequest 请求对象
      * @return CompletableFuture<ShowJobResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowJobResponse> showJobAsync(ShowJobRequest request) {
         return hcClient.asyncInvokeHttp(request, ImsMeta.showJob);
     }
@@ -1097,6 +1098,7 @@ public class ImsAsyncClient {
      * @param request ShowJobRequest 请求对象
      * @return AsyncInvoker<ShowJobRequest, ShowJobResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowJobRequest, ShowJobResponse> showJobAsyncInvoker(ShowJobRequest request) {
         return new AsyncInvoker<>(request, ImsMeta.showJob, hcClient);
     }
@@ -1225,6 +1227,7 @@ public class ImsAsyncClient {
      * @param request GlanceAddImageMemberRequest 请求对象
      * @return CompletableFuture<GlanceAddImageMemberResponse>
      */
+    @Deprecated
     public CompletableFuture<GlanceAddImageMemberResponse> glanceAddImageMemberAsync(
         GlanceAddImageMemberRequest request) {
         return hcClient.asyncInvokeHttp(request, ImsMeta.glanceAddImageMember);
@@ -1240,6 +1243,7 @@ public class ImsAsyncClient {
      * @param request GlanceAddImageMemberRequest 请求对象
      * @return AsyncInvoker<GlanceAddImageMemberRequest, GlanceAddImageMemberResponse>
      */
+    @Deprecated
     public AsyncInvoker<GlanceAddImageMemberRequest, GlanceAddImageMemberResponse> glanceAddImageMemberAsyncInvoker(
         GlanceAddImageMemberRequest request) {
         return new AsyncInvoker<>(request, ImsMeta.glanceAddImageMember, hcClient);
@@ -1285,6 +1289,7 @@ public class ImsAsyncClient {
      * @param request GlanceCreateTagRequest 请求对象
      * @return CompletableFuture<GlanceCreateTagResponse>
      */
+    @Deprecated
     public CompletableFuture<GlanceCreateTagResponse> glanceCreateTagAsync(GlanceCreateTagRequest request) {
         return hcClient.asyncInvokeHttp(request, ImsMeta.glanceCreateTag);
     }
@@ -1299,6 +1304,7 @@ public class ImsAsyncClient {
      * @param request GlanceCreateTagRequest 请求对象
      * @return AsyncInvoker<GlanceCreateTagRequest, GlanceCreateTagResponse>
      */
+    @Deprecated
     public AsyncInvoker<GlanceCreateTagRequest, GlanceCreateTagResponse> glanceCreateTagAsyncInvoker(
         GlanceCreateTagRequest request) {
         return new AsyncInvoker<>(request, ImsMeta.glanceCreateTag, hcClient);
@@ -1343,6 +1349,7 @@ public class ImsAsyncClient {
      * @param request GlanceDeleteImageMemberRequest 请求对象
      * @return CompletableFuture<GlanceDeleteImageMemberResponse>
      */
+    @Deprecated
     public CompletableFuture<GlanceDeleteImageMemberResponse> glanceDeleteImageMemberAsync(
         GlanceDeleteImageMemberRequest request) {
         return hcClient.asyncInvokeHttp(request, ImsMeta.glanceDeleteImageMember);
@@ -1358,6 +1365,7 @@ public class ImsAsyncClient {
      * @param request GlanceDeleteImageMemberRequest 请求对象
      * @return AsyncInvoker<GlanceDeleteImageMemberRequest, GlanceDeleteImageMemberResponse>
      */
+    @Deprecated
     public AsyncInvoker<GlanceDeleteImageMemberRequest, GlanceDeleteImageMemberResponse> glanceDeleteImageMemberAsyncInvoker(
         GlanceDeleteImageMemberRequest request) {
         return new AsyncInvoker<>(request, ImsMeta.glanceDeleteImageMember, hcClient);
@@ -1373,6 +1381,7 @@ public class ImsAsyncClient {
      * @param request GlanceDeleteTagRequest 请求对象
      * @return CompletableFuture<GlanceDeleteTagResponse>
      */
+    @Deprecated
     public CompletableFuture<GlanceDeleteTagResponse> glanceDeleteTagAsync(GlanceDeleteTagRequest request) {
         return hcClient.asyncInvokeHttp(request, ImsMeta.glanceDeleteTag);
     }
@@ -1387,6 +1396,7 @@ public class ImsAsyncClient {
      * @param request GlanceDeleteTagRequest 请求对象
      * @return AsyncInvoker<GlanceDeleteTagRequest, GlanceDeleteTagResponse>
      */
+    @Deprecated
     public AsyncInvoker<GlanceDeleteTagRequest, GlanceDeleteTagResponse> glanceDeleteTagAsyncInvoker(
         GlanceDeleteTagRequest request) {
         return new AsyncInvoker<>(request, ImsMeta.glanceDeleteTag, hcClient);
@@ -1496,6 +1506,7 @@ public class ImsAsyncClient {
      * @param request GlanceListImagesRequest 请求对象
      * @return CompletableFuture<GlanceListImagesResponse>
      */
+    @Deprecated
     public CompletableFuture<GlanceListImagesResponse> glanceListImagesAsync(GlanceListImagesRequest request) {
         return hcClient.asyncInvokeHttp(request, ImsMeta.glanceListImages);
     }
@@ -1514,6 +1525,7 @@ public class ImsAsyncClient {
      * @param request GlanceListImagesRequest 请求对象
      * @return AsyncInvoker<GlanceListImagesRequest, GlanceListImagesResponse>
      */
+    @Deprecated
     public AsyncInvoker<GlanceListImagesRequest, GlanceListImagesResponse> glanceListImagesAsyncInvoker(
         GlanceListImagesRequest request) {
         return new AsyncInvoker<>(request, ImsMeta.glanceListImages, hcClient);
@@ -1529,6 +1541,7 @@ public class ImsAsyncClient {
      * @param request GlanceShowImageRequest 请求对象
      * @return CompletableFuture<GlanceShowImageResponse>
      */
+    @Deprecated
     public CompletableFuture<GlanceShowImageResponse> glanceShowImageAsync(GlanceShowImageRequest request) {
         return hcClient.asyncInvokeHttp(request, ImsMeta.glanceShowImage);
     }
@@ -1543,6 +1556,7 @@ public class ImsAsyncClient {
      * @param request GlanceShowImageRequest 请求对象
      * @return AsyncInvoker<GlanceShowImageRequest, GlanceShowImageResponse>
      */
+    @Deprecated
     public AsyncInvoker<GlanceShowImageRequest, GlanceShowImageResponse> glanceShowImageAsyncInvoker(
         GlanceShowImageRequest request) {
         return new AsyncInvoker<>(request, ImsMeta.glanceShowImage, hcClient);
@@ -1648,6 +1662,7 @@ public class ImsAsyncClient {
      * @param request GlanceUpdateImageRequest 请求对象
      * @return CompletableFuture<GlanceUpdateImageResponse>
      */
+    @Deprecated
     public CompletableFuture<GlanceUpdateImageResponse> glanceUpdateImageAsync(GlanceUpdateImageRequest request) {
         return hcClient.asyncInvokeHttp(request, ImsMeta.glanceUpdateImage);
     }
@@ -1662,6 +1677,7 @@ public class ImsAsyncClient {
      * @param request GlanceUpdateImageRequest 请求对象
      * @return AsyncInvoker<GlanceUpdateImageRequest, GlanceUpdateImageResponse>
      */
+    @Deprecated
     public AsyncInvoker<GlanceUpdateImageRequest, GlanceUpdateImageResponse> glanceUpdateImageAsyncInvoker(
         GlanceUpdateImageRequest request) {
         return new AsyncInvoker<>(request, ImsMeta.glanceUpdateImage, hcClient);
@@ -1677,6 +1693,7 @@ public class ImsAsyncClient {
      * @param request GlanceUpdateImageMemberRequest 请求对象
      * @return CompletableFuture<GlanceUpdateImageMemberResponse>
      */
+    @Deprecated
     public CompletableFuture<GlanceUpdateImageMemberResponse> glanceUpdateImageMemberAsync(
         GlanceUpdateImageMemberRequest request) {
         return hcClient.asyncInvokeHttp(request, ImsMeta.glanceUpdateImageMember);
@@ -1692,6 +1709,7 @@ public class ImsAsyncClient {
      * @param request GlanceUpdateImageMemberRequest 请求对象
      * @return AsyncInvoker<GlanceUpdateImageMemberRequest, GlanceUpdateImageMemberResponse>
      */
+    @Deprecated
     public AsyncInvoker<GlanceUpdateImageMemberRequest, GlanceUpdateImageMemberResponse> glanceUpdateImageMemberAsyncInvoker(
         GlanceUpdateImageMemberRequest request) {
         return new AsyncInvoker<>(request, ImsMeta.glanceUpdateImageMember, hcClient);

@@ -18,6 +18,11 @@ public class PolicyTriggerPropertiesReq {
 
     private List<String> pattern = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_window_minutes")
+
+    private Integer startWindowMinutes;
+
     public PolicyTriggerPropertiesReq withPattern(List<String> pattern) {
         this.pattern = pattern;
         return this;
@@ -51,6 +56,25 @@ public class PolicyTriggerPropertiesReq {
         this.pattern = pattern;
     }
 
+    public PolicyTriggerPropertiesReq withStartWindowMinutes(Integer startWindowMinutes) {
+        this.startWindowMinutes = startWindowMinutes;
+        return this;
+    }
+
+    /**
+     * 启动时间窗口大小
+     * minimum: 60
+     * maximum: 480
+     * @return startWindowMinutes
+     */
+    public Integer getStartWindowMinutes() {
+        return startWindowMinutes;
+    }
+
+    public void setStartWindowMinutes(Integer startWindowMinutes) {
+        this.startWindowMinutes = startWindowMinutes;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -60,12 +84,13 @@ public class PolicyTriggerPropertiesReq {
             return false;
         }
         PolicyTriggerPropertiesReq that = (PolicyTriggerPropertiesReq) obj;
-        return Objects.equals(this.pattern, that.pattern);
+        return Objects.equals(this.pattern, that.pattern)
+            && Objects.equals(this.startWindowMinutes, that.startWindowMinutes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pattern);
+        return Objects.hash(pattern, startWindowMinutes);
     }
 
     @Override
@@ -73,6 +98,7 @@ public class PolicyTriggerPropertiesReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class PolicyTriggerPropertiesReq {\n");
         sb.append("    pattern: ").append(toIndentedString(pattern)).append("\n");
+        sb.append("    startWindowMinutes: ").append(toIndentedString(startWindowMinutes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

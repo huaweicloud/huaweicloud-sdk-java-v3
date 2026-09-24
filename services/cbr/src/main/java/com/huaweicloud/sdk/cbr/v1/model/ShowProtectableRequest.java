@@ -21,7 +21,7 @@ public class ShowProtectableRequest {
     private String instanceId;
 
     /**
-     * 可保护性类型
+     * **参数解释：** 可保护性类型 **约束限制：** 不涉及 **取值范围：** 可选参数为server,disk,turbo,workspace和workspace_v2 server： 云服务器类型 disk：云硬盘类型 turbo：turbo类型 workspace：workspace类型 workspace_v2：workspace_v2类型 **默认取值：** 不涉及
      */
     public static final class ProtectableTypeEnum {
 
@@ -35,12 +35,30 @@ public class ShowProtectableRequest {
          */
         public static final ProtectableTypeEnum DISK = new ProtectableTypeEnum("disk");
 
+        /**
+         * Enum TURBO for value: "turbo"
+         */
+        public static final ProtectableTypeEnum TURBO = new ProtectableTypeEnum("turbo");
+
+        /**
+         * Enum WORKSPACE for value: "workspace"
+         */
+        public static final ProtectableTypeEnum WORKSPACE = new ProtectableTypeEnum("workspace");
+
+        /**
+         * Enum WORKSPACE_V2 for value: "workspace_v2"
+         */
+        public static final ProtectableTypeEnum WORKSPACE_V2 = new ProtectableTypeEnum("workspace_v2");
+
         private static final Map<String, ProtectableTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ProtectableTypeEnum> createStaticFields() {
             Map<String, ProtectableTypeEnum> map = new HashMap<>();
             map.put("server", SERVER);
             map.put("disk", DISK);
+            map.put("turbo", TURBO);
+            map.put("workspace", WORKSPACE);
+            map.put("workspace_v2", WORKSPACE_V2);
             return Collections.unmodifiableMap(map);
         }
 
@@ -118,7 +136,7 @@ public class ShowProtectableRequest {
     }
 
     /**
-     * 可保护性类型
+     * **参数解释：** 可保护性类型 **约束限制：** 不涉及 **取值范围：** 可选参数为server,disk,turbo,workspace和workspace_v2 server： 云服务器类型 disk：云硬盘类型 turbo：turbo类型 workspace：workspace类型 workspace_v2：workspace_v2类型 **默认取值：** 不涉及
      * @return protectableType
      */
     public ProtectableTypeEnum getProtectableType() {

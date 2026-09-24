@@ -41,19 +41,9 @@ public class UpdateAlgorithmDto {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "command")
-
-    private String command;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_at")
 
     private Long createAt;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "picture")
-
-    private String picture;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lang")
@@ -162,23 +152,6 @@ public class UpdateAlgorithmDto {
         this.description = description;
     }
 
-    public UpdateAlgorithmDto withCommand(String command) {
-        this.command = command;
-        return this;
-    }
-
-    /**
-     * **参数解释**： 算法默认启动指令 **约束限制**： 不涉及 **取值范围**： 长度[0,256] **默认取值**： 不涉及 
-     * @return command
-     */
-    public String getCommand() {
-        return command;
-    }
-
-    public void setCommand(String command) {
-        this.command = command;
-    }
-
     public UpdateAlgorithmDto withCreateAt(Long createAt) {
         this.createAt = createAt;
         return this;
@@ -196,23 +169,6 @@ public class UpdateAlgorithmDto {
 
     public void setCreateAt(Long createAt) {
         this.createAt = createAt;
-    }
-
-    public UpdateAlgorithmDto withPicture(String picture) {
-        this.picture = picture;
-        return this;
-    }
-
-    /**
-     * **参数解释**： 算法项目的图标 **约束限制**： 不涉及 **取值范围**： [0,65536] **默认取值**： 无 
-     * @return picture
-     */
-    public String getPicture() {
-        return picture;
-    }
-
-    public void setPicture(String picture) {
-        this.picture = picture;
     }
 
     public UpdateAlgorithmDto withLang(ProgramLang lang) {
@@ -244,13 +200,12 @@ public class UpdateAlgorithmDto {
         return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.id, that.id)
             && Objects.equals(this.name, that.name) && Objects.equals(this.buildCommand, that.buildCommand)
             && Objects.equals(this.env, that.env) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.command, that.command) && Objects.equals(this.createAt, that.createAt)
-            && Objects.equals(this.picture, that.picture) && Objects.equals(this.lang, that.lang);
+            && Objects.equals(this.createAt, that.createAt) && Objects.equals(this.lang, that.lang);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, id, name, buildCommand, env, description, command, createAt, picture, lang);
+        return Objects.hash(projectId, id, name, buildCommand, env, description, createAt, lang);
     }
 
     @Override
@@ -263,9 +218,7 @@ public class UpdateAlgorithmDto {
         sb.append("    buildCommand: ").append(toIndentedString(buildCommand)).append("\n");
         sb.append("    env: ").append(toIndentedString(env)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    command: ").append(toIndentedString(command)).append("\n");
         sb.append("    createAt: ").append(toIndentedString(createAt)).append("\n");
-        sb.append("    picture: ").append(toIndentedString(picture)).append("\n");
         sb.append("    lang: ").append(toIndentedString(lang)).append("\n");
         sb.append("}");
         return sb.toString();

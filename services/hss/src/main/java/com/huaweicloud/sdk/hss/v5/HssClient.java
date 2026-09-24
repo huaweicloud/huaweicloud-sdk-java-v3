@@ -2371,6 +2371,36 @@ public class HssClient {
     }
 
     /**
+     * 查询告警白名单生详情
+     *
+     * 查询告警白名单生详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmWhiteListHostDetailRequest 请求对象
+     * @return ListAlarmWhiteListHostDetailResponse
+     */
+    public ListAlarmWhiteListHostDetailResponse listAlarmWhiteListHostDetail(
+        ListAlarmWhiteListHostDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listAlarmWhiteListHostDetail);
+    }
+
+    /**
+     * 查询告警白名单生详情
+     *
+     * 查询告警白名单生详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmWhiteListHostDetailRequest 请求对象
+     * @return SyncInvoker<ListAlarmWhiteListHostDetailRequest, ListAlarmWhiteListHostDetailResponse>
+     */
+    public SyncInvoker<ListAlarmWhiteListHostDetailRequest, ListAlarmWhiteListHostDetailResponse> listAlarmWhiteListHostDetailInvoker(
+        ListAlarmWhiteListHostDetailRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listAlarmWhiteListHostDetail, hcClient);
+    }
+
+    /**
      * 获取软件信息的历史变动记录
      *
      * 获取软件信息的历史变动记录。
@@ -6640,6 +6670,35 @@ public class HssClient {
     }
 
     /**
+     * 编辑告警白名单生效主机
+     *
+     * 编辑告警白名单主机相关信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAlarmWhiteListHostRequest 请求对象
+     * @return UpdateAlarmWhiteListHostResponse
+     */
+    public UpdateAlarmWhiteListHostResponse updateAlarmWhiteListHost(UpdateAlarmWhiteListHostRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.updateAlarmWhiteListHost);
+    }
+
+    /**
+     * 编辑告警白名单生效主机
+     *
+     * 编辑告警白名单主机相关信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAlarmWhiteListHostRequest 请求对象
+     * @return SyncInvoker<UpdateAlarmWhiteListHostRequest, UpdateAlarmWhiteListHostResponse>
+     */
+    public SyncInvoker<UpdateAlarmWhiteListHostRequest, UpdateAlarmWhiteListHostResponse> updateAlarmWhiteListHostInvoker(
+        UpdateAlarmWhiteListHostRequest request) {
+        return new SyncInvoker<>(request, HssMeta.updateAlarmWhiteListHost, hcClient);
+    }
+
+    /**
      * 容器集群网络更新配置策略
      *
      * 容器集群网络更新配置策略。
@@ -10487,65 +10546,6 @@ public class HssClient {
     public SyncInvoker<UpdateCustomRuleConfigRequest, UpdateCustomRuleConfigResponse> updateCustomRuleConfigInvoker(
         UpdateCustomRuleConfigRequest request) {
         return new SyncInvoker<>(request, HssMeta.updateCustomRuleConfig, hcClient);
-    }
-
-    /**
-     * 查询告警白名单生详情
-     *
-     * 查询告警白名单生详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAlarmWhiteListHostDetailRequest 请求对象
-     * @return ListAlarmWhiteListHostDetailResponse
-     */
-    public ListAlarmWhiteListHostDetailResponse listAlarmWhiteListHostDetail(
-        ListAlarmWhiteListHostDetailRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.listAlarmWhiteListHostDetail);
-    }
-
-    /**
-     * 查询告警白名单生详情
-     *
-     * 查询告警白名单生详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAlarmWhiteListHostDetailRequest 请求对象
-     * @return SyncInvoker<ListAlarmWhiteListHostDetailRequest, ListAlarmWhiteListHostDetailResponse>
-     */
-    public SyncInvoker<ListAlarmWhiteListHostDetailRequest, ListAlarmWhiteListHostDetailResponse> listAlarmWhiteListHostDetailInvoker(
-        ListAlarmWhiteListHostDetailRequest request) {
-        return new SyncInvoker<>(request, HssMeta.listAlarmWhiteListHostDetail, hcClient);
-    }
-
-    /**
-     * 编辑告警白名单生效主机
-     *
-     * 编辑告警白名单主机相关信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateAlarmWhiteListHostRequest 请求对象
-     * @return UpdateAlarmWhiteListHostResponse
-     */
-    public UpdateAlarmWhiteListHostResponse updateAlarmWhiteListHost(UpdateAlarmWhiteListHostRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.updateAlarmWhiteListHost);
-    }
-
-    /**
-     * 编辑告警白名单生效主机
-     *
-     * 编辑告警白名单主机相关信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateAlarmWhiteListHostRequest 请求对象
-     * @return SyncInvoker<UpdateAlarmWhiteListHostRequest, UpdateAlarmWhiteListHostResponse>
-     */
-    public SyncInvoker<UpdateAlarmWhiteListHostRequest, UpdateAlarmWhiteListHostResponse> updateAlarmWhiteListHostInvoker(
-        UpdateAlarmWhiteListHostRequest request) {
-        return new SyncInvoker<>(request, HssMeta.updateAlarmWhiteListHost, hcClient);
     }
 
     /**

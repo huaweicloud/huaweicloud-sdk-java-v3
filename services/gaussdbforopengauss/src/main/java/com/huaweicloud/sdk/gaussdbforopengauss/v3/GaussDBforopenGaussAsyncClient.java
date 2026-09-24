@@ -293,6 +293,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlLimitTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlLimitTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlPlanActionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlPlanActionResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlRecommendRulesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlRecommendRulesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlTraceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlTraceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesRequest;
@@ -7952,6 +7954,36 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ListSqlPlanActionRequest, ListSqlPlanActionResponse> listSqlPlanActionAsyncInvoker(
         ListSqlPlanActionRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listSqlPlanAction, hcClient);
+    }
+
+    /**
+     * 获取SQL限流推荐规则
+     *
+     * 获取SQL限流推荐规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlRecommendRulesRequest 请求对象
+     * @return CompletableFuture<ListSqlRecommendRulesResponse>
+     */
+    public CompletableFuture<ListSqlRecommendRulesResponse> listSqlRecommendRulesAsync(
+        ListSqlRecommendRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listSqlRecommendRules);
+    }
+
+    /**
+     * 获取SQL限流推荐规则
+     *
+     * 获取SQL限流推荐规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlRecommendRulesRequest 请求对象
+     * @return AsyncInvoker<ListSqlRecommendRulesRequest, ListSqlRecommendRulesResponse>
+     */
+    public AsyncInvoker<ListSqlRecommendRulesRequest, ListSqlRecommendRulesResponse> listSqlRecommendRulesAsyncInvoker(
+        ListSqlRecommendRulesRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listSqlRecommendRules, hcClient);
     }
 
     /**

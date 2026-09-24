@@ -72,6 +72,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.ListRateOnPeriodDetailResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListRenewRateOnPeriodReq;
 import com.huaweicloud.sdk.bssintl.v2.model.ListRenewRateOnPeriodRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListRenewRateOnPeriodResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ListResourceSpecsPriceRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ListResourceSpecsPriceResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListResourceSpecsRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListResourceSpecsResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListResourceTypesRequest;
@@ -107,6 +109,7 @@ import com.huaweicloud.sdk.bssintl.v2.model.RenewResourceConfigReq;
 import com.huaweicloud.sdk.bssintl.v2.model.RenewalResourcesReq;
 import com.huaweicloud.sdk.bssintl.v2.model.RenewalResourcesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.RenewalResourcesResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ResourceSpecsPriceQueryReq;
 import com.huaweicloud.sdk.bssintl.v2.model.ResourceSpecsQueryReq;
 import com.huaweicloud.sdk.bssintl.v2.model.SendVerificationCodeV2Req;
 import com.huaweicloud.sdk.bssintl.v2.model.SendVerificationMessageCodeRequest;
@@ -1190,6 +1193,35 @@ public class BssintlMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResourceSpecsQueryReq.class),
             f -> f.withMarshaller(ListResourceSpecsRequest::getBody, ListResourceSpecsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResourceSpecsPriceRequest, ListResourceSpecsPriceResponse> listResourceSpecsPrice =
+        genForListResourceSpecsPrice();
+
+    private static HttpRequestDef<ListResourceSpecsPriceRequest, ListResourceSpecsPriceResponse> genForListResourceSpecsPrice() {
+        // basic
+        HttpRequestDef.Builder<ListResourceSpecsPriceRequest, ListResourceSpecsPriceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListResourceSpecsPriceRequest.class, ListResourceSpecsPriceResponse.class)
+            .withName("ListResourceSpecsPrice")
+            .withUri("/v2/products/resource-specs-price/query")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceSpecsPriceRequest::getXLanguage,
+                ListResourceSpecsPriceRequest::setXLanguage));
+        builder.<ResourceSpecsPriceQueryReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResourceSpecsPriceQueryReq.class),
+            f -> f.withMarshaller(ListResourceSpecsPriceRequest::getBody, ListResourceSpecsPriceRequest::setBody));
 
         // response
 

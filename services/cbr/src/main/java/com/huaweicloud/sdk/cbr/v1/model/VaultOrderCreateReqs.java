@@ -14,16 +14,16 @@ public class VaultOrderCreateReqs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vault")
 
-    private VaultOrder vault;
+    private PrePaidVaultOrder vault;
 
-    public VaultOrderCreateReqs withVault(VaultOrder vault) {
+    public VaultOrderCreateReqs withVault(PrePaidVaultOrder vault) {
         this.vault = vault;
         return this;
     }
 
-    public VaultOrderCreateReqs withVault(Consumer<VaultOrder> vaultSetter) {
+    public VaultOrderCreateReqs withVault(Consumer<PrePaidVaultOrder> vaultSetter) {
         if (this.vault == null) {
-            this.vault = new VaultOrder();
+            this.vault = new PrePaidVaultOrder();
             vaultSetter.accept(this.vault);
         }
 
@@ -34,11 +34,11 @@ public class VaultOrderCreateReqs {
      * Get vault
      * @return vault
      */
-    public VaultOrder getVault() {
+    public PrePaidVaultOrder getVault() {
         return vault;
     }
 
-    public void setVault(VaultOrder vault) {
+    public void setVault(PrePaidVaultOrder vault) {
         this.vault = vault;
     }
 

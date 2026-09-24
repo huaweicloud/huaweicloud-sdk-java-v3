@@ -135,7 +135,7 @@ public class ListWebAppAndServiceStatisticsRequest {
     }
 
     /**
-     * **参数解释**: 资产类型 **约束限制**: 不涉及 **取值范围**: - web-app：web应用 - web-service：web服务 - database：数据库  **默认取值**: 不涉及 
+     * **参数解释**: 资产类型 **约束限制**: 不涉及 **取值范围**: - web_cms：web应用 - web_service：web服务 - database：数据库  **默认取值**: 不涉及 
      * @return catalogue
      */
     public String getCatalogue() {

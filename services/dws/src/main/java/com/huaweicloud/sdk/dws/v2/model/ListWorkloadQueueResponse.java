@@ -15,6 +15,11 @@ import java.util.function.Consumer;
 public class ListWorkloadQueueResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "queue_list")
+
+    private List<PlanStageQueue> queueList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workload_queue_name_list")
 
     private List<String> workloadQueueNameList = null;
@@ -24,10 +29,38 @@ public class ListWorkloadQueueResponse extends SdkResponse {
 
     private Integer workloadResCode;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "workload_res_str")
+    public ListWorkloadQueueResponse withQueueList(List<PlanStageQueue> queueList) {
+        this.queueList = queueList;
+        return this;
+    }
 
-    private String workloadResStr;
+    public ListWorkloadQueueResponse addQueueListItem(PlanStageQueue queueListItem) {
+        if (this.queueList == null) {
+            this.queueList = new ArrayList<>();
+        }
+        this.queueList.add(queueListItem);
+        return this;
+    }
+
+    public ListWorkloadQueueResponse withQueueList(Consumer<List<PlanStageQueue>> queueListSetter) {
+        if (this.queueList == null) {
+            this.queueList = new ArrayList<>();
+        }
+        queueListSetter.accept(this.queueList);
+        return this;
+    }
+
+    /**
+     * 资源池队列详情
+     * @return queueList
+     */
+    public List<PlanStageQueue> getQueueList() {
+        return queueList;
+    }
+
+    public void setQueueList(List<PlanStageQueue> queueList) {
+        this.queueList = queueList;
+    }
 
     public ListWorkloadQueueResponse withWorkloadQueueNameList(List<String> workloadQueueNameList) {
         this.workloadQueueNameList = workloadQueueNameList;
@@ -51,7 +84,7 @@ public class ListWorkloadQueueResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 资源池名称。 **取值范围**： 不涉及。
+     * 资源池名称队列
      * @return workloadQueueNameList
      */
     public List<String> getWorkloadQueueNameList() {
@@ -68,7 +101,7 @@ public class ListWorkloadQueueResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 结果状态码。 **取值范围**： 不涉及。
+     * 资源池队列查询返回码
      * @return workloadResCode
      */
     public Integer getWorkloadResCode() {
@@ -77,23 +110,6 @@ public class ListWorkloadQueueResponse extends SdkResponse {
 
     public void setWorkloadResCode(Integer workloadResCode) {
         this.workloadResCode = workloadResCode;
-    }
-
-    public ListWorkloadQueueResponse withWorkloadResStr(String workloadResStr) {
-        this.workloadResStr = workloadResStr;
-        return this;
-    }
-
-    /**
-     * **参数解释**： 结果描述。 **取值范围**： 不涉及。
-     * @return workloadResStr
-     */
-    public String getWorkloadResStr() {
-        return workloadResStr;
-    }
-
-    public void setWorkloadResStr(String workloadResStr) {
-        this.workloadResStr = workloadResStr;
     }
 
     @Override
@@ -105,23 +121,23 @@ public class ListWorkloadQueueResponse extends SdkResponse {
             return false;
         }
         ListWorkloadQueueResponse that = (ListWorkloadQueueResponse) obj;
-        return Objects.equals(this.workloadQueueNameList, that.workloadQueueNameList)
-            && Objects.equals(this.workloadResCode, that.workloadResCode)
-            && Objects.equals(this.workloadResStr, that.workloadResStr);
+        return Objects.equals(this.queueList, that.queueList)
+            && Objects.equals(this.workloadQueueNameList, that.workloadQueueNameList)
+            && Objects.equals(this.workloadResCode, that.workloadResCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workloadQueueNameList, workloadResCode, workloadResStr);
+        return Objects.hash(queueList, workloadQueueNameList, workloadResCode);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListWorkloadQueueResponse {\n");
+        sb.append("    queueList: ").append(toIndentedString(queueList)).append("\n");
         sb.append("    workloadQueueNameList: ").append(toIndentedString(workloadQueueNameList)).append("\n");
         sb.append("    workloadResCode: ").append(toIndentedString(workloadResCode)).append("\n");
-        sb.append("    workloadResStr: ").append(toIndentedString(workloadResStr)).append("\n");
         sb.append("}");
         return sb.toString();
     }

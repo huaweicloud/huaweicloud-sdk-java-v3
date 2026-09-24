@@ -60,6 +60,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.ListRateOnPeriodDetailRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListRateOnPeriodDetailResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListRenewRateOnPeriodRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListRenewRateOnPeriodResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ListResourceSpecsPriceRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ListResourceSpecsPriceResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListResourceSpecsRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListResourceSpecsResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListResourceTypesRequest;
@@ -1031,6 +1033,35 @@ public class BssintlClient {
     public SyncInvoker<ListResourceSpecsRequest, ListResourceSpecsResponse> listResourceSpecsInvoker(
         ListResourceSpecsRequest request) {
         return new SyncInvoker<>(request, BssintlMeta.listResourceSpecs, hcClient);
+    }
+
+    /**
+     * 查询云服务类型资源规格定价
+     *
+     * 客户或伙伴在自建平台查询云服务类型资源规格定价，辅助购买决策
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceSpecsPriceRequest 请求对象
+     * @return ListResourceSpecsPriceResponse
+     */
+    public ListResourceSpecsPriceResponse listResourceSpecsPrice(ListResourceSpecsPriceRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.listResourceSpecsPrice);
+    }
+
+    /**
+     * 查询云服务类型资源规格定价
+     *
+     * 客户或伙伴在自建平台查询云服务类型资源规格定价，辅助购买决策
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceSpecsPriceRequest 请求对象
+     * @return SyncInvoker<ListResourceSpecsPriceRequest, ListResourceSpecsPriceResponse>
+     */
+    public SyncInvoker<ListResourceSpecsPriceRequest, ListResourceSpecsPriceResponse> listResourceSpecsPriceInvoker(
+        ListResourceSpecsPriceRequest request) {
+        return new SyncInvoker<>(request, BssintlMeta.listResourceSpecsPrice, hcClient);
     }
 
     /**

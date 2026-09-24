@@ -4755,6 +4755,18 @@ public class AgentArtsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListOpsEvaluatorVersionsRequest::getEvaluatorId,
                 ListOpsEvaluatorVersionsRequest::setEvaluatorId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsEvaluatorVersionsRequest::getOffset,
+                ListOpsEvaluatorVersionsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOpsEvaluatorVersionsRequest::getLimit,
+                ListOpsEvaluatorVersionsRequest::setLimit));
 
         // response
 
@@ -6631,12 +6643,6 @@ public class AgentArtsMeta {
                 BatchAddOpsEvaluationTaskCustomLabelsRequest::setBody));
 
         // response
-        builder.<Object>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            Object.class,
-            f -> f.withMarshaller(BatchAddOpsEvaluationTaskCustomLabelsResponse::getBody,
-                BatchAddOpsEvaluationTaskCustomLabelsResponse::setBody));
 
         return builder.build();
     }
@@ -6664,12 +6670,6 @@ public class AgentArtsMeta {
                 BatchDeleteOpsEvaluationTasksRequest::setBody));
 
         // response
-        builder.<Object>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            Object.class,
-            f -> f.withMarshaller(BatchDeleteOpsEvaluationTasksResponse::getBody,
-                BatchDeleteOpsEvaluationTasksResponse::setBody));
 
         return builder.build();
     }
@@ -6909,12 +6909,6 @@ public class AgentArtsMeta {
                 ListOpsEvaluationTaskCustomLabelValuesRequest::setLimit));
 
         // response
-        builder.<Object>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            Object.class,
-            f -> f.withMarshaller(ListOpsEvaluationTaskCustomLabelValuesResponse::getBody,
-                ListOpsEvaluationTaskCustomLabelValuesResponse::setBody));
 
         return builder.build();
     }
@@ -6954,12 +6948,6 @@ public class AgentArtsMeta {
                 ListOpsEvaluationTaskCustomLabelsRequest::setLimit));
 
         // response
-        builder.<Object>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            Object.class,
-            f -> f.withMarshaller(ListOpsEvaluationTaskCustomLabelsResponse::getBody,
-                ListOpsEvaluationTaskCustomLabelsResponse::setBody));
 
         return builder.build();
     }
@@ -7016,11 +7004,6 @@ public class AgentArtsMeta {
             f -> f.withMarshaller(ListOpsEvaluationTasksRequest::getBody, ListOpsEvaluationTasksRequest::setBody));
 
         // response
-        builder.<Object>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            Object.class,
-            f -> f.withMarshaller(ListOpsEvaluationTasksResponse::getBody, ListOpsEvaluationTasksResponse::setBody));
 
         return builder.build();
     }
@@ -7049,11 +7032,6 @@ public class AgentArtsMeta {
             f -> f.withMarshaller(ShowOpsEvaluationTaskRequest::getName, ShowOpsEvaluationTaskRequest::setName));
 
         // response
-        builder.<Object>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            Object.class,
-            f -> f.withMarshaller(ShowOpsEvaluationTaskResponse::getBody, ShowOpsEvaluationTaskResponse::setBody));
 
         return builder.build();
     }
@@ -7135,12 +7113,6 @@ public class AgentArtsMeta {
                 ShowOpsEvaluationTaskChartsScoreStatsRequest::setTaskId));
 
         // response
-        builder.<Object>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            Object.class,
-            f -> f.withMarshaller(ShowOpsEvaluationTaskChartsScoreStatsResponse::getBody,
-                ShowOpsEvaluationTaskChartsScoreStatsResponse::setBody));
 
         return builder.build();
     }
@@ -7168,12 +7140,6 @@ public class AgentArtsMeta {
                 ShowOpsEvaluationTaskChartsStatusRequest::setTaskId));
 
         // response
-        builder.<Object>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            Object.class,
-            f -> f.withMarshaller(ShowOpsEvaluationTaskChartsStatusResponse::getBody,
-                ShowOpsEvaluationTaskChartsStatusResponse::setBody));
 
         return builder.build();
     }

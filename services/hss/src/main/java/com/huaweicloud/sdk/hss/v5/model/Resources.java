@@ -26,7 +26,7 @@ public class Resources {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "images")
 
-    private String images;
+    private List<String> images = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
@@ -72,20 +72,36 @@ public class Resources {
         this.clusterName = clusterName;
     }
 
-    public Resources withImages(String images) {
+    public Resources withImages(List<String> images) {
         this.images = images;
         return this;
     }
 
+    public Resources addImagesItem(String imagesItem) {
+        if (this.images == null) {
+            this.images = new ArrayList<>();
+        }
+        this.images.add(imagesItem);
+        return this;
+    }
+
+    public Resources withImages(Consumer<List<String>> imagesSetter) {
+        if (this.images == null) {
+            this.images = new ArrayList<>();
+        }
+        imagesSetter.accept(this.images);
+        return this;
+    }
+
     /**
-     * **参数解释**： 镜像 **取值范围**： 不涉及 
+     * **参数解释**： 镜像列表 **取值范围**： 不涉及 
      * @return images
      */
-    public String getImages() {
+    public List<String> getImages() {
         return images;
     }
 
-    public void setImages(String images) {
+    public void setImages(List<String> images) {
         this.images = images;
     }
 

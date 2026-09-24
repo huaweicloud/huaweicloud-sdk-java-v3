@@ -23,6 +23,11 @@ public class PolicyTriggerPropertiesResp {
 
     private String startTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_window_minutes")
+
+    private Integer startWindowMinutes;
+
     public PolicyTriggerPropertiesResp withPattern(List<String> pattern) {
         this.pattern = pattern;
         return this;
@@ -73,6 +78,25 @@ public class PolicyTriggerPropertiesResp {
         this.startTime = startTime;
     }
 
+    public PolicyTriggerPropertiesResp withStartWindowMinutes(Integer startWindowMinutes) {
+        this.startWindowMinutes = startWindowMinutes;
+        return this;
+    }
+
+    /**
+     * 启动时间窗口大小
+     * minimum: 60
+     * maximum: 480
+     * @return startWindowMinutes
+     */
+    public Integer getStartWindowMinutes() {
+        return startWindowMinutes;
+    }
+
+    public void setStartWindowMinutes(Integer startWindowMinutes) {
+        this.startWindowMinutes = startWindowMinutes;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -82,12 +106,13 @@ public class PolicyTriggerPropertiesResp {
             return false;
         }
         PolicyTriggerPropertiesResp that = (PolicyTriggerPropertiesResp) obj;
-        return Objects.equals(this.pattern, that.pattern) && Objects.equals(this.startTime, that.startTime);
+        return Objects.equals(this.pattern, that.pattern) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.startWindowMinutes, that.startWindowMinutes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pattern, startTime);
+        return Objects.hash(pattern, startTime, startWindowMinutes);
     }
 
     @Override
@@ -96,6 +121,7 @@ public class PolicyTriggerPropertiesResp {
         sb.append("class PolicyTriggerPropertiesResp {\n");
         sb.append("    pattern: ").append(toIndentedString(pattern)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    startWindowMinutes: ").append(toIndentedString(startWindowMinutes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

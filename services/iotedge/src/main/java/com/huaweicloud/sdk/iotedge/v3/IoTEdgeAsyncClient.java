@@ -76,7 +76,7 @@ public class IoTEdgeAsyncClient {
     /**
      * 创建应用模板
      *
-     * 应用服务器可调用此接口为创建批量处理任务，对多个设备进行批量操作。当前支持批量软固件升级、批量创建设备、批量删除设备、批量冻结、批量解冻、批量下发同步命令、批量下发异步命令。
+     * 应用服务器可调用此接口创建应用模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -90,7 +90,7 @@ public class IoTEdgeAsyncClient {
     /**
      * 创建应用模板
      *
-     * 应用服务器可调用此接口为创建批量处理任务，对多个设备进行批量操作。当前支持批量软固件升级、批量创建设备、批量删除设备、批量冻结、批量解冻、批量下发同步命令、批量下发异步命令。
+     * 应用服务器可调用此接口创建应用模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -160,7 +160,7 @@ public class IoTEdgeAsyncClient {
     /**
      * 查询应用模板详情
      *
-     * 应用服务器可调用此接口查询物联网平台中指定批量任务的信息，包括任务内容、任务状态、任务完成情况统计以及子任务列表等。
+     * 应用服务器可调用此接口查询应用模板详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -174,7 +174,7 @@ public class IoTEdgeAsyncClient {
     /**
      * 查询应用模板详情
      *
-     * 应用服务器可调用此接口查询物联网平台中指定批量任务的信息，包括任务内容、任务状态、任务完成情况统计以及子任务列表等。
+     * 应用服务器可调用此接口查询应用模板详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -188,7 +188,7 @@ public class IoTEdgeAsyncClient {
     /**
      * 创建应用实例
      *
-     * 应用服务器可调用此接口为创建应用实例。
+     * 应用服务器可调用此接口创建应用实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -202,7 +202,7 @@ public class IoTEdgeAsyncClient {
     /**
      * 创建应用实例
      *
-     * 应用服务器可调用此接口为创建应用实例。
+     * 应用服务器可调用此接口创建应用实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -217,7 +217,7 @@ public class IoTEdgeAsyncClient {
     /**
      * 删除应用实例
      *
-     * 应用服务器可调用此接口为删除应用实例。
+     * 应用服务器可调用此接口删除应用实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -231,7 +231,7 @@ public class IoTEdgeAsyncClient {
     /**
      * 删除应用实例
      *
-     * 应用服务器可调用此接口为删除应用实例。
+     * 应用服务器可调用此接口删除应用实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -305,7 +305,7 @@ public class IoTEdgeAsyncClient {
     /**
      * 更新应用实例
      *
-     * 应用服务器可调用此接口为更新应用实例。
+     * 应用服务器可调用此接口更新应用实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -319,7 +319,7 @@ public class IoTEdgeAsyncClient {
     /**
      * 更新应用实例
      *
-     * 应用服务器可调用此接口为更新应用实例。
+     * 应用服务器可调用此接口更新应用实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -334,7 +334,7 @@ public class IoTEdgeAsyncClient {
     /**
      * 创建应用版本
      *
-     * 应用服务器可调用此接口为创建应用版本。
+     * 应用服务器可调用此接口创建应用版本。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -348,7 +348,7 @@ public class IoTEdgeAsyncClient {
     /**
      * 创建应用版本
      *
-     * 应用服务器可调用此接口为创建应用版本。
+     * 应用服务器可调用此接口创建应用版本。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -508,7 +508,7 @@ public class IoTEdgeAsyncClient {
     /**
      * 创建边缘集群
      *
-     * 应用服务器可调用此接口为创建边缘集群。
+     * 应用服务器可调用此接口创建边缘集群。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -522,7 +522,7 @@ public class IoTEdgeAsyncClient {
     /**
      * 创建边缘集群
      *
-     * 应用服务器可调用此接口为创建边缘集群。
+     * 应用服务器可调用此接口创建边缘集群。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

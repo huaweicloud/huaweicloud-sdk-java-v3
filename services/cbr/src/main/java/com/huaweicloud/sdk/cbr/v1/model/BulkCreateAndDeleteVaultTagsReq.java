@@ -21,7 +21,7 @@ public class BulkCreateAndDeleteVaultTagsReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<Tag> tags = null;
+    private List<BulkCreateAndDeleteTags> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sys_tags")
@@ -103,12 +103,12 @@ public class BulkCreateAndDeleteVaultTagsReq {
 
     private ActionEnum action;
 
-    public BulkCreateAndDeleteVaultTagsReq withTags(List<Tag> tags) {
+    public BulkCreateAndDeleteVaultTagsReq withTags(List<BulkCreateAndDeleteTags> tags) {
         this.tags = tags;
         return this;
     }
 
-    public BulkCreateAndDeleteVaultTagsReq addTagsItem(Tag tagsItem) {
+    public BulkCreateAndDeleteVaultTagsReq addTagsItem(BulkCreateAndDeleteTags tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -116,7 +116,7 @@ public class BulkCreateAndDeleteVaultTagsReq {
         return this;
     }
 
-    public BulkCreateAndDeleteVaultTagsReq withTags(Consumer<List<Tag>> tagsSetter) {
+    public BulkCreateAndDeleteVaultTagsReq withTags(Consumer<List<BulkCreateAndDeleteTags>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -128,11 +128,11 @@ public class BulkCreateAndDeleteVaultTagsReq {
      * 标签列表。  tags不允许为空列表。  tags中最多包含10个key。  tags中key不允许重复。
      * @return tags
      */
-    public List<Tag> getTags() {
+    public List<BulkCreateAndDeleteTags> getTags() {
         return tags;
     }
 
-    public void setTags(List<Tag> tags) {
+    public void setTags(List<BulkCreateAndDeleteTags> tags) {
         this.tags = tags;
     }
 

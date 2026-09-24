@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,42 +13,34 @@ import java.util.function.Consumer;
 public class ShowOpsEvaluatorVersionResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "versions")
+    @JsonProperty(value = "evaluator")
 
-    private List<ListOpsEvaluatorVersionsResponseBodyVersions> versions = null;
+    private OpsListEvaluatorsInfo evaluator;
 
-    public ShowOpsEvaluatorVersionResponse withVersions(List<ListOpsEvaluatorVersionsResponseBodyVersions> versions) {
-        this.versions = versions;
+    public ShowOpsEvaluatorVersionResponse withEvaluator(OpsListEvaluatorsInfo evaluator) {
+        this.evaluator = evaluator;
         return this;
     }
 
-    public ShowOpsEvaluatorVersionResponse addVersionsItem(ListOpsEvaluatorVersionsResponseBodyVersions versionsItem) {
-        if (this.versions == null) {
-            this.versions = new ArrayList<>();
+    public ShowOpsEvaluatorVersionResponse withEvaluator(Consumer<OpsListEvaluatorsInfo> evaluatorSetter) {
+        if (this.evaluator == null) {
+            this.evaluator = new OpsListEvaluatorsInfo();
+            evaluatorSetter.accept(this.evaluator);
         }
-        this.versions.add(versionsItem);
-        return this;
-    }
 
-    public ShowOpsEvaluatorVersionResponse withVersions(
-        Consumer<List<ListOpsEvaluatorVersionsResponseBodyVersions>> versionsSetter) {
-        if (this.versions == null) {
-            this.versions = new ArrayList<>();
-        }
-        versionsSetter.accept(this.versions);
         return this;
     }
 
     /**
-     * **参数解释：** 评估器的版本列表，包含该评估器下所有已发布的历史版本及配置详情。 **取值范围：** 不涉及。 
-     * @return versions
+     * Get evaluator
+     * @return evaluator
      */
-    public List<ListOpsEvaluatorVersionsResponseBodyVersions> getVersions() {
-        return versions;
+    public OpsListEvaluatorsInfo getEvaluator() {
+        return evaluator;
     }
 
-    public void setVersions(List<ListOpsEvaluatorVersionsResponseBodyVersions> versions) {
-        this.versions = versions;
+    public void setEvaluator(OpsListEvaluatorsInfo evaluator) {
+        this.evaluator = evaluator;
     }
 
     @Override
@@ -62,19 +52,19 @@ public class ShowOpsEvaluatorVersionResponse extends SdkResponse {
             return false;
         }
         ShowOpsEvaluatorVersionResponse that = (ShowOpsEvaluatorVersionResponse) obj;
-        return Objects.equals(this.versions, that.versions);
+        return Objects.equals(this.evaluator, that.evaluator);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(versions);
+        return Objects.hash(evaluator);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowOpsEvaluatorVersionResponse {\n");
-        sb.append("    versions: ").append(toIndentedString(versions)).append("\n");
+        sb.append("    evaluator: ").append(toIndentedString(evaluator)).append("\n");
         sb.append("}");
         return sb.toString();
     }

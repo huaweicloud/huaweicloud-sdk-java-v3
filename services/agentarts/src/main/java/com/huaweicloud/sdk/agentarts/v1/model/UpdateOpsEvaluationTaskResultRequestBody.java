@@ -36,6 +36,11 @@ public class UpdateOpsEvaluationTaskResultRequestBody {
 
     private UpdateOpsEvaluationTaskResultRequestBodyCorrection correction;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "revoke")
+
+    private Boolean revoke;
+
     public UpdateOpsEvaluationTaskResultRequestBody withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -132,6 +137,23 @@ public class UpdateOpsEvaluationTaskResultRequestBody {
         this.correction = correction;
     }
 
+    public UpdateOpsEvaluationTaskResultRequestBody withRevoke(Boolean revoke) {
+        this.revoke = revoke;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否撤销已存在的校正。为true时撤销校正。 **约束限制：** 不涉及。 **取值范围：** - true：撤销校正 - false：应用校正 **默认取值：** 不涉及。 
+     * @return revoke
+     */
+    public Boolean getRevoke() {
+        return revoke;
+    }
+
+    public void setRevoke(Boolean revoke) {
+        this.revoke = revoke;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -143,12 +165,12 @@ public class UpdateOpsEvaluationTaskResultRequestBody {
         UpdateOpsEvaluationTaskResultRequestBody that = (UpdateOpsEvaluationTaskResultRequestBody) obj;
         return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.evaluatorId, that.evaluatorId)
             && Objects.equals(this.evaluatorVersion, that.evaluatorVersion) && Objects.equals(this.itemId, that.itemId)
-            && Objects.equals(this.correction, that.correction);
+            && Objects.equals(this.correction, that.correction) && Objects.equals(this.revoke, that.revoke);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, evaluatorId, evaluatorVersion, itemId, correction);
+        return Objects.hash(taskId, evaluatorId, evaluatorVersion, itemId, correction, revoke);
     }
 
     @Override
@@ -160,6 +182,7 @@ public class UpdateOpsEvaluationTaskResultRequestBody {
         sb.append("    evaluatorVersion: ").append(toIndentedString(evaluatorVersion)).append("\n");
         sb.append("    itemId: ").append(toIndentedString(itemId)).append("\n");
         sb.append("    correction: ").append(toIndentedString(correction)).append("\n");
+        sb.append("    revoke: ").append(toIndentedString(revoke)).append("\n");
         sb.append("}");
         return sb.toString();
     }
