@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * **参数解释：**  容器日志文件配置。 **约束限制：**  数量上限为10个。
+ * **参数解释：** 容器日志文件配置。 **约束限制：** 数量上限为10个。
  */
 public class LtsFiles {
 

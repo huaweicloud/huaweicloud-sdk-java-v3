@@ -34,6 +34,11 @@ public class BasicConfig {
     private Integer priority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "taskPriority")
+
+    private Integer taskPriority;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executeUser")
 
     private String executeUser;
@@ -110,7 +115,7 @@ public class BasicConfig {
     }
 
     /**
-     * 作业优先级
+     * 执行优先级
      * @return priority
      */
     public Integer getPriority() {
@@ -119,6 +124,23 @@ public class BasicConfig {
 
     public void setPriority(Integer priority) {
         this.priority = priority;
+    }
+
+    public BasicConfig withTaskPriority(Integer taskPriority) {
+        this.taskPriority = taskPriority;
+        return this;
+    }
+
+    /**
+     * 作业优先级，取值范围[0, 2]，默认值是0。0代表高优先级，1代表中优先级，2代表低优先级。
+     * @return taskPriority
+     */
+    public Integer getTaskPriority() {
+        return taskPriority;
+    }
+
+    public void setTaskPriority(Integer taskPriority) {
+        this.taskPriority = taskPriority;
     }
 
     public BasicConfig withExecuteUser(String executeUser) {
@@ -216,14 +238,23 @@ public class BasicConfig {
         BasicConfig that = (BasicConfig) obj;
         return Objects.equals(this.owner, that.owner) && Objects.equals(this.agency, that.agency)
             && Objects.equals(this.isIgnoreWaiting, that.isIgnoreWaiting)
-            && Objects.equals(this.priority, that.priority) && Objects.equals(this.executeUser, that.executeUser)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.taskPriority, that.taskPriority)
+            && Objects.equals(this.executeUser, that.executeUser)
             && Objects.equals(this.instanceTimeout, that.instanceTimeout)
             && Objects.equals(this.customFields, that.customFields) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(owner, agency, isIgnoreWaiting, priority, executeUser, instanceTimeout, customFields, tags);
+        return Objects.hash(owner,
+            agency,
+            isIgnoreWaiting,
+            priority,
+            taskPriority,
+            executeUser,
+            instanceTimeout,
+            customFields,
+            tags);
     }
 
     @Override
@@ -234,6 +265,7 @@ public class BasicConfig {
         sb.append("    agency: ").append(toIndentedString(agency)).append("\n");
         sb.append("    isIgnoreWaiting: ").append(toIndentedString(isIgnoreWaiting)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+        sb.append("    taskPriority: ").append(toIndentedString(taskPriority)).append("\n");
         sb.append("    executeUser: ").append(toIndentedString(executeUser)).append("\n");
         sb.append("    instanceTimeout: ").append(toIndentedString(instanceTimeout)).append("\n");
         sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");

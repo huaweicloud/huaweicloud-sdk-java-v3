@@ -143,7 +143,7 @@ public class ContinueTrainTask {
     }
 
     /**
-     * 是否续训任务。  0: 非续训, 1:续训。
+     * 是否续训任务。 0: 非续训, 1:续训。
      * minimum: 0
      * maximum: 1
      * @return restoreTraining

@@ -291,7 +291,7 @@ public class CocClient {
     /**
      * 创建改密计划
      *
-     * 创建改密计划
+     * 创建改密计划。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -305,7 +305,7 @@ public class CocClient {
     /**
      * 创建改密计划
      *
-     * 创建改密计划
+     * 创建改密计划。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -320,7 +320,7 @@ public class CocClient {
     /**
      * 主机密码重置
      *
-     * 主机密码重置
+     * 主机密码重置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -334,7 +334,7 @@ public class CocClient {
     /**
      * 主机密码重置
      *
-     * 主机密码重置
+     * 主机密码重置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -349,7 +349,7 @@ public class CocClient {
     /**
      * 回写改密结果
      *
-     * 回写改密结果
+     * 回写改密结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -363,7 +363,7 @@ public class CocClient {
     /**
      * 回写改密结果
      *
-     * 回写改密结果
+     * 回写改密结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -378,7 +378,7 @@ public class CocClient {
     /**
      * 批量清除告警
      *
-     * 清除告警
+     * 批量清除告警。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -392,7 +392,7 @@ public class CocClient {
     /**
      * 批量清除告警
      *
-     * 清除告警
+     * 批量清除告警。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -406,7 +406,7 @@ public class CocClient {
     /**
      * 自动处理告警
      *
-     * 自动处理告警
+     * 自动处理告警。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -420,7 +420,7 @@ public class CocClient {
     /**
      * 自动处理告警
      *
-     * 自动处理告警
+     * 自动处理告警。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -434,7 +434,7 @@ public class CocClient {
     /**
      * 查询告警工单历史
      *
-     * 查询告警工单历史
+     * 查询告警工单历史。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -448,7 +448,7 @@ public class CocClient {
     /**
      * 查询告警工单历史
      *
-     * 查询告警工单历史
+     * 查询告警工单历史。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -463,7 +463,7 @@ public class CocClient {
     /**
      * 查询Alarm
      *
-     * Get alarm info by id
+     * 查询Alarm。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -477,7 +477,7 @@ public class CocClient {
     /**
      * 查询Alarm
      *
-     * Get alarm info by id
+     * 查询Alarm。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -491,7 +491,7 @@ public class CocClient {
     /**
      * 批量告警转事件
      *
-     * 批量告警转事件
+     * 批量告警转事件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -505,7 +505,7 @@ public class CocClient {
     /**
      * 批量告警转事件
      *
-     * 批量告警转事件
+     * 批量告警转事件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -607,7 +607,7 @@ public class CocClient {
     /**
      * 批量创建应用，分组，组件
      *
-     * 批量创建应用，分组，组件。
+     * 批量创建应用、分组、组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -621,7 +621,7 @@ public class CocClient {
     /**
      * 批量创建应用，分组，组件
      *
-     * 批量创建应用，分组，组件。
+     * 批量创建应用、分组、组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -665,7 +665,7 @@ public class CocClient {
     /**
      * 创建应用评估任务
      *
-     * 创建应用评估任务
+     * 创建应用评估任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -679,7 +679,7 @@ public class CocClient {
     /**
      * 创建应用评估任务
      *
-     * 创建应用评估任务
+     * 创建应用评估任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -694,7 +694,7 @@ public class CocClient {
     /**
      * 分页查询评估任务列表
      *
-     * 分页查询评估任务列表
+     * 分页查询评估任务列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -708,7 +708,7 @@ public class CocClient {
     /**
      * 分页查询评估任务列表
      *
-     * 分页查询评估任务列表
+     * 分页查询评估任务列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -808,7 +808,7 @@ public class CocClient {
     /**
      * ListIncidentsHistories 获取事件单历史
      *
-     * ListIncidentsHistories  获取事件单历史
+     * ListIncidentsHistories 获取事件单历史。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -822,7 +822,7 @@ public class CocClient {
     /**
      * ListIncidentsHistories 获取事件单历史
      *
-     * ListIncidentsHistories  获取事件单历史
+     * ListIncidentsHistories 获取事件单历史。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -866,7 +866,7 @@ public class CocClient {
     /**
      * 获取节点合规性报告
      *
-     * 分页获取节点合规性报告
+     * 分页获取节点合规性报告。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -880,7 +880,7 @@ public class CocClient {
     /**
      * 获取节点合规性报告
      *
-     * 分页获取节点合规性报告
+     * 分页获取节点合规性报告。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -895,7 +895,7 @@ public class CocClient {
     /**
      * 分页获取节点补丁详情
      *
-     * 分页获取节点补丁详情
+     * 分页获取节点补丁详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -909,7 +909,7 @@ public class CocClient {
     /**
      * 分页获取节点补丁详情
      *
-     * 分页获取节点补丁详情
+     * 分页获取节点补丁详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1127,7 +1127,7 @@ public class CocClient {
     /**
      * 取消诊断任务
      *
-     * 取消诊断任务
+     * 取消诊断任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1141,7 +1141,7 @@ public class CocClient {
     /**
      * 取消诊断任务
      *
-     * 取消诊断任务
+     * 取消诊断任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1156,7 +1156,7 @@ public class CocClient {
     /**
      * 提交诊断任务
      *
-     * 提交诊断任务
+     * 提交诊断任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1170,7 +1170,7 @@ public class CocClient {
     /**
      * 提交诊断任务
      *
-     * 提交诊断任务
+     * 提交诊断任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1185,7 +1185,7 @@ public class CocClient {
     /**
      * 查询诊断记录
      *
-     * 查询诊断记录
+     * 查询诊断记录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1199,7 +1199,7 @@ public class CocClient {
     /**
      * 查询诊断记录
      *
-     * 查询诊断记录
+     * 查询诊断记录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1214,7 +1214,7 @@ public class CocClient {
     /**
      * 重试诊断任务
      *
-     * 重试诊断任务
+     * 重试诊断任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1228,7 +1228,7 @@ public class CocClient {
     /**
      * 重试诊断任务
      *
-     * 重试诊断任务
+     * 重试诊断任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1243,7 +1243,7 @@ public class CocClient {
     /**
      * 查询指定诊断记录下的指定诊断步骤的详情
      *
-     * 查询指定诊断记录下的指定诊断步骤的详情
+     * 查询指定诊断记录下的指定诊断步骤的详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1257,7 +1257,7 @@ public class CocClient {
     /**
      * 查询指定诊断记录下的指定诊断步骤的详情
      *
-     * 查询指定诊断记录下的指定诊断步骤的详情
+     * 查询指定诊断记录下的指定诊断步骤的详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1272,7 +1272,7 @@ public class CocClient {
     /**
      * 查询批量诊断任务的结果概要
      *
-     * 查询诊断任务的结果概要
+     * 查询批量诊断任务的结果概要。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1286,7 +1286,7 @@ public class CocClient {
     /**
      * 查询批量诊断任务的结果概要
      *
-     * 查询诊断任务的结果概要
+     * 查询批量诊断任务的结果概要。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1301,7 +1301,7 @@ public class CocClient {
     /**
      * 查询单个诊断任务详情
      *
-     * 查询单个诊断任务详情
+     * 查询单个诊断任务详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1315,7 +1315,7 @@ public class CocClient {
     /**
      * 查询单个诊断任务详情
      *
-     * 查询单个诊断任务详情
+     * 查询单个诊断任务详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1330,7 +1330,7 @@ public class CocClient {
     /**
      * 创建自定义作业
      *
-     * 创建自定义作业
+     * 创建自定义作业。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1344,7 +1344,7 @@ public class CocClient {
     /**
      * 创建自定义作业
      *
-     * 创建自定义作业
+     * 创建自定义作业。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1359,7 +1359,7 @@ public class CocClient {
     /**
      * 删除自定义作业
      *
-     * 删除自定义作业
+     * 删除自定义作业。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1373,7 +1373,7 @@ public class CocClient {
     /**
      * 删除自定义作业
      *
-     * 删除自定义作业
+     * 删除自定义作业。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1388,7 +1388,7 @@ public class CocClient {
     /**
      * 执行自定义作业
      *
-     * 执行自定义作业
+     * 执行自定义作业。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1402,7 +1402,7 @@ public class CocClient {
     /**
      * 执行自定义作业
      *
-     * 执行自定义作业
+     * 执行自定义作业。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1417,7 +1417,7 @@ public class CocClient {
     /**
      * 查询自定义作业详情
      *
-     * 查询自定义作业详情
+     * 查询自定义作业详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1431,7 +1431,7 @@ public class CocClient {
     /**
      * 查询自定义作业详情
      *
-     * 查询自定义作业详情
+     * 查询自定义作业详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1443,9 +1443,9 @@ public class CocClient {
     }
 
     /**
-     * 获取原子能力详细
+     * 获取原子能力详情
      *
-     * 获取原子能力详细
+     * 获取原子能力详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1457,9 +1457,9 @@ public class CocClient {
     }
 
     /**
-     * 获取原子能力详细
+     * 获取原子能力详情
      *
-     * 获取原子能力详细
+     * 获取原子能力详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1474,7 +1474,7 @@ public class CocClient {
     /**
      * 获取原子能力列表
      *
-     * 获取原子能力列表
+     * 获取原子能力列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1488,7 +1488,7 @@ public class CocClient {
     /**
      * 获取原子能力列表
      *
-     * 获取原子能力列表
+     * 获取原子能力列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1503,7 +1503,7 @@ public class CocClient {
     /**
      * 查询自定义作业列表
      *
-     * 查询自定义作业列表
+     * 查询自定义作业列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1517,7 +1517,7 @@ public class CocClient {
     /**
      * 查询自定义作业列表
      *
-     * 查询自定义作业列表
+     * 查询自定义作业列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1531,7 +1531,7 @@ public class CocClient {
     /**
      * 修改自定义作业
      *
-     * 修改自定义作业
+     * 修改自定义作业。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1545,7 +1545,7 @@ public class CocClient {
     /**
      * 修改自定义作业
      *
-     * 修改自定义作业
+     * 修改自定义作业。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1649,7 +1649,7 @@ public class CocClient {
     /**
      * 查询作业工单详情
      *
-     * 查询作业工单详情
+     * 查询作业工单详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1663,7 +1663,7 @@ public class CocClient {
     /**
      * 查询作业工单详情
      *
-     * 查询作业工单详情
+     * 查询作业工单详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1677,7 +1677,7 @@ public class CocClient {
     /**
      * 查询工单步骤批次实例
      *
-     * 查询工单步骤批次实例，如脚本分批操作里的ECS实例
+     * 查询工单步骤批次实例，如脚本分批操作里的ECS实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1691,7 +1691,7 @@ public class CocClient {
     /**
      * 查询工单步骤批次实例
      *
-     * 查询工单步骤批次实例，如脚本分批操作里的ECS实例
+     * 查询工单步骤批次实例，如脚本分批操作里的ECS实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1706,7 +1706,7 @@ public class CocClient {
     /**
      * 查询工单步骤详情
      *
-     * 查询工单步骤详情
+     * 查询工单步骤详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1720,7 +1720,7 @@ public class CocClient {
     /**
      * 查询工单步骤详情
      *
-     * 查询工单步骤详情
+     * 查询工单步骤详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1735,7 +1735,7 @@ public class CocClient {
     /**
      * 查询作业工单列表
      *
-     * 查询作业工单列表
+     * 查询作业工单列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1749,7 +1749,7 @@ public class CocClient {
     /**
      * 查询作业工单列表
      *
-     * 查询作业工单列表
+     * 查询作业工单列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1764,7 +1764,7 @@ public class CocClient {
     /**
      * 操作工单
      *
-     * 操作工单
+     * 操作工单。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1778,7 +1778,7 @@ public class CocClient {
     /**
      * 操作工单
      *
-     * 操作工单
+     * 操作工单。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1966,7 +1966,7 @@ public class CocClient {
     /**
      * GetCocTicketOperationHistories 获取事件单历史
      *
-     * ListCocTicketOperationHistories  获取事件单历史
+     * ListCocTicketOperationHistories 获取事件单历史。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1981,7 +1981,7 @@ public class CocClient {
     /**
      * GetCocTicketOperationHistories 获取事件单历史
      *
-     * ListCocTicketOperationHistories  获取事件单历史
+     * ListCocTicketOperationHistories 获取事件单历史。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2023,9 +2023,9 @@ public class CocClient {
     }
 
     /**
-     * GetCocIncidentDetail 获取事件单详细
+     * GetCocIncidentDetail 获取事件单详情
      *
-     * ShowCocIncidentDetail  获取事件单详细
+     * ShowCocIncidentDetail 获取事件单详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2037,9 +2037,9 @@ public class CocClient {
     }
 
     /**
-     * GetCocIncidentDetail 获取事件单详细
+     * GetCocIncidentDetail 获取事件单详情
      *
-     * ShowCocIncidentDetail  获取事件单详细
+     * ShowCocIncidentDetail 获取事件单详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2081,9 +2081,9 @@ public class CocClient {
     }
 
     /**
-     * GetCocIssuesDetail 获取事件单详细
+     * GetCocIssuesDetail 获取问题单详情
      *
-     * ShowCocIssuesDetail  获取事件单详细
+     * ShowCocIssuesDetail 获取问题单详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2095,9 +2095,9 @@ public class CocClient {
     }
 
     /**
-     * GetCocIssuesDetail 获取事件单详细
+     * GetCocIssuesDetail 获取问题单详情
      *
-     * ShowCocIssuesDetail  获取事件单详细
+     * ShowCocIssuesDetail 获取问题单详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2285,7 +2285,7 @@ public class CocClient {
     /**
      * 查询Ticket
      *
-     * Get Ticket info by id
+     * 查询Ticket。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2299,7 +2299,7 @@ public class CocClient {
     /**
      * 查询Ticket
      *
-     * Get Ticket info by id
+     * 查询Ticket。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2372,7 +2372,7 @@ public class CocClient {
     /**
      * 查询分组
      *
-     * 查询应用。
+     * 查询分组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2386,7 +2386,7 @@ public class CocClient {
     /**
      * 查询分组
      *
-     * 查询应用。
+     * 查询分组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2815,7 +2815,7 @@ public class CocClient {
     /**
      * 查询用户各种资源总数
      *
-     * 查询用户各种资源总数
+     * 查询用户各种资源总数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2829,7 +2829,7 @@ public class CocClient {
     /**
      * 查询用户各种资源总数
      *
-     * 查询用户各种资源总数
+     * 查询用户各种资源总数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2873,7 +2873,7 @@ public class CocClient {
     /**
      * 查询用户所有资源
      *
-     * 查询租户所有资源：
+     * 查询租户所有资源。
      *  - 查询租户所有资源等相关信息，便于租户详细了解资源总体情况。
      *  - 请求参数provider（云服务名称），type（云资源类型），limit（查询条数）必填，单次最大查询条数：500。
      *  - 返回信息包括：资源ID，资源名称，云服务名称，资源类型，项目ID，租户ID，区域ID，企业项目ID，资源标签，资源详细属性，资源ingest属性，uniagentID，uniagent状态，是否托管，是否可运维。
@@ -2890,7 +2890,7 @@ public class CocClient {
     /**
      * 查询用户所有资源
      *
-     * 查询租户所有资源：
+     * 查询租户所有资源。
      *  - 查询租户所有资源等相关信息，便于租户详细了解资源总体情况。
      *  - 请求参数provider（云服务名称），type（云资源类型），limit（查询条数）必填，单次最大查询条数：500。
      *  - 返回信息包括：资源ID，资源名称，云服务名称，资源类型，项目ID，租户ID，区域ID，企业项目ID，资源标签，资源详细属性，资源ingest属性，uniagentID，uniagent状态，是否托管，是否可运维。
@@ -2907,7 +2907,7 @@ public class CocClient {
     /**
      * 从RMS同步用户所有资源
      *
-     * 从RMS同步用户所有资源
+     * 从RMS同步用户所有资源。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2921,7 +2921,7 @@ public class CocClient {
     /**
      * 从RMS同步用户所有资源
      *
-     * 从RMS同步用户所有资源
+     * 从RMS同步用户所有资源。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2964,7 +2964,7 @@ public class CocClient {
     /**
      * 查询资源标签列表
      *
-     * 查询资源标签列表
+     * 查询资源标签列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2978,7 +2978,7 @@ public class CocClient {
     /**
      * 查询资源标签列表
      *
-     * 查询资源标签列表
+     * 查询资源标签列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2993,7 +2993,7 @@ public class CocClient {
     /**
      * 更新资源标签
      *
-     * 更新资源标签
+     * 更新资源标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3007,7 +3007,7 @@ public class CocClient {
     /**
      * 更新资源标签
      *
-     * 更新资源标签
+     * 更新资源标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3284,7 +3284,7 @@ public class CocClient {
     /**
      * 新建定时运维
      *
-     * Create Scheduled Task
+     * 创建定时运维任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3298,7 +3298,7 @@ public class CocClient {
     /**
      * 新建定时运维
      *
-     * Create Scheduled Task
+     * 创建定时运维任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3313,7 +3313,7 @@ public class CocClient {
     /**
      * 删除ScheduledTask
      *
-     * Delete scheduled task by id
+     * 根据ID删除定时运维任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3327,7 +3327,7 @@ public class CocClient {
     /**
      * 删除ScheduledTask
      *
-     * Delete scheduled task by id
+     * 根据ID删除定时运维任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3342,7 +3342,7 @@ public class CocClient {
     /**
      * 禁用ScheduledTask
      *
-     * Disable scheduled task by id
+     * 根据ID禁用定时运维任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3356,7 +3356,7 @@ public class CocClient {
     /**
      * 禁用ScheduledTask
      *
-     * Disable scheduled task by id
+     * 根据ID禁用定时运维任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3371,7 +3371,7 @@ public class CocClient {
     /**
      * 启用ScheduledTask
      *
-     * Enable scheduled task by id
+     * 根据ID启用定时运维任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3385,7 +3385,7 @@ public class CocClient {
     /**
      * 启用ScheduledTask
      *
-     * Enable scheduled task by id
+     * 根据ID启用定时运维任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3400,7 +3400,7 @@ public class CocClient {
     /**
      * 查询ScheduledTask列表
      *
-     * Get ScheduledTask infos
+     * 查询定时运维任务列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3414,7 +3414,7 @@ public class CocClient {
     /**
      * 查询ScheduledTask列表
      *
-     * Get ScheduledTask infos
+     * 查询定时运维任务列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3429,7 +3429,7 @@ public class CocClient {
     /**
      * 查询定时运维历史记录
      *
-     * get scheduled task history list
+     * 查询定时运维历史记录列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3443,7 +3443,7 @@ public class CocClient {
     /**
      * 查询定时运维历史记录
      *
-     * get scheduled task history list
+     * 查询定时运维历史记录列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3458,7 +3458,7 @@ public class CocClient {
     /**
      * 查询ScheduledTask
      *
-     * Get ScheduledTask info by id
+     * 根据ID查询定时运维任务详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3472,7 +3472,7 @@ public class CocClient {
     /**
      * 查询ScheduledTask
      *
-     * Get ScheduledTask info by id
+     * 根据ID查询定时运维任务详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3487,7 +3487,7 @@ public class CocClient {
     /**
      * 修改ScheduledTask
      *
-     * Update ScheduledTask
+     * 修改定时运维任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3501,7 +3501,7 @@ public class CocClient {
     /**
      * 修改ScheduledTask
      *
-     * Update ScheduledTask
+     * 修改定时运维任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3765,7 +3765,7 @@ public class CocClient {
     /**
      * 创建脚本
      *
-     * 创建作业脚本：自定义脚本
+     * 创建作业脚本：自定义脚本。
      * - 脚本有标签属性，表示是高危脚本。创建时候不需要对脚本进行是否是高危的二次校验。
      * - 进行租户隔离；北向接口创建的脚本，审批人字段不填写，默认不需要审批
      * - 约束条件：
@@ -3790,7 +3790,7 @@ public class CocClient {
     /**
      * 创建脚本
      *
-     * 创建作业脚本：自定义脚本
+     * 创建作业脚本：自定义脚本。
      * - 脚本有标签属性，表示是高危脚本。创建时候不需要对脚本进行是否是高危的二次校验。
      * - 进行租户隔离；北向接口创建的脚本，审批人字段不填写，默认不需要审批
      * - 约束条件：
@@ -3843,7 +3843,7 @@ public class CocClient {
     /**
      * 执行自定义脚本
      *
-     * 执行脚本
+     * 执行脚本。
      * 
      * 脚本入参、超时时间、执行用户、资源受限
      * 脚本入参支持20个。
@@ -3864,7 +3864,7 @@ public class CocClient {
     /**
      * 执行自定义脚本
      *
-     * 执行脚本
+     * 执行脚本。
      * 
      * 脚本入参、超时时间、执行用户、资源受限
      * 脚本入参支持20个。
@@ -3885,7 +3885,7 @@ public class CocClient {
     /**
      * 获取自定义脚本详情
      *
-     * 获取脚本详情
+     * 获取脚本详情。
      * 约束条件：
      * 只能查询自定义脚本详情
      * 
@@ -3901,7 +3901,7 @@ public class CocClient {
     /**
      * 获取自定义脚本详情
      *
-     * 获取脚本详情
+     * 获取脚本详情。
      * 约束条件：
      * 只能查询自定义脚本详情
      * 
@@ -3964,7 +3964,7 @@ public class CocClient {
     /**
      * 查询脚本列表
      *
-     * 作业脚本列表：自定义脚本
+     * 作业脚本列表：自定义脚本。
      * 
      * limit最大为100
      * 
@@ -3980,7 +3980,7 @@ public class CocClient {
     /**
      * 查询脚本列表
      *
-     * 作业脚本列表：自定义脚本
+     * 作业脚本列表：自定义脚本。
      * 
      * limit最大为100
      * 
@@ -3996,7 +3996,7 @@ public class CocClient {
     /**
      * 修改脚本
      *
-     * 修改作业脚本：自定义脚本
+     * 修改作业脚本：自定义脚本。
      * 约束条件：
      * 脚本名称：同一租户下，脚本名称不能重复，最大字符64个字符，支持中文+字母+数字+下划线。
      * 脚本内容最大4096个字符。
@@ -4018,7 +4018,7 @@ public class CocClient {
     /**
      * 修改脚本
      *
-     * 修改作业脚本：自定义脚本
+     * 修改作业脚本：自定义脚本。
      * 约束条件：
      * 脚本名称：同一租户下，脚本名称不能重复，最大字符64个字符，支持中文+字母+数字+下划线。
      * 脚本内容最大4096个字符。
@@ -4040,7 +4040,7 @@ public class CocClient {
     /**
      * 执行公共脚本
      *
-     * 执行公共脚本
+     * 执行公共脚本。
      * 脚本入参、超时时间、执行用户、资源受限
      * 脚本入参支持20个。
      * 单次下发的机器支持200个。
@@ -4059,7 +4059,7 @@ public class CocClient {
     /**
      * 执行公共脚本
      *
-     * 执行公共脚本
+     * 执行公共脚本。
      * 脚本入参、超时时间、执行用户、资源受限
      * 脚本入参支持20个。
      * 单次下发的机器支持200个。
@@ -4079,7 +4079,7 @@ public class CocClient {
     /**
      * 展示公共脚本详情
      *
-     * 展示公共脚本详情
+     * 展示公共脚本详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4093,7 +4093,7 @@ public class CocClient {
     /**
      * 展示公共脚本详情
      *
-     * 展示公共脚本详情
+     * 展示公共脚本详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4108,7 +4108,7 @@ public class CocClient {
     /**
      * 获取公共脚本列表
      *
-     * 获取公共脚本列表，分页逻辑：采用limit+marker方式，提高分页效率。用自增id作为marker参数
+     * 获取公共脚本列表，分页逻辑：采用limit+marker方式，提高分页效率。用自增id作为marker参数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4122,7 +4122,7 @@ public class CocClient {
     /**
      * 获取公共脚本列表
      *
-     * 获取公共脚本列表，分页逻辑：采用limit+marker方式，提高分页效率。用自增id作为marker参数
+     * 获取公共脚本列表，分页逻辑：采用limit+marker方式，提高分页效率。用自增id作为marker参数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4166,7 +4166,7 @@ public class CocClient {
     /**
      * 删除云厂商账号
      *
-     * 增加云广商账号，不需要后，可删除云厂商账号。
+     * 增加云厂商账号，不需要后，可删除云厂商账号。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4180,7 +4180,7 @@ public class CocClient {
     /**
      * 删除云厂商账号
      *
-     * 增加云广商账号，不需要后，可删除云厂商账号。
+     * 增加云厂商账号，不需要后，可删除云厂商账号。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4253,7 +4253,7 @@ public class CocClient {
     /**
      * 创建租户区WarRoom
      *
-     * 创建租户区WarRoom
+     * 创建租户区WarRoom。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4267,7 +4267,7 @@ public class CocClient {
     /**
      * 创建租户区WarRoom
      *
-     * 创建租户区WarRoom
+     * 创建租户区WarRoom。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4281,7 +4281,7 @@ public class CocClient {
     /**
      * 查询租户区WarRoom信息列表
      *
-     * 查询租户区WarRoom信息列表
+     * 查询租户区WarRoom信息列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4295,7 +4295,7 @@ public class CocClient {
     /**
      * 查询租户区WarRoom信息列表
      *
-     * 查询租户区WarRoom信息列表
+     * 查询租户区WarRoom信息列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

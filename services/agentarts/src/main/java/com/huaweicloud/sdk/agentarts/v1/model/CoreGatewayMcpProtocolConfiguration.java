@@ -104,6 +104,11 @@ public class CoreGatewayMcpProtocolConfiguration {
 
     private List<SupportedVersionsEnum> supportedVersions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "session_configuration")
+
+    private CoreGatewaySessionConfiguration sessionConfiguration;
+
     public CoreGatewayMcpProtocolConfiguration withSearchConfiguration(
         CoreGatewaySearchConfiguration searchConfiguration) {
         this.searchConfiguration = searchConfiguration;
@@ -166,6 +171,34 @@ public class CoreGatewayMcpProtocolConfiguration {
         this.supportedVersions = supportedVersions;
     }
 
+    public CoreGatewayMcpProtocolConfiguration withSessionConfiguration(
+        CoreGatewaySessionConfiguration sessionConfiguration) {
+        this.sessionConfiguration = sessionConfiguration;
+        return this;
+    }
+
+    public CoreGatewayMcpProtocolConfiguration withSessionConfiguration(
+        Consumer<CoreGatewaySessionConfiguration> sessionConfigurationSetter) {
+        if (this.sessionConfiguration == null) {
+            this.sessionConfiguration = new CoreGatewaySessionConfiguration();
+            sessionConfigurationSetter.accept(this.sessionConfiguration);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sessionConfiguration
+     * @return sessionConfiguration
+     */
+    public CoreGatewaySessionConfiguration getSessionConfiguration() {
+        return sessionConfiguration;
+    }
+
+    public void setSessionConfiguration(CoreGatewaySessionConfiguration sessionConfiguration) {
+        this.sessionConfiguration = sessionConfiguration;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -176,12 +209,13 @@ public class CoreGatewayMcpProtocolConfiguration {
         }
         CoreGatewayMcpProtocolConfiguration that = (CoreGatewayMcpProtocolConfiguration) obj;
         return Objects.equals(this.searchConfiguration, that.searchConfiguration)
-            && Objects.equals(this.supportedVersions, that.supportedVersions);
+            && Objects.equals(this.supportedVersions, that.supportedVersions)
+            && Objects.equals(this.sessionConfiguration, that.sessionConfiguration);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(searchConfiguration, supportedVersions);
+        return Objects.hash(searchConfiguration, supportedVersions, sessionConfiguration);
     }
 
     @Override
@@ -190,6 +224,7 @@ public class CoreGatewayMcpProtocolConfiguration {
         sb.append("class CoreGatewayMcpProtocolConfiguration {\n");
         sb.append("    searchConfiguration: ").append(toIndentedString(searchConfiguration)).append("\n");
         sb.append("    supportedVersions: ").append(toIndentedString(supportedVersions)).append("\n");
+        sb.append("    sessionConfiguration: ").append(toIndentedString(sessionConfiguration)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -21,6 +21,21 @@ public class CoreGatewayTargetConfiguration {
 
     private CoreGatewayOpenApiTargetConfiguration openapi;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dedicated_gateway_api")
+
+    private CoreGatewayDedicatedGatewayApiTargetConfiguration dedicatedGatewayApi;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cloud_service_open_api")
+
+    private CoreGatewayCloudServiceApiTargetConfiguration cloudServiceOpenApi;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "inference")
+
+    private CoreGatewayTargetInferenceConfiguration inference;
+
     public CoreGatewayTargetConfiguration withMcpServer(CoreGatewayMcpServerTargetConfiguration mcpServer) {
         this.mcpServer = mcpServer;
         return this;
@@ -74,6 +89,89 @@ public class CoreGatewayTargetConfiguration {
         this.openapi = openapi;
     }
 
+    public CoreGatewayTargetConfiguration withDedicatedGatewayApi(
+        CoreGatewayDedicatedGatewayApiTargetConfiguration dedicatedGatewayApi) {
+        this.dedicatedGatewayApi = dedicatedGatewayApi;
+        return this;
+    }
+
+    public CoreGatewayTargetConfiguration withDedicatedGatewayApi(
+        Consumer<CoreGatewayDedicatedGatewayApiTargetConfiguration> dedicatedGatewayApiSetter) {
+        if (this.dedicatedGatewayApi == null) {
+            this.dedicatedGatewayApi = new CoreGatewayDedicatedGatewayApiTargetConfiguration();
+            dedicatedGatewayApiSetter.accept(this.dedicatedGatewayApi);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get dedicatedGatewayApi
+     * @return dedicatedGatewayApi
+     */
+    public CoreGatewayDedicatedGatewayApiTargetConfiguration getDedicatedGatewayApi() {
+        return dedicatedGatewayApi;
+    }
+
+    public void setDedicatedGatewayApi(CoreGatewayDedicatedGatewayApiTargetConfiguration dedicatedGatewayApi) {
+        this.dedicatedGatewayApi = dedicatedGatewayApi;
+    }
+
+    public CoreGatewayTargetConfiguration withCloudServiceOpenApi(
+        CoreGatewayCloudServiceApiTargetConfiguration cloudServiceOpenApi) {
+        this.cloudServiceOpenApi = cloudServiceOpenApi;
+        return this;
+    }
+
+    public CoreGatewayTargetConfiguration withCloudServiceOpenApi(
+        Consumer<CoreGatewayCloudServiceApiTargetConfiguration> cloudServiceOpenApiSetter) {
+        if (this.cloudServiceOpenApi == null) {
+            this.cloudServiceOpenApi = new CoreGatewayCloudServiceApiTargetConfiguration();
+            cloudServiceOpenApiSetter.accept(this.cloudServiceOpenApi);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get cloudServiceOpenApi
+     * @return cloudServiceOpenApi
+     */
+    public CoreGatewayCloudServiceApiTargetConfiguration getCloudServiceOpenApi() {
+        return cloudServiceOpenApi;
+    }
+
+    public void setCloudServiceOpenApi(CoreGatewayCloudServiceApiTargetConfiguration cloudServiceOpenApi) {
+        this.cloudServiceOpenApi = cloudServiceOpenApi;
+    }
+
+    public CoreGatewayTargetConfiguration withInference(CoreGatewayTargetInferenceConfiguration inference) {
+        this.inference = inference;
+        return this;
+    }
+
+    public CoreGatewayTargetConfiguration withInference(
+        Consumer<CoreGatewayTargetInferenceConfiguration> inferenceSetter) {
+        if (this.inference == null) {
+            this.inference = new CoreGatewayTargetInferenceConfiguration();
+            inferenceSetter.accept(this.inference);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get inference
+     * @return inference
+     */
+    public CoreGatewayTargetInferenceConfiguration getInference() {
+        return inference;
+    }
+
+    public void setInference(CoreGatewayTargetInferenceConfiguration inference) {
+        this.inference = inference;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +181,15 @@ public class CoreGatewayTargetConfiguration {
             return false;
         }
         CoreGatewayTargetConfiguration that = (CoreGatewayTargetConfiguration) obj;
-        return Objects.equals(this.mcpServer, that.mcpServer) && Objects.equals(this.openapi, that.openapi);
+        return Objects.equals(this.mcpServer, that.mcpServer) && Objects.equals(this.openapi, that.openapi)
+            && Objects.equals(this.dedicatedGatewayApi, that.dedicatedGatewayApi)
+            && Objects.equals(this.cloudServiceOpenApi, that.cloudServiceOpenApi)
+            && Objects.equals(this.inference, that.inference);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(mcpServer, openapi);
+        return Objects.hash(mcpServer, openapi, dedicatedGatewayApi, cloudServiceOpenApi, inference);
     }
 
     @Override
@@ -97,6 +198,9 @@ public class CoreGatewayTargetConfiguration {
         sb.append("class CoreGatewayTargetConfiguration {\n");
         sb.append("    mcpServer: ").append(toIndentedString(mcpServer)).append("\n");
         sb.append("    openapi: ").append(toIndentedString(openapi)).append("\n");
+        sb.append("    dedicatedGatewayApi: ").append(toIndentedString(dedicatedGatewayApi)).append("\n");
+        sb.append("    cloudServiceOpenApi: ").append(toIndentedString(cloudServiceOpenApi)).append("\n");
+        sb.append("    inference: ").append(toIndentedString(inference)).append("\n");
         sb.append("}");
         return sb.toString();
     }

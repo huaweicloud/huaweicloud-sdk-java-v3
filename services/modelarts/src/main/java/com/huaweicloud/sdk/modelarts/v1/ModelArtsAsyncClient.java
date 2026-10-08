@@ -441,8 +441,6 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowNotebookRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowNotebookResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowNotebookTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowNotebookTagsResponse;
-import com.huaweicloud.sdk.modelarts.v1.model.ShowObsUrlOfTrainingJobLogsRequest;
-import com.huaweicloud.sdk.modelarts.v1.model.ShowObsUrlOfTrainingJobLogsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowOrderRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowOrderResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowOsConfigRequest;
@@ -6022,36 +6020,6 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<ShowNodePoolRequest, ShowNodePoolResponse> showNodePoolAsyncInvoker(
         ShowNodePoolRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.showNodePool, hcClient);
-    }
-
-    /**
-     * 查询训练作业指定任务的日志（OBS链接）
-     *
-     * 查询训练作业指定任务的日志（OBS临时链接，有效期5分钟），可全量查看或直接下载。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowObsUrlOfTrainingJobLogsRequest 请求对象
-     * @return CompletableFuture<ShowObsUrlOfTrainingJobLogsResponse>
-     */
-    public CompletableFuture<ShowObsUrlOfTrainingJobLogsResponse> showObsUrlOfTrainingJobLogsAsync(
-        ShowObsUrlOfTrainingJobLogsRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showObsUrlOfTrainingJobLogs);
-    }
-
-    /**
-     * 查询训练作业指定任务的日志（OBS链接）
-     *
-     * 查询训练作业指定任务的日志（OBS临时链接，有效期5分钟），可全量查看或直接下载。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowObsUrlOfTrainingJobLogsRequest 请求对象
-     * @return AsyncInvoker<ShowObsUrlOfTrainingJobLogsRequest, ShowObsUrlOfTrainingJobLogsResponse>
-     */
-    public AsyncInvoker<ShowObsUrlOfTrainingJobLogsRequest, ShowObsUrlOfTrainingJobLogsResponse> showObsUrlOfTrainingJobLogsAsyncInvoker(
-        ShowObsUrlOfTrainingJobLogsRequest request) {
-        return new AsyncInvoker<>(request, ModelArtsMeta.showObsUrlOfTrainingJobLogs, hcClient);
     }
 
     /**

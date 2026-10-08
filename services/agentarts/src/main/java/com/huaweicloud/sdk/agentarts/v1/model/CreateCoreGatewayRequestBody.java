@@ -212,7 +212,7 @@ public class CreateCoreGatewayRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<CoreGatewayTag> tags = null;
+    private List<CoreGatewayTagForRequest> tags = null;
 
     public CreateCoreGatewayRequestBody withName(String name) {
         this.name = name;
@@ -428,12 +428,12 @@ public class CreateCoreGatewayRequestBody {
         this.outboundNetworkConfiguration = outboundNetworkConfiguration;
     }
 
-    public CreateCoreGatewayRequestBody withTags(List<CoreGatewayTag> tags) {
+    public CreateCoreGatewayRequestBody withTags(List<CoreGatewayTagForRequest> tags) {
         this.tags = tags;
         return this;
     }
 
-    public CreateCoreGatewayRequestBody addTagsItem(CoreGatewayTag tagsItem) {
+    public CreateCoreGatewayRequestBody addTagsItem(CoreGatewayTagForRequest tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -441,7 +441,7 @@ public class CreateCoreGatewayRequestBody {
         return this;
     }
 
-    public CreateCoreGatewayRequestBody withTags(Consumer<List<CoreGatewayTag>> tagsSetter) {
+    public CreateCoreGatewayRequestBody withTags(Consumer<List<CoreGatewayTagForRequest>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -453,11 +453,11 @@ public class CreateCoreGatewayRequestBody {
      * 资源标签列表。
      * @return tags
      */
-    public List<CoreGatewayTag> getTags() {
+    public List<CoreGatewayTagForRequest> getTags() {
         return tags;
     }
 
-    public void setTags(List<CoreGatewayTag> tags) {
+    public void setTags(List<CoreGatewayTagForRequest> tags) {
         this.tags = tags;
     }
 

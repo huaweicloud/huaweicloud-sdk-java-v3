@@ -390,7 +390,7 @@ public class ServiceCreateRequest {
     }
 
     /**
-     * **参数解释：**  定时停止配置。 **约束限制：**  最多支持一个定时任务。
+     * **参数解释：** 定时停止配置。 **约束限制：** 最多支持一个定时任务。
      * @return schedule
      */
     public List<ScheduleConfig> getSchedule() {

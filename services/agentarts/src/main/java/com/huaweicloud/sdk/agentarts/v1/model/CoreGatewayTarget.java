@@ -175,12 +175,30 @@ public class CoreGatewayTarget {
          */
         public static final TargetTypeEnum OPENAPI = new TargetTypeEnum("openapi");
 
+        /**
+         * Enum DEDICATED_GATEWAY_API for value: "dedicated_gateway_api"
+         */
+        public static final TargetTypeEnum DEDICATED_GATEWAY_API = new TargetTypeEnum("dedicated_gateway_api");
+
+        /**
+         * Enum CLOUD_SERVICE_OPEN_API for value: "cloud_service_open_api"
+         */
+        public static final TargetTypeEnum CLOUD_SERVICE_OPEN_API = new TargetTypeEnum("cloud_service_open_api");
+
+        /**
+         * Enum INFERENCE for value: "inference"
+         */
+        public static final TargetTypeEnum INFERENCE = new TargetTypeEnum("inference");
+
         private static final Map<String, TargetTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TargetTypeEnum> createStaticFields() {
             Map<String, TargetTypeEnum> map = new HashMap<>();
             map.put("mcp_server", MCP_SERVER);
             map.put("openapi", OPENAPI);
+            map.put("dedicated_gateway_api", DEDICATED_GATEWAY_API);
+            map.put("cloud_service_open_api", CLOUD_SERVICE_OPEN_API);
+            map.put("inference", INFERENCE);
             return Collections.unmodifiableMap(map);
         }
 

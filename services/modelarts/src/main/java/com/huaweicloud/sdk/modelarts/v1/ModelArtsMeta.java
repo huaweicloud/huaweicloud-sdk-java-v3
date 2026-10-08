@@ -524,8 +524,6 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowNotebookRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowNotebookResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowNotebookTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowNotebookTagsResponse;
-import com.huaweicloud.sdk.modelarts.v1.model.ShowObsUrlOfTrainingJobLogsRequest;
-import com.huaweicloud.sdk.modelarts.v1.model.ShowObsUrlOfTrainingJobLogsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowOrderRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowOrderResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowOsConfigRequest;
@@ -6737,39 +6735,6 @@ public class ModelArtsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowNodePoolRequest::getLimit, ShowNodePoolRequest::setLimit));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowObsUrlOfTrainingJobLogsRequest, ShowObsUrlOfTrainingJobLogsResponse> showObsUrlOfTrainingJobLogs =
-        genForShowObsUrlOfTrainingJobLogs();
-
-    private static HttpRequestDef<ShowObsUrlOfTrainingJobLogsRequest, ShowObsUrlOfTrainingJobLogsResponse> genForShowObsUrlOfTrainingJobLogs() {
-        // basic
-        HttpRequestDef.Builder<ShowObsUrlOfTrainingJobLogsRequest, ShowObsUrlOfTrainingJobLogsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ShowObsUrlOfTrainingJobLogsRequest.class,
-                    ShowObsUrlOfTrainingJobLogsResponse.class)
-                .withName("ShowObsUrlOfTrainingJobLogs")
-                .withUri("/v2/{project_id}/training-jobs/{training_job_id}/tasks/{task_id}/logs/url")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("training_job_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowObsUrlOfTrainingJobLogsRequest::getTrainingJobId,
-                ShowObsUrlOfTrainingJobLogsRequest::setTrainingJobId));
-        builder.<String>withRequestField("task_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowObsUrlOfTrainingJobLogsRequest::getTaskId,
-                ShowObsUrlOfTrainingJobLogsRequest::setTaskId));
 
         // response
 

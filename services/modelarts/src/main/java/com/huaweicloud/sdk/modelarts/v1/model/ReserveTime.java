@@ -26,7 +26,7 @@ public class ReserveTime {
     }
 
     /**
-     * **参数解释**：时间单位。  **约束限制**：不涉及。  **取值范围**：  - HOURS：小时   **默认取值**：不涉及。
+     * **参数解释**：时间单位。 **约束限制**：不涉及。 **取值范围**： - HOURS：小时  **默认取值**：不涉及。
      * @return timeUnit
      */
     public String getTimeUnit() {
@@ -43,7 +43,7 @@ public class ReserveTime {
     }
 
     /**
-     * **参数解释**：保留时长。  **约束限制**：不涉及。  **取值范围**：最小值为1。  **默认取值**：不涉及。
+     * **参数解释**：保留时长。 **约束限制**：不涉及。 **取值范围**：最小值为1。 **默认取值**：不涉及。
      * @return duration
      */
     public Integer getDuration() {

@@ -181,6 +181,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowServerAttachableNicNumRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerAttachableNicNumResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ShowServerConsoleOutputRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ShowServerConsoleOutputResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerGroupRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerGroupResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerLimitsRequest;
@@ -3020,6 +3022,36 @@ public class EcsAsyncClient {
     public AsyncInvoker<ShowServerBlockDeviceRequest, ShowServerBlockDeviceResponse> showServerBlockDeviceAsyncInvoker(
         ShowServerBlockDeviceRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.showServerBlockDevice, hcClient);
+    }
+
+    /**
+     * 获取弹性云服务器的控制台日志
+     *
+     * 获取弹性云服务器云主机的控制台日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowServerConsoleOutputRequest 请求对象
+     * @return CompletableFuture<ShowServerConsoleOutputResponse>
+     */
+    public CompletableFuture<ShowServerConsoleOutputResponse> showServerConsoleOutputAsync(
+        ShowServerConsoleOutputRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.showServerConsoleOutput);
+    }
+
+    /**
+     * 获取弹性云服务器的控制台日志
+     *
+     * 获取弹性云服务器云主机的控制台日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowServerConsoleOutputRequest 请求对象
+     * @return AsyncInvoker<ShowServerConsoleOutputRequest, ShowServerConsoleOutputResponse>
+     */
+    public AsyncInvoker<ShowServerConsoleOutputRequest, ShowServerConsoleOutputResponse> showServerConsoleOutputAsyncInvoker(
+        ShowServerConsoleOutputRequest request) {
+        return new AsyncInvoker<>(request, EcsMeta.showServerConsoleOutput, hcClient);
     }
 
     /**

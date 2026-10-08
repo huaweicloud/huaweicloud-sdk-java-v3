@@ -181,6 +181,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowServerAttachableNicNumRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerAttachableNicNumResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ShowServerConsoleOutputRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ShowServerConsoleOutputResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerGroupRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerGroupResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerLimitsRequest;
@@ -2973,6 +2975,35 @@ public class EcsClient {
     public SyncInvoker<ShowServerBlockDeviceRequest, ShowServerBlockDeviceResponse> showServerBlockDeviceInvoker(
         ShowServerBlockDeviceRequest request) {
         return new SyncInvoker<>(request, EcsMeta.showServerBlockDevice, hcClient);
+    }
+
+    /**
+     * 获取弹性云服务器的控制台日志
+     *
+     * 获取弹性云服务器云主机的控制台日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowServerConsoleOutputRequest 请求对象
+     * @return ShowServerConsoleOutputResponse
+     */
+    public ShowServerConsoleOutputResponse showServerConsoleOutput(ShowServerConsoleOutputRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.showServerConsoleOutput);
+    }
+
+    /**
+     * 获取弹性云服务器的控制台日志
+     *
+     * 获取弹性云服务器云主机的控制台日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowServerConsoleOutputRequest 请求对象
+     * @return SyncInvoker<ShowServerConsoleOutputRequest, ShowServerConsoleOutputResponse>
+     */
+    public SyncInvoker<ShowServerConsoleOutputRequest, ShowServerConsoleOutputResponse> showServerConsoleOutputInvoker(
+        ShowServerConsoleOutputRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.showServerConsoleOutput, hcClient);
     }
 
     /**

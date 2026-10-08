@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * **参数解释：**  服务日志配置信息。
+ * **参数解释：** 服务日志配置信息。
  */
 public class LogConfigResponse {
 

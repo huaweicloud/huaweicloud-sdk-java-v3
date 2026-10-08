@@ -301,6 +301,11 @@ public class ShowCoreGatewayResponse extends SdkResponse {
     private String endpointUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "endpoint_urls")
+
+    private List<String> endpointUrls = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_delivery_configuration")
 
     private CoreGatewayLogDeliveryConfiguration logDeliveryConfiguration;
@@ -498,6 +503,39 @@ public class ShowCoreGatewayResponse extends SdkResponse {
         this.endpointUrl = endpointUrl;
     }
 
+    public ShowCoreGatewayResponse withEndpointUrls(List<String> endpointUrls) {
+        this.endpointUrls = endpointUrls;
+        return this;
+    }
+
+    public ShowCoreGatewayResponse addEndpointUrlsItem(String endpointUrlsItem) {
+        if (this.endpointUrls == null) {
+            this.endpointUrls = new ArrayList<>();
+        }
+        this.endpointUrls.add(endpointUrlsItem);
+        return this;
+    }
+
+    public ShowCoreGatewayResponse withEndpointUrls(Consumer<List<String>> endpointUrlsSetter) {
+        if (this.endpointUrls == null) {
+            this.endpointUrls = new ArrayList<>();
+        }
+        endpointUrlsSetter.accept(this.endpointUrls);
+        return this;
+    }
+
+    /**
+     * 访问网关的URL列表。
+     * @return endpointUrls
+     */
+    public List<String> getEndpointUrls() {
+        return endpointUrls;
+    }
+
+    public void setEndpointUrls(List<String> endpointUrls) {
+        this.endpointUrls = endpointUrls;
+    }
+
     public ShowCoreGatewayResponse withLogDeliveryConfiguration(
         CoreGatewayLogDeliveryConfiguration logDeliveryConfiguration) {
         this.logDeliveryConfiguration = logDeliveryConfiguration;
@@ -679,6 +717,7 @@ public class ShowCoreGatewayResponse extends SdkResponse {
             && Objects.equals(this.protocolConfiguration, that.protocolConfiguration)
             && Objects.equals(this.authorizerType, that.authorizerType)
             && Objects.equals(this.agencyName, that.agencyName) && Objects.equals(this.endpointUrl, that.endpointUrl)
+            && Objects.equals(this.endpointUrls, that.endpointUrls)
             && Objects.equals(this.logDeliveryConfiguration, that.logDeliveryConfiguration)
             && Objects.equals(this.workloadIdentity, that.workloadIdentity)
             && Objects.equals(this.agentGatewayId, that.agentGatewayId)
@@ -698,6 +737,7 @@ public class ShowCoreGatewayResponse extends SdkResponse {
             authorizerType,
             agencyName,
             endpointUrl,
+            endpointUrls,
             logDeliveryConfiguration,
             workloadIdentity,
             agentGatewayId,
@@ -720,6 +760,7 @@ public class ShowCoreGatewayResponse extends SdkResponse {
         sb.append("    authorizerType: ").append(toIndentedString(authorizerType)).append("\n");
         sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
         sb.append("    endpointUrl: ").append(toIndentedString(endpointUrl)).append("\n");
+        sb.append("    endpointUrls: ").append(toIndentedString(endpointUrls)).append("\n");
         sb.append("    logDeliveryConfiguration: ").append(toIndentedString(logDeliveryConfiguration)).append("\n");
         sb.append("    workloadIdentity: ").append(toIndentedString(workloadIdentity)).append("\n");
         sb.append("    agentGatewayId: ").append(toIndentedString(agentGatewayId)).append("\n");

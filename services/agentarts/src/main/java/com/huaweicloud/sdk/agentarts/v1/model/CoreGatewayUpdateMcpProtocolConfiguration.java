@@ -16,6 +16,11 @@ public class CoreGatewayUpdateMcpProtocolConfiguration {
 
     private CoreGatewaySearchConfiguration searchConfiguration;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "session_configuration")
+
+    private CoreGatewaySessionConfiguration sessionConfiguration;
+
     public CoreGatewayUpdateMcpProtocolConfiguration withSearchConfiguration(
         CoreGatewaySearchConfiguration searchConfiguration) {
         this.searchConfiguration = searchConfiguration;
@@ -44,6 +49,34 @@ public class CoreGatewayUpdateMcpProtocolConfiguration {
         this.searchConfiguration = searchConfiguration;
     }
 
+    public CoreGatewayUpdateMcpProtocolConfiguration withSessionConfiguration(
+        CoreGatewaySessionConfiguration sessionConfiguration) {
+        this.sessionConfiguration = sessionConfiguration;
+        return this;
+    }
+
+    public CoreGatewayUpdateMcpProtocolConfiguration withSessionConfiguration(
+        Consumer<CoreGatewaySessionConfiguration> sessionConfigurationSetter) {
+        if (this.sessionConfiguration == null) {
+            this.sessionConfiguration = new CoreGatewaySessionConfiguration();
+            sessionConfigurationSetter.accept(this.sessionConfiguration);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sessionConfiguration
+     * @return sessionConfiguration
+     */
+    public CoreGatewaySessionConfiguration getSessionConfiguration() {
+        return sessionConfiguration;
+    }
+
+    public void setSessionConfiguration(CoreGatewaySessionConfiguration sessionConfiguration) {
+        this.sessionConfiguration = sessionConfiguration;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -53,12 +86,13 @@ public class CoreGatewayUpdateMcpProtocolConfiguration {
             return false;
         }
         CoreGatewayUpdateMcpProtocolConfiguration that = (CoreGatewayUpdateMcpProtocolConfiguration) obj;
-        return Objects.equals(this.searchConfiguration, that.searchConfiguration);
+        return Objects.equals(this.searchConfiguration, that.searchConfiguration)
+            && Objects.equals(this.sessionConfiguration, that.sessionConfiguration);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(searchConfiguration);
+        return Objects.hash(searchConfiguration, sessionConfiguration);
     }
 
     @Override
@@ -66,6 +100,7 @@ public class CoreGatewayUpdateMcpProtocolConfiguration {
         StringBuilder sb = new StringBuilder();
         sb.append("class CoreGatewayUpdateMcpProtocolConfiguration {\n");
         sb.append("    searchConfiguration: ").append(toIndentedString(searchConfiguration)).append("\n");
+        sb.append("    sessionConfiguration: ").append(toIndentedString(sessionConfiguration)).append("\n");
         sb.append("}");
         return sb.toString();
     }

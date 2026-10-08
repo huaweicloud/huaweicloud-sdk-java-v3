@@ -44,6 +44,8 @@ import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsModelTuningTaskTagsR
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsModelTuningTaskTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsSynthesisTasksRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsSynthesisTasksResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDisassociateModelProxiesRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDisassociateModelProxiesResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchUpdateOpsEvaluationTaskCustomLabelValuesRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchUpdateOpsEvaluationTaskCustomLabelValuesResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.CheckOpsEvaluationTaskNameRequest;
@@ -68,6 +70,12 @@ import com.huaweicloud.sdk.agentarts.v1.model.CreateCoreSpaceCustomizedStrategyR
 import com.huaweicloud.sdk.agentarts.v1.model.CreateCoreSpaceCustomizedStrategyResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateCoreSpaceRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateCoreSpaceResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateCustomModelProviderModelRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateCustomModelProviderModelResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateCustomModelProviderRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateCustomModelProviderResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateModelProxyRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.CreateModelProxyResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsAgentObservationRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsAgentObservationResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.CreateOpsAgentTuningTaskRequest;
@@ -110,6 +118,10 @@ import com.huaweicloud.sdk.agentarts.v1.model.DeleteCoreSpaceCustomizedStrategyR
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteCoreSpaceCustomizedStrategyResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteCoreSpaceRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteCoreSpaceResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteCustomModelProviderModelRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteCustomModelProviderModelResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteCustomModelProviderRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.DeleteCustomModelProviderResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsAgentObservationRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsAgentObservationResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.DeleteOpsAgentTuningTaskRequest;
@@ -166,6 +178,10 @@ import com.huaweicloud.sdk.agentarts.v1.model.ListCoreCodeInterpretersRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCoreCodeInterpretersResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCoreGatewayQuotasRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCoreGatewayQuotasResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListCoreGatewaySupportedFeaturesRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListCoreGatewaySupportedFeaturesResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListCoreGatewaySupportedServicesRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListCoreGatewaySupportedServicesResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCoreGatewayTagsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCoreGatewayTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCoreGatewayTargetsRequest;
@@ -192,6 +208,14 @@ import com.huaweicloud.sdk.agentarts.v1.model.ListCoreSpaceMemoriesRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCoreSpaceMemoriesResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCoreSpacesRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCoreSpacesResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListCustomModelProviderModelsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListCustomModelProviderModelsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListCustomModelProvidersRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListCustomModelProvidersResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListModelManagementQuotasRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListModelManagementQuotasResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListModelProxiesRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListModelProxiesResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentLogRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentLogResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentMetricLabelValuesRequest;
@@ -318,6 +342,10 @@ import com.huaweicloud.sdk.agentarts.v1.model.ShowCoreSpaceJobRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowCoreSpaceJobResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowCoreSpaceRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowCoreSpaceResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowCustomModelProviderModelRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowCustomModelProviderModelResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowCustomModelProviderRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowCustomModelProviderResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentMetricGaugeRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentMetricGaugeResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentMetricRequest;
@@ -432,6 +460,10 @@ import com.huaweicloud.sdk.agentarts.v1.model.UpdateCoreSpaceNetworkRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateCoreSpaceNetworkResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateCoreSpaceRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateCoreSpaceResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateCustomModelProviderModelRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateCustomModelProviderModelResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateCustomModelProviderRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateCustomModelProviderResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAgentObservationRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAgentObservationResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAgentTuningTaskRequest;
@@ -529,6 +561,36 @@ public class AgentArtsAsyncClient {
     public AsyncInvoker<BatchDeleteCoreGatewayTagsRequest, BatchDeleteCoreGatewayTagsResponse> batchDeleteCoreGatewayTagsAsyncInvoker(
         BatchDeleteCoreGatewayTagsRequest request) {
         return new AsyncInvoker<>(request, AgentArtsMeta.batchDeleteCoreGatewayTags, hcClient);
+    }
+
+    /**
+     * 批量解绑模型代理
+     *
+     * 批量解绑模型代理。当模型代理没有任何模型提供商关联时，会自动删除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDisassociateModelProxiesRequest 请求对象
+     * @return CompletableFuture<BatchDisassociateModelProxiesResponse>
+     */
+    public CompletableFuture<BatchDisassociateModelProxiesResponse> batchDisassociateModelProxiesAsync(
+        BatchDisassociateModelProxiesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.batchDisassociateModelProxies);
+    }
+
+    /**
+     * 批量解绑模型代理
+     *
+     * 批量解绑模型代理。当模型代理没有任何模型提供商关联时，会自动删除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDisassociateModelProxiesRequest 请求对象
+     * @return AsyncInvoker<BatchDisassociateModelProxiesRequest, BatchDisassociateModelProxiesResponse>
+     */
+    public AsyncInvoker<BatchDisassociateModelProxiesRequest, BatchDisassociateModelProxiesResponse> batchDisassociateModelProxiesAsyncInvoker(
+        BatchDisassociateModelProxiesRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.batchDisassociateModelProxies, hcClient);
     }
 
     /**
@@ -858,6 +920,95 @@ public class AgentArtsAsyncClient {
     }
 
     /**
+     * 创建模型提供商
+     *
+     * 使用指定配置创建一个新的模型提供商。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCustomModelProviderRequest 请求对象
+     * @return CompletableFuture<CreateCustomModelProviderResponse>
+     */
+    public CompletableFuture<CreateCustomModelProviderResponse> createCustomModelProviderAsync(
+        CreateCustomModelProviderRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.createCustomModelProvider);
+    }
+
+    /**
+     * 创建模型提供商
+     *
+     * 使用指定配置创建一个新的模型提供商。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCustomModelProviderRequest 请求对象
+     * @return AsyncInvoker<CreateCustomModelProviderRequest, CreateCustomModelProviderResponse>
+     */
+    public AsyncInvoker<CreateCustomModelProviderRequest, CreateCustomModelProviderResponse> createCustomModelProviderAsyncInvoker(
+        CreateCustomModelProviderRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.createCustomModelProvider, hcClient);
+    }
+
+    /**
+     * 创建模型服务
+     *
+     * 使用指定配置创建一个新的模型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCustomModelProviderModelRequest 请求对象
+     * @return CompletableFuture<CreateCustomModelProviderModelResponse>
+     */
+    public CompletableFuture<CreateCustomModelProviderModelResponse> createCustomModelProviderModelAsync(
+        CreateCustomModelProviderModelRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.createCustomModelProviderModel);
+    }
+
+    /**
+     * 创建模型服务
+     *
+     * 使用指定配置创建一个新的模型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCustomModelProviderModelRequest 请求对象
+     * @return AsyncInvoker<CreateCustomModelProviderModelRequest, CreateCustomModelProviderModelResponse>
+     */
+    public AsyncInvoker<CreateCustomModelProviderModelRequest, CreateCustomModelProviderModelResponse> createCustomModelProviderModelAsyncInvoker(
+        CreateCustomModelProviderModelRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.createCustomModelProviderModel, hcClient);
+    }
+
+    /**
+     * 创建模型代理
+     *
+     * 创建模型代理。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateModelProxyRequest 请求对象
+     * @return CompletableFuture<CreateModelProxyResponse>
+     */
+    public CompletableFuture<CreateModelProxyResponse> createModelProxyAsync(CreateModelProxyRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.createModelProxy);
+    }
+
+    /**
+     * 创建模型代理
+     *
+     * 创建模型代理。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateModelProxyRequest 请求对象
+     * @return AsyncInvoker<CreateModelProxyRequest, CreateModelProxyResponse>
+     */
+    public AsyncInvoker<CreateModelProxyRequest, CreateModelProxyResponse> createModelProxyAsyncInvoker(
+        CreateModelProxyRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.createModelProxy, hcClient);
+    }
+
+    /**
      * 删除代码解释器
      *
      * 删除指定的代码解释器。
@@ -1128,6 +1279,66 @@ public class AgentArtsAsyncClient {
     }
 
     /**
+     * 删除模型提供商
+     *
+     * 永久删除指定ID的模型提供商。此操作无法撤销。当模型提供商关联了模型代理时，无法删除，请先解绑模型代理。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCustomModelProviderRequest 请求对象
+     * @return CompletableFuture<DeleteCustomModelProviderResponse>
+     */
+    public CompletableFuture<DeleteCustomModelProviderResponse> deleteCustomModelProviderAsync(
+        DeleteCustomModelProviderRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.deleteCustomModelProvider);
+    }
+
+    /**
+     * 删除模型提供商
+     *
+     * 永久删除指定ID的模型提供商。此操作无法撤销。当模型提供商关联了模型代理时，无法删除，请先解绑模型代理。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCustomModelProviderRequest 请求对象
+     * @return AsyncInvoker<DeleteCustomModelProviderRequest, DeleteCustomModelProviderResponse>
+     */
+    public AsyncInvoker<DeleteCustomModelProviderRequest, DeleteCustomModelProviderResponse> deleteCustomModelProviderAsyncInvoker(
+        DeleteCustomModelProviderRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.deleteCustomModelProvider, hcClient);
+    }
+
+    /**
+     * 删除模型服务
+     *
+     * 永久删除指定ID的模型。此操作无法撤销。当其所属的模型提供商关联了模型代理时，至少保留一个模型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCustomModelProviderModelRequest 请求对象
+     * @return CompletableFuture<DeleteCustomModelProviderModelResponse>
+     */
+    public CompletableFuture<DeleteCustomModelProviderModelResponse> deleteCustomModelProviderModelAsync(
+        DeleteCustomModelProviderModelRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.deleteCustomModelProviderModel);
+    }
+
+    /**
+     * 删除模型服务
+     *
+     * 永久删除指定ID的模型。此操作无法撤销。当其所属的模型提供商关联了模型代理时，至少保留一个模型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCustomModelProviderModelRequest 请求对象
+     * @return AsyncInvoker<DeleteCustomModelProviderModelRequest, DeleteCustomModelProviderModelResponse>
+     */
+    public AsyncInvoker<DeleteCustomModelProviderModelRequest, DeleteCustomModelProviderModelResponse> deleteCustomModelProviderModelAsyncInvoker(
+        DeleteCustomModelProviderModelRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.deleteCustomModelProviderModel, hcClient);
+    }
+
+    /**
      * 查询账号下所有网关标签列表
      *
      * 查询账号下所有网关标签列表。
@@ -1215,6 +1426,66 @@ public class AgentArtsAsyncClient {
     public AsyncInvoker<ListCoreGatewayQuotasRequest, ListCoreGatewayQuotasResponse> listCoreGatewayQuotasAsyncInvoker(
         ListCoreGatewayQuotasRequest request) {
         return new AsyncInvoker<>(request, AgentArtsMeta.listCoreGatewayQuotas, hcClient);
+    }
+
+    /**
+     * 查询网关支持特性列表
+     *
+     * 查询网关支持特性列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCoreGatewaySupportedFeaturesRequest 请求对象
+     * @return CompletableFuture<ListCoreGatewaySupportedFeaturesResponse>
+     */
+    public CompletableFuture<ListCoreGatewaySupportedFeaturesResponse> listCoreGatewaySupportedFeaturesAsync(
+        ListCoreGatewaySupportedFeaturesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listCoreGatewaySupportedFeatures);
+    }
+
+    /**
+     * 查询网关支持特性列表
+     *
+     * 查询网关支持特性列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCoreGatewaySupportedFeaturesRequest 请求对象
+     * @return AsyncInvoker<ListCoreGatewaySupportedFeaturesRequest, ListCoreGatewaySupportedFeaturesResponse>
+     */
+    public AsyncInvoker<ListCoreGatewaySupportedFeaturesRequest, ListCoreGatewaySupportedFeaturesResponse> listCoreGatewaySupportedFeaturesAsyncInvoker(
+        ListCoreGatewaySupportedFeaturesRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listCoreGatewaySupportedFeatures, hcClient);
+    }
+
+    /**
+     * 查询网关支持服务列表
+     *
+     * 当选择云服务Open API类型的target时，获取支持的主力核心服务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCoreGatewaySupportedServicesRequest 请求对象
+     * @return CompletableFuture<ListCoreGatewaySupportedServicesResponse>
+     */
+    public CompletableFuture<ListCoreGatewaySupportedServicesResponse> listCoreGatewaySupportedServicesAsync(
+        ListCoreGatewaySupportedServicesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listCoreGatewaySupportedServices);
+    }
+
+    /**
+     * 查询网关支持服务列表
+     *
+     * 当选择云服务Open API类型的target时，获取支持的主力核心服务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCoreGatewaySupportedServicesRequest 请求对象
+     * @return AsyncInvoker<ListCoreGatewaySupportedServicesRequest, ListCoreGatewaySupportedServicesResponse>
+     */
+    public AsyncInvoker<ListCoreGatewaySupportedServicesRequest, ListCoreGatewaySupportedServicesResponse> listCoreGatewaySupportedServicesAsyncInvoker(
+        ListCoreGatewaySupportedServicesRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listCoreGatewaySupportedServices, hcClient);
     }
 
     /**
@@ -1664,6 +1935,125 @@ public class AgentArtsAsyncClient {
     }
 
     /**
+     * 列出所有模型服务
+     *
+     * 检索所有模型服务，支持可选的过滤和分页功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomModelProviderModelsRequest 请求对象
+     * @return CompletableFuture<ListCustomModelProviderModelsResponse>
+     */
+    public CompletableFuture<ListCustomModelProviderModelsResponse> listCustomModelProviderModelsAsync(
+        ListCustomModelProviderModelsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listCustomModelProviderModels);
+    }
+
+    /**
+     * 列出所有模型服务
+     *
+     * 检索所有模型服务，支持可选的过滤和分页功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomModelProviderModelsRequest 请求对象
+     * @return AsyncInvoker<ListCustomModelProviderModelsRequest, ListCustomModelProviderModelsResponse>
+     */
+    public AsyncInvoker<ListCustomModelProviderModelsRequest, ListCustomModelProviderModelsResponse> listCustomModelProviderModelsAsyncInvoker(
+        ListCustomModelProviderModelsRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listCustomModelProviderModels, hcClient);
+    }
+
+    /**
+     * 列出所有模型提供商
+     *
+     * 检索所有模型提供商，支持可选的过滤和分页功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomModelProvidersRequest 请求对象
+     * @return CompletableFuture<ListCustomModelProvidersResponse>
+     */
+    public CompletableFuture<ListCustomModelProvidersResponse> listCustomModelProvidersAsync(
+        ListCustomModelProvidersRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listCustomModelProviders);
+    }
+
+    /**
+     * 列出所有模型提供商
+     *
+     * 检索所有模型提供商，支持可选的过滤和分页功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomModelProvidersRequest 请求对象
+     * @return AsyncInvoker<ListCustomModelProvidersRequest, ListCustomModelProvidersResponse>
+     */
+    public AsyncInvoker<ListCustomModelProvidersRequest, ListCustomModelProvidersResponse> listCustomModelProvidersAsyncInvoker(
+        ListCustomModelProvidersRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listCustomModelProviders, hcClient);
+    }
+
+    /**
+     * 查询模型管理配额
+     *
+     * 获取当前认证账号的模型提供商、模型代理、模型的有效配额信息，包括配额类型、最小值、最大值、配额值和已使用数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListModelManagementQuotasRequest 请求对象
+     * @return CompletableFuture<ListModelManagementQuotasResponse>
+     */
+    public CompletableFuture<ListModelManagementQuotasResponse> listModelManagementQuotasAsync(
+        ListModelManagementQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listModelManagementQuotas);
+    }
+
+    /**
+     * 查询模型管理配额
+     *
+     * 获取当前认证账号的模型提供商、模型代理、模型的有效配额信息，包括配额类型、最小值、最大值、配额值和已使用数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListModelManagementQuotasRequest 请求对象
+     * @return AsyncInvoker<ListModelManagementQuotasRequest, ListModelManagementQuotasResponse>
+     */
+    public AsyncInvoker<ListModelManagementQuotasRequest, ListModelManagementQuotasResponse> listModelManagementQuotasAsyncInvoker(
+        ListModelManagementQuotasRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listModelManagementQuotas, hcClient);
+    }
+
+    /**
+     * 列出所有模型代理
+     *
+     * 列出所有模型代理。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListModelProxiesRequest 请求对象
+     * @return CompletableFuture<ListModelProxiesResponse>
+     */
+    public CompletableFuture<ListModelProxiesResponse> listModelProxiesAsync(ListModelProxiesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listModelProxies);
+    }
+
+    /**
+     * 列出所有模型代理
+     *
+     * 列出所有模型代理。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListModelProxiesRequest 请求对象
+     * @return AsyncInvoker<ListModelProxiesRequest, ListModelProxiesResponse>
+     */
+    public AsyncInvoker<ListModelProxiesRequest, ListModelProxiesResponse> listModelProxiesAsyncInvoker(
+        ListModelProxiesRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.listModelProxies, hcClient);
+    }
+
+    /**
      * 重置 API Key
      *
      * 异步重置指定 Space 的 API Key，旧 Key 立即失效
@@ -2039,6 +2429,66 @@ public class AgentArtsAsyncClient {
     }
 
     /**
+     * 获取模型提供商详情
+     *
+     * 获取模型提供商详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCustomModelProviderRequest 请求对象
+     * @return CompletableFuture<ShowCustomModelProviderResponse>
+     */
+    public CompletableFuture<ShowCustomModelProviderResponse> showCustomModelProviderAsync(
+        ShowCustomModelProviderRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.showCustomModelProvider);
+    }
+
+    /**
+     * 获取模型提供商详情
+     *
+     * 获取模型提供商详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCustomModelProviderRequest 请求对象
+     * @return AsyncInvoker<ShowCustomModelProviderRequest, ShowCustomModelProviderResponse>
+     */
+    public AsyncInvoker<ShowCustomModelProviderRequest, ShowCustomModelProviderResponse> showCustomModelProviderAsyncInvoker(
+        ShowCustomModelProviderRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.showCustomModelProvider, hcClient);
+    }
+
+    /**
+     * 获取模型服务详情
+     *
+     * 获取模型服务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCustomModelProviderModelRequest 请求对象
+     * @return CompletableFuture<ShowCustomModelProviderModelResponse>
+     */
+    public CompletableFuture<ShowCustomModelProviderModelResponse> showCustomModelProviderModelAsync(
+        ShowCustomModelProviderModelRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.showCustomModelProviderModel);
+    }
+
+    /**
+     * 获取模型服务详情
+     *
+     * 获取模型服务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCustomModelProviderModelRequest 请求对象
+     * @return AsyncInvoker<ShowCustomModelProviderModelRequest, ShowCustomModelProviderModelResponse>
+     */
+    public AsyncInvoker<ShowCustomModelProviderModelRequest, ShowCustomModelProviderModelResponse> showCustomModelProviderModelAsyncInvoker(
+        ShowCustomModelProviderModelRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.showCustomModelProviderModel, hcClient);
+    }
+
+    /**
      * 同步网关目标工具列表
      *
      * 同步网关目标工具列表，同步状态可通过查询目标详情查询。
@@ -2338,6 +2788,66 @@ public class AgentArtsAsyncClient {
     public AsyncInvoker<UpdateCoreSpaceNetworkRequest, UpdateCoreSpaceNetworkResponse> updateCoreSpaceNetworkAsyncInvoker(
         UpdateCoreSpaceNetworkRequest request) {
         return new AsyncInvoker<>(request, AgentArtsMeta.updateCoreSpaceNetwork, hcClient);
+    }
+
+    /**
+     * 更新模型提供商
+     *
+     * 更新模型提供商。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCustomModelProviderRequest 请求对象
+     * @return CompletableFuture<UpdateCustomModelProviderResponse>
+     */
+    public CompletableFuture<UpdateCustomModelProviderResponse> updateCustomModelProviderAsync(
+        UpdateCustomModelProviderRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.updateCustomModelProvider);
+    }
+
+    /**
+     * 更新模型提供商
+     *
+     * 更新模型提供商。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCustomModelProviderRequest 请求对象
+     * @return AsyncInvoker<UpdateCustomModelProviderRequest, UpdateCustomModelProviderResponse>
+     */
+    public AsyncInvoker<UpdateCustomModelProviderRequest, UpdateCustomModelProviderResponse> updateCustomModelProviderAsyncInvoker(
+        UpdateCustomModelProviderRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.updateCustomModelProvider, hcClient);
+    }
+
+    /**
+     * 更新模型服务
+     *
+     * 更新模型服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCustomModelProviderModelRequest 请求对象
+     * @return CompletableFuture<UpdateCustomModelProviderModelResponse>
+     */
+    public CompletableFuture<UpdateCustomModelProviderModelResponse> updateCustomModelProviderModelAsync(
+        UpdateCustomModelProviderModelRequest request) {
+        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.updateCustomModelProviderModel);
+    }
+
+    /**
+     * 更新模型服务
+     *
+     * 更新模型服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCustomModelProviderModelRequest 请求对象
+     * @return AsyncInvoker<UpdateCustomModelProviderModelRequest, UpdateCustomModelProviderModelResponse>
+     */
+    public AsyncInvoker<UpdateCustomModelProviderModelRequest, UpdateCustomModelProviderModelResponse> updateCustomModelProviderModelAsyncInvoker(
+        UpdateCustomModelProviderModelRequest request) {
+        return new AsyncInvoker<>(request, AgentArtsMeta.updateCustomModelProviderModel, hcClient);
     }
 
     /**

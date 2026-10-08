@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * **参数解释：**  服务调用时的相关配置。
+ * **参数解释：** 服务调用时的相关配置。
  */
 public class ServiceInvokeResponse {
 

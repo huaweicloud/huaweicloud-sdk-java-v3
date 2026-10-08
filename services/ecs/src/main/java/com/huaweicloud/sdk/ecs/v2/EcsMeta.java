@@ -226,6 +226,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowServerAttachableNicNumRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerAttachableNicNumResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ShowServerConsoleOutputRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ShowServerConsoleOutputResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerGroupRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerGroupResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerLimitsRequest;
@@ -3144,6 +3146,36 @@ public class EcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowServerBlockDeviceRequest::getVolumeId,
                 ShowServerBlockDeviceRequest::setVolumeId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowServerConsoleOutputRequest, ShowServerConsoleOutputResponse> showServerConsoleOutput =
+        genForShowServerConsoleOutput();
+
+    private static HttpRequestDef<ShowServerConsoleOutputRequest, ShowServerConsoleOutputResponse> genForShowServerConsoleOutput() {
+        // basic
+        HttpRequestDef.Builder<ShowServerConsoleOutputRequest, ShowServerConsoleOutputResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowServerConsoleOutputRequest.class, ShowServerConsoleOutputResponse.class)
+            .withName("ShowServerConsoleOutput")
+            .withUri("/v1/{project_id}/cloudservers/{server_id}/console-output")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowServerConsoleOutputRequest::getServerId,
+                ShowServerConsoleOutputRequest::setServerId));
+        builder.<Integer>withRequestField("length",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowServerConsoleOutputRequest::getLength,
+                ShowServerConsoleOutputRequest::setLength));
 
         // response
 

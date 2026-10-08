@@ -4481,13 +4481,13 @@ public class DasMeta {
                 ListTemplateDatabaseComparisonsRequest::setEndAt1));
         builder.<Long>withRequestField("start_at2",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListTemplateDatabaseComparisonsRequest::getStartAt2,
                 ListTemplateDatabaseComparisonsRequest::setStartAt2));
         builder.<Long>withRequestField("end_at2",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListTemplateDatabaseComparisonsRequest::getEndAt2,
                 ListTemplateDatabaseComparisonsRequest::setEndAt2));

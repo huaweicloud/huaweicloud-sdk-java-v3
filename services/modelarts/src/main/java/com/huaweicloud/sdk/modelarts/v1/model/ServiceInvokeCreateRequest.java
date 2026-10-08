@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * **参数解释：**  服务调用时的相关配置。 **约束限制：**  不涉及。
+ * **参数解释：** 服务调用时的相关配置。 **约束限制：** 不涉及。
  */
 public class ServiceInvokeCreateRequest {
 

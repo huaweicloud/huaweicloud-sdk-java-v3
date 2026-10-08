@@ -441,8 +441,6 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowNotebookRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowNotebookResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowNotebookTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowNotebookTagsResponse;
-import com.huaweicloud.sdk.modelarts.v1.model.ShowObsUrlOfTrainingJobLogsRequest;
-import com.huaweicloud.sdk.modelarts.v1.model.ShowObsUrlOfTrainingJobLogsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowOrderRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowOrderResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowOsConfigRequest;
@@ -5936,35 +5934,6 @@ public class ModelArtsClient {
      */
     public SyncInvoker<ShowNodePoolRequest, ShowNodePoolResponse> showNodePoolInvoker(ShowNodePoolRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.showNodePool, hcClient);
-    }
-
-    /**
-     * 查询训练作业指定任务的日志（OBS链接）
-     *
-     * 查询训练作业指定任务的日志（OBS临时链接，有效期5分钟），可全量查看或直接下载。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowObsUrlOfTrainingJobLogsRequest 请求对象
-     * @return ShowObsUrlOfTrainingJobLogsResponse
-     */
-    public ShowObsUrlOfTrainingJobLogsResponse showObsUrlOfTrainingJobLogs(ShowObsUrlOfTrainingJobLogsRequest request) {
-        return hcClient.syncInvokeHttp(request, ModelArtsMeta.showObsUrlOfTrainingJobLogs);
-    }
-
-    /**
-     * 查询训练作业指定任务的日志（OBS链接）
-     *
-     * 查询训练作业指定任务的日志（OBS临时链接，有效期5分钟），可全量查看或直接下载。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowObsUrlOfTrainingJobLogsRequest 请求对象
-     * @return SyncInvoker<ShowObsUrlOfTrainingJobLogsRequest, ShowObsUrlOfTrainingJobLogsResponse>
-     */
-    public SyncInvoker<ShowObsUrlOfTrainingJobLogsRequest, ShowObsUrlOfTrainingJobLogsResponse> showObsUrlOfTrainingJobLogsInvoker(
-        ShowObsUrlOfTrainingJobLogsRequest request) {
-        return new SyncInvoker<>(request, ModelArtsMeta.showObsUrlOfTrainingJobLogs, hcClient);
     }
 
     /**

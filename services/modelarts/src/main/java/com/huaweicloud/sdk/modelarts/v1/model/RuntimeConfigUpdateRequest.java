@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * **参数解释：** 服务运行配置。  **约束限制：** 不涉及。
+ * **参数解释：** 服务运行配置。 **约束限制：** 不涉及。
  */
 public class RuntimeConfigUpdateRequest {
 
