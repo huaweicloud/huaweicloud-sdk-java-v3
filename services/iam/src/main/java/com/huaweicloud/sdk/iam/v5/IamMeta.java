@@ -206,6 +206,9 @@ import com.huaweicloud.sdk.iam.v5.model.UpdateOIDCProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdatePasswordPolicyReqBody;
 import com.huaweicloud.sdk.iam.v5.model.UpdatePasswordPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdatePasswordPolicyV5Response;
+import com.huaweicloud.sdk.iam.v5.model.UpdatePolicyReqBody;
+import com.huaweicloud.sdk.iam.v5.model.UpdatePolicyV5Request;
+import com.huaweicloud.sdk.iam.v5.model.UpdatePolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdateSAMLProviderReqBody;
 import com.huaweicloud.sdk.iam.v5.model.UpdateSAMLProviderV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdateSAMLProviderV5Response;
@@ -1498,6 +1501,34 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdatePolicyV5Request, UpdatePolicyV5Response> updatePolicyV5 =
+        genForUpdatePolicyV5();
+
+    private static HttpRequestDef<UpdatePolicyV5Request, UpdatePolicyV5Response> genForUpdatePolicyV5() {
+        // basic
+        HttpRequestDef.Builder<UpdatePolicyV5Request, UpdatePolicyV5Response> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePolicyV5Request.class, UpdatePolicyV5Response.class)
+                .withName("UpdatePolicyV5")
+                .withUri("/v5/policies/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePolicyV5Request::getPolicyId, UpdatePolicyV5Request::setPolicyId));
+        builder.<UpdatePolicyReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePolicyReqBody.class),
+            f -> f.withMarshaller(UpdatePolicyV5Request::getBody, UpdatePolicyV5Request::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AttachAgencyPolicyV5Request, AttachAgencyPolicyV5Response> attachAgencyPolicyV5 =
         genForAttachAgencyPolicyV5();
 
@@ -2363,6 +2394,11 @@ public class IamMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListUsersV5Request::getGroupId, ListUsersV5Request::setGroupId));
+        builder.<String>withRequestField("access_key_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUsersV5Request::getAccessKeyId, ListUsersV5Request::setAccessKeyId));
 
         // response
 

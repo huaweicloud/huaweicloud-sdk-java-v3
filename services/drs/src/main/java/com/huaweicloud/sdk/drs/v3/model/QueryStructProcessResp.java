@@ -31,6 +31,11 @@ public class QueryStructProcessResp {
 
     private StructProcessResp structProcess;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "database_info")
+
+    private Object databaseInfo;
+
     public QueryStructProcessResp withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -108,6 +113,23 @@ public class QueryStructProcessResp {
         this.structProcess = structProcess;
     }
 
+    public QueryStructProcessResp withDatabaseInfo(Object databaseInfo) {
+        this.databaseInfo = databaseInfo;
+        return this;
+    }
+
+    /**
+     * 灾备数据库信息。
+     * @return databaseInfo
+     */
+    public Object getDatabaseInfo() {
+        return databaseInfo;
+    }
+
+    public void setDatabaseInfo(Object databaseInfo) {
+        this.databaseInfo = databaseInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -119,12 +141,13 @@ public class QueryStructProcessResp {
         QueryStructProcessResp that = (QueryStructProcessResp) obj;
         return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.errorCode, that.errorCode)
             && Objects.equals(this.errorMessage, that.errorMessage)
-            && Objects.equals(this.structProcess, that.structProcess);
+            && Objects.equals(this.structProcess, that.structProcess)
+            && Objects.equals(this.databaseInfo, that.databaseInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, errorCode, errorMessage, structProcess);
+        return Objects.hash(jobId, errorCode, errorMessage, structProcess, databaseInfo);
     }
 
     @Override
@@ -135,6 +158,7 @@ public class QueryStructProcessResp {
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
         sb.append("    structProcess: ").append(toIndentedString(structProcess)).append("\n");
+        sb.append("    databaseInfo: ").append(toIndentedString(databaseInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

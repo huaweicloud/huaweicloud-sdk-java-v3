@@ -96,7 +96,7 @@ public class ShowJobDetailRequest {
     private XLanguageEnum xLanguage;
 
     /**
-     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。 - diagnosis：查询一键诊断结果，需配合query_id参数一起查询。 - diagnosis_history：查询一键诊断结果历史，需配合query_id参数一起查询。 - repair_progress：数据修复进度，需配合query_id参数一起查询。 - repair_detail：数据修复详情，需配合query_id参数一起查询。 - repair_export_status：查询数据修复SQL导出状态，需配合compare_task_id参数一起查询。
+     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。 - diagnosis：查询一键诊断结果，需配合query_id参数一起查询。 - diagnosis_history：查询一键诊断结果历史，需配合query_id参数一起查询。 - repair_progress：数据修复进度，需配合query_id参数一起查询。 - repair_detail：数据修复详情，需配合query_id参数一起查询。 - repair_export_status：查询数据修复SQL导出状态，需配合compare_task_id参数一起查询。 - db_table_details：库表映射概览。
      */
     public static final class TypeEnum {
 
@@ -175,6 +175,11 @@ public class ShowJobDetailRequest {
          */
         public static final TypeEnum REPAIR_EXPORT_STATUS = new TypeEnum("repair_export_status");
 
+        /**
+         * Enum DB_TABLE_DETAILS for value: "db_table_details"
+         */
+        public static final TypeEnum DB_TABLE_DETAILS = new TypeEnum("db_table_details");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -194,6 +199,7 @@ public class ShowJobDetailRequest {
             map.put("repair_progress", REPAIR_PROGRESS);
             map.put("repair_detail", REPAIR_DETAIL);
             map.put("repair_export_status", REPAIR_EXPORT_STATUS);
+            map.put("db_table_details", DB_TABLE_DETAILS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -351,7 +357,7 @@ public class ShowJobDetailRequest {
     private CompareTypeEnum compareType;
 
     /**
-     * 查询对比内容。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。 - diff：不一致详情。
+     * 查询对比内容/预检查类型。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。 - diff：不一致详情。 - upgradeJob：升级预检查。
      */
     public static final class QueryTypeEnum {
 
@@ -375,6 +381,11 @@ public class ShowJobDetailRequest {
          */
         public static final QueryTypeEnum DIFF = new QueryTypeEnum("diff");
 
+        /**
+         * Enum UPGRADEJOB for value: "upgradeJob"
+         */
+        public static final QueryTypeEnum UPGRADEJOB = new QueryTypeEnum("upgradeJob");
+
         private static final Map<String, QueryTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, QueryTypeEnum> createStaticFields() {
@@ -383,6 +394,7 @@ public class ShowJobDetailRequest {
             map.put("list", LIST);
             map.put("detail", DETAIL);
             map.put("diff", DIFF);
+            map.put("upgradeJob", UPGRADEJOB);
             return Collections.unmodifiableMap(map);
         }
 
@@ -544,16 +556,16 @@ public class ShowJobDetailRequest {
         public static final CompareDetailTypeEnum COMPARE = new CompareDetailTypeEnum("compare");
 
         /**
-         * Enum UNCOMPARE for value: "uncompare"
+         * Enum UNCOMPARE for value: "unCompare"
          */
-        public static final CompareDetailTypeEnum UNCOMPARE = new CompareDetailTypeEnum("uncompare");
+        public static final CompareDetailTypeEnum UNCOMPARE = new CompareDetailTypeEnum("unCompare");
 
         private static final Map<String, CompareDetailTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CompareDetailTypeEnum> createStaticFields() {
             Map<String, CompareDetailTypeEnum> map = new HashMap<>();
             map.put("compare", COMPARE);
-            map.put("uncompare", UNCOMPARE);
+            map.put("unCompare", UNCOMPARE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -655,7 +667,7 @@ public class ShowJobDetailRequest {
     }
 
     /**
-     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。 - diagnosis：查询一键诊断结果，需配合query_id参数一起查询。 - diagnosis_history：查询一键诊断结果历史，需配合query_id参数一起查询。 - repair_progress：数据修复进度，需配合query_id参数一起查询。 - repair_detail：数据修复详情，需配合query_id参数一起查询。 - repair_export_status：查询数据修复SQL导出状态，需配合compare_task_id参数一起查询。
+     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。 - diagnosis：查询一键诊断结果，需配合query_id参数一起查询。 - diagnosis_history：查询一键诊断结果历史，需配合query_id参数一起查询。 - repair_progress：数据修复进度，需配合query_id参数一起查询。 - repair_detail：数据修复详情，需配合query_id参数一起查询。 - repair_export_status：查询数据修复SQL导出状态，需配合compare_task_id参数一起查询。 - db_table_details：库表映射概览。
      * @return type
      */
     public TypeEnum getType() {
@@ -740,7 +752,7 @@ public class ShowJobDetailRequest {
     }
 
     /**
-     * 查询对比内容。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。 - diff：不一致详情。
+     * 查询对比内容/预检查类型。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。 - diff：不一致详情。 - upgradeJob：升级预检查。
      * @return queryType
      */
     public QueryTypeEnum getQueryType() {

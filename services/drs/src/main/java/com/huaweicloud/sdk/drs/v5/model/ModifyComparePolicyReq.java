@@ -123,6 +123,81 @@ public class ModifyComparePolicyReq {
 
     private Integer intervalHour;
 
+    /**
+     * **参数解释：** 冲突策略。 **约束限制：** 对存在正在执行中的对比任务时的周期性对比策略 支持链路范围：MySQL-MySQL、MySQL-TaurusDB迁移、MySQL-MySQL同步，MySQL-GaussDB集中式，GaussDB分布式-GaussDB集中式，GaussDB集中式-MySQL，GaussDBV1-GaussDB集中式，GaussDB集中式-GaussDBV1，MySQL-MySQL灾备，GaussDB集中式-GaussDB集中式，OpenGauss-GaussDB分布式，OpenGauss-GaussDB集中式，GaussDB集中式-Oracle，Oracle-GaussDB集中式，GaussDB分布式-GaussDB分布式，GaussDB分布式-Oracle，Oracle-GaussDB分布式，MySQL-TaurusDB，TaurusDB-TaurusDB，TaurusDB-MySQL，GaussDB集中式-GaussDB透明多写，GaussDB分布式-GaussDB透明多写，GaussDB透明多写-GaussDB透明多写，GaussDB透明多写-GaussDB分布式，GaussDB透明多写-GaussDB集中式，Oracle-GaussDB透明多写，GaussDB透明多写-Oracle，DB2-GaussDB分布式，DB2-GaussDB集中式，GaussDB分布式-DB2，GaussDB集中式-DB2 **取值范围：** cover: 覆盖表示取消正在执行的任务，开始新对比 ignore：忽略表示忽略本次周期性对比 **默认取值：** 不涉及
+     */
+    public static final class ConflictStrategyEnum {
+
+        /**
+         * Enum COVER for value: "cover"
+         */
+        public static final ConflictStrategyEnum COVER = new ConflictStrategyEnum("cover");
+
+        /**
+         * Enum IGNORE for value: "ignore"
+         */
+        public static final ConflictStrategyEnum IGNORE = new ConflictStrategyEnum("ignore");
+
+        private static final Map<String, ConflictStrategyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ConflictStrategyEnum> createStaticFields() {
+            Map<String, ConflictStrategyEnum> map = new HashMap<>();
+            map.put("cover", COVER);
+            map.put("ignore", IGNORE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ConflictStrategyEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ConflictStrategyEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConflictStrategyEnum(value));
+        }
+
+        public static ConflictStrategyEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ConflictStrategyEnum) {
+                return this.value.equals(((ConflictStrategyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "conflict_strategy")
+
+    private ConflictStrategyEnum conflictStrategy;
+
     public ModifyComparePolicyReq withAction(String action) {
         this.action = action;
         return this;
@@ -213,7 +288,7 @@ public class ModifyComparePolicyReq {
     }
 
     /**
-     * 对比类型列表： - object_comparison：对象对比。 - lines：行对比。 - account：用户对比。
+     * 对比类型列表： - object_comparison：对象对比。 - lines：行对比。 - account：用户对比。 - contents: 内容对比。
      * @return compareType
      */
     public List<String> getCompareType() {
@@ -258,6 +333,23 @@ public class ModifyComparePolicyReq {
         this.intervalHour = intervalHour;
     }
 
+    public ModifyComparePolicyReq withConflictStrategy(ConflictStrategyEnum conflictStrategy) {
+        this.conflictStrategy = conflictStrategy;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 冲突策略。 **约束限制：** 对存在正在执行中的对比任务时的周期性对比策略 支持链路范围：MySQL-MySQL、MySQL-TaurusDB迁移、MySQL-MySQL同步，MySQL-GaussDB集中式，GaussDB分布式-GaussDB集中式，GaussDB集中式-MySQL，GaussDBV1-GaussDB集中式，GaussDB集中式-GaussDBV1，MySQL-MySQL灾备，GaussDB集中式-GaussDB集中式，OpenGauss-GaussDB分布式，OpenGauss-GaussDB集中式，GaussDB集中式-Oracle，Oracle-GaussDB集中式，GaussDB分布式-GaussDB分布式，GaussDB分布式-Oracle，Oracle-GaussDB分布式，MySQL-TaurusDB，TaurusDB-TaurusDB，TaurusDB-MySQL，GaussDB集中式-GaussDB透明多写，GaussDB分布式-GaussDB透明多写，GaussDB透明多写-GaussDB透明多写，GaussDB透明多写-GaussDB分布式，GaussDB透明多写-GaussDB集中式，Oracle-GaussDB透明多写，GaussDB透明多写-Oracle，DB2-GaussDB分布式，DB2-GaussDB集中式，GaussDB分布式-DB2，GaussDB集中式-DB2 **取值范围：** cover: 覆盖表示取消正在执行的任务，开始新对比 ignore：忽略表示忽略本次周期性对比 **默认取值：** 不涉及
+     * @return conflictStrategy
+     */
+    public ConflictStrategyEnum getConflictStrategy() {
+        return conflictStrategy;
+    }
+
+    public void setConflictStrategy(ConflictStrategyEnum conflictStrategy) {
+        this.conflictStrategy = conflictStrategy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -271,12 +363,14 @@ public class ModifyComparePolicyReq {
             && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
             && Objects.equals(this.compareType, that.compareType)
             && Objects.equals(this.comparePolicy, that.comparePolicy)
-            && Objects.equals(this.intervalHour, that.intervalHour);
+            && Objects.equals(this.intervalHour, that.intervalHour)
+            && Objects.equals(this.conflictStrategy, that.conflictStrategy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(action, period, beginTime, endTime, compareType, comparePolicy, intervalHour);
+        return Objects
+            .hash(action, period, beginTime, endTime, compareType, comparePolicy, intervalHour, conflictStrategy);
     }
 
     @Override
@@ -290,6 +384,7 @@ public class ModifyComparePolicyReq {
         sb.append("    compareType: ").append(toIndentedString(compareType)).append("\n");
         sb.append("    comparePolicy: ").append(toIndentedString(comparePolicy)).append("\n");
         sb.append("    intervalHour: ").append(toIndentedString(intervalHour)).append("\n");
+        sb.append("    conflictStrategy: ").append(toIndentedString(conflictStrategy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

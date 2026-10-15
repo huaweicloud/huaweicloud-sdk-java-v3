@@ -97,7 +97,7 @@ public class UploadDbObjectTemplateRequest {
     private XLanguageEnum xLanguage;
 
     /**
-     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入
+     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入 - compare_key：对比场景下指定分片键导入
      */
     public static final class FileImportDbLevelEnum {
 
@@ -121,6 +121,11 @@ public class UploadDbObjectTemplateRequest {
          */
         public static final FileImportDbLevelEnum PARTITION = new FileImportDbLevelEnum("partition");
 
+        /**
+         * Enum COMPARE_KEY for value: "compare_key"
+         */
+        public static final FileImportDbLevelEnum COMPARE_KEY = new FileImportDbLevelEnum("compare_key");
+
         private static final Map<String, FileImportDbLevelEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FileImportDbLevelEnum> createStaticFields() {
@@ -129,6 +134,7 @@ public class UploadDbObjectTemplateRequest {
             map.put("table", TABLE);
             map.put("column", COLUMN);
             map.put("partition", PARTITION);
+            map.put("compare_key", COMPARE_KEY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -235,7 +241,7 @@ public class UploadDbObjectTemplateRequest {
     }
 
     /**
-     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入
+     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入 - compare_key：对比场景下指定分片键导入
      * @return fileImportDbLevel
      */
     public FileImportDbLevelEnum getFileImportDbLevel() {

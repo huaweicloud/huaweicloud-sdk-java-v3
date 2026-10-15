@@ -730,6 +730,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowTransferPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowTransferPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowUpgradeDbMajorVersionStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowUpgradeDbMajorVersionStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowVectorStorageConfigRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowVectorStorageConfigResponse;
 import com.huaweicloud.sdk.rds.v3.model.SimplifiedInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.Single2Ha;
 import com.huaweicloud.sdk.rds.v3.model.SlowLogStatisticsForLtsRequest;
@@ -862,6 +864,9 @@ import com.huaweicloud.sdk.rds.v3.model.UpdateTimeZoneRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.UpdateTimeZoneResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateToPeriodRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateToPeriodResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateVectorStorageConfigReq;
+import com.huaweicloud.sdk.rds.v3.model.UpdateVectorStorageConfigRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateVectorStorageConfigResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionRequest;
@@ -7680,6 +7685,36 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowVectorStorageConfigRequest, ShowVectorStorageConfigResponse> showVectorStorageConfig =
+        genForShowVectorStorageConfig();
+
+    private static HttpRequestDef<ShowVectorStorageConfigRequest, ShowVectorStorageConfigResponse> genForShowVectorStorageConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowVectorStorageConfigRequest, ShowVectorStorageConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowVectorStorageConfigRequest.class, ShowVectorStorageConfigResponse.class)
+            .withName("ShowVectorStorageConfig")
+            .withUri("/v3/{project_id}/instances/{instance_id}/vector-storage")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVectorStorageConfigRequest::getInstanceId,
+                ShowVectorStorageConfigRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVectorStorageConfigRequest::getXLanguage,
+                ShowVectorStorageConfigRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StartFailoverRequest, StartFailoverResponse> startFailover =
         genForStartFailover();
 
@@ -8678,6 +8713,45 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ToPeriodReq.class),
             f -> f.withMarshaller(UpdateToPeriodRequest::getBody, UpdateToPeriodRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateVectorStorageConfigRequest, UpdateVectorStorageConfigResponse> updateVectorStorageConfig =
+        genForUpdateVectorStorageConfig();
+
+    private static HttpRequestDef<UpdateVectorStorageConfigRequest, UpdateVectorStorageConfigResponse> genForUpdateVectorStorageConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateVectorStorageConfigRequest, UpdateVectorStorageConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateVectorStorageConfigRequest.class,
+                    UpdateVectorStorageConfigResponse.class)
+                .withName("UpdateVectorStorageConfig")
+                .withUri("/v3/{project_id}/instances/{instance_id}/vector-storage")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateVectorStorageConfigRequest::getInstanceId,
+                UpdateVectorStorageConfigRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateVectorStorageConfigRequest::getXLanguage,
+                UpdateVectorStorageConfigRequest::setXLanguage));
+        builder.<UpdateVectorStorageConfigReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateVectorStorageConfigReq.class),
+            f -> f.withMarshaller(UpdateVectorStorageConfigRequest::getBody,
+                UpdateVectorStorageConfigRequest::setBody));
 
         // response
 

@@ -41,7 +41,7 @@ public class ActionBaseResp {
     }
 
     /**
-     * 错误码。
+     * **参数解释**：  错误码，当任务报错时返回的错误代码。  **约束限制**：  - 最小长度：12 - 最大长度：12  **取值范围**：  格式为DRS.XXXXXX。  **默认取值**：  不涉及
      * @return errorCode
      */
     public String getErrorCode() {
@@ -58,7 +58,7 @@ public class ActionBaseResp {
     }
 
     /**
-     * 错误描述。
+     * **参数解释**：  错误详细信息，当任务执行失败时返回的具体错误描述。  **约束限制**：  - 最小长度：1 - 最大长度：512  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return errorMsg
      */
     public String getErrorMsg() {

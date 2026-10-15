@@ -135,6 +135,7 @@ public class DrsAsyncClient {
      * @param request BatchChangeDataRequest 请求对象
      * @return CompletableFuture<BatchChangeDataResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchChangeDataResponse> batchChangeDataAsync(BatchChangeDataRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchChangeData);
     }
@@ -149,6 +150,7 @@ public class DrsAsyncClient {
      * @param request BatchChangeDataRequest 请求对象
      * @return AsyncInvoker<BatchChangeDataRequest, BatchChangeDataResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchChangeDataRequest, BatchChangeDataResponse> batchChangeDataAsyncInvoker(
         BatchChangeDataRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchChangeData, hcClient);
@@ -164,6 +166,7 @@ public class DrsAsyncClient {
      * @param request BatchCheckJobsRequest 请求对象
      * @return CompletableFuture<BatchCheckJobsResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchCheckJobsResponse> batchCheckJobsAsync(BatchCheckJobsRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchCheckJobs);
     }
@@ -178,6 +181,7 @@ public class DrsAsyncClient {
      * @param request BatchCheckJobsRequest 请求对象
      * @return AsyncInvoker<BatchCheckJobsRequest, BatchCheckJobsResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchCheckJobsRequest, BatchCheckJobsResponse> batchCheckJobsAsyncInvoker(
         BatchCheckJobsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchCheckJobs, hcClient);
@@ -193,6 +197,7 @@ public class DrsAsyncClient {
      * @param request BatchCheckResultsRequest 请求对象
      * @return CompletableFuture<BatchCheckResultsResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchCheckResultsResponse> batchCheckResultsAsync(BatchCheckResultsRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchCheckResults);
     }
@@ -207,6 +212,7 @@ public class DrsAsyncClient {
      * @param request BatchCheckResultsRequest 请求对象
      * @return AsyncInvoker<BatchCheckResultsRequest, BatchCheckResultsResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchCheckResultsRequest, BatchCheckResultsResponse> batchCheckResultsAsyncInvoker(
         BatchCheckResultsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchCheckResults, hcClient);
@@ -222,6 +228,7 @@ public class DrsAsyncClient {
      * @param request BatchCreateJobsRequest 请求对象
      * @return CompletableFuture<BatchCreateJobsResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchCreateJobsResponse> batchCreateJobsAsync(BatchCreateJobsRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchCreateJobs);
     }
@@ -236,6 +243,7 @@ public class DrsAsyncClient {
      * @param request BatchCreateJobsRequest 请求对象
      * @return AsyncInvoker<BatchCreateJobsRequest, BatchCreateJobsResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchCreateJobsRequest, BatchCreateJobsResponse> batchCreateJobsAsyncInvoker(
         BatchCreateJobsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchCreateJobs, hcClient);
@@ -251,6 +259,7 @@ public class DrsAsyncClient {
      * @param request BatchDeleteJobsRequest 请求对象
      * @return CompletableFuture<BatchDeleteJobsResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchDeleteJobsResponse> batchDeleteJobsAsync(BatchDeleteJobsRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchDeleteJobs);
     }
@@ -265,6 +274,7 @@ public class DrsAsyncClient {
      * @param request BatchDeleteJobsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse> batchDeleteJobsAsyncInvoker(
         BatchDeleteJobsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchDeleteJobs, hcClient);
@@ -280,6 +290,7 @@ public class DrsAsyncClient {
      * @param request BatchListJobDetailsRequest 请求对象
      * @return CompletableFuture<BatchListJobDetailsResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchListJobDetailsResponse> batchListJobDetailsAsync(BatchListJobDetailsRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchListJobDetails);
     }
@@ -294,6 +305,7 @@ public class DrsAsyncClient {
      * @param request BatchListJobDetailsRequest 请求对象
      * @return AsyncInvoker<BatchListJobDetailsRequest, BatchListJobDetailsResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchListJobDetailsRequest, BatchListJobDetailsResponse> batchListJobDetailsAsyncInvoker(
         BatchListJobDetailsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchListJobDetails, hcClient);
@@ -309,6 +321,7 @@ public class DrsAsyncClient {
      * @param request BatchListJobStatusRequest 请求对象
      * @return CompletableFuture<BatchListJobStatusResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchListJobStatusResponse> batchListJobStatusAsync(BatchListJobStatusRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchListJobStatus);
     }
@@ -323,6 +336,7 @@ public class DrsAsyncClient {
      * @param request BatchListJobStatusRequest 请求对象
      * @return AsyncInvoker<BatchListJobStatusRequest, BatchListJobStatusResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchListJobStatusRequest, BatchListJobStatusResponse> batchListJobStatusAsyncInvoker(
         BatchListJobStatusRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchListJobStatus, hcClient);
@@ -427,6 +441,7 @@ public class DrsAsyncClient {
      * @param request BatchListStructProcessRequest 请求对象
      * @return CompletableFuture<BatchListStructProcessResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchListStructProcessResponse> batchListStructProcessAsync(
         BatchListStructProcessRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchListStructProcess);
@@ -442,6 +457,7 @@ public class DrsAsyncClient {
      * @param request BatchListStructProcessRequest 请求对象
      * @return AsyncInvoker<BatchListStructProcessRequest, BatchListStructProcessResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchListStructProcessRequest, BatchListStructProcessResponse> batchListStructProcessAsyncInvoker(
         BatchListStructProcessRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchListStructProcess, hcClient);
@@ -457,6 +473,7 @@ public class DrsAsyncClient {
      * @param request BatchResetPasswordRequest 请求对象
      * @return CompletableFuture<BatchResetPasswordResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchResetPasswordResponse> batchResetPasswordAsync(BatchResetPasswordRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchResetPassword);
     }
@@ -471,6 +488,7 @@ public class DrsAsyncClient {
      * @param request BatchResetPasswordRequest 请求对象
      * @return AsyncInvoker<BatchResetPasswordRequest, BatchResetPasswordResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchResetPasswordRequest, BatchResetPasswordResponse> batchResetPasswordAsyncInvoker(
         BatchResetPasswordRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchResetPassword, hcClient);
@@ -486,6 +504,7 @@ public class DrsAsyncClient {
      * @param request BatchRestoreTaskRequest 请求对象
      * @return CompletableFuture<BatchRestoreTaskResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchRestoreTaskResponse> batchRestoreTaskAsync(BatchRestoreTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchRestoreTask);
     }
@@ -500,6 +519,7 @@ public class DrsAsyncClient {
      * @param request BatchRestoreTaskRequest 请求对象
      * @return AsyncInvoker<BatchRestoreTaskRequest, BatchRestoreTaskResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchRestoreTaskRequest, BatchRestoreTaskResponse> batchRestoreTaskAsyncInvoker(
         BatchRestoreTaskRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchRestoreTask, hcClient);
@@ -517,6 +537,7 @@ public class DrsAsyncClient {
      * @param request BatchSetDefinerRequest 请求对象
      * @return CompletableFuture<BatchSetDefinerResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchSetDefinerResponse> batchSetDefinerAsync(BatchSetDefinerRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchSetDefiner);
     }
@@ -533,6 +554,7 @@ public class DrsAsyncClient {
      * @param request BatchSetDefinerRequest 请求对象
      * @return AsyncInvoker<BatchSetDefinerRequest, BatchSetDefinerResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchSetDefinerRequest, BatchSetDefinerResponse> batchSetDefinerAsyncInvoker(
         BatchSetDefinerRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchSetDefiner, hcClient);
@@ -548,6 +570,7 @@ public class DrsAsyncClient {
      * @param request BatchSetObjectsRequest 请求对象
      * @return CompletableFuture<BatchSetObjectsResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchSetObjectsResponse> batchSetObjectsAsync(BatchSetObjectsRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchSetObjects);
     }
@@ -562,6 +585,7 @@ public class DrsAsyncClient {
      * @param request BatchSetObjectsRequest 请求对象
      * @return AsyncInvoker<BatchSetObjectsRequest, BatchSetObjectsResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchSetObjectsRequest, BatchSetObjectsResponse> batchSetObjectsAsyncInvoker(
         BatchSetObjectsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchSetObjects, hcClient);
@@ -578,6 +602,7 @@ public class DrsAsyncClient {
      * @param request BatchSetPolicyRequest 请求对象
      * @return CompletableFuture<BatchSetPolicyResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchSetPolicyResponse> batchSetPolicyAsync(BatchSetPolicyRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchSetPolicy);
     }
@@ -593,6 +618,7 @@ public class DrsAsyncClient {
      * @param request BatchSetPolicyRequest 请求对象
      * @return AsyncInvoker<BatchSetPolicyRequest, BatchSetPolicyResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchSetPolicyRequest, BatchSetPolicyResponse> batchSetPolicyAsyncInvoker(
         BatchSetPolicyRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchSetPolicy, hcClient);
@@ -609,6 +635,7 @@ public class DrsAsyncClient {
      * @param request BatchSetSmnRequest 请求对象
      * @return CompletableFuture<BatchSetSmnResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchSetSmnResponse> batchSetSmnAsync(BatchSetSmnRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchSetSmn);
     }
@@ -624,6 +651,7 @@ public class DrsAsyncClient {
      * @param request BatchSetSmnRequest 请求对象
      * @return AsyncInvoker<BatchSetSmnRequest, BatchSetSmnResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchSetSmnRequest, BatchSetSmnResponse> batchSetSmnAsyncInvoker(BatchSetSmnRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchSetSmn, hcClient);
     }
@@ -640,6 +668,7 @@ public class DrsAsyncClient {
      * @param request BatchSetSpeedRequest 请求对象
      * @return CompletableFuture<BatchSetSpeedResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchSetSpeedResponse> batchSetSpeedAsync(BatchSetSpeedRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchSetSpeed);
     }
@@ -656,6 +685,7 @@ public class DrsAsyncClient {
      * @param request BatchSetSpeedRequest 请求对象
      * @return AsyncInvoker<BatchSetSpeedRequest, BatchSetSpeedResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchSetSpeedRequest, BatchSetSpeedResponse> batchSetSpeedAsyncInvoker(
         BatchSetSpeedRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchSetSpeed, hcClient);
@@ -671,6 +701,7 @@ public class DrsAsyncClient {
      * @param request BatchShowParamsRequest 请求对象
      * @return CompletableFuture<BatchShowParamsResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchShowParamsResponse> batchShowParamsAsync(BatchShowParamsRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchShowParams);
     }
@@ -685,6 +716,7 @@ public class DrsAsyncClient {
      * @param request BatchShowParamsRequest 请求对象
      * @return AsyncInvoker<BatchShowParamsRequest, BatchShowParamsResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchShowParamsRequest, BatchShowParamsResponse> batchShowParamsAsyncInvoker(
         BatchShowParamsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchShowParams, hcClient);
@@ -700,6 +732,7 @@ public class DrsAsyncClient {
      * @param request BatchStartJobsRequest 请求对象
      * @return CompletableFuture<BatchStartJobsResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchStartJobsResponse> batchStartJobsAsync(BatchStartJobsRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchStartJobs);
     }
@@ -714,6 +747,7 @@ public class DrsAsyncClient {
      * @param request BatchStartJobsRequest 请求对象
      * @return AsyncInvoker<BatchStartJobsRequest, BatchStartJobsResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchStartJobsRequest, BatchStartJobsResponse> batchStartJobsAsyncInvoker(
         BatchStartJobsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchStartJobs, hcClient);
@@ -729,6 +763,7 @@ public class DrsAsyncClient {
      * @param request BatchStopJobsRequest 请求对象
      * @return CompletableFuture<BatchStopJobsResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchStopJobsResponse> batchStopJobsAsync(BatchStopJobsRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchStopJobs);
     }
@@ -743,6 +778,7 @@ public class DrsAsyncClient {
      * @param request BatchStopJobsRequest 请求对象
      * @return AsyncInvoker<BatchStopJobsRequest, BatchStopJobsResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchStopJobsRequest, BatchStopJobsResponse> batchStopJobsAsyncInvoker(
         BatchStopJobsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchStopJobs, hcClient);
@@ -758,6 +794,7 @@ public class DrsAsyncClient {
      * @param request BatchSwitchoverRequest 请求对象
      * @return CompletableFuture<BatchSwitchoverResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchSwitchoverResponse> batchSwitchoverAsync(BatchSwitchoverRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchSwitchover);
     }
@@ -772,6 +809,7 @@ public class DrsAsyncClient {
      * @param request BatchSwitchoverRequest 请求对象
      * @return AsyncInvoker<BatchSwitchoverRequest, BatchSwitchoverResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchSwitchoverRequest, BatchSwitchoverResponse> batchSwitchoverAsyncInvoker(
         BatchSwitchoverRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchSwitchover, hcClient);
@@ -787,6 +825,7 @@ public class DrsAsyncClient {
      * @param request BatchUpdateJobRequest 请求对象
      * @return CompletableFuture<BatchUpdateJobResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchUpdateJobResponse> batchUpdateJobAsync(BatchUpdateJobRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchUpdateJob);
     }
@@ -801,6 +840,7 @@ public class DrsAsyncClient {
      * @param request BatchUpdateJobRequest 请求对象
      * @return AsyncInvoker<BatchUpdateJobRequest, BatchUpdateJobResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchUpdateJobRequest, BatchUpdateJobResponse> batchUpdateJobAsyncInvoker(
         BatchUpdateJobRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchUpdateJob, hcClient);
@@ -816,6 +856,7 @@ public class DrsAsyncClient {
      * @param request BatchUpdateUserRequest 请求对象
      * @return CompletableFuture<BatchUpdateUserResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchUpdateUserResponse> batchUpdateUserAsync(BatchUpdateUserRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchUpdateUser);
     }
@@ -830,6 +871,7 @@ public class DrsAsyncClient {
      * @param request BatchUpdateUserRequest 请求对象
      * @return AsyncInvoker<BatchUpdateUserRequest, BatchUpdateUserResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchUpdateUserRequest, BatchUpdateUserResponse> batchUpdateUserAsyncInvoker(
         BatchUpdateUserRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchUpdateUser, hcClient);
@@ -846,6 +888,7 @@ public class DrsAsyncClient {
      * @param request BatchValidateClustersConnectionsRequest 请求对象
      * @return CompletableFuture<BatchValidateClustersConnectionsResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchValidateClustersConnectionsResponse> batchValidateClustersConnectionsAsync(
         BatchValidateClustersConnectionsRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchValidateClustersConnections);
@@ -862,6 +905,7 @@ public class DrsAsyncClient {
      * @param request BatchValidateClustersConnectionsRequest 请求对象
      * @return AsyncInvoker<BatchValidateClustersConnectionsRequest, BatchValidateClustersConnectionsResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchValidateClustersConnectionsRequest, BatchValidateClustersConnectionsResponse> batchValidateClustersConnectionsAsyncInvoker(
         BatchValidateClustersConnectionsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchValidateClustersConnections, hcClient);
@@ -877,6 +921,7 @@ public class DrsAsyncClient {
      * @param request BatchValidateConnectionsRequest 请求对象
      * @return CompletableFuture<BatchValidateConnectionsResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchValidateConnectionsResponse> batchValidateConnectionsAsync(
         BatchValidateConnectionsRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchValidateConnections);
@@ -892,6 +937,7 @@ public class DrsAsyncClient {
      * @param request BatchValidateConnectionsRequest 请求对象
      * @return AsyncInvoker<BatchValidateConnectionsRequest, BatchValidateConnectionsResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchValidateConnectionsRequest, BatchValidateConnectionsResponse> batchValidateConnectionsAsyncInvoker(
         BatchValidateConnectionsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchValidateConnections, hcClient);
@@ -907,6 +953,7 @@ public class DrsAsyncClient {
      * @param request CreateCompareResultFileRequest 请求对象
      * @return CompletableFuture<CreateCompareResultFileResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateCompareResultFileResponse> createCompareResultFileAsync(
         CreateCompareResultFileRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.createCompareResultFile);
@@ -922,6 +969,7 @@ public class DrsAsyncClient {
      * @param request CreateCompareResultFileRequest 请求对象
      * @return AsyncInvoker<CreateCompareResultFileRequest, CreateCompareResultFileResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateCompareResultFileRequest, CreateCompareResultFileResponse> createCompareResultFileAsyncInvoker(
         CreateCompareResultFileRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.createCompareResultFile, hcClient);
@@ -937,6 +985,7 @@ public class DrsAsyncClient {
      * @param request CreateCompareTaskRequest 请求对象
      * @return CompletableFuture<CreateCompareTaskResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateCompareTaskResponse> createCompareTaskAsync(CreateCompareTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.createCompareTask);
     }
@@ -951,6 +1000,7 @@ public class DrsAsyncClient {
      * @param request CreateCompareTaskRequest 请求对象
      * @return AsyncInvoker<CreateCompareTaskRequest, CreateCompareTaskResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateCompareTaskRequest, CreateCompareTaskResponse> createCompareTaskAsyncInvoker(
         CreateCompareTaskRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.createCompareTask, hcClient);
@@ -966,6 +1016,7 @@ public class DrsAsyncClient {
      * @param request CreateDataLevelTableCompareJobRequest 请求对象
      * @return CompletableFuture<CreateDataLevelTableCompareJobResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateDataLevelTableCompareJobResponse> createDataLevelTableCompareJobAsync(
         CreateDataLevelTableCompareJobRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.createDataLevelTableCompareJob);
@@ -981,6 +1032,7 @@ public class DrsAsyncClient {
      * @param request CreateDataLevelTableCompareJobRequest 请求对象
      * @return AsyncInvoker<CreateDataLevelTableCompareJobRequest, CreateDataLevelTableCompareJobResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateDataLevelTableCompareJobRequest, CreateDataLevelTableCompareJobResponse> createDataLevelTableCompareJobAsyncInvoker(
         CreateDataLevelTableCompareJobRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.createDataLevelTableCompareJob, hcClient);
@@ -996,6 +1048,7 @@ public class DrsAsyncClient {
      * @param request CreateObjectLevelCompareJobRequest 请求对象
      * @return CompletableFuture<CreateObjectLevelCompareJobResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateObjectLevelCompareJobResponse> createObjectLevelCompareJobAsync(
         CreateObjectLevelCompareJobRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.createObjectLevelCompareJob);
@@ -1011,6 +1064,7 @@ public class DrsAsyncClient {
      * @param request CreateObjectLevelCompareJobRequest 请求对象
      * @return AsyncInvoker<CreateObjectLevelCompareJobRequest, CreateObjectLevelCompareJobResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateObjectLevelCompareJobRequest, CreateObjectLevelCompareJobResponse> createObjectLevelCompareJobAsyncInvoker(
         CreateObjectLevelCompareJobRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.createObjectLevelCompareJob, hcClient);
@@ -1026,6 +1080,7 @@ public class DrsAsyncClient {
      * @param request DeleteCompareJobRequest 请求对象
      * @return CompletableFuture<DeleteCompareJobResponse>
      */
+    @Deprecated
     public CompletableFuture<DeleteCompareJobResponse> deleteCompareJobAsync(DeleteCompareJobRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.deleteCompareJob);
     }
@@ -1040,6 +1095,7 @@ public class DrsAsyncClient {
      * @param request DeleteCompareJobRequest 请求对象
      * @return AsyncInvoker<DeleteCompareJobRequest, DeleteCompareJobResponse>
      */
+    @Deprecated
     public AsyncInvoker<DeleteCompareJobRequest, DeleteCompareJobResponse> deleteCompareJobAsyncInvoker(
         DeleteCompareJobRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.deleteCompareJob, hcClient);
@@ -1055,6 +1111,7 @@ public class DrsAsyncClient {
      * @param request DownloadCompareResultFileRequest 请求对象
      * @return CompletableFuture<DownloadCompareResultFileResponse>
      */
+    @Deprecated
     public CompletableFuture<DownloadCompareResultFileResponse> downloadCompareResultFileAsync(
         DownloadCompareResultFileRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.downloadCompareResultFile);
@@ -1070,6 +1127,7 @@ public class DrsAsyncClient {
      * @param request DownloadCompareResultFileRequest 请求对象
      * @return AsyncInvoker<DownloadCompareResultFileRequest, DownloadCompareResultFileResponse>
      */
+    @Deprecated
     public AsyncInvoker<DownloadCompareResultFileRequest, DownloadCompareResultFileResponse> downloadCompareResultFileAsyncInvoker(
         DownloadCompareResultFileRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.downloadCompareResultFile, hcClient);
@@ -1085,6 +1143,7 @@ public class DrsAsyncClient {
      * @param request ListAvailableNodeTypesRequest 请求对象
      * @return CompletableFuture<ListAvailableNodeTypesResponse>
      */
+    @Deprecated
     public CompletableFuture<ListAvailableNodeTypesResponse> listAvailableNodeTypesAsync(
         ListAvailableNodeTypesRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.listAvailableNodeTypes);
@@ -1100,6 +1159,7 @@ public class DrsAsyncClient {
      * @param request ListAvailableNodeTypesRequest 请求对象
      * @return AsyncInvoker<ListAvailableNodeTypesRequest, ListAvailableNodeTypesResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListAvailableNodeTypesRequest, ListAvailableNodeTypesResponse> listAvailableNodeTypesAsyncInvoker(
         ListAvailableNodeTypesRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.listAvailableNodeTypes, hcClient);
@@ -1144,6 +1204,7 @@ public class DrsAsyncClient {
      * @param request ListCompareResultRequest 请求对象
      * @return CompletableFuture<ListCompareResultResponse>
      */
+    @Deprecated
     public CompletableFuture<ListCompareResultResponse> listCompareResultAsync(ListCompareResultRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.listCompareResult);
     }
@@ -1158,6 +1219,7 @@ public class DrsAsyncClient {
      * @param request ListCompareResultRequest 请求对象
      * @return AsyncInvoker<ListCompareResultRequest, ListCompareResultResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListCompareResultRequest, ListCompareResultResponse> listCompareResultAsyncInvoker(
         ListCompareResultRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.listCompareResult, hcClient);
@@ -1173,6 +1235,7 @@ public class DrsAsyncClient {
      * @param request ListContentCompareDetailRequest 请求对象
      * @return CompletableFuture<ListContentCompareDetailResponse>
      */
+    @Deprecated
     public CompletableFuture<ListContentCompareDetailResponse> listContentCompareDetailAsync(
         ListContentCompareDetailRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.listContentCompareDetail);
@@ -1188,6 +1251,7 @@ public class DrsAsyncClient {
      * @param request ListContentCompareDetailRequest 请求对象
      * @return AsyncInvoker<ListContentCompareDetailRequest, ListContentCompareDetailResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListContentCompareDetailRequest, ListContentCompareDetailResponse> listContentCompareDetailAsyncInvoker(
         ListContentCompareDetailRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.listContentCompareDetail, hcClient);
@@ -1203,6 +1267,7 @@ public class DrsAsyncClient {
      * @param request ListContentCompareDifferenceRequest 请求对象
      * @return CompletableFuture<ListContentCompareDifferenceResponse>
      */
+    @Deprecated
     public CompletableFuture<ListContentCompareDifferenceResponse> listContentCompareDifferenceAsync(
         ListContentCompareDifferenceRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.listContentCompareDifference);
@@ -1218,6 +1283,7 @@ public class DrsAsyncClient {
      * @param request ListContentCompareDifferenceRequest 请求对象
      * @return AsyncInvoker<ListContentCompareDifferenceRequest, ListContentCompareDifferenceResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListContentCompareDifferenceRequest, ListContentCompareDifferenceResponse> listContentCompareDifferenceAsyncInvoker(
         ListContentCompareDifferenceRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.listContentCompareDifference, hcClient);
@@ -1233,6 +1299,7 @@ public class DrsAsyncClient {
      * @param request ListContentCompareOverviewRequest 请求对象
      * @return CompletableFuture<ListContentCompareOverviewResponse>
      */
+    @Deprecated
     public CompletableFuture<ListContentCompareOverviewResponse> listContentCompareOverviewAsync(
         ListContentCompareOverviewRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.listContentCompareOverview);
@@ -1248,6 +1315,7 @@ public class DrsAsyncClient {
      * @param request ListContentCompareOverviewRequest 请求对象
      * @return AsyncInvoker<ListContentCompareOverviewRequest, ListContentCompareOverviewResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListContentCompareOverviewRequest, ListContentCompareOverviewResponse> listContentCompareOverviewAsyncInvoker(
         ListContentCompareOverviewRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.listContentCompareOverview, hcClient);
@@ -1263,6 +1331,7 @@ public class DrsAsyncClient {
      * @param request ListDataCompareDetailRequest 请求对象
      * @return CompletableFuture<ListDataCompareDetailResponse>
      */
+    @Deprecated
     public CompletableFuture<ListDataCompareDetailResponse> listDataCompareDetailAsync(
         ListDataCompareDetailRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.listDataCompareDetail);
@@ -1278,6 +1347,7 @@ public class DrsAsyncClient {
      * @param request ListDataCompareDetailRequest 请求对象
      * @return AsyncInvoker<ListDataCompareDetailRequest, ListDataCompareDetailResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListDataCompareDetailRequest, ListDataCompareDetailResponse> listDataCompareDetailAsyncInvoker(
         ListDataCompareDetailRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.listDataCompareDetail, hcClient);
@@ -1293,6 +1363,7 @@ public class DrsAsyncClient {
      * @param request ListDataCompareOverviewRequest 请求对象
      * @return CompletableFuture<ListDataCompareOverviewResponse>
      */
+    @Deprecated
     public CompletableFuture<ListDataCompareOverviewResponse> listDataCompareOverviewAsync(
         ListDataCompareOverviewRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.listDataCompareOverview);
@@ -1308,6 +1379,7 @@ public class DrsAsyncClient {
      * @param request ListDataCompareOverviewRequest 请求对象
      * @return AsyncInvoker<ListDataCompareOverviewRequest, ListDataCompareOverviewResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListDataCompareOverviewRequest, ListDataCompareOverviewResponse> listDataCompareOverviewAsyncInvoker(
         ListDataCompareOverviewRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.listDataCompareOverview, hcClient);
@@ -1323,6 +1395,7 @@ public class DrsAsyncClient {
      * @param request ListDataLevelTableCompareJobsRequest 请求对象
      * @return CompletableFuture<ListDataLevelTableCompareJobsResponse>
      */
+    @Deprecated
     public CompletableFuture<ListDataLevelTableCompareJobsResponse> listDataLevelTableCompareJobsAsync(
         ListDataLevelTableCompareJobsRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.listDataLevelTableCompareJobs);
@@ -1338,6 +1411,7 @@ public class DrsAsyncClient {
      * @param request ListDataLevelTableCompareJobsRequest 请求对象
      * @return AsyncInvoker<ListDataLevelTableCompareJobsRequest, ListDataLevelTableCompareJobsResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListDataLevelTableCompareJobsRequest, ListDataLevelTableCompareJobsResponse> listDataLevelTableCompareJobsAsyncInvoker(
         ListDataLevelTableCompareJobsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.listDataLevelTableCompareJobs, hcClient);
@@ -1353,6 +1427,7 @@ public class DrsAsyncClient {
      * @param request ListObejectLevelCompareDetailRequest 请求对象
      * @return CompletableFuture<ListObejectLevelCompareDetailResponse>
      */
+    @Deprecated
     public CompletableFuture<ListObejectLevelCompareDetailResponse> listObejectLevelCompareDetailAsync(
         ListObejectLevelCompareDetailRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.listObejectLevelCompareDetail);
@@ -1368,6 +1443,7 @@ public class DrsAsyncClient {
      * @param request ListObejectLevelCompareDetailRequest 请求对象
      * @return AsyncInvoker<ListObejectLevelCompareDetailRequest, ListObejectLevelCompareDetailResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListObejectLevelCompareDetailRequest, ListObejectLevelCompareDetailResponse> listObejectLevelCompareDetailAsyncInvoker(
         ListObejectLevelCompareDetailRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.listObejectLevelCompareDetail, hcClient);
@@ -1383,6 +1459,7 @@ public class DrsAsyncClient {
      * @param request ListObejectLevelCompareOverviewRequest 请求对象
      * @return CompletableFuture<ListObejectLevelCompareOverviewResponse>
      */
+    @Deprecated
     public CompletableFuture<ListObejectLevelCompareOverviewResponse> listObejectLevelCompareOverviewAsync(
         ListObejectLevelCompareOverviewRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.listObejectLevelCompareOverview);
@@ -1398,6 +1475,7 @@ public class DrsAsyncClient {
      * @param request ListObejectLevelCompareOverviewRequest 请求对象
      * @return AsyncInvoker<ListObejectLevelCompareOverviewRequest, ListObejectLevelCompareOverviewResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListObejectLevelCompareOverviewRequest, ListObejectLevelCompareOverviewResponse> listObejectLevelCompareOverviewAsyncInvoker(
         ListObejectLevelCompareOverviewRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.listObejectLevelCompareOverview, hcClient);
@@ -1413,6 +1491,7 @@ public class DrsAsyncClient {
      * @param request ListUsersRequest 请求对象
      * @return CompletableFuture<ListUsersResponse>
      */
+    @Deprecated
     public CompletableFuture<ListUsersResponse> listUsersAsync(ListUsersRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.listUsers);
     }
@@ -1427,6 +1506,7 @@ public class DrsAsyncClient {
      * @param request ListUsersRequest 请求对象
      * @return AsyncInvoker<ListUsersRequest, ListUsersResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListUsersRequest, ListUsersResponse> listUsersAsyncInvoker(ListUsersRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.listUsers, hcClient);
     }
@@ -1441,6 +1521,7 @@ public class DrsAsyncClient {
      * @param request ModifyGroupAndStreamRequest 请求对象
      * @return CompletableFuture<ModifyGroupAndStreamResponse>
      */
+    @Deprecated
     public CompletableFuture<ModifyGroupAndStreamResponse> modifyGroupAndStreamAsync(
         ModifyGroupAndStreamRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.modifyGroupAndStream);
@@ -1456,6 +1537,7 @@ public class DrsAsyncClient {
      * @param request ModifyGroupAndStreamRequest 请求对象
      * @return AsyncInvoker<ModifyGroupAndStreamRequest, ModifyGroupAndStreamResponse>
      */
+    @Deprecated
     public AsyncInvoker<ModifyGroupAndStreamRequest, ModifyGroupAndStreamResponse> modifyGroupAndStreamAsyncInvoker(
         ModifyGroupAndStreamRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.modifyGroupAndStream, hcClient);
@@ -1471,6 +1553,7 @@ public class DrsAsyncClient {
      * @param request QueryTuningParamsRequest 请求对象
      * @return CompletableFuture<QueryTuningParamsResponse>
      */
+    @Deprecated
     public CompletableFuture<QueryTuningParamsResponse> queryTuningParamsAsync(QueryTuningParamsRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.queryTuningParams);
     }
@@ -1485,6 +1568,7 @@ public class DrsAsyncClient {
      * @param request QueryTuningParamsRequest 请求对象
      * @return AsyncInvoker<QueryTuningParamsRequest, QueryTuningParamsResponse>
      */
+    @Deprecated
     public AsyncInvoker<QueryTuningParamsRequest, QueryTuningParamsResponse> queryTuningParamsAsyncInvoker(
         QueryTuningParamsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.queryTuningParams, hcClient);
@@ -1500,6 +1584,7 @@ public class DrsAsyncClient {
      * @param request SelectGroupAndStreamRequest 请求对象
      * @return CompletableFuture<SelectGroupAndStreamResponse>
      */
+    @Deprecated
     public CompletableFuture<SelectGroupAndStreamResponse> selectGroupAndStreamAsync(
         SelectGroupAndStreamRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.selectGroupAndStream);
@@ -1515,6 +1600,7 @@ public class DrsAsyncClient {
      * @param request SelectGroupAndStreamRequest 请求对象
      * @return AsyncInvoker<SelectGroupAndStreamRequest, SelectGroupAndStreamResponse>
      */
+    @Deprecated
     public AsyncInvoker<SelectGroupAndStreamRequest, SelectGroupAndStreamResponse> selectGroupAndStreamAsyncInvoker(
         SelectGroupAndStreamRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.selectGroupAndStream, hcClient);
@@ -1530,6 +1616,7 @@ public class DrsAsyncClient {
      * @param request ShowJobListRequest 请求对象
      * @return CompletableFuture<ShowJobListResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowJobListResponse> showJobListAsync(ShowJobListRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.showJobList);
     }
@@ -1544,6 +1631,7 @@ public class DrsAsyncClient {
      * @param request ShowJobListRequest 请求对象
      * @return AsyncInvoker<ShowJobListRequest, ShowJobListResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowJobListRequest, ShowJobListResponse> showJobListAsyncInvoker(ShowJobListRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.showJobList, hcClient);
     }
@@ -1558,6 +1646,7 @@ public class DrsAsyncClient {
      * @param request ShowMonitoringDataRequest 请求对象
      * @return CompletableFuture<ShowMonitoringDataResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowMonitoringDataResponse> showMonitoringDataAsync(ShowMonitoringDataRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.showMonitoringData);
     }
@@ -1572,6 +1661,7 @@ public class DrsAsyncClient {
      * @param request ShowMonitoringDataRequest 请求对象
      * @return AsyncInvoker<ShowMonitoringDataRequest, ShowMonitoringDataResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowMonitoringDataRequest, ShowMonitoringDataResponse> showMonitoringDataAsyncInvoker(
         ShowMonitoringDataRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.showMonitoringData, hcClient);
@@ -1615,6 +1705,7 @@ public class DrsAsyncClient {
      * @param request StartPromptlyDataLevelTableCompareJobRequest 请求对象
      * @return CompletableFuture<StartPromptlyDataLevelTableCompareJobResponse>
      */
+    @Deprecated
     public CompletableFuture<StartPromptlyDataLevelTableCompareJobResponse> startPromptlyDataLevelTableCompareJobAsync(
         StartPromptlyDataLevelTableCompareJobRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.startPromptlyDataLevelTableCompareJob);
@@ -1630,6 +1721,7 @@ public class DrsAsyncClient {
      * @param request StartPromptlyDataLevelTableCompareJobRequest 请求对象
      * @return AsyncInvoker<StartPromptlyDataLevelTableCompareJobRequest, StartPromptlyDataLevelTableCompareJobResponse>
      */
+    @Deprecated
     public AsyncInvoker<StartPromptlyDataLevelTableCompareJobRequest, StartPromptlyDataLevelTableCompareJobResponse> startPromptlyDataLevelTableCompareJobAsyncInvoker(
         StartPromptlyDataLevelTableCompareJobRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.startPromptlyDataLevelTableCompareJob, hcClient);
@@ -1645,6 +1737,7 @@ public class DrsAsyncClient {
      * @param request UpdateParamsRequest 请求对象
      * @return CompletableFuture<UpdateParamsResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateParamsResponse> updateParamsAsync(UpdateParamsRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.updateParams);
     }
@@ -1659,6 +1752,7 @@ public class DrsAsyncClient {
      * @param request UpdateParamsRequest 请求对象
      * @return AsyncInvoker<UpdateParamsRequest, UpdateParamsResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateParamsRequest, UpdateParamsResponse> updateParamsAsyncInvoker(
         UpdateParamsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.updateParams, hcClient);
@@ -1674,6 +1768,7 @@ public class DrsAsyncClient {
      * @param request UpdateTuningParamsRequest 请求对象
      * @return CompletableFuture<UpdateTuningParamsResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateTuningParamsResponse> updateTuningParamsAsync(UpdateTuningParamsRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.updateTuningParams);
     }
@@ -1688,6 +1783,7 @@ public class DrsAsyncClient {
      * @param request UpdateTuningParamsRequest 请求对象
      * @return AsyncInvoker<UpdateTuningParamsRequest, UpdateTuningParamsResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateTuningParamsRequest, UpdateTuningParamsResponse> updateTuningParamsAsyncInvoker(
         UpdateTuningParamsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.updateTuningParams, hcClient);

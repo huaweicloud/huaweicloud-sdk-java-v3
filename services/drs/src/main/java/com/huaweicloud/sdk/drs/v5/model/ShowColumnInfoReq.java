@@ -29,7 +29,7 @@ public class ShowColumnInfoReq {
     }
 
     /**
-     * 是否重新从node获取列信息
+     * 是否重新从node获取列信息，默认为否。
      * @return refresh
      */
     public Boolean getRefresh() {

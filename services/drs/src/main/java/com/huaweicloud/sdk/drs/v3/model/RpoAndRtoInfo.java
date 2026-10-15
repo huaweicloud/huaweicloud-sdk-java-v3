@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * RpoAndRTO信息体
+ * RPO和RTO信息体
  */
 public class RpoAndRtoInfo {
 
@@ -36,7 +36,7 @@ public class RpoAndRtoInfo {
     }
 
     /**
-     * 检查点
+     * **参数解释**：  数据复制的检查点位置，标识已同步数据的Binlog位置。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return checkPoint
      */
     public String getCheckPoint() {
@@ -53,7 +53,7 @@ public class RpoAndRtoInfo {
     }
 
     /**
-     * 延迟
+     * **参数解释**：  数据同步延迟时间。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return delay
      */
     public String getDelay() {
@@ -70,7 +70,7 @@ public class RpoAndRtoInfo {
     }
 
     /**
-     * gtid集合
+     * **参数解释**：  全局事务ID集合（Global Transaction Identifier），用于标识已执行的事务。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return gtidSet
      */
     public String getGtidSet() {
@@ -87,7 +87,7 @@ public class RpoAndRtoInfo {
     }
 
     /**
-     * 当前时间 ，格式为“yyyy-MM-dd HH:mm:ss”
+     * **参数解释**：  RPO或RTO的统计时间点，格式为\"yyyy-MM-dd HH:mm:ss\"。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return time
      */
     public String getTime() {

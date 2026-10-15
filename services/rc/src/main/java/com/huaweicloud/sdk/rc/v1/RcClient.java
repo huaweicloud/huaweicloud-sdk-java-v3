@@ -499,7 +499,7 @@ public class RcClient {
     /**
      * 列举资源概要
      *
-     * 查询当前帐号的资源概览，需要当前用户有rc::listResourceSummary权限。
+     * 查询当前帐号的资源概览，需要当前用户有resourcecenter::listResourceSummary权限。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -513,7 +513,7 @@ public class RcClient {
     /**
      * 列举资源概要
      *
-     * 查询当前帐号的资源概览，需要当前用户有rc::listResourceSummary权限。
+     * 查询当前帐号的资源概览，需要当前用户有resourcecenter::listResourceSummary权限。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -1175,6 +1175,21 @@ public class OptVerseMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListChatRequest::getAgentType, ListChatRequest::setAgentType));
+        builder.<String>withRequestField("domain_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListChatRequest::getDomainType, ListChatRequest::setDomainType));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListChatRequest::getStartTime, ListChatRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListChatRequest::getEndTime, ListChatRequest::setEndTime));
 
         // response
 

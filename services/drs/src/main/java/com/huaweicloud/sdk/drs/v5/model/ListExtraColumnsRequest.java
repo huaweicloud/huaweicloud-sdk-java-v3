@@ -110,6 +110,11 @@ public class ListExtraColumnsRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fetch_all")
+
+    private Boolean fetchAll;
+
     public ListExtraColumnsRequest withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -197,6 +202,23 @@ public class ListExtraColumnsRequest {
         this.limit = limit;
     }
 
+    public ListExtraColumnsRequest withFetchAll(Boolean fetchAll) {
+        this.fetchAll = fetchAll;
+        return this;
+    }
+
+    /**
+     * 是否查询所有数据，值为\"true\"时会使得offset和limit参数失效并返回所有记录，默认值为\"false\"。
+     * @return fetchAll
+     */
+    public Boolean getFetchAll() {
+        return fetchAll;
+    }
+
+    public void setFetchAll(Boolean fetchAll) {
+        this.fetchAll = fetchAll;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -208,12 +230,12 @@ public class ListExtraColumnsRequest {
         ListExtraColumnsRequest that = (ListExtraColumnsRequest) obj;
         return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.xLanguage, that.xLanguage)
             && Objects.equals(this.isOnlyShowSent, that.isOnlyShowSent) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.fetchAll, that.fetchAll);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, xLanguage, isOnlyShowSent, offset, limit);
+        return Objects.hash(jobId, xLanguage, isOnlyShowSent, offset, limit, fetchAll);
     }
 
     @Override
@@ -225,6 +247,7 @@ public class ListExtraColumnsRequest {
         sb.append("    isOnlyShowSent: ").append(toIndentedString(isOnlyShowSent)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    fetchAll: ").append(toIndentedString(fetchAll)).append("\n");
         sb.append("}");
         return sb.toString();
     }

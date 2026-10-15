@@ -1,7 +1,11 @@
 package com.huaweicloud.sdk.aidatalake.v2;
 
+import com.huaweicloud.sdk.aidatalake.v2.model.CancelAuraDataframeJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.CancelAuraDataframeJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelAuraSqlStatementRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelAuraSqlStatementResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.CancelFlinkJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.CancelFlinkJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelRayJobRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelRayJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelSparkJobRequest;
@@ -10,16 +14,42 @@ import com.huaweicloud.sdk.aidatalake.v2.model.CancelSparkSqlRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelSparkSqlResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.CloseAuraSqlSessionRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.CloseAuraSqlSessionResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.CloseRaySessionRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.CloseRaySessionResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateAuraDataframeJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateAuraDataframeJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.CreateAuraSqlSessionRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.CreateAuraSqlSessionResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateFederationRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateFederationResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateFlinkSavepointRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateFlinkSavepointResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateRaySessionRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateRaySessionResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.DeleteFederationRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.DeleteFederationResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.DeleteFlinkSavepointRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.DeleteFlinkSavepointResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ExecuteAuraSqlStatementRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ExecuteAuraSqlStatementResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraDataframeJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraDataframeJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraSessionStatementRecordsRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraSessionStatementRecordsResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraSqlSessionsRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraSqlSessionsResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraStatementRecordsRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraStatementRecordsResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFederationsRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFederationsResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFlinkJobAutoscalingHistoriesRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFlinkJobAutoscalingHistoriesResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFlinkJobEventsRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFlinkJobEventsResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFlinkJobsRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFlinkJobsResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFlinkSavepointRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFlinkSavepointResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListRayJobsRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListRayJobsResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListSparkJobsRequest;
@@ -30,12 +60,16 @@ import com.huaweicloud.sdk.aidatalake.v2.model.PreviewSparkSqlResultRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.PreviewSparkSqlResultResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.RestartSparkSqlClusterRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.RestartSparkSqlClusterResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.RunFlinkJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.RunFlinkJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.RunRayJobRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.RunRayJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.RunSparkJobRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.RunSparkJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.RunSparkSqlRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.RunSparkSqlResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraDataframeJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraDataframeJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraSqlSessionRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraSqlSessionResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraSqlStatementResultRequest;
@@ -44,6 +78,16 @@ import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraStatementOperatorMetricsR
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraStatementOperatorMetricsResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraStatementQueryMetricsRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraStatementQueryMetricsResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFederationRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFederationResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFlinkJobAutoscalingPolicyRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFlinkJobAutoscalingPolicyResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFlinkJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFlinkJobResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFlinkJobStateRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFlinkJobStateResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFlinkSavepointRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFlinkSavepointResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowRayJobRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowRayJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowSparkJobRequest;
@@ -56,6 +100,10 @@ import com.huaweicloud.sdk.aidatalake.v2.model.ShowSparkSqlRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowSparkSqlResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowSparkSqlStateRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowSparkSqlStateResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.UpdateFederationRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.UpdateFederationResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.UpdateFlinkJobAutoscalingPolicyRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.UpdateFlinkJobAutoscalingPolicyResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -73,6 +121,136 @@ public class AIDataLakeAsyncClient {
     public static ClientBuilder<AIDataLakeAsyncClient> newBuilder() {
         ClientBuilder<AIDataLakeAsyncClient> clientBuilder = new ClientBuilder<>(AIDataLakeAsyncClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 取消Aura Dataframe Job
+     *
+     * 取消正在运行中的Dataframe Job。
+     * 此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelAuraDataframeJobRequest 请求对象
+     * @return CompletableFuture<CancelAuraDataframeJobResponse>
+     */
+    public CompletableFuture<CancelAuraDataframeJobResponse> cancelAuraDataframeJobAsync(
+        CancelAuraDataframeJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.cancelAuraDataframeJob);
+    }
+
+    /**
+     * 取消Aura Dataframe Job
+     *
+     * 取消正在运行中的Dataframe Job。
+     * 此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelAuraDataframeJobRequest 请求对象
+     * @return AsyncInvoker<CancelAuraDataframeJobRequest, CancelAuraDataframeJobResponse>
+     */
+    public AsyncInvoker<CancelAuraDataframeJobRequest, CancelAuraDataframeJobResponse> cancelAuraDataframeJobAsyncInvoker(
+        CancelAuraDataframeJobRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.cancelAuraDataframeJob, hcClient);
+    }
+
+    /**
+     * 创建Aura Dataframe Job
+     *
+     * 创建Dataframe Job。
+     * 用户通过此接口在指定端点创建Dataframe Job。
+     * 此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAuraDataframeJobRequest 请求对象
+     * @return CompletableFuture<CreateAuraDataframeJobResponse>
+     */
+    public CompletableFuture<CreateAuraDataframeJobResponse> createAuraDataframeJobAsync(
+        CreateAuraDataframeJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.createAuraDataframeJob);
+    }
+
+    /**
+     * 创建Aura Dataframe Job
+     *
+     * 创建Dataframe Job。
+     * 用户通过此接口在指定端点创建Dataframe Job。
+     * 此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAuraDataframeJobRequest 请求对象
+     * @return AsyncInvoker<CreateAuraDataframeJobRequest, CreateAuraDataframeJobResponse>
+     */
+    public AsyncInvoker<CreateAuraDataframeJobRequest, CreateAuraDataframeJobResponse> createAuraDataframeJobAsyncInvoker(
+        CreateAuraDataframeJobRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.createAuraDataframeJob, hcClient);
+    }
+
+    /**
+     * 查看Aura Dataframe Job列表
+     *
+     * 查询Aura Dataframe Job列表。
+     * 此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAuraDataframeJobRequest 请求对象
+     * @return CompletableFuture<ListAuraDataframeJobResponse>
+     */
+    public CompletableFuture<ListAuraDataframeJobResponse> listAuraDataframeJobAsync(
+        ListAuraDataframeJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.listAuraDataframeJob);
+    }
+
+    /**
+     * 查看Aura Dataframe Job列表
+     *
+     * 查询Aura Dataframe Job列表。
+     * 此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAuraDataframeJobRequest 请求对象
+     * @return AsyncInvoker<ListAuraDataframeJobRequest, ListAuraDataframeJobResponse>
+     */
+    public AsyncInvoker<ListAuraDataframeJobRequest, ListAuraDataframeJobResponse> listAuraDataframeJobAsyncInvoker(
+        ListAuraDataframeJobRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.listAuraDataframeJob, hcClient);
+    }
+
+    /**
+     * 查看Aura Dataframe Job详情
+     *
+     * 查询Aura Dataframe Job信息。
+     * 此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAuraDataframeJobRequest 请求对象
+     * @return CompletableFuture<ShowAuraDataframeJobResponse>
+     */
+    public CompletableFuture<ShowAuraDataframeJobResponse> showAuraDataframeJobAsync(
+        ShowAuraDataframeJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.showAuraDataframeJob);
+    }
+
+    /**
+     * 查看Aura Dataframe Job详情
+     *
+     * 查询Aura Dataframe Job信息。
+     * 此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAuraDataframeJobRequest 请求对象
+     * @return AsyncInvoker<ShowAuraDataframeJobRequest, ShowAuraDataframeJobResponse>
+     */
+    public AsyncInvoker<ShowAuraDataframeJobRequest, ShowAuraDataframeJobResponse> showAuraDataframeJobAsyncInvoker(
+        ShowAuraDataframeJobRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.showAuraDataframeJob, hcClient);
     }
 
     /**
@@ -437,6 +615,560 @@ public class AIDataLakeAsyncClient {
     }
 
     /**
+     * 查询Flink作业自动调优历史
+     *
+     * 查询Flink作业自动调优历史记录，包含每次扩缩容操作的详细信息。此接口为同步接口，支持分页查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFlinkJobAutoscalingHistoriesRequest 请求对象
+     * @return CompletableFuture<ListFlinkJobAutoscalingHistoriesResponse>
+     */
+    public CompletableFuture<ListFlinkJobAutoscalingHistoriesResponse> listFlinkJobAutoscalingHistoriesAsync(
+        ListFlinkJobAutoscalingHistoriesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.listFlinkJobAutoscalingHistories);
+    }
+
+    /**
+     * 查询Flink作业自动调优历史
+     *
+     * 查询Flink作业自动调优历史记录，包含每次扩缩容操作的详细信息。此接口为同步接口，支持分页查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFlinkJobAutoscalingHistoriesRequest 请求对象
+     * @return AsyncInvoker<ListFlinkJobAutoscalingHistoriesRequest, ListFlinkJobAutoscalingHistoriesResponse>
+     */
+    public AsyncInvoker<ListFlinkJobAutoscalingHistoriesRequest, ListFlinkJobAutoscalingHistoriesResponse> listFlinkJobAutoscalingHistoriesAsyncInvoker(
+        ListFlinkJobAutoscalingHistoriesRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.listFlinkJobAutoscalingHistories, hcClient);
+    }
+
+    /**
+     * 查询Flink作业自动调优配置
+     *
+     * 查询Flink作业当前的自动调优配置。此接口为同步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlinkJobAutoscalingPolicyRequest 请求对象
+     * @return CompletableFuture<ShowFlinkJobAutoscalingPolicyResponse>
+     */
+    public CompletableFuture<ShowFlinkJobAutoscalingPolicyResponse> showFlinkJobAutoscalingPolicyAsync(
+        ShowFlinkJobAutoscalingPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.showFlinkJobAutoscalingPolicy);
+    }
+
+    /**
+     * 查询Flink作业自动调优配置
+     *
+     * 查询Flink作业当前的自动调优配置。此接口为同步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlinkJobAutoscalingPolicyRequest 请求对象
+     * @return AsyncInvoker<ShowFlinkJobAutoscalingPolicyRequest, ShowFlinkJobAutoscalingPolicyResponse>
+     */
+    public AsyncInvoker<ShowFlinkJobAutoscalingPolicyRequest, ShowFlinkJobAutoscalingPolicyResponse> showFlinkJobAutoscalingPolicyAsyncInvoker(
+        ShowFlinkJobAutoscalingPolicyRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.showFlinkJobAutoscalingPolicy, hcClient);
+    }
+
+    /**
+     * 热更新Flink作业自动调优配置
+     *
+     * 热更新Flink作业自动调优配置。此接口为异步接口，作业运行中时配置将自动应用，无需重启作业。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateFlinkJobAutoscalingPolicyRequest 请求对象
+     * @return CompletableFuture<UpdateFlinkJobAutoscalingPolicyResponse>
+     */
+    public CompletableFuture<UpdateFlinkJobAutoscalingPolicyResponse> updateFlinkJobAutoscalingPolicyAsync(
+        UpdateFlinkJobAutoscalingPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.updateFlinkJobAutoscalingPolicy);
+    }
+
+    /**
+     * 热更新Flink作业自动调优配置
+     *
+     * 热更新Flink作业自动调优配置。此接口为异步接口，作业运行中时配置将自动应用，无需重启作业。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateFlinkJobAutoscalingPolicyRequest 请求对象
+     * @return AsyncInvoker<UpdateFlinkJobAutoscalingPolicyRequest, UpdateFlinkJobAutoscalingPolicyResponse>
+     */
+    public AsyncInvoker<UpdateFlinkJobAutoscalingPolicyRequest, UpdateFlinkJobAutoscalingPolicyResponse> updateFlinkJobAutoscalingPolicyAsyncInvoker(
+        UpdateFlinkJobAutoscalingPolicyRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.updateFlinkJobAutoscalingPolicy, hcClient);
+    }
+
+    /**
+     * 取消Flink作业执行
+     *
+     * 取消Flink作业。此接口为异步接口，响应仅表示取消请求已接收，作业实际停止状态可通过[查询Flink作业状态](ShowFlinkJobState.xml)接口查询。
+     * 支持多种停止策略：
+     * - NONE：立即停止不保存状态。
+     * - STOP_WITH_SAVEPOINT：停止前创建快照。
+     * - STOP_WITH_DRAIN：Drain模式停止，触发窗口计算后再创建快照停止。
+     * - FORCE_CANCEL：强制取消，仅当作业已处于CANCELLING状态时可再次触发取消。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelFlinkJobRequest 请求对象
+     * @return CompletableFuture<CancelFlinkJobResponse>
+     */
+    public CompletableFuture<CancelFlinkJobResponse> cancelFlinkJobAsync(CancelFlinkJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.cancelFlinkJob);
+    }
+
+    /**
+     * 取消Flink作业执行
+     *
+     * 取消Flink作业。此接口为异步接口，响应仅表示取消请求已接收，作业实际停止状态可通过[查询Flink作业状态](ShowFlinkJobState.xml)接口查询。
+     * 支持多种停止策略：
+     * - NONE：立即停止不保存状态。
+     * - STOP_WITH_SAVEPOINT：停止前创建快照。
+     * - STOP_WITH_DRAIN：Drain模式停止，触发窗口计算后再创建快照停止。
+     * - FORCE_CANCEL：强制取消，仅当作业已处于CANCELLING状态时可再次触发取消。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelFlinkJobRequest 请求对象
+     * @return AsyncInvoker<CancelFlinkJobRequest, CancelFlinkJobResponse>
+     */
+    public AsyncInvoker<CancelFlinkJobRequest, CancelFlinkJobResponse> cancelFlinkJobAsyncInvoker(
+        CancelFlinkJobRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.cancelFlinkJob, hcClient);
+    }
+
+    /**
+     * 查询Flink作业事件详情列表
+     *
+     * 查询Flink作业的运行事件列表。此接口为同步接口，响应中包含作业运行期间产生的事件详情，可用于问题定位和运行状态追踪。
+     * 可通过[查看Flink作业详情](ShowFlinkJob.xml)接口获取作业完整信息，或通过[查询Flink作业状态](ShowFlinkJobState.xml)接口获取作业当前运行状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFlinkJobEventsRequest 请求对象
+     * @return CompletableFuture<ListFlinkJobEventsResponse>
+     */
+    public CompletableFuture<ListFlinkJobEventsResponse> listFlinkJobEventsAsync(ListFlinkJobEventsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.listFlinkJobEvents);
+    }
+
+    /**
+     * 查询Flink作业事件详情列表
+     *
+     * 查询Flink作业的运行事件列表。此接口为同步接口，响应中包含作业运行期间产生的事件详情，可用于问题定位和运行状态追踪。
+     * 可通过[查看Flink作业详情](ShowFlinkJob.xml)接口获取作业完整信息，或通过[查询Flink作业状态](ShowFlinkJobState.xml)接口获取作业当前运行状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFlinkJobEventsRequest 请求对象
+     * @return AsyncInvoker<ListFlinkJobEventsRequest, ListFlinkJobEventsResponse>
+     */
+    public AsyncInvoker<ListFlinkJobEventsRequest, ListFlinkJobEventsResponse> listFlinkJobEventsAsyncInvoker(
+        ListFlinkJobEventsRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.listFlinkJobEvents, hcClient);
+    }
+
+    /**
+     * 查询Flink作业列表
+     *
+     * 查询工作空间下Flink作业列表。此接口为同步接口，响应中包含作业的概要信息，支持分页查询和多条件筛选。
+     * 可通过[查看Flink作业详情](ShowFlinkJob.xml)接口获取指定作业的完整信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFlinkJobsRequest 请求对象
+     * @return CompletableFuture<ListFlinkJobsResponse>
+     */
+    public CompletableFuture<ListFlinkJobsResponse> listFlinkJobsAsync(ListFlinkJobsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.listFlinkJobs);
+    }
+
+    /**
+     * 查询Flink作业列表
+     *
+     * 查询工作空间下Flink作业列表。此接口为同步接口，响应中包含作业的概要信息，支持分页查询和多条件筛选。
+     * 可通过[查看Flink作业详情](ShowFlinkJob.xml)接口获取指定作业的完整信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFlinkJobsRequest 请求对象
+     * @return AsyncInvoker<ListFlinkJobsRequest, ListFlinkJobsResponse>
+     */
+    public AsyncInvoker<ListFlinkJobsRequest, ListFlinkJobsResponse> listFlinkJobsAsyncInvoker(
+        ListFlinkJobsRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.listFlinkJobs, hcClient);
+    }
+
+    /**
+     * 创建Flink作业
+     *
+     * 创建并启动Flink作业实例。此接口为异步接口，响应仅表示作业创建请求已接收，作业实际运行状态可通过[查询Flink作业状态](ShowFlinkJobState.xml)接口查询。
+     * 支持多种作业类型：
+     * - FLINK_SQL_JOB：Flink SQL作业，通过SQL脚本定义数据处理逻辑。
+     * - FLINK_JAR_JOB：Flink JAR作业，通过自定义JAR包定义数据处理逻辑。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunFlinkJobRequest 请求对象
+     * @return CompletableFuture<RunFlinkJobResponse>
+     */
+    public CompletableFuture<RunFlinkJobResponse> runFlinkJobAsync(RunFlinkJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.runFlinkJob);
+    }
+
+    /**
+     * 创建Flink作业
+     *
+     * 创建并启动Flink作业实例。此接口为异步接口，响应仅表示作业创建请求已接收，作业实际运行状态可通过[查询Flink作业状态](ShowFlinkJobState.xml)接口查询。
+     * 支持多种作业类型：
+     * - FLINK_SQL_JOB：Flink SQL作业，通过SQL脚本定义数据处理逻辑。
+     * - FLINK_JAR_JOB：Flink JAR作业，通过自定义JAR包定义数据处理逻辑。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunFlinkJobRequest 请求对象
+     * @return AsyncInvoker<RunFlinkJobRequest, RunFlinkJobResponse>
+     */
+    public AsyncInvoker<RunFlinkJobRequest, RunFlinkJobResponse> runFlinkJobAsyncInvoker(RunFlinkJobRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.runFlinkJob, hcClient);
+    }
+
+    /**
+     * 查看Flink作业详情
+     *
+     * 获取Flink作业实例的详细信息。此接口为同步接口，响应中包含作业的完整配置和运行状态信息。
+     * 可通过[查询Flink作业事件详情列表](ListFlinkJobEvents.xml)接口获取作业运行事件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlinkJobRequest 请求对象
+     * @return CompletableFuture<ShowFlinkJobResponse>
+     */
+    public CompletableFuture<ShowFlinkJobResponse> showFlinkJobAsync(ShowFlinkJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.showFlinkJob);
+    }
+
+    /**
+     * 查看Flink作业详情
+     *
+     * 获取Flink作业实例的详细信息。此接口为同步接口，响应中包含作业的完整配置和运行状态信息。
+     * 可通过[查询Flink作业事件详情列表](ListFlinkJobEvents.xml)接口获取作业运行事件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlinkJobRequest 请求对象
+     * @return AsyncInvoker<ShowFlinkJobRequest, ShowFlinkJobResponse>
+     */
+    public AsyncInvoker<ShowFlinkJobRequest, ShowFlinkJobResponse> showFlinkJobAsyncInvoker(
+        ShowFlinkJobRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.showFlinkJob, hcClient);
+    }
+
+    /**
+     * 查询Flink作业状态
+     *
+     * 查询Flink作业的运行状态。此接口为同步接口，响应中包含作业当前状态。
+     * 可通过[查看Flink作业详情](ShowFlinkJob.xml)接口获取作业完整信息，或通过[查询Flink作业事件详情列表](ListFlinkJobEvents.xml)接口获取作业运行事件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlinkJobStateRequest 请求对象
+     * @return CompletableFuture<ShowFlinkJobStateResponse>
+     */
+    public CompletableFuture<ShowFlinkJobStateResponse> showFlinkJobStateAsync(ShowFlinkJobStateRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.showFlinkJobState);
+    }
+
+    /**
+     * 查询Flink作业状态
+     *
+     * 查询Flink作业的运行状态。此接口为同步接口，响应中包含作业当前状态。
+     * 可通过[查看Flink作业详情](ShowFlinkJob.xml)接口获取作业完整信息，或通过[查询Flink作业事件详情列表](ListFlinkJobEvents.xml)接口获取作业运行事件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlinkJobStateRequest 请求对象
+     * @return AsyncInvoker<ShowFlinkJobStateRequest, ShowFlinkJobStateResponse>
+     */
+    public AsyncInvoker<ShowFlinkJobStateRequest, ShowFlinkJobStateResponse> showFlinkJobStateAsyncInvoker(
+        ShowFlinkJobStateRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.showFlinkJobState, hcClient);
+    }
+
+    /**
+     * 创建Flink作业Savepoint
+     *
+     * 为运行中的Flink作业触发Savepoint，用于保存作业当前状态。此接口为异步接口，响应仅表示快照创建请求已接收，快照实际生成状态可通过[查询Flink作业Savepoint列表](ListFlinkSavepoint.xml)接口查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateFlinkSavepointRequest 请求对象
+     * @return CompletableFuture<CreateFlinkSavepointResponse>
+     */
+    public CompletableFuture<CreateFlinkSavepointResponse> createFlinkSavepointAsync(
+        CreateFlinkSavepointRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.createFlinkSavepoint);
+    }
+
+    /**
+     * 创建Flink作业Savepoint
+     *
+     * 为运行中的Flink作业触发Savepoint，用于保存作业当前状态。此接口为异步接口，响应仅表示快照创建请求已接收，快照实际生成状态可通过[查询Flink作业Savepoint列表](ListFlinkSavepoint.xml)接口查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateFlinkSavepointRequest 请求对象
+     * @return AsyncInvoker<CreateFlinkSavepointRequest, CreateFlinkSavepointResponse>
+     */
+    public AsyncInvoker<CreateFlinkSavepointRequest, CreateFlinkSavepointResponse> createFlinkSavepointAsyncInvoker(
+        CreateFlinkSavepointRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.createFlinkSavepoint, hcClient);
+    }
+
+    /**
+     * 删除Flink作业Savepoint
+     *
+     * 删除指定Savepoint的元数据记录，不影响OBS中的实际Savepoint数据。该接口为同步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteFlinkSavepointRequest 请求对象
+     * @return CompletableFuture<DeleteFlinkSavepointResponse>
+     */
+    public CompletableFuture<DeleteFlinkSavepointResponse> deleteFlinkSavepointAsync(
+        DeleteFlinkSavepointRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.deleteFlinkSavepoint);
+    }
+
+    /**
+     * 删除Flink作业Savepoint
+     *
+     * 删除指定Savepoint的元数据记录，不影响OBS中的实际Savepoint数据。该接口为同步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteFlinkSavepointRequest 请求对象
+     * @return AsyncInvoker<DeleteFlinkSavepointRequest, DeleteFlinkSavepointResponse>
+     */
+    public AsyncInvoker<DeleteFlinkSavepointRequest, DeleteFlinkSavepointResponse> deleteFlinkSavepointAsyncInvoker(
+        DeleteFlinkSavepointRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.deleteFlinkSavepoint, hcClient);
+    }
+
+    /**
+     * 查询Flink作业Savepoint列表
+     *
+     * 查询指定Flink作业的Savepoint记录，返回分页列表。此接口为同步接口，响应中包含Savepoint的详细信息。
+     * 可通过[查询Flink作业Savepoint详情](ShowFlinkSavepoint.xml)接口获取指定Savepoint的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFlinkSavepointRequest 请求对象
+     * @return CompletableFuture<ListFlinkSavepointResponse>
+     */
+    public CompletableFuture<ListFlinkSavepointResponse> listFlinkSavepointAsync(ListFlinkSavepointRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.listFlinkSavepoint);
+    }
+
+    /**
+     * 查询Flink作业Savepoint列表
+     *
+     * 查询指定Flink作业的Savepoint记录，返回分页列表。此接口为同步接口，响应中包含Savepoint的详细信息。
+     * 可通过[查询Flink作业Savepoint详情](ShowFlinkSavepoint.xml)接口获取指定Savepoint的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFlinkSavepointRequest 请求对象
+     * @return AsyncInvoker<ListFlinkSavepointRequest, ListFlinkSavepointResponse>
+     */
+    public AsyncInvoker<ListFlinkSavepointRequest, ListFlinkSavepointResponse> listFlinkSavepointAsyncInvoker(
+        ListFlinkSavepointRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.listFlinkSavepoint, hcClient);
+    }
+
+    /**
+     * 查询Flink作业Savepoint详情
+     *
+     * 获取指定Savepoint的详细信息。此接口为同步接口，响应中包含Savepoint的完整状态和配置信息。
+     * 可通过[查询Flink作业Savepoint列表](ListFlinkSavepoint.xml)接口获取Savepoint列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlinkSavepointRequest 请求对象
+     * @return CompletableFuture<ShowFlinkSavepointResponse>
+     */
+    public CompletableFuture<ShowFlinkSavepointResponse> showFlinkSavepointAsync(ShowFlinkSavepointRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.showFlinkSavepoint);
+    }
+
+    /**
+     * 查询Flink作业Savepoint详情
+     *
+     * 获取指定Savepoint的详细信息。此接口为同步接口，响应中包含Savepoint的完整状态和配置信息。
+     * 可通过[查询Flink作业Savepoint列表](ListFlinkSavepoint.xml)接口获取Savepoint列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlinkSavepointRequest 请求对象
+     * @return AsyncInvoker<ShowFlinkSavepointRequest, ShowFlinkSavepointResponse>
+     */
+    public AsyncInvoker<ShowFlinkSavepointRequest, ShowFlinkSavepointResponse> showFlinkSavepointAsyncInvoker(
+        ShowFlinkSavepointRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.showFlinkSavepoint, hcClient);
+    }
+
+    /**
+     * 创建Ray联邦端点
+     *
+     * 创建Ray联邦端点。此接口为同步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateFederationRequest 请求对象
+     * @return CompletableFuture<CreateFederationResponse>
+     */
+    public CompletableFuture<CreateFederationResponse> createFederationAsync(CreateFederationRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.createFederation);
+    }
+
+    /**
+     * 创建Ray联邦端点
+     *
+     * 创建Ray联邦端点。此接口为同步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateFederationRequest 请求对象
+     * @return AsyncInvoker<CreateFederationRequest, CreateFederationResponse>
+     */
+    public AsyncInvoker<CreateFederationRequest, CreateFederationResponse> createFederationAsyncInvoker(
+        CreateFederationRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.createFederation, hcClient);
+    }
+
+    /**
+     * 删除Ray联邦端点
+     *
+     * 删除Ray联邦端点。此接口为同步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteFederationRequest 请求对象
+     * @return CompletableFuture<DeleteFederationResponse>
+     */
+    public CompletableFuture<DeleteFederationResponse> deleteFederationAsync(DeleteFederationRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.deleteFederation);
+    }
+
+    /**
+     * 删除Ray联邦端点
+     *
+     * 删除Ray联邦端点。此接口为同步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteFederationRequest 请求对象
+     * @return AsyncInvoker<DeleteFederationRequest, DeleteFederationResponse>
+     */
+    public AsyncInvoker<DeleteFederationRequest, DeleteFederationResponse> deleteFederationAsyncInvoker(
+        DeleteFederationRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.deleteFederation, hcClient);
+    }
+
+    /**
+     * 查询Ray联邦端点列表
+     *
+     * 查询工作空间下的Ray联邦端点列表。此接口为同步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFederationsRequest 请求对象
+     * @return CompletableFuture<ListFederationsResponse>
+     */
+    public CompletableFuture<ListFederationsResponse> listFederationsAsync(ListFederationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.listFederations);
+    }
+
+    /**
+     * 查询Ray联邦端点列表
+     *
+     * 查询工作空间下的Ray联邦端点列表。此接口为同步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFederationsRequest 请求对象
+     * @return AsyncInvoker<ListFederationsRequest, ListFederationsResponse>
+     */
+    public AsyncInvoker<ListFederationsRequest, ListFederationsResponse> listFederationsAsyncInvoker(
+        ListFederationsRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.listFederations, hcClient);
+    }
+
+    /**
+     * 查询Ray联邦端点详情
+     *
+     * 查询Ray联邦端点详情。此接口为同步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFederationRequest 请求对象
+     * @return CompletableFuture<ShowFederationResponse>
+     */
+    public CompletableFuture<ShowFederationResponse> showFederationAsync(ShowFederationRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.showFederation);
+    }
+
+    /**
+     * 查询Ray联邦端点详情
+     *
+     * 查询Ray联邦端点详情。此接口为同步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFederationRequest 请求对象
+     * @return AsyncInvoker<ShowFederationRequest, ShowFederationResponse>
+     */
+    public AsyncInvoker<ShowFederationRequest, ShowFederationResponse> showFederationAsyncInvoker(
+        ShowFederationRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.showFederation, hcClient);
+    }
+
+    /**
+     * 更新Ray联邦端点
+     *
+     * 更新Ray联邦端点。此接口为同步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateFederationRequest 请求对象
+     * @return CompletableFuture<UpdateFederationResponse>
+     */
+    public CompletableFuture<UpdateFederationResponse> updateFederationAsync(UpdateFederationRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.updateFederation);
+    }
+
+    /**
+     * 更新Ray联邦端点
+     *
+     * 更新Ray联邦端点。此接口为同步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateFederationRequest 请求对象
+     * @return AsyncInvoker<UpdateFederationRequest, UpdateFederationResponse>
+     */
+    public AsyncInvoker<UpdateFederationRequest, UpdateFederationResponse> updateFederationAsyncInvoker(
+        UpdateFederationRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.updateFederation, hcClient);
+    }
+
+    /**
      * 取消作业运行
      *
      * 取消作业运行。主要使用于取消运行Ray Job场景。本接口为异步接口，当前取消作业运行请求下发成功后会返回job_id，此时取消作业运行并没有立即完成，需要通过调用[查看Ray作业详情](ShowRayJob.xml)查询Job状态，当Job状态为CANCELED时代表取消作业运行成功。
@@ -547,6 +1279,64 @@ public class AIDataLakeAsyncClient {
      */
     public AsyncInvoker<ShowRayJobRequest, ShowRayJobResponse> showRayJobAsyncInvoker(ShowRayJobRequest request) {
         return new AsyncInvoker<>(request, AIDataLakeMeta.showRayJob, hcClient);
+    }
+
+    /**
+     * 关闭交互式会话
+     *
+     * 关闭一个已存在的交互式会话，将会话状态设置为成功。本接口为同步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CloseRaySessionRequest 请求对象
+     * @return CompletableFuture<CloseRaySessionResponse>
+     */
+    public CompletableFuture<CloseRaySessionResponse> closeRaySessionAsync(CloseRaySessionRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.closeRaySession);
+    }
+
+    /**
+     * 关闭交互式会话
+     *
+     * 关闭一个已存在的交互式会话，将会话状态设置为成功。本接口为同步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CloseRaySessionRequest 请求对象
+     * @return AsyncInvoker<CloseRaySessionRequest, CloseRaySessionResponse>
+     */
+    public AsyncInvoker<CloseRaySessionRequest, CloseRaySessionResponse> closeRaySessionAsyncInvoker(
+        CloseRaySessionRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.closeRaySession, hcClient);
+    }
+
+    /**
+     * 创建交互式会话
+     *
+     * 创建一个交互式会话。本接口为同步接口，用于Notebook等交互式工具连接Ray集群。联邦用户认证场景下，会返回含联邦用户身份对应的凭据名称。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRaySessionRequest 请求对象
+     * @return CompletableFuture<CreateRaySessionResponse>
+     */
+    public CompletableFuture<CreateRaySessionResponse> createRaySessionAsync(CreateRaySessionRequest request) {
+        return hcClient.asyncInvokeHttp(request, AIDataLakeMeta.createRaySession);
+    }
+
+    /**
+     * 创建交互式会话
+     *
+     * 创建一个交互式会话。本接口为同步接口，用于Notebook等交互式工具连接Ray集群。联邦用户认证场景下，会返回含联邦用户身份对应的凭据名称。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRaySessionRequest 请求对象
+     * @return AsyncInvoker<CreateRaySessionRequest, CreateRaySessionResponse>
+     */
+    public AsyncInvoker<CreateRaySessionRequest, CreateRaySessionResponse> createRaySessionAsyncInvoker(
+        CreateRaySessionRequest request) {
+        return new AsyncInvoker<>(request, AIDataLakeMeta.createRaySession, hcClient);
     }
 
     /**

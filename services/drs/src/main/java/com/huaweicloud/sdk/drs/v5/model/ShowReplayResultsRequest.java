@@ -96,7 +96,7 @@ public class ShowReplayResultsRequest {
     private XLanguageEnum xLanguage;
 
     /**
-     * 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。 - error_classification：回放异常SQL分类。
+     * 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。 - error_classification：回放异常SQL分类。 - sql_result_inconsistent：回放库和镜像库里面SQL执行结果不一致详情。 - replayed_sql：流量回放已回放SQL统计信息。 - ugo_error_sql：ugo转换失败信息。 - sql_object_statistic：SQL对象统计信息。 - archive_capture_data：录制产生文件的SQL data数据。
      */
     public static final class TypeEnum {
 
@@ -135,6 +135,31 @@ public class ShowReplayResultsRequest {
          */
         public static final TypeEnum ERROR_CLASSIFICATION = new TypeEnum("error_classification");
 
+        /**
+         * Enum SQL_RESULT_INCONSISTENT for value: "sql_result_inconsistent"
+         */
+        public static final TypeEnum SQL_RESULT_INCONSISTENT = new TypeEnum("sql_result_inconsistent");
+
+        /**
+         * Enum REPLAYED_SQL for value: "replayed_sql"
+         */
+        public static final TypeEnum REPLAYED_SQL = new TypeEnum("replayed_sql");
+
+        /**
+         * Enum UGO_ERROR_SQL for value: "ugo_error_sql"
+         */
+        public static final TypeEnum UGO_ERROR_SQL = new TypeEnum("ugo_error_sql");
+
+        /**
+         * Enum SQL_OBJECT_STATISTIC for value: "sql_object_statistic"
+         */
+        public static final TypeEnum SQL_OBJECT_STATISTIC = new TypeEnum("sql_object_statistic");
+
+        /**
+         * Enum ARCHIVE_CAPTURE_DATA for value: "archive_capture_data"
+         */
+        public static final TypeEnum ARCHIVE_CAPTURE_DATA = new TypeEnum("archive_capture_data");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -146,6 +171,11 @@ public class ShowReplayResultsRequest {
             map.put("error_sql_template", ERROR_SQL_TEMPLATE);
             map.put("replaying_sql", REPLAYING_SQL);
             map.put("error_classification", ERROR_CLASSIFICATION);
+            map.put("sql_result_inconsistent", SQL_RESULT_INCONSISTENT);
+            map.put("replayed_sql", REPLAYED_SQL);
+            map.put("ugo_error_sql", UGO_ERROR_SQL);
+            map.put("sql_object_statistic", SQL_OBJECT_STATISTIC);
+            map.put("archive_capture_data", ARCHIVE_CAPTURE_DATA);
             return Collections.unmodifiableMap(map);
         }
 
@@ -432,7 +462,7 @@ public class ShowReplayResultsRequest {
     }
 
     /**
-     * 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。 - error_classification：回放异常SQL分类。
+     * 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。 - error_classification：回放异常SQL分类。 - sql_result_inconsistent：回放库和镜像库里面SQL执行结果不一致详情。 - replayed_sql：流量回放已回放SQL统计信息。 - ugo_error_sql：ugo转换失败信息。 - sql_object_statistic：SQL对象统计信息。 - archive_capture_data：录制产生文件的SQL data数据。
      * @return type
      */
     public TypeEnum getType() {

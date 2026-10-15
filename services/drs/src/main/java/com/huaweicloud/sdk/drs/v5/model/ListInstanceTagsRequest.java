@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ListInstanceTagsRequest {
 
     /**
-     * 资源类型。 - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 - subscription：数据订阅 - backupMigration：备份迁移 - replay：录制回放
+     * **参数解释**：  DRS资源类型，用于指定需要操作标签的资源所属的业务类型。不同资源类型对应不同的DRS任务类型，查询标签时需根据实际任务类型传入对应值。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 - subscription：数据订阅 - backupMigration：备份迁移 - replay：录制回放 - verify：校验任务  **默认取值**：  不涉及
      */
     public static final class ResourceTypeEnum {
 
@@ -50,6 +50,11 @@ public class ListInstanceTagsRequest {
          */
         public static final ResourceTypeEnum REPLAY = new ResourceTypeEnum("replay");
 
+        /**
+         * Enum VERIFY for value: "verify"
+         */
+        public static final ResourceTypeEnum VERIFY = new ResourceTypeEnum("verify");
+
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ResourceTypeEnum> createStaticFields() {
@@ -60,6 +65,7 @@ public class ListInstanceTagsRequest {
             map.put("subscription", SUBSCRIPTION);
             map.put("backupMigration", BACKUPMIGRATION);
             map.put("replay", REPLAY);
+            map.put("verify", VERIFY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -115,7 +121,7 @@ public class ListInstanceTagsRequest {
     private ResourceTypeEnum resourceType;
 
     /**
-     * 请求语言类型。
+     * **参数解释**：  请求语言类型。  **约束限制**：  不涉及。  **取值范围**：  - en-us：英文 - zh-cn：中文  **默认取值**：  en-us
      */
     public static final class XLanguageEnum {
 
@@ -200,7 +206,7 @@ public class ListInstanceTagsRequest {
     }
 
     /**
-     * 资源类型。 - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 - subscription：数据订阅 - backupMigration：备份迁移 - replay：录制回放
+     * **参数解释**：  DRS资源类型，用于指定需要操作标签的资源所属的业务类型。不同资源类型对应不同的DRS任务类型，查询标签时需根据实际任务类型传入对应值。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 - subscription：数据订阅 - backupMigration：备份迁移 - replay：录制回放 - verify：校验任务  **默认取值**：  不涉及
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {
@@ -217,7 +223,7 @@ public class ListInstanceTagsRequest {
     }
 
     /**
-     * 请求语言类型。
+     * **参数解释**：  请求语言类型。  **约束限制**：  不涉及。  **取值范围**：  - en-us：英文 - zh-cn：中文  **默认取值**：  en-us
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -236,7 +242,7 @@ public class ListInstanceTagsRequest {
     }
 
     /**
-     * 资源ID，即DRS任务ID。
+     * **参数解释**：  资源ID，即DRS任务ID。用于唯一标识一个DRS任务资源，在标签管理接口中用于定位需要查询标签的具体任务。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return resourceId
      */
     public String getResourceId() {

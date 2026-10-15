@@ -24,7 +24,7 @@ public class JobDetailResp {
     private String id;
 
     /**
-     * 任务状态。 - CREATING：创建中 - CREATE_FAILED：创建失败 - CONFIGURATION：配置中 - STARTJOBING：启动中 - WAITING_FOR_START：等待启动中 - START_JOB_FAILED：启动失败 - PAUSING：已暂停 - FULL_TRANSFER_STARTED：全量开始，灾备场景下为初始化 - FULL_TRANSFER_FAILED：全量失败，灾备场景下为初始化失败 - FULL_TRANSFER_COMPLETE：全量完成，灾备场景下为初始化完成 - INCRE_TRANSFER_STARTED：增量开始，灾备场景下为灾备中 - INCRE_TRANSFER_FAILED：增量失败，灾备场景下为灾备异常 - RELEASE_RESOURCE_STARTED：结束任务中 - RELEASE_RESOURCE_FAILED：结束任务失败 - RELEASE_RESOURCE_COMPLETE：已结束 - REBUILD_NODE_STARTED：故障恢复中 - REBUILD_NODE_FAILED：故障恢复失败 - CHANGE_JOB_STARTED：任务变更中 - CHANGE_JOB_FAILED：任务变更失败 - DELETED：已删除 - CHILD_TRANSFER_STARTING：再编辑子任务启动中 - CHILD_TRANSFER_STARTED：再编辑子任务迁移中 - CHILD_TRANSFER_COMPLETE：再编辑子任务迁移完成 - CHILD_TRANSFER_FAILED：再编辑子任务迁移失败 - RELEASE_CHILD_TRANSFER_STARTED：再编辑子任务结束中 - RELEASE_CHILD_TRANSFER_COMPLETE：再编辑子任务已结束 - NODE_UPGRADE_START：升级开始 - NODE_UPGRADE_COMPLETE：升级完成 - NODE_UPGRADE_FAILED：升级失败
+     * **参数解释**：  任务当前运行状态。  **约束限制**：  不涉及。  **取值范围**：  - CREATING：创建中 - CREATE_FAILED：创建失败 - CONFIGURATION：配置中 - STARTJOBING：启动中 - WAITING_FOR_START：等待启动中 - START_JOB_FAILED：启动失败 - PAUSING：已暂停 - FULL_TRANSFER_STARTED：全量开始，灾备场景下为初始化 - FULL_TRANSFER_FAILED：全量失败，灾备场景下为初始化失败 - FULL_TRANSFER_COMPLETE：全量完成，灾备场景下为初始化完成 - INCRE_TRANSFER_STARTED：增量开始，灾备场景下为灾备中 - INCRE_TRANSFER_FAILED：增量失败，灾备场景下为灾备异常 - RELEASE_RESOURCE_STARTED：结束任务中 - RELEASE_RESOURCE_FAILED：结束任务失败 - RELEASE_RESOURCE_COMPLETE：已结束 - REBUILD_NODE_STARTED：故障恢复中 - REBUILD_NODE_FAILED：故障恢复失败 - CHANGE_JOB_STARTED：任务变更中 - CHANGE_JOB_FAILED：任务变更失败 - DELETED：已删除 - CHILD_TRANSFER_STARTING：再编辑子任务启动中 - CHILD_TRANSFER_STARTED：再编辑子任务迁移中 - CHILD_TRANSFER_COMPLETE：再编辑子任务迁移完成 - CHILD_TRANSFER_FAILED：再编辑子任务迁移失败 - RELEASE_CHILD_TRANSFER_STARTED：再编辑子任务结束中 - RELEASE_CHILD_TRANSFER_COMPLETE：再编辑子任务已结束 - NODE_UPGRADE_START：升级开始 - NODE_UPGRADE_COMPLETE：升级完成 - NODE_UPGRADE_FAILED：升级失败  **默认取值**：  不涉及
      */
     public static final class StatusEnum {
 
@@ -403,7 +403,7 @@ public class JobDetailResp {
     private List<FailedToBindEipChildInfo> children = null;
 
     /**
-     * 解除目标库只读操作后，目标库解除只读是否成功。 - pending：目标库解除操作进行中。 - success：目标库解除只读操作成功。
+     * **参数解释**：  解除目标库只读操作后，目标库解除只读是否成功。  **约束限制**：  不涉及。  **取值范围**：  - pending：目标库解除操作进行中 - success：目标库解除只读操作成功  **默认取值**：  不涉及
      */
     public static final class IsWritableEnum {
 
@@ -498,7 +498,7 @@ public class JobDetailResp {
     private String repairExportStatus;
 
     /**
-     * 灾备任务内核方向，up上云，down下云。当任务处于倒换中，与灾备任务方向相反，否则相同。
+     * **参数解释**：  灾备内核方向，非倒换中与job_direction取值相同，倒换中与job_direction取值相反。  **约束限制**：  不涉及。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主  **默认取值**：  不涉及
      */
     public static final class JobKernelDirectionEnum {
 
@@ -572,13 +572,106 @@ public class JobDetailResp {
 
     private JobKernelDirectionEnum jobKernelDirection;
 
+    /**
+     * 同步模式 DB_LEVEL：库级 SCHEMA_LEVEL：schema级 TABLE_LEVEL：表级 FILE_IMPORT：文件导入 INSTANCE_LEVEL：实例级
+     */
+    public static final class SyncModeEnum {
+
+        /**
+         * Enum DB_LEVEL for value: "DB_LEVEL"
+         */
+        public static final SyncModeEnum DB_LEVEL = new SyncModeEnum("DB_LEVEL");
+
+        /**
+         * Enum SCHEMA_LEVEL for value: "SCHEMA_LEVEL"
+         */
+        public static final SyncModeEnum SCHEMA_LEVEL = new SyncModeEnum("SCHEMA_LEVEL");
+
+        /**
+         * Enum TABLE_LEVEL for value: "TABLE_LEVEL"
+         */
+        public static final SyncModeEnum TABLE_LEVEL = new SyncModeEnum("TABLE_LEVEL");
+
+        /**
+         * Enum FILE_IMPORT for value: "FILE_IMPORT"
+         */
+        public static final SyncModeEnum FILE_IMPORT = new SyncModeEnum("FILE_IMPORT");
+
+        /**
+         * Enum INSTANCE_LEVEL for value: "INSTANCE_LEVEL"
+         */
+        public static final SyncModeEnum INSTANCE_LEVEL = new SyncModeEnum("INSTANCE_LEVEL");
+
+        private static final Map<String, SyncModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SyncModeEnum> createStaticFields() {
+            Map<String, SyncModeEnum> map = new HashMap<>();
+            map.put("DB_LEVEL", DB_LEVEL);
+            map.put("SCHEMA_LEVEL", SCHEMA_LEVEL);
+            map.put("TABLE_LEVEL", TABLE_LEVEL);
+            map.put("FILE_IMPORT", FILE_IMPORT);
+            map.put("INSTANCE_LEVEL", INSTANCE_LEVEL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SyncModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SyncModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SyncModeEnum(value));
+        }
+
+        public static SyncModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SyncModeEnum) {
+                return this.value.equals(((SyncModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sync_mode")
+
+    private SyncModeEnum syncMode;
+
     public JobDetailResp withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 任务ID。
+     * **参数解释**：  任务ID，用于唯一标识一个数据复制任务。  **约束限制**：  不涉及。  **取值范围**：  UUID格式字符串。  **默认取值**：  不涉及
      * @return id
      */
     public String getId() {
@@ -595,7 +688,7 @@ public class JobDetailResp {
     }
 
     /**
-     * 任务状态。 - CREATING：创建中 - CREATE_FAILED：创建失败 - CONFIGURATION：配置中 - STARTJOBING：启动中 - WAITING_FOR_START：等待启动中 - START_JOB_FAILED：启动失败 - PAUSING：已暂停 - FULL_TRANSFER_STARTED：全量开始，灾备场景下为初始化 - FULL_TRANSFER_FAILED：全量失败，灾备场景下为初始化失败 - FULL_TRANSFER_COMPLETE：全量完成，灾备场景下为初始化完成 - INCRE_TRANSFER_STARTED：增量开始，灾备场景下为灾备中 - INCRE_TRANSFER_FAILED：增量失败，灾备场景下为灾备异常 - RELEASE_RESOURCE_STARTED：结束任务中 - RELEASE_RESOURCE_FAILED：结束任务失败 - RELEASE_RESOURCE_COMPLETE：已结束 - REBUILD_NODE_STARTED：故障恢复中 - REBUILD_NODE_FAILED：故障恢复失败 - CHANGE_JOB_STARTED：任务变更中 - CHANGE_JOB_FAILED：任务变更失败 - DELETED：已删除 - CHILD_TRANSFER_STARTING：再编辑子任务启动中 - CHILD_TRANSFER_STARTED：再编辑子任务迁移中 - CHILD_TRANSFER_COMPLETE：再编辑子任务迁移完成 - CHILD_TRANSFER_FAILED：再编辑子任务迁移失败 - RELEASE_CHILD_TRANSFER_STARTED：再编辑子任务结束中 - RELEASE_CHILD_TRANSFER_COMPLETE：再编辑子任务已结束 - NODE_UPGRADE_START：升级开始 - NODE_UPGRADE_COMPLETE：升级完成 - NODE_UPGRADE_FAILED：升级失败
+     * **参数解释**：  任务当前运行状态。  **约束限制**：  不涉及。  **取值范围**：  - CREATING：创建中 - CREATE_FAILED：创建失败 - CONFIGURATION：配置中 - STARTJOBING：启动中 - WAITING_FOR_START：等待启动中 - START_JOB_FAILED：启动失败 - PAUSING：已暂停 - FULL_TRANSFER_STARTED：全量开始，灾备场景下为初始化 - FULL_TRANSFER_FAILED：全量失败，灾备场景下为初始化失败 - FULL_TRANSFER_COMPLETE：全量完成，灾备场景下为初始化完成 - INCRE_TRANSFER_STARTED：增量开始，灾备场景下为灾备中 - INCRE_TRANSFER_FAILED：增量失败，灾备场景下为灾备异常 - RELEASE_RESOURCE_STARTED：结束任务中 - RELEASE_RESOURCE_FAILED：结束任务失败 - RELEASE_RESOURCE_COMPLETE：已结束 - REBUILD_NODE_STARTED：故障恢复中 - REBUILD_NODE_FAILED：故障恢复失败 - CHANGE_JOB_STARTED：任务变更中 - CHANGE_JOB_FAILED：任务变更失败 - DELETED：已删除 - CHILD_TRANSFER_STARTING：再编辑子任务启动中 - CHILD_TRANSFER_STARTED：再编辑子任务迁移中 - CHILD_TRANSFER_COMPLETE：再编辑子任务迁移完成 - CHILD_TRANSFER_FAILED：再编辑子任务迁移失败 - RELEASE_CHILD_TRANSFER_STARTED：再编辑子任务结束中 - RELEASE_CHILD_TRANSFER_COMPLETE：再编辑子任务已结束 - NODE_UPGRADE_START：升级开始 - NODE_UPGRADE_COMPLETE：升级完成 - NODE_UPGRADE_FAILED：升级失败  **默认取值**：  不涉及
      * @return status
      */
     public StatusEnum getStatus() {
@@ -612,7 +705,7 @@ public class JobDetailResp {
     }
 
     /**
-     * 任务创建时间。
+     * **参数解释**：  任务的创建时间，表示任务首次被创建的时间戳。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return createTime
      */
     public String getCreateTime() {
@@ -629,7 +722,7 @@ public class JobDetailResp {
     }
 
     /**
-     * 列表中的项目总数，与分页无关。
+     * **参数解释**：  列表中的项目总数，与分页无关。表示满足查询条件的记录总数量，用于分页计算。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return totalCount
      */
     public Integer getTotalCount() {
@@ -646,7 +739,7 @@ public class JobDetailResp {
     }
 
     /**
-     * 多任务主节点的任务ID。
+     * **参数解释**：  多任务主节点的任务ID，在多对一同步场景中标识主任务。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return masterJobId
      */
     public String getMasterJobId() {
@@ -705,7 +798,7 @@ public class JobDetailResp {
     }
 
     /**
-     * 任务源数据库信息体。
+     * **参数解释**：  任务源数据库信息体，详情请参见JobEndpointInfo对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及  **默认取值**：  不涉及
      * @return sourceEndpoint
      */
     public List<JobEndpointInfo> getSourceEndpoint() {
@@ -738,7 +831,7 @@ public class JobDetailResp {
     }
 
     /**
-     * 任务目标数据库信息体。
+     * **参数解释**：  任务目标数据库信息体，详情请参见JobEndpointInfo对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及  **默认取值**：  不涉及
      * @return targetEndpoint
      */
     public List<JobEndpointInfo> getTargetEndpoint() {
@@ -986,7 +1079,7 @@ public class JobDetailResp {
     }
 
     /**
-     * 日志查询结果信息体。
+     * **参数解释**：  日志查询结果信息体，详情请参见TaskLogInfo对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及  **默认取值**：  不涉及
      * @return logs
      */
     public List<TaskLogInfo> getLogs() {
@@ -1019,7 +1112,7 @@ public class JobDetailResp {
     }
 
     /**
-     * 网络打通测试结果信息体。
+     * **参数解释**：  网络打通测试结果信息体，详情请参见QueryNetworkResult对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及  **默认取值**：  不涉及
      * @return networkResults
      */
     public List<QueryNetworkResult> getNetworkResults() {
@@ -1209,7 +1302,7 @@ public class JobDetailResp {
     }
 
     /**
-     * 由开关和版本共同控制的任务级别的功能列表。
+     * **参数解释**：  由开关和版本共同控制的任务级别的功能列表，格式为key/value键值对。  **约束限制**：  不涉及。  **取值范围**：  不涉及  **默认取值**：  不涉及
      * @return instanceFeatures
      */
     public Map<String, String> getInstanceFeatures() {
@@ -1226,7 +1319,7 @@ public class JobDetailResp {
     }
 
     /**
-     * 任务版本。
+     * **参数解释**：  任务版本，标识当前数据复制任务所使用的版本号。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return taskVersion
      */
     public String getTaskVersion() {
@@ -1285,7 +1378,7 @@ public class JobDetailResp {
     }
 
     /**
-     * 指定公网IP的信息
+     * **参数解释**：  指定公网IP的信息列表，详情请参见PublicIpConfig对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及  **默认取值**：  不涉及
      * @return publicIpList
      */
     public List<PublicIpConfig> getPublicIpList() {
@@ -1302,7 +1395,7 @@ public class JobDetailResp {
     }
 
     /**
-     * 是否成功绑定公网IP 取值：SUCCESS，FAILED
+     * **参数解释**：  是否成功绑定公网IP，标识为任务绑定公网IP操作的执行结果。  **约束限制**：  不涉及。  **取值范围**：  - SUCCESS：成功 - FAILED：失败  **默认取值**：  不涉及
      * @return bindPublicIpState
      */
     public String getBindPublicIpState() {
@@ -1335,7 +1428,7 @@ public class JobDetailResp {
     }
 
     /**
-     * 多任务时，存在子任务绑定失败时，返回子任务的信息
+     * **参数解释**：  多任务时存在子任务绑定失败时返回的子任务信息列表，详情请参见FailedToBindEipChildInfo对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及  **默认取值**：  不涉及
      * @return children
      */
     public List<FailedToBindEipChildInfo> getChildren() {
@@ -1352,7 +1445,7 @@ public class JobDetailResp {
     }
 
     /**
-     * 解除目标库只读操作后，目标库解除只读是否成功。 - pending：目标库解除操作进行中。 - success：目标库解除只读操作成功。
+     * **参数解释**：  解除目标库只读操作后，目标库解除只读是否成功。  **约束限制**：  不涉及。  **取值范围**：  - pending：目标库解除操作进行中 - success：目标库解除只读操作成功  **默认取值**：  不涉及
      * @return isWritable
      */
     public IsWritableEnum getIsWritable() {
@@ -1385,7 +1478,7 @@ public class JobDetailResp {
     }
 
     /**
-     * 一键诊断结果。
+     * **参数解释**：  一键诊断结果列表，详情请参见QueryDiagnosisResult对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及  **默认取值**：  不涉及
      * @return diagnoses
      */
     public List<QueryDiagnosisResult> getDiagnoses() {
@@ -1454,7 +1547,7 @@ public class JobDetailResp {
     }
 
     /**
-     * 修复SQL导出状态。 INIT：初始状态，EXPORTING：比对结果导出中，EXPORT_COMPLETE：比对结果导出完成，EXPORT_COMMON_FAILED：比对结果导出失败
+     * **参数解释**：  修复SQL导出状态，标识数据修复SQL文件的导出进度。  **约束限制**：  不涉及。  **取值范围**：  - INIT：初始状态 - EXPORTING：比对结果导出中 - EXPORT_COMPLETE：比对结果导出完成 - EXPORT_COMMON_FAILED：比对结果导出失败  **默认取值**：  不涉及
      * @return repairExportStatus
      */
     public String getRepairExportStatus() {
@@ -1471,7 +1564,7 @@ public class JobDetailResp {
     }
 
     /**
-     * 灾备任务内核方向，up上云，down下云。当任务处于倒换中，与灾备任务方向相反，否则相同。
+     * **参数解释**：  灾备内核方向，非倒换中与job_direction取值相同，倒换中与job_direction取值相反。  **约束限制**：  不涉及。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主  **默认取值**：  不涉及
      * @return jobKernelDirection
      */
     public JobKernelDirectionEnum getJobKernelDirection() {
@@ -1480,6 +1573,23 @@ public class JobDetailResp {
 
     public void setJobKernelDirection(JobKernelDirectionEnum jobKernelDirection) {
         this.jobKernelDirection = jobKernelDirection;
+    }
+
+    public JobDetailResp withSyncMode(SyncModeEnum syncMode) {
+        this.syncMode = syncMode;
+        return this;
+    }
+
+    /**
+     * 同步模式 DB_LEVEL：库级 SCHEMA_LEVEL：schema级 TABLE_LEVEL：表级 FILE_IMPORT：文件导入 INSTANCE_LEVEL：实例级
+     * @return syncMode
+     */
+    public SyncModeEnum getSyncMode() {
+        return syncMode;
+    }
+
+    public void setSyncMode(SyncModeEnum syncMode) {
+        this.syncMode = syncMode;
     }
 
     @Override
@@ -1517,7 +1627,8 @@ public class JobDetailResp {
             && Objects.equals(this.repairProgressInfo, that.repairProgressInfo)
             && Objects.equals(this.repairDetailInfo, that.repairDetailInfo)
             && Objects.equals(this.repairExportStatus, that.repairExportStatus)
-            && Objects.equals(this.jobKernelDirection, that.jobKernelDirection);
+            && Objects.equals(this.jobKernelDirection, that.jobKernelDirection)
+            && Objects.equals(this.syncMode, that.syncMode);
     }
 
     @Override
@@ -1557,7 +1668,8 @@ public class JobDetailResp {
             repairProgressInfo,
             repairDetailInfo,
             repairExportStatus,
-            jobKernelDirection);
+            jobKernelDirection,
+            syncMode);
     }
 
     @Override
@@ -1602,6 +1714,7 @@ public class JobDetailResp {
         sb.append("    repairDetailInfo: ").append(toIndentedString(repairDetailInfo)).append("\n");
         sb.append("    repairExportStatus: ").append(toIndentedString(repairExportStatus)).append("\n");
         sb.append("    jobKernelDirection: ").append(toIndentedString(jobKernelDirection)).append("\n");
+        sb.append("    syncMode: ").append(toIndentedString(syncMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -24,7 +24,7 @@ public class PrecheckResult {
     private String item;
 
     /**
-     * 检查结果
+     * **参数解释**：  预检查项的检查结果，表示该检查项是否通过。  **约束限制**：  不涉及。  **取值范围**：  - PASSED：通过 - ALARM：告警 - FAILED：失败  **默认取值**：  不涉及
      */
     public static final class ResultEnum {
 
@@ -135,7 +135,7 @@ public class PrecheckResult {
     }
 
     /**
-     * 检查项。
+     * **参数解释**：  预检查的具体检查项名称，用于标识预检查中执行的具体检查项目。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return item
      */
     public String getItem() {
@@ -152,7 +152,7 @@ public class PrecheckResult {
     }
 
     /**
-     * 检查结果
+     * **参数解释**：  预检查项的检查结果，表示该检查项是否通过。  **约束限制**：  不涉及。  **取值范围**：  - PASSED：通过 - ALARM：告警 - FAILED：失败  **默认取值**：  不涉及
      * @return result
      */
     public ResultEnum getResult() {
@@ -169,7 +169,7 @@ public class PrecheckResult {
     }
 
     /**
-     * 失败原因。
+     * **参数解释**：  预检查项的失败原因，当检查结果为FAILED或ALARM时返回的具体失败描述。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return failedReason
      */
     public String getFailedReason() {
@@ -186,7 +186,7 @@ public class PrecheckResult {
     }
 
     /**
-     * 加密的数据。
+     * **参数解释**：  预检查项的加密数据，包含检查项的详细检测数据，以JSON格式加密返回。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return data
      */
     public String getData() {
@@ -203,7 +203,7 @@ public class PrecheckResult {
     }
 
     /**
-     * 行错误信息。
+     * **参数解释**：  原始错误信息，预检查过程中产生的原始错误描述。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return rawErrorMsg
      */
     public String getRawErrorMsg() {
@@ -220,7 +220,7 @@ public class PrecheckResult {
     }
 
     /**
-     * 检查项分组
+     * **参数解释**：  检查项分组，用于将预检查项按类别归类展示。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return group
      */
     public String getGroup() {
@@ -253,7 +253,7 @@ public class PrecheckResult {
     }
 
     /**
-     * 失败的子任务信息。
+     * **参数解释**：  失败的子任务信息集合，包含预检查中失败的子任务详情，详情请参见PrecheckFailSubJobVO对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return failedSubJobs
      */
     public List<PrecheckFailSubJobVO> getFailedSubJobs() {

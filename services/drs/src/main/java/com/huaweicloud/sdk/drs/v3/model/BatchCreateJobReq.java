@@ -40,7 +40,7 @@ public class BatchCreateJobReq {
     }
 
     /**
-     * 创建任务请求体
+     * **参数解释**：  创建任务请求体列表，详情请参见CreateJobReq对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return jobs
      */
     public List<CreateJobReq> getJobs() {

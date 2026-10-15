@@ -63,6 +63,11 @@ public class CompareJobInfo {
 
     private String proportionValue;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "database_info")
+
+    private Object databaseInfo;
+
     public CompareJobInfo withId(String id) {
         this.id = id;
         return this;
@@ -265,6 +270,23 @@ public class CompareJobInfo {
         this.proportionValue = proportionValue;
     }
 
+    public CompareJobInfo withDatabaseInfo(Object databaseInfo) {
+        this.databaseInfo = databaseInfo;
+        return this;
+    }
+
+    /**
+     * 灾备数据库信息。
+     * @return databaseInfo
+     */
+    public Object getDatabaseInfo() {
+        return databaseInfo;
+    }
+
+    public void setDatabaseInfo(Object databaseInfo) {
+        this.databaseInfo = databaseInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -280,7 +302,8 @@ public class CompareJobInfo {
             && Objects.equals(this.exportStatus, that.exportStatus)
             && Objects.equals(this.reportRemainSeconds, that.reportRemainSeconds)
             && Objects.equals(this.compareJobTag, that.compareJobTag)
-            && Objects.equals(this.proportionValue, that.proportionValue);
+            && Objects.equals(this.proportionValue, that.proportionValue)
+            && Objects.equals(this.databaseInfo, that.databaseInfo);
     }
 
     @Override
@@ -294,7 +317,8 @@ public class CompareJobInfo {
             exportStatus,
             reportRemainSeconds,
             compareJobTag,
-            proportionValue);
+            proportionValue,
+            databaseInfo);
     }
 
     @Override
@@ -311,6 +335,7 @@ public class CompareJobInfo {
         sb.append("    reportRemainSeconds: ").append(toIndentedString(reportRemainSeconds)).append("\n");
         sb.append("    compareJobTag: ").append(toIndentedString(compareJobTag)).append("\n");
         sb.append("    proportionValue: ").append(toIndentedString(proportionValue)).append("\n");
+        sb.append("    databaseInfo: ").append(toIndentedString(databaseInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

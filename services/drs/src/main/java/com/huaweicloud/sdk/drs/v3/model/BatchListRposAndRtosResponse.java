@@ -30,7 +30,7 @@ public class BatchListRposAndRtosResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释**：  返回的RPO和RTO查询结果总数，与results数组的长度一致。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return count
      */
     public Integer getCount() {
@@ -63,7 +63,7 @@ public class BatchListRposAndRtosResponse extends SdkResponse {
     }
 
     /**
-     * 批量查询RPO&RTO的响应体集合
+     * **参数解释**：  批量查询RPO和RTO的响应体集合，每个元素包含一个任务的RPO和RTO信息。详情请参见QueryRpoAndRtoResp对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return results
      */
     public List<QueryRpoAndRtoResp> getResults() {

@@ -108,6 +108,16 @@ public class InstanceConfigResult {
 
     private CpuOptions cpuOptions;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<TagsSingleValue> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tag_transmission_policy")
+
+    private String tagTransmissionPolicy;
+
     public InstanceConfigResult withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
@@ -506,6 +516,56 @@ public class InstanceConfigResult {
         this.cpuOptions = cpuOptions;
     }
 
+    public InstanceConfigResult withTags(List<TagsSingleValue> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public InstanceConfigResult addTagsItem(TagsSingleValue tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public InstanceConfigResult withTags(Consumer<List<TagsSingleValue>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 伸缩配置标签列表。每个伸缩配置最多添加20个标签。
+     * @return tags
+     */
+    public List<TagsSingleValue> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TagsSingleValue> tags) {
+        this.tags = tags;
+    }
+
+    public InstanceConfigResult withTagTransmissionPolicy(String tagTransmissionPolicy) {
+        this.tagTransmissionPolicy = tagTransmissionPolicy;
+        return this;
+    }
+
+    /**
+     * 标签传递策略，OVERRIDE表示扩容时使用伸缩配置标签，SUPPRESS表示扩容时使用伸缩组标签，默认SUPPRESS
+     * @return tagTransmissionPolicy
+     */
+    public String getTagTransmissionPolicy() {
+        return tagTransmissionPolicy;
+    }
+
+    public void setTagTransmissionPolicy(String tagTransmissionPolicy) {
+        this.tagTransmissionPolicy = tagTransmissionPolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -526,7 +586,8 @@ public class InstanceConfigResult {
             && Objects.equals(this.dedicatedHostId, that.dedicatedHostId)
             && Objects.equals(this.marketType, that.marketType)
             && Objects.equals(this.multiFlavorPriorityPolicy, that.multiFlavorPriorityPolicy)
-            && Objects.equals(this.cpuOptions, that.cpuOptions);
+            && Objects.equals(this.cpuOptions, that.cpuOptions) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.tagTransmissionPolicy, that.tagTransmissionPolicy);
     }
 
     @Override
@@ -549,7 +610,9 @@ public class InstanceConfigResult {
             dedicatedHostId,
             marketType,
             multiFlavorPriorityPolicy,
-            cpuOptions);
+            cpuOptions,
+            tags,
+            tagTransmissionPolicy);
     }
 
     @Override
@@ -575,6 +638,8 @@ public class InstanceConfigResult {
         sb.append("    marketType: ").append(toIndentedString(marketType)).append("\n");
         sb.append("    multiFlavorPriorityPolicy: ").append(toIndentedString(multiFlavorPriorityPolicy)).append("\n");
         sb.append("    cpuOptions: ").append(toIndentedString(cpuOptions)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    tagTransmissionPolicy: ").append(toIndentedString(tagTransmissionPolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

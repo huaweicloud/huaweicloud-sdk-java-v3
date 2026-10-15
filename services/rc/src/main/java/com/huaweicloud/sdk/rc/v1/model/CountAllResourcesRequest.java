@@ -48,6 +48,11 @@ public class CountAllResourcesRequest {
 
     private List<String> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
     public CountAllResourcesRequest withId(String id) {
         this.id = id;
         return this;
@@ -247,6 +252,23 @@ public class CountAllResourcesRequest {
         this.tags = tags;
     }
 
+    public CountAllResourcesRequest withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 资源组ID
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -259,12 +281,12 @@ public class CountAllResourcesRequest {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.type, that.type) && Objects.equals(this.regionId, that.regionId)
             && Objects.equals(this.epId, that.epId) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, regionId, epId, projectId, tags);
+        return Objects.hash(id, name, type, regionId, epId, projectId, tags, groupId);
     }
 
     @Override
@@ -278,6 +300,7 @@ public class CountAllResourcesRequest {
         sb.append("    epId: ").append(toIndentedString(epId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

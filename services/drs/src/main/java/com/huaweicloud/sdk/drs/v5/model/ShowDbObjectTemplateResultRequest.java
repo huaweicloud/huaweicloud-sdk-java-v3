@@ -98,7 +98,7 @@ public class ShowDbObjectTemplateResultRequest implements ProgressRequest {
     private XLanguageEnum xLanguage;
 
     /**
-     * 导入的结果类型。取值： - detail：获取最新导入的文件与校验结果，上传后的文件若存在错误，会同时将错误原因标记在文件内。 - synchronized：获取已同步的（已下发的）对象文件结果。 - change: 获取新增和删除的对象结果（当再编辑时使用）
+     * 导入的结果类型。取值： - detail：获取最新导入的文件与校验结果，上传后的文件若存在错误，会同时将错误原因标记在文件内。 - synchronized：获取已同步的（已下发的）对象文件结果。 - change: 获取新增和删除的对象结果（当再编辑时使用） - compare: 获取已导入的对比键文件结果。 - compare_key_detail: 获取已导入的对比键校验结果，上传后的文件若存在错误，会同时将错误原因标记在文件内。
      */
     public static final class TypeEnum {
 
@@ -117,6 +117,16 @@ public class ShowDbObjectTemplateResultRequest implements ProgressRequest {
          */
         public static final TypeEnum CHANGE = new TypeEnum("change");
 
+        /**
+         * Enum COMPARE for value: "compare"
+         */
+        public static final TypeEnum COMPARE = new TypeEnum("compare");
+
+        /**
+         * Enum COMPARE_KEY_DETAIL for value: "compare_key_detail"
+         */
+        public static final TypeEnum COMPARE_KEY_DETAIL = new TypeEnum("compare_key_detail");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -124,6 +134,8 @@ public class ShowDbObjectTemplateResultRequest implements ProgressRequest {
             map.put("detail", DETAIL);
             map.put("synchronized", SYNCHRONIZED);
             map.put("change", CHANGE);
+            map.put("compare", COMPARE);
+            map.put("compare_key_detail", COMPARE_KEY_DETAIL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -249,7 +261,7 @@ public class ShowDbObjectTemplateResultRequest implements ProgressRequest {
     }
 
     /**
-     * 导入的结果类型。取值： - detail：获取最新导入的文件与校验结果，上传后的文件若存在错误，会同时将错误原因标记在文件内。 - synchronized：获取已同步的（已下发的）对象文件结果。 - change: 获取新增和删除的对象结果（当再编辑时使用）
+     * 导入的结果类型。取值： - detail：获取最新导入的文件与校验结果，上传后的文件若存在错误，会同时将错误原因标记在文件内。 - synchronized：获取已同步的（已下发的）对象文件结果。 - change: 获取新增和删除的对象结果（当再编辑时使用） - compare: 获取已导入的对比键文件结果。 - compare_key_detail: 获取已导入的对比键校验结果，上传后的文件若存在错误，会同时将错误原因标记在文件内。
      * @return type
      */
     public TypeEnum getType() {

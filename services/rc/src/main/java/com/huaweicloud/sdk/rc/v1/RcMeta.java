@@ -584,6 +584,11 @@ public class RcMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(CountAllResourcesRequest::getTags, CountAllResourcesRequest::setTags));
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountAllResourcesRequest::getGroupId, CountAllResourcesRequest::setGroupId));
 
         // response
 

@@ -40,6 +40,11 @@ public class HealthCompareJob {
 
     private String computeType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "database_info")
+
+    private Object databaseInfo;
+
     public HealthCompareJob withId(String id) {
         this.id = id;
         return this;
@@ -142,6 +147,23 @@ public class HealthCompareJob {
         this.computeType = computeType;
     }
 
+    public HealthCompareJob withDatabaseInfo(Object databaseInfo) {
+        this.databaseInfo = databaseInfo;
+        return this;
+    }
+
+    /**
+     * 灾备数据库信息。
+     * @return databaseInfo
+     */
+    public Object getDatabaseInfo() {
+        return databaseInfo;
+    }
+
+    public void setDatabaseInfo(Object databaseInfo) {
+        this.databaseInfo = databaseInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -153,12 +175,13 @@ public class HealthCompareJob {
         HealthCompareJob that = (HealthCompareJob) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
             && Objects.equals(this.status, that.status) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.computeType, that.computeType);
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.computeType, that.computeType)
+            && Objects.equals(this.databaseInfo, that.databaseInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, type, status, startTime, endTime, computeType);
+        return Objects.hash(id, type, status, startTime, endTime, computeType, databaseInfo);
     }
 
     @Override
@@ -171,6 +194,7 @@ public class HealthCompareJob {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    computeType: ").append(toIndentedString(computeType)).append("\n");
+        sb.append("    databaseInfo: ").append(toIndentedString(databaseInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -46,7 +46,7 @@ public class BatchCreateJobsResponse extends SdkResponse {
     }
 
     /**
-     * 批量创建任务的响应体集合。
+     * **参数解释**：  批量创建任务的响应体集合，详情请参见CreateJobResp对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return results
      */
     public List<CreateJobResp> getResults() {
@@ -63,7 +63,7 @@ public class BatchCreateJobsResponse extends SdkResponse {
     }
 
     /**
-     * 总记录数。
+     * **参数解释**：  返回的任务信息总数，表示本次查询成功返回的任务数量，与results数组的长度一致。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return count
      */
     public Integer getCount() {

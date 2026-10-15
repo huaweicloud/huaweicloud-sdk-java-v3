@@ -123,6 +123,26 @@ public class StatementExecuteRequestBody {
 
     private ResultsetFetchModeEnum resultsetFetchMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "wait_timeout")
+
+    private Integer waitTimeout;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_retry_times")
+
+    private Integer maxRetryTimes;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "statement_type")
+
+    private String statementType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "statement_name")
+
+    private String statementName;
+
     public StatementExecuteRequestBody withSessionId(String sessionId) {
         this.sessionId = sessionId;
         return this;
@@ -146,7 +166,7 @@ public class StatementExecuteRequestBody {
     }
 
     /**
-     * **参数解释**：SQL statement信息。 **约束限制**：不涉及。 **取值范围**：0~10000000。 **默认取值**：不涉及。
+     * **参数解释**：SQL statement信息。 **约束限制**：不涉及。 **取值范围**：长度为1~10000000个字符。 **默认取值**：不涉及。
      * @return statement
      */
     public String getStatement() {
@@ -163,7 +183,7 @@ public class StatementExecuteRequestBody {
     }
 
     /**
-     * **参数解释**：limit限制。 **约束限制**：不涉及。 **取值范围**：1~2147483647。 **默认取值**：不涉及。
+     * **参数解释**：返回结果集的最大行数限制。 **约束限制**：不涉及。 **取值范围**：1~2147483647，单位：行。 **默认取值**：不涉及。
      * @return limit
      */
     public Integer getLimit() {
@@ -196,7 +216,7 @@ public class StatementExecuteRequestBody {
     }
 
     /**
-     * **参数解释**：参数绑定列表。 **约束限制**：不涉及。 **取值范围**：0~10000。 **默认取值**：不涉及。
+     * **参数解释**：SQL语句的参数绑定列表，用于绑定变量传参。外层数组为绑定集合（实际使用首个元素 bindings[0]），内层数组为单条SQL的参数值列表，每个字符串元素为单个参数值。 **约束限制**：   - 外层数组元素个数：0~1。   - 内层数组元素个数：0~200。   - 每个参数值字符串长度：0~500个字符。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return bindings
      */
     public List<List<String>> getBindings() {
@@ -213,7 +233,7 @@ public class StatementExecuteRequestBody {
     }
 
     /**
-     * **参数解释**：同步执行或异步执行。 **约束限制**：不涉及。 **取值范围**：   - true：同步。   - false：异步。 **默认取值**：不涉及。
+     * **参数解释**：同步执行或异步执行。 **约束限制**：不涉及。 **取值范围**：   - true：同步。   - false：异步。 **默认取值**：true（未传时默认同步执行）。
      * @return isSync
      */
     public Boolean getIsSync() {
@@ -230,7 +250,7 @@ public class StatementExecuteRequestBody {
     }
 
     /**
-     * **参数解释**：是否来自运维通道。 **约束限制**：不涉及。 **取值范围**：  - true：运维通道语句。  - false：不是运维通道语句。 **默认取值**：不涉及。
+     * **参数解释**：是否来自运维通道。 **约束限制**：不涉及。 **取值范围**：  - true：运维通道语句。  - false：不是运维通道语句。 **默认取值**：false
      * @return isMaintainStatement
      */
     public Boolean getIsMaintainStatement() {
@@ -258,6 +278,77 @@ public class StatementExecuteRequestBody {
         this.resultsetFetchMode = resultsetFetchMode;
     }
 
+    public StatementExecuteRequestBody withWaitTimeout(Integer waitTimeout) {
+        this.waitTimeout = waitTimeout;
+        return this;
+    }
+
+    /**
+     * **参数解释**：SQL排队等待时间，单位：秒。 **约束限制**：不涉及。 **取值范围**：300~86400。 **默认取值**：不涉及。
+     * minimum: 300
+     * maximum: 86400
+     * @return waitTimeout
+     */
+    public Integer getWaitTimeout() {
+        return waitTimeout;
+    }
+
+    public void setWaitTimeout(Integer waitTimeout) {
+        this.waitTimeout = waitTimeout;
+    }
+
+    public StatementExecuteRequestBody withMaxRetryTimes(Integer maxRetryTimes) {
+        this.maxRetryTimes = maxRetryTimes;
+        return this;
+    }
+
+    /**
+     * **参数解释**：资源不足时重试次数。 **约束限制**：不涉及。 **取值范围**：1~6000。 **默认取值**：不涉及。
+     * minimum: 1
+     * @return maxRetryTimes
+     */
+    public Integer getMaxRetryTimes() {
+        return maxRetryTimes;
+    }
+
+    public void setMaxRetryTimes(Integer maxRetryTimes) {
+        this.maxRetryTimes = maxRetryTimes;
+    }
+
+    public StatementExecuteRequestBody withStatementType(String statementType) {
+        this.statementType = statementType;
+        return this;
+    }
+
+    /**
+     * **参数解释**：作业类型。 **约束限制**：不涉及。 **取值范围**：   - SQL：SQL查询。   - JOB：作业。 **默认取值**：SQL。
+     * @return statementType
+     */
+    public String getStatementType() {
+        return statementType;
+    }
+
+    public void setStatementType(String statementType) {
+        this.statementType = statementType;
+    }
+
+    public StatementExecuteRequestBody withStatementName(String statementName) {
+        this.statementName = statementName;
+        return this;
+    }
+
+    /**
+     * **参数解释**：作业名称。 **约束限制**：长度不超过64个字符，仅允许字母、数字、中文、下划线和连字符。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * @return statementName
+     */
+    public String getStatementName() {
+        return statementName;
+    }
+
+    public void setStatementName(String statementName) {
+        this.statementName = statementName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -271,12 +362,26 @@ public class StatementExecuteRequestBody {
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.bindings, that.bindings)
             && Objects.equals(this.isSync, that.isSync)
             && Objects.equals(this.isMaintainStatement, that.isMaintainStatement)
-            && Objects.equals(this.resultsetFetchMode, that.resultsetFetchMode);
+            && Objects.equals(this.resultsetFetchMode, that.resultsetFetchMode)
+            && Objects.equals(this.waitTimeout, that.waitTimeout)
+            && Objects.equals(this.maxRetryTimes, that.maxRetryTimes)
+            && Objects.equals(this.statementType, that.statementType)
+            && Objects.equals(this.statementName, that.statementName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sessionId, statement, limit, bindings, isSync, isMaintainStatement, resultsetFetchMode);
+        return Objects.hash(sessionId,
+            statement,
+            limit,
+            bindings,
+            isSync,
+            isMaintainStatement,
+            resultsetFetchMode,
+            waitTimeout,
+            maxRetryTimes,
+            statementType,
+            statementName);
     }
 
     @Override
@@ -290,6 +395,10 @@ public class StatementExecuteRequestBody {
         sb.append("    isSync: ").append(toIndentedString(isSync)).append("\n");
         sb.append("    isMaintainStatement: ").append(toIndentedString(isMaintainStatement)).append("\n");
         sb.append("    resultsetFetchMode: ").append(toIndentedString(resultsetFetchMode)).append("\n");
+        sb.append("    waitTimeout: ").append(toIndentedString(waitTimeout)).append("\n");
+        sb.append("    maxRetryTimes: ").append(toIndentedString(maxRetryTimes)).append("\n");
+        sb.append("    statementType: ").append(toIndentedString(statementType)).append("\n");
+        sb.append("    statementName: ").append(toIndentedString(statementName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

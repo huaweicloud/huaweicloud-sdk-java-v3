@@ -42,7 +42,7 @@ public class QueryRpoAndRtoResp {
     }
 
     /**
-     * 任务ID
+     * **参数解释**：  数据复制任务ID，用于唯一标识一个任务。  **约束限制**：  不涉及。  **取值范围**：  UUID格式字符串。  **默认取值**：  不涉及
      * @return jobId
      */
     public String getJobId() {
@@ -111,7 +111,7 @@ public class QueryRpoAndRtoResp {
     }
 
     /**
-     * 错误码
+     * **参数解释**：  错误码，当查询任务RPO和RTO失败时返回的错误代码。  **约束限制**：  不涉及。  **取值范围**：  格式为DRS.XXXXXX。  **默认取值**：  不涉及
      * @return errorCode
      */
     public String getErrorCode() {
@@ -128,7 +128,7 @@ public class QueryRpoAndRtoResp {
     }
 
     /**
-     * 错误信息
+     * **参数解释**：  错误详细信息，当查询任务RPO和RTO失败时返回的具体错误描述。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return errorMsg
      */
     public String getErrorMsg() {

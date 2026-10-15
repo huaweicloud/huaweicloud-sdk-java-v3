@@ -46,7 +46,7 @@ public class BatchStartJobsResponse extends SdkResponse {
     }
 
     /**
-     * 批量启动实时灾备任务返回列表。
+     * **参数解释**：  批量启动任务返回列表，包含每个任务的启动结果信息。详情请参见StartJobResp对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return results
      */
     public List<StartJobResp> getResults() {
@@ -63,7 +63,7 @@ public class BatchStartJobsResponse extends SdkResponse {
     }
 
     /**
-     * 总数。
+     * **参数解释**：  返回的任务信息总数，表示本次批量启动操作返回的任务结果数量，与results数组的长度一致。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return count
      */
     public Integer getCount() {

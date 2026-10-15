@@ -31,7 +31,7 @@ public class PrecheckFailSubJobVO {
     }
 
     /**
-     * 预检查失败子任务id。
+     * **参数解释**：  预检查失败子任务ID，用于唯一标识一个预检查失败的子任务。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return id
      */
     public String getId() {
@@ -48,7 +48,7 @@ public class PrecheckFailSubJobVO {
     }
 
     /**
-     * 预检查失败子任务名称。
+     * **参数解释**：  预检查失败子任务的名称，用于标识失败的子任务。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return name
      */
     public String getName() {
@@ -65,7 +65,7 @@ public class PrecheckFailSubJobVO {
     }
 
     /**
-     * 检查结果。
+     * **参数解释**：  预检查失败子任务的检查结果，表示该子任务的检查是否通过。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return checkResult
      */
     public String getCheckResult() {

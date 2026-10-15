@@ -21,7 +21,7 @@ public class ListAsyncJobDetailRequest {
     private String asyncJobId;
 
     /**
-     * 请求语言类型。
+     * **参数解释**：  请求语言类型。  **约束限制**：  不涉及。  **取值范围**：  - en-us：英文 - zh-cn：中文  **默认取值**：  en-us
      */
     public static final class XLanguageEnum {
 
@@ -128,7 +128,7 @@ public class ListAsyncJobDetailRequest {
     }
 
     /**
-     * 请求语言类型。
+     * **参数解释**：  请求语言类型。  **约束限制**：  不涉及。  **取值范围**：  - en-us：英文 - zh-cn：中文  **默认取值**：  en-us
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

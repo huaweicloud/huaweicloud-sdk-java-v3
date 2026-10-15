@@ -83,6 +83,16 @@ public class PublishApp {
 
     private AppExtendedInfo appExtendedInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_pre_boot")
+
+    private Boolean isPreBoot;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pre_launch_policy")
+
+    private Integer preLaunchPolicy;
+
     public PublishApp withName(String name) {
         this.name = name;
         return this;
@@ -350,6 +360,40 @@ public class PublishApp {
         this.appExtendedInfo = appExtendedInfo;
     }
 
+    public PublishApp withIsPreBoot(Boolean isPreBoot) {
+        this.isPreBoot = isPreBoot;
+        return this;
+    }
+
+    /**
+     * 是否开启会话预开。
+     * @return isPreBoot
+     */
+    public Boolean getIsPreBoot() {
+        return isPreBoot;
+    }
+
+    public void setIsPreBoot(Boolean isPreBoot) {
+        this.isPreBoot = isPreBoot;
+    }
+
+    public PublishApp withPreLaunchPolicy(Integer preLaunchPolicy) {
+        this.preLaunchPolicy = preLaunchPolicy;
+        return this;
+    }
+
+    /**
+     * 预开状态：0：非预开，1：会话预开，3：应用预开。
+     * @return preLaunchPolicy
+     */
+    public Integer getPreLaunchPolicy() {
+        return preLaunchPolicy;
+    }
+
+    public void setPreLaunchPolicy(Integer preLaunchPolicy) {
+        this.preLaunchPolicy = preLaunchPolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -367,7 +411,9 @@ public class PublishApp {
             && Objects.equals(this.publisher, that.publisher)
             && Objects.equals(this.sourceImageIds, that.sourceImageIds)
             && Objects.equals(this.sandboxEnable, that.sandboxEnable)
-            && Objects.equals(this.appExtendedInfo, that.appExtendedInfo);
+            && Objects.equals(this.appExtendedInfo, that.appExtendedInfo)
+            && Objects.equals(this.isPreBoot, that.isPreBoot)
+            && Objects.equals(this.preLaunchPolicy, that.preLaunchPolicy);
     }
 
     @Override
@@ -385,7 +431,9 @@ public class PublishApp {
             publisher,
             sourceImageIds,
             sandboxEnable,
-            appExtendedInfo);
+            appExtendedInfo,
+            isPreBoot,
+            preLaunchPolicy);
     }
 
     @Override
@@ -406,6 +454,8 @@ public class PublishApp {
         sb.append("    sourceImageIds: ").append(toIndentedString(sourceImageIds)).append("\n");
         sb.append("    sandboxEnable: ").append(toIndentedString(sandboxEnable)).append("\n");
         sb.append("    appExtendedInfo: ").append(toIndentedString(appExtendedInfo)).append("\n");
+        sb.append("    isPreBoot: ").append(toIndentedString(isPreBoot)).append("\n");
+        sb.append("    preLaunchPolicy: ").append(toIndentedString(preLaunchPolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

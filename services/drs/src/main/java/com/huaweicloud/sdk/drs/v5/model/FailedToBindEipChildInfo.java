@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 绑定EIP失败的子任务信息
+ * 绑定EIP失败的子任务信息。
  */
 public class FailedToBindEipChildInfo {
 
@@ -26,7 +26,7 @@ public class FailedToBindEipChildInfo {
     }
 
     /**
-     * 子任务ID
+     * 子任务ID。
      * @return id
      */
     public String getId() {
@@ -43,7 +43,7 @@ public class FailedToBindEipChildInfo {
     }
 
     /**
-     * 子任务名称
+     * 子任务名称。
      * @return name
      */
     public String getName() {

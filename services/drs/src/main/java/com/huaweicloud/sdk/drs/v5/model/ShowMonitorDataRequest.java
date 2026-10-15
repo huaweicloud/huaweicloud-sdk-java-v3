@@ -21,7 +21,7 @@ public class ShowMonitorDataRequest {
     private String jobId;
 
     /**
-     * 请求语言类型。
+     * **参数解释**：  请求语言类型。  **约束限制**：  不涉及。  **取值范围**：  - en-us：英文 - zh-cn：中文  **默认取值**：  en-us
      */
     public static final class XLanguageEnum {
 
@@ -101,7 +101,7 @@ public class ShowMonitorDataRequest {
     }
 
     /**
-     * 任务ID。
+     * **参数解释**：  迁移任务ID，用于唯一标识一个数据复制任务，在查询、修改、删除等操作中作为任务的识别凭证。  **约束限制**：  不涉及。  **取值范围**：  UUID格式字符串。  **默认取值**：  不涉及
      * @return jobId
      */
     public String getJobId() {
@@ -118,7 +118,7 @@ public class ShowMonitorDataRequest {
     }
 
     /**
-     * 请求语言类型。
+     * **参数解释**：  请求语言类型。  **约束限制**：  不涉及。  **取值范围**：  - en-us：英文 - zh-cn：中文  **默认取值**：  en-us
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -29,7 +29,7 @@ public class LimitSpeedReq {
     }
 
     /**
-     * 任务id
+     * 任务ID。
      * @return jobId
      */
     public String getJobId() {

@@ -122,7 +122,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * EIP带宽，单位：MB/S
+     * **参数解释**：  EIP带宽，用于评估公网传输速率是否满足迁移需求。单位：MB/s。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return bandwidth
      */
     public String getBandwidth() {
@@ -139,7 +139,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 源库连接状态是否正常。
+     * **参数解释**：  源库连接状态是否正常。  **约束限制**：  不涉及。  **取值范围**：  - true：源库连接正常 - false：源库连接异常  **默认取值**：  不涉及
      * @return isSrcNormal
      */
     public Boolean getIsSrcNormal() {
@@ -156,7 +156,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 目标库连接状态是否正常。
+     * **参数解释**：  目标库连接状态是否正常。  **约束限制**：  不涉及。  **取值范围**：  - true：目标库连接正常 - false：目标库连接异常  **默认取值**：  不涉及
      * @return isDstNormal
      */
     public Boolean getIsDstNormal() {
@@ -173,7 +173,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 源库offSet位点。
+     * **参数解释**：  源库offset位点，用于判断源库数据同步进度。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return srcOffset
      */
     public String getSrcOffset() {
@@ -190,7 +190,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 迁移实例offSet位点。
+     * **参数解释**：  迁移实例offset位点，用于判断迁移实例数据同步进度。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return nodeOffset
      */
     public String getNodeOffset() {
@@ -207,7 +207,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 目标库offSet位点。
+     * **参数解释**：  目标库offset位点，用于判断目标库数据同步进度。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return dstOffset
      */
     public String getDstOffset() {
@@ -224,7 +224,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 源库时延。
+     * **参数解释**：  源库时延，用于判断数据同步的实时性。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return srcDelay
      */
     public Integer getSrcDelay() {
@@ -241,7 +241,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 目标库时延。
+     * **参数解释**：  目标库时延，用于判断数据同步的实时性。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return dstDelay
      */
     public Integer getDstDelay() {
@@ -258,7 +258,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 源库RPS。
+     * **参数解释**：  源库RPS（Requests Per Second，每秒请求数），用于评估源库的数据变更速率。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return srcRps
      */
     public String getSrcRps() {
@@ -275,7 +275,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 源库IO。
+     * **参数解释**：  源库IO（Input/Output，每秒输入输出操作量），用于评估源库的磁盘读写负载。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return srcIo
      */
     public String getSrcIo() {
@@ -292,7 +292,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 目标库RPS。
+     * **参数解释**：  目标库RPS（Requests Per Second，每秒请求数），用于评估目标库的数据写入速率。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return dstRps
      */
     public String getDstRps() {
@@ -309,7 +309,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 目标库IO。
+     * **参数解释**：  目标库IO（Input/Output，每秒输入输出操作量），用于评估目标库的磁盘读写负载。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return dstIo
      */
     public String getDstIo() {
@@ -326,7 +326,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 迁移数据量。单位：MB
+     * **参数解释**：  已迁移的数据量，用于评估迁移进度。单位：MB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return transData
      */
     public String getTransData() {
@@ -343,7 +343,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 迁移数据行数。
+     * **参数解释**：  已迁移的数据行数，用于评估迁移进度。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return transLines
      */
     public String getTransLines() {
@@ -360,7 +360,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 磁盘使用量。单位：GB
+     * **参数解释**：  迁移实例磁盘使用量，用于监控迁移实例存储容量。单位：GB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return usedVolumes
      */
     public String getUsedVolumes() {
@@ -377,7 +377,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 内存使用量。单位：MB
+     * **参数解释**：  迁移实例内存使用量，用于监控迁移实例内存消耗。单位：MB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return usedMemory
      */
     public String getUsedMemory() {
@@ -394,7 +394,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * CPU使用百分比。
+     * **参数解释**：  迁移实例CPU使用百分比，用于监控迁移实例计算负载。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return usedCpuPercent
      */
     public String getUsedCpuPercent() {
@@ -411,7 +411,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * node磁盘总大小。单位：GB
+     * **参数解释**：  迁移实例磁盘总大小，与used_volumes配合评估磁盘使用率。单位：GB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return nodeVolumeSize
      */
     public Integer getNodeVolumeSize() {
@@ -428,7 +428,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * node内存总大小。单位：MB
+     * **参数解释**：  迁移实例内存总大小，与used_memory配合评估内存使用率。单位：MB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return nodeMemorySize
      */
     public Integer getNodeMemorySize() {
@@ -445,7 +445,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 更新时间。
+     * **参数解释**：  监控数据的更新时间，UTC格式，如2023-07-19T03:09:25Z。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return updateTime
      */
     public String getUpdateTime() {
@@ -462,7 +462,7 @@ public class ShowMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 同步速度。单位：byte/s
+     * **参数解释**：  同步速度，用于评估数据回放速率。单位：byte/s。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return applyRate
      */
     public Integer getApplyRate() {

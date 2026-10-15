@@ -25,6 +25,11 @@ public class ListUsersV5Request {
 
     private String groupId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_key_id")
+
+    private String accessKeyId;
+
     public ListUsersV5Request withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -78,6 +83,23 @@ public class ListUsersV5Request {
         this.groupId = groupId;
     }
 
+    public ListUsersV5Request withAccessKeyId(String accessKeyId) {
+        this.accessKeyId = accessKeyId;
+        return this;
+    }
+
+    /**
+     * 永久访问密钥ID，即AK。
+     * @return accessKeyId
+     */
+    public String getAccessKeyId() {
+        return accessKeyId;
+    }
+
+    public void setAccessKeyId(String accessKeyId) {
+        this.accessKeyId = accessKeyId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -88,12 +110,12 @@ public class ListUsersV5Request {
         }
         ListUsersV5Request that = (ListUsersV5Request) obj;
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
-            && Objects.equals(this.groupId, that.groupId);
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.accessKeyId, that.accessKeyId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, groupId);
+        return Objects.hash(limit, marker, groupId, accessKeyId);
     }
 
     @Override
@@ -103,6 +125,7 @@ public class ListUsersV5Request {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    accessKeyId: ").append(toIndentedString(accessKeyId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

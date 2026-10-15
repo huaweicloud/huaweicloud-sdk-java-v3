@@ -108,6 +108,11 @@ public class App {
     private Boolean isPreBoot;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pre_launch_policy")
+
+    private Integer preLaunchPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_extended_info")
 
     private AppExtendedInfo appExtendedInfo;
@@ -435,6 +440,23 @@ public class App {
         this.isPreBoot = isPreBoot;
     }
 
+    public App withPreLaunchPolicy(Integer preLaunchPolicy) {
+        this.preLaunchPolicy = preLaunchPolicy;
+        return this;
+    }
+
+    /**
+     * 预开状态：0：非预开，1：会话预开，3：应用预开。
+     * @return preLaunchPolicy
+     */
+    public Integer getPreLaunchPolicy() {
+        return preLaunchPolicy;
+    }
+
+    public void setPreLaunchPolicy(Integer preLaunchPolicy) {
+        this.preLaunchPolicy = preLaunchPolicy;
+    }
+
     public App withAppExtendedInfo(AppExtendedInfo appExtendedInfo) {
         this.appExtendedInfo = appExtendedInfo;
         return this;
@@ -480,6 +502,7 @@ public class App {
             && Objects.equals(this.publisher, that.publisher) && Objects.equals(this.iconUrl, that.iconUrl)
             && Objects.equals(this.publishable, that.publishable)
             && Objects.equals(this.sandboxEnable, that.sandboxEnable) && Objects.equals(this.isPreBoot, that.isPreBoot)
+            && Objects.equals(this.preLaunchPolicy, that.preLaunchPolicy)
             && Objects.equals(this.appExtendedInfo, that.appExtendedInfo);
     }
 
@@ -504,6 +527,7 @@ public class App {
             publishable,
             sandboxEnable,
             isPreBoot,
+            preLaunchPolicy,
             appExtendedInfo);
     }
 
@@ -530,6 +554,7 @@ public class App {
         sb.append("    publishable: ").append(toIndentedString(publishable)).append("\n");
         sb.append("    sandboxEnable: ").append(toIndentedString(sandboxEnable)).append("\n");
         sb.append("    isPreBoot: ").append(toIndentedString(isPreBoot)).append("\n");
+        sb.append("    preLaunchPolicy: ").append(toIndentedString(preLaunchPolicy)).append("\n");
         sb.append("    appExtendedInfo: ").append(toIndentedString(appExtendedInfo)).append("\n");
         sb.append("}");
         return sb.toString();

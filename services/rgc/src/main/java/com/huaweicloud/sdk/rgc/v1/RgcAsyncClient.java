@@ -43,6 +43,8 @@ import com.huaweicloud.sdk.rgc.v1.model.ListEnabledControlsRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListEnabledControlsResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListExternalConfigRuleCompliancesRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListExternalConfigRuleCompliancesResponse;
+import com.huaweicloud.sdk.rgc.v1.model.ListLandingZoneVersionRequest;
+import com.huaweicloud.sdk.rgc.v1.model.ListLandingZoneVersionResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedAccountsForParentRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedAccountsForParentResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedAccountsRequest;
@@ -798,6 +800,36 @@ public class RgcAsyncClient {
     public AsyncInvoker<DeleteLandingZoneRequest, DeleteLandingZoneResponse> deleteLandingZoneAsyncInvoker(
         DeleteLandingZoneRequest request) {
         return new AsyncInvoker<>(request, RgcMeta.deleteLandingZone, hcClient);
+    }
+
+    /**
+     * 列出Landing Zone版本列表
+     *
+     * 列出Landing Zone版本列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLandingZoneVersionRequest 请求对象
+     * @return CompletableFuture<ListLandingZoneVersionResponse>
+     */
+    public CompletableFuture<ListLandingZoneVersionResponse> listLandingZoneVersionAsync(
+        ListLandingZoneVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, RgcMeta.listLandingZoneVersion);
+    }
+
+    /**
+     * 列出Landing Zone版本列表
+     *
+     * 列出Landing Zone版本列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLandingZoneVersionRequest 请求对象
+     * @return AsyncInvoker<ListLandingZoneVersionRequest, ListLandingZoneVersionResponse>
+     */
+    public AsyncInvoker<ListLandingZoneVersionRequest, ListLandingZoneVersionResponse> listLandingZoneVersionAsyncInvoker(
+        ListLandingZoneVersionRequest request) {
+        return new AsyncInvoker<>(request, RgcMeta.listLandingZoneVersion, hcClient);
     }
 
     /**

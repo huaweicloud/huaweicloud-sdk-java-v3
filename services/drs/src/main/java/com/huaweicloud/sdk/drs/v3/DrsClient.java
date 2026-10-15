@@ -133,6 +133,7 @@ public class DrsClient {
      * @param request BatchChangeDataRequest 请求对象
      * @return BatchChangeDataResponse
      */
+    @Deprecated
     public BatchChangeDataResponse batchChangeData(BatchChangeDataRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchChangeData);
     }
@@ -147,6 +148,7 @@ public class DrsClient {
      * @param request BatchChangeDataRequest 请求对象
      * @return SyncInvoker<BatchChangeDataRequest, BatchChangeDataResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchChangeDataRequest, BatchChangeDataResponse> batchChangeDataInvoker(
         BatchChangeDataRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchChangeData, hcClient);
@@ -162,6 +164,7 @@ public class DrsClient {
      * @param request BatchCheckJobsRequest 请求对象
      * @return BatchCheckJobsResponse
      */
+    @Deprecated
     public BatchCheckJobsResponse batchCheckJobs(BatchCheckJobsRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchCheckJobs);
     }
@@ -176,6 +179,7 @@ public class DrsClient {
      * @param request BatchCheckJobsRequest 请求对象
      * @return SyncInvoker<BatchCheckJobsRequest, BatchCheckJobsResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchCheckJobsRequest, BatchCheckJobsResponse> batchCheckJobsInvoker(
         BatchCheckJobsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchCheckJobs, hcClient);
@@ -191,6 +195,7 @@ public class DrsClient {
      * @param request BatchCheckResultsRequest 请求对象
      * @return BatchCheckResultsResponse
      */
+    @Deprecated
     public BatchCheckResultsResponse batchCheckResults(BatchCheckResultsRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchCheckResults);
     }
@@ -205,6 +210,7 @@ public class DrsClient {
      * @param request BatchCheckResultsRequest 请求对象
      * @return SyncInvoker<BatchCheckResultsRequest, BatchCheckResultsResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchCheckResultsRequest, BatchCheckResultsResponse> batchCheckResultsInvoker(
         BatchCheckResultsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchCheckResults, hcClient);
@@ -220,6 +226,7 @@ public class DrsClient {
      * @param request BatchCreateJobsRequest 请求对象
      * @return BatchCreateJobsResponse
      */
+    @Deprecated
     public BatchCreateJobsResponse batchCreateJobs(BatchCreateJobsRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchCreateJobs);
     }
@@ -234,6 +241,7 @@ public class DrsClient {
      * @param request BatchCreateJobsRequest 请求对象
      * @return SyncInvoker<BatchCreateJobsRequest, BatchCreateJobsResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchCreateJobsRequest, BatchCreateJobsResponse> batchCreateJobsInvoker(
         BatchCreateJobsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchCreateJobs, hcClient);
@@ -249,6 +257,7 @@ public class DrsClient {
      * @param request BatchDeleteJobsRequest 请求对象
      * @return BatchDeleteJobsResponse
      */
+    @Deprecated
     public BatchDeleteJobsResponse batchDeleteJobs(BatchDeleteJobsRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchDeleteJobs);
     }
@@ -263,6 +272,7 @@ public class DrsClient {
      * @param request BatchDeleteJobsRequest 请求对象
      * @return SyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse> batchDeleteJobsInvoker(
         BatchDeleteJobsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchDeleteJobs, hcClient);
@@ -278,6 +288,7 @@ public class DrsClient {
      * @param request BatchListJobDetailsRequest 请求对象
      * @return BatchListJobDetailsResponse
      */
+    @Deprecated
     public BatchListJobDetailsResponse batchListJobDetails(BatchListJobDetailsRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchListJobDetails);
     }
@@ -292,6 +303,7 @@ public class DrsClient {
      * @param request BatchListJobDetailsRequest 请求对象
      * @return SyncInvoker<BatchListJobDetailsRequest, BatchListJobDetailsResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchListJobDetailsRequest, BatchListJobDetailsResponse> batchListJobDetailsInvoker(
         BatchListJobDetailsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchListJobDetails, hcClient);
@@ -307,6 +319,7 @@ public class DrsClient {
      * @param request BatchListJobStatusRequest 请求对象
      * @return BatchListJobStatusResponse
      */
+    @Deprecated
     public BatchListJobStatusResponse batchListJobStatus(BatchListJobStatusRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchListJobStatus);
     }
@@ -321,6 +334,7 @@ public class DrsClient {
      * @param request BatchListJobStatusRequest 请求对象
      * @return SyncInvoker<BatchListJobStatusRequest, BatchListJobStatusResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchListJobStatusRequest, BatchListJobStatusResponse> batchListJobStatusInvoker(
         BatchListJobStatusRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchListJobStatus, hcClient);
@@ -423,6 +437,7 @@ public class DrsClient {
      * @param request BatchListStructProcessRequest 请求对象
      * @return BatchListStructProcessResponse
      */
+    @Deprecated
     public BatchListStructProcessResponse batchListStructProcess(BatchListStructProcessRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchListStructProcess);
     }
@@ -437,6 +452,7 @@ public class DrsClient {
      * @param request BatchListStructProcessRequest 请求对象
      * @return SyncInvoker<BatchListStructProcessRequest, BatchListStructProcessResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchListStructProcessRequest, BatchListStructProcessResponse> batchListStructProcessInvoker(
         BatchListStructProcessRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchListStructProcess, hcClient);
@@ -452,6 +468,7 @@ public class DrsClient {
      * @param request BatchResetPasswordRequest 请求对象
      * @return BatchResetPasswordResponse
      */
+    @Deprecated
     public BatchResetPasswordResponse batchResetPassword(BatchResetPasswordRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchResetPassword);
     }
@@ -466,6 +483,7 @@ public class DrsClient {
      * @param request BatchResetPasswordRequest 请求对象
      * @return SyncInvoker<BatchResetPasswordRequest, BatchResetPasswordResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchResetPasswordRequest, BatchResetPasswordResponse> batchResetPasswordInvoker(
         BatchResetPasswordRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchResetPassword, hcClient);
@@ -481,6 +499,7 @@ public class DrsClient {
      * @param request BatchRestoreTaskRequest 请求对象
      * @return BatchRestoreTaskResponse
      */
+    @Deprecated
     public BatchRestoreTaskResponse batchRestoreTask(BatchRestoreTaskRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchRestoreTask);
     }
@@ -495,6 +514,7 @@ public class DrsClient {
      * @param request BatchRestoreTaskRequest 请求对象
      * @return SyncInvoker<BatchRestoreTaskRequest, BatchRestoreTaskResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchRestoreTaskRequest, BatchRestoreTaskResponse> batchRestoreTaskInvoker(
         BatchRestoreTaskRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchRestoreTask, hcClient);
@@ -512,6 +532,7 @@ public class DrsClient {
      * @param request BatchSetDefinerRequest 请求对象
      * @return BatchSetDefinerResponse
      */
+    @Deprecated
     public BatchSetDefinerResponse batchSetDefiner(BatchSetDefinerRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchSetDefiner);
     }
@@ -528,6 +549,7 @@ public class DrsClient {
      * @param request BatchSetDefinerRequest 请求对象
      * @return SyncInvoker<BatchSetDefinerRequest, BatchSetDefinerResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchSetDefinerRequest, BatchSetDefinerResponse> batchSetDefinerInvoker(
         BatchSetDefinerRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchSetDefiner, hcClient);
@@ -543,6 +565,7 @@ public class DrsClient {
      * @param request BatchSetObjectsRequest 请求对象
      * @return BatchSetObjectsResponse
      */
+    @Deprecated
     public BatchSetObjectsResponse batchSetObjects(BatchSetObjectsRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchSetObjects);
     }
@@ -557,6 +580,7 @@ public class DrsClient {
      * @param request BatchSetObjectsRequest 请求对象
      * @return SyncInvoker<BatchSetObjectsRequest, BatchSetObjectsResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchSetObjectsRequest, BatchSetObjectsResponse> batchSetObjectsInvoker(
         BatchSetObjectsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchSetObjects, hcClient);
@@ -573,6 +597,7 @@ public class DrsClient {
      * @param request BatchSetPolicyRequest 请求对象
      * @return BatchSetPolicyResponse
      */
+    @Deprecated
     public BatchSetPolicyResponse batchSetPolicy(BatchSetPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchSetPolicy);
     }
@@ -588,6 +613,7 @@ public class DrsClient {
      * @param request BatchSetPolicyRequest 请求对象
      * @return SyncInvoker<BatchSetPolicyRequest, BatchSetPolicyResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchSetPolicyRequest, BatchSetPolicyResponse> batchSetPolicyInvoker(
         BatchSetPolicyRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchSetPolicy, hcClient);
@@ -604,6 +630,7 @@ public class DrsClient {
      * @param request BatchSetSmnRequest 请求对象
      * @return BatchSetSmnResponse
      */
+    @Deprecated
     public BatchSetSmnResponse batchSetSmn(BatchSetSmnRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchSetSmn);
     }
@@ -619,6 +646,7 @@ public class DrsClient {
      * @param request BatchSetSmnRequest 请求对象
      * @return SyncInvoker<BatchSetSmnRequest, BatchSetSmnResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchSetSmnRequest, BatchSetSmnResponse> batchSetSmnInvoker(BatchSetSmnRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchSetSmn, hcClient);
     }
@@ -635,6 +663,7 @@ public class DrsClient {
      * @param request BatchSetSpeedRequest 请求对象
      * @return BatchSetSpeedResponse
      */
+    @Deprecated
     public BatchSetSpeedResponse batchSetSpeed(BatchSetSpeedRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchSetSpeed);
     }
@@ -651,6 +680,7 @@ public class DrsClient {
      * @param request BatchSetSpeedRequest 请求对象
      * @return SyncInvoker<BatchSetSpeedRequest, BatchSetSpeedResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchSetSpeedRequest, BatchSetSpeedResponse> batchSetSpeedInvoker(BatchSetSpeedRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchSetSpeed, hcClient);
     }
@@ -665,6 +695,7 @@ public class DrsClient {
      * @param request BatchShowParamsRequest 请求对象
      * @return BatchShowParamsResponse
      */
+    @Deprecated
     public BatchShowParamsResponse batchShowParams(BatchShowParamsRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchShowParams);
     }
@@ -679,6 +710,7 @@ public class DrsClient {
      * @param request BatchShowParamsRequest 请求对象
      * @return SyncInvoker<BatchShowParamsRequest, BatchShowParamsResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchShowParamsRequest, BatchShowParamsResponse> batchShowParamsInvoker(
         BatchShowParamsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchShowParams, hcClient);
@@ -694,6 +726,7 @@ public class DrsClient {
      * @param request BatchStartJobsRequest 请求对象
      * @return BatchStartJobsResponse
      */
+    @Deprecated
     public BatchStartJobsResponse batchStartJobs(BatchStartJobsRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchStartJobs);
     }
@@ -708,6 +741,7 @@ public class DrsClient {
      * @param request BatchStartJobsRequest 请求对象
      * @return SyncInvoker<BatchStartJobsRequest, BatchStartJobsResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchStartJobsRequest, BatchStartJobsResponse> batchStartJobsInvoker(
         BatchStartJobsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchStartJobs, hcClient);
@@ -723,6 +757,7 @@ public class DrsClient {
      * @param request BatchStopJobsRequest 请求对象
      * @return BatchStopJobsResponse
      */
+    @Deprecated
     public BatchStopJobsResponse batchStopJobs(BatchStopJobsRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchStopJobs);
     }
@@ -737,6 +772,7 @@ public class DrsClient {
      * @param request BatchStopJobsRequest 请求对象
      * @return SyncInvoker<BatchStopJobsRequest, BatchStopJobsResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchStopJobsRequest, BatchStopJobsResponse> batchStopJobsInvoker(BatchStopJobsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchStopJobs, hcClient);
     }
@@ -751,6 +787,7 @@ public class DrsClient {
      * @param request BatchSwitchoverRequest 请求对象
      * @return BatchSwitchoverResponse
      */
+    @Deprecated
     public BatchSwitchoverResponse batchSwitchover(BatchSwitchoverRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchSwitchover);
     }
@@ -765,6 +802,7 @@ public class DrsClient {
      * @param request BatchSwitchoverRequest 请求对象
      * @return SyncInvoker<BatchSwitchoverRequest, BatchSwitchoverResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchSwitchoverRequest, BatchSwitchoverResponse> batchSwitchoverInvoker(
         BatchSwitchoverRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchSwitchover, hcClient);
@@ -780,6 +818,7 @@ public class DrsClient {
      * @param request BatchUpdateJobRequest 请求对象
      * @return BatchUpdateJobResponse
      */
+    @Deprecated
     public BatchUpdateJobResponse batchUpdateJob(BatchUpdateJobRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchUpdateJob);
     }
@@ -794,6 +833,7 @@ public class DrsClient {
      * @param request BatchUpdateJobRequest 请求对象
      * @return SyncInvoker<BatchUpdateJobRequest, BatchUpdateJobResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchUpdateJobRequest, BatchUpdateJobResponse> batchUpdateJobInvoker(
         BatchUpdateJobRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchUpdateJob, hcClient);
@@ -809,6 +849,7 @@ public class DrsClient {
      * @param request BatchUpdateUserRequest 请求对象
      * @return BatchUpdateUserResponse
      */
+    @Deprecated
     public BatchUpdateUserResponse batchUpdateUser(BatchUpdateUserRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchUpdateUser);
     }
@@ -823,6 +864,7 @@ public class DrsClient {
      * @param request BatchUpdateUserRequest 请求对象
      * @return SyncInvoker<BatchUpdateUserRequest, BatchUpdateUserResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchUpdateUserRequest, BatchUpdateUserResponse> batchUpdateUserInvoker(
         BatchUpdateUserRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchUpdateUser, hcClient);
@@ -839,6 +881,7 @@ public class DrsClient {
      * @param request BatchValidateClustersConnectionsRequest 请求对象
      * @return BatchValidateClustersConnectionsResponse
      */
+    @Deprecated
     public BatchValidateClustersConnectionsResponse batchValidateClustersConnections(
         BatchValidateClustersConnectionsRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchValidateClustersConnections);
@@ -855,6 +898,7 @@ public class DrsClient {
      * @param request BatchValidateClustersConnectionsRequest 请求对象
      * @return SyncInvoker<BatchValidateClustersConnectionsRequest, BatchValidateClustersConnectionsResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchValidateClustersConnectionsRequest, BatchValidateClustersConnectionsResponse> batchValidateClustersConnectionsInvoker(
         BatchValidateClustersConnectionsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchValidateClustersConnections, hcClient);
@@ -870,6 +914,7 @@ public class DrsClient {
      * @param request BatchValidateConnectionsRequest 请求对象
      * @return BatchValidateConnectionsResponse
      */
+    @Deprecated
     public BatchValidateConnectionsResponse batchValidateConnections(BatchValidateConnectionsRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchValidateConnections);
     }
@@ -884,6 +929,7 @@ public class DrsClient {
      * @param request BatchValidateConnectionsRequest 请求对象
      * @return SyncInvoker<BatchValidateConnectionsRequest, BatchValidateConnectionsResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchValidateConnectionsRequest, BatchValidateConnectionsResponse> batchValidateConnectionsInvoker(
         BatchValidateConnectionsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchValidateConnections, hcClient);
@@ -899,6 +945,7 @@ public class DrsClient {
      * @param request CreateCompareResultFileRequest 请求对象
      * @return CreateCompareResultFileResponse
      */
+    @Deprecated
     public CreateCompareResultFileResponse createCompareResultFile(CreateCompareResultFileRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.createCompareResultFile);
     }
@@ -913,6 +960,7 @@ public class DrsClient {
      * @param request CreateCompareResultFileRequest 请求对象
      * @return SyncInvoker<CreateCompareResultFileRequest, CreateCompareResultFileResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateCompareResultFileRequest, CreateCompareResultFileResponse> createCompareResultFileInvoker(
         CreateCompareResultFileRequest request) {
         return new SyncInvoker<>(request, DrsMeta.createCompareResultFile, hcClient);
@@ -928,6 +976,7 @@ public class DrsClient {
      * @param request CreateCompareTaskRequest 请求对象
      * @return CreateCompareTaskResponse
      */
+    @Deprecated
     public CreateCompareTaskResponse createCompareTask(CreateCompareTaskRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.createCompareTask);
     }
@@ -942,6 +991,7 @@ public class DrsClient {
      * @param request CreateCompareTaskRequest 请求对象
      * @return SyncInvoker<CreateCompareTaskRequest, CreateCompareTaskResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateCompareTaskRequest, CreateCompareTaskResponse> createCompareTaskInvoker(
         CreateCompareTaskRequest request) {
         return new SyncInvoker<>(request, DrsMeta.createCompareTask, hcClient);
@@ -957,6 +1007,7 @@ public class DrsClient {
      * @param request CreateDataLevelTableCompareJobRequest 请求对象
      * @return CreateDataLevelTableCompareJobResponse
      */
+    @Deprecated
     public CreateDataLevelTableCompareJobResponse createDataLevelTableCompareJob(
         CreateDataLevelTableCompareJobRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.createDataLevelTableCompareJob);
@@ -972,6 +1023,7 @@ public class DrsClient {
      * @param request CreateDataLevelTableCompareJobRequest 请求对象
      * @return SyncInvoker<CreateDataLevelTableCompareJobRequest, CreateDataLevelTableCompareJobResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateDataLevelTableCompareJobRequest, CreateDataLevelTableCompareJobResponse> createDataLevelTableCompareJobInvoker(
         CreateDataLevelTableCompareJobRequest request) {
         return new SyncInvoker<>(request, DrsMeta.createDataLevelTableCompareJob, hcClient);
@@ -987,6 +1039,7 @@ public class DrsClient {
      * @param request CreateObjectLevelCompareJobRequest 请求对象
      * @return CreateObjectLevelCompareJobResponse
      */
+    @Deprecated
     public CreateObjectLevelCompareJobResponse createObjectLevelCompareJob(CreateObjectLevelCompareJobRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.createObjectLevelCompareJob);
     }
@@ -1001,6 +1054,7 @@ public class DrsClient {
      * @param request CreateObjectLevelCompareJobRequest 请求对象
      * @return SyncInvoker<CreateObjectLevelCompareJobRequest, CreateObjectLevelCompareJobResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateObjectLevelCompareJobRequest, CreateObjectLevelCompareJobResponse> createObjectLevelCompareJobInvoker(
         CreateObjectLevelCompareJobRequest request) {
         return new SyncInvoker<>(request, DrsMeta.createObjectLevelCompareJob, hcClient);
@@ -1016,6 +1070,7 @@ public class DrsClient {
      * @param request DeleteCompareJobRequest 请求对象
      * @return DeleteCompareJobResponse
      */
+    @Deprecated
     public DeleteCompareJobResponse deleteCompareJob(DeleteCompareJobRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.deleteCompareJob);
     }
@@ -1030,6 +1085,7 @@ public class DrsClient {
      * @param request DeleteCompareJobRequest 请求对象
      * @return SyncInvoker<DeleteCompareJobRequest, DeleteCompareJobResponse>
      */
+    @Deprecated
     public SyncInvoker<DeleteCompareJobRequest, DeleteCompareJobResponse> deleteCompareJobInvoker(
         DeleteCompareJobRequest request) {
         return new SyncInvoker<>(request, DrsMeta.deleteCompareJob, hcClient);
@@ -1045,6 +1101,7 @@ public class DrsClient {
      * @param request DownloadCompareResultFileRequest 请求对象
      * @return DownloadCompareResultFileResponse
      */
+    @Deprecated
     public DownloadCompareResultFileResponse downloadCompareResultFile(DownloadCompareResultFileRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.downloadCompareResultFile);
     }
@@ -1059,6 +1116,7 @@ public class DrsClient {
      * @param request DownloadCompareResultFileRequest 请求对象
      * @return SyncInvoker<DownloadCompareResultFileRequest, DownloadCompareResultFileResponse>
      */
+    @Deprecated
     public SyncInvoker<DownloadCompareResultFileRequest, DownloadCompareResultFileResponse> downloadCompareResultFileInvoker(
         DownloadCompareResultFileRequest request) {
         return new SyncInvoker<>(request, DrsMeta.downloadCompareResultFile, hcClient);
@@ -1074,6 +1132,7 @@ public class DrsClient {
      * @param request ListAvailableNodeTypesRequest 请求对象
      * @return ListAvailableNodeTypesResponse
      */
+    @Deprecated
     public ListAvailableNodeTypesResponse listAvailableNodeTypes(ListAvailableNodeTypesRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.listAvailableNodeTypes);
     }
@@ -1088,6 +1147,7 @@ public class DrsClient {
      * @param request ListAvailableNodeTypesRequest 请求对象
      * @return SyncInvoker<ListAvailableNodeTypesRequest, ListAvailableNodeTypesResponse>
      */
+    @Deprecated
     public SyncInvoker<ListAvailableNodeTypesRequest, ListAvailableNodeTypesResponse> listAvailableNodeTypesInvoker(
         ListAvailableNodeTypesRequest request) {
         return new SyncInvoker<>(request, DrsMeta.listAvailableNodeTypes, hcClient);
@@ -1132,6 +1192,7 @@ public class DrsClient {
      * @param request ListCompareResultRequest 请求对象
      * @return ListCompareResultResponse
      */
+    @Deprecated
     public ListCompareResultResponse listCompareResult(ListCompareResultRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.listCompareResult);
     }
@@ -1146,6 +1207,7 @@ public class DrsClient {
      * @param request ListCompareResultRequest 请求对象
      * @return SyncInvoker<ListCompareResultRequest, ListCompareResultResponse>
      */
+    @Deprecated
     public SyncInvoker<ListCompareResultRequest, ListCompareResultResponse> listCompareResultInvoker(
         ListCompareResultRequest request) {
         return new SyncInvoker<>(request, DrsMeta.listCompareResult, hcClient);
@@ -1161,6 +1223,7 @@ public class DrsClient {
      * @param request ListContentCompareDetailRequest 请求对象
      * @return ListContentCompareDetailResponse
      */
+    @Deprecated
     public ListContentCompareDetailResponse listContentCompareDetail(ListContentCompareDetailRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.listContentCompareDetail);
     }
@@ -1175,6 +1238,7 @@ public class DrsClient {
      * @param request ListContentCompareDetailRequest 请求对象
      * @return SyncInvoker<ListContentCompareDetailRequest, ListContentCompareDetailResponse>
      */
+    @Deprecated
     public SyncInvoker<ListContentCompareDetailRequest, ListContentCompareDetailResponse> listContentCompareDetailInvoker(
         ListContentCompareDetailRequest request) {
         return new SyncInvoker<>(request, DrsMeta.listContentCompareDetail, hcClient);
@@ -1190,6 +1254,7 @@ public class DrsClient {
      * @param request ListContentCompareDifferenceRequest 请求对象
      * @return ListContentCompareDifferenceResponse
      */
+    @Deprecated
     public ListContentCompareDifferenceResponse listContentCompareDifference(
         ListContentCompareDifferenceRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.listContentCompareDifference);
@@ -1205,6 +1270,7 @@ public class DrsClient {
      * @param request ListContentCompareDifferenceRequest 请求对象
      * @return SyncInvoker<ListContentCompareDifferenceRequest, ListContentCompareDifferenceResponse>
      */
+    @Deprecated
     public SyncInvoker<ListContentCompareDifferenceRequest, ListContentCompareDifferenceResponse> listContentCompareDifferenceInvoker(
         ListContentCompareDifferenceRequest request) {
         return new SyncInvoker<>(request, DrsMeta.listContentCompareDifference, hcClient);
@@ -1220,6 +1286,7 @@ public class DrsClient {
      * @param request ListContentCompareOverviewRequest 请求对象
      * @return ListContentCompareOverviewResponse
      */
+    @Deprecated
     public ListContentCompareOverviewResponse listContentCompareOverview(ListContentCompareOverviewRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.listContentCompareOverview);
     }
@@ -1234,6 +1301,7 @@ public class DrsClient {
      * @param request ListContentCompareOverviewRequest 请求对象
      * @return SyncInvoker<ListContentCompareOverviewRequest, ListContentCompareOverviewResponse>
      */
+    @Deprecated
     public SyncInvoker<ListContentCompareOverviewRequest, ListContentCompareOverviewResponse> listContentCompareOverviewInvoker(
         ListContentCompareOverviewRequest request) {
         return new SyncInvoker<>(request, DrsMeta.listContentCompareOverview, hcClient);
@@ -1249,6 +1317,7 @@ public class DrsClient {
      * @param request ListDataCompareDetailRequest 请求对象
      * @return ListDataCompareDetailResponse
      */
+    @Deprecated
     public ListDataCompareDetailResponse listDataCompareDetail(ListDataCompareDetailRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.listDataCompareDetail);
     }
@@ -1263,6 +1332,7 @@ public class DrsClient {
      * @param request ListDataCompareDetailRequest 请求对象
      * @return SyncInvoker<ListDataCompareDetailRequest, ListDataCompareDetailResponse>
      */
+    @Deprecated
     public SyncInvoker<ListDataCompareDetailRequest, ListDataCompareDetailResponse> listDataCompareDetailInvoker(
         ListDataCompareDetailRequest request) {
         return new SyncInvoker<>(request, DrsMeta.listDataCompareDetail, hcClient);
@@ -1278,6 +1348,7 @@ public class DrsClient {
      * @param request ListDataCompareOverviewRequest 请求对象
      * @return ListDataCompareOverviewResponse
      */
+    @Deprecated
     public ListDataCompareOverviewResponse listDataCompareOverview(ListDataCompareOverviewRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.listDataCompareOverview);
     }
@@ -1292,6 +1363,7 @@ public class DrsClient {
      * @param request ListDataCompareOverviewRequest 请求对象
      * @return SyncInvoker<ListDataCompareOverviewRequest, ListDataCompareOverviewResponse>
      */
+    @Deprecated
     public SyncInvoker<ListDataCompareOverviewRequest, ListDataCompareOverviewResponse> listDataCompareOverviewInvoker(
         ListDataCompareOverviewRequest request) {
         return new SyncInvoker<>(request, DrsMeta.listDataCompareOverview, hcClient);
@@ -1307,6 +1379,7 @@ public class DrsClient {
      * @param request ListDataLevelTableCompareJobsRequest 请求对象
      * @return ListDataLevelTableCompareJobsResponse
      */
+    @Deprecated
     public ListDataLevelTableCompareJobsResponse listDataLevelTableCompareJobs(
         ListDataLevelTableCompareJobsRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.listDataLevelTableCompareJobs);
@@ -1322,6 +1395,7 @@ public class DrsClient {
      * @param request ListDataLevelTableCompareJobsRequest 请求对象
      * @return SyncInvoker<ListDataLevelTableCompareJobsRequest, ListDataLevelTableCompareJobsResponse>
      */
+    @Deprecated
     public SyncInvoker<ListDataLevelTableCompareJobsRequest, ListDataLevelTableCompareJobsResponse> listDataLevelTableCompareJobsInvoker(
         ListDataLevelTableCompareJobsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.listDataLevelTableCompareJobs, hcClient);
@@ -1337,6 +1411,7 @@ public class DrsClient {
      * @param request ListObejectLevelCompareDetailRequest 请求对象
      * @return ListObejectLevelCompareDetailResponse
      */
+    @Deprecated
     public ListObejectLevelCompareDetailResponse listObejectLevelCompareDetail(
         ListObejectLevelCompareDetailRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.listObejectLevelCompareDetail);
@@ -1352,6 +1427,7 @@ public class DrsClient {
      * @param request ListObejectLevelCompareDetailRequest 请求对象
      * @return SyncInvoker<ListObejectLevelCompareDetailRequest, ListObejectLevelCompareDetailResponse>
      */
+    @Deprecated
     public SyncInvoker<ListObejectLevelCompareDetailRequest, ListObejectLevelCompareDetailResponse> listObejectLevelCompareDetailInvoker(
         ListObejectLevelCompareDetailRequest request) {
         return new SyncInvoker<>(request, DrsMeta.listObejectLevelCompareDetail, hcClient);
@@ -1367,6 +1443,7 @@ public class DrsClient {
      * @param request ListObejectLevelCompareOverviewRequest 请求对象
      * @return ListObejectLevelCompareOverviewResponse
      */
+    @Deprecated
     public ListObejectLevelCompareOverviewResponse listObejectLevelCompareOverview(
         ListObejectLevelCompareOverviewRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.listObejectLevelCompareOverview);
@@ -1382,6 +1459,7 @@ public class DrsClient {
      * @param request ListObejectLevelCompareOverviewRequest 请求对象
      * @return SyncInvoker<ListObejectLevelCompareOverviewRequest, ListObejectLevelCompareOverviewResponse>
      */
+    @Deprecated
     public SyncInvoker<ListObejectLevelCompareOverviewRequest, ListObejectLevelCompareOverviewResponse> listObejectLevelCompareOverviewInvoker(
         ListObejectLevelCompareOverviewRequest request) {
         return new SyncInvoker<>(request, DrsMeta.listObejectLevelCompareOverview, hcClient);
@@ -1397,6 +1475,7 @@ public class DrsClient {
      * @param request ListUsersRequest 请求对象
      * @return ListUsersResponse
      */
+    @Deprecated
     public ListUsersResponse listUsers(ListUsersRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.listUsers);
     }
@@ -1411,6 +1490,7 @@ public class DrsClient {
      * @param request ListUsersRequest 请求对象
      * @return SyncInvoker<ListUsersRequest, ListUsersResponse>
      */
+    @Deprecated
     public SyncInvoker<ListUsersRequest, ListUsersResponse> listUsersInvoker(ListUsersRequest request) {
         return new SyncInvoker<>(request, DrsMeta.listUsers, hcClient);
     }
@@ -1425,6 +1505,7 @@ public class DrsClient {
      * @param request ModifyGroupAndStreamRequest 请求对象
      * @return ModifyGroupAndStreamResponse
      */
+    @Deprecated
     public ModifyGroupAndStreamResponse modifyGroupAndStream(ModifyGroupAndStreamRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.modifyGroupAndStream);
     }
@@ -1439,6 +1520,7 @@ public class DrsClient {
      * @param request ModifyGroupAndStreamRequest 请求对象
      * @return SyncInvoker<ModifyGroupAndStreamRequest, ModifyGroupAndStreamResponse>
      */
+    @Deprecated
     public SyncInvoker<ModifyGroupAndStreamRequest, ModifyGroupAndStreamResponse> modifyGroupAndStreamInvoker(
         ModifyGroupAndStreamRequest request) {
         return new SyncInvoker<>(request, DrsMeta.modifyGroupAndStream, hcClient);
@@ -1454,6 +1536,7 @@ public class DrsClient {
      * @param request QueryTuningParamsRequest 请求对象
      * @return QueryTuningParamsResponse
      */
+    @Deprecated
     public QueryTuningParamsResponse queryTuningParams(QueryTuningParamsRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.queryTuningParams);
     }
@@ -1468,6 +1551,7 @@ public class DrsClient {
      * @param request QueryTuningParamsRequest 请求对象
      * @return SyncInvoker<QueryTuningParamsRequest, QueryTuningParamsResponse>
      */
+    @Deprecated
     public SyncInvoker<QueryTuningParamsRequest, QueryTuningParamsResponse> queryTuningParamsInvoker(
         QueryTuningParamsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.queryTuningParams, hcClient);
@@ -1483,6 +1567,7 @@ public class DrsClient {
      * @param request SelectGroupAndStreamRequest 请求对象
      * @return SelectGroupAndStreamResponse
      */
+    @Deprecated
     public SelectGroupAndStreamResponse selectGroupAndStream(SelectGroupAndStreamRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.selectGroupAndStream);
     }
@@ -1497,6 +1582,7 @@ public class DrsClient {
      * @param request SelectGroupAndStreamRequest 请求对象
      * @return SyncInvoker<SelectGroupAndStreamRequest, SelectGroupAndStreamResponse>
      */
+    @Deprecated
     public SyncInvoker<SelectGroupAndStreamRequest, SelectGroupAndStreamResponse> selectGroupAndStreamInvoker(
         SelectGroupAndStreamRequest request) {
         return new SyncInvoker<>(request, DrsMeta.selectGroupAndStream, hcClient);
@@ -1512,6 +1598,7 @@ public class DrsClient {
      * @param request ShowJobListRequest 请求对象
      * @return ShowJobListResponse
      */
+    @Deprecated
     public ShowJobListResponse showJobList(ShowJobListRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.showJobList);
     }
@@ -1526,6 +1613,7 @@ public class DrsClient {
      * @param request ShowJobListRequest 请求对象
      * @return SyncInvoker<ShowJobListRequest, ShowJobListResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowJobListRequest, ShowJobListResponse> showJobListInvoker(ShowJobListRequest request) {
         return new SyncInvoker<>(request, DrsMeta.showJobList, hcClient);
     }
@@ -1540,6 +1628,7 @@ public class DrsClient {
      * @param request ShowMonitoringDataRequest 请求对象
      * @return ShowMonitoringDataResponse
      */
+    @Deprecated
     public ShowMonitoringDataResponse showMonitoringData(ShowMonitoringDataRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.showMonitoringData);
     }
@@ -1554,6 +1643,7 @@ public class DrsClient {
      * @param request ShowMonitoringDataRequest 请求对象
      * @return SyncInvoker<ShowMonitoringDataRequest, ShowMonitoringDataResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowMonitoringDataRequest, ShowMonitoringDataResponse> showMonitoringDataInvoker(
         ShowMonitoringDataRequest request) {
         return new SyncInvoker<>(request, DrsMeta.showMonitoringData, hcClient);
@@ -1597,6 +1687,7 @@ public class DrsClient {
      * @param request StartPromptlyDataLevelTableCompareJobRequest 请求对象
      * @return StartPromptlyDataLevelTableCompareJobResponse
      */
+    @Deprecated
     public StartPromptlyDataLevelTableCompareJobResponse startPromptlyDataLevelTableCompareJob(
         StartPromptlyDataLevelTableCompareJobRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.startPromptlyDataLevelTableCompareJob);
@@ -1612,6 +1703,7 @@ public class DrsClient {
      * @param request StartPromptlyDataLevelTableCompareJobRequest 请求对象
      * @return SyncInvoker<StartPromptlyDataLevelTableCompareJobRequest, StartPromptlyDataLevelTableCompareJobResponse>
      */
+    @Deprecated
     public SyncInvoker<StartPromptlyDataLevelTableCompareJobRequest, StartPromptlyDataLevelTableCompareJobResponse> startPromptlyDataLevelTableCompareJobInvoker(
         StartPromptlyDataLevelTableCompareJobRequest request) {
         return new SyncInvoker<>(request, DrsMeta.startPromptlyDataLevelTableCompareJob, hcClient);
@@ -1627,6 +1719,7 @@ public class DrsClient {
      * @param request UpdateParamsRequest 请求对象
      * @return UpdateParamsResponse
      */
+    @Deprecated
     public UpdateParamsResponse updateParams(UpdateParamsRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.updateParams);
     }
@@ -1641,6 +1734,7 @@ public class DrsClient {
      * @param request UpdateParamsRequest 请求对象
      * @return SyncInvoker<UpdateParamsRequest, UpdateParamsResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateParamsRequest, UpdateParamsResponse> updateParamsInvoker(UpdateParamsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.updateParams, hcClient);
     }
@@ -1655,6 +1749,7 @@ public class DrsClient {
      * @param request UpdateTuningParamsRequest 请求对象
      * @return UpdateTuningParamsResponse
      */
+    @Deprecated
     public UpdateTuningParamsResponse updateTuningParams(UpdateTuningParamsRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.updateTuningParams);
     }
@@ -1669,6 +1764,7 @@ public class DrsClient {
      * @param request UpdateTuningParamsRequest 请求对象
      * @return SyncInvoker<UpdateTuningParamsRequest, UpdateTuningParamsResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateTuningParamsRequest, UpdateTuningParamsResponse> updateTuningParamsInvoker(
         UpdateTuningParamsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.updateTuningParams, hcClient);

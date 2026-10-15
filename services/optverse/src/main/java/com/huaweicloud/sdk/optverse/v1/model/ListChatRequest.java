@@ -35,6 +35,21 @@ public class ListChatRequest {
 
     private String agentType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_type")
+
+    private String domainType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_time")
+
+    private String startTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "end_time")
+
+    private String endTime;
+
     public ListChatRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -113,7 +128,7 @@ public class ListChatRequest {
     }
 
     /**
-     * **参数解释**： 对话名称，支持模糊搜索。 **约束限制**： 不涉及 **取值范围**： * optverse：天筹工具链 * predict：预测工具链 * vrp：路径规划工具链 * demand：需求助手 **默认取值**： 不涉及 
+     * **参数解释**： 对话名称，支持模糊搜索。 **约束限制**： 不涉及 **取值范围**： * optverse：天筹工具链 * predict：预测工具链 * demand：需求助手 **默认取值**： 不涉及 
      * @return agentType
      */
     public String getAgentType() {
@@ -122,6 +137,57 @@ public class ListChatRequest {
 
     public void setAgentType(String agentType) {
         this.agentType = agentType;
+    }
+
+    public ListChatRequest withDomainType(String domainType) {
+        this.domainType = domainType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 领域类型，仅agent_type为optverse时生效。 **约束限制**： 不涉及 **取值范围**： * production-planning：生产计划 * sequence-planning：生产排程 * vrp：运输计划 * optverse：通用数学规划 **默认取值**： optverse
+     * @return domainType
+     */
+    public String getDomainType() {
+        return domainType;
+    }
+
+    public void setDomainType(String domainType) {
+        this.domainType = domainType;
+    }
+
+    public ListChatRequest withStartTime(String startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 筛选起始时间，按对话创建时间（create_time）过滤，包含边界。 **约束限制**： 不涉及 **取值范围**： Unix时间戳（秒级），例如：1789991522。 **默认取值**： 不涉及 
+     * @return startTime
+     */
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public ListChatRequest withEndTime(String endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 筛选结束时间，按对话创建时间（create_time）过滤，包含边界。 **约束限制**： 不涉及 **取值范围**： Unix时间戳（秒级），例如：1789991522。 **默认取值**： 不涉及 
+     * @return endTime
+     */
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 
     @Override
@@ -135,12 +201,13 @@ public class ListChatRequest {
         ListChatRequest that = (ListChatRequest) obj;
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.title, that.title)
-            && Objects.equals(this.agentType, that.agentType);
+            && Objects.equals(this.agentType, that.agentType) && Objects.equals(this.domainType, that.domainType)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, offset, sortDir, title, agentType);
+        return Objects.hash(limit, offset, sortDir, title, agentType, domainType, startTime, endTime);
     }
 
     @Override
@@ -152,6 +219,9 @@ public class ListChatRequest {
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    title: ").append(toIndentedString(title)).append("\n");
         sb.append("    agentType: ").append(toIndentedString(agentType)).append("\n");
+        sb.append("    domainType: ").append(toIndentedString(domainType)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

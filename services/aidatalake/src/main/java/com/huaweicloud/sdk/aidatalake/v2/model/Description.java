@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.aidatalake.v2.model;
 import java.util.Objects;
 
 /**
- * **参数解释**：描述信息。 **约束限制**：不涉及。 **取值范围**：0~1024。 **默认取值**：不涉及。 
+ * **参数解释**：描述信息。 **约束限制**：不涉及。 **取值范围**：长度为0-1024的任意字符组合，不包含“!”、“&lt;”、“&gt;”、“&#x3D;”、“&amp;”、“\&quot;”、“&#39;”。 **默认取值**：不涉及。 
  */
 public class Description {
 

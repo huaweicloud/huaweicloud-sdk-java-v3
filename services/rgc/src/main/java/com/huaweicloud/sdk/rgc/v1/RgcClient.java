@@ -43,6 +43,8 @@ import com.huaweicloud.sdk.rgc.v1.model.ListEnabledControlsRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListEnabledControlsResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListExternalConfigRuleCompliancesRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListExternalConfigRuleCompliancesResponse;
+import com.huaweicloud.sdk.rgc.v1.model.ListLandingZoneVersionRequest;
+import com.huaweicloud.sdk.rgc.v1.model.ListLandingZoneVersionResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedAccountsForParentRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedAccountsForParentResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedAccountsRequest;
@@ -785,6 +787,35 @@ public class RgcClient {
     public SyncInvoker<DeleteLandingZoneRequest, DeleteLandingZoneResponse> deleteLandingZoneInvoker(
         DeleteLandingZoneRequest request) {
         return new SyncInvoker<>(request, RgcMeta.deleteLandingZone, hcClient);
+    }
+
+    /**
+     * 列出Landing Zone版本列表
+     *
+     * 列出Landing Zone版本列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLandingZoneVersionRequest 请求对象
+     * @return ListLandingZoneVersionResponse
+     */
+    public ListLandingZoneVersionResponse listLandingZoneVersion(ListLandingZoneVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, RgcMeta.listLandingZoneVersion);
+    }
+
+    /**
+     * 列出Landing Zone版本列表
+     *
+     * 列出Landing Zone版本列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLandingZoneVersionRequest 请求对象
+     * @return SyncInvoker<ListLandingZoneVersionRequest, ListLandingZoneVersionResponse>
+     */
+    public SyncInvoker<ListLandingZoneVersionRequest, ListLandingZoneVersionResponse> listLandingZoneVersionInvoker(
+        ListLandingZoneVersionRequest request) {
+        return new SyncInvoker<>(request, RgcMeta.listLandingZoneVersion, hcClient);
     }
 
     /**

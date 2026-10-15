@@ -171,6 +171,8 @@ import com.huaweicloud.sdk.iam.v5.model.UpdateOIDCProviderV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdateOIDCProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdatePasswordPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdatePasswordPolicyV5Response;
+import com.huaweicloud.sdk.iam.v5.model.UpdatePolicyV5Request;
+import com.huaweicloud.sdk.iam.v5.model.UpdatePolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdateSAMLProviderV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdateSAMLProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdateServiceSpecificCredentialV5Request;
@@ -1578,6 +1580,35 @@ public class IamAsyncClient {
     public AsyncInvoker<SetDefaultPolicyVersionV5Request, SetDefaultPolicyVersionV5Response> setDefaultPolicyVersionV5AsyncInvoker(
         SetDefaultPolicyVersionV5Request request) {
         return new AsyncInvoker<>(request, IamMeta.setDefaultPolicyVersionV5, hcClient);
+    }
+
+    /**
+     * 修改自定义身份策略描述
+     *
+     * 该接口可以用于修改自定义身份策略的描述字段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePolicyV5Request 请求对象
+     * @return CompletableFuture<UpdatePolicyV5Response>
+     */
+    public CompletableFuture<UpdatePolicyV5Response> updatePolicyV5Async(UpdatePolicyV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.updatePolicyV5);
+    }
+
+    /**
+     * 修改自定义身份策略描述
+     *
+     * 该接口可以用于修改自定义身份策略的描述字段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePolicyV5Request 请求对象
+     * @return AsyncInvoker<UpdatePolicyV5Request, UpdatePolicyV5Response>
+     */
+    public AsyncInvoker<UpdatePolicyV5Request, UpdatePolicyV5Response> updatePolicyV5AsyncInvoker(
+        UpdatePolicyV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.updatePolicyV5, hcClient);
     }
 
     /**

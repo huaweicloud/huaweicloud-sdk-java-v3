@@ -16,7 +16,7 @@ import java.util.Objects;
 public class InstInfo {
 
     /**
-     * 引擎类型
+     * **参数解释**：  DRS任务引擎类型。  **约束限制**：  不涉及。  **取值范围**：  - mysql：MySQL到MySQL迁移，MySQL到MySQL同步 - mongodb：MongoDB到DDS迁移与同步 - cloudDataGuard-mysql：MySQL到MySQL灾备 - gaussdbv5：GaussDB同步 - postgresql：PostgreSQL到PostgreSQL同步 - mysql-to-kafka：MySQL到Kafka同步 - taurus-to-kafka：TaurusDB到Kafka同步 - gaussdbv5ha-to-kafka：GaussDB集中式版到Kafka同步  **默认取值**：  不涉及
      */
     public static final class EngineTypeEnum {
 
@@ -127,7 +127,7 @@ public class InstInfo {
     private EngineTypeEnum engineType;
 
     /**
-     * 实例类型 取值：common，high，ultrahigh
+     * **参数解释**：  实例规格类型。  **约束限制**：  不涉及。  **取值范围**：  - common：中 - high：大 - ultrahigh：极大  **默认取值**：  不涉及
      */
     public static final class InstTypeEnum {
 
@@ -211,7 +211,7 @@ public class InstInfo {
     private String startTime;
 
     /**
-     * 迁移实例的状态
+     * **参数解释**：  迁移实例的状态。  **约束限制**：  不涉及。  **取值范围**：  - active：运行中 - deleted：已删除  **默认取值**：  不涉及
      */
     public static final class StatusEnum {
 
@@ -296,7 +296,7 @@ public class InstInfo {
     }
 
     /**
-     * 引擎类型
+     * **参数解释**：  DRS任务引擎类型。  **约束限制**：  不涉及。  **取值范围**：  - mysql：MySQL到MySQL迁移，MySQL到MySQL同步 - mongodb：MongoDB到DDS迁移与同步 - cloudDataGuard-mysql：MySQL到MySQL灾备 - gaussdbv5：GaussDB同步 - postgresql：PostgreSQL到PostgreSQL同步 - mysql-to-kafka：MySQL到Kafka同步 - taurus-to-kafka：TaurusDB到Kafka同步 - gaussdbv5ha-to-kafka：GaussDB集中式版到Kafka同步  **默认取值**：  不涉及
      * @return engineType
      */
     public EngineTypeEnum getEngineType() {
@@ -313,7 +313,7 @@ public class InstInfo {
     }
 
     /**
-     * 实例类型 取值：common，high，ultrahigh
+     * **参数解释**：  实例规格类型。  **约束限制**：  不涉及。  **取值范围**：  - common：中 - high：大 - ultrahigh：极大  **默认取值**：  不涉及
      * @return instType
      */
     public InstTypeEnum getInstType() {
@@ -330,7 +330,7 @@ public class InstInfo {
     }
 
     /**
-     * 迁移实例所在的私有IP
+     * **参数解释**：  迁移实例所在的私有IP地址。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return ip
      */
     public String getIp() {
@@ -347,7 +347,7 @@ public class InstInfo {
     }
 
     /**
-     * 迁移实例所在的公网IP
+     * **参数解释**：  迁移实例所在的公网IP地址。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return publicIp
      */
     public String getPublicIp() {
@@ -364,7 +364,7 @@ public class InstInfo {
     }
 
     /**
-     * 迁移实例任务定时启动时间
+     * **参数解释**：  迁移实例任务定时启动时间。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return startTime
      */
     public String getStartTime() {
@@ -381,7 +381,7 @@ public class InstInfo {
     }
 
     /**
-     * 迁移实例的状态
+     * **参数解释**：  迁移实例的状态。  **约束限制**：  不涉及。  **取值范围**：  - active：运行中 - deleted：已删除  **默认取值**：  不涉及
      * @return status
      */
     public StatusEnum getStatus() {
@@ -398,7 +398,7 @@ public class InstInfo {
     }
 
     /**
-     * 迁移实例的磁盘大小
+     * **参数解释**：  迁移实例的磁盘大小，单位为GB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return volumeSize
      */
     public Integer getVolumeSize() {

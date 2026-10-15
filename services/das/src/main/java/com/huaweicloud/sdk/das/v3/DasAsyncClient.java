@@ -23,6 +23,8 @@ import com.huaweicloud.sdk.das.v3.model.BatchDeleteConnectionNewRequest;
 import com.huaweicloud.sdk.das.v3.model.BatchDeleteConnectionNewResponse;
 import com.huaweicloud.sdk.das.v3.model.BatchSendEmailRequest;
 import com.huaweicloud.sdk.das.v3.model.BatchSendEmailResponse;
+import com.huaweicloud.sdk.das.v3.model.BatchSetHealthReportConfigRequest;
+import com.huaweicloud.sdk.das.v3.model.BatchSetHealthReportConfigResponse;
 import com.huaweicloud.sdk.das.v3.model.BatchSetSqlLimitingSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.BatchSetSqlLimitingSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.BatchSetSqlSwitchNewRequest;
@@ -37,6 +39,8 @@ import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsResponse;
 import com.huaweicloud.sdk.das.v3.model.CancelShareNewRequest;
 import com.huaweicloud.sdk.das.v3.model.CancelShareNewResponse;
+import com.huaweicloud.sdk.das.v3.model.ChangeBigKeyHotKeySwitchRequest;
+import com.huaweicloud.sdk.das.v3.model.ChangeBigKeyHotKeySwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeDeadLockSwitchNewRequest;
@@ -73,6 +77,8 @@ import com.huaweicloud.sdk.das.v3.model.CreateFullSqlBucketRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateFullSqlBucketResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTaskResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTemplateRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTemplateResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateHistoryTransactionExportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateHistoryTransactionExportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateIndexUsageExportTaskNewRequest;
@@ -119,6 +125,8 @@ import com.huaweicloud.sdk.das.v3.model.DeleteExportTaskObsFileNewRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteExportTaskObsFileNewResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteFullSqlExportTaskObsFileRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteFullSqlExportTaskObsFileResponse;
+import com.huaweicloud.sdk.das.v3.model.DeleteHealthReportTemplateRequest;
+import com.huaweicloud.sdk.das.v3.model.DeleteHealthReportTemplateResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteHistoryTransactionExportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteHistoryTransactionExportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteInstanceGroupRequest;
@@ -183,6 +191,8 @@ import com.huaweicloud.sdk.das.v3.model.ListApiVersionsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListApiVersionsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListAutoIncrementUsageRequest;
 import com.huaweicloud.sdk.das.v3.model.ListAutoIncrementUsageResponse;
+import com.huaweicloud.sdk.das.v3.model.ListBigKeysRequest;
+import com.huaweicloud.sdk.das.v3.model.ListBigKeysResponse;
 import com.huaweicloud.sdk.das.v3.model.ListBinlogExportsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListBinlogExportsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListBinlogFilesRequest;
@@ -229,12 +239,18 @@ import com.huaweicloud.sdk.das.v3.model.ListFullSqlTasksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListFullSqlTasksResponse;
 import com.huaweicloud.sdk.das.v3.model.ListGaussDbInstanceConfigurationsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListGaussDbInstanceConfigurationsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListHealthReportConfigsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListHealthReportConfigsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskResponse;
+import com.huaweicloud.sdk.das.v3.model.ListHealthReportTemplateRequest;
+import com.huaweicloud.sdk.das.v3.model.ListHealthReportTemplateResponse;
 import com.huaweicloud.sdk.das.v3.model.ListHistoryTransactionExportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.ListHistoryTransactionExportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.ListHistoryTransactionsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListHistoryTransactionsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListHotKeysRequest;
+import com.huaweicloud.sdk.das.v3.model.ListHotKeysResponse;
 import com.huaweicloud.sdk.das.v3.model.ListIndexUsageDetailsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListIndexUsageDetailsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListIndexUsageExportTasksRequest;
@@ -391,6 +407,8 @@ import com.huaweicloud.sdk.das.v3.model.SetHistoryTransactionSwitchNewRequest;
 import com.huaweicloud.sdk.das.v3.model.SetHistoryTransactionSwitchNewResponse;
 import com.huaweicloud.sdk.das.v3.model.SetIndexUsageSwitchNewRequest;
 import com.huaweicloud.sdk.das.v3.model.SetIndexUsageSwitchNewResponse;
+import com.huaweicloud.sdk.das.v3.model.SetInstanceHealthReportConfigRequest;
+import com.huaweicloud.sdk.das.v3.model.SetInstanceHealthReportConfigResponse;
 import com.huaweicloud.sdk.das.v3.model.SetLockBlockingSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.SetLockBlockingSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.SetLongHistoryTransactionSwitchNewRequest;
@@ -415,6 +433,8 @@ import com.huaweicloud.sdk.das.v3.model.ShowAnalysisSessionStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowAnalysisSessionStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowBigKeyHotKeySwitchRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowBigKeyHotKeySwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowBinlogExportTaskInfoRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowBinlogExportTaskInfoResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowBinlogParseRequest;
@@ -475,6 +495,8 @@ import com.huaweicloud.sdk.das.v3.model.ShowGlobalPrivacyNewRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowGlobalPrivacyNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowHealthReportSettingsRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowHealthReportSettingsResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowHealthReportTemplateRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowHealthReportTemplateResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowHistoryTransactionExportTaskInfoRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowHistoryTransactionExportTaskInfoResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowHistoryTransactionSwitchNewRequest;
@@ -491,6 +513,8 @@ import com.huaweicloud.sdk.das.v3.model.ShowInstanceDistributionRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceDistributionResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReport4ApiRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReport4ApiResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportConfigRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportConfigResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceInfoRequest;
@@ -507,6 +531,8 @@ import com.huaweicloud.sdk.das.v3.model.ShowIsAdminUserNewRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowIsAdminUserNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowIsSignedProtocolRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowIsSignedProtocolResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowKeyTrendRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowKeyTrendResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowKillProcessTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowKillProcessTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowKillProcessTaskSwitchRequest;
@@ -647,6 +673,8 @@ import com.huaweicloud.sdk.das.v3.model.UpdateFullSqlSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateFullSqlSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.UpdateHealthReportSettingsRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateHealthReportSettingsResponse;
+import com.huaweicloud.sdk.das.v3.model.UpdateHealthReportTemplateRequest;
+import com.huaweicloud.sdk.das.v3.model.UpdateHealthReportTemplateResponse;
 import com.huaweicloud.sdk.das.v3.model.UpdateInstanceConfigRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateInstanceConfigResponse;
 import com.huaweicloud.sdk.das.v3.model.UpdateInstanceGroupRequest;
@@ -6852,6 +6880,36 @@ public class DasAsyncClient {
     }
 
     /**
+     * 批量设置实例健康报告模板配置
+     *
+     * 批量设置实例的健康报告模板配置，用于批量巡检实例组场景。此为实例级配置，修改后将同时影响实例的日报订阅报告内容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchSetHealthReportConfigRequest 请求对象
+     * @return CompletableFuture<BatchSetHealthReportConfigResponse>
+     */
+    public CompletableFuture<BatchSetHealthReportConfigResponse> batchSetHealthReportConfigAsync(
+        BatchSetHealthReportConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.batchSetHealthReportConfig);
+    }
+
+    /**
+     * 批量设置实例健康报告模板配置
+     *
+     * 批量设置实例的健康报告模板配置，用于批量巡检实例组场景。此为实例级配置，修改后将同时影响实例的日报订阅报告内容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchSetHealthReportConfigRequest 请求对象
+     * @return AsyncInvoker<BatchSetHealthReportConfigRequest, BatchSetHealthReportConfigResponse>
+     */
+    public AsyncInvoker<BatchSetHealthReportConfigRequest, BatchSetHealthReportConfigResponse> batchSetHealthReportConfigAsyncInvoker(
+        BatchSetHealthReportConfigRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.batchSetHealthReportConfig, hcClient);
+    }
+
+    /**
      * 批量订阅/取消订阅
      *
      * 批量订阅/取消订阅
@@ -6908,6 +6966,36 @@ public class DasAsyncClient {
     public AsyncInvoker<CancelShareNewRequest, CancelShareNewResponse> cancelShareNewAsyncInvoker(
         CancelShareNewRequest request) {
         return new AsyncInvoker<>(request, DasMeta.cancelShareNew, hcClient);
+    }
+
+    /**
+     * 开启/关闭Redis大key热key历史数据采集
+     *
+     * 开启或关闭GeminiDB Redis实例的大key、热key历史数据采集开关。仅支持GeminiDB Redis引擎，内核版本需≥5.0.7.20。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeBigKeyHotKeySwitchRequest 请求对象
+     * @return CompletableFuture<ChangeBigKeyHotKeySwitchResponse>
+     */
+    public CompletableFuture<ChangeBigKeyHotKeySwitchResponse> changeBigKeyHotKeySwitchAsync(
+        ChangeBigKeyHotKeySwitchRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.changeBigKeyHotKeySwitch);
+    }
+
+    /**
+     * 开启/关闭Redis大key热key历史数据采集
+     *
+     * 开启或关闭GeminiDB Redis实例的大key、热key历史数据采集开关。仅支持GeminiDB Redis引擎，内核版本需≥5.0.7.20。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeBigKeyHotKeySwitchRequest 请求对象
+     * @return AsyncInvoker<ChangeBigKeyHotKeySwitchRequest, ChangeBigKeyHotKeySwitchResponse>
+     */
+    public AsyncInvoker<ChangeBigKeyHotKeySwitchRequest, ChangeBigKeyHotKeySwitchResponse> changeBigKeyHotKeySwitchAsyncInvoker(
+        ChangeBigKeyHotKeySwitchRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.changeBigKeyHotKeySwitch, hcClient);
     }
 
     /**
@@ -7210,6 +7298,36 @@ public class DasAsyncClient {
     }
 
     /**
+     * 创建健康报告模板
+     *
+     * 创建健康报告模板，模板为租户级资源。系统预设模板不可创建，每个租户最多创建20个自定义模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHealthReportTemplateRequest 请求对象
+     * @return CompletableFuture<CreateHealthReportTemplateResponse>
+     */
+    public CompletableFuture<CreateHealthReportTemplateResponse> createHealthReportTemplateAsync(
+        CreateHealthReportTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.createHealthReportTemplate);
+    }
+
+    /**
+     * 创建健康报告模板
+     *
+     * 创建健康报告模板，模板为租户级资源。系统预设模板不可创建，每个租户最多创建20个自定义模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHealthReportTemplateRequest 请求对象
+     * @return AsyncInvoker<CreateHealthReportTemplateRequest, CreateHealthReportTemplateResponse>
+     */
+    public AsyncInvoker<CreateHealthReportTemplateRequest, CreateHealthReportTemplateResponse> createHealthReportTemplateAsyncInvoker(
+        CreateHealthReportTemplateRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.createHealthReportTemplate, hcClient);
+    }
+
+    /**
      * 创建导出历史事务任务
      *
      * DAS收集历史事务开关打开后，支持创建一次性导出指定时间范围内的历史事务数据任务。
@@ -7436,6 +7554,36 @@ public class DasAsyncClient {
     public AsyncInvoker<DeleteEmailTemplateRequest, DeleteEmailTemplateResponse> deleteEmailTemplateAsyncInvoker(
         DeleteEmailTemplateRequest request) {
         return new AsyncInvoker<>(request, DasMeta.deleteEmailTemplate, hcClient);
+    }
+
+    /**
+     * 删除健康报告模板
+     *
+     * 删除健康报告模板。系统预设模板不可删除，有实例引用时不可删除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHealthReportTemplateRequest 请求对象
+     * @return CompletableFuture<DeleteHealthReportTemplateResponse>
+     */
+    public CompletableFuture<DeleteHealthReportTemplateResponse> deleteHealthReportTemplateAsync(
+        DeleteHealthReportTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.deleteHealthReportTemplate);
+    }
+
+    /**
+     * 删除健康报告模板
+     *
+     * 删除健康报告模板。系统预设模板不可删除，有实例引用时不可删除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHealthReportTemplateRequest 请求对象
+     * @return AsyncInvoker<DeleteHealthReportTemplateRequest, DeleteHealthReportTemplateResponse>
+     */
+    public AsyncInvoker<DeleteHealthReportTemplateRequest, DeleteHealthReportTemplateResponse> deleteHealthReportTemplateAsyncInvoker(
+        DeleteHealthReportTemplateRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.deleteHealthReportTemplate, hcClient);
     }
 
     /**
@@ -7885,6 +8033,34 @@ public class DasAsyncClient {
     }
 
     /**
+     * 查询大key列表
+     *
+     * 查询GeminiDB Redis实例的历史大key排行列表，支持按长度（size）和存储占用（storage）两个统计维度筛选，返回Top 1000排行。同一key出现多次时进行MAX聚合。仅支持GeminiDB Redis引擎。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBigKeysRequest 请求对象
+     * @return CompletableFuture<ListBigKeysResponse>
+     */
+    public CompletableFuture<ListBigKeysResponse> listBigKeysAsync(ListBigKeysRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.listBigKeys);
+    }
+
+    /**
+     * 查询大key列表
+     *
+     * 查询GeminiDB Redis实例的历史大key排行列表，支持按长度（size）和存储占用（storage）两个统计维度筛选，返回Top 1000排行。同一key出现多次时进行MAX聚合。仅支持GeminiDB Redis引擎。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBigKeysRequest 请求对象
+     * @return AsyncInvoker<ListBigKeysRequest, ListBigKeysResponse>
+     */
+    public AsyncInvoker<ListBigKeysRequest, ListBigKeysResponse> listBigKeysAsyncInvoker(ListBigKeysRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.listBigKeys, hcClient);
+    }
+
+    /**
      * 获取DAS云DBA实例列表
      *
      * 获取DAS云DBA实例列表。
@@ -8089,6 +8265,36 @@ public class DasAsyncClient {
     }
 
     /**
+     * 批量查询实例健康报告模板配置
+     *
+     * 批量查询实例的健康报告模板配置，用于批量巡检实例组场景下查看组内实例的模板配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHealthReportConfigsRequest 请求对象
+     * @return CompletableFuture<ListHealthReportConfigsResponse>
+     */
+    public CompletableFuture<ListHealthReportConfigsResponse> listHealthReportConfigsAsync(
+        ListHealthReportConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.listHealthReportConfigs);
+    }
+
+    /**
+     * 批量查询实例健康报告模板配置
+     *
+     * 批量查询实例的健康报告模板配置，用于批量巡检实例组场景下查看组内实例的模板配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHealthReportConfigsRequest 请求对象
+     * @return AsyncInvoker<ListHealthReportConfigsRequest, ListHealthReportConfigsResponse>
+     */
+    public AsyncInvoker<ListHealthReportConfigsRequest, ListHealthReportConfigsResponse> listHealthReportConfigsAsyncInvoker(
+        ListHealthReportConfigsRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.listHealthReportConfigs, hcClient);
+    }
+
+    /**
      * 查询实例健康诊断报告列表
      *
      * 查询实例健康诊断报告列表。
@@ -8119,6 +8325,36 @@ public class DasAsyncClient {
     }
 
     /**
+     * 查询健康报告模板列表
+     *
+     * 查询租户可用的健康报告模板列表，包含系统预设模板和自定义模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHealthReportTemplateRequest 请求对象
+     * @return CompletableFuture<ListHealthReportTemplateResponse>
+     */
+    public CompletableFuture<ListHealthReportTemplateResponse> listHealthReportTemplateAsync(
+        ListHealthReportTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.listHealthReportTemplate);
+    }
+
+    /**
+     * 查询健康报告模板列表
+     *
+     * 查询租户可用的健康报告模板列表，包含系统预设模板和自定义模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHealthReportTemplateRequest 请求对象
+     * @return AsyncInvoker<ListHealthReportTemplateRequest, ListHealthReportTemplateResponse>
+     */
+    public AsyncInvoker<ListHealthReportTemplateRequest, ListHealthReportTemplateResponse> listHealthReportTemplateAsyncInvoker(
+        ListHealthReportTemplateRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.listHealthReportTemplate, hcClient);
+    }
+
+    /**
      * 查询历史事务导出任务列表
      *
      * DAS收集历史事务开关打开后，查询历史事务导出任务列表。
@@ -8146,6 +8382,34 @@ public class DasAsyncClient {
     public AsyncInvoker<ListHistoryTransactionExportTaskRequest, ListHistoryTransactionExportTaskResponse> listHistoryTransactionExportTaskAsyncInvoker(
         ListHistoryTransactionExportTaskRequest request) {
         return new AsyncInvoker<>(request, DasMeta.listHistoryTransactionExportTask, hcClient);
+    }
+
+    /**
+     * 查询热key列表
+     *
+     * 查询GeminiDB Redis实例的历史热key排行列表，支持按QPS（qps）和流量（traffic）两个统计维度筛选，返回Top 1000排行。同一key出现多次时进行MAX聚合。仅支持GeminiDB Redis引擎。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHotKeysRequest 请求对象
+     * @return CompletableFuture<ListHotKeysResponse>
+     */
+    public CompletableFuture<ListHotKeysResponse> listHotKeysAsync(ListHotKeysRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.listHotKeys);
+    }
+
+    /**
+     * 查询热key列表
+     *
+     * 查询GeminiDB Redis实例的历史热key排行列表，支持按QPS（qps）和流量（traffic）两个统计维度筛选，返回Top 1000排行。同一key出现多次时进行MAX聚合。仅支持GeminiDB Redis引擎。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHotKeysRequest 请求对象
+     * @return AsyncInvoker<ListHotKeysRequest, ListHotKeysResponse>
+     */
+    public AsyncInvoker<ListHotKeysRequest, ListHotKeysResponse> listHotKeysAsyncInvoker(ListHotKeysRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.listHotKeys, hcClient);
     }
 
     /**
@@ -8928,6 +9192,36 @@ public class DasAsyncClient {
     }
 
     /**
+     * 设置实例健康报告模板配置
+     *
+     * 设置实例的健康报告模板配置，此为实例级配置，修改后将同时影响该实例的批量巡检报告内容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetInstanceHealthReportConfigRequest 请求对象
+     * @return CompletableFuture<SetInstanceHealthReportConfigResponse>
+     */
+    public CompletableFuture<SetInstanceHealthReportConfigResponse> setInstanceHealthReportConfigAsync(
+        SetInstanceHealthReportConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.setInstanceHealthReportConfig);
+    }
+
+    /**
+     * 设置实例健康报告模板配置
+     *
+     * 设置实例的健康报告模板配置，此为实例级配置，修改后将同时影响该实例的批量巡检报告内容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetInstanceHealthReportConfigRequest 请求对象
+     * @return AsyncInvoker<SetInstanceHealthReportConfigRequest, SetInstanceHealthReportConfigResponse>
+     */
+    public AsyncInvoker<SetInstanceHealthReportConfigRequest, SetInstanceHealthReportConfigResponse> setInstanceHealthReportConfigAsyncInvoker(
+        SetInstanceHealthReportConfigRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.setInstanceHealthReportConfig, hcClient);
+    }
+
+    /**
      * 设置锁阻塞开关和保存时长
      *
      * 设置锁阻塞开关和保存时长，仅支持SQLServer引擎
@@ -9045,6 +9339,36 @@ public class DasAsyncClient {
     public AsyncInvoker<ShowAnalysisSessionStatusRequest, ShowAnalysisSessionStatusResponse> showAnalysisSessionStatusAsyncInvoker(
         ShowAnalysisSessionStatusRequest request) {
         return new AsyncInvoker<>(request, DasMeta.showAnalysisSessionStatus, hcClient);
+    }
+
+    /**
+     * 查询Redis大key热key历史数据采集开关状态
+     *
+     * 查询GeminiDB Redis实例的大key、热key历史数据采集开关状态、数据保留时长及是否可开启等信息。仅支持GeminiDB Redis引擎，内核版本需≥5.0.7.20。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBigKeyHotKeySwitchRequest 请求对象
+     * @return CompletableFuture<ShowBigKeyHotKeySwitchResponse>
+     */
+    public CompletableFuture<ShowBigKeyHotKeySwitchResponse> showBigKeyHotKeySwitchAsync(
+        ShowBigKeyHotKeySwitchRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.showBigKeyHotKeySwitch);
+    }
+
+    /**
+     * 查询Redis大key热key历史数据采集开关状态
+     *
+     * 查询GeminiDB Redis实例的大key、热key历史数据采集开关状态、数据保留时长及是否可开启等信息。仅支持GeminiDB Redis引擎，内核版本需≥5.0.7.20。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBigKeyHotKeySwitchRequest 请求对象
+     * @return AsyncInvoker<ShowBigKeyHotKeySwitchRequest, ShowBigKeyHotKeySwitchResponse>
+     */
+    public AsyncInvoker<ShowBigKeyHotKeySwitchRequest, ShowBigKeyHotKeySwitchResponse> showBigKeyHotKeySwitchAsyncInvoker(
+        ShowBigKeyHotKeySwitchRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.showBigKeyHotKeySwitch, hcClient);
     }
 
     /**
@@ -9436,6 +9760,36 @@ public class DasAsyncClient {
     }
 
     /**
+     * 查询健康报告模板详情
+     *
+     * 查询指定健康报告模板的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHealthReportTemplateRequest 请求对象
+     * @return CompletableFuture<ShowHealthReportTemplateResponse>
+     */
+    public CompletableFuture<ShowHealthReportTemplateResponse> showHealthReportTemplateAsync(
+        ShowHealthReportTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.showHealthReportTemplate);
+    }
+
+    /**
+     * 查询健康报告模板详情
+     *
+     * 查询指定健康报告模板的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHealthReportTemplateRequest 请求对象
+     * @return AsyncInvoker<ShowHealthReportTemplateRequest, ShowHealthReportTemplateResponse>
+     */
+    public AsyncInvoker<ShowHealthReportTemplateRequest, ShowHealthReportTemplateResponse> showHealthReportTemplateAsyncInvoker(
+        ShowHealthReportTemplateRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.showHealthReportTemplate, hcClient);
+    }
+
+    /**
      * 查询历史事务导出任务详情
      *
      * DAS收集历史事务开关打开后，查询历史事务导出任务详情。
@@ -9553,6 +9907,65 @@ public class DasAsyncClient {
     public AsyncInvoker<ShowInstanceHealthReportRequest, ShowInstanceHealthReportResponse> showInstanceHealthReportAsyncInvoker(
         ShowInstanceHealthReportRequest request) {
         return new AsyncInvoker<>(request, DasMeta.showInstanceHealthReport, hcClient);
+    }
+
+    /**
+     * 查询实例健康报告模板配置
+     *
+     * 查询实例的健康报告模板配置，未配置时template_id等字段为null，表示使用完整版模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceHealthReportConfigRequest 请求对象
+     * @return CompletableFuture<ShowInstanceHealthReportConfigResponse>
+     */
+    public CompletableFuture<ShowInstanceHealthReportConfigResponse> showInstanceHealthReportConfigAsync(
+        ShowInstanceHealthReportConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.showInstanceHealthReportConfig);
+    }
+
+    /**
+     * 查询实例健康报告模板配置
+     *
+     * 查询实例的健康报告模板配置，未配置时template_id等字段为null，表示使用完整版模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceHealthReportConfigRequest 请求对象
+     * @return AsyncInvoker<ShowInstanceHealthReportConfigRequest, ShowInstanceHealthReportConfigResponse>
+     */
+    public AsyncInvoker<ShowInstanceHealthReportConfigRequest, ShowInstanceHealthReportConfigResponse> showInstanceHealthReportConfigAsyncInvoker(
+        ShowInstanceHealthReportConfigRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.showInstanceHealthReportConfig, hcClient);
+    }
+
+    /**
+     * 查询单key趋势
+     *
+     * 查询GeminiDB Redis实例中指定key在所选时间段内的变化曲线，支持自适应时间粒度聚合。traffic维度同时返回入口流量和出口流量双指标趋势。仅支持GeminiDB Redis引擎。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKeyTrendRequest 请求对象
+     * @return CompletableFuture<ShowKeyTrendResponse>
+     */
+    public CompletableFuture<ShowKeyTrendResponse> showKeyTrendAsync(ShowKeyTrendRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.showKeyTrend);
+    }
+
+    /**
+     * 查询单key趋势
+     *
+     * 查询GeminiDB Redis实例中指定key在所选时间段内的变化曲线，支持自适应时间粒度聚合。traffic维度同时返回入口流量和出口流量双指标趋势。仅支持GeminiDB Redis引擎。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKeyTrendRequest 请求对象
+     * @return AsyncInvoker<ShowKeyTrendRequest, ShowKeyTrendResponse>
+     */
+    public AsyncInvoker<ShowKeyTrendRequest, ShowKeyTrendResponse> showKeyTrendAsyncInvoker(
+        ShowKeyTrendRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.showKeyTrend, hcClient);
     }
 
     /**
@@ -10368,6 +10781,36 @@ public class DasAsyncClient {
     public AsyncInvoker<UpdateHealthReportSettingsRequest, UpdateHealthReportSettingsResponse> updateHealthReportSettingsAsyncInvoker(
         UpdateHealthReportSettingsRequest request) {
         return new AsyncInvoker<>(request, DasMeta.updateHealthReportSettings, hcClient);
+    }
+
+    /**
+     * 更新健康报告模板
+     *
+     * 更新健康报告模板，采用全量更新语义。系统预设模板不可更新。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateHealthReportTemplateRequest 请求对象
+     * @return CompletableFuture<UpdateHealthReportTemplateResponse>
+     */
+    public CompletableFuture<UpdateHealthReportTemplateResponse> updateHealthReportTemplateAsync(
+        UpdateHealthReportTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.updateHealthReportTemplate);
+    }
+
+    /**
+     * 更新健康报告模板
+     *
+     * 更新健康报告模板，采用全量更新语义。系统预设模板不可更新。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateHealthReportTemplateRequest 请求对象
+     * @return AsyncInvoker<UpdateHealthReportTemplateRequest, UpdateHealthReportTemplateResponse>
+     */
+    public AsyncInvoker<UpdateHealthReportTemplateRequest, UpdateHealthReportTemplateResponse> updateHealthReportTemplateAsyncInvoker(
+        UpdateHealthReportTemplateRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.updateHealthReportTemplate, hcClient);
     }
 
     /**

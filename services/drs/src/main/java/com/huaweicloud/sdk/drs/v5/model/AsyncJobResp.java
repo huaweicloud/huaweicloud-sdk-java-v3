@@ -21,7 +21,7 @@ public class AsyncJobResp {
     private String asyncJobId;
 
     /**
-     * 批量异步创建的任务状态。取值： - ASYNC_JOB_VALIDATING：批量异步任务参数校验中。 - ASYNC_JOB_VALIDATE_FAILED：批量异步任务参数校验失败。 - AUTO_PARAM_VALIDATE_SUCCESS：批量异步任务参数校验成功。 - COMMIT_SUCCESS：批量异步任务提交成功。
+     * **参数解释**：  批量异步创建的任务状态，表示异步任务的当前执行阶段。  **约束限制**：  不涉及。  **取值范围**：  - ASYNC_JOB_VALIDATING：批量异步任务参数校验中 - ASYNC_JOB_VALIDATE_FAILED：批量异步任务参数校验失败 - AUTO_PARAM_VALIDATE_SUCCESS：批量异步任务参数校验成功 - COMMIT_SUCCESS：批量异步任务提交成功  **默认取值**：  不涉及
      */
     public static final class StatusEnum {
 
@@ -128,7 +128,7 @@ public class AsyncJobResp {
     }
 
     /**
-     * 批量异步创建的任务ID。
+     * **参数解释**：  批量异步创建的任务ID，唯一标识一个批量异步创建任务。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return asyncJobId
      */
     public String getAsyncJobId() {
@@ -145,7 +145,7 @@ public class AsyncJobResp {
     }
 
     /**
-     * 批量异步创建的任务状态。取值： - ASYNC_JOB_VALIDATING：批量异步任务参数校验中。 - ASYNC_JOB_VALIDATE_FAILED：批量异步任务参数校验失败。 - AUTO_PARAM_VALIDATE_SUCCESS：批量异步任务参数校验成功。 - COMMIT_SUCCESS：批量异步任务提交成功。
+     * **参数解释**：  批量异步创建的任务状态，表示异步任务的当前执行阶段。  **约束限制**：  不涉及。  **取值范围**：  - ASYNC_JOB_VALIDATING：批量异步任务参数校验中 - ASYNC_JOB_VALIDATE_FAILED：批量异步任务参数校验失败 - AUTO_PARAM_VALIDATE_SUCCESS：批量异步任务参数校验成功 - COMMIT_SUCCESS：批量异步任务提交成功  **默认取值**：  不涉及
      * @return status
      */
     public StatusEnum getStatus() {
@@ -162,7 +162,7 @@ public class AsyncJobResp {
     }
 
     /**
-     * 批量异步创建的任务的租户名。
+     * **参数解释**：  批量异步创建任务的租户名，标识创建该任务所属的租户（域名）。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return domainName
      */
     public String getDomainName() {
@@ -179,7 +179,7 @@ public class AsyncJobResp {
     }
 
     /**
-     * 批量异步创建的任务的用户名。
+     * **参数解释**：  批量异步创建任务的用户名，标识创建该任务的具体IAM用户。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return userName
      */
     public String getUserName() {
@@ -196,7 +196,7 @@ public class AsyncJobResp {
     }
 
     /**
-     * 批量异步创建的任务的创建时间。
+     * **参数解释**：  批量异步创建任务的创建时间，表示任务首次被创建的时间戳。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return createTime
      */
     public String getCreateTime() {

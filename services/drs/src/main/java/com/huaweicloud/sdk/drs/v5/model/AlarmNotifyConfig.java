@@ -41,7 +41,7 @@ public class AlarmNotifyConfig {
     }
 
     /**
-     * 异常告警是否通知用户。
+     * **参数解释**：  异常告警是否通知用户，指定当任务状态异常时是否向用户发送告警通知。  **约束限制**：  不涉及。  **取值范围**：  - true：异常告警通知用户 - false：异常告警不通知用户  **默认取值**：  false
      * @return alarmToUser
      */
     public Boolean getAlarmToUser() {
@@ -58,7 +58,7 @@ public class AlarmNotifyConfig {
     }
 
     /**
-     * SMN主题URN。
+     * **参数解释**：  SMN主题URN，指定异常告警通知发送的目标SMN主题。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return topicUrn
      */
     public String getTopicUrn() {

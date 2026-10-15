@@ -54,6 +54,11 @@ public class ListObejectLevelCompareOverviewResponse extends SdkResponse {
 
     private List<ObjectsCompareOverviewInfo> compareResult = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "database_info")
+
+    private Object databaseInfo;
+
     public ListObejectLevelCompareOverviewResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -207,6 +212,23 @@ public class ListObejectLevelCompareOverviewResponse extends SdkResponse {
         this.compareResult = compareResult;
     }
 
+    public ListObejectLevelCompareOverviewResponse withDatabaseInfo(Object databaseInfo) {
+        this.databaseInfo = databaseInfo;
+        return this;
+    }
+
+    /**
+     * 灾备数据库信息。
+     * @return databaseInfo
+     */
+    public Object getDatabaseInfo() {
+        return databaseInfo;
+    }
+
+    public void setDatabaseInfo(Object databaseInfo) {
+        this.databaseInfo = databaseInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -220,7 +242,8 @@ public class ListObejectLevelCompareOverviewResponse extends SdkResponse {
             && Objects.equals(this.status, that.status) && Objects.equals(this.exportStatus, that.exportStatus)
             && Objects.equals(this.reportRemainSeconds, that.reportRemainSeconds)
             && Objects.equals(this.compareJobId, that.compareJobId) && Objects.equals(this.errorMsg, that.errorMsg)
-            && Objects.equals(this.compareResult, that.compareResult);
+            && Objects.equals(this.compareResult, that.compareResult)
+            && Objects.equals(this.databaseInfo, that.databaseInfo);
     }
 
     @Override
@@ -232,7 +255,8 @@ public class ListObejectLevelCompareOverviewResponse extends SdkResponse {
             reportRemainSeconds,
             compareJobId,
             errorMsg,
-            compareResult);
+            compareResult,
+            databaseInfo);
     }
 
     @Override
@@ -247,6 +271,7 @@ public class ListObejectLevelCompareOverviewResponse extends SdkResponse {
         sb.append("    compareJobId: ").append(toIndentedString(compareJobId)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
         sb.append("    compareResult: ").append(toIndentedString(compareResult)).append("\n");
+        sb.append("    databaseInfo: ").append(toIndentedString(databaseInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

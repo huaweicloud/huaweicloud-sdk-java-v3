@@ -23,6 +23,11 @@ public class UpdatePreBootPolicyReq {
 
     private Boolean isPreBoot;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pre_launch_policy")
+
+    private Integer preLaunchPolicy;
+
     public UpdatePreBootPolicyReq withIds(List<String> ids) {
         this.ids = ids;
         return this;
@@ -62,7 +67,7 @@ public class UpdatePreBootPolicyReq {
     }
 
     /**
-     * 是否设置应用预启动。
+     * 是否设置会话预启动。
      * @return isPreBoot
      */
     public Boolean getIsPreBoot() {
@@ -71,6 +76,25 @@ public class UpdatePreBootPolicyReq {
 
     public void setIsPreBoot(Boolean isPreBoot) {
         this.isPreBoot = isPreBoot;
+    }
+
+    public UpdatePreBootPolicyReq withPreLaunchPolicy(Integer preLaunchPolicy) {
+        this.preLaunchPolicy = preLaunchPolicy;
+        return this;
+    }
+
+    /**
+     * 预开状态：0：非预开，1：会话预开，3：应用预开。
+     * minimum: 0
+     * maximum: 3
+     * @return preLaunchPolicy
+     */
+    public Integer getPreLaunchPolicy() {
+        return preLaunchPolicy;
+    }
+
+    public void setPreLaunchPolicy(Integer preLaunchPolicy) {
+        this.preLaunchPolicy = preLaunchPolicy;
     }
 
     @Override
@@ -82,12 +106,13 @@ public class UpdatePreBootPolicyReq {
             return false;
         }
         UpdatePreBootPolicyReq that = (UpdatePreBootPolicyReq) obj;
-        return Objects.equals(this.ids, that.ids) && Objects.equals(this.isPreBoot, that.isPreBoot);
+        return Objects.equals(this.ids, that.ids) && Objects.equals(this.isPreBoot, that.isPreBoot)
+            && Objects.equals(this.preLaunchPolicy, that.preLaunchPolicy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ids, isPreBoot);
+        return Objects.hash(ids, isPreBoot, preLaunchPolicy);
     }
 
     @Override
@@ -96,6 +121,7 @@ public class UpdatePreBootPolicyReq {
         sb.append("class UpdatePreBootPolicyReq {\n");
         sb.append("    ids: ").append(toIndentedString(ids)).append("\n");
         sb.append("    isPreBoot: ").append(toIndentedString(isPreBoot)).append("\n");
+        sb.append("    preLaunchPolicy: ").append(toIndentedString(preLaunchPolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

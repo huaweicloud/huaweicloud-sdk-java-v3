@@ -68,13 +68,18 @@ public class AssumeAgencyReqBody {
 
     private List<String> transitiveTagKeys = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "provided_contexts")
+
+    private List<ProvidedContextDto> providedContexts = null;
+
     public AssumeAgencyReqBody withDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
         return this;
     }
 
     /**
-     * **参数解释**： 获得的临时安全凭证的有效时间（单位：秒）。  **约束限制**： 请注意，该时间需要小于委托本身设置的最大会话持续时间，同时在携带X-Security-Token的Header头时该时间不能超过3600秒。  **取值范围**： 取值范围为[900,43200]。  **默认取值**： 默认值为3600。 
+     * **参数解释**： 获得的临时安全凭证的有效时间（单位：秒）。  **约束限制**： 请注意，该时间需要小于委托本身设置的最大会话持续时间（在IAM控制台「委托」页面中获取），同时在携带X-Security-Token的Header头时该时间不能超过3600秒。  **取值范围**： 取值范围为[900,43200]。  **默认取值**： 默认值为3600。 
      * minimum: 900
      * maximum: 43200
      * @return durationSeconds
@@ -93,7 +98,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * **参数解释**： 外部ID，防止混淆代理人问题。  **约束限制**： 长度范围为[2,1224]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
+     * **参数解释**： 外部ID，防止混淆代理人问题。  **约束限制**： 不涉及。  **取值范围**： 长度为2到1224个字符，只允许大小写字母、数字、\"_\"、\"+\"、\"=\"、\",\"、\".\"、\"@\"、\":\"、\"/\"、\"-\"。  **默认取值**： 不涉及。 
      * @return externalId
      */
     public String getExternalId() {
@@ -110,7 +115,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * **参数解释**： 自定义策略，限制本次会话获得的临时安全凭证的权限范围不会超过该自定义策略指定的权限。  **约束限制**： 本次会话获得的临时安全凭证的权限范围不会超过该自定义策略指定的权限。 长度范围为[2,2048]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
+     * **参数解释**： 自定义策略，用于进一步限制临时安全凭证的权限范围。  **约束限制**： 本次会话获得的临时安全凭证的权限范围不会超过该自定义策略指定的权限。  **取值范围**： 长度为2到4096个字符。  **默认取值**： 不涉及。 
      * @return policy
      */
     public String getPolicy() {
@@ -143,7 +148,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * **参数解释**： 预置策略列表，限制本次会话获得的临时安全凭证的权限范围不会超过该预置策略指定的权限。  **约束限制**： 不涉及。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
+     * **参数解释**： 预置策略列表，限制本次会话获得的临时安全凭证的权限范围不会超过该预置策略指定的权限。 每个元素为预置策略的标识ID，长度限制为1到64个字符，只允许大小写字母、数字、\"_\"、\"-\"，且至少包含一个字符。  **约束限制**： 该数组允许的元素个数最多为20。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
      * @return policyIds
      */
     public List<String> getPolicyIds() {
@@ -160,7 +165,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * **参数解释**： 目标委托的URN。  **约束限制**： 长度范围为[0,1500]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
+     * **参数解释**： 目标委托的URN，在IAM控制台的「委托」页面中获取。  **约束限制**： 不涉及。  **取值范围**： 长度最多为1500个字符。格式为5段，用\":\"分隔，各段允许大小写字母、数字、\"+\"、\"/\"、\"=\"、\"-\"、\"_\"（第2段还额外允许 \"*\"），长度限制为：第1段至少1位，第2段0~255位，第3段1~64位，第4段1~64位，第5段至少1位（任意字符）。  **默认取值**： 不涉及。 
      * @return agencyUrn
      */
     public String getAgencyUrn() {
@@ -177,7 +182,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * **参数解释**： 委托会话的会话名。  **约束限制**： 长度范围为[2,128]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
+     * **参数解释**： 委托会话的会话名。  **约束限制**： 不涉及。  **取值范围**： 长度为2到128个字符，只允许大小写字母、数字、\"_\"、\"+\"、\"=\"、\",\"、\".\"、\"@\"、\"-\"。  **默认取值**： 不涉及。 
      * @return agencySessionName
      */
     public String getAgencySessionName() {
@@ -194,7 +199,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * **参数解释**： 调用者绑定的MFA设备的序列号。  **约束限制**： 长度范围为[9,256]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
+     * **参数解释**： 调用者绑定的MFA设备的序列号。在IAM控制台->「用户」->「安全设置」->「多因素认证设备」中获取。  **约束限制**： 不涉及。  **取值范围**： 长度为9到256个字符，只允许大小写字母、数字、\"_\"、\"+\"、\"=\"、\"/\"、\":\"、\",\"、\".\"、\"@\"、\"-\"。  **默认取值**： 不涉及。 
      * @return serialNumber
      */
     public String getSerialNumber() {
@@ -211,7 +216,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * **参数解释**： 调用者绑定的MFA设备上的6位数字码。  **约束限制**： 长度范围为[6,6]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
+     * **参数解释**： 调用者绑定的MFA设备上的6位纯数字。  **约束限制**： 只允许6位数字。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
      * @return tokenCode
      */
     public String getTokenCode() {
@@ -228,7 +233,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * **参数解释**： 调用链里最初调用者所声明的身份。  **约束限制**： 长度范围为[2,64]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
+     * **参数解释**： 调用链里最初调用者所声明的身份。  **约束限制**： 不涉及。  **取值范围**： 长度为2到64个字符，只允许大小写字母、数字、\"_\"、\"+\"、\"=\"、\",\"、\".\"、\"@\"、\"-\"。  **默认取值**： 不涉及。 
      * @return sourceIdentity
      */
     public String getSourceIdentity() {
@@ -261,7 +266,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * **参数解释**： 自定义标签列表。  **约束限制**： 不涉及。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
+     * **参数解释**： 自定义标签列表。  **约束限制**： 该数组允许的元素个数最多为20。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
      * @return tags
      */
     public List<TagDto> getTags() {
@@ -294,7 +299,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * **参数解释**： 随着临时安全凭证调用链持续透传的标签键列表。  **约束限制**： 不涉及。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
+     * **参数解释**： 随着临时安全凭证调用链持续透传的标签键列表。  **约束限制**： 该数组允许的元素个数最多为20。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
      * @return transitiveTagKeys
      */
     public List<String> getTransitiveTagKeys() {
@@ -303,6 +308,39 @@ public class AssumeAgencyReqBody {
 
     public void setTransitiveTagKeys(List<String> transitiveTagKeys) {
         this.transitiveTagKeys = transitiveTagKeys;
+    }
+
+    public AssumeAgencyReqBody withProvidedContexts(List<ProvidedContextDto> providedContexts) {
+        this.providedContexts = providedContexts;
+        return this;
+    }
+
+    public AssumeAgencyReqBody addProvidedContextsItem(ProvidedContextDto providedContextsItem) {
+        if (this.providedContexts == null) {
+            this.providedContexts = new ArrayList<>();
+        }
+        this.providedContexts.add(providedContextsItem);
+        return this;
+    }
+
+    public AssumeAgencyReqBody withProvidedContexts(Consumer<List<ProvidedContextDto>> providedContextsSetter) {
+        if (this.providedContexts == null) {
+            this.providedContexts = new ArrayList<>();
+        }
+        providedContextsSetter.accept(this.providedContexts);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 预先获取的可信上下文断言列表，格式为数组。  **约束限制**： 该数组允许的元素个数为1到5。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
+     * @return providedContexts
+     */
+    public List<ProvidedContextDto> getProvidedContexts() {
+        return providedContexts;
+    }
+
+    public void setProvidedContexts(List<ProvidedContextDto> providedContexts) {
+        this.providedContexts = providedContexts;
     }
 
     @Override
@@ -320,7 +358,8 @@ public class AssumeAgencyReqBody {
             && Objects.equals(this.agencySessionName, that.agencySessionName)
             && Objects.equals(this.serialNumber, that.serialNumber) && Objects.equals(this.tokenCode, that.tokenCode)
             && Objects.equals(this.sourceIdentity, that.sourceIdentity) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.transitiveTagKeys, that.transitiveTagKeys);
+            && Objects.equals(this.transitiveTagKeys, that.transitiveTagKeys)
+            && Objects.equals(this.providedContexts, that.providedContexts);
     }
 
     @Override
@@ -335,7 +374,8 @@ public class AssumeAgencyReqBody {
             tokenCode,
             sourceIdentity,
             tags,
-            transitiveTagKeys);
+            transitiveTagKeys,
+            providedContexts);
     }
 
     @Override
@@ -353,6 +393,7 @@ public class AssumeAgencyReqBody {
         sb.append("    sourceIdentity: ").append(toIndentedString(sourceIdentity)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    transitiveTagKeys: ").append(toIndentedString(transitiveTagKeys)).append("\n");
+        sb.append("    providedContexts: ").append(toIndentedString(providedContexts)).append("\n");
         sb.append("}");
         return sb.toString();
     }

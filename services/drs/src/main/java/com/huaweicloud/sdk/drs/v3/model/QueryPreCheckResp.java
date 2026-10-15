@@ -44,7 +44,7 @@ public class QueryPreCheckResp {
     private String rdsInstanceId;
 
     /**
-     * 迁移方向。 - up-入云 灾备场景时对应本云为备 - down-出云 灾备场景时对应本云为主 - non-dbs-自建
+     * **参数解释**：  任务的迁移方向。  **约束限制**：  不涉及。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主 - non-dbs：自建  **默认取值**：  不涉及
      */
     public static final class JobDirectionEnum {
 
@@ -145,7 +145,7 @@ public class QueryPreCheckResp {
     }
 
     /**
-     * 预检查id。
+     * **参数解释**：  查询预检查结果的任务ID，用于唯一标识一个预检查任务。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return precheckId
      */
     public String getPrecheckId() {
@@ -162,7 +162,7 @@ public class QueryPreCheckResp {
     }
 
     /**
-     * 返回的预检查结果是否通过。true表示预检查通过，通过后才可进行启动任务。
+     * **参数解释**：  预检查结果是否通过，标识任务预检查的整体通过情况。  **约束限制**：  不涉及。  **取值范围**：  - true：预检查通过，通过后才可进行启动任务 - false：预检查未通过，需查看precheck_result中的具体失败项  **默认取值**：  不涉及
      * @return result
      */
     public Boolean getResult() {
@@ -179,7 +179,7 @@ public class QueryPreCheckResp {
     }
 
     /**
-     * 预检查进度百分比。
+     * **参数解释**：  预检查进度百分比，表示预检查任务的执行进度。  **约束限制**：  不涉及。  **取值范围**：  0%-100%。  **默认取值**：  不涉及
      * @return process
      */
     public String getProcess() {
@@ -196,7 +196,7 @@ public class QueryPreCheckResp {
     }
 
     /**
-     * 预检查通过百分比。
+     * **参数解释**：  预检查通过百分比，表示预检查项中通过的占比。  **约束限制**：  不涉及。  **取值范围**：  0%-100%。  **默认取值**：  不涉及
      * @return totalPassedRate
      */
     public String getTotalPassedRate() {
@@ -213,7 +213,7 @@ public class QueryPreCheckResp {
     }
 
     /**
-     * RDS实例id。
+     * **参数解释**：  RDS实例ID，用于标识关联的华为云RDS数据库实例。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return rdsInstanceId
      */
     public String getRdsInstanceId() {
@@ -230,7 +230,7 @@ public class QueryPreCheckResp {
     }
 
     /**
-     * 迁移方向。 - up-入云 灾备场景时对应本云为备 - down-出云 灾备场景时对应本云为主 - non-dbs-自建
+     * **参数解释**：  任务的迁移方向。  **约束限制**：  不涉及。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主 - non-dbs：自建  **默认取值**：  不涉及
      * @return jobDirection
      */
     public JobDirectionEnum getJobDirection() {
@@ -280,7 +280,7 @@ public class QueryPreCheckResp {
     }
 
     /**
-     * 错误信息
+     * **参数解释**：  错误详细信息，当任务执行失败时返回的具体错误描述。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return errorMsg
      */
     public String getErrorMsg() {
@@ -297,7 +297,7 @@ public class QueryPreCheckResp {
     }
 
     /**
-     * 任务错误码。
+     * **参数解释**：  错误码，当任务报错时返回的错误代码。  **约束限制**：  不涉及。  **取值范围**：  格式为DRS.XXXXXX。  **默认取值**：  不涉及
      * @return errorCode
      */
     public String getErrorCode() {

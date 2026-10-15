@@ -41,7 +41,7 @@ public class QuotaResource {
     }
 
     /**
-     * 配额类型信息 instances：实例的数量配额，cpu：CPU的配额，cores：CPU核心数的配额，server_groups服务器组的配额，mem内存配额，ram主存配额
+     * **参数解释**：  配额类型，用于标识不同维度的资源配额。  **约束限制**：  不涉及。  **取值范围**：  - instances：实例的数量配额  **默认取值**：  不涉及
      * @return type
      */
     public String getType() {
@@ -58,7 +58,7 @@ public class QuotaResource {
     }
 
     /**
-     * 配额最小取值
+     * **参数解释**：  配额允许的最小值，表示该资源配额的下限。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return min
      */
     public Integer getMin() {
@@ -75,7 +75,7 @@ public class QuotaResource {
     }
 
     /**
-     * 配额最大取值
+     * **参数解释**：  配额允许的最大值，表示该资源配额的上限。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return max
      */
     public Integer getMax() {
@@ -92,7 +92,7 @@ public class QuotaResource {
     }
 
     /**
-     * 用户配额的实际值
+     * **参数解释**：  用户当前配额的实际值，即系统为该用户分配的配额数量。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return quota
      */
     public Integer getQuota() {
@@ -109,7 +109,7 @@ public class QuotaResource {
     }
 
     /**
-     * 已使用的配额值
+     * **参数解释**：  用户已使用的配额值，表示当前已占用的资源数量。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return used
      */
     public Integer getUsed() {

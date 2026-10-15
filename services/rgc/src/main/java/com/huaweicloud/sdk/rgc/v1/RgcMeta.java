@@ -36,6 +36,7 @@ import com.huaweicloud.sdk.rgc.v1.model.EnableControlResponse;
 import com.huaweicloud.sdk.rgc.v1.model.EnrollAccountRequest;
 import com.huaweicloud.sdk.rgc.v1.model.EnrollAccountRequestBody;
 import com.huaweicloud.sdk.rgc.v1.model.EnrollAccountResponse;
+import com.huaweicloud.sdk.rgc.v1.model.LandingZoneVersionDetail;
 import com.huaweicloud.sdk.rgc.v1.model.ListConfigRuleCompliancesRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListConfigRuleCompliancesResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListControlViolationsRequest;
@@ -52,6 +53,8 @@ import com.huaweicloud.sdk.rgc.v1.model.ListEnabledControlsRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListEnabledControlsResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListExternalConfigRuleCompliancesRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListExternalConfigRuleCompliancesResponse;
+import com.huaweicloud.sdk.rgc.v1.model.ListLandingZoneVersionRequest;
+import com.huaweicloud.sdk.rgc.v1.model.ListLandingZoneVersionResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedAccountsForParentRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedAccountsForParentResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedAccountsRequest;
@@ -707,6 +710,30 @@ public class RgcMeta {
         // requests
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLandingZoneVersionRequest, ListLandingZoneVersionResponse> listLandingZoneVersion =
+        genForListLandingZoneVersion();
+
+    private static HttpRequestDef<ListLandingZoneVersionRequest, ListLandingZoneVersionResponse> genForListLandingZoneVersion() {
+        // basic
+        HttpRequestDef.Builder<ListLandingZoneVersionRequest, ListLandingZoneVersionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListLandingZoneVersionRequest.class, ListLandingZoneVersionResponse.class)
+            .withName("ListLandingZoneVersion")
+            .withUri("/v1/landing-zone/version")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+        builder.<List<LandingZoneVersionDetail>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListLandingZoneVersionResponse::getBody, ListLandingZoneVersionResponse::setBody)
+                .withInnerContainerType(LandingZoneVersionDetail.class));
 
         return builder.build();
     }

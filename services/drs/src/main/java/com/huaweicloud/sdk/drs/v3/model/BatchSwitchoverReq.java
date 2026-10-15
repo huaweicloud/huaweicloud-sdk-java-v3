@@ -18,6 +18,11 @@ public class BatchSwitchoverReq {
 
     private List<String> jobs = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_pause_job")
+
+    private Boolean isPauseJob;
+
     public BatchSwitchoverReq withJobs(List<String> jobs) {
         this.jobs = jobs;
         return this;
@@ -51,6 +56,23 @@ public class BatchSwitchoverReq {
         this.jobs = jobs;
     }
 
+    public BatchSwitchoverReq withIsPauseJob(Boolean isPauseJob) {
+        this.isPauseJob = isPauseJob;
+        return this;
+    }
+
+    /**
+     * 灾备倒换后是否暂停任务。默认值为false，不暂停灾备任务。
+     * @return isPauseJob
+     */
+    public Boolean getIsPauseJob() {
+        return isPauseJob;
+    }
+
+    public void setIsPauseJob(Boolean isPauseJob) {
+        this.isPauseJob = isPauseJob;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -60,12 +82,12 @@ public class BatchSwitchoverReq {
             return false;
         }
         BatchSwitchoverReq that = (BatchSwitchoverReq) obj;
-        return Objects.equals(this.jobs, that.jobs);
+        return Objects.equals(this.jobs, that.jobs) && Objects.equals(this.isPauseJob, that.isPauseJob);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobs);
+        return Objects.hash(jobs, isPauseJob);
     }
 
     @Override
@@ -73,6 +95,7 @@ public class BatchSwitchoverReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchSwitchoverReq {\n");
         sb.append("    jobs: ").append(toIndentedString(jobs)).append("\n");
+        sb.append("    isPauseJob: ").append(toIndentedString(isPauseJob)).append("\n");
         sb.append("}");
         return sb.toString();
     }

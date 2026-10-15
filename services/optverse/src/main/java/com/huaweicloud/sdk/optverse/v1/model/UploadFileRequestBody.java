@@ -30,6 +30,11 @@ public class UploadFileRequestBody implements SdkFormDataBody {
 
     private String agentType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_type")
+
+    private String domainType;
+
     public UploadFileRequestBody withChatId(String chatId) {
         this.chatId = chatId;
         return this;
@@ -81,6 +86,23 @@ public class UploadFileRequestBody implements SdkFormDataBody {
         this.agentType = agentType;
     }
 
+    public UploadFileRequestBody withDomainType(String domainType) {
+        this.domainType = domainType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 领域类型，仅agent_type为optverse时生效。 **约束限制**： 不涉及 **取值范围**： * production-planning：生产计划 * sequence-planning：生产排程 * vrp：运输计划 * optverse：通用数学规划 **默认取值**： optverse
+     * @return domainType
+     */
+    public String getDomainType() {
+        return domainType;
+    }
+
+    public void setDomainType(String domainType) {
+        this.domainType = domainType;
+    }
+
     public UploadFileRequestBody withFile(InputStream inputStream, String fileName, String contentType) {
         this.file = new FormDataFilePart(inputStream, fileName).withContentType(contentType);
         return this;
@@ -107,6 +129,9 @@ public class UploadFileRequestBody implements SdkFormDataBody {
                 }
                 put("file", file);
                 put("agent_type", new FormDataPart<>(agentType));
+                if (domainType != null) {
+                    put("domain_type", new FormDataPart<>(domainType));
+                }
             }
         };
     }
@@ -121,12 +146,12 @@ public class UploadFileRequestBody implements SdkFormDataBody {
         }
         UploadFileRequestBody that = (UploadFileRequestBody) obj;
         return Objects.equals(this.chatId, that.chatId) && Objects.equals(this.file, that.file)
-            && Objects.equals(this.agentType, that.agentType);
+            && Objects.equals(this.agentType, that.agentType) && Objects.equals(this.domainType, that.domainType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(chatId, file, agentType);
+        return Objects.hash(chatId, file, agentType, domainType);
     }
 
     @Override
@@ -136,6 +161,7 @@ public class UploadFileRequestBody implements SdkFormDataBody {
         sb.append("    chatId: ").append(toIndentedString(chatId)).append("\n");
         sb.append("    file: ").append(toIndentedString("[resource:will-not-print]")).append("\n");
         sb.append("    agentType: ").append(toIndentedString(agentType)).append("\n");
+        sb.append("    domainType: ").append(toIndentedString(domainType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

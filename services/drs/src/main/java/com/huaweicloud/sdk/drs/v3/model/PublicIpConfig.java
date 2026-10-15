@@ -26,7 +26,7 @@ public class PublicIpConfig {
     private String publicIp;
 
     /**
-     * 指定公网IP绑定任务的类型： - 主备任务：主是master，备是slave - 其他固定传master
+     * **参数解释**：  指定公网IP绑定任务的类型。  **约束限制**：  不涉及。  **取值范围**：  - master：主任务或单任务的公网IP - slave：备任务的公网IP  **默认取值**：  不涉及
      */
     public static final class TypeEnum {
 
@@ -106,7 +106,7 @@ public class PublicIpConfig {
     }
 
     /**
-     * 指定公网IP的ID
+     * **参数解释**：  指定公网IP的ID。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return id
      */
     public String getId() {
@@ -123,7 +123,7 @@ public class PublicIpConfig {
     }
 
     /**
-     * 指定公网IP
+     * **参数解释**：  指定公网IP地址。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return publicIp
      */
     public String getPublicIp() {
@@ -140,7 +140,7 @@ public class PublicIpConfig {
     }
 
     /**
-     * 指定公网IP绑定任务的类型： - 主备任务：主是master，备是slave - 其他固定传master
+     * **参数解释**：  指定公网IP绑定任务的类型。  **约束限制**：  不涉及。  **取值范围**：  - master：主任务或单任务的公网IP - slave：备任务的公网IP  **默认取值**：  不涉及
      * @return type
      */
     public TypeEnum getType() {

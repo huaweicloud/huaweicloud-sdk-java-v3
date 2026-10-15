@@ -40,7 +40,7 @@ public class BatchTestConnectionReq {
     }
 
     /**
-     * 批量测试连接请求列表。
+     * **参数解释**：  批量测试连接请求列表，指定需要测试连接的任务及其数据库连接信息。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return jobs
      */
     public List<TestEndPoint> getJobs() {

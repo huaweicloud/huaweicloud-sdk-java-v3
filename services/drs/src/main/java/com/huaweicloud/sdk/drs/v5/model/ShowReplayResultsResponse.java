@@ -54,6 +54,11 @@ public class ShowReplayResultsResponse extends SdkResponse {
 
     private List<ReplayErrorClassification> errorClassifications = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "compare_results")
+
+    private List<ReplayCompareResultResp> compareResults = null;
+
     public ShowReplayResultsResponse withTotalCount(Long totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -305,6 +310,39 @@ public class ShowReplayResultsResponse extends SdkResponse {
         this.errorClassifications = errorClassifications;
     }
 
+    public ShowReplayResultsResponse withCompareResults(List<ReplayCompareResultResp> compareResults) {
+        this.compareResults = compareResults;
+        return this;
+    }
+
+    public ShowReplayResultsResponse addCompareResultsItem(ReplayCompareResultResp compareResultsItem) {
+        if (this.compareResults == null) {
+            this.compareResults = new ArrayList<>();
+        }
+        this.compareResults.add(compareResultsItem);
+        return this;
+    }
+
+    public ShowReplayResultsResponse withCompareResults(Consumer<List<ReplayCompareResultResp>> compareResultsSetter) {
+        if (this.compareResults == null) {
+            this.compareResults = new ArrayList<>();
+        }
+        compareResultsSetter.accept(this.compareResults);
+        return this;
+    }
+
+    /**
+     * SQL执行结果不一致数据，在type为sql_result_inconsistent时返回
+     * @return compareResults
+     */
+    public List<ReplayCompareResultResp> getCompareResults() {
+        return compareResults;
+    }
+
+    public void setCompareResults(List<ReplayCompareResultResp> compareResults) {
+        this.compareResults = compareResults;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -320,7 +358,8 @@ public class ShowReplayResultsResponse extends SdkResponse {
             && Objects.equals(this.errorSqls, that.errorSqls)
             && Objects.equals(this.errorSqlTemplates, that.errorSqlTemplates)
             && Objects.equals(this.replayingSqls, that.replayingSqls)
-            && Objects.equals(this.errorClassifications, that.errorClassifications);
+            && Objects.equals(this.errorClassifications, that.errorClassifications)
+            && Objects.equals(this.compareResults, that.compareResults);
     }
 
     @Override
@@ -332,7 +371,8 @@ public class ShowReplayResultsResponse extends SdkResponse {
             errorSqls,
             errorSqlTemplates,
             replayingSqls,
-            errorClassifications);
+            errorClassifications,
+            compareResults);
     }
 
     @Override
@@ -347,6 +387,7 @@ public class ShowReplayResultsResponse extends SdkResponse {
         sb.append("    errorSqlTemplates: ").append(toIndentedString(errorSqlTemplates)).append("\n");
         sb.append("    replayingSqls: ").append(toIndentedString(replayingSqls)).append("\n");
         sb.append("    errorClassifications: ").append(toIndentedString(errorClassifications)).append("\n");
+        sb.append("    compareResults: ").append(toIndentedString(compareResults)).append("\n");
         sb.append("}");
         return sb.toString();
     }

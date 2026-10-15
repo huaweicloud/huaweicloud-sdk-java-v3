@@ -603,6 +603,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowTransferPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowTransferPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowUpgradeDbMajorVersionStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowUpgradeDbMajorVersionStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowVectorStorageConfigRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowVectorStorageConfigResponse;
 import com.huaweicloud.sdk.rds.v3.model.StartDatabaseProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.StartDatabaseProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.StartFailoverRequest;
@@ -701,6 +703,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpdateTimeZoneRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateTimeZoneResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateToPeriodRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateToPeriodResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateVectorStorageConfigRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateVectorStorageConfigResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionRequest;
@@ -6364,6 +6368,36 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 查询实例的向量存储配置
+     *
+     * 查询实例的向量存储配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVectorStorageConfigRequest 请求对象
+     * @return CompletableFuture<ShowVectorStorageConfigResponse>
+     */
+    public CompletableFuture<ShowVectorStorageConfigResponse> showVectorStorageConfigAsync(
+        ShowVectorStorageConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showVectorStorageConfig);
+    }
+
+    /**
+     * 查询实例的向量存储配置
+     *
+     * 查询实例的向量存储配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVectorStorageConfigRequest 请求对象
+     * @return AsyncInvoker<ShowVectorStorageConfigRequest, ShowVectorStorageConfigResponse>
+     */
+    public AsyncInvoker<ShowVectorStorageConfigRequest, ShowVectorStorageConfigResponse> showVectorStorageConfigAsyncInvoker(
+        ShowVectorStorageConfigRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.showVectorStorageConfig, hcClient);
+    }
+
+    /**
      * 手动倒换主备
      *
      * 手动倒换主备.
@@ -7240,6 +7274,36 @@ public class RdsAsyncClient {
     public AsyncInvoker<UpdateToPeriodRequest, UpdateToPeriodResponse> updateToPeriodAsyncInvoker(
         UpdateToPeriodRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.updateToPeriod, hcClient);
+    }
+
+    /**
+     * 修改实例的向量存储配置
+     *
+     * 修改实例的向量存储配置，开启或关闭向量存储功能。该接口为异步接口，返回工作流ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateVectorStorageConfigRequest 请求对象
+     * @return CompletableFuture<UpdateVectorStorageConfigResponse>
+     */
+    public CompletableFuture<UpdateVectorStorageConfigResponse> updateVectorStorageConfigAsync(
+        UpdateVectorStorageConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.updateVectorStorageConfig);
+    }
+
+    /**
+     * 修改实例的向量存储配置
+     *
+     * 修改实例的向量存储配置，开启或关闭向量存储功能。该接口为异步接口，返回工作流ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateVectorStorageConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateVectorStorageConfigRequest, UpdateVectorStorageConfigResponse>
+     */
+    public AsyncInvoker<UpdateVectorStorageConfigRequest, UpdateVectorStorageConfigResponse> updateVectorStorageConfigAsyncInvoker(
+        UpdateVectorStorageConfigRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.updateVectorStorageConfig, hcClient);
     }
 
     /**

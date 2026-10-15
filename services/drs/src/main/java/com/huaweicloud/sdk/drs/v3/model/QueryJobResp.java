@@ -34,7 +34,7 @@ public class QueryJobResp {
     private String name;
 
     /**
-     * 任务状态。 - CREATING：创建中 - CREATE_FAILED：创建失败 - CONFIGURATION：配置中 - STARTJOBING：启动中 - WAITING_FOR_START：等待启动中 - START_JOB_FAILED：启动失败 - PAUSING：已暂停 - FULL_TRANSFER_STARTED：全量开始，灾备场景下为初始化 - FULL_TRANSFER_FAILED：全量失败，灾备场景下为初始化失败 - FULL_TRANSFER_COMPLETE：全量完成，灾备场景下为初始化完成 - INCRE_TRANSFER_STARTED：增量开始，灾备场景下为灾备中 - INCRE_TRANSFER_FAILED：增量失败，灾备场景下为灾备异常 - RELEASE_RESOURCE_STARTED：结束任务中 - RELEASE_RESOURCE_FAILED：结束任务失败 - RELEASE_RESOURCE_COMPLETE：已结束 - REBUILD_NODE_STARTED：故障恢复中 - REBUILD_NODE_FAILED：故障恢复失败 - CHANGE_JOB_STARTED：任务变更中 - CHANGE_JOB_FAILED：任务变更失败 - DELETED：已删除 - CHILD_TRANSFER_STARTING：再编辑子任务启动中 - CHILD_TRANSFER_STARTED：再编辑子任务迁移中 - CHILD_TRANSFER_COMPLETE：再编辑子任务迁移完成 - CHILD_TRANSFER_FAILED：再编辑子任务迁移失败 - RELEASE_CHILD_TRANSFER_STARTED：再编辑子任务结束中 - RELEASE_CHILD_TRANSFER_COMPLETE：再编辑子任务已结束 - NODE_UPGRADE_START：升级开始 - NODE_UPGRADE_COMPLETE：升级完成 - NODE_UPGRADE_FAILED：升级失败
+     * **参数解释**：  任务当前运行状态。  **约束限制**：  不涉及。  **取值范围**：  - CREATING：创建中 - CREATE_FAILED：创建失败 - CONFIGURATION：配置中 - STARTJOBING：启动中 - WAITING_FOR_START：等待启动中 - START_JOB_FAILED：启动失败 - PAUSING：已暂停 - FULL_TRANSFER_STARTED：全量开始，灾备场景下为初始化 - FULL_TRANSFER_FAILED：全量失败，灾备场景下为初始化失败 - FULL_TRANSFER_COMPLETE：全量完成，灾备场景下为初始化完成 - INCRE_TRANSFER_STARTED：增量开始，灾备场景下为灾备中 - INCRE_TRANSFER_FAILED：增量失败，灾备场景下为灾备异常 - RELEASE_RESOURCE_STARTED：结束任务中 - RELEASE_RESOURCE_FAILED：结束任务失败 - RELEASE_RESOURCE_COMPLETE：已结束 - REBUILD_NODE_STARTED：故障恢复中 - REBUILD_NODE_FAILED：故障恢复失败 - CHANGE_JOB_STARTED：任务变更中 - CHANGE_JOB_FAILED：任务变更失败 - DELETED：已删除 - CHILD_TRANSFER_STARTING：再编辑子任务启动中 - CHILD_TRANSFER_STARTED：再编辑子任务迁移中 - CHILD_TRANSFER_COMPLETE：再编辑子任务迁移完成 - CHILD_TRANSFER_FAILED：再编辑子任务迁移失败 - RELEASE_CHILD_TRANSFER_STARTED：再编辑子任务结束中 - RELEASE_CHILD_TRANSFER_COMPLETE：再编辑子任务已结束 - NODE_UPGRADE_START：升级开始 - NODE_UPGRADE_COMPLETE：升级完成 - NODE_UPGRADE_FAILED：升级失败  **默认取值**：  不涉及
      */
     public static final class StatusEnum {
 
@@ -283,7 +283,7 @@ public class QueryJobResp {
     private String createTime;
 
     /**
-     * 迁移模式
+     * **参数解释**：  任务迁移模式，指定数据复制任务的执行方式。  **约束限制**：  不涉及。  **取值范围**：  - FULL_TRANS：全量迁移，仅迁移历史数据 - FULL_INCR_TRANS：全量+增量迁移，先迁移历史数据再持续同步增量 - INCR_TRANS：增量迁移，仅同步数据变更  **默认取值**：  不涉及
      */
     public static final class TaskTypeEnum {
 
@@ -384,7 +384,7 @@ public class QueryJobResp {
     private Endpoint targetEndpoint;
 
     /**
-     * 网络类型
+     * **参数解释**：  任务使用的网络类型。  **约束限制**：  不涉及。  **取值范围**：  - vpn：虚拟专用网络 - vpc：虚拟私有云 - eip：弹性公网IP  **默认取值**：  不涉及
      */
     public static final class NetTypeEnum {
 
@@ -490,7 +490,7 @@ public class QueryJobResp {
     private String updateTime;
 
     /**
-     * 任务方向
+     * **参数解释**：  任务的迁移方向。  **约束限制**：  不涉及。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主 - non-dbs：自建  **默认取值**：  不涉及
      */
     public static final class JobDirectionEnum {
 
@@ -571,7 +571,7 @@ public class QueryJobResp {
     private JobDirectionEnum jobDirection;
 
     /**
-     * 迁移场景 - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备
+     * **参数解释**：  迁移任务的业务场景类型。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备  **默认取值**：  不涉及
      */
     public static final class DbUseTypeEnum {
 
@@ -662,7 +662,7 @@ public class QueryJobResp {
     private Boolean isTargetReadonly;
 
     /**
-     * 冲突忽略策略 - stop：冲突失败 - overwrite：冲突覆盖 - ignore：冲突忽略
+     * **参数解释**：  数据迁移过程中的冲突忽略策略，指定当目标库已存在相同数据时的处理方式。  **约束限制**：  不涉及。  **取值范围**：  - stop：冲突失败，遇到冲突时停止任务 - overwrite：冲突覆盖，用源库数据覆盖目标库已有数据 - ignore：冲突忽略，跳过冲突数据继续迁移  **默认取值**：  不涉及
      */
     public static final class ConflictPolicyEnum {
 
@@ -753,7 +753,7 @@ public class QueryJobResp {
     private List<SpeedLimitInfo> speedLimit = null;
 
     /**
-     * 迁移方案 - Replication-主从复制 - Tungsten-日志解析 - PGBaseBackup-PG备份
+     * **参数解释**：  DRS任务的迁移方案，指定数据复制的底层实现方式。  **约束限制**：  不涉及。  **取值范围**：  - Replication：主从复制 - Tungsten：日志解析 - PGBaseBackup：PG备份  **默认取值**：  不涉及
      */
     public static final class SchemaTypeEnum {
 
@@ -979,7 +979,7 @@ public class QueryJobResp {
     private List<DatabaseObjectInfo> objectInfos = null;
 
     /**
-     * 初始任务方向。 取值： - up：入云，灾备场景时对应本云为备。 - down：出云，灾备场景时对应本云为主。 - non-dbs：自建。
+     * **参数解释**：  任务创建时的初始方向，表示任务首次创建时配置的迁移方向，不会随灾备倒换而改变。  **约束限制**：  不涉及。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主 - non-dbs：自建  **默认取值**：  不涉及
      */
     public static final class OriginalJobDirectionEnum {
 
@@ -1090,7 +1090,7 @@ public class QueryJobResp {
     private Boolean isOpenFastClean;
 
     /**
-     * 灾备任务内核方向，up上云，down下云。当任务处于倒换中，与灾备任务方向相反，否则相同。
+     * **参数解释**：  灾备任务内核方向。非倒换中与job_direction取值相同，倒换中与job_direction取值相反。  **约束限制**：  不涉及。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主  **默认取值**：  不涉及
      */
     public static final class JobKernelDirectionEnum {
 
@@ -1164,13 +1164,106 @@ public class QueryJobResp {
 
     private JobKernelDirectionEnum jobKernelDirection;
 
+    /**
+     * **参数解释**：  同步任务的同步模式，指定数据同步的粒度级别。  **约束限制**：  不涉及。  **取值范围**：  - DB_LEVEL：库级同步 - SCHEMA_LEVEL：schema级同步 - TABLE_LEVEL：表级同步 - FILE_IMPORT：文件导入 - INSTANCE_LEVEL：实例级同步  **默认取值**：  不涉及
+     */
+    public static final class SyncModeEnum {
+
+        /**
+         * Enum DB_LEVEL for value: "DB_LEVEL"
+         */
+        public static final SyncModeEnum DB_LEVEL = new SyncModeEnum("DB_LEVEL");
+
+        /**
+         * Enum SCHEMA_LEVEL for value: "SCHEMA_LEVEL"
+         */
+        public static final SyncModeEnum SCHEMA_LEVEL = new SyncModeEnum("SCHEMA_LEVEL");
+
+        /**
+         * Enum TABLE_LEVEL for value: "TABLE_LEVEL"
+         */
+        public static final SyncModeEnum TABLE_LEVEL = new SyncModeEnum("TABLE_LEVEL");
+
+        /**
+         * Enum FILE_IMPORT for value: "FILE_IMPORT"
+         */
+        public static final SyncModeEnum FILE_IMPORT = new SyncModeEnum("FILE_IMPORT");
+
+        /**
+         * Enum INSTANCE_LEVEL for value: "INSTANCE_LEVEL"
+         */
+        public static final SyncModeEnum INSTANCE_LEVEL = new SyncModeEnum("INSTANCE_LEVEL");
+
+        private static final Map<String, SyncModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SyncModeEnum> createStaticFields() {
+            Map<String, SyncModeEnum> map = new HashMap<>();
+            map.put("DB_LEVEL", DB_LEVEL);
+            map.put("SCHEMA_LEVEL", SCHEMA_LEVEL);
+            map.put("TABLE_LEVEL", TABLE_LEVEL);
+            map.put("FILE_IMPORT", FILE_IMPORT);
+            map.put("INSTANCE_LEVEL", INSTANCE_LEVEL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SyncModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SyncModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SyncModeEnum(value));
+        }
+
+        public static SyncModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SyncModeEnum) {
+                return this.value.equals(((SyncModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sync_mode")
+
+    private SyncModeEnum syncMode;
+
     public QueryJobResp withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 任务id
+     * **参数解释**：  任务ID，用于唯一标识一个数据复制任务。  **约束限制**：  不涉及。  **取值范围**：  UUID格式字符串。  **默认取值**：  不涉及
      * @return id
      */
     public String getId() {
@@ -1187,7 +1280,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 父任务id。
+     * **参数解释**：  父任务ID，多任务场景下子任务所归属的父任务标识。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return parentId
      */
     public String getParentId() {
@@ -1204,7 +1297,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 任务名称
+     * **参数解释**：  任务名称，用户创建任务时自定义的名称，用于区分和识别不同的数据复制任务。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return name
      */
     public String getName() {
@@ -1221,7 +1314,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 任务状态。 - CREATING：创建中 - CREATE_FAILED：创建失败 - CONFIGURATION：配置中 - STARTJOBING：启动中 - WAITING_FOR_START：等待启动中 - START_JOB_FAILED：启动失败 - PAUSING：已暂停 - FULL_TRANSFER_STARTED：全量开始，灾备场景下为初始化 - FULL_TRANSFER_FAILED：全量失败，灾备场景下为初始化失败 - FULL_TRANSFER_COMPLETE：全量完成，灾备场景下为初始化完成 - INCRE_TRANSFER_STARTED：增量开始，灾备场景下为灾备中 - INCRE_TRANSFER_FAILED：增量失败，灾备场景下为灾备异常 - RELEASE_RESOURCE_STARTED：结束任务中 - RELEASE_RESOURCE_FAILED：结束任务失败 - RELEASE_RESOURCE_COMPLETE：已结束 - REBUILD_NODE_STARTED：故障恢复中 - REBUILD_NODE_FAILED：故障恢复失败 - CHANGE_JOB_STARTED：任务变更中 - CHANGE_JOB_FAILED：任务变更失败 - DELETED：已删除 - CHILD_TRANSFER_STARTING：再编辑子任务启动中 - CHILD_TRANSFER_STARTED：再编辑子任务迁移中 - CHILD_TRANSFER_COMPLETE：再编辑子任务迁移完成 - CHILD_TRANSFER_FAILED：再编辑子任务迁移失败 - RELEASE_CHILD_TRANSFER_STARTED：再编辑子任务结束中 - RELEASE_CHILD_TRANSFER_COMPLETE：再编辑子任务已结束 - NODE_UPGRADE_START：升级开始 - NODE_UPGRADE_COMPLETE：升级完成 - NODE_UPGRADE_FAILED：升级失败
+     * **参数解释**：  任务当前运行状态。  **约束限制**：  不涉及。  **取值范围**：  - CREATING：创建中 - CREATE_FAILED：创建失败 - CONFIGURATION：配置中 - STARTJOBING：启动中 - WAITING_FOR_START：等待启动中 - START_JOB_FAILED：启动失败 - PAUSING：已暂停 - FULL_TRANSFER_STARTED：全量开始，灾备场景下为初始化 - FULL_TRANSFER_FAILED：全量失败，灾备场景下为初始化失败 - FULL_TRANSFER_COMPLETE：全量完成，灾备场景下为初始化完成 - INCRE_TRANSFER_STARTED：增量开始，灾备场景下为灾备中 - INCRE_TRANSFER_FAILED：增量失败，灾备场景下为灾备异常 - RELEASE_RESOURCE_STARTED：结束任务中 - RELEASE_RESOURCE_FAILED：结束任务失败 - RELEASE_RESOURCE_COMPLETE：已结束 - REBUILD_NODE_STARTED：故障恢复中 - REBUILD_NODE_FAILED：故障恢复失败 - CHANGE_JOB_STARTED：任务变更中 - CHANGE_JOB_FAILED：任务变更失败 - DELETED：已删除 - CHILD_TRANSFER_STARTING：再编辑子任务启动中 - CHILD_TRANSFER_STARTED：再编辑子任务迁移中 - CHILD_TRANSFER_COMPLETE：再编辑子任务迁移完成 - CHILD_TRANSFER_FAILED：再编辑子任务迁移失败 - RELEASE_CHILD_TRANSFER_STARTED：再编辑子任务结束中 - RELEASE_CHILD_TRANSFER_COMPLETE：再编辑子任务已结束 - NODE_UPGRADE_START：升级开始 - NODE_UPGRADE_COMPLETE：升级完成 - NODE_UPGRADE_FAILED：升级失败  **默认取值**：  不涉及
      * @return status
      */
     public StatusEnum getStatus() {
@@ -1238,7 +1331,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 描述信息
+     * **参数解释**：  任务描述信息，用户创建任务时自定义的备注说明。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return description
      */
     public String getDescription() {
@@ -1255,7 +1348,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 创建时间，时间戳格式。
+     * **参数解释**：  任务的创建时间。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return createTime
      */
     public String getCreateTime() {
@@ -1272,7 +1365,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 迁移模式
+     * **参数解释**：  任务迁移模式，指定数据复制任务的执行方式。  **约束限制**：  不涉及。  **取值范围**：  - FULL_TRANS：全量迁移，仅迁移历史数据 - FULL_INCR_TRANS：全量+增量迁移，先迁移历史数据再持续同步增量 - INCR_TRANS：增量迁移，仅同步数据变更  **默认取值**：  不涉及
      * @return taskType
      */
     public TaskTypeEnum getTaskType() {
@@ -1357,7 +1450,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 物理源库信息。
+     * **参数解释**：  物理分片源库信息列表，多对一场景下存在多个源库时返回，每个元素为Endpoint结构。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return sourceSharding
      */
     public List<Endpoint> getSourceSharding() {
@@ -1400,7 +1493,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 网络类型
+     * **参数解释**：  任务使用的网络类型。  **约束限制**：  不涉及。  **取值范围**：  - vpn：虚拟专用网络 - vpc：虚拟私有云 - eip：弹性公网IP  **默认取值**：  不涉及
      * @return netType
      */
     public NetTypeEnum getNetType() {
@@ -1417,7 +1510,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 失败原因。
+     * **参数解释**：  任务失败原因，任务状态为失败时返回该字段。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return failedReason
      */
     public String getFailedReason() {
@@ -1460,7 +1553,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 实际启动时间，时间戳格式。
+     * **参数解释**：  任务实际启动时间。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return actualStartTime
      */
     public String getActualStartTime() {
@@ -1477,7 +1570,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 全量完成时间，时间戳格式。
+     * **参数解释**：  全量迁移完成时间。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return fullTransferCompleteTime
      */
     public String getFullTransferCompleteTime() {
@@ -1494,7 +1587,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 更新时间，时间戳格式
+     * **参数解释**：  任务最近一次更新时间。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return updateTime
      */
     public String getUpdateTime() {
@@ -1511,7 +1604,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 任务方向
+     * **参数解释**：  任务的迁移方向。  **约束限制**：  不涉及。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主 - non-dbs：自建  **默认取值**：  不涉及
      * @return jobDirection
      */
     public JobDirectionEnum getJobDirection() {
@@ -1528,7 +1621,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 迁移场景 - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备
+     * **参数解释**：  迁移任务的业务场景类型。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备  **默认取值**：  不涉及
      * @return dbUseType
      */
     public DbUseTypeEnum getDbUseType() {
@@ -1545,7 +1638,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 是否需要重启
+     * **参数解释**：  任务配置变更后是否需要重启迁移实例才能生效。  **约束限制**：  不涉及。  **取值范围**：  - true：需要重启 - false：不需要重启  **默认取值**：  不涉及
      * @return needRestart
      */
     public Boolean getNeedRestart() {
@@ -1562,7 +1655,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 指定目标实例是否限制为只读
+     * **参数解释**：  指定目标数据库实例在迁移过程中是否限制为只读状态。  **约束限制**：  不涉及。  **取值范围**：  - true：目标实例限制为只读 - false：目标实例不限制为只读  **默认取值**：  不涉及
      * @return isTargetReadonly
      */
     public Boolean getIsTargetReadonly() {
@@ -1579,7 +1672,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 冲突忽略策略 - stop：冲突失败 - overwrite：冲突覆盖 - ignore：冲突忽略
+     * **参数解释**：  数据迁移过程中的冲突忽略策略，指定当目标库已存在相同数据时的处理方式。  **约束限制**：  不涉及。  **取值范围**：  - stop：冲突失败，遇到冲突时停止任务 - overwrite：冲突覆盖，用源库数据覆盖目标库已有数据 - ignore：冲突忽略，跳过冲突数据继续迁移  **默认取值**：  不涉及
      * @return conflictPolicy
      */
     public ConflictPolicyEnum getConflictPolicy() {
@@ -1596,7 +1689,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 过滤DDL策略 - drop_database：过滤drop_database - drop_databasefilter_all：过滤所有ddl - \"\"：不过滤
+     * **参数解释**：  过滤DDL策略，指定迁移过程中需要过滤的DDL操作类型。  **约束限制**：  不涉及。  **取值范围**：  - drop_database：过滤drop_database操作 - drop_databasefilter_all：过滤所有DDL操作 - \"\"：不过滤  **默认取值**：  不涉及
      * @return filterDdlPolicy
      */
     public String getFilterDdlPolicy() {
@@ -1629,7 +1722,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 迁移速度限制。
+     * **参数解释**：  迁移速度限制信息，详情请参见SpeedLimitInfo对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return speedLimit
      */
     public List<SpeedLimitInfo> getSpeedLimit() {
@@ -1646,7 +1739,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 迁移方案 - Replication-主从复制 - Tungsten-日志解析 - PGBaseBackup-PG备份
+     * **参数解释**：  DRS任务的迁移方案，指定数据复制的底层实现方式。  **约束限制**：  不涉及。  **取值范围**：  - Replication：主从复制 - Tungsten：日志解析 - PGBaseBackup：PG备份  **默认取值**：  不涉及
      * @return schemaType
      */
     public SchemaTypeEnum getSchemaType() {
@@ -1663,7 +1756,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 节点个数。
+     * **参数解释**：  迁移实例节点个数。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * minimum: 0
      * @return nodeNum
      */
@@ -1681,7 +1774,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 对象选择开关
+     * **参数解释**：  对象选择开关，标识是否已开启对象选择功能。  **约束限制**：  不涉及。  **取值范围**：  - true：开启对象选择 - false：关闭对象选择  **默认取值**：  不涉及
      * @return objectSwitch
      */
     public Boolean getObjectSwitch() {
@@ -1698,7 +1791,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 主任务Id。
+     * **参数解释**：  主任务ID，多任务场景下子任务所归属的主任务标识。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return masterJobId
      */
     public String getMasterJobId() {
@@ -1715,7 +1808,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 全量快照模式。
+     * **参数解释**：  全量快照模式。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return fullMode
      */
     public String getFullMode() {
@@ -1732,7 +1825,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 是否迁移结构。
+     * **参数解释**：  是否迁移结构。  **约束限制**：  不涉及。  **取值范围**：  - true：迁移结构 - false：不迁移结构  **默认取值**：  不涉及
      * @return structTrans
      */
     public Boolean getStructTrans() {
@@ -1749,7 +1842,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 否迁移索引。
+     * **参数解释**：  是否迁移索引。  **约束限制**：  不涉及。  **取值范围**：  - true：迁移索引 - false：不迁移索引  **默认取值**：  不涉及
      * @return indexTrans
      */
     public Boolean getIndexTrans() {
@@ -1766,7 +1859,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 是否使用目标库的用户替换掉definer。
+     * **参数解释**：  是否使用目标库的用户替换掉definer。  **约束限制**：  不涉及。  **取值范围**：  - true：使用目标库用户替换definer - false：不替换definer  **默认取值**：  不涉及
      * @return replaceDefiner
      */
     public Boolean getReplaceDefiner() {
@@ -1783,7 +1876,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 是否迁移用户。
+     * **参数解释**：  是否迁移用户。  **约束限制**：  不涉及。  **取值范围**：  - true：迁移用户 - false：不迁移用户  **默认取值**：  不涉及
      * @return migrateUser
      */
     public Boolean getMigrateUser() {
@@ -1800,7 +1893,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 是否库级同步。
+     * **参数解释**：  是否库级同步。  **约束限制**：  不涉及。  **取值范围**：  - true：库级同步 - false：非库级同步  **默认取值**：  不涉及
      * @return syncDatabase
      */
     public Boolean getSyncDatabase() {
@@ -1817,7 +1910,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 错误码
+     * **参数解释**：  错误码，当任务报错时返回的错误代码。  **约束限制**：  不涉及。  **取值范围**：  格式为DRS.XXXXXX。  **默认取值**：  不涉及
      * @return errorCode
      */
     public String getErrorCode() {
@@ -1834,7 +1927,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 错误信息。
+     * **参数解释**：  错误详细信息，当任务执行失败时返回的具体错误描述。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return errorMessage
      */
     public String getErrorMessage() {
@@ -1877,7 +1970,7 @@ public class QueryJobResp {
     }
 
     /**
-     * node所在AZ
+     * **参数解释**：  迁移实例节点所在的可用区（AZ，Availability Zone）编码。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return azCode
      */
     public String getAzCode() {
@@ -1894,7 +1987,7 @@ public class QueryJobResp {
     }
 
     /**
-     * node所在VPC
+     * **参数解释**：  迁移实例节点所在的虚拟私有云（VPC，Virtual Private Cloud）ID。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return vpcId
      */
     public String getVpcId() {
@@ -1911,7 +2004,7 @@ public class QueryJobResp {
     }
 
     /**
-     * node所在子网
+     * **参数解释**：  迁移实例节点所在的子网ID。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return subnetId
      */
     public String getSubnetId() {
@@ -1928,7 +2021,7 @@ public class QueryJobResp {
     }
 
     /**
-     * node所在安全组
+     * **参数解释**：  迁移实例节点所在的安全组ID。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -1945,7 +2038,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 是否多主灾备任务,双主灾备时有值为true
+     * **参数解释**：  是否多主灾备任务，双主灾备场景下该值为true。  **约束限制**：  不涉及。  **取值范围**：  - true：多主灾备任务 - false：非多主灾备任务  **默认取值**：  不涉及
      * @return multiWrite
      */
     public Boolean getMultiWrite() {
@@ -1962,7 +2055,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 是否支持IPV6
+     * **参数解释**：  是否支持IPv6。  **约束限制**：  不涉及。  **取值范围**：  - true：支持IPv6 - false：不支持IPv6  **默认取值**：  不涉及
      * @return supportIpV6
      */
     public Boolean getSupportIpV6() {
@@ -1979,7 +2072,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 继承的任务ID，Oracle_Mrskafka链路时使用。
+     * **参数解释**：  继承的任务ID，Oracle到Kafka链路时使用。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return inheritId
      */
     public String getInheritId() {
@@ -1996,7 +2089,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 断点的GTID集合
+     * **参数解释**：  断点的GTID（Global Transaction Identifier）集合，用于记录增量同步的断点位置。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return gtid
      */
     public String getGtid() {
@@ -2039,7 +2132,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 增量任务启动位点
+     * **参数解释**：  增量任务启动位点，标识增量同步起始的数据位置。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return increStartPosition
      */
     public String getIncreStartPosition() {
@@ -2056,7 +2149,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 是否是主备任务。
+     * **参数解释**：  标识任务是否为跨可用区（AZ）部署的主备任务。  **约束限制**：  不涉及。  **取值范围**：  - true：跨AZ主备任务 - false：非跨AZ任务  **默认取值**：  不涉及
      * @return isMultiAz
      */
     public Boolean getIsMultiAz() {
@@ -2073,7 +2166,7 @@ public class QueryJobResp {
     }
 
     /**
-     * node所在节点AZ名称。
+     * **参数解释**：  迁移实例节点所在的可用区（AZ）名称。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return azName
      */
     public String getAzName() {
@@ -2090,7 +2183,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 主备任务主AZ。
+     * **参数解释**：  主备任务中主实例所在的可用区（AZ）。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return masterAz
      */
     public String getMasterAz() {
@@ -2107,7 +2200,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 主备任务备AZ。
+     * **参数解释**：  主备任务中备实例所在的可用区（AZ）。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return slaveAz
      */
     public String getSlaveAz() {
@@ -2124,7 +2217,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 任务主备角色。
+     * **参数解释**：  任务主备角色，标识当前节点在主备任务中的角色。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return nodeRole
      */
     public String getNodeRole() {
@@ -2183,7 +2276,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 已同步对象信息。
+     * **参数解释**：  已同步对象信息列表，每个元素为DatabaseObjectInfo结构。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return objectInfos
      */
     public List<DatabaseObjectInfo> getObjectInfos() {
@@ -2200,7 +2293,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 初始任务方向。 取值： - up：入云，灾备场景时对应本云为备。 - down：出云，灾备场景时对应本云为主。 - non-dbs：自建。
+     * **参数解释**：  任务创建时的初始方向，表示任务首次创建时配置的迁移方向，不会随灾备倒换而改变。  **约束限制**：  不涉及。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主 - non-dbs：自建  **默认取值**：  不涉及
      * @return originalJobDirection
      */
     public OriginalJobDirectionEnum getOriginalJobDirection() {
@@ -2259,7 +2352,7 @@ public class QueryJobResp {
     }
 
     /**
-     * DRS任务标签。
+     * **参数解释**：  DRS任务标签列表，每个元素为Tag结构。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return tags
      */
     public List<Tag> getTags() {
@@ -2292,7 +2385,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 指定公网Ip的信息。
+     * **参数解释**：  指定公网IP的信息列表，每个元素为PublicIpConfig结构。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return publicIpList
      */
     public List<PublicIpConfig> getPublicIpList() {
@@ -2309,7 +2402,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 是否成功绑定公网IP。
+     * **参数解释**：  公网IP绑定状态，标识是否成功绑定公网IP。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return bindPublicIpState
      */
     public String getBindPublicIpState() {
@@ -2342,7 +2435,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 多任务时，存在子任务绑定失败时，返回子任务的信息。
+     * **参数解释**：  子任务绑定失败信息列表，多任务场景下存在子任务绑定公网IP失败时返回，每个元素为FailedToBindEipChildInfo结构。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return children
      */
     public List<FailedToBindEipChildInfo> getChildren() {
@@ -2359,7 +2452,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 是否开启云数据库RDS for MySQL/MariaDB的binlog快速清理。
+     * **参数解释**：  是否开启云数据库RDS for MySQL或MariaDB的Binlog快速清理。  **约束限制**：  不涉及。  **取值范围**：  - true：开启Binlog快速清理 - false：不开启Binlog快速清理  **默认取值**：  不涉及
      * @return isOpenFastClean
      */
     public Boolean getIsOpenFastClean() {
@@ -2376,7 +2469,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 灾备任务内核方向，up上云，down下云。当任务处于倒换中，与灾备任务方向相反，否则相同。
+     * **参数解释**：  灾备任务内核方向。非倒换中与job_direction取值相同，倒换中与job_direction取值相反。  **约束限制**：  不涉及。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主  **默认取值**：  不涉及
      * @return jobKernelDirection
      */
     public JobKernelDirectionEnum getJobKernelDirection() {
@@ -2385,6 +2478,23 @@ public class QueryJobResp {
 
     public void setJobKernelDirection(JobKernelDirectionEnum jobKernelDirection) {
         this.jobKernelDirection = jobKernelDirection;
+    }
+
+    public QueryJobResp withSyncMode(SyncModeEnum syncMode) {
+        this.syncMode = syncMode;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  同步任务的同步模式，指定数据同步的粒度级别。  **约束限制**：  不涉及。  **取值范围**：  - DB_LEVEL：库级同步 - SCHEMA_LEVEL：schema级同步 - TABLE_LEVEL：表级同步 - FILE_IMPORT：文件导入 - INSTANCE_LEVEL：实例级同步  **默认取值**：  不涉及
+     * @return syncMode
+     */
+    public SyncModeEnum getSyncMode() {
+        return syncMode;
+    }
+
+    public void setSyncMode(SyncModeEnum syncMode) {
+        this.syncMode = syncMode;
     }
 
     @Override
@@ -2436,7 +2546,8 @@ public class QueryJobResp {
             && Objects.equals(this.bindPublicIpState, that.bindPublicIpState)
             && Objects.equals(this.children, that.children)
             && Objects.equals(this.isOpenFastClean, that.isOpenFastClean)
-            && Objects.equals(this.jobKernelDirection, that.jobKernelDirection);
+            && Objects.equals(this.jobKernelDirection, that.jobKernelDirection)
+            && Objects.equals(this.syncMode, that.syncMode);
     }
 
     @Override
@@ -2502,7 +2613,8 @@ public class QueryJobResp {
             bindPublicIpState,
             children,
             isOpenFastClean,
-            jobKernelDirection);
+            jobKernelDirection,
+            syncMode);
     }
 
     @Override
@@ -2571,6 +2683,7 @@ public class QueryJobResp {
         sb.append("    children: ").append(toIndentedString(children)).append("\n");
         sb.append("    isOpenFastClean: ").append(toIndentedString(isOpenFastClean)).append("\n");
         sb.append("    jobKernelDirection: ").append(toIndentedString(jobKernelDirection)).append("\n");
+        sb.append("    syncMode: ").append(toIndentedString(syncMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

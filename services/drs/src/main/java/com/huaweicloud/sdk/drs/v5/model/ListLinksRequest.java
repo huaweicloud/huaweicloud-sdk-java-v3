@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ListLinksRequest {
 
     /**
-     * 请求语言类型。
+     * **参数解释**：  请求语言类型。  **约束限制**：  不涉及。  **取值范围**：  - en-us：英文 - zh-cn：中文  **默认取值**：  en-us
      */
     public static final class XLanguageEnum {
 
@@ -91,7 +91,7 @@ public class ListLinksRequest {
     private XLanguageEnum xLanguage;
 
     /**
-     * 任务场景。取值： - migration：实时迁移。 - sync：实时同步。 - cloudDataGuard：实时灾备。
+     * **参数解释**：  DRS任务场景类型，用于区分不同的数据复制场景。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 - replay：流量回放  **默认取值**：  不涉及
      */
     public static final class JobTypeEnum {
 
@@ -110,6 +110,11 @@ public class ListLinksRequest {
          */
         public static final JobTypeEnum CLOUDDATAGUARD = new JobTypeEnum("cloudDataGuard");
 
+        /**
+         * Enum REPLAY for value: "replay"
+         */
+        public static final JobTypeEnum REPLAY = new JobTypeEnum("replay");
+
         private static final Map<String, JobTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, JobTypeEnum> createStaticFields() {
@@ -117,6 +122,7 @@ public class ListLinksRequest {
             map.put("migration", MIGRATION);
             map.put("sync", SYNC);
             map.put("cloudDataGuard", CLOUDDATAGUARD);
+            map.put("replay", REPLAY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -187,7 +193,7 @@ public class ListLinksRequest {
     }
 
     /**
-     * 请求语言类型。
+     * **参数解释**：  请求语言类型。  **约束限制**：  不涉及。  **取值范围**：  - en-us：英文 - zh-cn：中文  **默认取值**：  en-us
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -206,7 +212,7 @@ public class ListLinksRequest {
     }
 
     /**
-     * 任务场景。取值： - migration：实时迁移。 - sync：实时同步。 - cloudDataGuard：实时灾备。
+     * **参数解释**：  DRS任务场景类型，用于区分不同的数据复制场景。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 - replay：流量回放  **默认取值**：  不涉及
      * @return jobType
      */
     public JobTypeEnum getJobType() {
@@ -223,7 +229,7 @@ public class ListLinksRequest {
     }
 
     /**
-     * 偏移量，表示查询该偏移量后面的记录。
+     * **参数解释**：  偏移量，表示查询该偏移量后面的记录，用于分页查询。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  0
      * @return offset
      */
     public Integer getOffset() {
@@ -240,7 +246,7 @@ public class ListLinksRequest {
     }
 
     /**
-     * 查询返回记录的数量限制。
+     * **参数解释**：  查询返回记录的数量限制，用于分页查询时控制每页返回的数据条数。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return limit
      */
     public Integer getLimit() {

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 批量结束与删除在线迁移任务请求体
+ * **参数解释**：  批量结束与删除任务请求体，包含待操作的任务列表。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
  */
 public class BatchDeleteJobReq {
 
@@ -40,7 +40,7 @@ public class BatchDeleteJobReq {
     }
 
     /**
-     * 批量结束与删除任务请求列表
+     * **参数解释**：  批量结束与删除任务请求列表，指定需要结束或删除的任务信息。详情请参见DeleteJobReq对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
      * @return jobs
      */
     public List<DeleteJobReq> getJobs() {

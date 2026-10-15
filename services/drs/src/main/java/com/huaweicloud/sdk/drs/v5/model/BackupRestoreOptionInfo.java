@@ -128,6 +128,81 @@ public class BackupRestoreOptionInfo {
 
     private Boolean isDeleteBackupFile;
 
+    /**
+     * DBCC一致性校验模式。 - sync 同步 - async 异步
+     */
+    public static final class ConsistencyCheckModeEnum {
+
+        /**
+         * Enum SYNC for value: "sync"
+         */
+        public static final ConsistencyCheckModeEnum SYNC = new ConsistencyCheckModeEnum("sync");
+
+        /**
+         * Enum ASYNC for value: "async"
+         */
+        public static final ConsistencyCheckModeEnum ASYNC = new ConsistencyCheckModeEnum("async");
+
+        private static final Map<String, ConsistencyCheckModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ConsistencyCheckModeEnum> createStaticFields() {
+            Map<String, ConsistencyCheckModeEnum> map = new HashMap<>();
+            map.put("sync", SYNC);
+            map.put("async", ASYNC);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ConsistencyCheckModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ConsistencyCheckModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConsistencyCheckModeEnum(value));
+        }
+
+        public static ConsistencyCheckModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ConsistencyCheckModeEnum) {
+                return this.value.equals(((ConsistencyCheckModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "consistency_check_mode")
+
+    private ConsistencyCheckModeEnum consistencyCheckMode;
+
     public BackupRestoreOptionInfo withIsCover(Boolean isCover) {
         this.isCover = isCover;
         return this;
@@ -296,6 +371,23 @@ public class BackupRestoreOptionInfo {
         this.isDeleteBackupFile = isDeleteBackupFile;
     }
 
+    public BackupRestoreOptionInfo withConsistencyCheckMode(ConsistencyCheckModeEnum consistencyCheckMode) {
+        this.consistencyCheckMode = consistencyCheckMode;
+        return this;
+    }
+
+    /**
+     * DBCC一致性校验模式。 - sync 同步 - async 异步
+     * @return consistencyCheckMode
+     */
+    public ConsistencyCheckModeEnum getConsistencyCheckMode() {
+        return consistencyCheckMode;
+    }
+
+    public void setConsistencyCheckMode(ConsistencyCheckModeEnum consistencyCheckMode) {
+        this.consistencyCheckMode = consistencyCheckMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -310,7 +402,8 @@ public class BackupRestoreOptionInfo {
             && Objects.equals(this.isLastBackup, that.isLastBackup) && Objects.equals(this.isPrecheck, that.isPrecheck)
             && Objects.equals(this.recoveryMode, that.recoveryMode) && Objects.equals(this.dbNames, that.dbNames)
             && Objects.equals(this.resetDbNameMap, that.resetDbNameMap)
-            && Objects.equals(this.isDeleteBackupFile, that.isDeleteBackupFile);
+            && Objects.equals(this.isDeleteBackupFile, that.isDeleteBackupFile)
+            && Objects.equals(this.consistencyCheckMode, that.consistencyCheckMode);
     }
 
     @Override
@@ -322,7 +415,8 @@ public class BackupRestoreOptionInfo {
             recoveryMode,
             dbNames,
             resetDbNameMap,
-            isDeleteBackupFile);
+            isDeleteBackupFile,
+            consistencyCheckMode);
     }
 
     @Override
@@ -337,6 +431,7 @@ public class BackupRestoreOptionInfo {
         sb.append("    dbNames: ").append(toIndentedString(dbNames)).append("\n");
         sb.append("    resetDbNameMap: ").append(toIndentedString(resetDbNameMap)).append("\n");
         sb.append("    isDeleteBackupFile: ").append(toIndentedString(isDeleteBackupFile)).append("\n");
+        sb.append("    consistencyCheckMode: ").append(toIndentedString(consistencyCheckMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -135,6 +135,11 @@ public class ShowComparePolicyResponse extends SdkResponse {
 
     private Integer intervalHour;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "conflict_strategy")
+
+    private String conflictStrategy;
+
     public ShowComparePolicyResponse withPeriod(String period) {
         this.period = period;
         return this;
@@ -287,6 +292,23 @@ public class ShowComparePolicyResponse extends SdkResponse {
         this.intervalHour = intervalHour;
     }
 
+    public ShowComparePolicyResponse withConflictStrategy(String conflictStrategy) {
+        this.conflictStrategy = conflictStrategy;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 冲突策略。 **约束限制：** 不涉及 **取值范围：** 不涉及 默认取值： 不涉及
+     * @return conflictStrategy
+     */
+    public String getConflictStrategy() {
+        return conflictStrategy;
+    }
+
+    public void setConflictStrategy(String conflictStrategy) {
+        this.conflictStrategy = conflictStrategy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -301,13 +323,21 @@ public class ShowComparePolicyResponse extends SdkResponse {
             && Objects.equals(this.compareType, that.compareType)
             && Objects.equals(this.nextCompareTime, that.nextCompareTime)
             && Objects.equals(this.comparePolicy, that.comparePolicy)
-            && Objects.equals(this.intervalHour, that.intervalHour);
+            && Objects.equals(this.intervalHour, that.intervalHour)
+            && Objects.equals(this.conflictStrategy, that.conflictStrategy);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(period, status, beginTime, endTime, compareType, nextCompareTime, comparePolicy, intervalHour);
+        return Objects.hash(period,
+            status,
+            beginTime,
+            endTime,
+            compareType,
+            nextCompareTime,
+            comparePolicy,
+            intervalHour,
+            conflictStrategy);
     }
 
     @Override
@@ -322,6 +352,7 @@ public class ShowComparePolicyResponse extends SdkResponse {
         sb.append("    nextCompareTime: ").append(toIndentedString(nextCompareTime)).append("\n");
         sb.append("    comparePolicy: ").append(toIndentedString(comparePolicy)).append("\n");
         sb.append("    intervalHour: ").append(toIndentedString(intervalHour)).append("\n");
+        sb.append("    conflictStrategy: ").append(toIndentedString(conflictStrategy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.aidatalake.v2;
 
 import com.huaweicloud.sdk.aidatalake.v2.model.AuraStatementOperatorMetrics;
+import com.huaweicloud.sdk.aidatalake.v2.model.CancelAuraDataframeJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.CancelAuraDataframeJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelAuraSqlStatementRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelAuraSqlStatementResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.CancelFlinkJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.CancelFlinkJobRequestBody;
+import com.huaweicloud.sdk.aidatalake.v2.model.CancelFlinkJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelRayJobRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelRayJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelSparkJobRequest;
@@ -11,17 +16,48 @@ import com.huaweicloud.sdk.aidatalake.v2.model.CancelSparkSqlRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.CancelSparkSqlResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.CloseAuraSqlSessionRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.CloseAuraSqlSessionResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.CloseRaySessionRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.CloseRaySessionResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateAuraDataframeJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateAuraDataframeJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.CreateAuraSqlSessionRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.CreateAuraSqlSessionResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateDataframeJobRequestBody;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateFederationRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateFederationResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateFlinkSavepointRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateFlinkSavepointRequestBody;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateFlinkSavepointResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateRayFederationRequestBody;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateRaySessionRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateRaySessionRequestBody;
+import com.huaweicloud.sdk.aidatalake.v2.model.CreateRaySessionResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.CreateSessionRequestBodyV2;
+import com.huaweicloud.sdk.aidatalake.v2.model.DeleteFederationRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.DeleteFederationResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.DeleteFlinkSavepointRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.DeleteFlinkSavepointResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ExecuteAuraSqlStatementRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ExecuteAuraSqlStatementResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.FlinkJobState;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraDataframeJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraDataframeJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraSessionStatementRecordsRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraSessionStatementRecordsResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraSqlSessionsRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraSqlSessionsResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraStatementRecordsRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListAuraStatementRecordsResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFederationsRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFederationsResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFlinkJobAutoscalingHistoriesRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFlinkJobAutoscalingHistoriesResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFlinkJobEventsRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFlinkJobEventsResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFlinkJobsRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFlinkJobsResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFlinkSavepointRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ListFlinkSavepointResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListRayJobsRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListRayJobsResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ListSparkJobsRequest;
@@ -33,6 +69,9 @@ import com.huaweicloud.sdk.aidatalake.v2.model.PreviewSparkSqlResultResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.RestartSparkSqlClusterRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.RestartSparkSqlClusterRequestBody;
 import com.huaweicloud.sdk.aidatalake.v2.model.RestartSparkSqlClusterResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.RunFlinkJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.RunFlinkJobRequestBody;
+import com.huaweicloud.sdk.aidatalake.v2.model.RunFlinkJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.RunRayJobRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.RunRayJobRequestBody;
 import com.huaweicloud.sdk.aidatalake.v2.model.RunRayJobResponse;
@@ -42,6 +81,8 @@ import com.huaweicloud.sdk.aidatalake.v2.model.RunSparkJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.RunSparkSqlRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.RunSparkSqlRequestBody;
 import com.huaweicloud.sdk.aidatalake.v2.model.RunSparkSqlResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraDataframeJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraDataframeJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraSqlSessionRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraSqlSessionResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraSqlStatementResultRequest;
@@ -50,6 +91,16 @@ import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraStatementOperatorMetricsR
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraStatementOperatorMetricsResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraStatementQueryMetricsRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowAuraStatementQueryMetricsResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFederationRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFederationResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFlinkJobAutoscalingPolicyRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFlinkJobAutoscalingPolicyResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFlinkJobRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFlinkJobResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFlinkJobStateRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFlinkJobStateResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFlinkSavepointRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.ShowFlinkSavepointResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowRayJobRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowRayJobResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowSparkJobRequest;
@@ -64,6 +115,12 @@ import com.huaweicloud.sdk.aidatalake.v2.model.ShowSparkSqlStateRequest;
 import com.huaweicloud.sdk.aidatalake.v2.model.ShowSparkSqlStateResponse;
 import com.huaweicloud.sdk.aidatalake.v2.model.StatementExecuteRequestBody;
 import com.huaweicloud.sdk.aidatalake.v2.model.StatementQueryMetrics;
+import com.huaweicloud.sdk.aidatalake.v2.model.UpdateFederationRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.UpdateFederationResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.UpdateFlinkJobAutoscalingPolicyRequest;
+import com.huaweicloud.sdk.aidatalake.v2.model.UpdateFlinkJobAutoscalingPolicyResponse;
+import com.huaweicloud.sdk.aidatalake.v2.model.UpdateFlinkJobAutoscalingRequestBody;
+import com.huaweicloud.sdk.aidatalake.v2.model.UpdateRayFederationRequestBody;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
@@ -74,6 +131,155 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class AIDataLakeMeta {
+
+    public static final HttpRequestDef<CancelAuraDataframeJobRequest, CancelAuraDataframeJobResponse> cancelAuraDataframeJob =
+        genForCancelAuraDataframeJob();
+
+    private static HttpRequestDef<CancelAuraDataframeJobRequest, CancelAuraDataframeJobResponse> genForCancelAuraDataframeJob() {
+        // basic
+        HttpRequestDef.Builder<CancelAuraDataframeJobRequest, CancelAuraDataframeJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CancelAuraDataframeJobRequest.class, CancelAuraDataframeJobResponse.class)
+            .withName("CancelAuraDataframeJob")
+            .withUri("/v2/workspaces/{workspace_id}/aura-dataframe-jobs/{job_id}/cancel")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelAuraDataframeJobRequest::getWorkspaceId,
+                CancelAuraDataframeJobRequest::setWorkspaceId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelAuraDataframeJobRequest::getJobId, CancelAuraDataframeJobRequest::setJobId));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CancelAuraDataframeJobResponse::getXRequestId,
+                CancelAuraDataframeJobResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAuraDataframeJobRequest, CreateAuraDataframeJobResponse> createAuraDataframeJob =
+        genForCreateAuraDataframeJob();
+
+    private static HttpRequestDef<CreateAuraDataframeJobRequest, CreateAuraDataframeJobResponse> genForCreateAuraDataframeJob() {
+        // basic
+        HttpRequestDef.Builder<CreateAuraDataframeJobRequest, CreateAuraDataframeJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateAuraDataframeJobRequest.class, CreateAuraDataframeJobResponse.class)
+            .withName("CreateAuraDataframeJob")
+            .withUri("/v2/workspaces/{workspace_id}/aura-dataframe-jobs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAuraDataframeJobRequest::getWorkspaceId,
+                CreateAuraDataframeJobRequest::setWorkspaceId));
+        builder.<CreateDataframeJobRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateDataframeJobRequestBody.class),
+            f -> f.withMarshaller(CreateAuraDataframeJobRequest::getBody, CreateAuraDataframeJobRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAuraDataframeJobResponse::getXRequestId,
+                CreateAuraDataframeJobResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAuraDataframeJobRequest, ListAuraDataframeJobResponse> listAuraDataframeJob =
+        genForListAuraDataframeJob();
+
+    private static HttpRequestDef<ListAuraDataframeJobRequest, ListAuraDataframeJobResponse> genForListAuraDataframeJob() {
+        // basic
+        HttpRequestDef.Builder<ListAuraDataframeJobRequest, ListAuraDataframeJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAuraDataframeJobRequest.class, ListAuraDataframeJobResponse.class)
+            .withName("ListAuraDataframeJob")
+            .withUri("/v2/workspaces/{workspace_id}/aura-dataframe-jobs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuraDataframeJobRequest::getWorkspaceId,
+                ListAuraDataframeJobRequest::setWorkspaceId));
+        builder.<String>withRequestField("endpoint_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuraDataframeJobRequest::getEndpointId,
+                ListAuraDataframeJobRequest::setEndpointId));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuraDataframeJobRequest::getId, ListAuraDataframeJobRequest::setId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAuraDataframeJobRequest::getLimit, ListAuraDataframeJobRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAuraDataframeJobRequest::getOffset, ListAuraDataframeJobRequest::setOffset));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuraDataframeJobRequest::getStatus, ListAuraDataframeJobRequest::setStatus));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAuraDataframeJobRequest, ShowAuraDataframeJobResponse> showAuraDataframeJob =
+        genForShowAuraDataframeJob();
+
+    private static HttpRequestDef<ShowAuraDataframeJobRequest, ShowAuraDataframeJobResponse> genForShowAuraDataframeJob() {
+        // basic
+        HttpRequestDef.Builder<ShowAuraDataframeJobRequest, ShowAuraDataframeJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAuraDataframeJobRequest.class, ShowAuraDataframeJobResponse.class)
+            .withName("ShowAuraDataframeJob")
+            .withUri("/v2/workspaces/{workspace_id}/aura-dataframe-jobs/{job_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAuraDataframeJobRequest::getWorkspaceId,
+                ShowAuraDataframeJobRequest::setWorkspaceId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAuraDataframeJobRequest::getJobId, ShowAuraDataframeJobRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<CancelAuraSqlStatementRequest, CancelAuraSqlStatementResponse> cancelAuraSqlStatement =
         genForCancelAuraSqlStatement();
@@ -605,6 +811,722 @@ public class AIDataLakeMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListFlinkJobAutoscalingHistoriesRequest, ListFlinkJobAutoscalingHistoriesResponse> listFlinkJobAutoscalingHistories =
+        genForListFlinkJobAutoscalingHistories();
+
+    private static HttpRequestDef<ListFlinkJobAutoscalingHistoriesRequest, ListFlinkJobAutoscalingHistoriesResponse> genForListFlinkJobAutoscalingHistories() {
+        // basic
+        HttpRequestDef.Builder<ListFlinkJobAutoscalingHistoriesRequest, ListFlinkJobAutoscalingHistoriesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListFlinkJobAutoscalingHistoriesRequest.class,
+                    ListFlinkJobAutoscalingHistoriesResponse.class)
+                .withName("ListFlinkJobAutoscalingHistories")
+                .withUri("/v2/workspaces/{workspace_id}/flink-jobs/{job_id}/autoscaling-histories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkJobAutoscalingHistoriesRequest::getWorkspaceId,
+                ListFlinkJobAutoscalingHistoriesRequest::setWorkspaceId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkJobAutoscalingHistoriesRequest::getJobId,
+                ListFlinkJobAutoscalingHistoriesRequest::setJobId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlinkJobAutoscalingHistoriesRequest::getOffset,
+                ListFlinkJobAutoscalingHistoriesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlinkJobAutoscalingHistoriesRequest::getLimit,
+                ListFlinkJobAutoscalingHistoriesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFlinkJobAutoscalingPolicyRequest, ShowFlinkJobAutoscalingPolicyResponse> showFlinkJobAutoscalingPolicy =
+        genForShowFlinkJobAutoscalingPolicy();
+
+    private static HttpRequestDef<ShowFlinkJobAutoscalingPolicyRequest, ShowFlinkJobAutoscalingPolicyResponse> genForShowFlinkJobAutoscalingPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowFlinkJobAutoscalingPolicyRequest, ShowFlinkJobAutoscalingPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowFlinkJobAutoscalingPolicyRequest.class,
+                    ShowFlinkJobAutoscalingPolicyResponse.class)
+                .withName("ShowFlinkJobAutoscalingPolicy")
+                .withUri("/v2/workspaces/{workspace_id}/flink-jobs/{job_id}/autoscaling-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlinkJobAutoscalingPolicyRequest::getWorkspaceId,
+                ShowFlinkJobAutoscalingPolicyRequest::setWorkspaceId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlinkJobAutoscalingPolicyRequest::getJobId,
+                ShowFlinkJobAutoscalingPolicyRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateFlinkJobAutoscalingPolicyRequest, UpdateFlinkJobAutoscalingPolicyResponse> updateFlinkJobAutoscalingPolicy =
+        genForUpdateFlinkJobAutoscalingPolicy();
+
+    private static HttpRequestDef<UpdateFlinkJobAutoscalingPolicyRequest, UpdateFlinkJobAutoscalingPolicyResponse> genForUpdateFlinkJobAutoscalingPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateFlinkJobAutoscalingPolicyRequest, UpdateFlinkJobAutoscalingPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateFlinkJobAutoscalingPolicyRequest.class,
+                    UpdateFlinkJobAutoscalingPolicyResponse.class)
+                .withName("UpdateFlinkJobAutoscalingPolicy")
+                .withUri("/v2/workspaces/{workspace_id}/flink-jobs/{job_id}/autoscaling-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFlinkJobAutoscalingPolicyRequest::getWorkspaceId,
+                UpdateFlinkJobAutoscalingPolicyRequest::setWorkspaceId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFlinkJobAutoscalingPolicyRequest::getJobId,
+                UpdateFlinkJobAutoscalingPolicyRequest::setJobId));
+        builder.<UpdateFlinkJobAutoscalingRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateFlinkJobAutoscalingRequestBody.class),
+            f -> f.withMarshaller(UpdateFlinkJobAutoscalingPolicyRequest::getBody,
+                UpdateFlinkJobAutoscalingPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CancelFlinkJobRequest, CancelFlinkJobResponse> cancelFlinkJob =
+        genForCancelFlinkJob();
+
+    private static HttpRequestDef<CancelFlinkJobRequest, CancelFlinkJobResponse> genForCancelFlinkJob() {
+        // basic
+        HttpRequestDef.Builder<CancelFlinkJobRequest, CancelFlinkJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CancelFlinkJobRequest.class, CancelFlinkJobResponse.class)
+                .withName("CancelFlinkJob")
+                .withUri("/v2/workspaces/{workspace_id}/flink-jobs/{job_id}/cancel")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelFlinkJobRequest::getWorkspaceId, CancelFlinkJobRequest::setWorkspaceId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelFlinkJobRequest::getJobId, CancelFlinkJobRequest::setJobId));
+        builder.<CancelFlinkJobRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CancelFlinkJobRequestBody.class),
+            f -> f.withMarshaller(CancelFlinkJobRequest::getBody, CancelFlinkJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFlinkJobEventsRequest, ListFlinkJobEventsResponse> listFlinkJobEvents =
+        genForListFlinkJobEvents();
+
+    private static HttpRequestDef<ListFlinkJobEventsRequest, ListFlinkJobEventsResponse> genForListFlinkJobEvents() {
+        // basic
+        HttpRequestDef.Builder<ListFlinkJobEventsRequest, ListFlinkJobEventsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFlinkJobEventsRequest.class, ListFlinkJobEventsResponse.class)
+                .withName("ListFlinkJobEvents")
+                .withUri("/v2/workspaces/{workspace_id}/flink-jobs/{job_id}/events")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkJobEventsRequest::getWorkspaceId,
+                ListFlinkJobEventsRequest::setWorkspaceId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkJobEventsRequest::getJobId, ListFlinkJobEventsRequest::setJobId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlinkJobEventsRequest::getOffset, ListFlinkJobEventsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlinkJobEventsRequest::getLimit, ListFlinkJobEventsRequest::setLimit));
+        builder.<Long>withRequestField("create_time_after",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFlinkJobEventsRequest::getCreateTimeAfter,
+                ListFlinkJobEventsRequest::setCreateTimeAfter));
+        builder.<Long>withRequestField("create_time_before",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFlinkJobEventsRequest::getCreateTimeBefore,
+                ListFlinkJobEventsRequest::setCreateTimeBefore));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFlinkJobsRequest, ListFlinkJobsResponse> listFlinkJobs =
+        genForListFlinkJobs();
+
+    private static HttpRequestDef<ListFlinkJobsRequest, ListFlinkJobsResponse> genForListFlinkJobs() {
+        // basic
+        HttpRequestDef.Builder<ListFlinkJobsRequest, ListFlinkJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFlinkJobsRequest.class, ListFlinkJobsResponse.class)
+                .withName("ListFlinkJobs")
+                .withUri("/v2/workspaces/{workspace_id}/flink-jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getWorkspaceId, ListFlinkJobsRequest::setWorkspaceId));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getMarker, ListFlinkJobsRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getLimit, ListFlinkJobsRequest::setLimit));
+        builder.<Boolean>withRequestField("page_reverse",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getPageReverse, ListFlinkJobsRequest::setPageReverse));
+        builder.<Long>withRequestField("create_time_after",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getCreateTimeAfter, ListFlinkJobsRequest::setCreateTimeAfter));
+        builder.<Long>withRequestField("create_time_before",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getCreateTimeBefore,
+                ListFlinkJobsRequest::setCreateTimeBefore));
+        builder.<String>withRequestField("endpoint_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getEndpointId, ListFlinkJobsRequest::setEndpointId));
+        builder.<String>withRequestField("endpoint_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getEndpointName, ListFlinkJobsRequest::setEndpointName));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getName, ListFlinkJobsRequest::setName));
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getJobId, ListFlinkJobsRequest::setJobId));
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getDeploymentId, ListFlinkJobsRequest::setDeploymentId));
+        builder.<List<FlinkJobState>>withRequestField("state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getState, ListFlinkJobsRequest::setState));
+        builder.<ListFlinkJobsRequest.JobTypeEnum>withRequestField("job_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFlinkJobsRequest.JobTypeEnum.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getJobType, ListFlinkJobsRequest::setJobType));
+        builder.<ListFlinkJobsRequest.ExecutionModeEnum>withRequestField("execution_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFlinkJobsRequest.ExecutionModeEnum.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getExecutionMode, ListFlinkJobsRequest::setExecutionMode));
+        builder.<String>withRequestField("create_user_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getCreateUserId, ListFlinkJobsRequest::setCreateUserId));
+        builder.<List<String>>withRequestField("labels",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListFlinkJobsRequest::getLabels, ListFlinkJobsRequest::setLabels));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RunFlinkJobRequest, RunFlinkJobResponse> runFlinkJob = genForRunFlinkJob();
+
+    private static HttpRequestDef<RunFlinkJobRequest, RunFlinkJobResponse> genForRunFlinkJob() {
+        // basic
+        HttpRequestDef.Builder<RunFlinkJobRequest, RunFlinkJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RunFlinkJobRequest.class, RunFlinkJobResponse.class)
+                .withName("RunFlinkJob")
+                .withUri("/v2/workspaces/{workspace_id}/flink-jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunFlinkJobRequest::getWorkspaceId, RunFlinkJobRequest::setWorkspaceId));
+        builder.<String>withRequestField("X-Client-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunFlinkJobRequest::getXClientToken, RunFlinkJobRequest::setXClientToken));
+        builder.<RunFlinkJobRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RunFlinkJobRequestBody.class),
+            f -> f.withMarshaller(RunFlinkJobRequest::getBody, RunFlinkJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFlinkJobRequest, ShowFlinkJobResponse> showFlinkJob = genForShowFlinkJob();
+
+    private static HttpRequestDef<ShowFlinkJobRequest, ShowFlinkJobResponse> genForShowFlinkJob() {
+        // basic
+        HttpRequestDef.Builder<ShowFlinkJobRequest, ShowFlinkJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFlinkJobRequest.class, ShowFlinkJobResponse.class)
+                .withName("ShowFlinkJob")
+                .withUri("/v2/workspaces/{workspace_id}/flink-jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlinkJobRequest::getWorkspaceId, ShowFlinkJobRequest::setWorkspaceId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlinkJobRequest::getJobId, ShowFlinkJobRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFlinkJobStateRequest, ShowFlinkJobStateResponse> showFlinkJobState =
+        genForShowFlinkJobState();
+
+    private static HttpRequestDef<ShowFlinkJobStateRequest, ShowFlinkJobStateResponse> genForShowFlinkJobState() {
+        // basic
+        HttpRequestDef.Builder<ShowFlinkJobStateRequest, ShowFlinkJobStateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFlinkJobStateRequest.class, ShowFlinkJobStateResponse.class)
+                .withName("ShowFlinkJobState")
+                .withUri("/v2/workspaces/{workspace_id}/flink-jobs/{job_id}/state")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlinkJobStateRequest::getWorkspaceId, ShowFlinkJobStateRequest::setWorkspaceId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlinkJobStateRequest::getJobId, ShowFlinkJobStateRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateFlinkSavepointRequest, CreateFlinkSavepointResponse> createFlinkSavepoint =
+        genForCreateFlinkSavepoint();
+
+    private static HttpRequestDef<CreateFlinkSavepointRequest, CreateFlinkSavepointResponse> genForCreateFlinkSavepoint() {
+        // basic
+        HttpRequestDef.Builder<CreateFlinkSavepointRequest, CreateFlinkSavepointResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateFlinkSavepointRequest.class, CreateFlinkSavepointResponse.class)
+            .withName("CreateFlinkSavepoint")
+            .withUri("/v2/workspaces/{workspace_id}/flink-jobs/{job_id}/flink-savepoints")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFlinkSavepointRequest::getWorkspaceId,
+                CreateFlinkSavepointRequest::setWorkspaceId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFlinkSavepointRequest::getJobId, CreateFlinkSavepointRequest::setJobId));
+        builder.<CreateFlinkSavepointRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateFlinkSavepointRequestBody.class),
+            f -> f.withMarshaller(CreateFlinkSavepointRequest::getBody, CreateFlinkSavepointRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteFlinkSavepointRequest, DeleteFlinkSavepointResponse> deleteFlinkSavepoint =
+        genForDeleteFlinkSavepoint();
+
+    private static HttpRequestDef<DeleteFlinkSavepointRequest, DeleteFlinkSavepointResponse> genForDeleteFlinkSavepoint() {
+        // basic
+        HttpRequestDef.Builder<DeleteFlinkSavepointRequest, DeleteFlinkSavepointResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteFlinkSavepointRequest.class, DeleteFlinkSavepointResponse.class)
+            .withName("DeleteFlinkSavepoint")
+            .withUri("/v2/workspaces/{workspace_id}/flink-jobs/{job_id}/flink-savepoints/{savepoint_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFlinkSavepointRequest::getWorkspaceId,
+                DeleteFlinkSavepointRequest::setWorkspaceId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFlinkSavepointRequest::getJobId, DeleteFlinkSavepointRequest::setJobId));
+        builder.<String>withRequestField("savepoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFlinkSavepointRequest::getSavepointId,
+                DeleteFlinkSavepointRequest::setSavepointId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFlinkSavepointRequest, ListFlinkSavepointResponse> listFlinkSavepoint =
+        genForListFlinkSavepoint();
+
+    private static HttpRequestDef<ListFlinkSavepointRequest, ListFlinkSavepointResponse> genForListFlinkSavepoint() {
+        // basic
+        HttpRequestDef.Builder<ListFlinkSavepointRequest, ListFlinkSavepointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFlinkSavepointRequest.class, ListFlinkSavepointResponse.class)
+                .withName("ListFlinkSavepoint")
+                .withUri("/v2/workspaces/{workspace_id}/flink-jobs/{job_id}/flink-savepoints")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkSavepointRequest::getWorkspaceId,
+                ListFlinkSavepointRequest::setWorkspaceId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlinkSavepointRequest::getJobId, ListFlinkSavepointRequest::setJobId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlinkSavepointRequest::getOffset, ListFlinkSavepointRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlinkSavepointRequest::getLimit, ListFlinkSavepointRequest::setLimit));
+        builder.<Long>withRequestField("create_time_after",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFlinkSavepointRequest::getCreateTimeAfter,
+                ListFlinkSavepointRequest::setCreateTimeAfter));
+        builder.<Long>withRequestField("create_time_before",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFlinkSavepointRequest::getCreateTimeBefore,
+                ListFlinkSavepointRequest::setCreateTimeBefore));
+        builder.<ListFlinkSavepointRequest.StateEnum>withRequestField("state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFlinkSavepointRequest.StateEnum.class),
+            f -> f.withMarshaller(ListFlinkSavepointRequest::getState, ListFlinkSavepointRequest::setState));
+        builder.<ListFlinkSavepointRequest.TriggerTypeEnum>withRequestField("trigger_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFlinkSavepointRequest.TriggerTypeEnum.class),
+            f -> f.withMarshaller(ListFlinkSavepointRequest::getTriggerType,
+                ListFlinkSavepointRequest::setTriggerType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFlinkSavepointRequest, ShowFlinkSavepointResponse> showFlinkSavepoint =
+        genForShowFlinkSavepoint();
+
+    private static HttpRequestDef<ShowFlinkSavepointRequest, ShowFlinkSavepointResponse> genForShowFlinkSavepoint() {
+        // basic
+        HttpRequestDef.Builder<ShowFlinkSavepointRequest, ShowFlinkSavepointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFlinkSavepointRequest.class, ShowFlinkSavepointResponse.class)
+                .withName("ShowFlinkSavepoint")
+                .withUri("/v2/workspaces/{workspace_id}/flink-jobs/{job_id}/flink-savepoints/{savepoint_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlinkSavepointRequest::getWorkspaceId,
+                ShowFlinkSavepointRequest::setWorkspaceId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlinkSavepointRequest::getJobId, ShowFlinkSavepointRequest::setJobId));
+        builder.<String>withRequestField("savepoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlinkSavepointRequest::getSavepointId,
+                ShowFlinkSavepointRequest::setSavepointId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateFederationRequest, CreateFederationResponse> createFederation =
+        genForCreateFederation();
+
+    private static HttpRequestDef<CreateFederationRequest, CreateFederationResponse> genForCreateFederation() {
+        // basic
+        HttpRequestDef.Builder<CreateFederationRequest, CreateFederationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateFederationRequest.class, CreateFederationResponse.class)
+                .withName("CreateFederation")
+                .withUri("/v2/workspaces/{workspace_id}/ray-federations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFederationRequest::getWorkspaceId, CreateFederationRequest::setWorkspaceId));
+        builder.<CreateRayFederationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateRayFederationRequestBody.class),
+            f -> f.withMarshaller(CreateFederationRequest::getBody, CreateFederationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteFederationRequest, DeleteFederationResponse> deleteFederation =
+        genForDeleteFederation();
+
+    private static HttpRequestDef<DeleteFederationRequest, DeleteFederationResponse> genForDeleteFederation() {
+        // basic
+        HttpRequestDef.Builder<DeleteFederationRequest, DeleteFederationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteFederationRequest.class, DeleteFederationResponse.class)
+                .withName("DeleteFederation")
+                .withUri("/v2/workspaces/{workspace_id}/ray-federations/{ray_federation_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFederationRequest::getWorkspaceId, DeleteFederationRequest::setWorkspaceId));
+        builder.<String>withRequestField("ray_federation_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFederationRequest::getRayFederationId,
+                DeleteFederationRequest::setRayFederationId));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteFederationResponse::getXRequestId, DeleteFederationResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFederationsRequest, ListFederationsResponse> listFederations =
+        genForListFederations();
+
+    private static HttpRequestDef<ListFederationsRequest, ListFederationsResponse> genForListFederations() {
+        // basic
+        HttpRequestDef.Builder<ListFederationsRequest, ListFederationsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFederationsRequest.class, ListFederationsResponse.class)
+                .withName("ListFederations")
+                .withUri("/v2/workspaces/{workspace_id}/ray-federations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFederationsRequest::getWorkspaceId, ListFederationsRequest::setWorkspaceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFederationsRequest::getOffset, ListFederationsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFederationsRequest::getLimit, ListFederationsRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFederationsRequest::getName, ListFederationsRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFederationRequest, ShowFederationResponse> showFederation =
+        genForShowFederation();
+
+    private static HttpRequestDef<ShowFederationRequest, ShowFederationResponse> genForShowFederation() {
+        // basic
+        HttpRequestDef.Builder<ShowFederationRequest, ShowFederationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFederationRequest.class, ShowFederationResponse.class)
+                .withName("ShowFederation")
+                .withUri("/v2/workspaces/{workspace_id}/ray-federations/{ray_federation_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFederationRequest::getWorkspaceId, ShowFederationRequest::setWorkspaceId));
+        builder.<String>withRequestField("ray_federation_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFederationRequest::getRayFederationId,
+                ShowFederationRequest::setRayFederationId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateFederationRequest, UpdateFederationResponse> updateFederation =
+        genForUpdateFederation();
+
+    private static HttpRequestDef<UpdateFederationRequest, UpdateFederationResponse> genForUpdateFederation() {
+        // basic
+        HttpRequestDef.Builder<UpdateFederationRequest, UpdateFederationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateFederationRequest.class, UpdateFederationResponse.class)
+                .withName("UpdateFederation")
+                .withUri("/v2/workspaces/{workspace_id}/ray-federations/{ray_federation_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFederationRequest::getWorkspaceId, UpdateFederationRequest::setWorkspaceId));
+        builder.<String>withRequestField("ray_federation_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFederationRequest::getRayFederationId,
+                UpdateFederationRequest::setRayFederationId));
+        builder.<UpdateRayFederationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateRayFederationRequestBody.class),
+            f -> f.withMarshaller(UpdateFederationRequest::getBody, UpdateFederationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CancelRayJobRequest, CancelRayJobResponse> cancelRayJob = genForCancelRayJob();
 
     private static HttpRequestDef<CancelRayJobRequest, CancelRayJobResponse> genForCancelRayJob() {
@@ -755,6 +1677,72 @@ public class AIDataLakeMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CloseRaySessionRequest, CloseRaySessionResponse> closeRaySession =
+        genForCloseRaySession();
+
+    private static HttpRequestDef<CloseRaySessionRequest, CloseRaySessionResponse> genForCloseRaySession() {
+        // basic
+        HttpRequestDef.Builder<CloseRaySessionRequest, CloseRaySessionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, CloseRaySessionRequest.class, CloseRaySessionResponse.class)
+                .withName("CloseRaySession")
+                .withUri("/v2/workspaces/{workspace_id}/ray-sessions/{session_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CloseRaySessionRequest::getWorkspaceId, CloseRaySessionRequest::setWorkspaceId));
+        builder.<String>withRequestField("session_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CloseRaySessionRequest::getSessionId, CloseRaySessionRequest::setSessionId));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CloseRaySessionResponse::getXRequestId, CloseRaySessionResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRaySessionRequest, CreateRaySessionResponse> createRaySession =
+        genForCreateRaySession();
+
+    private static HttpRequestDef<CreateRaySessionRequest, CreateRaySessionResponse> genForCreateRaySession() {
+        // basic
+        HttpRequestDef.Builder<CreateRaySessionRequest, CreateRaySessionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRaySessionRequest.class, CreateRaySessionResponse.class)
+                .withName("CreateRaySession")
+                .withUri("/v2/workspaces/{workspace_id}/ray-sessions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRaySessionRequest::getWorkspaceId, CreateRaySessionRequest::setWorkspaceId));
+        builder.<CreateRaySessionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateRaySessionRequestBody.class),
+            f -> f.withMarshaller(CreateRaySessionRequest::getBody, CreateRaySessionRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateRaySessionResponse::getXRequestId, CreateRaySessionResponse::setXRequestId));
         return builder.build();
     }
 

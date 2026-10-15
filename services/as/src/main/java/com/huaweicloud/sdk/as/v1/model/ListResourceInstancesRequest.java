@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class ListResourceInstancesRequest {
 
     /**
-     * 资源类型，枚举类：SCALING_GROUP_TAG。
+     * 资源类型，枚举类：SCALING_GROUP_TAG、SCALING_CONFIGURATION_TAG。
      */
     public static final class ResourceTypeEnum {
 
@@ -26,11 +26,18 @@ public class ListResourceInstancesRequest {
          */
         public static final ResourceTypeEnum SCALING_GROUP_TAG = new ResourceTypeEnum("scaling_group_tag");
 
+        /**
+         * Enum SCALING_CONFIGURATION_TAG for value: "scaling_configuration_tag"
+         */
+        public static final ResourceTypeEnum SCALING_CONFIGURATION_TAG =
+            new ResourceTypeEnum("scaling_configuration_tag");
+
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ResourceTypeEnum> createStaticFields() {
             Map<String, ResourceTypeEnum> map = new HashMap<>();
             map.put("scaling_group_tag", SCALING_GROUP_TAG);
+            map.put("scaling_configuration_tag", SCALING_CONFIGURATION_TAG);
             return Collections.unmodifiableMap(map);
         }
 
@@ -96,7 +103,7 @@ public class ListResourceInstancesRequest {
     }
 
     /**
-     * 资源类型，枚举类：SCALING_GROUP_TAG。
+     * 资源类型，枚举类：SCALING_GROUP_TAG、SCALING_CONFIGURATION_TAG。
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {

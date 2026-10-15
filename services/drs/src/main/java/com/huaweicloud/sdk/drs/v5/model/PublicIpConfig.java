@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 租户公网IP信息
+ * 租户公网IP信息。
  */
 public class PublicIpConfig {
 
@@ -26,7 +26,7 @@ public class PublicIpConfig {
     private String publicIp;
 
     /**
-     * 指定公网IP绑定任务的类型： - 主备任务：主是master，备是slave - 其他固定为master
+     * 指定公网IP绑定任务的类型： - 主备任务：主是master，备是slave。 - 其他固定为master。
      */
     public static final class TypeEnum {
 
@@ -106,7 +106,7 @@ public class PublicIpConfig {
     }
 
     /**
-     * 指定公网IP的ID
+     * 指定公网IP的ID。
      * @return id
      */
     public String getId() {
@@ -123,7 +123,7 @@ public class PublicIpConfig {
     }
 
     /**
-     * 指定公网IP
+     * 指定公网IP。
      * @return publicIp
      */
     public String getPublicIp() {
@@ -140,7 +140,7 @@ public class PublicIpConfig {
     }
 
     /**
-     * 指定公网IP绑定任务的类型： - 主备任务：主是master，备是slave - 其他固定为master
+     * 指定公网IP绑定任务的类型： - 主备任务：主是master，备是slave。 - 其他固定为master。
      * @return type
      */
     public TypeEnum getType() {
