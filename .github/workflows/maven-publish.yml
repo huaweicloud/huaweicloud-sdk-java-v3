@@ -10,25 +10,25 @@ jobs:
   publish:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v6
-      - name: Set up Maven Central Repository
-        uses: actions/setup-java@v5
+      - name: Setup Maven Action
+        uses: s4u/setup-maven-action@v1.21.0
         with:
           java-version: '8.0.352'
-          distribution: 'temurin'
-          cache: 'maven'
-          server-id: 'central'
-          server-username: TOKEN_USERNAME
-          server-password: TOKEN_PASSWORD
-          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
-          gpg-passphrase: GPG_PASSPHRASE
-      - name: Publish packages
-        run: |
-          token=$(printf "${TOKEN_USERNAME}:${TOKEN_PASSWORD}" | base64)
-          curl -o /dev/null --fail -X POST "https://central.sonatype.com/api/v1/publisher/deployments/files" -H "Authorization: Bearer ${token}" -H "Content-Type: application/json" --data-raw "{\"sortField\": \"createdTimestamp\"}"
-          mvn deploy -B -P release -DretryFailedDeploymentCount=10
-        shell: bash
+          java-distribution: 'temurin'
+          maven-version: 3.9.16
+          settings-servers: |
+            [
+              {
+                "id": "central",
+                "username": "${{ secrets.TOKEN_USERNAME }}",
+                "password": "${{ secrets.TOKEN_PASSWORD }}"
+              }
+            ]
+      - name: Import GPG Key
+        run: printf '%s' "$GPG_PRIVATE_KEY" | gpg --batch --import
         env:
-          TOKEN_USERNAME: ${{ secrets.TOKEN_USERNAME }}
-          TOKEN_PASSWORD: ${{ secrets.TOKEN_PASSWORD }}
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+      - name: Publish to Maven Central
+        run: mvn -B clean deploy -P release -Dgpg.passphrase="$GPG_PASSPHRASE"
+        env:
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
