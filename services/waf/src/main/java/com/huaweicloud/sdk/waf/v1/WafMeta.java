@@ -7,6 +7,17 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.waf.v1.model.AccessProgress;
 import com.huaweicloud.sdk.waf.v1.model.AccessStatusBody;
+import com.huaweicloud.sdk.waf.v1.model.AiAppCreateRequest;
+import com.huaweicloud.sdk.waf.v1.model.AiAppPolicyUpdateRequest;
+import com.huaweicloud.sdk.waf.v1.model.AiAppProtectStatusRequest;
+import com.huaweicloud.sdk.waf.v1.model.AiAppSettingRequest;
+import com.huaweicloud.sdk.waf.v1.model.AiAppUpdateRequest;
+import com.huaweicloud.sdk.waf.v1.model.AiGuardTimeLineItem;
+import com.huaweicloud.sdk.waf.v1.model.AiguardCustomAnswersBatchDeleteBody;
+import com.huaweicloud.sdk.waf.v1.model.AiguardCustomAnswersBody;
+import com.huaweicloud.sdk.waf.v1.model.AiguardCustomAnswersUpdateBody;
+import com.huaweicloud.sdk.waf.v1.model.AiguardCustomLlmBody;
+import com.huaweicloud.sdk.waf.v1.model.AiguardCustomLlmUpdateBody;
 import com.huaweicloud.sdk.waf.v1.model.ApplyCertificateToHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.ApplyCertificateToHostRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.ApplyCertificateToHostResponse;
@@ -39,23 +50,45 @@ import com.huaweicloud.sdk.waf.v1.model.BatchCreatePrivacyRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.BatchCreatePrivacyRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchCreateWhiteblackipRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchCreateWhiteblackipRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAiAppsRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAiAppsResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAiGuardPolicyRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAiGuardPolicyRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAiGuardPolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAiGuardRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAiGuardRuleRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAiGuardRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAlertNoticeConfigBody;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAlertNoticeConfigRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAlertNoticeConfigResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCompositeHostsRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCompositeHostsRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCompositeHostsResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomAnswersRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomAnswersResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomLlmRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomLlmResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeletePoliciesRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeletePoliciesRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeletePoliciesResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteRulesResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchUpdateAiGuardRuleStatusRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchUpdateAiGuardRuleStatusRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.BatchUpdateAiGuardRuleStatusResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateAntiTamperRulesRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateAntileakageRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateAntileakageRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateAntileakageRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateAntitamperRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateAntitamperRulesResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchUpdateBotMRuleActionRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchUpdateBotMRuleActionRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.BatchUpdateBotMRuleActionResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchUpdateBotMRuleStatusRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchUpdateBotMRuleStatusRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.BatchUpdateBotMRuleStatusResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateCcRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateCcRulesRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateCcRulesResponse;
@@ -77,6 +110,9 @@ import com.huaweicloud.sdk.waf.v1.model.BatchUpdatePrivacyRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateWhiteBlackIpRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateWhiteblackipRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateWhiteblackipRulesResponse;
+import com.huaweicloud.sdk.waf.v1.model.BindAiAppsRequest;
+import com.huaweicloud.sdk.waf.v1.model.BindAiAppsRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.BindAiAppsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafRequest;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafResponse;
@@ -107,6 +143,17 @@ import com.huaweicloud.sdk.waf.v1.model.CopyPolicyByIdResponse;
 import com.huaweicloud.sdk.waf.v1.model.CountItem;
 import com.huaweicloud.sdk.waf.v1.model.CreateAgencyRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateAgencyResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateAiAppRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateAiAppResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateAiGuardPolicyRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateAiGuardPolicyRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.CreateAiGuardPolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateAiGuardRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateAiGuardRuleRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.CreateAiGuardRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateAiguardTemplateRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateAiguardTemplateRuleRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.CreateAiguardTemplateRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateAlertNoticeConfigBody;
 import com.huaweicloud.sdk.waf.v1.model.CreateAlertNoticeConfigRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateAlertNoticeConfigResponse;
@@ -119,6 +166,8 @@ import com.huaweicloud.sdk.waf.v1.model.CreateAnticrawlerRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateAntileakageRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateAntileakageRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.CreateAntileakageRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateBotMTrafficDetectionConditionRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateBotMTrafficDetectionConditionResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateCcRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateCcRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.CreateCcRuleResponse;
@@ -128,6 +177,10 @@ import com.huaweicloud.sdk.waf.v1.model.CreateCertificateResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateCloudWafPostPaidResourceRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateCloudWafPostPaidResourceRequestbody;
 import com.huaweicloud.sdk.waf.v1.model.CreateCloudWafPostPaidResourceResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateCustomAnswersRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateCustomAnswersResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateCustomLlmRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateCustomLlmResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateCustomRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateCustomRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.CreateCustomRuleResponse;
@@ -180,8 +233,15 @@ import com.huaweicloud.sdk.waf.v1.model.CreateValueListResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateWhiteBlackIpRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.CreateWhiteblackipRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateWhiteblackipRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.CustomLlmBatchDeleteBody;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAgencyRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAgencyResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAiAppRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAiAppResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAiGuardPolicyRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAiGuardPolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAiGuardRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAiGuardRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAlertNoticeConfigRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAlertNoticeConfigResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAnticrawlerRuleRequest;
@@ -190,12 +250,18 @@ import com.huaweicloud.sdk.waf.v1.model.DeleteAntileakageRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAntileakageRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAntitamperRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAntitamperRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteBotMTrafficDetectionConditionRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteBotMTrafficDetectionConditionResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCcRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCcRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCertificateRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCertificateResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCloudWafPostPaidResourceRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCloudWafPostPaidResourceResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteCustomAnswersRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteCustomAnswersResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteCustomLlmRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteCustomLlmResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCustomRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCustomRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteGeoipRuleRequest;
@@ -226,6 +292,16 @@ import com.huaweicloud.sdk.waf.v1.model.DeleteValueListRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteValueListResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteWhiteBlackIpRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteWhiteBlackIpRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListAiAppsLogsRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListAiAppsLogsResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListAiAppsRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListAiAppsResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListAiGuardOverviewSummaryRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListAiGuardOverviewSummaryResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListAiGuardPolicyRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListAiGuardPolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListAiGuardRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListAiGuardRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListAntiTamperPolicyRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListAntiTamperPolicyRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListAnticrawlerRulesRequest;
@@ -240,6 +316,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListAttackActionTypesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListAttackActionTypesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListBandwidthTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListBandwidthTimelineResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMRulesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCcPolicyRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCcPolicyRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCcRulesRequest;
@@ -248,6 +326,10 @@ import com.huaweicloud.sdk.waf.v1.model.ListCertificatesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCertificatesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCompositeHostsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCompositeHostsResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListCustomAnswersRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListCustomAnswersResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListCustomLlmRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListCustomLlmResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCustomPolicyRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCustomPolicyRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCustomRulesRequest;
@@ -288,6 +370,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListOverviewsClassificationRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListOverviewsClassificationResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListOverviewsHostDomainsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListOverviewsHostDomainsResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListPiiCategoriesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListPiiCategoriesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListPolicyProtectRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListPolicyProtectRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListPolicyRequest;
@@ -318,6 +402,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListSourceIpTop5Request;
 import com.huaweicloud.sdk.waf.v1.model.ListSourceIpTop5Response;
 import com.huaweicloud.sdk.waf.v1.model.ListStatisticsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListStatisticsResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListSystemLexiconsRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListSystemLexiconsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListThreatsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListThreatsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListTopAbnormalRequest;
@@ -349,12 +435,31 @@ import com.huaweicloud.sdk.waf.v1.model.RenameInstanceRequest;
 import com.huaweicloud.sdk.waf.v1.model.RenameInstanceRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.RenameInstanceResponse;
 import com.huaweicloud.sdk.waf.v1.model.RouteBody;
+import com.huaweicloud.sdk.waf.v1.model.SaveTrafficDetectionConditionRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.SetAiAppSettingRequest;
+import com.huaweicloud.sdk.waf.v1.model.SetAiAppSettingResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiAppRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiAppResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiAppSettingRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiAppSettingResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardAttackDistributionRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardAttackDistributionResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardLtsConfigRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardLtsConfigResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardPolicyRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardPolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardRequestTimelineRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardRequestTimelineResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowAnticrawlerRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowAnticrawlerRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowAntileakageRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowAntileakageRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowAntitamperRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowAntitamperRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowBotMRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowBotMRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowCcRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowCcRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowCertificateRequest;
@@ -363,6 +468,10 @@ import com.huaweicloud.sdk.waf.v1.model.ShowCompositeHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowCompositeHostResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowConsoleConfigRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowConsoleConfigResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowCustomAnswersRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowCustomAnswersResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowCustomLlmRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowCustomLlmResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowCustomRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowCustomRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowEventRequest;
@@ -389,6 +498,8 @@ import com.huaweicloud.sdk.waf.v1.model.ShowPoolRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPoolResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowPremiumHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPremiumHostResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowPresignedUrlRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowPresignedUrlResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowPrivacyRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPrivacyRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowPunishmentRuleRequest;
@@ -411,6 +522,24 @@ import com.huaweicloud.sdk.waf.v1.model.StatisticsTimelineItem;
 import com.huaweicloud.sdk.waf.v1.model.TmsResourceInstancesRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAccessProgressRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAccessProgressResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiAppPolicyRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiAppPolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiAppProtectStatusRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiAppProtectStatusResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiAppRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiAppResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardLtsConfigRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardLtsConfigRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardLtsConfigResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardPolicyRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardPolicyRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardPolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardRuleRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardRuleStatusRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardRuleStatusRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardRuleStatusResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAlertNoticeConfigRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAlertNoticeConfigRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAlertNoticeConfigResponse;
@@ -425,12 +554,32 @@ import com.huaweicloud.sdk.waf.v1.model.UpdateAnticrawlerRuleTypeResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAntileakageRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAntileakageRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAntileakageRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMCategoryStatusRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMCategoryStatusResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMRuleActionRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMRuleActionRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMRuleActionResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMRuleDefenseStrategyRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMRuleDefenseStrategyRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMRuleDefenseStrategyResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMRuleStatusRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMRuleStatusRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMRuleStatusResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMTenantPolicyRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMTenantPolicyRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMTenantPolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMTrafficDetectionConditionRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMTrafficDetectionConditionResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCcRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCcRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCcRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCertificateRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCertificateRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCertificateResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateCustomAnswersRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateCustomAnswersResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateCustomLlmRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateCustomLlmResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCustomRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCustomRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCustomRuleResponse;
@@ -612,40 +761,6 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(BatchCreateAntileakageRuleRequestBody.class),
             f -> f.withMarshaller(BatchCreateAntileakageRuleRequest::getBody,
                 BatchCreateAntileakageRuleRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<BatchCreateCcRuleRequest, BatchCreateCcRuleResponse> batchCreateCcRule =
-        genForBatchCreateCcRule();
-
-    private static HttpRequestDef<BatchCreateCcRuleRequest, BatchCreateCcRuleResponse> genForBatchCreateCcRule() {
-        // basic
-        HttpRequestDef.Builder<BatchCreateCcRuleRequest, BatchCreateCcRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchCreateCcRuleRequest.class, BatchCreateCcRuleResponse.class)
-                .withName("BatchCreateCcRule")
-                .withUri("/v1/{project_id}/waf/rule/cc")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("policyids",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateCcRuleRequest::getPolicyids, BatchCreateCcRuleRequest::setPolicyids));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateCcRuleRequest::getEnterpriseProjectId,
-                BatchCreateCcRuleRequest::setEnterpriseProjectId));
-        builder.<BatchCreateCcRuleRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchCreateCcRuleRequestBody.class),
-            f -> f.withMarshaller(BatchCreateCcRuleRequest::getBody, BatchCreateCcRuleRequest::setBody));
 
         // response
 
@@ -1059,29 +1174,66 @@ public class WafMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchUpdateCcRulesRequest, BatchUpdateCcRulesResponse> batchUpdateCcRules =
-        genForBatchUpdateCcRules();
+    public static final HttpRequestDef<BatchUpdateBotMRuleActionRequest, BatchUpdateBotMRuleActionResponse> batchUpdateBotMRuleAction =
+        genForBatchUpdateBotMRuleAction();
 
-    private static HttpRequestDef<BatchUpdateCcRulesRequest, BatchUpdateCcRulesResponse> genForBatchUpdateCcRules() {
+    private static HttpRequestDef<BatchUpdateBotMRuleActionRequest, BatchUpdateBotMRuleActionResponse> genForBatchUpdateBotMRuleAction() {
         // basic
-        HttpRequestDef.Builder<BatchUpdateCcRulesRequest, BatchUpdateCcRulesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchUpdateCcRulesRequest.class, BatchUpdateCcRulesResponse.class)
-                .withName("BatchUpdateCcRules")
-                .withUri("/v1/{project_id}/waf/rule/cc/batch-update")
+        HttpRequestDef.Builder<BatchUpdateBotMRuleActionRequest, BatchUpdateBotMRuleActionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchUpdateBotMRuleActionRequest.class,
+                    BatchUpdateBotMRuleActionResponse.class)
+                .withName("BatchUpdateBotMRuleAction")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/bot-manager/rule/batch-update-action")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUpdateCcRulesRequest::getEnterpriseProjectId,
-                BatchUpdateCcRulesRequest::setEnterpriseProjectId));
-        builder.<BatchUpdateCcRulesRequestBody>withRequestField("body",
+            f -> f.withMarshaller(BatchUpdateBotMRuleActionRequest::getPolicyId,
+                BatchUpdateBotMRuleActionRequest::setPolicyId));
+        builder.<BatchUpdateBotMRuleActionRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(BatchUpdateCcRulesRequestBody.class),
-            f -> f.withMarshaller(BatchUpdateCcRulesRequest::getBody, BatchUpdateCcRulesRequest::setBody));
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateBotMRuleActionRequestBody.class),
+            f -> f.withMarshaller(BatchUpdateBotMRuleActionRequest::getBody,
+                BatchUpdateBotMRuleActionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpdateBotMRuleStatusRequest, BatchUpdateBotMRuleStatusResponse> batchUpdateBotMRuleStatus =
+        genForBatchUpdateBotMRuleStatus();
+
+    private static HttpRequestDef<BatchUpdateBotMRuleStatusRequest, BatchUpdateBotMRuleStatusResponse> genForBatchUpdateBotMRuleStatus() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateBotMRuleStatusRequest, BatchUpdateBotMRuleStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchUpdateBotMRuleStatusRequest.class,
+                    BatchUpdateBotMRuleStatusResponse.class)
+                .withName("BatchUpdateBotMRuleStatus")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/bot-manager/rule/batch-update-status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateBotMRuleStatusRequest::getPolicyId,
+                BatchUpdateBotMRuleStatusRequest::setPolicyId));
+        builder.<BatchUpdateBotMRuleStatusRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateBotMRuleStatusRequestBody.class),
+            f -> f.withMarshaller(BatchUpdateBotMRuleStatusRequest::getBody,
+                BatchUpdateBotMRuleStatusRequest::setBody));
 
         // response
 
@@ -1680,41 +1832,6 @@ public class WafMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateAnticrawlerRuleRequest, CreateAnticrawlerRuleResponse> createAnticrawlerRule =
-        genForCreateAnticrawlerRule();
-
-    private static HttpRequestDef<CreateAnticrawlerRuleRequest, CreateAnticrawlerRuleResponse> genForCreateAnticrawlerRule() {
-        // basic
-        HttpRequestDef.Builder<CreateAnticrawlerRuleRequest, CreateAnticrawlerRuleResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreateAnticrawlerRuleRequest.class, CreateAnticrawlerRuleResponse.class)
-            .withName("CreateAnticrawlerRule")
-            .withUri("/v1/{project_id}/waf/policy/{policy_id}/anticrawler")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("policy_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAnticrawlerRuleRequest::getPolicyId,
-                CreateAnticrawlerRuleRequest::setPolicyId));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAnticrawlerRuleRequest::getEnterpriseProjectId,
-                CreateAnticrawlerRuleRequest::setEnterpriseProjectId));
-        builder.<CreateAnticrawlerRuleRequestbody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateAnticrawlerRuleRequestbody.class),
-            f -> f.withMarshaller(CreateAnticrawlerRuleRequest::getBody, CreateAnticrawlerRuleRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateAntileakageRuleRequest, CreateAntileakageRuleResponse> createAntileakageRule =
         genForCreateAntileakageRule();
 
@@ -1750,14 +1867,18 @@ public class WafMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateCcRuleRequest, CreateCcRuleResponse> createCcRule = genForCreateCcRule();
+    public static final HttpRequestDef<CreateBotMTrafficDetectionConditionRequest, CreateBotMTrafficDetectionConditionResponse> createBotMTrafficDetectionCondition =
+        genForCreateBotMTrafficDetectionCondition();
 
-    private static HttpRequestDef<CreateCcRuleRequest, CreateCcRuleResponse> genForCreateCcRule() {
+    private static HttpRequestDef<CreateBotMTrafficDetectionConditionRequest, CreateBotMTrafficDetectionConditionResponse> genForCreateBotMTrafficDetectionCondition() {
         // basic
-        HttpRequestDef.Builder<CreateCcRuleRequest, CreateCcRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateCcRuleRequest.class, CreateCcRuleResponse.class)
-                .withName("CreateCcRule")
-                .withUri("/v1/{project_id}/waf/policy/{policy_id}/cc")
+        HttpRequestDef.Builder<CreateBotMTrafficDetectionConditionRequest, CreateBotMTrafficDetectionConditionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateBotMTrafficDetectionConditionRequest.class,
+                    CreateBotMTrafficDetectionConditionResponse.class)
+                .withName("CreateBotMTrafficDetectionCondition")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/bot-manager/traffic-detection-condition")
                 .withContentType("application/json");
 
         // requests
@@ -1765,18 +1886,14 @@ public class WafMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCcRuleRequest::getPolicyId, CreateCcRuleRequest::setPolicyId));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCcRuleRequest::getEnterpriseProjectId,
-                CreateCcRuleRequest::setEnterpriseProjectId));
-        builder.<CreateCcRuleRequestBody>withRequestField("body",
+            f -> f.withMarshaller(CreateBotMTrafficDetectionConditionRequest::getPolicyId,
+                CreateBotMTrafficDetectionConditionRequest::setPolicyId));
+        builder.<SaveTrafficDetectionConditionRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(CreateCcRuleRequestBody.class),
-            f -> f.withMarshaller(CreateCcRuleRequest::getBody, CreateCcRuleRequest::setBody));
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SaveTrafficDetectionConditionRequestBody.class),
+            f -> f.withMarshaller(CreateBotMTrafficDetectionConditionRequest::getBody,
+                CreateBotMTrafficDetectionConditionRequest::setBody));
 
         // response
 
@@ -2433,41 +2550,6 @@ public class WafMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse> deleteAnticrawlerRule =
-        genForDeleteAnticrawlerRule();
-
-    private static HttpRequestDef<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse> genForDeleteAnticrawlerRule() {
-        // basic
-        HttpRequestDef.Builder<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse> builder = HttpRequestDef
-            .builder(HttpMethod.DELETE, DeleteAnticrawlerRuleRequest.class, DeleteAnticrawlerRuleResponse.class)
-            .withName("DeleteAnticrawlerRule")
-            .withUri("/v1/{project_id}/waf/policy/{policy_id}/anticrawler/{rule_id}")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("policy_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAnticrawlerRuleRequest::getPolicyId,
-                DeleteAnticrawlerRuleRequest::setPolicyId));
-        builder.<String>withRequestField("rule_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAnticrawlerRuleRequest::getRuleId, DeleteAnticrawlerRuleRequest::setRuleId));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAnticrawlerRuleRequest::getEnterpriseProjectId,
-                DeleteAnticrawlerRuleRequest::setEnterpriseProjectId));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<DeleteAntileakageRuleRequest, DeleteAntileakageRuleResponse> deleteAntileakageRule =
         genForDeleteAntileakageRule();
 
@@ -2537,14 +2619,19 @@ public class WafMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteCcRuleRequest, DeleteCcRuleResponse> deleteCcRule = genForDeleteCcRule();
+    public static final HttpRequestDef<DeleteBotMTrafficDetectionConditionRequest, DeleteBotMTrafficDetectionConditionResponse> deleteBotMTrafficDetectionCondition =
+        genForDeleteBotMTrafficDetectionCondition();
 
-    private static HttpRequestDef<DeleteCcRuleRequest, DeleteCcRuleResponse> genForDeleteCcRule() {
+    private static HttpRequestDef<DeleteBotMTrafficDetectionConditionRequest, DeleteBotMTrafficDetectionConditionResponse> genForDeleteBotMTrafficDetectionCondition() {
         // basic
-        HttpRequestDef.Builder<DeleteCcRuleRequest, DeleteCcRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteCcRuleRequest.class, DeleteCcRuleResponse.class)
-                .withName("DeleteCcRule")
-                .withUri("/v1/{project_id}/waf/policy/{policy_id}/cc/{rule_id}")
+        HttpRequestDef.Builder<DeleteBotMTrafficDetectionConditionRequest, DeleteBotMTrafficDetectionConditionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteBotMTrafficDetectionConditionRequest.class,
+                    DeleteBotMTrafficDetectionConditionResponse.class)
+                .withName("DeleteBotMTrafficDetectionCondition")
+                .withUri(
+                    "/v1/{project_id}/waf/policy/{policy_id}/bot-manager/traffic-detection-condition/{condition_id}")
                 .withContentType("application/json");
 
         // requests
@@ -2552,18 +2639,14 @@ public class WafMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCcRuleRequest::getPolicyId, DeleteCcRuleRequest::setPolicyId));
-        builder.<String>withRequestField("rule_id",
+            f -> f.withMarshaller(DeleteBotMTrafficDetectionConditionRequest::getPolicyId,
+                DeleteBotMTrafficDetectionConditionRequest::setPolicyId));
+        builder.<String>withRequestField("condition_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCcRuleRequest::getRuleId, DeleteCcRuleRequest::setRuleId));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCcRuleRequest::getEnterpriseProjectId,
-                DeleteCcRuleRequest::setEnterpriseProjectId));
+            f -> f.withMarshaller(DeleteBotMTrafficDetectionConditionRequest::getConditionId,
+                DeleteBotMTrafficDetectionConditionRequest::setConditionId));
 
         // response
 
@@ -3150,60 +3233,6 @@ public class WafMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse> listAnticrawlerRules =
-        genForListAnticrawlerRules();
-
-    private static HttpRequestDef<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse> genForListAnticrawlerRules() {
-        // basic
-        HttpRequestDef.Builder<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListAnticrawlerRulesRequest.class, ListAnticrawlerRulesResponse.class)
-            .withName("ListAnticrawlerRules")
-            .withUri("/v1/{project_id}/waf/policy/{policy_id}/anticrawler")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("policy_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAnticrawlerRulesRequest::getPolicyId, ListAnticrawlerRulesRequest::setPolicyId));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAnticrawlerRulesRequest::getEnterpriseProjectId,
-                ListAnticrawlerRulesRequest::setEnterpriseProjectId));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAnticrawlerRulesRequest::getOffset, ListAnticrawlerRulesRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAnticrawlerRulesRequest::getLimit, ListAnticrawlerRulesRequest::setLimit));
-        builder.<Integer>withRequestField("page",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAnticrawlerRulesRequest::getPage, ListAnticrawlerRulesRequest::setPage));
-        builder.<Integer>withRequestField("pagesize",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAnticrawlerRulesRequest::getPagesize, ListAnticrawlerRulesRequest::setPagesize));
-        builder.<ListAnticrawlerRulesRequest.TypeEnum>withRequestField("type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListAnticrawlerRulesRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListAnticrawlerRulesRequest::getType, ListAnticrawlerRulesRequest::setType));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListAntileakagePolicyRulesRequest, ListAntileakagePolicyRulesResponse> listAntileakagePolicyRules =
         genForListAntileakagePolicyRules();
 
@@ -3433,53 +3462,15 @@ public class WafMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCcPolicyRulesRequest, ListCcPolicyRulesResponse> listCcPolicyRules =
-        genForListCcPolicyRules();
+    public static final HttpRequestDef<ListBotMRulesRequest, ListBotMRulesResponse> listBotMRules =
+        genForListBotMRules();
 
-    private static HttpRequestDef<ListCcPolicyRulesRequest, ListCcPolicyRulesResponse> genForListCcPolicyRules() {
+    private static HttpRequestDef<ListBotMRulesRequest, ListBotMRulesResponse> genForListBotMRules() {
         // basic
-        HttpRequestDef.Builder<ListCcPolicyRulesRequest, ListCcPolicyRulesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListCcPolicyRulesRequest.class, ListCcPolicyRulesResponse.class)
-                .withName("ListCcPolicyRules")
-                .withUri("/v1/{project_id}/waf/rule/cc")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("policyids",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCcPolicyRulesRequest::getPolicyids, ListCcPolicyRulesRequest::setPolicyids));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCcPolicyRulesRequest::getEnterpriseProjectId,
-                ListCcPolicyRulesRequest::setEnterpriseProjectId));
-        builder.<Integer>withRequestField("page",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCcPolicyRulesRequest::getPage, ListCcPolicyRulesRequest::setPage));
-        builder.<Integer>withRequestField("pagesize",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCcPolicyRulesRequest::getPagesize, ListCcPolicyRulesRequest::setPagesize));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListCcRulesRequest, ListCcRulesResponse> listCcRules = genForListCcRules();
-
-    private static HttpRequestDef<ListCcRulesRequest, ListCcRulesResponse> genForListCcRules() {
-        // basic
-        HttpRequestDef.Builder<ListCcRulesRequest, ListCcRulesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListCcRulesRequest.class, ListCcRulesResponse.class)
-                .withName("ListCcRules")
-                .withUri("/v1/{project_id}/waf/policy/{policy_id}/cc")
+        HttpRequestDef.Builder<ListBotMRulesRequest, ListBotMRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBotMRulesRequest.class, ListBotMRulesResponse.class)
+                .withName("ListBotMRules")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/bot-manager")
                 .withContentType("application/json");
 
         // requests
@@ -3487,53 +3478,7 @@ public class WafMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCcRulesRequest::getPolicyId, ListCcRulesRequest::setPolicyId));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCcRulesRequest::getEnterpriseProjectId,
-                ListCcRulesRequest::setEnterpriseProjectId));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCcRulesRequest::getOffset, ListCcRulesRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCcRulesRequest::getLimit, ListCcRulesRequest::setLimit));
-        builder.<Integer>withRequestField("page",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCcRulesRequest::getPage, ListCcRulesRequest::setPage));
-        builder.<Integer>withRequestField("pagesize",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCcRulesRequest::getPagesize, ListCcRulesRequest::setPagesize));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCcRulesRequest::getName, ListCcRulesRequest::setName));
-        builder.<Integer>withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCcRulesRequest::getStatus, ListCcRulesRequest::setStatus));
-        builder.<String>withRequestField("category",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCcRulesRequest::getCategory, ListCcRulesRequest::setCategory));
-        builder.<ListCcRulesRequest.TagTypeEnum>withRequestField("tag_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListCcRulesRequest.TagTypeEnum.class),
-            f -> f.withMarshaller(ListCcRulesRequest::getTagType, ListCcRulesRequest::setTagType));
+            f -> f.withMarshaller(ListBotMRulesRequest::getPolicyId, ListBotMRulesRequest::setPolicyId));
 
         // response
 
@@ -5917,40 +5862,6 @@ public class WafMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse> showAnticrawlerRule =
-        genForShowAnticrawlerRule();
-
-    private static HttpRequestDef<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse> genForShowAnticrawlerRule() {
-        // basic
-        HttpRequestDef.Builder<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowAnticrawlerRuleRequest.class, ShowAnticrawlerRuleResponse.class)
-                .withName("ShowAnticrawlerRule")
-                .withUri("/v1/{project_id}/waf/policy/{policy_id}/anticrawler/{rule_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("policy_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAnticrawlerRuleRequest::getPolicyId, ShowAnticrawlerRuleRequest::setPolicyId));
-        builder.<String>withRequestField("rule_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAnticrawlerRuleRequest::getRuleId, ShowAnticrawlerRuleRequest::setRuleId));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAnticrawlerRuleRequest::getEnterpriseProjectId,
-                ShowAnticrawlerRuleRequest::setEnterpriseProjectId));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowAntileakageRuleRequest, ShowAntileakageRuleResponse> showAntileakageRule =
         genForShowAntileakageRule();
 
@@ -6019,14 +5930,14 @@ public class WafMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowCcRuleRequest, ShowCcRuleResponse> showCcRule = genForShowCcRule();
+    public static final HttpRequestDef<ShowBotMRuleRequest, ShowBotMRuleResponse> showBotMRule = genForShowBotMRule();
 
-    private static HttpRequestDef<ShowCcRuleRequest, ShowCcRuleResponse> genForShowCcRule() {
+    private static HttpRequestDef<ShowBotMRuleRequest, ShowBotMRuleResponse> genForShowBotMRule() {
         // basic
-        HttpRequestDef.Builder<ShowCcRuleRequest, ShowCcRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowCcRuleRequest.class, ShowCcRuleResponse.class)
-                .withName("ShowCcRule")
-                .withUri("/v1/{project_id}/waf/policy/{policy_id}/cc/{rule_id}")
+        HttpRequestDef.Builder<ShowBotMRuleRequest, ShowBotMRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBotMRuleRequest.class, ShowBotMRuleResponse.class)
+                .withName("ShowBotMRule")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/bot-manager/{rule_id}")
                 .withContentType("application/json");
 
         // requests
@@ -6034,18 +5945,12 @@ public class WafMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCcRuleRequest::getPolicyId, ShowCcRuleRequest::setPolicyId));
+            f -> f.withMarshaller(ShowBotMRuleRequest::getPolicyId, ShowBotMRuleRequest::setPolicyId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCcRuleRequest::getRuleId, ShowCcRuleRequest::setRuleId));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCcRuleRequest::getEnterpriseProjectId,
-                ShowCcRuleRequest::setEnterpriseProjectId));
+            f -> f.withMarshaller(ShowBotMRuleRequest::getRuleId, ShowBotMRuleRequest::setRuleId));
 
         // response
 
@@ -6833,85 +6738,6 @@ public class WafMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse> updateAnticrawlerRule =
-        genForUpdateAnticrawlerRule();
-
-    private static HttpRequestDef<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse> genForUpdateAnticrawlerRule() {
-        // basic
-        HttpRequestDef.Builder<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse> builder = HttpRequestDef
-            .builder(HttpMethod.PUT, UpdateAnticrawlerRuleRequest.class, UpdateAnticrawlerRuleResponse.class)
-            .withName("UpdateAnticrawlerRule")
-            .withUri("/v1/{project_id}/waf/policy/{policy_id}/anticrawler/{rule_id}")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("policy_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAnticrawlerRuleRequest::getPolicyId,
-                UpdateAnticrawlerRuleRequest::setPolicyId));
-        builder.<String>withRequestField("rule_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAnticrawlerRuleRequest::getRuleId, UpdateAnticrawlerRuleRequest::setRuleId));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAnticrawlerRuleRequest::getEnterpriseProjectId,
-                UpdateAnticrawlerRuleRequest::setEnterpriseProjectId));
-        builder.<UpdateAnticrawlerRuleRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateAnticrawlerRuleRequestBody.class),
-            f -> f.withMarshaller(UpdateAnticrawlerRuleRequest::getBody, UpdateAnticrawlerRuleRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateAnticrawlerRuleTypeRequest, UpdateAnticrawlerRuleTypeResponse> updateAnticrawlerRuleType =
-        genForUpdateAnticrawlerRuleType();
-
-    private static HttpRequestDef<UpdateAnticrawlerRuleTypeRequest, UpdateAnticrawlerRuleTypeResponse> genForUpdateAnticrawlerRuleType() {
-        // basic
-        HttpRequestDef.Builder<UpdateAnticrawlerRuleTypeRequest, UpdateAnticrawlerRuleTypeResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.PUT,
-                    UpdateAnticrawlerRuleTypeRequest.class,
-                    UpdateAnticrawlerRuleTypeResponse.class)
-                .withName("UpdateAnticrawlerRuleType")
-                .withUri("/v1/{project_id}/waf/policy/{policy_id}/anticrawler")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("policy_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAnticrawlerRuleTypeRequest::getPolicyId,
-                UpdateAnticrawlerRuleTypeRequest::setPolicyId));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAnticrawlerRuleTypeRequest::getEnterpriseProjectId,
-                UpdateAnticrawlerRuleTypeRequest::setEnterpriseProjectId));
-        builder.<UpdateAnticrawlerRuleTypeRequestbody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateAnticrawlerRuleTypeRequestbody.class),
-            f -> f.withMarshaller(UpdateAnticrawlerRuleTypeRequest::getBody,
-                UpdateAnticrawlerRuleTypeRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<UpdateAntileakageRuleRequest, UpdateAntileakageRuleResponse> updateAntileakageRule =
         genForUpdateAntileakageRule();
 
@@ -6952,14 +6778,16 @@ public class WafMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateCcRuleRequest, UpdateCcRuleResponse> updateCcRule = genForUpdateCcRule();
+    public static final HttpRequestDef<UpdateBotMCategoryStatusRequest, UpdateBotMCategoryStatusResponse> updateBotMCategoryStatus =
+        genForUpdateBotMCategoryStatus();
 
-    private static HttpRequestDef<UpdateCcRuleRequest, UpdateCcRuleResponse> genForUpdateCcRule() {
+    private static HttpRequestDef<UpdateBotMCategoryStatusRequest, UpdateBotMCategoryStatusResponse> genForUpdateBotMCategoryStatus() {
         // basic
-        HttpRequestDef.Builder<UpdateCcRuleRequest, UpdateCcRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateCcRuleRequest.class, UpdateCcRuleResponse.class)
-                .withName("UpdateCcRule")
-                .withUri("/v1/{project_id}/waf/policy/{policy_id}/cc/{rule_id}")
+        HttpRequestDef.Builder<UpdateBotMCategoryStatusRequest, UpdateBotMCategoryStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateBotMCategoryStatusRequest.class, UpdateBotMCategoryStatusResponse.class)
+                .withName("UpdateBotMCategoryStatus")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/bot-manager/category/{category_id}/status")
                 .withContentType("application/json");
 
         // requests
@@ -6967,23 +6795,187 @@ public class WafMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCcRuleRequest::getPolicyId, UpdateCcRuleRequest::setPolicyId));
+            f -> f.withMarshaller(UpdateBotMCategoryStatusRequest::getPolicyId,
+                UpdateBotMCategoryStatusRequest::setPolicyId));
+        builder.<String>withRequestField("category_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBotMCategoryStatusRequest::getCategoryId,
+                UpdateBotMCategoryStatusRequest::setCategoryId));
+        builder.<UpdateBotMRuleStatusRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateBotMRuleStatusRequestBody.class),
+            f -> f.withMarshaller(UpdateBotMCategoryStatusRequest::getBody, UpdateBotMCategoryStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateBotMRuleActionRequest, UpdateBotMRuleActionResponse> updateBotMRuleAction =
+        genForUpdateBotMRuleAction();
+
+    private static HttpRequestDef<UpdateBotMRuleActionRequest, UpdateBotMRuleActionResponse> genForUpdateBotMRuleAction() {
+        // basic
+        HttpRequestDef.Builder<UpdateBotMRuleActionRequest, UpdateBotMRuleActionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateBotMRuleActionRequest.class, UpdateBotMRuleActionResponse.class)
+            .withName("UpdateBotMRuleAction")
+            .withUri("/v1/{project_id}/waf/policy/{policy_id}/bot-manager/{rule_id}/action")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBotMRuleActionRequest::getPolicyId, UpdateBotMRuleActionRequest::setPolicyId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCcRuleRequest::getRuleId, UpdateCcRuleRequest::setRuleId));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCcRuleRequest::getEnterpriseProjectId,
-                UpdateCcRuleRequest::setEnterpriseProjectId));
-        builder.<UpdateCcRuleRequestBody>withRequestField("body",
+            f -> f.withMarshaller(UpdateBotMRuleActionRequest::getRuleId, UpdateBotMRuleActionRequest::setRuleId));
+        builder.<UpdateBotMRuleActionRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(UpdateCcRuleRequestBody.class),
-            f -> f.withMarshaller(UpdateCcRuleRequest::getBody, UpdateCcRuleRequest::setBody));
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateBotMRuleActionRequestBody.class),
+            f -> f.withMarshaller(UpdateBotMRuleActionRequest::getBody, UpdateBotMRuleActionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateBotMRuleDefenseStrategyRequest, UpdateBotMRuleDefenseStrategyResponse> updateBotMRuleDefenseStrategy =
+        genForUpdateBotMRuleDefenseStrategy();
+
+    private static HttpRequestDef<UpdateBotMRuleDefenseStrategyRequest, UpdateBotMRuleDefenseStrategyResponse> genForUpdateBotMRuleDefenseStrategy() {
+        // basic
+        HttpRequestDef.Builder<UpdateBotMRuleDefenseStrategyRequest, UpdateBotMRuleDefenseStrategyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateBotMRuleDefenseStrategyRequest.class,
+                    UpdateBotMRuleDefenseStrategyResponse.class)
+                .withName("UpdateBotMRuleDefenseStrategy")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/bot-manager/rule/defense-strategy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBotMRuleDefenseStrategyRequest::getPolicyId,
+                UpdateBotMRuleDefenseStrategyRequest::setPolicyId));
+        builder.<UpdateBotMRuleDefenseStrategyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateBotMRuleDefenseStrategyRequestBody.class),
+            f -> f.withMarshaller(UpdateBotMRuleDefenseStrategyRequest::getBody,
+                UpdateBotMRuleDefenseStrategyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateBotMRuleStatusRequest, UpdateBotMRuleStatusResponse> updateBotMRuleStatus =
+        genForUpdateBotMRuleStatus();
+
+    private static HttpRequestDef<UpdateBotMRuleStatusRequest, UpdateBotMRuleStatusResponse> genForUpdateBotMRuleStatus() {
+        // basic
+        HttpRequestDef.Builder<UpdateBotMRuleStatusRequest, UpdateBotMRuleStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateBotMRuleStatusRequest.class, UpdateBotMRuleStatusResponse.class)
+            .withName("UpdateBotMRuleStatus")
+            .withUri("/v1/{project_id}/waf/policy/{policy_id}/bot-manager/{rule_id}/status")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBotMRuleStatusRequest::getPolicyId, UpdateBotMRuleStatusRequest::setPolicyId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBotMRuleStatusRequest::getRuleId, UpdateBotMRuleStatusRequest::setRuleId));
+        builder.<UpdateBotMRuleStatusRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateBotMRuleStatusRequestBody.class),
+            f -> f.withMarshaller(UpdateBotMRuleStatusRequest::getBody, UpdateBotMRuleStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateBotMTenantPolicyRequest, UpdateBotMTenantPolicyResponse> updateBotMTenantPolicy =
+        genForUpdateBotMTenantPolicy();
+
+    private static HttpRequestDef<UpdateBotMTenantPolicyRequest, UpdateBotMTenantPolicyResponse> genForUpdateBotMTenantPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateBotMTenantPolicyRequest, UpdateBotMTenantPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateBotMTenantPolicyRequest.class, UpdateBotMTenantPolicyResponse.class)
+            .withName("UpdateBotMTenantPolicy")
+            .withUri("/v1/{project_id}/waf/policy/{policy_id}/bot-manager")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBotMTenantPolicyRequest::getPolicyId,
+                UpdateBotMTenantPolicyRequest::setPolicyId));
+        builder.<UpdateBotMTenantPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateBotMTenantPolicyRequestBody.class),
+            f -> f.withMarshaller(UpdateBotMTenantPolicyRequest::getBody, UpdateBotMTenantPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateBotMTrafficDetectionConditionRequest, UpdateBotMTrafficDetectionConditionResponse> updateBotMTrafficDetectionCondition =
+        genForUpdateBotMTrafficDetectionCondition();
+
+    private static HttpRequestDef<UpdateBotMTrafficDetectionConditionRequest, UpdateBotMTrafficDetectionConditionResponse> genForUpdateBotMTrafficDetectionCondition() {
+        // basic
+        HttpRequestDef.Builder<UpdateBotMTrafficDetectionConditionRequest, UpdateBotMTrafficDetectionConditionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateBotMTrafficDetectionConditionRequest.class,
+                    UpdateBotMTrafficDetectionConditionResponse.class)
+                .withName("UpdateBotMTrafficDetectionCondition")
+                .withUri(
+                    "/v1/{project_id}/waf/policy/{policy_id}/bot-manager/traffic-detection-condition/{condition_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBotMTrafficDetectionConditionRequest::getPolicyId,
+                UpdateBotMTrafficDetectionConditionRequest::setPolicyId));
+        builder.<String>withRequestField("condition_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBotMTrafficDetectionConditionRequest::getConditionId,
+                UpdateBotMTrafficDetectionConditionRequest::setConditionId));
+        builder.<SaveTrafficDetectionConditionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SaveTrafficDetectionConditionRequestBody.class),
+            f -> f.withMarshaller(UpdateBotMTrafficDetectionConditionRequest::getBody,
+                UpdateBotMTrafficDetectionConditionRequest::setBody));
 
         // response
 
@@ -7907,6 +7899,1667 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDeleteAiAppsRequest, BatchDeleteAiAppsResponse> batchDeleteAiApps =
+        genForBatchDeleteAiApps();
+
+    private static HttpRequestDef<BatchDeleteAiAppsRequest, BatchDeleteAiAppsResponse> genForBatchDeleteAiApps() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteAiAppsRequest, BatchDeleteAiAppsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteAiAppsRequest.class, BatchDeleteAiAppsResponse.class)
+                .withName("BatchDeleteAiApps")
+                .withUri("/v1/{project_id}/aiguard/aiapps/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Boolean>withRequestField("keep_policy",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(BatchDeleteAiAppsRequest::getKeepPolicy, BatchDeleteAiAppsRequest::setKeepPolicy));
+        builder.<BatchDeleteRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteRequest.class),
+            f -> f.withMarshaller(BatchDeleteAiAppsRequest::getBody, BatchDeleteAiAppsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAiAppRequest, CreateAiAppResponse> createAiApp = genForCreateAiApp();
+
+    private static HttpRequestDef<CreateAiAppRequest, CreateAiAppResponse> genForCreateAiApp() {
+        // basic
+        HttpRequestDef.Builder<CreateAiAppRequest, CreateAiAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAiAppRequest.class, CreateAiAppResponse.class)
+                .withName("CreateAiApp")
+                .withUri("/v1/{project_id}/aiguard/aiapps")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AiAppCreateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AiAppCreateRequest.class),
+            f -> f.withMarshaller(CreateAiAppRequest::getBody, CreateAiAppRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAiAppRequest, DeleteAiAppResponse> deleteAiApp = genForDeleteAiApp();
+
+    private static HttpRequestDef<DeleteAiAppRequest, DeleteAiAppResponse> genForDeleteAiApp() {
+        // basic
+        HttpRequestDef.Builder<DeleteAiAppRequest, DeleteAiAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAiAppRequest.class, DeleteAiAppResponse.class)
+                .withName("DeleteAiApp")
+                .withUri("/v1/{project_id}/aiguard/aiapps/{app_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAiAppRequest::getAppId, DeleteAiAppRequest::setAppId));
+        builder.<Boolean>withRequestField("keep_policy",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteAiAppRequest::getKeepPolicy, DeleteAiAppRequest::setKeepPolicy));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAiAppsRequest, ListAiAppsResponse> listAiApps = genForListAiApps();
+
+    private static HttpRequestDef<ListAiAppsRequest, ListAiAppsResponse> genForListAiApps() {
+        // basic
+        HttpRequestDef.Builder<ListAiAppsRequest, ListAiAppsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAiAppsRequest.class, ListAiAppsResponse.class)
+                .withName("ListAiApps")
+                .withUri("/v1/{project_id}/aiguard/aiapps")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiAppsRequest::getLimit, ListAiAppsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiAppsRequest::getOffset, ListAiAppsRequest::setOffset));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiAppsRequest::getName, ListAiAppsRequest::setName));
+        builder.<ListAiAppsRequest.ProtectStatusEnum>withRequestField("protect_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAiAppsRequest.ProtectStatusEnum.class),
+            f -> f.withMarshaller(ListAiAppsRequest::getProtectStatus, ListAiAppsRequest::setProtectStatus));
+        builder.<String>withRequestField("policy_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiAppsRequest::getPolicyId, ListAiAppsRequest::setPolicyId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetAiAppSettingRequest, SetAiAppSettingResponse> setAiAppSetting =
+        genForSetAiAppSetting();
+
+    private static HttpRequestDef<SetAiAppSettingRequest, SetAiAppSettingResponse> genForSetAiAppSetting() {
+        // basic
+        HttpRequestDef.Builder<SetAiAppSettingRequest, SetAiAppSettingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetAiAppSettingRequest.class, SetAiAppSettingResponse.class)
+                .withName("SetAiAppSetting")
+                .withUri("/v1/{project_id}/aiguard/aiapps/setting")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AiAppSettingRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AiAppSettingRequest.class),
+            f -> f.withMarshaller(SetAiAppSettingRequest::getBody, SetAiAppSettingRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAiAppRequest, ShowAiAppResponse> showAiApp = genForShowAiApp();
+
+    private static HttpRequestDef<ShowAiAppRequest, ShowAiAppResponse> genForShowAiApp() {
+        // basic
+        HttpRequestDef.Builder<ShowAiAppRequest, ShowAiAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAiAppRequest.class, ShowAiAppResponse.class)
+                .withName("ShowAiApp")
+                .withUri("/v1/{project_id}/aiguard/aiapps/{app_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAiAppRequest::getAppId, ShowAiAppRequest::setAppId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAiAppSettingRequest, ShowAiAppSettingResponse> showAiAppSetting =
+        genForShowAiAppSetting();
+
+    private static HttpRequestDef<ShowAiAppSettingRequest, ShowAiAppSettingResponse> genForShowAiAppSetting() {
+        // basic
+        HttpRequestDef.Builder<ShowAiAppSettingRequest, ShowAiAppSettingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAiAppSettingRequest.class, ShowAiAppSettingResponse.class)
+                .withName("ShowAiAppSetting")
+                .withUri("/v1/{project_id}/aiguard/aiapps/setting")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAiAppRequest, UpdateAiAppResponse> updateAiApp = genForUpdateAiApp();
+
+    private static HttpRequestDef<UpdateAiAppRequest, UpdateAiAppResponse> genForUpdateAiApp() {
+        // basic
+        HttpRequestDef.Builder<UpdateAiAppRequest, UpdateAiAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAiAppRequest.class, UpdateAiAppResponse.class)
+                .withName("UpdateAiApp")
+                .withUri("/v1/{project_id}/aiguard/aiapps/{app_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAiAppRequest::getAppId, UpdateAiAppRequest::setAppId));
+        builder.<AiAppUpdateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AiAppUpdateRequest.class),
+            f -> f.withMarshaller(UpdateAiAppRequest::getBody, UpdateAiAppRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAiAppPolicyRequest, UpdateAiAppPolicyResponse> updateAiAppPolicy =
+        genForUpdateAiAppPolicy();
+
+    private static HttpRequestDef<UpdateAiAppPolicyRequest, UpdateAiAppPolicyResponse> genForUpdateAiAppPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateAiAppPolicyRequest, UpdateAiAppPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAiAppPolicyRequest.class, UpdateAiAppPolicyResponse.class)
+                .withName("UpdateAiAppPolicy")
+                .withUri("/v1/{project_id}/aiguard/aiapps/{app_id}/policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAiAppPolicyRequest::getAppId, UpdateAiAppPolicyRequest::setAppId));
+        builder.<AiAppPolicyUpdateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AiAppPolicyUpdateRequest.class),
+            f -> f.withMarshaller(UpdateAiAppPolicyRequest::getBody, UpdateAiAppPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAiAppProtectStatusRequest, UpdateAiAppProtectStatusResponse> updateAiAppProtectStatus =
+        genForUpdateAiAppProtectStatus();
+
+    private static HttpRequestDef<UpdateAiAppProtectStatusRequest, UpdateAiAppProtectStatusResponse> genForUpdateAiAppProtectStatus() {
+        // basic
+        HttpRequestDef.Builder<UpdateAiAppProtectStatusRequest, UpdateAiAppProtectStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateAiAppProtectStatusRequest.class, UpdateAiAppProtectStatusResponse.class)
+                .withName("UpdateAiAppProtectStatus")
+                .withUri("/v1/{project_id}/aiguard/aiapps/{app_id}/protect-status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAiAppProtectStatusRequest::getAppId,
+                UpdateAiAppProtectStatusRequest::setAppId));
+        builder.<AiAppProtectStatusRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AiAppProtectStatusRequest.class),
+            f -> f.withMarshaller(UpdateAiAppProtectStatusRequest::getBody, UpdateAiAppProtectStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAiAppsLogsRequest, ListAiAppsLogsResponse> listAiAppsLogs =
+        genForListAiAppsLogs();
+
+    private static HttpRequestDef<ListAiAppsLogsRequest, ListAiAppsLogsResponse> genForListAiAppsLogs() {
+        // basic
+        HttpRequestDef.Builder<ListAiAppsLogsRequest, ListAiAppsLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAiAppsLogsRequest.class, ListAiAppsLogsResponse.class)
+                .withName("ListAiAppsLogs")
+                .withUri("/v1/{project_id}/aiguard/logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiAppsLogsRequest::getAppId, ListAiAppsLogsRequest::setAppId));
+        builder.<String>withRequestField("request_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiAppsLogsRequest::getRequestId, ListAiAppsLogsRequest::setRequestId));
+        builder.<String>withRequestField("detect_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiAppsLogsRequest::getDetectType, ListAiAppsLogsRequest::setDetectType));
+        builder.<List<String>>withRequestField("attack_types",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAiAppsLogsRequest::getAttackTypes, ListAiAppsLogsRequest::setAttackTypes));
+        builder.<String>withRequestField("suggestion",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiAppsLogsRequest::getSuggestion, ListAiAppsLogsRequest::setSuggestion));
+        builder.<String>withRequestField("app_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiAppsLogsRequest::getAppName, ListAiAppsLogsRequest::setAppName));
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAiAppsLogsRequest::getFrom, ListAiAppsLogsRequest::setFrom));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAiAppsLogsRequest::getTo, ListAiAppsLogsRequest::setTo));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiAppsLogsRequest::getLimit, ListAiAppsLogsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiAppsLogsRequest::getOffset, ListAiAppsLogsRequest::setOffset));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiAppsLogsRequest::getMarker, ListAiAppsLogsRequest::setMarker));
+        builder.<String>withRequestField("sort_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiAppsLogsRequest::getSortBy, ListAiAppsLogsRequest::setSortBy));
+        builder.<String>withRequestField("sort_direction",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiAppsLogsRequest::getSortDirection, ListAiAppsLogsRequest::setSortDirection));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAiAppsLogsResponse::getXRequestId, ListAiAppsLogsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAiGuardAttackDistributionRequest, ShowAiGuardAttackDistributionResponse> showAiGuardAttackDistribution =
+        genForShowAiGuardAttackDistribution();
+
+    private static HttpRequestDef<ShowAiGuardAttackDistributionRequest, ShowAiGuardAttackDistributionResponse> genForShowAiGuardAttackDistribution() {
+        // basic
+        HttpRequestDef.Builder<ShowAiGuardAttackDistributionRequest, ShowAiGuardAttackDistributionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAiGuardAttackDistributionRequest.class,
+                    ShowAiGuardAttackDistributionResponse.class)
+                .withName("ShowAiGuardAttackDistribution")
+                .withUri("/v1/{project_id}/aiguard/overviews/attack/distribution")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowAiGuardAttackDistributionRequest::getFrom,
+                ShowAiGuardAttackDistributionRequest::setFrom));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowAiGuardAttackDistributionRequest::getTo,
+                ShowAiGuardAttackDistributionRequest::setTo));
+        builder.<String>withRequestField("app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAiGuardAttackDistributionRequest::getAppId,
+                ShowAiGuardAttackDistributionRequest::setAppId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAiGuardAttackDistributionRequest::getOffset,
+                ShowAiGuardAttackDistributionRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAiGuardAttackDistributionRequest::getLimit,
+                ShowAiGuardAttackDistributionRequest::setLimit));
+        builder.<ShowAiGuardAttackDistributionRequest.DetectTypeEnum>withRequestField("detect_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowAiGuardAttackDistributionRequest.DetectTypeEnum.class),
+            f -> f.withMarshaller(ShowAiGuardAttackDistributionRequest::getDetectType,
+                ShowAiGuardAttackDistributionRequest::setDetectType));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAiGuardAttackDistributionResponse::getXRequestId,
+                ShowAiGuardAttackDistributionResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAiGuardRequestTimelineRequest, ShowAiGuardRequestTimelineResponse> showAiGuardRequestTimeline =
+        genForShowAiGuardRequestTimeline();
+
+    private static HttpRequestDef<ShowAiGuardRequestTimelineRequest, ShowAiGuardRequestTimelineResponse> genForShowAiGuardRequestTimeline() {
+        // basic
+        HttpRequestDef.Builder<ShowAiGuardRequestTimelineRequest, ShowAiGuardRequestTimelineResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAiGuardRequestTimelineRequest.class,
+                    ShowAiGuardRequestTimelineResponse.class)
+                .withName("ShowAiGuardRequestTimeline")
+                .withUri("/v1/{project_id}/aiguard/overviews/request/timeline")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowAiGuardRequestTimelineRequest::getFrom,
+                ShowAiGuardRequestTimelineRequest::setFrom));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowAiGuardRequestTimelineRequest::getTo, ShowAiGuardRequestTimelineRequest::setTo));
+        builder.<String>withRequestField("app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAiGuardRequestTimelineRequest::getAppId,
+                ShowAiGuardRequestTimelineRequest::setAppId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAiGuardRequestTimelineRequest::getOffset,
+                ShowAiGuardRequestTimelineRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAiGuardRequestTimelineRequest::getLimit,
+                ShowAiGuardRequestTimelineRequest::setLimit));
+        builder.<ShowAiGuardRequestTimelineRequest.DetectTypeEnum>withRequestField("detect_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowAiGuardRequestTimelineRequest.DetectTypeEnum.class),
+            f -> f.withMarshaller(ShowAiGuardRequestTimelineRequest::getDetectType,
+                ShowAiGuardRequestTimelineRequest::setDetectType));
+
+        // response
+        builder.<List<AiGuardTimeLineItem>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ShowAiGuardRequestTimelineResponse::getBody,
+                    ShowAiGuardRequestTimelineResponse::setBody)
+                .withInnerContainerType(AiGuardTimeLineItem.class));
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAiGuardRequestTimelineResponse::getXRequestId,
+                ShowAiGuardRequestTimelineResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAiGuardOverviewSummaryRequest, ListAiGuardOverviewSummaryResponse> listAiGuardOverviewSummary =
+        genForListAiGuardOverviewSummary();
+
+    private static HttpRequestDef<ListAiGuardOverviewSummaryRequest, ListAiGuardOverviewSummaryResponse> genForListAiGuardOverviewSummary() {
+        // basic
+        HttpRequestDef.Builder<ListAiGuardOverviewSummaryRequest, ListAiGuardOverviewSummaryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAiGuardOverviewSummaryRequest.class,
+                    ListAiGuardOverviewSummaryResponse.class)
+                .withName("ListAiGuardOverviewSummary")
+                .withUri("/v1/{project_id}/aiguard/overview/summary")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAiGuardOverviewSummaryRequest::getFrom,
+                ListAiGuardOverviewSummaryRequest::setFrom));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAiGuardOverviewSummaryRequest::getTo, ListAiGuardOverviewSummaryRequest::setTo));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAiGuardOverviewSummaryResponse::getXRequestId,
+                ListAiGuardOverviewSummaryResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteAiGuardPolicyRequest, BatchDeleteAiGuardPolicyResponse> batchDeleteAiGuardPolicy =
+        genForBatchDeleteAiGuardPolicy();
+
+    private static HttpRequestDef<BatchDeleteAiGuardPolicyRequest, BatchDeleteAiGuardPolicyResponse> genForBatchDeleteAiGuardPolicy() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteAiGuardPolicyRequest, BatchDeleteAiGuardPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, BatchDeleteAiGuardPolicyRequest.class, BatchDeleteAiGuardPolicyResponse.class)
+                .withName("BatchDeleteAiGuardPolicy")
+                .withUri("/v1/{project_id}/aiguard/policies/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteAiGuardPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteAiGuardPolicyRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteAiGuardPolicyRequest::getBody, BatchDeleteAiGuardPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BindAiAppsRequest, BindAiAppsResponse> bindAiApps = genForBindAiApps();
+
+    private static HttpRequestDef<BindAiAppsRequest, BindAiAppsResponse> genForBindAiApps() {
+        // basic
+        HttpRequestDef.Builder<BindAiAppsRequest, BindAiAppsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BindAiAppsRequest.class, BindAiAppsResponse.class)
+                .withName("BindAiApps")
+                .withUri("/v1/{project_id}/aiguard/policies/{policy_id}/bind-ai-apps")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BindAiAppsRequest::getPolicyId, BindAiAppsRequest::setPolicyId));
+        builder.<BindAiAppsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BindAiAppsRequestBody.class),
+            f -> f.withMarshaller(BindAiAppsRequest::getBody, BindAiAppsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAiGuardPolicyRequest, CreateAiGuardPolicyResponse> createAiGuardPolicy =
+        genForCreateAiGuardPolicy();
+
+    private static HttpRequestDef<CreateAiGuardPolicyRequest, CreateAiGuardPolicyResponse> genForCreateAiGuardPolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateAiGuardPolicyRequest, CreateAiGuardPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAiGuardPolicyRequest.class, CreateAiGuardPolicyResponse.class)
+                .withName("CreateAiGuardPolicy")
+                .withUri("/v1/{project_id}/aiguard/policies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateAiGuardPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAiGuardPolicyRequestBody.class),
+            f -> f.withMarshaller(CreateAiGuardPolicyRequest::getBody, CreateAiGuardPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAiGuardPolicyRequest, DeleteAiGuardPolicyResponse> deleteAiGuardPolicy =
+        genForDeleteAiGuardPolicy();
+
+    private static HttpRequestDef<DeleteAiGuardPolicyRequest, DeleteAiGuardPolicyResponse> genForDeleteAiGuardPolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteAiGuardPolicyRequest, DeleteAiGuardPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteAiGuardPolicyRequest.class, DeleteAiGuardPolicyResponse.class)
+            .withName("DeleteAiGuardPolicy")
+            .withUri("/v1/{project_id}/aiguard/policies/{policy_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAiGuardPolicyRequest::getPolicyId, DeleteAiGuardPolicyRequest::setPolicyId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAiGuardPolicyRequest, ListAiGuardPolicyResponse> listAiGuardPolicy =
+        genForListAiGuardPolicy();
+
+    private static HttpRequestDef<ListAiGuardPolicyRequest, ListAiGuardPolicyResponse> genForListAiGuardPolicy() {
+        // basic
+        HttpRequestDef.Builder<ListAiGuardPolicyRequest, ListAiGuardPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAiGuardPolicyRequest.class, ListAiGuardPolicyResponse.class)
+                .withName("ListAiGuardPolicy")
+                .withUri("/v1/{project_id}/aiguard/policies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiGuardPolicyRequest::getLimit, ListAiGuardPolicyRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiGuardPolicyRequest::getOffset, ListAiGuardPolicyRequest::setOffset));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiGuardPolicyRequest::getName, ListAiGuardPolicyRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAiGuardPolicyRequest, ShowAiGuardPolicyResponse> showAiGuardPolicy =
+        genForShowAiGuardPolicy();
+
+    private static HttpRequestDef<ShowAiGuardPolicyRequest, ShowAiGuardPolicyResponse> genForShowAiGuardPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowAiGuardPolicyRequest, ShowAiGuardPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAiGuardPolicyRequest.class, ShowAiGuardPolicyResponse.class)
+                .withName("ShowAiGuardPolicy")
+                .withUri("/v1/{project_id}/aiguard/policies/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAiGuardPolicyRequest::getPolicyId, ShowAiGuardPolicyRequest::setPolicyId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAiGuardPolicyRequest, UpdateAiGuardPolicyResponse> updateAiGuardPolicy =
+        genForUpdateAiGuardPolicy();
+
+    private static HttpRequestDef<UpdateAiGuardPolicyRequest, UpdateAiGuardPolicyResponse> genForUpdateAiGuardPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateAiGuardPolicyRequest, UpdateAiGuardPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAiGuardPolicyRequest.class, UpdateAiGuardPolicyResponse.class)
+                .withName("UpdateAiGuardPolicy")
+                .withUri("/v1/{project_id}/aiguard/policies/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAiGuardPolicyRequest::getPolicyId, UpdateAiGuardPolicyRequest::setPolicyId));
+        builder.<UpdateAiGuardPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAiGuardPolicyRequestBody.class),
+            f -> f.withMarshaller(UpdateAiGuardPolicyRequest::getBody, UpdateAiGuardPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteAiGuardRuleRequest, BatchDeleteAiGuardRuleResponse> batchDeleteAiGuardRule =
+        genForBatchDeleteAiGuardRule();
+
+    private static HttpRequestDef<BatchDeleteAiGuardRuleRequest, BatchDeleteAiGuardRuleResponse> genForBatchDeleteAiGuardRule() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteAiGuardRuleRequest, BatchDeleteAiGuardRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteAiGuardRuleRequest.class, BatchDeleteAiGuardRuleResponse.class)
+            .withName("BatchDeleteAiGuardRule")
+            .withUri("/v1/{project_id}/aiguard/{policy_id}/llmrules/batch-delete")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteAiGuardRuleRequest::getPolicyId,
+                BatchDeleteAiGuardRuleRequest::setPolicyId));
+        builder.<BatchDeleteAiGuardRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteAiGuardRuleRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteAiGuardRuleRequest::getBody, BatchDeleteAiGuardRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpdateAiGuardRuleStatusRequest, BatchUpdateAiGuardRuleStatusResponse> batchUpdateAiGuardRuleStatus =
+        genForBatchUpdateAiGuardRuleStatus();
+
+    private static HttpRequestDef<BatchUpdateAiGuardRuleStatusRequest, BatchUpdateAiGuardRuleStatusResponse> genForBatchUpdateAiGuardRuleStatus() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateAiGuardRuleStatusRequest, BatchUpdateAiGuardRuleStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchUpdateAiGuardRuleStatusRequest.class,
+                    BatchUpdateAiGuardRuleStatusResponse.class)
+                .withName("BatchUpdateAiGuardRuleStatus")
+                .withUri("/v1/{project_id}/aiguard/{policy_id}/llmrules/status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateAiGuardRuleStatusRequest::getPolicyId,
+                BatchUpdateAiGuardRuleStatusRequest::setPolicyId));
+        builder.<BatchUpdateAiGuardRuleStatusRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateAiGuardRuleStatusRequestBody.class),
+            f -> f.withMarshaller(BatchUpdateAiGuardRuleStatusRequest::getBody,
+                BatchUpdateAiGuardRuleStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAiGuardRuleRequest, CreateAiGuardRuleResponse> createAiGuardRule =
+        genForCreateAiGuardRule();
+
+    private static HttpRequestDef<CreateAiGuardRuleRequest, CreateAiGuardRuleResponse> genForCreateAiGuardRule() {
+        // basic
+        HttpRequestDef.Builder<CreateAiGuardRuleRequest, CreateAiGuardRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAiGuardRuleRequest.class, CreateAiGuardRuleResponse.class)
+                .withName("CreateAiGuardRule")
+                .withUri("/v1/{project_id}/aiguard/{policy_id}/llmrules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAiGuardRuleRequest::getPolicyId, CreateAiGuardRuleRequest::setPolicyId));
+        builder.<CreateAiGuardRuleRequest.DetectTypeEnum>withRequestField("detect_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateAiGuardRuleRequest.DetectTypeEnum.class),
+            f -> f.withMarshaller(CreateAiGuardRuleRequest::getDetectType, CreateAiGuardRuleRequest::setDetectType));
+        builder.<CreateAiGuardRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAiGuardRuleRequestBody.class),
+            f -> f.withMarshaller(CreateAiGuardRuleRequest::getBody, CreateAiGuardRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAiguardTemplateRuleRequest, CreateAiguardTemplateRuleResponse> createAiguardTemplateRule =
+        genForCreateAiguardTemplateRule();
+
+    private static HttpRequestDef<CreateAiguardTemplateRuleRequest, CreateAiguardTemplateRuleResponse> genForCreateAiguardTemplateRule() {
+        // basic
+        HttpRequestDef.Builder<CreateAiguardTemplateRuleRequest, CreateAiguardTemplateRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateAiguardTemplateRuleRequest.class,
+                    CreateAiguardTemplateRuleResponse.class)
+                .withName("CreateAiguardTemplateRule")
+                .withUri("/v1/{project_id}/aiguard/{policy_id}/llmrules/apply-template")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAiguardTemplateRuleRequest::getPolicyId,
+                CreateAiguardTemplateRuleRequest::setPolicyId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAiguardTemplateRuleRequest::getXLanguage,
+                CreateAiguardTemplateRuleRequest::setXLanguage));
+        builder.<CreateAiguardTemplateRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAiguardTemplateRuleRequestBody.class),
+            f -> f.withMarshaller(CreateAiguardTemplateRuleRequest::getBody,
+                CreateAiguardTemplateRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAiGuardRuleRequest, DeleteAiGuardRuleResponse> deleteAiGuardRule =
+        genForDeleteAiGuardRule();
+
+    private static HttpRequestDef<DeleteAiGuardRuleRequest, DeleteAiGuardRuleResponse> genForDeleteAiGuardRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteAiGuardRuleRequest, DeleteAiGuardRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAiGuardRuleRequest.class, DeleteAiGuardRuleResponse.class)
+                .withName("DeleteAiGuardRule")
+                .withUri("/v1/{project_id}/aiguard/{policy_id}/llmrules/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAiGuardRuleRequest::getPolicyId, DeleteAiGuardRuleRequest::setPolicyId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAiGuardRuleRequest::getRuleId, DeleteAiGuardRuleRequest::setRuleId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAiGuardRuleRequest, ListAiGuardRuleResponse> listAiGuardRule =
+        genForListAiGuardRule();
+
+    private static HttpRequestDef<ListAiGuardRuleRequest, ListAiGuardRuleResponse> genForListAiGuardRule() {
+        // basic
+        HttpRequestDef.Builder<ListAiGuardRuleRequest, ListAiGuardRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAiGuardRuleRequest.class, ListAiGuardRuleResponse.class)
+                .withName("ListAiGuardRule")
+                .withUri("/v1/{project_id}/aiguard/{policy_id}/llmrules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiGuardRuleRequest::getPolicyId, ListAiGuardRuleRequest::setPolicyId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiGuardRuleRequest::getLimit, ListAiGuardRuleRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiGuardRuleRequest::getOffset, ListAiGuardRuleRequest::setOffset));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiGuardRuleRequest::getName, ListAiGuardRuleRequest::setName));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiGuardRuleRequest::getStatus, ListAiGuardRuleRequest::setStatus));
+        builder.<String>withRequestField("detect_opt",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiGuardRuleRequest::getDetectOpt, ListAiGuardRuleRequest::setDetectOpt));
+        builder.<ListAiGuardRuleRequest.DetectTypeEnum>withRequestField("detect_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAiGuardRuleRequest.DetectTypeEnum.class),
+            f -> f.withMarshaller(ListAiGuardRuleRequest::getDetectType, ListAiGuardRuleRequest::setDetectType));
+        builder.<Boolean>withRequestField("with_template",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListAiGuardRuleRequest::getWithTemplate, ListAiGuardRuleRequest::setWithTemplate));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAiGuardRuleRequest, ShowAiGuardRuleResponse> showAiGuardRule =
+        genForShowAiGuardRule();
+
+    private static HttpRequestDef<ShowAiGuardRuleRequest, ShowAiGuardRuleResponse> genForShowAiGuardRule() {
+        // basic
+        HttpRequestDef.Builder<ShowAiGuardRuleRequest, ShowAiGuardRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAiGuardRuleRequest.class, ShowAiGuardRuleResponse.class)
+                .withName("ShowAiGuardRule")
+                .withUri("/v1/{project_id}/aiguard/{policy_id}/llmrules/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAiGuardRuleRequest::getPolicyId, ShowAiGuardRuleRequest::setPolicyId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAiGuardRuleRequest::getRuleId, ShowAiGuardRuleRequest::setRuleId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAiGuardRuleRequest, UpdateAiGuardRuleResponse> updateAiGuardRule =
+        genForUpdateAiGuardRule();
+
+    private static HttpRequestDef<UpdateAiGuardRuleRequest, UpdateAiGuardRuleResponse> genForUpdateAiGuardRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateAiGuardRuleRequest, UpdateAiGuardRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAiGuardRuleRequest.class, UpdateAiGuardRuleResponse.class)
+                .withName("UpdateAiGuardRule")
+                .withUri("/v1/{project_id}/aiguard/{policy_id}/llmrules/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAiGuardRuleRequest::getPolicyId, UpdateAiGuardRuleRequest::setPolicyId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAiGuardRuleRequest::getRuleId, UpdateAiGuardRuleRequest::setRuleId));
+        builder.<UpdateAiGuardRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAiGuardRuleRequestBody.class),
+            f -> f.withMarshaller(UpdateAiGuardRuleRequest::getBody, UpdateAiGuardRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAiGuardRuleStatusRequest, UpdateAiGuardRuleStatusResponse> updateAiGuardRuleStatus =
+        genForUpdateAiGuardRuleStatus();
+
+    private static HttpRequestDef<UpdateAiGuardRuleStatusRequest, UpdateAiGuardRuleStatusResponse> genForUpdateAiGuardRuleStatus() {
+        // basic
+        HttpRequestDef.Builder<UpdateAiGuardRuleStatusRequest, UpdateAiGuardRuleStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAiGuardRuleStatusRequest.class, UpdateAiGuardRuleStatusResponse.class)
+            .withName("UpdateAiGuardRuleStatus")
+            .withUri("/v1/{project_id}/aiguard/{policy_id}/llmrules/{rule_id}/status")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAiGuardRuleStatusRequest::getPolicyId,
+                UpdateAiGuardRuleStatusRequest::setPolicyId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAiGuardRuleStatusRequest::getRuleId,
+                UpdateAiGuardRuleStatusRequest::setRuleId));
+        builder.<UpdateAiGuardRuleStatusRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAiGuardRuleStatusRequestBody.class),
+            f -> f.withMarshaller(UpdateAiGuardRuleStatusRequest::getBody, UpdateAiGuardRuleStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteCustomAnswersRequest, BatchDeleteCustomAnswersResponse> batchDeleteCustomAnswers =
+        genForBatchDeleteCustomAnswers();
+
+    private static HttpRequestDef<BatchDeleteCustomAnswersRequest, BatchDeleteCustomAnswersResponse> genForBatchDeleteCustomAnswers() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteCustomAnswersRequest, BatchDeleteCustomAnswersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, BatchDeleteCustomAnswersRequest.class, BatchDeleteCustomAnswersResponse.class)
+                .withName("BatchDeleteCustomAnswers")
+                .withUri("/v1/{project_id}/aiguard/custom-answers/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AiguardCustomAnswersBatchDeleteBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AiguardCustomAnswersBatchDeleteBody.class),
+            f -> f.withMarshaller(BatchDeleteCustomAnswersRequest::getBody, BatchDeleteCustomAnswersRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCustomAnswersRequest, CreateCustomAnswersResponse> createCustomAnswers =
+        genForCreateCustomAnswers();
+
+    private static HttpRequestDef<CreateCustomAnswersRequest, CreateCustomAnswersResponse> genForCreateCustomAnswers() {
+        // basic
+        HttpRequestDef.Builder<CreateCustomAnswersRequest, CreateCustomAnswersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCustomAnswersRequest.class, CreateCustomAnswersResponse.class)
+                .withName("CreateCustomAnswers")
+                .withUri("/v1/{project_id}/aiguard/custom-answers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AiguardCustomAnswersBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AiguardCustomAnswersBody.class),
+            f -> f.withMarshaller(CreateCustomAnswersRequest::getBody, CreateCustomAnswersRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCustomAnswersRequest, DeleteCustomAnswersResponse> deleteCustomAnswers =
+        genForDeleteCustomAnswers();
+
+    private static HttpRequestDef<DeleteCustomAnswersRequest, DeleteCustomAnswersResponse> genForDeleteCustomAnswers() {
+        // basic
+        HttpRequestDef.Builder<DeleteCustomAnswersRequest, DeleteCustomAnswersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteCustomAnswersRequest.class, DeleteCustomAnswersResponse.class)
+            .withName("DeleteCustomAnswers")
+            .withUri("/v1/{project_id}/aiguard/custom-answers/{answer_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("answer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCustomAnswersRequest::getAnswerId, DeleteCustomAnswersRequest::setAnswerId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCustomAnswersRequest, ListCustomAnswersResponse> listCustomAnswers =
+        genForListCustomAnswers();
+
+    private static HttpRequestDef<ListCustomAnswersRequest, ListCustomAnswersResponse> genForListCustomAnswers() {
+        // basic
+        HttpRequestDef.Builder<ListCustomAnswersRequest, ListCustomAnswersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCustomAnswersRequest.class, ListCustomAnswersResponse.class)
+                .withName("ListCustomAnswers")
+                .withUri("/v1/{project_id}/aiguard/custom-answers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomAnswersRequest::getOffset, ListCustomAnswersRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomAnswersRequest::getLimit, ListCustomAnswersRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCustomAnswersRequest, ShowCustomAnswersResponse> showCustomAnswers =
+        genForShowCustomAnswers();
+
+    private static HttpRequestDef<ShowCustomAnswersRequest, ShowCustomAnswersResponse> genForShowCustomAnswers() {
+        // basic
+        HttpRequestDef.Builder<ShowCustomAnswersRequest, ShowCustomAnswersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCustomAnswersRequest.class, ShowCustomAnswersResponse.class)
+                .withName("ShowCustomAnswers")
+                .withUri("/v1/{project_id}/aiguard/custom-answers/{answer_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("answer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCustomAnswersRequest::getAnswerId, ShowCustomAnswersRequest::setAnswerId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateCustomAnswersRequest, UpdateCustomAnswersResponse> updateCustomAnswers =
+        genForUpdateCustomAnswers();
+
+    private static HttpRequestDef<UpdateCustomAnswersRequest, UpdateCustomAnswersResponse> genForUpdateCustomAnswers() {
+        // basic
+        HttpRequestDef.Builder<UpdateCustomAnswersRequest, UpdateCustomAnswersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateCustomAnswersRequest.class, UpdateCustomAnswersResponse.class)
+                .withName("UpdateCustomAnswers")
+                .withUri("/v1/{project_id}/aiguard/custom-answers/{answer_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("answer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCustomAnswersRequest::getAnswerId, UpdateCustomAnswersRequest::setAnswerId));
+        builder.<AiguardCustomAnswersUpdateBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AiguardCustomAnswersUpdateBody.class),
+            f -> f.withMarshaller(UpdateCustomAnswersRequest::getBody, UpdateCustomAnswersRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteCustomLlmRequest, BatchDeleteCustomLlmResponse> batchDeleteCustomLlm =
+        genForBatchDeleteCustomLlm();
+
+    private static HttpRequestDef<BatchDeleteCustomLlmRequest, BatchDeleteCustomLlmResponse> genForBatchDeleteCustomLlm() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteCustomLlmRequest, BatchDeleteCustomLlmResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteCustomLlmRequest.class, BatchDeleteCustomLlmResponse.class)
+            .withName("BatchDeleteCustomLlm")
+            .withUri("/v1/{project_id}/aiguard/custom-llms/batch-delete")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CustomLlmBatchDeleteBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CustomLlmBatchDeleteBody.class),
+            f -> f.withMarshaller(BatchDeleteCustomLlmRequest::getBody, BatchDeleteCustomLlmRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCustomLlmRequest, CreateCustomLlmResponse> createCustomLlm =
+        genForCreateCustomLlm();
+
+    private static HttpRequestDef<CreateCustomLlmRequest, CreateCustomLlmResponse> genForCreateCustomLlm() {
+        // basic
+        HttpRequestDef.Builder<CreateCustomLlmRequest, CreateCustomLlmResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCustomLlmRequest.class, CreateCustomLlmResponse.class)
+                .withName("CreateCustomLlm")
+                .withUri("/v1/{project_id}/aiguard/custom-llms")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AiguardCustomLlmBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AiguardCustomLlmBody.class),
+            f -> f.withMarshaller(CreateCustomLlmRequest::getBody, CreateCustomLlmRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCustomLlmRequest, DeleteCustomLlmResponse> deleteCustomLlm =
+        genForDeleteCustomLlm();
+
+    private static HttpRequestDef<DeleteCustomLlmRequest, DeleteCustomLlmResponse> genForDeleteCustomLlm() {
+        // basic
+        HttpRequestDef.Builder<DeleteCustomLlmRequest, DeleteCustomLlmResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteCustomLlmRequest.class, DeleteCustomLlmResponse.class)
+                .withName("DeleteCustomLlm")
+                .withUri("/v1/{project_id}/aiguard/custom-llms/{llmId}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("llmId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCustomLlmRequest::getLlmId, DeleteCustomLlmRequest::setLlmId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCustomLlmRequest, ListCustomLlmResponse> listCustomLlm =
+        genForListCustomLlm();
+
+    private static HttpRequestDef<ListCustomLlmRequest, ListCustomLlmResponse> genForListCustomLlm() {
+        // basic
+        HttpRequestDef.Builder<ListCustomLlmRequest, ListCustomLlmResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCustomLlmRequest.class, ListCustomLlmResponse.class)
+                .withName("ListCustomLlm")
+                .withUri("/v1/{project_id}/aiguard/custom-llms")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomLlmRequest::getName, ListCustomLlmRequest::setName));
+        builder.<String>withRequestField("model_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomLlmRequest::getModelName, ListCustomLlmRequest::setModelName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomLlmRequest::getOffset, ListCustomLlmRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomLlmRequest::getLimit, ListCustomLlmRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCustomLlmRequest, ShowCustomLlmResponse> showCustomLlm =
+        genForShowCustomLlm();
+
+    private static HttpRequestDef<ShowCustomLlmRequest, ShowCustomLlmResponse> genForShowCustomLlm() {
+        // basic
+        HttpRequestDef.Builder<ShowCustomLlmRequest, ShowCustomLlmResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCustomLlmRequest.class, ShowCustomLlmResponse.class)
+                .withName("ShowCustomLlm")
+                .withUri("/v1/{project_id}/aiguard/custom-llms/{llmId}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("llmId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCustomLlmRequest::getLlmId, ShowCustomLlmRequest::setLlmId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPresignedUrlRequest, ShowPresignedUrlResponse> showPresignedUrl =
+        genForShowPresignedUrl();
+
+    private static HttpRequestDef<ShowPresignedUrlRequest, ShowPresignedUrlResponse> genForShowPresignedUrl() {
+        // basic
+        HttpRequestDef.Builder<ShowPresignedUrlRequest, ShowPresignedUrlResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPresignedUrlRequest.class, ShowPresignedUrlResponse.class)
+                .withName("ShowPresignedUrl")
+                .withUri("/v1/{project_id}/aiguard/{operation_name}/presigned-url")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("operation_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPresignedUrlRequest::getOperationName,
+                ShowPresignedUrlRequest::setOperationName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateCustomLlmRequest, UpdateCustomLlmResponse> updateCustomLlm =
+        genForUpdateCustomLlm();
+
+    private static HttpRequestDef<UpdateCustomLlmRequest, UpdateCustomLlmResponse> genForUpdateCustomLlm() {
+        // basic
+        HttpRequestDef.Builder<UpdateCustomLlmRequest, UpdateCustomLlmResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateCustomLlmRequest.class, UpdateCustomLlmResponse.class)
+                .withName("UpdateCustomLlm")
+                .withUri("/v1/{project_id}/aiguard/custom-llms/{llmId}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("llmId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCustomLlmRequest::getLlmId, UpdateCustomLlmRequest::setLlmId));
+        builder.<AiguardCustomLlmUpdateBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AiguardCustomLlmUpdateBody.class),
+            f -> f.withMarshaller(UpdateCustomLlmRequest::getBody, UpdateCustomLlmRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateCcRuleRequest, BatchCreateCcRuleResponse> batchCreateCcRule =
+        genForBatchCreateCcRule();
+
+    private static HttpRequestDef<BatchCreateCcRuleRequest, BatchCreateCcRuleResponse> genForBatchCreateCcRule() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateCcRuleRequest, BatchCreateCcRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateCcRuleRequest.class, BatchCreateCcRuleResponse.class)
+                .withName("BatchCreateCcRule")
+                .withUri("/v1/{project_id}/waf/rule/cc")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policyids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateCcRuleRequest::getPolicyids, BatchCreateCcRuleRequest::setPolicyids));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateCcRuleRequest::getEnterpriseProjectId,
+                BatchCreateCcRuleRequest::setEnterpriseProjectId));
+        builder.<BatchCreateCcRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateCcRuleRequestBody.class),
+            f -> f.withMarshaller(BatchCreateCcRuleRequest::getBody, BatchCreateCcRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpdateCcRulesRequest, BatchUpdateCcRulesResponse> batchUpdateCcRules =
+        genForBatchUpdateCcRules();
+
+    private static HttpRequestDef<BatchUpdateCcRulesRequest, BatchUpdateCcRulesResponse> genForBatchUpdateCcRules() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateCcRulesRequest, BatchUpdateCcRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchUpdateCcRulesRequest.class, BatchUpdateCcRulesResponse.class)
+                .withName("BatchUpdateCcRules")
+                .withUri("/v1/{project_id}/waf/rule/cc/batch-update")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateCcRulesRequest::getEnterpriseProjectId,
+                BatchUpdateCcRulesRequest::setEnterpriseProjectId));
+        builder.<BatchUpdateCcRulesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchUpdateCcRulesRequestBody.class),
+            f -> f.withMarshaller(BatchUpdateCcRulesRequest::getBody, BatchUpdateCcRulesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCcRuleRequest, CreateCcRuleResponse> createCcRule = genForCreateCcRule();
+
+    private static HttpRequestDef<CreateCcRuleRequest, CreateCcRuleResponse> genForCreateCcRule() {
+        // basic
+        HttpRequestDef.Builder<CreateCcRuleRequest, CreateCcRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCcRuleRequest.class, CreateCcRuleResponse.class)
+                .withName("CreateCcRule")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/cc")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCcRuleRequest::getPolicyId, CreateCcRuleRequest::setPolicyId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCcRuleRequest::getEnterpriseProjectId,
+                CreateCcRuleRequest::setEnterpriseProjectId));
+        builder.<CreateCcRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateCcRuleRequestBody.class),
+            f -> f.withMarshaller(CreateCcRuleRequest::getBody, CreateCcRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCcRuleRequest, DeleteCcRuleResponse> deleteCcRule = genForDeleteCcRule();
+
+    private static HttpRequestDef<DeleteCcRuleRequest, DeleteCcRuleResponse> genForDeleteCcRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteCcRuleRequest, DeleteCcRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteCcRuleRequest.class, DeleteCcRuleResponse.class)
+                .withName("DeleteCcRule")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/cc/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCcRuleRequest::getPolicyId, DeleteCcRuleRequest::setPolicyId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCcRuleRequest::getRuleId, DeleteCcRuleRequest::setRuleId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCcRuleRequest::getEnterpriseProjectId,
+                DeleteCcRuleRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCcPolicyRulesRequest, ListCcPolicyRulesResponse> listCcPolicyRules =
+        genForListCcPolicyRules();
+
+    private static HttpRequestDef<ListCcPolicyRulesRequest, ListCcPolicyRulesResponse> genForListCcPolicyRules() {
+        // basic
+        HttpRequestDef.Builder<ListCcPolicyRulesRequest, ListCcPolicyRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCcPolicyRulesRequest.class, ListCcPolicyRulesResponse.class)
+                .withName("ListCcPolicyRules")
+                .withUri("/v1/{project_id}/waf/rule/cc")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policyids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCcPolicyRulesRequest::getPolicyids, ListCcPolicyRulesRequest::setPolicyids));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCcPolicyRulesRequest::getEnterpriseProjectId,
+                ListCcPolicyRulesRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCcPolicyRulesRequest::getPage, ListCcPolicyRulesRequest::setPage));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCcPolicyRulesRequest::getPagesize, ListCcPolicyRulesRequest::setPagesize));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCcRulesRequest, ListCcRulesResponse> listCcRules = genForListCcRules();
+
+    private static HttpRequestDef<ListCcRulesRequest, ListCcRulesResponse> genForListCcRules() {
+        // basic
+        HttpRequestDef.Builder<ListCcRulesRequest, ListCcRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCcRulesRequest.class, ListCcRulesResponse.class)
+                .withName("ListCcRules")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/cc")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCcRulesRequest::getPolicyId, ListCcRulesRequest::setPolicyId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCcRulesRequest::getEnterpriseProjectId,
+                ListCcRulesRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCcRulesRequest::getOffset, ListCcRulesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCcRulesRequest::getLimit, ListCcRulesRequest::setLimit));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCcRulesRequest::getPage, ListCcRulesRequest::setPage));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCcRulesRequest::getPagesize, ListCcRulesRequest::setPagesize));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCcRulesRequest::getName, ListCcRulesRequest::setName));
+        builder.<Integer>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCcRulesRequest::getStatus, ListCcRulesRequest::setStatus));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCcRulesRequest::getCategory, ListCcRulesRequest::setCategory));
+        builder.<ListCcRulesRequest.TagTypeEnum>withRequestField("tag_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListCcRulesRequest.TagTypeEnum.class),
+            f -> f.withMarshaller(ListCcRulesRequest::getTagType, ListCcRulesRequest::setTagType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCcRuleRequest, ShowCcRuleResponse> showCcRule = genForShowCcRule();
+
+    private static HttpRequestDef<ShowCcRuleRequest, ShowCcRuleResponse> genForShowCcRule() {
+        // basic
+        HttpRequestDef.Builder<ShowCcRuleRequest, ShowCcRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCcRuleRequest.class, ShowCcRuleResponse.class)
+                .withName("ShowCcRule")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/cc/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCcRuleRequest::getPolicyId, ShowCcRuleRequest::setPolicyId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCcRuleRequest::getRuleId, ShowCcRuleRequest::setRuleId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCcRuleRequest::getEnterpriseProjectId,
+                ShowCcRuleRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateCcRuleRequest, UpdateCcRuleResponse> updateCcRule = genForUpdateCcRule();
+
+    private static HttpRequestDef<UpdateCcRuleRequest, UpdateCcRuleResponse> genForUpdateCcRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateCcRuleRequest, UpdateCcRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateCcRuleRequest.class, UpdateCcRuleResponse.class)
+                .withName("UpdateCcRule")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/cc/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCcRuleRequest::getPolicyId, UpdateCcRuleRequest::setPolicyId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCcRuleRequest::getRuleId, UpdateCcRuleRequest::setRuleId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCcRuleRequest::getEnterpriseProjectId,
+                UpdateCcRuleRequest::setEnterpriseProjectId));
+        builder.<UpdateCcRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateCcRuleRequestBody.class),
+            f -> f.withMarshaller(UpdateCcRuleRequest::getBody, UpdateCcRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ConfirmDnsDomainRequest, ConfirmDnsDomainResponse> confirmDnsDomain =
         genForConfirmDnsDomain();
 
@@ -7964,6 +9617,346 @@ public class WafMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAnticrawlerRuleRequest, CreateAnticrawlerRuleResponse> createAnticrawlerRule =
+        genForCreateAnticrawlerRule();
+
+    private static HttpRequestDef<CreateAnticrawlerRuleRequest, CreateAnticrawlerRuleResponse> genForCreateAnticrawlerRule() {
+        // basic
+        HttpRequestDef.Builder<CreateAnticrawlerRuleRequest, CreateAnticrawlerRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateAnticrawlerRuleRequest.class, CreateAnticrawlerRuleResponse.class)
+            .withName("CreateAnticrawlerRule")
+            .withUri("/v1/{project_id}/waf/policy/{policy_id}/anticrawler")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAnticrawlerRuleRequest::getPolicyId,
+                CreateAnticrawlerRuleRequest::setPolicyId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAnticrawlerRuleRequest::getEnterpriseProjectId,
+                CreateAnticrawlerRuleRequest::setEnterpriseProjectId));
+        builder.<CreateAnticrawlerRuleRequestbody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAnticrawlerRuleRequestbody.class),
+            f -> f.withMarshaller(CreateAnticrawlerRuleRequest::getBody, CreateAnticrawlerRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse> deleteAnticrawlerRule =
+        genForDeleteAnticrawlerRule();
+
+    private static HttpRequestDef<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse> genForDeleteAnticrawlerRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteAnticrawlerRuleRequest.class, DeleteAnticrawlerRuleResponse.class)
+            .withName("DeleteAnticrawlerRule")
+            .withUri("/v1/{project_id}/waf/policy/{policy_id}/anticrawler/{rule_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAnticrawlerRuleRequest::getPolicyId,
+                DeleteAnticrawlerRuleRequest::setPolicyId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAnticrawlerRuleRequest::getRuleId, DeleteAnticrawlerRuleRequest::setRuleId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAnticrawlerRuleRequest::getEnterpriseProjectId,
+                DeleteAnticrawlerRuleRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse> listAnticrawlerRules =
+        genForListAnticrawlerRules();
+
+    private static HttpRequestDef<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse> genForListAnticrawlerRules() {
+        // basic
+        HttpRequestDef.Builder<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAnticrawlerRulesRequest.class, ListAnticrawlerRulesResponse.class)
+            .withName("ListAnticrawlerRules")
+            .withUri("/v1/{project_id}/waf/policy/{policy_id}/anticrawler")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAnticrawlerRulesRequest::getPolicyId, ListAnticrawlerRulesRequest::setPolicyId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAnticrawlerRulesRequest::getEnterpriseProjectId,
+                ListAnticrawlerRulesRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAnticrawlerRulesRequest::getOffset, ListAnticrawlerRulesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAnticrawlerRulesRequest::getLimit, ListAnticrawlerRulesRequest::setLimit));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAnticrawlerRulesRequest::getPage, ListAnticrawlerRulesRequest::setPage));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAnticrawlerRulesRequest::getPagesize, ListAnticrawlerRulesRequest::setPagesize));
+        builder.<ListAnticrawlerRulesRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAnticrawlerRulesRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListAnticrawlerRulesRequest::getType, ListAnticrawlerRulesRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse> showAnticrawlerRule =
+        genForShowAnticrawlerRule();
+
+    private static HttpRequestDef<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse> genForShowAnticrawlerRule() {
+        // basic
+        HttpRequestDef.Builder<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAnticrawlerRuleRequest.class, ShowAnticrawlerRuleResponse.class)
+                .withName("ShowAnticrawlerRule")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/anticrawler/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAnticrawlerRuleRequest::getPolicyId, ShowAnticrawlerRuleRequest::setPolicyId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAnticrawlerRuleRequest::getRuleId, ShowAnticrawlerRuleRequest::setRuleId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAnticrawlerRuleRequest::getEnterpriseProjectId,
+                ShowAnticrawlerRuleRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse> updateAnticrawlerRule =
+        genForUpdateAnticrawlerRule();
+
+    private static HttpRequestDef<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse> genForUpdateAnticrawlerRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAnticrawlerRuleRequest.class, UpdateAnticrawlerRuleResponse.class)
+            .withName("UpdateAnticrawlerRule")
+            .withUri("/v1/{project_id}/waf/policy/{policy_id}/anticrawler/{rule_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAnticrawlerRuleRequest::getPolicyId,
+                UpdateAnticrawlerRuleRequest::setPolicyId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAnticrawlerRuleRequest::getRuleId, UpdateAnticrawlerRuleRequest::setRuleId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAnticrawlerRuleRequest::getEnterpriseProjectId,
+                UpdateAnticrawlerRuleRequest::setEnterpriseProjectId));
+        builder.<UpdateAnticrawlerRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAnticrawlerRuleRequestBody.class),
+            f -> f.withMarshaller(UpdateAnticrawlerRuleRequest::getBody, UpdateAnticrawlerRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAnticrawlerRuleTypeRequest, UpdateAnticrawlerRuleTypeResponse> updateAnticrawlerRuleType =
+        genForUpdateAnticrawlerRuleType();
+
+    private static HttpRequestDef<UpdateAnticrawlerRuleTypeRequest, UpdateAnticrawlerRuleTypeResponse> genForUpdateAnticrawlerRuleType() {
+        // basic
+        HttpRequestDef.Builder<UpdateAnticrawlerRuleTypeRequest, UpdateAnticrawlerRuleTypeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateAnticrawlerRuleTypeRequest.class,
+                    UpdateAnticrawlerRuleTypeResponse.class)
+                .withName("UpdateAnticrawlerRuleType")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/anticrawler")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAnticrawlerRuleTypeRequest::getPolicyId,
+                UpdateAnticrawlerRuleTypeRequest::setPolicyId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAnticrawlerRuleTypeRequest::getEnterpriseProjectId,
+                UpdateAnticrawlerRuleTypeRequest::setEnterpriseProjectId));
+        builder.<UpdateAnticrawlerRuleTypeRequestbody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAnticrawlerRuleTypeRequestbody.class),
+            f -> f.withMarshaller(UpdateAnticrawlerRuleTypeRequest::getBody,
+                UpdateAnticrawlerRuleTypeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAiGuardLtsConfigRequest, ShowAiGuardLtsConfigResponse> showAiGuardLtsConfig =
+        genForShowAiGuardLtsConfig();
+
+    private static HttpRequestDef<ShowAiGuardLtsConfigRequest, ShowAiGuardLtsConfigResponse> genForShowAiGuardLtsConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowAiGuardLtsConfigRequest, ShowAiGuardLtsConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAiGuardLtsConfigRequest.class, ShowAiGuardLtsConfigResponse.class)
+            .withName("ShowAiGuardLtsConfig")
+            .withUri("/v1/{project_id}/aiguard/config/lts")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAiGuardLtsConfigRequest, UpdateAiGuardLtsConfigResponse> updateAiGuardLtsConfig =
+        genForUpdateAiGuardLtsConfig();
+
+    private static HttpRequestDef<UpdateAiGuardLtsConfigRequest, UpdateAiGuardLtsConfigResponse> genForUpdateAiGuardLtsConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateAiGuardLtsConfigRequest, UpdateAiGuardLtsConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAiGuardLtsConfigRequest.class, UpdateAiGuardLtsConfigResponse.class)
+            .withName("UpdateAiGuardLtsConfig")
+            .withUri("/v1/{project_id}/aiguard/config/lts")
+            .withContentType("application/json");
+
+        // requests
+        builder.<UpdateAiGuardLtsConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAiGuardLtsConfigRequestBody.class),
+            f -> f.withMarshaller(UpdateAiGuardLtsConfigRequest::getBody, UpdateAiGuardLtsConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPiiCategoriesRequest, ListPiiCategoriesResponse> listPiiCategories =
+        genForListPiiCategories();
+
+    private static HttpRequestDef<ListPiiCategoriesRequest, ListPiiCategoriesResponse> genForListPiiCategories() {
+        // basic
+        HttpRequestDef.Builder<ListPiiCategoriesRequest, ListPiiCategoriesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPiiCategoriesRequest.class, ListPiiCategoriesResponse.class)
+                .withName("ListPiiCategories")
+                .withUri("/v1/{project_id}/aiguard/pii/categories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPiiCategoriesRequest::getXLanguage, ListPiiCategoriesRequest::setXLanguage));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListPiiCategoriesResponse::getXRequestId, ListPiiCategoriesResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSystemLexiconsRequest, ListSystemLexiconsResponse> listSystemLexicons =
+        genForListSystemLexicons();
+
+    private static HttpRequestDef<ListSystemLexiconsRequest, ListSystemLexiconsResponse> genForListSystemLexicons() {
+        // basic
+        HttpRequestDef.Builder<ListSystemLexiconsRequest, ListSystemLexiconsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSystemLexiconsRequest.class, ListSystemLexiconsResponse.class)
+                .withName("ListSystemLexicons")
+                .withUri("/v1/{project_id}/aiguard/system-lexicons")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSystemLexiconsRequest::getType, ListSystemLexiconsRequest::setType));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSystemLexiconsRequest::getXLanguage, ListSystemLexiconsRequest::setXLanguage));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSystemLexiconsResponse::getXRequestId,
+                ListSystemLexiconsResponse::setXRequestId));
         return builder.build();
     }
 

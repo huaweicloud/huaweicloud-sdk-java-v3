@@ -3,8 +3,18 @@ package com.huaweicloud.sdk.evs.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.evs.v2.model.AssociateAutoSnapshotPolicyRequest;
+import com.huaweicloud.sdk.evs.v2.model.AssociateAutoSnapshotPolicyResponse;
+import com.huaweicloud.sdk.evs.v2.model.BatchCreateSnapshotGroupTagRequest;
+import com.huaweicloud.sdk.evs.v2.model.BatchCreateSnapshotGroupTagResponse;
+import com.huaweicloud.sdk.evs.v2.model.BatchCreateSnapshotTagsRequest;
+import com.huaweicloud.sdk.evs.v2.model.BatchCreateSnapshotTagsResponse;
 import com.huaweicloud.sdk.evs.v2.model.BatchCreateVolumeTagsRequest;
 import com.huaweicloud.sdk.evs.v2.model.BatchCreateVolumeTagsResponse;
+import com.huaweicloud.sdk.evs.v2.model.BatchDeleteSnapshotGroupTagRequest;
+import com.huaweicloud.sdk.evs.v2.model.BatchDeleteSnapshotGroupTagResponse;
+import com.huaweicloud.sdk.evs.v2.model.BatchDeleteSnapshotTagsRequest;
+import com.huaweicloud.sdk.evs.v2.model.BatchDeleteSnapshotTagsResponse;
 import com.huaweicloud.sdk.evs.v2.model.BatchDeleteVolumeTagsRequest;
 import com.huaweicloud.sdk.evs.v2.model.BatchDeleteVolumeTagsResponse;
 import com.huaweicloud.sdk.evs.v2.model.BatchResizeVolumesRequest;
@@ -27,16 +37,50 @@ import com.huaweicloud.sdk.evs.v2.model.CinderListVolumeTypesRequest;
 import com.huaweicloud.sdk.evs.v2.model.CinderListVolumeTypesResponse;
 import com.huaweicloud.sdk.evs.v2.model.CinderShowVolumeTransferRequest;
 import com.huaweicloud.sdk.evs.v2.model.CinderShowVolumeTransferResponse;
+import com.huaweicloud.sdk.evs.v2.model.CountAutoSnapshotPoliciesRequest;
+import com.huaweicloud.sdk.evs.v2.model.CountAutoSnapshotPoliciesResponse;
+import com.huaweicloud.sdk.evs.v2.model.CountSnapshotChainsRequest;
+import com.huaweicloud.sdk.evs.v2.model.CountSnapshotChainsResponse;
+import com.huaweicloud.sdk.evs.v2.model.CountSnapshotsGroupRequest;
+import com.huaweicloud.sdk.evs.v2.model.CountSnapshotsGroupResponse;
+import com.huaweicloud.sdk.evs.v2.model.CountSnapshotsRequest;
+import com.huaweicloud.sdk.evs.v2.model.CountSnapshotsResponse;
+import com.huaweicloud.sdk.evs.v2.model.CreateAutoSnapshotPolicyRequest;
+import com.huaweicloud.sdk.evs.v2.model.CreateAutoSnapshotPolicyResponse;
+import com.huaweicloud.sdk.evs.v2.model.CreateSnapshotGroupRequest;
+import com.huaweicloud.sdk.evs.v2.model.CreateSnapshotGroupResponse;
 import com.huaweicloud.sdk.evs.v2.model.CreateSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.CreateSnapshotResponse;
+import com.huaweicloud.sdk.evs.v2.model.CreateStandardSnapshotRequest;
+import com.huaweicloud.sdk.evs.v2.model.CreateStandardSnapshotResponse;
 import com.huaweicloud.sdk.evs.v2.model.CreateVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.CreateVolumeResponse;
+import com.huaweicloud.sdk.evs.v2.model.DeleteAutoSnapshotPolicyRequest;
+import com.huaweicloud.sdk.evs.v2.model.DeleteAutoSnapshotPolicyResponse;
+import com.huaweicloud.sdk.evs.v2.model.DeleteSnapshotGroupRequest;
+import com.huaweicloud.sdk.evs.v2.model.DeleteSnapshotGroupResponse;
 import com.huaweicloud.sdk.evs.v2.model.DeleteSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.DeleteSnapshotResponse;
+import com.huaweicloud.sdk.evs.v2.model.DeleteStandardSnapshotRequest;
+import com.huaweicloud.sdk.evs.v2.model.DeleteStandardSnapshotResponse;
 import com.huaweicloud.sdk.evs.v2.model.DeleteVolumeInRecycleRequest;
 import com.huaweicloud.sdk.evs.v2.model.DeleteVolumeInRecycleResponse;
 import com.huaweicloud.sdk.evs.v2.model.DeleteVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.DeleteVolumeResponse;
+import com.huaweicloud.sdk.evs.v2.model.DisassociateAutoSnapshotPolicyRequest;
+import com.huaweicloud.sdk.evs.v2.model.DisassociateAutoSnapshotPolicyResponse;
+import com.huaweicloud.sdk.evs.v2.model.ListAutoSnapshotPolicyRequest;
+import com.huaweicloud.sdk.evs.v2.model.ListAutoSnapshotPolicyResponse;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotChainsRequest;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotChainsResponse;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotGroupRequest;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotGroupResponse;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotGroupTagsRequest;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotGroupTagsResponse;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotTagsRequest;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotTagsResponse;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotsDetailsRequest;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotsDetailsResponse;
 import com.huaweicloud.sdk.evs.v2.model.ListSnapshotsRequest;
 import com.huaweicloud.sdk.evs.v2.model.ListSnapshotsResponse;
 import com.huaweicloud.sdk.evs.v2.model.ListVersionsRequest;
@@ -59,12 +103,20 @@ import com.huaweicloud.sdk.evs.v2.model.RevertVolumeInRecycleRequest;
 import com.huaweicloud.sdk.evs.v2.model.RevertVolumeInRecycleResponse;
 import com.huaweicloud.sdk.evs.v2.model.RollbackSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.RollbackSnapshotResponse;
+import com.huaweicloud.sdk.evs.v2.model.RollbackStandardSnapshotRequest;
+import com.huaweicloud.sdk.evs.v2.model.RollbackStandardSnapshotResponse;
+import com.huaweicloud.sdk.evs.v2.model.ShowAutoSnapshotPolicyRequest;
+import com.huaweicloud.sdk.evs.v2.model.ShowAutoSnapshotPolicyResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowJobRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowJobResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowRecyclePolicyRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowRecyclePolicyResponse;
+import com.huaweicloud.sdk.evs.v2.model.ShowSnapshotGroupRequest;
+import com.huaweicloud.sdk.evs.v2.model.ShowSnapshotGroupResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowSnapshotResponse;
+import com.huaweicloud.sdk.evs.v2.model.ShowStandardSnapshotRequest;
+import com.huaweicloud.sdk.evs.v2.model.ShowStandardSnapshotResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowVersionRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowVersionResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowVolumeInRecycleRequest;
@@ -75,10 +127,16 @@ import com.huaweicloud.sdk.evs.v2.model.ShowVolumeTagsRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowVolumeTagsResponse;
 import com.huaweicloud.sdk.evs.v2.model.UnsubscribePostpaidVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.UnsubscribePostpaidVolumeResponse;
+import com.huaweicloud.sdk.evs.v2.model.UpdateAutoSnapshotPolicyRequest;
+import com.huaweicloud.sdk.evs.v2.model.UpdateAutoSnapshotPolicyResponse;
 import com.huaweicloud.sdk.evs.v2.model.UpdateRecyclePolicyRequest;
 import com.huaweicloud.sdk.evs.v2.model.UpdateRecyclePolicyResponse;
+import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotGroupRequest;
+import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotGroupResponse;
 import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotResponse;
+import com.huaweicloud.sdk.evs.v2.model.UpdateStandardSnapshotRequest;
+import com.huaweicloud.sdk.evs.v2.model.UpdateStandardSnapshotResponse;
 import com.huaweicloud.sdk.evs.v2.model.UpdateVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.UpdateVolumeResponse;
 
@@ -93,6 +151,93 @@ public class EvsClient {
     public static ClientBuilder<EvsClient> newBuilder() {
         ClientBuilder<EvsClient> clientBuilder = new ClientBuilder<>(EvsClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 绑定自动快照策略
+     *
+     * 绑定自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssociateAutoSnapshotPolicyRequest 请求对象
+     * @return AssociateAutoSnapshotPolicyResponse
+     */
+    public AssociateAutoSnapshotPolicyResponse associateAutoSnapshotPolicy(AssociateAutoSnapshotPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.associateAutoSnapshotPolicy);
+    }
+
+    /**
+     * 绑定自动快照策略
+     *
+     * 绑定自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssociateAutoSnapshotPolicyRequest 请求对象
+     * @return SyncInvoker<AssociateAutoSnapshotPolicyRequest, AssociateAutoSnapshotPolicyResponse>
+     */
+    public SyncInvoker<AssociateAutoSnapshotPolicyRequest, AssociateAutoSnapshotPolicyResponse> associateAutoSnapshotPolicyInvoker(
+        AssociateAutoSnapshotPolicyRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.associateAutoSnapshotPolicy, hcClient);
+    }
+
+    /**
+     * 为指定快照组添加标签
+     *
+     * 为指定快照组添加标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateSnapshotGroupTagRequest 请求对象
+     * @return BatchCreateSnapshotGroupTagResponse
+     */
+    public BatchCreateSnapshotGroupTagResponse batchCreateSnapshotGroupTag(BatchCreateSnapshotGroupTagRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.batchCreateSnapshotGroupTag);
+    }
+
+    /**
+     * 为指定快照组添加标签
+     *
+     * 为指定快照组添加标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateSnapshotGroupTagRequest 请求对象
+     * @return SyncInvoker<BatchCreateSnapshotGroupTagRequest, BatchCreateSnapshotGroupTagResponse>
+     */
+    public SyncInvoker<BatchCreateSnapshotGroupTagRequest, BatchCreateSnapshotGroupTagResponse> batchCreateSnapshotGroupTagInvoker(
+        BatchCreateSnapshotGroupTagRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.batchCreateSnapshotGroupTag, hcClient);
+    }
+
+    /**
+     * 为指定快照添加标签
+     *
+     * 为指定快照添加标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateSnapshotTagsRequest 请求对象
+     * @return BatchCreateSnapshotTagsResponse
+     */
+    public BatchCreateSnapshotTagsResponse batchCreateSnapshotTags(BatchCreateSnapshotTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.batchCreateSnapshotTags);
+    }
+
+    /**
+     * 为指定快照添加标签
+     *
+     * 为指定快照添加标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateSnapshotTagsRequest 请求对象
+     * @return SyncInvoker<BatchCreateSnapshotTagsRequest, BatchCreateSnapshotTagsResponse>
+     */
+    public SyncInvoker<BatchCreateSnapshotTagsRequest, BatchCreateSnapshotTagsResponse> batchCreateSnapshotTagsInvoker(
+        BatchCreateSnapshotTagsRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.batchCreateSnapshotTags, hcClient);
     }
 
     /**
@@ -128,6 +273,64 @@ public class EvsClient {
     public SyncInvoker<BatchCreateVolumeTagsRequest, BatchCreateVolumeTagsResponse> batchCreateVolumeTagsInvoker(
         BatchCreateVolumeTagsRequest request) {
         return new SyncInvoker<>(request, EvsMeta.batchCreateVolumeTags, hcClient);
+    }
+
+    /**
+     * 为指定快照组删除标签
+     *
+     * 为指定快照组删除标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSnapshotGroupTagRequest 请求对象
+     * @return BatchDeleteSnapshotGroupTagResponse
+     */
+    public BatchDeleteSnapshotGroupTagResponse batchDeleteSnapshotGroupTag(BatchDeleteSnapshotGroupTagRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.batchDeleteSnapshotGroupTag);
+    }
+
+    /**
+     * 为指定快照组删除标签
+     *
+     * 为指定快照组删除标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSnapshotGroupTagRequest 请求对象
+     * @return SyncInvoker<BatchDeleteSnapshotGroupTagRequest, BatchDeleteSnapshotGroupTagResponse>
+     */
+    public SyncInvoker<BatchDeleteSnapshotGroupTagRequest, BatchDeleteSnapshotGroupTagResponse> batchDeleteSnapshotGroupTagInvoker(
+        BatchDeleteSnapshotGroupTagRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.batchDeleteSnapshotGroupTag, hcClient);
+    }
+
+    /**
+     * 为指定快照删除标签
+     *
+     * 为指定快照删除标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSnapshotTagsRequest 请求对象
+     * @return BatchDeleteSnapshotTagsResponse
+     */
+    public BatchDeleteSnapshotTagsResponse batchDeleteSnapshotTags(BatchDeleteSnapshotTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.batchDeleteSnapshotTags);
+    }
+
+    /**
+     * 为指定快照删除标签
+     *
+     * 为指定快照删除标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSnapshotTagsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteSnapshotTagsRequest, BatchDeleteSnapshotTagsResponse>
+     */
+    public SyncInvoker<BatchDeleteSnapshotTagsRequest, BatchDeleteSnapshotTagsResponse> batchDeleteSnapshotTagsInvoker(
+        BatchDeleteSnapshotTagsRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.batchDeleteSnapshotTags, hcClient);
     }
 
     /**
@@ -460,6 +663,151 @@ public class EvsClient {
     }
 
     /**
+     * 查询自动快照策略总数
+     *
+     * 查询自动快照策略总数。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountAutoSnapshotPoliciesRequest 请求对象
+     * @return CountAutoSnapshotPoliciesResponse
+     */
+    public CountAutoSnapshotPoliciesResponse countAutoSnapshotPolicies(CountAutoSnapshotPoliciesRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.countAutoSnapshotPolicies);
+    }
+
+    /**
+     * 查询自动快照策略总数
+     *
+     * 查询自动快照策略总数。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountAutoSnapshotPoliciesRequest 请求对象
+     * @return SyncInvoker<CountAutoSnapshotPoliciesRequest, CountAutoSnapshotPoliciesResponse>
+     */
+    public SyncInvoker<CountAutoSnapshotPoliciesRequest, CountAutoSnapshotPoliciesResponse> countAutoSnapshotPoliciesInvoker(
+        CountAutoSnapshotPoliciesRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.countAutoSnapshotPolicies, hcClient);
+    }
+
+    /**
+     * 查询快照链个数
+     *
+     * 查询快照链个数。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountSnapshotChainsRequest 请求对象
+     * @return CountSnapshotChainsResponse
+     */
+    public CountSnapshotChainsResponse countSnapshotChains(CountSnapshotChainsRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.countSnapshotChains);
+    }
+
+    /**
+     * 查询快照链个数
+     *
+     * 查询快照链个数。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountSnapshotChainsRequest 请求对象
+     * @return SyncInvoker<CountSnapshotChainsRequest, CountSnapshotChainsResponse>
+     */
+    public SyncInvoker<CountSnapshotChainsRequest, CountSnapshotChainsResponse> countSnapshotChainsInvoker(
+        CountSnapshotChainsRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.countSnapshotChains, hcClient);
+    }
+
+    /**
+     * 查询快照个数
+     *
+     * 查询快照个数。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountSnapshotsRequest 请求对象
+     * @return CountSnapshotsResponse
+     */
+    public CountSnapshotsResponse countSnapshots(CountSnapshotsRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.countSnapshots);
+    }
+
+    /**
+     * 查询快照个数
+     *
+     * 查询快照个数。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountSnapshotsRequest 请求对象
+     * @return SyncInvoker<CountSnapshotsRequest, CountSnapshotsResponse>
+     */
+    public SyncInvoker<CountSnapshotsRequest, CountSnapshotsResponse> countSnapshotsInvoker(
+        CountSnapshotsRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.countSnapshots, hcClient);
+    }
+
+    /**
+     * 查询快照一致性组个数
+     *
+     * 查询快照一致性组个数。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountSnapshotsGroupRequest 请求对象
+     * @return CountSnapshotsGroupResponse
+     */
+    public CountSnapshotsGroupResponse countSnapshotsGroup(CountSnapshotsGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.countSnapshotsGroup);
+    }
+
+    /**
+     * 查询快照一致性组个数
+     *
+     * 查询快照一致性组个数。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountSnapshotsGroupRequest 请求对象
+     * @return SyncInvoker<CountSnapshotsGroupRequest, CountSnapshotsGroupResponse>
+     */
+    public SyncInvoker<CountSnapshotsGroupRequest, CountSnapshotsGroupResponse> countSnapshotsGroupInvoker(
+        CountSnapshotsGroupRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.countSnapshotsGroup, hcClient);
+    }
+
+    /**
+     * 创建自动快照策略
+     *
+     * 创建自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAutoSnapshotPolicyRequest 请求对象
+     * @return CreateAutoSnapshotPolicyResponse
+     */
+    public CreateAutoSnapshotPolicyResponse createAutoSnapshotPolicy(CreateAutoSnapshotPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.createAutoSnapshotPolicy);
+    }
+
+    /**
+     * 创建自动快照策略
+     *
+     * 创建自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAutoSnapshotPolicyRequest 请求对象
+     * @return SyncInvoker<CreateAutoSnapshotPolicyRequest, CreateAutoSnapshotPolicyResponse>
+     */
+    public SyncInvoker<CreateAutoSnapshotPolicyRequest, CreateAutoSnapshotPolicyResponse> createAutoSnapshotPolicyInvoker(
+        CreateAutoSnapshotPolicyRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.createAutoSnapshotPolicy, hcClient);
+    }
+
+    /**
      * 创建云硬盘快照
      *
      * 创建云硬盘快照。
@@ -486,6 +834,64 @@ public class EvsClient {
     public SyncInvoker<CreateSnapshotRequest, CreateSnapshotResponse> createSnapshotInvoker(
         CreateSnapshotRequest request) {
         return new SyncInvoker<>(request, EvsMeta.createSnapshot, hcClient);
+    }
+
+    /**
+     * 创建快照一致性组
+     *
+     * 创建快照一致性组。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSnapshotGroupRequest 请求对象
+     * @return CreateSnapshotGroupResponse
+     */
+    public CreateSnapshotGroupResponse createSnapshotGroup(CreateSnapshotGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.createSnapshotGroup);
+    }
+
+    /**
+     * 创建快照一致性组
+     *
+     * 创建快照一致性组。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSnapshotGroupRequest 请求对象
+     * @return SyncInvoker<CreateSnapshotGroupRequest, CreateSnapshotGroupResponse>
+     */
+    public SyncInvoker<CreateSnapshotGroupRequest, CreateSnapshotGroupResponse> createSnapshotGroupInvoker(
+        CreateSnapshotGroupRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.createSnapshotGroup, hcClient);
+    }
+
+    /**
+     * 创建快照
+     *
+     * 创建标准快照。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateStandardSnapshotRequest 请求对象
+     * @return CreateStandardSnapshotResponse
+     */
+    public CreateStandardSnapshotResponse createStandardSnapshot(CreateStandardSnapshotRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.createStandardSnapshot);
+    }
+
+    /**
+     * 创建快照
+     *
+     * 创建标准快照。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateStandardSnapshotRequest 请求对象
+     * @return SyncInvoker<CreateStandardSnapshotRequest, CreateStandardSnapshotResponse>
+     */
+    public SyncInvoker<CreateStandardSnapshotRequest, CreateStandardSnapshotResponse> createStandardSnapshotInvoker(
+        CreateStandardSnapshotRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.createStandardSnapshot, hcClient);
     }
 
     /**
@@ -527,6 +933,35 @@ public class EvsClient {
     }
 
     /**
+     * 删除单个自动快照策略
+     *
+     * 删除单个自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAutoSnapshotPolicyRequest 请求对象
+     * @return DeleteAutoSnapshotPolicyResponse
+     */
+    public DeleteAutoSnapshotPolicyResponse deleteAutoSnapshotPolicy(DeleteAutoSnapshotPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.deleteAutoSnapshotPolicy);
+    }
+
+    /**
+     * 删除单个自动快照策略
+     *
+     * 删除单个自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAutoSnapshotPolicyRequest 请求对象
+     * @return SyncInvoker<DeleteAutoSnapshotPolicyRequest, DeleteAutoSnapshotPolicyResponse>
+     */
+    public SyncInvoker<DeleteAutoSnapshotPolicyRequest, DeleteAutoSnapshotPolicyResponse> deleteAutoSnapshotPolicyInvoker(
+        DeleteAutoSnapshotPolicyRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.deleteAutoSnapshotPolicy, hcClient);
+    }
+
+    /**
      * 删除云硬盘快照
      *
      * 删除云硬盘快照。
@@ -553,6 +988,64 @@ public class EvsClient {
     public SyncInvoker<DeleteSnapshotRequest, DeleteSnapshotResponse> deleteSnapshotInvoker(
         DeleteSnapshotRequest request) {
         return new SyncInvoker<>(request, EvsMeta.deleteSnapshot, hcClient);
+    }
+
+    /**
+     * 删除快照一致性组
+     *
+     * 删除快照一致性组。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSnapshotGroupRequest 请求对象
+     * @return DeleteSnapshotGroupResponse
+     */
+    public DeleteSnapshotGroupResponse deleteSnapshotGroup(DeleteSnapshotGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.deleteSnapshotGroup);
+    }
+
+    /**
+     * 删除快照一致性组
+     *
+     * 删除快照一致性组。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSnapshotGroupRequest 请求对象
+     * @return SyncInvoker<DeleteSnapshotGroupRequest, DeleteSnapshotGroupResponse>
+     */
+    public SyncInvoker<DeleteSnapshotGroupRequest, DeleteSnapshotGroupResponse> deleteSnapshotGroupInvoker(
+        DeleteSnapshotGroupRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.deleteSnapshotGroup, hcClient);
+    }
+
+    /**
+     * 删除快照
+     *
+     * 删除快照。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteStandardSnapshotRequest 请求对象
+     * @return DeleteStandardSnapshotResponse
+     */
+    public DeleteStandardSnapshotResponse deleteStandardSnapshot(DeleteStandardSnapshotRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.deleteStandardSnapshot);
+    }
+
+    /**
+     * 删除快照
+     *
+     * 删除快照。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteStandardSnapshotRequest 请求对象
+     * @return SyncInvoker<DeleteStandardSnapshotRequest, DeleteStandardSnapshotResponse>
+     */
+    public SyncInvoker<DeleteStandardSnapshotRequest, DeleteStandardSnapshotResponse> deleteStandardSnapshotInvoker(
+        DeleteStandardSnapshotRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.deleteStandardSnapshot, hcClient);
     }
 
     /**
@@ -613,6 +1106,181 @@ public class EvsClient {
     }
 
     /**
+     * 解绑自动快照策略
+     *
+     * 解绑自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisassociateAutoSnapshotPolicyRequest 请求对象
+     * @return DisassociateAutoSnapshotPolicyResponse
+     */
+    public DisassociateAutoSnapshotPolicyResponse disassociateAutoSnapshotPolicy(
+        DisassociateAutoSnapshotPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.disassociateAutoSnapshotPolicy);
+    }
+
+    /**
+     * 解绑自动快照策略
+     *
+     * 解绑自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisassociateAutoSnapshotPolicyRequest 请求对象
+     * @return SyncInvoker<DisassociateAutoSnapshotPolicyRequest, DisassociateAutoSnapshotPolicyResponse>
+     */
+    public SyncInvoker<DisassociateAutoSnapshotPolicyRequest, DisassociateAutoSnapshotPolicyResponse> disassociateAutoSnapshotPolicyInvoker(
+        DisassociateAutoSnapshotPolicyRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.disassociateAutoSnapshotPolicy, hcClient);
+    }
+
+    /**
+     * 查询自动快照策略
+     *
+     * 查询自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAutoSnapshotPolicyRequest 请求对象
+     * @return ListAutoSnapshotPolicyResponse
+     */
+    public ListAutoSnapshotPolicyResponse listAutoSnapshotPolicy(ListAutoSnapshotPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.listAutoSnapshotPolicy);
+    }
+
+    /**
+     * 查询自动快照策略
+     *
+     * 查询自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAutoSnapshotPolicyRequest 请求对象
+     * @return SyncInvoker<ListAutoSnapshotPolicyRequest, ListAutoSnapshotPolicyResponse>
+     */
+    public SyncInvoker<ListAutoSnapshotPolicyRequest, ListAutoSnapshotPolicyResponse> listAutoSnapshotPolicyInvoker(
+        ListAutoSnapshotPolicyRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.listAutoSnapshotPolicy, hcClient);
+    }
+
+    /**
+     * 查询快照链列表
+     *
+     * 查询快照链的列表。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSnapshotChainsRequest 请求对象
+     * @return ListSnapshotChainsResponse
+     */
+    public ListSnapshotChainsResponse listSnapshotChains(ListSnapshotChainsRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.listSnapshotChains);
+    }
+
+    /**
+     * 查询快照链列表
+     *
+     * 查询快照链的列表。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSnapshotChainsRequest 请求对象
+     * @return SyncInvoker<ListSnapshotChainsRequest, ListSnapshotChainsResponse>
+     */
+    public SyncInvoker<ListSnapshotChainsRequest, ListSnapshotChainsResponse> listSnapshotChainsInvoker(
+        ListSnapshotChainsRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.listSnapshotChains, hcClient);
+    }
+
+    /**
+     * 查询快照一致性组列表
+     *
+     * 查询快照一致性组列表。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSnapshotGroupRequest 请求对象
+     * @return ListSnapshotGroupResponse
+     */
+    public ListSnapshotGroupResponse listSnapshotGroup(ListSnapshotGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.listSnapshotGroup);
+    }
+
+    /**
+     * 查询快照一致性组列表
+     *
+     * 查询快照一致性组列表。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSnapshotGroupRequest 请求对象
+     * @return SyncInvoker<ListSnapshotGroupRequest, ListSnapshotGroupResponse>
+     */
+    public SyncInvoker<ListSnapshotGroupRequest, ListSnapshotGroupResponse> listSnapshotGroupInvoker(
+        ListSnapshotGroupRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.listSnapshotGroup, hcClient);
+    }
+
+    /**
+     * 查询快照组的所有标签
+     *
+     * 查询快照组的所有标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSnapshotGroupTagsRequest 请求对象
+     * @return ListSnapshotGroupTagsResponse
+     */
+    public ListSnapshotGroupTagsResponse listSnapshotGroupTags(ListSnapshotGroupTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.listSnapshotGroupTags);
+    }
+
+    /**
+     * 查询快照组的所有标签
+     *
+     * 查询快照组的所有标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSnapshotGroupTagsRequest 请求对象
+     * @return SyncInvoker<ListSnapshotGroupTagsRequest, ListSnapshotGroupTagsResponse>
+     */
+    public SyncInvoker<ListSnapshotGroupTagsRequest, ListSnapshotGroupTagsResponse> listSnapshotGroupTagsInvoker(
+        ListSnapshotGroupTagsRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.listSnapshotGroupTags, hcClient);
+    }
+
+    /**
+     * 查询快照资源的所有标签
+     *
+     * 查询快照资源的所有标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSnapshotTagsRequest 请求对象
+     * @return ListSnapshotTagsResponse
+     */
+    public ListSnapshotTagsResponse listSnapshotTags(ListSnapshotTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.listSnapshotTags);
+    }
+
+    /**
+     * 查询快照资源的所有标签
+     *
+     * 查询快照资源的所有标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSnapshotTagsRequest 请求对象
+     * @return SyncInvoker<ListSnapshotTagsRequest, ListSnapshotTagsResponse>
+     */
+    public SyncInvoker<ListSnapshotTagsRequest, ListSnapshotTagsResponse> listSnapshotTagsInvoker(
+        ListSnapshotTagsRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.listSnapshotTags, hcClient);
+    }
+
+    /**
      * 查询云硬盘快照详情列表
      *
      * 查询云硬盘快照详细列表信息。
@@ -638,6 +1306,35 @@ public class EvsClient {
      */
     public SyncInvoker<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsInvoker(ListSnapshotsRequest request) {
         return new SyncInvoker<>(request, EvsMeta.listSnapshots, hcClient);
+    }
+
+    /**
+     * 查询快照详情列表
+     *
+     * 查询快照详情列表。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSnapshotsDetailsRequest 请求对象
+     * @return ListSnapshotsDetailsResponse
+     */
+    public ListSnapshotsDetailsResponse listSnapshotsDetails(ListSnapshotsDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.listSnapshotsDetails);
+    }
+
+    /**
+     * 查询快照详情列表
+     *
+     * 查询快照详情列表。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSnapshotsDetailsRequest 请求对象
+     * @return SyncInvoker<ListSnapshotsDetailsRequest, ListSnapshotsDetailsResponse>
+     */
+    public SyncInvoker<ListSnapshotsDetailsRequest, ListSnapshotsDetailsResponse> listSnapshotsDetailsInvoker(
+        ListSnapshotsDetailsRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.listSnapshotsDetails, hcClient);
     }
 
     /**
@@ -919,6 +1616,64 @@ public class EvsClient {
     }
 
     /**
+     * 快照回滚
+     *
+     * 将快照数据回滚到云硬盘。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RollbackStandardSnapshotRequest 请求对象
+     * @return RollbackStandardSnapshotResponse
+     */
+    public RollbackStandardSnapshotResponse rollbackStandardSnapshot(RollbackStandardSnapshotRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.rollbackStandardSnapshot);
+    }
+
+    /**
+     * 快照回滚
+     *
+     * 将快照数据回滚到云硬盘。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RollbackStandardSnapshotRequest 请求对象
+     * @return SyncInvoker<RollbackStandardSnapshotRequest, RollbackStandardSnapshotResponse>
+     */
+    public SyncInvoker<RollbackStandardSnapshotRequest, RollbackStandardSnapshotResponse> rollbackStandardSnapshotInvoker(
+        RollbackStandardSnapshotRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.rollbackStandardSnapshot, hcClient);
+    }
+
+    /**
+     * 查询单个自动快照策略
+     *
+     * 查询单个自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoSnapshotPolicyRequest 请求对象
+     * @return ShowAutoSnapshotPolicyResponse
+     */
+    public ShowAutoSnapshotPolicyResponse showAutoSnapshotPolicy(ShowAutoSnapshotPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.showAutoSnapshotPolicy);
+    }
+
+    /**
+     * 查询单个自动快照策略
+     *
+     * 查询单个自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoSnapshotPolicyRequest 请求对象
+     * @return SyncInvoker<ShowAutoSnapshotPolicyRequest, ShowAutoSnapshotPolicyResponse>
+     */
+    public SyncInvoker<ShowAutoSnapshotPolicyRequest, ShowAutoSnapshotPolicyResponse> showAutoSnapshotPolicyInvoker(
+        ShowAutoSnapshotPolicyRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.showAutoSnapshotPolicy, hcClient);
+    }
+
+    /**
      * 查询job的状态
      *
      * 查询Job的执行状态。
@@ -1003,6 +1758,64 @@ public class EvsClient {
      */
     public SyncInvoker<ShowSnapshotRequest, ShowSnapshotResponse> showSnapshotInvoker(ShowSnapshotRequest request) {
         return new SyncInvoker<>(request, EvsMeta.showSnapshot, hcClient);
+    }
+
+    /**
+     * 查询单个快照一致性组
+     *
+     * 查询单个快照一致性组。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSnapshotGroupRequest 请求对象
+     * @return ShowSnapshotGroupResponse
+     */
+    public ShowSnapshotGroupResponse showSnapshotGroup(ShowSnapshotGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.showSnapshotGroup);
+    }
+
+    /**
+     * 查询单个快照一致性组
+     *
+     * 查询单个快照一致性组。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSnapshotGroupRequest 请求对象
+     * @return SyncInvoker<ShowSnapshotGroupRequest, ShowSnapshotGroupResponse>
+     */
+    public SyncInvoker<ShowSnapshotGroupRequest, ShowSnapshotGroupResponse> showSnapshotGroupInvoker(
+        ShowSnapshotGroupRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.showSnapshotGroup, hcClient);
+    }
+
+    /**
+     * 查询单个快照信息
+     *
+     * 查询单个快照信息。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStandardSnapshotRequest 请求对象
+     * @return ShowStandardSnapshotResponse
+     */
+    public ShowStandardSnapshotResponse showStandardSnapshot(ShowStandardSnapshotRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.showStandardSnapshot);
+    }
+
+    /**
+     * 查询单个快照信息
+     *
+     * 查询单个快照信息。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStandardSnapshotRequest 请求对象
+     * @return SyncInvoker<ShowStandardSnapshotRequest, ShowStandardSnapshotResponse>
+     */
+    public SyncInvoker<ShowStandardSnapshotRequest, ShowStandardSnapshotResponse> showStandardSnapshotInvoker(
+        ShowStandardSnapshotRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.showStandardSnapshot, hcClient);
     }
 
     /**
@@ -1125,6 +1938,35 @@ public class EvsClient {
     }
 
     /**
+     * 更新自动快照策略
+     *
+     * 更新自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAutoSnapshotPolicyRequest 请求对象
+     * @return UpdateAutoSnapshotPolicyResponse
+     */
+    public UpdateAutoSnapshotPolicyResponse updateAutoSnapshotPolicy(UpdateAutoSnapshotPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.updateAutoSnapshotPolicy);
+    }
+
+    /**
+     * 更新自动快照策略
+     *
+     * 更新自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAutoSnapshotPolicyRequest 请求对象
+     * @return SyncInvoker<UpdateAutoSnapshotPolicyRequest, UpdateAutoSnapshotPolicyResponse>
+     */
+    public SyncInvoker<UpdateAutoSnapshotPolicyRequest, UpdateAutoSnapshotPolicyResponse> updateAutoSnapshotPolicyInvoker(
+        UpdateAutoSnapshotPolicyRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.updateAutoSnapshotPolicy, hcClient);
+    }
+
+    /**
      * 更新回收站策略
      *
      * 更新回收站策略。
@@ -1180,6 +2022,64 @@ public class EvsClient {
     public SyncInvoker<UpdateSnapshotRequest, UpdateSnapshotResponse> updateSnapshotInvoker(
         UpdateSnapshotRequest request) {
         return new SyncInvoker<>(request, EvsMeta.updateSnapshot, hcClient);
+    }
+
+    /**
+     * 更新快照一致性组
+     *
+     * 更新快照一致性组。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSnapshotGroupRequest 请求对象
+     * @return UpdateSnapshotGroupResponse
+     */
+    public UpdateSnapshotGroupResponse updateSnapshotGroup(UpdateSnapshotGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.updateSnapshotGroup);
+    }
+
+    /**
+     * 更新快照一致性组
+     *
+     * 更新快照一致性组。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSnapshotGroupRequest 请求对象
+     * @return SyncInvoker<UpdateSnapshotGroupRequest, UpdateSnapshotGroupResponse>
+     */
+    public SyncInvoker<UpdateSnapshotGroupRequest, UpdateSnapshotGroupResponse> updateSnapshotGroupInvoker(
+        UpdateSnapshotGroupRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.updateSnapshotGroup, hcClient);
+    }
+
+    /**
+     * 更新快照信息
+     *
+     * 更新快照信息。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateStandardSnapshotRequest 请求对象
+     * @return UpdateStandardSnapshotResponse
+     */
+    public UpdateStandardSnapshotResponse updateStandardSnapshot(UpdateStandardSnapshotRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.updateStandardSnapshot);
+    }
+
+    /**
+     * 更新快照信息
+     *
+     * 更新快照信息。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateStandardSnapshotRequest 请求对象
+     * @return SyncInvoker<UpdateStandardSnapshotRequest, UpdateStandardSnapshotResponse>
+     */
+    public SyncInvoker<UpdateStandardSnapshotRequest, UpdateStandardSnapshotResponse> updateStandardSnapshotInvoker(
+        UpdateStandardSnapshotRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.updateStandardSnapshot, hcClient);
     }
 
     /**

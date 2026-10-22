@@ -56,7 +56,7 @@ public class Health {
     }
 
     /**
-     * **参数解释：** 健康检查方式：HTTP 或者 EXEC（命令行）。 **约束限制：** 不涉及。 **取值范围：** - HTTP：超文本传输协议。 - EXEC：命令行。 **默认取值：** 创建的时候，check_method不传值，默认：check_method。 更新的时候，check_method不传值，会报错。
+     * **参数解释：** 健康检查方式：HTTP 或者 EXEC（命令行）。 **约束限制：** 不涉及。 **取值范围：** - HTTP：超文本传输协议。 - EXEC：命令行。 **默认取值：** 创建的时候，check_method不传值，默认：HTTP。 更新的时候，check_method不传值，会报错。
      * @return checkMethod
      */
     public String getCheckMethod() {

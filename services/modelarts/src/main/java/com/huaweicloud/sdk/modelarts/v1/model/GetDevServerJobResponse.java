@@ -17,12 +17,12 @@ public class GetDevServerJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_at")
 
-    private String createAt;
+    private Long createAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_at")
 
-    private String updateAt;
+    private Long updateAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -74,7 +74,7 @@ public class GetDevServerJobResponse extends SdkResponse {
 
     private String description;
 
-    public GetDevServerJobResponse withCreateAt(String createAt) {
+    public GetDevServerJobResponse withCreateAt(Long createAt) {
         this.createAt = createAt;
         return this;
     }
@@ -83,15 +83,15 @@ public class GetDevServerJobResponse extends SdkResponse {
      * **参数解释**：创建时间。 **取值范围**：不涉及。
      * @return createAt
      */
-    public String getCreateAt() {
+    public Long getCreateAt() {
         return createAt;
     }
 
-    public void setCreateAt(String createAt) {
+    public void setCreateAt(Long createAt) {
         this.createAt = createAt;
     }
 
-    public GetDevServerJobResponse withUpdateAt(String updateAt) {
+    public GetDevServerJobResponse withUpdateAt(Long updateAt) {
         this.updateAt = updateAt;
         return this;
     }
@@ -100,11 +100,11 @@ public class GetDevServerJobResponse extends SdkResponse {
      * **参数解释**：更新时间。 **取值范围**：不涉及。
      * @return updateAt
      */
-    public String getUpdateAt() {
+    public Long getUpdateAt() {
         return updateAt;
     }
 
-    public void setUpdateAt(String updateAt) {
+    public void setUpdateAt(Long updateAt) {
         this.updateAt = updateAt;
     }
 

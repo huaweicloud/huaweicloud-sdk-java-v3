@@ -24,6 +24,11 @@ public class ListAllAppRequestBody {
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "search")
+
+    private String search;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page")
 
     private Integer page;
@@ -246,6 +251,23 @@ public class ListAllAppRequestBody {
         this.projectId = projectId;
     }
 
+    public ListAllAppRequestBody withSearch(String search) {
+        this.search = search;
+        return this;
+    }
+
+    /**
+     * 检索关键字，应用名称模糊匹配
+     * @return search
+     */
+    public String getSearch() {
+        return search;
+    }
+
+    public void setSearch(String search) {
+        this.search = search;
+    }
+
     public ListAllAppRequestBody withPage(Integer page) {
         this.page = page;
         return this;
@@ -373,15 +395,15 @@ public class ListAllAppRequestBody {
             return false;
         }
         ListAllAppRequestBody that = (ListAllAppRequestBody) obj;
-        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.page, that.page)
-            && Objects.equals(this.size, that.size) && Objects.equals(this.sortName, that.sortName)
-            && Objects.equals(this.sortBy, that.sortBy) && Objects.equals(this.states, that.states)
-            && Objects.equals(this.groupId, that.groupId);
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.search, that.search)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.sortName, that.sortName) && Objects.equals(this.sortBy, that.sortBy)
+            && Objects.equals(this.states, that.states) && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, page, size, sortName, sortBy, states, groupId);
+        return Objects.hash(projectId, search, page, size, sortName, sortBy, states, groupId);
     }
 
     @Override
@@ -389,6 +411,7 @@ public class ListAllAppRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAllAppRequestBody {\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    search: ").append(toIndentedString(search)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    sortName: ").append(toIndentedString(sortName)).append("\n");

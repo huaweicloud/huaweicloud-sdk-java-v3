@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.waf.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * SecurityReportContentResponseReportContentInfoQpsStatisticsInfoTimeline
@@ -19,6 +22,11 @@ public class SecurityReportContentResponseReportContentInfoQpsStatisticsInfoTime
     @JsonProperty(value = "num")
 
     private Long num;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "docCountItems")
+
+    private List<SecurityReportContentResponseReportContentInfoDocCountItems> docCountItems = null;
 
     public SecurityReportContentResponseReportContentInfoQpsStatisticsInfoTimeline withTime(Long time) {
         this.time = time;
@@ -54,6 +62,42 @@ public class SecurityReportContentResponseReportContentInfoQpsStatisticsInfoTime
         this.num = num;
     }
 
+    public SecurityReportContentResponseReportContentInfoQpsStatisticsInfoTimeline withDocCountItems(
+        List<SecurityReportContentResponseReportContentInfoDocCountItems> docCountItems) {
+        this.docCountItems = docCountItems;
+        return this;
+    }
+
+    public SecurityReportContentResponseReportContentInfoQpsStatisticsInfoTimeline addDocCountItemsItem(
+        SecurityReportContentResponseReportContentInfoDocCountItems docCountItemsItem) {
+        if (this.docCountItems == null) {
+            this.docCountItems = new ArrayList<>();
+        }
+        this.docCountItems.add(docCountItemsItem);
+        return this;
+    }
+
+    public SecurityReportContentResponseReportContentInfoQpsStatisticsInfoTimeline withDocCountItems(
+        Consumer<List<SecurityReportContentResponseReportContentInfoDocCountItems>> docCountItemsSetter) {
+        if (this.docCountItems == null) {
+            this.docCountItems = new ArrayList<>();
+        }
+        docCountItemsSetter.accept(this.docCountItems);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 该时间点各维度的详细统计项。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return docCountItems
+     */
+    public List<SecurityReportContentResponseReportContentInfoDocCountItems> getDocCountItems() {
+        return docCountItems;
+    }
+
+    public void setDocCountItems(List<SecurityReportContentResponseReportContentInfoDocCountItems> docCountItems) {
+        this.docCountItems = docCountItems;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +108,13 @@ public class SecurityReportContentResponseReportContentInfoQpsStatisticsInfoTime
         }
         SecurityReportContentResponseReportContentInfoQpsStatisticsInfoTimeline that =
             (SecurityReportContentResponseReportContentInfoQpsStatisticsInfoTimeline) obj;
-        return Objects.equals(this.time, that.time) && Objects.equals(this.num, that.num);
+        return Objects.equals(this.time, that.time) && Objects.equals(this.num, that.num)
+            && Objects.equals(this.docCountItems, that.docCountItems);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, num);
+        return Objects.hash(time, num, docCountItems);
     }
 
     @Override
@@ -78,6 +123,7 @@ public class SecurityReportContentResponseReportContentInfoQpsStatisticsInfoTime
         sb.append("class SecurityReportContentResponseReportContentInfoQpsStatisticsInfoTimeline {\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    num: ").append(toIndentedString(num)).append("\n");
+        sb.append("    docCountItems: ").append(toIndentedString(docCountItems)).append("\n");
         sb.append("}");
         return sb.toString();
     }

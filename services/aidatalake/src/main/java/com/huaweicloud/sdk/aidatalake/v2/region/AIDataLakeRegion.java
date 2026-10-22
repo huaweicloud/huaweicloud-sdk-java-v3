@@ -19,9 +19,13 @@ public class AIDataLakeRegion {
     public static final Region CN_NORTH_2 = new Region("cn-north-2", "https://fabric.cn-north-2.myhuaweicloud.com");
 
     public static final Region CN_SOUTHWEST_2 =
-        new Region("cn-southwest-2", "https://fabric.cn-southwest-2.myhuaweicloud.com");
+        new Region("cn-southwest-2", "https://fabric-serverless.cn-southwest-2.myhuaweicloud.com");
 
-    public static final Region CN_EAST_4 = new Region("cn-east-4", "https://fabric.cn-east-4.myhuaweicloud.com");
+    public static final Region CN_EAST_4 =
+        new Region("cn-east-4", "https://fabric-serverless.cn-east-4.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_1 =
+        new Region("ap-southeast-1", "https://fabric.ap-southeast-1.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("AIDATALAKE");
 
@@ -33,6 +37,7 @@ public class AIDataLakeRegion {
         map.put("cn-north-2", CN_NORTH_2);
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
         map.put("cn-east-4", CN_EAST_4);
+        map.put("ap-southeast-1", AP_SOUTHEAST_1);
         return Collections.unmodifiableMap(map);
     }
 

@@ -37,6 +37,11 @@ public class Resource {
     private String poolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_name")
+
+    private String poolName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool_group_id")
 
     private String poolGroupId;
@@ -140,6 +145,23 @@ public class Resource {
 
     public void setPoolId(String poolId) {
         this.poolId = poolId;
+    }
+
+    public Resource withPoolName(String poolName) {
+        this.poolName = poolName;
+        return this;
+    }
+
+    /**
+     * **参数解释**：训练作业选择的资源池名称。 **取值范围**：不涉及。
+     * @return poolName
+     */
+    public String getPoolName() {
+        return poolName;
+    }
+
+    public void setPoolName(String poolName) {
+        this.poolName = poolName;
     }
 
     public Resource withPoolGroupId(String poolGroupId) {
@@ -251,7 +273,8 @@ public class Resource {
         Resource that = (Resource) obj;
         return Objects.equals(this.policy, that.policy) && Objects.equals(this.flavorId, that.flavorId)
             && Objects.equals(this.flavorName, that.flavorName) && Objects.equals(this.nodeCount, that.nodeCount)
-            && Objects.equals(this.poolId, that.poolId) && Objects.equals(this.poolGroupId, that.poolGroupId)
+            && Objects.equals(this.poolId, that.poolId) && Objects.equals(this.poolName, that.poolName)
+            && Objects.equals(this.poolGroupId, that.poolGroupId)
             && Objects.equals(this.flavorDetail, that.flavorDetail)
             && Objects.equals(this.mainContainerAllocatedResources, that.mainContainerAllocatedResources)
             && Objects.equals(this.mainContainerCustomizedFlavor, that.mainContainerCustomizedFlavor);
@@ -264,6 +287,7 @@ public class Resource {
             flavorName,
             nodeCount,
             poolId,
+            poolName,
             poolGroupId,
             flavorDetail,
             mainContainerAllocatedResources,
@@ -279,6 +303,7 @@ public class Resource {
         sb.append("    flavorName: ").append(toIndentedString(flavorName)).append("\n");
         sb.append("    nodeCount: ").append(toIndentedString(nodeCount)).append("\n");
         sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
+        sb.append("    poolName: ").append(toIndentedString(poolName)).append("\n");
         sb.append("    poolGroupId: ").append(toIndentedString(poolGroupId)).append("\n");
         sb.append("    flavorDetail: ").append(toIndentedString(flavorDetail)).append("\n");
         sb.append("    mainContainerAllocatedResources: ")

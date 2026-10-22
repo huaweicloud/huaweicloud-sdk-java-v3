@@ -81,6 +81,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.CreateDevServerRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateDevServerResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperClusterRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperClusterResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperinstanceGroupRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperinstanceGroupResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperinstanceTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperinstanceTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateImageRequest;
@@ -155,6 +157,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.DeleteDevServerRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteDevServerResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperClusterRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperClusterResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceGroupRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceGroupResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceTagsRequest;
@@ -223,6 +227,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.GetDevServerOperationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.GetDevServerOperationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.GetHyperClusterRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.GetHyperClusterResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceGroupRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceGroupResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceOperationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceOperationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceRequest;
@@ -271,6 +277,12 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListHyperClusterRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListHyperClusterResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceClustersCapacityRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceClustersCapacityResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceGroupRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceGroupResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceGroupsCapacityRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceGroupsCapacityResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceServersRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceServersResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstancesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstancesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListImageGroupRequest;
@@ -545,6 +557,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.SyncDevServersRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.SyncDevServersResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.SyncImageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.SyncImageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UnbindDevServerPublicIPRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UnbindDevServerPublicIPResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.UnbindInferApiKeyRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.UnbindInferApiKeyResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateAuthModeRequest;
@@ -1474,7 +1488,8 @@ public class ModelArtsAsyncClient {
     /**
      * 更新训练作业描述
      *
-     * 更新训练作业描述。
+     * 更新训练作业接口用于修改已存在的训练作业的描述、事件通知、作业优先级、允许被抢占等信息。
+     * 该接口适用于以下场景：当用户需要更新训练作业的描述、事件通知、作业优先级、允许被抢占等信息时，可以通过此接口进行修改。使用该接口的前提条件是训练作业已存在且用户具有相应的权限。更新操作完成后，训练作业的描述、事件通知、作业优先级、允许被抢占等信息将被更新。若训练作业不存在或用户无权限操作，接口将返回相应的错误信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1489,7 +1504,8 @@ public class ModelArtsAsyncClient {
     /**
      * 更新训练作业描述
      *
-     * 更新训练作业描述。
+     * 更新训练作业接口用于修改已存在的训练作业的描述、事件通知、作业优先级、允许被抢占等信息。
+     * 该接口适用于以下场景：当用户需要更新训练作业的描述、事件通知、作业优先级、允许被抢占等信息时，可以通过此接口进行修改。使用该接口的前提条件是训练作业已存在且用户具有相应的权限。更新操作完成后，训练作业的描述、事件通知、作业优先级、允许被抢占等信息将被更新。若训练作业不存在或用户无权限操作，接口将返回相应的错误信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1770,6 +1786,36 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<CreateHyperClusterRequest, CreateHyperClusterResponse> createHyperClusterAsyncInvoker(
         CreateHyperClusterRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.createHyperCluster, hcClient);
+    }
+
+    /**
+     * 创建hyperinstance-group
+     *
+     * 创建Hyper Group接口用于在系统中创建一个新的Hyper Group。该接口适用于以下场景：当用户需要使用超平面网络时，可以通过此接口创建Hyper Group。使用该接口的前提条件是用户已登录并具有创建Hyper Group的权限，且系统中已配置了必要的资源。创建操作完成后，将生成一个新的超平面网络，并返回超平面网络的详细信息，包括ID、名称、参数面网络ID。若用户无权限操作、系统中缺少必要的资源或配置参数无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHyperinstanceGroupRequest 请求对象
+     * @return CompletableFuture<CreateHyperinstanceGroupResponse>
+     */
+    public CompletableFuture<CreateHyperinstanceGroupResponse> createHyperinstanceGroupAsync(
+        CreateHyperinstanceGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createHyperinstanceGroup);
+    }
+
+    /**
+     * 创建hyperinstance-group
+     *
+     * 创建Hyper Group接口用于在系统中创建一个新的Hyper Group。该接口适用于以下场景：当用户需要使用超平面网络时，可以通过此接口创建Hyper Group。使用该接口的前提条件是用户已登录并具有创建Hyper Group的权限，且系统中已配置了必要的资源。创建操作完成后，将生成一个新的超平面网络，并返回超平面网络的详细信息，包括ID、名称、参数面网络ID。若用户无权限操作、系统中缺少必要的资源或配置参数无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHyperinstanceGroupRequest 请求对象
+     * @return AsyncInvoker<CreateHyperinstanceGroupRequest, CreateHyperinstanceGroupResponse>
+     */
+    public AsyncInvoker<CreateHyperinstanceGroupRequest, CreateHyperinstanceGroupResponse> createHyperinstanceGroupAsyncInvoker(
+        CreateHyperinstanceGroupRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createHyperinstanceGroup, hcClient);
     }
 
     /**
@@ -2522,6 +2568,36 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<DeleteHyperinstanceRequest, DeleteHyperinstanceResponse> deleteHyperinstanceAsyncInvoker(
         DeleteHyperinstanceRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.deleteHyperinstance, hcClient);
+    }
+
+    /**
+     * 删除hyperinstance-group
+     *
+     * 删除hyperinstance-group
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHyperinstanceGroupRequest 请求对象
+     * @return CompletableFuture<DeleteHyperinstanceGroupResponse>
+     */
+    public CompletableFuture<DeleteHyperinstanceGroupResponse> deleteHyperinstanceGroupAsync(
+        DeleteHyperinstanceGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteHyperinstanceGroup);
+    }
+
+    /**
+     * 删除hyperinstance-group
+     *
+     * 删除hyperinstance-group
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHyperinstanceGroupRequest 请求对象
+     * @return AsyncInvoker<DeleteHyperinstanceGroupRequest, DeleteHyperinstanceGroupResponse>
+     */
+    public AsyncInvoker<DeleteHyperinstanceGroupRequest, DeleteHyperinstanceGroupResponse> deleteHyperinstanceGroupAsyncInvoker(
+        DeleteHyperinstanceGroupRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.deleteHyperinstanceGroup, hcClient);
     }
 
     /**
@@ -3330,6 +3406,36 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 查询hyperinstance-group详情
+     *
+     * 查询HyperGroup详情接口用于在系统中查询Hyper Group详情。该接口适用于以下场景：当用户需要查询Hyper Group详情，可以通过此接口完成。使用该接口的前提条件是用户已登录并具有查询Hyper Group的权限，且系统中已配置了必要的资源。查询会返回超平面网络的详细信息，包括ID、名称、参数面网络ID等。若用户无权限操作、系统中缺少必要的资源或配置参数无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetHyperinstanceGroupRequest 请求对象
+     * @return CompletableFuture<GetHyperinstanceGroupResponse>
+     */
+    public CompletableFuture<GetHyperinstanceGroupResponse> getHyperinstanceGroupAsync(
+        GetHyperinstanceGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getHyperinstanceGroup);
+    }
+
+    /**
+     * 查询hyperinstance-group详情
+     *
+     * 查询HyperGroup详情接口用于在系统中查询Hyper Group详情。该接口适用于以下场景：当用户需要查询Hyper Group详情，可以通过此接口完成。使用该接口的前提条件是用户已登录并具有查询Hyper Group的权限，且系统中已配置了必要的资源。查询会返回超平面网络的详细信息，包括ID、名称、参数面网络ID等。若用户无权限操作、系统中缺少必要的资源或配置参数无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetHyperinstanceGroupRequest 请求对象
+     * @return AsyncInvoker<GetHyperinstanceGroupRequest, GetHyperinstanceGroupResponse>
+     */
+    public AsyncInvoker<GetHyperinstanceGroupRequest, GetHyperinstanceGroupResponse> getHyperinstanceGroupAsyncInvoker(
+        GetHyperinstanceGroupRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.getHyperinstanceGroup, hcClient);
+    }
+
+    /**
      * 查询超节点Operation详情
      *
      * 查询Operation详情接口用于获取指定Operation的详细信息。该接口适用于以下场景：当用户需要了解某个Operation的具体执行情况和状态，以便进行故障排查或操作审计时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Operation详情的权限，且指定的Operation已存在。查询操作完成后，接口将返回指定Operation的详细信息，包括Operation ID、操作类型、执行状态、开始时间、结束时间、操作结果等。若用户无权限操作、指定的Operation不存在或Operation ID无效，接口将返回相应的错误信息。
@@ -3859,6 +3965,96 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<ListHyperinstanceClustersCapacityRequest, ListHyperinstanceClustersCapacityResponse> listHyperinstanceClustersCapacityAsyncInvoker(
         ListHyperinstanceClustersCapacityRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.listHyperinstanceClustersCapacity, hcClient);
+    }
+
+    /**
+     * 查询hyperinstance-group详情列表
+     *
+     * 查询hyperinstance-group详情列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHyperinstanceGroupRequest 请求对象
+     * @return CompletableFuture<ListHyperinstanceGroupResponse>
+     */
+    public CompletableFuture<ListHyperinstanceGroupResponse> listHyperinstanceGroupAsync(
+        ListHyperinstanceGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listHyperinstanceGroup);
+    }
+
+    /**
+     * 查询hyperinstance-group详情列表
+     *
+     * 查询hyperinstance-group详情列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHyperinstanceGroupRequest 请求对象
+     * @return AsyncInvoker<ListHyperinstanceGroupRequest, ListHyperinstanceGroupResponse>
+     */
+    public AsyncInvoker<ListHyperinstanceGroupRequest, ListHyperinstanceGroupResponse> listHyperinstanceGroupAsyncInvoker(
+        ListHyperinstanceGroupRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listHyperinstanceGroup, hcClient);
+    }
+
+    /**
+     * 查询超节点hyperinstance-groups容量测算结果
+     *
+     * 查询超节点hyperinstance-groups容量测算结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHyperinstanceGroupsCapacityRequest 请求对象
+     * @return CompletableFuture<ListHyperinstanceGroupsCapacityResponse>
+     */
+    public CompletableFuture<ListHyperinstanceGroupsCapacityResponse> listHyperinstanceGroupsCapacityAsync(
+        ListHyperinstanceGroupsCapacityRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listHyperinstanceGroupsCapacity);
+    }
+
+    /**
+     * 查询超节点hyperinstance-groups容量测算结果
+     *
+     * 查询超节点hyperinstance-groups容量测算结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHyperinstanceGroupsCapacityRequest 请求对象
+     * @return AsyncInvoker<ListHyperinstanceGroupsCapacityRequest, ListHyperinstanceGroupsCapacityResponse>
+     */
+    public AsyncInvoker<ListHyperinstanceGroupsCapacityRequest, ListHyperinstanceGroupsCapacityResponse> listHyperinstanceGroupsCapacityAsyncInvoker(
+        ListHyperinstanceGroupsCapacityRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listHyperinstanceGroupsCapacity, hcClient);
+    }
+
+    /**
+     * 查询超节点的所有子节点
+     *
+     * 查询指定超节点下的所有节点实例列表接口用于获取用户名下指定超节点所有Lite Server实例的详细信息。该接口适用于以下场景：用户需要查看其指定超节点下的所有Lite Server实例的状态、配置等信息，以便进行资源管理。使用该接口的前提条件是用户已登录且具有查询指定超节点下的所有节点实例列表接口的权限。调用此接口后，系统将返回指定超节点下所有Lite Server实例的列表，包括实例ID、名称、状态、创建时间等信息。若用户无权限或未登录，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHyperinstanceServersRequest 请求对象
+     * @return CompletableFuture<ListHyperinstanceServersResponse>
+     */
+    public CompletableFuture<ListHyperinstanceServersResponse> listHyperinstanceServersAsync(
+        ListHyperinstanceServersRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listHyperinstanceServers);
+    }
+
+    /**
+     * 查询超节点的所有子节点
+     *
+     * 查询指定超节点下的所有节点实例列表接口用于获取用户名下指定超节点所有Lite Server实例的详细信息。该接口适用于以下场景：用户需要查看其指定超节点下的所有Lite Server实例的状态、配置等信息，以便进行资源管理。使用该接口的前提条件是用户已登录且具有查询指定超节点下的所有节点实例列表接口的权限。调用此接口后，系统将返回指定超节点下所有Lite Server实例的列表，包括实例ID、名称、状态、创建时间等信息。若用户无权限或未登录，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHyperinstanceServersRequest 请求对象
+     * @return AsyncInvoker<ListHyperinstanceServersRequest, ListHyperinstanceServersResponse>
+     */
+    public AsyncInvoker<ListHyperinstanceServersRequest, ListHyperinstanceServersResponse> listHyperinstanceServersAsyncInvoker(
+        ListHyperinstanceServersRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listHyperinstanceServers, hcClient);
     }
 
     /**
@@ -7201,6 +7397,36 @@ public class ModelArtsAsyncClient {
      */
     public AsyncInvoker<SyncImageRequest, SyncImageResponse> syncImageAsyncInvoker(SyncImageRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.syncImage, hcClient);
+    }
+
+    /**
+     * Lite Server解绑EIP
+     *
+     * Lite Server解绑EIP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnbindDevServerPublicIPRequest 请求对象
+     * @return CompletableFuture<UnbindDevServerPublicIPResponse>
+     */
+    public CompletableFuture<UnbindDevServerPublicIPResponse> unbindDevServerPublicIPAsync(
+        UnbindDevServerPublicIPRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.unbindDevServerPublicIP);
+    }
+
+    /**
+     * Lite Server解绑EIP
+     *
+     * Lite Server解绑EIP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnbindDevServerPublicIPRequest 请求对象
+     * @return AsyncInvoker<UnbindDevServerPublicIPRequest, UnbindDevServerPublicIPResponse>
+     */
+    public AsyncInvoker<UnbindDevServerPublicIPRequest, UnbindDevServerPublicIPResponse> unbindDevServerPublicIPAsyncInvoker(
+        UnbindDevServerPublicIPRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.unbindDevServerPublicIP, hcClient);
     }
 
     /**

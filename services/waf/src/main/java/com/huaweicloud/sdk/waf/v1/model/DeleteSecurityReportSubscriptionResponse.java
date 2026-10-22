@@ -18,6 +18,11 @@ public class DeleteSecurityReportSubscriptionResponse extends SdkResponse {
     private String subscriptionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "report_id")
+
+    private String reportId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sending_period")
 
     private String sendingPeriod;
@@ -31,6 +36,11 @@ public class DeleteSecurityReportSubscriptionResponse extends SdkResponse {
     @JsonProperty(value = "report_category")
 
     private String reportCategory;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "report_status")
+
+    private String reportStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_urn")
@@ -62,6 +72,21 @@ public class DeleteSecurityReportSubscriptionResponse extends SdkResponse {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "template_eps_id")
+
+    private String templateEpsId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_report_created")
+
+    private Boolean isReportCreated;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "latest_create_time")
+
+    private Long latestCreateTime;
+
     public DeleteSecurityReportSubscriptionResponse withSubscriptionId(String subscriptionId) {
         this.subscriptionId = subscriptionId;
         return this;
@@ -77,6 +102,23 @@ public class DeleteSecurityReportSubscriptionResponse extends SdkResponse {
 
     public void setSubscriptionId(String subscriptionId) {
         this.subscriptionId = subscriptionId;
+    }
+
+    public DeleteSecurityReportSubscriptionResponse withReportId(String reportId) {
+        this.reportId = reportId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 报告ID，关联当前订阅的最新安全报告唯一标识。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return reportId
+     */
+    public String getReportId() {
+        return reportId;
+    }
+
+    public void setReportId(String reportId) {
+        this.reportId = reportId;
     }
 
     public DeleteSecurityReportSubscriptionResponse withSendingPeriod(String sendingPeriod) {
@@ -128,6 +170,23 @@ public class DeleteSecurityReportSubscriptionResponse extends SdkResponse {
 
     public void setReportCategory(String reportCategory) {
         this.reportCategory = reportCategory;
+    }
+
+    public DeleteSecurityReportSubscriptionResponse withReportStatus(String reportStatus) {
+        this.reportStatus = reportStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 报告开启状态 **约束限制：** 不涉及 **取值范围：** - opened：已开启 - closed：已关闭 **默认取值：** 不涉及
+     * @return reportStatus
+     */
+    public String getReportStatus() {
+        return reportStatus;
+    }
+
+    public void setReportStatus(String reportStatus) {
+        this.reportStatus = reportStatus;
     }
 
     public DeleteSecurityReportSubscriptionResponse withTopicUrn(String topicUrn) {
@@ -255,6 +314,57 @@ public class DeleteSecurityReportSubscriptionResponse extends SdkResponse {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public DeleteSecurityReportSubscriptionResponse withTemplateEpsId(String templateEpsId) {
+        this.templateEpsId = templateEpsId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 模板企业项目ID，订阅关联的模板企业项目唯一标识。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return templateEpsId
+     */
+    public String getTemplateEpsId() {
+        return templateEpsId;
+    }
+
+    public void setTemplateEpsId(String templateEpsId) {
+        this.templateEpsId = templateEpsId;
+    }
+
+    public DeleteSecurityReportSubscriptionResponse withIsReportCreated(Boolean isReportCreated) {
+        this.isReportCreated = isReportCreated;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否已生成报告，标识当前订阅是否已生成过安全报告（true表示已生成，false表示未生成）。 **约束限制：** 不涉及 **取值范围：** 仅支持true、false两个布尔值 **默认取值：** false
+     * @return isReportCreated
+     */
+    public Boolean getIsReportCreated() {
+        return isReportCreated;
+    }
+
+    public void setIsReportCreated(Boolean isReportCreated) {
+        this.isReportCreated = isReportCreated;
+    }
+
+    public DeleteSecurityReportSubscriptionResponse withLatestCreateTime(Long latestCreateTime) {
+        this.latestCreateTime = latestCreateTime;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 最近生成时间，最近一次生成安全报告的时间戳（毫秒级）。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return latestCreateTime
+     */
+    public Long getLatestCreateTime() {
+        return latestCreateTime;
+    }
+
+    public void setLatestCreateTime(Long latestCreateTime) {
+        this.latestCreateTime = latestCreateTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -264,29 +374,38 @@ public class DeleteSecurityReportSubscriptionResponse extends SdkResponse {
             return false;
         }
         DeleteSecurityReportSubscriptionResponse that = (DeleteSecurityReportSubscriptionResponse) obj;
-        return Objects.equals(this.subscriptionId, that.subscriptionId)
+        return Objects.equals(this.subscriptionId, that.subscriptionId) && Objects.equals(this.reportId, that.reportId)
             && Objects.equals(this.sendingPeriod, that.sendingPeriod)
             && Objects.equals(this.reportName, that.reportName)
-            && Objects.equals(this.reportCategory, that.reportCategory) && Objects.equals(this.topicUrn, that.topicUrn)
+            && Objects.equals(this.reportCategory, that.reportCategory)
+            && Objects.equals(this.reportStatus, that.reportStatus) && Objects.equals(this.topicUrn, that.topicUrn)
             && Objects.equals(this.subscriptionType, that.subscriptionType)
             && Objects.equals(this.reportContentSubscription, that.reportContentSubscription)
             && Objects.equals(this.statPeriod, that.statPeriod)
             && Objects.equals(this.isAllEnterpriseProject, that.isAllEnterpriseProject)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.templateEpsId, that.templateEpsId)
+            && Objects.equals(this.isReportCreated, that.isReportCreated)
+            && Objects.equals(this.latestCreateTime, that.latestCreateTime);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(subscriptionId,
+            reportId,
             sendingPeriod,
             reportName,
             reportCategory,
+            reportStatus,
             topicUrn,
             subscriptionType,
             reportContentSubscription,
             statPeriod,
             isAllEnterpriseProject,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            templateEpsId,
+            isReportCreated,
+            latestCreateTime);
     }
 
     @Override
@@ -294,15 +413,20 @@ public class DeleteSecurityReportSubscriptionResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteSecurityReportSubscriptionResponse {\n");
         sb.append("    subscriptionId: ").append(toIndentedString(subscriptionId)).append("\n");
+        sb.append("    reportId: ").append(toIndentedString(reportId)).append("\n");
         sb.append("    sendingPeriod: ").append(toIndentedString(sendingPeriod)).append("\n");
         sb.append("    reportName: ").append(toIndentedString(reportName)).append("\n");
         sb.append("    reportCategory: ").append(toIndentedString(reportCategory)).append("\n");
+        sb.append("    reportStatus: ").append(toIndentedString(reportStatus)).append("\n");
         sb.append("    topicUrn: ").append(toIndentedString(topicUrn)).append("\n");
         sb.append("    subscriptionType: ").append(toIndentedString(subscriptionType)).append("\n");
         sb.append("    reportContentSubscription: ").append(toIndentedString(reportContentSubscription)).append("\n");
         sb.append("    statPeriod: ").append(toIndentedString(statPeriod)).append("\n");
         sb.append("    isAllEnterpriseProject: ").append(toIndentedString(isAllEnterpriseProject)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    templateEpsId: ").append(toIndentedString(templateEpsId)).append("\n");
+        sb.append("    isReportCreated: ").append(toIndentedString(isReportCreated)).append("\n");
+        sb.append("    latestCreateTime: ").append(toIndentedString(latestCreateTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

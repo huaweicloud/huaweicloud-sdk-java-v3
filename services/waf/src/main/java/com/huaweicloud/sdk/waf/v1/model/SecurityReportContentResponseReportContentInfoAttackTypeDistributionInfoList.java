@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.waf.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * SecurityReportContentResponseReportContentInfoAttackTypeDistributionInfoList
@@ -19,6 +22,11 @@ public class SecurityReportContentResponseReportContentInfoAttackTypeDistributio
     @JsonProperty(value = "num")
 
     private Integer num;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detail")
+
+    private List<SecurityReportContentResponseReportContentInfoDetail> detail = null;
 
     public SecurityReportContentResponseReportContentInfoAttackTypeDistributionInfoList withKey(String key) {
         this.key = key;
@@ -54,6 +62,42 @@ public class SecurityReportContentResponseReportContentInfoAttackTypeDistributio
         this.num = num;
     }
 
+    public SecurityReportContentResponseReportContentInfoAttackTypeDistributionInfoList withDetail(
+        List<SecurityReportContentResponseReportContentInfoDetail> detail) {
+        this.detail = detail;
+        return this;
+    }
+
+    public SecurityReportContentResponseReportContentInfoAttackTypeDistributionInfoList addDetailItem(
+        SecurityReportContentResponseReportContentInfoDetail detailItem) {
+        if (this.detail == null) {
+            this.detail = new ArrayList<>();
+        }
+        this.detail.add(detailItem);
+        return this;
+    }
+
+    public SecurityReportContentResponseReportContentInfoAttackTypeDistributionInfoList withDetail(
+        Consumer<List<SecurityReportContentResponseReportContentInfoDetail>> detailSetter) {
+        if (this.detail == null) {
+            this.detail = new ArrayList<>();
+        }
+        detailSetter.accept(this.detail);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 该攻击类型的详细分布信息。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return detail
+     */
+    public List<SecurityReportContentResponseReportContentInfoDetail> getDetail() {
+        return detail;
+    }
+
+    public void setDetail(List<SecurityReportContentResponseReportContentInfoDetail> detail) {
+        this.detail = detail;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +108,13 @@ public class SecurityReportContentResponseReportContentInfoAttackTypeDistributio
         }
         SecurityReportContentResponseReportContentInfoAttackTypeDistributionInfoList that =
             (SecurityReportContentResponseReportContentInfoAttackTypeDistributionInfoList) obj;
-        return Objects.equals(this.key, that.key) && Objects.equals(this.num, that.num);
+        return Objects.equals(this.key, that.key) && Objects.equals(this.num, that.num)
+            && Objects.equals(this.detail, that.detail);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(key, num);
+        return Objects.hash(key, num, detail);
     }
 
     @Override
@@ -78,6 +123,7 @@ public class SecurityReportContentResponseReportContentInfoAttackTypeDistributio
         sb.append("class SecurityReportContentResponseReportContentInfoAttackTypeDistributionInfoList {\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    num: ").append(toIndentedString(num)).append("\n");
+        sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -25,19 +26,69 @@ public class UpdateInferDeploymentResponse extends SdkResponse {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "workspace_id")
+    @JsonProperty(value = "deployment_name")
 
-    private String workspaceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
-    private String type;
+    private String deploymentName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "deploy_type")
+    @JsonProperty(value = "infer_name")
 
-    private String deployType;
+    private String inferName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_id")
+
+    private String poolId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "framework")
+
+    private String framework;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private String version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version_id")
+
+    private String versionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version_count")
+
+    private Integer versionCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "weight")
+
+    private Integer weight;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "priority")
+
+    private Integer priority;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "secret_type")
+
+    private String secretType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "secret_name")
+
+    private String secretName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -45,64 +96,89 @@ public class UpdateInferDeploymentResponse extends SdkResponse {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "failure_reason")
+    @JsonProperty(value = "deploy_type")
 
-    private String failureReason;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "version")
-
-    private ServiceVersionResponse version;
+    private String deployType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "predict_url")
+    @JsonProperty(value = "workload_type")
 
-    private List<PredictUrlResponse> predictUrl = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dispatcher_group_id")
-
-    private String dispatcherGroupId;
+    private String workloadType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tags")
+    @JsonProperty(value = "high_avail_switch")
 
-    private List<TagsResponse> tags = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "deploy_timeout_minutes")
-
-    private Integer deployTimeoutMinutes;
+    private Boolean highAvailSwitch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "schedule")
+    @JsonProperty(value = "system_log_dump_enable")
 
-    private List<ScheduleConfigResponse> schedule = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_at")
-
-    private String createAt;
+    private Boolean systemLogDumpEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_at")
+    @JsonProperty(value = "schedule_strategy")
 
-    private String updateAt;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_type")
-
-    private String taskType;
+    private String scheduleStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "provider")
+    @JsonProperty(value = "unit_configs")
 
-    private String provider;
+    private List<UnitConfig> unitConfigs = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "model")
+
+    private GroupModel model;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "advanced_config")
+
+    private AdvancedConfig advancedConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mirror_traffic_enable")
+
+    private Boolean mirrorTrafficEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mirror_traffic_weight")
+
+    private Integer mirrorTrafficWeight;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_name")
+
+    private String userName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_name")
+
+    private String agencyName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_used_time")
+
+    private OffsetDateTime lastUsedTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deployment_task_limit")
+
+    private DeploymentTaskLimit deploymentTaskLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frozen_infos")
 
     private List<FrozenInfo> frozenInfos = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_at")
+
+    private OffsetDateTime createAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_at")
+
+    private OffsetDateTime updateAt;
 
     public UpdateInferDeploymentResponse withId(String id) {
         this.id = id;
@@ -110,7 +186,7 @@ public class UpdateInferDeploymentResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 服务ID，在[创建服务](CreateInferService.xml)时即可在返回体中获取，也可通过[查询服务列表](ListInferServices.xml)获取当前用户拥有的服务，其中service_id字段即为服务ID。 **取值范围：** 不涉及。
+     * 参数解释： 部署ID，在[添加部署](CreateInferDeployment.xml)时即可在返回体中获取，也可通过[查询服务部署列表](ListInferDeployments.xml)获取当前用户拥有的部署，其中deployment_id字段即为部署ID。 约束限制： 不涉及。 取值范围： 部署ID。 默认取值： 不涉及。
      * @return id
      */
     public String getId() {
@@ -127,7 +203,7 @@ public class UpdateInferDeploymentResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 服务名，用户在[创建服务](CreateInferService.xml)时自定义的名称。 **取值范围：** 支持1-64位字符，可包含字母、中文、数字、中划线、下划线。
+     * **参数解释：** 服务部署名字
      * @return name
      */
     public String getName() {
@@ -138,55 +214,229 @@ public class UpdateInferDeploymentResponse extends SdkResponse {
         this.name = name;
     }
 
-    public UpdateInferDeploymentResponse withWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
+    public UpdateInferDeploymentResponse withDeploymentName(String deploymentName) {
+        this.deploymentName = deploymentName;
         return this;
     }
 
     /**
-     * **参数解释：** 工作空间ID。 **取值范围：** - 0：默认空间ID。 - 由数字和小写字母组成的32位字符：其他空间ID，可参考[工作空间创建](CreateWorkspace.xml)。
-     * @return workspaceId
+     * 参数解释： 服务部署名字。
+     * @return deploymentName
      */
-    public String getWorkspaceId() {
-        return workspaceId;
+    public String getDeploymentName() {
+        return deploymentName;
     }
 
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
+    public void setDeploymentName(String deploymentName) {
+        this.deploymentName = deploymentName;
     }
 
-    public UpdateInferDeploymentResponse withType(String type) {
-        this.type = type;
+    public UpdateInferDeploymentResponse withInferName(String inferName) {
+        this.inferName = inferName;
         return this;
     }
 
     /**
-     * **参数解释：** 推理服务类型。 **取值范围：** - REAL_TIME：在线服务。 - ASYNC_REAL_TIME：异步服务。
-     * @return type
+     * 参数解释： 部署id（废弃字段）。 取值范围： 不涉及。
+     * @return inferName
      */
-    public String getType() {
-        return type;
+    public String getInferName() {
+        return inferName;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setInferName(String inferName) {
+        this.inferName = inferName;
     }
 
-    public UpdateInferDeploymentResponse withDeployType(String deployType) {
-        this.deployType = deployType;
+    public UpdateInferDeploymentResponse withDescription(String description) {
+        this.description = description;
         return this;
     }
 
     /**
-     * **参数解释：** 部署方式。 **取值范围：** - SINGLE：单机单卡。 - MULTI：多机多卡。
-     * @return deployType
+     * 参数解释： 描述 取值范围： 不涉及。
+     * @return description
      */
-    public String getDeployType() {
-        return deployType;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDeployType(String deployType) {
-        this.deployType = deployType;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public UpdateInferDeploymentResponse withPoolId(String poolId) {
+        this.poolId = poolId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 专属资源池ID。 **取值范围：** 不涉及。
+     * @return poolId
+     */
+    public String getPoolId() {
+        return poolId;
+    }
+
+    public void setPoolId(String poolId) {
+        this.poolId = poolId;
+    }
+
+    public UpdateInferDeploymentResponse withFramework(String framework) {
+        this.framework = framework;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 算法框架。 **取值范围：** - COMMON： 普通在线服务。
+     * @return framework
+     */
+    public String getFramework() {
+        return framework;
+    }
+
+    public void setFramework(String framework) {
+        this.framework = framework;
+    }
+
+    public UpdateInferDeploymentResponse withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 当前部署版本信息。
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public UpdateInferDeploymentResponse withVersionId(String versionId) {
+        this.versionId = versionId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 版本id，可通过查询version列表查询。 **取值范围：** 不涉及。
+     * @return versionId
+     */
+    public String getVersionId() {
+        return versionId;
+    }
+
+    public void setVersionId(String versionId) {
+        this.versionId = versionId;
+    }
+
+    public UpdateInferDeploymentResponse withVersionCount(Integer versionCount) {
+        this.versionCount = versionCount;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 服务版本数量。 **取值范围：** 不涉及。
+     * @return versionCount
+     */
+    public Integer getVersionCount() {
+        return versionCount;
+    }
+
+    public void setVersionCount(Integer versionCount) {
+        this.versionCount = versionCount;
+    }
+
+    public UpdateInferDeploymentResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 服务部署实例数。
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    public UpdateInferDeploymentResponse withWeight(Integer weight) {
+        this.weight = weight;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 权重百分比，分配到此模型的流量权重，仅当模型部署为在线服务时需要配置。 **约束限制：** 不涉及。 **取值范围：** [0, 100]。 **默认取值：** 不涉及。
+     * minimum: 0
+     * maximum: 100
+     * @return weight
+     */
+    public Integer getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
+    }
+
+    public UpdateInferDeploymentResponse withPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 服务优先级。 **约束限制：** 不涉及。 **取值范围：** [1, 3]。 **默认取值：** 不涉及。
+     * minimum: 1
+     * maximum: 3
+     * @return priority
+     */
+    public Integer getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    public UpdateInferDeploymentResponse withSecretType(String secretType) {
+        this.secretType = secretType;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 凭证类型相关配置，用户可以在此处选择使用的凭证类型（dew，agency） **约束限制：** 不涉及。 **取值范围：** - [dew：DEW密钥。](tag:hws,hws_hk,fcs) - agency：临时委托凭证。 **默认取值：** 不涉及。
+     * @return secretType
+     */
+    public String getSecretType() {
+        return secretType;
+    }
+
+    public void setSecretType(String secretType) {
+        this.secretType = secretType;
+    }
+
+    public UpdateInferDeploymentResponse withSecretName(String secretName) {
+        this.secretName = secretName;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 凭证名称，用户使用dew类型凭证时可以在此处选择使用的凭证。 **取值范围：** 1-64个字符，只能包含字母、数字、连字符和下划线。
+     * @return secretName
+     */
+    public String getSecretName() {
+        return secretName;
+    }
+
+    public void setSecretName(String secretName) {
+        this.secretName = secretName;
     }
 
     public UpdateInferDeploymentResponse withStatus(String status) {
@@ -195,7 +445,7 @@ public class UpdateInferDeploymentResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 服务当前状态。 **取值范围：** - DEPLOYING：部署中 。 - FAILED：失败 。 - STOPPED：停止。 - RUNNING：运行中。 - DELETING：删除中 。 - STOPPING：停止中 。 - CONCERNING：告警 。 - UPGRADING：升级中 。 - ERROR：异常 。 - INIT：待部署。
+     * **参数解释：** 服务部署状态
      * @return status
      */
     public String getStatus() {
@@ -206,248 +456,286 @@ public class UpdateInferDeploymentResponse extends SdkResponse {
         this.status = status;
     }
 
-    public UpdateInferDeploymentResponse withFailureReason(String failureReason) {
-        this.failureReason = failureReason;
+    public UpdateInferDeploymentResponse withDeployType(String deployType) {
+        this.deployType = deployType;
         return this;
     }
 
     /**
-     * **参数解释：** 在线服务失败原因。 **取值范围：** 不涉及。
-     * @return failureReason
+     * **参数解释：** 部署类型。 **取值范围：** - SINGLE：单机单卡。 - MULTI：多机多卡。
+     * @return deployType
      */
-    public String getFailureReason() {
-        return failureReason;
+    public String getDeployType() {
+        return deployType;
     }
 
-    public void setFailureReason(String failureReason) {
-        this.failureReason = failureReason;
+    public void setDeployType(String deployType) {
+        this.deployType = deployType;
     }
 
-    public UpdateInferDeploymentResponse withVersion(ServiceVersionResponse version) {
-        this.version = version;
+    public UpdateInferDeploymentResponse withWorkloadType(String workloadType) {
+        this.workloadType = workloadType;
         return this;
     }
 
-    public UpdateInferDeploymentResponse withVersion(Consumer<ServiceVersionResponse> versionSetter) {
-        if (this.version == null) {
-            this.version = new ServiceVersionResponse();
-            versionSetter.accept(this.version);
+    /**
+     * **参数解释：** 工作负载类型。 **取值范围：** - LWS - DEPLOYMENT **默认取值：** DEPLOYMENT
+     * @return workloadType
+     */
+    public String getWorkloadType() {
+        return workloadType;
+    }
+
+    public void setWorkloadType(String workloadType) {
+        this.workloadType = workloadType;
+    }
+
+    public UpdateInferDeploymentResponse withHighAvailSwitch(Boolean highAvailSwitch) {
+        this.highAvailSwitch = highAvailSwitch;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 高可用开关，开启后不同实例的pod将尽量均匀分布到不同的节点上。 **约束限制：** 不涉及 **取值范围：** - true: 高可用开启。 - false: 高可用关闭。
+     * @return highAvailSwitch
+     */
+    public Boolean getHighAvailSwitch() {
+        return highAvailSwitch;
+    }
+
+    public void setHighAvailSwitch(Boolean highAvailSwitch) {
+        this.highAvailSwitch = highAvailSwitch;
+    }
+
+    public UpdateInferDeploymentResponse withSystemLogDumpEnable(Boolean systemLogDumpEnable) {
+        this.systemLogDumpEnable = systemLogDumpEnable;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 系统日志转储开关。 **约束限制：** 只有NPU资源池有，且逻辑池是没有的 **取值范围：** 不涉及 **默认取值：** false
+     * @return systemLogDumpEnable
+     */
+    public Boolean getSystemLogDumpEnable() {
+        return systemLogDumpEnable;
+    }
+
+    public void setSystemLogDumpEnable(Boolean systemLogDumpEnable) {
+        this.systemLogDumpEnable = systemLogDumpEnable;
+    }
+
+    public UpdateInferDeploymentResponse withScheduleStrategy(String scheduleStrategy) {
+        this.scheduleStrategy = scheduleStrategy;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 调度策略。 **取值范围：** 不涉及。
+     * @return scheduleStrategy
+     */
+    public String getScheduleStrategy() {
+        return scheduleStrategy;
+    }
+
+    public void setScheduleStrategy(String scheduleStrategy) {
+        this.scheduleStrategy = scheduleStrategy;
+    }
+
+    public UpdateInferDeploymentResponse withUnitConfigs(List<UnitConfig> unitConfigs) {
+        this.unitConfigs = unitConfigs;
+        return this;
+    }
+
+    public UpdateInferDeploymentResponse addUnitConfigsItem(UnitConfig unitConfigsItem) {
+        if (this.unitConfigs == null) {
+            this.unitConfigs = new ArrayList<>();
+        }
+        this.unitConfigs.add(unitConfigsItem);
+        return this;
+    }
+
+    public UpdateInferDeploymentResponse withUnitConfigs(Consumer<List<UnitConfig>> unitConfigsSetter) {
+        if (this.unitConfigs == null) {
+            this.unitConfigs = new ArrayList<>();
+        }
+        unitConfigsSetter.accept(this.unitConfigs);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 实例单元配置。 **约束限制：** 单机推理时，个数只会为1；如果是分布式推理时，根据不同框架，实例单元配置可灵活配置。
+     * @return unitConfigs
+     */
+    public List<UnitConfig> getUnitConfigs() {
+        return unitConfigs;
+    }
+
+    public void setUnitConfigs(List<UnitConfig> unitConfigs) {
+        this.unitConfigs = unitConfigs;
+    }
+
+    public UpdateInferDeploymentResponse withModel(GroupModel model) {
+        this.model = model;
+        return this;
+    }
+
+    public UpdateInferDeploymentResponse withModel(Consumer<GroupModel> modelSetter) {
+        if (this.model == null) {
+            this.model = new GroupModel();
+            modelSetter.accept(this.model);
         }
 
         return this;
     }
 
     /**
-     * Get version
-     * @return version
+     * Get model
+     * @return model
      */
-    public ServiceVersionResponse getVersion() {
-        return version;
+    public GroupModel getModel() {
+        return model;
     }
 
-    public void setVersion(ServiceVersionResponse version) {
-        this.version = version;
+    public void setModel(GroupModel model) {
+        this.model = model;
     }
 
-    public UpdateInferDeploymentResponse withPredictUrl(List<PredictUrlResponse> predictUrl) {
-        this.predictUrl = predictUrl;
+    public UpdateInferDeploymentResponse withAdvancedConfig(AdvancedConfig advancedConfig) {
+        this.advancedConfig = advancedConfig;
         return this;
     }
 
-    public UpdateInferDeploymentResponse addPredictUrlItem(PredictUrlResponse predictUrlItem) {
-        if (this.predictUrl == null) {
-            this.predictUrl = new ArrayList<>();
+    public UpdateInferDeploymentResponse withAdvancedConfig(Consumer<AdvancedConfig> advancedConfigSetter) {
+        if (this.advancedConfig == null) {
+            this.advancedConfig = new AdvancedConfig();
+            advancedConfigSetter.accept(this.advancedConfig);
         }
-        this.predictUrl.add(predictUrlItem);
+
         return this;
     }
 
-    public UpdateInferDeploymentResponse withPredictUrl(Consumer<List<PredictUrlResponse>> predictUrlSetter) {
-        if (this.predictUrl == null) {
-            this.predictUrl = new ArrayList<>();
+    /**
+     * Get advancedConfig
+     * @return advancedConfig
+     */
+    public AdvancedConfig getAdvancedConfig() {
+        return advancedConfig;
+    }
+
+    public void setAdvancedConfig(AdvancedConfig advancedConfig) {
+        this.advancedConfig = advancedConfig;
+    }
+
+    public UpdateInferDeploymentResponse withMirrorTrafficEnable(Boolean mirrorTrafficEnable) {
+        this.mirrorTrafficEnable = mirrorTrafficEnable;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否开启镜像流量。 **取值范围：** 不涉及。
+     * @return mirrorTrafficEnable
+     */
+    public Boolean getMirrorTrafficEnable() {
+        return mirrorTrafficEnable;
+    }
+
+    public void setMirrorTrafficEnable(Boolean mirrorTrafficEnable) {
+        this.mirrorTrafficEnable = mirrorTrafficEnable;
+    }
+
+    public UpdateInferDeploymentResponse withMirrorTrafficWeight(Integer mirrorTrafficWeight) {
+        this.mirrorTrafficWeight = mirrorTrafficWeight;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 镜像流量权重。 **取值范围：** 不涉及。
+     * @return mirrorTrafficWeight
+     */
+    public Integer getMirrorTrafficWeight() {
+        return mirrorTrafficWeight;
+    }
+
+    public void setMirrorTrafficWeight(Integer mirrorTrafficWeight) {
+        this.mirrorTrafficWeight = mirrorTrafficWeight;
+    }
+
+    public UpdateInferDeploymentResponse withUserName(String userName) {
+        this.userName = userName;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 用户名。 **取值范围：** 不涉及。
+     * @return userName
+     */
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public UpdateInferDeploymentResponse withAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 委托名称。 **取值范围：** 不涉及。
+     * @return agencyName
+     */
+    public String getAgencyName() {
+        return agencyName;
+    }
+
+    public void setAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+    }
+
+    public UpdateInferDeploymentResponse withLastUsedTime(OffsetDateTime lastUsedTime) {
+        this.lastUsedTime = lastUsedTime;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 最后使用时间。 **取值范围：** 不涉及。
+     * @return lastUsedTime
+     */
+    public OffsetDateTime getLastUsedTime() {
+        return lastUsedTime;
+    }
+
+    public void setLastUsedTime(OffsetDateTime lastUsedTime) {
+        this.lastUsedTime = lastUsedTime;
+    }
+
+    public UpdateInferDeploymentResponse withDeploymentTaskLimit(DeploymentTaskLimit deploymentTaskLimit) {
+        this.deploymentTaskLimit = deploymentTaskLimit;
+        return this;
+    }
+
+    public UpdateInferDeploymentResponse withDeploymentTaskLimit(
+        Consumer<DeploymentTaskLimit> deploymentTaskLimitSetter) {
+        if (this.deploymentTaskLimit == null) {
+            this.deploymentTaskLimit = new DeploymentTaskLimit();
+            deploymentTaskLimitSetter.accept(this.deploymentTaskLimit);
         }
-        predictUrlSetter.accept(this.predictUrl);
+
         return this;
     }
 
     /**
-     * **参数解释：** 在线服务访问地址，创建服务接口无返回，详情接口中返回。
-     * @return predictUrl
+     * Get deploymentTaskLimit
+     * @return deploymentTaskLimit
      */
-    public List<PredictUrlResponse> getPredictUrl() {
-        return predictUrl;
+    public DeploymentTaskLimit getDeploymentTaskLimit() {
+        return deploymentTaskLimit;
     }
 
-    public void setPredictUrl(List<PredictUrlResponse> predictUrl) {
-        this.predictUrl = predictUrl;
-    }
-
-    public UpdateInferDeploymentResponse withDispatcherGroupId(String dispatcherGroupId) {
-        this.dispatcherGroupId = dispatcherGroupId;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 服务绑定的dispatcher组ID，创建服务接口无返回，详情接口中返回。 **取值范围：** 不涉及。
-     * @return dispatcherGroupId
-     */
-    public String getDispatcherGroupId() {
-        return dispatcherGroupId;
-    }
-
-    public void setDispatcherGroupId(String dispatcherGroupId) {
-        this.dispatcherGroupId = dispatcherGroupId;
-    }
-
-    public UpdateInferDeploymentResponse withTags(List<TagsResponse> tags) {
-        this.tags = tags;
-        return this;
-    }
-
-    public UpdateInferDeploymentResponse addTagsItem(TagsResponse tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        this.tags.add(tagsItem);
-        return this;
-    }
-
-    public UpdateInferDeploymentResponse withTags(Consumer<List<TagsResponse>> tagsSetter) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        tagsSetter.accept(this.tags);
-        return this;
-    }
-
-    /**
-     * **参数解释：** TMS对接标签类。
-     * @return tags
-     */
-    public List<TagsResponse> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<TagsResponse> tags) {
-        this.tags = tags;
-    }
-
-    public UpdateInferDeploymentResponse withDeployTimeoutMinutes(Integer deployTimeoutMinutes) {
-        this.deployTimeoutMinutes = deployTimeoutMinutes;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 部署超时时间。
-     * @return deployTimeoutMinutes
-     */
-    public Integer getDeployTimeoutMinutes() {
-        return deployTimeoutMinutes;
-    }
-
-    public void setDeployTimeoutMinutes(Integer deployTimeoutMinutes) {
-        this.deployTimeoutMinutes = deployTimeoutMinutes;
-    }
-
-    public UpdateInferDeploymentResponse withSchedule(List<ScheduleConfigResponse> schedule) {
-        this.schedule = schedule;
-        return this;
-    }
-
-    public UpdateInferDeploymentResponse addScheduleItem(ScheduleConfigResponse scheduleItem) {
-        if (this.schedule == null) {
-            this.schedule = new ArrayList<>();
-        }
-        this.schedule.add(scheduleItem);
-        return this;
-    }
-
-    public UpdateInferDeploymentResponse withSchedule(Consumer<List<ScheduleConfigResponse>> scheduleSetter) {
-        if (this.schedule == null) {
-            this.schedule = new ArrayList<>();
-        }
-        scheduleSetter.accept(this.schedule);
-        return this;
-    }
-
-    /**
-     * **参数解释：** 定时停止配置。
-     * @return schedule
-     */
-    public List<ScheduleConfigResponse> getSchedule() {
-        return schedule;
-    }
-
-    public void setSchedule(List<ScheduleConfigResponse> schedule) {
-        this.schedule = schedule;
-    }
-
-    public UpdateInferDeploymentResponse withCreateAt(String createAt) {
-        this.createAt = createAt;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 创建时间，根据创建时的当前时间自动生成。 **取值范围：** 毫秒级时间戳，13位数字，如1609459200000。
-     * @return createAt
-     */
-    public String getCreateAt() {
-        return createAt;
-    }
-
-    public void setCreateAt(String createAt) {
-        this.createAt = createAt;
-    }
-
-    public UpdateInferDeploymentResponse withUpdateAt(String updateAt) {
-        this.updateAt = updateAt;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 更新时间，根据更新时的当前时间自动生成。 **取值范围：** 毫秒级时间戳，13位数字，如1609459200000。
-     * @return updateAt
-     */
-    public String getUpdateAt() {
-        return updateAt;
-    }
-
-    public void setUpdateAt(String updateAt) {
-        this.updateAt = updateAt;
-    }
-
-    public UpdateInferDeploymentResponse withTaskType(String taskType) {
-        this.taskType = taskType;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 模型类型。 **取值范围：** - TEXT_GENERATION：文本生成 - IMAGE_UNDERSTANDING：图像理解 - VIDEO_GENERATION：视频生成 - IMAGE_GENERATION：图像生成 - RERANK：重排序 - VECTOR_MODEL：向量模型 - EMBEDDING：Embedding嵌入
-     * @return taskType
-     */
-    public String getTaskType() {
-        return taskType;
-    }
-
-    public void setTaskType(String taskType) {
-        this.taskType = taskType;
-    }
-
-    public UpdateInferDeploymentResponse withProvider(String provider) {
-        this.provider = provider;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 服务提供者的账号id（创建服务时通过X-Auth-Token-Provider请求头解析iam token而来），该值不为空时，该服务的所有更新操作需要在请求头中添加X-Auth-Token-Provider，取值为该账号id的domain级或project级token。
-     * @return provider
-     */
-    public String getProvider() {
-        return provider;
-    }
-
-    public void setProvider(String provider) {
-        this.provider = provider;
+    public void setDeploymentTaskLimit(DeploymentTaskLimit deploymentTaskLimit) {
+        this.deploymentTaskLimit = deploymentTaskLimit;
     }
 
     public UpdateInferDeploymentResponse withFrozenInfos(List<FrozenInfo> frozenInfos) {
@@ -483,6 +771,40 @@ public class UpdateInferDeploymentResponse extends SdkResponse {
         this.frozenInfos = frozenInfos;
     }
 
+    public UpdateInferDeploymentResponse withCreateAt(OffsetDateTime createAt) {
+        this.createAt = createAt;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 创建时间，根据创建时的当前时间自动生成。 **取值范围：** 毫秒级时间戳，13位数字
+     * @return createAt
+     */
+    public OffsetDateTime getCreateAt() {
+        return createAt;
+    }
+
+    public void setCreateAt(OffsetDateTime createAt) {
+        this.createAt = createAt;
+    }
+
+    public UpdateInferDeploymentResponse withUpdateAt(OffsetDateTime updateAt) {
+        this.updateAt = updateAt;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 更新时间，根据更新时的当前时间自动生成。 **取值范围：** 毫秒级时间戳，13位数字。
+     * @return updateAt
+     */
+    public OffsetDateTime getUpdateAt() {
+        return updateAt;
+    }
+
+    public void setUpdateAt(OffsetDateTime updateAt) {
+        this.updateAt = updateAt;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -493,37 +815,64 @@ public class UpdateInferDeploymentResponse extends SdkResponse {
         }
         UpdateInferDeploymentResponse that = (UpdateInferDeploymentResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.deployType, that.deployType) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.failureReason, that.failureReason) && Objects.equals(this.version, that.version)
-            && Objects.equals(this.predictUrl, that.predictUrl)
-            && Objects.equals(this.dispatcherGroupId, that.dispatcherGroupId) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.deployTimeoutMinutes, that.deployTimeoutMinutes)
-            && Objects.equals(this.schedule, that.schedule) && Objects.equals(this.createAt, that.createAt)
-            && Objects.equals(this.updateAt, that.updateAt) && Objects.equals(this.taskType, that.taskType)
-            && Objects.equals(this.provider, that.provider) && Objects.equals(this.frozenInfos, that.frozenInfos);
+            && Objects.equals(this.deploymentName, that.deploymentName)
+            && Objects.equals(this.inferName, that.inferName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.poolId, that.poolId) && Objects.equals(this.framework, that.framework)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.versionId, that.versionId)
+            && Objects.equals(this.versionCount, that.versionCount) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.weight, that.weight) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.secretType, that.secretType) && Objects.equals(this.secretName, that.secretName)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.deployType, that.deployType)
+            && Objects.equals(this.workloadType, that.workloadType)
+            && Objects.equals(this.highAvailSwitch, that.highAvailSwitch)
+            && Objects.equals(this.systemLogDumpEnable, that.systemLogDumpEnable)
+            && Objects.equals(this.scheduleStrategy, that.scheduleStrategy)
+            && Objects.equals(this.unitConfigs, that.unitConfigs) && Objects.equals(this.model, that.model)
+            && Objects.equals(this.advancedConfig, that.advancedConfig)
+            && Objects.equals(this.mirrorTrafficEnable, that.mirrorTrafficEnable)
+            && Objects.equals(this.mirrorTrafficWeight, that.mirrorTrafficWeight)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.agencyName, that.agencyName)
+            && Objects.equals(this.lastUsedTime, that.lastUsedTime)
+            && Objects.equals(this.deploymentTaskLimit, that.deploymentTaskLimit)
+            && Objects.equals(this.frozenInfos, that.frozenInfos) && Objects.equals(this.createAt, that.createAt)
+            && Objects.equals(this.updateAt, that.updateAt);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id,
             name,
-            workspaceId,
-            type,
-            deployType,
-            status,
-            failureReason,
+            deploymentName,
+            inferName,
+            description,
+            poolId,
+            framework,
             version,
-            predictUrl,
-            dispatcherGroupId,
-            tags,
-            deployTimeoutMinutes,
-            schedule,
+            versionId,
+            versionCount,
+            count,
+            weight,
+            priority,
+            secretType,
+            secretName,
+            status,
+            deployType,
+            workloadType,
+            highAvailSwitch,
+            systemLogDumpEnable,
+            scheduleStrategy,
+            unitConfigs,
+            model,
+            advancedConfig,
+            mirrorTrafficEnable,
+            mirrorTrafficWeight,
+            userName,
+            agencyName,
+            lastUsedTime,
+            deploymentTaskLimit,
+            frozenInfos,
             createAt,
-            updateAt,
-            taskType,
-            provider,
-            frozenInfos);
+            updateAt);
     }
 
     @Override
@@ -532,22 +881,37 @@ public class UpdateInferDeploymentResponse extends SdkResponse {
         sb.append("class UpdateInferDeploymentResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    deployType: ").append(toIndentedString(deployType)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    failureReason: ").append(toIndentedString(failureReason)).append("\n");
+        sb.append("    deploymentName: ").append(toIndentedString(deploymentName)).append("\n");
+        sb.append("    inferName: ").append(toIndentedString(inferName)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
+        sb.append("    framework: ").append(toIndentedString(framework)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
-        sb.append("    predictUrl: ").append(toIndentedString(predictUrl)).append("\n");
-        sb.append("    dispatcherGroupId: ").append(toIndentedString(dispatcherGroupId)).append("\n");
-        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    deployTimeoutMinutes: ").append(toIndentedString(deployTimeoutMinutes)).append("\n");
-        sb.append("    schedule: ").append(toIndentedString(schedule)).append("\n");
+        sb.append("    versionId: ").append(toIndentedString(versionId)).append("\n");
+        sb.append("    versionCount: ").append(toIndentedString(versionCount)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
+        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+        sb.append("    secretType: ").append(toIndentedString(secretType)).append("\n");
+        sb.append("    secretName: ").append(toIndentedString(secretName)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    deployType: ").append(toIndentedString(deployType)).append("\n");
+        sb.append("    workloadType: ").append(toIndentedString(workloadType)).append("\n");
+        sb.append("    highAvailSwitch: ").append(toIndentedString(highAvailSwitch)).append("\n");
+        sb.append("    systemLogDumpEnable: ").append(toIndentedString(systemLogDumpEnable)).append("\n");
+        sb.append("    scheduleStrategy: ").append(toIndentedString(scheduleStrategy)).append("\n");
+        sb.append("    unitConfigs: ").append(toIndentedString(unitConfigs)).append("\n");
+        sb.append("    model: ").append(toIndentedString(model)).append("\n");
+        sb.append("    advancedConfig: ").append(toIndentedString(advancedConfig)).append("\n");
+        sb.append("    mirrorTrafficEnable: ").append(toIndentedString(mirrorTrafficEnable)).append("\n");
+        sb.append("    mirrorTrafficWeight: ").append(toIndentedString(mirrorTrafficWeight)).append("\n");
+        sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
+        sb.append("    lastUsedTime: ").append(toIndentedString(lastUsedTime)).append("\n");
+        sb.append("    deploymentTaskLimit: ").append(toIndentedString(deploymentTaskLimit)).append("\n");
+        sb.append("    frozenInfos: ").append(toIndentedString(frozenInfos)).append("\n");
         sb.append("    createAt: ").append(toIndentedString(createAt)).append("\n");
         sb.append("    updateAt: ").append(toIndentedString(updateAt)).append("\n");
-        sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
-        sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
-        sb.append("    frozenInfos: ").append(toIndentedString(frozenInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

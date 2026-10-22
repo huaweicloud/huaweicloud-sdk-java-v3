@@ -14,9 +14,9 @@ import java.util.function.Consumer;
 public class SecurityReportContentResponseReportContentInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "overview_statistics_list_info")
+    @JsonProperty(value = "overview_statistics_info_list")
 
-    private List<SecurityReportContentResponseReportContentInfoOverviewStatisticsListInfo> overviewStatisticsListInfo =
+    private List<SecurityReportContentResponseReportContentInfoOverviewStatisticsInfoList> overviewStatisticsInfoList =
         null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -70,45 +70,45 @@ public class SecurityReportContentResponseReportContentInfo {
         null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "top_abnormal_urls_info")
+    @JsonProperty(value = "top_error_pages_info")
 
-    private SecurityReportContentResponseReportContentInfoTopAbnormalUrlsInfo topAbnormalUrlsInfo;
+    private SecurityReportContentResponseReportContentInfoTopErrorPagesInfo topErrorPagesInfo;
 
-    public SecurityReportContentResponseReportContentInfo withOverviewStatisticsListInfo(
-        List<SecurityReportContentResponseReportContentInfoOverviewStatisticsListInfo> overviewStatisticsListInfo) {
-        this.overviewStatisticsListInfo = overviewStatisticsListInfo;
+    public SecurityReportContentResponseReportContentInfo withOverviewStatisticsInfoList(
+        List<SecurityReportContentResponseReportContentInfoOverviewStatisticsInfoList> overviewStatisticsInfoList) {
+        this.overviewStatisticsInfoList = overviewStatisticsInfoList;
         return this;
     }
 
-    public SecurityReportContentResponseReportContentInfo addOverviewStatisticsListInfoItem(
-        SecurityReportContentResponseReportContentInfoOverviewStatisticsListInfo overviewStatisticsListInfoItem) {
-        if (this.overviewStatisticsListInfo == null) {
-            this.overviewStatisticsListInfo = new ArrayList<>();
+    public SecurityReportContentResponseReportContentInfo addOverviewStatisticsInfoListItem(
+        SecurityReportContentResponseReportContentInfoOverviewStatisticsInfoList overviewStatisticsInfoListItem) {
+        if (this.overviewStatisticsInfoList == null) {
+            this.overviewStatisticsInfoList = new ArrayList<>();
         }
-        this.overviewStatisticsListInfo.add(overviewStatisticsListInfoItem);
+        this.overviewStatisticsInfoList.add(overviewStatisticsInfoListItem);
         return this;
     }
 
-    public SecurityReportContentResponseReportContentInfo withOverviewStatisticsListInfo(
-        Consumer<List<SecurityReportContentResponseReportContentInfoOverviewStatisticsListInfo>> overviewStatisticsListInfoSetter) {
-        if (this.overviewStatisticsListInfo == null) {
-            this.overviewStatisticsListInfo = new ArrayList<>();
+    public SecurityReportContentResponseReportContentInfo withOverviewStatisticsInfoList(
+        Consumer<List<SecurityReportContentResponseReportContentInfoOverviewStatisticsInfoList>> overviewStatisticsInfoListSetter) {
+        if (this.overviewStatisticsInfoList == null) {
+            this.overviewStatisticsInfoList = new ArrayList<>();
         }
-        overviewStatisticsListInfoSetter.accept(this.overviewStatisticsListInfo);
+        overviewStatisticsInfoListSetter.accept(this.overviewStatisticsInfoList);
         return this;
     }
 
     /**
      * **参数解释：** 总览统计信息，包含各维度的汇总统计数据及TOP域名详情。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
-     * @return overviewStatisticsListInfo
+     * @return overviewStatisticsInfoList
      */
-    public List<SecurityReportContentResponseReportContentInfoOverviewStatisticsListInfo> getOverviewStatisticsListInfo() {
-        return overviewStatisticsListInfo;
+    public List<SecurityReportContentResponseReportContentInfoOverviewStatisticsInfoList> getOverviewStatisticsInfoList() {
+        return overviewStatisticsInfoList;
     }
 
-    public void setOverviewStatisticsListInfo(
-        List<SecurityReportContentResponseReportContentInfoOverviewStatisticsListInfo> overviewStatisticsListInfo) {
-        this.overviewStatisticsListInfo = overviewStatisticsListInfo;
+    public void setOverviewStatisticsInfoList(
+        List<SecurityReportContentResponseReportContentInfoOverviewStatisticsInfoList> overviewStatisticsInfoList) {
+        this.overviewStatisticsInfoList = overviewStatisticsInfoList;
     }
 
     public SecurityReportContentResponseReportContentInfo withRequestStatisticsInfoList(
@@ -421,33 +421,33 @@ public class SecurityReportContentResponseReportContentInfo {
         this.topAttackSourceLocationsInfoList = topAttackSourceLocationsInfoList;
     }
 
-    public SecurityReportContentResponseReportContentInfo withTopAbnormalUrlsInfo(
-        SecurityReportContentResponseReportContentInfoTopAbnormalUrlsInfo topAbnormalUrlsInfo) {
-        this.topAbnormalUrlsInfo = topAbnormalUrlsInfo;
+    public SecurityReportContentResponseReportContentInfo withTopErrorPagesInfo(
+        SecurityReportContentResponseReportContentInfoTopErrorPagesInfo topErrorPagesInfo) {
+        this.topErrorPagesInfo = topErrorPagesInfo;
         return this;
     }
 
-    public SecurityReportContentResponseReportContentInfo withTopAbnormalUrlsInfo(
-        Consumer<SecurityReportContentResponseReportContentInfoTopAbnormalUrlsInfo> topAbnormalUrlsInfoSetter) {
-        if (this.topAbnormalUrlsInfo == null) {
-            this.topAbnormalUrlsInfo = new SecurityReportContentResponseReportContentInfoTopAbnormalUrlsInfo();
-            topAbnormalUrlsInfoSetter.accept(this.topAbnormalUrlsInfo);
+    public SecurityReportContentResponseReportContentInfo withTopErrorPagesInfo(
+        Consumer<SecurityReportContentResponseReportContentInfoTopErrorPagesInfo> topErrorPagesInfoSetter) {
+        if (this.topErrorPagesInfo == null) {
+            this.topErrorPagesInfo = new SecurityReportContentResponseReportContentInfoTopErrorPagesInfo();
+            topErrorPagesInfoSetter.accept(this.topErrorPagesInfo);
         }
 
         return this;
     }
 
     /**
-     * Get topAbnormalUrlsInfo
-     * @return topAbnormalUrlsInfo
+     * Get topErrorPagesInfo
+     * @return topErrorPagesInfo
      */
-    public SecurityReportContentResponseReportContentInfoTopAbnormalUrlsInfo getTopAbnormalUrlsInfo() {
-        return topAbnormalUrlsInfo;
+    public SecurityReportContentResponseReportContentInfoTopErrorPagesInfo getTopErrorPagesInfo() {
+        return topErrorPagesInfo;
     }
 
-    public void setTopAbnormalUrlsInfo(
-        SecurityReportContentResponseReportContentInfoTopAbnormalUrlsInfo topAbnormalUrlsInfo) {
-        this.topAbnormalUrlsInfo = topAbnormalUrlsInfo;
+    public void setTopErrorPagesInfo(
+        SecurityReportContentResponseReportContentInfoTopErrorPagesInfo topErrorPagesInfo) {
+        this.topErrorPagesInfo = topErrorPagesInfo;
     }
 
     @Override
@@ -459,7 +459,7 @@ public class SecurityReportContentResponseReportContentInfo {
             return false;
         }
         SecurityReportContentResponseReportContentInfo that = (SecurityReportContentResponseReportContentInfo) obj;
-        return Objects.equals(this.overviewStatisticsListInfo, that.overviewStatisticsListInfo)
+        return Objects.equals(this.overviewStatisticsInfoList, that.overviewStatisticsInfoList)
             && Objects.equals(this.requestStatisticsInfoList, that.requestStatisticsInfoList)
             && Objects.equals(this.qpsStatisticsInfo, that.qpsStatisticsInfo)
             && Objects.equals(this.bandwidthStatisticsInfo, that.bandwidthStatisticsInfo)
@@ -469,12 +469,12 @@ public class SecurityReportContentResponseReportContentInfo {
             && Objects.equals(this.topAttackSourceIpsInfoList, that.topAttackSourceIpsInfoList)
             && Objects.equals(this.topAttackedUrlsInfoList, that.topAttackedUrlsInfoList)
             && Objects.equals(this.topAttackSourceLocationsInfoList, that.topAttackSourceLocationsInfoList)
-            && Objects.equals(this.topAbnormalUrlsInfo, that.topAbnormalUrlsInfo);
+            && Objects.equals(this.topErrorPagesInfo, that.topErrorPagesInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(overviewStatisticsListInfo,
+        return Objects.hash(overviewStatisticsInfoList,
             requestStatisticsInfoList,
             qpsStatisticsInfo,
             bandwidthStatisticsInfo,
@@ -484,14 +484,14 @@ public class SecurityReportContentResponseReportContentInfo {
             topAttackSourceIpsInfoList,
             topAttackedUrlsInfoList,
             topAttackSourceLocationsInfoList,
-            topAbnormalUrlsInfo);
+            topErrorPagesInfo);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SecurityReportContentResponseReportContentInfo {\n");
-        sb.append("    overviewStatisticsListInfo: ").append(toIndentedString(overviewStatisticsListInfo)).append("\n");
+        sb.append("    overviewStatisticsInfoList: ").append(toIndentedString(overviewStatisticsInfoList)).append("\n");
         sb.append("    requestStatisticsInfoList: ").append(toIndentedString(requestStatisticsInfoList)).append("\n");
         sb.append("    qpsStatisticsInfo: ").append(toIndentedString(qpsStatisticsInfo)).append("\n");
         sb.append("    bandwidthStatisticsInfo: ").append(toIndentedString(bandwidthStatisticsInfo)).append("\n");
@@ -505,7 +505,7 @@ public class SecurityReportContentResponseReportContentInfo {
         sb.append("    topAttackSourceLocationsInfoList: ")
             .append(toIndentedString(topAttackSourceLocationsInfoList))
             .append("\n");
-        sb.append("    topAbnormalUrlsInfo: ").append(toIndentedString(topAbnormalUrlsInfo)).append("\n");
+        sb.append("    topErrorPagesInfo: ").append(toIndentedString(topErrorPagesInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

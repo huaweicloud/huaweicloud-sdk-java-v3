@@ -14,7 +14,7 @@ public class AdvancedConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deploy_timeout_minutes")
 
-    private String deployTimeoutMinutes;
+    private Integer deployTimeoutMinutes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "upgrade_config")
@@ -62,6 +62,11 @@ public class AdvancedConfig {
     private String customMetricsPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mooncake_enable")
+
+    private Boolean mooncakeEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
 
     private Integer port;
@@ -71,7 +76,7 @@ public class AdvancedConfig {
 
     private String protocol;
 
-    public AdvancedConfig withDeployTimeoutMinutes(String deployTimeoutMinutes) {
+    public AdvancedConfig withDeployTimeoutMinutes(Integer deployTimeoutMinutes) {
         this.deployTimeoutMinutes = deployTimeoutMinutes;
         return this;
     }
@@ -80,11 +85,11 @@ public class AdvancedConfig {
      * **参数解释：** 部署超时时间
      * @return deployTimeoutMinutes
      */
-    public String getDeployTimeoutMinutes() {
+    public Integer getDeployTimeoutMinutes() {
         return deployTimeoutMinutes;
     }
 
-    public void setDeployTimeoutMinutes(String deployTimeoutMinutes) {
+    public void setDeployTimeoutMinutes(Integer deployTimeoutMinutes) {
         this.deployTimeoutMinutes = deployTimeoutMinutes;
     }
 
@@ -259,6 +264,23 @@ public class AdvancedConfig {
         this.customMetricsPath = customMetricsPath;
     }
 
+    public AdvancedConfig withMooncakeEnable(Boolean mooncakeEnable) {
+        this.mooncakeEnable = mooncakeEnable;
+        return this;
+    }
+
+    /**
+     * **参数解释：** Mooncake缓存开关。 **约束限制：** 不涉及。 **取值范围：** - true：开启Mooncake缓存开关。 - false：关闭Mooncake缓存开关。 **默认取值：** false
+     * @return mooncakeEnable
+     */
+    public Boolean getMooncakeEnable() {
+        return mooncakeEnable;
+    }
+
+    public void setMooncakeEnable(Boolean mooncakeEnable) {
+        this.mooncakeEnable = mooncakeEnable;
+    }
+
     public AdvancedConfig withPort(Integer port) {
         this.port = port;
         return this;
@@ -310,7 +332,8 @@ public class AdvancedConfig {
             && Objects.equals(this.metricApiScheme, that.metricApiScheme)
             && Objects.equals(this.metricApiPort, that.metricApiPort)
             && Objects.equals(this.metricApiPath, that.metricApiPath)
-            && Objects.equals(this.customMetricsPath, that.customMetricsPath) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.customMetricsPath, that.customMetricsPath)
+            && Objects.equals(this.mooncakeEnable, that.mooncakeEnable) && Objects.equals(this.port, that.port)
             && Objects.equals(this.protocol, that.protocol);
     }
 
@@ -326,6 +349,7 @@ public class AdvancedConfig {
             metricApiPort,
             metricApiPath,
             customMetricsPath,
+            mooncakeEnable,
             port,
             protocol);
     }
@@ -344,6 +368,7 @@ public class AdvancedConfig {
         sb.append("    metricApiPort: ").append(toIndentedString(metricApiPort)).append("\n");
         sb.append("    metricApiPath: ").append(toIndentedString(metricApiPath)).append("\n");
         sb.append("    customMetricsPath: ").append(toIndentedString(customMetricsPath)).append("\n");
+        sb.append("    mooncakeEnable: ").append(toIndentedString(mooncakeEnable)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("}");

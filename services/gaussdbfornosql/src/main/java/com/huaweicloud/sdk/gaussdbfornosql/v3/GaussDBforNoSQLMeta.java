@@ -100,6 +100,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListAvailableFlavorInfosRequ
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListAvailableFlavorInfosResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListBackupsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListBackupsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListBiactiveInstanceCandidatesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListBiactiveInstanceCandidatesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListCassandraSlowLogsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListCassandraSlowLogsRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListCassandraSlowLogsResponse;
@@ -1362,6 +1364,63 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBackupsRequest::getEndTime, ListBackupsRequest::setEndTime));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBiactiveInstanceCandidatesRequest, ListBiactiveInstanceCandidatesResponse> listBiactiveInstanceCandidates =
+        genForListBiactiveInstanceCandidates();
+
+    private static HttpRequestDef<ListBiactiveInstanceCandidatesRequest, ListBiactiveInstanceCandidatesResponse> genForListBiactiveInstanceCandidates() {
+        // basic
+        HttpRequestDef.Builder<ListBiactiveInstanceCandidatesRequest, ListBiactiveInstanceCandidatesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListBiactiveInstanceCandidatesRequest.class,
+                    ListBiactiveInstanceCandidatesResponse.class)
+                .withName("ListBiactiveInstanceCandidates")
+                .withUri("/v3/{project_id}/instances/{instance_id}/disaster-recovery/biactive-instance-candidates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBiactiveInstanceCandidatesRequest::getInstanceId,
+                ListBiactiveInstanceCandidatesRequest::setInstanceId));
+        builder.<String>withRequestField("target_region_code",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBiactiveInstanceCandidatesRequest::getTargetRegionCode,
+                ListBiactiveInstanceCandidatesRequest::setTargetRegionCode));
+        builder.<String>withRequestField("target_instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBiactiveInstanceCandidatesRequest::getTargetInstanceName,
+                ListBiactiveInstanceCandidatesRequest::setTargetInstanceName));
+        builder.<String>withRequestField("data_sync_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBiactiveInstanceCandidatesRequest::getDataSyncMode,
+                ListBiactiveInstanceCandidatesRequest::setDataSyncMode));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBiactiveInstanceCandidatesRequest::getOffset,
+                ListBiactiveInstanceCandidatesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBiactiveInstanceCandidatesRequest::getLimit,
+                ListBiactiveInstanceCandidatesRequest::setLimit));
 
         // response
 

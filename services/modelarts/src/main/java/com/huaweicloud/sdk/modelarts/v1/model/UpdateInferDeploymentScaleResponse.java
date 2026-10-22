@@ -26,14 +26,14 @@ public class UpdateInferDeploymentScaleResponse extends SdkResponse {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deployment_name")
+
+    private String deploymentName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "infer_name")
 
     private String inferName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_at")
-
-    private OffsetDateTime createAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -51,49 +51,14 @@ public class UpdateInferDeploymentScaleResponse extends SdkResponse {
     private String framework;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "priority")
-
-    private String priority;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "secret_type")
-
-    private String secretType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
-
-    private String status;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "count")
-
-    private Integer count;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "high_avail_switch")
-
-    private String highAvailSwitch;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "system_log_dump_enable")
-
-    private String systemLogDumpEnable;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "unit_configs")
-
-    private List<UnitConfig> unitConfigs = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_at")
-
-    private OffsetDateTime updateAt;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private String version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version_id")
+
+    private String versionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version_count")
@@ -101,9 +66,69 @@ public class UpdateInferDeploymentScaleResponse extends SdkResponse {
     private Integer versionCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "weight")
 
     private Integer weight;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "priority")
+
+    private Integer priority;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "secret_type")
+
+    private String secretType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "secret_name")
+
+    private String secretName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deploy_type")
+
+    private String deployType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workload_type")
+
+    private String workloadType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "high_avail_switch")
+
+    private Boolean highAvailSwitch;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "system_log_dump_enable")
+
+    private Boolean systemLogDumpEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "schedule_strategy")
+
+    private String scheduleStrategy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "unit_configs")
+
+    private List<UnitConfig> unitConfigs = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "model")
+
+    private GroupModel model;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "advanced_config")
@@ -111,19 +136,49 @@ public class UpdateInferDeploymentScaleResponse extends SdkResponse {
     private AdvancedConfig advancedConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "job_id")
+    @JsonProperty(value = "mirror_traffic_enable")
 
-    private String jobId;
+    private Boolean mirrorTrafficEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "deployment_name")
+    @JsonProperty(value = "mirror_traffic_weight")
 
-    private String deploymentName;
+    private Integer mirrorTrafficWeight;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_name")
+
+    private String userName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_name")
+
+    private String agencyName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_used_time")
+
+    private OffsetDateTime lastUsedTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deployment_task_limit")
+
+    private DeploymentTaskLimit deploymentTaskLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frozen_infos")
 
     private List<FrozenInfo> frozenInfos = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_at")
+
+    private OffsetDateTime createAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_at")
+
+    private OffsetDateTime updateAt;
 
     public UpdateInferDeploymentScaleResponse withId(String id) {
         this.id = id;
@@ -159,6 +214,23 @@ public class UpdateInferDeploymentScaleResponse extends SdkResponse {
         this.name = name;
     }
 
+    public UpdateInferDeploymentScaleResponse withDeploymentName(String deploymentName) {
+        this.deploymentName = deploymentName;
+        return this;
+    }
+
+    /**
+     * 参数解释： 服务部署名字。
+     * @return deploymentName
+     */
+    public String getDeploymentName() {
+        return deploymentName;
+    }
+
+    public void setDeploymentName(String deploymentName) {
+        this.deploymentName = deploymentName;
+    }
+
     public UpdateInferDeploymentScaleResponse withInferName(String inferName) {
         this.inferName = inferName;
         return this;
@@ -174,23 +246,6 @@ public class UpdateInferDeploymentScaleResponse extends SdkResponse {
 
     public void setInferName(String inferName) {
         this.inferName = inferName;
-    }
-
-    public UpdateInferDeploymentScaleResponse withCreateAt(OffsetDateTime createAt) {
-        this.createAt = createAt;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 创建时间，根据创建时的当前时间自动生成。 **取值范围：** 毫秒级时间戳，13位数字
-     * @return createAt
-     */
-    public OffsetDateTime getCreateAt() {
-        return createAt;
-    }
-
-    public void setCreateAt(OffsetDateTime createAt) {
-        this.createAt = createAt;
     }
 
     public UpdateInferDeploymentScaleResponse withDescription(String description) {
@@ -244,20 +299,109 @@ public class UpdateInferDeploymentScaleResponse extends SdkResponse {
         this.framework = framework;
     }
 
-    public UpdateInferDeploymentScaleResponse withPriority(String priority) {
+    public UpdateInferDeploymentScaleResponse withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 当前部署版本信息。
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public UpdateInferDeploymentScaleResponse withVersionId(String versionId) {
+        this.versionId = versionId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 版本id，可通过查询version列表查询。 **取值范围：** 不涉及。
+     * @return versionId
+     */
+    public String getVersionId() {
+        return versionId;
+    }
+
+    public void setVersionId(String versionId) {
+        this.versionId = versionId;
+    }
+
+    public UpdateInferDeploymentScaleResponse withVersionCount(Integer versionCount) {
+        this.versionCount = versionCount;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 服务版本数量。 **取值范围：** 不涉及。
+     * @return versionCount
+     */
+    public Integer getVersionCount() {
+        return versionCount;
+    }
+
+    public void setVersionCount(Integer versionCount) {
+        this.versionCount = versionCount;
+    }
+
+    public UpdateInferDeploymentScaleResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 服务部署实例数。
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    public UpdateInferDeploymentScaleResponse withWeight(Integer weight) {
+        this.weight = weight;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 权重百分比，分配到此模型的流量权重，仅当模型部署为在线服务时需要配置。 **约束限制：** 不涉及。 **取值范围：** [0, 100]。 **默认取值：** 不涉及。
+     * minimum: 0
+     * maximum: 100
+     * @return weight
+     */
+    public Integer getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
+    }
+
+    public UpdateInferDeploymentScaleResponse withPriority(Integer priority) {
         this.priority = priority;
         return this;
     }
 
     /**
      * **参数解释：** 服务优先级。 **约束限制：** 不涉及。 **取值范围：** [1, 3]。 **默认取值：** 不涉及。
+     * minimum: 1
+     * maximum: 3
      * @return priority
      */
-    public String getPriority() {
+    public Integer getPriority() {
         return priority;
     }
 
-    public void setPriority(String priority) {
+    public void setPriority(Integer priority) {
         this.priority = priority;
     }
 
@@ -278,6 +422,23 @@ public class UpdateInferDeploymentScaleResponse extends SdkResponse {
         this.secretType = secretType;
     }
 
+    public UpdateInferDeploymentScaleResponse withSecretName(String secretName) {
+        this.secretName = secretName;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 凭证名称，用户使用dew类型凭证时可以在此处选择使用的凭证。 **取值范围：** 1-64个字符，只能包含字母、数字、连字符和下划线。
+     * @return secretName
+     */
+    public String getSecretName() {
+        return secretName;
+    }
+
+    public void setSecretName(String secretName) {
+        this.secretName = secretName;
+    }
+
     public UpdateInferDeploymentScaleResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -295,41 +456,58 @@ public class UpdateInferDeploymentScaleResponse extends SdkResponse {
         this.status = status;
     }
 
-    public UpdateInferDeploymentScaleResponse withCount(Integer count) {
-        this.count = count;
+    public UpdateInferDeploymentScaleResponse withDeployType(String deployType) {
+        this.deployType = deployType;
         return this;
     }
 
     /**
-     * **参数解释：** 服务实例数
-     * @return count
+     * **参数解释：** 部署类型。 **取值范围：** - SINGLE：单机单卡。 - MULTI：多机多卡。
+     * @return deployType
      */
-    public Integer getCount() {
-        return count;
+    public String getDeployType() {
+        return deployType;
     }
 
-    public void setCount(Integer count) {
-        this.count = count;
+    public void setDeployType(String deployType) {
+        this.deployType = deployType;
     }
 
-    public UpdateInferDeploymentScaleResponse withHighAvailSwitch(String highAvailSwitch) {
+    public UpdateInferDeploymentScaleResponse withWorkloadType(String workloadType) {
+        this.workloadType = workloadType;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 工作负载类型。 **取值范围：** - LWS - DEPLOYMENT **默认取值：** DEPLOYMENT
+     * @return workloadType
+     */
+    public String getWorkloadType() {
+        return workloadType;
+    }
+
+    public void setWorkloadType(String workloadType) {
+        this.workloadType = workloadType;
+    }
+
+    public UpdateInferDeploymentScaleResponse withHighAvailSwitch(Boolean highAvailSwitch) {
         this.highAvailSwitch = highAvailSwitch;
         return this;
     }
 
     /**
-     * **参数解释：** 高可用开关，开启后不同实例的pod将尽量均匀分布到不同的节点上。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** true
+     * **参数解释：** 高可用开关，开启后不同实例的pod将尽量均匀分布到不同的节点上。 **约束限制：** 不涉及 **取值范围：** - true: 高可用开启。 - false: 高可用关闭。
      * @return highAvailSwitch
      */
-    public String getHighAvailSwitch() {
+    public Boolean getHighAvailSwitch() {
         return highAvailSwitch;
     }
 
-    public void setHighAvailSwitch(String highAvailSwitch) {
+    public void setHighAvailSwitch(Boolean highAvailSwitch) {
         this.highAvailSwitch = highAvailSwitch;
     }
 
-    public UpdateInferDeploymentScaleResponse withSystemLogDumpEnable(String systemLogDumpEnable) {
+    public UpdateInferDeploymentScaleResponse withSystemLogDumpEnable(Boolean systemLogDumpEnable) {
         this.systemLogDumpEnable = systemLogDumpEnable;
         return this;
     }
@@ -338,12 +516,29 @@ public class UpdateInferDeploymentScaleResponse extends SdkResponse {
      * **参数解释：** 系统日志转储开关。 **约束限制：** 只有NPU资源池有，且逻辑池是没有的 **取值范围：** 不涉及 **默认取值：** false
      * @return systemLogDumpEnable
      */
-    public String getSystemLogDumpEnable() {
+    public Boolean getSystemLogDumpEnable() {
         return systemLogDumpEnable;
     }
 
-    public void setSystemLogDumpEnable(String systemLogDumpEnable) {
+    public void setSystemLogDumpEnable(Boolean systemLogDumpEnable) {
         this.systemLogDumpEnable = systemLogDumpEnable;
+    }
+
+    public UpdateInferDeploymentScaleResponse withScheduleStrategy(String scheduleStrategy) {
+        this.scheduleStrategy = scheduleStrategy;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 调度策略。 **取值范围：** 不涉及。
+     * @return scheduleStrategy
+     */
+    public String getScheduleStrategy() {
+        return scheduleStrategy;
+    }
+
+    public void setScheduleStrategy(String scheduleStrategy) {
+        this.scheduleStrategy = scheduleStrategy;
     }
 
     public UpdateInferDeploymentScaleResponse withUnitConfigs(List<UnitConfig> unitConfigs) {
@@ -379,72 +574,30 @@ public class UpdateInferDeploymentScaleResponse extends SdkResponse {
         this.unitConfigs = unitConfigs;
     }
 
-    public UpdateInferDeploymentScaleResponse withUpdateAt(OffsetDateTime updateAt) {
-        this.updateAt = updateAt;
+    public UpdateInferDeploymentScaleResponse withModel(GroupModel model) {
+        this.model = model;
+        return this;
+    }
+
+    public UpdateInferDeploymentScaleResponse withModel(Consumer<GroupModel> modelSetter) {
+        if (this.model == null) {
+            this.model = new GroupModel();
+            modelSetter.accept(this.model);
+        }
+
         return this;
     }
 
     /**
-     * **参数解释：** 更新时间，根据更新时的当前时间自动生成。 **取值范围：** 毫秒级时间戳，13位数字。
-     * @return updateAt
+     * Get model
+     * @return model
      */
-    public OffsetDateTime getUpdateAt() {
-        return updateAt;
+    public GroupModel getModel() {
+        return model;
     }
 
-    public void setUpdateAt(OffsetDateTime updateAt) {
-        this.updateAt = updateAt;
-    }
-
-    public UpdateInferDeploymentScaleResponse withVersion(String version) {
-        this.version = version;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 当前服务版本信息。
-     * @return version
-     */
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
-    public UpdateInferDeploymentScaleResponse withVersionCount(Integer versionCount) {
-        this.versionCount = versionCount;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 服务版本数量。 **取值范围：** 不涉及。
-     * @return versionCount
-     */
-    public Integer getVersionCount() {
-        return versionCount;
-    }
-
-    public void setVersionCount(Integer versionCount) {
-        this.versionCount = versionCount;
-    }
-
-    public UpdateInferDeploymentScaleResponse withWeight(Integer weight) {
-        this.weight = weight;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 权重百分比，分配到此模型的流量权重，仅当模型部署为在线服务时需要配置。 **约束限制：** 不涉及。 **取值范围：** [0, 100]。 **默认取值：** 不涉及。
-     * @return weight
-     */
-    public Integer getWeight() {
-        return weight;
-    }
-
-    public void setWeight(Integer weight) {
-        this.weight = weight;
+    public void setModel(GroupModel model) {
+        this.model = model;
     }
 
     public UpdateInferDeploymentScaleResponse withAdvancedConfig(AdvancedConfig advancedConfig) {
@@ -473,38 +626,116 @@ public class UpdateInferDeploymentScaleResponse extends SdkResponse {
         this.advancedConfig = advancedConfig;
     }
 
-    public UpdateInferDeploymentScaleResponse withJobId(String jobId) {
-        this.jobId = jobId;
+    public UpdateInferDeploymentScaleResponse withMirrorTrafficEnable(Boolean mirrorTrafficEnable) {
+        this.mirrorTrafficEnable = mirrorTrafficEnable;
         return this;
     }
 
     /**
-     * **参数解释：** 巫山工作流ID。 **取值范围：** 不涉及。
-     * @return jobId
+     * **参数解释：** 是否开启镜像流量。 **取值范围：** 不涉及。
+     * @return mirrorTrafficEnable
      */
-    public String getJobId() {
-        return jobId;
+    public Boolean getMirrorTrafficEnable() {
+        return mirrorTrafficEnable;
     }
 
-    public void setJobId(String jobId) {
-        this.jobId = jobId;
+    public void setMirrorTrafficEnable(Boolean mirrorTrafficEnable) {
+        this.mirrorTrafficEnable = mirrorTrafficEnable;
     }
 
-    public UpdateInferDeploymentScaleResponse withDeploymentName(String deploymentName) {
-        this.deploymentName = deploymentName;
+    public UpdateInferDeploymentScaleResponse withMirrorTrafficWeight(Integer mirrorTrafficWeight) {
+        this.mirrorTrafficWeight = mirrorTrafficWeight;
         return this;
     }
 
     /**
-     * 参数解释： 服务部署名字。
-     * @return deploymentName
+     * **参数解释：** 镜像流量权重。 **取值范围：** 不涉及。
+     * @return mirrorTrafficWeight
      */
-    public String getDeploymentName() {
-        return deploymentName;
+    public Integer getMirrorTrafficWeight() {
+        return mirrorTrafficWeight;
     }
 
-    public void setDeploymentName(String deploymentName) {
-        this.deploymentName = deploymentName;
+    public void setMirrorTrafficWeight(Integer mirrorTrafficWeight) {
+        this.mirrorTrafficWeight = mirrorTrafficWeight;
+    }
+
+    public UpdateInferDeploymentScaleResponse withUserName(String userName) {
+        this.userName = userName;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 用户名。 **取值范围：** 不涉及。
+     * @return userName
+     */
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public UpdateInferDeploymentScaleResponse withAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 委托名称。 **取值范围：** 不涉及。
+     * @return agencyName
+     */
+    public String getAgencyName() {
+        return agencyName;
+    }
+
+    public void setAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+    }
+
+    public UpdateInferDeploymentScaleResponse withLastUsedTime(OffsetDateTime lastUsedTime) {
+        this.lastUsedTime = lastUsedTime;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 最后使用时间。 **取值范围：** 不涉及。
+     * @return lastUsedTime
+     */
+    public OffsetDateTime getLastUsedTime() {
+        return lastUsedTime;
+    }
+
+    public void setLastUsedTime(OffsetDateTime lastUsedTime) {
+        this.lastUsedTime = lastUsedTime;
+    }
+
+    public UpdateInferDeploymentScaleResponse withDeploymentTaskLimit(DeploymentTaskLimit deploymentTaskLimit) {
+        this.deploymentTaskLimit = deploymentTaskLimit;
+        return this;
+    }
+
+    public UpdateInferDeploymentScaleResponse withDeploymentTaskLimit(
+        Consumer<DeploymentTaskLimit> deploymentTaskLimitSetter) {
+        if (this.deploymentTaskLimit == null) {
+            this.deploymentTaskLimit = new DeploymentTaskLimit();
+            deploymentTaskLimitSetter.accept(this.deploymentTaskLimit);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get deploymentTaskLimit
+     * @return deploymentTaskLimit
+     */
+    public DeploymentTaskLimit getDeploymentTaskLimit() {
+        return deploymentTaskLimit;
+    }
+
+    public void setDeploymentTaskLimit(DeploymentTaskLimit deploymentTaskLimit) {
+        this.deploymentTaskLimit = deploymentTaskLimit;
     }
 
     public UpdateInferDeploymentScaleResponse withFrozenInfos(List<FrozenInfo> frozenInfos) {
@@ -540,6 +771,40 @@ public class UpdateInferDeploymentScaleResponse extends SdkResponse {
         this.frozenInfos = frozenInfos;
     }
 
+    public UpdateInferDeploymentScaleResponse withCreateAt(OffsetDateTime createAt) {
+        this.createAt = createAt;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 创建时间，根据创建时的当前时间自动生成。 **取值范围：** 毫秒级时间戳，13位数字
+     * @return createAt
+     */
+    public OffsetDateTime getCreateAt() {
+        return createAt;
+    }
+
+    public void setCreateAt(OffsetDateTime createAt) {
+        this.createAt = createAt;
+    }
+
+    public UpdateInferDeploymentScaleResponse withUpdateAt(OffsetDateTime updateAt) {
+        this.updateAt = updateAt;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 更新时间，根据更新时的当前时间自动生成。 **取值范围：** 毫秒级时间戳，13位数字。
+     * @return updateAt
+     */
+    public OffsetDateTime getUpdateAt() {
+        return updateAt;
+    }
+
+    public void setUpdateAt(OffsetDateTime updateAt) {
+        this.updateAt = updateAt;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -550,43 +815,64 @@ public class UpdateInferDeploymentScaleResponse extends SdkResponse {
         }
         UpdateInferDeploymentScaleResponse that = (UpdateInferDeploymentScaleResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.inferName, that.inferName) && Objects.equals(this.createAt, that.createAt)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.poolId, that.poolId)
-            && Objects.equals(this.framework, that.framework) && Objects.equals(this.priority, that.priority)
-            && Objects.equals(this.secretType, that.secretType) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.count, that.count) && Objects.equals(this.highAvailSwitch, that.highAvailSwitch)
+            && Objects.equals(this.deploymentName, that.deploymentName)
+            && Objects.equals(this.inferName, that.inferName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.poolId, that.poolId) && Objects.equals(this.framework, that.framework)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.versionId, that.versionId)
+            && Objects.equals(this.versionCount, that.versionCount) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.weight, that.weight) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.secretType, that.secretType) && Objects.equals(this.secretName, that.secretName)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.deployType, that.deployType)
+            && Objects.equals(this.workloadType, that.workloadType)
+            && Objects.equals(this.highAvailSwitch, that.highAvailSwitch)
             && Objects.equals(this.systemLogDumpEnable, that.systemLogDumpEnable)
-            && Objects.equals(this.unitConfigs, that.unitConfigs) && Objects.equals(this.updateAt, that.updateAt)
-            && Objects.equals(this.version, that.version) && Objects.equals(this.versionCount, that.versionCount)
-            && Objects.equals(this.weight, that.weight) && Objects.equals(this.advancedConfig, that.advancedConfig)
-            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.deploymentName, that.deploymentName)
-            && Objects.equals(this.frozenInfos, that.frozenInfos);
+            && Objects.equals(this.scheduleStrategy, that.scheduleStrategy)
+            && Objects.equals(this.unitConfigs, that.unitConfigs) && Objects.equals(this.model, that.model)
+            && Objects.equals(this.advancedConfig, that.advancedConfig)
+            && Objects.equals(this.mirrorTrafficEnable, that.mirrorTrafficEnable)
+            && Objects.equals(this.mirrorTrafficWeight, that.mirrorTrafficWeight)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.agencyName, that.agencyName)
+            && Objects.equals(this.lastUsedTime, that.lastUsedTime)
+            && Objects.equals(this.deploymentTaskLimit, that.deploymentTaskLimit)
+            && Objects.equals(this.frozenInfos, that.frozenInfos) && Objects.equals(this.createAt, that.createAt)
+            && Objects.equals(this.updateAt, that.updateAt);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id,
             name,
+            deploymentName,
             inferName,
-            createAt,
             description,
             poolId,
             framework,
+            version,
+            versionId,
+            versionCount,
+            count,
+            weight,
             priority,
             secretType,
+            secretName,
             status,
-            count,
+            deployType,
+            workloadType,
             highAvailSwitch,
             systemLogDumpEnable,
+            scheduleStrategy,
             unitConfigs,
-            updateAt,
-            version,
-            versionCount,
-            weight,
+            model,
             advancedConfig,
-            jobId,
-            deploymentName,
-            frozenInfos);
+            mirrorTrafficEnable,
+            mirrorTrafficWeight,
+            userName,
+            agencyName,
+            lastUsedTime,
+            deploymentTaskLimit,
+            frozenInfos,
+            createAt,
+            updateAt);
     }
 
     @Override
@@ -595,26 +881,37 @@ public class UpdateInferDeploymentScaleResponse extends SdkResponse {
         sb.append("class UpdateInferDeploymentScaleResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    deploymentName: ").append(toIndentedString(deploymentName)).append("\n");
         sb.append("    inferName: ").append(toIndentedString(inferName)).append("\n");
-        sb.append("    createAt: ").append(toIndentedString(createAt)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("    framework: ").append(toIndentedString(framework)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    versionId: ").append(toIndentedString(versionId)).append("\n");
+        sb.append("    versionCount: ").append(toIndentedString(versionCount)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    secretType: ").append(toIndentedString(secretType)).append("\n");
+        sb.append("    secretName: ").append(toIndentedString(secretName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    deployType: ").append(toIndentedString(deployType)).append("\n");
+        sb.append("    workloadType: ").append(toIndentedString(workloadType)).append("\n");
         sb.append("    highAvailSwitch: ").append(toIndentedString(highAvailSwitch)).append("\n");
         sb.append("    systemLogDumpEnable: ").append(toIndentedString(systemLogDumpEnable)).append("\n");
+        sb.append("    scheduleStrategy: ").append(toIndentedString(scheduleStrategy)).append("\n");
         sb.append("    unitConfigs: ").append(toIndentedString(unitConfigs)).append("\n");
-        sb.append("    updateAt: ").append(toIndentedString(updateAt)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
-        sb.append("    versionCount: ").append(toIndentedString(versionCount)).append("\n");
-        sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
+        sb.append("    model: ").append(toIndentedString(model)).append("\n");
         sb.append("    advancedConfig: ").append(toIndentedString(advancedConfig)).append("\n");
-        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
-        sb.append("    deploymentName: ").append(toIndentedString(deploymentName)).append("\n");
+        sb.append("    mirrorTrafficEnable: ").append(toIndentedString(mirrorTrafficEnable)).append("\n");
+        sb.append("    mirrorTrafficWeight: ").append(toIndentedString(mirrorTrafficWeight)).append("\n");
+        sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
+        sb.append("    lastUsedTime: ").append(toIndentedString(lastUsedTime)).append("\n");
+        sb.append("    deploymentTaskLimit: ").append(toIndentedString(deploymentTaskLimit)).append("\n");
         sb.append("    frozenInfos: ").append(toIndentedString(frozenInfos)).append("\n");
+        sb.append("    createAt: ").append(toIndentedString(createAt)).append("\n");
+        sb.append("    updateAt: ").append(toIndentedString(updateAt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

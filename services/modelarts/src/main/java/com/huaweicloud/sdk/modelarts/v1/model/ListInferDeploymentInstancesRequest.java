@@ -39,9 +39,9 @@ public class ListInferDeploymentInstancesRequest {
     private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "pod_name")
+    @JsonProperty(value = "instance_name")
 
-    private String podName;
+    private String instanceName;
 
     public ListInferDeploymentInstancesRequest withId(String id) {
         this.id = id;
@@ -146,21 +146,21 @@ public class ListInferDeploymentInstancesRequest {
         this.offset = offset;
     }
 
-    public ListInferDeploymentInstancesRequest withPodName(String podName) {
-        this.podName = podName;
+    public ListInferDeploymentInstancesRequest withInstanceName(String instanceName) {
+        this.instanceName = instanceName;
         return this;
     }
 
     /**
-     * **参数解释：** pod名字。 **取值范围：** 不涉及。
-     * @return podName
+     * **参数解释：** 服务实例名字。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return instanceName
      */
-    public String getPodName() {
-        return podName;
+    public String getInstanceName() {
+        return instanceName;
     }
 
-    public void setPodName(String podName) {
-        this.podName = podName;
+    public void setInstanceName(String instanceName) {
+        this.instanceName = instanceName;
     }
 
     @Override
@@ -174,12 +174,12 @@ public class ListInferDeploymentInstancesRequest {
         ListInferDeploymentInstancesRequest that = (ListInferDeploymentInstancesRequest) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.status, that.status) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.podName, that.podName);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.instanceName, that.instanceName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status, limit, offset, podName);
+        return Objects.hash(id, name, status, limit, offset, instanceName);
     }
 
     @Override
@@ -191,7 +191,7 @@ public class ListInferDeploymentInstancesRequest {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    podName: ").append(toIndentedString(podName)).append("\n");
+        sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

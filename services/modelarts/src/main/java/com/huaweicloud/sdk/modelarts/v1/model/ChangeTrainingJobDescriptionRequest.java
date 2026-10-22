@@ -19,7 +19,7 @@ public class ChangeTrainingJobDescriptionRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private JobDescription body;
+    private JobUpdateRequestBody body;
 
     public ChangeTrainingJobDescriptionRequest withTrainingJobId(String trainingJobId) {
         this.trainingJobId = trainingJobId;
@@ -38,14 +38,14 @@ public class ChangeTrainingJobDescriptionRequest {
         this.trainingJobId = trainingJobId;
     }
 
-    public ChangeTrainingJobDescriptionRequest withBody(JobDescription body) {
+    public ChangeTrainingJobDescriptionRequest withBody(JobUpdateRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public ChangeTrainingJobDescriptionRequest withBody(Consumer<JobDescription> bodySetter) {
+    public ChangeTrainingJobDescriptionRequest withBody(Consumer<JobUpdateRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new JobDescription();
+            this.body = new JobUpdateRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class ChangeTrainingJobDescriptionRequest {
      * Get body
      * @return body
      */
-    public JobDescription getBody() {
+    public JobUpdateRequestBody getBody() {
         return body;
     }
 
-    public void setBody(JobDescription body) {
+    public void setBody(JobUpdateRequestBody body) {
         this.body = body;
     }
 

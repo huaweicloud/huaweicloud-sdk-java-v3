@@ -20,6 +20,16 @@ public class SecurityReportContentResponseReportContentInfoTopAttackSourceLocati
 
     private Integer num;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host")
+
+    private String host;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "web_tag")
+
+    private String webTag;
+
     public SecurityReportContentResponseReportContentInfoTopAttackSourceLocationsInfoList withKey(String key) {
         this.key = key;
         return this;
@@ -54,6 +64,40 @@ public class SecurityReportContentResponseReportContentInfoTopAttackSourceLocati
         this.num = num;
     }
 
+    public SecurityReportContentResponseReportContentInfoTopAttackSourceLocationsInfoList withHost(String host) {
+        this.host = host;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 域名标识。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return host
+     */
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    public SecurityReportContentResponseReportContentInfoTopAttackSourceLocationsInfoList withWebTag(String webTag) {
+        this.webTag = webTag;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 域名的Web标签。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return webTag
+     */
+    public String getWebTag() {
+        return webTag;
+    }
+
+    public void setWebTag(String webTag) {
+        this.webTag = webTag;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +108,13 @@ public class SecurityReportContentResponseReportContentInfoTopAttackSourceLocati
         }
         SecurityReportContentResponseReportContentInfoTopAttackSourceLocationsInfoList that =
             (SecurityReportContentResponseReportContentInfoTopAttackSourceLocationsInfoList) obj;
-        return Objects.equals(this.key, that.key) && Objects.equals(this.num, that.num);
+        return Objects.equals(this.key, that.key) && Objects.equals(this.num, that.num)
+            && Objects.equals(this.host, that.host) && Objects.equals(this.webTag, that.webTag);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(key, num);
+        return Objects.hash(key, num, host, webTag);
     }
 
     @Override
@@ -78,6 +123,8 @@ public class SecurityReportContentResponseReportContentInfoTopAttackSourceLocati
         sb.append("class SecurityReportContentResponseReportContentInfoTopAttackSourceLocationsInfoList {\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    num: ").append(toIndentedString(num)).append("\n");
+        sb.append("    host: ").append(toIndentedString(host)).append("\n");
+        sb.append("    webTag: ").append(toIndentedString(webTag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

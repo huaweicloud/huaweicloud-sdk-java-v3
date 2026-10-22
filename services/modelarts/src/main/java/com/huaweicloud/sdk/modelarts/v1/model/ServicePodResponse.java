@@ -45,6 +45,11 @@ public class ServicePodResponse {
 
     private Long updateTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pod_role_name")
+
+    private String podRoleName;
+
     public ServicePodResponse withPodId(String podId) {
         this.podId = podId;
         return this;
@@ -164,6 +169,23 @@ public class ServicePodResponse {
         this.updateTime = updateTime;
     }
 
+    public ServicePodResponse withPodRoleName(String podRoleName) {
+        this.podRoleName = podRoleName;
+        return this;
+    }
+
+    /**
+     * **参数解释：** pod所属单元名称。 **取值范围：** 不涉及。
+     * @return podRoleName
+     */
+    public String getPodRoleName() {
+        return podRoleName;
+    }
+
+    public void setPodRoleName(String podRoleName) {
+        this.podRoleName = podRoleName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -176,12 +198,12 @@ public class ServicePodResponse {
         return Objects.equals(this.podId, that.podId) && Objects.equals(this.podName, that.podName)
             && Objects.equals(this.podNodeIp, that.podNodeIp) && Objects.equals(this.podNodeName, that.podNodeName)
             && Objects.equals(this.podRole, that.podRole) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.podRoleName, that.podRoleName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(podId, podName, podNodeIp, podNodeName, podRole, status, updateTime);
+        return Objects.hash(podId, podName, podNodeIp, podNodeName, podRole, status, updateTime, podRoleName);
     }
 
     @Override
@@ -195,6 +217,7 @@ public class ServicePodResponse {
         sb.append("    podRole: ").append(toIndentedString(podRole)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    podRoleName: ").append(toIndentedString(podRoleName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

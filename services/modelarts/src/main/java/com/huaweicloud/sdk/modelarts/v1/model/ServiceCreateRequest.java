@@ -61,7 +61,7 @@ public class ServiceCreateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_configs")
 
-    private List<LtsConfiguration> logConfigs = null;
+    private List<LtsConfigurationV2> logConfigs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -285,12 +285,12 @@ public class ServiceCreateRequest {
         this.ltsStrategy = ltsStrategy;
     }
 
-    public ServiceCreateRequest withLogConfigs(List<LtsConfiguration> logConfigs) {
+    public ServiceCreateRequest withLogConfigs(List<LtsConfigurationV2> logConfigs) {
         this.logConfigs = logConfigs;
         return this;
     }
 
-    public ServiceCreateRequest addLogConfigsItem(LtsConfiguration logConfigsItem) {
+    public ServiceCreateRequest addLogConfigsItem(LtsConfigurationV2 logConfigsItem) {
         if (this.logConfigs == null) {
             this.logConfigs = new ArrayList<>();
         }
@@ -298,7 +298,7 @@ public class ServiceCreateRequest {
         return this;
     }
 
-    public ServiceCreateRequest withLogConfigs(Consumer<List<LtsConfiguration>> logConfigsSetter) {
+    public ServiceCreateRequest withLogConfigs(Consumer<List<LtsConfigurationV2>> logConfigsSetter) {
         if (this.logConfigs == null) {
             this.logConfigs = new ArrayList<>();
         }
@@ -310,11 +310,11 @@ public class ServiceCreateRequest {
      * **参数解释：** 服务日志配置。 **约束限制：** 数量上限为[3](tag:hws,hws_hk,fcs,fcs_super)[2](tag:hcs,hcs_sm)个，且每种类型只可配置一个。
      * @return logConfigs
      */
-    public List<LtsConfiguration> getLogConfigs() {
+    public List<LtsConfigurationV2> getLogConfigs() {
         return logConfigs;
     }
 
-    public void setLogConfigs(List<LtsConfiguration> logConfigs) {
+    public void setLogConfigs(List<LtsConfigurationV2> logConfigs) {
         this.logConfigs = logConfigs;
     }
 

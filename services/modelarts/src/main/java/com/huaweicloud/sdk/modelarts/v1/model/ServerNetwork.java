@@ -48,6 +48,11 @@ public class ServerNetwork {
 
     private List<AllowedAddressPairs> allowedAddressPairs = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hyper_group")
+
+    private HyperGroup hyperGroup;
+
     public ServerNetwork withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
         return this;
@@ -192,6 +197,32 @@ public class ServerNetwork {
         this.allowedAddressPairs = allowedAddressPairs;
     }
 
+    public ServerNetwork withHyperGroup(HyperGroup hyperGroup) {
+        this.hyperGroup = hyperGroup;
+        return this;
+    }
+
+    public ServerNetwork withHyperGroup(Consumer<HyperGroup> hyperGroupSetter) {
+        if (this.hyperGroup == null) {
+            this.hyperGroup = new HyperGroup();
+            hyperGroupSetter.accept(this.hyperGroup);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get hyperGroup
+     * @return hyperGroup
+     */
+    public HyperGroup getHyperGroup() {
+        return hyperGroup;
+    }
+
+    public void setHyperGroup(HyperGroup hyperGroup) {
+        this.hyperGroup = hyperGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -205,12 +236,14 @@ public class ServerNetwork {
             && Objects.equals(this.securityGroupId, that.securityGroupId)
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.hyperCluster, that.hyperCluster)
-            && Objects.equals(this.allowedAddressPairs, that.allowedAddressPairs);
+            && Objects.equals(this.allowedAddressPairs, that.allowedAddressPairs)
+            && Objects.equals(this.hyperGroup, that.hyperGroup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ipv6Enable, roceId, securityGroupId, subnetId, vpcId, hyperCluster, allowedAddressPairs);
+        return Objects
+            .hash(ipv6Enable, roceId, securityGroupId, subnetId, vpcId, hyperCluster, allowedAddressPairs, hyperGroup);
     }
 
     @Override
@@ -224,6 +257,7 @@ public class ServerNetwork {
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    hyperCluster: ").append(toIndentedString(hyperCluster)).append("\n");
         sb.append("    allowedAddressPairs: ").append(toIndentedString(allowedAddressPairs)).append("\n");
+        sb.append("    hyperGroup: ").append(toIndentedString(hyperGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

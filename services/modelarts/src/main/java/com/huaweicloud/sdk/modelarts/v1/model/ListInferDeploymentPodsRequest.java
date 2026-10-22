@@ -63,6 +63,11 @@ public class ListInferDeploymentPodsRequest {
 
     private String podNodeName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pod_role_name")
+
+    private String podRoleName;
+
     public ListInferDeploymentPodsRequest withId(String id) {
         this.id = id;
         return this;
@@ -251,6 +256,23 @@ public class ListInferDeploymentPodsRequest {
         this.podNodeName = podNodeName;
     }
 
+    public ListInferDeploymentPodsRequest withPodRoleName(String podRoleName) {
+        this.podRoleName = podRoleName;
+        return this;
+    }
+
+    /**
+     * **参数解释：** pod所属单元名称。 **取值范围：** 不涉及。
+     * @return podRoleName
+     */
+    public String getPodRoleName() {
+        return podRoleName;
+    }
+
+    public void setPodRoleName(String podRoleName) {
+        this.podRoleName = podRoleName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -264,12 +286,14 @@ public class ListInferDeploymentPodsRequest {
             && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.podName, that.podName) && Objects.equals(this.podId, that.podId)
-            && Objects.equals(this.podNodeIp, that.podNodeIp) && Objects.equals(this.podNodeName, that.podNodeName);
+            && Objects.equals(this.podNodeIp, that.podNodeIp) && Objects.equals(this.podNodeName, that.podNodeName)
+            && Objects.equals(this.podRoleName, that.podRoleName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, deploymentName, name, status, limit, offset, podName, podId, podNodeIp, podNodeName);
+        return Objects
+            .hash(id, deploymentName, name, status, limit, offset, podName, podId, podNodeIp, podNodeName, podRoleName);
     }
 
     @Override
@@ -286,6 +310,7 @@ public class ListInferDeploymentPodsRequest {
         sb.append("    podId: ").append(toIndentedString(podId)).append("\n");
         sb.append("    podNodeIp: ").append(toIndentedString(podNodeIp)).append("\n");
         sb.append("    podNodeName: ").append(toIndentedString(podNodeName)).append("\n");
+        sb.append("    podRoleName: ").append(toIndentedString(podRoleName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

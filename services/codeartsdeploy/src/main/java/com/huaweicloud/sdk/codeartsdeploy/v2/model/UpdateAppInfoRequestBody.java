@@ -113,6 +113,11 @@ public class UpdateAppInfoRequestBody {
     private CreateTypeEnum createType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "slave_cluster_id")
 
     private String slaveClusterId;
@@ -126,6 +131,21 @@ public class UpdateAppInfoRequestBody {
     @JsonProperty(value = "arrange_infos")
 
     private List<UpdateTaskV2RequestBody> arrangeInfos = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_urn")
+
+    private String agencyUrn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "slave_resource_type")
+
+    private String slaveResourceType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timeout")
+
+    private Integer timeout;
 
     public UpdateAppInfoRequestBody withId(String id) {
         this.id = id;
@@ -229,6 +249,23 @@ public class UpdateAppInfoRequestBody {
         this.createType = createType;
     }
 
+    public UpdateAppInfoRequestBody withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 分组id
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
     public UpdateAppInfoRequestBody withSlaveClusterId(String slaveClusterId) {
         this.slaveClusterId = slaveClusterId;
         return this;
@@ -305,6 +342,59 @@ public class UpdateAppInfoRequestBody {
         this.arrangeInfos = arrangeInfos;
     }
 
+    public UpdateAppInfoRequestBody withAgencyUrn(String agencyUrn) {
+        this.agencyUrn = agencyUrn;
+        return this;
+    }
+
+    /**
+     * 委托URN
+     * @return agencyUrn
+     */
+    public String getAgencyUrn() {
+        return agencyUrn;
+    }
+
+    public void setAgencyUrn(String agencyUrn) {
+        this.agencyUrn = agencyUrn;
+    }
+
+    public UpdateAppInfoRequestBody withSlaveResourceType(String slaveResourceType) {
+        this.slaveResourceType = slaveResourceType;
+        return this;
+    }
+
+    /**
+     * 资源池类型
+     * @return slaveResourceType
+     */
+    public String getSlaveResourceType() {
+        return slaveResourceType;
+    }
+
+    public void setSlaveResourceType(String slaveResourceType) {
+        this.slaveResourceType = slaveResourceType;
+    }
+
+    public UpdateAppInfoRequestBody withTimeout(Integer timeout) {
+        this.timeout = timeout;
+        return this;
+    }
+
+    /**
+     * 任务执行超时时间
+     * minimum: 10
+     * maximum: 360
+     * @return timeout
+     */
+    public Integer getTimeout() {
+        return timeout;
+    }
+
+    public void setTimeout(Integer timeout) {
+        this.timeout = timeout;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -317,14 +407,28 @@ public class UpdateAppInfoRequestBody {
         return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.isDraft, that.isDraft) && Objects.equals(this.createType, that.createType)
-            && Objects.equals(this.slaveClusterId, that.slaveClusterId) && Objects.equals(this.trigger, that.trigger)
-            && Objects.equals(this.arrangeInfos, that.arrangeInfos);
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.slaveClusterId, that.slaveClusterId)
+            && Objects.equals(this.trigger, that.trigger) && Objects.equals(this.arrangeInfos, that.arrangeInfos)
+            && Objects.equals(this.agencyUrn, that.agencyUrn)
+            && Objects.equals(this.slaveResourceType, that.slaveResourceType)
+            && Objects.equals(this.timeout, that.timeout);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, projectId, name, description, isDraft, createType, slaveClusterId, trigger, arrangeInfos);
+        return Objects.hash(id,
+            projectId,
+            name,
+            description,
+            isDraft,
+            createType,
+            groupId,
+            slaveClusterId,
+            trigger,
+            arrangeInfos,
+            agencyUrn,
+            slaveResourceType,
+            timeout);
     }
 
     @Override
@@ -337,9 +441,13 @@ public class UpdateAppInfoRequestBody {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    isDraft: ").append(toIndentedString(isDraft)).append("\n");
         sb.append("    createType: ").append(toIndentedString(createType)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    slaveClusterId: ").append(toIndentedString(slaveClusterId)).append("\n");
         sb.append("    trigger: ").append(toIndentedString(trigger)).append("\n");
         sb.append("    arrangeInfos: ").append(toIndentedString(arrangeInfos)).append("\n");
+        sb.append("    agencyUrn: ").append(toIndentedString(agencyUrn)).append("\n");
+        sb.append("    slaveResourceType: ").append(toIndentedString(slaveResourceType)).append("\n");
+        sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("}");
         return sb.toString();
     }

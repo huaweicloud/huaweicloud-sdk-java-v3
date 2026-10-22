@@ -102,6 +102,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.CreateHpaRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateHraRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperClusterRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperClusterResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperinstanceGroupRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperinstanceGroupResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperinstanceTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperinstanceTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateImageRequest;
@@ -186,6 +188,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.DeleteDevServerRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteDevServerResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperClusterRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperClusterResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceGroupRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceGroupResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceTagsRequest;
@@ -264,6 +268,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.GetDevServerOperationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.GetDevServerOperationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.GetHyperClusterRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.GetHyperClusterResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceGroupRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceGroupResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceOperationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceOperationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceRequest;
@@ -276,6 +282,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.GroupConfig;
 import com.huaweicloud.sdk.modelarts.v1.model.GroupConfigUpdateRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.HyperClusterCreateRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.HyperinstanceClustersCapacityRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.HyperinstanceGroupCreateRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.HyperinstanceGroupsCapacityRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ImageCreateReq;
 import com.huaweicloud.sdk.modelarts.v1.model.ImageRegRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ImageSaveJob;
@@ -284,8 +292,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.IntranetConnectionModifyRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.IntranetConnectionRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.Job;
 import com.huaweicloud.sdk.modelarts.v1.model.JobActionType;
-import com.huaweicloud.sdk.modelarts.v1.model.JobDescription;
 import com.huaweicloud.sdk.modelarts.v1.model.JobSearches;
+import com.huaweicloud.sdk.modelarts.v1.model.JobUpdateRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.LeaseReq;
 import com.huaweicloud.sdk.modelarts.v1.model.ListAlgorithmsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListAlgorithmsResponse;
@@ -327,6 +335,12 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListHyperClusterRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListHyperClusterResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceClustersCapacityRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceClustersCapacityResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceGroupRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceGroupResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceGroupsCapacityRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceGroupsCapacityResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceServersRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceServersResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstancesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstancesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListImageGroupRequest;
@@ -633,6 +647,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.SyncImageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.SyncImageResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.TagRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.TaskHistory;
+import com.huaweicloud.sdk.modelarts.v1.model.UnbindDevServerPublicIPRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UnbindDevServerPublicIPResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.UnbindInferApiKeyRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.UnbindInferApiKeyResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateAuthModeRequest;
@@ -1577,10 +1593,10 @@ public class ModelArtsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ChangeTrainingJobDescriptionRequest::getTrainingJobId,
                 ChangeTrainingJobDescriptionRequest::setTrainingJobId));
-        builder.<JobDescription>withRequestField("body",
+        builder.<JobUpdateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(JobDescription.class),
+            TypeCasts.uncheckedConversion(JobUpdateRequestBody.class),
             f -> f.withMarshaller(ChangeTrainingJobDescriptionRequest::getBody,
                 ChangeTrainingJobDescriptionRequest::setBody));
 
@@ -1819,6 +1835,30 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(HyperClusterCreateRequest.class),
             f -> f.withMarshaller(CreateHyperClusterRequest::getBody, CreateHyperClusterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateHyperinstanceGroupRequest, CreateHyperinstanceGroupResponse> createHyperinstanceGroup =
+        genForCreateHyperinstanceGroup();
+
+    private static HttpRequestDef<CreateHyperinstanceGroupRequest, CreateHyperinstanceGroupResponse> genForCreateHyperinstanceGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateHyperinstanceGroupRequest, CreateHyperinstanceGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateHyperinstanceGroupRequest.class, CreateHyperinstanceGroupResponse.class)
+                .withName("CreateHyperinstanceGroup")
+                .withUri("/v1/{project_id}/dev-servers/hyperinstance/groups")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<HyperinstanceGroupCreateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(HyperinstanceGroupCreateRequest.class),
+            f -> f.withMarshaller(CreateHyperinstanceGroupRequest::getBody, CreateHyperinstanceGroupRequest::setBody));
 
         // response
 
@@ -2494,6 +2534,38 @@ public class ModelArtsMeta {
             String.class,
             f -> f.withMarshaller(DeleteHyperinstanceResponse::getXRequestId,
                 DeleteHyperinstanceResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteHyperinstanceGroupRequest, DeleteHyperinstanceGroupResponse> deleteHyperinstanceGroup =
+        genForDeleteHyperinstanceGroup();
+
+    private static HttpRequestDef<DeleteHyperinstanceGroupRequest, DeleteHyperinstanceGroupResponse> genForDeleteHyperinstanceGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteHyperinstanceGroupRequest, DeleteHyperinstanceGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteHyperinstanceGroupRequest.class,
+                    DeleteHyperinstanceGroupResponse.class)
+                .withName("DeleteHyperinstanceGroup")
+                .withUri("/v1/{project_id}/dev-servers/hyperinstance/groups/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHyperinstanceGroupRequest::getId, DeleteHyperinstanceGroupRequest::setId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteHyperinstanceGroupResponse::getBody,
+                DeleteHyperinstanceGroupResponse::setBody));
+
         return builder.build();
     }
 
@@ -3302,6 +3374,29 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<GetHyperinstanceGroupRequest, GetHyperinstanceGroupResponse> getHyperinstanceGroup =
+        genForGetHyperinstanceGroup();
+
+    private static HttpRequestDef<GetHyperinstanceGroupRequest, GetHyperinstanceGroupResponse> genForGetHyperinstanceGroup() {
+        // basic
+        HttpRequestDef.Builder<GetHyperinstanceGroupRequest, GetHyperinstanceGroupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, GetHyperinstanceGroupRequest.class, GetHyperinstanceGroupResponse.class)
+            .withName("GetHyperinstanceGroup")
+            .withUri("/v1/{project_id}/dev-servers/hyperinstance/groups/{id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetHyperinstanceGroupRequest::getId, GetHyperinstanceGroupRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<GetHyperinstanceOperationRequest, GetHyperinstanceOperationResponse> getHyperinstanceOperation =
         genForGetHyperinstanceOperation();
 
@@ -3905,6 +4000,75 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListHyperinstanceGroupRequest, ListHyperinstanceGroupResponse> listHyperinstanceGroup =
+        genForListHyperinstanceGroup();
+
+    private static HttpRequestDef<ListHyperinstanceGroupRequest, ListHyperinstanceGroupResponse> genForListHyperinstanceGroup() {
+        // basic
+        HttpRequestDef.Builder<ListHyperinstanceGroupRequest, ListHyperinstanceGroupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListHyperinstanceGroupRequest.class, ListHyperinstanceGroupResponse.class)
+            .withName("ListHyperinstanceGroup")
+            .withUri("/v1/{project_id}/dev-servers/hyperinstance/groups")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHyperinstanceGroupsCapacityRequest, ListHyperinstanceGroupsCapacityResponse> listHyperinstanceGroupsCapacity =
+        genForListHyperinstanceGroupsCapacity();
+
+    private static HttpRequestDef<ListHyperinstanceGroupsCapacityRequest, ListHyperinstanceGroupsCapacityResponse> genForListHyperinstanceGroupsCapacity() {
+        // basic
+        HttpRequestDef.Builder<ListHyperinstanceGroupsCapacityRequest, ListHyperinstanceGroupsCapacityResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListHyperinstanceGroupsCapacityRequest.class,
+                    ListHyperinstanceGroupsCapacityResponse.class)
+                .withName("ListHyperinstanceGroupsCapacity")
+                .withUri("/v1/{project_id}/dev-servers/hyperinstance/group-capacity-evaluations")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<HyperinstanceGroupsCapacityRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(HyperinstanceGroupsCapacityRequest.class),
+            f -> f.withMarshaller(ListHyperinstanceGroupsCapacityRequest::getBody,
+                ListHyperinstanceGroupsCapacityRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHyperinstanceServersRequest, ListHyperinstanceServersResponse> listHyperinstanceServers =
+        genForListHyperinstanceServers();
+
+    private static HttpRequestDef<ListHyperinstanceServersRequest, ListHyperinstanceServersResponse> genForListHyperinstanceServers() {
+        // basic
+        HttpRequestDef.Builder<ListHyperinstanceServersRequest, ListHyperinstanceServersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListHyperinstanceServersRequest.class, ListHyperinstanceServersResponse.class)
+                .withName("ListHyperinstanceServers")
+                .withUri("/v1/{project_id}/dev-servers/hyperinstance/{id}/servers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHyperinstanceServersRequest::getId, ListHyperinstanceServersRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListHyperinstancesRequest, ListHyperinstancesResponse> listHyperinstances =
         genForListHyperinstances();
 
@@ -4228,12 +4392,12 @@ public class ModelArtsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInferDeploymentInstancesRequest::getOffset,
                 ListInferDeploymentInstancesRequest::setOffset));
-        builder.<String>withRequestField("pod_name",
+        builder.<String>withRequestField("instance_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInferDeploymentInstancesRequest::getPodName,
-                ListInferDeploymentInstancesRequest::setPodName));
+            f -> f.withMarshaller(ListInferDeploymentInstancesRequest::getInstanceName,
+                ListInferDeploymentInstancesRequest::setInstanceName));
 
         // response
 
@@ -4374,6 +4538,12 @@ public class ModelArtsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInferDeploymentPodsRequest::getPodNodeName,
                 ListInferDeploymentPodsRequest::setPodNodeName));
+        builder.<String>withRequestField("pod_role_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentPodsRequest::getPodRoleName,
+                ListInferDeploymentPodsRequest::setPodRoleName));
 
         // response
 
@@ -7820,6 +7990,40 @@ public class ModelArtsMeta {
             f -> f.withMarshaller(SyncImageRequest::getImageId, SyncImageRequest::setImageId));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnbindDevServerPublicIPRequest, UnbindDevServerPublicIPResponse> unbindDevServerPublicIP =
+        genForUnbindDevServerPublicIP();
+
+    private static HttpRequestDef<UnbindDevServerPublicIPRequest, UnbindDevServerPublicIPResponse> genForUnbindDevServerPublicIP() {
+        // basic
+        HttpRequestDef.Builder<UnbindDevServerPublicIPRequest, UnbindDevServerPublicIPResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, UnbindDevServerPublicIPRequest.class, UnbindDevServerPublicIPResponse.class)
+            .withName("UnbindDevServerPublicIP")
+            .withUri("/v1/{project_id}/dev-servers/{id}/publicips/{publicip_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnbindDevServerPublicIPRequest::getId, UnbindDevServerPublicIPRequest::setId));
+        builder.<String>withRequestField("publicip_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnbindDevServerPublicIPRequest::getPublicipId,
+                UnbindDevServerPublicIPRequest::setPublicipId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UnbindDevServerPublicIPResponse::getBody, UnbindDevServerPublicIPResponse::setBody));
 
         return builder.build();
     }

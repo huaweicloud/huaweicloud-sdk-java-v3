@@ -37,6 +37,11 @@ public class CreateSecurityReportSubscriptionRequestBody {
     private String subscriptionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "report_status")
+
+    private String reportStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "report_content_subscription")
 
     private CreateSecurityReportSubscriptionRequestBodyReportContentSubscription reportContentSubscription;
@@ -57,7 +62,7 @@ public class CreateSecurityReportSubscriptionRequestBody {
     }
 
     /**
-     * **参数解释：** 发送时间段，设置报告的预设发送时间（如morning表示早晨时段）。 **约束限制：** 不涉及 **取值范围：** - morning : 00:00~06:00 - noon : 06:00~12:00 - afternoon : 12:00~18:00 - evening : 12:00~18:00  **默认取值：** 不涉及
+     * **参数解释：** 发送时间段，设置报告的预设发送时间（如morning表示早晨时段）。 **约束限制：** 不涉及 **取值范围：** - morning : 00:00~06:00 - noon : 06:00~12:00 - afternoon : 12:00~18:00 - evening : 12:00~18:00 **默认取值：** 不涉及
      * @return sendingPeriod
      */
     public String getSendingPeriod() {
@@ -91,7 +96,7 @@ public class CreateSecurityReportSubscriptionRequestBody {
     }
 
     /**
-     * **参数解释：** 报告类别，设置订阅的报告类型（如daily_report表示安全日报）。 **约束限制：** 不涉及 **取值范围：** - daily_report : 日报 - weekly_report : 周报 - monthly_report : 月报 - custom_report : 自定义  **默认取值：** 不涉及
+     * **参数解释：** 报告类别，设置订阅的报告类型（如daily_report表示安全日报）。 **约束限制：** 不涉及 **取值范围：** - daily_report : 日报 - weekly_report : 周报 - monthly_report : 月报 - custom_report : 自定义 **默认取值：** 不涉及
      * @return reportCategory
      */
     public String getReportCategory() {
@@ -125,7 +130,7 @@ public class CreateSecurityReportSubscriptionRequestBody {
     }
 
     /**
-     * **参数解释：** 订阅类型，接收安全报告的订阅方式（如slient表示静默订阅）。 **约束限制：** 不涉及 **取值范围：** - smn_topic : 消息主题 - silent ： 静默 - message_center ： 消息中心  **默认取值：** 不涉及
+     * **参数解释：** 订阅类型，接收安全报告的订阅方式（如silent表示静默订阅）。 **约束限制：** 不涉及 **取值范围：** - smn_topic : 消息主题 - silent ： 静默 - message_center ： 消息中心 **默认取值：** 不涉及
      * @return subscriptionType
      */
     public String getSubscriptionType() {
@@ -134,6 +139,23 @@ public class CreateSecurityReportSubscriptionRequestBody {
 
     public void setSubscriptionType(String subscriptionType) {
         this.subscriptionType = subscriptionType;
+    }
+
+    public CreateSecurityReportSubscriptionRequestBody withReportStatus(String reportStatus) {
+        this.reportStatus = reportStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 报告状态，标识当前订阅的启用状态（如opened表示已开启，closed表示已关闭）。 **约束限制：** 不涉及 **取值范围：** - opened ： 已开启 - closed ： 已关闭 **默认取值：** 不涉及
+     * @return reportStatus
+     */
+    public String getReportStatus() {
+        return reportStatus;
+    }
+
+    public void setReportStatus(String reportStatus) {
+        this.reportStatus = reportStatus;
     }
 
     public CreateSecurityReportSubscriptionRequestBody withReportContentSubscription(
@@ -223,6 +245,7 @@ public class CreateSecurityReportSubscriptionRequestBody {
             && Objects.equals(this.reportName, that.reportName)
             && Objects.equals(this.reportCategory, that.reportCategory) && Objects.equals(this.topicUrn, that.topicUrn)
             && Objects.equals(this.subscriptionType, that.subscriptionType)
+            && Objects.equals(this.reportStatus, that.reportStatus)
             && Objects.equals(this.reportContentSubscription, that.reportContentSubscription)
             && Objects.equals(this.statPeriod, that.statPeriod)
             && Objects.equals(this.consoleUrlPrefix, that.consoleUrlPrefix);
@@ -235,6 +258,7 @@ public class CreateSecurityReportSubscriptionRequestBody {
             reportCategory,
             topicUrn,
             subscriptionType,
+            reportStatus,
             reportContentSubscription,
             statPeriod,
             consoleUrlPrefix);
@@ -249,6 +273,7 @@ public class CreateSecurityReportSubscriptionRequestBody {
         sb.append("    reportCategory: ").append(toIndentedString(reportCategory)).append("\n");
         sb.append("    topicUrn: ").append(toIndentedString(topicUrn)).append("\n");
         sb.append("    subscriptionType: ").append(toIndentedString(subscriptionType)).append("\n");
+        sb.append("    reportStatus: ").append(toIndentedString(reportStatus)).append("\n");
         sb.append("    reportContentSubscription: ").append(toIndentedString(reportContentSubscription)).append("\n");
         sb.append("    statPeriod: ").append(toIndentedString(statPeriod)).append("\n");
         sb.append("    consoleUrlPrefix: ").append(toIndentedString(consoleUrlPrefix)).append("\n");

@@ -101,6 +101,11 @@ public class PolicyOption {
     private Boolean botEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bot_manager_enable")
+
+    private Boolean botManagerEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modulex_enabled")
 
     private Boolean modulexEnabled;
@@ -114,6 +119,21 @@ public class PolicyOption {
     @JsonProperty(value = "anticrawler")
 
     private Boolean anticrawler;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scan_protection")
+
+    private Boolean scanProtection;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "high_frequency_scan_blocking")
+
+    private Boolean highFrequencyScanBlocking;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "directory_traversal_protection")
+
+    private Boolean directoryTraversalProtection;
 
     public PolicyOption withWebattack(Boolean webattack) {
         this.webattack = webattack;
@@ -421,6 +441,23 @@ public class PolicyOption {
         this.botEnable = botEnable;
     }
 
+    public PolicyOption withBotManagerEnable(Boolean botManagerEnable) {
+        this.botManagerEnable = botManagerEnable;
+        return this;
+    }
+
+    /**
+     * BOT管理是否开启
+     * @return botManagerEnable
+     */
+    public Boolean getBotManagerEnable() {
+        return botManagerEnable;
+    }
+
+    public void setBotManagerEnable(Boolean botManagerEnable) {
+        this.botManagerEnable = botManagerEnable;
+    }
+
     public PolicyOption withModulexEnabled(Boolean modulexEnabled) {
         this.modulexEnabled = modulexEnabled;
         return this;
@@ -472,6 +509,57 @@ public class PolicyOption {
         this.anticrawler = anticrawler;
     }
 
+    public PolicyOption withScanProtection(Boolean scanProtection) {
+        this.scanProtection = scanProtection;
+        return this;
+    }
+
+    /**
+     * 扫描防护总开关是否开启
+     * @return scanProtection
+     */
+    public Boolean getScanProtection() {
+        return scanProtection;
+    }
+
+    public void setScanProtection(Boolean scanProtection) {
+        this.scanProtection = scanProtection;
+    }
+
+    public PolicyOption withHighFrequencyScanBlocking(Boolean highFrequencyScanBlocking) {
+        this.highFrequencyScanBlocking = highFrequencyScanBlocking;
+        return this;
+    }
+
+    /**
+     * 高频扫描封禁是否开启
+     * @return highFrequencyScanBlocking
+     */
+    public Boolean getHighFrequencyScanBlocking() {
+        return highFrequencyScanBlocking;
+    }
+
+    public void setHighFrequencyScanBlocking(Boolean highFrequencyScanBlocking) {
+        this.highFrequencyScanBlocking = highFrequencyScanBlocking;
+    }
+
+    public PolicyOption withDirectoryTraversalProtection(Boolean directoryTraversalProtection) {
+        this.directoryTraversalProtection = directoryTraversalProtection;
+        return this;
+    }
+
+    /**
+     * 目录遍历防护是否开启
+     * @return directoryTraversalProtection
+     */
+    public Boolean getDirectoryTraversalProtection() {
+        return directoryTraversalProtection;
+    }
+
+    public void setDirectoryTraversalProtection(Boolean directoryTraversalProtection) {
+        this.directoryTraversalProtection = directoryTraversalProtection;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -491,9 +579,13 @@ public class PolicyOption {
             && Objects.equals(this.geoip, that.geoip) && Objects.equals(this.ignore, that.ignore)
             && Objects.equals(this.privacy, that.privacy) && Objects.equals(this.antitamper, that.antitamper)
             && Objects.equals(this.antileakage, that.antileakage) && Objects.equals(this.botEnable, that.botEnable)
+            && Objects.equals(this.botManagerEnable, that.botManagerEnable)
             && Objects.equals(this.modulexEnabled, that.modulexEnabled)
             && Objects.equals(this.followedAction, that.followedAction)
-            && Objects.equals(this.anticrawler, that.anticrawler);
+            && Objects.equals(this.anticrawler, that.anticrawler)
+            && Objects.equals(this.scanProtection, that.scanProtection)
+            && Objects.equals(this.highFrequencyScanBlocking, that.highFrequencyScanBlocking)
+            && Objects.equals(this.directoryTraversalProtection, that.directoryTraversalProtection);
     }
 
     @Override
@@ -516,9 +608,13 @@ public class PolicyOption {
             antitamper,
             antileakage,
             botEnable,
+            botManagerEnable,
             modulexEnabled,
             followedAction,
-            anticrawler);
+            anticrawler,
+            scanProtection,
+            highFrequencyScanBlocking,
+            directoryTraversalProtection);
     }
 
     @Override
@@ -543,9 +639,15 @@ public class PolicyOption {
         sb.append("    antitamper: ").append(toIndentedString(antitamper)).append("\n");
         sb.append("    antileakage: ").append(toIndentedString(antileakage)).append("\n");
         sb.append("    botEnable: ").append(toIndentedString(botEnable)).append("\n");
+        sb.append("    botManagerEnable: ").append(toIndentedString(botManagerEnable)).append("\n");
         sb.append("    modulexEnabled: ").append(toIndentedString(modulexEnabled)).append("\n");
         sb.append("    followedAction: ").append(toIndentedString(followedAction)).append("\n");
         sb.append("    anticrawler: ").append(toIndentedString(anticrawler)).append("\n");
+        sb.append("    scanProtection: ").append(toIndentedString(scanProtection)).append("\n");
+        sb.append("    highFrequencyScanBlocking: ").append(toIndentedString(highFrequencyScanBlocking)).append("\n");
+        sb.append("    directoryTraversalProtection: ")
+            .append(toIndentedString(directoryTraversalProtection))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -76,6 +76,11 @@ public class UnitConfig {
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cpu_affinity")
+
+    private Boolean cpuAffinity;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cmd")
 
     private String cmd;
@@ -139,6 +144,11 @@ public class UnitConfig {
     @JsonProperty(value = "pool_resource_flavor")
 
     private String poolResourceFlavor;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_policy")
+
+    private UnitGroupPolicy groupPolicy;
 
     public UnitConfig withId(String id) {
         this.id = id;
@@ -424,6 +434,23 @@ public class UnitConfig {
 
     public void setCount(Integer count) {
         this.count = count;
+    }
+
+    public UnitConfig withCpuAffinity(Boolean cpuAffinity) {
+        this.cpuAffinity = cpuAffinity;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 表示是否启用绑核加速。 **取值范围：** - true：启用绑核加速。 - false：不启用绑核加速。
+     * @return cpuAffinity
+     */
+    public Boolean getCpuAffinity() {
+        return cpuAffinity;
+    }
+
+    public void setCpuAffinity(Boolean cpuAffinity) {
+        this.cpuAffinity = cpuAffinity;
     }
 
     public UnitConfig withCmd(String cmd) {
@@ -717,6 +744,32 @@ public class UnitConfig {
         this.poolResourceFlavor = poolResourceFlavor;
     }
 
+    public UnitConfig withGroupPolicy(UnitGroupPolicy groupPolicy) {
+        this.groupPolicy = groupPolicy;
+        return this;
+    }
+
+    public UnitConfig withGroupPolicy(Consumer<UnitGroupPolicy> groupPolicySetter) {
+        if (this.groupPolicy == null) {
+            this.groupPolicy = new UnitGroupPolicy();
+            groupPolicySetter.accept(this.groupPolicy);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get groupPolicy
+     * @return groupPolicy
+     */
+    public UnitGroupPolicy getGroupPolicy() {
+        return groupPolicy;
+    }
+
+    public void setGroupPolicy(UnitGroupPolicy groupPolicy) {
+        this.groupPolicy = groupPolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -732,15 +785,16 @@ public class UnitConfig {
             && Objects.equals(this.flavorDisplayName, that.flavorDisplayName) && Objects.equals(this.image, that.image)
             && Objects.equals(this.models, that.models) && Objects.equals(this.codes, that.codes)
             && Objects.equals(this.files, that.files) && Objects.equals(this.dumps, that.dumps)
-            && Objects.equals(this.count, that.count) && Objects.equals(this.cmd, that.cmd)
-            && Objects.equals(this.terminationGrace, that.terminationGrace) && Objects.equals(this.envs, that.envs)
-            && Objects.equals(this.readinessHealth, that.readinessHealth)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.cpuAffinity, that.cpuAffinity)
+            && Objects.equals(this.cmd, that.cmd) && Objects.equals(this.terminationGrace, that.terminationGrace)
+            && Objects.equals(this.envs, that.envs) && Objects.equals(this.readinessHealth, that.readinessHealth)
             && Objects.equals(this.startupHealth, that.startupHealth)
             && Objects.equals(this.livenessHealth, that.livenessHealth) && Objects.equals(this.port, that.port)
             && Objects.equals(this.recovery, that.recovery) && Objects.equals(this.npuResetEnable, that.npuResetEnable)
             && Objects.equals(this.groupCount, that.groupCount) && Objects.equals(this.affinity, that.affinity)
             && Objects.equals(this.securityConfig, that.securityConfig)
-            && Objects.equals(this.poolResourceFlavor, that.poolResourceFlavor);
+            && Objects.equals(this.poolResourceFlavor, that.poolResourceFlavor)
+            && Objects.equals(this.groupPolicy, that.groupPolicy);
     }
 
     @Override
@@ -757,6 +811,7 @@ public class UnitConfig {
             files,
             dumps,
             count,
+            cpuAffinity,
             cmd,
             terminationGrace,
             envs,
@@ -769,7 +824,8 @@ public class UnitConfig {
             groupCount,
             affinity,
             securityConfig,
-            poolResourceFlavor);
+            poolResourceFlavor,
+            groupPolicy);
     }
 
     @Override
@@ -788,6 +844,7 @@ public class UnitConfig {
         sb.append("    files: ").append(toIndentedString(files)).append("\n");
         sb.append("    dumps: ").append(toIndentedString(dumps)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    cpuAffinity: ").append(toIndentedString(cpuAffinity)).append("\n");
         sb.append("    cmd: ").append(toIndentedString(cmd)).append("\n");
         sb.append("    terminationGrace: ").append(toIndentedString(terminationGrace)).append("\n");
         sb.append("    envs: ").append(toIndentedString(envs)).append("\n");
@@ -801,6 +858,7 @@ public class UnitConfig {
         sb.append("    affinity: ").append(toIndentedString(affinity)).append("\n");
         sb.append("    securityConfig: ").append(toIndentedString(securityConfig)).append("\n");
         sb.append("    poolResourceFlavor: ").append(toIndentedString(poolResourceFlavor)).append("\n");
+        sb.append("    groupPolicy: ").append(toIndentedString(groupPolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

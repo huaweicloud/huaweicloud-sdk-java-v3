@@ -5,9 +5,21 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.evs.v2.model.AssociateAutoSnapshotPolicyRequest;
+import com.huaweicloud.sdk.evs.v2.model.AssociateAutoSnapshotPolicyResponse;
+import com.huaweicloud.sdk.evs.v2.model.BatchCreateResourceTagsRequestBody;
+import com.huaweicloud.sdk.evs.v2.model.BatchCreateSnapshotGroupTagRequest;
+import com.huaweicloud.sdk.evs.v2.model.BatchCreateSnapshotGroupTagResponse;
+import com.huaweicloud.sdk.evs.v2.model.BatchCreateSnapshotTagsRequest;
+import com.huaweicloud.sdk.evs.v2.model.BatchCreateSnapshotTagsResponse;
 import com.huaweicloud.sdk.evs.v2.model.BatchCreateVolumeTagsRequest;
 import com.huaweicloud.sdk.evs.v2.model.BatchCreateVolumeTagsRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.BatchCreateVolumeTagsResponse;
+import com.huaweicloud.sdk.evs.v2.model.BatchDeleteResourceTagsRequestBody;
+import com.huaweicloud.sdk.evs.v2.model.BatchDeleteSnapshotGroupTagRequest;
+import com.huaweicloud.sdk.evs.v2.model.BatchDeleteSnapshotGroupTagResponse;
+import com.huaweicloud.sdk.evs.v2.model.BatchDeleteSnapshotTagsRequest;
+import com.huaweicloud.sdk.evs.v2.model.BatchDeleteSnapshotTagsResponse;
 import com.huaweicloud.sdk.evs.v2.model.BatchDeleteVolumeTagsRequest;
 import com.huaweicloud.sdk.evs.v2.model.BatchDeleteVolumeTagsRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.BatchDeleteVolumeTagsResponse;
@@ -35,18 +47,55 @@ import com.huaweicloud.sdk.evs.v2.model.CinderListVolumeTypesRequest;
 import com.huaweicloud.sdk.evs.v2.model.CinderListVolumeTypesResponse;
 import com.huaweicloud.sdk.evs.v2.model.CinderShowVolumeTransferRequest;
 import com.huaweicloud.sdk.evs.v2.model.CinderShowVolumeTransferResponse;
+import com.huaweicloud.sdk.evs.v2.model.CountAutoSnapshotPoliciesRequest;
+import com.huaweicloud.sdk.evs.v2.model.CountAutoSnapshotPoliciesResponse;
+import com.huaweicloud.sdk.evs.v2.model.CountSnapshotChainsRequest;
+import com.huaweicloud.sdk.evs.v2.model.CountSnapshotChainsResponse;
+import com.huaweicloud.sdk.evs.v2.model.CountSnapshotsGroupRequest;
+import com.huaweicloud.sdk.evs.v2.model.CountSnapshotsGroupResponse;
+import com.huaweicloud.sdk.evs.v2.model.CountSnapshotsRequest;
+import com.huaweicloud.sdk.evs.v2.model.CountSnapshotsResponse;
+import com.huaweicloud.sdk.evs.v2.model.CreateAutoSnapshotPolicyRequest;
+import com.huaweicloud.sdk.evs.v2.model.CreateAutoSnapshotPolicyResponse;
+import com.huaweicloud.sdk.evs.v2.model.CreateSnapshotGroupRequest;
+import com.huaweicloud.sdk.evs.v2.model.CreateSnapshotGroupRequestBody;
+import com.huaweicloud.sdk.evs.v2.model.CreateSnapshotGroupResponse;
+import com.huaweicloud.sdk.evs.v2.model.CreateSnapshotPolicyRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.CreateSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.CreateSnapshotRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.CreateSnapshotResponse;
+import com.huaweicloud.sdk.evs.v2.model.CreateStandardSnapshotRequest;
+import com.huaweicloud.sdk.evs.v2.model.CreateStandardSnapshotRequestBody;
+import com.huaweicloud.sdk.evs.v2.model.CreateStandardSnapshotResponse;
 import com.huaweicloud.sdk.evs.v2.model.CreateVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.CreateVolumeRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.CreateVolumeResponse;
+import com.huaweicloud.sdk.evs.v2.model.DeleteAutoSnapshotPolicyRequest;
+import com.huaweicloud.sdk.evs.v2.model.DeleteAutoSnapshotPolicyResponse;
+import com.huaweicloud.sdk.evs.v2.model.DeleteSnapshotGroupRequest;
+import com.huaweicloud.sdk.evs.v2.model.DeleteSnapshotGroupResponse;
 import com.huaweicloud.sdk.evs.v2.model.DeleteSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.DeleteSnapshotResponse;
+import com.huaweicloud.sdk.evs.v2.model.DeleteStandardSnapshotRequest;
+import com.huaweicloud.sdk.evs.v2.model.DeleteStandardSnapshotResponse;
 import com.huaweicloud.sdk.evs.v2.model.DeleteVolumeInRecycleRequest;
 import com.huaweicloud.sdk.evs.v2.model.DeleteVolumeInRecycleResponse;
 import com.huaweicloud.sdk.evs.v2.model.DeleteVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.DeleteVolumeResponse;
+import com.huaweicloud.sdk.evs.v2.model.DisassociateAutoSnapshotPolicyRequest;
+import com.huaweicloud.sdk.evs.v2.model.DisassociateAutoSnapshotPolicyResponse;
+import com.huaweicloud.sdk.evs.v2.model.ListAutoSnapshotPolicyRequest;
+import com.huaweicloud.sdk.evs.v2.model.ListAutoSnapshotPolicyResponse;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotChainsRequest;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotChainsResponse;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotGroupRequest;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotGroupResponse;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotGroupTagsRequest;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotGroupTagsResponse;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotTagsRequest;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotTagsResponse;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotsDetailsRequest;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotsDetailsResponse;
 import com.huaweicloud.sdk.evs.v2.model.ListSnapshotsRequest;
 import com.huaweicloud.sdk.evs.v2.model.ListSnapshotsResponse;
 import com.huaweicloud.sdk.evs.v2.model.ListVersionsRequest;
@@ -74,13 +123,22 @@ import com.huaweicloud.sdk.evs.v2.model.RevertVolumeInRecycleRequest;
 import com.huaweicloud.sdk.evs.v2.model.RevertVolumeInRecycleResponse;
 import com.huaweicloud.sdk.evs.v2.model.RollbackSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.RollbackSnapshotRequestBody;
+import com.huaweicloud.sdk.evs.v2.model.RollbackSnapshotRequestBodyV5;
 import com.huaweicloud.sdk.evs.v2.model.RollbackSnapshotResponse;
+import com.huaweicloud.sdk.evs.v2.model.RollbackStandardSnapshotRequest;
+import com.huaweicloud.sdk.evs.v2.model.RollbackStandardSnapshotResponse;
+import com.huaweicloud.sdk.evs.v2.model.ShowAutoSnapshotPolicyRequest;
+import com.huaweicloud.sdk.evs.v2.model.ShowAutoSnapshotPolicyResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowJobRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowJobResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowRecyclePolicyRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowRecyclePolicyResponse;
+import com.huaweicloud.sdk.evs.v2.model.ShowSnapshotGroupRequest;
+import com.huaweicloud.sdk.evs.v2.model.ShowSnapshotGroupResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowSnapshotResponse;
+import com.huaweicloud.sdk.evs.v2.model.ShowStandardSnapshotRequest;
+import com.huaweicloud.sdk.evs.v2.model.ShowStandardSnapshotResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowVersionRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowVersionResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowVolumeInRecycleRequest;
@@ -92,17 +150,125 @@ import com.huaweicloud.sdk.evs.v2.model.ShowVolumeTagsResponse;
 import com.huaweicloud.sdk.evs.v2.model.UnsubscribePostpaidVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.UnsubscribePostpaidVolumeResponse;
 import com.huaweicloud.sdk.evs.v2.model.UnsubscribeVolumeRequestBody;
+import com.huaweicloud.sdk.evs.v2.model.UpdateAutoSnapshotPolicyRequest;
+import com.huaweicloud.sdk.evs.v2.model.UpdateAutoSnapshotPolicyResponse;
 import com.huaweicloud.sdk.evs.v2.model.UpdateRecyclePolicyRequest;
 import com.huaweicloud.sdk.evs.v2.model.UpdateRecyclePolicyResponse;
+import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotGroupRequest;
+import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotGroupRequestBody;
+import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotGroupResponse;
+import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotPolicyRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotRequestBody;
+import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotRequestBodyV5;
 import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotResponse;
+import com.huaweicloud.sdk.evs.v2.model.UpdateStandardSnapshotRequest;
+import com.huaweicloud.sdk.evs.v2.model.UpdateStandardSnapshotResponse;
 import com.huaweicloud.sdk.evs.v2.model.UpdateVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.UpdateVolumeRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.UpdateVolumeResponse;
 
+import java.util.List;
+
 @SuppressWarnings("unchecked")
 public class EvsMeta {
+
+    public static final HttpRequestDef<AssociateAutoSnapshotPolicyRequest, AssociateAutoSnapshotPolicyResponse> associateAutoSnapshotPolicy =
+        genForAssociateAutoSnapshotPolicy();
+
+    private static HttpRequestDef<AssociateAutoSnapshotPolicyRequest, AssociateAutoSnapshotPolicyResponse> genForAssociateAutoSnapshotPolicy() {
+        // basic
+        HttpRequestDef.Builder<AssociateAutoSnapshotPolicyRequest, AssociateAutoSnapshotPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AssociateAutoSnapshotPolicyRequest.class,
+                    AssociateAutoSnapshotPolicyResponse.class)
+                .withName("AssociateAutoSnapshotPolicy")
+                .withUri("/v5/{project_id}/snapshot-policies/{snapshot_policy_id}/associate")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("snapshot_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateAutoSnapshotPolicyRequest::getSnapshotPolicyId,
+                AssociateAutoSnapshotPolicyRequest::setSnapshotPolicyId));
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(AssociateAutoSnapshotPolicyRequest::getBody,
+                    AssociateAutoSnapshotPolicyRequest::setBody)
+                .withInnerContainerType(String.class));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateSnapshotGroupTagRequest, BatchCreateSnapshotGroupTagResponse> batchCreateSnapshotGroupTag =
+        genForBatchCreateSnapshotGroupTag();
+
+    private static HttpRequestDef<BatchCreateSnapshotGroupTagRequest, BatchCreateSnapshotGroupTagResponse> genForBatchCreateSnapshotGroupTag() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateSnapshotGroupTagRequest, BatchCreateSnapshotGroupTagResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateSnapshotGroupTagRequest.class,
+                    BatchCreateSnapshotGroupTagResponse.class)
+                .withName("BatchCreateSnapshotGroupTag")
+                .withUri("/v5/{project_id}/snapshot-groups/{snapshot_group_id}/tags/create")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("snapshot_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateSnapshotGroupTagRequest::getSnapshotGroupId,
+                BatchCreateSnapshotGroupTagRequest::setSnapshotGroupId));
+        builder.<BatchCreateResourceTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateResourceTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateSnapshotGroupTagRequest::getBody,
+                BatchCreateSnapshotGroupTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateSnapshotTagsRequest, BatchCreateSnapshotTagsResponse> batchCreateSnapshotTags =
+        genForBatchCreateSnapshotTags();
+
+    private static HttpRequestDef<BatchCreateSnapshotTagsRequest, BatchCreateSnapshotTagsResponse> genForBatchCreateSnapshotTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateSnapshotTagsRequest, BatchCreateSnapshotTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchCreateSnapshotTagsRequest.class, BatchCreateSnapshotTagsResponse.class)
+            .withName("BatchCreateSnapshotTags")
+            .withUri("/v5/{project_id}/snapshots/{snapshot_id}/tags/create")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("snapshot_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateSnapshotTagsRequest::getSnapshotId,
+                BatchCreateSnapshotTagsRequest::setSnapshotId));
+        builder.<BatchCreateResourceTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateResourceTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateSnapshotTagsRequest::getBody, BatchCreateSnapshotTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<BatchCreateVolumeTagsRequest, BatchCreateVolumeTagsResponse> batchCreateVolumeTags =
         genForBatchCreateVolumeTags();
@@ -127,6 +293,68 @@ public class EvsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateVolumeTagsRequestBody.class),
             f -> f.withMarshaller(BatchCreateVolumeTagsRequest::getBody, BatchCreateVolumeTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteSnapshotGroupTagRequest, BatchDeleteSnapshotGroupTagResponse> batchDeleteSnapshotGroupTag =
+        genForBatchDeleteSnapshotGroupTag();
+
+    private static HttpRequestDef<BatchDeleteSnapshotGroupTagRequest, BatchDeleteSnapshotGroupTagResponse> genForBatchDeleteSnapshotGroupTag() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteSnapshotGroupTagRequest, BatchDeleteSnapshotGroupTagResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteSnapshotGroupTagRequest.class,
+                    BatchDeleteSnapshotGroupTagResponse.class)
+                .withName("BatchDeleteSnapshotGroupTag")
+                .withUri("/v5/{project_id}/snapshot-groups/{snapshot_group_id}/tags/delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("snapshot_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteSnapshotGroupTagRequest::getSnapshotGroupId,
+                BatchDeleteSnapshotGroupTagRequest::setSnapshotGroupId));
+        builder.<BatchDeleteResourceTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteResourceTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteSnapshotGroupTagRequest::getBody,
+                BatchDeleteSnapshotGroupTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteSnapshotTagsRequest, BatchDeleteSnapshotTagsResponse> batchDeleteSnapshotTags =
+        genForBatchDeleteSnapshotTags();
+
+    private static HttpRequestDef<BatchDeleteSnapshotTagsRequest, BatchDeleteSnapshotTagsResponse> genForBatchDeleteSnapshotTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteSnapshotTagsRequest, BatchDeleteSnapshotTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteSnapshotTagsRequest.class, BatchDeleteSnapshotTagsResponse.class)
+            .withName("BatchDeleteSnapshotTags")
+            .withUri("/v5/{project_id}/snapshots/{snapshot_id}/tags/delete")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("snapshot_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteSnapshotTagsRequest::getSnapshotId,
+                BatchDeleteSnapshotTagsRequest::setSnapshotId));
+        builder.<BatchDeleteResourceTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteResourceTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteSnapshotTagsRequest::getBody, BatchDeleteSnapshotTagsRequest::setBody));
 
         // response
 
@@ -426,6 +654,239 @@ public class EvsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CountAutoSnapshotPoliciesRequest, CountAutoSnapshotPoliciesResponse> countAutoSnapshotPolicies =
+        genForCountAutoSnapshotPolicies();
+
+    private static HttpRequestDef<CountAutoSnapshotPoliciesRequest, CountAutoSnapshotPoliciesResponse> genForCountAutoSnapshotPolicies() {
+        // basic
+        HttpRequestDef.Builder<CountAutoSnapshotPoliciesRequest, CountAutoSnapshotPoliciesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    CountAutoSnapshotPoliciesRequest.class,
+                    CountAutoSnapshotPoliciesResponse.class)
+                .withName("CountAutoSnapshotPolicies")
+                .withUri("/v5/{project_id}/snapshot-policies/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountAutoSnapshotPoliciesRequest::getId, CountAutoSnapshotPoliciesRequest::setId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountAutoSnapshotPoliciesRequest::getName,
+                CountAutoSnapshotPoliciesRequest::setName));
+        builder.<String>withRequestField("tag_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountAutoSnapshotPoliciesRequest::getTagKey,
+                CountAutoSnapshotPoliciesRequest::setTagKey));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountAutoSnapshotPoliciesRequest::getTags,
+                CountAutoSnapshotPoliciesRequest::setTags));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountAutoSnapshotPoliciesRequest::getEnterpriseProjectId,
+                CountAutoSnapshotPoliciesRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountSnapshotChainsRequest, CountSnapshotChainsResponse> countSnapshotChains =
+        genForCountSnapshotChains();
+
+    private static HttpRequestDef<CountSnapshotChainsRequest, CountSnapshotChainsResponse> genForCountSnapshotChains() {
+        // basic
+        HttpRequestDef.Builder<CountSnapshotChainsRequest, CountSnapshotChainsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CountSnapshotChainsRequest.class, CountSnapshotChainsResponse.class)
+                .withName("CountSnapshotChains")
+                .withUri("/v5/{project_id}/snapshot-chains/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("volume_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotChainsRequest::getVolumeId, CountSnapshotChainsRequest::setVolumeId));
+        builder.<String>withRequestField("availability_zone",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotChainsRequest::getAvailabilityZone,
+                CountSnapshotChainsRequest::setAvailabilityZone));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotChainsRequest::getCategory, CountSnapshotChainsRequest::setCategory));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotChainsRequest::getId, CountSnapshotChainsRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountSnapshotsRequest, CountSnapshotsResponse> countSnapshots =
+        genForCountSnapshots();
+
+    private static HttpRequestDef<CountSnapshotsRequest, CountSnapshotsResponse> genForCountSnapshots() {
+        // basic
+        HttpRequestDef.Builder<CountSnapshotsRequest, CountSnapshotsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CountSnapshotsRequest.class, CountSnapshotsResponse.class)
+                .withName("CountSnapshots")
+                .withUri("/v5/{project_id}/snapshots/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("volume_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotsRequest::getVolumeId, CountSnapshotsRequest::setVolumeId));
+        builder.<String>withRequestField("availability_zone",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotsRequest::getAvailabilityZone,
+                CountSnapshotsRequest::setAvailabilityZone));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotsRequest::getName, CountSnapshotsRequest::setName));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotsRequest::getStatus, CountSnapshotsRequest::setStatus));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotsRequest::getId, CountSnapshotsRequest::setId));
+        builder.<String>withRequestField("snapshot_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotsRequest::getSnapshotType, CountSnapshotsRequest::setSnapshotType));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotsRequest::getEnterpriseProjectId,
+                CountSnapshotsRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("tag_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotsRequest::getTagKey, CountSnapshotsRequest::setTagKey));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotsRequest::getTags, CountSnapshotsRequest::setTags));
+        builder.<String>withRequestField("snapshot_chain_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotsRequest::getSnapshotChainId,
+                CountSnapshotsRequest::setSnapshotChainId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountSnapshotsGroupRequest, CountSnapshotsGroupResponse> countSnapshotsGroup =
+        genForCountSnapshotsGroup();
+
+    private static HttpRequestDef<CountSnapshotsGroupRequest, CountSnapshotsGroupResponse> genForCountSnapshotsGroup() {
+        // basic
+        HttpRequestDef.Builder<CountSnapshotsGroupRequest, CountSnapshotsGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CountSnapshotsGroupRequest.class, CountSnapshotsGroupResponse.class)
+                .withName("CountSnapshotsGroup")
+                .withUri("/v5/{project_id}/snapshot-groups/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotsGroupRequest::getName, CountSnapshotsGroupRequest::setName));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotsGroupRequest::getStatus, CountSnapshotsGroupRequest::setStatus));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotsGroupRequest::getId, CountSnapshotsGroupRequest::setId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotsGroupRequest::getEnterpriseProjectId,
+                CountSnapshotsGroupRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("tag_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotsGroupRequest::getTagKey, CountSnapshotsGroupRequest::setTagKey));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSnapshotsGroupRequest::getTags, CountSnapshotsGroupRequest::setTags));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAutoSnapshotPolicyRequest, CreateAutoSnapshotPolicyResponse> createAutoSnapshotPolicy =
+        genForCreateAutoSnapshotPolicy();
+
+    private static HttpRequestDef<CreateAutoSnapshotPolicyRequest, CreateAutoSnapshotPolicyResponse> genForCreateAutoSnapshotPolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateAutoSnapshotPolicyRequest, CreateAutoSnapshotPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateAutoSnapshotPolicyRequest.class, CreateAutoSnapshotPolicyResponse.class)
+                .withName("CreateAutoSnapshotPolicy")
+                .withUri("/v5/{project_id}/snapshot-policies")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateSnapshotPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSnapshotPolicyRequestBody.class),
+            f -> f.withMarshaller(CreateAutoSnapshotPolicyRequest::getBody, CreateAutoSnapshotPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateSnapshotRequest, CreateSnapshotResponse> createSnapshot =
         genForCreateSnapshot();
 
@@ -443,6 +904,52 @@ public class EvsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSnapshotRequestBody.class),
             f -> f.withMarshaller(CreateSnapshotRequest::getBody, CreateSnapshotRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSnapshotGroupRequest, CreateSnapshotGroupResponse> createSnapshotGroup =
+        genForCreateSnapshotGroup();
+
+    private static HttpRequestDef<CreateSnapshotGroupRequest, CreateSnapshotGroupResponse> genForCreateSnapshotGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateSnapshotGroupRequest, CreateSnapshotGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSnapshotGroupRequest.class, CreateSnapshotGroupResponse.class)
+                .withName("CreateSnapshotGroup")
+                .withUri("/v5/{project_id}/snapshot-groups")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateSnapshotGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSnapshotGroupRequestBody.class),
+            f -> f.withMarshaller(CreateSnapshotGroupRequest::getBody, CreateSnapshotGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateStandardSnapshotRequest, CreateStandardSnapshotResponse> createStandardSnapshot =
+        genForCreateStandardSnapshot();
+
+    private static HttpRequestDef<CreateStandardSnapshotRequest, CreateStandardSnapshotResponse> genForCreateStandardSnapshot() {
+        // basic
+        HttpRequestDef.Builder<CreateStandardSnapshotRequest, CreateStandardSnapshotResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateStandardSnapshotRequest.class, CreateStandardSnapshotResponse.class)
+            .withName("CreateStandardSnapshot")
+            .withUri("/v5/{project_id}/snapshots")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateStandardSnapshotRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateStandardSnapshotRequestBody.class),
+            f -> f.withMarshaller(CreateStandardSnapshotRequest::getBody, CreateStandardSnapshotRequest::setBody));
 
         // response
 
@@ -476,6 +983,39 @@ public class EvsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteAutoSnapshotPolicyRequest, DeleteAutoSnapshotPolicyResponse> deleteAutoSnapshotPolicy =
+        genForDeleteAutoSnapshotPolicy();
+
+    private static HttpRequestDef<DeleteAutoSnapshotPolicyRequest, DeleteAutoSnapshotPolicyResponse> genForDeleteAutoSnapshotPolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteAutoSnapshotPolicyRequest, DeleteAutoSnapshotPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteAutoSnapshotPolicyRequest.class,
+                    DeleteAutoSnapshotPolicyResponse.class)
+                .withName("DeleteAutoSnapshotPolicy")
+                .withUri("/v5/{project_id}/snapshot-policies/{snapshot_policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("snapshot_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAutoSnapshotPolicyRequest::getSnapshotPolicyId,
+                DeleteAutoSnapshotPolicyRequest::setSnapshotPolicyId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteAutoSnapshotPolicyResponse::getBody,
+                DeleteAutoSnapshotPolicyResponse::setBody));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteSnapshotRequest, DeleteSnapshotResponse> deleteSnapshot =
         genForDeleteSnapshot();
 
@@ -493,6 +1033,54 @@ public class EvsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSnapshotRequest::getSnapshotId, DeleteSnapshotRequest::setSnapshotId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSnapshotGroupRequest, DeleteSnapshotGroupResponse> deleteSnapshotGroup =
+        genForDeleteSnapshotGroup();
+
+    private static HttpRequestDef<DeleteSnapshotGroupRequest, DeleteSnapshotGroupResponse> genForDeleteSnapshotGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteSnapshotGroupRequest, DeleteSnapshotGroupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteSnapshotGroupRequest.class, DeleteSnapshotGroupResponse.class)
+            .withName("DeleteSnapshotGroup")
+            .withUri("/v5/{project_id}/snapshot-groups/{snapshot_group_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("snapshot_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSnapshotGroupRequest::getSnapshotGroupId,
+                DeleteSnapshotGroupRequest::setSnapshotGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteStandardSnapshotRequest, DeleteStandardSnapshotResponse> deleteStandardSnapshot =
+        genForDeleteStandardSnapshot();
+
+    private static HttpRequestDef<DeleteStandardSnapshotRequest, DeleteStandardSnapshotResponse> genForDeleteStandardSnapshot() {
+        // basic
+        HttpRequestDef.Builder<DeleteStandardSnapshotRequest, DeleteStandardSnapshotResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteStandardSnapshotRequest.class, DeleteStandardSnapshotResponse.class)
+            .withName("DeleteStandardSnapshot")
+            .withUri("/v5/{project_id}/snapshots/{snapshot_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("snapshot_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStandardSnapshotRequest::getSnapshotId,
+                DeleteStandardSnapshotRequest::setSnapshotId));
 
         // response
 
@@ -539,6 +1127,260 @@ public class EvsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteVolumeInRecycleRequest::getVolumeId,
                 DeleteVolumeInRecycleRequest::setVolumeId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociateAutoSnapshotPolicyRequest, DisassociateAutoSnapshotPolicyResponse> disassociateAutoSnapshotPolicy =
+        genForDisassociateAutoSnapshotPolicy();
+
+    private static HttpRequestDef<DisassociateAutoSnapshotPolicyRequest, DisassociateAutoSnapshotPolicyResponse> genForDisassociateAutoSnapshotPolicy() {
+        // basic
+        HttpRequestDef.Builder<DisassociateAutoSnapshotPolicyRequest, DisassociateAutoSnapshotPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DisassociateAutoSnapshotPolicyRequest.class,
+                    DisassociateAutoSnapshotPolicyResponse.class)
+                .withName("DisassociateAutoSnapshotPolicy")
+                .withUri("/v5/{project_id}/snapshot-policies/{snapshot_policy_id}/disassociate")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("snapshot_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateAutoSnapshotPolicyRequest::getSnapshotPolicyId,
+                DisassociateAutoSnapshotPolicyRequest::setSnapshotPolicyId));
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(DisassociateAutoSnapshotPolicyRequest::getBody,
+                    DisassociateAutoSnapshotPolicyRequest::setBody)
+                .withInnerContainerType(String.class));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAutoSnapshotPolicyRequest, ListAutoSnapshotPolicyResponse> listAutoSnapshotPolicy =
+        genForListAutoSnapshotPolicy();
+
+    private static HttpRequestDef<ListAutoSnapshotPolicyRequest, ListAutoSnapshotPolicyResponse> genForListAutoSnapshotPolicy() {
+        // basic
+        HttpRequestDef.Builder<ListAutoSnapshotPolicyRequest, ListAutoSnapshotPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAutoSnapshotPolicyRequest.class, ListAutoSnapshotPolicyResponse.class)
+            .withName("ListAutoSnapshotPolicy")
+            .withUri("/v5/{project_id}/snapshot-policies")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutoSnapshotPolicyRequest::getId, ListAutoSnapshotPolicyRequest::setId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutoSnapshotPolicyRequest::getName, ListAutoSnapshotPolicyRequest::setName));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutoSnapshotPolicyRequest::getTags, ListAutoSnapshotPolicyRequest::setTags));
+        builder.<String>withRequestField("tag_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutoSnapshotPolicyRequest::getTagKey, ListAutoSnapshotPolicyRequest::setTagKey));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutoSnapshotPolicyRequest::getEnterpriseProjectId,
+                ListAutoSnapshotPolicyRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAutoSnapshotPolicyRequest::getLimit, ListAutoSnapshotPolicyRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAutoSnapshotPolicyRequest::getOffset, ListAutoSnapshotPolicyRequest::setOffset));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutoSnapshotPolicyRequest::getSortKey,
+                ListAutoSnapshotPolicyRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutoSnapshotPolicyRequest::getSortDir,
+                ListAutoSnapshotPolicyRequest::setSortDir));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSnapshotChainsRequest, ListSnapshotChainsResponse> listSnapshotChains =
+        genForListSnapshotChains();
+
+    private static HttpRequestDef<ListSnapshotChainsRequest, ListSnapshotChainsResponse> genForListSnapshotChains() {
+        // basic
+        HttpRequestDef.Builder<ListSnapshotChainsRequest, ListSnapshotChainsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSnapshotChainsRequest.class, ListSnapshotChainsResponse.class)
+                .withName("ListSnapshotChains")
+                .withUri("/v5/{project_id}/snapshot-chains")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotChainsRequest::getMarker, ListSnapshotChainsRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSnapshotChainsRequest::getLimit, ListSnapshotChainsRequest::setLimit));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotChainsRequest::getId, ListSnapshotChainsRequest::setId));
+        builder.<String>withRequestField("volume_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotChainsRequest::getVolumeId, ListSnapshotChainsRequest::setVolumeId));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotChainsRequest::getCategory, ListSnapshotChainsRequest::setCategory));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSnapshotGroupRequest, ListSnapshotGroupResponse> listSnapshotGroup =
+        genForListSnapshotGroup();
+
+    private static HttpRequestDef<ListSnapshotGroupRequest, ListSnapshotGroupResponse> genForListSnapshotGroup() {
+        // basic
+        HttpRequestDef.Builder<ListSnapshotGroupRequest, ListSnapshotGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSnapshotGroupRequest.class, ListSnapshotGroupResponse.class)
+                .withName("ListSnapshotGroup")
+                .withUri("/v5/{project_id}/snapshot-groups/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotGroupRequest::getId, ListSnapshotGroupRequest::setId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotGroupRequest::getName, ListSnapshotGroupRequest::setName));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotGroupRequest::getStatus, ListSnapshotGroupRequest::setStatus));
+        builder.<String>withRequestField("tag_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotGroupRequest::getTagKey, ListSnapshotGroupRequest::setTagKey));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotGroupRequest::getTags, ListSnapshotGroupRequest::setTags));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotGroupRequest::getEnterpriseProjectId,
+                ListSnapshotGroupRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSnapshotGroupRequest::getLimit, ListSnapshotGroupRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSnapshotGroupRequest::getOffset, ListSnapshotGroupRequest::setOffset));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotGroupRequest::getSortKey, ListSnapshotGroupRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotGroupRequest::getSortDir, ListSnapshotGroupRequest::setSortDir));
+        builder.<String>withRequestField("server_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotGroupRequest::getServerId, ListSnapshotGroupRequest::setServerId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSnapshotGroupTagsRequest, ListSnapshotGroupTagsResponse> listSnapshotGroupTags =
+        genForListSnapshotGroupTags();
+
+    private static HttpRequestDef<ListSnapshotGroupTagsRequest, ListSnapshotGroupTagsResponse> genForListSnapshotGroupTags() {
+        // basic
+        HttpRequestDef.Builder<ListSnapshotGroupTagsRequest, ListSnapshotGroupTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSnapshotGroupTagsRequest.class, ListSnapshotGroupTagsResponse.class)
+            .withName("ListSnapshotGroupTags")
+            .withUri("/v5/{project_id}/snapshot-groups/tags")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSnapshotTagsRequest, ListSnapshotTagsResponse> listSnapshotTags =
+        genForListSnapshotTags();
+
+    private static HttpRequestDef<ListSnapshotTagsRequest, ListSnapshotTagsResponse> genForListSnapshotTags() {
+        // basic
+        HttpRequestDef.Builder<ListSnapshotTagsRequest, ListSnapshotTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSnapshotTagsRequest.class, ListSnapshotTagsResponse.class)
+                .withName("ListSnapshotTags")
+                .withUri("/v5/{project_id}/snapshots/tags")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -616,6 +1458,114 @@ public class EvsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSnapshotsRequest::getEnterpriseProjectId,
                 ListSnapshotsRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSnapshotsDetailsRequest, ListSnapshotsDetailsResponse> listSnapshotsDetails =
+        genForListSnapshotsDetails();
+
+    private static HttpRequestDef<ListSnapshotsDetailsRequest, ListSnapshotsDetailsResponse> genForListSnapshotsDetails() {
+        // basic
+        HttpRequestDef.Builder<ListSnapshotsDetailsRequest, ListSnapshotsDetailsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSnapshotsDetailsRequest.class, ListSnapshotsDetailsResponse.class)
+            .withName("ListSnapshotsDetails")
+            .withUri("/v5/{project_id}/snapshots/detail")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getMarker, ListSnapshotsDetailsRequest::setMarker));
+        builder.<String>withRequestField("volume_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getVolumeId, ListSnapshotsDetailsRequest::setVolumeId));
+        builder.<String>withRequestField("availability_zone",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getAvailabilityZone,
+                ListSnapshotsDetailsRequest::setAvailabilityZone));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getLimit, ListSnapshotsDetailsRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getName, ListSnapshotsDetailsRequest::setName));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getOffset, ListSnapshotsDetailsRequest::setOffset));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getStatus, ListSnapshotsDetailsRequest::setStatus));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getSortKey, ListSnapshotsDetailsRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getSortDir, ListSnapshotsDetailsRequest::setSortDir));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getId, ListSnapshotsDetailsRequest::setId));
+        builder.<String>withRequestField("ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getIds, ListSnapshotsDetailsRequest::setIds));
+        builder.<String>withRequestField("snapshot_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getSnapshotType,
+                ListSnapshotsDetailsRequest::setSnapshotType));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getEnterpriseProjectId,
+                ListSnapshotsDetailsRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("tag_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getTagKey, ListSnapshotsDetailsRequest::setTagKey));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getTags, ListSnapshotsDetailsRequest::setTags));
+        builder.<String>withRequestField("snapshot_chain_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getSnapshotChainId,
+                ListSnapshotsDetailsRequest::setSnapshotChainId));
+        builder.<String>withRequestField("snapshot_group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getSnapshotGroupId,
+                ListSnapshotsDetailsRequest::setSnapshotGroupId));
 
         // response
 
@@ -962,6 +1912,60 @@ public class EvsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RollbackStandardSnapshotRequest, RollbackStandardSnapshotResponse> rollbackStandardSnapshot =
+        genForRollbackStandardSnapshot();
+
+    private static HttpRequestDef<RollbackStandardSnapshotRequest, RollbackStandardSnapshotResponse> genForRollbackStandardSnapshot() {
+        // basic
+        HttpRequestDef.Builder<RollbackStandardSnapshotRequest, RollbackStandardSnapshotResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, RollbackStandardSnapshotRequest.class, RollbackStandardSnapshotResponse.class)
+                .withName("RollbackStandardSnapshot")
+                .withUri("/v5/{project_id}/snapshots/{snapshot_id}/rollback")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("snapshot_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RollbackStandardSnapshotRequest::getSnapshotId,
+                RollbackStandardSnapshotRequest::setSnapshotId));
+        builder.<RollbackSnapshotRequestBodyV5>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RollbackSnapshotRequestBodyV5.class),
+            f -> f.withMarshaller(RollbackStandardSnapshotRequest::getBody, RollbackStandardSnapshotRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutoSnapshotPolicyRequest, ShowAutoSnapshotPolicyResponse> showAutoSnapshotPolicy =
+        genForShowAutoSnapshotPolicy();
+
+    private static HttpRequestDef<ShowAutoSnapshotPolicyRequest, ShowAutoSnapshotPolicyResponse> genForShowAutoSnapshotPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowAutoSnapshotPolicyRequest, ShowAutoSnapshotPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAutoSnapshotPolicyRequest.class, ShowAutoSnapshotPolicyResponse.class)
+            .withName("ShowAutoSnapshotPolicy")
+            .withUri("/v5/{project_id}/snapshot-policies/{snapshot_policy_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("snapshot_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoSnapshotPolicyRequest::getSnapshotPolicyId,
+                ShowAutoSnapshotPolicyRequest::setSnapshotPolicyId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForShowJob();
 
     private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForShowJob() {
@@ -1018,6 +2022,54 @@ public class EvsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSnapshotRequest::getSnapshotId, ShowSnapshotRequest::setSnapshotId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSnapshotGroupRequest, ShowSnapshotGroupResponse> showSnapshotGroup =
+        genForShowSnapshotGroup();
+
+    private static HttpRequestDef<ShowSnapshotGroupRequest, ShowSnapshotGroupResponse> genForShowSnapshotGroup() {
+        // basic
+        HttpRequestDef.Builder<ShowSnapshotGroupRequest, ShowSnapshotGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSnapshotGroupRequest.class, ShowSnapshotGroupResponse.class)
+                .withName("ShowSnapshotGroup")
+                .withUri("/v5/{project_id}/snapshot-groups/{snapshot_group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("snapshot_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSnapshotGroupRequest::getSnapshotGroupId,
+                ShowSnapshotGroupRequest::setSnapshotGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowStandardSnapshotRequest, ShowStandardSnapshotResponse> showStandardSnapshot =
+        genForShowStandardSnapshot();
+
+    private static HttpRequestDef<ShowStandardSnapshotRequest, ShowStandardSnapshotResponse> genForShowStandardSnapshot() {
+        // basic
+        HttpRequestDef.Builder<ShowStandardSnapshotRequest, ShowStandardSnapshotResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowStandardSnapshotRequest.class, ShowStandardSnapshotResponse.class)
+            .withName("ShowStandardSnapshot")
+            .withUri("/v5/{project_id}/snapshots/{snapshot_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("snapshot_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStandardSnapshotRequest::getSnapshotId,
+                ShowStandardSnapshotRequest::setSnapshotId));
 
         // response
 
@@ -1125,6 +2177,36 @@ public class EvsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateAutoSnapshotPolicyRequest, UpdateAutoSnapshotPolicyResponse> updateAutoSnapshotPolicy =
+        genForUpdateAutoSnapshotPolicy();
+
+    private static HttpRequestDef<UpdateAutoSnapshotPolicyRequest, UpdateAutoSnapshotPolicyResponse> genForUpdateAutoSnapshotPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateAutoSnapshotPolicyRequest, UpdateAutoSnapshotPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateAutoSnapshotPolicyRequest.class, UpdateAutoSnapshotPolicyResponse.class)
+                .withName("UpdateAutoSnapshotPolicy")
+                .withUri("/v5/{project_id}/snapshot-policies/{snapshot_policy_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("snapshot_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAutoSnapshotPolicyRequest::getSnapshotPolicyId,
+                UpdateAutoSnapshotPolicyRequest::setSnapshotPolicyId));
+        builder.<UpdateSnapshotPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSnapshotPolicyRequestBody.class),
+            f -> f.withMarshaller(UpdateAutoSnapshotPolicyRequest::getBody, UpdateAutoSnapshotPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateRecyclePolicyRequest, UpdateRecyclePolicyResponse> updateRecyclePolicy =
         genForUpdateRecyclePolicy();
 
@@ -1170,6 +2252,64 @@ public class EvsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSnapshotRequestBody.class),
             f -> f.withMarshaller(UpdateSnapshotRequest::getBody, UpdateSnapshotRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSnapshotGroupRequest, UpdateSnapshotGroupResponse> updateSnapshotGroup =
+        genForUpdateSnapshotGroup();
+
+    private static HttpRequestDef<UpdateSnapshotGroupRequest, UpdateSnapshotGroupResponse> genForUpdateSnapshotGroup() {
+        // basic
+        HttpRequestDef.Builder<UpdateSnapshotGroupRequest, UpdateSnapshotGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateSnapshotGroupRequest.class, UpdateSnapshotGroupResponse.class)
+                .withName("UpdateSnapshotGroup")
+                .withUri("/v5/{project_id}/snapshot-groups/{snapshot_group_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("snapshot_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSnapshotGroupRequest::getSnapshotGroupId,
+                UpdateSnapshotGroupRequest::setSnapshotGroupId));
+        builder.<UpdateSnapshotGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSnapshotGroupRequestBody.class),
+            f -> f.withMarshaller(UpdateSnapshotGroupRequest::getBody, UpdateSnapshotGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateStandardSnapshotRequest, UpdateStandardSnapshotResponse> updateStandardSnapshot =
+        genForUpdateStandardSnapshot();
+
+    private static HttpRequestDef<UpdateStandardSnapshotRequest, UpdateStandardSnapshotResponse> genForUpdateStandardSnapshot() {
+        // basic
+        HttpRequestDef.Builder<UpdateStandardSnapshotRequest, UpdateStandardSnapshotResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateStandardSnapshotRequest.class, UpdateStandardSnapshotResponse.class)
+            .withName("UpdateStandardSnapshot")
+            .withUri("/v5/{project_id}/snapshots/{snapshot_id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("snapshot_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStandardSnapshotRequest::getSnapshotId,
+                UpdateStandardSnapshotRequest::setSnapshotId));
+        builder.<UpdateSnapshotRequestBodyV5>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSnapshotRequestBodyV5.class),
+            f -> f.withMarshaller(UpdateStandardSnapshotRequest::getBody, UpdateStandardSnapshotRequest::setBody));
 
         // response
 

@@ -75,6 +75,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListAvailableFlavorInfosRequ
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListAvailableFlavorInfosResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListBackupsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListBackupsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListBiactiveInstanceCandidatesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListBiactiveInstanceCandidatesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListCassandraSlowLogsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListCassandraSlowLogsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListConfigurationDatastoresRequest;
@@ -1336,6 +1338,36 @@ public class GaussDBforNoSQLClient {
      */
     public SyncInvoker<ListBackupsRequest, ListBackupsResponse> listBackupsInvoker(ListBackupsRequest request) {
         return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listBackups, hcClient);
+    }
+
+    /**
+     * 查询实例可搭建双活关系的候选实例
+     *
+     * 查询实例在目标Region可搭建双活关系的候选实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBiactiveInstanceCandidatesRequest 请求对象
+     * @return ListBiactiveInstanceCandidatesResponse
+     */
+    public ListBiactiveInstanceCandidatesResponse listBiactiveInstanceCandidates(
+        ListBiactiveInstanceCandidatesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.listBiactiveInstanceCandidates);
+    }
+
+    /**
+     * 查询实例可搭建双活关系的候选实例
+     *
+     * 查询实例在目标Region可搭建双活关系的候选实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBiactiveInstanceCandidatesRequest 请求对象
+     * @return SyncInvoker<ListBiactiveInstanceCandidatesRequest, ListBiactiveInstanceCandidatesResponse>
+     */
+    public SyncInvoker<ListBiactiveInstanceCandidatesRequest, ListBiactiveInstanceCandidatesResponse> listBiactiveInstanceCandidatesInvoker(
+        ListBiactiveInstanceCandidatesRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listBiactiveInstanceCandidates, hcClient);
     }
 
     /**

@@ -56,6 +56,11 @@ public class PolicyResponse {
     private Map<String, Object> modulexOptions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scan_protection_options")
+
+    private ScanProtectionOption scanProtectionOptions;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosts")
 
     private List<String> hosts = null;
@@ -254,6 +259,32 @@ public class PolicyResponse {
         this.modulexOptions = modulexOptions;
     }
 
+    public PolicyResponse withScanProtectionOptions(ScanProtectionOption scanProtectionOptions) {
+        this.scanProtectionOptions = scanProtectionOptions;
+        return this;
+    }
+
+    public PolicyResponse withScanProtectionOptions(Consumer<ScanProtectionOption> scanProtectionOptionsSetter) {
+        if (this.scanProtectionOptions == null) {
+            this.scanProtectionOptions = new ScanProtectionOption();
+            scanProtectionOptionsSetter.accept(this.scanProtectionOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get scanProtectionOptions
+     * @return scanProtectionOptions
+     */
+    public ScanProtectionOption getScanProtectionOptions() {
+        return scanProtectionOptions;
+    }
+
+    public void setScanProtectionOptions(ScanProtectionOption scanProtectionOptions) {
+        this.scanProtectionOptions = scanProtectionOptions;
+    }
+
     public PolicyResponse withHosts(List<String> hosts) {
         this.hosts = hosts;
         return this;
@@ -383,6 +414,7 @@ public class PolicyResponse {
             && Objects.equals(this.level, that.level) && Objects.equals(this.fullDetection, that.fullDetection)
             && Objects.equals(this.robotAction, that.robotAction) && Objects.equals(this.action, that.action)
             && Objects.equals(this.options, that.options) && Objects.equals(this.modulexOptions, that.modulexOptions)
+            && Objects.equals(this.scanProtectionOptions, that.scanProtectionOptions)
             && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.bindHost, that.bindHost)
             && Objects.equals(this.extend, that.extend) && Objects.equals(this.timestamp, that.timestamp);
     }
@@ -397,6 +429,7 @@ public class PolicyResponse {
             action,
             options,
             modulexOptions,
+            scanProtectionOptions,
             hosts,
             bindHost,
             extend,
@@ -415,6 +448,7 @@ public class PolicyResponse {
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    options: ").append(toIndentedString(options)).append("\n");
         sb.append("    modulexOptions: ").append(toIndentedString(modulexOptions)).append("\n");
+        sb.append("    scanProtectionOptions: ").append(toIndentedString(scanProtectionOptions)).append("\n");
         sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
         sb.append("    bindHost: ").append(toIndentedString(bindHost)).append("\n");
         sb.append("    extend: ").append(toIndentedString(extend)).append("\n");

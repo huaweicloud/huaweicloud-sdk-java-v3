@@ -105,6 +105,86 @@ public class CreateHostClusterRequestBody {
 
     private String slaveClusterId;
 
+    /**
+     * 资源池类型，self-hosted 自托管资源池，exclusive 独享资源池
+     */
+    public static final class SlaveResourceTypeEnum {
+
+        /**
+         * Enum SELF_HOSTED for value: "self-hosted"
+         */
+        public static final SlaveResourceTypeEnum SELF_HOSTED = new SlaveResourceTypeEnum("self-hosted");
+
+        /**
+         * Enum EXCLUSIVE for value: "exclusive"
+         */
+        public static final SlaveResourceTypeEnum EXCLUSIVE = new SlaveResourceTypeEnum("exclusive");
+
+        private static final Map<String, SlaveResourceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SlaveResourceTypeEnum> createStaticFields() {
+            Map<String, SlaveResourceTypeEnum> map = new HashMap<>();
+            map.put("self-hosted", SELF_HOSTED);
+            map.put("exclusive", EXCLUSIVE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SlaveResourceTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SlaveResourceTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SlaveResourceTypeEnum(value));
+        }
+
+        public static SlaveResourceTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SlaveResourceTypeEnum) {
+                return this.value.equals(((SlaveResourceTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "slave_resource_type")
+
+    private SlaveResourceTypeEnum slaveResourceType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ansible_type")
+
+    private Integer ansibleType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
@@ -183,6 +263,40 @@ public class CreateHostClusterRequestBody {
         this.slaveClusterId = slaveClusterId;
     }
 
+    public CreateHostClusterRequestBody withSlaveResourceType(SlaveResourceTypeEnum slaveResourceType) {
+        this.slaveResourceType = slaveResourceType;
+        return this;
+    }
+
+    /**
+     * 资源池类型，self-hosted 自托管资源池，exclusive 独享资源池
+     * @return slaveResourceType
+     */
+    public SlaveResourceTypeEnum getSlaveResourceType() {
+        return slaveResourceType;
+    }
+
+    public void setSlaveResourceType(SlaveResourceTypeEnum slaveResourceType) {
+        this.slaveResourceType = slaveResourceType;
+    }
+
+    public CreateHostClusterRequestBody withAnsibleType(Integer ansibleType) {
+        this.ansibleType = ansibleType;
+        return this;
+    }
+
+    /**
+     * 是否切换新系统支持，1：是 0：否
+     * @return ansibleType
+     */
+    public Integer getAnsibleType() {
+        return ansibleType;
+    }
+
+    public void setAnsibleType(Integer ansibleType) {
+        this.ansibleType = ansibleType;
+    }
+
     public CreateHostClusterRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -228,12 +342,15 @@ public class CreateHostClusterRequestBody {
         CreateHostClusterRequestBody that = (CreateHostClusterRequestBody) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.os, that.os) && Objects.equals(this.slaveClusterId, that.slaveClusterId)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.isProxyMode, that.isProxyMode);
+            && Objects.equals(this.slaveResourceType, that.slaveResourceType)
+            && Objects.equals(this.ansibleType, that.ansibleType) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.isProxyMode, that.isProxyMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, projectId, os, slaveClusterId, description, isProxyMode);
+        return Objects
+            .hash(name, projectId, os, slaveClusterId, slaveResourceType, ansibleType, description, isProxyMode);
     }
 
     @Override
@@ -244,6 +361,8 @@ public class CreateHostClusterRequestBody {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    os: ").append(toIndentedString(os)).append("\n");
         sb.append("    slaveClusterId: ").append(toIndentedString(slaveClusterId)).append("\n");
+        sb.append("    slaveResourceType: ").append(toIndentedString(slaveResourceType)).append("\n");
+        sb.append("    ansibleType: ").append(toIndentedString(ansibleType)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    isProxyMode: ").append(toIndentedString(isProxyMode)).append("\n");
         sb.append("}");

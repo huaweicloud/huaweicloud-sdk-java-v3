@@ -203,7 +203,7 @@ public class StatementRecord {
     }
 
     /**
-     * **参数解释**：工作空间ID。 **取值范围**：长度为1~36个字符，支持大小写英文字母、数字、连字符。
+     * **参数解释**：工作空间ID。 **取值范围**：长度为1~36的英文字母、数字和中划线的组合。 
      * @return workspaceId
      */
     public String getWorkspaceId() {

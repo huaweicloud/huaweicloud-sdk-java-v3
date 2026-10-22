@@ -66,9 +66,9 @@ public class SecurityReportSubscriptionResponseReportContentSubscription {
     private Boolean topAttackSourceLocationsEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "top_abnormal_urls_enable")
+    @JsonProperty(value = "top_error_pages_enable")
 
-    private Boolean topAbnormalUrlsEnable;
+    private Boolean topErrorPagesEnable;
 
     public SecurityReportSubscriptionResponseReportContentSubscription withOverviewStatisticsEnable(
         Boolean overviewStatisticsEnable) {
@@ -267,22 +267,22 @@ public class SecurityReportSubscriptionResponseReportContentSubscription {
         this.topAttackSourceLocationsEnable = topAttackSourceLocationsEnable;
     }
 
-    public SecurityReportSubscriptionResponseReportContentSubscription withTopAbnormalUrlsEnable(
-        Boolean topAbnormalUrlsEnable) {
-        this.topAbnormalUrlsEnable = topAbnormalUrlsEnable;
+    public SecurityReportSubscriptionResponseReportContentSubscription withTopErrorPagesEnable(
+        Boolean topErrorPagesEnable) {
+        this.topErrorPagesEnable = topErrorPagesEnable;
         return this;
     }
 
     /**
-     * **参数解释：** 是否启用TOP异常URL统计（true表示启用，false表示禁用）。 **约束限制：** 不涉及 **取值范围：** 仅支持true、false两个布尔值 **默认取值：** true
-     * @return topAbnormalUrlsEnable
+     * **参数解释：** 是否启用TOP异常页面统计（true表示启用，false表示禁用）。 **约束限制：** 不涉及 **取值范围：** 仅支持true、false两个布尔值 **默认取值：** true
+     * @return topErrorPagesEnable
      */
-    public Boolean getTopAbnormalUrlsEnable() {
-        return topAbnormalUrlsEnable;
+    public Boolean getTopErrorPagesEnable() {
+        return topErrorPagesEnable;
     }
 
-    public void setTopAbnormalUrlsEnable(Boolean topAbnormalUrlsEnable) {
-        this.topAbnormalUrlsEnable = topAbnormalUrlsEnable;
+    public void setTopErrorPagesEnable(Boolean topErrorPagesEnable) {
+        this.topErrorPagesEnable = topErrorPagesEnable;
     }
 
     @Override
@@ -306,7 +306,7 @@ public class SecurityReportSubscriptionResponseReportContentSubscription {
             && Objects.equals(this.topAttackSourceIpsEnable, that.topAttackSourceIpsEnable)
             && Objects.equals(this.topAttackedUrlsEnable, that.topAttackedUrlsEnable)
             && Objects.equals(this.topAttackSourceLocationsEnable, that.topAttackSourceLocationsEnable)
-            && Objects.equals(this.topAbnormalUrlsEnable, that.topAbnormalUrlsEnable);
+            && Objects.equals(this.topErrorPagesEnable, that.topErrorPagesEnable);
     }
 
     @Override
@@ -322,7 +322,7 @@ public class SecurityReportSubscriptionResponseReportContentSubscription {
             topAttackSourceIpsEnable,
             topAttackedUrlsEnable,
             topAttackSourceLocationsEnable,
-            topAbnormalUrlsEnable);
+            topErrorPagesEnable);
     }
 
     @Override
@@ -346,7 +346,7 @@ public class SecurityReportSubscriptionResponseReportContentSubscription {
         sb.append("    topAttackSourceLocationsEnable: ")
             .append(toIndentedString(topAttackSourceLocationsEnable))
             .append("\n");
-        sb.append("    topAbnormalUrlsEnable: ").append(toIndentedString(topAbnormalUrlsEnable)).append("\n");
+        sb.append("    topErrorPagesEnable: ").append(toIndentedString(topErrorPagesEnable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

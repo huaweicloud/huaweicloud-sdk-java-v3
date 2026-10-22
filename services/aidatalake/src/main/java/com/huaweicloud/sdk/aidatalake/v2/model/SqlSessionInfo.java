@@ -20,7 +20,7 @@ public class SqlSessionInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private SqlSessionStatus status;
+    private SqlSessionStatusAdmin status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -49,7 +49,7 @@ public class SqlSessionInfo {
         this.sessionId = sessionId;
     }
 
-    public SqlSessionInfo withStatus(SqlSessionStatus status) {
+    public SqlSessionInfo withStatus(SqlSessionStatusAdmin status) {
         this.status = status;
         return this;
     }
@@ -58,11 +58,11 @@ public class SqlSessionInfo {
      * Get status
      * @return status
      */
-    public SqlSessionStatus getStatus() {
+    public SqlSessionStatusAdmin getStatus() {
         return status;
     }
 
-    public void setStatus(SqlSessionStatus status) {
+    public void setStatus(SqlSessionStatusAdmin status) {
         this.status = status;
     }
 

@@ -23,18 +23,34 @@ import com.huaweicloud.sdk.waf.v1.model.BatchCreatePrivacyRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchCreatePrivacyRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchCreateWhiteblackipRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchCreateWhiteblackipRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAiAppsRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAiAppsResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAiGuardPolicyRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAiGuardPolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAiGuardRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAiGuardRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAlertNoticeConfigRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAlertNoticeConfigResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCompositeHostsRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCompositeHostsResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomAnswersRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomAnswersResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomLlmRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomLlmResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeletePoliciesRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeletePoliciesResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteRulesResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchUpdateAiGuardRuleStatusRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchUpdateAiGuardRuleStatusResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateAntileakageRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateAntileakageRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateAntitamperRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateAntitamperRulesResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchUpdateBotMRuleActionRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchUpdateBotMRuleActionResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchUpdateBotMRuleStatusRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchUpdateBotMRuleStatusResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateCcRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateCcRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateCustomRulesRequest;
@@ -49,6 +65,8 @@ import com.huaweicloud.sdk.waf.v1.model.BatchUpdatePrivacyRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdatePrivacyRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateWhiteblackipRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateWhiteblackipRulesResponse;
+import com.huaweicloud.sdk.waf.v1.model.BindAiAppsRequest;
+import com.huaweicloud.sdk.waf.v1.model.BindAiAppsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafRequest;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafResponse;
 import com.huaweicloud.sdk.waf.v1.model.CheckAgencyRequest;
@@ -77,6 +95,14 @@ import com.huaweicloud.sdk.waf.v1.model.CopyPolicyByIdRequest;
 import com.huaweicloud.sdk.waf.v1.model.CopyPolicyByIdResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateAgencyRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateAgencyResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateAiAppRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateAiAppResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateAiGuardPolicyRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateAiGuardPolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateAiGuardRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateAiGuardRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateAiguardTemplateRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateAiguardTemplateRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateAlertNoticeConfigRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateAlertNoticeConfigResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateAntiTamperRuleRequest;
@@ -85,12 +111,18 @@ import com.huaweicloud.sdk.waf.v1.model.CreateAnticrawlerRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateAnticrawlerRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateAntileakageRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateAntileakageRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateBotMTrafficDetectionConditionRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateBotMTrafficDetectionConditionResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateCcRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateCcRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateCertificateRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateCertificateResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateCloudWafPostPaidResourceRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateCloudWafPostPaidResourceResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateCustomAnswersRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateCustomAnswersResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateCustomLlmRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateCustomLlmResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateCustomRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateCustomRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateEventExportJobRequest;
@@ -129,6 +161,12 @@ import com.huaweicloud.sdk.waf.v1.model.CreateWhiteblackipRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateWhiteblackipRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAgencyRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAgencyResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAiAppRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAiAppResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAiGuardPolicyRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAiGuardPolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAiGuardRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAiGuardRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAlertNoticeConfigRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAlertNoticeConfigResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAnticrawlerRuleRequest;
@@ -137,12 +175,18 @@ import com.huaweicloud.sdk.waf.v1.model.DeleteAntileakageRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAntileakageRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAntitamperRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAntitamperRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteBotMTrafficDetectionConditionRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteBotMTrafficDetectionConditionResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCcRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCcRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCertificateRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCertificateResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCloudWafPostPaidResourceRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCloudWafPostPaidResourceResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteCustomAnswersRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteCustomAnswersResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteCustomLlmRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteCustomLlmResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCustomRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCustomRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteGeoipRuleRequest;
@@ -173,6 +217,16 @@ import com.huaweicloud.sdk.waf.v1.model.DeleteValueListRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteValueListResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteWhiteBlackIpRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteWhiteBlackIpRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListAiAppsLogsRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListAiAppsLogsResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListAiAppsRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListAiAppsResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListAiGuardOverviewSummaryRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListAiGuardOverviewSummaryResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListAiGuardPolicyRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListAiGuardPolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListAiGuardRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListAiGuardRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListAntiTamperPolicyRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListAntiTamperPolicyRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListAnticrawlerRulesRequest;
@@ -187,6 +241,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListAttackActionTypesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListAttackActionTypesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListBandwidthTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListBandwidthTimelineResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMRulesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCcPolicyRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCcPolicyRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCcRulesRequest;
@@ -195,6 +251,10 @@ import com.huaweicloud.sdk.waf.v1.model.ListCertificatesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCertificatesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCompositeHostsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCompositeHostsResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListCustomAnswersRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListCustomAnswersResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListCustomLlmRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListCustomLlmResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCustomPolicyRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCustomPolicyRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCustomRulesRequest;
@@ -235,6 +295,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListOverviewsClassificationRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListOverviewsClassificationResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListOverviewsHostDomainsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListOverviewsHostDomainsResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListPiiCategoriesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListPiiCategoriesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListPolicyProtectRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListPolicyProtectRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListPolicyRequest;
@@ -265,6 +327,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListSourceIpTop5Request;
 import com.huaweicloud.sdk.waf.v1.model.ListSourceIpTop5Response;
 import com.huaweicloud.sdk.waf.v1.model.ListStatisticsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListStatisticsResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListSystemLexiconsRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListSystemLexiconsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListThreatsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListThreatsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListTopAbnormalRequest;
@@ -291,12 +355,30 @@ import com.huaweicloud.sdk.waf.v1.model.MigrateCompositeHostsRequest;
 import com.huaweicloud.sdk.waf.v1.model.MigrateCompositeHostsResponse;
 import com.huaweicloud.sdk.waf.v1.model.RenameInstanceRequest;
 import com.huaweicloud.sdk.waf.v1.model.RenameInstanceResponse;
+import com.huaweicloud.sdk.waf.v1.model.SetAiAppSettingRequest;
+import com.huaweicloud.sdk.waf.v1.model.SetAiAppSettingResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiAppRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiAppResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiAppSettingRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiAppSettingResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardAttackDistributionRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardAttackDistributionResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardLtsConfigRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardLtsConfigResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardPolicyRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardPolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardRequestTimelineRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardRequestTimelineResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowAiGuardRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowAnticrawlerRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowAnticrawlerRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowAntileakageRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowAntileakageRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowAntitamperRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowAntitamperRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowBotMRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowBotMRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowCcRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowCcRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowCertificateRequest;
@@ -305,6 +387,10 @@ import com.huaweicloud.sdk.waf.v1.model.ShowCompositeHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowCompositeHostResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowConsoleConfigRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowConsoleConfigResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowCustomAnswersRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowCustomAnswersResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowCustomLlmRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowCustomLlmResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowCustomRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowCustomRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowEventRequest;
@@ -331,6 +417,8 @@ import com.huaweicloud.sdk.waf.v1.model.ShowPoolRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPoolResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowPremiumHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPremiumHostResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowPresignedUrlRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowPresignedUrlResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowPrivacyRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPrivacyRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowPunishmentRuleRequest;
@@ -351,6 +439,20 @@ import com.huaweicloud.sdk.waf.v1.model.ShowWhiteBlackIpRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowWhiteBlackIpRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAccessProgressRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAccessProgressResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiAppPolicyRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiAppPolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiAppProtectStatusRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiAppProtectStatusResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiAppRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiAppResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardLtsConfigRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardLtsConfigResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardPolicyRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardPolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardRuleStatusRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAiGuardRuleStatusResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAlertNoticeConfigRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAlertNoticeConfigResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAntiTamperRuleRefreshRequest;
@@ -361,10 +463,26 @@ import com.huaweicloud.sdk.waf.v1.model.UpdateAnticrawlerRuleTypeRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAnticrawlerRuleTypeResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAntileakageRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAntileakageRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMCategoryStatusRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMCategoryStatusResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMRuleActionRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMRuleActionResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMRuleDefenseStrategyRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMRuleDefenseStrategyResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMRuleStatusRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMRuleStatusResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMTenantPolicyRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMTenantPolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMTrafficDetectionConditionRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMTrafficDetectionConditionResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCcRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCcRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCertificateRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCertificateResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateCustomAnswersRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateCustomAnswersResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateCustomLlmRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateCustomLlmResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCustomRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCustomRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateGeoipRuleRequest;
@@ -512,35 +630,6 @@ public class WafClient {
     public SyncInvoker<BatchCreateAntileakageRuleRequest, BatchCreateAntileakageRuleResponse> batchCreateAntileakageRuleInvoker(
         BatchCreateAntileakageRuleRequest request) {
         return new SyncInvoker<>(request, WafMeta.batchCreateAntileakageRule, hcClient);
-    }
-
-    /**
-     * 选中多个策略为批量添加cc规则
-     *
-     * 选中多个策略为这些策略批量添加cc规则
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchCreateCcRuleRequest 请求对象
-     * @return BatchCreateCcRuleResponse
-     */
-    public BatchCreateCcRuleResponse batchCreateCcRule(BatchCreateCcRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.batchCreateCcRule);
-    }
-
-    /**
-     * 选中多个策略为批量添加cc规则
-     *
-     * 选中多个策略为这些策略批量添加cc规则
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchCreateCcRuleRequest 请求对象
-     * @return SyncInvoker<BatchCreateCcRuleRequest, BatchCreateCcRuleResponse>
-     */
-    public SyncInvoker<BatchCreateCcRuleRequest, BatchCreateCcRuleResponse> batchCreateCcRuleInvoker(
-        BatchCreateCcRuleRequest request) {
-        return new SyncInvoker<>(request, WafMeta.batchCreateCcRule, hcClient);
     }
 
     /**
@@ -893,32 +982,61 @@ public class WafClient {
     }
 
     /**
-     * 批量修改CC防护规则
+     * 批量更新BotM规则防护动作
      *
-     * 批量修改CC防护规则
+     * 批量更新BotM规则防护动作
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request BatchUpdateCcRulesRequest 请求对象
-     * @return BatchUpdateCcRulesResponse
+     * @param request BatchUpdateBotMRuleActionRequest 请求对象
+     * @return BatchUpdateBotMRuleActionResponse
      */
-    public BatchUpdateCcRulesResponse batchUpdateCcRules(BatchUpdateCcRulesRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.batchUpdateCcRules);
+    public BatchUpdateBotMRuleActionResponse batchUpdateBotMRuleAction(BatchUpdateBotMRuleActionRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.batchUpdateBotMRuleAction);
     }
 
     /**
-     * 批量修改CC防护规则
+     * 批量更新BotM规则防护动作
      *
-     * 批量修改CC防护规则
+     * 批量更新BotM规则防护动作
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request BatchUpdateCcRulesRequest 请求对象
-     * @return SyncInvoker<BatchUpdateCcRulesRequest, BatchUpdateCcRulesResponse>
+     * @param request BatchUpdateBotMRuleActionRequest 请求对象
+     * @return SyncInvoker<BatchUpdateBotMRuleActionRequest, BatchUpdateBotMRuleActionResponse>
      */
-    public SyncInvoker<BatchUpdateCcRulesRequest, BatchUpdateCcRulesResponse> batchUpdateCcRulesInvoker(
-        BatchUpdateCcRulesRequest request) {
-        return new SyncInvoker<>(request, WafMeta.batchUpdateCcRules, hcClient);
+    public SyncInvoker<BatchUpdateBotMRuleActionRequest, BatchUpdateBotMRuleActionResponse> batchUpdateBotMRuleActionInvoker(
+        BatchUpdateBotMRuleActionRequest request) {
+        return new SyncInvoker<>(request, WafMeta.batchUpdateBotMRuleAction, hcClient);
+    }
+
+    /**
+     * 批量更新BotM规则启用状态
+     *
+     * 批量更新BotM规则启用状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateBotMRuleStatusRequest 请求对象
+     * @return BatchUpdateBotMRuleStatusResponse
+     */
+    public BatchUpdateBotMRuleStatusResponse batchUpdateBotMRuleStatus(BatchUpdateBotMRuleStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.batchUpdateBotMRuleStatus);
+    }
+
+    /**
+     * 批量更新BotM规则启用状态
+     *
+     * 批量更新BotM规则启用状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateBotMRuleStatusRequest 请求对象
+     * @return SyncInvoker<BatchUpdateBotMRuleStatusRequest, BatchUpdateBotMRuleStatusResponse>
+     */
+    public SyncInvoker<BatchUpdateBotMRuleStatusRequest, BatchUpdateBotMRuleStatusResponse> batchUpdateBotMRuleStatusInvoker(
+        BatchUpdateBotMRuleStatusRequest request) {
+        return new SyncInvoker<>(request, WafMeta.batchUpdateBotMRuleStatus, hcClient);
     }
 
     /**
@@ -1538,35 +1656,6 @@ public class WafClient {
     }
 
     /**
-     * 创建JS脚本反爬虫规则
-     *
-     * 创建JS脚本反爬虫规则，在调用此接口创建防护规则前，需要调用更新JS脚本反爬虫规则防护模式（UpdateAnticrawlerRuleType）接口指定防护模式
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateAnticrawlerRuleRequest 请求对象
-     * @return CreateAnticrawlerRuleResponse
-     */
-    public CreateAnticrawlerRuleResponse createAnticrawlerRule(CreateAnticrawlerRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.createAnticrawlerRule);
-    }
-
-    /**
-     * 创建JS脚本反爬虫规则
-     *
-     * 创建JS脚本反爬虫规则，在调用此接口创建防护规则前，需要调用更新JS脚本反爬虫规则防护模式（UpdateAnticrawlerRuleType）接口指定防护模式
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateAnticrawlerRuleRequest 请求对象
-     * @return SyncInvoker<CreateAnticrawlerRuleRequest, CreateAnticrawlerRuleResponse>
-     */
-    public SyncInvoker<CreateAnticrawlerRuleRequest, CreateAnticrawlerRuleResponse> createAnticrawlerRuleInvoker(
-        CreateAnticrawlerRuleRequest request) {
-        return new SyncInvoker<>(request, WafMeta.createAnticrawlerRule, hcClient);
-    }
-
-    /**
      * 创建防敏感信息泄露规则
      *
      * 创建防敏感信息泄露规则
@@ -1596,31 +1685,33 @@ public class WafClient {
     }
 
     /**
-     * 创建cc规则
+     * 创建BOTM流量检测条件
      *
-     * 创建cc规则
+     * 创建BOTM流量检测条件
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateCcRuleRequest 请求对象
-     * @return CreateCcRuleResponse
+     * @param request CreateBotMTrafficDetectionConditionRequest 请求对象
+     * @return CreateBotMTrafficDetectionConditionResponse
      */
-    public CreateCcRuleResponse createCcRule(CreateCcRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.createCcRule);
+    public CreateBotMTrafficDetectionConditionResponse createBotMTrafficDetectionCondition(
+        CreateBotMTrafficDetectionConditionRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.createBotMTrafficDetectionCondition);
     }
 
     /**
-     * 创建cc规则
+     * 创建BOTM流量检测条件
      *
-     * 创建cc规则
+     * 创建BOTM流量检测条件
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateCcRuleRequest 请求对象
-     * @return SyncInvoker<CreateCcRuleRequest, CreateCcRuleResponse>
+     * @param request CreateBotMTrafficDetectionConditionRequest 请求对象
+     * @return SyncInvoker<CreateBotMTrafficDetectionConditionRequest, CreateBotMTrafficDetectionConditionResponse>
      */
-    public SyncInvoker<CreateCcRuleRequest, CreateCcRuleResponse> createCcRuleInvoker(CreateCcRuleRequest request) {
-        return new SyncInvoker<>(request, WafMeta.createCcRule, hcClient);
+    public SyncInvoker<CreateBotMTrafficDetectionConditionRequest, CreateBotMTrafficDetectionConditionResponse> createBotMTrafficDetectionConditionInvoker(
+        CreateBotMTrafficDetectionConditionRequest request) {
+        return new SyncInvoker<>(request, WafMeta.createBotMTrafficDetectionCondition, hcClient);
     }
 
     /**
@@ -2230,35 +2321,6 @@ public class WafClient {
     }
 
     /**
-     * 删除JS脚本反爬虫防护规则
-     *
-     * 删除JS脚本反爬虫防护规则
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteAnticrawlerRuleRequest 请求对象
-     * @return DeleteAnticrawlerRuleResponse
-     */
-    public DeleteAnticrawlerRuleResponse deleteAnticrawlerRule(DeleteAnticrawlerRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.deleteAnticrawlerRule);
-    }
-
-    /**
-     * 删除JS脚本反爬虫防护规则
-     *
-     * 删除JS脚本反爬虫防护规则
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteAnticrawlerRuleRequest 请求对象
-     * @return SyncInvoker<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse>
-     */
-    public SyncInvoker<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse> deleteAnticrawlerRuleInvoker(
-        DeleteAnticrawlerRuleRequest request) {
-        return new SyncInvoker<>(request, WafMeta.deleteAnticrawlerRule, hcClient);
-    }
-
-    /**
      * 删除防敏感信息泄露防护规则
      *
      * 删除防敏感信息泄露防护规则
@@ -2317,31 +2379,33 @@ public class WafClient {
     }
 
     /**
-     * 删除cc防护规则
+     * 删除BotM流量检测条件
      *
-     * 删除cc防护规则
+     * 删除BotM流量检测条件
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeleteCcRuleRequest 请求对象
-     * @return DeleteCcRuleResponse
+     * @param request DeleteBotMTrafficDetectionConditionRequest 请求对象
+     * @return DeleteBotMTrafficDetectionConditionResponse
      */
-    public DeleteCcRuleResponse deleteCcRule(DeleteCcRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.deleteCcRule);
+    public DeleteBotMTrafficDetectionConditionResponse deleteBotMTrafficDetectionCondition(
+        DeleteBotMTrafficDetectionConditionRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.deleteBotMTrafficDetectionCondition);
     }
 
     /**
-     * 删除cc防护规则
+     * 删除BotM流量检测条件
      *
-     * 删除cc防护规则
+     * 删除BotM流量检测条件
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeleteCcRuleRequest 请求对象
-     * @return SyncInvoker<DeleteCcRuleRequest, DeleteCcRuleResponse>
+     * @param request DeleteBotMTrafficDetectionConditionRequest 请求对象
+     * @return SyncInvoker<DeleteBotMTrafficDetectionConditionRequest, DeleteBotMTrafficDetectionConditionResponse>
      */
-    public SyncInvoker<DeleteCcRuleRequest, DeleteCcRuleResponse> deleteCcRuleInvoker(DeleteCcRuleRequest request) {
-        return new SyncInvoker<>(request, WafMeta.deleteCcRule, hcClient);
+    public SyncInvoker<DeleteBotMTrafficDetectionConditionRequest, DeleteBotMTrafficDetectionConditionResponse> deleteBotMTrafficDetectionConditionInvoker(
+        DeleteBotMTrafficDetectionConditionRequest request) {
+        return new SyncInvoker<>(request, WafMeta.deleteBotMTrafficDetectionCondition, hcClient);
     }
 
     /**
@@ -2865,35 +2929,6 @@ public class WafClient {
     }
 
     /**
-     * 查询JS脚本反爬虫规则列表
-     *
-     * 查询JS脚本反爬虫规则列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAnticrawlerRulesRequest 请求对象
-     * @return ListAnticrawlerRulesResponse
-     */
-    public ListAnticrawlerRulesResponse listAnticrawlerRules(ListAnticrawlerRulesRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listAnticrawlerRules);
-    }
-
-    /**
-     * 查询JS脚本反爬虫规则列表
-     *
-     * 查询JS脚本反爬虫规则列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAnticrawlerRulesRequest 请求对象
-     * @return SyncInvoker<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse>
-     */
-    public SyncInvoker<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse> listAnticrawlerRulesInvoker(
-        ListAnticrawlerRulesRequest request) {
-        return new SyncInvoker<>(request, WafMeta.listAnticrawlerRules, hcClient);
-    }
-
-    /**
      * 查询所有策略防敏感信息泄露规则
      *
      * 查询所有策略防敏感信息泄露规则
@@ -3039,60 +3074,31 @@ public class WafClient {
     }
 
     /**
-     * 查询所有策略CC规则
+     * 查询BotM所有规则
      *
-     * 查询所有策略CC规则
+     * 查询BotM所有规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListCcPolicyRulesRequest 请求对象
-     * @return ListCcPolicyRulesResponse
+     * @param request ListBotMRulesRequest 请求对象
+     * @return ListBotMRulesResponse
      */
-    public ListCcPolicyRulesResponse listCcPolicyRules(ListCcPolicyRulesRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listCcPolicyRules);
+    public ListBotMRulesResponse listBotMRules(ListBotMRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listBotMRules);
     }
 
     /**
-     * 查询所有策略CC规则
+     * 查询BotM所有规则
      *
-     * 查询所有策略CC规则
+     * 查询BotM所有规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListCcPolicyRulesRequest 请求对象
-     * @return SyncInvoker<ListCcPolicyRulesRequest, ListCcPolicyRulesResponse>
+     * @param request ListBotMRulesRequest 请求对象
+     * @return SyncInvoker<ListBotMRulesRequest, ListBotMRulesResponse>
      */
-    public SyncInvoker<ListCcPolicyRulesRequest, ListCcPolicyRulesResponse> listCcPolicyRulesInvoker(
-        ListCcPolicyRulesRequest request) {
-        return new SyncInvoker<>(request, WafMeta.listCcPolicyRules, hcClient);
-    }
-
-    /**
-     * 查询cc规则列表
-     *
-     * 查询cc规则列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListCcRulesRequest 请求对象
-     * @return ListCcRulesResponse
-     */
-    public ListCcRulesResponse listCcRules(ListCcRulesRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listCcRules);
-    }
-
-    /**
-     * 查询cc规则列表
-     *
-     * 查询cc规则列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListCcRulesRequest 请求对象
-     * @return SyncInvoker<ListCcRulesRequest, ListCcRulesResponse>
-     */
-    public SyncInvoker<ListCcRulesRequest, ListCcRulesResponse> listCcRulesInvoker(ListCcRulesRequest request) {
-        return new SyncInvoker<>(request, WafMeta.listCcRules, hcClient);
+    public SyncInvoker<ListBotMRulesRequest, ListBotMRulesResponse> listBotMRulesInvoker(ListBotMRulesRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listBotMRules, hcClient);
     }
 
     /**
@@ -4507,35 +4513,6 @@ public class WafClient {
     }
 
     /**
-     * 查询JS脚本反爬虫防护规则
-     *
-     * 根据Id查询JS脚本反爬虫防护规则
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAnticrawlerRuleRequest 请求对象
-     * @return ShowAnticrawlerRuleResponse
-     */
-    public ShowAnticrawlerRuleResponse showAnticrawlerRule(ShowAnticrawlerRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.showAnticrawlerRule);
-    }
-
-    /**
-     * 查询JS脚本反爬虫防护规则
-     *
-     * 根据Id查询JS脚本反爬虫防护规则
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAnticrawlerRuleRequest 请求对象
-     * @return SyncInvoker<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse>
-     */
-    public SyncInvoker<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse> showAnticrawlerRuleInvoker(
-        ShowAnticrawlerRuleRequest request) {
-        return new SyncInvoker<>(request, WafMeta.showAnticrawlerRule, hcClient);
-    }
-
-    /**
      * 查询防敏感信息泄露防护规则
      *
      * 根据Id查询防敏感信息泄露防护规则
@@ -4594,31 +4571,31 @@ public class WafClient {
     }
 
     /**
-     * 根据Id查询cc防护规则
+     * 查询BotM单条规则详情
      *
-     * 根据Id查询cc防护规则
+     * 查询BotM单条规则详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowCcRuleRequest 请求对象
-     * @return ShowCcRuleResponse
+     * @param request ShowBotMRuleRequest 请求对象
+     * @return ShowBotMRuleResponse
      */
-    public ShowCcRuleResponse showCcRule(ShowCcRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.showCcRule);
+    public ShowBotMRuleResponse showBotMRule(ShowBotMRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showBotMRule);
     }
 
     /**
-     * 根据Id查询cc防护规则
+     * 查询BotM单条规则详情
      *
-     * 根据Id查询cc防护规则
+     * 查询BotM单条规则详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowCcRuleRequest 请求对象
-     * @return SyncInvoker<ShowCcRuleRequest, ShowCcRuleResponse>
+     * @param request ShowBotMRuleRequest 请求对象
+     * @return SyncInvoker<ShowBotMRuleRequest, ShowBotMRuleResponse>
      */
-    public SyncInvoker<ShowCcRuleRequest, ShowCcRuleResponse> showCcRuleInvoker(ShowCcRuleRequest request) {
-        return new SyncInvoker<>(request, WafMeta.showCcRule, hcClient);
+    public SyncInvoker<ShowBotMRuleRequest, ShowBotMRuleResponse> showBotMRuleInvoker(ShowBotMRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.showBotMRule, hcClient);
     }
 
     /**
@@ -5397,64 +5374,6 @@ public class WafClient {
     }
 
     /**
-     * 更新JS脚本反爬虫防护规则
-     *
-     * 更新JS脚本反爬虫防护规则
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateAnticrawlerRuleRequest 请求对象
-     * @return UpdateAnticrawlerRuleResponse
-     */
-    public UpdateAnticrawlerRuleResponse updateAnticrawlerRule(UpdateAnticrawlerRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.updateAnticrawlerRule);
-    }
-
-    /**
-     * 更新JS脚本反爬虫防护规则
-     *
-     * 更新JS脚本反爬虫防护规则
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateAnticrawlerRuleRequest 请求对象
-     * @return SyncInvoker<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse>
-     */
-    public SyncInvoker<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse> updateAnticrawlerRuleInvoker(
-        UpdateAnticrawlerRuleRequest request) {
-        return new SyncInvoker<>(request, WafMeta.updateAnticrawlerRule, hcClient);
-    }
-
-    /**
-     * 更新JS脚本反爬虫规则防护模式
-     *
-     * 更新JS脚本反爬虫规则防护模式，在创建JS脚本反爬虫规则前，需要调用该接口指定JS脚本反爬虫规则防护模式。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateAnticrawlerRuleTypeRequest 请求对象
-     * @return UpdateAnticrawlerRuleTypeResponse
-     */
-    public UpdateAnticrawlerRuleTypeResponse updateAnticrawlerRuleType(UpdateAnticrawlerRuleTypeRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.updateAnticrawlerRuleType);
-    }
-
-    /**
-     * 更新JS脚本反爬虫规则防护模式
-     *
-     * 更新JS脚本反爬虫规则防护模式，在创建JS脚本反爬虫规则前，需要调用该接口指定JS脚本反爬虫规则防护模式。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateAnticrawlerRuleTypeRequest 请求对象
-     * @return SyncInvoker<UpdateAnticrawlerRuleTypeRequest, UpdateAnticrawlerRuleTypeResponse>
-     */
-    public SyncInvoker<UpdateAnticrawlerRuleTypeRequest, UpdateAnticrawlerRuleTypeResponse> updateAnticrawlerRuleTypeInvoker(
-        UpdateAnticrawlerRuleTypeRequest request) {
-        return new SyncInvoker<>(request, WafMeta.updateAnticrawlerRuleType, hcClient);
-    }
-
-    /**
      * 更新防敏感信息泄露防护规则
      *
      * 更新防敏感信息泄露防护规则
@@ -5484,31 +5403,179 @@ public class WafClient {
     }
 
     /**
-     * 更新cc防护规则
+     * 更新BotM的Category[已知BOT检测/请求特征检测]启用状态
      *
-     * 更新cc防护规则
+     * 更新BotM规则启用状态
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdateCcRuleRequest 请求对象
-     * @return UpdateCcRuleResponse
+     * @param request UpdateBotMCategoryStatusRequest 请求对象
+     * @return UpdateBotMCategoryStatusResponse
      */
-    public UpdateCcRuleResponse updateCcRule(UpdateCcRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.updateCcRule);
+    public UpdateBotMCategoryStatusResponse updateBotMCategoryStatus(UpdateBotMCategoryStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateBotMCategoryStatus);
     }
 
     /**
-     * 更新cc防护规则
+     * 更新BotM的Category[已知BOT检测/请求特征检测]启用状态
      *
-     * 更新cc防护规则
+     * 更新BotM规则启用状态
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdateCcRuleRequest 请求对象
-     * @return SyncInvoker<UpdateCcRuleRequest, UpdateCcRuleResponse>
+     * @param request UpdateBotMCategoryStatusRequest 请求对象
+     * @return SyncInvoker<UpdateBotMCategoryStatusRequest, UpdateBotMCategoryStatusResponse>
      */
-    public SyncInvoker<UpdateCcRuleRequest, UpdateCcRuleResponse> updateCcRuleInvoker(UpdateCcRuleRequest request) {
-        return new SyncInvoker<>(request, WafMeta.updateCcRule, hcClient);
+    public SyncInvoker<UpdateBotMCategoryStatusRequest, UpdateBotMCategoryStatusResponse> updateBotMCategoryStatusInvoker(
+        UpdateBotMCategoryStatusRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateBotMCategoryStatus, hcClient);
+    }
+
+    /**
+     * 更新BotM规则防护动作
+     *
+     * 更新BotM规则防护动作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBotMRuleActionRequest 请求对象
+     * @return UpdateBotMRuleActionResponse
+     */
+    public UpdateBotMRuleActionResponse updateBotMRuleAction(UpdateBotMRuleActionRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateBotMRuleAction);
+    }
+
+    /**
+     * 更新BotM规则防护动作
+     *
+     * 更新BotM规则防护动作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBotMRuleActionRequest 请求对象
+     * @return SyncInvoker<UpdateBotMRuleActionRequest, UpdateBotMRuleActionResponse>
+     */
+    public SyncInvoker<UpdateBotMRuleActionRequest, UpdateBotMRuleActionResponse> updateBotMRuleActionInvoker(
+        UpdateBotMRuleActionRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateBotMRuleAction, hcClient);
+    }
+
+    /**
+     * 更新BotM行为检测规则的防护策略
+     *
+     * 更新BotM行为检测规则的防护策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBotMRuleDefenseStrategyRequest 请求对象
+     * @return UpdateBotMRuleDefenseStrategyResponse
+     */
+    public UpdateBotMRuleDefenseStrategyResponse updateBotMRuleDefenseStrategy(
+        UpdateBotMRuleDefenseStrategyRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateBotMRuleDefenseStrategy);
+    }
+
+    /**
+     * 更新BotM行为检测规则的防护策略
+     *
+     * 更新BotM行为检测规则的防护策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBotMRuleDefenseStrategyRequest 请求对象
+     * @return SyncInvoker<UpdateBotMRuleDefenseStrategyRequest, UpdateBotMRuleDefenseStrategyResponse>
+     */
+    public SyncInvoker<UpdateBotMRuleDefenseStrategyRequest, UpdateBotMRuleDefenseStrategyResponse> updateBotMRuleDefenseStrategyInvoker(
+        UpdateBotMRuleDefenseStrategyRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateBotMRuleDefenseStrategy, hcClient);
+    }
+
+    /**
+     * 更新BotM规则启用状态
+     *
+     * 更新BotM规则启用状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBotMRuleStatusRequest 请求对象
+     * @return UpdateBotMRuleStatusResponse
+     */
+    public UpdateBotMRuleStatusResponse updateBotMRuleStatus(UpdateBotMRuleStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateBotMRuleStatus);
+    }
+
+    /**
+     * 更新BotM规则启用状态
+     *
+     * 更新BotM规则启用状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBotMRuleStatusRequest 请求对象
+     * @return SyncInvoker<UpdateBotMRuleStatusRequest, UpdateBotMRuleStatusResponse>
+     */
+    public SyncInvoker<UpdateBotMRuleStatusRequest, UpdateBotMRuleStatusResponse> updateBotMRuleStatusInvoker(
+        UpdateBotMRuleStatusRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateBotMRuleStatus, hcClient);
+    }
+
+    /**
+     * 更新BOTM策略(用户标识)
+     *
+     * 更新BOTM策略(用户标识)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBotMTenantPolicyRequest 请求对象
+     * @return UpdateBotMTenantPolicyResponse
+     */
+    public UpdateBotMTenantPolicyResponse updateBotMTenantPolicy(UpdateBotMTenantPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateBotMTenantPolicy);
+    }
+
+    /**
+     * 更新BOTM策略(用户标识)
+     *
+     * 更新BOTM策略(用户标识)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBotMTenantPolicyRequest 请求对象
+     * @return SyncInvoker<UpdateBotMTenantPolicyRequest, UpdateBotMTenantPolicyResponse>
+     */
+    public SyncInvoker<UpdateBotMTenantPolicyRequest, UpdateBotMTenantPolicyResponse> updateBotMTenantPolicyInvoker(
+        UpdateBotMTenantPolicyRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateBotMTenantPolicy, hcClient);
+    }
+
+    /**
+     * 更新BotM流量检测条件
+     *
+     * 更新BotM流量检测条件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBotMTrafficDetectionConditionRequest 请求对象
+     * @return UpdateBotMTrafficDetectionConditionResponse
+     */
+    public UpdateBotMTrafficDetectionConditionResponse updateBotMTrafficDetectionCondition(
+        UpdateBotMTrafficDetectionConditionRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateBotMTrafficDetectionCondition);
+    }
+
+    /**
+     * 更新BotM流量检测条件
+     *
+     * 更新BotM流量检测条件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBotMTrafficDetectionConditionRequest 请求对象
+     * @return SyncInvoker<UpdateBotMTrafficDetectionConditionRequest, UpdateBotMTrafficDetectionConditionResponse>
+     */
+    public SyncInvoker<UpdateBotMTrafficDetectionConditionRequest, UpdateBotMTrafficDetectionConditionResponse> updateBotMTrafficDetectionConditionInvoker(
+        UpdateBotMTrafficDetectionConditionRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateBotMTrafficDetectionCondition, hcClient);
     }
 
     /**
@@ -6239,6 +6306,1492 @@ public class WafClient {
     }
 
     /**
+     * 批量删除AI应用
+     *
+     * 一次请求删除多个AI应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAiAppsRequest 请求对象
+     * @return BatchDeleteAiAppsResponse
+     */
+    public BatchDeleteAiAppsResponse batchDeleteAiApps(BatchDeleteAiAppsRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.batchDeleteAiApps);
+    }
+
+    /**
+     * 批量删除AI应用
+     *
+     * 一次请求删除多个AI应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAiAppsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteAiAppsRequest, BatchDeleteAiAppsResponse>
+     */
+    public SyncInvoker<BatchDeleteAiAppsRequest, BatchDeleteAiAppsResponse> batchDeleteAiAppsInvoker(
+        BatchDeleteAiAppsRequest request) {
+        return new SyncInvoker<>(request, WafMeta.batchDeleteAiApps, hcClient);
+    }
+
+    /**
+     * 创建AI应用
+     *
+     * 创建具有指定名称、描述、API签名和策略的新AI应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAiAppRequest 请求对象
+     * @return CreateAiAppResponse
+     */
+    public CreateAiAppResponse createAiApp(CreateAiAppRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.createAiApp);
+    }
+
+    /**
+     * 创建AI应用
+     *
+     * 创建具有指定名称、描述、API签名和策略的新AI应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAiAppRequest 请求对象
+     * @return SyncInvoker<CreateAiAppRequest, CreateAiAppResponse>
+     */
+    public SyncInvoker<CreateAiAppRequest, CreateAiAppResponse> createAiAppInvoker(CreateAiAppRequest request) {
+        return new SyncInvoker<>(request, WafMeta.createAiApp, hcClient);
+    }
+
+    /**
+     * 删除AI应用
+     *
+     * 删除指定的AI应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAiAppRequest 请求对象
+     * @return DeleteAiAppResponse
+     */
+    public DeleteAiAppResponse deleteAiApp(DeleteAiAppRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.deleteAiApp);
+    }
+
+    /**
+     * 删除AI应用
+     *
+     * 删除指定的AI应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAiAppRequest 请求对象
+     * @return SyncInvoker<DeleteAiAppRequest, DeleteAiAppResponse>
+     */
+    public SyncInvoker<DeleteAiAppRequest, DeleteAiAppResponse> deleteAiAppInvoker(DeleteAiAppRequest request) {
+        return new SyncInvoker<>(request, WafMeta.deleteAiApp, hcClient);
+    }
+
+    /**
+     * 查询AI应用列表
+     *
+     * 获取AI应用列表，支持过滤和分页
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiAppsRequest 请求对象
+     * @return ListAiAppsResponse
+     */
+    public ListAiAppsResponse listAiApps(ListAiAppsRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listAiApps);
+    }
+
+    /**
+     * 查询AI应用列表
+     *
+     * 获取AI应用列表，支持过滤和分页
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiAppsRequest 请求对象
+     * @return SyncInvoker<ListAiAppsRequest, ListAiAppsResponse>
+     */
+    public SyncInvoker<ListAiAppsRequest, ListAiAppsResponse> listAiAppsInvoker(ListAiAppsRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listAiApps, hcClient);
+    }
+
+    /**
+     * 设置AI应用设置
+     *
+     * 更新AI应用的全局设置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetAiAppSettingRequest 请求对象
+     * @return SetAiAppSettingResponse
+     */
+    public SetAiAppSettingResponse setAiAppSetting(SetAiAppSettingRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.setAiAppSetting);
+    }
+
+    /**
+     * 设置AI应用设置
+     *
+     * 更新AI应用的全局设置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetAiAppSettingRequest 请求对象
+     * @return SyncInvoker<SetAiAppSettingRequest, SetAiAppSettingResponse>
+     */
+    public SyncInvoker<SetAiAppSettingRequest, SetAiAppSettingResponse> setAiAppSettingInvoker(
+        SetAiAppSettingRequest request) {
+        return new SyncInvoker<>(request, WafMeta.setAiAppSetting, hcClient);
+    }
+
+    /**
+     * 获取AI应用详情
+     *
+     * 获取指定AI应用的详细信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAiAppRequest 请求对象
+     * @return ShowAiAppResponse
+     */
+    public ShowAiAppResponse showAiApp(ShowAiAppRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showAiApp);
+    }
+
+    /**
+     * 获取AI应用详情
+     *
+     * 获取指定AI应用的详细信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAiAppRequest 请求对象
+     * @return SyncInvoker<ShowAiAppRequest, ShowAiAppResponse>
+     */
+    public SyncInvoker<ShowAiAppRequest, ShowAiAppResponse> showAiAppInvoker(ShowAiAppRequest request) {
+        return new SyncInvoker<>(request, WafMeta.showAiApp, hcClient);
+    }
+
+    /**
+     * 查询AI应用设置
+     *
+     * 获取AI应用的全局设置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAiAppSettingRequest 请求对象
+     * @return ShowAiAppSettingResponse
+     */
+    public ShowAiAppSettingResponse showAiAppSetting(ShowAiAppSettingRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showAiAppSetting);
+    }
+
+    /**
+     * 查询AI应用设置
+     *
+     * 获取AI应用的全局设置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAiAppSettingRequest 请求对象
+     * @return SyncInvoker<ShowAiAppSettingRequest, ShowAiAppSettingResponse>
+     */
+    public SyncInvoker<ShowAiAppSettingRequest, ShowAiAppSettingResponse> showAiAppSettingInvoker(
+        ShowAiAppSettingRequest request) {
+        return new SyncInvoker<>(request, WafMeta.showAiAppSetting, hcClient);
+    }
+
+    /**
+     * 更新AI应用
+     *
+     * 更新AI应用的名称和/或描述
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAiAppRequest 请求对象
+     * @return UpdateAiAppResponse
+     */
+    public UpdateAiAppResponse updateAiApp(UpdateAiAppRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateAiApp);
+    }
+
+    /**
+     * 更新AI应用
+     *
+     * 更新AI应用的名称和/或描述
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAiAppRequest 请求对象
+     * @return SyncInvoker<UpdateAiAppRequest, UpdateAiAppResponse>
+     */
+    public SyncInvoker<UpdateAiAppRequest, UpdateAiAppResponse> updateAiAppInvoker(UpdateAiAppRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateAiApp, hcClient);
+    }
+
+    /**
+     * 更新AI应用策略
+     *
+     * 更新AI应用关联的策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAiAppPolicyRequest 请求对象
+     * @return UpdateAiAppPolicyResponse
+     */
+    public UpdateAiAppPolicyResponse updateAiAppPolicy(UpdateAiAppPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateAiAppPolicy);
+    }
+
+    /**
+     * 更新AI应用策略
+     *
+     * 更新AI应用关联的策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAiAppPolicyRequest 请求对象
+     * @return SyncInvoker<UpdateAiAppPolicyRequest, UpdateAiAppPolicyResponse>
+     */
+    public SyncInvoker<UpdateAiAppPolicyRequest, UpdateAiAppPolicyResponse> updateAiAppPolicyInvoker(
+        UpdateAiAppPolicyRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateAiAppPolicy, hcClient);
+    }
+
+    /**
+     * 更新AI应用防护状态
+     *
+     * 启用或禁用AI应用的防护功能
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAiAppProtectStatusRequest 请求对象
+     * @return UpdateAiAppProtectStatusResponse
+     */
+    public UpdateAiAppProtectStatusResponse updateAiAppProtectStatus(UpdateAiAppProtectStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateAiAppProtectStatus);
+    }
+
+    /**
+     * 更新AI应用防护状态
+     *
+     * 启用或禁用AI应用的防护功能
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAiAppProtectStatusRequest 请求对象
+     * @return SyncInvoker<UpdateAiAppProtectStatusRequest, UpdateAiAppProtectStatusResponse>
+     */
+    public SyncInvoker<UpdateAiAppProtectStatusRequest, UpdateAiAppProtectStatusResponse> updateAiAppProtectStatusInvoker(
+        UpdateAiAppProtectStatusRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateAiAppProtectStatus, hcClient);
+    }
+
+    /**
+     * 查询AI Guard检测日志列表
+     *
+     * 查询指定项目下的AI Guard检测日志列表，支持分页查询和多种筛选条件。 - 支持按照app_id、detect_type、attack_types、suggestion进行筛选 - 支持按照时间段（from/to）筛选 - 支持分页查询（limit/offset）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiAppsLogsRequest 请求对象
+     * @return ListAiAppsLogsResponse
+     */
+    public ListAiAppsLogsResponse listAiAppsLogs(ListAiAppsLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listAiAppsLogs);
+    }
+
+    /**
+     * 查询AI Guard检测日志列表
+     *
+     * 查询指定项目下的AI Guard检测日志列表，支持分页查询和多种筛选条件。 - 支持按照app_id、detect_type、attack_types、suggestion进行筛选 - 支持按照时间段（from/to）筛选 - 支持分页查询（limit/offset）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiAppsLogsRequest 请求对象
+     * @return SyncInvoker<ListAiAppsLogsRequest, ListAiAppsLogsResponse>
+     */
+    public SyncInvoker<ListAiAppsLogsRequest, ListAiAppsLogsResponse> listAiAppsLogsInvoker(
+        ListAiAppsLogsRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listAiAppsLogs, hcClient);
+    }
+
+    /**
+     * 获取AI Guard攻击类型分布
+     *
+     * 获取AI Guard整体攻击类型分布统计，展示每种攻击类型的数量和占比。
+     * - 支持固定时间范围（今天、昨天、近7天、近30天）和自定义时间范围查询
+     * - 数据包含内容合规检测和提示词注入攻击两大类
+     * - 数据来源：ES统计日志中的api_detection_stat结构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAiGuardAttackDistributionRequest 请求对象
+     * @return ShowAiGuardAttackDistributionResponse
+     */
+    public ShowAiGuardAttackDistributionResponse showAiGuardAttackDistribution(
+        ShowAiGuardAttackDistributionRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showAiGuardAttackDistribution);
+    }
+
+    /**
+     * 获取AI Guard攻击类型分布
+     *
+     * 获取AI Guard整体攻击类型分布统计，展示每种攻击类型的数量和占比。
+     * - 支持固定时间范围（今天、昨天、近7天、近30天）和自定义时间范围查询
+     * - 数据包含内容合规检测和提示词注入攻击两大类
+     * - 数据来源：ES统计日志中的api_detection_stat结构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAiGuardAttackDistributionRequest 请求对象
+     * @return SyncInvoker<ShowAiGuardAttackDistributionRequest, ShowAiGuardAttackDistributionResponse>
+     */
+    public SyncInvoker<ShowAiGuardAttackDistributionRequest, ShowAiGuardAttackDistributionResponse> showAiGuardAttackDistributionInvoker(
+        ShowAiGuardAttackDistributionRequest request) {
+        return new SyncInvoker<>(request, WafMeta.showAiGuardAttackDistribution, hcClient);
+    }
+
+    /**
+     * 获取AI Guard请求时间线
+     *
+     * 获取AI Guard请求时间线数据，展示不同时间段的检测请求次数和防护类型分布。
+     * - 支持固定时间范围（今天、昨天、近7天、近30天）和自定义时间范围查询
+     * - 时间线数据支持实时粒度（按小时/分钟聚合）
+     * - 数据来源：ES统计日志中的api_detection_stat结构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAiGuardRequestTimelineRequest 请求对象
+     * @return ShowAiGuardRequestTimelineResponse
+     */
+    public ShowAiGuardRequestTimelineResponse showAiGuardRequestTimeline(ShowAiGuardRequestTimelineRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showAiGuardRequestTimeline);
+    }
+
+    /**
+     * 获取AI Guard请求时间线
+     *
+     * 获取AI Guard请求时间线数据，展示不同时间段的检测请求次数和防护类型分布。
+     * - 支持固定时间范围（今天、昨天、近7天、近30天）和自定义时间范围查询
+     * - 时间线数据支持实时粒度（按小时/分钟聚合）
+     * - 数据来源：ES统计日志中的api_detection_stat结构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAiGuardRequestTimelineRequest 请求对象
+     * @return SyncInvoker<ShowAiGuardRequestTimelineRequest, ShowAiGuardRequestTimelineResponse>
+     */
+    public SyncInvoker<ShowAiGuardRequestTimelineRequest, ShowAiGuardRequestTimelineResponse> showAiGuardRequestTimelineInvoker(
+        ShowAiGuardRequestTimelineRequest request) {
+        return new SyncInvoker<>(request, WafMeta.showAiGuardRequestTimeline, hcClient);
+    }
+
+    /**
+     * 获取Aiguard总览统计数据
+     *
+     * 获取指定项目下所有APP的接入数据和防护统计数据，统一返回完整总览数据。
+     * - 时间参数：from/to为时间戳（毫秒），必填
+     * - 时间范围限制：查询时间范围不超过1个月
+     * - 数据来源：ES统计日志中的api_detection_stat结构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiGuardOverviewSummaryRequest 请求对象
+     * @return ListAiGuardOverviewSummaryResponse
+     */
+    public ListAiGuardOverviewSummaryResponse listAiGuardOverviewSummary(ListAiGuardOverviewSummaryRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listAiGuardOverviewSummary);
+    }
+
+    /**
+     * 获取Aiguard总览统计数据
+     *
+     * 获取指定项目下所有APP的接入数据和防护统计数据，统一返回完整总览数据。
+     * - 时间参数：from/to为时间戳（毫秒），必填
+     * - 时间范围限制：查询时间范围不超过1个月
+     * - 数据来源：ES统计日志中的api_detection_stat结构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiGuardOverviewSummaryRequest 请求对象
+     * @return SyncInvoker<ListAiGuardOverviewSummaryRequest, ListAiGuardOverviewSummaryResponse>
+     */
+    public SyncInvoker<ListAiGuardOverviewSummaryRequest, ListAiGuardOverviewSummaryResponse> listAiGuardOverviewSummaryInvoker(
+        ListAiGuardOverviewSummaryRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listAiGuardOverviewSummary, hcClient);
+    }
+
+    /**
+     * 批量删除策略
+     *
+     * 批量删除 AI 护栏策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAiGuardPolicyRequest 请求对象
+     * @return BatchDeleteAiGuardPolicyResponse
+     */
+    public BatchDeleteAiGuardPolicyResponse batchDeleteAiGuardPolicy(BatchDeleteAiGuardPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.batchDeleteAiGuardPolicy);
+    }
+
+    /**
+     * 批量删除策略
+     *
+     * 批量删除 AI 护栏策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAiGuardPolicyRequest 请求对象
+     * @return SyncInvoker<BatchDeleteAiGuardPolicyRequest, BatchDeleteAiGuardPolicyResponse>
+     */
+    public SyncInvoker<BatchDeleteAiGuardPolicyRequest, BatchDeleteAiGuardPolicyResponse> batchDeleteAiGuardPolicyInvoker(
+        BatchDeleteAiGuardPolicyRequest request) {
+        return new SyncInvoker<>(request, WafMeta.batchDeleteAiGuardPolicy, hcClient);
+    }
+
+    /**
+     * 更新防护 AI 应用
+     *
+     * 更新策略绑定的 AI 应用（支持多个，全量更新）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindAiAppsRequest 请求对象
+     * @return BindAiAppsResponse
+     */
+    public BindAiAppsResponse bindAiApps(BindAiAppsRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.bindAiApps);
+    }
+
+    /**
+     * 更新防护 AI 应用
+     *
+     * 更新策略绑定的 AI 应用（支持多个，全量更新）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindAiAppsRequest 请求对象
+     * @return SyncInvoker<BindAiAppsRequest, BindAiAppsResponse>
+     */
+    public SyncInvoker<BindAiAppsRequest, BindAiAppsResponse> bindAiAppsInvoker(BindAiAppsRequest request) {
+        return new SyncInvoker<>(request, WafMeta.bindAiApps, hcClient);
+    }
+
+    /**
+     * 添加策略
+     *
+     * 添加 AI 护栏策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAiGuardPolicyRequest 请求对象
+     * @return CreateAiGuardPolicyResponse
+     */
+    public CreateAiGuardPolicyResponse createAiGuardPolicy(CreateAiGuardPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.createAiGuardPolicy);
+    }
+
+    /**
+     * 添加策略
+     *
+     * 添加 AI 护栏策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAiGuardPolicyRequest 请求对象
+     * @return SyncInvoker<CreateAiGuardPolicyRequest, CreateAiGuardPolicyResponse>
+     */
+    public SyncInvoker<CreateAiGuardPolicyRequest, CreateAiGuardPolicyResponse> createAiGuardPolicyInvoker(
+        CreateAiGuardPolicyRequest request) {
+        return new SyncInvoker<>(request, WafMeta.createAiGuardPolicy, hcClient);
+    }
+
+    /**
+     * 删除策略
+     *
+     * 删除 AI 护栏策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAiGuardPolicyRequest 请求对象
+     * @return DeleteAiGuardPolicyResponse
+     */
+    public DeleteAiGuardPolicyResponse deleteAiGuardPolicy(DeleteAiGuardPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.deleteAiGuardPolicy);
+    }
+
+    /**
+     * 删除策略
+     *
+     * 删除 AI 护栏策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAiGuardPolicyRequest 请求对象
+     * @return SyncInvoker<DeleteAiGuardPolicyRequest, DeleteAiGuardPolicyResponse>
+     */
+    public SyncInvoker<DeleteAiGuardPolicyRequest, DeleteAiGuardPolicyResponse> deleteAiGuardPolicyInvoker(
+        DeleteAiGuardPolicyRequest request) {
+        return new SyncInvoker<>(request, WafMeta.deleteAiGuardPolicy, hcClient);
+    }
+
+    /**
+     * 查询策略列表
+     *
+     * 查询AI护栏策略列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiGuardPolicyRequest 请求对象
+     * @return ListAiGuardPolicyResponse
+     */
+    public ListAiGuardPolicyResponse listAiGuardPolicy(ListAiGuardPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listAiGuardPolicy);
+    }
+
+    /**
+     * 查询策略列表
+     *
+     * 查询AI护栏策略列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiGuardPolicyRequest 请求对象
+     * @return SyncInvoker<ListAiGuardPolicyRequest, ListAiGuardPolicyResponse>
+     */
+    public SyncInvoker<ListAiGuardPolicyRequest, ListAiGuardPolicyResponse> listAiGuardPolicyInvoker(
+        ListAiGuardPolicyRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listAiGuardPolicy, hcClient);
+    }
+
+    /**
+     * 获取策略详情
+     *
+     * 获取 AI 护栏策略详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAiGuardPolicyRequest 请求对象
+     * @return ShowAiGuardPolicyResponse
+     */
+    public ShowAiGuardPolicyResponse showAiGuardPolicy(ShowAiGuardPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showAiGuardPolicy);
+    }
+
+    /**
+     * 获取策略详情
+     *
+     * 获取 AI 护栏策略详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAiGuardPolicyRequest 请求对象
+     * @return SyncInvoker<ShowAiGuardPolicyRequest, ShowAiGuardPolicyResponse>
+     */
+    public SyncInvoker<ShowAiGuardPolicyRequest, ShowAiGuardPolicyResponse> showAiGuardPolicyInvoker(
+        ShowAiGuardPolicyRequest request) {
+        return new SyncInvoker<>(request, WafMeta.showAiGuardPolicy, hcClient);
+    }
+
+    /**
+     * 更新策略基本信息
+     *
+     * 更新 AI 护栏策略基本信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAiGuardPolicyRequest 请求对象
+     * @return UpdateAiGuardPolicyResponse
+     */
+    public UpdateAiGuardPolicyResponse updateAiGuardPolicy(UpdateAiGuardPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateAiGuardPolicy);
+    }
+
+    /**
+     * 更新策略基本信息
+     *
+     * 更新 AI 护栏策略基本信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAiGuardPolicyRequest 请求对象
+     * @return SyncInvoker<UpdateAiGuardPolicyRequest, UpdateAiGuardPolicyResponse>
+     */
+    public SyncInvoker<UpdateAiGuardPolicyRequest, UpdateAiGuardPolicyResponse> updateAiGuardPolicyInvoker(
+        UpdateAiGuardPolicyRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateAiGuardPolicy, hcClient);
+    }
+
+    /**
+     * 批量删除AI护栏规则
+     *
+     * 批量删除AI护栏规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAiGuardRuleRequest 请求对象
+     * @return BatchDeleteAiGuardRuleResponse
+     */
+    public BatchDeleteAiGuardRuleResponse batchDeleteAiGuardRule(BatchDeleteAiGuardRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.batchDeleteAiGuardRule);
+    }
+
+    /**
+     * 批量删除AI护栏规则
+     *
+     * 批量删除AI护栏规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAiGuardRuleRequest 请求对象
+     * @return SyncInvoker<BatchDeleteAiGuardRuleRequest, BatchDeleteAiGuardRuleResponse>
+     */
+    public SyncInvoker<BatchDeleteAiGuardRuleRequest, BatchDeleteAiGuardRuleResponse> batchDeleteAiGuardRuleInvoker(
+        BatchDeleteAiGuardRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.batchDeleteAiGuardRule, hcClient);
+    }
+
+    /**
+     * 批量更新AI护栏防护状态
+     *
+     * 批量更新AI护栏规则防护状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateAiGuardRuleStatusRequest 请求对象
+     * @return BatchUpdateAiGuardRuleStatusResponse
+     */
+    public BatchUpdateAiGuardRuleStatusResponse batchUpdateAiGuardRuleStatus(
+        BatchUpdateAiGuardRuleStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.batchUpdateAiGuardRuleStatus);
+    }
+
+    /**
+     * 批量更新AI护栏防护状态
+     *
+     * 批量更新AI护栏规则防护状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateAiGuardRuleStatusRequest 请求对象
+     * @return SyncInvoker<BatchUpdateAiGuardRuleStatusRequest, BatchUpdateAiGuardRuleStatusResponse>
+     */
+    public SyncInvoker<BatchUpdateAiGuardRuleStatusRequest, BatchUpdateAiGuardRuleStatusResponse> batchUpdateAiGuardRuleStatusInvoker(
+        BatchUpdateAiGuardRuleStatusRequest request) {
+        return new SyncInvoker<>(request, WafMeta.batchUpdateAiGuardRuleStatus, hcClient);
+    }
+
+    /**
+     * 添加AI护栏规则
+     *
+     * 添加AI护栏规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAiGuardRuleRequest 请求对象
+     * @return CreateAiGuardRuleResponse
+     */
+    public CreateAiGuardRuleResponse createAiGuardRule(CreateAiGuardRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.createAiGuardRule);
+    }
+
+    /**
+     * 添加AI护栏规则
+     *
+     * 添加AI护栏规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAiGuardRuleRequest 请求对象
+     * @return SyncInvoker<CreateAiGuardRuleRequest, CreateAiGuardRuleResponse>
+     */
+    public SyncInvoker<CreateAiGuardRuleRequest, CreateAiGuardRuleResponse> createAiGuardRuleInvoker(
+        CreateAiGuardRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.createAiGuardRule, hcClient);
+    }
+
+    /**
+     * 添加AI护栏模板规则
+     *
+     * 添加AI护栏模板规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAiguardTemplateRuleRequest 请求对象
+     * @return CreateAiguardTemplateRuleResponse
+     */
+    public CreateAiguardTemplateRuleResponse createAiguardTemplateRule(CreateAiguardTemplateRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.createAiguardTemplateRule);
+    }
+
+    /**
+     * 添加AI护栏模板规则
+     *
+     * 添加AI护栏模板规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAiguardTemplateRuleRequest 请求对象
+     * @return SyncInvoker<CreateAiguardTemplateRuleRequest, CreateAiguardTemplateRuleResponse>
+     */
+    public SyncInvoker<CreateAiguardTemplateRuleRequest, CreateAiguardTemplateRuleResponse> createAiguardTemplateRuleInvoker(
+        CreateAiguardTemplateRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.createAiguardTemplateRule, hcClient);
+    }
+
+    /**
+     * 删除AI护栏规则
+     *
+     * 删除AI护栏规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAiGuardRuleRequest 请求对象
+     * @return DeleteAiGuardRuleResponse
+     */
+    public DeleteAiGuardRuleResponse deleteAiGuardRule(DeleteAiGuardRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.deleteAiGuardRule);
+    }
+
+    /**
+     * 删除AI护栏规则
+     *
+     * 删除AI护栏规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAiGuardRuleRequest 请求对象
+     * @return SyncInvoker<DeleteAiGuardRuleRequest, DeleteAiGuardRuleResponse>
+     */
+    public SyncInvoker<DeleteAiGuardRuleRequest, DeleteAiGuardRuleResponse> deleteAiGuardRuleInvoker(
+        DeleteAiGuardRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.deleteAiGuardRule, hcClient);
+    }
+
+    /**
+     * 根据策略id查询规则
+     *
+     * 根据策略ID查询AI护栏规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiGuardRuleRequest 请求对象
+     * @return ListAiGuardRuleResponse
+     */
+    public ListAiGuardRuleResponse listAiGuardRule(ListAiGuardRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listAiGuardRule);
+    }
+
+    /**
+     * 根据策略id查询规则
+     *
+     * 根据策略ID查询AI护栏规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiGuardRuleRequest 请求对象
+     * @return SyncInvoker<ListAiGuardRuleRequest, ListAiGuardRuleResponse>
+     */
+    public SyncInvoker<ListAiGuardRuleRequest, ListAiGuardRuleResponse> listAiGuardRuleInvoker(
+        ListAiGuardRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listAiGuardRule, hcClient);
+    }
+
+    /**
+     * 查询规则详情
+     *
+     * 查询AI护栏规则详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAiGuardRuleRequest 请求对象
+     * @return ShowAiGuardRuleResponse
+     */
+    public ShowAiGuardRuleResponse showAiGuardRule(ShowAiGuardRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showAiGuardRule);
+    }
+
+    /**
+     * 查询规则详情
+     *
+     * 查询AI护栏规则详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAiGuardRuleRequest 请求对象
+     * @return SyncInvoker<ShowAiGuardRuleRequest, ShowAiGuardRuleResponse>
+     */
+    public SyncInvoker<ShowAiGuardRuleRequest, ShowAiGuardRuleResponse> showAiGuardRuleInvoker(
+        ShowAiGuardRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.showAiGuardRule, hcClient);
+    }
+
+    /**
+     * 更新AI护栏规则
+     *
+     * 更新AI护栏规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAiGuardRuleRequest 请求对象
+     * @return UpdateAiGuardRuleResponse
+     */
+    public UpdateAiGuardRuleResponse updateAiGuardRule(UpdateAiGuardRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateAiGuardRule);
+    }
+
+    /**
+     * 更新AI护栏规则
+     *
+     * 更新AI护栏规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAiGuardRuleRequest 请求对象
+     * @return SyncInvoker<UpdateAiGuardRuleRequest, UpdateAiGuardRuleResponse>
+     */
+    public SyncInvoker<UpdateAiGuardRuleRequest, UpdateAiGuardRuleResponse> updateAiGuardRuleInvoker(
+        UpdateAiGuardRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateAiGuardRule, hcClient);
+    }
+
+    /**
+     * 更新AI护栏防护状态
+     *
+     * 更新AI护栏规则防护状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAiGuardRuleStatusRequest 请求对象
+     * @return UpdateAiGuardRuleStatusResponse
+     */
+    public UpdateAiGuardRuleStatusResponse updateAiGuardRuleStatus(UpdateAiGuardRuleStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateAiGuardRuleStatus);
+    }
+
+    /**
+     * 更新AI护栏防护状态
+     *
+     * 更新AI护栏规则防护状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAiGuardRuleStatusRequest 请求对象
+     * @return SyncInvoker<UpdateAiGuardRuleStatusRequest, UpdateAiGuardRuleStatusResponse>
+     */
+    public SyncInvoker<UpdateAiGuardRuleStatusRequest, UpdateAiGuardRuleStatusResponse> updateAiGuardRuleStatusInvoker(
+        UpdateAiGuardRuleStatusRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateAiGuardRuleStatus, hcClient);
+    }
+
+    /**
+     * 批量删除自定义代答库
+     *
+     * 批量删除自定义代答库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteCustomAnswersRequest 请求对象
+     * @return BatchDeleteCustomAnswersResponse
+     */
+    public BatchDeleteCustomAnswersResponse batchDeleteCustomAnswers(BatchDeleteCustomAnswersRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.batchDeleteCustomAnswers);
+    }
+
+    /**
+     * 批量删除自定义代答库
+     *
+     * 批量删除自定义代答库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteCustomAnswersRequest 请求对象
+     * @return SyncInvoker<BatchDeleteCustomAnswersRequest, BatchDeleteCustomAnswersResponse>
+     */
+    public SyncInvoker<BatchDeleteCustomAnswersRequest, BatchDeleteCustomAnswersResponse> batchDeleteCustomAnswersInvoker(
+        BatchDeleteCustomAnswersRequest request) {
+        return new SyncInvoker<>(request, WafMeta.batchDeleteCustomAnswers, hcClient);
+    }
+
+    /**
+     * 创建自定义代答库
+     *
+     * 创建自定义代答库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCustomAnswersRequest 请求对象
+     * @return CreateCustomAnswersResponse
+     */
+    public CreateCustomAnswersResponse createCustomAnswers(CreateCustomAnswersRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.createCustomAnswers);
+    }
+
+    /**
+     * 创建自定义代答库
+     *
+     * 创建自定义代答库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCustomAnswersRequest 请求对象
+     * @return SyncInvoker<CreateCustomAnswersRequest, CreateCustomAnswersResponse>
+     */
+    public SyncInvoker<CreateCustomAnswersRequest, CreateCustomAnswersResponse> createCustomAnswersInvoker(
+        CreateCustomAnswersRequest request) {
+        return new SyncInvoker<>(request, WafMeta.createCustomAnswers, hcClient);
+    }
+
+    /**
+     * 删除自定义代答库
+     *
+     * 删除自定义代答库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCustomAnswersRequest 请求对象
+     * @return DeleteCustomAnswersResponse
+     */
+    public DeleteCustomAnswersResponse deleteCustomAnswers(DeleteCustomAnswersRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.deleteCustomAnswers);
+    }
+
+    /**
+     * 删除自定义代答库
+     *
+     * 删除自定义代答库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCustomAnswersRequest 请求对象
+     * @return SyncInvoker<DeleteCustomAnswersRequest, DeleteCustomAnswersResponse>
+     */
+    public SyncInvoker<DeleteCustomAnswersRequest, DeleteCustomAnswersResponse> deleteCustomAnswersInvoker(
+        DeleteCustomAnswersRequest request) {
+        return new SyncInvoker<>(request, WafMeta.deleteCustomAnswers, hcClient);
+    }
+
+    /**
+     * 查询自定义代答库列表
+     *
+     * 查询自定义代答库列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomAnswersRequest 请求对象
+     * @return ListCustomAnswersResponse
+     */
+    public ListCustomAnswersResponse listCustomAnswers(ListCustomAnswersRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listCustomAnswers);
+    }
+
+    /**
+     * 查询自定义代答库列表
+     *
+     * 查询自定义代答库列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomAnswersRequest 请求对象
+     * @return SyncInvoker<ListCustomAnswersRequest, ListCustomAnswersResponse>
+     */
+    public SyncInvoker<ListCustomAnswersRequest, ListCustomAnswersResponse> listCustomAnswersInvoker(
+        ListCustomAnswersRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listCustomAnswers, hcClient);
+    }
+
+    /**
+     * 查询自定义代答库详情
+     *
+     * 查询自定义代答库详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCustomAnswersRequest 请求对象
+     * @return ShowCustomAnswersResponse
+     */
+    public ShowCustomAnswersResponse showCustomAnswers(ShowCustomAnswersRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showCustomAnswers);
+    }
+
+    /**
+     * 查询自定义代答库详情
+     *
+     * 查询自定义代答库详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCustomAnswersRequest 请求对象
+     * @return SyncInvoker<ShowCustomAnswersRequest, ShowCustomAnswersResponse>
+     */
+    public SyncInvoker<ShowCustomAnswersRequest, ShowCustomAnswersResponse> showCustomAnswersInvoker(
+        ShowCustomAnswersRequest request) {
+        return new SyncInvoker<>(request, WafMeta.showCustomAnswers, hcClient);
+    }
+
+    /**
+     * 更新自定义代答库
+     *
+     * 更新自定义代答库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCustomAnswersRequest 请求对象
+     * @return UpdateCustomAnswersResponse
+     */
+    public UpdateCustomAnswersResponse updateCustomAnswers(UpdateCustomAnswersRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateCustomAnswers);
+    }
+
+    /**
+     * 更新自定义代答库
+     *
+     * 更新自定义代答库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCustomAnswersRequest 请求对象
+     * @return SyncInvoker<UpdateCustomAnswersRequest, UpdateCustomAnswersResponse>
+     */
+    public SyncInvoker<UpdateCustomAnswersRequest, UpdateCustomAnswersResponse> updateCustomAnswersInvoker(
+        UpdateCustomAnswersRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateCustomAnswers, hcClient);
+    }
+
+    /**
+     * 批量删除自定义大模型
+     *
+     * 批量删除自定义大模型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteCustomLlmRequest 请求对象
+     * @return BatchDeleteCustomLlmResponse
+     */
+    public BatchDeleteCustomLlmResponse batchDeleteCustomLlm(BatchDeleteCustomLlmRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.batchDeleteCustomLlm);
+    }
+
+    /**
+     * 批量删除自定义大模型
+     *
+     * 批量删除自定义大模型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteCustomLlmRequest 请求对象
+     * @return SyncInvoker<BatchDeleteCustomLlmRequest, BatchDeleteCustomLlmResponse>
+     */
+    public SyncInvoker<BatchDeleteCustomLlmRequest, BatchDeleteCustomLlmResponse> batchDeleteCustomLlmInvoker(
+        BatchDeleteCustomLlmRequest request) {
+        return new SyncInvoker<>(request, WafMeta.batchDeleteCustomLlm, hcClient);
+    }
+
+    /**
+     * 创建自定义大模型
+     *
+     * 创建自定义大模型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCustomLlmRequest 请求对象
+     * @return CreateCustomLlmResponse
+     */
+    public CreateCustomLlmResponse createCustomLlm(CreateCustomLlmRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.createCustomLlm);
+    }
+
+    /**
+     * 创建自定义大模型
+     *
+     * 创建自定义大模型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCustomLlmRequest 请求对象
+     * @return SyncInvoker<CreateCustomLlmRequest, CreateCustomLlmResponse>
+     */
+    public SyncInvoker<CreateCustomLlmRequest, CreateCustomLlmResponse> createCustomLlmInvoker(
+        CreateCustomLlmRequest request) {
+        return new SyncInvoker<>(request, WafMeta.createCustomLlm, hcClient);
+    }
+
+    /**
+     * 删除自定义大模型
+     *
+     * 删除自定义大模型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCustomLlmRequest 请求对象
+     * @return DeleteCustomLlmResponse
+     */
+    public DeleteCustomLlmResponse deleteCustomLlm(DeleteCustomLlmRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.deleteCustomLlm);
+    }
+
+    /**
+     * 删除自定义大模型
+     *
+     * 删除自定义大模型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCustomLlmRequest 请求对象
+     * @return SyncInvoker<DeleteCustomLlmRequest, DeleteCustomLlmResponse>
+     */
+    public SyncInvoker<DeleteCustomLlmRequest, DeleteCustomLlmResponse> deleteCustomLlmInvoker(
+        DeleteCustomLlmRequest request) {
+        return new SyncInvoker<>(request, WafMeta.deleteCustomLlm, hcClient);
+    }
+
+    /**
+     * 查询自定义大模型列表
+     *
+     * 查询自定义大模型列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomLlmRequest 请求对象
+     * @return ListCustomLlmResponse
+     */
+    public ListCustomLlmResponse listCustomLlm(ListCustomLlmRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listCustomLlm);
+    }
+
+    /**
+     * 查询自定义大模型列表
+     *
+     * 查询自定义大模型列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomLlmRequest 请求对象
+     * @return SyncInvoker<ListCustomLlmRequest, ListCustomLlmResponse>
+     */
+    public SyncInvoker<ListCustomLlmRequest, ListCustomLlmResponse> listCustomLlmInvoker(ListCustomLlmRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listCustomLlm, hcClient);
+    }
+
+    /**
+     * 查询自定义大模型详情
+     *
+     * 查询自定义大模型详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCustomLlmRequest 请求对象
+     * @return ShowCustomLlmResponse
+     */
+    public ShowCustomLlmResponse showCustomLlm(ShowCustomLlmRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showCustomLlm);
+    }
+
+    /**
+     * 查询自定义大模型详情
+     *
+     * 查询自定义大模型详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCustomLlmRequest 请求对象
+     * @return SyncInvoker<ShowCustomLlmRequest, ShowCustomLlmResponse>
+     */
+    public SyncInvoker<ShowCustomLlmRequest, ShowCustomLlmResponse> showCustomLlmInvoker(ShowCustomLlmRequest request) {
+        return new SyncInvoker<>(request, WafMeta.showCustomLlm, hcClient);
+    }
+
+    /**
+     * 获取预签名URL
+     *
+     * 获取预签名URL用于自定义大模型测试
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPresignedUrlRequest 请求对象
+     * @return ShowPresignedUrlResponse
+     */
+    public ShowPresignedUrlResponse showPresignedUrl(ShowPresignedUrlRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showPresignedUrl);
+    }
+
+    /**
+     * 获取预签名URL
+     *
+     * 获取预签名URL用于自定义大模型测试
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPresignedUrlRequest 请求对象
+     * @return SyncInvoker<ShowPresignedUrlRequest, ShowPresignedUrlResponse>
+     */
+    public SyncInvoker<ShowPresignedUrlRequest, ShowPresignedUrlResponse> showPresignedUrlInvoker(
+        ShowPresignedUrlRequest request) {
+        return new SyncInvoker<>(request, WafMeta.showPresignedUrl, hcClient);
+    }
+
+    /**
+     * 更新自定义大模型
+     *
+     * 更新自定义大模型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCustomLlmRequest 请求对象
+     * @return UpdateCustomLlmResponse
+     */
+    public UpdateCustomLlmResponse updateCustomLlm(UpdateCustomLlmRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateCustomLlm);
+    }
+
+    /**
+     * 更新自定义大模型
+     *
+     * 更新自定义大模型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCustomLlmRequest 请求对象
+     * @return SyncInvoker<UpdateCustomLlmRequest, UpdateCustomLlmResponse>
+     */
+    public SyncInvoker<UpdateCustomLlmRequest, UpdateCustomLlmResponse> updateCustomLlmInvoker(
+        UpdateCustomLlmRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateCustomLlm, hcClient);
+    }
+
+    /**
+     * 选中多个策略为批量添加cc规则
+     *
+     * 选中多个策略为这些策略批量添加cc规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateCcRuleRequest 请求对象
+     * @return BatchCreateCcRuleResponse
+     */
+    public BatchCreateCcRuleResponse batchCreateCcRule(BatchCreateCcRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.batchCreateCcRule);
+    }
+
+    /**
+     * 选中多个策略为批量添加cc规则
+     *
+     * 选中多个策略为这些策略批量添加cc规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateCcRuleRequest 请求对象
+     * @return SyncInvoker<BatchCreateCcRuleRequest, BatchCreateCcRuleResponse>
+     */
+    public SyncInvoker<BatchCreateCcRuleRequest, BatchCreateCcRuleResponse> batchCreateCcRuleInvoker(
+        BatchCreateCcRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.batchCreateCcRule, hcClient);
+    }
+
+    /**
+     * 批量修改CC防护规则
+     *
+     * 批量修改CC防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateCcRulesRequest 请求对象
+     * @return BatchUpdateCcRulesResponse
+     */
+    public BatchUpdateCcRulesResponse batchUpdateCcRules(BatchUpdateCcRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.batchUpdateCcRules);
+    }
+
+    /**
+     * 批量修改CC防护规则
+     *
+     * 批量修改CC防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateCcRulesRequest 请求对象
+     * @return SyncInvoker<BatchUpdateCcRulesRequest, BatchUpdateCcRulesResponse>
+     */
+    public SyncInvoker<BatchUpdateCcRulesRequest, BatchUpdateCcRulesResponse> batchUpdateCcRulesInvoker(
+        BatchUpdateCcRulesRequest request) {
+        return new SyncInvoker<>(request, WafMeta.batchUpdateCcRules, hcClient);
+    }
+
+    /**
+     * 创建cc规则
+     *
+     * 创建cc规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCcRuleRequest 请求对象
+     * @return CreateCcRuleResponse
+     */
+    public CreateCcRuleResponse createCcRule(CreateCcRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.createCcRule);
+    }
+
+    /**
+     * 创建cc规则
+     *
+     * 创建cc规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCcRuleRequest 请求对象
+     * @return SyncInvoker<CreateCcRuleRequest, CreateCcRuleResponse>
+     */
+    public SyncInvoker<CreateCcRuleRequest, CreateCcRuleResponse> createCcRuleInvoker(CreateCcRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.createCcRule, hcClient);
+    }
+
+    /**
+     * 删除cc防护规则
+     *
+     * 删除cc防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCcRuleRequest 请求对象
+     * @return DeleteCcRuleResponse
+     */
+    public DeleteCcRuleResponse deleteCcRule(DeleteCcRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.deleteCcRule);
+    }
+
+    /**
+     * 删除cc防护规则
+     *
+     * 删除cc防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCcRuleRequest 请求对象
+     * @return SyncInvoker<DeleteCcRuleRequest, DeleteCcRuleResponse>
+     */
+    public SyncInvoker<DeleteCcRuleRequest, DeleteCcRuleResponse> deleteCcRuleInvoker(DeleteCcRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.deleteCcRule, hcClient);
+    }
+
+    /**
+     * 查询所有策略CC规则
+     *
+     * 查询所有策略CC规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCcPolicyRulesRequest 请求对象
+     * @return ListCcPolicyRulesResponse
+     */
+    public ListCcPolicyRulesResponse listCcPolicyRules(ListCcPolicyRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listCcPolicyRules);
+    }
+
+    /**
+     * 查询所有策略CC规则
+     *
+     * 查询所有策略CC规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCcPolicyRulesRequest 请求对象
+     * @return SyncInvoker<ListCcPolicyRulesRequest, ListCcPolicyRulesResponse>
+     */
+    public SyncInvoker<ListCcPolicyRulesRequest, ListCcPolicyRulesResponse> listCcPolicyRulesInvoker(
+        ListCcPolicyRulesRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listCcPolicyRules, hcClient);
+    }
+
+    /**
+     * 查询cc规则列表
+     *
+     * 查询cc规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCcRulesRequest 请求对象
+     * @return ListCcRulesResponse
+     */
+    public ListCcRulesResponse listCcRules(ListCcRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listCcRules);
+    }
+
+    /**
+     * 查询cc规则列表
+     *
+     * 查询cc规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCcRulesRequest 请求对象
+     * @return SyncInvoker<ListCcRulesRequest, ListCcRulesResponse>
+     */
+    public SyncInvoker<ListCcRulesRequest, ListCcRulesResponse> listCcRulesInvoker(ListCcRulesRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listCcRules, hcClient);
+    }
+
+    /**
+     * 根据Id查询cc防护规则
+     *
+     * 根据Id查询cc防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCcRuleRequest 请求对象
+     * @return ShowCcRuleResponse
+     */
+    public ShowCcRuleResponse showCcRule(ShowCcRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showCcRule);
+    }
+
+    /**
+     * 根据Id查询cc防护规则
+     *
+     * 根据Id查询cc防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCcRuleRequest 请求对象
+     * @return SyncInvoker<ShowCcRuleRequest, ShowCcRuleResponse>
+     */
+    public SyncInvoker<ShowCcRuleRequest, ShowCcRuleResponse> showCcRuleInvoker(ShowCcRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.showCcRule, hcClient);
+    }
+
+    /**
+     * 更新cc防护规则
+     *
+     * 更新cc防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCcRuleRequest 请求对象
+     * @return UpdateCcRuleResponse
+     */
+    public UpdateCcRuleResponse updateCcRule(UpdateCcRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateCcRule);
+    }
+
+    /**
+     * 更新cc防护规则
+     *
+     * 更新cc防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCcRuleRequest 请求对象
+     * @return SyncInvoker<UpdateCcRuleRequest, UpdateCcRuleResponse>
+     */
+    public SyncInvoker<UpdateCcRuleRequest, UpdateCcRuleResponse> updateCcRuleInvoker(UpdateCcRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateCcRule, hcClient);
+    }
+
+    /**
      * 查询用户托管在云解析上的域名
      *
      * 查询用户托管在云解析上的域名
@@ -6294,6 +7847,296 @@ public class WafClient {
     public SyncInvoker<CreateQuickAccessDomainRequest, CreateQuickAccessDomainResponse> createQuickAccessDomainInvoker(
         CreateQuickAccessDomainRequest request) {
         return new SyncInvoker<>(request, WafMeta.createQuickAccessDomain, hcClient);
+    }
+
+    /**
+     * 创建JS脚本反爬虫规则
+     *
+     * 创建JS脚本反爬虫规则，在调用此接口创建防护规则前，需要调用更新JS脚本反爬虫规则防护模式（UpdateAnticrawlerRuleType）接口指定防护模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAnticrawlerRuleRequest 请求对象
+     * @return CreateAnticrawlerRuleResponse
+     */
+    public CreateAnticrawlerRuleResponse createAnticrawlerRule(CreateAnticrawlerRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.createAnticrawlerRule);
+    }
+
+    /**
+     * 创建JS脚本反爬虫规则
+     *
+     * 创建JS脚本反爬虫规则，在调用此接口创建防护规则前，需要调用更新JS脚本反爬虫规则防护模式（UpdateAnticrawlerRuleType）接口指定防护模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAnticrawlerRuleRequest 请求对象
+     * @return SyncInvoker<CreateAnticrawlerRuleRequest, CreateAnticrawlerRuleResponse>
+     */
+    public SyncInvoker<CreateAnticrawlerRuleRequest, CreateAnticrawlerRuleResponse> createAnticrawlerRuleInvoker(
+        CreateAnticrawlerRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.createAnticrawlerRule, hcClient);
+    }
+
+    /**
+     * 删除JS脚本反爬虫防护规则
+     *
+     * 删除JS脚本反爬虫防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAnticrawlerRuleRequest 请求对象
+     * @return DeleteAnticrawlerRuleResponse
+     */
+    public DeleteAnticrawlerRuleResponse deleteAnticrawlerRule(DeleteAnticrawlerRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.deleteAnticrawlerRule);
+    }
+
+    /**
+     * 删除JS脚本反爬虫防护规则
+     *
+     * 删除JS脚本反爬虫防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAnticrawlerRuleRequest 请求对象
+     * @return SyncInvoker<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse>
+     */
+    public SyncInvoker<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse> deleteAnticrawlerRuleInvoker(
+        DeleteAnticrawlerRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.deleteAnticrawlerRule, hcClient);
+    }
+
+    /**
+     * 查询JS脚本反爬虫规则列表
+     *
+     * 查询JS脚本反爬虫规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAnticrawlerRulesRequest 请求对象
+     * @return ListAnticrawlerRulesResponse
+     */
+    public ListAnticrawlerRulesResponse listAnticrawlerRules(ListAnticrawlerRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listAnticrawlerRules);
+    }
+
+    /**
+     * 查询JS脚本反爬虫规则列表
+     *
+     * 查询JS脚本反爬虫规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAnticrawlerRulesRequest 请求对象
+     * @return SyncInvoker<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse>
+     */
+    public SyncInvoker<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse> listAnticrawlerRulesInvoker(
+        ListAnticrawlerRulesRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listAnticrawlerRules, hcClient);
+    }
+
+    /**
+     * 查询JS脚本反爬虫防护规则
+     *
+     * 根据Id查询JS脚本反爬虫防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAnticrawlerRuleRequest 请求对象
+     * @return ShowAnticrawlerRuleResponse
+     */
+    public ShowAnticrawlerRuleResponse showAnticrawlerRule(ShowAnticrawlerRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showAnticrawlerRule);
+    }
+
+    /**
+     * 查询JS脚本反爬虫防护规则
+     *
+     * 根据Id查询JS脚本反爬虫防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAnticrawlerRuleRequest 请求对象
+     * @return SyncInvoker<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse>
+     */
+    public SyncInvoker<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse> showAnticrawlerRuleInvoker(
+        ShowAnticrawlerRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.showAnticrawlerRule, hcClient);
+    }
+
+    /**
+     * 更新JS脚本反爬虫防护规则
+     *
+     * 更新JS脚本反爬虫防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAnticrawlerRuleRequest 请求对象
+     * @return UpdateAnticrawlerRuleResponse
+     */
+    public UpdateAnticrawlerRuleResponse updateAnticrawlerRule(UpdateAnticrawlerRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateAnticrawlerRule);
+    }
+
+    /**
+     * 更新JS脚本反爬虫防护规则
+     *
+     * 更新JS脚本反爬虫防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAnticrawlerRuleRequest 请求对象
+     * @return SyncInvoker<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse>
+     */
+    public SyncInvoker<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse> updateAnticrawlerRuleInvoker(
+        UpdateAnticrawlerRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateAnticrawlerRule, hcClient);
+    }
+
+    /**
+     * 更新JS脚本反爬虫规则防护模式
+     *
+     * 更新JS脚本反爬虫规则防护模式，在创建JS脚本反爬虫规则前，需要调用该接口指定JS脚本反爬虫规则防护模式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAnticrawlerRuleTypeRequest 请求对象
+     * @return UpdateAnticrawlerRuleTypeResponse
+     */
+    public UpdateAnticrawlerRuleTypeResponse updateAnticrawlerRuleType(UpdateAnticrawlerRuleTypeRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateAnticrawlerRuleType);
+    }
+
+    /**
+     * 更新JS脚本反爬虫规则防护模式
+     *
+     * 更新JS脚本反爬虫规则防护模式，在创建JS脚本反爬虫规则前，需要调用该接口指定JS脚本反爬虫规则防护模式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAnticrawlerRuleTypeRequest 请求对象
+     * @return SyncInvoker<UpdateAnticrawlerRuleTypeRequest, UpdateAnticrawlerRuleTypeResponse>
+     */
+    public SyncInvoker<UpdateAnticrawlerRuleTypeRequest, UpdateAnticrawlerRuleTypeResponse> updateAnticrawlerRuleTypeInvoker(
+        UpdateAnticrawlerRuleTypeRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateAnticrawlerRuleType, hcClient);
+    }
+
+    /**
+     * 查询 LTS 配置
+     *
+     * 获取指定租户当前的 LTS 日志转发配置详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAiGuardLtsConfigRequest 请求对象
+     * @return ShowAiGuardLtsConfigResponse
+     */
+    public ShowAiGuardLtsConfigResponse showAiGuardLtsConfig(ShowAiGuardLtsConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showAiGuardLtsConfig);
+    }
+
+    /**
+     * 查询 LTS 配置
+     *
+     * 获取指定租户当前的 LTS 日志转发配置详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAiGuardLtsConfigRequest 请求对象
+     * @return SyncInvoker<ShowAiGuardLtsConfigRequest, ShowAiGuardLtsConfigResponse>
+     */
+    public SyncInvoker<ShowAiGuardLtsConfigRequest, ShowAiGuardLtsConfigResponse> showAiGuardLtsConfigInvoker(
+        ShowAiGuardLtsConfigRequest request) {
+        return new SyncInvoker<>(request, WafMeta.showAiGuardLtsConfig, hcClient);
+    }
+
+    /**
+     * 更新 LTS 配置
+     *
+     * 配置或更新租户的 LTS 日志转发设置，包括日志组、日志流 ID 及开关状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAiGuardLtsConfigRequest 请求对象
+     * @return UpdateAiGuardLtsConfigResponse
+     */
+    public UpdateAiGuardLtsConfigResponse updateAiGuardLtsConfig(UpdateAiGuardLtsConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateAiGuardLtsConfig);
+    }
+
+    /**
+     * 更新 LTS 配置
+     *
+     * 配置或更新租户的 LTS 日志转发设置，包括日志组、日志流 ID 及开关状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAiGuardLtsConfigRequest 请求对象
+     * @return SyncInvoker<UpdateAiGuardLtsConfigRequest, UpdateAiGuardLtsConfigResponse>
+     */
+    public SyncInvoker<UpdateAiGuardLtsConfigRequest, UpdateAiGuardLtsConfigResponse> updateAiGuardLtsConfigInvoker(
+        UpdateAiGuardLtsConfigRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateAiGuardLtsConfig, hcClient);
+    }
+
+    /**
+     * 查询PII分类
+     *
+     * 查询PII分类
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPiiCategoriesRequest 请求对象
+     * @return ListPiiCategoriesResponse
+     */
+    public ListPiiCategoriesResponse listPiiCategories(ListPiiCategoriesRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listPiiCategories);
+    }
+
+    /**
+     * 查询PII分类
+     *
+     * 查询PII分类
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPiiCategoriesRequest 请求对象
+     * @return SyncInvoker<ListPiiCategoriesRequest, ListPiiCategoriesResponse>
+     */
+    public SyncInvoker<ListPiiCategoriesRequest, ListPiiCategoriesResponse> listPiiCategoriesInvoker(
+        ListPiiCategoriesRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listPiiCategories, hcClient);
+    }
+
+    /**
+     * 查询系统词典列表
+     *
+     * 查询系统词典列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSystemLexiconsRequest 请求对象
+     * @return ListSystemLexiconsResponse
+     */
+    public ListSystemLexiconsResponse listSystemLexicons(ListSystemLexiconsRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listSystemLexicons);
+    }
+
+    /**
+     * 查询系统词典列表
+     *
+     * 查询系统词典列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSystemLexiconsRequest 请求对象
+     * @return SyncInvoker<ListSystemLexiconsRequest, ListSystemLexiconsResponse>
+     */
+    public SyncInvoker<ListSystemLexiconsRequest, ListSystemLexiconsResponse> listSystemLexiconsInvoker(
+        ListSystemLexiconsRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listSystemLexicons, hcClient);
     }
 
     /**

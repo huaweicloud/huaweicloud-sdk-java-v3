@@ -11,6 +11,11 @@ import java.util.Objects;
 public class SecurityReportContentResponseReportContentInfoTopDomains {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key")
+
+    private String key;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num")
 
     private Integer num;
@@ -19,6 +24,38 @@ public class SecurityReportContentResponseReportContentInfoTopDomains {
     @JsonProperty(value = "host")
 
     private String host;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "web_tag")
+
+    private String webTag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "block_num")
+
+    private Long blockNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "only_log_num")
+
+    private Long onlyLogNum;
+
+    public SecurityReportContentResponseReportContentInfoTopDomains withKey(String key) {
+        this.key = key;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 域名标识。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return key
+     */
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public SecurityReportContentResponseReportContentInfoTopDomains withNum(Integer num) {
         this.num = num;
@@ -54,6 +91,57 @@ public class SecurityReportContentResponseReportContentInfoTopDomains {
         this.host = host;
     }
 
+    public SecurityReportContentResponseReportContentInfoTopDomains withWebTag(String webTag) {
+        this.webTag = webTag;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 域名的Web标签。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return webTag
+     */
+    public String getWebTag() {
+        return webTag;
+    }
+
+    public void setWebTag(String webTag) {
+        this.webTag = webTag;
+    }
+
+    public SecurityReportContentResponseReportContentInfoTopDomains withBlockNum(Long blockNum) {
+        this.blockNum = blockNum;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 该域名拦截数量。 **约束限制：** 不涉及 **取值范围：** ≥0 **默认取值：** 不涉及
+     * @return blockNum
+     */
+    public Long getBlockNum() {
+        return blockNum;
+    }
+
+    public void setBlockNum(Long blockNum) {
+        this.blockNum = blockNum;
+    }
+
+    public SecurityReportContentResponseReportContentInfoTopDomains withOnlyLogNum(Long onlyLogNum) {
+        this.onlyLogNum = onlyLogNum;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 该域名仅记录数量。 **约束限制：** 不涉及 **取值范围：** ≥0 **默认取值：** 不涉及
+     * @return onlyLogNum
+     */
+    public Long getOnlyLogNum() {
+        return onlyLogNum;
+    }
+
+    public void setOnlyLogNum(Long onlyLogNum) {
+        this.onlyLogNum = onlyLogNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,20 +152,26 @@ public class SecurityReportContentResponseReportContentInfoTopDomains {
         }
         SecurityReportContentResponseReportContentInfoTopDomains that =
             (SecurityReportContentResponseReportContentInfoTopDomains) obj;
-        return Objects.equals(this.num, that.num) && Objects.equals(this.host, that.host);
+        return Objects.equals(this.key, that.key) && Objects.equals(this.num, that.num)
+            && Objects.equals(this.host, that.host) && Objects.equals(this.webTag, that.webTag)
+            && Objects.equals(this.blockNum, that.blockNum) && Objects.equals(this.onlyLogNum, that.onlyLogNum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(num, host);
+        return Objects.hash(key, num, host, webTag, blockNum, onlyLogNum);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SecurityReportContentResponseReportContentInfoTopDomains {\n");
+        sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    num: ").append(toIndentedString(num)).append("\n");
         sb.append("    host: ").append(toIndentedString(host)).append("\n");
+        sb.append("    webTag: ").append(toIndentedString(webTag)).append("\n");
+        sb.append("    blockNum: ").append(toIndentedString(blockNum)).append("\n");
+        sb.append("    onlyLogNum: ").append(toIndentedString(onlyLogNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

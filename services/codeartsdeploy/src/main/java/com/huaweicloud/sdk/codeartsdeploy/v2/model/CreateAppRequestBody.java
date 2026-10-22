@@ -127,6 +127,21 @@ public class CreateAppRequestBody {
 
     private List<TaskV2RequestBody> arrangeInfos = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_urn")
+
+    private String agencyUrn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "slave_resource_type")
+
+    private String slaveResourceType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timeout")
+
+    private Integer timeout;
+
     public CreateAppRequestBody withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -305,6 +320,59 @@ public class CreateAppRequestBody {
         this.arrangeInfos = arrangeInfos;
     }
 
+    public CreateAppRequestBody withAgencyUrn(String agencyUrn) {
+        this.agencyUrn = agencyUrn;
+        return this;
+    }
+
+    /**
+     * 委托URN
+     * @return agencyUrn
+     */
+    public String getAgencyUrn() {
+        return agencyUrn;
+    }
+
+    public void setAgencyUrn(String agencyUrn) {
+        this.agencyUrn = agencyUrn;
+    }
+
+    public CreateAppRequestBody withSlaveResourceType(String slaveResourceType) {
+        this.slaveResourceType = slaveResourceType;
+        return this;
+    }
+
+    /**
+     * 资源池类型
+     * @return slaveResourceType
+     */
+    public String getSlaveResourceType() {
+        return slaveResourceType;
+    }
+
+    public void setSlaveResourceType(String slaveResourceType) {
+        this.slaveResourceType = slaveResourceType;
+    }
+
+    public CreateAppRequestBody withTimeout(Integer timeout) {
+        this.timeout = timeout;
+        return this;
+    }
+
+    /**
+     * 任务执行超时时间
+     * minimum: 10
+     * maximum: 360
+     * @return timeout
+     */
+    public Integer getTimeout() {
+        return timeout;
+    }
+
+    public void setTimeout(Integer timeout) {
+        this.timeout = timeout;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -318,13 +386,25 @@ public class CreateAppRequestBody {
             && Objects.equals(this.description, that.description) && Objects.equals(this.groupId, that.groupId)
             && Objects.equals(this.isDraft, that.isDraft) && Objects.equals(this.createType, that.createType)
             && Objects.equals(this.slaveClusterId, that.slaveClusterId) && Objects.equals(this.trigger, that.trigger)
-            && Objects.equals(this.arrangeInfos, that.arrangeInfos);
+            && Objects.equals(this.arrangeInfos, that.arrangeInfos) && Objects.equals(this.agencyUrn, that.agencyUrn)
+            && Objects.equals(this.slaveResourceType, that.slaveResourceType)
+            && Objects.equals(this.timeout, that.timeout);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(projectId, name, description, groupId, isDraft, createType, slaveClusterId, trigger, arrangeInfos);
+        return Objects.hash(projectId,
+            name,
+            description,
+            groupId,
+            isDraft,
+            createType,
+            slaveClusterId,
+            trigger,
+            arrangeInfos,
+            agencyUrn,
+            slaveResourceType,
+            timeout);
     }
 
     @Override
@@ -340,6 +420,9 @@ public class CreateAppRequestBody {
         sb.append("    slaveClusterId: ").append(toIndentedString(slaveClusterId)).append("\n");
         sb.append("    trigger: ").append(toIndentedString(trigger)).append("\n");
         sb.append("    arrangeInfos: ").append(toIndentedString(arrangeInfos)).append("\n");
+        sb.append("    agencyUrn: ").append(toIndentedString(agencyUrn)).append("\n");
+        sb.append("    slaveResourceType: ").append(toIndentedString(slaveResourceType)).append("\n");
+        sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -25,6 +25,11 @@ public class SecurityReportContentResponseReportContentInfoTopAttackedDomainsInf
 
     private String webTag;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host")
+
+    private String host;
+
     public SecurityReportContentResponseReportContentInfoTopAttackedDomainsInfoList withKey(String key) {
         this.key = key;
         return this;
@@ -76,6 +81,23 @@ public class SecurityReportContentResponseReportContentInfoTopAttackedDomainsInf
         this.webTag = webTag;
     }
 
+    public SecurityReportContentResponseReportContentInfoTopAttackedDomainsInfoList withHost(String host) {
+        this.host = host;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 域名标识，包含域名及关联标识。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return host
+     */
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -87,12 +109,12 @@ public class SecurityReportContentResponseReportContentInfoTopAttackedDomainsInf
         SecurityReportContentResponseReportContentInfoTopAttackedDomainsInfoList that =
             (SecurityReportContentResponseReportContentInfoTopAttackedDomainsInfoList) obj;
         return Objects.equals(this.key, that.key) && Objects.equals(this.num, that.num)
-            && Objects.equals(this.webTag, that.webTag);
+            && Objects.equals(this.webTag, that.webTag) && Objects.equals(this.host, that.host);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(key, num, webTag);
+        return Objects.hash(key, num, webTag, host);
     }
 
     @Override
@@ -102,6 +124,7 @@ public class SecurityReportContentResponseReportContentInfoTopAttackedDomainsInf
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    num: ").append(toIndentedString(num)).append("\n");
         sb.append("    webTag: ").append(toIndentedString(webTag)).append("\n");
+        sb.append("    host: ").append(toIndentedString(host)).append("\n");
         sb.append("}");
         return sb.toString();
     }

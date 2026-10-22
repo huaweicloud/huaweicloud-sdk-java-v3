@@ -31,6 +31,11 @@ public class RuntimeConfigUpdateRequest {
 
     private ServerTaskLimit serverTaskLimit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "smart_routing_enable")
+
+    private Boolean smartRoutingEnable;
+
     public RuntimeConfigUpdateRequest withServiceInvoke(ServiceInvokeUpdateRequest serviceInvoke) {
         this.serviceInvoke = serviceInvoke;
         return this;
@@ -135,6 +140,23 @@ public class RuntimeConfigUpdateRequest {
         this.serverTaskLimit = serverTaskLimit;
     }
 
+    public RuntimeConfigUpdateRequest withSmartRoutingEnable(Boolean smartRoutingEnable) {
+        this.smartRoutingEnable = smartRoutingEnable;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 智能分流开启字段。 **取值范围：** [true, false]。
+     * @return smartRoutingEnable
+     */
+    public Boolean getSmartRoutingEnable() {
+        return smartRoutingEnable;
+    }
+
+    public void setSmartRoutingEnable(Boolean smartRoutingEnable) {
+        this.smartRoutingEnable = smartRoutingEnable;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -147,12 +169,13 @@ public class RuntimeConfigUpdateRequest {
         return Objects.equals(this.serviceInvoke, that.serviceInvoke)
             && Objects.equals(this.serviceLimit, that.serviceLimit)
             && Objects.equals(this.serviceSecret, that.serviceSecret)
-            && Objects.equals(this.serverTaskLimit, that.serverTaskLimit);
+            && Objects.equals(this.serverTaskLimit, that.serverTaskLimit)
+            && Objects.equals(this.smartRoutingEnable, that.smartRoutingEnable);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serviceInvoke, serviceLimit, serviceSecret, serverTaskLimit);
+        return Objects.hash(serviceInvoke, serviceLimit, serviceSecret, serverTaskLimit, smartRoutingEnable);
     }
 
     @Override
@@ -163,6 +186,7 @@ public class RuntimeConfigUpdateRequest {
         sb.append("    serviceLimit: ").append(toIndentedString(serviceLimit)).append("\n");
         sb.append("    serviceSecret: ").append(toIndentedString(serviceSecret)).append("\n");
         sb.append("    serverTaskLimit: ").append(toIndentedString(serverTaskLimit)).append("\n");
+        sb.append("    smartRoutingEnable: ").append(toIndentedString(smartRoutingEnable)).append("\n");
         sb.append("}");
         return sb.toString();
     }
