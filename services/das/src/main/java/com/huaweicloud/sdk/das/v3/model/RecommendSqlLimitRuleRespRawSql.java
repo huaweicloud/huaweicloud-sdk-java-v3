@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.das.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -14,7 +13,7 @@ public class RecommendSqlLimitRuleRespRawSql {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "session_id")
 
-    private BigDecimal sessionId;
+    private Long sessionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host")
@@ -46,7 +45,7 @@ public class RecommendSqlLimitRuleRespRawSql {
 
     private Long time;
 
-    public RecommendSqlLimitRuleRespRawSql withSessionId(BigDecimal sessionId) {
+    public RecommendSqlLimitRuleRespRawSql withSessionId(Long sessionId) {
         this.sessionId = sessionId;
         return this;
     }
@@ -55,11 +54,11 @@ public class RecommendSqlLimitRuleRespRawSql {
      * 会话id
      * @return sessionId
      */
-    public BigDecimal getSessionId() {
+    public Long getSessionId() {
         return sessionId;
     }
 
-    public void setSessionId(BigDecimal sessionId) {
+    public void setSessionId(Long sessionId) {
         this.sessionId = sessionId;
     }
 

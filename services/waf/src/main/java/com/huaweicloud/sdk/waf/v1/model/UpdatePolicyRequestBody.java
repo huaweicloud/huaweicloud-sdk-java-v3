@@ -65,6 +65,11 @@ public class UpdatePolicyRequestBody {
 
     private Map<String, String> extend = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scan_protection_options")
+
+    private ScanProtectionOption scanProtectionOptions;
+
     public UpdatePolicyRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -326,6 +331,33 @@ public class UpdatePolicyRequestBody {
         this.extend = extend;
     }
 
+    public UpdatePolicyRequestBody withScanProtectionOptions(ScanProtectionOption scanProtectionOptions) {
+        this.scanProtectionOptions = scanProtectionOptions;
+        return this;
+    }
+
+    public UpdatePolicyRequestBody withScanProtectionOptions(
+        Consumer<ScanProtectionOption> scanProtectionOptionsSetter) {
+        if (this.scanProtectionOptions == null) {
+            this.scanProtectionOptions = new ScanProtectionOption();
+            scanProtectionOptionsSetter.accept(this.scanProtectionOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get scanProtectionOptions
+     * @return scanProtectionOptions
+     */
+    public ScanProtectionOption getScanProtectionOptions() {
+        return scanProtectionOptions;
+    }
+
+    public void setScanProtectionOptions(ScanProtectionOption scanProtectionOptions) {
+        this.scanProtectionOptions = scanProtectionOptions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -340,13 +372,23 @@ public class UpdatePolicyRequestBody {
             && Objects.equals(this.robotAction, that.robotAction) && Objects.equals(this.action, that.action)
             && Objects.equals(this.options, that.options) && Objects.equals(this.modulexOptions, that.modulexOptions)
             && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.bindHost, that.bindHost)
-            && Objects.equals(this.extend, that.extend);
+            && Objects.equals(this.extend, that.extend)
+            && Objects.equals(this.scanProtectionOptions, that.scanProtectionOptions);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(name, level, fullDetection, robotAction, action, options, modulexOptions, hosts, bindHost, extend);
+        return Objects.hash(name,
+            level,
+            fullDetection,
+            robotAction,
+            action,
+            options,
+            modulexOptions,
+            hosts,
+            bindHost,
+            extend,
+            scanProtectionOptions);
     }
 
     @Override
@@ -363,6 +405,7 @@ public class UpdatePolicyRequestBody {
         sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
         sb.append("    bindHost: ").append(toIndentedString(bindHost)).append("\n");
         sb.append("    extend: ").append(toIndentedString(extend)).append("\n");
+        sb.append("    scanProtectionOptions: ").append(toIndentedString(scanProtectionOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

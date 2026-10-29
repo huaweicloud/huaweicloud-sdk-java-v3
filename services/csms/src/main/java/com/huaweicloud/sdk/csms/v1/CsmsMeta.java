@@ -8,6 +8,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsRequest;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsRequestBody;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsResponse;
+import com.huaweicloud.sdk.csms.v1.model.BatchGetSecretValueRequest;
+import com.huaweicloud.sdk.csms.v1.model.BatchGetSecretValueRequestBody;
+import com.huaweicloud.sdk.csms.v1.model.BatchGetSecretValueResponse;
 import com.huaweicloud.sdk.csms.v1.model.BatchImportSecretsRequest;
 import com.huaweicloud.sdk.csms.v1.model.BatchImportSecretsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ChangeUsersPassword;
@@ -141,6 +144,29 @@ public class CsmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateOrDeleteTagsRequestBody.class),
             f -> f.withMarshaller(BatchCreateOrDeleteTagsRequest::getBody, BatchCreateOrDeleteTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchGetSecretValueRequest, BatchGetSecretValueResponse> batchGetSecretValue =
+        genForBatchGetSecretValue();
+
+    private static HttpRequestDef<BatchGetSecretValueRequest, BatchGetSecretValueResponse> genForBatchGetSecretValue() {
+        // basic
+        HttpRequestDef.Builder<BatchGetSecretValueRequest, BatchGetSecretValueResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchGetSecretValueRequest.class, BatchGetSecretValueResponse.class)
+                .withName("BatchGetSecretValue")
+                .withUri("/v1/{project_id}/secrets/batch-get-secret-value")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchGetSecretValueRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchGetSecretValueRequestBody.class),
+            f -> f.withMarshaller(BatchGetSecretValueRequest::getBody, BatchGetSecretValueRequest::setBody));
 
         // response
 

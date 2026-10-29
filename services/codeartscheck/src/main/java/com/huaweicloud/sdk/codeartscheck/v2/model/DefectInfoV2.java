@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 缺陷信息
+ * DefectInfoV2
  */
 public class DefectInfoV2 {
 
@@ -29,9 +29,19 @@ public class DefectInfoV2 {
     private String defectStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "defect_owner")
+
+    private String defectOwner;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_system_tags")
 
     private String ruleSystemTags;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rule_id")
+
+    private String ruleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_name")
@@ -84,7 +94,7 @@ public class DefectInfoV2 {
     }
 
     /**
-     * 缺陷的id
+     * **参数解释：** MergeKey，问题ID。 **取值范围：** 不涉及。
      * @return defectId
      */
     public String getDefectId() {
@@ -101,7 +111,7 @@ public class DefectInfoV2 {
     }
 
     /**
-     * 缺陷对应检查项的名称
+     * **参数解释：** 废弃字段。 **取值范围：** 不涉及。
      * @return defectCheckerName
      */
     public String getDefectCheckerName() {
@@ -118,7 +128,7 @@ public class DefectInfoV2 {
     }
 
     /**
-     * 缺陷的状态0为解决 1已解决 2已忽略
+     * **参数解释：** 问题状态。 **取值范围：** - 0：待处理。 - 1：已解决。 - 2：已忽略。 [- 3：重新打开（需打开忽略审核开关）。](tag:fcs,hcs,hcs_sm,hcs_site,hcs_sitesm) [- 4：待审核（需打开忽略审核开关）。](tag:fcs,hcs,hcs_sm,hcs_site,hcs_sitesm)
      * @return defectStatus
      */
     public String getDefectStatus() {
@@ -129,13 +139,30 @@ public class DefectInfoV2 {
         this.defectStatus = defectStatus;
     }
 
+    public DefectInfoV2 withDefectOwner(String defectOwner) {
+        this.defectOwner = defectOwner;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 问题责任人。 **取值范围：** 不涉及。
+     * @return defectOwner
+     */
+    public String getDefectOwner() {
+        return defectOwner;
+    }
+
+    public void setDefectOwner(String defectOwner) {
+        this.defectOwner = defectOwner;
+    }
+
     public DefectInfoV2 withRuleSystemTags(String ruleSystemTags) {
         this.ruleSystemTags = ruleSystemTags;
         return this;
     }
 
     /**
-     * 规则标签,多个标签用逗号隔开
+     * **参数解释：** 标签，多个标签用逗号隔开。 **取值范围：** 不涉及。
      * @return ruleSystemTags
      */
     public String getRuleSystemTags() {
@@ -146,13 +173,30 @@ public class DefectInfoV2 {
         this.ruleSystemTags = ruleSystemTags;
     }
 
+    public DefectInfoV2 withRuleId(String ruleId) {
+        this.ruleId = ruleId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 规则ID。 **取值范围：** 不涉及。
+     * @return ruleId
+     */
+    public String getRuleId() {
+        return ruleId;
+    }
+
+    public void setRuleId(String ruleId) {
+        this.ruleId = ruleId;
+    }
+
     public DefectInfoV2 withRuleName(String ruleName) {
         this.ruleName = ruleName;
         return this;
     }
 
     /**
-     * 规则名
+     * **参数解释：** 规则名称。 **取值范围：** 不涉及。
      * @return ruleName
      */
     public String getRuleName() {
@@ -169,7 +213,7 @@ public class DefectInfoV2 {
     }
 
     /**
-     * 缺陷所在文件行号
+     * **参数解释：** 问题所在文件行号。 **取值范围：** 不涉及。
      * @return lineNumber
      */
     public String getLineNumber() {
@@ -186,7 +230,7 @@ public class DefectInfoV2 {
     }
 
     /**
-     * 缺陷描述
+     * **参数解释：** 问题详细描述。 **取值范围：** 不涉及。
      * @return defectContent
      */
     public String getDefectContent() {
@@ -203,7 +247,7 @@ public class DefectInfoV2 {
     }
 
     /**
-     * 缺陷等级，0致命，1严重，2一般，3提示
+     * **参数解释：** 问题级别。 **取值范围：** - 0：致命。 - 1：严重。 - 2：一般。 - 3：提示。
      * @return defectLevel
      */
     public String getDefectLevel() {
@@ -220,7 +264,7 @@ public class DefectInfoV2 {
     }
 
     /**
-     * 缺陷文件路径
+     * **参数解释：** 问题文件路径。 **取值范围：** 不涉及。
      * @return filePath
      */
     public String getFilePath() {
@@ -237,7 +281,7 @@ public class DefectInfoV2 {
     }
 
     /**
-     * 创建时间
+     * **参数解释：** 问题发现时间。使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -254,7 +298,7 @@ public class DefectInfoV2 {
     }
 
     /**
-     * 问题唯一标识
+     * **参数解释：** 废弃字段。 **取值范围：** 不涉及。
      * @return issueKey
      */
     public String getIssueKey() {
@@ -287,7 +331,7 @@ public class DefectInfoV2 {
     }
 
     /**
-     * 缺陷代码片段详情
+     * **参数解释：** 代码片段内容。
      * @return fragment
      */
     public List<DefectFragmentV2> getFragment() {
@@ -320,7 +364,7 @@ public class DefectInfoV2 {
     }
 
     /**
-     * 调用链信息
+     * **参数解释：** 调用链信息。
      * @return events
      */
     public List<DefectEvents> getEvents() {
@@ -343,8 +387,9 @@ public class DefectInfoV2 {
         return Objects.equals(this.defectId, that.defectId)
             && Objects.equals(this.defectCheckerName, that.defectCheckerName)
             && Objects.equals(this.defectStatus, that.defectStatus)
-            && Objects.equals(this.ruleSystemTags, that.ruleSystemTags) && Objects.equals(this.ruleName, that.ruleName)
-            && Objects.equals(this.lineNumber, that.lineNumber)
+            && Objects.equals(this.defectOwner, that.defectOwner)
+            && Objects.equals(this.ruleSystemTags, that.ruleSystemTags) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.ruleName, that.ruleName) && Objects.equals(this.lineNumber, that.lineNumber)
             && Objects.equals(this.defectContent, that.defectContent)
             && Objects.equals(this.defectLevel, that.defectLevel) && Objects.equals(this.filePath, that.filePath)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.issueKey, that.issueKey)
@@ -356,7 +401,9 @@ public class DefectInfoV2 {
         return Objects.hash(defectId,
             defectCheckerName,
             defectStatus,
+            defectOwner,
             ruleSystemTags,
+            ruleId,
             ruleName,
             lineNumber,
             defectContent,
@@ -375,7 +422,9 @@ public class DefectInfoV2 {
         sb.append("    defectId: ").append(toIndentedString(defectId)).append("\n");
         sb.append("    defectCheckerName: ").append(toIndentedString(defectCheckerName)).append("\n");
         sb.append("    defectStatus: ").append(toIndentedString(defectStatus)).append("\n");
+        sb.append("    defectOwner: ").append(toIndentedString(defectOwner)).append("\n");
         sb.append("    ruleSystemTags: ").append(toIndentedString(ruleSystemTags)).append("\n");
+        sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
         sb.append("    ruleName: ").append(toIndentedString(ruleName)).append("\n");
         sb.append("    lineNumber: ").append(toIndentedString(lineNumber)).append("\n");
         sb.append("    defectContent: ").append(toIndentedString(defectContent)).append("\n");

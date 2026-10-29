@@ -597,6 +597,7 @@ public class LtsAsyncClient {
      * @param request CreateStructTemplateRequest 请求对象
      * @return CompletableFuture<CreateStructTemplateResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateStructTemplateResponse> createStructTemplateAsync(
         CreateStructTemplateRequest request) {
         return hcClient.asyncInvokeHttp(request, LtsMeta.createStructTemplate);
@@ -612,6 +613,7 @@ public class LtsAsyncClient {
      * @param request CreateStructTemplateRequest 请求对象
      * @return AsyncInvoker<CreateStructTemplateRequest, CreateStructTemplateResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateStructTemplateRequest, CreateStructTemplateResponse> createStructTemplateAsyncInvoker(
         CreateStructTemplateRequest request) {
         return new AsyncInvoker<>(request, LtsMeta.createStructTemplate, hcClient);
@@ -1708,6 +1710,7 @@ public class LtsAsyncClient {
      * @param request ListQueryStructuredLogsRequest 请求对象
      * @return CompletableFuture<ListQueryStructuredLogsResponse>
      */
+    @Deprecated
     public CompletableFuture<ListQueryStructuredLogsResponse> listQueryStructuredLogsAsync(
         ListQueryStructuredLogsRequest request) {
         return hcClient.asyncInvokeHttp(request, LtsMeta.listQueryStructuredLogs);
@@ -1723,6 +1726,7 @@ public class LtsAsyncClient {
      * @param request ListQueryStructuredLogsRequest 请求对象
      * @return AsyncInvoker<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse> listQueryStructuredLogsAsyncInvoker(
         ListQueryStructuredLogsRequest request) {
         return new AsyncInvoker<>(request, LtsMeta.listQueryStructuredLogs, hcClient);
@@ -1767,6 +1771,7 @@ public class LtsAsyncClient {
      * @param request ListStructuredLogsWithTimeRangeRequest 请求对象
      * @return CompletableFuture<ListStructuredLogsWithTimeRangeResponse>
      */
+    @Deprecated
     public CompletableFuture<ListStructuredLogsWithTimeRangeResponse> listStructuredLogsWithTimeRangeAsync(
         ListStructuredLogsWithTimeRangeRequest request) {
         return hcClient.asyncInvokeHttp(request, LtsMeta.listStructuredLogsWithTimeRange);
@@ -1782,6 +1787,7 @@ public class LtsAsyncClient {
      * @param request ListStructuredLogsWithTimeRangeRequest 请求对象
      * @return AsyncInvoker<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse> listStructuredLogsWithTimeRangeAsyncInvoker(
         ListStructuredLogsWithTimeRangeRequest request) {
         return new AsyncInvoker<>(request, LtsMeta.listStructuredLogsWithTimeRange, hcClient);
@@ -2299,6 +2305,7 @@ public class LtsAsyncClient {
      * @param request UpdateStructTemplateRequest 请求对象
      * @return CompletableFuture<UpdateStructTemplateResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateStructTemplateResponse> updateStructTemplateAsync(
         UpdateStructTemplateRequest request) {
         return hcClient.asyncInvokeHttp(request, LtsMeta.updateStructTemplate);
@@ -2314,6 +2321,7 @@ public class LtsAsyncClient {
      * @param request UpdateStructTemplateRequest 请求对象
      * @return AsyncInvoker<UpdateStructTemplateRequest, UpdateStructTemplateResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateStructTemplateRequest, UpdateStructTemplateResponse> updateStructTemplateAsyncInvoker(
         UpdateStructTemplateRequest request) {
         return new AsyncInvoker<>(request, LtsMeta.updateStructTemplate, hcClient);

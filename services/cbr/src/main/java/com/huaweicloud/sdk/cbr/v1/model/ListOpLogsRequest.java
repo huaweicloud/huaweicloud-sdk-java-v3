@@ -275,6 +275,16 @@ public class ListOpLogsRequest {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "destination_region")
+
+    private String destinationRegion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "destination_project_id")
+
+    private String destinationProjectId;
+
     public ListOpLogsRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -317,7 +327,7 @@ public class ListOpLogsRequest {
 
     /**
      * 偏移值，正整数
-     * minimum: 1
+     * minimum: 0
      * @return offset
      */
     public Integer getOffset() {
@@ -481,6 +491,40 @@ public class ListOpLogsRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public ListOpLogsRequest withDestinationRegion(String destinationRegion) {
+        this.destinationRegion = destinationRegion;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 复制的目标区域 [获取方法请参见\"[地区和终端节点查询](https://console.huaweicloud.com/apiexplorer/#/endpoint/CBR)\"。 ](tag:hws) [获取方法请参见\"[地区和终端节点查询](https://console-intl.huaweicloud.com/apiexplorer/#/endpoint/CBR)\"。](tag:hws_hk) **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return destinationRegion
+     */
+    public String getDestinationRegion() {
+        return destinationRegion;
+    }
+
+    public void setDestinationRegion(String destinationRegion) {
+        this.destinationRegion = destinationRegion;
+    }
+
+    public ListOpLogsRequest withDestinationProjectId(String destinationProjectId) {
+        this.destinationProjectId = destinationProjectId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 复制的目标区域项目ID，获取方法请参见[获取项目ID](cbr_04_0022.xml) **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return destinationProjectId
+     */
+    public String getDestinationProjectId() {
+        return destinationProjectId;
+    }
+
+    public void setDestinationProjectId(String destinationProjectId) {
+        this.destinationProjectId = destinationProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -496,7 +540,9 @@ public class ListOpLogsRequest {
             && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.status, that.status) && Objects.equals(this.vaultId, that.vaultId)
             && Objects.equals(this.vaultName, that.vaultName)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.destinationRegion, that.destinationRegion)
+            && Objects.equals(this.destinationProjectId, that.destinationProjectId);
     }
 
     @Override
@@ -512,7 +558,9 @@ public class ListOpLogsRequest {
             status,
             vaultId,
             vaultName,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            destinationRegion,
+            destinationProjectId);
     }
 
     @Override
@@ -531,6 +579,8 @@ public class ListOpLogsRequest {
         sb.append("    vaultId: ").append(toIndentedString(vaultId)).append("\n");
         sb.append("    vaultName: ").append(toIndentedString(vaultName)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    destinationRegion: ").append(toIndentedString(destinationRegion)).append("\n");
+        sb.append("    destinationProjectId: ").append(toIndentedString(destinationProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

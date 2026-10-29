@@ -14,12 +14,12 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * **参数解释**：Flink SQL作业参数，包含SQL作业的详细配置信息。
+ * **参数解释**：SQL作业参数，包含SQL作业的详细配置信息。
  */
 public class ShowFlinkSqlParameterResponse {
 
     /**
-     * **参数解释**：作业类型。 **约束限制**：不涉及。 **取值范围**：   - FLINK_SQL_JOB：Flink SQL作业。 
+     * **参数解释**：作业类型，用于区分SQL作业、Jar作业和SQL Gateway作业。 **约束限制**：不涉及。 **取值范围**：   - FLINK_SQL_JOB：SQL作业。 
      */
     public static final class TypeEnum {
 
@@ -97,13 +97,23 @@ public class ShowFlinkSqlParameterResponse {
 
     private List<String> dependencyJars = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dependency_files")
+
+    private List<String> dependencyFiles = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "python_parameter")
+
+    private ShowFlinkPythonDependencyParameterResponse pythonParameter;
+
     public ShowFlinkSqlParameterResponse withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
     /**
-     * **参数解释**：作业类型。 **约束限制**：不涉及。 **取值范围**：   - FLINK_SQL_JOB：Flink SQL作业。 
+     * **参数解释**：作业类型，用于区分SQL作业、Jar作业和SQL Gateway作业。 **约束限制**：不涉及。 **取值范围**：   - FLINK_SQL_JOB：SQL作业。 
      * @return type
      */
     public TypeEnum getType() {
@@ -164,6 +174,67 @@ public class ShowFlinkSqlParameterResponse {
         this.dependencyJars = dependencyJars;
     }
 
+    public ShowFlinkSqlParameterResponse withDependencyFiles(List<String> dependencyFiles) {
+        this.dependencyFiles = dependencyFiles;
+        return this;
+    }
+
+    public ShowFlinkSqlParameterResponse addDependencyFilesItem(String dependencyFilesItem) {
+        if (this.dependencyFiles == null) {
+            this.dependencyFiles = new ArrayList<>();
+        }
+        this.dependencyFiles.add(dependencyFilesItem);
+        return this;
+    }
+
+    public ShowFlinkSqlParameterResponse withDependencyFiles(Consumer<List<String>> dependencyFilesSetter) {
+        if (this.dependencyFiles == null) {
+            this.dependencyFiles = new ArrayList<>();
+        }
+        dependencyFilesSetter.accept(this.dependencyFiles);
+        return this;
+    }
+
+    /**
+     * **参数解释**：SQL作业依赖文件的OBS路径列表，用于指定作业运行所需的依赖文件。
+     * @return dependencyFiles
+     */
+    public List<String> getDependencyFiles() {
+        return dependencyFiles;
+    }
+
+    public void setDependencyFiles(List<String> dependencyFiles) {
+        this.dependencyFiles = dependencyFiles;
+    }
+
+    public ShowFlinkSqlParameterResponse withPythonParameter(
+        ShowFlinkPythonDependencyParameterResponse pythonParameter) {
+        this.pythonParameter = pythonParameter;
+        return this;
+    }
+
+    public ShowFlinkSqlParameterResponse withPythonParameter(
+        Consumer<ShowFlinkPythonDependencyParameterResponse> pythonParameterSetter) {
+        if (this.pythonParameter == null) {
+            this.pythonParameter = new ShowFlinkPythonDependencyParameterResponse();
+            pythonParameterSetter.accept(this.pythonParameter);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pythonParameter
+     * @return pythonParameter
+     */
+    public ShowFlinkPythonDependencyParameterResponse getPythonParameter() {
+        return pythonParameter;
+    }
+
+    public void setPythonParameter(ShowFlinkPythonDependencyParameterResponse pythonParameter) {
+        this.pythonParameter = pythonParameter;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -174,12 +245,14 @@ public class ShowFlinkSqlParameterResponse {
         }
         ShowFlinkSqlParameterResponse that = (ShowFlinkSqlParameterResponse) obj;
         return Objects.equals(this.type, that.type) && Objects.equals(this.sqlScriptFile, that.sqlScriptFile)
-            && Objects.equals(this.dependencyJars, that.dependencyJars);
+            && Objects.equals(this.dependencyJars, that.dependencyJars)
+            && Objects.equals(this.dependencyFiles, that.dependencyFiles)
+            && Objects.equals(this.pythonParameter, that.pythonParameter);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, sqlScriptFile, dependencyJars);
+        return Objects.hash(type, sqlScriptFile, dependencyJars, dependencyFiles, pythonParameter);
     }
 
     @Override
@@ -189,6 +262,8 @@ public class ShowFlinkSqlParameterResponse {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    sqlScriptFile: ").append(toIndentedString(sqlScriptFile)).append("\n");
         sb.append("    dependencyJars: ").append(toIndentedString(dependencyJars)).append("\n");
+        sb.append("    dependencyFiles: ").append(toIndentedString(dependencyFiles)).append("\n");
+        sb.append("    pythonParameter: ").append(toIndentedString(pythonParameter)).append("\n");
         sb.append("}");
         return sb.toString();
     }

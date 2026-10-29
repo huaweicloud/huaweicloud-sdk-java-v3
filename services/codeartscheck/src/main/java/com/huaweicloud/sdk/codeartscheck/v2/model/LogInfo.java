@@ -41,7 +41,7 @@ public class LogInfo {
     }
 
     /**
-     * 日志标题
+     * **参数解释：** 检查日志页面所显示的子任务阶段名称。 **取值范围:** 不涉及。
      * @return displayName
      */
     public String getDisplayName() {
@@ -58,7 +58,7 @@ public class LogInfo {
     }
 
     /**
-     * 日志内容
+     * **参数解释：** 扫描日志内容。 **取值范围:** 不涉及。
      * @return log
      */
     public String getLog() {
@@ -75,7 +75,7 @@ public class LogInfo {
     }
 
     /**
-     * 日志级别
+     * **参数解释：** 废弃字段。 **取值范围:** 不涉及。
      * @return level
      */
     public String getLevel() {
@@ -92,7 +92,7 @@ public class LogInfo {
     }
 
     /**
-     * 日志分析
+     * **参数解释：** 任务失败的简要原因。 **取值范围:** 不涉及。
      * @return analysis
      */
     public String getAnalysis() {
@@ -109,7 +109,7 @@ public class LogInfo {
     }
 
     /**
-     * 常见问题解答
+     * **参数解释：** 废弃字段。 **取值范围:** 不涉及。
      * @return faq
      */
     public String getFaq() {

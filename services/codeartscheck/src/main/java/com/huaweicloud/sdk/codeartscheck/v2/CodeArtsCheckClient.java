@@ -14,6 +14,8 @@ import com.huaweicloud.sdk.codeartscheck.v2.model.DeleteRulesetRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.DeleteRulesetResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.DeleteTaskRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.DeleteTaskResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ListCriterionSetsByLanguageRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ListCriterionSetsByLanguageResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ListRulesRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ListRulesResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ListRulesetsRequest;
@@ -38,6 +40,8 @@ import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskDefectsStatisticReques
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskDefectsStatisticResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskDetailRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskDetailResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskInfoByIdRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskInfoByIdResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskListByProjectIdRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskListByProjectIdResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskPathTreeRequest;
@@ -46,10 +50,14 @@ import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskSettingsRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskSettingsResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTasklogRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTasklogResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTasksListRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTasksListResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTasksRulesetsRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTasksRulesetsResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.StopTaskByIdRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.StopTaskByIdResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.UpdateCodeGateRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.UpdateCodeGateResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.UpdateDefectStatusRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.UpdateDefectStatusResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.UpdateIgnorePathRequest;
@@ -271,6 +279,35 @@ public class CodeArtsCheckClient {
      */
     public SyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskInvoker(DeleteTaskRequest request) {
         return new SyncInvoker<>(request, CodeArtsCheckMeta.deleteTask, hcClient);
+    }
+
+    /**
+     * 根据语言查询规则集
+     *
+     * 该API用于查询项目下某一语言的规则集列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCriterionSetsByLanguageRequest 请求对象
+     * @return ListCriterionSetsByLanguageResponse
+     */
+    public ListCriterionSetsByLanguageResponse listCriterionSetsByLanguage(ListCriterionSetsByLanguageRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsCheckMeta.listCriterionSetsByLanguage);
+    }
+
+    /**
+     * 根据语言查询规则集
+     *
+     * 该API用于查询项目下某一语言的规则集列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCriterionSetsByLanguageRequest 请求对象
+     * @return SyncInvoker<ListCriterionSetsByLanguageRequest, ListCriterionSetsByLanguageResponse>
+     */
+    public SyncInvoker<ListCriterionSetsByLanguageRequest, ListCriterionSetsByLanguageResponse> listCriterionSetsByLanguageInvoker(
+        ListCriterionSetsByLanguageRequest request) {
+        return new SyncInvoker<>(request, CodeArtsCheckMeta.listCriterionSetsByLanguage, hcClient);
     }
 
     /**
@@ -619,6 +656,35 @@ public class CodeArtsCheckClient {
     }
 
     /**
+     * 根据任务ID查询检查任务
+     *
+     * 根据任务ID查询代码检查任务的基本信息，返回任务ID、任务名、项目ID、项目名、代码仓地址、分支和配置模板ID等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTaskInfoByIdRequest 请求对象
+     * @return ShowTaskInfoByIdResponse
+     */
+    public ShowTaskInfoByIdResponse showTaskInfoById(ShowTaskInfoByIdRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsCheckMeta.showTaskInfoById);
+    }
+
+    /**
+     * 根据任务ID查询检查任务
+     *
+     * 根据任务ID查询代码检查任务的基本信息，返回任务ID、任务名、项目ID、项目名、代码仓地址、分支和配置模板ID等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTaskInfoByIdRequest 请求对象
+     * @return SyncInvoker<ShowTaskInfoByIdRequest, ShowTaskInfoByIdResponse>
+     */
+    public SyncInvoker<ShowTaskInfoByIdRequest, ShowTaskInfoByIdResponse> showTaskInfoByIdInvoker(
+        ShowTaskInfoByIdRequest request) {
+        return new SyncInvoker<>(request, CodeArtsCheckMeta.showTaskInfoById, hcClient);
+    }
+
+    /**
      * 查询任务列表
      *
      * 根据DEVCLOUD_PROJECT_UUID查询该项目下的任务列表。
@@ -734,6 +800,34 @@ public class CodeArtsCheckClient {
     }
 
     /**
+     * 查询任务列表
+     *
+     * 根据项目ID、需要搜索的任务名、任务分组ID和任务执行状态分页查询项目下的代码检查任务，返回任务名称、代码仓地址、分支、配置模板ID和规则集等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTasksListRequest 请求对象
+     * @return ShowTasksListResponse
+     */
+    public ShowTasksListResponse showTasksList(ShowTasksListRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsCheckMeta.showTasksList);
+    }
+
+    /**
+     * 查询任务列表
+     *
+     * 根据项目ID、需要搜索的任务名、任务分组ID和任务执行状态分页查询项目下的代码检查任务，返回任务名称、代码仓地址、分支、配置模板ID和规则集等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTasksListRequest 请求对象
+     * @return SyncInvoker<ShowTasksListRequest, ShowTasksListResponse>
+     */
+    public SyncInvoker<ShowTasksListRequest, ShowTasksListResponse> showTasksListInvoker(ShowTasksListRequest request) {
+        return new SyncInvoker<>(request, CodeArtsCheckMeta.showTasksList, hcClient);
+    }
+
+    /**
      * 查询任务的已选规则集列表
      *
      * 查询任务的已选规则集列表。
@@ -788,6 +882,35 @@ public class CodeArtsCheckClient {
      */
     public SyncInvoker<StopTaskByIdRequest, StopTaskByIdResponse> stopTaskByIdInvoker(StopTaskByIdRequest request) {
         return new SyncInvoker<>(request, CodeArtsCheckMeta.stopTaskById, hcClient);
+    }
+
+    /**
+     * 更新门禁配置
+     *
+     * 根据任务ID设置任务的致命问题数、严重问题数、一般问题数和提示问题数的质量门禁，在检查完成后，超过门禁阈值将提示门禁结果为Failed。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCodeGateRequest 请求对象
+     * @return UpdateCodeGateResponse
+     */
+    public UpdateCodeGateResponse updateCodeGate(UpdateCodeGateRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsCheckMeta.updateCodeGate);
+    }
+
+    /**
+     * 更新门禁配置
+     *
+     * 根据任务ID设置任务的致命问题数、严重问题数、一般问题数和提示问题数的质量门禁，在检查完成后，超过门禁阈值将提示门禁结果为Failed。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCodeGateRequest 请求对象
+     * @return SyncInvoker<UpdateCodeGateRequest, UpdateCodeGateResponse>
+     */
+    public SyncInvoker<UpdateCodeGateRequest, UpdateCodeGateResponse> updateCodeGateInvoker(
+        UpdateCodeGateRequest request) {
+        return new SyncInvoker<>(request, CodeArtsCheckMeta.updateCodeGate, hcClient);
     }
 
     /**

@@ -77,6 +77,11 @@ public class ShowSparkJobResponse extends SdkResponse {
     private Map<String, String> sparkConfig = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metric_statistics")
+
+    private SparkJobMetricStatistics metricStatistics;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logging_config")
 
     private ShowSparkLoggingConfigResponse loggingConfig;
@@ -125,6 +130,11 @@ public class ShowSparkJobResponse extends SdkResponse {
     @JsonProperty(value = "description")
 
     private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "spark_ui")
+
+    private SparkUiSharedInfo sparkUi;
 
     public ShowSparkJobResponse withJobId(String jobId) {
         this.jobId = jobId;
@@ -373,6 +383,32 @@ public class ShowSparkJobResponse extends SdkResponse {
         this.sparkConfig = sparkConfig;
     }
 
+    public ShowSparkJobResponse withMetricStatistics(SparkJobMetricStatistics metricStatistics) {
+        this.metricStatistics = metricStatistics;
+        return this;
+    }
+
+    public ShowSparkJobResponse withMetricStatistics(Consumer<SparkJobMetricStatistics> metricStatisticsSetter) {
+        if (this.metricStatistics == null) {
+            this.metricStatistics = new SparkJobMetricStatistics();
+            metricStatisticsSetter.accept(this.metricStatistics);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get metricStatistics
+     * @return metricStatistics
+     */
+    public SparkJobMetricStatistics getMetricStatistics() {
+        return metricStatistics;
+    }
+
+    public void setMetricStatistics(SparkJobMetricStatistics metricStatistics) {
+        this.metricStatistics = metricStatistics;
+    }
+
     public ShowSparkJobResponse withLoggingConfig(ShowSparkLoggingConfigResponse loggingConfig) {
         this.loggingConfig = loggingConfig;
         return this;
@@ -586,6 +622,32 @@ public class ShowSparkJobResponse extends SdkResponse {
         this.description = description;
     }
 
+    public ShowSparkJobResponse withSparkUi(SparkUiSharedInfo sparkUi) {
+        this.sparkUi = sparkUi;
+        return this;
+    }
+
+    public ShowSparkJobResponse withSparkUi(Consumer<SparkUiSharedInfo> sparkUiSetter) {
+        if (this.sparkUi == null) {
+            this.sparkUi = new SparkUiSharedInfo();
+            sparkUiSetter.accept(this.sparkUi);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sparkUi
+     * @return sparkUi
+     */
+    public SparkUiSharedInfo getSparkUi() {
+        return sparkUi;
+    }
+
+    public void setSparkUi(SparkUiSharedInfo sparkUi) {
+        this.sparkUi = sparkUi;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -603,11 +665,13 @@ public class ShowSparkJobResponse extends SdkResponse {
             && Objects.equals(this.resourceConfig, that.resourceConfig)
             && Objects.equals(this.restoreStrategy, that.restoreStrategy)
             && Objects.equals(this.sparkConfig, that.sparkConfig)
+            && Objects.equals(this.metricStatistics, that.metricStatistics)
             && Objects.equals(this.loggingConfig, that.loggingConfig) && Objects.equals(this.image, that.image)
             && Objects.equals(this.retryTimes, that.retryTimes) && Objects.equals(this.labels, that.labels)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.createUser, that.createUser)
-            && Objects.equals(this.logUrl, that.logUrl) && Objects.equals(this.description, that.description);
+            && Objects.equals(this.logUrl, that.logUrl) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.sparkUi, that.sparkUi);
     }
 
     @Override
@@ -624,6 +688,7 @@ public class ShowSparkJobResponse extends SdkResponse {
             resourceConfig,
             restoreStrategy,
             sparkConfig,
+            metricStatistics,
             loggingConfig,
             image,
             retryTimes,
@@ -633,7 +698,8 @@ public class ShowSparkJobResponse extends SdkResponse {
             endTime,
             createUser,
             logUrl,
-            description);
+            description,
+            sparkUi);
     }
 
     @Override
@@ -652,6 +718,7 @@ public class ShowSparkJobResponse extends SdkResponse {
         sb.append("    resourceConfig: ").append(toIndentedString(resourceConfig)).append("\n");
         sb.append("    restoreStrategy: ").append(toIndentedString(restoreStrategy)).append("\n");
         sb.append("    sparkConfig: ").append(toIndentedString(sparkConfig)).append("\n");
+        sb.append("    metricStatistics: ").append(toIndentedString(metricStatistics)).append("\n");
         sb.append("    loggingConfig: ").append(toIndentedString(loggingConfig)).append("\n");
         sb.append("    image: ").append(toIndentedString(image)).append("\n");
         sb.append("    retryTimes: ").append(toIndentedString(retryTimes)).append("\n");
@@ -662,6 +729,7 @@ public class ShowSparkJobResponse extends SdkResponse {
         sb.append("    createUser: ").append(toIndentedString(createUser)).append("\n");
         sb.append("    logUrl: ").append(toIndentedString(logUrl)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    sparkUi: ").append(toIndentedString(sparkUi)).append("\n");
         sb.append("}");
         return sb.toString();
     }

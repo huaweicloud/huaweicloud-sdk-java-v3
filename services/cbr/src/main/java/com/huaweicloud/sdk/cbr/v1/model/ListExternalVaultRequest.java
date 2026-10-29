@@ -36,9 +36,9 @@ public class ListExternalVaultRequest {
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "objcet_type")
+    @JsonProperty(value = "object_type")
 
-    private String objcetType;
+    private String objectType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_type")
@@ -137,21 +137,21 @@ public class ListExternalVaultRequest {
         this.regionId = regionId;
     }
 
-    public ListExternalVaultRequest withObjcetType(String objcetType) {
-        this.objcetType = objcetType;
+    public ListExternalVaultRequest withObjectType(String objectType) {
+        this.objectType = objectType;
         return this;
     }
 
     /**
      * 资源类型
-     * @return objcetType
+     * @return objectType
      */
-    public String getObjcetType() {
-        return objcetType;
+    public String getObjectType() {
+        return objectType;
     }
 
-    public void setObjcetType(String objcetType) {
-        this.objcetType = objcetType;
+    public void setObjectType(String objectType) {
+        this.objectType = objectType;
     }
 
     public ListExternalVaultRequest withCloudType(String cloudType) {
@@ -199,13 +199,13 @@ public class ListExternalVaultRequest {
         ListExternalVaultRequest that = (ListExternalVaultRequest) obj;
         return Objects.equals(this.externalProjectId, that.externalProjectId) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.protectType, that.protectType)
-            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.objcetType, that.objcetType)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.objectType, that.objectType)
             && Objects.equals(this.cloudType, that.cloudType) && Objects.equals(this.vaultId, that.vaultId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(externalProjectId, limit, offset, protectType, regionId, objcetType, cloudType, vaultId);
+        return Objects.hash(externalProjectId, limit, offset, protectType, regionId, objectType, cloudType, vaultId);
     }
 
     @Override
@@ -217,7 +217,7 @@ public class ListExternalVaultRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    protectType: ").append(toIndentedString(protectType)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
-        sb.append("    objcetType: ").append(toIndentedString(objcetType)).append("\n");
+        sb.append("    objectType: ").append(toIndentedString(objectType)).append("\n");
         sb.append("    cloudType: ").append(toIndentedString(cloudType)).append("\n");
         sb.append("    vaultId: ").append(toIndentedString(vaultId)).append("\n");
         sb.append("}");

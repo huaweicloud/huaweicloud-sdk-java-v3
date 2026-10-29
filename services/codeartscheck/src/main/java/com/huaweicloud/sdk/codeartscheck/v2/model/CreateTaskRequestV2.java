@@ -14,11 +14,6 @@ import java.util.function.Consumer;
 public class CreateTaskRequestV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "check_type")
-
-    private List<String> checkType = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "git_url")
 
     private String gitUrl;
@@ -64,47 +59,24 @@ public class CreateTaskRequestV2 {
     private IncConfigV2 incConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enable_fossbot")
-
-    private Boolean enableFossbot;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_pool_id")
 
     private String resourcePoolId;
 
-    public CreateTaskRequestV2 withCheckType(List<String> checkType) {
-        this.checkType = checkType;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sm_level")
 
-    public CreateTaskRequestV2 addCheckTypeItem(String checkTypeItem) {
-        if (this.checkType == null) {
-            this.checkType = new ArrayList<>();
-        }
-        this.checkType.add(checkTypeItem);
-        return this;
-    }
+    private String smLevel;
 
-    public CreateTaskRequestV2 withCheckType(Consumer<List<String>> checkTypeSetter) {
-        if (this.checkType == null) {
-            this.checkType = new ArrayList<>();
-        }
-        checkTypeSetter.accept(this.checkType);
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "check_type")
 
-    /**
-     * 检查类型，数组格式，默认为source
-     * @return checkType
-     */
-    public List<String> getCheckType() {
-        return checkType;
-    }
+    private List<String> checkType = null;
 
-    public void setCheckType(List<String> checkType) {
-        this.checkType = checkType;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_fossbot")
+
+    private Boolean enableFossbot;
 
     public CreateTaskRequestV2 withGitUrl(String gitUrl) {
         this.gitUrl = gitUrl;
@@ -112,7 +84,7 @@ public class CreateTaskRequestV2 {
     }
 
     /**
-     * 仓库地址
+     * **参数解释：** 代码仓地址。 **约束限制：** 不涉及。 **取值范围：** repo仓传以git开头的地址；非repo仓传以http开头的地址。 **默认取值：** 不涉及。
      * @return gitUrl
      */
     public String getGitUrl() {
@@ -129,7 +101,7 @@ public class CreateTaskRequestV2 {
     }
 
     /**
-     * 仓库分支
+     * **参数解释：** 计划创建任务的对应代码仓的分支。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return gitBranch
      */
     public String getGitBranch() {
@@ -162,7 +134,7 @@ public class CreateTaskRequestV2 {
     }
 
     /**
-     * 检查语言，数组格式，支持cpp,java,js,python,php,css,html,go,typescript,csharp
+     * **参数解释：** 启用的检查语言，数组格式，支持的语言请关注服务更新特性文档。 **约束限制：** 与rule_sets 2选1使用。
      * @return language
      */
     public List<String> getLanguage() {
@@ -195,7 +167,7 @@ public class CreateTaskRequestV2 {
     }
 
     /**
-     * 指定规则集
+     * **参数解释：** 启用的规则集，数组格式，当只传语言，不传规则集ID时，与language参数等效，启用这些语言在项目下的默认规则集，支持的语言请关注服务更新特性文档。 **约束限制：** 与language 2选1使用。
      * @return ruleSets
      */
     public List<RuleSetV2> getRuleSets() {
@@ -212,7 +184,7 @@ public class CreateTaskRequestV2 {
     }
 
     /**
-     * 检查类型，支持full/inc两种类型，full表示全量检查，inc表示mr检查
+     * **参数解释：** 任务类型。 **约束限制：** 不涉及。 **取值范围：** - full：代码仓分支对应的全量任务。 - inc：MR增量任务。 **默认取值：** full
      * @return taskType
      */
     public String getTaskType() {
@@ -229,7 +201,7 @@ public class CreateTaskRequestV2 {
     }
 
     /**
-     * 仓库有权限的用户名
+     * **参数解释：** 用户名，与access_token联合使用，用于在创建三方仓时，由Check服务创建1个通用git扩展点，从而保存代码仓信息。 **约束限制：** username、access_token组合与endpoint_id 2选1使用。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return username
      */
     public String getUsername() {
@@ -246,7 +218,7 @@ public class CreateTaskRequestV2 {
     }
 
     /**
-     * 仓库有权限的用户token
+     * **参数解释：** 密码或访问密钥/令牌，username，用于在创建三方仓时，由Check服务创建1个通用git扩展点，从而保存代码仓信息。 **约束限制：** username、access_token组合与endpoint_id 2选1使用。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return accessToken
      */
     public String getAccessToken() {
@@ -263,7 +235,7 @@ public class CreateTaskRequestV2 {
     }
 
     /**
-     * 仓库有权限的用户endpointId
+     * **参数解释：** 用户预先创建的项目下的代码源扩展点ID，保存了代码仓信息。创建第三方代码源任务，若未填写endpoint，会自动创建扩展点，需要账号有创建扩展点权限，且项目下扩展点未达到上限。 **约束限制：** username、access_token组合与endpoint_id 2选1使用。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return endpointId
      */
     public String getEndpointId() {
@@ -300,30 +272,13 @@ public class CreateTaskRequestV2 {
         this.incConfig = incConfig;
     }
 
-    public CreateTaskRequestV2 withEnableFossbot(Boolean enableFossbot) {
-        this.enableFossbot = enableFossbot;
-        return this;
-    }
-
-    /**
-     * 是否打开fossbot检查,默认不开
-     * @return enableFossbot
-     */
-    public Boolean getEnableFossbot() {
-        return enableFossbot;
-    }
-
-    public void setEnableFossbot(Boolean enableFossbot) {
-        this.enableFossbot = enableFossbot;
-    }
-
     public CreateTaskRequestV2 withResourcePoolId(String resourcePoolId) {
         this.resourcePoolId = resourcePoolId;
         return this;
     }
 
     /**
-     * 资源池id，可以从资源池管理页面获取
+     * **参数解释：** 用户购买的资源池ID，创建任务时如传此参数，任务将使用对应资源池进行检查。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return resourcePoolId
      */
     public String getResourcePoolId() {
@@ -332,6 +287,73 @@ public class CreateTaskRequestV2 {
 
     public void setResourcePoolId(String resourcePoolId) {
         this.resourcePoolId = resourcePoolId;
+    }
+
+    public CreateTaskRequestV2 withSmLevel(String smLevel) {
+        this.smLevel = smLevel;
+        return this;
+    }
+
+    /**
+     * **参数解释：** [密级ID,可见信息密级的ID，从页面接口GET https://{endpoint}/projects/v1/options的响应参数中获取，其中的code值即为密级ID。](tag:hcs_sm,hcs_sitesm)[该参数暂无业务意义，传0即可。](tag:fcs) **约束限制：** [租户开启密级功能后必传。](tag:hcs_sm,hcs_sitesm)[不涉及。](tag:fcs) **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return smLevel
+     */
+    public String getSmLevel() {
+        return smLevel;
+    }
+
+    public void setSmLevel(String smLevel) {
+        this.smLevel = smLevel;
+    }
+
+    public CreateTaskRequestV2 withCheckType(List<String> checkType) {
+        this.checkType = checkType;
+        return this;
+    }
+
+    public CreateTaskRequestV2 addCheckTypeItem(String checkTypeItem) {
+        if (this.checkType == null) {
+            this.checkType = new ArrayList<>();
+        }
+        this.checkType.add(checkTypeItem);
+        return this;
+    }
+
+    public CreateTaskRequestV2 withCheckType(Consumer<List<String>> checkTypeSetter) {
+        if (this.checkType == null) {
+            this.checkType = new ArrayList<>();
+        }
+        checkTypeSetter.accept(this.checkType);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 废弃参数
+     * @return checkType
+     */
+    public List<String> getCheckType() {
+        return checkType;
+    }
+
+    public void setCheckType(List<String> checkType) {
+        this.checkType = checkType;
+    }
+
+    public CreateTaskRequestV2 withEnableFossbot(Boolean enableFossbot) {
+        this.enableFossbot = enableFossbot;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 废弃参数
+     * @return enableFossbot
+     */
+    public Boolean getEnableFossbot() {
+        return enableFossbot;
+    }
+
+    public void setEnableFossbot(Boolean enableFossbot) {
+        this.enableFossbot = enableFossbot;
     }
 
     @Override
@@ -343,19 +365,18 @@ public class CreateTaskRequestV2 {
             return false;
         }
         CreateTaskRequestV2 that = (CreateTaskRequestV2) obj;
-        return Objects.equals(this.checkType, that.checkType) && Objects.equals(this.gitUrl, that.gitUrl)
-            && Objects.equals(this.gitBranch, that.gitBranch) && Objects.equals(this.language, that.language)
-            && Objects.equals(this.ruleSets, that.ruleSets) && Objects.equals(this.taskType, that.taskType)
-            && Objects.equals(this.username, that.username) && Objects.equals(this.accessToken, that.accessToken)
-            && Objects.equals(this.endpointId, that.endpointId) && Objects.equals(this.incConfig, that.incConfig)
-            && Objects.equals(this.enableFossbot, that.enableFossbot)
-            && Objects.equals(this.resourcePoolId, that.resourcePoolId);
+        return Objects.equals(this.gitUrl, that.gitUrl) && Objects.equals(this.gitBranch, that.gitBranch)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.ruleSets, that.ruleSets)
+            && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.username, that.username)
+            && Objects.equals(this.accessToken, that.accessToken) && Objects.equals(this.endpointId, that.endpointId)
+            && Objects.equals(this.incConfig, that.incConfig)
+            && Objects.equals(this.resourcePoolId, that.resourcePoolId) && Objects.equals(this.smLevel, that.smLevel)
+            && Objects.equals(this.checkType, that.checkType) && Objects.equals(this.enableFossbot, that.enableFossbot);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(checkType,
-            gitUrl,
+        return Objects.hash(gitUrl,
             gitBranch,
             language,
             ruleSets,
@@ -364,15 +385,16 @@ public class CreateTaskRequestV2 {
             accessToken,
             endpointId,
             incConfig,
-            enableFossbot,
-            resourcePoolId);
+            resourcePoolId,
+            smLevel,
+            checkType,
+            enableFossbot);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateTaskRequestV2 {\n");
-        sb.append("    checkType: ").append(toIndentedString(checkType)).append("\n");
         sb.append("    gitUrl: ").append(toIndentedString(gitUrl)).append("\n");
         sb.append("    gitBranch: ").append(toIndentedString(gitBranch)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
@@ -382,8 +404,10 @@ public class CreateTaskRequestV2 {
         sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
         sb.append("    endpointId: ").append(toIndentedString(endpointId)).append("\n");
         sb.append("    incConfig: ").append(toIndentedString(incConfig)).append("\n");
-        sb.append("    enableFossbot: ").append(toIndentedString(enableFossbot)).append("\n");
         sb.append("    resourcePoolId: ").append(toIndentedString(resourcePoolId)).append("\n");
+        sb.append("    smLevel: ").append(toIndentedString(smLevel)).append("\n");
+        sb.append("    checkType: ").append(toIndentedString(checkType)).append("\n");
+        sb.append("    enableFossbot: ").append(toIndentedString(enableFossbot)).append("\n");
         sb.append("}");
         return sb.toString();
     }

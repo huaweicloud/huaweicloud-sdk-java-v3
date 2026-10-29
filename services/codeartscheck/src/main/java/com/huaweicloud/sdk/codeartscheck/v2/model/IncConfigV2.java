@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 增量检查相关的参数
+ * **参数解释：** 基于某一任务创建分支任务、MR任务时使用的参数。 **约束限制：** 不涉及。
  */
 public class IncConfigV2 {
 
@@ -51,7 +51,7 @@ public class IncConfigV2 {
     }
 
     /**
-     * 需要关联的父任务ID，流水线创建或MR创建任务需要该参数
+     * **参数解释：** 需要关联的任务ID。 **约束限制：** 32位UUID。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return parentTaskId
      */
     public String getParentTaskId() {
@@ -68,7 +68,7 @@ public class IncConfigV2 {
     }
 
     /**
-     * 增量检查代码源分支
+     * **参数解释：** MR增量任务的源分支。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return gitSourceBranch
      */
     public String getGitSourceBranch() {
@@ -85,7 +85,7 @@ public class IncConfigV2 {
     }
 
     /**
-     * 增量检查代码目标分支
+     * **参数解释：** MR增量任务的目标分支。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return gitTargetBranch
      */
     public String getGitTargetBranch() {
@@ -102,7 +102,7 @@ public class IncConfigV2 {
     }
 
     /**
-     * MR唯一标示ID
+     * **参数解释：** MR编号。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return mergeId
      */
     public String getMergeId() {
@@ -119,7 +119,7 @@ public class IncConfigV2 {
     }
 
     /**
-     * webhook触发事件类型,merge_request/push_request
+     * **参数解释：** 创建MR增量任务时需传。 **约束限制：** 不涉及。 **取值范围：** merge_request。 **默认取值：** 不涉及。
      * @return eventType
      */
     public String getEventType() {
@@ -136,7 +136,7 @@ public class IncConfigV2 {
     }
 
     /**
-     * webhook事件状态，open/close/update
+     * **参数解释：** 创建MR增量任务时需传。 **约束限制：** 不涉及。 **取值范围：** open。 **默认取值：** 不涉及。
      * @return action
      */
     public String getAction() {
@@ -153,7 +153,7 @@ public class IncConfigV2 {
     }
 
     /**
-     * MR标题
+     * **参数解释：** 创建MR增量任务时需传，MR标题。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return title
      */
     public String getTitle() {

@@ -158,6 +158,81 @@ public class CreateEndpointRequestBody {
 
     private String ipv6Address;
 
+    /**
+     * 终端节点的商用类型。 - profession：专业版 - basic：基础版 不传时默认为基础版。
+     */
+    public static final class EditionEnum {
+
+        /**
+         * Enum PROFESSION for value: "profession"
+         */
+        public static final EditionEnum PROFESSION = new EditionEnum("profession");
+
+        /**
+         * Enum BASIC for value: "basic"
+         */
+        public static final EditionEnum BASIC = new EditionEnum("basic");
+
+        private static final Map<String, EditionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EditionEnum> createStaticFields() {
+            Map<String, EditionEnum> map = new HashMap<>();
+            map.put("profession", PROFESSION);
+            map.put("basic", BASIC);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        EditionEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static EditionEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EditionEnum(value));
+        }
+
+        public static EditionEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof EditionEnum) {
+                return this.value.equals(((EditionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "edition")
+
+    private EditionEnum edition;
+
     public CreateEndpointRequestBody withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -460,6 +535,23 @@ public class CreateEndpointRequestBody {
         this.ipv6Address = ipv6Address;
     }
 
+    public CreateEndpointRequestBody withEdition(EditionEnum edition) {
+        this.edition = edition;
+        return this;
+    }
+
+    /**
+     * 终端节点的商用类型。 - profession：专业版 - basic：基础版 不传时默认为基础版。
+     * @return edition
+     */
+    public EditionEnum getEdition() {
+        return edition;
+    }
+
+    public void setEdition(EditionEnum edition) {
+        this.edition = edition;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -478,7 +570,8 @@ public class CreateEndpointRequestBody {
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.policyStatement, that.policyStatement)
             && Objects.equals(this.policyDocument, that.policyDocument)
-            && Objects.equals(this.ipVersion, that.ipVersion) && Objects.equals(this.ipv6Address, that.ipv6Address);
+            && Objects.equals(this.ipVersion, that.ipVersion) && Objects.equals(this.ipv6Address, that.ipv6Address)
+            && Objects.equals(this.edition, that.edition);
     }
 
     @Override
@@ -496,7 +589,8 @@ public class CreateEndpointRequestBody {
             policyStatement,
             policyDocument,
             ipVersion,
-            ipv6Address);
+            ipv6Address,
+            edition);
     }
 
     @Override
@@ -517,6 +611,7 @@ public class CreateEndpointRequestBody {
         sb.append("    policyDocument: ").append(toIndentedString(policyDocument)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    ipv6Address: ").append(toIndentedString(ipv6Address)).append("\n");
+        sb.append("    edition: ").append(toIndentedString(edition)).append("\n");
         sb.append("}");
         return sb.toString();
     }

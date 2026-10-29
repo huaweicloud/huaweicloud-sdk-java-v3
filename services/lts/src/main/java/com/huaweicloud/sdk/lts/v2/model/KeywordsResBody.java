@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -152,6 +154,31 @@ public class KeywordsResBody {
     @JsonProperty(value = "is_time_range_relative")
 
     private Boolean isTimeRangeRelative;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "conditions")
+
+    private List<KeywordsAlarmConditions> conditions = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_group_name_alias")
+
+    private String logGroupNameAlias;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_stream_name_alias")
+
+    private String logStreamNameAlias;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eps_id")
+
+    private String epsId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "time_range")
+
+    private TimeRange timeRange;
 
     public KeywordsResBody withLogStreamId(String logStreamId) {
         this.logStreamId = logStreamId;
@@ -349,6 +376,116 @@ public class KeywordsResBody {
         this.isTimeRangeRelative = isTimeRangeRelative;
     }
 
+    public KeywordsResBody withConditions(List<KeywordsAlarmConditions> conditions) {
+        this.conditions = conditions;
+        return this;
+    }
+
+    public KeywordsResBody addConditionsItem(KeywordsAlarmConditions conditionsItem) {
+        if (this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
+        this.conditions.add(conditionsItem);
+        return this;
+    }
+
+    public KeywordsResBody withConditions(Consumer<List<KeywordsAlarmConditions>> conditionsSetter) {
+        if (this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
+        conditionsSetter.accept(this.conditions);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 支持根据不同条件触发不同级别的告警。当使用该参数时，将优先使用该参数中的条件触发告警，无视keywords_alarm_level参数以及keywords_requests中的condition、number参数。 **约束限制：** 不涉及。
+     * @return conditions
+     */
+    public List<KeywordsAlarmConditions> getConditions() {
+        return conditions;
+    }
+
+    public void setConditions(List<KeywordsAlarmConditions> conditions) {
+        this.conditions = conditions;
+    }
+
+    public KeywordsResBody withLogGroupNameAlias(String logGroupNameAlias) {
+        this.logGroupNameAlias = logGroupNameAlias;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 日志组别名。 **取值范围：** 不涉及。
+     * @return logGroupNameAlias
+     */
+    public String getLogGroupNameAlias() {
+        return logGroupNameAlias;
+    }
+
+    public void setLogGroupNameAlias(String logGroupNameAlias) {
+        this.logGroupNameAlias = logGroupNameAlias;
+    }
+
+    public KeywordsResBody withLogStreamNameAlias(String logStreamNameAlias) {
+        this.logStreamNameAlias = logStreamNameAlias;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 日志流别名。 **取值范围：** 不涉及。
+     * @return logStreamNameAlias
+     */
+    public String getLogStreamNameAlias() {
+        return logStreamNameAlias;
+    }
+
+    public void setLogStreamNameAlias(String logStreamNameAlias) {
+        this.logStreamNameAlias = logStreamNameAlias;
+    }
+
+    public KeywordsResBody withEpsId(String epsId) {
+        this.epsId = epsId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 企业项目ID。 **取值范围：** 不涉及。
+     * @return epsId
+     */
+    public String getEpsId() {
+        return epsId;
+    }
+
+    public void setEpsId(String epsId) {
+        this.epsId = epsId;
+    }
+
+    public KeywordsResBody withTimeRange(TimeRange timeRange) {
+        this.timeRange = timeRange;
+        return this;
+    }
+
+    public KeywordsResBody withTimeRange(Consumer<TimeRange> timeRangeSetter) {
+        if (this.timeRange == null) {
+            this.timeRange = new TimeRange();
+            timeRangeSetter.accept(this.timeRange);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get timeRange
+     * @return timeRange
+     */
+    public TimeRange getTimeRange() {
+        return timeRange;
+    }
+
+    public void setTimeRange(TimeRange timeRange) {
+        this.timeRange = timeRange;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -365,7 +502,11 @@ public class KeywordsResBody {
             && Objects.equals(this.number, that.number) && Objects.equals(this.searchTimeRange, that.searchTimeRange)
             && Objects.equals(this.searchTimeRangeUnit, that.searchTimeRangeUnit)
             && Objects.equals(this.customDate, that.customDate)
-            && Objects.equals(this.isTimeRangeRelative, that.isTimeRangeRelative);
+            && Objects.equals(this.isTimeRangeRelative, that.isTimeRangeRelative)
+            && Objects.equals(this.conditions, that.conditions)
+            && Objects.equals(this.logGroupNameAlias, that.logGroupNameAlias)
+            && Objects.equals(this.logStreamNameAlias, that.logStreamNameAlias)
+            && Objects.equals(this.epsId, that.epsId) && Objects.equals(this.timeRange, that.timeRange);
     }
 
     @Override
@@ -380,7 +521,12 @@ public class KeywordsResBody {
             searchTimeRange,
             searchTimeRangeUnit,
             customDate,
-            isTimeRangeRelative);
+            isTimeRangeRelative,
+            conditions,
+            logGroupNameAlias,
+            logStreamNameAlias,
+            epsId,
+            timeRange);
     }
 
     @Override
@@ -398,6 +544,11 @@ public class KeywordsResBody {
         sb.append("    searchTimeRangeUnit: ").append(toIndentedString(searchTimeRangeUnit)).append("\n");
         sb.append("    customDate: ").append(toIndentedString(customDate)).append("\n");
         sb.append("    isTimeRangeRelative: ").append(toIndentedString(isTimeRangeRelative)).append("\n");
+        sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
+        sb.append("    logGroupNameAlias: ").append(toIndentedString(logGroupNameAlias)).append("\n");
+        sb.append("    logStreamNameAlias: ").append(toIndentedString(logStreamNameAlias)).append("\n");
+        sb.append("    epsId: ").append(toIndentedString(epsId)).append("\n");
+        sb.append("    timeRange: ").append(toIndentedString(timeRange)).append("\n");
         sb.append("}");
         return sb.toString();
     }

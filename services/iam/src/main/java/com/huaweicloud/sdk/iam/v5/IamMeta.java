@@ -2399,6 +2399,12 @@ public class IamMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListUsersV5Request::getAccessKeyId, ListUsersV5Request::setAccessKeyId));
+        builder.<String>withRequestField("service_specific_credential_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUsersV5Request::getServiceSpecificCredentialId,
+                ListUsersV5Request::setServiceSpecificCredentialId));
 
         // response
 

@@ -116,6 +116,11 @@ public class ShowSparkSqlResponse extends SdkResponse {
 
     private List<SparkSqlLabelRes> labels = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "spark_ui")
+
+    private SparkUiSharedInfo sparkUi;
+
     public ShowSparkSqlResponse withEndpointName(String endpointName) {
         this.endpointName = endpointName;
         return this;
@@ -568,6 +573,32 @@ public class ShowSparkSqlResponse extends SdkResponse {
         this.labels = labels;
     }
 
+    public ShowSparkSqlResponse withSparkUi(SparkUiSharedInfo sparkUi) {
+        this.sparkUi = sparkUi;
+        return this;
+    }
+
+    public ShowSparkSqlResponse withSparkUi(Consumer<SparkUiSharedInfo> sparkUiSetter) {
+        if (this.sparkUi == null) {
+            this.sparkUi = new SparkUiSharedInfo();
+            sparkUiSetter.accept(this.sparkUi);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sparkUi
+     * @return sparkUi
+     */
+    public SparkUiSharedInfo getSparkUi() {
+        return sparkUi;
+    }
+
+    public void setSparkUi(SparkUiSharedInfo sparkUi) {
+        this.sparkUi = sparkUi;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -589,7 +620,7 @@ public class ShowSparkSqlResponse extends SdkResponse {
             && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.logUrl, that.logUrl)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.createUser, that.createUser)
-            && Objects.equals(this.labels, that.labels);
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.sparkUi, that.sparkUi);
     }
 
     @Override
@@ -613,7 +644,8 @@ public class ShowSparkSqlResponse extends SdkResponse {
             startTime,
             endTime,
             createUser,
-            labels);
+            labels,
+            sparkUi);
     }
 
     @Override
@@ -640,6 +672,7 @@ public class ShowSparkSqlResponse extends SdkResponse {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    createUser: ").append(toIndentedString(createUser)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+        sb.append("    sparkUi: ").append(toIndentedString(sparkUi)).append("\n");
         sb.append("}");
         return sb.toString();
     }

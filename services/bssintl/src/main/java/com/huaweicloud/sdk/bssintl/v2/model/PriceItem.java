@@ -48,6 +48,21 @@ public class PriceItem {
 
     private String billingUsageFactor;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_mode")
+
+    private String policyMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "division_pattern")
+
+    private DivisionPattern divisionPattern;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "condition_nodes")
+
+    private List<ConditionSelectPattern> conditionNodes = null;
+
     public PriceItem withOfferingId(String offeringId) {
         this.offeringId = offeringId;
         return this;
@@ -183,6 +198,82 @@ public class PriceItem {
         this.billingUsageFactor = billingUsageFactor;
     }
 
+    public PriceItem withPolicyMode(String policyMode) {
+        this.policyMode = policyMode;
+        return this;
+    }
+
+    /**
+     * 定价策略模式，SIMPLE：简单定价、DIVISION：阶梯定价、CONDITION：条件选择定价
+     * @return policyMode
+     */
+    public String getPolicyMode() {
+        return policyMode;
+    }
+
+    public void setPolicyMode(String policyMode) {
+        this.policyMode = policyMode;
+    }
+
+    public PriceItem withDivisionPattern(DivisionPattern divisionPattern) {
+        this.divisionPattern = divisionPattern;
+        return this;
+    }
+
+    public PriceItem withDivisionPattern(Consumer<DivisionPattern> divisionPatternSetter) {
+        if (this.divisionPattern == null) {
+            this.divisionPattern = new DivisionPattern();
+            divisionPatternSetter.accept(this.divisionPattern);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get divisionPattern
+     * @return divisionPattern
+     */
+    public DivisionPattern getDivisionPattern() {
+        return divisionPattern;
+    }
+
+    public void setDivisionPattern(DivisionPattern divisionPattern) {
+        this.divisionPattern = divisionPattern;
+    }
+
+    public PriceItem withConditionNodes(List<ConditionSelectPattern> conditionNodes) {
+        this.conditionNodes = conditionNodes;
+        return this;
+    }
+
+    public PriceItem addConditionNodesItem(ConditionSelectPattern conditionNodesItem) {
+        if (this.conditionNodes == null) {
+            this.conditionNodes = new ArrayList<>();
+        }
+        this.conditionNodes.add(conditionNodesItem);
+        return this;
+    }
+
+    public PriceItem withConditionNodes(Consumer<List<ConditionSelectPattern>> conditionNodesSetter) {
+        if (this.conditionNodes == null) {
+            this.conditionNodes = new ArrayList<>();
+        }
+        conditionNodesSetter.accept(this.conditionNodes);
+        return this;
+    }
+
+    /**
+     * 条件选择定价结构，policy_mode=CONDITION 时有效
+     * @return conditionNodes
+     */
+    public List<ConditionSelectPattern> getConditionNodes() {
+        return conditionNodes;
+    }
+
+    public void setConditionNodes(List<ConditionSelectPattern> conditionNodes) {
+        this.conditionNodes = conditionNodes;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -196,13 +287,24 @@ public class PriceItem {
             && Objects.equals(this.officialPrice, that.officialPrice)
             && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.periodType, that.periodType)
             && Objects.equals(this.periodNums, that.periodNums)
-            && Objects.equals(this.billingUsageFactor, that.billingUsageFactor);
+            && Objects.equals(this.billingUsageFactor, that.billingUsageFactor)
+            && Objects.equals(this.policyMode, that.policyMode)
+            && Objects.equals(this.divisionPattern, that.divisionPattern)
+            && Objects.equals(this.conditionNodes, that.conditionNodes);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(offeringId, currency, officialPrice, chargingMode, periodType, periodNums, billingUsageFactor);
+        return Objects.hash(offeringId,
+            currency,
+            officialPrice,
+            chargingMode,
+            periodType,
+            periodNums,
+            billingUsageFactor,
+            policyMode,
+            divisionPattern,
+            conditionNodes);
     }
 
     @Override
@@ -216,6 +318,9 @@ public class PriceItem {
         sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
         sb.append("    periodNums: ").append(toIndentedString(periodNums)).append("\n");
         sb.append("    billingUsageFactor: ").append(toIndentedString(billingUsageFactor)).append("\n");
+        sb.append("    policyMode: ").append(toIndentedString(policyMode)).append("\n");
+        sb.append("    divisionPattern: ").append(toIndentedString(divisionPattern)).append("\n");
+        sb.append("    conditionNodes: ").append(toIndentedString(conditionNodes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

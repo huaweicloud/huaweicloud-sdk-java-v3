@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -20,7 +19,7 @@ public class ChangePaymentModeNewResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_set_free_time")
 
-    private BigDecimal canSetFreeTime;
+    private Long canSetFreeTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_msg")
@@ -44,7 +43,7 @@ public class ChangePaymentModeNewResponse extends SdkResponse {
         this.success = success;
     }
 
-    public ChangePaymentModeNewResponse withCanSetFreeTime(BigDecimal canSetFreeTime) {
+    public ChangePaymentModeNewResponse withCanSetFreeTime(Long canSetFreeTime) {
         this.canSetFreeTime = canSetFreeTime;
         return this;
     }
@@ -53,11 +52,11 @@ public class ChangePaymentModeNewResponse extends SdkResponse {
      * 可恢复为免费实例的时间
      * @return canSetFreeTime
      */
-    public BigDecimal getCanSetFreeTime() {
+    public Long getCanSetFreeTime() {
         return canSetFreeTime;
     }
 
-    public void setCanSetFreeTime(BigDecimal canSetFreeTime) {
+    public void setCanSetFreeTime(Long canSetFreeTime) {
         this.canSetFreeTime = canSetFreeTime;
     }
 

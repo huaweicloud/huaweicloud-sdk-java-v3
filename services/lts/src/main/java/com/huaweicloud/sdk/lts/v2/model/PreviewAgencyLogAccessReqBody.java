@@ -85,6 +85,11 @@ public class PreviewAgencyLogAccessReqBody {
     private AgencyAccessTypeEnum agencyAccessType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_accessConfig_id")
+
+    private String agencyAccessConfigId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agency_log_access")
 
     private String agencyLogAccess;
@@ -164,6 +169,23 @@ public class PreviewAgencyLogAccessReqBody {
 
     public void setAgencyAccessType(AgencyAccessTypeEnum agencyAccessType) {
         this.agencyAccessType = agencyAccessType;
+    }
+
+    public PreviewAgencyLogAccessReqBody withAgencyAccessConfigId(String agencyAccessConfigId) {
+        this.agencyAccessConfigId = agencyAccessConfigId;
+        return this;
+    }
+
+    /**
+     * 跨账号日志接入配置id
+     * @return agencyAccessConfigId
+     */
+    public String getAgencyAccessConfigId() {
+        return agencyAccessConfigId;
+    }
+
+    public void setAgencyAccessConfigId(String agencyAccessConfigId) {
+        this.agencyAccessConfigId = agencyAccessConfigId;
     }
 
     public PreviewAgencyLogAccessReqBody withAgencyLogAccess(String agencyLogAccess) {
@@ -397,6 +419,7 @@ public class PreviewAgencyLogAccessReqBody {
         }
         PreviewAgencyLogAccessReqBody that = (PreviewAgencyLogAccessReqBody) obj;
         return Objects.equals(this.agencyAccessType, that.agencyAccessType)
+            && Objects.equals(this.agencyAccessConfigId, that.agencyAccessConfigId)
             && Objects.equals(this.agencyLogAccess, that.agencyLogAccess)
             && Objects.equals(this.logAgencyStreamName, that.logAgencyStreamName)
             && Objects.equals(this.logAgencyStreamId, that.logAgencyStreamId)
@@ -415,6 +438,7 @@ public class PreviewAgencyLogAccessReqBody {
     @Override
     public int hashCode() {
         return Objects.hash(agencyAccessType,
+            agencyAccessConfigId,
             agencyLogAccess,
             logAgencyStreamName,
             logAgencyStreamId,
@@ -435,6 +459,7 @@ public class PreviewAgencyLogAccessReqBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class PreviewAgencyLogAccessReqBody {\n");
         sb.append("    agencyAccessType: ").append(toIndentedString(agencyAccessType)).append("\n");
+        sb.append("    agencyAccessConfigId: ").append(toIndentedString(agencyAccessConfigId)).append("\n");
         sb.append("    agencyLogAccess: ").append(toIndentedString(agencyLogAccess)).append("\n");
         sb.append("    logAgencyStreamName: ").append(toIndentedString(logAgencyStreamName)).append("\n");
         sb.append("    logAgencyStreamId: ").append(toIndentedString(logAgencyStreamId)).append("\n");

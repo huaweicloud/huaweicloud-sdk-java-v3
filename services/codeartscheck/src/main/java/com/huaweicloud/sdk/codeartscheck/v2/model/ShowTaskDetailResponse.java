@@ -148,6 +148,11 @@ public class ShowTaskDetailResponse extends SdkResponse {
     private String isAccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "review_result")
+
+    private String reviewResult;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_type")
 
     private String triggerType;
@@ -157,13 +162,53 @@ public class ShowTaskDetailResponse extends SdkResponse {
 
     private String fileDuplicationRatio;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_count")
+
+    private Integer newCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "solve_count")
+
+    private Integer solveCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dismissed_count")
+
+    private Integer dismissedCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "duplicated_files")
+
+    private Integer duplicatedFiles;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_critical_count")
+
+    private String newCriticalCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_major_count")
+
+    private String newMajorCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_minor_count")
+
+    private String newMinorCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_suggestion_count")
+
+    private String newSuggestionCount;
+
     public ShowTaskDetailResponse withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
     }
 
     /**
-     * 任务id
+     * **参数解释：** 旧版任务ID。即新建检查任务接口的返回值，每个代码检查任务及其下的分支任务、通过API创建的增量任务都有唯一的任务ID。 **取值范围：** 不涉及。
      * @return taskId
      */
     public String getTaskId() {
@@ -180,7 +225,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 任务名字
+     * **参数解释：** 任务名称。 **取值范围：** 不涉及。
      * @return taskName
      */
     public String getTaskName() {
@@ -197,7 +242,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 创建者id
+     * **参数解释：** 任务创建者用户ID。 **取值范围：** 不涉及。
      * @return creatorId
      */
     public String getCreatorId() {
@@ -214,7 +259,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 代码仓地址
+     * **参数解释：** 代码仓地址。 **取值范围：** 不涉及。
      * @return gitUrl
      */
     public String getGitUrl() {
@@ -231,7 +276,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 代码仓分支,如果是MR模式，为源分支
+     * **参数解释：** 代码仓分支，如果是MR模式，为源分支。 **取值范围：** 不涉及。
      * @return gitBranch
      */
     public String getGitBranch() {
@@ -248,7 +293,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 上一次检查时间
+     * **参数解释：** 上一次检查时间。使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
      * @return lastCheckTime
      */
     public String getLastCheckTime() {
@@ -265,7 +310,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 代码总行数
+     * **参数解释：** 原始代码行数，包含空行和注释行。 **取值范围：** 不涉及。
      * @return codeLineTotal
      */
     public Integer getCodeLineTotal() {
@@ -282,7 +327,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 代码有效行数
+     * **参数解释：** 有效代码行数，不包含空行和注释行。 **取值范围：** 不涉及。
      * @return codeLine
      */
     public Integer getCodeLine() {
@@ -299,7 +344,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 代码质量
+     * **参数解释：** 代码质量。 **取值范围：** 不涉及。
      * @return codeQuality
      */
     public BigDecimal getCodeQuality() {
@@ -316,7 +361,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 问题数
+     * **参数解释：** [待处理问题数。](tag:hws,hws_hk)[待处理和重新打开（需打开忽略审核开关）问题数。](tag:fcs,hcs,hcs_sm,hcs_site,hcs_sitesm) **取值范围：** 不涉及。
      * @return issueCount
      */
     public Integer getIssueCount() {
@@ -333,7 +378,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 危险系数
+     * **参数解释：** 危险系数。 **取值范围：** 不涉及。
      * @return riskCoefficient
      */
     public BigDecimal getRiskCoefficient() {
@@ -350,7 +395,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 重复比例
+     * **参数解释：** 代码重复率。 **取值范围：** 不涉及。
      * @return duplicationRatio
      */
     public String getDuplicationRatio() {
@@ -367,7 +412,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 复杂度
+     * **参数解释：** 圈复杂度总数。 **取值范围：** 不涉及。
      * @return complexityCount
      */
     public Integer getComplexityCount() {
@@ -384,7 +429,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 重复行数
+     * **参数解释：** 重复行数总数。 **取值范围：** 不涉及。
      * @return duplicatedLines
      */
     public Integer getDuplicatedLines() {
@@ -401,7 +446,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 注释行数
+     * **参数解释：** 注释行数。 **取值范围：** 不涉及。
      * @return commentLines
      */
     public Integer getCommentLines() {
@@ -418,7 +463,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 注释比例
+     * **参数解释：** 注释率。 **取值范围：** 不涉及。
      * @return commentRatio
      */
     public String getCommentRatio() {
@@ -435,7 +480,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 重复块
+     * **参数解释：** 重复块个数。 **取值范围：** 不涉及。
      * @return duplicatedBlocks
      */
     public Integer getDuplicatedBlocks() {
@@ -452,7 +497,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 上次执行时间
+     * **参数解释：** 上一次执行时间。使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
      * @return lastExecTime
      */
     public String getLastExecTime() {
@@ -469,7 +514,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 检查类型
+     * **参数解释：** 废弃字段。 **约束限制：** 不涉及。 **取值范围：** 不涉及。
      * @return checkType
      */
     public String getCheckType() {
@@ -486,7 +531,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间
+     * **参数解释：** 创建时间。使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -503,7 +548,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 代码平均复杂度
+     * **参数解释：** 平均圈复杂度（方法）。 **取值范围：** 不涉及。
      * @return cyclomaticComplexityPerMethod
      */
     public String getCyclomaticComplexityPerMethod() {
@@ -520,7 +565,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 代码平均复杂度(文件)
+     * **参数解释：** 平均圈复杂度（文件）。 **取值范围：** 不涉及。
      * @return cyclomaticComplexityPerFile
      */
     public String getCyclomaticComplexityPerFile() {
@@ -537,7 +582,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 致命问题数
+     * **参数解释：** 致命问题数。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
      * @return criticalCount
      */
     public String getCriticalCount() {
@@ -554,7 +599,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 严重问题数
+     * **参数解释：** 严重问题数。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
      * @return majorCount
      */
     public String getMajorCount() {
@@ -571,7 +616,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 一般问题数
+     * **参数解释：** 一般问题数。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
      * @return minorCount
      */
     public String getMinorCount() {
@@ -588,7 +633,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 提示问题数
+     * **参数解释：** 提示问题数。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
      * @return suggestionCount
      */
     public String getSuggestionCount() {
@@ -605,7 +650,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 门禁质量是否通过
+     * **参数解释：** 门禁质量是否通过。 **取值范围：** - 1：门禁通过。 - 0：门禁不通过。
      * @return isAccess
      */
     public String getIsAccess() {
@@ -616,13 +661,30 @@ public class ShowTaskDetailResponse extends SdkResponse {
         this.isAccess = isAccess;
     }
 
+    public ShowTaskDetailResponse withReviewResult(String reviewResult) {
+        this.reviewResult = reviewResult;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 门禁质量是否通过。 **取值范围：** 不涉及。
+     * @return reviewResult
+     */
+    public String getReviewResult() {
+        return reviewResult;
+    }
+
+    public void setReviewResult(String reviewResult) {
+        this.reviewResult = reviewResult;
+    }
+
     public ShowTaskDetailResponse withTriggerType(String triggerType) {
         this.triggerType = triggerType;
         return this;
     }
 
     /**
-     * 任务触发方式
+     * **参数解释：** 任务触发方式。 **取值范围：** - 0：手动触发。 - 1：定时触发。 - 2：代码提交触发。 - 3：合并请求触发。
      * @return triggerType
      */
     public String getTriggerType() {
@@ -639,7 +701,7 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 文件重复率
+     * **参数解释：** 文件重复率。 **取值范围：** 不涉及。
      * @return fileDuplicationRatio
      */
     public String getFileDuplicationRatio() {
@@ -648,6 +710,142 @@ public class ShowTaskDetailResponse extends SdkResponse {
 
     public void setFileDuplicationRatio(String fileDuplicationRatio) {
         this.fileDuplicationRatio = fileDuplicationRatio;
+    }
+
+    public ShowTaskDetailResponse withNewCount(Integer newCount) {
+        this.newCount = newCount;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 新发现问题数。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
+     * @return newCount
+     */
+    public Integer getNewCount() {
+        return newCount;
+    }
+
+    public void setNewCount(Integer newCount) {
+        this.newCount = newCount;
+    }
+
+    public ShowTaskDetailResponse withSolveCount(Integer solveCount) {
+        this.solveCount = solveCount;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 已解决和已修复问题数。 **取值范围：** 不涉及。
+     * @return solveCount
+     */
+    public Integer getSolveCount() {
+        return solveCount;
+    }
+
+    public void setSolveCount(Integer solveCount) {
+        this.solveCount = solveCount;
+    }
+
+    public ShowTaskDetailResponse withDismissedCount(Integer dismissedCount) {
+        this.dismissedCount = dismissedCount;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 已忽略问题数。 **取值范围：** 不涉及。
+     * @return dismissedCount
+     */
+    public Integer getDismissedCount() {
+        return dismissedCount;
+    }
+
+    public void setDismissedCount(Integer dismissedCount) {
+        this.dismissedCount = dismissedCount;
+    }
+
+    public ShowTaskDetailResponse withDuplicatedFiles(Integer duplicatedFiles) {
+        this.duplicatedFiles = duplicatedFiles;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 重复文件数量。 **取值范围：** 不涉及。
+     * @return duplicatedFiles
+     */
+    public Integer getDuplicatedFiles() {
+        return duplicatedFiles;
+    }
+
+    public void setDuplicatedFiles(Integer duplicatedFiles) {
+        this.duplicatedFiles = duplicatedFiles;
+    }
+
+    public ShowTaskDetailResponse withNewCriticalCount(String newCriticalCount) {
+        this.newCriticalCount = newCriticalCount;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 新增致命问题数。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
+     * @return newCriticalCount
+     */
+    public String getNewCriticalCount() {
+        return newCriticalCount;
+    }
+
+    public void setNewCriticalCount(String newCriticalCount) {
+        this.newCriticalCount = newCriticalCount;
+    }
+
+    public ShowTaskDetailResponse withNewMajorCount(String newMajorCount) {
+        this.newMajorCount = newMajorCount;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 新增严重问题数。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
+     * @return newMajorCount
+     */
+    public String getNewMajorCount() {
+        return newMajorCount;
+    }
+
+    public void setNewMajorCount(String newMajorCount) {
+        this.newMajorCount = newMajorCount;
+    }
+
+    public ShowTaskDetailResponse withNewMinorCount(String newMinorCount) {
+        this.newMinorCount = newMinorCount;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 新增一般问题数。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
+     * @return newMinorCount
+     */
+    public String getNewMinorCount() {
+        return newMinorCount;
+    }
+
+    public void setNewMinorCount(String newMinorCount) {
+        this.newMinorCount = newMinorCount;
+    }
+
+    public ShowTaskDetailResponse withNewSuggestionCount(String newSuggestionCount) {
+        this.newSuggestionCount = newSuggestionCount;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 新增提示问题数。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
+     * @return newSuggestionCount
+     */
+    public String getNewSuggestionCount() {
+        return newSuggestionCount;
+    }
+
+    public void setNewSuggestionCount(String newSuggestionCount) {
+        this.newSuggestionCount = newSuggestionCount;
     }
 
     @Override
@@ -678,8 +876,16 @@ public class ShowTaskDetailResponse extends SdkResponse {
             && Objects.equals(this.criticalCount, that.criticalCount)
             && Objects.equals(this.majorCount, that.majorCount) && Objects.equals(this.minorCount, that.minorCount)
             && Objects.equals(this.suggestionCount, that.suggestionCount)
-            && Objects.equals(this.isAccess, that.isAccess) && Objects.equals(this.triggerType, that.triggerType)
-            && Objects.equals(this.fileDuplicationRatio, that.fileDuplicationRatio);
+            && Objects.equals(this.isAccess, that.isAccess) && Objects.equals(this.reviewResult, that.reviewResult)
+            && Objects.equals(this.triggerType, that.triggerType)
+            && Objects.equals(this.fileDuplicationRatio, that.fileDuplicationRatio)
+            && Objects.equals(this.newCount, that.newCount) && Objects.equals(this.solveCount, that.solveCount)
+            && Objects.equals(this.dismissedCount, that.dismissedCount)
+            && Objects.equals(this.duplicatedFiles, that.duplicatedFiles)
+            && Objects.equals(this.newCriticalCount, that.newCriticalCount)
+            && Objects.equals(this.newMajorCount, that.newMajorCount)
+            && Objects.equals(this.newMinorCount, that.newMinorCount)
+            && Objects.equals(this.newSuggestionCount, that.newSuggestionCount);
     }
 
     @Override
@@ -711,8 +917,17 @@ public class ShowTaskDetailResponse extends SdkResponse {
             minorCount,
             suggestionCount,
             isAccess,
+            reviewResult,
             triggerType,
-            fileDuplicationRatio);
+            fileDuplicationRatio,
+            newCount,
+            solveCount,
+            dismissedCount,
+            duplicatedFiles,
+            newCriticalCount,
+            newMajorCount,
+            newMinorCount,
+            newSuggestionCount);
     }
 
     @Override
@@ -750,8 +965,17 @@ public class ShowTaskDetailResponse extends SdkResponse {
         sb.append("    minorCount: ").append(toIndentedString(minorCount)).append("\n");
         sb.append("    suggestionCount: ").append(toIndentedString(suggestionCount)).append("\n");
         sb.append("    isAccess: ").append(toIndentedString(isAccess)).append("\n");
+        sb.append("    reviewResult: ").append(toIndentedString(reviewResult)).append("\n");
         sb.append("    triggerType: ").append(toIndentedString(triggerType)).append("\n");
         sb.append("    fileDuplicationRatio: ").append(toIndentedString(fileDuplicationRatio)).append("\n");
+        sb.append("    newCount: ").append(toIndentedString(newCount)).append("\n");
+        sb.append("    solveCount: ").append(toIndentedString(solveCount)).append("\n");
+        sb.append("    dismissedCount: ").append(toIndentedString(dismissedCount)).append("\n");
+        sb.append("    duplicatedFiles: ").append(toIndentedString(duplicatedFiles)).append("\n");
+        sb.append("    newCriticalCount: ").append(toIndentedString(newCriticalCount)).append("\n");
+        sb.append("    newMajorCount: ").append(toIndentedString(newMajorCount)).append("\n");
+        sb.append("    newMinorCount: ").append(toIndentedString(newMinorCount)).append("\n");
+        sb.append("    newSuggestionCount: ").append(toIndentedString(newSuggestionCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

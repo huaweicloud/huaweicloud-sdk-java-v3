@@ -71,7 +71,7 @@ public class RulesetItem {
     }
 
     /**
-     * 规则集id
+     * **参数解释:** 规则集ID。 **取值范围:** 32位UUID。
      * @return templateId
      */
     public String getTemplateId() {
@@ -88,7 +88,7 @@ public class RulesetItem {
     }
 
     /**
-     * 规则集语言
+     * **参数解释:** 规则集语言。 **取值范围:** 当前支持的语言有： - ARKTS - C# - CANGJIE - C++ - CSS - GO - HTML - JAVA - JAVASCRIPT - KOTLIN - LUA - PHP - PYTHON - RUST - SCALA - SHELL - SQL - TERRAFORM - TYPESCRIPT - AZURERESOURCEMANAGER - DOCKER - KUBERNETES
      * @return language
      */
     public String getLanguage() {
@@ -105,7 +105,7 @@ public class RulesetItem {
     }
 
     /**
-     * 规则集名称
+     * **参数解释:** 规则集语言。 **取值范围:** 任意中英文，数字，点，连字符-及下划线_。长度为[1~128]个字符。
      * @return templateName
      */
     public String getTemplateName() {
@@ -122,7 +122,7 @@ public class RulesetItem {
     }
 
     /**
-     * 创建人ID
+     * **参数解释:** 创建者的user_id，值来源于IAM的用户ID。 **取值范围:** 32位UUID。
      * @return creatorId
      */
     public String getCreatorId() {
@@ -139,7 +139,7 @@ public class RulesetItem {
     }
 
     /**
-     * 创建人名称
+     * **参数解释:** 创建人名称，值来源于IAM用户名称。 **取值范围:** IAM用户名称。
      * @return creatorName
      */
     public String getCreatorName() {
@@ -156,7 +156,7 @@ public class RulesetItem {
     }
 
     /**
-     * 创建人时间
+     * **参数解释:** 创建时间，时区统一为0时区。 **取值范围:** 0时区时间。
      * @return templateCreateTime
      */
     public String getTemplateCreateTime() {
@@ -173,7 +173,7 @@ public class RulesetItem {
     }
 
     /**
-     * 使用状态1使用中，0空闲中
+     * **参数解释:** 使用状态。 **取值范围:** - 0：空闲中。 - 1：使用中。
      * @return isUsed
      */
     public String getIsUsed() {
@@ -190,7 +190,7 @@ public class RulesetItem {
     }
 
     /**
-     * 规则集包含的规则id
+     * **参数解释:** 规则集包含的规则ID，每条规则都有唯一的规则ID。 **取值范围:** 32位UUID列表，多个UUID以英文逗号分隔。
      * @return ruleIds
      */
     public String getRuleIds() {
@@ -207,7 +207,7 @@ public class RulesetItem {
     }
 
     /**
-     * 是否该语言默认规则集，0不是，1是
+     * **参数解释:** 规则集是否是该语言默认规则集。 **取值范围:** - 0：不是。 - 1：是。
      * @return isDefault
      */
     public String getIsDefault() {
@@ -224,7 +224,7 @@ public class RulesetItem {
     }
 
     /**
-     * 是否是项目下语言默认规则集，0不是，1是
+     * **参数解释:** 规则集是否是项目下该语言默认规则集。 **取值范围:** - 0：不是。 - 1：是。
      * @return isDevcloudProjectDefault
      */
     public String getIsDevcloudProjectDefault() {
@@ -241,7 +241,7 @@ public class RulesetItem {
     }
 
     /**
-     * 是否是系统规则集，0不是，1是
+     * **参数解释:** 规则集是否是系统规则集。 **取值范围:** - 0：不是。 - 1：是。
      * @return isDefaultTemplate
      */
     public String getIsDefaultTemplate() {

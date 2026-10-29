@@ -46,7 +46,7 @@ public class ShowTaskSettingsResponse extends SdkResponse {
     }
 
     /**
-     * 高级选项的相关信息
+     * **参数解释：** 高级配置的相关信息。
      * @return info
      */
     public List<TaskAdvancedSettings> getInfo() {
@@ -63,7 +63,7 @@ public class ShowTaskSettingsResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释：** 总数。 **取值范围：** ≥0
      * @return total
      */
     public Integer getTotal() {

@@ -76,6 +76,11 @@ public class UpdatePolicyResponse extends SdkResponse {
 
     private Long timestamp;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scan_protection_options")
+
+    private ScanProtectionOption scanProtectionOptions;
+
     public UpdatePolicyResponse withId(String id) {
         this.id = id;
         return this;
@@ -371,6 +376,32 @@ public class UpdatePolicyResponse extends SdkResponse {
         this.timestamp = timestamp;
     }
 
+    public UpdatePolicyResponse withScanProtectionOptions(ScanProtectionOption scanProtectionOptions) {
+        this.scanProtectionOptions = scanProtectionOptions;
+        return this;
+    }
+
+    public UpdatePolicyResponse withScanProtectionOptions(Consumer<ScanProtectionOption> scanProtectionOptionsSetter) {
+        if (this.scanProtectionOptions == null) {
+            this.scanProtectionOptions = new ScanProtectionOption();
+            scanProtectionOptionsSetter.accept(this.scanProtectionOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get scanProtectionOptions
+     * @return scanProtectionOptions
+     */
+    public ScanProtectionOption getScanProtectionOptions() {
+        return scanProtectionOptions;
+    }
+
+    public void setScanProtectionOptions(ScanProtectionOption scanProtectionOptions) {
+        this.scanProtectionOptions = scanProtectionOptions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -385,7 +416,8 @@ public class UpdatePolicyResponse extends SdkResponse {
             && Objects.equals(this.robotAction, that.robotAction) && Objects.equals(this.action, that.action)
             && Objects.equals(this.options, that.options) && Objects.equals(this.modulexOptions, that.modulexOptions)
             && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.bindHost, that.bindHost)
-            && Objects.equals(this.extend, that.extend) && Objects.equals(this.timestamp, that.timestamp);
+            && Objects.equals(this.extend, that.extend) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.scanProtectionOptions, that.scanProtectionOptions);
     }
 
     @Override
@@ -401,7 +433,8 @@ public class UpdatePolicyResponse extends SdkResponse {
             hosts,
             bindHost,
             extend,
-            timestamp);
+            timestamp,
+            scanProtectionOptions);
     }
 
     @Override
@@ -420,6 +453,7 @@ public class UpdatePolicyResponse extends SdkResponse {
         sb.append("    bindHost: ").append(toIndentedString(bindHost)).append("\n");
         sb.append("    extend: ").append(toIndentedString(extend)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+        sb.append("    scanProtectionOptions: ").append(toIndentedString(scanProtectionOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

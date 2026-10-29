@@ -45,13 +45,28 @@ public class SimpleTaskInfoV2 {
 
     private String lastCheckTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sm_level")
+
+    private String smLevel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sm_level_name_en")
+
+    private String smLevelNameEn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sm_level_name")
+
+    private String smLevelName;
+
     public SimpleTaskInfoV2 withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
     }
 
     /**
-     * 任务id
+     * **参数解释：** 任务下的默认分支任务的ID。 **取值范围：** 不涉及。
      * @return taskId
      */
     public String getTaskId() {
@@ -68,7 +83,7 @@ public class SimpleTaskInfoV2 {
     }
 
     /**
-     * 任务名字
+     * **参数解释：** 任务名称。 **取值范围：** 不涉及。
      * @return taskName
      */
     public String getTaskName() {
@@ -85,7 +100,7 @@ public class SimpleTaskInfoV2 {
     }
 
     /**
-     * 创建者id
+     * **参数解释：** 任务创建者的用户ID。 **取值范围：** 不涉及。
      * @return creatorId
      */
     public String getCreatorId() {
@@ -102,7 +117,7 @@ public class SimpleTaskInfoV2 {
     }
 
     /**
-     * 代码仓地址
+     * **参数解释：** 代码仓地址。 **取值范围：** 不涉及。
      * @return gitUrl
      */
     public String getGitUrl() {
@@ -119,7 +134,7 @@ public class SimpleTaskInfoV2 {
     }
 
     /**
-     * 代码仓分支,如果是MR模式，为源分支
+     * **参数解释：** 任务的默认分支，非代码仓默认分支。 **取值范围：** 不涉及。
      * @return gitBranch
      */
     public String getGitBranch() {
@@ -136,7 +151,7 @@ public class SimpleTaskInfoV2 {
     }
 
     /**
-     * 创建时间
+     * **参数解释：** 任务创建时间。 **取值范围：** UTC格式，格式为yyyy-MM-ddTHH:mm:ssZ，例如\"2025-11-28T06:55:41Z\"。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -153,7 +168,7 @@ public class SimpleTaskInfoV2 {
     }
 
     /**
-     * 上一次检查时间
+     * **参数解释：** 任务下所有分支任务、增量任务的最近检查时间。 **取值范围：** UTC格式，格式为yyyy-MM-ddTHH:mm:ssZ，例如\"2025-11-28T06:55:41Z\"。
      * @return lastCheckTime
      */
     public String getLastCheckTime() {
@@ -162,6 +177,57 @@ public class SimpleTaskInfoV2 {
 
     public void setLastCheckTime(String lastCheckTime) {
         this.lastCheckTime = lastCheckTime;
+    }
+
+    public SimpleTaskInfoV2 withSmLevel(String smLevel) {
+        this.smLevel = smLevel;
+        return this;
+    }
+
+    /**
+     * **参数解释：** [密级ID,可见信息密级的ID，从页面接口GET https://{endpoint}/projects/v1/options的响应参数中获取，其中的code值即为密级ID。](tag:hcs_sm,hcs_sitesm)[该参数暂无业务意义，忽略。](tag:fcs) **取值范围：** [不涉及,取值根据用户配置的密级情况变化。](tag:hcs_sm,hcs_sitesm)[不涉及。](tag:fcs)
+     * @return smLevel
+     */
+    public String getSmLevel() {
+        return smLevel;
+    }
+
+    public void setSmLevel(String smLevel) {
+        this.smLevel = smLevel;
+    }
+
+    public SimpleTaskInfoV2 withSmLevelNameEn(String smLevelNameEn) {
+        this.smLevelNameEn = smLevelNameEn;
+        return this;
+    }
+
+    /**
+     * **参数解释：** [密级英文名称，取值根据用户配置的密级情况变化。](tag:hcs_sm,hcs_sitesm)[该参数暂无业务意义，忽略。](tag:fcs) **取值范围：** 不涉及。
+     * @return smLevelNameEn
+     */
+    public String getSmLevelNameEn() {
+        return smLevelNameEn;
+    }
+
+    public void setSmLevelNameEn(String smLevelNameEn) {
+        this.smLevelNameEn = smLevelNameEn;
+    }
+
+    public SimpleTaskInfoV2 withSmLevelName(String smLevelName) {
+        this.smLevelName = smLevelName;
+        return this;
+    }
+
+    /**
+     * **参数解释：** [密级中文名称，取值根据用户配置的密级情况变化。](tag:hcs_sm,hcs_sitesm)[该参数暂无业务意义，忽略。](tag:fcs) **取值范围：** 不涉及。
+     * @return smLevelName
+     */
+    public String getSmLevelName() {
+        return smLevelName;
+    }
+
+    public void setSmLevelName(String smLevelName) {
+        this.smLevelName = smLevelName;
     }
 
     @Override
@@ -176,12 +242,23 @@ public class SimpleTaskInfoV2 {
         return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskName, that.taskName)
             && Objects.equals(this.creatorId, that.creatorId) && Objects.equals(this.gitUrl, that.gitUrl)
             && Objects.equals(this.gitBranch, that.gitBranch) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.lastCheckTime, that.lastCheckTime);
+            && Objects.equals(this.lastCheckTime, that.lastCheckTime) && Objects.equals(this.smLevel, that.smLevel)
+            && Objects.equals(this.smLevelNameEn, that.smLevelNameEn)
+            && Objects.equals(this.smLevelName, that.smLevelName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, taskName, creatorId, gitUrl, gitBranch, createdAt, lastCheckTime);
+        return Objects.hash(taskId,
+            taskName,
+            creatorId,
+            gitUrl,
+            gitBranch,
+            createdAt,
+            lastCheckTime,
+            smLevel,
+            smLevelNameEn,
+            smLevelName);
     }
 
     @Override
@@ -195,6 +272,9 @@ public class SimpleTaskInfoV2 {
         sb.append("    gitBranch: ").append(toIndentedString(gitBranch)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    lastCheckTime: ").append(toIndentedString(lastCheckTime)).append("\n");
+        sb.append("    smLevel: ").append(toIndentedString(smLevel)).append("\n");
+        sb.append("    smLevelNameEn: ").append(toIndentedString(smLevelNameEn)).append("\n");
+        sb.append("    smLevelName: ").append(toIndentedString(smLevelName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

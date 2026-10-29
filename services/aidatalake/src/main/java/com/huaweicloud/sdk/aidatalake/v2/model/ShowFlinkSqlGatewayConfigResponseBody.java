@@ -26,7 +26,7 @@ public class ShowFlinkSqlGatewayConfigResponseBody {
     }
 
     /**
-     * **参数解释**：SQL Gateway的Ingress访问域名，格式为sql-gateway-{jobId}。 **取值范围**：长度为1~253个字符。
+     * **参数解释**：SQL Gateway的访问Host，格式为sql-gateway-{jobId}。 **取值范围**：长度为1~253个字符。
      * @return host
      */
     public String getHost() {

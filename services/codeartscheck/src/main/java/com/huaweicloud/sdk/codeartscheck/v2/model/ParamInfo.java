@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 任务详情
+ * **参数解释：** 任务基本信息。
  */
 public class ParamInfo {
 
@@ -51,7 +51,7 @@ public class ParamInfo {
     }
 
     /**
-     * 仓库地址
+     * **参数解释：** 代码仓地址。 **取值范围:** 不涉及。
      * @return url
      */
     public String getUrl() {
@@ -68,7 +68,7 @@ public class ParamInfo {
     }
 
     /**
-     * 仓库分支
+     * **参数解释：** 任务本次扫描的代码仓分支。 **取值范围:** 不涉及。
      * @return branch
      */
     public String getBranch() {
@@ -85,7 +85,7 @@ public class ParamInfo {
     }
 
     /**
-     * 仓库语言
+     * **参数解释：** 任务本次扫描的规则语言。 **取值范围:** 不涉及。
      * @return language
      */
     public String getLanguage() {
@@ -102,7 +102,7 @@ public class ParamInfo {
     }
 
     /**
-     * 排除的目录
+     * **参数解释：** 任务配置的排除目录信息。 **取值范围:** 不涉及。
      * @return excludeDir
      */
     public String getExcludeDir() {
@@ -119,7 +119,7 @@ public class ParamInfo {
     }
 
     /**
-     * 编码格式
+     * **参数解释：** 废弃字段。 **取值范围:** 不涉及。
      * @return encode
      */
     public String getEncode() {
@@ -136,7 +136,7 @@ public class ParamInfo {
     }
 
     /**
-     * 编译配置信息
+     * **参数解释：** 任务的部分检查参数json格式信息。 **取值范围:** 不涉及。
      * @return compileConfig
      */
     public String getCompileConfig() {
@@ -153,7 +153,7 @@ public class ParamInfo {
     }
 
     /**
-     * g规则集名称
+     * **参数解释：** 废弃字段。 **取值范围:** 不涉及。
      * @return ruleTemplate
      */
     public String getRuleTemplate() {

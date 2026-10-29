@@ -48,6 +48,11 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
     private String lastExecTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_check_finish_time")
+
+    private String lastCheckFinishTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_type")
 
     private String checkType;
@@ -68,7 +73,7 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
     }
 
     /**
-     * 任务id
+     * **参数解释：** 旧版任务ID。即新建检查任务接口的返回值，每个代码检查任务及其下的分支任务、通过API创建的增量任务都有唯一的任务ID。 **取值范围：** 不涉及。
      * @return taskId
      */
     public String getTaskId() {
@@ -85,7 +90,7 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
     }
 
     /**
-     * 任务名字
+     * **参数解释：** 任务名称。 **取值范围：** 不涉及。
      * @return taskName
      */
     public String getTaskName() {
@@ -102,7 +107,7 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
     }
 
     /**
-     * 创建者id
+     * **参数解释：** 任务创建者用户ID。 **取值范围：** 不涉及。
      * @return creatorId
      */
     public String getCreatorId() {
@@ -119,7 +124,7 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
     }
 
     /**
-     * 代码仓地址
+     * **参数解释：** 代码仓地址。 **取值范围：** 不涉及。
      * @return gitUrl
      */
     public String getGitUrl() {
@@ -136,7 +141,7 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
     }
 
     /**
-     * 代码仓分支
+     * **参数解释：** 代码仓分支。 **取值范围：** 不涉及。
      * @return gitBranch
      */
     public String getGitBranch() {
@@ -153,7 +158,7 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
     }
 
     /**
-     * 上一次检查时间
+     * **参数解释：** 上一次检查时间。使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
      * @return lastCheckTime
      */
     public String getLastCheckTime() {
@@ -170,7 +175,7 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
     }
 
     /**
-     * 上次执行时间
+     * **参数解释：** 上一次执行时间。使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
      * @return lastExecTime
      */
     public String getLastExecTime() {
@@ -181,13 +186,30 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
         this.lastExecTime = lastExecTime;
     }
 
+    public ShowTaskCmetricsResponse withLastCheckFinishTime(String lastCheckFinishTime) {
+        this.lastCheckFinishTime = lastCheckFinishTime;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 上次执行结束时间。使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
+     * @return lastCheckFinishTime
+     */
+    public String getLastCheckFinishTime() {
+        return lastCheckFinishTime;
+    }
+
+    public void setLastCheckFinishTime(String lastCheckFinishTime) {
+        this.lastCheckFinishTime = lastCheckFinishTime;
+    }
+
     public ShowTaskCmetricsResponse withCheckType(String checkType) {
         this.checkType = checkType;
         return this;
     }
 
     /**
-     * 检查类型
+     * **参数解释：** 废弃字段。 **约束限制：** 不涉及。 **取值范围：** 不涉及。
      * @return checkType
      */
     public String getCheckType() {
@@ -204,7 +226,7 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间
+     * **参数解释：** 任务创建时间。使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -253,8 +275,10 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
         return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskName, that.taskName)
             && Objects.equals(this.creatorId, that.creatorId) && Objects.equals(this.gitUrl, that.gitUrl)
             && Objects.equals(this.gitBranch, that.gitBranch) && Objects.equals(this.lastCheckTime, that.lastCheckTime)
-            && Objects.equals(this.lastExecTime, that.lastExecTime) && Objects.equals(this.checkType, that.checkType)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.metricInfo, that.metricInfo);
+            && Objects.equals(this.lastExecTime, that.lastExecTime)
+            && Objects.equals(this.lastCheckFinishTime, that.lastCheckFinishTime)
+            && Objects.equals(this.checkType, that.checkType) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.metricInfo, that.metricInfo);
     }
 
     @Override
@@ -266,6 +290,7 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
             gitBranch,
             lastCheckTime,
             lastExecTime,
+            lastCheckFinishTime,
             checkType,
             createdAt,
             metricInfo);
@@ -282,6 +307,7 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
         sb.append("    gitBranch: ").append(toIndentedString(gitBranch)).append("\n");
         sb.append("    lastCheckTime: ").append(toIndentedString(lastCheckTime)).append("\n");
         sb.append("    lastExecTime: ").append(toIndentedString(lastExecTime)).append("\n");
+        sb.append("    lastCheckFinishTime: ").append(toIndentedString(lastCheckFinishTime)).append("\n");
         sb.append("    checkType: ").append(toIndentedString(checkType)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    metricInfo: ").append(toIndentedString(metricInfo)).append("\n");

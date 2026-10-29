@@ -302,6 +302,21 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
 
     private List<TagsResBody> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private Long createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private Long updateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "condition_expressions")
+
+    private List<AlarmCondition> conditionExpressions = null;
+
     public UpdateSqlAlarmRuleResponse withSqlAlarmRuleName(String sqlAlarmRuleName) {
         this.sqlAlarmRuleName = sqlAlarmRuleName;
         return this;
@@ -666,6 +681,74 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         this.tags = tags;
     }
 
+    public UpdateSqlAlarmRuleResponse withCreateTime(Long createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 告警规则创建的时间，毫秒级的时间戳。 **取值范围** 不涉及。
+     * @return createTime
+     */
+    public Long getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
+    }
+
+    public UpdateSqlAlarmRuleResponse withUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 告警规则最后一次修改的时间，毫秒级的时间戳。 **取值范围：** 不涉及。
+     * @return updateTime
+     */
+    public Long getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public UpdateSqlAlarmRuleResponse withConditionExpressions(List<AlarmCondition> conditionExpressions) {
+        this.conditionExpressions = conditionExpressions;
+        return this;
+    }
+
+    public UpdateSqlAlarmRuleResponse addConditionExpressionsItem(AlarmCondition conditionExpressionsItem) {
+        if (this.conditionExpressions == null) {
+            this.conditionExpressions = new ArrayList<>();
+        }
+        this.conditionExpressions.add(conditionExpressionsItem);
+        return this;
+    }
+
+    public UpdateSqlAlarmRuleResponse withConditionExpressions(
+        Consumer<List<AlarmCondition>> conditionExpressionsSetter) {
+        if (this.conditionExpressions == null) {
+            this.conditionExpressions = new ArrayList<>();
+        }
+        conditionExpressionsSetter.accept(this.conditionExpressions);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 支持根据不同条件触发不同级别的告警。当使用该参数时，将优先使用该参数中的条件触发告警，无视condition_expression、sql_alarm_level参数。 **约束限制：** 不涉及。
+     * @return conditionExpressions
+     */
+    public List<AlarmCondition> getConditionExpressions() {
+        return conditionExpressions;
+    }
+
+    public void setConditionExpressions(List<AlarmCondition> conditionExpressions) {
+        this.conditionExpressions = conditionExpressions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -689,7 +772,9 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
             && Objects.equals(this.triggerConditionCount, that.triggerConditionCount)
             && Objects.equals(this.triggerConditionFrequency, that.triggerConditionFrequency)
             && Objects.equals(this.whetherRecoveryPolicy, that.whetherRecoveryPolicy)
-            && Objects.equals(this.recoveryPolicy, that.recoveryPolicy) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.recoveryPolicy, that.recoveryPolicy) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.conditionExpressions, that.conditionExpressions);
     }
 
     @Override
@@ -712,7 +797,10 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
             triggerConditionFrequency,
             whetherRecoveryPolicy,
             recoveryPolicy,
-            tags);
+            tags,
+            createTime,
+            updateTime,
+            conditionExpressions);
     }
 
     @Override
@@ -738,6 +826,9 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         sb.append("    whetherRecoveryPolicy: ").append(toIndentedString(whetherRecoveryPolicy)).append("\n");
         sb.append("    recoveryPolicy: ").append(toIndentedString(recoveryPolicy)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    conditionExpressions: ").append(toIndentedString(conditionExpressions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

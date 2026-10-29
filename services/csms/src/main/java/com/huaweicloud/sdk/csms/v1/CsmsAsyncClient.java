@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsRequest;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsResponse;
+import com.huaweicloud.sdk.csms.v1.model.BatchGetSecretValueRequest;
+import com.huaweicloud.sdk.csms.v1.model.BatchGetSecretValueResponse;
 import com.huaweicloud.sdk.csms.v1.model.BatchImportSecretsRequest;
 import com.huaweicloud.sdk.csms.v1.model.BatchImportSecretsResponse;
 import com.huaweicloud.sdk.csms.v1.model.CheckSecretsRequest;
@@ -137,6 +139,35 @@ public class CsmsAsyncClient {
     public AsyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> batchCreateOrDeleteTagsAsyncInvoker(
         BatchCreateOrDeleteTagsRequest request) {
         return new AsyncInvoker<>(request, CsmsMeta.batchCreateOrDeleteTags, hcClient);
+    }
+
+    /**
+     * 批量查询明文凭据值
+     *
+     * 批量查询明文凭据值，仅获取latest凭据值，即仅获取凭据版本状态为\&quot;SYSCURRENT\&quot;的凭据版本值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchGetSecretValueRequest 请求对象
+     * @return CompletableFuture<BatchGetSecretValueResponse>
+     */
+    public CompletableFuture<BatchGetSecretValueResponse> batchGetSecretValueAsync(BatchGetSecretValueRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.batchGetSecretValue);
+    }
+
+    /**
+     * 批量查询明文凭据值
+     *
+     * 批量查询明文凭据值，仅获取latest凭据值，即仅获取凭据版本状态为\&quot;SYSCURRENT\&quot;的凭据版本值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchGetSecretValueRequest 请求对象
+     * @return AsyncInvoker<BatchGetSecretValueRequest, BatchGetSecretValueResponse>
+     */
+    public AsyncInvoker<BatchGetSecretValueRequest, BatchGetSecretValueResponse> batchGetSecretValueAsyncInvoker(
+        BatchGetSecretValueRequest request) {
+        return new AsyncInvoker<>(request, CsmsMeta.batchGetSecretValue, hcClient);
     }
 
     /**

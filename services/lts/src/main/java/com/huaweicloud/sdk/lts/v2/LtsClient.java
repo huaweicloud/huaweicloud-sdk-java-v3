@@ -590,6 +590,7 @@ public class LtsClient {
      * @param request CreateStructTemplateRequest 请求对象
      * @return CreateStructTemplateResponse
      */
+    @Deprecated
     public CreateStructTemplateResponse createStructTemplate(CreateStructTemplateRequest request) {
         return hcClient.syncInvokeHttp(request, LtsMeta.createStructTemplate);
     }
@@ -604,6 +605,7 @@ public class LtsClient {
      * @param request CreateStructTemplateRequest 请求对象
      * @return SyncInvoker<CreateStructTemplateRequest, CreateStructTemplateResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateStructTemplateRequest, CreateStructTemplateResponse> createStructTemplateInvoker(
         CreateStructTemplateRequest request) {
         return new SyncInvoker<>(request, LtsMeta.createStructTemplate, hcClient);
@@ -1684,6 +1686,7 @@ public class LtsClient {
      * @param request ListQueryStructuredLogsRequest 请求对象
      * @return ListQueryStructuredLogsResponse
      */
+    @Deprecated
     public ListQueryStructuredLogsResponse listQueryStructuredLogs(ListQueryStructuredLogsRequest request) {
         return hcClient.syncInvokeHttp(request, LtsMeta.listQueryStructuredLogs);
     }
@@ -1698,6 +1701,7 @@ public class LtsClient {
      * @param request ListQueryStructuredLogsRequest 请求对象
      * @return SyncInvoker<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse>
      */
+    @Deprecated
     public SyncInvoker<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse> listQueryStructuredLogsInvoker(
         ListQueryStructuredLogsRequest request) {
         return new SyncInvoker<>(request, LtsMeta.listQueryStructuredLogs, hcClient);
@@ -1742,6 +1746,7 @@ public class LtsClient {
      * @param request ListStructuredLogsWithTimeRangeRequest 请求对象
      * @return ListStructuredLogsWithTimeRangeResponse
      */
+    @Deprecated
     public ListStructuredLogsWithTimeRangeResponse listStructuredLogsWithTimeRange(
         ListStructuredLogsWithTimeRangeRequest request) {
         return hcClient.syncInvokeHttp(request, LtsMeta.listStructuredLogsWithTimeRange);
@@ -1757,6 +1762,7 @@ public class LtsClient {
      * @param request ListStructuredLogsWithTimeRangeRequest 请求对象
      * @return SyncInvoker<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse>
      */
+    @Deprecated
     public SyncInvoker<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse> listStructuredLogsWithTimeRangeInvoker(
         ListStructuredLogsWithTimeRangeRequest request) {
         return new SyncInvoker<>(request, LtsMeta.listStructuredLogsWithTimeRange, hcClient);
@@ -2265,6 +2271,7 @@ public class LtsClient {
      * @param request UpdateStructTemplateRequest 请求对象
      * @return UpdateStructTemplateResponse
      */
+    @Deprecated
     public UpdateStructTemplateResponse updateStructTemplate(UpdateStructTemplateRequest request) {
         return hcClient.syncInvokeHttp(request, LtsMeta.updateStructTemplate);
     }
@@ -2279,6 +2286,7 @@ public class LtsClient {
      * @param request UpdateStructTemplateRequest 请求对象
      * @return SyncInvoker<UpdateStructTemplateRequest, UpdateStructTemplateResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateStructTemplateRequest, UpdateStructTemplateResponse> updateStructTemplateInvoker(
         UpdateStructTemplateRequest request) {
         return new SyncInvoker<>(request, LtsMeta.updateStructTemplate, hcClient);

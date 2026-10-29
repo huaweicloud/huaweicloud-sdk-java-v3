@@ -194,9 +194,9 @@ public class RealTimeNodeStatus {
         public static final NodeTypeEnum CSJOB = new NodeTypeEnum("CSJob");
 
         /**
-         * Enum CLOUDTABLEMANAGE for value: "CloudTableManage"
+         * Enum CLOUDTABLEMANAGER for value: "CloudTableManager"
          */
-        public static final NodeTypeEnum CLOUDTABLEMANAGE = new NodeTypeEnum("CloudTableManage");
+        public static final NodeTypeEnum CLOUDTABLEMANAGER = new NodeTypeEnum("CloudTableManager");
 
         /**
          * Enum OBSMANAGER for value: "OBSManager"
@@ -245,7 +245,7 @@ public class RealTimeNodeStatus {
             map.put("CDMJob", CDMJOB);
             map.put("DISTransferTask", DISTRANSFERTASK);
             map.put("CSJob", CSJOB);
-            map.put("CloudTableManage", CLOUDTABLEMANAGE);
+            map.put("CloudTableManager", CLOUDTABLEMANAGER);
             map.put("OBSManager", OBSMANAGER);
             map.put("RESTAPI", RESTAPI);
             map.put("MachineLearning", MACHINELEARNING);

@@ -98,6 +98,11 @@ public class UpdateAccessConfigRequestBody {
 
     private List<String> componentId = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disable_labels_prefix")
+
+    private Boolean disableLabelsPrefix;
+
     public UpdateAccessConfigRequestBody withAccessConfigId(String accessConfigId) {
         this.accessConfigId = accessConfigId;
         return this;
@@ -470,6 +475,23 @@ public class UpdateAccessConfigRequestBody {
         this.componentId = componentId;
     }
 
+    public UpdateAccessConfigRequestBody withDisableLabelsPrefix(Boolean disableLabelsPrefix) {
+        this.disableLabelsPrefix = disableLabelsPrefix;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否对结构化上报方式中labels字段中非内置字段添加__labels__.前缀的行为进行禁用。 **约束限制：** 不涉及。 **取值范围：** - true：禁用，不添加__labels__.前缀。 - false：不禁用，即添加__labels__.前缀。 **默认取值：** 不涉及。
+     * @return disableLabelsPrefix
+     */
+    public Boolean getDisableLabelsPrefix() {
+        return disableLabelsPrefix;
+    }
+
+    public void setDisableLabelsPrefix(Boolean disableLabelsPrefix) {
+        this.disableLabelsPrefix = disableLabelsPrefix;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -492,7 +514,8 @@ public class UpdateAccessConfigRequestBody {
             && Objects.equals(this.demoFields, that.demoFields) && Objects.equals(this.processors, that.processors)
             && Objects.equals(this.applicationId, that.applicationId)
             && Objects.equals(this.environmentId, that.environmentId)
-            && Objects.equals(this.componentId, that.componentId);
+            && Objects.equals(this.componentId, that.componentId)
+            && Objects.equals(this.disableLabelsPrefix, that.disableLabelsPrefix);
     }
 
     @Override
@@ -513,7 +536,8 @@ public class UpdateAccessConfigRequestBody {
             processors,
             applicationId,
             environmentId,
-            componentId);
+            componentId,
+            disableLabelsPrefix);
     }
 
     @Override
@@ -537,6 +561,7 @@ public class UpdateAccessConfigRequestBody {
         sb.append("    applicationId: ").append(toIndentedString(applicationId)).append("\n");
         sb.append("    environmentId: ").append(toIndentedString(environmentId)).append("\n");
         sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
+        sb.append("    disableLabelsPrefix: ").append(toIndentedString(disableLabelsPrefix)).append("\n");
         sb.append("}");
         return sb.toString();
     }

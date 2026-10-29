@@ -135,11 +135,6 @@ public class ShowLogConvergeConfigResponse extends SdkResponse {
     private String managementProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "version")
-
-    private String version;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_mapping_config")
 
     private List<LogMappingConfig> logMappingConfig = null;
@@ -297,23 +292,6 @@ public class ShowLogConvergeConfigResponse extends SdkResponse {
         this.managementProjectId = managementProjectId;
     }
 
-    public ShowLogConvergeConfigResponse withVersion(String version) {
-        this.version = version;
-        return this;
-    }
-
-    /**
-     * 版本
-     * @return version
-     */
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
     public ShowLogConvergeConfigResponse withLogMappingConfig(List<LogMappingConfig> logMappingConfig) {
         this.logMappingConfig = logMappingConfig;
         return this;
@@ -362,7 +340,6 @@ public class ShowLogConvergeConfigResponse extends SdkResponse {
             && Objects.equals(this.status, that.status) && Objects.equals(this.organizationId, that.organizationId)
             && Objects.equals(this.managementAccountId, that.managementAccountId)
             && Objects.equals(this.managementProjectId, that.managementProjectId)
-            && Objects.equals(this.version, that.version)
             && Objects.equals(this.logMappingConfig, that.logMappingConfig);
     }
 
@@ -377,7 +354,6 @@ public class ShowLogConvergeConfigResponse extends SdkResponse {
             organizationId,
             managementAccountId,
             managementProjectId,
-            version,
             logMappingConfig);
     }
 
@@ -394,7 +370,6 @@ public class ShowLogConvergeConfigResponse extends SdkResponse {
         sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
         sb.append("    managementAccountId: ").append(toIndentedString(managementAccountId)).append("\n");
         sb.append("    managementProjectId: ").append(toIndentedString(managementProjectId)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    logMappingConfig: ").append(toIndentedString(logMappingConfig)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -534,6 +534,11 @@ public class ListBackupsRequest {
 
     private Boolean incremental;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "existed_quantity_based_retention_backups")
+
+    private Boolean existedQuantityBasedRetentionBackups;
+
     public ListBackupsRequest withCheckpointId(String checkpointId) {
         this.checkpointId = checkpointId;
         return this;
@@ -925,6 +930,23 @@ public class ListBackupsRequest {
         this.incremental = incremental;
     }
 
+    public ListBackupsRequest withExistedQuantityBasedRetentionBackups(Boolean existedQuantityBasedRetentionBackups) {
+        this.existedQuantityBasedRetentionBackups = existedQuantityBasedRetentionBackups;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否查询按数量保留或永久保留自动备份 **约束限制：** 不涉及 **取值范围：** - true：返回按数量保留或永久保留自动备份  - false：返回按时间保留自动备份 **默认取值：** 不涉及
+     * @return existedQuantityBasedRetentionBackups
+     */
+    public Boolean getExistedQuantityBasedRetentionBackups() {
+        return existedQuantityBasedRetentionBackups;
+    }
+
+    public void setExistedQuantityBasedRetentionBackups(Boolean existedQuantityBasedRetentionBackups) {
+        this.existedQuantityBasedRetentionBackups = existedQuantityBasedRetentionBackups;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -947,7 +969,8 @@ public class ListBackupsRequest {
             && Objects.equals(this.ownType, that.ownType) && Objects.equals(this.memberStatus, that.memberStatus)
             && Objects.equals(this.parentId, that.parentId) && Objects.equals(this.usedPercent, that.usedPercent)
             && Objects.equals(this.showReplication, that.showReplication)
-            && Objects.equals(this.incremental, that.incremental);
+            && Objects.equals(this.incremental, that.incremental)
+            && Objects.equals(this.existedQuantityBasedRetentionBackups, that.existedQuantityBasedRetentionBackups);
     }
 
     @Override
@@ -974,7 +997,8 @@ public class ListBackupsRequest {
             parentId,
             usedPercent,
             showReplication,
-            incremental);
+            incremental,
+            existedQuantityBasedRetentionBackups);
     }
 
     @Override
@@ -1004,6 +1028,9 @@ public class ListBackupsRequest {
         sb.append("    usedPercent: ").append(toIndentedString(usedPercent)).append("\n");
         sb.append("    showReplication: ").append(toIndentedString(showReplication)).append("\n");
         sb.append("    incremental: ").append(toIndentedString(incremental)).append("\n");
+        sb.append("    existedQuantityBasedRetentionBackups: ")
+            .append(toIndentedString(existedQuantityBasedRetentionBackups))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

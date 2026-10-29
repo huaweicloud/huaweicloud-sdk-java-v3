@@ -17,14 +17,14 @@ public class CheckParametersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<TaskCheckParamters> body = null;
+    private List<TaskCheckParameters> body = null;
 
-    public CheckParametersResponse withBody(List<TaskCheckParamters> body) {
+    public CheckParametersResponse withBody(List<TaskCheckParameters> body) {
         this.body = body;
         return this;
     }
 
-    public CheckParametersResponse addBodyItem(TaskCheckParamters bodyItem) {
+    public CheckParametersResponse addBodyItem(TaskCheckParameters bodyItem) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class CheckParametersResponse extends SdkResponse {
         return this;
     }
 
-    public CheckParametersResponse withBody(Consumer<List<TaskCheckParamters>> bodySetter) {
+    public CheckParametersResponse withBody(Consumer<List<TaskCheckParameters>> bodySetter) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -44,11 +44,11 @@ public class CheckParametersResponse extends SdkResponse {
      * Get body
      * @return body
      */
-    public List<TaskCheckParamters> getBody() {
+    public List<TaskCheckParameters> getBody() {
         return body;
     }
 
-    public void setBody(List<TaskCheckParamters> body) {
+    public void setBody(List<TaskCheckParameters> body) {
         this.body = body;
     }
 

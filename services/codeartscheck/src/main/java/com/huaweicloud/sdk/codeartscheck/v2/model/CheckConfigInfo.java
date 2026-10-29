@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * CheckConfigInfo
+ * **参数解释：** 检查参数配置信息。
  */
 public class CheckConfigInfo {
 
@@ -61,7 +61,7 @@ public class CheckConfigInfo {
     }
 
     /**
-     * 检查参数名称
+     * **参数解释：** 检查参数名称。 **取值范围:** 不涉及。
      * @return name
      */
     public String getName() {
@@ -78,7 +78,7 @@ public class CheckConfigInfo {
     }
 
     /**
-     * 检查参数对应的key值
+     * **参数解释：** 检查参数对应的Key值。 **取值范围:** 不涉及。
      * @return cfgKey
      */
     public String getCfgKey() {
@@ -95,7 +95,7 @@ public class CheckConfigInfo {
     }
 
     /**
-     * 检查参数默认值
+     * **参数解释：** 检查参数默认值。 **取值范围:** 不涉及。
      * @return defaultValue
      */
     public String getDefaultValue() {
@@ -112,7 +112,7 @@ public class CheckConfigInfo {
     }
 
     /**
-     * 检查参数可选项
+     * **参数解释：** 检查参数可选项。 **取值范围:** 不涉及。
      * @return optionValue
      */
     public String getOptionValue() {
@@ -129,7 +129,7 @@ public class CheckConfigInfo {
     }
 
     /**
-     * 0：非必填，1：必填
+     * **参数解释：** 是否必填参数。 **取值范围:** - 0：非必填。 - 1：必填。
      * @return isRequired
      */
     public Integer getIsRequired() {
@@ -146,7 +146,7 @@ public class CheckConfigInfo {
     }
 
     /**
-     * 检查参数说明
+     * **参数解释：** 检查参数说明。 **取值范围:** 不涉及。
      * @return description
      */
     public String getDescription() {
@@ -163,7 +163,7 @@ public class CheckConfigInfo {
     }
 
     /**
-     * 参数类型，0：文本，2：有可选项
+     * **参数解释：** 参数类型。 **取值范围:** - 0：文本。 - 2：有可选项。
      * @return type
      */
     public Integer getType() {
@@ -180,7 +180,7 @@ public class CheckConfigInfo {
     }
 
     /**
-     * 参数状态，on：启用，off：未启用
+     * **参数解释：** 参数状态。 **取值范围:** - on：启用。 - off：未启用。
      * @return status
      */
     public String getStatus() {
@@ -197,7 +197,7 @@ public class CheckConfigInfo {
     }
 
     /**
-     * 检查参数值
+     * **参数解释：** 检查参数值。 **取值范围:** 不涉及。
      * @return value
      */
     public String getValue() {

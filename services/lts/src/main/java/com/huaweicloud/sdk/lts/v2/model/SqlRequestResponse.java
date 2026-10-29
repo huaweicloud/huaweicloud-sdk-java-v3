@@ -61,6 +61,16 @@ public class SqlRequestResponse {
 
     private Boolean isTimeRangeRelative;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_group_name_alias")
+
+    private String logGroupNameAlias;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_stream_name_alias")
+
+    private String logStreamNameAlias;
+
     public SqlRequestResponse withLogStreamId(String logStreamId) {
         this.logStreamId = logStreamId;
         return this;
@@ -240,6 +250,40 @@ public class SqlRequestResponse {
         this.isTimeRangeRelative = isTimeRangeRelative;
     }
 
+    public SqlRequestResponse withLogGroupNameAlias(String logGroupNameAlias) {
+        this.logGroupNameAlias = logGroupNameAlias;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 日志组别名。 **约束限制：** 不涉及。
+     * @return logGroupNameAlias
+     */
+    public String getLogGroupNameAlias() {
+        return logGroupNameAlias;
+    }
+
+    public void setLogGroupNameAlias(String logGroupNameAlias) {
+        this.logGroupNameAlias = logGroupNameAlias;
+    }
+
+    public SqlRequestResponse withLogStreamNameAlias(String logStreamNameAlias) {
+        this.logStreamNameAlias = logStreamNameAlias;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 日志流别名。 **约束限制：** 不涉及。
+     * @return logStreamNameAlias
+     */
+    public String getLogStreamNameAlias() {
+        return logStreamNameAlias;
+    }
+
+    public void setLogStreamNameAlias(String logStreamNameAlias) {
+        this.logStreamNameAlias = logStreamNameAlias;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -256,7 +300,9 @@ public class SqlRequestResponse {
             && Objects.equals(this.searchTimeRange, that.searchTimeRange)
             && Objects.equals(this.searchTimeRangeUnit, that.searchTimeRangeUnit)
             && Objects.equals(this.customDate, that.customDate)
-            && Objects.equals(this.isTimeRangeRelative, that.isTimeRangeRelative);
+            && Objects.equals(this.isTimeRangeRelative, that.isTimeRangeRelative)
+            && Objects.equals(this.logGroupNameAlias, that.logGroupNameAlias)
+            && Objects.equals(this.logStreamNameAlias, that.logStreamNameAlias);
     }
 
     @Override
@@ -270,7 +316,9 @@ public class SqlRequestResponse {
             searchTimeRange,
             searchTimeRangeUnit,
             customDate,
-            isTimeRangeRelative);
+            isTimeRangeRelative,
+            logGroupNameAlias,
+            logStreamNameAlias);
     }
 
     @Override
@@ -287,6 +335,8 @@ public class SqlRequestResponse {
         sb.append("    searchTimeRangeUnit: ").append(toIndentedString(searchTimeRangeUnit)).append("\n");
         sb.append("    customDate: ").append(toIndentedString(customDate)).append("\n");
         sb.append("    isTimeRangeRelative: ").append(toIndentedString(isTimeRangeRelative)).append("\n");
+        sb.append("    logGroupNameAlias: ").append(toIndentedString(logGroupNameAlias)).append("\n");
+        sb.append("    logStreamNameAlias: ").append(toIndentedString(logStreamNameAlias)).append("\n");
         sb.append("}");
         return sb.toString();
     }

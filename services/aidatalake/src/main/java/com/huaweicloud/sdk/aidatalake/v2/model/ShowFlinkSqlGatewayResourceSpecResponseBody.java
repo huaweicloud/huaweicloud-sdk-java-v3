@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * **参数解释**：SQL Gateway sidecar的资源规格，包含CPU和内存配额，仅FLINK_SQL_GATEWAY类型返回。
+ * **参数解释**：SQL Gateway 的资源规格，包含CPU和内存配额。
  */
 public class ShowFlinkSqlGatewayResourceSpecResponseBody {
 
@@ -26,7 +26,7 @@ public class ShowFlinkSqlGatewayResourceSpecResponseBody {
     }
 
     /**
-     * **参数解释**：SQL Gateway的CPU配额，单位为毫核。 **取值范围**：100~48000。
+     * **参数解释**：CPU毫核数，单位为毫核。 **取值范围**：500~47500。
      * @return cpu
      */
     public Integer getCpu() {
@@ -43,7 +43,7 @@ public class ShowFlinkSqlGatewayResourceSpecResponseBody {
     }
 
     /**
-     * **参数解释**：SQL Gateway的内存配额，单位为MB。 **取值范围**：128~393216。
+     * **参数解释**：内存大小，单位为MB。 **取值范围**：2048~391168。
      * @return memory
      */
     public Integer getMemory() {

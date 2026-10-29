@@ -26,7 +26,7 @@ public class PortList {
     private Integer serverPort;
 
     /**
-     * 端口映射协议，支持TCP。
+     * 端口映射协议，支持TCP、UDP。
      */
     public static final class ProtocolEnum {
 
@@ -35,11 +35,17 @@ public class PortList {
          */
         public static final ProtocolEnum TCP = new ProtocolEnum("TCP");
 
+        /**
+         * Enum UDP for value: "UDP"
+         */
+        public static final ProtocolEnum UDP = new ProtocolEnum("UDP");
+
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ProtocolEnum> createStaticFields() {
             Map<String, ProtocolEnum> map = new HashMap<>();
             map.put("TCP", TCP);
+            map.put("UDP", UDP);
             return Collections.unmodifiableMap(map);
         }
 
@@ -138,7 +144,7 @@ public class PortList {
     }
 
     /**
-     * 端口映射协议，支持TCP。
+     * 端口映射协议，支持TCP、UDP。
      * @return protocol
      */
     public ProtocolEnum getProtocol() {

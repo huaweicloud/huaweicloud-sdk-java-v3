@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * **参数解释**：SQL Gateway的资源规格，仅FLINK_SQL_GATEWAY类型使用。 **约束限制**：不涉及。
+ * **参数解释**：SQL Gateway的资源规格，仅FLINK_SQL_GATEWAY类型使用。 **约束限制**：SQL Gateway与JobManager的CPU之和不能超过48000毫核，内存之和不能超过393216 MB。
  */
 public class FlinkSqlGatewayResourceSpec {
 
@@ -26,9 +26,9 @@ public class FlinkSqlGatewayResourceSpec {
     }
 
     /**
-     * **参数解释**：SQL Gateway的CPU配额，单位为毫核。 **约束限制**：不涉及。 **取值范围**：100~48000。 **默认取值**：500。
-     * minimum: 100
-     * maximum: 48000
+     * **参数解释**：CPU毫核数，单位为毫核，用于指定SQL Gateway的CPU资源。 **约束限制**：SQL Gateway与JobManager的CPU之和不能超过48000毫核。 **取值范围**：500~47500。 **默认取值**：1000。
+     * minimum: 500
+     * maximum: 47500
      * @return cpu
      */
     public Integer getCpu() {
@@ -45,9 +45,9 @@ public class FlinkSqlGatewayResourceSpec {
     }
 
     /**
-     * **参数解释**：SQL Gateway的内存配额，单位为MB。 **约束限制**：不涉及。 **取值范围**：128~393216。 **默认取值**：1000。
-     * minimum: 128
-     * maximum: 393216
+     * **参数解释**：内存大小，单位为MB，用于指定SQL Gateway的内存资源。 **约束限制**：SQL Gateway与JobManager的内存之和不能超过393216 MB。 **取值范围**：2048~391168。 **默认取值**：4096。
+     * minimum: 2048
+     * maximum: 391168
      * @return memory
      */
     public Integer getMemory() {

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 任务配置高级选项的请求信息
+ * **参数解释：** 高级配置参数的相关信息，数组不能为空。 **约束限制：** 不涉及。
  */
 public class UpdateTaskSettingsRequestBody {
 
@@ -42,7 +42,7 @@ public class UpdateTaskSettingsRequestBody {
     }
 
     /**
-     * 高级选项参数的相关信息
+     * **参数解释：** 高级配置参数的相关信息，数组不能为空。 **约束限制：** 不涉及。
      * @return taskAdvancedSettings
      */
     public List<TaskAdvancedSettingsItem> getTaskAdvancedSettings() {

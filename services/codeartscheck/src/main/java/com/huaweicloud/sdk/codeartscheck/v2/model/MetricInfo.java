@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 度量项
+ * MetricInfo
  */
 public class MetricInfo {
 
@@ -231,7 +231,7 @@ public class MetricInfo {
     }
 
     /**
-     * 代码规模
+     * **参数解释：** 有效代码行数，不包含空行和注释行。 **取值范围：** 不涉及。
      * @return codeSize
      */
     public String getCodeSize() {
@@ -248,7 +248,7 @@ public class MetricInfo {
     }
 
     /**
-     * 原始代码行数
+     * **参数解释：** 原始代码行数，包含空行和注释行。 **取值范围：** 不涉及。
      * @return rawLines
      */
     public String getRawLines() {
@@ -265,7 +265,7 @@ public class MetricInfo {
     }
 
     /**
-     * 函数总数
+     * **参数解释：** 函数总数。 **取值范围：** 不涉及。
      * @return methodsTotal
      */
     public String getMethodsTotal() {
@@ -282,7 +282,7 @@ public class MetricInfo {
     }
 
     /**
-     * 圈复杂度总数
+     * **参数解释：** 圈复杂度总数。 **取值范围：** 不涉及。
      * @return cyclomaticComplexityTotal
      */
     public String getCyclomaticComplexityTotal() {
@@ -299,7 +299,7 @@ public class MetricInfo {
     }
 
     /**
-     * 平均圈复杂度
+     * **参数解释：** 平均圈复杂度。 **取值范围：** 不涉及。
      * @return cyclomaticComplexityPerMethod
      */
     public String getCyclomaticComplexityPerMethod() {
@@ -316,7 +316,7 @@ public class MetricInfo {
     }
 
     /**
-     * 最大圈复杂度
+     * **参数解释：** 最大圈复杂度。 **取值范围：** 不涉及。
      * @return maximumCyclomaticComplexity
      */
     public String getMaximumCyclomaticComplexity() {
@@ -333,7 +333,7 @@ public class MetricInfo {
     }
 
     /**
-     * 超大圈复杂度数
+     * **参数解释：** 超大圈复杂度函数总数。 **取值范围：** 不涉及。
      * @return hugeCyclomaticComplexityTotal
      */
     public String getHugeCyclomaticComplexityTotal() {
@@ -350,7 +350,7 @@ public class MetricInfo {
     }
 
     /**
-     * 超大圈复杂度比例
+     * **参数解释：** 超大圈复杂度函数占比。 **取值范围：** 不涉及。
      * @return hugeCyclomaticComplexityRatio
      */
     public String getHugeCyclomaticComplexityRatio() {
@@ -367,7 +367,7 @@ public class MetricInfo {
     }
 
     /**
-     * cca圈复杂度总数
+     * **参数解释：** CCA圈复杂度总数。 **取值范围：** 不涉及。
      * @return ccaCyclomaticComplexityTotal
      */
     public String getCcaCyclomaticComplexityTotal() {
@@ -384,7 +384,7 @@ public class MetricInfo {
     }
 
     /**
-     * cca平均圈复杂度
+     * **参数解释：** CCA平均圈复杂度。 **取值范围：** 不涉及。
      * @return ccaCyclomaticComplexityPerMethod
      */
     public String getCcaCyclomaticComplexityPerMethod() {
@@ -401,7 +401,7 @@ public class MetricInfo {
     }
 
     /**
-     * cca最大圈复杂度
+     * **参数解释：** CCA最大圈复杂度。 **取值范围：** 不涉及。
      * @return maximumCcaCyclomaticComplexity
      */
     public String getMaximumCcaCyclomaticComplexity() {
@@ -418,7 +418,7 @@ public class MetricInfo {
     }
 
     /**
-     * 超大圈复杂度函数总数
+     * **参数解释：** 超大CCA圈复杂度函数总数。 **取值范围：** 不涉及。
      * @return hugeCcaCyclomaticComplexityTotal
      */
     public String getHugeCcaCyclomaticComplexityTotal() {
@@ -435,7 +435,7 @@ public class MetricInfo {
     }
 
     /**
-     * 圈复杂度满足度
+     * **参数解释：** 圈复杂度阈值遵从度。 **取值范围：** 不涉及。
      * @return cyclomaticComplexityAdequacy
      */
     public String getCyclomaticComplexityAdequacy() {
@@ -452,7 +452,7 @@ public class MetricInfo {
     }
 
     /**
-     * 最大深度
+     * **参数解释：** 最大深度。 **取值范围：** 不涉及。
      * @return maximumDepth
      */
     public String getMaximumDepth() {
@@ -469,7 +469,7 @@ public class MetricInfo {
     }
 
     /**
-     * 超大深度数
+     * **参数解释：** 超大深度个数。 **取值范围：** 不涉及。
      * @return hugeDepthTotal
      */
     public String getHugeDepthTotal() {
@@ -486,7 +486,7 @@ public class MetricInfo {
     }
 
     /**
-     * 超大深度占比
+     * **参数解释：** 超大深度占比。 **取值范围：** 不涉及。
      * @return hugeDepthRatio
      */
     public String getHugeDepthRatio() {
@@ -503,7 +503,7 @@ public class MetricInfo {
     }
 
     /**
-     * 函数总行数
+     * **参数解释：** 函数总行数。 **取值范围：** 不涉及。
      * @return methodLines
      */
     public String getMethodLines() {
@@ -520,7 +520,7 @@ public class MetricInfo {
     }
 
     /**
-     * 函数平均代码行
+     * **参数解释：** 平均函数代码行。 **取值范围：** 不涉及。
      * @return linesPerMethod
      */
     public String getLinesPerMethod() {
@@ -537,7 +537,7 @@ public class MetricInfo {
     }
 
     /**
-     * 超大函数数
+     * **参数解释：** 超大代码行函数数。 **取值范围：** 不涉及。
      * @return hugeMethodTotal
      */
     public String getHugeMethodTotal() {
@@ -554,7 +554,7 @@ public class MetricInfo {
     }
 
     /**
-     * 超大函数占比
+     * **参数解释：** 超大代码行函数占比。 **取值范围：** 不涉及。
      * @return hugeMethodRatio
      */
     public String getHugeMethodRatio() {
@@ -571,7 +571,7 @@ public class MetricInfo {
     }
 
     /**
-     * 文件总数
+     * **参数解释：** 文件总数。 **取值范围：** 不涉及。
      * @return filesTotal
      */
     public String getFilesTotal() {
@@ -588,7 +588,7 @@ public class MetricInfo {
     }
 
     /**
-     * 目录总数
+     * **参数解释：** 目录总数。 **取值范围：** 不涉及。
      * @return foldersTotal
      */
     public String getFoldersTotal() {
@@ -605,7 +605,7 @@ public class MetricInfo {
     }
 
     /**
-     * 文件平均代码行
+     * **参数解释：** 平均文件代码行。 **取值范围：** 不涉及。
      * @return linesPerFile
      */
     public String getLinesPerFile() {
@@ -622,7 +622,7 @@ public class MetricInfo {
     }
 
     /**
-     * 超大头文件数
+     * **参数解释：** 超大头文件数。 **取值范围：** 不涉及。
      * @return hugeHeaderfileTotal
      */
     public String getHugeHeaderfileTotal() {
@@ -639,7 +639,7 @@ public class MetricInfo {
     }
 
     /**
-     * 超大头文件占比
+     * **参数解释：** 超大头文件占比。 **取值范围：** 不涉及。
      * @return hugeHeaderfileRatio
      */
     public String getHugeHeaderfileRatio() {
@@ -656,7 +656,7 @@ public class MetricInfo {
     }
 
     /**
-     * 超大源文件数
+     * **参数解释：** 超大源文件数。 **取值范围：** 不涉及。
      * @return hugeNonHeaderfileTotal
      */
     public String getHugeNonHeaderfileTotal() {
@@ -673,7 +673,7 @@ public class MetricInfo {
     }
 
     /**
-     * 超大源文件占比
+     * **参数解释：** 超大源文件占比。 **取值范围：** 不涉及。
      * @return hugeNonHeaderfileRatio
      */
     public String getHugeNonHeaderfileRatio() {
@@ -690,7 +690,7 @@ public class MetricInfo {
     }
 
     /**
-     * 超大目录数
+     * **参数解释：** 超大目录数。 **取值范围：** 不涉及。
      * @return hugeFolderTotal
      */
     public String getHugeFolderTotal() {
@@ -707,7 +707,7 @@ public class MetricInfo {
     }
 
     /**
-     * 超大目录占比
+     * **参数解释：** 超大目录占比。 **取值范围：** 不涉及。
      * @return hugeFolderRatio
      */
     public String getHugeFolderRatio() {
@@ -724,7 +724,7 @@ public class MetricInfo {
     }
 
     /**
-     * 重复文件数
+     * **参数解释：** 重复文件数。 **取值范围：** 不涉及。
      * @return fileDuplicationTotal
      */
     public String getFileDuplicationTotal() {
@@ -741,7 +741,7 @@ public class MetricInfo {
     }
 
     /**
-     * 文件重复率
+     * **参数解释：** 文件重复率。 **取值范围：** 不涉及。
      * @return fileDuplicationRatio
      */
     public String getFileDuplicationRatio() {
@@ -758,7 +758,7 @@ public class MetricInfo {
     }
 
     /**
-     * 重复源文件数
+     * **参数解释：** 重复源文件数。 **取值范围：** 不涉及。
      * @return nonHfileDuplicationTotal
      */
     public String getNonHfileDuplicationTotal() {
@@ -775,7 +775,7 @@ public class MetricInfo {
     }
 
     /**
-     * 源文件重复率
+     * **参数解释：** 源文件重复率。 **取值范围：** 不涉及。
      * @return nonHfileDuplicationRatio
      */
     public String getNonHfileDuplicationRatio() {
@@ -792,7 +792,7 @@ public class MetricInfo {
     }
 
     /**
-     * 代码重复数
+     * **参数解释：** 代码重复数。 **取值范围：** 不涉及。
      * @return codeDuplicationTotal
      */
     public String getCodeDuplicationTotal() {
@@ -809,7 +809,7 @@ public class MetricInfo {
     }
 
     /**
-     * 代码重复率
+     * **参数解释：** 代码重复率。 **取值范围：** 不涉及。
      * @return codeDuplicationRatio
      */
     public String getCodeDuplicationRatio() {
@@ -826,7 +826,7 @@ public class MetricInfo {
     }
 
     /**
-     * 源文件代码重复数
+     * **参数解释：** 源文件代码重复数。 **取值范围：** 不涉及。
      * @return nonHfileCodeDuplicationTotal
      */
     public String getNonHfileCodeDuplicationTotal() {
@@ -843,7 +843,7 @@ public class MetricInfo {
     }
 
     /**
-     * 源文件代码重复率
+     * **参数解释：** 源文件代码重复率。 **取值范围：** 不涉及。
      * @return nonHfileCodeDuplicationRatio
      */
     public String getNonHfileCodeDuplicationRatio() {
@@ -860,7 +860,7 @@ public class MetricInfo {
     }
 
     /**
-     * 危险函数总数
+     * **参数解释：** 危险函数总数。 **取值范围：** 不涉及。
      * @return unsafeFunctionsTotal
      */
     public String getUnsafeFunctionsTotal() {
@@ -877,7 +877,7 @@ public class MetricInfo {
     }
 
     /**
-     * 危险函数密度
+     * **参数解释：** 危险函数密度。 **取值范围：** 不涉及。
      * @return unsafeFunctionsKloc
      */
     public String getUnsafeFunctionsKloc() {
@@ -894,7 +894,7 @@ public class MetricInfo {
     }
 
     /**
-     * 冗余代码数
+     * **参数解释：** 冗余代码数。 **取值范围：** 不涉及。
      * @return redundantCodeTotal
      */
     public String getRedundantCodeTotal() {
@@ -911,7 +911,7 @@ public class MetricInfo {
     }
 
     /**
-     * 冗余代码块密度
+     * **参数解释：** 冗余代码密度。 **取值范围：** 不涉及。
      * @return redundantCodeKloc
      */
     public String getRedundantCodeKloc() {
@@ -928,7 +928,7 @@ public class MetricInfo {
     }
 
     /**
-     * 抑制告警数
+     * **参数解释：** 抑制告警数。 **取值范围：** 不涉及。
      * @return warningSuppressionTotal
      */
     public String getWarningSuppressionTotal() {
@@ -945,7 +945,7 @@ public class MetricInfo {
     }
 
     /**
-     * 抑制告警密度
+     * **参数解释：** 抑制告警密度。 **取值范围：** 不涉及。
      * @return warningSuppressionKloc
      */
     public String getWarningSuppressionKloc() {

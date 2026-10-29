@@ -36,7 +36,7 @@ public class StatisticSeverityV2 {
     }
 
     /**
-     * 致命问题数
+     * **参数解释：** 致命问题数。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
      * @return critical
      */
     public Integer getCritical() {
@@ -53,7 +53,7 @@ public class StatisticSeverityV2 {
     }
 
     /**
-     * 严重问题数
+     * **参数解释：** 严重问题数。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
      * @return major
      */
     public Integer getMajor() {
@@ -70,7 +70,7 @@ public class StatisticSeverityV2 {
     }
 
     /**
-     * 一般问题数
+     * **参数解释：** 一般问题数。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
      * @return minor
      */
     public Integer getMinor() {
@@ -87,7 +87,7 @@ public class StatisticSeverityV2 {
     }
 
     /**
-     * 提示问题数
+     * **参数解释：** 提示问题数。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
      * @return suggestion
      */
     public Integer getSuggestion() {

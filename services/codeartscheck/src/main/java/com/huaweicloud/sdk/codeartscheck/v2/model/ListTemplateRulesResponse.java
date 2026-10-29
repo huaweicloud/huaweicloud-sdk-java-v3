@@ -46,7 +46,7 @@ public class ListTemplateRulesResponse extends SdkResponse {
     }
 
     /**
-     * 规则集的规则列表信息
+     * **参数解释:** 规则集的规则列表信息。
      * @return info
      */
     public List<RuleItem> getInfo() {
@@ -63,7 +63,7 @@ public class ListTemplateRulesResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释:** 总数。 **取值范围:** ≥0
      * @return total
      */
     public Integer getTotal() {

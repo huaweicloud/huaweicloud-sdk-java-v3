@@ -9,9 +9,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * TaskCheckParamters
+ * **参数解释：** 任务规则集的检查参数。
  */
-public class TaskCheckParamters {
+public class TaskCheckParameters {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_id")
@@ -28,13 +28,13 @@ public class TaskCheckParamters {
 
     private List<CheckConfigInfo> checkerConfigs = null;
 
-    public TaskCheckParamters withCheckId(Integer checkId) {
+    public TaskCheckParameters withCheckId(Integer checkId) {
         this.checkId = checkId;
         return this;
     }
 
     /**
-     * 检查工具ID
+     * **参数解释：** 检查工具ID。 **取值范围:** ≥0
      * @return checkId
      */
     public Integer getCheckId() {
@@ -45,13 +45,13 @@ public class TaskCheckParamters {
         this.checkId = checkId;
     }
 
-    public TaskCheckParamters withName(String name) {
+    public TaskCheckParameters withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * 编译参数名称
+     * **参数解释：** 编译参数名称。 **取值范围:** 不涉及。
      * @return name
      */
     public String getName() {
@@ -62,12 +62,12 @@ public class TaskCheckParamters {
         this.name = name;
     }
 
-    public TaskCheckParamters withCheckerConfigs(List<CheckConfigInfo> checkerConfigs) {
+    public TaskCheckParameters withCheckerConfigs(List<CheckConfigInfo> checkerConfigs) {
         this.checkerConfigs = checkerConfigs;
         return this;
     }
 
-    public TaskCheckParamters addCheckerConfigsItem(CheckConfigInfo checkerConfigsItem) {
+    public TaskCheckParameters addCheckerConfigsItem(CheckConfigInfo checkerConfigsItem) {
         if (this.checkerConfigs == null) {
             this.checkerConfigs = new ArrayList<>();
         }
@@ -75,7 +75,7 @@ public class TaskCheckParamters {
         return this;
     }
 
-    public TaskCheckParamters withCheckerConfigs(Consumer<List<CheckConfigInfo>> checkerConfigsSetter) {
+    public TaskCheckParameters withCheckerConfigs(Consumer<List<CheckConfigInfo>> checkerConfigsSetter) {
         if (this.checkerConfigs == null) {
             this.checkerConfigs = new ArrayList<>();
         }
@@ -84,7 +84,7 @@ public class TaskCheckParamters {
     }
 
     /**
-     * 检查参数配置信息
+     * **参数解释：** 检查参数配置信息。
      * @return checkerConfigs
      */
     public List<CheckConfigInfo> getCheckerConfigs() {
@@ -103,7 +103,7 @@ public class TaskCheckParamters {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskCheckParamters that = (TaskCheckParamters) obj;
+        TaskCheckParameters that = (TaskCheckParameters) obj;
         return Objects.equals(this.checkId, that.checkId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.checkerConfigs, that.checkerConfigs);
     }
@@ -116,7 +116,7 @@ public class TaskCheckParamters {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class TaskCheckParamters {\n");
+        sb.append("class TaskCheckParameters {\n");
         sb.append("    checkId: ").append(toIndentedString(checkId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    checkerConfigs: ").append(toIndentedString(checkerConfigs)).append("\n");

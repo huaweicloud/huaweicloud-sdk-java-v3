@@ -2211,6 +2211,7 @@ public class CbrAsyncClient {
      * @param request UpdateOrderRequest 请求对象
      * @return CompletableFuture<UpdateOrderResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateOrderResponse> updateOrderAsync(UpdateOrderRequest request) {
         return hcClient.asyncInvokeHttp(request, CbrMeta.updateOrder);
     }
@@ -2225,6 +2226,7 @@ public class CbrAsyncClient {
      * @param request UpdateOrderRequest 请求对象
      * @return AsyncInvoker<UpdateOrderRequest, UpdateOrderResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateOrderRequest, UpdateOrderResponse> updateOrderAsyncInvoker(UpdateOrderRequest request) {
         return new AsyncInvoker<>(request, CbrMeta.updateOrder, hcClient);
     }

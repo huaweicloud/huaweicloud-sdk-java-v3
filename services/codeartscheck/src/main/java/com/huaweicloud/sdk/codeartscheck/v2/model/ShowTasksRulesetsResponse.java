@@ -15,46 +15,46 @@ import java.util.function.Consumer;
 public class ShowTasksRulesetsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "info")
+    @JsonProperty(value = "data")
 
-    private List<TaskRulesetInfo> info = null;
+    private List<TaskRulesetInfo> data = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
     private Integer total;
 
-    public ShowTasksRulesetsResponse withInfo(List<TaskRulesetInfo> info) {
-        this.info = info;
+    public ShowTasksRulesetsResponse withData(List<TaskRulesetInfo> data) {
+        this.data = data;
         return this;
     }
 
-    public ShowTasksRulesetsResponse addInfoItem(TaskRulesetInfo infoItem) {
-        if (this.info == null) {
-            this.info = new ArrayList<>();
+    public ShowTasksRulesetsResponse addDataItem(TaskRulesetInfo dataItem) {
+        if (this.data == null) {
+            this.data = new ArrayList<>();
         }
-        this.info.add(infoItem);
+        this.data.add(dataItem);
         return this;
     }
 
-    public ShowTasksRulesetsResponse withInfo(Consumer<List<TaskRulesetInfo>> infoSetter) {
-        if (this.info == null) {
-            this.info = new ArrayList<>();
+    public ShowTasksRulesetsResponse withData(Consumer<List<TaskRulesetInfo>> dataSetter) {
+        if (this.data == null) {
+            this.data = new ArrayList<>();
         }
-        infoSetter.accept(this.info);
+        dataSetter.accept(this.data);
         return this;
     }
 
     /**
-     * 规则集信息
-     * @return info
+     * **参数解释：** 规则集信息。
+     * @return data
      */
-    public List<TaskRulesetInfo> getInfo() {
-        return info;
+    public List<TaskRulesetInfo> getData() {
+        return data;
     }
 
-    public void setInfo(List<TaskRulesetInfo> info) {
-        this.info = info;
+    public void setData(List<TaskRulesetInfo> data) {
+        this.data = data;
     }
 
     public ShowTasksRulesetsResponse withTotal(Integer total) {
@@ -63,7 +63,7 @@ public class ShowTasksRulesetsResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释：** 总数。 **取值范围:** 不涉及。
      * @return total
      */
     public Integer getTotal() {
@@ -83,19 +83,19 @@ public class ShowTasksRulesetsResponse extends SdkResponse {
             return false;
         }
         ShowTasksRulesetsResponse that = (ShowTasksRulesetsResponse) obj;
-        return Objects.equals(this.info, that.info) && Objects.equals(this.total, that.total);
+        return Objects.equals(this.data, that.data) && Objects.equals(this.total, that.total);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(info, total);
+        return Objects.hash(data, total);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowTasksRulesetsResponse {\n");
-        sb.append("    info: ").append(toIndentedString(info)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("}");
         return sb.toString();

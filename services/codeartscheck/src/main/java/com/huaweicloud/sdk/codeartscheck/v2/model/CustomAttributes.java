@@ -29,7 +29,7 @@ public class CustomAttributes {
     }
 
     /**
-     * 配置项属性，severity：为问题级别
+     * **参数解释:** 配置项属性，severity：为规则告警等级。 **约束限制:** 不涉及。 **取值范围:** severity。 **默认取值:** 不涉及。
      * @return attribute
      */
     public String getAttribute() {
@@ -62,7 +62,7 @@ public class CustomAttributes {
     }
 
     /**
-     * 规则详细
+     * **参数解释:** 规则详细。
      * @return rules
      */
     public List<CustomAttributesRule> getRules() {

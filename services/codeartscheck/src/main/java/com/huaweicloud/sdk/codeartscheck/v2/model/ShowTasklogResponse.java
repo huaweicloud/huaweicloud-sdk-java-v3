@@ -72,7 +72,7 @@ public class ShowTasklogResponse extends SdkResponse {
     }
 
     /**
-     * 日志信息
+     * **参数解释：** 失败日志详情。
      * @return logInfo
      */
     public List<LogInfo> getLogInfo() {

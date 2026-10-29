@@ -32,7 +32,7 @@ public class CheckRecordDataInfo {
     }
 
     /**
-     * 检查任务执行开始时间
+     * **参数解释：** 检查任务执行开始时间，使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
      * @return checkTime
      */
     public String getCheckTime() {
@@ -49,7 +49,7 @@ public class CheckRecordDataInfo {
     }
 
     /**
-     * 检查任务执行结束时间
+     * **参数解释：** 检查任务执行结束时间，使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
      * @return checkEndTime
      */
     public String getCheckEndTime() {

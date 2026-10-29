@@ -109,19 +109,14 @@ public class Node {
         public static final TypeEnum MAPREDUCE = new TypeEnum("MapReduce");
 
         /**
-         * Enum MRSFLINK for value: "MRSFlink"
-         */
-        public static final TypeEnum MRSFLINK = new TypeEnum("MRSFlink");
-
-        /**
          * Enum MRSFLINKJOB for value: "MRSFlinkJob"
          */
         public static final TypeEnum MRSFLINKJOB = new TypeEnum("MRSFlinkJob");
 
         /**
-         * Enum MRSHETUENGINE for value: "MRSHetuEngine"
+         * Enum HETUENGINESQL for value: "HetuEngineSQL"
          */
-        public static final TypeEnum MRSHETUENGINE = new TypeEnum("MRSHetuEngine");
+        public static final TypeEnum HETUENGINESQL = new TypeEnum("HetuEngineSQL");
 
         /**
          * Enum DATAMIGRATION for value: "DataMigration"
@@ -148,9 +143,8 @@ public class Node {
             map.put("SMN", SMN);
             map.put("MRSSpark", MRSSPARK);
             map.put("MapReduce", MAPREDUCE);
-            map.put("MRSFlink", MRSFLINK);
             map.put("MRSFlinkJob", MRSFLINKJOB);
-            map.put("MRSHetuEngine", MRSHETUENGINE);
+            map.put("HetuEngineSQL", HETUENGINESQL);
             map.put("DataMigration", DATAMIGRATION);
             return Collections.unmodifiableMap(map);
         }

@@ -22,7 +22,7 @@ public class RunTaskResponse extends SdkResponse {
     }
 
     /**
-     * 执行id
+     * **参数解释:** 1次代码检查对应的执行记录ID。 **取值范围:** 32位UUID。
      * @return execId
      */
     public String getExecId() {

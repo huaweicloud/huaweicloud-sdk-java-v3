@@ -26,7 +26,7 @@ public class IgnorePathSettingItem {
     }
 
     /**
-     * 目录或文件路径
+     * **参数解释：** 需要屏蔽的目录或文件路径。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return filePath
      */
     public String getFilePath() {
@@ -43,7 +43,7 @@ public class IgnorePathSettingItem {
     }
 
     /**
-     * 屏蔽状态，包括unchecked(不屏蔽)、all(全屏蔽)、half(半屏蔽)
+     * **参数解释：** 屏蔽状态。 **约束限制：** 不涉及。 **取值范围：** - unchecked：取消屏蔽 - all：全部屏蔽 - half：半屏蔽，用于目录，表示目录下部分子目录、文件需要屏蔽 **默认取值：** 不涉及。
      * @return checkboxStatus
      */
     public String getCheckboxStatus() {

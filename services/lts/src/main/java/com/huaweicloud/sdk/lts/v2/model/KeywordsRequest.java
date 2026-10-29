@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -217,6 +219,11 @@ public class KeywordsRequest {
 
     private Boolean isTimeRangeRelative;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "conditions")
+
+    private List<KeywordsAlarmConditions> conditions = null;
+
     public KeywordsRequest withLogStreamId(String logStreamId) {
         this.logStreamId = logStreamId;
         return this;
@@ -417,6 +424,39 @@ public class KeywordsRequest {
         this.isTimeRangeRelative = isTimeRangeRelative;
     }
 
+    public KeywordsRequest withConditions(List<KeywordsAlarmConditions> conditions) {
+        this.conditions = conditions;
+        return this;
+    }
+
+    public KeywordsRequest addConditionsItem(KeywordsAlarmConditions conditionsItem) {
+        if (this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
+        this.conditions.add(conditionsItem);
+        return this;
+    }
+
+    public KeywordsRequest withConditions(Consumer<List<KeywordsAlarmConditions>> conditionsSetter) {
+        if (this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
+        conditionsSetter.accept(this.conditions);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 支持根据不同条件触发不同级别的告警。当使用该参数时，将优先使用该参数中的条件触发告警，无视keywords_alarm_level参数以及keywords_requests中的condition、number参数。 **约束限制：** 不涉及。
+     * @return conditions
+     */
+    public List<KeywordsAlarmConditions> getConditions() {
+        return conditions;
+    }
+
+    public void setConditions(List<KeywordsAlarmConditions> conditions) {
+        this.conditions = conditions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -433,7 +473,8 @@ public class KeywordsRequest {
             && Objects.equals(this.number, that.number) && Objects.equals(this.searchTimeRange, that.searchTimeRange)
             && Objects.equals(this.searchTimeRangeUnit, that.searchTimeRangeUnit)
             && Objects.equals(this.customDate, that.customDate)
-            && Objects.equals(this.isTimeRangeRelative, that.isTimeRangeRelative);
+            && Objects.equals(this.isTimeRangeRelative, that.isTimeRangeRelative)
+            && Objects.equals(this.conditions, that.conditions);
     }
 
     @Override
@@ -448,7 +489,8 @@ public class KeywordsRequest {
             searchTimeRange,
             searchTimeRangeUnit,
             customDate,
-            isTimeRangeRelative);
+            isTimeRangeRelative,
+            conditions);
     }
 
     @Override
@@ -466,6 +508,7 @@ public class KeywordsRequest {
         sb.append("    searchTimeRangeUnit: ").append(toIndentedString(searchTimeRangeUnit)).append("\n");
         sb.append("    customDate: ").append(toIndentedString(customDate)).append("\n");
         sb.append("    isTimeRangeRelative: ").append(toIndentedString(isTimeRangeRelative)).append("\n");
+        sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

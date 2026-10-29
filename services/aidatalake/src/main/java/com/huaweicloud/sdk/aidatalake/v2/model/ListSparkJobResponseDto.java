@@ -128,6 +128,11 @@ public class ListSparkJobResponseDto {
     private String stateMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metric_statistics")
+
+    private SparkJobMetricStatistics metricStatistics;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retry_times")
 
     private Integer retryTimes;
@@ -276,6 +281,32 @@ public class ListSparkJobResponseDto {
         this.stateMessage = stateMessage;
     }
 
+    public ListSparkJobResponseDto withMetricStatistics(SparkJobMetricStatistics metricStatistics) {
+        this.metricStatistics = metricStatistics;
+        return this;
+    }
+
+    public ListSparkJobResponseDto withMetricStatistics(Consumer<SparkJobMetricStatistics> metricStatisticsSetter) {
+        if (this.metricStatistics == null) {
+            this.metricStatistics = new SparkJobMetricStatistics();
+            metricStatisticsSetter.accept(this.metricStatistics);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get metricStatistics
+     * @return metricStatistics
+     */
+    public SparkJobMetricStatistics getMetricStatistics() {
+        return metricStatistics;
+    }
+
+    public void setMetricStatistics(SparkJobMetricStatistics metricStatistics) {
+        this.metricStatistics = metricStatistics;
+    }
+
     public ListSparkJobResponseDto withRetryTimes(Integer retryTimes) {
         this.retryTimes = retryTimes;
         return this;
@@ -399,10 +430,11 @@ public class ListSparkJobResponseDto {
         return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.clientToken, that.clientToken)
             && Objects.equals(this.name, that.name) && Objects.equals(this.endpointName, that.endpointName)
             && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.state, that.state)
-            && Objects.equals(this.stateMessage, that.stateMessage) && Objects.equals(this.retryTimes, that.retryTimes)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.createUser, that.createUser)
-            && Objects.equals(this.logUrl, that.logUrl);
+            && Objects.equals(this.stateMessage, that.stateMessage)
+            && Objects.equals(this.metricStatistics, that.metricStatistics)
+            && Objects.equals(this.retryTimes, that.retryTimes) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.createUser, that.createUser) && Objects.equals(this.logUrl, that.logUrl);
     }
 
     @Override
@@ -414,6 +446,7 @@ public class ListSparkJobResponseDto {
             jobType,
             state,
             stateMessage,
+            metricStatistics,
             retryTimes,
             createTime,
             startTime,
@@ -433,6 +466,7 @@ public class ListSparkJobResponseDto {
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    stateMessage: ").append(toIndentedString(stateMessage)).append("\n");
+        sb.append("    metricStatistics: ").append(toIndentedString(metricStatistics)).append("\n");
         sb.append("    retryTimes: ").append(toIndentedString(retryTimes)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");

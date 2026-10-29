@@ -46,7 +46,7 @@ public class RuleItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_config_list")
 
-    private List<RuleConfig> ruleConfigList = null;
+    private List<RuleConfigParam> ruleConfigList = null;
 
     public RuleItem withRuleId(String ruleId) {
         this.ruleId = ruleId;
@@ -54,7 +54,7 @@ public class RuleItem {
     }
 
     /**
-     * 规则id
+     * **参数解释:** 规则ID。 **取值范围:** 32位ID。
      * @return ruleId
      */
     public String getRuleId() {
@@ -71,7 +71,7 @@ public class RuleItem {
     }
 
     /**
-     * 规则所属语言
+     * **参数解释:** 规则所属语言。 **取值范围:** 当前支持的语言有： - ARKTS - C# - CANGJIE - C++ - CSS - GO - HTML - JAVA - JAVASCRIPT - KOTLIN - LUA - PHP - PYTHON - RUST - SCALA - SHELL - SQL - TERRAFORM - TYPESCRIPT - AZURERESOURCEMANAGER - DOCKER - KUBERNETES
      * @return ruleLanguage
      */
     public String getRuleLanguage() {
@@ -88,7 +88,7 @@ public class RuleItem {
     }
 
     /**
-     * 规则名称
+     * **参数解释:** 规则名称。 **取值范围:** 不涉及。
      * @return ruleName
      */
     public String getRuleName() {
@@ -105,7 +105,7 @@ public class RuleItem {
     }
 
     /**
-     * 规则问题级别
+     * **参数解释:** 规则问题级别。 **取值范围：** - 0：致命。 - 1：严重。 - 2：一般。 - 3：提示。
      * @return ruleSeverity
      */
     public String getRuleSeverity() {
@@ -122,7 +122,7 @@ public class RuleItem {
     }
 
     /**
-     * 规则标签
+     * **参数解释:** 规则标签。 **取值范围:** - huawei - iso5055 - cert - cwe - top10 - top25 - misra - GJB - autosar - PCI DSS
      * @return ruleTages
      */
     public String getRuleTages() {
@@ -139,7 +139,7 @@ public class RuleItem {
     }
 
     /**
-     * 规则状态0：未启用，1：已启用
+     * **参数解释:** 规则状态。 **取值范围:** - 0：未启用。 - 1：已启用。
      * @return checked
      */
     public String getChecked() {
@@ -150,12 +150,12 @@ public class RuleItem {
         this.checked = checked;
     }
 
-    public RuleItem withRuleConfigList(List<RuleConfig> ruleConfigList) {
+    public RuleItem withRuleConfigList(List<RuleConfigParam> ruleConfigList) {
         this.ruleConfigList = ruleConfigList;
         return this;
     }
 
-    public RuleItem addRuleConfigListItem(RuleConfig ruleConfigListItem) {
+    public RuleItem addRuleConfigListItem(RuleConfigParam ruleConfigListItem) {
         if (this.ruleConfigList == null) {
             this.ruleConfigList = new ArrayList<>();
         }
@@ -163,7 +163,7 @@ public class RuleItem {
         return this;
     }
 
-    public RuleItem withRuleConfigList(Consumer<List<RuleConfig>> ruleConfigListSetter) {
+    public RuleItem withRuleConfigList(Consumer<List<RuleConfigParam>> ruleConfigListSetter) {
         if (this.ruleConfigList == null) {
             this.ruleConfigList = new ArrayList<>();
         }
@@ -172,14 +172,14 @@ public class RuleItem {
     }
 
     /**
-     * 规则配置参数阈值相关信息
+     * **参数解释:** 规则配置参数阈值相关信息。
      * @return ruleConfigList
      */
-    public List<RuleConfig> getRuleConfigList() {
+    public List<RuleConfigParam> getRuleConfigList() {
         return ruleConfigList;
     }
 
-    public void setRuleConfigList(List<RuleConfig> ruleConfigList) {
+    public void setRuleConfigList(List<RuleConfigParam> ruleConfigList) {
         this.ruleConfigList = ruleConfigList;
     }
 

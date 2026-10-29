@@ -36,6 +36,55 @@ public class DlfRegion {
     public static final Region CN_NORTH_11 =
         new Region("cn-north-11", "https://dayu-dlf.cn-north-11.myhuaweicloud.com");
 
+    public static final Region CN_NORTH_2 = new Region("cn-north-2", "https://dayu-dlf.cn-north-2.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://dayu-dlf.cn-north-9.myhuaweicloud.com");
+
+    public static final Region CN_SOUTHWEST_2 =
+        new Region("cn-southwest-2", "https://dayu-dlf.cn-southwest-2.myhuaweicloud.com");
+
+    public static final Region CN_EAST_4 = new Region("cn-east-4", "https://dayu.cn-east-4.myhuaweicloud.com");
+
+    public static final Region AF_SOUTH_1 = new Region("af-south-1", "https://dayu-dlf.af-south-1.myhuaweicloud.com");
+
+    public static final Region AF_NORTH_1 = new Region("af-north-1", "https://dayu-dlf.af-north-1.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_2 =
+        new Region("ap-southeast-2", "https://dayu-dlf.ap-southeast-2.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_4 =
+        new Region("ap-southeast-4", "https://dayu-dlf.ap-southeast-4.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_5 =
+        new Region("ap-southeast-5", "https://dayu-dlf.ap-southeast-5.myhuaweicloud.com");
+
+    public static final Region AE_AD_1 = new Region("ae-ad-1", "https://dayu-dlf.ae-ad-1.myhuaweicloud.com");
+
+    public static final Region RU_MOSCOW_1 =
+        new Region("ru-moscow-1", "https://dayu-dlf.ru-moscow-1.myhuaweicloud.com");
+
+    public static final Region MY_KUALALUMPUR_1 =
+        new Region("my-kualalumpur-1", "https://dayu-dlf.my-kualalumpur-1.myhuaweicloud.com");
+
+    public static final Region TR_WEST_1 = new Region("tr-west-1", "https://dayu-dlf.tr-west-1.myhuaweicloud.com");
+
+    public static final Region SA_BRAZIL_1 =
+        new Region("sa-brazil-1", "https://dayu-dlf.sa-brazil-1.myhuaweicloud.com");
+
+    public static final Region LA_SOUTH_2 = new Region("la-south-2", "https://dayu-dlf.la-south-2.myhuaweicloud.com");
+
+    public static final Region LA_NORTH_2 = new Region("la-north-2", "https://dayu-dlf.la-north-2.myhuaweicloud.com");
+
+    public static final Region NA_MEXICO_1 =
+        new Region("na-mexico-1", "https://dayu-dlf.na-mexico-1.myhuaweicloud.com");
+
+    public static final Region ME_EAST_1 = new Region("me-east-1", "https://dayu-dlf.me-east-1.myhuaweicloud.com");
+
+    public static final Region EU_WEST_0 = new Region("eu-west-0", "https://dayu-dlf.eu-west-0.myhuaweicloud.com");
+
+    public static final Region EU_WEST_101 =
+        new Region("eu-west-101", "https://dayu-dlf.eu-west-101.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DLF");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -51,6 +100,26 @@ public class DlfRegion {
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ru-northwest-2", RU_NORTHWEST_2);
         map.put("cn-north-11", CN_NORTH_11);
+        map.put("cn-north-2", CN_NORTH_2);
+        map.put("cn-north-9", CN_NORTH_9);
+        map.put("cn-southwest-2", CN_SOUTHWEST_2);
+        map.put("cn-east-4", CN_EAST_4);
+        map.put("af-south-1", AF_SOUTH_1);
+        map.put("af-north-1", AF_NORTH_1);
+        map.put("ap-southeast-2", AP_SOUTHEAST_2);
+        map.put("ap-southeast-4", AP_SOUTHEAST_4);
+        map.put("ap-southeast-5", AP_SOUTHEAST_5);
+        map.put("ae-ad-1", AE_AD_1);
+        map.put("ru-moscow-1", RU_MOSCOW_1);
+        map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
+        map.put("tr-west-1", TR_WEST_1);
+        map.put("sa-brazil-1", SA_BRAZIL_1);
+        map.put("la-south-2", LA_SOUTH_2);
+        map.put("la-north-2", LA_NORTH_2);
+        map.put("na-mexico-1", NA_MEXICO_1);
+        map.put("me-east-1", ME_EAST_1);
+        map.put("eu-west-0", EU_WEST_0);
+        map.put("eu-west-101", EU_WEST_101);
         return Collections.unmodifiableMap(map);
     }
 

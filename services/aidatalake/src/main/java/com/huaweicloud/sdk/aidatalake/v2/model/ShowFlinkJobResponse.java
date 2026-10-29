@@ -137,6 +137,11 @@ public class ShowFlinkJobResponse extends SdkResponse {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alert_enabled")
+
+    private Boolean alertEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
     private Long startTime;
@@ -671,6 +676,23 @@ public class ShowFlinkJobResponse extends SdkResponse {
         this.description = description;
     }
 
+    public ShowFlinkJobResponse withAlertEnabled(Boolean alertEnabled) {
+        this.alertEnabled = alertEnabled;
+        return this;
+    }
+
+    /**
+     * **参数解释**：该作业是否开启失败告警通知。 **取值范围**：   - true：开启。作业运行失败或提交失败时会向客户发送告警通知。   - false：关闭。作业失败时不发送告警通知。 **默认取值**：false，不指定时默认关闭。 
+     * @return alertEnabled
+     */
+    public Boolean getAlertEnabled() {
+        return alertEnabled;
+    }
+
+    public void setAlertEnabled(Boolean alertEnabled) {
+        this.alertEnabled = alertEnabled;
+    }
+
     public ShowFlinkJobResponse withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
@@ -731,7 +753,8 @@ public class ShowFlinkJobResponse extends SdkResponse {
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.createUser, that.createUser)
             && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.updateUser, that.updateUser)
             && Objects.equals(this.logUrl, that.logUrl) && Objects.equals(this.labels, that.labels)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.alertEnabled, that.alertEnabled) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.endTime, that.endTime);
     }
 
@@ -761,6 +784,7 @@ public class ShowFlinkJobResponse extends SdkResponse {
             logUrl,
             labels,
             description,
+            alertEnabled,
             startTime,
             endTime);
     }
@@ -793,6 +817,7 @@ public class ShowFlinkJobResponse extends SdkResponse {
         sb.append("    logUrl: ").append(toIndentedString(logUrl)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    alertEnabled: ").append(toIndentedString(alertEnabled)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");

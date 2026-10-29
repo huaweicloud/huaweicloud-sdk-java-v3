@@ -2183,6 +2183,7 @@ public class CbrClient {
      * @param request UpdateOrderRequest 请求对象
      * @return UpdateOrderResponse
      */
+    @Deprecated
     public UpdateOrderResponse updateOrder(UpdateOrderRequest request) {
         return hcClient.syncInvokeHttp(request, CbrMeta.updateOrder);
     }
@@ -2197,6 +2198,7 @@ public class CbrClient {
      * @param request UpdateOrderRequest 请求对象
      * @return SyncInvoker<UpdateOrderRequest, UpdateOrderResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateOrderRequest, UpdateOrderResponse> updateOrderInvoker(UpdateOrderRequest request) {
         return new SyncInvoker<>(request, CbrMeta.updateOrder, hcClient);
     }

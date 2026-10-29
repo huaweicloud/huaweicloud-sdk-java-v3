@@ -14,12 +14,12 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * **参数解释**：Flink JAR作业参数，包含JAR作业的详细配置信息。
+ * **参数解释**：JAR作业参数，包含JAR作业的详细配置信息。
  */
 public class ShowFlinkJarParameterResponse {
 
     /**
-     * **参数解释**：作业类型。 **约束限制**：不涉及。 **取值范围**：   - FLINK_JAR_JOB：Flink Jar作业。 
+     * **参数解释**：作业类型，用于区分SQL作业、Jar作业和SQL Gateway作业。 **约束限制**：不涉及。 **取值范围**：   - FLINK_JAR_JOB：Jar作业。 
      */
     public static final class TypeEnum {
 
@@ -112,13 +112,18 @@ public class ShowFlinkJarParameterResponse {
 
     private List<String> dependencyFiles = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "python_parameter")
+
+    private ShowFlinkPythonDependencyParameterResponse pythonParameter;
+
     public ShowFlinkJarParameterResponse withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
     /**
-     * **参数解释**：作业类型。 **约束限制**：不涉及。 **取值范围**：   - FLINK_JAR_JOB：Flink Jar作业。 
+     * **参数解释**：作业类型，用于区分SQL作业、Jar作业和SQL Gateway作业。 **约束限制**：不涉及。 **取值范围**：   - FLINK_JAR_JOB：Jar作业。 
      * @return type
      */
     public TypeEnum getType() {
@@ -262,6 +267,34 @@ public class ShowFlinkJarParameterResponse {
         this.dependencyFiles = dependencyFiles;
     }
 
+    public ShowFlinkJarParameterResponse withPythonParameter(
+        ShowFlinkPythonDependencyParameterResponse pythonParameter) {
+        this.pythonParameter = pythonParameter;
+        return this;
+    }
+
+    public ShowFlinkJarParameterResponse withPythonParameter(
+        Consumer<ShowFlinkPythonDependencyParameterResponse> pythonParameterSetter) {
+        if (this.pythonParameter == null) {
+            this.pythonParameter = new ShowFlinkPythonDependencyParameterResponse();
+            pythonParameterSetter.accept(this.pythonParameter);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pythonParameter
+     * @return pythonParameter
+     */
+    public ShowFlinkPythonDependencyParameterResponse getPythonParameter() {
+        return pythonParameter;
+    }
+
+    public void setPythonParameter(ShowFlinkPythonDependencyParameterResponse pythonParameter) {
+        this.pythonParameter = pythonParameter;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -274,12 +307,13 @@ public class ShowFlinkJarParameterResponse {
         return Objects.equals(this.type, that.type) && Objects.equals(this.mainJar, that.mainJar)
             && Objects.equals(this.mainClass, that.mainClass) && Objects.equals(this.mainArgs, that.mainArgs)
             && Objects.equals(this.dependencyJars, that.dependencyJars)
-            && Objects.equals(this.dependencyFiles, that.dependencyFiles);
+            && Objects.equals(this.dependencyFiles, that.dependencyFiles)
+            && Objects.equals(this.pythonParameter, that.pythonParameter);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, mainJar, mainClass, mainArgs, dependencyJars, dependencyFiles);
+        return Objects.hash(type, mainJar, mainClass, mainArgs, dependencyJars, dependencyFiles, pythonParameter);
     }
 
     @Override
@@ -292,6 +326,7 @@ public class ShowFlinkJarParameterResponse {
         sb.append("    mainArgs: ").append(toIndentedString(mainArgs)).append("\n");
         sb.append("    dependencyJars: ").append(toIndentedString(dependencyJars)).append("\n");
         sb.append("    dependencyFiles: ").append(toIndentedString(dependencyFiles)).append("\n");
+        sb.append("    pythonParameter: ").append(toIndentedString(pythonParameter)).append("\n");
         sb.append("}");
         return sb.toString();
     }

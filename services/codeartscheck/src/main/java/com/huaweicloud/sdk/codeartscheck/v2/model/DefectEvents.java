@@ -39,11 +39,6 @@ public class DefectEvents {
     private Integer endLine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "code_context_start_line")
-
-    private Integer codeContextStartLine;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "main")
 
     private Boolean main;
@@ -68,6 +63,11 @@ public class DefectEvents {
 
     private String codeContext;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "code_context_start_line")
+
+    private Integer codeContextStartLine;
+
     public DefectEvents withEvents(List<DefectEvents> events) {
         this.events = events;
         return this;
@@ -90,7 +90,7 @@ public class DefectEvents {
     }
 
     /**
-     * 调用链信息
+     * **参数解释：** 调用链信息。
      * @return events
      */
     public List<DefectEvents> getEvents() {
@@ -107,7 +107,7 @@ public class DefectEvents {
     }
 
     /**
-     * 描述
+     * **参数解释：** 问题详细描述。 **取值范围：** 不涉及。
      * @return description
      */
     public String getDescription() {
@@ -140,7 +140,7 @@ public class DefectEvents {
     }
 
     /**
-     * fix suggestions
+     * **参数解释：** 修复建议。
      * @return fixSuggestions
      */
     public List<String> getFixSuggestions() {
@@ -157,7 +157,7 @@ public class DefectEvents {
     }
 
     /**
-     * 缺陷所在行
+     * **参数解释：** 问题所在文件行号。 **取值范围：** 不涉及。
      * @return line
      */
     public Integer getLine() {
@@ -174,7 +174,7 @@ public class DefectEvents {
     }
 
     /**
-     * 缺陷结束行
+     * **参数解释：** 废弃字段。 **取值范围：** 不涉及。
      * @return endLine
      */
     public Integer getEndLine() {
@@ -185,30 +185,13 @@ public class DefectEvents {
         this.endLine = endLine;
     }
 
-    public DefectEvents withCodeContextStartLine(Integer codeContextStartLine) {
-        this.codeContextStartLine = codeContextStartLine;
-        return this;
-    }
-
-    /**
-     * 缺陷开始行
-     * @return codeContextStartLine
-     */
-    public Integer getCodeContextStartLine() {
-        return codeContextStartLine;
-    }
-
-    public void setCodeContextStartLine(Integer codeContextStartLine) {
-        this.codeContextStartLine = codeContextStartLine;
-    }
-
     public DefectEvents withMain(Boolean main) {
         this.main = main;
         return this;
     }
 
     /**
-     * 代码片段
+     * **参数解释：** 废弃字段。 **取值范围：** 不涉及。
      * @return main
      */
     public Boolean getMain() {
@@ -225,7 +208,7 @@ public class DefectEvents {
     }
 
     /**
-     * file path
+     * **参数解释：** 文件路径。 **取值范围：** 不涉及。
      * @return path
      */
     public String getPath() {
@@ -242,7 +225,7 @@ public class DefectEvents {
     }
 
     /**
-     * 标签
+     * **参数解释：** 废弃字段。 **取值范围：** 不涉及。
      * @return tag
      */
     public String getTag() {
@@ -259,7 +242,7 @@ public class DefectEvents {
     }
 
     /**
-     * main buggy code
+     * **参数解释：** 问题主事件对应的代码片段内容。 **取值范围：** 不涉及。
      * @return mainBuggyCode
      */
     public String getMainBuggyCode() {
@@ -276,7 +259,7 @@ public class DefectEvents {
     }
 
     /**
-     * code context
+     * **参数解释：** 代码上下文。 **取值范围：** 不涉及。
      * @return codeContext
      */
     public String getCodeContext() {
@@ -285,6 +268,23 @@ public class DefectEvents {
 
     public void setCodeContext(String codeContext) {
         this.codeContext = codeContext;
+    }
+
+    public DefectEvents withCodeContextStartLine(Integer codeContextStartLine) {
+        this.codeContextStartLine = codeContextStartLine;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 代码上下文起始行号。 **取值范围：** 不涉及。
+     * @return codeContextStartLine
+     */
+    public Integer getCodeContextStartLine() {
+        return codeContextStartLine;
+    }
+
+    public void setCodeContextStartLine(Integer codeContextStartLine) {
+        this.codeContextStartLine = codeContextStartLine;
     }
 
     @Override
@@ -298,11 +298,11 @@ public class DefectEvents {
         DefectEvents that = (DefectEvents) obj;
         return Objects.equals(this.events, that.events) && Objects.equals(this.description, that.description)
             && Objects.equals(this.fixSuggestions, that.fixSuggestions) && Objects.equals(this.line, that.line)
-            && Objects.equals(this.endLine, that.endLine)
-            && Objects.equals(this.codeContextStartLine, that.codeContextStartLine)
-            && Objects.equals(this.main, that.main) && Objects.equals(this.path, that.path)
-            && Objects.equals(this.tag, that.tag) && Objects.equals(this.mainBuggyCode, that.mainBuggyCode)
-            && Objects.equals(this.codeContext, that.codeContext);
+            && Objects.equals(this.endLine, that.endLine) && Objects.equals(this.main, that.main)
+            && Objects.equals(this.path, that.path) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.mainBuggyCode, that.mainBuggyCode)
+            && Objects.equals(this.codeContext, that.codeContext)
+            && Objects.equals(this.codeContextStartLine, that.codeContextStartLine);
     }
 
     @Override
@@ -312,12 +312,12 @@ public class DefectEvents {
             fixSuggestions,
             line,
             endLine,
-            codeContextStartLine,
             main,
             path,
             tag,
             mainBuggyCode,
-            codeContext);
+            codeContext,
+            codeContextStartLine);
     }
 
     @Override
@@ -329,12 +329,12 @@ public class DefectEvents {
         sb.append("    fixSuggestions: ").append(toIndentedString(fixSuggestions)).append("\n");
         sb.append("    line: ").append(toIndentedString(line)).append("\n");
         sb.append("    endLine: ").append(toIndentedString(endLine)).append("\n");
-        sb.append("    codeContextStartLine: ").append(toIndentedString(codeContextStartLine)).append("\n");
         sb.append("    main: ").append(toIndentedString(main)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("    mainBuggyCode: ").append(toIndentedString(mainBuggyCode)).append("\n");
         sb.append("    codeContext: ").append(toIndentedString(codeContext)).append("\n");
+        sb.append("    codeContextStartLine: ").append(toIndentedString(codeContextStartLine)).append("\n");
         sb.append("}");
         return sb.toString();
     }

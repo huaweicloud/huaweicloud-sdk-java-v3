@@ -26,7 +26,7 @@ public class OpExtendInfoRemoveResources {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
-    private List<Resource> resources = null;
+    private List<OpResourceResp> resources = null;
 
     public OpExtendInfoRemoveResources withFailCount(Integer failCount) {
         this.failCount = failCount;
@@ -62,12 +62,12 @@ public class OpExtendInfoRemoveResources {
         this.totalCount = totalCount;
     }
 
-    public OpExtendInfoRemoveResources withResources(List<Resource> resources) {
+    public OpExtendInfoRemoveResources withResources(List<OpResourceResp> resources) {
         this.resources = resources;
         return this;
     }
 
-    public OpExtendInfoRemoveResources addResourcesItem(Resource resourcesItem) {
+    public OpExtendInfoRemoveResources addResourcesItem(OpResourceResp resourcesItem) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -75,7 +75,7 @@ public class OpExtendInfoRemoveResources {
         return this;
     }
 
-    public OpExtendInfoRemoveResources withResources(Consumer<List<Resource>> resourcesSetter) {
+    public OpExtendInfoRemoveResources withResources(Consumer<List<OpResourceResp>> resourcesSetter) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -87,11 +87,11 @@ public class OpExtendInfoRemoveResources {
      * 
      * @return resources
      */
-    public List<Resource> getResources() {
+    public List<OpResourceResp> getResources() {
         return resources;
     }
 
-    public void setResources(List<Resource> resources) {
+    public void setResources(List<OpResourceResp> resources) {
         this.resources = resources;
     }
 

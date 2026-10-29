@@ -161,6 +161,11 @@ public class QueryLtsLogParams {
 
     private Boolean isAnalysisQuery;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sql_timezone")
+
+    private String sqlTimezone;
+
     public QueryLtsLogParams withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -436,6 +441,23 @@ public class QueryLtsLogParams {
         this.isAnalysisQuery = isAnalysisQuery;
     }
 
+    public QueryLtsLogParams withSqlTimezone(String sqlTimezone) {
+        this.sqlTimezone = sqlTimezone;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 查询时区。 当开启管道符语句查询功能时，将会按照sql_timezone中的时区信息对时间算子进行处理。 **约束限制：** 不涉及。 **取值范围：** 标准时区值 **默认取值：** UTC
+     * @return sqlTimezone
+     */
+    public String getSqlTimezone() {
+        return sqlTimezone;
+    }
+
+    public void setSqlTimezone(String sqlTimezone) {
+        this.sqlTimezone = sqlTimezone;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -452,7 +474,8 @@ public class QueryLtsLogParams {
             && Objects.equals(this.scrollId, that.scrollId) && Objects.equals(this.searchType, that.searchType)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.highlight, that.highlight)
             && Objects.equals(this.isIterative, that.isIterative) && Objects.equals(this.query, that.query)
-            && Objects.equals(this.isAnalysisQuery, that.isAnalysisQuery);
+            && Objects.equals(this.isAnalysisQuery, that.isAnalysisQuery)
+            && Objects.equals(this.sqlTimezone, that.sqlTimezone);
     }
 
     @Override
@@ -471,7 +494,8 @@ public class QueryLtsLogParams {
             highlight,
             isIterative,
             query,
-            isAnalysisQuery);
+            isAnalysisQuery,
+            sqlTimezone);
     }
 
     @Override
@@ -493,6 +517,7 @@ public class QueryLtsLogParams {
         sb.append("    isIterative: ").append(toIndentedString(isIterative)).append("\n");
         sb.append("    query: ").append(toIndentedString(query)).append("\n");
         sb.append("    isAnalysisQuery: ").append(toIndentedString(isAnalysisQuery)).append("\n");
+        sb.append("    sqlTimezone: ").append(toIndentedString(sqlTimezone)).append("\n");
         sb.append("}");
         return sb.toString();
     }

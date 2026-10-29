@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * start_offset和end_offset均为-1，表示该行不是缺陷片段或者整行都是，需要结合DefectInfoV2中的line_number属性一起判断哪一行是具体的缺陷片段。
+ * DefectFragmentV2
  */
 public class DefectFragmentV2 {
 
@@ -36,7 +36,7 @@ public class DefectFragmentV2 {
     }
 
     /**
-     * 行号
+     * **参数解释：** 行号。 **取值范围：** 不涉及。
      * @return lineNum
      */
     public String getLineNum() {
@@ -53,7 +53,7 @@ public class DefectFragmentV2 {
     }
 
     /**
-     * 该行代码内容
+     * **参数解释：** 行代码内容。 **取值范围：** 不涉及。
      * @return lineContent
      */
     public String getLineContent() {
@@ -70,7 +70,7 @@ public class DefectFragmentV2 {
     }
 
     /**
-     * 缺陷开始列号
+     * **参数解释：** 废弃字段。 **取值范围：** 不涉及。
      * @return startOffset
      */
     public Integer getStartOffset() {
@@ -87,7 +87,7 @@ public class DefectFragmentV2 {
     }
 
     /**
-     * 缺陷结束列号
+     * **参数解释：** 废弃字段。 **取值范围：** 不涉及。
      * @return endOffset
      */
     public Integer getEndOffset() {

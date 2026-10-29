@@ -79,7 +79,7 @@ public class ListFlinkJobsRequest {
     private List<FlinkJobState> state = null;
 
     /**
-     * **参数解释**：作业类型，用于按作业类型筛选列表。 **约束限制**：不涉及。 **取值范围**：   - FLINK_SQL_JOB：SQL作业。   - FLINK_JAR_JOB：JAR作业。 **默认取值**：不涉及。
+     * **参数解释**：作业类型，用于按作业类型筛选列表。 **约束限制**：不涉及。 **取值范围**：   - FLINK_SQL_JOB：SQL作业。   - FLINK_JAR_JOB：JAR作业。   - FLINK_SQL_GATEWAY：SQL Gateway作业。   - FLINK_PYTHON_JOB：Python作业。 **默认取值**：不涉及。
      */
     public static final class JobTypeEnum {
 
@@ -93,12 +93,24 @@ public class ListFlinkJobsRequest {
          */
         public static final JobTypeEnum FLINK_JAR_JOB = new JobTypeEnum("FLINK_JAR_JOB");
 
+        /**
+         * Enum FLINK_SQL_GATEWAY for value: "FLINK_SQL_GATEWAY"
+         */
+        public static final JobTypeEnum FLINK_SQL_GATEWAY = new JobTypeEnum("FLINK_SQL_GATEWAY");
+
+        /**
+         * Enum FLINK_PYTHON_JOB for value: "FLINK_PYTHON_JOB"
+         */
+        public static final JobTypeEnum FLINK_PYTHON_JOB = new JobTypeEnum("FLINK_PYTHON_JOB");
+
         private static final Map<String, JobTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, JobTypeEnum> createStaticFields() {
             Map<String, JobTypeEnum> map = new HashMap<>();
             map.put("FLINK_SQL_JOB", FLINK_SQL_JOB);
             map.put("FLINK_JAR_JOB", FLINK_JAR_JOB);
+            map.put("FLINK_SQL_GATEWAY", FLINK_SQL_GATEWAY);
+            map.put("FLINK_PYTHON_JOB", FLINK_PYTHON_JOB);
             return Collections.unmodifiableMap(map);
         }
 
@@ -470,7 +482,7 @@ public class ListFlinkJobsRequest {
     }
 
     /**
-     * **参数解释**：作业类型，用于按作业类型筛选列表。 **约束限制**：不涉及。 **取值范围**：   - FLINK_SQL_JOB：SQL作业。   - FLINK_JAR_JOB：JAR作业。 **默认取值**：不涉及。
+     * **参数解释**：作业类型，用于按作业类型筛选列表。 **约束限制**：不涉及。 **取值范围**：   - FLINK_SQL_JOB：SQL作业。   - FLINK_JAR_JOB：JAR作业。   - FLINK_SQL_GATEWAY：SQL Gateway作业。   - FLINK_PYTHON_JOB：Python作业。 **默认取值**：不涉及。
      * @return jobType
      */
     public JobTypeEnum getJobType() {

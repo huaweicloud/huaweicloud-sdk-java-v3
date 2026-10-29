@@ -43,6 +43,11 @@ public class FlinkJarParameter {
 
     private List<String> dependencyFiles = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "python_parameter")
+
+    private FlinkPythonDependencyParameter pythonParameter;
+
     public FlinkJarParameter withType(String type) {
         this.type = type;
         return this;
@@ -193,6 +198,32 @@ public class FlinkJarParameter {
         this.dependencyFiles = dependencyFiles;
     }
 
+    public FlinkJarParameter withPythonParameter(FlinkPythonDependencyParameter pythonParameter) {
+        this.pythonParameter = pythonParameter;
+        return this;
+    }
+
+    public FlinkJarParameter withPythonParameter(Consumer<FlinkPythonDependencyParameter> pythonParameterSetter) {
+        if (this.pythonParameter == null) {
+            this.pythonParameter = new FlinkPythonDependencyParameter();
+            pythonParameterSetter.accept(this.pythonParameter);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pythonParameter
+     * @return pythonParameter
+     */
+    public FlinkPythonDependencyParameter getPythonParameter() {
+        return pythonParameter;
+    }
+
+    public void setPythonParameter(FlinkPythonDependencyParameter pythonParameter) {
+        this.pythonParameter = pythonParameter;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -205,12 +236,13 @@ public class FlinkJarParameter {
         return Objects.equals(this.type, that.type) && Objects.equals(this.mainJar, that.mainJar)
             && Objects.equals(this.mainClass, that.mainClass) && Objects.equals(this.mainArgs, that.mainArgs)
             && Objects.equals(this.dependencyJars, that.dependencyJars)
-            && Objects.equals(this.dependencyFiles, that.dependencyFiles);
+            && Objects.equals(this.dependencyFiles, that.dependencyFiles)
+            && Objects.equals(this.pythonParameter, that.pythonParameter);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, mainJar, mainClass, mainArgs, dependencyJars, dependencyFiles);
+        return Objects.hash(type, mainJar, mainClass, mainArgs, dependencyJars, dependencyFiles, pythonParameter);
     }
 
     @Override
@@ -223,6 +255,7 @@ public class FlinkJarParameter {
         sb.append("    mainArgs: ").append(toIndentedString(mainArgs)).append("\n");
         sb.append("    dependencyJars: ").append(toIndentedString(dependencyJars)).append("\n");
         sb.append("    dependencyFiles: ").append(toIndentedString(dependencyFiles)).append("\n");
+        sb.append("    pythonParameter: ").append(toIndentedString(pythonParameter)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -214,8 +214,6 @@ import com.huaweicloud.sdk.agentarts.v1.model.ListCustomModelProvidersRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCustomModelProvidersResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListModelManagementQuotasRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListModelManagementQuotasResponse;
-import com.huaweicloud.sdk.agentarts.v1.model.ListModelProxiesRequest;
-import com.huaweicloud.sdk.agentarts.v1.model.ListModelProxiesResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentLogRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentLogResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentMetricLabelValuesRequest;
@@ -2022,35 +2020,6 @@ public class AgentArtsAsyncClient {
     public AsyncInvoker<ListModelManagementQuotasRequest, ListModelManagementQuotasResponse> listModelManagementQuotasAsyncInvoker(
         ListModelManagementQuotasRequest request) {
         return new AsyncInvoker<>(request, AgentArtsMeta.listModelManagementQuotas, hcClient);
-    }
-
-    /**
-     * 列出所有模型代理
-     *
-     * 列出所有模型代理。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListModelProxiesRequest 请求对象
-     * @return CompletableFuture<ListModelProxiesResponse>
-     */
-    public CompletableFuture<ListModelProxiesResponse> listModelProxiesAsync(ListModelProxiesRequest request) {
-        return hcClient.asyncInvokeHttp(request, AgentArtsMeta.listModelProxies);
-    }
-
-    /**
-     * 列出所有模型代理
-     *
-     * 列出所有模型代理。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListModelProxiesRequest 请求对象
-     * @return AsyncInvoker<ListModelProxiesRequest, ListModelProxiesResponse>
-     */
-    public AsyncInvoker<ListModelProxiesRequest, ListModelProxiesResponse> listModelProxiesAsyncInvoker(
-        ListModelProxiesRequest request) {
-        return new AsyncInvoker<>(request, AgentArtsMeta.listModelProxies, hcClient);
     }
 
     /**

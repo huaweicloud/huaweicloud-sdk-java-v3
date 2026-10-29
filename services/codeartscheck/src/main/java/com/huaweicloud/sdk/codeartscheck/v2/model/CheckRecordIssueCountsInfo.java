@@ -36,7 +36,7 @@ public class CheckRecordIssueCountsInfo {
     }
 
     /**
-     * 致命问题
+     * **参数解释：** 致命问题数量。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
      * @return critical
      */
     public Integer getCritical() {
@@ -53,7 +53,7 @@ public class CheckRecordIssueCountsInfo {
     }
 
     /**
-     * 严重问题
+     * **参数解释：** 严重问题数量。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
      * @return serious
      */
     public Integer getSerious() {
@@ -70,7 +70,7 @@ public class CheckRecordIssueCountsInfo {
     }
 
     /**
-     * 常规问题
+     * **参数解释：** 一般问题数量。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
      * @return normal
      */
     public Integer getNormal() {
@@ -87,7 +87,7 @@ public class CheckRecordIssueCountsInfo {
     }
 
     /**
-     * 提示问题
+     * **参数解释：** 提示问题数量。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
      * @return prompt
      */
     public Integer getPrompt() {

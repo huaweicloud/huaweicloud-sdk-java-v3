@@ -41,7 +41,7 @@ public class TaskRulesetInfo {
     }
 
     /**
-     * 规则集id
+     * **参数解释：** 规则集ID。 **取值范围:** 长度为[1~32]个字符。
      * @return templateId
      */
     public String getTemplateId() {
@@ -58,7 +58,7 @@ public class TaskRulesetInfo {
     }
 
     /**
-     * 规则集语言
+     * **参数解释：** 规则集语言。 **取值范围:** 自定义语言或者系统内置语言，当前支持的系统内置语言有： - ARKTS - C# - CANGJIE - C++ - CSS - GO - HTML - JAVA - JAVASCRIPT - KOTLIN - LUA - PHP - PYTHON - RUST - SCALA - SHELL - SQL - TERRAFORM - TYPESCRIPT - AZURERESOURCEMANAGER - DOCKER - KUBERNETES
      * @return language
      */
     public String getLanguage() {
@@ -75,7 +75,7 @@ public class TaskRulesetInfo {
     }
 
     /**
-     * 规则集名称
+     * **参数解释：** 规则集名称。 **取值范围:** 任意中英文，数字，点，连字符-及下划线_。长度为[1~128]个字符。
      * @return templateName
      */
     public String getTemplateName() {
@@ -92,7 +92,7 @@ public class TaskRulesetInfo {
     }
 
     /**
-     * 规则集状态optional：可选，selected：已选
+     * **参数解释：** 规则集选取状态。 **取值范围:** - selected：已选。 - optional：可选，指未开启的语言在当前项目下的默认规则集。
      * @return type
      */
     public String getType() {
@@ -109,7 +109,7 @@ public class TaskRulesetInfo {
     }
 
     /**
-     * 规则集属性0 是默认用户规则集,1 是系统默认规则集
+     * **参数解释：** 规则集属性。 **取值范围:** - 0：用户自定义规则集。 - 1：系统规则集。
      * @return status
      */
     public String getStatus() {

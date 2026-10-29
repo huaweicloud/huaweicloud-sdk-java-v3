@@ -73,6 +73,13 @@ public class DataArtsStudioRegion {
 
     public static final Region CN_EAST_4 = new Region("cn-east-4", "https://dayu.cn-east-4.myhuaweicloud.com");
 
+    public static final Region AF_NORTH_1 = new Region("af-north-1", "https://dayu.af-north-1.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_5 =
+        new Region("ap-southeast-5", "https://dayu.ap-southeast-5.myhuaweicloud.com");
+
+    public static final Region EU_WEST_0 = new Region("eu-west-0", "https://dayu.eu-west-0.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DATAARTSSTUDIO");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -105,6 +112,9 @@ public class DataArtsStudioRegion {
         map.put("ru-moscow-1", RU_MOSCOW_1);
         map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         map.put("cn-east-4", CN_EAST_4);
+        map.put("af-north-1", AF_NORTH_1);
+        map.put("ap-southeast-5", AP_SOUTHEAST_5);
+        map.put("eu-west-0", EU_WEST_0);
         return Collections.unmodifiableMap(map);
     }
 

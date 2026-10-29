@@ -214,8 +214,6 @@ import com.huaweicloud.sdk.agentarts.v1.model.ListCustomModelProvidersRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCustomModelProvidersResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListModelManagementQuotasRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListModelManagementQuotasResponse;
-import com.huaweicloud.sdk.agentarts.v1.model.ListModelProxiesRequest;
-import com.huaweicloud.sdk.agentarts.v1.model.ListModelProxiesResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentLogRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentLogResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentMetricLabelValuesRequest;
@@ -1996,35 +1994,6 @@ public class AgentArtsClient {
     public SyncInvoker<ListModelManagementQuotasRequest, ListModelManagementQuotasResponse> listModelManagementQuotasInvoker(
         ListModelManagementQuotasRequest request) {
         return new SyncInvoker<>(request, AgentArtsMeta.listModelManagementQuotas, hcClient);
-    }
-
-    /**
-     * 列出所有模型代理
-     *
-     * 列出所有模型代理。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListModelProxiesRequest 请求对象
-     * @return ListModelProxiesResponse
-     */
-    public ListModelProxiesResponse listModelProxies(ListModelProxiesRequest request) {
-        return hcClient.syncInvokeHttp(request, AgentArtsMeta.listModelProxies);
-    }
-
-    /**
-     * 列出所有模型代理
-     *
-     * 列出所有模型代理。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListModelProxiesRequest 请求对象
-     * @return SyncInvoker<ListModelProxiesRequest, ListModelProxiesResponse>
-     */
-    public SyncInvoker<ListModelProxiesRequest, ListModelProxiesResponse> listModelProxiesInvoker(
-        ListModelProxiesRequest request) {
-        return new SyncInvoker<>(request, AgentArtsMeta.listModelProxies, hcClient);
     }
 
     /**

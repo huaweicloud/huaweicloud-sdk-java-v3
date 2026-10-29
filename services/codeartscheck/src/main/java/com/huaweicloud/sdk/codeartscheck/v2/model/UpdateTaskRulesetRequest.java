@@ -62,7 +62,7 @@ public class UpdateTaskRulesetRequest {
     }
 
     /**
-     * 修改任务规则集
+     * **参数解释：** 规则集信息。 **约束限制：** 不涉及。
      * @return body
      */
     public List<UpdateTaskRulesetItem> getBody() {

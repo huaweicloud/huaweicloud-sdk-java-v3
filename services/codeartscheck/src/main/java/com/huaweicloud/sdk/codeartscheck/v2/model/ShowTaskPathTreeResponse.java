@@ -46,7 +46,7 @@ public class ShowTaskPathTreeResponse extends SdkResponse {
     }
 
     /**
-     * 任务的目录树信息
+     * **参数解释:** 任务的目录树信息。
      * @return info
      */
     public List<TreeNode> getInfo() {
@@ -63,7 +63,7 @@ public class ShowTaskPathTreeResponse extends SdkResponse {
     }
 
     /**
-     * 数目
+     * **参数解释:** 数目。 **取值范围:** ≥0
      * @return total
      */
     public Integer getTotal() {

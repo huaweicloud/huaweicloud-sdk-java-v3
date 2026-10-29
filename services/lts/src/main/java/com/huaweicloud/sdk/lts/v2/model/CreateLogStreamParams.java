@@ -38,6 +38,16 @@ public class CreateLogStreamParams {
 
     private String enterpriseProjectName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hot_cold_separation")
+
+    private Boolean hotColdSeparation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hot_storage_days")
+
+    private Integer hotStorageDays;
+
     public CreateLogStreamParams withLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
         return this;
@@ -141,6 +151,40 @@ public class CreateLogStreamParams {
         this.enterpriseProjectName = enterpriseProjectName;
     }
 
+    public CreateLogStreamParams withHotColdSeparation(Boolean hotColdSeparation) {
+        this.hotColdSeparation = hotColdSeparation;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否开启智能冷存储。 **约束限制：** 开启智能冷存储需要日志存储时间大于7天。开启智能冷存储后，需要设置标准存储层数据的保存时间。标准存储至少需保存7天才能转换为智能冷存储层数据。当日志保存时间大于标准存储层数据保存时间，且小于日志存储时间时，日志数据将自动转换为智能冷存储层数据存储。 **取值范围：** true/false。 **默认取值：** false
+     * @return hotColdSeparation
+     */
+    public Boolean getHotColdSeparation() {
+        return hotColdSeparation;
+    }
+
+    public void setHotColdSeparation(Boolean hotColdSeparation) {
+        this.hotColdSeparation = hotColdSeparation;
+    }
+
+    public CreateLogStreamParams withHotStorageDays(Integer hotStorageDays) {
+        this.hotStorageDays = hotStorageDays;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 日志流标准存储时间（单位：天），即日志上报到LTS后日志标准存储的时间。 **约束限制：** 开启智能冷存储需要日志总存储时间大于7天。 **取值范围：** 最小值：7天 最大值：365天 **默认取值：** 不涉及。        
+     * @return hotStorageDays
+     */
+    public Integer getHotStorageDays() {
+        return hotStorageDays;
+    }
+
+    public void setHotStorageDays(Integer hotStorageDays) {
+        this.hotStorageDays = hotStorageDays;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -152,12 +196,20 @@ public class CreateLogStreamParams {
         CreateLogStreamParams that = (CreateLogStreamParams) obj;
         return Objects.equals(this.logStreamName, that.logStreamName) && Objects.equals(this.ttlInDays, that.ttlInDays)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.logStreamNameAlias, that.logStreamNameAlias)
-            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName);
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.hotColdSeparation, that.hotColdSeparation)
+            && Objects.equals(this.hotStorageDays, that.hotStorageDays);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(logStreamName, ttlInDays, tags, logStreamNameAlias, enterpriseProjectName);
+        return Objects.hash(logStreamName,
+            ttlInDays,
+            tags,
+            logStreamNameAlias,
+            enterpriseProjectName,
+            hotColdSeparation,
+            hotStorageDays);
     }
 
     @Override
@@ -169,6 +221,8 @@ public class CreateLogStreamParams {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    logStreamNameAlias: ").append(toIndentedString(logStreamNameAlias)).append("\n");
         sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
+        sb.append("    hotColdSeparation: ").append(toIndentedString(hotColdSeparation)).append("\n");
+        sb.append("    hotStorageDays: ").append(toIndentedString(hotStorageDays)).append("\n");
         sb.append("}");
         return sb.toString();
     }

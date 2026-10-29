@@ -37,7 +37,7 @@ public class FlinkJobSummary {
     private String endpointName;
 
     /**
-     * **参数解释**：作业类型。 **取值范围**：   - FLINK_JAR_JOB：JAR作业。   - FLINK_SQL_JOB：SQL作业。   - FLINK_SQL_GATEWAY：SQL Gateway作业。 
+     * **参数解释**：作业类型。 **取值范围**：   - FLINK_JAR_JOB：JAR作业。   - FLINK_SQL_JOB：SQL作业。   - FLINK_SQL_GATEWAY：SQL Gateway作业。   - FLINK_PYTHON_JOB：Python作业。 
      */
     public static final class JobTypeEnum {
 
@@ -56,6 +56,11 @@ public class FlinkJobSummary {
          */
         public static final JobTypeEnum FLINK_SQL_GATEWAY = new JobTypeEnum("FLINK_SQL_GATEWAY");
 
+        /**
+         * Enum FLINK_PYTHON_JOB for value: "FLINK_PYTHON_JOB"
+         */
+        public static final JobTypeEnum FLINK_PYTHON_JOB = new JobTypeEnum("FLINK_PYTHON_JOB");
+
         private static final Map<String, JobTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, JobTypeEnum> createStaticFields() {
@@ -63,6 +68,7 @@ public class FlinkJobSummary {
             map.put("FLINK_JAR_JOB", FLINK_JAR_JOB);
             map.put("FLINK_SQL_JOB", FLINK_SQL_JOB);
             map.put("FLINK_SQL_GATEWAY", FLINK_SQL_GATEWAY);
+            map.put("FLINK_PYTHON_JOB", FLINK_PYTHON_JOB);
             return Collections.unmodifiableMap(map);
         }
 
@@ -163,6 +169,11 @@ public class FlinkJobSummary {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alert_enabled")
+
+    private Boolean alertEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
     private Long startTime;
@@ -246,7 +257,7 @@ public class FlinkJobSummary {
     }
 
     /**
-     * **参数解释**：作业类型。 **取值范围**：   - FLINK_JAR_JOB：JAR作业。   - FLINK_SQL_JOB：SQL作业。   - FLINK_SQL_GATEWAY：SQL Gateway作业。 
+     * **参数解释**：作业类型。 **取值范围**：   - FLINK_JAR_JOB：JAR作业。   - FLINK_SQL_JOB：SQL作业。   - FLINK_SQL_GATEWAY：SQL Gateway作业。   - FLINK_PYTHON_JOB：Python作业。 
      * @return jobType
      */
     public JobTypeEnum getJobType() {
@@ -450,6 +461,23 @@ public class FlinkJobSummary {
         this.description = description;
     }
 
+    public FlinkJobSummary withAlertEnabled(Boolean alertEnabled) {
+        this.alertEnabled = alertEnabled;
+        return this;
+    }
+
+    /**
+     * **参数解释**：该作业是否开启失败告警通知。 **取值范围**：   - true：开启。作业运行失败或提交失败时会向客户发送告警通知。   - false：关闭。作业失败时不发送告警通知。 **默认取值**：false，不指定时默认关闭。 
+     * @return alertEnabled
+     */
+    public Boolean getAlertEnabled() {
+        return alertEnabled;
+    }
+
+    public void setAlertEnabled(Boolean alertEnabled) {
+        this.alertEnabled = alertEnabled;
+    }
+
     public FlinkJobSummary withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
@@ -504,7 +532,8 @@ public class FlinkJobSummary {
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.createUser, that.createUser)
             && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.updateUser, that.updateUser)
             && Objects.equals(this.logUrl, that.logUrl) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
+            && Objects.equals(this.alertEnabled, that.alertEnabled) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override
@@ -523,6 +552,7 @@ public class FlinkJobSummary {
             updateUser,
             logUrl,
             description,
+            alertEnabled,
             startTime,
             endTime);
     }
@@ -545,6 +575,7 @@ public class FlinkJobSummary {
         sb.append("    updateUser: ").append(toIndentedString(updateUser)).append("\n");
         sb.append("    logUrl: ").append(toIndentedString(logUrl)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    alertEnabled: ").append(toIndentedString(alertEnabled)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");

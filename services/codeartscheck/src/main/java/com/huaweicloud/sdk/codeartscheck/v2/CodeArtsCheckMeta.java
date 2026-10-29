@@ -16,6 +16,8 @@ import com.huaweicloud.sdk.codeartscheck.v2.model.DeleteRulesetRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.DeleteRulesetResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.DeleteTaskRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.DeleteTaskResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ListCriterionSetsByLanguageRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ListCriterionSetsByLanguageResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ListRulesRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ListRulesResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ListRulesetsRequest;
@@ -42,6 +44,8 @@ import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskDefectsStatisticReques
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskDefectsStatisticResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskDetailRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskDetailResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskInfoByIdRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskInfoByIdResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskListByProjectIdRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskListByProjectIdResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskPathTreeRequest;
@@ -50,12 +54,17 @@ import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskSettingsRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskSettingsResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTasklogRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTasklogResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTasksListRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTasksListResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTasksRulesetsRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTasksRulesetsResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.StopTaskByIdRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.StopTaskByIdResponse;
-import com.huaweicloud.sdk.codeartscheck.v2.model.TaskCheckParamters;
+import com.huaweicloud.sdk.codeartscheck.v2.model.TaskCheckParameters;
 import com.huaweicloud.sdk.codeartscheck.v2.model.TaskRulesetInfo;
+import com.huaweicloud.sdk.codeartscheck.v2.model.UpdateCodeGateRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.UpdateCodeGateRequestBody;
+import com.huaweicloud.sdk.codeartscheck.v2.model.UpdateCodeGateResponse;
 import com.huaweicloud.sdk.codeartscheck.v2.model.UpdateDefectRequestBody;
 import com.huaweicloud.sdk.codeartscheck.v2.model.UpdateDefectStatusRequest;
 import com.huaweicloud.sdk.codeartscheck.v2.model.UpdateDefectStatusResponse;
@@ -113,12 +122,12 @@ public class CodeArtsCheckMeta {
             f -> f.withMarshaller(CheckParametersRequest::getLanguage, CheckParametersRequest::setLanguage));
 
         // response
-        builder.<List<TaskCheckParamters>>withResponseField("body",
+        builder.<List<TaskCheckParameters>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(CheckParametersResponse::getBody, CheckParametersResponse::setBody)
-                .withInnerContainerType(TaskCheckParamters.class));
+                .withInnerContainerType(TaskCheckParameters.class));
 
         return builder.build();
     }
@@ -315,6 +324,63 @@ public class CodeArtsCheckMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTaskRequest::getTaskId, DeleteTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCriterionSetsByLanguageRequest, ListCriterionSetsByLanguageResponse> listCriterionSetsByLanguage =
+        genForListCriterionSetsByLanguage();
+
+    private static HttpRequestDef<ListCriterionSetsByLanguageRequest, ListCriterionSetsByLanguageResponse> genForListCriterionSetsByLanguage() {
+        // basic
+        HttpRequestDef.Builder<ListCriterionSetsByLanguageRequest, ListCriterionSetsByLanguageResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListCriterionSetsByLanguageRequest.class,
+                    ListCriterionSetsByLanguageResponse.class)
+                .withName("ListCriterionSetsByLanguage")
+                .withUri("/v1/criterionsets/language")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("language",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCriterionSetsByLanguageRequest::getLanguage,
+                ListCriterionSetsByLanguageRequest::setLanguage));
+        builder.<String>withRequestField("search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCriterionSetsByLanguageRequest::getSearch,
+                ListCriterionSetsByLanguageRequest::setSearch));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCriterionSetsByLanguageRequest::getPageSize,
+                ListCriterionSetsByLanguageRequest::setPageSize));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCriterionSetsByLanguageRequest::getPage,
+                ListCriterionSetsByLanguageRequest::setPage));
+        builder.<String>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCriterionSetsByLanguageRequest::getProjectId,
+                ListCriterionSetsByLanguageRequest::setProjectId));
+        builder.<String>withRequestField("is_reliable",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCriterionSetsByLanguageRequest::getIsReliable,
+                ListCriterionSetsByLanguageRequest::setIsReliable));
 
         // response
 
@@ -717,6 +783,44 @@ public class CodeArtsCheckMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowTaskInfoByIdRequest, ShowTaskInfoByIdResponse> showTaskInfoById =
+        genForShowTaskInfoById();
+
+    private static HttpRequestDef<ShowTaskInfoByIdRequest, ShowTaskInfoByIdResponse> genForShowTaskInfoById() {
+        // basic
+        HttpRequestDef.Builder<ShowTaskInfoByIdRequest, ShowTaskInfoByIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTaskInfoByIdRequest.class, ShowTaskInfoByIdResponse.class)
+                .withName("ShowTaskInfoById")
+                .withUri("/v3/task/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskInfoByIdRequest::getTaskId, ShowTaskInfoByIdRequest::setTaskId));
+        builder.<String>withRequestField("merge_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskInfoByIdRequest::getMergeId, ShowTaskInfoByIdRequest::setMergeId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskInfoByIdRequest::getJobId, ShowTaskInfoByIdRequest::setJobId));
+        builder.<String>withRequestField("operator",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskInfoByIdRequest::getOperator, ShowTaskInfoByIdRequest::setOperator));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowTaskListByProjectIdRequest, ShowTaskListByProjectIdResponse> showTaskListByProjectId =
         genForShowTaskListByProjectId();
 
@@ -865,6 +969,108 @@ public class CodeArtsCheckMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowTasksListRequest, ShowTasksListResponse> showTasksList =
+        genForShowTasksList();
+
+    private static HttpRequestDef<ShowTasksListRequest, ShowTasksListResponse> genForShowTasksList() {
+        // basic
+        HttpRequestDef.Builder<ShowTasksListRequest, ShowTasksListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTasksListRequest.class, ShowTasksListResponse.class)
+                .withName("ShowTasksList")
+                .withUri("/v1/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTasksListRequest::getPage, ShowTasksListRequest::setPage));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTasksListRequest::getPageSize, ShowTasksListRequest::setPageSize));
+        builder.<String>withRequestField("search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTasksListRequest::getSearch, ShowTasksListRequest::setSearch));
+        builder.<String>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTasksListRequest::getProjectId, ShowTasksListRequest::setProjectId));
+        builder.<String>withRequestField("review_result_types",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTasksListRequest::getReviewResultTypes,
+                ShowTasksListRequest::setReviewResultTypes));
+        builder.<String>withRequestField("job_status_types",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTasksListRequest::getJobStatusTypes, ShowTasksListRequest::setJobStatusTypes));
+        builder.<String>withRequestField("order_by_execute_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTasksListRequest::getOrderByExecuteTime,
+                ShowTasksListRequest::setOrderByExecuteTime));
+        builder.<String>withRequestField("task_classification_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTasksListRequest::getTaskClassificationId,
+                ShowTasksListRequest::setTaskClassificationId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTasksListRequest::getOffset, ShowTasksListRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTasksListRequest::getLimit, ShowTasksListRequest::setLimit));
+        builder.<String>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTasksListRequest::getSortField, ShowTasksListRequest::setSortField));
+        builder.<String>withRequestField("sort_order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTasksListRequest::getSortOrder, ShowTasksListRequest::setSortOrder));
+        builder.<String>withRequestField("repo_url",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTasksListRequest::getRepoUrl, ShowTasksListRequest::setRepoUrl));
+        builder.<String>withRequestField("branch",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTasksListRequest::getBranch, ShowTasksListRequest::setBranch));
+        builder.<String>withRequestField("repo_url_full_match",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTasksListRequest::getRepoUrlFullMatch,
+                ShowTasksListRequest::setRepoUrlFullMatch));
+        builder.<String>withRequestField("operator",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTasksListRequest::getOperator, ShowTasksListRequest::setOperator));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowTasksRulesetsRequest, ShowTasksRulesetsResponse> showTasksRulesets =
         genForShowTasksRulesets();
 
@@ -919,6 +1125,34 @@ public class CodeArtsCheckMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopTaskByIdRequest::getTaskId, StopTaskByIdRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateCodeGateRequest, UpdateCodeGateResponse> updateCodeGate =
+        genForUpdateCodeGate();
+
+    private static HttpRequestDef<UpdateCodeGateRequest, UpdateCodeGateResponse> genForUpdateCodeGate() {
+        // basic
+        HttpRequestDef.Builder<UpdateCodeGateRequest, UpdateCodeGateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateCodeGateRequest.class, UpdateCodeGateResponse.class)
+                .withName("UpdateCodeGate")
+                .withUri("/v1/task/code-gate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("operator",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCodeGateRequest::getOperator, UpdateCodeGateRequest::setOperator));
+        builder.<UpdateCodeGateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateCodeGateRequestBody.class),
+            f -> f.withMarshaller(UpdateCodeGateRequest::getBody, UpdateCodeGateRequest::setBody));
 
         // response
 

@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,7 +17,7 @@ public class ListLogHistogramResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "histogram")
 
-    private String histogram;
+    private List<LogCounts> histogram = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
@@ -26,20 +29,36 @@ public class ListLogHistogramResponse extends SdkResponse {
 
     private Boolean isQueryComplete;
 
-    public ListLogHistogramResponse withHistogram(String histogram) {
+    public ListLogHistogramResponse withHistogram(List<LogCounts> histogram) {
         this.histogram = histogram;
         return this;
     }
 
+    public ListLogHistogramResponse addHistogramItem(LogCounts histogramItem) {
+        if (this.histogram == null) {
+            this.histogram = new ArrayList<>();
+        }
+        this.histogram.add(histogramItem);
+        return this;
+    }
+
+    public ListLogHistogramResponse withHistogram(Consumer<List<LogCounts>> histogramSetter) {
+        if (this.histogram == null) {
+            this.histogram = new ArrayList<>();
+        }
+        histogramSetter.accept(this.histogram);
+        return this;
+    }
+
     /**
-     * 直方图结果
+     * **参数解释：** 直方图结果。 **取值范围：** 不涉及。
      * @return histogram
      */
-    public String getHistogram() {
+    public List<LogCounts> getHistogram() {
         return histogram;
     }
 
-    public void setHistogram(String histogram) {
+    public void setHistogram(List<LogCounts> histogram) {
         this.histogram = histogram;
     }
 

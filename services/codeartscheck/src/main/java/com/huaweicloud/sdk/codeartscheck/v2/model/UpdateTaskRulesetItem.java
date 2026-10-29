@@ -36,7 +36,7 @@ public class UpdateTaskRulesetItem {
     }
 
     /**
-     * 规则集语言
+     * **参数解释：** 检查语言，支持的语言请关注服务更新特性文档。 **约束限制:** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return language
      */
     public String getLanguage() {
@@ -53,7 +53,7 @@ public class UpdateTaskRulesetItem {
     }
 
     /**
-     * 规则集ID,通过调用ListTaskRuleset接口，根据响应参数中的template_id获得
+     * **参数解释：** 规则集ID。 **约束限制:** 长度为[1~32]个字符。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return ruleSetId
      */
     public String getRuleSetId() {
@@ -70,7 +70,7 @@ public class UpdateTaskRulesetItem {
     }
 
     /**
-     * 任务语言和规则集的关系是否启用，1是启用，0是未启用
+     * **参数解释：** 是否启用。 **约束限制:** 不涉及。 **取值范围：** - 0：不启用。 - 1：启用。 **默认取值：** 不涉及。
      * @return ifUse
      */
     public String getIfUse() {
@@ -87,7 +87,7 @@ public class UpdateTaskRulesetItem {
     }
 
     /**
-     * 新/老数据表示，默认1
+     * **参数解释：** 新/老数据。 **约束限制:** 不涉及。 **取值范围：** 1 **默认取值：** 不涉及。
      * @return status
      */
     public String getStatus() {

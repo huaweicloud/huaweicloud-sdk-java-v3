@@ -89,6 +89,16 @@ public class FlinkSqlGatewayParameter {
 
     private String sqlGatewayToken;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "idle_enabled")
+
+    private Boolean idleEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "idle_timeout")
+
+    private Integer idleTimeout;
+
     public FlinkSqlGatewayParameter withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -123,6 +133,42 @@ public class FlinkSqlGatewayParameter {
         this.sqlGatewayToken = sqlGatewayToken;
     }
 
+    public FlinkSqlGatewayParameter withIdleEnabled(Boolean idleEnabled) {
+        this.idleEnabled = idleEnabled;
+        return this;
+    }
+
+    /**
+     * **参数解释**：是否开启空闲自动释放。 **约束限制**：不涉及。 **取值范围**：   - true：开启空闲自动释放。   - false：关闭空闲自动释放。 **默认取值**：false。
+     * @return idleEnabled
+     */
+    public Boolean getIdleEnabled() {
+        return idleEnabled;
+    }
+
+    public void setIdleEnabled(Boolean idleEnabled) {
+        this.idleEnabled = idleEnabled;
+    }
+
+    public FlinkSqlGatewayParameter withIdleTimeout(Integer idleTimeout) {
+        this.idleTimeout = idleTimeout;
+        return this;
+    }
+
+    /**
+     * **参数解释**：最大空闲时长，单位为分钟，用于指定SQL Gateway空闲多长时间后自动停止。空闲指会话内没有正在运行的作业，创建会话等其他操作不计为非空闲。 **约束限制**：不涉及。 **取值范围**：10~1440。 **默认取值**：30。
+     * minimum: 10
+     * maximum: 1440
+     * @return idleTimeout
+     */
+    public Integer getIdleTimeout() {
+        return idleTimeout;
+    }
+
+    public void setIdleTimeout(Integer idleTimeout) {
+        this.idleTimeout = idleTimeout;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -132,12 +178,13 @@ public class FlinkSqlGatewayParameter {
             return false;
         }
         FlinkSqlGatewayParameter that = (FlinkSqlGatewayParameter) obj;
-        return Objects.equals(this.type, that.type) && Objects.equals(this.sqlGatewayToken, that.sqlGatewayToken);
+        return Objects.equals(this.type, that.type) && Objects.equals(this.sqlGatewayToken, that.sqlGatewayToken)
+            && Objects.equals(this.idleEnabled, that.idleEnabled) && Objects.equals(this.idleTimeout, that.idleTimeout);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, sqlGatewayToken);
+        return Objects.hash(type, sqlGatewayToken, idleEnabled, idleTimeout);
     }
 
     @Override
@@ -146,6 +193,8 @@ public class FlinkSqlGatewayParameter {
         sb.append("class FlinkSqlGatewayParameter {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    sqlGatewayToken: ").append(toIndentedString(sqlGatewayToken)).append("\n");
+        sb.append("    idleEnabled: ").append(toIndentedString(idleEnabled)).append("\n");
+        sb.append("    idleTimeout: ").append(toIndentedString(idleTimeout)).append("\n");
         sb.append("}");
         return sb.toString();
     }

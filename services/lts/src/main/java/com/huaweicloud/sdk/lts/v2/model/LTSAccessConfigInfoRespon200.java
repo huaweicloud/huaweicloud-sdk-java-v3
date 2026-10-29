@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.lts.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -26,10 +31,104 @@ public class LTSAccessConfigInfoRespon200 {
 
     private String accessConfigName;
 
+    /**
+     * **参数解释：** 委托接入类型。 **约束限制：** 不涉及。 **取值范围：** - AGENCYACCESS：委托接入。
+     */
+    public static final class AccessConfigTypeEnum {
+
+        /**
+         * Enum AGENT for value: "Agent"
+         */
+        public static final AccessConfigTypeEnum AGENT = new AccessConfigTypeEnum("Agent");
+
+        /**
+         * Enum CRD for value: "CRD"
+         */
+        public static final AccessConfigTypeEnum CRD = new AccessConfigTypeEnum("CRD");
+
+        /**
+         * Enum AGENCYACCESS for value: "AGENCYACCESS"
+         */
+        public static final AccessConfigTypeEnum AGENCYACCESS = new AccessConfigTypeEnum("AGENCYACCESS");
+
+        /**
+         * Enum K8S_CCE for value: "K8S_CCE"
+         */
+        public static final AccessConfigTypeEnum K8S_CCE = new AccessConfigTypeEnum("K8S_CCE");
+
+        /**
+         * Enum K8S_CUSTOM for value: "K8S_CUSTOM"
+         */
+        public static final AccessConfigTypeEnum K8S_CUSTOM = new AccessConfigTypeEnum("K8S_CUSTOM");
+
+        /**
+         * Enum CLOUD_STREAM_AGENCY for value: "CLOUD_STREAM_AGENCY"
+         */
+        public static final AccessConfigTypeEnum CLOUD_STREAM_AGENCY = new AccessConfigTypeEnum("CLOUD_STREAM_AGENCY");
+
+        private static final Map<String, AccessConfigTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AccessConfigTypeEnum> createStaticFields() {
+            Map<String, AccessConfigTypeEnum> map = new HashMap<>();
+            map.put("Agent", AGENT);
+            map.put("CRD", CRD);
+            map.put("AGENCYACCESS", AGENCYACCESS);
+            map.put("K8S_CCE", K8S_CCE);
+            map.put("K8S_CUSTOM", K8S_CUSTOM);
+            map.put("CLOUD_STREAM_AGENCY", CLOUD_STREAM_AGENCY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AccessConfigTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AccessConfigTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AccessConfigTypeEnum(value));
+        }
+
+        public static AccessConfigTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AccessConfigTypeEnum) {
+                return this.value.equals(((AccessConfigTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_config_type")
 
-    private Object accessConfigType;
+    private AccessConfigTypeEnum accessConfigType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
@@ -112,20 +211,20 @@ public class LTSAccessConfigInfoRespon200 {
         this.accessConfigName = accessConfigName;
     }
 
-    public LTSAccessConfigInfoRespon200 withAccessConfigType(Object accessConfigType) {
+    public LTSAccessConfigInfoRespon200 withAccessConfigType(AccessConfigTypeEnum accessConfigType) {
         this.accessConfigType = accessConfigType;
         return this;
     }
 
     /**
-     * 跨账号日志接入类型
+     * **参数解释：** 委托接入类型。 **约束限制：** 不涉及。 **取值范围：** - AGENCYACCESS：委托接入。
      * @return accessConfigType
      */
-    public Object getAccessConfigType() {
+    public AccessConfigTypeEnum getAccessConfigType() {
         return accessConfigType;
     }
 
-    public void setAccessConfigType(Object accessConfigType) {
+    public void setAccessConfigType(AccessConfigTypeEnum accessConfigType) {
         this.accessConfigType = accessConfigType;
     }
 

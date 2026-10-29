@@ -262,8 +262,6 @@ import com.huaweicloud.sdk.agentarts.v1.model.ListCustomModelProvidersRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCustomModelProvidersResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListModelManagementQuotasRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListModelManagementQuotasResponse;
-import com.huaweicloud.sdk.agentarts.v1.model.ListModelProxiesRequest;
-import com.huaweicloud.sdk.agentarts.v1.model.ListModelProxiesResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentLogRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentLogResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListOpsAgentMetricLabelValuesRequest;
@@ -2211,67 +2209,6 @@ public class AgentArtsMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListModelManagementQuotasRequest::getOffset,
                 ListModelManagementQuotasRequest::setOffset));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListModelProxiesRequest, ListModelProxiesResponse> listModelProxies =
-        genForListModelProxies();
-
-    private static HttpRequestDef<ListModelProxiesRequest, ListModelProxiesResponse> genForListModelProxies() {
-        // basic
-        HttpRequestDef.Builder<ListModelProxiesRequest, ListModelProxiesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListModelProxiesRequest.class, ListModelProxiesResponse.class)
-                .withName("ListModelProxies")
-                .withUri("/v1/core/model-proxy")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListModelProxiesRequest::getName, ListModelProxiesRequest::setName));
-        builder.<UUID>withRequestField("id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(UUID.class),
-            f -> f.withMarshaller(ListModelProxiesRequest::getId, ListModelProxiesRequest::setId));
-        builder.<List<String>>withRequestField("tag_key_exists",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListModelProxiesRequest::getTagKeyExists, ListModelProxiesRequest::setTagKeyExists));
-        builder.<List<String>>withRequestField("tag_key_matches",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListModelProxiesRequest::getTagKeyMatches,
-                ListModelProxiesRequest::setTagKeyMatches));
-        builder.<List<String>>withRequestField("tag_value_matches",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListModelProxiesRequest::getTagValueMatches,
-                ListModelProxiesRequest::setTagValueMatches));
-        builder.<ListModelProxiesRequest.TagMatchPolicyEnum>withRequestField("tag_match_policy",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListModelProxiesRequest.TagMatchPolicyEnum.class),
-            f -> f.withMarshaller(ListModelProxiesRequest::getTagMatchPolicy,
-                ListModelProxiesRequest::setTagMatchPolicy));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListModelProxiesRequest::getLimit, ListModelProxiesRequest::setLimit));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListModelProxiesRequest::getOffset, ListModelProxiesRequest::setOffset));
 
         // response
 

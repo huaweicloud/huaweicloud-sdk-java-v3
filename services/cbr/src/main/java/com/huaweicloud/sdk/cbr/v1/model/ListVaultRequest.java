@@ -213,6 +213,11 @@ public class ListVaultRequest {
 
     private String resourceIds;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private String availabilityZone;
+
     public ListVaultRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -418,6 +423,23 @@ public class ListVaultRequest {
         this.resourceIds = resourceIds;
     }
 
+    public ListVaultRequest withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 存储库可用区信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return availabilityZone
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -432,7 +454,8 @@ public class ListVaultRequest {
             && Objects.equals(this.protectType, that.protectType) && Objects.equals(this.objectType, that.objectType)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId) && Objects.equals(this.id, that.id)
             && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.resourceIds, that.resourceIds);
+            && Objects.equals(this.resourceIds, that.resourceIds)
+            && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override
@@ -447,7 +470,8 @@ public class ListVaultRequest {
             id,
             policyId,
             status,
-            resourceIds);
+            resourceIds,
+            availabilityZone);
     }
 
     @Override
@@ -465,6 +489,7 @@ public class ListVaultRequest {
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    resourceIds: ").append(toIndentedString(resourceIds)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("}");
         return sb.toString();
     }

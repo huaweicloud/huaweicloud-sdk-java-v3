@@ -46,7 +46,7 @@ public class ShowTaskListByProjectIdResponse extends SdkResponse {
     }
 
     /**
-     * 任务信息
+     * **参数解释：** 任务信息。
      * @return tasks
      */
     public List<SimpleTaskInfoV2> getTasks() {
@@ -63,7 +63,7 @@ public class ShowTaskListByProjectIdResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释：** 项目下的任务总数。 **取值范围：** 不涉及。
      * @return total
      */
     public Integer getTotal() {

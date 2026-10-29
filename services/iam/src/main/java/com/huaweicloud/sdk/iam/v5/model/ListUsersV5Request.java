@@ -30,6 +30,11 @@ public class ListUsersV5Request {
 
     private String accessKeyId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_specific_credential_id")
+
+    private String serviceSpecificCredentialId;
+
     public ListUsersV5Request withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -100,6 +105,23 @@ public class ListUsersV5Request {
         this.accessKeyId = accessKeyId;
     }
 
+    public ListUsersV5Request withServiceSpecificCredentialId(String serviceSpecificCredentialId) {
+        this.serviceSpecificCredentialId = serviceSpecificCredentialId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 服务专属凭证的标识符 ID。  **约束限制**： 不涉及。  **取值范围**： 长度固定为20，格式为HSSC + 16位随机字符，只能包含大小写字母和数字。  **默认取值**： 不涉及。 
+     * @return serviceSpecificCredentialId
+     */
+    public String getServiceSpecificCredentialId() {
+        return serviceSpecificCredentialId;
+    }
+
+    public void setServiceSpecificCredentialId(String serviceSpecificCredentialId) {
+        this.serviceSpecificCredentialId = serviceSpecificCredentialId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -110,12 +132,13 @@ public class ListUsersV5Request {
         }
         ListUsersV5Request that = (ListUsersV5Request) obj;
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
-            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.accessKeyId, that.accessKeyId);
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.accessKeyId, that.accessKeyId)
+            && Objects.equals(this.serviceSpecificCredentialId, that.serviceSpecificCredentialId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, groupId, accessKeyId);
+        return Objects.hash(limit, marker, groupId, accessKeyId, serviceSpecificCredentialId);
     }
 
     @Override
@@ -126,6 +149,9 @@ public class ListUsersV5Request {
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    accessKeyId: ").append(toIndentedString(accessKeyId)).append("\n");
+        sb.append("    serviceSpecificCredentialId: ")
+            .append(toIndentedString(serviceSpecificCredentialId))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

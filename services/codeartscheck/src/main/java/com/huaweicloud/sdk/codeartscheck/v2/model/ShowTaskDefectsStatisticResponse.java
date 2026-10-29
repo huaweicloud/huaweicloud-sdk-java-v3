@@ -22,6 +22,16 @@ public class ShowTaskDefectsStatisticResponse extends SdkResponse {
 
     private StatisticStatusV2 status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_check_time")
+
+    private String lastCheckTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_check_finish_time")
+
+    private String lastCheckFinishTime;
+
     public ShowTaskDefectsStatisticResponse withSeverity(StatisticSeverityV2 severity) {
         this.severity = severity;
         return this;
@@ -74,6 +84,40 @@ public class ShowTaskDefectsStatisticResponse extends SdkResponse {
         this.status = status;
     }
 
+    public ShowTaskDefectsStatisticResponse withLastCheckTime(String lastCheckTime) {
+        this.lastCheckTime = lastCheckTime;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 检查开始时间，使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
+     * @return lastCheckTime
+     */
+    public String getLastCheckTime() {
+        return lastCheckTime;
+    }
+
+    public void setLastCheckTime(String lastCheckTime) {
+        this.lastCheckTime = lastCheckTime;
+    }
+
+    public ShowTaskDefectsStatisticResponse withLastCheckFinishTime(String lastCheckFinishTime) {
+        this.lastCheckFinishTime = lastCheckFinishTime;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 检查结束时间，使用UTC时间，格式为yyyy-MM-ddTHH:mm:ssZ。例如：2020-09-25T12:05:00Z。 **取值范围：** 不涉及。
+     * @return lastCheckFinishTime
+     */
+    public String getLastCheckFinishTime() {
+        return lastCheckFinishTime;
+    }
+
+    public void setLastCheckFinishTime(String lastCheckFinishTime) {
+        this.lastCheckFinishTime = lastCheckFinishTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +127,14 @@ public class ShowTaskDefectsStatisticResponse extends SdkResponse {
             return false;
         }
         ShowTaskDefectsStatisticResponse that = (ShowTaskDefectsStatisticResponse) obj;
-        return Objects.equals(this.severity, that.severity) && Objects.equals(this.status, that.status);
+        return Objects.equals(this.severity, that.severity) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.lastCheckTime, that.lastCheckTime)
+            && Objects.equals(this.lastCheckFinishTime, that.lastCheckFinishTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(severity, status);
+        return Objects.hash(severity, status, lastCheckTime, lastCheckFinishTime);
     }
 
     @Override
@@ -97,6 +143,8 @@ public class ShowTaskDefectsStatisticResponse extends SdkResponse {
         sb.append("class ShowTaskDefectsStatisticResponse {\n");
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    lastCheckTime: ").append(toIndentedString(lastCheckTime)).append("\n");
+        sb.append("    lastCheckFinishTime: ").append(toIndentedString(lastCheckFinishTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

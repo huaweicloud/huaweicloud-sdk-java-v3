@@ -381,6 +381,11 @@ public class SqlAlarmRuleRespList {
 
     private List<TagsResBody> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "condition_expressions")
+
+    private List<AlarmCondition> conditionExpressions = null;
+
     public SqlAlarmRuleRespList withSqlAlarmRuleName(String sqlAlarmRuleName) {
         this.sqlAlarmRuleName = sqlAlarmRuleName;
         return this;
@@ -799,6 +804,39 @@ public class SqlAlarmRuleRespList {
         this.tags = tags;
     }
 
+    public SqlAlarmRuleRespList withConditionExpressions(List<AlarmCondition> conditionExpressions) {
+        this.conditionExpressions = conditionExpressions;
+        return this;
+    }
+
+    public SqlAlarmRuleRespList addConditionExpressionsItem(AlarmCondition conditionExpressionsItem) {
+        if (this.conditionExpressions == null) {
+            this.conditionExpressions = new ArrayList<>();
+        }
+        this.conditionExpressions.add(conditionExpressionsItem);
+        return this;
+    }
+
+    public SqlAlarmRuleRespList withConditionExpressions(Consumer<List<AlarmCondition>> conditionExpressionsSetter) {
+        if (this.conditionExpressions == null) {
+            this.conditionExpressions = new ArrayList<>();
+        }
+        conditionExpressionsSetter.accept(this.conditionExpressions);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 支持根据不同条件触发不同级别的告警。当使用该参数时，将优先使用该参数中的条件触发告警，无视condition_expression、sql_alarm_level参数。
+     * @return conditionExpressions
+     */
+    public List<AlarmCondition> getConditionExpressions() {
+        return conditionExpressions;
+    }
+
+    public void setConditionExpressions(List<AlarmCondition> conditionExpressions) {
+        this.conditionExpressions = conditionExpressions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -823,7 +861,8 @@ public class SqlAlarmRuleRespList {
             && Objects.equals(this.recoveryPolicy, that.recoveryPolicy)
             && Objects.equals(this.notificationFrequency, that.notificationFrequency)
             && Objects.equals(this.alarmActionRuleName, that.alarmActionRuleName)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.conditionExpressions, that.conditionExpressions);
     }
 
     @Override
@@ -848,7 +887,8 @@ public class SqlAlarmRuleRespList {
             recoveryPolicy,
             notificationFrequency,
             alarmActionRuleName,
-            tags);
+            tags,
+            conditionExpressions);
     }
 
     @Override
@@ -876,6 +916,7 @@ public class SqlAlarmRuleRespList {
         sb.append("    notificationFrequency: ").append(toIndentedString(notificationFrequency)).append("\n");
         sb.append("    alarmActionRuleName: ").append(toIndentedString(alarmActionRuleName)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    conditionExpressions: ").append(toIndentedString(conditionExpressions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

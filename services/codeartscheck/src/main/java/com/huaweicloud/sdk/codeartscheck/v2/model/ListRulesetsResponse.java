@@ -46,7 +46,7 @@ public class ListRulesetsResponse extends SdkResponse {
     }
 
     /**
-     * 规则集列表信息
+     * **参数解释:** 规则集列表信息。
      * @return info
      */
     public List<RulesetItem> getInfo() {
@@ -63,7 +63,7 @@ public class ListRulesetsResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释:** 规则集总数。 **取值范围:** ≥0
      * @return total
      */
     public Integer getTotal() {

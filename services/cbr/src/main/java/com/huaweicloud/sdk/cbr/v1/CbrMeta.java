@@ -1007,6 +1007,12 @@ public class CbrMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListBackupsRequest::getIncremental, ListBackupsRequest::setIncremental));
+        builder.<Boolean>withRequestField("existed_quantity_based_retention_backups",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListBackupsRequest::getExistedQuantityBasedRetentionBackups,
+                ListBackupsRequest::setExistedQuantityBasedRetentionBackups));
 
         // response
 
@@ -1074,11 +1080,11 @@ public class CbrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListExternalVaultRequest::getRegionId, ListExternalVaultRequest::setRegionId));
-        builder.<String>withRequestField("objcet_type",
+        builder.<String>withRequestField("object_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExternalVaultRequest::getObjcetType, ListExternalVaultRequest::setObjcetType));
+            f -> f.withMarshaller(ListExternalVaultRequest::getObjectType, ListExternalVaultRequest::setObjectType));
         builder.<String>withRequestField("cloud_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1200,6 +1206,17 @@ public class CbrMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListOpLogsRequest::getEnterpriseProjectId,
                 ListOpLogsRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("destination_region",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpLogsRequest::getDestinationRegion, ListOpLogsRequest::setDestinationRegion));
+        builder.<String>withRequestField("destination_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOpLogsRequest::getDestinationProjectId,
+                ListOpLogsRequest::setDestinationProjectId));
 
         // response
 
@@ -1367,6 +1384,12 @@ public class CbrMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProtectableRequest::getServerId, ListProtectableRequest::setServerId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProtectableRequest::getEnterpriseProjectId,
+                ListProtectableRequest::setEnterpriseProjectId));
 
         // response
 
@@ -1439,6 +1462,11 @@ public class CbrMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVaultRequest::getResourceIds, ListVaultRequest::setResourceIds));
+        builder.<String>withRequestField("availability_zone",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVaultRequest::getAvailabilityZone, ListVaultRequest::setAvailabilityZone));
 
         // response
 
@@ -2129,6 +2157,12 @@ public class CbrMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVaultResourceInstancesRequest::getEnterpriseProjectId,
+                ShowVaultResourceInstancesRequest::setEnterpriseProjectId));
         builder.<VaultResourceInstancesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

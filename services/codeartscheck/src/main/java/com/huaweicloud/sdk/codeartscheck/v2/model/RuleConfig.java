@@ -18,7 +18,7 @@ public class RuleConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_id")
 
-    private Integer ruleId;
+    private String ruleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_value")
@@ -56,7 +56,7 @@ public class RuleConfig {
     }
 
     /**
-     * 规则配置ID
+     * **参数解释:** 规则配置ID。可调用[[获取规则列表接口](https://support.huaweicloud.com/api-codecheck/ListRules.html)](tag:hws)[[获取规则列表接口](https://support.huaweicloud.com/intl/zh-cn/api-codecheck/ListRules.html)](tag:hws_hk)[获取规则列表接口](tag:hcs,hcs_sm,hcs_site,hcs_sitesm,fcs)获取规则配置ID。 **约束限制:** 不涉及。 **取值范围:** 32位UUID。 **默认取值:** 不涉及。
      * @return id
      */
     public Integer getId() {
@@ -67,20 +67,20 @@ public class RuleConfig {
         this.id = id;
     }
 
-    public RuleConfig withRuleId(Integer ruleId) {
+    public RuleConfig withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
     }
 
     /**
-     * 规则ID
+     * **参数解释:** 工具规则ID，即可配置阈值规则的各种阈值对应的ID，当前无便利手段获取，请联系客服咨询。 **约束限制:** 不涉及。 **取值范围:** 32位UUID。 **默认取值:** 不涉及。
      * @return ruleId
      */
-    public Integer getRuleId() {
+    public String getRuleId() {
         return ruleId;
     }
 
-    public void setRuleId(Integer ruleId) {
+    public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
 
@@ -90,7 +90,7 @@ public class RuleConfig {
     }
 
     /**
-     * 默认值
+     * **参数解释:** 配置参数默认阈值。 **约束限制:** 不涉及。 **取值范围:** 不涉及。 **默认取值:** 不涉及。
      * @return defaultValue
      */
     public String getDefaultValue() {
@@ -107,7 +107,7 @@ public class RuleConfig {
     }
 
     /**
-     * 当前
+     * **参数解释:** 配置参数新阈值。 **约束限制:** 不涉及。 **取值范围:** 不涉及。 **默认取值:** 不涉及。
      * @return optionValue
      */
     public String getOptionValue() {
@@ -124,7 +124,7 @@ public class RuleConfig {
     }
 
     /**
-     * 当前规则配置项key
+     * **参数解释:** 当前规则配置项key。可调用[[获取规则列表接口](https://support.huaweicloud.com/api-codecheck/ListRules.html)](tag:hws)[[获取规则列表接口](https://support.huaweicloud.com/intl/zh-cn/api-codecheck/ListRules.html)](tag:hws_hk)[获取规则列表接口](tag:hcs,hcs_sm,hcs_site,hcs_sitesm,fcs)获取规则配置ID。 **约束限制:** 需要和规则ID相匹配。 **取值范围:** 不涉及。 **默认取值:** 不涉及。
      * @return optionKey
      */
     public String getOptionKey() {
@@ -141,7 +141,7 @@ public class RuleConfig {
     }
 
     /**
-     * 当前规则配置项名称
+     * **参数解释:** 当前规则配置项key。可调用[[获取规则列表接口](https://support.huaweicloud.com/api-codecheck/ListRules.html)](tag:hws)[[获取规则列表接口](https://support.huaweicloud.com/intl/zh-cn/api-codecheck/ListRules.html)](tag:hws_hk)[获取规则列表接口](tag:hcs,hcs_sm,hcs_site,hcs_sitesm,fcs)获取规则配置ID。 **约束限制:** 需要和规则ID相匹配。 **取值范围:** 不涉及。 **默认取值:** 不涉及。
      * @return optionName
      */
     public String getOptionName() {
@@ -158,7 +158,7 @@ public class RuleConfig {
     }
 
     /**
-     * 规则集id
+     * **参数解释:** 规则集ID。可调用[[查询规则集列表](https://support.huaweicloud.com/api-codecheck/ListRulesets.html)](tag:hws)[[查询规则集列表](https://support.huaweicloud.com/intl/zh-cn/api-codecheck/ListRulesets.html)](tag:hws_hk)[查询规则集列表](tag:hcs,hcs_sm,hcs_site,hcs_sitesm,fcs)获取规则集ID。 **约束限制:** 不涉及。 **取值范围:** 32位UUID。 **默认取值:** 不涉及。
      * @return templateId
      */
     public String getTemplateId() {
@@ -175,7 +175,7 @@ public class RuleConfig {
     }
 
     /**
-     * 描述
+     * **参数解释:** 配置参数的描述。可不填。 **约束限制:** 不涉及。 **取值范围:** 不涉及。 **默认取值:** 不涉及。
      * @return description
      */
     public String getDescription() {

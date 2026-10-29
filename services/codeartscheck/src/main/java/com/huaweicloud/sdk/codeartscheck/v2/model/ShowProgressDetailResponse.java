@@ -28,7 +28,7 @@ public class ShowProgressDetailResponse extends SdkResponse {
     }
 
     /**
-     * 任务状态,0表示检查中，1表示检查失败，2表示检查成功，3表示任务中止
+     * **参数解释:** 检查任务的执行状态。 **取值范围:** - 0：检查中。 - 1：检查失败。 - 2：检查成功。 - 3：任务中止。 - null：未检查。
      * @return taskStatus
      */
     public Integer getTaskStatus() {

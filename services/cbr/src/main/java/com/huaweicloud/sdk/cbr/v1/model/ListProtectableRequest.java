@@ -143,6 +143,11 @@ public class ListProtectableRequest {
 
     private String serverId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public ListProtectableRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -279,6 +284,23 @@ public class ListProtectableRequest {
         this.serverId = serverId;
     }
 
+    public ListProtectableRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 企业项目ID，获取企业项目ID请参考[查询企业项目列表](https://support.huaweicloud.com/api-em/zh-cn_topic_0121230880.html)(tag:hws)[查询企业项目列表](https://support.huaweicloud.com/intl/zh-cn/api-em/zh-cn_topic_0121230880.html)(tag:hws_hk)[《企业管理API参考》“查询企业项目列表”章节](tag:ctc,dt,tm,sbc,hws_eu,fcs_vm,hcso_dt,srg) **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -291,12 +313,13 @@ public class ListProtectableRequest {
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
             && Objects.equals(this.name, that.name) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.protectableType, that.protectableType) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.serverId, that.serverId);
+            && Objects.equals(this.id, that.id) && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, name, offset, protectableType, status, id, serverId);
+        return Objects.hash(limit, marker, name, offset, protectableType, status, id, serverId, enterpriseProjectId);
     }
 
     @Override
@@ -311,6 +334,7 @@ public class ListProtectableRequest {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

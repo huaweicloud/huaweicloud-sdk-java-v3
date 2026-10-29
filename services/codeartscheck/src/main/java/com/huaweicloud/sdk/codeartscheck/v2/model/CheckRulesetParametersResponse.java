@@ -17,19 +17,19 @@ public class CheckRulesetParametersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private List<TaskCheckParamters> data = null;
+    private List<TaskCheckParameters> data = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
     private Integer total;
 
-    public CheckRulesetParametersResponse withData(List<TaskCheckParamters> data) {
+    public CheckRulesetParametersResponse withData(List<TaskCheckParameters> data) {
         this.data = data;
         return this;
     }
 
-    public CheckRulesetParametersResponse addDataItem(TaskCheckParamters dataItem) {
+    public CheckRulesetParametersResponse addDataItem(TaskCheckParameters dataItem) {
         if (this.data == null) {
             this.data = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class CheckRulesetParametersResponse extends SdkResponse {
         return this;
     }
 
-    public CheckRulesetParametersResponse withData(Consumer<List<TaskCheckParamters>> dataSetter) {
+    public CheckRulesetParametersResponse withData(Consumer<List<TaskCheckParameters>> dataSetter) {
         if (this.data == null) {
             this.data = new ArrayList<>();
         }
@@ -46,14 +46,14 @@ public class CheckRulesetParametersResponse extends SdkResponse {
     }
 
     /**
-     * 历史记录数据
+     * **参数解释：** 历史记录数据。
      * @return data
      */
-    public List<TaskCheckParamters> getData() {
+    public List<TaskCheckParameters> getData() {
         return data;
     }
 
-    public void setData(List<TaskCheckParamters> data) {
+    public void setData(List<TaskCheckParameters> data) {
         this.data = data;
     }
 
@@ -63,7 +63,7 @@ public class CheckRulesetParametersResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释：** 总数。 **取值范围:** ≥0
      * @return total
      */
     public Integer getTotal() {
