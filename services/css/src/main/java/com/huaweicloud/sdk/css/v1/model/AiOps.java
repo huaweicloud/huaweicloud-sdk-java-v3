@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.css.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -47,7 +46,7 @@ public class AiOps {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private LocalDate createTime;
+    private Integer createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "summary")
@@ -161,7 +160,7 @@ public class AiOps {
         this.status = status;
     }
 
-    public AiOps withCreateTime(LocalDate createTime) {
+    public AiOps withCreateTime(Integer createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -170,11 +169,11 @@ public class AiOps {
      * **参数解释**： 集群风险检测任务创建时间。 **取值范围**： 格式：Unix时间戳格式。
      * @return createTime
      */
-    public LocalDate getCreateTime() {
+    public Integer getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(LocalDate createTime) {
+    public void setCreateTime(Integer createTime) {
         this.createTime = createTime;
     }
 

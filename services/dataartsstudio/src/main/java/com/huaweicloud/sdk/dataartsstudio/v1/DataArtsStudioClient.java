@@ -555,6 +555,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDesignLatestApprovalDif
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDesignLatestApprovalDiffResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDwByTypeRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDwByTypeResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchFactoryJobBaselineInfoRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchFactoryJobBaselineInfoResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchFieldsForRelationRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchFieldsForRelationResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchIdByPathRequest;
@@ -8482,6 +8484,36 @@ public class DataArtsStudioClient {
     public SyncInvoker<SearchDwByTypeRequest, SearchDwByTypeResponse> searchDwByTypeInvoker(
         SearchDwByTypeRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.searchDwByType, hcClient);
+    }
+
+    /**
+     * 批量查询作业基线归属信息
+     *
+     * 批量查询作业是否为基线任务及关联的基线信息。该接口返回的基线归属信息依赖每日基线实例的生成，在基线实例生成前，返回的基线信息列表为空，需等待基线实例生成后方可获取到完整的基线归属信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchFactoryJobBaselineInfoRequest 请求对象
+     * @return SearchFactoryJobBaselineInfoResponse
+     */
+    public SearchFactoryJobBaselineInfoResponse searchFactoryJobBaselineInfo(
+        SearchFactoryJobBaselineInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.searchFactoryJobBaselineInfo);
+    }
+
+    /**
+     * 批量查询作业基线归属信息
+     *
+     * 批量查询作业是否为基线任务及关联的基线信息。该接口返回的基线归属信息依赖每日基线实例的生成，在基线实例生成前，返回的基线信息列表为空，需等待基线实例生成后方可获取到完整的基线归属信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchFactoryJobBaselineInfoRequest 请求对象
+     * @return SyncInvoker<SearchFactoryJobBaselineInfoRequest, SearchFactoryJobBaselineInfoResponse>
+     */
+    public SyncInvoker<SearchFactoryJobBaselineInfoRequest, SearchFactoryJobBaselineInfoResponse> searchFactoryJobBaselineInfoInvoker(
+        SearchFactoryJobBaselineInfoRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.searchFactoryJobBaselineInfo, hcClient);
     }
 
     /**

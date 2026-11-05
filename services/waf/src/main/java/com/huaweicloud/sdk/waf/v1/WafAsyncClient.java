@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.waf.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.waf.v1.model.AddImagesRequest;
+import com.huaweicloud.sdk.waf.v1.model.AddImagesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ApplyCertificateToHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.ApplyCertificateToHostResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchCreateAntiTamperRuleRequest;
@@ -31,12 +33,16 @@ import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAiGuardRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAiGuardRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAlertNoticeConfigRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAlertNoticeConfigResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAtlasesRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAtlasesResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCompositeHostsRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCompositeHostsResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomAnswersRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomAnswersResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomLlmRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomLlmResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomRegexSetRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomRegexSetResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeletePoliciesRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeletePoliciesResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteRulesRequest;
@@ -111,6 +117,8 @@ import com.huaweicloud.sdk.waf.v1.model.CreateAnticrawlerRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateAnticrawlerRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateAntileakageRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateAntileakageRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateAtlasRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateAtlasResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateBotMTrafficDetectionConditionRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateBotMTrafficDetectionConditionResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateCcRuleRequest;
@@ -123,6 +131,10 @@ import com.huaweicloud.sdk.waf.v1.model.CreateCustomAnswersRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateCustomAnswersResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateCustomLlmRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateCustomLlmResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateCustomRegexRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateCustomRegexResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateCustomRegexSetRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateCustomRegexSetResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateCustomRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateCustomRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateEventExportJobRequest;
@@ -147,12 +159,16 @@ import com.huaweicloud.sdk.waf.v1.model.CreatePremiumHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreatePremiumHostResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreatePrepaidCloudWafRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreatePrepaidCloudWafResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreatePresignedUploadUrlRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreatePresignedUploadUrlResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreatePrivacyRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreatePrivacyRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreatePunishmentRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreatePunishmentRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateQuickAccessDomainRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateQuickAccessDomainResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateRegexTestRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateRegexTestResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateSecurityReportSubscriptionRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateSecurityReportSubscriptionResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateValueListRequest;
@@ -175,6 +191,8 @@ import com.huaweicloud.sdk.waf.v1.model.DeleteAntileakageRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAntileakageRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAntitamperRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAntitamperRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAtlasRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAtlasResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteBotMTrafficDetectionConditionRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteBotMTrafficDetectionConditionResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCcRuleRequest;
@@ -187,6 +205,10 @@ import com.huaweicloud.sdk.waf.v1.model.DeleteCustomAnswersRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCustomAnswersResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCustomLlmRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCustomLlmResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteCustomRegexRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteCustomRegexResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteCustomRegexSetRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteCustomRegexSetResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCustomRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCustomRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteGeoipRuleRequest;
@@ -237,6 +259,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListAntileakageRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListAntileakageRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListAntitamperRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListAntitamperRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListAtlasesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListAtlasesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListAttackActionTypesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListAttackActionTypesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListBandwidthTimelineRequest;
@@ -257,6 +281,10 @@ import com.huaweicloud.sdk.waf.v1.model.ListCustomLlmRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCustomLlmResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCustomPolicyRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCustomPolicyRulesResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListCustomRegexRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListCustomRegexResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListCustomRegexSetRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListCustomRegexSetResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCustomRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCustomRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListEventLogRequest;
@@ -275,6 +303,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListIgnorePolicyRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListIgnorePolicyRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListIgnoreRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListIgnoreRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListImagesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListImagesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListInstancePoolsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListInstancePoolsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListInstanceRequest;
@@ -353,6 +383,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListWhiteblackipRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListWhiteblackipRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.MigrateCompositeHostsRequest;
 import com.huaweicloud.sdk.waf.v1.model.MigrateCompositeHostsResponse;
+import com.huaweicloud.sdk.waf.v1.model.RemoveImagesRequest;
+import com.huaweicloud.sdk.waf.v1.model.RemoveImagesResponse;
 import com.huaweicloud.sdk.waf.v1.model.RenameInstanceRequest;
 import com.huaweicloud.sdk.waf.v1.model.RenameInstanceResponse;
 import com.huaweicloud.sdk.waf.v1.model.SetAiAppSettingRequest;
@@ -377,6 +409,8 @@ import com.huaweicloud.sdk.waf.v1.model.ShowAntileakageRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowAntileakageRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowAntitamperRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowAntitamperRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowAtlasRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowAtlasResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowBotMRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowBotMRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowCcRuleRequest;
@@ -391,6 +425,8 @@ import com.huaweicloud.sdk.waf.v1.model.ShowCustomAnswersRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowCustomAnswersResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowCustomLlmRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowCustomLlmResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowCustomRegexSetRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowCustomRegexSetResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowCustomRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowCustomRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowEventRequest;
@@ -463,6 +499,8 @@ import com.huaweicloud.sdk.waf.v1.model.UpdateAnticrawlerRuleTypeRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAnticrawlerRuleTypeResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAntileakageRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAntileakageRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAtlasRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAtlasResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateBotMCategoryStatusRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateBotMCategoryStatusResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateBotMRuleActionRequest;
@@ -483,6 +521,10 @@ import com.huaweicloud.sdk.waf.v1.model.UpdateCustomAnswersRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCustomAnswersResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCustomLlmRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCustomLlmResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateCustomRegexRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateCustomRegexResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateCustomRegexSetRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateCustomRegexSetResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCustomRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCustomRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateGeoipRuleRequest;
@@ -7295,6 +7337,290 @@ public class WafAsyncClient {
     }
 
     /**
+     * 加入图库
+     *
+     * 加入图库（批量 + 拉取原图真实校验大小/格式 + 置status&#x3D;0 + 逐个返回结果）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddImagesRequest 请求对象
+     * @return CompletableFuture<AddImagesResponse>
+     */
+    public CompletableFuture<AddImagesResponse> addImagesAsync(AddImagesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.addImages);
+    }
+
+    /**
+     * 加入图库
+     *
+     * 加入图库（批量 + 拉取原图真实校验大小/格式 + 置status&#x3D;0 + 逐个返回结果）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddImagesRequest 请求对象
+     * @return AsyncInvoker<AddImagesRequest, AddImagesResponse>
+     */
+    public AsyncInvoker<AddImagesRequest, AddImagesResponse> addImagesAsyncInvoker(AddImagesRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.addImages, hcClient);
+    }
+
+    /**
+     * 批量删除图库
+     *
+     * 批量删除图库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAtlasesRequest 请求对象
+     * @return CompletableFuture<BatchDeleteAtlasesResponse>
+     */
+    public CompletableFuture<BatchDeleteAtlasesResponse> batchDeleteAtlasesAsync(BatchDeleteAtlasesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.batchDeleteAtlases);
+    }
+
+    /**
+     * 批量删除图库
+     *
+     * 批量删除图库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAtlasesRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteAtlasesRequest, BatchDeleteAtlasesResponse>
+     */
+    public AsyncInvoker<BatchDeleteAtlasesRequest, BatchDeleteAtlasesResponse> batchDeleteAtlasesAsyncInvoker(
+        BatchDeleteAtlasesRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.batchDeleteAtlases, hcClient);
+    }
+
+    /**
+     * 创建图库
+     *
+     * 创建图库（0&#x3D;白库/豁免/可信样本，1&#x3D;黑库/敏感/拦截样本）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAtlasRequest 请求对象
+     * @return CompletableFuture<CreateAtlasResponse>
+     */
+    public CompletableFuture<CreateAtlasResponse> createAtlasAsync(CreateAtlasRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createAtlas);
+    }
+
+    /**
+     * 创建图库
+     *
+     * 创建图库（0&#x3D;白库/豁免/可信样本，1&#x3D;黑库/敏感/拦截样本）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAtlasRequest 请求对象
+     * @return AsyncInvoker<CreateAtlasRequest, CreateAtlasResponse>
+     */
+    public AsyncInvoker<CreateAtlasRequest, CreateAtlasResponse> createAtlasAsyncInvoker(CreateAtlasRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.createAtlas, hcClient);
+    }
+
+    /**
+     * 批量获取预签名上传地址
+     *
+     * 批量获取OBS PUT预签名上传地址（前端直传图片到OBS，后端不转发二进制；逐项校验、部分成功、保序返回）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePresignedUploadUrlRequest 请求对象
+     * @return CompletableFuture<CreatePresignedUploadUrlResponse>
+     */
+    public CompletableFuture<CreatePresignedUploadUrlResponse> createPresignedUploadUrlAsync(
+        CreatePresignedUploadUrlRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createPresignedUploadUrl);
+    }
+
+    /**
+     * 批量获取预签名上传地址
+     *
+     * 批量获取OBS PUT预签名上传地址（前端直传图片到OBS，后端不转发二进制；逐项校验、部分成功、保序返回）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePresignedUploadUrlRequest 请求对象
+     * @return AsyncInvoker<CreatePresignedUploadUrlRequest, CreatePresignedUploadUrlResponse>
+     */
+    public AsyncInvoker<CreatePresignedUploadUrlRequest, CreatePresignedUploadUrlResponse> createPresignedUploadUrlAsyncInvoker(
+        CreatePresignedUploadUrlRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.createPresignedUploadUrl, hcClient);
+    }
+
+    /**
+     * 删除图库
+     *
+     * 删除图库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAtlasRequest 请求对象
+     * @return CompletableFuture<DeleteAtlasResponse>
+     */
+    public CompletableFuture<DeleteAtlasResponse> deleteAtlasAsync(DeleteAtlasRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.deleteAtlas);
+    }
+
+    /**
+     * 删除图库
+     *
+     * 删除图库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAtlasRequest 请求对象
+     * @return AsyncInvoker<DeleteAtlasRequest, DeleteAtlasResponse>
+     */
+    public AsyncInvoker<DeleteAtlasRequest, DeleteAtlasResponse> deleteAtlasAsyncInvoker(DeleteAtlasRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.deleteAtlas, hcClient);
+    }
+
+    /**
+     * 查询图库列表
+     *
+     * 查询图库列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAtlasesRequest 请求对象
+     * @return CompletableFuture<ListAtlasesResponse>
+     */
+    public CompletableFuture<ListAtlasesResponse> listAtlasesAsync(ListAtlasesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listAtlases);
+    }
+
+    /**
+     * 查询图库列表
+     *
+     * 查询图库列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAtlasesRequest 请求对象
+     * @return AsyncInvoker<ListAtlasesRequest, ListAtlasesResponse>
+     */
+    public AsyncInvoker<ListAtlasesRequest, ListAtlasesResponse> listAtlasesAsyncInvoker(ListAtlasesRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.listAtlases, hcClient);
+    }
+
+    /**
+     * 查询图库图片列表
+     *
+     * 查询图库图片列表（按status返回缩略图/原图预签名 + status/message）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListImagesRequest 请求对象
+     * @return CompletableFuture<ListImagesResponse>
+     */
+    public CompletableFuture<ListImagesResponse> listImagesAsync(ListImagesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listImages);
+    }
+
+    /**
+     * 查询图库图片列表
+     *
+     * 查询图库图片列表（按status返回缩略图/原图预签名 + status/message）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListImagesRequest 请求对象
+     * @return AsyncInvoker<ListImagesRequest, ListImagesResponse>
+     */
+    public AsyncInvoker<ListImagesRequest, ListImagesResponse> listImagesAsyncInvoker(ListImagesRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.listImages, hcClient);
+    }
+
+    /**
+     * 移除图片
+     *
+     * 移除图片（批量软删）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoveImagesRequest 请求对象
+     * @return CompletableFuture<RemoveImagesResponse>
+     */
+    public CompletableFuture<RemoveImagesResponse> removeImagesAsync(RemoveImagesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.removeImages);
+    }
+
+    /**
+     * 移除图片
+     *
+     * 移除图片（批量软删）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoveImagesRequest 请求对象
+     * @return AsyncInvoker<RemoveImagesRequest, RemoveImagesResponse>
+     */
+    public AsyncInvoker<RemoveImagesRequest, RemoveImagesResponse> removeImagesAsyncInvoker(
+        RemoveImagesRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.removeImages, hcClient);
+    }
+
+    /**
+     * 查询图库详情
+     *
+     * 查询图库详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAtlasRequest 请求对象
+     * @return CompletableFuture<ShowAtlasResponse>
+     */
+    public CompletableFuture<ShowAtlasResponse> showAtlasAsync(ShowAtlasRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showAtlas);
+    }
+
+    /**
+     * 查询图库详情
+     *
+     * 查询图库详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAtlasRequest 请求对象
+     * @return AsyncInvoker<ShowAtlasRequest, ShowAtlasResponse>
+     */
+    public AsyncInvoker<ShowAtlasRequest, ShowAtlasResponse> showAtlasAsyncInvoker(ShowAtlasRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.showAtlas, hcClient);
+    }
+
+    /**
+     * 更新图库
+     *
+     * 更新图库（不支持修改type，图库类型创建后不可变更）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAtlasRequest 请求对象
+     * @return CompletableFuture<UpdateAtlasResponse>
+     */
+    public CompletableFuture<UpdateAtlasResponse> updateAtlasAsync(UpdateAtlasRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updateAtlas);
+    }
+
+    /**
+     * 更新图库
+     *
+     * 更新图库（不支持修改type，图库类型创建后不可变更）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAtlasRequest 请求对象
+     * @return AsyncInvoker<UpdateAtlasRequest, UpdateAtlasResponse>
+     */
+    public AsyncInvoker<UpdateAtlasRequest, UpdateAtlasResponse> updateAtlasAsyncInvoker(UpdateAtlasRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.updateAtlas, hcClient);
+    }
+
+    /**
      * 批量删除自定义代答库
      *
      * 批量删除自定义代答库
@@ -7671,6 +7997,329 @@ public class WafAsyncClient {
     public AsyncInvoker<UpdateCustomLlmRequest, UpdateCustomLlmResponse> updateCustomLlmAsyncInvoker(
         UpdateCustomLlmRequest request) {
         return new AsyncInvoker<>(request, WafMeta.updateCustomLlm, hcClient);
+    }
+
+    /**
+     * 批量删除自定义正则库
+     *
+     * 批量删除自定义正则库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteCustomRegexSetRequest 请求对象
+     * @return CompletableFuture<BatchDeleteCustomRegexSetResponse>
+     */
+    public CompletableFuture<BatchDeleteCustomRegexSetResponse> batchDeleteCustomRegexSetAsync(
+        BatchDeleteCustomRegexSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.batchDeleteCustomRegexSet);
+    }
+
+    /**
+     * 批量删除自定义正则库
+     *
+     * 批量删除自定义正则库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteCustomRegexSetRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteCustomRegexSetRequest, BatchDeleteCustomRegexSetResponse>
+     */
+    public AsyncInvoker<BatchDeleteCustomRegexSetRequest, BatchDeleteCustomRegexSetResponse> batchDeleteCustomRegexSetAsyncInvoker(
+        BatchDeleteCustomRegexSetRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.batchDeleteCustomRegexSet, hcClient);
+    }
+
+    /**
+     * 添加正则
+     *
+     * 向指定正则库添加正则条目
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCustomRegexRequest 请求对象
+     * @return CompletableFuture<CreateCustomRegexResponse>
+     */
+    public CompletableFuture<CreateCustomRegexResponse> createCustomRegexAsync(CreateCustomRegexRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createCustomRegex);
+    }
+
+    /**
+     * 添加正则
+     *
+     * 向指定正则库添加正则条目
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCustomRegexRequest 请求对象
+     * @return AsyncInvoker<CreateCustomRegexRequest, CreateCustomRegexResponse>
+     */
+    public AsyncInvoker<CreateCustomRegexRequest, CreateCustomRegexResponse> createCustomRegexAsyncInvoker(
+        CreateCustomRegexRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.createCustomRegex, hcClient);
+    }
+
+    /**
+     * 创建自定义正则库
+     *
+     * 创建自定义正则库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCustomRegexSetRequest 请求对象
+     * @return CompletableFuture<CreateCustomRegexSetResponse>
+     */
+    public CompletableFuture<CreateCustomRegexSetResponse> createCustomRegexSetAsync(
+        CreateCustomRegexSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createCustomRegexSet);
+    }
+
+    /**
+     * 创建自定义正则库
+     *
+     * 创建自定义正则库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCustomRegexSetRequest 请求对象
+     * @return AsyncInvoker<CreateCustomRegexSetRequest, CreateCustomRegexSetResponse>
+     */
+    public AsyncInvoker<CreateCustomRegexSetRequest, CreateCustomRegexSetResponse> createCustomRegexSetAsyncInvoker(
+        CreateCustomRegexSetRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.createCustomRegexSet, hcClient);
+    }
+
+    /**
+     * 正则拨测
+     *
+     * 拨测正则表达式有效性，校验正则语法及匹配效果（内部转发至引擎PII检测接口）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRegexTestRequest 请求对象
+     * @return CompletableFuture<CreateRegexTestResponse>
+     */
+    public CompletableFuture<CreateRegexTestResponse> createRegexTestAsync(CreateRegexTestRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createRegexTest);
+    }
+
+    /**
+     * 正则拨测
+     *
+     * 拨测正则表达式有效性，校验正则语法及匹配效果（内部转发至引擎PII检测接口）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRegexTestRequest 请求对象
+     * @return AsyncInvoker<CreateRegexTestRequest, CreateRegexTestResponse>
+     */
+    public AsyncInvoker<CreateRegexTestRequest, CreateRegexTestResponse> createRegexTestAsyncInvoker(
+        CreateRegexTestRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.createRegexTest, hcClient);
+    }
+
+    /**
+     * 删除正则
+     *
+     * 删除正则条目
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCustomRegexRequest 请求对象
+     * @return CompletableFuture<DeleteCustomRegexResponse>
+     */
+    public CompletableFuture<DeleteCustomRegexResponse> deleteCustomRegexAsync(DeleteCustomRegexRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.deleteCustomRegex);
+    }
+
+    /**
+     * 删除正则
+     *
+     * 删除正则条目
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCustomRegexRequest 请求对象
+     * @return AsyncInvoker<DeleteCustomRegexRequest, DeleteCustomRegexResponse>
+     */
+    public AsyncInvoker<DeleteCustomRegexRequest, DeleteCustomRegexResponse> deleteCustomRegexAsyncInvoker(
+        DeleteCustomRegexRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.deleteCustomRegex, hcClient);
+    }
+
+    /**
+     * 删除自定义正则库
+     *
+     * 删除自定义正则库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCustomRegexSetRequest 请求对象
+     * @return CompletableFuture<DeleteCustomRegexSetResponse>
+     */
+    public CompletableFuture<DeleteCustomRegexSetResponse> deleteCustomRegexSetAsync(
+        DeleteCustomRegexSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.deleteCustomRegexSet);
+    }
+
+    /**
+     * 删除自定义正则库
+     *
+     * 删除自定义正则库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCustomRegexSetRequest 请求对象
+     * @return AsyncInvoker<DeleteCustomRegexSetRequest, DeleteCustomRegexSetResponse>
+     */
+    public AsyncInvoker<DeleteCustomRegexSetRequest, DeleteCustomRegexSetResponse> deleteCustomRegexSetAsyncInvoker(
+        DeleteCustomRegexSetRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.deleteCustomRegexSet, hcClient);
+    }
+
+    /**
+     * 查询正则列表
+     *
+     * 查询正则库下正则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomRegexRequest 请求对象
+     * @return CompletableFuture<ListCustomRegexResponse>
+     */
+    public CompletableFuture<ListCustomRegexResponse> listCustomRegexAsync(ListCustomRegexRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listCustomRegex);
+    }
+
+    /**
+     * 查询正则列表
+     *
+     * 查询正则库下正则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomRegexRequest 请求对象
+     * @return AsyncInvoker<ListCustomRegexRequest, ListCustomRegexResponse>
+     */
+    public AsyncInvoker<ListCustomRegexRequest, ListCustomRegexResponse> listCustomRegexAsyncInvoker(
+        ListCustomRegexRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.listCustomRegex, hcClient);
+    }
+
+    /**
+     * 查询自定义正则库列表
+     *
+     * 查询自定义正则库列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomRegexSetRequest 请求对象
+     * @return CompletableFuture<ListCustomRegexSetResponse>
+     */
+    public CompletableFuture<ListCustomRegexSetResponse> listCustomRegexSetAsync(ListCustomRegexSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listCustomRegexSet);
+    }
+
+    /**
+     * 查询自定义正则库列表
+     *
+     * 查询自定义正则库列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomRegexSetRequest 请求对象
+     * @return AsyncInvoker<ListCustomRegexSetRequest, ListCustomRegexSetResponse>
+     */
+    public AsyncInvoker<ListCustomRegexSetRequest, ListCustomRegexSetResponse> listCustomRegexSetAsyncInvoker(
+        ListCustomRegexSetRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.listCustomRegexSet, hcClient);
+    }
+
+    /**
+     * 查询自定义正则库详情
+     *
+     * 查询自定义正则库详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCustomRegexSetRequest 请求对象
+     * @return CompletableFuture<ShowCustomRegexSetResponse>
+     */
+    public CompletableFuture<ShowCustomRegexSetResponse> showCustomRegexSetAsync(ShowCustomRegexSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showCustomRegexSet);
+    }
+
+    /**
+     * 查询自定义正则库详情
+     *
+     * 查询自定义正则库详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCustomRegexSetRequest 请求对象
+     * @return AsyncInvoker<ShowCustomRegexSetRequest, ShowCustomRegexSetResponse>
+     */
+    public AsyncInvoker<ShowCustomRegexSetRequest, ShowCustomRegexSetResponse> showCustomRegexSetAsyncInvoker(
+        ShowCustomRegexSetRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.showCustomRegexSet, hcClient);
+    }
+
+    /**
+     * 更新正则
+     *
+     * 更新正则条目（仅更新传入的字段，未传字段保持不变）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCustomRegexRequest 请求对象
+     * @return CompletableFuture<UpdateCustomRegexResponse>
+     */
+    public CompletableFuture<UpdateCustomRegexResponse> updateCustomRegexAsync(UpdateCustomRegexRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updateCustomRegex);
+    }
+
+    /**
+     * 更新正则
+     *
+     * 更新正则条目（仅更新传入的字段，未传字段保持不变）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCustomRegexRequest 请求对象
+     * @return AsyncInvoker<UpdateCustomRegexRequest, UpdateCustomRegexResponse>
+     */
+    public AsyncInvoker<UpdateCustomRegexRequest, UpdateCustomRegexResponse> updateCustomRegexAsyncInvoker(
+        UpdateCustomRegexRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.updateCustomRegex, hcClient);
+    }
+
+    /**
+     * 更新自定义正则库
+     *
+     * 更新自定义正则库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCustomRegexSetRequest 请求对象
+     * @return CompletableFuture<UpdateCustomRegexSetResponse>
+     */
+    public CompletableFuture<UpdateCustomRegexSetResponse> updateCustomRegexSetAsync(
+        UpdateCustomRegexSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updateCustomRegexSet);
+    }
+
+    /**
+     * 更新自定义正则库
+     *
+     * 更新自定义正则库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCustomRegexSetRequest 请求对象
+     * @return AsyncInvoker<UpdateCustomRegexSetRequest, UpdateCustomRegexSetResponse>
+     */
+    public AsyncInvoker<UpdateCustomRegexSetRequest, UpdateCustomRegexSetResponse> updateCustomRegexSetAsyncInvoker(
+        UpdateCustomRegexSetRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.updateCustomRegexSet, hcClient);
     }
 
     /**

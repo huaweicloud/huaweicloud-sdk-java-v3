@@ -402,6 +402,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportSecurityBuiltinCategory
 import com.huaweicloud.sdk.dataartsstudio.v1.model.InitializeStandardTemplateRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.InitializeStandardTemplateResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.JobAndNodeInfo;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.JobBaselineInfo;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.JobBaselineInfoReq;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.JobInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.JobLogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.LineageInfoRequest;
@@ -683,6 +685,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDesignLatestApprovalDif
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDesignLatestApprovalDiffResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDwByTypeRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDwByTypeResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchFactoryJobBaselineInfoRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchFactoryJobBaselineInfoResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchFieldsForRelationRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchFieldsForRelationResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchIdByPathRequest;
@@ -12712,6 +12716,53 @@ public class DataArtsStudioMeta {
             f -> f.withMarshaller(SearchDwByTypeRequest::getXProjectId, SearchDwByTypeRequest::setXProjectId));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchFactoryJobBaselineInfoRequest, SearchFactoryJobBaselineInfoResponse> searchFactoryJobBaselineInfo =
+        genForSearchFactoryJobBaselineInfo();
+
+    private static HttpRequestDef<SearchFactoryJobBaselineInfoRequest, SearchFactoryJobBaselineInfoResponse> genForSearchFactoryJobBaselineInfo() {
+        // basic
+        HttpRequestDef.Builder<SearchFactoryJobBaselineInfoRequest, SearchFactoryJobBaselineInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    SearchFactoryJobBaselineInfoRequest.class,
+                    SearchFactoryJobBaselineInfoResponse.class)
+                .withName("SearchFactoryJobBaselineInfo")
+                .withUri("/v2/{project_id}/factory/aiops/job-baseline-info")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchFactoryJobBaselineInfoRequest::getWorkspace,
+                SearchFactoryJobBaselineInfoRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchFactoryJobBaselineInfoRequest::getXProjectId,
+                SearchFactoryJobBaselineInfoRequest::setXProjectId));
+        builder.<JobBaselineInfoReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(JobBaselineInfoReq.class),
+            f -> f.withMarshaller(SearchFactoryJobBaselineInfoRequest::getBody,
+                SearchFactoryJobBaselineInfoRequest::setBody));
+
+        // response
+        builder.<List<JobBaselineInfo>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(SearchFactoryJobBaselineInfoResponse::getBody,
+                    SearchFactoryJobBaselineInfoResponse::setBody)
+                .withInnerContainerType(JobBaselineInfo.class));
 
         return builder.build();
     }

@@ -116,11 +116,6 @@ public class ReinstallDevServerOSResponse extends SdkResponse {
     private CloudServer cloudServer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "endpoints_response")
-
-    private List<Endpoints> endpointsResponse = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
 
     private String flavor;
@@ -509,39 +504,6 @@ public class ReinstallDevServerOSResponse extends SdkResponse {
         this.cloudServer = cloudServer;
     }
 
-    public ReinstallDevServerOSResponse withEndpointsResponse(List<Endpoints> endpointsResponse) {
-        this.endpointsResponse = endpointsResponse;
-        return this;
-    }
-
-    public ReinstallDevServerOSResponse addEndpointsResponseItem(Endpoints endpointsResponseItem) {
-        if (this.endpointsResponse == null) {
-            this.endpointsResponse = new ArrayList<>();
-        }
-        this.endpointsResponse.add(endpointsResponseItem);
-        return this;
-    }
-
-    public ReinstallDevServerOSResponse withEndpointsResponse(Consumer<List<Endpoints>> endpointsResponseSetter) {
-        if (this.endpointsResponse == null) {
-            this.endpointsResponse = new ArrayList<>();
-        }
-        endpointsResponseSetter.accept(this.endpointsResponse);
-        return this;
-    }
-
-    /**
-     * **参数解释**：实例私有IP信息。
-     * @return endpointsResponse
-     */
-    public List<Endpoints> getEndpointsResponse() {
-        return endpointsResponse;
-    }
-
-    public void setEndpointsResponse(List<Endpoints> endpointsResponse) {
-        this.endpointsResponse = endpointsResponse;
-    }
-
     public ReinstallDevServerOSResponse withFlavor(String flavor) {
         this.flavor = flavor;
         return this;
@@ -843,15 +805,14 @@ public class ReinstallDevServerOSResponse extends SdkResponse {
         ReinstallDevServerOSResponse that = (ReinstallDevServerOSResponse) obj;
         return Objects.equals(this.createAt, that.createAt) && Objects.equals(this.updateAt, that.updateAt)
             && Objects.equals(this.chargingMode, that.chargingMode)
-            && Objects.equals(this.cloudServer, that.cloudServer)
-            && Objects.equals(this.endpointsResponse, that.endpointsResponse)
-            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.keyPairName, that.keyPairName) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.endpoints, that.endpoints)
-            && Objects.equals(this.volumes, that.volumes) && Objects.equals(this.image, that.image)
-            && Objects.equals(this.category, that.category) && Objects.equals(this.serverHps, that.serverHps)
-            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.xRequestId, that.xRequestId);
+            && Objects.equals(this.cloudServer, that.cloudServer) && Objects.equals(this.flavor, that.flavor)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.keyPairName, that.keyPairName)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.endpoints, that.endpoints) && Objects.equals(this.volumes, that.volumes)
+            && Objects.equals(this.image, that.image) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.serverHps, that.serverHps) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
@@ -860,7 +821,6 @@ public class ReinstallDevServerOSResponse extends SdkResponse {
             updateAt,
             chargingMode,
             cloudServer,
-            endpointsResponse,
             flavor,
             id,
             keyPairName,
@@ -885,7 +845,6 @@ public class ReinstallDevServerOSResponse extends SdkResponse {
         sb.append("    updateAt: ").append(toIndentedString(updateAt)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    cloudServer: ").append(toIndentedString(cloudServer)).append("\n");
-        sb.append("    endpointsResponse: ").append(toIndentedString(endpointsResponse)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    keyPairName: ").append(toIndentedString(keyPairName)).append("\n");

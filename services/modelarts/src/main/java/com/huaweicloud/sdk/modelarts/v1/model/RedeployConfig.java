@@ -16,7 +16,7 @@ import java.util.Objects;
 public class RedeployConfig {
 
     /**
-     * 节点的重部署类型。若节点状态为不可用，将无法进行SOFT模式，只能进行HARD模式，HARD模式包含节点重置操作，会导致本地盘及云盘上的全部数据丢失，请谨慎操作
+     * 节点的重部署类型。若节点状态为不可用，将无法进行SOFT模式，只能进行HARD模式，HARD模式包含节点重置操作，会导致本地盘及云盘上的全部数据丢失，请谨慎操作。
      */
     public static final class TypeEnum {
 
@@ -90,80 +90,10 @@ public class RedeployConfig {
 
     private TypeEnum type;
 
-    /**
-     * 静默修复开关。开启autoFlow开关时，如重部署失败系统将自动流转至\"系统维护\"或发起\"二次重部署\"，并产生新的计划事件，该过程自动授权，无需二次授权
-     */
-    public static final class AutoFlowEnum {
-
-        /**
-         * Enum TRUE for value: "true"
-         */
-        public static final AutoFlowEnum TRUE = new AutoFlowEnum("true");
-
-        /**
-         * Enum FALSE for value: "false"
-         */
-        public static final AutoFlowEnum FALSE = new AutoFlowEnum("false");
-
-        private static final Map<String, AutoFlowEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, AutoFlowEnum> createStaticFields() {
-            Map<String, AutoFlowEnum> map = new HashMap<>();
-            map.put("true", TRUE);
-            map.put("false", FALSE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        AutoFlowEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static AutoFlowEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AutoFlowEnum(value));
-        }
-
-        public static AutoFlowEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof AutoFlowEnum) {
-                return this.value.equals(((AutoFlowEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "autoFlow")
 
-    private AutoFlowEnum autoFlow;
+    private Boolean autoFlow;
 
     public RedeployConfig withType(TypeEnum type) {
         this.type = type;
@@ -171,7 +101,7 @@ public class RedeployConfig {
     }
 
     /**
-     * 节点的重部署类型。若节点状态为不可用，将无法进行SOFT模式，只能进行HARD模式，HARD模式包含节点重置操作，会导致本地盘及云盘上的全部数据丢失，请谨慎操作
+     * 节点的重部署类型。若节点状态为不可用，将无法进行SOFT模式，只能进行HARD模式，HARD模式包含节点重置操作，会导致本地盘及云盘上的全部数据丢失，请谨慎操作。
      * @return type
      */
     public TypeEnum getType() {
@@ -182,20 +112,20 @@ public class RedeployConfig {
         this.type = type;
     }
 
-    public RedeployConfig withAutoFlow(AutoFlowEnum autoFlow) {
+    public RedeployConfig withAutoFlow(Boolean autoFlow) {
         this.autoFlow = autoFlow;
         return this;
     }
 
     /**
-     * 静默修复开关。开启autoFlow开关时，如重部署失败系统将自动流转至\"系统维护\"或发起\"二次重部署\"，并产生新的计划事件，该过程自动授权，无需二次授权
+     * 静默修复开关。开启autoFlow开关时，如重部署失败系统将自动流转至\"系统维护\"或发起\"二次重部署\"，该过程自动授权，无需二次授权。
      * @return autoFlow
      */
-    public AutoFlowEnum getAutoFlow() {
+    public Boolean getAutoFlow() {
         return autoFlow;
     }
 
-    public void setAutoFlow(AutoFlowEnum autoFlow) {
+    public void setAutoFlow(Boolean autoFlow) {
         this.autoFlow = autoFlow;
     }
 

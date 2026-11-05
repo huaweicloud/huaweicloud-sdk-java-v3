@@ -75,6 +75,16 @@ public class Virsubnet {
     private List<SubnetExtraDhcpOpt> extraDhcpOpts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_network_address_usage_metrics")
+
+    private Boolean enableNetworkAddressUsageMetrics;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "available_ip_address_count")
+
+    private Integer availableIpAddressCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
     private OffsetDateTime createdAt;
@@ -352,6 +362,40 @@ public class Virsubnet {
         this.extraDhcpOpts = extraDhcpOpts;
     }
 
+    public Virsubnet withEnableNetworkAddressUsageMetrics(Boolean enableNetworkAddressUsageMetrics) {
+        this.enableNetworkAddressUsageMetrics = enableNetworkAddressUsageMetrics;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否开启当前子网的IPv4地址使用量指标监控。 **取值范围**： true：开启。 false：不开启。
+     * @return enableNetworkAddressUsageMetrics
+     */
+    public Boolean getEnableNetworkAddressUsageMetrics() {
+        return enableNetworkAddressUsageMetrics;
+    }
+
+    public void setEnableNetworkAddressUsageMetrics(Boolean enableNetworkAddressUsageMetrics) {
+        this.enableNetworkAddressUsageMetrics = enableNetworkAddressUsageMetrics;
+    }
+
+    public Virsubnet withAvailableIpAddressCount(Integer availableIpAddressCount) {
+        this.availableIpAddressCount = availableIpAddressCount;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 子网内剩余可用的IPv4地址数量。 **取值范围**： 不涉及。
+     * @return availableIpAddressCount
+     */
+    public Integer getAvailableIpAddressCount() {
+        return availableIpAddressCount;
+    }
+
+    public void setAvailableIpAddressCount(Integer availableIpAddressCount) {
+        this.availableIpAddressCount = availableIpAddressCount;
+    }
+
     public Virsubnet withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -401,8 +445,10 @@ public class Virsubnet {
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.status, that.status)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.scope, that.scope)
             && Objects.equals(this.subnetCidrs, that.subnetCidrs) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.extraDhcpOpts, that.extraDhcpOpts) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.extraDhcpOpts, that.extraDhcpOpts)
+            && Objects.equals(this.enableNetworkAddressUsageMetrics, that.enableNetworkAddressUsageMetrics)
+            && Objects.equals(this.availableIpAddressCount, that.availableIpAddressCount)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override
@@ -419,6 +465,8 @@ public class Virsubnet {
             subnetCidrs,
             tags,
             extraDhcpOpts,
+            enableNetworkAddressUsageMetrics,
+            availableIpAddressCount,
             createdAt,
             updatedAt);
     }
@@ -439,6 +487,10 @@ public class Virsubnet {
         sb.append("    subnetCidrs: ").append(toIndentedString(subnetCidrs)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    extraDhcpOpts: ").append(toIndentedString(extraDhcpOpts)).append("\n");
+        sb.append("    enableNetworkAddressUsageMetrics: ")
+            .append(toIndentedString(enableNetworkAddressUsageMetrics))
+            .append("\n");
+        sb.append("    availableIpAddressCount: ").append(toIndentedString(availableIpAddressCount)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("}");

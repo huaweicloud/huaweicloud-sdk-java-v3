@@ -108,6 +108,11 @@ public class EndpointsRes {
 
     private List<String> keyPairNames = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extensions")
+
+    private Map<String, String> extensions = null;
+
     public EndpointsRes withDevService(String devService) {
         this.devService = devService;
         return this;
@@ -192,6 +197,39 @@ public class EndpointsRes {
         this.keyPairNames = keyPairNames;
     }
 
+    public EndpointsRes withExtensions(Map<String, String> extensions) {
+        this.extensions = extensions;
+        return this;
+    }
+
+    public EndpointsRes putExtensionsItem(String key, String extensionsItem) {
+        if (this.extensions == null) {
+            this.extensions = new HashMap<>();
+        }
+        this.extensions.put(key, extensionsItem);
+        return this;
+    }
+
+    public EndpointsRes withExtensions(Consumer<Map<String, String>> extensionsSetter) {
+        if (this.extensions == null) {
+            this.extensions = new HashMap<>();
+        }
+        extensionsSetter.accept(this.extensions);
+        return this;
+    }
+
+    /**
+     * **参数解释**：通过应用专属URL直接打开应用进入远程开发模式。包含应用的各种扩展配置。key表示扩展配置名称，value表示扩展配置值。
+     * @return extensions
+     */
+    public Map<String, String> getExtensions() {
+        return extensions;
+    }
+
+    public void setExtensions(Map<String, String> extensions) {
+        this.extensions = extensions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -202,12 +240,13 @@ public class EndpointsRes {
         }
         EndpointsRes that = (EndpointsRes) obj;
         return Objects.equals(this.devService, that.devService) && Objects.equals(this.service, that.service)
-            && Objects.equals(this.uri, that.uri) && Objects.equals(this.keyPairNames, that.keyPairNames);
+            && Objects.equals(this.uri, that.uri) && Objects.equals(this.keyPairNames, that.keyPairNames)
+            && Objects.equals(this.extensions, that.extensions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(devService, service, uri, keyPairNames);
+        return Objects.hash(devService, service, uri, keyPairNames, extensions);
     }
 
     @Override
@@ -218,6 +257,7 @@ public class EndpointsRes {
         sb.append("    service: ").append(toIndentedString(service)).append("\n");
         sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
         sb.append("    keyPairNames: ").append(toIndentedString(keyPairNames)).append("\n");
+        sb.append("    extensions: ").append(toIndentedString(extensions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

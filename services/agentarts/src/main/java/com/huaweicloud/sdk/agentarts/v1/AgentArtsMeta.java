@@ -9,6 +9,9 @@ import com.huaweicloud.sdk.agentarts.v1.model.BatchAddOpsEvaluationTaskCustomLab
 import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateCoreGatewayTagsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateCoreGatewayTagsRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateCoreGatewayTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateCustomModelProviderTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateCustomModelProviderTagsRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateCustomModelProviderTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsAgentTuningTaskTagsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsAgentTuningTaskTagsRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsAgentTuningTaskTagsResponse;
@@ -30,6 +33,9 @@ import com.huaweicloud.sdk.agentarts.v1.model.BatchCreateOpsModelTuningTaskTagsR
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteCoreGatewayTagsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteCoreGatewayTagsRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteCoreGatewayTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteCustomModelProviderTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteCustomModelProviderTagsRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteCustomModelProviderTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsAgentTuningTaskTagsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsAgentTuningTaskTagsRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.BatchDeleteOpsAgentTuningTaskTagsResponse;
@@ -209,6 +215,8 @@ import com.huaweicloud.sdk.agentarts.v1.model.InvokeOpsFineGrainedEvaluationRequ
 import com.huaweicloud.sdk.agentarts.v1.model.InvokeOpsFineGrainedEvaluationResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListAllCoreGatewayTagsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListAllCoreGatewayTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListAllCustomModelProviderTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListAllCustomModelProviderTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListAllOpsAgentTuningTaskTagsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListAllOpsAgentTuningTaskTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListAllOpsAnalysisTaskTagsRequest;
@@ -258,6 +266,11 @@ import com.huaweicloud.sdk.agentarts.v1.model.ListCoreSpacesRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCoreSpacesResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCustomModelProviderModelsRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCustomModelProviderModelsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListCustomModelProviderTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListCustomModelProviderTagsResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ListCustomModelProvidersByTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ListCustomModelProvidersByTagsRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.ListCustomModelProvidersByTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCustomModelProvidersRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ListCustomModelProvidersResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ListModelManagementQuotasRequest;
@@ -407,6 +420,9 @@ import com.huaweicloud.sdk.agentarts.v1.model.ShowCoreSpaceRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowCoreSpaceResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowCustomModelProviderModelRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowCustomModelProviderModelResponse;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowCustomModelProviderNumsByTagsRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowCustomModelProviderNumsByTagsRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.ShowCustomModelProviderNumsByTagsResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowCustomModelProviderRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowCustomModelProviderResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.ShowOpsAgentMetricGaugeRequest;
@@ -546,6 +562,9 @@ import com.huaweicloud.sdk.agentarts.v1.model.UpdateCustomModelProviderRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateCustomModelProviderRequestBody;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateCustomModelProviderResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateIngressRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateModelProxyRequest;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateModelProxyRequestBody;
+import com.huaweicloud.sdk.agentarts.v1.model.UpdateModelProxyResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAgentObservationRequest;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAgentObservationResponse;
 import com.huaweicloud.sdk.agentarts.v1.model.UpdateOpsAgentTuningTaskRequest;
@@ -620,6 +639,39 @@ public class AgentArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchCreateCustomModelProviderTagsRequest, BatchCreateCustomModelProviderTagsResponse> batchCreateCustomModelProviderTags =
+        genForBatchCreateCustomModelProviderTags();
+
+    private static HttpRequestDef<BatchCreateCustomModelProviderTagsRequest, BatchCreateCustomModelProviderTagsResponse> genForBatchCreateCustomModelProviderTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateCustomModelProviderTagsRequest, BatchCreateCustomModelProviderTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateCustomModelProviderTagsRequest.class,
+                    BatchCreateCustomModelProviderTagsResponse.class)
+                .withName("BatchCreateCustomModelProviderTags")
+                .withUri("/v1/custom-model-providers/{custom_model_provider_id}/tags/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UUID>withRequestField("custom_model_provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UUID.class),
+            f -> f.withMarshaller(BatchCreateCustomModelProviderTagsRequest::getCustomModelProviderId,
+                BatchCreateCustomModelProviderTagsRequest::setCustomModelProviderId));
+        builder.<BatchCreateCustomModelProviderTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateCustomModelProviderTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateCustomModelProviderTagsRequest::getBody,
+                BatchCreateCustomModelProviderTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteCoreGatewayTagsRequest, BatchDeleteCoreGatewayTagsResponse> batchDeleteCoreGatewayTags =
         genForBatchDeleteCoreGatewayTags();
 
@@ -647,6 +699,39 @@ public class AgentArtsMeta {
             TypeCasts.uncheckedConversion(BatchDeleteCoreGatewayTagsRequestBody.class),
             f -> f.withMarshaller(BatchDeleteCoreGatewayTagsRequest::getBody,
                 BatchDeleteCoreGatewayTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteCustomModelProviderTagsRequest, BatchDeleteCustomModelProviderTagsResponse> batchDeleteCustomModelProviderTags =
+        genForBatchDeleteCustomModelProviderTags();
+
+    private static HttpRequestDef<BatchDeleteCustomModelProviderTagsRequest, BatchDeleteCustomModelProviderTagsResponse> genForBatchDeleteCustomModelProviderTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteCustomModelProviderTagsRequest, BatchDeleteCustomModelProviderTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteCustomModelProviderTagsRequest.class,
+                    BatchDeleteCustomModelProviderTagsResponse.class)
+                .withName("BatchDeleteCustomModelProviderTags")
+                .withUri("/v1/custom-model-providers/{custom_model_provider_id}/tags/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UUID>withRequestField("custom_model_provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UUID.class),
+            f -> f.withMarshaller(BatchDeleteCustomModelProviderTagsRequest::getCustomModelProviderId,
+                BatchDeleteCustomModelProviderTagsRequest::setCustomModelProviderId));
+        builder.<BatchDeleteCustomModelProviderTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteCustomModelProviderTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteCustomModelProviderTagsRequest::getBody,
+                BatchDeleteCustomModelProviderTagsRequest::setBody));
 
         // response
 
@@ -1355,6 +1440,39 @@ public class AgentArtsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAllCoreGatewayTagsRequest::getLimit, ListAllCoreGatewayTagsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAllCustomModelProviderTagsRequest, ListAllCustomModelProviderTagsResponse> listAllCustomModelProviderTags =
+        genForListAllCustomModelProviderTags();
+
+    private static HttpRequestDef<ListAllCustomModelProviderTagsRequest, ListAllCustomModelProviderTagsResponse> genForListAllCustomModelProviderTags() {
+        // basic
+        HttpRequestDef.Builder<ListAllCustomModelProviderTagsRequest, ListAllCustomModelProviderTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAllCustomModelProviderTagsRequest.class,
+                    ListAllCustomModelProviderTagsResponse.class)
+                .withName("ListAllCustomModelProviderTags")
+                .withUri("/v1/custom-model-providers/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllCustomModelProviderTagsRequest::getOffset,
+                ListAllCustomModelProviderTagsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllCustomModelProviderTagsRequest::getLimit,
+                ListAllCustomModelProviderTagsRequest::setLimit));
 
         // response
 
@@ -2111,6 +2229,33 @@ public class AgentArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCustomModelProviderTagsRequest, ListCustomModelProviderTagsResponse> listCustomModelProviderTags =
+        genForListCustomModelProviderTags();
+
+    private static HttpRequestDef<ListCustomModelProviderTagsRequest, ListCustomModelProviderTagsResponse> genForListCustomModelProviderTags() {
+        // basic
+        HttpRequestDef.Builder<ListCustomModelProviderTagsRequest, ListCustomModelProviderTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListCustomModelProviderTagsRequest.class,
+                    ListCustomModelProviderTagsResponse.class)
+                .withName("ListCustomModelProviderTags")
+                .withUri("/v1/custom-model-providers/{custom_model_provider_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UUID>withRequestField("custom_model_provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UUID.class),
+            f -> f.withMarshaller(ListCustomModelProviderTagsRequest::getCustomModelProviderId,
+                ListCustomModelProviderTagsRequest::setCustomModelProviderId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCustomModelProvidersRequest, ListCustomModelProvidersResponse> listCustomModelProviders =
         genForListCustomModelProviders();
 
@@ -2170,6 +2315,45 @@ public class AgentArtsMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListCustomModelProvidersRequest::getOffset,
                 ListCustomModelProvidersRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCustomModelProvidersByTagsRequest, ListCustomModelProvidersByTagsResponse> listCustomModelProvidersByTags =
+        genForListCustomModelProvidersByTags();
+
+    private static HttpRequestDef<ListCustomModelProvidersByTagsRequest, ListCustomModelProvidersByTagsResponse> genForListCustomModelProvidersByTags() {
+        // basic
+        HttpRequestDef.Builder<ListCustomModelProvidersByTagsRequest, ListCustomModelProvidersByTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListCustomModelProvidersByTagsRequest.class,
+                    ListCustomModelProvidersByTagsResponse.class)
+                .withName("ListCustomModelProvidersByTags")
+                .withUri("/v1/custom-model-providers/resource-instances/filter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomModelProvidersByTagsRequest::getOffset,
+                ListCustomModelProvidersByTagsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomModelProvidersByTagsRequest::getLimit,
+                ListCustomModelProvidersByTagsRequest::setLimit));
+        builder.<ListCustomModelProvidersByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListCustomModelProvidersByTagsRequestBody.class),
+            f -> f.withMarshaller(ListCustomModelProvidersByTagsRequest::getBody,
+                ListCustomModelProvidersByTagsRequest::setBody));
 
         // response
 
@@ -2590,6 +2774,33 @@ public class AgentArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowCustomModelProviderNumsByTagsRequest, ShowCustomModelProviderNumsByTagsResponse> showCustomModelProviderNumsByTags =
+        genForShowCustomModelProviderNumsByTags();
+
+    private static HttpRequestDef<ShowCustomModelProviderNumsByTagsRequest, ShowCustomModelProviderNumsByTagsResponse> genForShowCustomModelProviderNumsByTags() {
+        // basic
+        HttpRequestDef.Builder<ShowCustomModelProviderNumsByTagsRequest, ShowCustomModelProviderNumsByTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowCustomModelProviderNumsByTagsRequest.class,
+                    ShowCustomModelProviderNumsByTagsResponse.class)
+                .withName("ShowCustomModelProviderNumsByTags")
+                .withUri("/v1/custom-model-providers/resource-instances/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowCustomModelProviderNumsByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowCustomModelProviderNumsByTagsRequestBody.class),
+            f -> f.withMarshaller(ShowCustomModelProviderNumsByTagsRequest::getBody,
+                ShowCustomModelProviderNumsByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SyncCoreGatewayTargetsRequest, SyncCoreGatewayTargetsResponse> syncCoreGatewayTargets =
         genForSyncCoreGatewayTargets();
 
@@ -2978,6 +3189,34 @@ public class AgentArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateModelProxyRequest, UpdateModelProxyResponse> updateModelProxy =
+        genForUpdateModelProxy();
+
+    private static HttpRequestDef<UpdateModelProxyRequest, UpdateModelProxyResponse> genForUpdateModelProxy() {
+        // basic
+        HttpRequestDef.Builder<UpdateModelProxyRequest, UpdateModelProxyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateModelProxyRequest.class, UpdateModelProxyResponse.class)
+                .withName("UpdateModelProxy")
+                .withUri("/v1/core/model-proxy/{gateway_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UUID>withRequestField("gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UUID.class),
+            f -> f.withMarshaller(UpdateModelProxyRequest::getGatewayId, UpdateModelProxyRequest::setGatewayId));
+        builder.<UpdateModelProxyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateModelProxyRequestBody.class),
+            f -> f.withMarshaller(UpdateModelProxyRequest::getBody, UpdateModelProxyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateOpsAgentObservationRequest, CreateOpsAgentObservationResponse> createOpsAgentObservation =
         genForCreateOpsAgentObservation();
 
@@ -3026,6 +3265,33 @@ public class AgentArtsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteOpsAgentObservationRequest::getAgentId,
                 DeleteOpsAgentObservationRequest::setAgentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOpsAgentMetricLabelValuesRequest, ListOpsAgentMetricLabelValuesResponse> listOpsAgentMetricLabelValues =
+        genForListOpsAgentMetricLabelValues();
+
+    private static HttpRequestDef<ListOpsAgentMetricLabelValuesRequest, ListOpsAgentMetricLabelValuesResponse> genForListOpsAgentMetricLabelValues() {
+        // basic
+        HttpRequestDef.Builder<ListOpsAgentMetricLabelValuesRequest, ListOpsAgentMetricLabelValuesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListOpsAgentMetricLabelValuesRequest.class,
+                    ListOpsAgentMetricLabelValuesResponse.class)
+                .withName("ListOpsAgentMetricLabelValues")
+                .withUri("/v1/ops/observation/agents/metric/label-values")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListOpsAgentMetricLabelValuesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListOpsAgentMetricLabelValuesRequestBody.class),
+            f -> f.withMarshaller(ListOpsAgentMetricLabelValuesRequest::getBody,
+                ListOpsAgentMetricLabelValuesRequest::setBody));
 
         // response
 
@@ -6303,33 +6569,6 @@ public class AgentArtsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListOpsAgentRuntLogRequest::getIsDesc, ListOpsAgentRuntLogRequest::setIsDesc));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListOpsAgentMetricLabelValuesRequest, ListOpsAgentMetricLabelValuesResponse> listOpsAgentMetricLabelValues =
-        genForListOpsAgentMetricLabelValues();
-
-    private static HttpRequestDef<ListOpsAgentMetricLabelValuesRequest, ListOpsAgentMetricLabelValuesResponse> genForListOpsAgentMetricLabelValues() {
-        // basic
-        HttpRequestDef.Builder<ListOpsAgentMetricLabelValuesRequest, ListOpsAgentMetricLabelValuesResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    ListOpsAgentMetricLabelValuesRequest.class,
-                    ListOpsAgentMetricLabelValuesResponse.class)
-                .withName("ListOpsAgentMetricLabelValues")
-                .withUri("/v1/ops/observation/agents/metric/label-values")
-                .withContentType("application/json");
-
-        // requests
-        builder.<ListOpsAgentMetricLabelValuesRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ListOpsAgentMetricLabelValuesRequestBody.class),
-            f -> f.withMarshaller(ListOpsAgentMetricLabelValuesRequest::getBody,
-                ListOpsAgentMetricLabelValuesRequest::setBody));
 
         // response
 

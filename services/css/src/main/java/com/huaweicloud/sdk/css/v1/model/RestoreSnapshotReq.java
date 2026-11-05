@@ -109,7 +109,7 @@ public class RestoreSnapshotReq {
     }
 
     /**
-     * 替换已存在的索引。    
+     * 替换已存在的索引。
      * @return replaceExistIndices
      */
     public Boolean getReplaceExistIndices() {

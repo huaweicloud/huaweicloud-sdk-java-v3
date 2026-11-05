@@ -58,7 +58,7 @@ public class ReferencedRule {
     }
 
     /**
-     * 策略名称
+     * 规则名称
      * @return ruleName
      */
     public String getRuleName() {
@@ -75,7 +75,7 @@ public class ReferencedRule {
     }
 
     /**
-     * 引用该代答库的规则所属策略ID
+     * 引用该规则的规则所属策略ID
      * @return policyId
      */
     public String getPolicyId() {
@@ -92,7 +92,7 @@ public class ReferencedRule {
     }
 
     /**
-     * 引用该代答库的规则所属策略名称
+     * 引用该规则的规则所属策略名称
      * @return policyName
      */
     public String getPolicyName() {
@@ -109,7 +109,7 @@ public class ReferencedRule {
     }
 
     /**
-     * 规则检测选项类型，可选：lexicon(词库检测), compliance(合规检测), inject(注入检测), immunity_lexicon(豁免词库), supported_language(语言检测), pii(PII检测), abuse(算力滥用检测), topic_detect(话题检测)等
+     * 规则检测选项类型，可选：atlas(黑库图库检测), immunity_atlas(白库图库豁免检测), lexicon(词库检测), compliance(合规检测), inject(注入检测), immunity_lexicon(豁免词库), supported_language(语言检测), pii(PII检测), abuse(算力滥用检测), topic_detect(话题检测)等
      * @return detectOptsType
      */
     public String getDetectOptsType() {

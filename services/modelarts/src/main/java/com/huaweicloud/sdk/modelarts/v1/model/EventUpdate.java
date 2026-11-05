@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.modelarts.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -20,6 +22,11 @@ public class EventUpdate {
     @JsonProperty(value = "redeployConfig")
 
     private RedeployConfig redeployConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instanceId")
+
+    private List<String> instanceId = null;
 
     public EventUpdate withNotBefore(String notBefore) {
         this.notBefore = notBefore;
@@ -64,6 +71,39 @@ public class EventUpdate {
         this.redeployConfig = redeployConfig;
     }
 
+    public EventUpdate withInstanceId(List<String> instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    public EventUpdate addInstanceIdItem(String instanceIdItem) {
+        if (this.instanceId == null) {
+            this.instanceId = new ArrayList<>();
+        }
+        this.instanceId.add(instanceIdItem);
+        return this;
+    }
+
+    public EventUpdate withInstanceId(Consumer<List<String>> instanceIdSetter) {
+        if (this.instanceId == null) {
+            this.instanceId = new ArrayList<>();
+        }
+        instanceIdSetter.accept(this.instanceId);
+        return this;
+    }
+
+    /**
+     * **参数解释**：授权节点ID列表。授权重部处理时可选填,支持填入单个故障节点ID。 **约束限制**：不涉及。 **取值范围**：计划事件故障节点列表。 **默认取值**：不填表示授权所有节点。
+     * @return instanceId
+     */
+    public List<String> getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(List<String> instanceId) {
+        this.instanceId = instanceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -74,12 +114,13 @@ public class EventUpdate {
         }
         EventUpdate that = (EventUpdate) obj;
         return Objects.equals(this.notBefore, that.notBefore)
-            && Objects.equals(this.redeployConfig, that.redeployConfig);
+            && Objects.equals(this.redeployConfig, that.redeployConfig)
+            && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(notBefore, redeployConfig);
+        return Objects.hash(notBefore, redeployConfig, instanceId);
     }
 
     @Override
@@ -88,6 +129,7 @@ public class EventUpdate {
         sb.append("class EventUpdate {\n");
         sb.append("    notBefore: ").append(toIndentedString(notBefore)).append("\n");
         sb.append("    redeployConfig: ").append(toIndentedString(redeployConfig)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

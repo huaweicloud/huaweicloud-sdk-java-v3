@@ -23,7 +23,7 @@ public class ClusterLogRecord {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "createAt")
 
-    private String createAt;
+    private Integer createAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logPath")
@@ -89,7 +89,7 @@ public class ClusterLogRecord {
         this.clusterId = clusterId;
     }
 
-    public ClusterLogRecord withCreateAt(String createAt) {
+    public ClusterLogRecord withCreateAt(Integer createAt) {
         this.createAt = createAt;
         return this;
     }
@@ -98,11 +98,11 @@ public class ClusterLogRecord {
      * 创建时间。格式：Unix时间戳格式。
      * @return createAt
      */
-    public String getCreateAt() {
+    public Integer getCreateAt() {
         return createAt;
     }
 
-    public void setCreateAt(String createAt) {
+    public void setCreateAt(Integer createAt) {
         this.createAt = createAt;
     }
 

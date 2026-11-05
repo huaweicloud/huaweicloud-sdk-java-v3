@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * NodeconfigSpec
@@ -13,22 +14,31 @@ public class NodeconfigSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configs")
 
-    private Object configs;
+    private NodeconfigSpecConfigs configs;
 
-    public NodeconfigSpec withConfigs(Object configs) {
+    public NodeconfigSpec withConfigs(NodeconfigSpecConfigs configs) {
         this.configs = configs;
         return this;
     }
 
+    public NodeconfigSpec withConfigs(Consumer<NodeconfigSpecConfigs> configsSetter) {
+        if (this.configs == null) {
+            this.configs = new NodeconfigSpecConfigs();
+            configsSetter.accept(this.configs);
+        }
+
+        return this;
+    }
+
     /**
-     * **参数解释**： 节点自定义配置；当前支持节点绑核、是否启用缓存清理、是否启用透明大页。 \"configs\": {    \"cpu_manager\": {     \"mode\": \"static/none\" //static为启用绑核, none为不启用绑核    },    \"drop_cache\": {     \"mode\": \"enable/disable\" // enable启用缓存清理    },    \"transparent_hugepage\": {     \"mode\": \"always/madvise/never\" // always为启用透明大页，never为关闭透明大页，madvice交给系统选择。    } }
+     * Get configs
      * @return configs
      */
-    public Object getConfigs() {
+    public NodeconfigSpecConfigs getConfigs() {
         return configs;
     }
 
-    public void setConfigs(Object configs) {
+    public void setConfigs(NodeconfigSpecConfigs configs) {
         this.configs = configs;
     }
 

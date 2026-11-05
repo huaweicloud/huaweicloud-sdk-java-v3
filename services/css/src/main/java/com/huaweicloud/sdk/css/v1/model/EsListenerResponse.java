@@ -29,7 +29,7 @@ public class EsListenerResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol_port")
 
-    private String protocolPort;
+    private Integer protocolPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_tls_container_ref")
@@ -97,7 +97,7 @@ public class EsListenerResponse {
         this.name = name;
     }
 
-    public EsListenerResponse withProtocolPort(String protocolPort) {
+    public EsListenerResponse withProtocolPort(Integer protocolPort) {
         this.protocolPort = protocolPort;
         return this;
     }
@@ -106,11 +106,11 @@ public class EsListenerResponse {
      * 监听器的前端监听端口。
      * @return protocolPort
      */
-    public String getProtocolPort() {
+    public Integer getProtocolPort() {
         return protocolPort;
     }
 
-    public void setProtocolPort(String protocolPort) {
+    public void setProtocolPort(Integer protocolPort) {
         this.protocolPort = protocolPort;
     }
 

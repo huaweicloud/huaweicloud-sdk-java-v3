@@ -32,6 +32,16 @@ public class Elbv3Listener {
     private Integer protocolPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_tls_container_ref")
+
+    private String defaultTlsContainerRef;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "client_ca_tls_container_ref")
+
+    private String clientCaTlsContainerRef;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipgroup")
 
     private ListenerIpGroup ipgroup;
@@ -104,6 +114,40 @@ public class Elbv3Listener {
         this.protocolPort = protocolPort;
     }
 
+    public Elbv3Listener withDefaultTlsContainerRef(String defaultTlsContainerRef) {
+        this.defaultTlsContainerRef = defaultTlsContainerRef;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 负载均衡器监听器的服务端证书。 **取值范围**： 不涉及
+     * @return defaultTlsContainerRef
+     */
+    public String getDefaultTlsContainerRef() {
+        return defaultTlsContainerRef;
+    }
+
+    public void setDefaultTlsContainerRef(String defaultTlsContainerRef) {
+        this.defaultTlsContainerRef = defaultTlsContainerRef;
+    }
+
+    public Elbv3Listener withClientCaTlsContainerRef(String clientCaTlsContainerRef) {
+        this.clientCaTlsContainerRef = clientCaTlsContainerRef;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 负载均衡器监听器的ca证书。 **取值范围**： 不涉及
+     * @return clientCaTlsContainerRef
+     */
+    public String getClientCaTlsContainerRef() {
+        return clientCaTlsContainerRef;
+    }
+
+    public void setClientCaTlsContainerRef(String clientCaTlsContainerRef) {
+        this.clientCaTlsContainerRef = clientCaTlsContainerRef;
+    }
+
     public Elbv3Listener withIpgroup(ListenerIpGroup ipgroup) {
         this.ipgroup = ipgroup;
         return this;
@@ -141,12 +185,14 @@ public class Elbv3Listener {
         Elbv3Listener that = (Elbv3Listener) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.protocolPort, that.protocolPort)
+            && Objects.equals(this.defaultTlsContainerRef, that.defaultTlsContainerRef)
+            && Objects.equals(this.clientCaTlsContainerRef, that.clientCaTlsContainerRef)
             && Objects.equals(this.ipgroup, that.ipgroup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, protocol, protocolPort, ipgroup);
+        return Objects.hash(id, name, protocol, protocolPort, defaultTlsContainerRef, clientCaTlsContainerRef, ipgroup);
     }
 
     @Override
@@ -157,6 +203,8 @@ public class Elbv3Listener {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    protocolPort: ").append(toIndentedString(protocolPort)).append("\n");
+        sb.append("    defaultTlsContainerRef: ").append(toIndentedString(defaultTlsContainerRef)).append("\n");
+        sb.append("    clientCaTlsContainerRef: ").append(toIndentedString(clientCaTlsContainerRef)).append("\n");
         sb.append("    ipgroup: ").append(toIndentedString(ipgroup)).append("\n");
         sb.append("}");
         return sb.toString();

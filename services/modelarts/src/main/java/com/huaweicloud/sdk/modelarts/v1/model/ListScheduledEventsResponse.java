@@ -51,7 +51,7 @@ public class ListScheduledEventsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：计划事件列表
+     * '**参数解释**：计划事件列表'。
      * @return events
      */
     public List<ScheduledEvent> getEvents() {

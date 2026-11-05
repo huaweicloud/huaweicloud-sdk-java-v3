@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.modelarts.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ModelArtsAgencyRequest
@@ -14,6 +17,11 @@ public class ModelArtsAgencyRequest {
     @JsonProperty(value = "agency_name_suffix")
 
     private String agencyNameSuffix;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_services")
+
+    private List<AgencyServices> agencyServices = null;
 
     public ModelArtsAgencyRequest withAgencyNameSuffix(String agencyNameSuffix) {
         this.agencyNameSuffix = agencyNameSuffix;
@@ -32,6 +40,39 @@ public class ModelArtsAgencyRequest {
         this.agencyNameSuffix = agencyNameSuffix;
     }
 
+    public ModelArtsAgencyRequest withAgencyServices(List<AgencyServices> agencyServices) {
+        this.agencyServices = agencyServices;
+        return this;
+    }
+
+    public ModelArtsAgencyRequest addAgencyServicesItem(AgencyServices agencyServicesItem) {
+        if (this.agencyServices == null) {
+            this.agencyServices = new ArrayList<>();
+        }
+        this.agencyServices.add(agencyServicesItem);
+        return this;
+    }
+
+    public ModelArtsAgencyRequest withAgencyServices(Consumer<List<AgencyServices>> agencyServicesSetter) {
+        if (this.agencyServices == null) {
+            this.agencyServices = new ArrayList<>();
+        }
+        agencyServicesSetter.accept(this.agencyServices);
+        return this;
+    }
+
+    /**
+     * **参数解释**：细粒度权限列表。
+     * @return agencyServices
+     */
+    public List<AgencyServices> getAgencyServices() {
+        return agencyServices;
+    }
+
+    public void setAgencyServices(List<AgencyServices> agencyServices) {
+        this.agencyServices = agencyServices;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +82,13 @@ public class ModelArtsAgencyRequest {
             return false;
         }
         ModelArtsAgencyRequest that = (ModelArtsAgencyRequest) obj;
-        return Objects.equals(this.agencyNameSuffix, that.agencyNameSuffix);
+        return Objects.equals(this.agencyNameSuffix, that.agencyNameSuffix)
+            && Objects.equals(this.agencyServices, that.agencyServices);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(agencyNameSuffix);
+        return Objects.hash(agencyNameSuffix, agencyServices);
     }
 
     @Override
@@ -54,6 +96,7 @@ public class ModelArtsAgencyRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ModelArtsAgencyRequest {\n");
         sb.append("    agencyNameSuffix: ").append(toIndentedString(agencyNameSuffix)).append("\n");
+        sb.append("    agencyServices: ").append(toIndentedString(agencyServices)).append("\n");
         sb.append("}");
         return sb.toString();
     }

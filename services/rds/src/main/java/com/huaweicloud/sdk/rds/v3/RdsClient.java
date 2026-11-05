@@ -117,6 +117,8 @@ import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDbUserRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDbUserResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateSubscriptionRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateSubscriptionResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateSupabaseApplicationRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateSupabaseApplicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteBackupSelectionRequest;
@@ -167,6 +169,8 @@ import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDbUserRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDbUserResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSubscriptionRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSubscriptionResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSupabaseApplicationRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSupabaseApplicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.DownloadErrorlogRequest;
 import com.huaweicloud.sdk.rds.v3.model.DownloadErrorlogResponse;
 import com.huaweicloud.sdk.rds.v3.model.DownloadSlowlogRequest;
@@ -187,6 +191,8 @@ import com.huaweicloud.sdk.rds.v3.model.GetInstancesOpsMetricNamesRequest;
 import com.huaweicloud.sdk.rds.v3.model.GetInstancesOpsMetricNamesResponse;
 import com.huaweicloud.sdk.rds.v3.model.GetInstancesOpsResourceUsageRequest;
 import com.huaweicloud.sdk.rds.v3.model.GetInstancesOpsResourceUsageResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListAiApplicationsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListAiApplicationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListApiVersionNewRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListApiVersionNewResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListApiVersionRequest;
@@ -385,6 +391,10 @@ import com.huaweicloud.sdk.rds.v3.model.ListSubscriberInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSubscriberInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSubscriptionsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSubscriptionsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSupabaseApplicationApiKeysRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSupabaseApplicationApiKeysResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSupabaseApplicationFlavorsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSupabaseApplicationFlavorsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListTasksRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListTasksResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListTopSqlsRequest;
@@ -413,6 +423,12 @@ import com.huaweicloud.sdk.rds.v3.model.ModifyPublicationRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyPublicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeResponse;
+import com.huaweicloud.sdk.rds.v3.model.ModifySupabaseApplicationAuthConfigRequest;
+import com.huaweicloud.sdk.rds.v3.model.ModifySupabaseApplicationAuthConfigResponse;
+import com.huaweicloud.sdk.rds.v3.model.ModifySupabaseApplicationPasswordRequest;
+import com.huaweicloud.sdk.rds.v3.model.ModifySupabaseApplicationPasswordResponse;
+import com.huaweicloud.sdk.rds.v3.model.ModifySupabaseApplicationStorageRequest;
+import com.huaweicloud.sdk.rds.v3.model.ModifySupabaseApplicationStorageResponse;
 import com.huaweicloud.sdk.rds.v3.model.NotifyReplaceNodeRequest;
 import com.huaweicloud.sdk.rds.v3.model.NotifyReplaceNodeResponse;
 import com.huaweicloud.sdk.rds.v3.model.QueryAutoSqlLimitingRequest;
@@ -427,10 +443,14 @@ import com.huaweicloud.sdk.rds.v3.model.ResetConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.ResetConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdResponse;
+import com.huaweicloud.sdk.rds.v3.model.ResetSupabaseApplicationApiKeyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ResetSupabaseApplicationApiKeyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ResetViewSqlStatisticsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ResetViewSqlStatisticsResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestartDbAgentJobRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestartDbAgentJobResponse;
+import com.huaweicloud.sdk.rds.v3.model.RestartSupabaseApplicationRequest;
+import com.huaweicloud.sdk.rds.v3.model.RestartSupabaseApplicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreLogReplayDatabaseRequest;
@@ -593,6 +613,12 @@ import com.huaweicloud.sdk.rds.v3.model.ShowSqlDiagnosisRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowSqlDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowStorageUsedSpaceRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowStorageUsedSpaceResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowSupabaseApplicationApiKeyValueRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowSupabaseApplicationApiKeyValueResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowSupabaseApplicationAuthConfigRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowSupabaseApplicationAuthConfigResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowSupabaseApplicationRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowSupabaseApplicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowTaskDetailRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowTaskDetailResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusRequest;
@@ -621,6 +647,8 @@ import com.huaweicloud.sdk.rds.v3.model.StartRecyclePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.StartRecyclePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.StartResizeFlavorActionRequest;
 import com.huaweicloud.sdk.rds.v3.model.StartResizeFlavorActionResponse;
+import com.huaweicloud.sdk.rds.v3.model.StartSupabaseApplicationRequest;
+import com.huaweicloud.sdk.rds.v3.model.StartSupabaseApplicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.StartupInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.StartupInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.StopBackupRequest;
@@ -629,6 +657,8 @@ import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.StopInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.StopInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.StopSupabaseApplicationRequest;
+import com.huaweicloud.sdk.rds.v3.model.StopSupabaseApplicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchDbAgentJobRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchDbAgentJobResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchLogReplayRequest;
@@ -641,6 +671,10 @@ import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslResponse;
+import com.huaweicloud.sdk.rds.v3.model.SwitchSupabaseApplicationEipBindRequest;
+import com.huaweicloud.sdk.rds.v3.model.SwitchSupabaseApplicationEipBindResponse;
+import com.huaweicloud.sdk.rds.v3.model.SwitchSupabaseApplicationSslRequest;
+import com.huaweicloud.sdk.rds.v3.model.SwitchSupabaseApplicationSslResponse;
 import com.huaweicloud.sdk.rds.v3.model.SyncReplicationMetadataRequest;
 import com.huaweicloud.sdk.rds.v3.model.SyncReplicationMetadataResponse;
 import com.huaweicloud.sdk.rds.v3.model.TransferBackupRequest;
@@ -11115,6 +11149,529 @@ public class RdsClient {
     public SyncInvoker<ValidateInstanceConnectionRequest, ValidateInstanceConnectionResponse> validateInstanceConnectionInvoker(
         ValidateInstanceConnectionRequest request) {
         return new SyncInvoker<>(request, RdsMeta.validateInstanceConnection, hcClient);
+    }
+
+    /**
+     * 创建Supabase应用
+     *
+     * 创建Supabase应用。支持两类路径：
+     * 1) 同时创建托管的PostgreSQL实例（manage_type&#x3D;newly_instance）；
+     * 2) 关联已有PostgreSQL实例（manage_type&#x3D;existed_instance）。
+     * 异步接口，返回job_id（按需）或order_id（包周期）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSupabaseApplicationRequest 请求对象
+     * @return CreateSupabaseApplicationResponse
+     */
+    public CreateSupabaseApplicationResponse createSupabaseApplication(CreateSupabaseApplicationRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.createSupabaseApplication);
+    }
+
+    /**
+     * 创建Supabase应用
+     *
+     * 创建Supabase应用。支持两类路径：
+     * 1) 同时创建托管的PostgreSQL实例（manage_type&#x3D;newly_instance）；
+     * 2) 关联已有PostgreSQL实例（manage_type&#x3D;existed_instance）。
+     * 异步接口，返回job_id（按需）或order_id（包周期）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSupabaseApplicationRequest 请求对象
+     * @return SyncInvoker<CreateSupabaseApplicationRequest, CreateSupabaseApplicationResponse>
+     */
+    public SyncInvoker<CreateSupabaseApplicationRequest, CreateSupabaseApplicationResponse> createSupabaseApplicationInvoker(
+        CreateSupabaseApplicationRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.createSupabaseApplication, hcClient);
+    }
+
+    /**
+     * 删除Supabase应用
+     *
+     * 删除Supabase应用。仅删除应用本身，保留底层PG实例及关联关系。
+     * 注：HTTP无请求体，delete_instance字段不对外暴露，恒为仅删应用。
+     * PG级联删除为反向触发（PG删→自动删关联Supabase）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSupabaseApplicationRequest 请求对象
+     * @return DeleteSupabaseApplicationResponse
+     */
+    public DeleteSupabaseApplicationResponse deleteSupabaseApplication(DeleteSupabaseApplicationRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.deleteSupabaseApplication);
+    }
+
+    /**
+     * 删除Supabase应用
+     *
+     * 删除Supabase应用。仅删除应用本身，保留底层PG实例及关联关系。
+     * 注：HTTP无请求体，delete_instance字段不对外暴露，恒为仅删应用。
+     * PG级联删除为反向触发（PG删→自动删关联Supabase）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSupabaseApplicationRequest 请求对象
+     * @return SyncInvoker<DeleteSupabaseApplicationRequest, DeleteSupabaseApplicationResponse>
+     */
+    public SyncInvoker<DeleteSupabaseApplicationRequest, DeleteSupabaseApplicationResponse> deleteSupabaseApplicationInvoker(
+        DeleteSupabaseApplicationRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.deleteSupabaseApplication, hcClient);
+    }
+
+    /**
+     * 查询AI应用列表
+     *
+     * 查询AI应用列表，含应用状态和关联PG实例信息。删除应用前通常先调此接口定位目标。支持按type过滤Supabase应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiApplicationsRequest 请求对象
+     * @return ListAiApplicationsResponse
+     */
+    public ListAiApplicationsResponse listAiApplications(ListAiApplicationsRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listAiApplications);
+    }
+
+    /**
+     * 查询AI应用列表
+     *
+     * 查询AI应用列表，含应用状态和关联PG实例信息。删除应用前通常先调此接口定位目标。支持按type过滤Supabase应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiApplicationsRequest 请求对象
+     * @return SyncInvoker<ListAiApplicationsRequest, ListAiApplicationsResponse>
+     */
+    public SyncInvoker<ListAiApplicationsRequest, ListAiApplicationsResponse> listAiApplicationsInvoker(
+        ListAiApplicationsRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.listAiApplications, hcClient);
+    }
+
+    /**
+     * 查询Supabase应用ApiKey列表
+     *
+     * 分页查询ApiKey元数据。列表不含明文。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSupabaseApplicationApiKeysRequest 请求对象
+     * @return ListSupabaseApplicationApiKeysResponse
+     */
+    public ListSupabaseApplicationApiKeysResponse listSupabaseApplicationApiKeys(
+        ListSupabaseApplicationApiKeysRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listSupabaseApplicationApiKeys);
+    }
+
+    /**
+     * 查询Supabase应用ApiKey列表
+     *
+     * 分页查询ApiKey元数据。列表不含明文。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSupabaseApplicationApiKeysRequest 请求对象
+     * @return SyncInvoker<ListSupabaseApplicationApiKeysRequest, ListSupabaseApplicationApiKeysResponse>
+     */
+    public SyncInvoker<ListSupabaseApplicationApiKeysRequest, ListSupabaseApplicationApiKeysResponse> listSupabaseApplicationApiKeysInvoker(
+        ListSupabaseApplicationApiKeysRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.listSupabaseApplicationApiKeys, hcClient);
+    }
+
+    /**
+     * 查询Supabase应用规格列表
+     *
+     * 查询可用规格，含每个AZ的可售状态和支持版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSupabaseApplicationFlavorsRequest 请求对象
+     * @return ListSupabaseApplicationFlavorsResponse
+     */
+    public ListSupabaseApplicationFlavorsResponse listSupabaseApplicationFlavors(
+        ListSupabaseApplicationFlavorsRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listSupabaseApplicationFlavors);
+    }
+
+    /**
+     * 查询Supabase应用规格列表
+     *
+     * 查询可用规格，含每个AZ的可售状态和支持版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSupabaseApplicationFlavorsRequest 请求对象
+     * @return SyncInvoker<ListSupabaseApplicationFlavorsRequest, ListSupabaseApplicationFlavorsResponse>
+     */
+    public SyncInvoker<ListSupabaseApplicationFlavorsRequest, ListSupabaseApplicationFlavorsResponse> listSupabaseApplicationFlavorsInvoker(
+        ListSupabaseApplicationFlavorsRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.listSupabaseApplicationFlavors, hcClient);
+    }
+
+    /**
+     * 修改Supabase应用Auth配置
+     *
+     * 部分更新：仅更新传入的非空字段，省略字段保留原值（@JsonInclude NON_EMPTY）。
+     * enable_github&#x3D;false时清空github子字段；enable_email_sign_up&#x3D;false时清空smtp_config子字段。
+     * 秘密字段（smtp_pwd、oauth_client_secret）需通过受控方式输入，show不返回故不会回显覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifySupabaseApplicationAuthConfigRequest 请求对象
+     * @return ModifySupabaseApplicationAuthConfigResponse
+     */
+    public ModifySupabaseApplicationAuthConfigResponse modifySupabaseApplicationAuthConfig(
+        ModifySupabaseApplicationAuthConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.modifySupabaseApplicationAuthConfig);
+    }
+
+    /**
+     * 修改Supabase应用Auth配置
+     *
+     * 部分更新：仅更新传入的非空字段，省略字段保留原值（@JsonInclude NON_EMPTY）。
+     * enable_github&#x3D;false时清空github子字段；enable_email_sign_up&#x3D;false时清空smtp_config子字段。
+     * 秘密字段（smtp_pwd、oauth_client_secret）需通过受控方式输入，show不返回故不会回显覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifySupabaseApplicationAuthConfigRequest 请求对象
+     * @return SyncInvoker<ModifySupabaseApplicationAuthConfigRequest, ModifySupabaseApplicationAuthConfigResponse>
+     */
+    public SyncInvoker<ModifySupabaseApplicationAuthConfigRequest, ModifySupabaseApplicationAuthConfigResponse> modifySupabaseApplicationAuthConfigInvoker(
+        ModifySupabaseApplicationAuthConfigRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.modifySupabaseApplicationAuthConfig, hcClient);
+    }
+
+    /**
+     * 修改Supabase应用密码
+     *
+     * 可单独修改应用密码或实例密码，但不能同时为空。不修改底层PG其他账号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifySupabaseApplicationPasswordRequest 请求对象
+     * @return ModifySupabaseApplicationPasswordResponse
+     */
+    public ModifySupabaseApplicationPasswordResponse modifySupabaseApplicationPassword(
+        ModifySupabaseApplicationPasswordRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.modifySupabaseApplicationPassword);
+    }
+
+    /**
+     * 修改Supabase应用密码
+     *
+     * 可单独修改应用密码或实例密码，但不能同时为空。不修改底层PG其他账号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifySupabaseApplicationPasswordRequest 请求对象
+     * @return SyncInvoker<ModifySupabaseApplicationPasswordRequest, ModifySupabaseApplicationPasswordResponse>
+     */
+    public SyncInvoker<ModifySupabaseApplicationPasswordRequest, ModifySupabaseApplicationPasswordResponse> modifySupabaseApplicationPasswordInvoker(
+        ModifySupabaseApplicationPasswordRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.modifySupabaseApplicationPassword, hcClient);
+    }
+
+    /**
+     * 修改Supabase应用Storage配置
+     *
+     * enabled&#x3D;false时bucket_name/ak/sk必须全空；enabled&#x3D;true时全必填。
+     * show不返回sk，故部分更新省略sk即保留。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifySupabaseApplicationStorageRequest 请求对象
+     * @return ModifySupabaseApplicationStorageResponse
+     */
+    public ModifySupabaseApplicationStorageResponse modifySupabaseApplicationStorage(
+        ModifySupabaseApplicationStorageRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.modifySupabaseApplicationStorage);
+    }
+
+    /**
+     * 修改Supabase应用Storage配置
+     *
+     * enabled&#x3D;false时bucket_name/ak/sk必须全空；enabled&#x3D;true时全必填。
+     * show不返回sk，故部分更新省略sk即保留。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifySupabaseApplicationStorageRequest 请求对象
+     * @return SyncInvoker<ModifySupabaseApplicationStorageRequest, ModifySupabaseApplicationStorageResponse>
+     */
+    public SyncInvoker<ModifySupabaseApplicationStorageRequest, ModifySupabaseApplicationStorageResponse> modifySupabaseApplicationStorageInvoker(
+        ModifySupabaseApplicationStorageRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.modifySupabaseApplicationStorage, hcClient);
+    }
+
+    /**
+     * 重置Supabase应用ApiKey
+     *
+     * 异步重置ApiKey。agent异步动作成功后，旧Key置deleted、新Key置normal，同事务原子切换。
+     * 新Key不沿用旧Key ID。返回job_id，需轮询list_job_info。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetSupabaseApplicationApiKeyRequest 请求对象
+     * @return ResetSupabaseApplicationApiKeyResponse
+     */
+    public ResetSupabaseApplicationApiKeyResponse resetSupabaseApplicationApiKey(
+        ResetSupabaseApplicationApiKeyRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.resetSupabaseApplicationApiKey);
+    }
+
+    /**
+     * 重置Supabase应用ApiKey
+     *
+     * 异步重置ApiKey。agent异步动作成功后，旧Key置deleted、新Key置normal，同事务原子切换。
+     * 新Key不沿用旧Key ID。返回job_id，需轮询list_job_info。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetSupabaseApplicationApiKeyRequest 请求对象
+     * @return SyncInvoker<ResetSupabaseApplicationApiKeyRequest, ResetSupabaseApplicationApiKeyResponse>
+     */
+    public SyncInvoker<ResetSupabaseApplicationApiKeyRequest, ResetSupabaseApplicationApiKeyResponse> resetSupabaseApplicationApiKeyInvoker(
+        ResetSupabaseApplicationApiKeyRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.resetSupabaseApplicationApiKey, hcClient);
+    }
+
+    /**
+     * 重启Supabase应用
+     *
+     * 异步重启Supabase应用。返回job_id，需轮询list_job_info。无requestBody。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestartSupabaseApplicationRequest 请求对象
+     * @return RestartSupabaseApplicationResponse
+     */
+    public RestartSupabaseApplicationResponse restartSupabaseApplication(RestartSupabaseApplicationRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.restartSupabaseApplication);
+    }
+
+    /**
+     * 重启Supabase应用
+     *
+     * 异步重启Supabase应用。返回job_id，需轮询list_job_info。无requestBody。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestartSupabaseApplicationRequest 请求对象
+     * @return SyncInvoker<RestartSupabaseApplicationRequest, RestartSupabaseApplicationResponse>
+     */
+    public SyncInvoker<RestartSupabaseApplicationRequest, RestartSupabaseApplicationResponse> restartSupabaseApplicationInvoker(
+        RestartSupabaseApplicationRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.restartSupabaseApplication, hcClient);
+    }
+
+    /**
+     * 查询Supabase应用详情
+     *
+     * 查询Supabase应用详情，含运行状态、关联PG、SSL/EIP/Storage配置等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSupabaseApplicationRequest 请求对象
+     * @return ShowSupabaseApplicationResponse
+     */
+    public ShowSupabaseApplicationResponse showSupabaseApplication(ShowSupabaseApplicationRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showSupabaseApplication);
+    }
+
+    /**
+     * 查询Supabase应用详情
+     *
+     * 查询Supabase应用详情，含运行状态、关联PG、SSL/EIP/Storage配置等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSupabaseApplicationRequest 请求对象
+     * @return SyncInvoker<ShowSupabaseApplicationRequest, ShowSupabaseApplicationResponse>
+     */
+    public SyncInvoker<ShowSupabaseApplicationRequest, ShowSupabaseApplicationResponse> showSupabaseApplicationInvoker(
+        ShowSupabaseApplicationRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.showSupabaseApplication, hcClient);
+    }
+
+    /**
+     * 查询Supabase应用ApiKey明文值
+     *
+     * 受控查看指定ApiKey的明文值。敏感操作，需明确授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSupabaseApplicationApiKeyValueRequest 请求对象
+     * @return ShowSupabaseApplicationApiKeyValueResponse
+     */
+    public ShowSupabaseApplicationApiKeyValueResponse showSupabaseApplicationApiKeyValue(
+        ShowSupabaseApplicationApiKeyValueRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showSupabaseApplicationApiKeyValue);
+    }
+
+    /**
+     * 查询Supabase应用ApiKey明文值
+     *
+     * 受控查看指定ApiKey的明文值。敏感操作，需明确授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSupabaseApplicationApiKeyValueRequest 请求对象
+     * @return SyncInvoker<ShowSupabaseApplicationApiKeyValueRequest, ShowSupabaseApplicationApiKeyValueResponse>
+     */
+    public SyncInvoker<ShowSupabaseApplicationApiKeyValueRequest, ShowSupabaseApplicationApiKeyValueResponse> showSupabaseApplicationApiKeyValueInvoker(
+        ShowSupabaseApplicationApiKeyValueRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.showSupabaseApplicationApiKeyValue, hcClient);
+    }
+
+    /**
+     * 查询Supabase应用Auth配置
+     *
+     * 查询Auth配置。敏感秘密（smtp_pwd、oauth_client_secret）在响应中省略，非脱敏占位。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSupabaseApplicationAuthConfigRequest 请求对象
+     * @return ShowSupabaseApplicationAuthConfigResponse
+     */
+    public ShowSupabaseApplicationAuthConfigResponse showSupabaseApplicationAuthConfig(
+        ShowSupabaseApplicationAuthConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showSupabaseApplicationAuthConfig);
+    }
+
+    /**
+     * 查询Supabase应用Auth配置
+     *
+     * 查询Auth配置。敏感秘密（smtp_pwd、oauth_client_secret）在响应中省略，非脱敏占位。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSupabaseApplicationAuthConfigRequest 请求对象
+     * @return SyncInvoker<ShowSupabaseApplicationAuthConfigRequest, ShowSupabaseApplicationAuthConfigResponse>
+     */
+    public SyncInvoker<ShowSupabaseApplicationAuthConfigRequest, ShowSupabaseApplicationAuthConfigResponse> showSupabaseApplicationAuthConfigInvoker(
+        ShowSupabaseApplicationAuthConfigRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.showSupabaseApplicationAuthConfig, hcClient);
+    }
+
+    /**
+     * 启动Supabase应用
+     *
+     * 异步启动Supabase应用。返回job_id，需轮询list_job_info。无requestBody。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartSupabaseApplicationRequest 请求对象
+     * @return StartSupabaseApplicationResponse
+     */
+    public StartSupabaseApplicationResponse startSupabaseApplication(StartSupabaseApplicationRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.startSupabaseApplication);
+    }
+
+    /**
+     * 启动Supabase应用
+     *
+     * 异步启动Supabase应用。返回job_id，需轮询list_job_info。无requestBody。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartSupabaseApplicationRequest 请求对象
+     * @return SyncInvoker<StartSupabaseApplicationRequest, StartSupabaseApplicationResponse>
+     */
+    public SyncInvoker<StartSupabaseApplicationRequest, StartSupabaseApplicationResponse> startSupabaseApplicationInvoker(
+        StartSupabaseApplicationRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.startSupabaseApplication, hcClient);
+    }
+
+    /**
+     * 停止Supabase应用
+     *
+     * 异步停止Supabase应用。返回job_id，需轮询list_job_info。无requestBody。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopSupabaseApplicationRequest 请求对象
+     * @return StopSupabaseApplicationResponse
+     */
+    public StopSupabaseApplicationResponse stopSupabaseApplication(StopSupabaseApplicationRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.stopSupabaseApplication);
+    }
+
+    /**
+     * 停止Supabase应用
+     *
+     * 异步停止Supabase应用。返回job_id，需轮询list_job_info。无requestBody。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopSupabaseApplicationRequest 请求对象
+     * @return SyncInvoker<StopSupabaseApplicationRequest, StopSupabaseApplicationResponse>
+     */
+    public SyncInvoker<StopSupabaseApplicationRequest, StopSupabaseApplicationResponse> stopSupabaseApplicationInvoker(
+        StopSupabaseApplicationRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.stopSupabaseApplication, hcClient);
+    }
+
+    /**
+     * 绑定或解绑Supabase应用EIP
+     *
+     * 异步绑定/解绑EIP。is_bind&#x3D;true时public_ip_id和public_ip_address必填。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchSupabaseApplicationEipBindRequest 请求对象
+     * @return SwitchSupabaseApplicationEipBindResponse
+     */
+    public SwitchSupabaseApplicationEipBindResponse switchSupabaseApplicationEipBind(
+        SwitchSupabaseApplicationEipBindRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.switchSupabaseApplicationEipBind);
+    }
+
+    /**
+     * 绑定或解绑Supabase应用EIP
+     *
+     * 异步绑定/解绑EIP。is_bind&#x3D;true时public_ip_id和public_ip_address必填。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchSupabaseApplicationEipBindRequest 请求对象
+     * @return SyncInvoker<SwitchSupabaseApplicationEipBindRequest, SwitchSupabaseApplicationEipBindResponse>
+     */
+    public SyncInvoker<SwitchSupabaseApplicationEipBindRequest, SwitchSupabaseApplicationEipBindResponse> switchSupabaseApplicationEipBindInvoker(
+        SwitchSupabaseApplicationEipBindRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.switchSupabaseApplicationEipBind, hcClient);
+    }
+
+    /**
+     * 开启或关闭Supabase应用SSL
+     *
+     * 异步开关SSL。enable_ssl&#x3D;false时cert_id必须为空；enable_ssl&#x3D;true时cert_id必填。
+     * SSL切换后需手动同步Auth相关URL协议（http&lt;-&gt;https），否则认证可能故障。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchSupabaseApplicationSslRequest 请求对象
+     * @return SwitchSupabaseApplicationSslResponse
+     */
+    public SwitchSupabaseApplicationSslResponse switchSupabaseApplicationSsl(
+        SwitchSupabaseApplicationSslRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.switchSupabaseApplicationSsl);
+    }
+
+    /**
+     * 开启或关闭Supabase应用SSL
+     *
+     * 异步开关SSL。enable_ssl&#x3D;false时cert_id必须为空；enable_ssl&#x3D;true时cert_id必填。
+     * SSL切换后需手动同步Auth相关URL协议（http&lt;-&gt;https），否则认证可能故障。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchSupabaseApplicationSslRequest 请求对象
+     * @return SyncInvoker<SwitchSupabaseApplicationSslRequest, SwitchSupabaseApplicationSslResponse>
+     */
+    public SyncInvoker<SwitchSupabaseApplicationSslRequest, SwitchSupabaseApplicationSslResponse> switchSupabaseApplicationSslInvoker(
+        SwitchSupabaseApplicationSslRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.switchSupabaseApplicationSsl, hcClient);
     }
 
     /**

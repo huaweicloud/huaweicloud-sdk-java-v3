@@ -26,7 +26,7 @@ public class SparkCreateUser {
     }
 
     /**
-     * **参数解释**：创建作业的用户ID，用于标识作业创建者。 **取值范围**：长度为1~256个字符。 
+     * **参数解释**：创建作业的用户ID，用于标识作业创建者。 **取值范围**：长度为1~256个字符，不涉及字符类型限制。 
      * @return userId
      */
     public String getUserId() {
@@ -43,7 +43,7 @@ public class SparkCreateUser {
     }
 
     /**
-     * **参数解释**：创建作业的用户名称，用于标识作业创建者。 **取值范围**：长度为1~256个字符。 
+     * **参数解释**：创建作业的用户名称，用于标识作业创建者。 **取值范围**：长度为1~256个字符，不涉及字符类型限制。 
      * @return userName
      */
     public String getUserName() {

@@ -149,6 +149,9 @@ import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDbUserResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateSubscriptionRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateSubscriptionRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.CreateSubscriptionResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateSupabaseApplicationRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateSupabaseApplicationRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.CreateSupabaseApplicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadResponse;
@@ -219,6 +222,8 @@ import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDbUserResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSubscriptionRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSubscriptionRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSubscriptionResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSupabaseApplicationRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSupabaseApplicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.DownloadErrorlogRequest;
 import com.huaweicloud.sdk.rds.v3.model.DownloadErrorlogResponse;
 import com.huaweicloud.sdk.rds.v3.model.DownloadSlowlogRequest;
@@ -253,6 +258,8 @@ import com.huaweicloud.sdk.rds.v3.model.GrantRequest;
 import com.huaweicloud.sdk.rds.v3.model.InstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.InstanceRestartRequsetBody;
 import com.huaweicloud.sdk.rds.v3.model.IntelligentKillSessionReq;
+import com.huaweicloud.sdk.rds.v3.model.ListAiApplicationsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListAiApplicationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListApiVersionNewRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListApiVersionNewResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListApiVersionRequest;
@@ -455,6 +462,10 @@ import com.huaweicloud.sdk.rds.v3.model.ListSubscriberInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSubscriberInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSubscriptionsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSubscriptionsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSupabaseApplicationApiKeysRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSupabaseApplicationApiKeysResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSupabaseApplicationFlavorsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSupabaseApplicationFlavorsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListTasksRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListTasksResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListTopSqlsRequest;
@@ -495,6 +506,15 @@ import com.huaweicloud.sdk.rds.v3.model.ModifyPublicationsRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifySubscriptionsRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.ModifySupabaseApplicationAuthConfigRequest;
+import com.huaweicloud.sdk.rds.v3.model.ModifySupabaseApplicationAuthConfigRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.ModifySupabaseApplicationAuthConfigResponse;
+import com.huaweicloud.sdk.rds.v3.model.ModifySupabaseApplicationPasswordRequest;
+import com.huaweicloud.sdk.rds.v3.model.ModifySupabaseApplicationPasswordRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.ModifySupabaseApplicationPasswordResponse;
+import com.huaweicloud.sdk.rds.v3.model.ModifySupabaseApplicationStorageRequest;
+import com.huaweicloud.sdk.rds.v3.model.ModifySupabaseApplicationStorageRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.ModifySupabaseApplicationStorageResponse;
 import com.huaweicloud.sdk.rds.v3.model.MultipleDeleteInsReq;
 import com.huaweicloud.sdk.rds.v3.model.MysqlReadOnlySwitch;
 import com.huaweicloud.sdk.rds.v3.model.NotifyReplaceNodeRequest;
@@ -532,11 +552,15 @@ import com.huaweicloud.sdk.rds.v3.model.ResetConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.ResetConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdResponse;
+import com.huaweicloud.sdk.rds.v3.model.ResetSupabaseApplicationApiKeyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ResetSupabaseApplicationApiKeyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ResetViewSqlStatisticsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ResetViewSqlStatisticsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ResizeFlavorRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestartDbAgentJobRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestartDbAgentJobResponse;
+import com.huaweicloud.sdk.rds.v3.model.RestartSupabaseApplicationRequest;
+import com.huaweicloud.sdk.rds.v3.model.RestartSupabaseApplicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistingInstanceRequestBody;
@@ -720,6 +744,12 @@ import com.huaweicloud.sdk.rds.v3.model.ShowSqlDiagnosisRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowSqlDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowStorageUsedSpaceRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowStorageUsedSpaceResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowSupabaseApplicationApiKeyValueRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowSupabaseApplicationApiKeyValueResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowSupabaseApplicationAuthConfigRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowSupabaseApplicationAuthConfigResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowSupabaseApplicationRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowSupabaseApplicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowTaskDetailRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowTaskDetailResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusRequest;
@@ -758,6 +788,8 @@ import com.huaweicloud.sdk.rds.v3.model.StartRecyclePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.StartRecyclePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.StartResizeFlavorActionRequest;
 import com.huaweicloud.sdk.rds.v3.model.StartResizeFlavorActionResponse;
+import com.huaweicloud.sdk.rds.v3.model.StartSupabaseApplicationRequest;
+import com.huaweicloud.sdk.rds.v3.model.StartSupabaseApplicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.StartupInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.StartupInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.StopBackupRequest;
@@ -766,6 +798,8 @@ import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.StopInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.StopInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.StopSupabaseApplicationRequest;
+import com.huaweicloud.sdk.rds.v3.model.StopSupabaseApplicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchDbAgentJobRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchDbAgentJobResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchLogReplayRequest;
@@ -782,6 +816,12 @@ import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslResponse;
+import com.huaweicloud.sdk.rds.v3.model.SwitchSupabaseApplicationEipBindRequest;
+import com.huaweicloud.sdk.rds.v3.model.SwitchSupabaseApplicationEipBindRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.SwitchSupabaseApplicationEipBindResponse;
+import com.huaweicloud.sdk.rds.v3.model.SwitchSupabaseApplicationSslRequest;
+import com.huaweicloud.sdk.rds.v3.model.SwitchSupabaseApplicationSslRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.SwitchSupabaseApplicationSslResponse;
 import com.huaweicloud.sdk.rds.v3.model.SyncReplicationMetadataRequest;
 import com.huaweicloud.sdk.rds.v3.model.SyncReplicationMetadataResponse;
 import com.huaweicloud.sdk.rds.v3.model.TaskDetailRequest;
@@ -13608,6 +13648,755 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(ValidateInstanceConnectionRequestBody.class),
             f -> f.withMarshaller(ValidateInstanceConnectionRequest::getBody,
                 ValidateInstanceConnectionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSupabaseApplicationRequest, CreateSupabaseApplicationResponse> createSupabaseApplication =
+        genForCreateSupabaseApplication();
+
+    private static HttpRequestDef<CreateSupabaseApplicationRequest, CreateSupabaseApplicationResponse> genForCreateSupabaseApplication() {
+        // basic
+        HttpRequestDef.Builder<CreateSupabaseApplicationRequest, CreateSupabaseApplicationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateSupabaseApplicationRequest.class,
+                    CreateSupabaseApplicationResponse.class)
+                .withName("CreateSupabaseApplication")
+                .withUri("/v3/{project_id}/ai-application/supabases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateSupabaseApplicationRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateSupabaseApplicationRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateSupabaseApplicationRequest::getXLanguage,
+                CreateSupabaseApplicationRequest::setXLanguage));
+        builder.<String>withRequestField("X-Client-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSupabaseApplicationRequest::getXClientToken,
+                CreateSupabaseApplicationRequest::setXClientToken));
+        builder.<CreateSupabaseApplicationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSupabaseApplicationRequestBody.class),
+            f -> f.withMarshaller(CreateSupabaseApplicationRequest::getBody,
+                CreateSupabaseApplicationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSupabaseApplicationRequest, DeleteSupabaseApplicationResponse> deleteSupabaseApplication =
+        genForDeleteSupabaseApplication();
+
+    private static HttpRequestDef<DeleteSupabaseApplicationRequest, DeleteSupabaseApplicationResponse> genForDeleteSupabaseApplication() {
+        // basic
+        HttpRequestDef.Builder<DeleteSupabaseApplicationRequest, DeleteSupabaseApplicationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteSupabaseApplicationRequest.class,
+                    DeleteSupabaseApplicationResponse.class)
+                .withName("DeleteSupabaseApplication")
+                .withUri("/v3/{project_id}/ai-application/{application_id}/supabase")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSupabaseApplicationRequest::getApplicationId,
+                DeleteSupabaseApplicationRequest::setApplicationId));
+        builder.<DeleteSupabaseApplicationRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteSupabaseApplicationRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(DeleteSupabaseApplicationRequest::getXLanguage,
+                DeleteSupabaseApplicationRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAiApplicationsRequest, ListAiApplicationsResponse> listAiApplications =
+        genForListAiApplications();
+
+    private static HttpRequestDef<ListAiApplicationsRequest, ListAiApplicationsResponse> genForListAiApplications() {
+        // basic
+        HttpRequestDef.Builder<ListAiApplicationsRequest, ListAiApplicationsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAiApplicationsRequest.class, ListAiApplicationsResponse.class)
+                .withName("ListAiApplications")
+                .withUri("/v3/{project_id}/ai-application/applications")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiApplicationsRequest::getName, ListAiApplicationsRequest::setName));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiApplicationsRequest::getId, ListAiApplicationsRequest::setId));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiApplicationsRequest::getType, ListAiApplicationsRequest::setType));
+        builder.<String>withRequestField("mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiApplicationsRequest::getMode, ListAiApplicationsRequest::setMode));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiApplicationsRequest::getStatus, ListAiApplicationsRequest::setStatus));
+        builder.<String>withRequestField("managed_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiApplicationsRequest::getManagedInstanceId,
+                ListAiApplicationsRequest::setManagedInstanceId));
+        builder.<String>withRequestField("managed_instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiApplicationsRequest::getManagedInstanceName,
+                ListAiApplicationsRequest::setManagedInstanceName));
+        builder.<Boolean>withRequestField("enable_ssl",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListAiApplicationsRequest::getEnableSsl, ListAiApplicationsRequest::setEnableSsl));
+        builder.<String>withRequestField("start_created_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiApplicationsRequest::getStartCreatedTime,
+                ListAiApplicationsRequest::setStartCreatedTime));
+        builder.<String>withRequestField("end_created_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiApplicationsRequest::getEndCreatedTime,
+                ListAiApplicationsRequest::setEndCreatedTime));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiApplicationsRequest::getSortKey, ListAiApplicationsRequest::setSortKey));
+        builder.<ListAiApplicationsRequest.SortDirEnum>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAiApplicationsRequest.SortDirEnum.class),
+            f -> f.withMarshaller(ListAiApplicationsRequest::getSortDir, ListAiApplicationsRequest::setSortDir));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiApplicationsRequest::getOffset, ListAiApplicationsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiApplicationsRequest::getLimit, ListAiApplicationsRequest::setLimit));
+        builder.<ListAiApplicationsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAiApplicationsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListAiApplicationsRequest::getXLanguage, ListAiApplicationsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSupabaseApplicationApiKeysRequest, ListSupabaseApplicationApiKeysResponse> listSupabaseApplicationApiKeys =
+        genForListSupabaseApplicationApiKeys();
+
+    private static HttpRequestDef<ListSupabaseApplicationApiKeysRequest, ListSupabaseApplicationApiKeysResponse> genForListSupabaseApplicationApiKeys() {
+        // basic
+        HttpRequestDef.Builder<ListSupabaseApplicationApiKeysRequest, ListSupabaseApplicationApiKeysResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSupabaseApplicationApiKeysRequest.class,
+                    ListSupabaseApplicationApiKeysResponse.class)
+                .withName("ListSupabaseApplicationApiKeys")
+                .withUri("/v3/{project_id}/ai-application/{application_id}/supabase/api-keys")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupabaseApplicationApiKeysRequest::getApplicationId,
+                ListSupabaseApplicationApiKeysRequest::setApplicationId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupabaseApplicationApiKeysRequest::getName,
+                ListSupabaseApplicationApiKeysRequest::setName));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupabaseApplicationApiKeysRequest::getId,
+                ListSupabaseApplicationApiKeysRequest::setId));
+        builder.<ListSupabaseApplicationApiKeysRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSupabaseApplicationApiKeysRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListSupabaseApplicationApiKeysRequest::getStatus,
+                ListSupabaseApplicationApiKeysRequest::setStatus));
+        builder.<ListSupabaseApplicationApiKeysRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSupabaseApplicationApiKeysRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListSupabaseApplicationApiKeysRequest::getType,
+                ListSupabaseApplicationApiKeysRequest::setType));
+        builder.<String>withRequestField("start_created_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupabaseApplicationApiKeysRequest::getStartCreatedTime,
+                ListSupabaseApplicationApiKeysRequest::setStartCreatedTime));
+        builder.<String>withRequestField("end_created_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupabaseApplicationApiKeysRequest::getEndCreatedTime,
+                ListSupabaseApplicationApiKeysRequest::setEndCreatedTime));
+        builder.<ListSupabaseApplicationApiKeysRequest.SortKeyEnum>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSupabaseApplicationApiKeysRequest.SortKeyEnum.class),
+            f -> f.withMarshaller(ListSupabaseApplicationApiKeysRequest::getSortKey,
+                ListSupabaseApplicationApiKeysRequest::setSortKey));
+        builder.<ListSupabaseApplicationApiKeysRequest.SortDirEnum>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSupabaseApplicationApiKeysRequest.SortDirEnum.class),
+            f -> f.withMarshaller(ListSupabaseApplicationApiKeysRequest::getSortDir,
+                ListSupabaseApplicationApiKeysRequest::setSortDir));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSupabaseApplicationApiKeysRequest::getOffset,
+                ListSupabaseApplicationApiKeysRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSupabaseApplicationApiKeysRequest::getLimit,
+                ListSupabaseApplicationApiKeysRequest::setLimit));
+        builder.<ListSupabaseApplicationApiKeysRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSupabaseApplicationApiKeysRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListSupabaseApplicationApiKeysRequest::getXLanguage,
+                ListSupabaseApplicationApiKeysRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSupabaseApplicationFlavorsRequest, ListSupabaseApplicationFlavorsResponse> listSupabaseApplicationFlavors =
+        genForListSupabaseApplicationFlavors();
+
+    private static HttpRequestDef<ListSupabaseApplicationFlavorsRequest, ListSupabaseApplicationFlavorsResponse> genForListSupabaseApplicationFlavors() {
+        // basic
+        HttpRequestDef.Builder<ListSupabaseApplicationFlavorsRequest, ListSupabaseApplicationFlavorsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSupabaseApplicationFlavorsRequest.class,
+                    ListSupabaseApplicationFlavorsResponse.class)
+                .withName("ListSupabaseApplicationFlavors")
+                .withUri("/v3/{project_id}/ai-application/supabase/flavors")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupabaseApplicationFlavorsRequest::getVersion,
+                ListSupabaseApplicationFlavorsRequest::setVersion));
+        builder.<String>withRequestField("spec_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupabaseApplicationFlavorsRequest::getSpecCode,
+                ListSupabaseApplicationFlavorsRequest::setSpecCode));
+        builder.<String>withRequestField("az_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupabaseApplicationFlavorsRequest::getAzCode,
+                ListSupabaseApplicationFlavorsRequest::setAzCode));
+        builder.<Boolean>withRequestField("is_free",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSupabaseApplicationFlavorsRequest::getIsFree,
+                ListSupabaseApplicationFlavorsRequest::setIsFree));
+        builder.<ListSupabaseApplicationFlavorsRequest.ModeEnum>withRequestField("mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSupabaseApplicationFlavorsRequest.ModeEnum.class),
+            f -> f.withMarshaller(ListSupabaseApplicationFlavorsRequest::getMode,
+                ListSupabaseApplicationFlavorsRequest::setMode));
+        builder.<ListSupabaseApplicationFlavorsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSupabaseApplicationFlavorsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListSupabaseApplicationFlavorsRequest::getXLanguage,
+                ListSupabaseApplicationFlavorsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifySupabaseApplicationAuthConfigRequest, ModifySupabaseApplicationAuthConfigResponse> modifySupabaseApplicationAuthConfig =
+        genForModifySupabaseApplicationAuthConfig();
+
+    private static HttpRequestDef<ModifySupabaseApplicationAuthConfigRequest, ModifySupabaseApplicationAuthConfigResponse> genForModifySupabaseApplicationAuthConfig() {
+        // basic
+        HttpRequestDef.Builder<ModifySupabaseApplicationAuthConfigRequest, ModifySupabaseApplicationAuthConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ModifySupabaseApplicationAuthConfigRequest.class,
+                    ModifySupabaseApplicationAuthConfigResponse.class)
+                .withName("ModifySupabaseApplicationAuthConfig")
+                .withUri("/v3/{project_id}/ai-application/{application_id}/supabase/auth-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifySupabaseApplicationAuthConfigRequest::getApplicationId,
+                ModifySupabaseApplicationAuthConfigRequest::setApplicationId));
+        builder.<ModifySupabaseApplicationAuthConfigRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ModifySupabaseApplicationAuthConfigRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ModifySupabaseApplicationAuthConfigRequest::getXLanguage,
+                ModifySupabaseApplicationAuthConfigRequest::setXLanguage));
+        builder.<ModifySupabaseApplicationAuthConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifySupabaseApplicationAuthConfigRequestBody.class),
+            f -> f.withMarshaller(ModifySupabaseApplicationAuthConfigRequest::getBody,
+                ModifySupabaseApplicationAuthConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifySupabaseApplicationPasswordRequest, ModifySupabaseApplicationPasswordResponse> modifySupabaseApplicationPassword =
+        genForModifySupabaseApplicationPassword();
+
+    private static HttpRequestDef<ModifySupabaseApplicationPasswordRequest, ModifySupabaseApplicationPasswordResponse> genForModifySupabaseApplicationPassword() {
+        // basic
+        HttpRequestDef.Builder<ModifySupabaseApplicationPasswordRequest, ModifySupabaseApplicationPasswordResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ModifySupabaseApplicationPasswordRequest.class,
+                    ModifySupabaseApplicationPasswordResponse.class)
+                .withName("ModifySupabaseApplicationPassword")
+                .withUri("/v3/{project_id}/ai-application/{application_id}/supabase/password")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifySupabaseApplicationPasswordRequest::getApplicationId,
+                ModifySupabaseApplicationPasswordRequest::setApplicationId));
+        builder.<ModifySupabaseApplicationPasswordRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ModifySupabaseApplicationPasswordRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ModifySupabaseApplicationPasswordRequest::getXLanguage,
+                ModifySupabaseApplicationPasswordRequest::setXLanguage));
+        builder.<ModifySupabaseApplicationPasswordRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifySupabaseApplicationPasswordRequestBody.class),
+            f -> f.withMarshaller(ModifySupabaseApplicationPasswordRequest::getBody,
+                ModifySupabaseApplicationPasswordRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifySupabaseApplicationStorageRequest, ModifySupabaseApplicationStorageResponse> modifySupabaseApplicationStorage =
+        genForModifySupabaseApplicationStorage();
+
+    private static HttpRequestDef<ModifySupabaseApplicationStorageRequest, ModifySupabaseApplicationStorageResponse> genForModifySupabaseApplicationStorage() {
+        // basic
+        HttpRequestDef.Builder<ModifySupabaseApplicationStorageRequest, ModifySupabaseApplicationStorageResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ModifySupabaseApplicationStorageRequest.class,
+                    ModifySupabaseApplicationStorageResponse.class)
+                .withName("ModifySupabaseApplicationStorage")
+                .withUri("/v3/{project_id}/ai-application/{application_id}/supabase/storage")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifySupabaseApplicationStorageRequest::getApplicationId,
+                ModifySupabaseApplicationStorageRequest::setApplicationId));
+        builder.<ModifySupabaseApplicationStorageRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ModifySupabaseApplicationStorageRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ModifySupabaseApplicationStorageRequest::getXLanguage,
+                ModifySupabaseApplicationStorageRequest::setXLanguage));
+        builder.<ModifySupabaseApplicationStorageRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifySupabaseApplicationStorageRequestBody.class),
+            f -> f.withMarshaller(ModifySupabaseApplicationStorageRequest::getBody,
+                ModifySupabaseApplicationStorageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetSupabaseApplicationApiKeyRequest, ResetSupabaseApplicationApiKeyResponse> resetSupabaseApplicationApiKey =
+        genForResetSupabaseApplicationApiKey();
+
+    private static HttpRequestDef<ResetSupabaseApplicationApiKeyRequest, ResetSupabaseApplicationApiKeyResponse> genForResetSupabaseApplicationApiKey() {
+        // basic
+        HttpRequestDef.Builder<ResetSupabaseApplicationApiKeyRequest, ResetSupabaseApplicationApiKeyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ResetSupabaseApplicationApiKeyRequest.class,
+                    ResetSupabaseApplicationApiKeyResponse.class)
+                .withName("ResetSupabaseApplicationApiKey")
+                .withUri("/v3/{project_id}/ai-application/{application_id}/supabase/api-key/{key_id}/reset")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetSupabaseApplicationApiKeyRequest::getApplicationId,
+                ResetSupabaseApplicationApiKeyRequest::setApplicationId));
+        builder.<String>withRequestField("key_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetSupabaseApplicationApiKeyRequest::getKeyId,
+                ResetSupabaseApplicationApiKeyRequest::setKeyId));
+        builder.<ResetSupabaseApplicationApiKeyRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ResetSupabaseApplicationApiKeyRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ResetSupabaseApplicationApiKeyRequest::getXLanguage,
+                ResetSupabaseApplicationApiKeyRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestartSupabaseApplicationRequest, RestartSupabaseApplicationResponse> restartSupabaseApplication =
+        genForRestartSupabaseApplication();
+
+    private static HttpRequestDef<RestartSupabaseApplicationRequest, RestartSupabaseApplicationResponse> genForRestartSupabaseApplication() {
+        // basic
+        HttpRequestDef.Builder<RestartSupabaseApplicationRequest, RestartSupabaseApplicationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RestartSupabaseApplicationRequest.class,
+                    RestartSupabaseApplicationResponse.class)
+                .withName("RestartSupabaseApplication")
+                .withUri("/v3/{project_id}/ai-application/{application_id}/restart")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartSupabaseApplicationRequest::getApplicationId,
+                RestartSupabaseApplicationRequest::setApplicationId));
+        builder.<RestartSupabaseApplicationRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RestartSupabaseApplicationRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(RestartSupabaseApplicationRequest::getXLanguage,
+                RestartSupabaseApplicationRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSupabaseApplicationRequest, ShowSupabaseApplicationResponse> showSupabaseApplication =
+        genForShowSupabaseApplication();
+
+    private static HttpRequestDef<ShowSupabaseApplicationRequest, ShowSupabaseApplicationResponse> genForShowSupabaseApplication() {
+        // basic
+        HttpRequestDef.Builder<ShowSupabaseApplicationRequest, ShowSupabaseApplicationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSupabaseApplicationRequest.class, ShowSupabaseApplicationResponse.class)
+            .withName("ShowSupabaseApplication")
+            .withUri("/v3/{project_id}/ai-application/{application_id}/supabase")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSupabaseApplicationRequest::getApplicationId,
+                ShowSupabaseApplicationRequest::setApplicationId));
+        builder.<ShowSupabaseApplicationRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowSupabaseApplicationRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowSupabaseApplicationRequest::getXLanguage,
+                ShowSupabaseApplicationRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSupabaseApplicationApiKeyValueRequest, ShowSupabaseApplicationApiKeyValueResponse> showSupabaseApplicationApiKeyValue =
+        genForShowSupabaseApplicationApiKeyValue();
+
+    private static HttpRequestDef<ShowSupabaseApplicationApiKeyValueRequest, ShowSupabaseApplicationApiKeyValueResponse> genForShowSupabaseApplicationApiKeyValue() {
+        // basic
+        HttpRequestDef.Builder<ShowSupabaseApplicationApiKeyValueRequest, ShowSupabaseApplicationApiKeyValueResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSupabaseApplicationApiKeyValueRequest.class,
+                    ShowSupabaseApplicationApiKeyValueResponse.class)
+                .withName("ShowSupabaseApplicationApiKeyValue")
+                .withUri("/v3/{project_id}/ai-application/{application_id}/supabase/api-key/{key_id}/value")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSupabaseApplicationApiKeyValueRequest::getApplicationId,
+                ShowSupabaseApplicationApiKeyValueRequest::setApplicationId));
+        builder.<String>withRequestField("key_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSupabaseApplicationApiKeyValueRequest::getKeyId,
+                ShowSupabaseApplicationApiKeyValueRequest::setKeyId));
+        builder.<ShowSupabaseApplicationApiKeyValueRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowSupabaseApplicationApiKeyValueRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowSupabaseApplicationApiKeyValueRequest::getXLanguage,
+                ShowSupabaseApplicationApiKeyValueRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSupabaseApplicationAuthConfigRequest, ShowSupabaseApplicationAuthConfigResponse> showSupabaseApplicationAuthConfig =
+        genForShowSupabaseApplicationAuthConfig();
+
+    private static HttpRequestDef<ShowSupabaseApplicationAuthConfigRequest, ShowSupabaseApplicationAuthConfigResponse> genForShowSupabaseApplicationAuthConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowSupabaseApplicationAuthConfigRequest, ShowSupabaseApplicationAuthConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSupabaseApplicationAuthConfigRequest.class,
+                    ShowSupabaseApplicationAuthConfigResponse.class)
+                .withName("ShowSupabaseApplicationAuthConfig")
+                .withUri("/v3/{project_id}/ai-application/{application_id}/supabase/auth-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSupabaseApplicationAuthConfigRequest::getApplicationId,
+                ShowSupabaseApplicationAuthConfigRequest::setApplicationId));
+        builder.<ShowSupabaseApplicationAuthConfigRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowSupabaseApplicationAuthConfigRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowSupabaseApplicationAuthConfigRequest::getXLanguage,
+                ShowSupabaseApplicationAuthConfigRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartSupabaseApplicationRequest, StartSupabaseApplicationResponse> startSupabaseApplication =
+        genForStartSupabaseApplication();
+
+    private static HttpRequestDef<StartSupabaseApplicationRequest, StartSupabaseApplicationResponse> genForStartSupabaseApplication() {
+        // basic
+        HttpRequestDef.Builder<StartSupabaseApplicationRequest, StartSupabaseApplicationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, StartSupabaseApplicationRequest.class, StartSupabaseApplicationResponse.class)
+                .withName("StartSupabaseApplication")
+                .withUri("/v3/{project_id}/ai-application/{application_id}/start")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartSupabaseApplicationRequest::getApplicationId,
+                StartSupabaseApplicationRequest::setApplicationId));
+        builder.<StartSupabaseApplicationRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(StartSupabaseApplicationRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(StartSupabaseApplicationRequest::getXLanguage,
+                StartSupabaseApplicationRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopSupabaseApplicationRequest, StopSupabaseApplicationResponse> stopSupabaseApplication =
+        genForStopSupabaseApplication();
+
+    private static HttpRequestDef<StopSupabaseApplicationRequest, StopSupabaseApplicationResponse> genForStopSupabaseApplication() {
+        // basic
+        HttpRequestDef.Builder<StopSupabaseApplicationRequest, StopSupabaseApplicationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, StopSupabaseApplicationRequest.class, StopSupabaseApplicationResponse.class)
+            .withName("StopSupabaseApplication")
+            .withUri("/v3/{project_id}/ai-application/{application_id}/stop")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopSupabaseApplicationRequest::getApplicationId,
+                StopSupabaseApplicationRequest::setApplicationId));
+        builder.<StopSupabaseApplicationRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(StopSupabaseApplicationRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(StopSupabaseApplicationRequest::getXLanguage,
+                StopSupabaseApplicationRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchSupabaseApplicationEipBindRequest, SwitchSupabaseApplicationEipBindResponse> switchSupabaseApplicationEipBind =
+        genForSwitchSupabaseApplicationEipBind();
+
+    private static HttpRequestDef<SwitchSupabaseApplicationEipBindRequest, SwitchSupabaseApplicationEipBindResponse> genForSwitchSupabaseApplicationEipBind() {
+        // basic
+        HttpRequestDef.Builder<SwitchSupabaseApplicationEipBindRequest, SwitchSupabaseApplicationEipBindResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    SwitchSupabaseApplicationEipBindRequest.class,
+                    SwitchSupabaseApplicationEipBindResponse.class)
+                .withName("SwitchSupabaseApplicationEipBind")
+                .withUri("/v3/{project_id}/ai-application/{application_id}/supabase/public-eip")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchSupabaseApplicationEipBindRequest::getApplicationId,
+                SwitchSupabaseApplicationEipBindRequest::setApplicationId));
+        builder.<SwitchSupabaseApplicationEipBindRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SwitchSupabaseApplicationEipBindRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(SwitchSupabaseApplicationEipBindRequest::getXLanguage,
+                SwitchSupabaseApplicationEipBindRequest::setXLanguage));
+        builder.<SwitchSupabaseApplicationEipBindRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SwitchSupabaseApplicationEipBindRequestBody.class),
+            f -> f.withMarshaller(SwitchSupabaseApplicationEipBindRequest::getBody,
+                SwitchSupabaseApplicationEipBindRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchSupabaseApplicationSslRequest, SwitchSupabaseApplicationSslResponse> switchSupabaseApplicationSsl =
+        genForSwitchSupabaseApplicationSsl();
+
+    private static HttpRequestDef<SwitchSupabaseApplicationSslRequest, SwitchSupabaseApplicationSslResponse> genForSwitchSupabaseApplicationSsl() {
+        // basic
+        HttpRequestDef.Builder<SwitchSupabaseApplicationSslRequest, SwitchSupabaseApplicationSslResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    SwitchSupabaseApplicationSslRequest.class,
+                    SwitchSupabaseApplicationSslResponse.class)
+                .withName("SwitchSupabaseApplicationSsl")
+                .withUri("/v3/{project_id}/ai-application/{application_id}/supabase/switch-ssl")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchSupabaseApplicationSslRequest::getApplicationId,
+                SwitchSupabaseApplicationSslRequest::setApplicationId));
+        builder.<SwitchSupabaseApplicationSslRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SwitchSupabaseApplicationSslRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(SwitchSupabaseApplicationSslRequest::getXLanguage,
+                SwitchSupabaseApplicationSslRequest::setXLanguage));
+        builder.<SwitchSupabaseApplicationSslRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SwitchSupabaseApplicationSslRequestBody.class),
+            f -> f.withMarshaller(SwitchSupabaseApplicationSslRequest::getBody,
+                SwitchSupabaseApplicationSslRequest::setBody));
 
         // response
 

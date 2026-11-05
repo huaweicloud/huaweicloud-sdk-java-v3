@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.vpc.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
@@ -19,6 +22,11 @@ public class UpdateClouddcnSubnetOption {
     @JsonProperty(value = "description")
 
     private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dns_nameservers")
+
+    private List<String> dnsNameservers = null;
 
     public UpdateClouddcnSubnetOption withName(String name) {
         this.name = name;
@@ -43,7 +51,7 @@ public class UpdateClouddcnSubnetOption {
     }
 
     /**
-     * 功能说明：子网描述 取值范围：0-255个字符，不能包含“<”和“>”。
+     * 功能说明：子网描述 取值范围：0-255个字符，不能包含\"<\"和\">\"。
      * @return description
      */
     public String getDescription() {
@@ -52,6 +60,39 @@ public class UpdateClouddcnSubnetOption {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public UpdateClouddcnSubnetOption withDnsNameservers(List<String> dnsNameservers) {
+        this.dnsNameservers = dnsNameservers;
+        return this;
+    }
+
+    public UpdateClouddcnSubnetOption addDnsNameserversItem(String dnsNameserversItem) {
+        if (this.dnsNameservers == null) {
+            this.dnsNameservers = new ArrayList<>();
+        }
+        this.dnsNameservers.add(dnsNameserversItem);
+        return this;
+    }
+
+    public UpdateClouddcnSubnetOption withDnsNameservers(Consumer<List<String>> dnsNameserversSetter) {
+        if (this.dnsNameservers == null) {
+            this.dnsNameservers = new ArrayList<>();
+        }
+        dnsNameserversSetter.accept(this.dnsNameservers);
+        return this;
+    }
+
+    /**
+     * 功能说明：子网关联的DNS服务器信息。
+     * @return dnsNameservers
+     */
+    public List<String> getDnsNameservers() {
+        return dnsNameservers;
+    }
+
+    public void setDnsNameservers(List<String> dnsNameservers) {
+        this.dnsNameservers = dnsNameservers;
     }
 
     @Override
@@ -63,12 +104,13 @@ public class UpdateClouddcnSubnetOption {
             return false;
         }
         UpdateClouddcnSubnetOption that = (UpdateClouddcnSubnetOption) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.dnsNameservers, that.dnsNameservers);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description);
+        return Objects.hash(name, description, dnsNameservers);
     }
 
     @Override
@@ -77,6 +119,7 @@ public class UpdateClouddcnSubnetOption {
         sb.append("class UpdateClouddcnSubnetOption {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    dnsNameservers: ").append(toIndentedString(dnsNameservers)).append("\n");
         sb.append("}");
         return sb.toString();
     }

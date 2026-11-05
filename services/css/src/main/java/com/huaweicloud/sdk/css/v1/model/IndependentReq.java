@@ -53,7 +53,7 @@ public class IndependentReq {
     }
 
     /**
-     * 是否自动支付。下单订购后，是否自动从客户的华为云账户中支付，而不需要客户手动去进行支付。
+     * Get isAutoPay
      * @return isAutoPay
      */
     public Integer getIsAutoPay() {

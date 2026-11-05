@@ -7,9 +7,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * Confs
+ * ListConfsRespConfs
  */
-public class Confs {
+public class ListConfsRespConfs {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -29,7 +29,7 @@ public class Confs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "setting")
 
-    private Setting setting;
+    private ListConfsRespConfsSetting setting;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateAt")
@@ -46,13 +46,13 @@ public class Confs {
 
     private Boolean sensitiveWordsShielding;
 
-    public Confs withName(String name) {
+    public ListConfsRespConfs withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * 配置文件名称。
+     * **参数解释**： 配置文件名称。 **取值范围**： 不涉及
      * @return name
      */
     public String getName() {
@@ -63,13 +63,13 @@ public class Confs {
         this.name = name;
     }
 
-    public Confs withStatus(String status) {
+    public ListConfsRespConfs withStatus(String status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 配置文件状态。
+     * **参数解释**： 配置文件状态。 **取值范围**： - checking：正在检查中。 - available：可用。 - unavailable：不可用。 - starting：正开始。 - working：工作中。 - stopping：正在停止。 - stopped：已经停止。 - restoring：正在回滚。
      * @return status
      */
     public String getStatus() {
@@ -80,13 +80,13 @@ public class Confs {
         this.status = status;
     }
 
-    public Confs withConfContent(String confContent) {
+    public ListConfsRespConfs withConfContent(String confContent) {
         this.confContent = confContent;
         return this;
     }
 
     /**
-     * 配置文件内容。
+     * **参数解释**： 配置文件内容。 **取值范围**： 不涉及
      * @return confContent
      */
     public String getConfContent() {
@@ -97,14 +97,14 @@ public class Confs {
         this.confContent = confContent;
     }
 
-    public Confs withSetting(Setting setting) {
+    public ListConfsRespConfs withSetting(ListConfsRespConfsSetting setting) {
         this.setting = setting;
         return this;
     }
 
-    public Confs withSetting(Consumer<Setting> settingSetter) {
+    public ListConfsRespConfs withSetting(Consumer<ListConfsRespConfsSetting> settingSetter) {
         if (this.setting == null) {
-            this.setting = new Setting();
+            this.setting = new ListConfsRespConfsSetting();
             settingSetter.accept(this.setting);
         }
 
@@ -115,21 +115,21 @@ public class Confs {
      * Get setting
      * @return setting
      */
-    public Setting getSetting() {
+    public ListConfsRespConfsSetting getSetting() {
         return setting;
     }
 
-    public void setSetting(Setting setting) {
+    public void setSetting(ListConfsRespConfsSetting setting) {
         this.setting = setting;
     }
 
-    public Confs withUpdateAt(String updateAt) {
+    public ListConfsRespConfs withUpdateAt(String updateAt) {
         this.updateAt = updateAt;
         return this;
     }
 
     /**
-     * 更新时间。
+     * **参数解释**： 更新时间，格式：yyyy-MM-dd'T'HH:mm:ss。 **取值范围**： 不涉及
      * @return updateAt
      */
     public String getUpdateAt() {
@@ -140,7 +140,7 @@ public class Confs {
         this.updateAt = updateAt;
     }
 
-    public Confs withDesc(String desc) {
+    public ListConfsRespConfs withDesc(String desc) {
         this.desc = desc;
         return this;
     }
@@ -157,13 +157,13 @@ public class Confs {
         this.desc = desc;
     }
 
-    public Confs withSensitiveWordsShielding(Boolean sensitiveWordsShielding) {
+    public ListConfsRespConfs withSensitiveWordsShielding(Boolean sensitiveWordsShielding) {
         this.sensitiveWordsShielding = sensitiveWordsShielding;
         return this;
     }
 
     /**
-     * 是否隐藏敏感词
+     * **参数解释**： 是否隐藏敏感词。 **取值范围**： - true：隐藏敏感词。 - false：未隐藏敏感词。
      * @return sensitiveWordsShielding
      */
     public Boolean getSensitiveWordsShielding() {
@@ -182,7 +182,7 @@ public class Confs {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Confs that = (Confs) obj;
+        ListConfsRespConfs that = (ListConfsRespConfs) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
             && Objects.equals(this.confContent, that.confContent) && Objects.equals(this.setting, that.setting)
             && Objects.equals(this.updateAt, that.updateAt) && Objects.equals(this.desc, that.desc)
@@ -197,7 +197,7 @@ public class Confs {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Confs {\n");
+        sb.append("class ListConfsRespConfs {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    confContent: ").append(toIndentedString(confContent)).append("\n");

@@ -135,6 +135,8 @@ import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowHostDetailRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowHostDetailResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowProjectSuccessRateRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowProjectSuccessRateResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowTaskLogsRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowTaskLogsResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.StartDeployTaskRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.StartDeployTaskResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.TasksSuccessRateQuery;
@@ -2240,6 +2242,48 @@ public class CodeArtsDeployMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowProjectSuccessRateRequest::getEndDate,
                 ShowProjectSuccessRateRequest::setEndDate));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTaskLogsRequest, ShowTaskLogsResponse> showTaskLogs = genForShowTaskLogs();
+
+    private static HttpRequestDef<ShowTaskLogsRequest, ShowTaskLogsResponse> genForShowTaskLogs() {
+        // basic
+        HttpRequestDef.Builder<ShowTaskLogsRequest, ShowTaskLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTaskLogsRequest.class, ShowTaskLogsResponse.class)
+                .withName("ShowTaskLogs")
+                .withUri("/v1/applications/{app_id}/records/{record_id}/logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskLogsRequest::getAppId, ShowTaskLogsRequest::setAppId));
+        builder.<String>withRequestField("record_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskLogsRequest::getRecordId, ShowTaskLogsRequest::setRecordId));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskLogsRequest::getOffset, ShowTaskLogsRequest::setOffset));
+        builder.<String>withRequestField("end_offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskLogsRequest::getEndOffset, ShowTaskLogsRequest::setEndOffset));
+        builder.<String>withRequestField("step_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskLogsRequest::getStepId, ShowTaskLogsRequest::setStepId));
 
         // response
 

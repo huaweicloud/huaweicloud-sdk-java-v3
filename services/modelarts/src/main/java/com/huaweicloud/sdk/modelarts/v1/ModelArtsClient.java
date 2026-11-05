@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.BatchBindPoolNodesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchBindPoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchCreatePoolTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchCreatePoolTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchCreateServiceOpensRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchCreateServiceOpensResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteInferIntranetConnectionsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteInferIntranetConnectionsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteInferServicesRequest;
@@ -73,6 +75,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateAuthGrantRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateAuthGrantResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAuthorizationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAuthorizationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateDevServerJobRequest;
@@ -341,6 +345,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListResourceFlavorsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListResourceFlavorsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListScheduledEventsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListScheduledEventsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListServiceStatusesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListServiceStatusesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingExperimentsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingExperimentsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobEventsRequest;
@@ -375,6 +381,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationReques
 import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchNetworkRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchNetworkResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.PatchNodeConfigRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.PatchNodeConfigResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchNodePoolRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchNodePoolResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchPoolRequest;
@@ -397,6 +405,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.ScaleUpHyperinstanceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ScaleUpHyperinstanceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAlgorithmByUuidRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAlgorithmByUuidResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAuthGrantRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAuthGrantResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAuthmodeDetailRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAuthmodeDetailResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchParamAnalysisResultPathRequest;
@@ -597,6 +607,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.ValidateAuthorizationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ValidateAuthorizationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ValidateTrainingJobNameRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ValidateTrainingJobNameResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.VerifyAgencyRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.VerifyAgencyResponse;
 
 public class ModelArtsClient {
 
@@ -822,6 +834,35 @@ public class ModelArtsClient {
     public SyncInvoker<BatchCreatePoolTagsRequest, BatchCreatePoolTagsResponse> batchCreatePoolTagsInvoker(
         BatchCreatePoolTagsRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.batchCreatePoolTags, hcClient);
+    }
+
+    /**
+     * 一键开通依赖服务
+     *
+     * 一键开通依赖服务接口用于一键开通AOM、CCE、CES、SWR-EE等依赖服务。该接口适用于以下场景：当用户首次使用ModelArts服务或需要批量开通相关依赖服务时，可通过此接口一键完成多个依赖服务的开通操作。使用该接口的前提条件是用户已登录系统、具有相应操作权限且账号余额充足。执行一键开通后，系统将自动为用户开通指定的依赖服务，服务开通后即可正常使用。若用户无权限操作、账号余额不足或服务开通失败，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateServiceOpensRequest 请求对象
+     * @return BatchCreateServiceOpensResponse
+     */
+    public BatchCreateServiceOpensResponse batchCreateServiceOpens(BatchCreateServiceOpensRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.batchCreateServiceOpens);
+    }
+
+    /**
+     * 一键开通依赖服务
+     *
+     * 一键开通依赖服务接口用于一键开通AOM、CCE、CES、SWR-EE等依赖服务。该接口适用于以下场景：当用户首次使用ModelArts服务或需要批量开通相关依赖服务时，可通过此接口一键完成多个依赖服务的开通操作。使用该接口的前提条件是用户已登录系统、具有相应操作权限且账号余额充足。执行一键开通后，系统将自动为用户开通指定的依赖服务，服务开通后即可正常使用。若用户无权限操作、账号余额不足或服务开通失败，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateServiceOpensRequest 请求对象
+     * @return SyncInvoker<BatchCreateServiceOpensRequest, BatchCreateServiceOpensResponse>
+     */
+    public SyncInvoker<BatchCreateServiceOpensRequest, BatchCreateServiceOpensResponse> batchCreateServiceOpensInvoker(
+        BatchCreateServiceOpensRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.batchCreateServiceOpens, hcClient);
     }
 
     /**
@@ -1647,6 +1688,35 @@ public class ModelArtsClient {
     public SyncInvoker<CreateAlgorithmVersionToGalleryRequest, CreateAlgorithmVersionToGalleryResponse> createAlgorithmVersionToGalleryInvoker(
         CreateAlgorithmVersionToGalleryRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.createAlgorithmVersionToGallery, hcClient);
+    }
+
+    /**
+     * 一键授权或重置授权
+     *
+     * 一键授权或重置授权接口用于一键创建ModelArts委托授权或重置已有委托。该接口适用于以下场景：当用户首次使用ModelArts服务需要开通委托授权时，或当现有委托授权出现异常、过期需要重新配置时，可通过此接口一键完成授权操作。使用该接口的前提条件是用户已登录系统且具有相应的操作权限。执行一键授权后，系统将自动创建委托授权关系；执行重置操作后，原有委托将被替换为新的授权。若用户无权限操作或服务异常，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAuthGrantRequest 请求对象
+     * @return CreateAuthGrantResponse
+     */
+    public CreateAuthGrantResponse createAuthGrant(CreateAuthGrantRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.createAuthGrant);
+    }
+
+    /**
+     * 一键授权或重置授权
+     *
+     * 一键授权或重置授权接口用于一键创建ModelArts委托授权或重置已有委托。该接口适用于以下场景：当用户首次使用ModelArts服务需要开通委托授权时，或当现有委托授权出现异常、过期需要重新配置时，可通过此接口一键完成授权操作。使用该接口的前提条件是用户已登录系统且具有相应的操作权限。执行一键授权后，系统将自动创建委托授权关系；执行重置操作后，原有委托将被替换为新的授权。若用户无权限操作或服务异常，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAuthGrantRequest 请求对象
+     * @return SyncInvoker<CreateAuthGrantRequest, CreateAuthGrantResponse>
+     */
+    public SyncInvoker<CreateAuthGrantRequest, CreateAuthGrantResponse> createAuthGrantInvoker(
+        CreateAuthGrantRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.createAuthGrant, hcClient);
     }
 
     /**
@@ -4784,6 +4854,35 @@ public class ModelArtsClient {
     }
 
     /**
+     * 查询依赖服务开通状态
+     *
+     * 查询依赖服务开通状态接口用于查询AOM、CCE、CES、SWR-EE等依赖服务的开通状态。该接口适用于以下场景：当用户需要确认ModelArts相关依赖服务是否已开通时，可通过此接口批量查询各依赖服务的当前状态。使用该接口的前提条件是用户已登录系统且具有相应的查询权限。查询结果将返回各依赖服务的开通状态（已开通或未开通），若用户无权限查询或服务异常，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServiceStatusesRequest 请求对象
+     * @return ListServiceStatusesResponse
+     */
+    public ListServiceStatusesResponse listServiceStatuses(ListServiceStatusesRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.listServiceStatuses);
+    }
+
+    /**
+     * 查询依赖服务开通状态
+     *
+     * 查询依赖服务开通状态接口用于查询AOM、CCE、CES、SWR-EE等依赖服务的开通状态。该接口适用于以下场景：当用户需要确认ModelArts相关依赖服务是否已开通时，可通过此接口批量查询各依赖服务的当前状态。使用该接口的前提条件是用户已登录系统且具有相应的查询权限。查询结果将返回各依赖服务的开通状态（已开通或未开通），若用户无权限查询或服务异常，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServiceStatusesRequest 请求对象
+     * @return SyncInvoker<ListServiceStatusesRequest, ListServiceStatusesResponse>
+     */
+    public SyncInvoker<ListServiceStatusesRequest, ListServiceStatusesResponse> listServiceStatusesInvoker(
+        ListServiceStatusesRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.listServiceStatuses, hcClient);
+    }
+
+    /**
      * 查询训练实验列表
      *
      * 查询训练实验列表接口用于获取ModelArts平台上用户已创建的训练实验的列表。
@@ -5198,6 +5297,35 @@ public class ModelArtsClient {
     }
 
     /**
+     * 更新资源池节点自定义配置
+     *
+     * 更新资源池节点自定义配置接口用于修改资源池节点的个性化设置。该接口适用于以下场景：当资源池节点需要调整资源分配策略、更新性能参数、创建/删除镜像预热任务或变更其他自定义配置时，用户可通过此接口更新指定资源池节点的自定义配置信息。使用该接口的前提条件是资源池节点已存在且用户具有管理员权限。更新操作完成后，资源池节点的自定义配置将被更新并生效，相关变更将被记录以便后续查询。若资源池节点不存在、用户无权限操作或配置参数格式不正确，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PatchNodeConfigRequest 请求对象
+     * @return PatchNodeConfigResponse
+     */
+    public PatchNodeConfigResponse patchNodeConfig(PatchNodeConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.patchNodeConfig);
+    }
+
+    /**
+     * 更新资源池节点自定义配置
+     *
+     * 更新资源池节点自定义配置接口用于修改资源池节点的个性化设置。该接口适用于以下场景：当资源池节点需要调整资源分配策略、更新性能参数、创建/删除镜像预热任务或变更其他自定义配置时，用户可通过此接口更新指定资源池节点的自定义配置信息。使用该接口的前提条件是资源池节点已存在且用户具有管理员权限。更新操作完成后，资源池节点的自定义配置将被更新并生效，相关变更将被记录以便后续查询。若资源池节点不存在、用户无权限操作或配置参数格式不正确，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PatchNodeConfigRequest 请求对象
+     * @return SyncInvoker<PatchNodeConfigRequest, PatchNodeConfigResponse>
+     */
+    public SyncInvoker<PatchNodeConfigRequest, PatchNodeConfigResponse> patchNodeConfigInvoker(
+        PatchNodeConfigRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.patchNodeConfig, hcClient);
+    }
+
+    /**
      * 更新节点池
      *
      * 更新节点池接口用于修改指定节点池的配置信息。该接口适用于以下场景：当需要扩展节点池容量、调整节点规格、优化资源分配或修复节点池配置时，用户可通过此接口更新节点池的相关信息。使用该接口的前提条件是节点池已存在且用户具有管理员权限。更新操作完成后，节点池的配置将被更新，包括节点数量、规格、网络配置等参数。若节点池不存在、用户无权限操作或配置参数错误，接口将返回相应的错误信息。
@@ -5482,6 +5610,34 @@ public class ModelArtsClient {
     public SyncInvoker<ShowAlgorithmByUuidRequest, ShowAlgorithmByUuidResponse> showAlgorithmByUuidInvoker(
         ShowAlgorithmByUuidRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.showAlgorithmByUuid, hcClient);
+    }
+
+    /**
+     * 查询委托授权状态
+     *
+     * 查询委托授权状态接口用于查询ModelArts服务的委托授权是否已开通。该接口适用于以下场景：当用户需要确认是否已开通ModelArts委托授权以进行后续操作（如模型训练、部署等）时，可通过此接口查询当前授权状态。使用该接口的前提条件是用户已登录系统且具有相应的查询权限。查询结果将返回委托授权的当前状态（已开通或未开通），若用户无权限查询或服务异常，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAuthGrantRequest 请求对象
+     * @return ShowAuthGrantResponse
+     */
+    public ShowAuthGrantResponse showAuthGrant(ShowAuthGrantRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.showAuthGrant);
+    }
+
+    /**
+     * 查询委托授权状态
+     *
+     * 查询委托授权状态接口用于查询ModelArts服务的委托授权是否已开通。该接口适用于以下场景：当用户需要确认是否已开通ModelArts委托授权以进行后续操作（如模型训练、部署等）时，可通过此接口查询当前授权状态。使用该接口的前提条件是用户已登录系统且具有相应的查询权限。查询结果将返回委托授权的当前状态（已开通或未开通），若用户无权限查询或服务异常，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAuthGrantRequest 请求对象
+     * @return SyncInvoker<ShowAuthGrantRequest, ShowAuthGrantResponse>
+     */
+    public SyncInvoker<ShowAuthGrantRequest, ShowAuthGrantResponse> showAuthGrantInvoker(ShowAuthGrantRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.showAuthGrant, hcClient);
     }
 
     /**
@@ -7669,6 +7825,34 @@ public class ModelArtsClient {
     public SyncInvoker<ValidateTrainingJobNameRequest, ValidateTrainingJobNameResponse> validateTrainingJobNameInvoker(
         ValidateTrainingJobNameRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.validateTrainingJobName, hcClient);
+    }
+
+    /**
+     * 校验委托使用权限
+     *
+     * 校验当前用户是否有权使用指定委托，仅支持委托给ModelArts服务的委托，通过PDP5的iam:agencies:pass鉴权判定
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request VerifyAgencyRequest 请求对象
+     * @return VerifyAgencyResponse
+     */
+    public VerifyAgencyResponse verifyAgency(VerifyAgencyRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.verifyAgency);
+    }
+
+    /**
+     * 校验委托使用权限
+     *
+     * 校验当前用户是否有权使用指定委托，仅支持委托给ModelArts服务的委托，通过PDP5的iam:agencies:pass鉴权判定
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request VerifyAgencyRequest 请求对象
+     * @return SyncInvoker<VerifyAgencyRequest, VerifyAgencyResponse>
+     */
+    public SyncInvoker<VerifyAgencyRequest, VerifyAgencyResponse> verifyAgencyInvoker(VerifyAgencyRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.verifyAgency, hcClient);
     }
 
     /**

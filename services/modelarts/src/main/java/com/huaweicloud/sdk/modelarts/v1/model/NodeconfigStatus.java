@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * NodeconfigStatus
@@ -16,7 +17,7 @@ import java.util.Objects;
 public class NodeconfigStatus {
 
     /**
-     * **参数解释**： 插件实例的状态。 **取值范围**： 可选值如下： - Pending：安装中，表示插件正在安装中。 - Running：运行中，表示插件全部实例状态都在运行中，插件正常使用。 - Updating：升级中，表示插件正在更新中。 - Abnormal：不可用，表示插件状态异常，插件不可使用。可单击状态查看失败原因。 - Deleting：删除中，表示插件正在删除中。
+     * **参数解释**： 节点配置的执行状态。 **约束限制**：不涉及。 **取值范围**： 可选值如下： - Pending：安装中，表示插件正在安装中。 - Running：运行中，表示插件全部实例状态都在运行中，插件正常使用。 - Updating：升级中，表示插件正在更新中。 - Abnormal：不可用，表示插件状态异常，插件不可使用。可单击状态查看失败原因。 - Deleting：删除中，表示插件正在删除中。 **默认取值**：不涉及。
      */
     public static final class PhaseEnum {
 
@@ -108,13 +109,18 @@ public class NodeconfigStatus {
 
     private PhaseEnum phase;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "configsStatus")
+
+    private NodeconfigStatusConfigsStatus configsStatus;
+
     public NodeconfigStatus withPhase(PhaseEnum phase) {
         this.phase = phase;
         return this;
     }
 
     /**
-     * **参数解释**： 插件实例的状态。 **取值范围**： 可选值如下： - Pending：安装中，表示插件正在安装中。 - Running：运行中，表示插件全部实例状态都在运行中，插件正常使用。 - Updating：升级中，表示插件正在更新中。 - Abnormal：不可用，表示插件状态异常，插件不可使用。可单击状态查看失败原因。 - Deleting：删除中，表示插件正在删除中。
+     * **参数解释**： 节点配置的执行状态。 **约束限制**：不涉及。 **取值范围**： 可选值如下： - Pending：安装中，表示插件正在安装中。 - Running：运行中，表示插件全部实例状态都在运行中，插件正常使用。 - Updating：升级中，表示插件正在更新中。 - Abnormal：不可用，表示插件状态异常，插件不可使用。可单击状态查看失败原因。 - Deleting：删除中，表示插件正在删除中。 **默认取值**：不涉及。
      * @return phase
      */
     public PhaseEnum getPhase() {
@@ -123,6 +129,32 @@ public class NodeconfigStatus {
 
     public void setPhase(PhaseEnum phase) {
         this.phase = phase;
+    }
+
+    public NodeconfigStatus withConfigsStatus(NodeconfigStatusConfigsStatus configsStatus) {
+        this.configsStatus = configsStatus;
+        return this;
+    }
+
+    public NodeconfigStatus withConfigsStatus(Consumer<NodeconfigStatusConfigsStatus> configsStatusSetter) {
+        if (this.configsStatus == null) {
+            this.configsStatus = new NodeconfigStatusConfigsStatus();
+            configsStatusSetter.accept(this.configsStatus);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get configsStatus
+     * @return configsStatus
+     */
+    public NodeconfigStatusConfigsStatus getConfigsStatus() {
+        return configsStatus;
+    }
+
+    public void setConfigsStatus(NodeconfigStatusConfigsStatus configsStatus) {
+        this.configsStatus = configsStatus;
     }
 
     @Override
@@ -134,12 +166,12 @@ public class NodeconfigStatus {
             return false;
         }
         NodeconfigStatus that = (NodeconfigStatus) obj;
-        return Objects.equals(this.phase, that.phase);
+        return Objects.equals(this.phase, that.phase) && Objects.equals(this.configsStatus, that.configsStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(phase);
+        return Objects.hash(phase, configsStatus);
     }
 
     @Override
@@ -147,6 +179,7 @@ public class NodeconfigStatus {
         StringBuilder sb = new StringBuilder();
         sb.append("class NodeconfigStatus {\n");
         sb.append("    phase: ").append(toIndentedString(phase)).append("\n");
+        sb.append("    configsStatus: ").append(toIndentedString(configsStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

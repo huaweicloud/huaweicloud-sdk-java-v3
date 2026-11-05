@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,24 +17,31 @@ public class ListCertsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certsRecords")
 
-    private CertsRecordsDatastore certsRecords;
+    private List<CertsRecordsDatastore> certsRecords = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalSize")
 
     private Integer totalSize;
 
-    public ListCertsResponse withCertsRecords(CertsRecordsDatastore certsRecords) {
+    public ListCertsResponse withCertsRecords(List<CertsRecordsDatastore> certsRecords) {
         this.certsRecords = certsRecords;
         return this;
     }
 
-    public ListCertsResponse withCertsRecords(Consumer<CertsRecordsDatastore> certsRecordsSetter) {
+    public ListCertsResponse addCertsRecordsItem(CertsRecordsDatastore certsRecordsItem) {
         if (this.certsRecords == null) {
-            this.certsRecords = new CertsRecordsDatastore();
-            certsRecordsSetter.accept(this.certsRecords);
+            this.certsRecords = new ArrayList<>();
         }
+        this.certsRecords.add(certsRecordsItem);
+        return this;
+    }
 
+    public ListCertsResponse withCertsRecords(Consumer<List<CertsRecordsDatastore>> certsRecordsSetter) {
+        if (this.certsRecords == null) {
+            this.certsRecords = new ArrayList<>();
+        }
+        certsRecordsSetter.accept(this.certsRecords);
         return this;
     }
 
@@ -40,11 +49,11 @@ public class ListCertsResponse extends SdkResponse {
      * Get certsRecords
      * @return certsRecords
      */
-    public CertsRecordsDatastore getCertsRecords() {
+    public List<CertsRecordsDatastore> getCertsRecords() {
         return certsRecords;
     }
 
-    public void setCertsRecords(CertsRecordsDatastore certsRecords) {
+    public void setCertsRecords(List<CertsRecordsDatastore> certsRecords) {
         this.certsRecords = certsRecords;
     }
 

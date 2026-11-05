@@ -24,12 +24,12 @@ public class CreateHyperinstanceGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "npu_count_limit")
 
-    private String npuCountLimit;
+    private Integer npuCountLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "npu_count")
 
-    private String npuCount;
+    private Integer npuCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hyperinstance_cluster_id")
@@ -80,7 +80,7 @@ public class CreateHyperinstanceGroupResponse extends SdkResponse {
         this.name = name;
     }
 
-    public CreateHyperinstanceGroupResponse withNpuCountLimit(String npuCountLimit) {
+    public CreateHyperinstanceGroupResponse withNpuCountLimit(Integer npuCountLimit) {
         this.npuCountLimit = npuCountLimit;
         return this;
     }
@@ -89,15 +89,15 @@ public class CreateHyperinstanceGroupResponse extends SdkResponse {
      * **参数解释**：npu数量限制。 **默认取值**：不涉及。
      * @return npuCountLimit
      */
-    public String getNpuCountLimit() {
+    public Integer getNpuCountLimit() {
         return npuCountLimit;
     }
 
-    public void setNpuCountLimit(String npuCountLimit) {
+    public void setNpuCountLimit(Integer npuCountLimit) {
         this.npuCountLimit = npuCountLimit;
     }
 
-    public CreateHyperinstanceGroupResponse withNpuCount(String npuCount) {
+    public CreateHyperinstanceGroupResponse withNpuCount(Integer npuCount) {
         this.npuCount = npuCount;
         return this;
     }
@@ -106,11 +106,11 @@ public class CreateHyperinstanceGroupResponse extends SdkResponse {
      * **参数解释**：npu数量。 **默认取值**：不涉及。
      * @return npuCount
      */
-    public String getNpuCount() {
+    public Integer getNpuCount() {
         return npuCount;
     }
 
-    public void setNpuCount(String npuCount) {
+    public void setNpuCount(Integer npuCount) {
         this.npuCount = npuCount;
     }
 

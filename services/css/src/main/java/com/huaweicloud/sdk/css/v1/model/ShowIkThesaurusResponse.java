@@ -59,7 +59,7 @@ public class ShowIkThesaurusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateTime")
 
-    private String updateTime;
+    private Integer updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateDetails")
@@ -229,7 +229,7 @@ public class ShowIkThesaurusResponse extends SdkResponse {
         this.extraStopObj = extraStopObj;
     }
 
-    public ShowIkThesaurusResponse withUpdateTime(String updateTime) {
+    public ShowIkThesaurusResponse withUpdateTime(Integer updateTime) {
         this.updateTime = updateTime;
         return this;
     }
@@ -238,11 +238,11 @@ public class ShowIkThesaurusResponse extends SdkResponse {
      * 词库最近更新时间。
      * @return updateTime
      */
-    public String getUpdateTime() {
+    public Integer getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(String updateTime) {
+    public void setUpdateTime(Integer updateTime) {
         this.updateTime = updateTime;
     }
 

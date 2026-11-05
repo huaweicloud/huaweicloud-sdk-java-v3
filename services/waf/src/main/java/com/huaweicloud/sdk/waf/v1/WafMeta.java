@@ -7,17 +7,28 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.waf.v1.model.AccessProgress;
 import com.huaweicloud.sdk.waf.v1.model.AccessStatusBody;
+import com.huaweicloud.sdk.waf.v1.model.AddImagesBody;
+import com.huaweicloud.sdk.waf.v1.model.AddImagesRequest;
+import com.huaweicloud.sdk.waf.v1.model.AddImagesResponse;
 import com.huaweicloud.sdk.waf.v1.model.AiAppCreateRequest;
 import com.huaweicloud.sdk.waf.v1.model.AiAppPolicyUpdateRequest;
 import com.huaweicloud.sdk.waf.v1.model.AiAppProtectStatusRequest;
 import com.huaweicloud.sdk.waf.v1.model.AiAppSettingRequest;
 import com.huaweicloud.sdk.waf.v1.model.AiAppUpdateRequest;
 import com.huaweicloud.sdk.waf.v1.model.AiGuardTimeLineItem;
+import com.huaweicloud.sdk.waf.v1.model.AiguardAtlasBatchDeleteBody;
+import com.huaweicloud.sdk.waf.v1.model.AiguardAtlasBody;
+import com.huaweicloud.sdk.waf.v1.model.AiguardAtlasUpdateBody;
 import com.huaweicloud.sdk.waf.v1.model.AiguardCustomAnswersBatchDeleteBody;
 import com.huaweicloud.sdk.waf.v1.model.AiguardCustomAnswersBody;
 import com.huaweicloud.sdk.waf.v1.model.AiguardCustomAnswersUpdateBody;
 import com.huaweicloud.sdk.waf.v1.model.AiguardCustomLlmBody;
 import com.huaweicloud.sdk.waf.v1.model.AiguardCustomLlmUpdateBody;
+import com.huaweicloud.sdk.waf.v1.model.AiguardCustomRegexBody;
+import com.huaweicloud.sdk.waf.v1.model.AiguardCustomRegexSetBatchDeleteBody;
+import com.huaweicloud.sdk.waf.v1.model.AiguardCustomRegexSetBody;
+import com.huaweicloud.sdk.waf.v1.model.AiguardCustomRegexSetUpdateBody;
+import com.huaweicloud.sdk.waf.v1.model.AiguardCustomRegexUpdateBody;
 import com.huaweicloud.sdk.waf.v1.model.ApplyCertificateToHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.ApplyCertificateToHostRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.ApplyCertificateToHostResponse;
@@ -61,6 +72,8 @@ import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAiGuardRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAlertNoticeConfigBody;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAlertNoticeConfigRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAlertNoticeConfigResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAtlasesRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAtlasesResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCompositeHostsRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCompositeHostsRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCompositeHostsResponse;
@@ -68,6 +81,8 @@ import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomAnswersRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomAnswersResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomLlmRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomLlmResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomRegexSetRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCustomRegexSetResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeletePoliciesRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeletePoliciesRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeletePoliciesResponse;
@@ -166,6 +181,8 @@ import com.huaweicloud.sdk.waf.v1.model.CreateAnticrawlerRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateAntileakageRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateAntileakageRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.CreateAntileakageRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateAtlasRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateAtlasResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateBotMTrafficDetectionConditionRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateBotMTrafficDetectionConditionResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateCcRuleRequest;
@@ -181,6 +198,10 @@ import com.huaweicloud.sdk.waf.v1.model.CreateCustomAnswersRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateCustomAnswersResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateCustomLlmRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateCustomLlmResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateCustomRegexRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateCustomRegexResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateCustomRegexSetRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateCustomRegexSetResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateCustomRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateCustomRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.CreateCustomRuleResponse;
@@ -216,6 +237,8 @@ import com.huaweicloud.sdk.waf.v1.model.CreatePremiumHostResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreatePrepaidCloudWafRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreatePrepaidCloudWafRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.CreatePrepaidCloudWafResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreatePresignedUploadUrlRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreatePresignedUploadUrlResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreatePrivacyRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreatePrivacyRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.CreatePrivacyRuleResponse;
@@ -224,6 +247,8 @@ import com.huaweicloud.sdk.waf.v1.model.CreatePunishmentRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.CreatePunishmentRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateQuickAccessDomainRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateQuickAccessDomainResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateRegexTestRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateRegexTestResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateSecurityReportSubscriptionRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateSecurityReportSubscriptionRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.CreateSecurityReportSubscriptionResponse;
@@ -250,6 +275,8 @@ import com.huaweicloud.sdk.waf.v1.model.DeleteAntileakageRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAntileakageRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAntitamperRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAntitamperRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAtlasRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAtlasResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteBotMTrafficDetectionConditionRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteBotMTrafficDetectionConditionResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCcRuleRequest;
@@ -262,6 +289,10 @@ import com.huaweicloud.sdk.waf.v1.model.DeleteCustomAnswersRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCustomAnswersResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCustomLlmRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCustomLlmResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteCustomRegexRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteCustomRegexResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteCustomRegexSetRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteCustomRegexSetResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCustomRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteCustomRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteGeoipRuleRequest;
@@ -312,6 +343,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListAntileakageRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListAntileakageRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListAntitamperRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListAntitamperRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListAtlasesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListAtlasesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListAttackActionTypesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListAttackActionTypesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListBandwidthTimelineRequest;
@@ -332,6 +365,10 @@ import com.huaweicloud.sdk.waf.v1.model.ListCustomLlmRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCustomLlmResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCustomPolicyRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCustomPolicyRulesResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListCustomRegexRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListCustomRegexResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListCustomRegexSetRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListCustomRegexSetResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCustomRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCustomRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListEventLogRequest;
@@ -350,6 +387,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListIgnorePolicyRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListIgnorePolicyRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListIgnoreRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListIgnoreRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListImagesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListImagesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListInstancePoolsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListInstancePoolsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListInstanceRequest;
@@ -431,6 +470,11 @@ import com.huaweicloud.sdk.waf.v1.model.MigrateCompositeHostsRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.MigrateCompositeHostsResponse;
 import com.huaweicloud.sdk.waf.v1.model.PolicyRuleIdRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.PremiumWafAgencyRequest;
+import com.huaweicloud.sdk.waf.v1.model.PresignUploadUrlBody;
+import com.huaweicloud.sdk.waf.v1.model.RegexTestRequest;
+import com.huaweicloud.sdk.waf.v1.model.RemoveImagesBody;
+import com.huaweicloud.sdk.waf.v1.model.RemoveImagesRequest;
+import com.huaweicloud.sdk.waf.v1.model.RemoveImagesResponse;
 import com.huaweicloud.sdk.waf.v1.model.RenameInstanceRequest;
 import com.huaweicloud.sdk.waf.v1.model.RenameInstanceRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.RenameInstanceResponse;
@@ -458,6 +502,8 @@ import com.huaweicloud.sdk.waf.v1.model.ShowAntileakageRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowAntileakageRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowAntitamperRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowAntitamperRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowAtlasRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowAtlasResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowBotMRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowBotMRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowCcRuleRequest;
@@ -472,6 +518,8 @@ import com.huaweicloud.sdk.waf.v1.model.ShowCustomAnswersRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowCustomAnswersResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowCustomLlmRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowCustomLlmResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowCustomRegexSetRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowCustomRegexSetResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowCustomRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowCustomRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowEventRequest;
@@ -554,6 +602,8 @@ import com.huaweicloud.sdk.waf.v1.model.UpdateAnticrawlerRuleTypeResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAntileakageRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAntileakageRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAntileakageRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAtlasRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAtlasResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateBotMCategoryStatusRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateBotMCategoryStatusResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateBotMRuleActionRequest;
@@ -580,6 +630,10 @@ import com.huaweicloud.sdk.waf.v1.model.UpdateCustomAnswersRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCustomAnswersResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCustomLlmRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCustomLlmResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateCustomRegexRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateCustomRegexResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateCustomRegexSetRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateCustomRegexSetResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCustomRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCustomRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCustomRuleResponse;
@@ -8922,6 +8976,280 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddImagesRequest, AddImagesResponse> addImages = genForAddImages();
+
+    private static HttpRequestDef<AddImagesRequest, AddImagesResponse> genForAddImages() {
+        // basic
+        HttpRequestDef.Builder<AddImagesRequest, AddImagesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddImagesRequest.class, AddImagesResponse.class)
+                .withName("AddImages")
+                .withUri("/v1/{project_id}/aiguard/atlases/{atlas_id}/images")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("atlas_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddImagesRequest::getAtlasId, AddImagesRequest::setAtlasId));
+        builder.<AddImagesBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddImagesBody.class),
+            f -> f.withMarshaller(AddImagesRequest::getBody, AddImagesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteAtlasesRequest, BatchDeleteAtlasesResponse> batchDeleteAtlases =
+        genForBatchDeleteAtlases();
+
+    private static HttpRequestDef<BatchDeleteAtlasesRequest, BatchDeleteAtlasesResponse> genForBatchDeleteAtlases() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteAtlasesRequest, BatchDeleteAtlasesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteAtlasesRequest.class, BatchDeleteAtlasesResponse.class)
+                .withName("BatchDeleteAtlases")
+                .withUri("/v1/{project_id}/aiguard/atlases/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AiguardAtlasBatchDeleteBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AiguardAtlasBatchDeleteBody.class),
+            f -> f.withMarshaller(BatchDeleteAtlasesRequest::getBody, BatchDeleteAtlasesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAtlasRequest, CreateAtlasResponse> createAtlas = genForCreateAtlas();
+
+    private static HttpRequestDef<CreateAtlasRequest, CreateAtlasResponse> genForCreateAtlas() {
+        // basic
+        HttpRequestDef.Builder<CreateAtlasRequest, CreateAtlasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAtlasRequest.class, CreateAtlasResponse.class)
+                .withName("CreateAtlas")
+                .withUri("/v1/{project_id}/aiguard/atlases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AiguardAtlasBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AiguardAtlasBody.class),
+            f -> f.withMarshaller(CreateAtlasRequest::getBody, CreateAtlasRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePresignedUploadUrlRequest, CreatePresignedUploadUrlResponse> createPresignedUploadUrl =
+        genForCreatePresignedUploadUrl();
+
+    private static HttpRequestDef<CreatePresignedUploadUrlRequest, CreatePresignedUploadUrlResponse> genForCreatePresignedUploadUrl() {
+        // basic
+        HttpRequestDef.Builder<CreatePresignedUploadUrlRequest, CreatePresignedUploadUrlResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreatePresignedUploadUrlRequest.class, CreatePresignedUploadUrlResponse.class)
+                .withName("CreatePresignedUploadUrl")
+                .withUri("/v1/{project_id}/aiguard/atlases/{atlas_id}/images/presigned-upload-url")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("atlas_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePresignedUploadUrlRequest::getAtlasId,
+                CreatePresignedUploadUrlRequest::setAtlasId));
+        builder.<PresignUploadUrlBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PresignUploadUrlBody.class),
+            f -> f.withMarshaller(CreatePresignedUploadUrlRequest::getBody, CreatePresignedUploadUrlRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAtlasRequest, DeleteAtlasResponse> deleteAtlas = genForDeleteAtlas();
+
+    private static HttpRequestDef<DeleteAtlasRequest, DeleteAtlasResponse> genForDeleteAtlas() {
+        // basic
+        HttpRequestDef.Builder<DeleteAtlasRequest, DeleteAtlasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAtlasRequest.class, DeleteAtlasResponse.class)
+                .withName("DeleteAtlas")
+                .withUri("/v1/{project_id}/aiguard/atlases/{atlas_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("atlas_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAtlasRequest::getAtlasId, DeleteAtlasRequest::setAtlasId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAtlasesRequest, ListAtlasesResponse> listAtlases = genForListAtlases();
+
+    private static HttpRequestDef<ListAtlasesRequest, ListAtlasesResponse> genForListAtlases() {
+        // basic
+        HttpRequestDef.Builder<ListAtlasesRequest, ListAtlasesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAtlasesRequest.class, ListAtlasesResponse.class)
+                .withName("ListAtlases")
+                .withUri("/v1/{project_id}/aiguard/atlases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAtlasesRequest::getOffset, ListAtlasesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAtlasesRequest::getLimit, ListAtlasesRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAtlasesRequest::getName, ListAtlasesRequest::setName));
+        builder.<Integer>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAtlasesRequest::getType, ListAtlasesRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListImagesRequest, ListImagesResponse> listImages = genForListImages();
+
+    private static HttpRequestDef<ListImagesRequest, ListImagesResponse> genForListImages() {
+        // basic
+        HttpRequestDef.Builder<ListImagesRequest, ListImagesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListImagesRequest.class, ListImagesResponse.class)
+                .withName("ListImages")
+                .withUri("/v1/{project_id}/aiguard/atlases/{atlas_id}/images")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("atlas_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImagesRequest::getAtlasId, ListImagesRequest::setAtlasId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImagesRequest::getOffset, ListImagesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImagesRequest::getLimit, ListImagesRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImagesRequest::getName, ListImagesRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RemoveImagesRequest, RemoveImagesResponse> removeImages = genForRemoveImages();
+
+    private static HttpRequestDef<RemoveImagesRequest, RemoveImagesResponse> genForRemoveImages() {
+        // basic
+        HttpRequestDef.Builder<RemoveImagesRequest, RemoveImagesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, RemoveImagesRequest.class, RemoveImagesResponse.class)
+                .withName("RemoveImages")
+                .withUri("/v1/{project_id}/aiguard/atlases/{atlas_id}/images")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("atlas_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveImagesRequest::getAtlasId, RemoveImagesRequest::setAtlasId));
+        builder.<RemoveImagesBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RemoveImagesBody.class),
+            f -> f.withMarshaller(RemoveImagesRequest::getBody, RemoveImagesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAtlasRequest, ShowAtlasResponse> showAtlas = genForShowAtlas();
+
+    private static HttpRequestDef<ShowAtlasRequest, ShowAtlasResponse> genForShowAtlas() {
+        // basic
+        HttpRequestDef.Builder<ShowAtlasRequest, ShowAtlasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAtlasRequest.class, ShowAtlasResponse.class)
+                .withName("ShowAtlas")
+                .withUri("/v1/{project_id}/aiguard/atlases/{atlas_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("atlas_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAtlasRequest::getAtlasId, ShowAtlasRequest::setAtlasId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAtlasRequest, UpdateAtlasResponse> updateAtlas = genForUpdateAtlas();
+
+    private static HttpRequestDef<UpdateAtlasRequest, UpdateAtlasResponse> genForUpdateAtlas() {
+        // basic
+        HttpRequestDef.Builder<UpdateAtlasRequest, UpdateAtlasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAtlasRequest.class, UpdateAtlasResponse.class)
+                .withName("UpdateAtlas")
+                .withUri("/v1/{project_id}/aiguard/atlases/{atlas_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("atlas_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAtlasRequest::getAtlasId, UpdateAtlasRequest::setAtlasId));
+        builder.<AiguardAtlasUpdateBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AiguardAtlasUpdateBody.class),
+            f -> f.withMarshaller(UpdateAtlasRequest::getBody, UpdateAtlasRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteCustomAnswersRequest, BatchDeleteCustomAnswersResponse> batchDeleteCustomAnswers =
         genForBatchDeleteCustomAnswers();
 
@@ -9247,6 +9575,315 @@ public class WafMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AiguardCustomLlmUpdateBody.class),
             f -> f.withMarshaller(UpdateCustomLlmRequest::getBody, UpdateCustomLlmRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteCustomRegexSetRequest, BatchDeleteCustomRegexSetResponse> batchDeleteCustomRegexSet =
+        genForBatchDeleteCustomRegexSet();
+
+    private static HttpRequestDef<BatchDeleteCustomRegexSetRequest, BatchDeleteCustomRegexSetResponse> genForBatchDeleteCustomRegexSet() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteCustomRegexSetRequest, BatchDeleteCustomRegexSetResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteCustomRegexSetRequest.class,
+                    BatchDeleteCustomRegexSetResponse.class)
+                .withName("BatchDeleteCustomRegexSet")
+                .withUri("/v1/{project_id}/aiguard/custom-regex-sets/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AiguardCustomRegexSetBatchDeleteBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AiguardCustomRegexSetBatchDeleteBody.class),
+            f -> f.withMarshaller(BatchDeleteCustomRegexSetRequest::getBody,
+                BatchDeleteCustomRegexSetRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCustomRegexRequest, CreateCustomRegexResponse> createCustomRegex =
+        genForCreateCustomRegex();
+
+    private static HttpRequestDef<CreateCustomRegexRequest, CreateCustomRegexResponse> genForCreateCustomRegex() {
+        // basic
+        HttpRequestDef.Builder<CreateCustomRegexRequest, CreateCustomRegexResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCustomRegexRequest.class, CreateCustomRegexResponse.class)
+                .withName("CreateCustomRegex")
+                .withUri("/v1/{project_id}/aiguard/custom-regex-sets/{regex_set_id}/regexes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("regex_set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCustomRegexRequest::getRegexSetId, CreateCustomRegexRequest::setRegexSetId));
+        builder.<AiguardCustomRegexBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AiguardCustomRegexBody.class),
+            f -> f.withMarshaller(CreateCustomRegexRequest::getBody, CreateCustomRegexRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCustomRegexSetRequest, CreateCustomRegexSetResponse> createCustomRegexSet =
+        genForCreateCustomRegexSet();
+
+    private static HttpRequestDef<CreateCustomRegexSetRequest, CreateCustomRegexSetResponse> genForCreateCustomRegexSet() {
+        // basic
+        HttpRequestDef.Builder<CreateCustomRegexSetRequest, CreateCustomRegexSetResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateCustomRegexSetRequest.class, CreateCustomRegexSetResponse.class)
+            .withName("CreateCustomRegexSet")
+            .withUri("/v1/{project_id}/aiguard/custom-regex-sets")
+            .withContentType("application/json");
+
+        // requests
+        builder.<AiguardCustomRegexSetBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AiguardCustomRegexSetBody.class),
+            f -> f.withMarshaller(CreateCustomRegexSetRequest::getBody, CreateCustomRegexSetRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRegexTestRequest, CreateRegexTestResponse> createRegexTest =
+        genForCreateRegexTest();
+
+    private static HttpRequestDef<CreateRegexTestRequest, CreateRegexTestResponse> genForCreateRegexTest() {
+        // basic
+        HttpRequestDef.Builder<CreateRegexTestRequest, CreateRegexTestResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRegexTestRequest.class, CreateRegexTestResponse.class)
+                .withName("CreateRegexTest")
+                .withUri("/v1/{project_id}/aiguard/regex-test/test")
+                .withContentType("application/json");
+
+        // requests
+        builder.<RegexTestRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RegexTestRequest.class),
+            f -> f.withMarshaller(CreateRegexTestRequest::getBody, CreateRegexTestRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCustomRegexRequest, DeleteCustomRegexResponse> deleteCustomRegex =
+        genForDeleteCustomRegex();
+
+    private static HttpRequestDef<DeleteCustomRegexRequest, DeleteCustomRegexResponse> genForDeleteCustomRegex() {
+        // basic
+        HttpRequestDef.Builder<DeleteCustomRegexRequest, DeleteCustomRegexResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteCustomRegexRequest.class, DeleteCustomRegexResponse.class)
+                .withName("DeleteCustomRegex")
+                .withUri("/v1/{project_id}/aiguard/custom-regex-sets/{regex_set_id}/regexes/{regex_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("regex_set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCustomRegexRequest::getRegexSetId, DeleteCustomRegexRequest::setRegexSetId));
+        builder.<String>withRequestField("regex_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCustomRegexRequest::getRegexId, DeleteCustomRegexRequest::setRegexId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCustomRegexSetRequest, DeleteCustomRegexSetResponse> deleteCustomRegexSet =
+        genForDeleteCustomRegexSet();
+
+    private static HttpRequestDef<DeleteCustomRegexSetRequest, DeleteCustomRegexSetResponse> genForDeleteCustomRegexSet() {
+        // basic
+        HttpRequestDef.Builder<DeleteCustomRegexSetRequest, DeleteCustomRegexSetResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteCustomRegexSetRequest.class, DeleteCustomRegexSetResponse.class)
+            .withName("DeleteCustomRegexSet")
+            .withUri("/v1/{project_id}/aiguard/custom-regex-sets/{regex_set_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("regex_set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCustomRegexSetRequest::getRegexSetId,
+                DeleteCustomRegexSetRequest::setRegexSetId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCustomRegexRequest, ListCustomRegexResponse> listCustomRegex =
+        genForListCustomRegex();
+
+    private static HttpRequestDef<ListCustomRegexRequest, ListCustomRegexResponse> genForListCustomRegex() {
+        // basic
+        HttpRequestDef.Builder<ListCustomRegexRequest, ListCustomRegexResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCustomRegexRequest.class, ListCustomRegexResponse.class)
+                .withName("ListCustomRegex")
+                .withUri("/v1/{project_id}/aiguard/custom-regex-sets/{regex_set_id}/regexes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("regex_set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomRegexRequest::getRegexSetId, ListCustomRegexRequest::setRegexSetId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomRegexRequest::getName, ListCustomRegexRequest::setName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomRegexRequest::getOffset, ListCustomRegexRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomRegexRequest::getLimit, ListCustomRegexRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCustomRegexSetRequest, ListCustomRegexSetResponse> listCustomRegexSet =
+        genForListCustomRegexSet();
+
+    private static HttpRequestDef<ListCustomRegexSetRequest, ListCustomRegexSetResponse> genForListCustomRegexSet() {
+        // basic
+        HttpRequestDef.Builder<ListCustomRegexSetRequest, ListCustomRegexSetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCustomRegexSetRequest.class, ListCustomRegexSetResponse.class)
+                .withName("ListCustomRegexSet")
+                .withUri("/v1/{project_id}/aiguard/custom-regex-sets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomRegexSetRequest::getName, ListCustomRegexSetRequest::setName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomRegexSetRequest::getOffset, ListCustomRegexSetRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomRegexSetRequest::getLimit, ListCustomRegexSetRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCustomRegexSetRequest, ShowCustomRegexSetResponse> showCustomRegexSet =
+        genForShowCustomRegexSet();
+
+    private static HttpRequestDef<ShowCustomRegexSetRequest, ShowCustomRegexSetResponse> genForShowCustomRegexSet() {
+        // basic
+        HttpRequestDef.Builder<ShowCustomRegexSetRequest, ShowCustomRegexSetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCustomRegexSetRequest.class, ShowCustomRegexSetResponse.class)
+                .withName("ShowCustomRegexSet")
+                .withUri("/v1/{project_id}/aiguard/custom-regex-sets/{regex_set_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("regex_set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCustomRegexSetRequest::getRegexSetId, ShowCustomRegexSetRequest::setRegexSetId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateCustomRegexRequest, UpdateCustomRegexResponse> updateCustomRegex =
+        genForUpdateCustomRegex();
+
+    private static HttpRequestDef<UpdateCustomRegexRequest, UpdateCustomRegexResponse> genForUpdateCustomRegex() {
+        // basic
+        HttpRequestDef.Builder<UpdateCustomRegexRequest, UpdateCustomRegexResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateCustomRegexRequest.class, UpdateCustomRegexResponse.class)
+                .withName("UpdateCustomRegex")
+                .withUri("/v1/{project_id}/aiguard/custom-regex-sets/{regex_set_id}/regexes/{regex_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("regex_set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCustomRegexRequest::getRegexSetId, UpdateCustomRegexRequest::setRegexSetId));
+        builder.<String>withRequestField("regex_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCustomRegexRequest::getRegexId, UpdateCustomRegexRequest::setRegexId));
+        builder.<AiguardCustomRegexUpdateBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AiguardCustomRegexUpdateBody.class),
+            f -> f.withMarshaller(UpdateCustomRegexRequest::getBody, UpdateCustomRegexRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateCustomRegexSetRequest, UpdateCustomRegexSetResponse> updateCustomRegexSet =
+        genForUpdateCustomRegexSet();
+
+    private static HttpRequestDef<UpdateCustomRegexSetRequest, UpdateCustomRegexSetResponse> genForUpdateCustomRegexSet() {
+        // basic
+        HttpRequestDef.Builder<UpdateCustomRegexSetRequest, UpdateCustomRegexSetResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateCustomRegexSetRequest.class, UpdateCustomRegexSetResponse.class)
+            .withName("UpdateCustomRegexSet")
+            .withUri("/v1/{project_id}/aiguard/custom-regex-sets/{regex_set_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("regex_set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCustomRegexSetRequest::getRegexSetId,
+                UpdateCustomRegexSetRequest::setRegexSetId));
+        builder.<AiguardCustomRegexSetUpdateBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AiguardCustomRegexSetUpdateBody.class),
+            f -> f.withMarshaller(UpdateCustomRegexSetRequest::getBody, UpdateCustomRegexSetRequest::setBody));
 
         // response
 

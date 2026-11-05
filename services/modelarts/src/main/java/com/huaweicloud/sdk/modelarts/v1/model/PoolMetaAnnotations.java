@@ -66,6 +66,11 @@ public class PoolMetaAnnotations {
     private String osModelartsPoolSchedulerQueueStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os.modelarts.pool/scheduler.queue.strategy.config")
+
+    private String osModelartsPoolSchedulerQueueStrategyConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os.modelarts.pool/subpools.count")
 
     private String osModelartsPoolSubpoolsCount;
@@ -256,7 +261,7 @@ public class PoolMetaAnnotations {
     }
 
     /**
-     * **参数解释**：资源池调度队列的策略，用于定义任务调度的规则。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * **参数解释**：资源池调度队列的策略，用于定义任务调度的规则。 **取值范围**：枚举：FIFO、Range、Step、Rank。
      * @return osModelartsPoolSchedulerQueueStrategy
      */
     public String getOsModelartsPoolSchedulerQueueStrategy() {
@@ -265,6 +270,24 @@ public class PoolMetaAnnotations {
 
     public void setOsModelartsPoolSchedulerQueueStrategy(String osModelartsPoolSchedulerQueueStrategy) {
         this.osModelartsPoolSchedulerQueueStrategy = osModelartsPoolSchedulerQueueStrategy;
+    }
+
+    public PoolMetaAnnotations withOsModelartsPoolSchedulerQueueStrategyConfig(
+        String osModelartsPoolSchedulerQueueStrategyConfig) {
+        this.osModelartsPoolSchedulerQueueStrategyConfig = osModelartsPoolSchedulerQueueStrategyConfig;
+        return this;
+    }
+
+    /**
+     * **参数解释**：资源池的调度策略配置。 **约束限制**：仅当调度策略为Step或Rank时生效。 **取值范围**：Json字符串，自行配置，示例如下： - Step: {\"step_config\":{\"timeout\":300}} - Rank: {\"rank_config\":[{\"max_priority\":3,\"min_priority\":3,\"rank_strategy\":\"Step\",\"step_config\":{\"timeout\":300}},{\"max_priority\":2,\"min_priority\":1,\"rank_strategy\":\"Range\"}]} **默认取值**：不涉及。
+     * @return osModelartsPoolSchedulerQueueStrategyConfig
+     */
+    public String getOsModelartsPoolSchedulerQueueStrategyConfig() {
+        return osModelartsPoolSchedulerQueueStrategyConfig;
+    }
+
+    public void setOsModelartsPoolSchedulerQueueStrategyConfig(String osModelartsPoolSchedulerQueueStrategyConfig) {
+        this.osModelartsPoolSchedulerQueueStrategyConfig = osModelartsPoolSchedulerQueueStrategyConfig;
     }
 
     public PoolMetaAnnotations withOsModelartsPoolSubpoolsCount(String osModelartsPoolSubpoolsCount) {
@@ -339,6 +362,8 @@ public class PoolMetaAnnotations {
             && Objects.equals(this.osModelartsFlavorResourceIds, that.osModelartsFlavorResourceIds)
             && Objects.equals(this.osModelartsTmsTags, that.osModelartsTmsTags)
             && Objects.equals(this.osModelartsPoolSchedulerQueueStrategy, that.osModelartsPoolSchedulerQueueStrategy)
+            && Objects.equals(this.osModelartsPoolSchedulerQueueStrategyConfig,
+                that.osModelartsPoolSchedulerQueueStrategyConfig)
             && Objects.equals(this.osModelartsPoolSubpoolsCount, that.osModelartsPoolSubpoolsCount)
             && Objects.equals(this.osModelartsTenantDomainName, that.osModelartsTenantDomainName)
             && Objects.equals(this.osModelartsPoolScopeExternalDependencyTrain,
@@ -358,6 +383,7 @@ public class PoolMetaAnnotations {
             osModelartsFlavorResourceIds,
             osModelartsTmsTags,
             osModelartsPoolSchedulerQueueStrategy,
+            osModelartsPoolSchedulerQueueStrategyConfig,
             osModelartsPoolSubpoolsCount,
             osModelartsTenantDomainName,
             osModelartsPoolScopeExternalDependencyTrain);
@@ -383,6 +409,9 @@ public class PoolMetaAnnotations {
         sb.append("    osModelartsTmsTags: ").append(toIndentedString(osModelartsTmsTags)).append("\n");
         sb.append("    osModelartsPoolSchedulerQueueStrategy: ")
             .append(toIndentedString(osModelartsPoolSchedulerQueueStrategy))
+            .append("\n");
+        sb.append("    osModelartsPoolSchedulerQueueStrategyConfig: ")
+            .append(toIndentedString(osModelartsPoolSchedulerQueueStrategyConfig))
             .append("\n");
         sb.append("    osModelartsPoolSubpoolsCount: ")
             .append(toIndentedString(osModelartsPoolSubpoolsCount))

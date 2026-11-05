@@ -11,16 +11,6 @@ import java.util.Objects;
 public class SparkJobMetricStatistics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "retry_attempt")
-
-    private Integer retryAttempt;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "metric_time")
-
-    private Long metricTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_cpu")
 
     private Long currentCpu;
@@ -31,43 +21,9 @@ public class SparkJobMetricStatistics {
     private Long currentMemory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total_cu_hours")
+    @JsonProperty(value = "total_cu_seconds")
 
-    private Double totalCuHours;
-
-    public SparkJobMetricStatistics withRetryAttempt(Integer retryAttempt) {
-        this.retryAttempt = retryAttempt;
-        return this;
-    }
-
-    /**
-     * **参数解释**：当前第几次重试，用于区分同一作业不同重试批次的指标 **取值范围**：最小值为1。
-     * @return retryAttempt
-     */
-    public Integer getRetryAttempt() {
-        return retryAttempt;
-    }
-
-    public void setRetryAttempt(Integer retryAttempt) {
-        this.retryAttempt = retryAttempt;
-    }
-
-    public SparkJobMetricStatistics withMetricTime(Long metricTime) {
-        this.metricTime = metricTime;
-        return this;
-    }
-
-    /**
-     * **参数解释**：指标生成时间。 **取值范围**：unix时间戳，单位为毫秒。
-     * @return metricTime
-     */
-    public Long getMetricTime() {
-        return metricTime;
-    }
-
-    public void setMetricTime(Long metricTime) {
-        this.metricTime = metricTime;
-    }
+    private Long totalCuSeconds;
 
     public SparkJobMetricStatistics withCurrentCpu(Long currentCpu) {
         this.currentCpu = currentCpu;
@@ -103,21 +59,21 @@ public class SparkJobMetricStatistics {
         this.currentMemory = currentMemory;
     }
 
-    public SparkJobMetricStatistics withTotalCuHours(Double totalCuHours) {
-        this.totalCuHours = totalCuHours;
+    public SparkJobMetricStatistics withTotalCuSeconds(Long totalCuSeconds) {
+        this.totalCuSeconds = totalCuSeconds;
         return this;
     }
 
     /**
-     * **参数解释**：估算 CU 时（折算后的小时数，保留4位小数，如 2.3500）。 **取值范围**：大于等于0。
-     * @return totalCuHours
+     * **参数解释**：估算 CU 秒（折算后的秒数，四舍五入取整，如 262）。
+     * @return totalCuSeconds
      */
-    public Double getTotalCuHours() {
-        return totalCuHours;
+    public Long getTotalCuSeconds() {
+        return totalCuSeconds;
     }
 
-    public void setTotalCuHours(Double totalCuHours) {
-        this.totalCuHours = totalCuHours;
+    public void setTotalCuSeconds(Long totalCuSeconds) {
+        this.totalCuSeconds = totalCuSeconds;
     }
 
     @Override
@@ -129,26 +85,23 @@ public class SparkJobMetricStatistics {
             return false;
         }
         SparkJobMetricStatistics that = (SparkJobMetricStatistics) obj;
-        return Objects.equals(this.retryAttempt, that.retryAttempt) && Objects.equals(this.metricTime, that.metricTime)
-            && Objects.equals(this.currentCpu, that.currentCpu)
+        return Objects.equals(this.currentCpu, that.currentCpu)
             && Objects.equals(this.currentMemory, that.currentMemory)
-            && Objects.equals(this.totalCuHours, that.totalCuHours);
+            && Objects.equals(this.totalCuSeconds, that.totalCuSeconds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(retryAttempt, metricTime, currentCpu, currentMemory, totalCuHours);
+        return Objects.hash(currentCpu, currentMemory, totalCuSeconds);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SparkJobMetricStatistics {\n");
-        sb.append("    retryAttempt: ").append(toIndentedString(retryAttempt)).append("\n");
-        sb.append("    metricTime: ").append(toIndentedString(metricTime)).append("\n");
         sb.append("    currentCpu: ").append(toIndentedString(currentCpu)).append("\n");
         sb.append("    currentMemory: ").append(toIndentedString(currentMemory)).append("\n");
-        sb.append("    totalCuHours: ").append(toIndentedString(totalCuHours)).append("\n");
+        sb.append("    totalCuSeconds: ").append(toIndentedString(totalCuSeconds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -130,7 +130,7 @@ public class ListScheduledEventsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private String id;
+    private List<String> id = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodeName")
@@ -201,7 +201,7 @@ public class ListScheduledEventsRequest {
     }
 
     /**
-     * **参数解释**：事件状态。 **约束限制**：不涉及。 **取值范围**：可选择值如下： - inquiring: 待授权, - scheduled: 待执行 - executing: 执行中 - completed: 执行成功 - failed: 执行失败 - canceled: 取消 **默认取值**：不涉及。
+     * **参数解释**：事件状态。 **约束限制**：不涉及。 **取值范围**：可选择值如下： - inquiring: 待授权 - scheduled: 待执行 - executing: 执行中 - completed: 执行成功 - failed: 执行失败 - canceled: 取消 **默认取值**：不涉及。
      * @return state
      */
     public List<StateEnum> getState() {
@@ -245,20 +245,36 @@ public class ListScheduledEventsRequest {
         this.type = type;
     }
 
-    public ListScheduledEventsRequest withId(String id) {
+    public ListScheduledEventsRequest withId(List<String> id) {
         this.id = id;
         return this;
     }
 
+    public ListScheduledEventsRequest addIdItem(String idItem) {
+        if (this.id == null) {
+            this.id = new ArrayList<>();
+        }
+        this.id.add(idItem);
+        return this;
+    }
+
+    public ListScheduledEventsRequest withId(Consumer<List<String>> idSetter) {
+        if (this.id == null) {
+            this.id = new ArrayList<>();
+        }
+        idSetter.accept(this.id);
+        return this;
+    }
+
     /**
-     * **参数解释**：计划事件ID，取值查询计划事件列表接口的event_id字段。 **约束限制**：系统自动生成，只能以小写字母开头，数字、中划线组成，不能以中划线结尾，长度小于63。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * **参数解释**：计划事件ID，取值查询计划事件列表接口的event_id字段。 支持批量筛选，批量筛选时传递多个参数，且最多支持100个。 **约束限制**：系统自动生成，只能以小写字母开头，数字、中划线组成，不能以中划线结尾，长度小于63。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return id
      */
-    public String getId() {
+    public List<String> getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(List<String> id) {
         this.id = id;
     }
 

@@ -108,6 +108,8 @@ import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowHostDetailRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowHostDetailResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowProjectSuccessRateRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowProjectSuccessRateResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowTaskLogsRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowTaskLogsResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.StartDeployTaskRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.StartDeployTaskResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateAppDisableStatusRequest;
@@ -2024,6 +2026,34 @@ public class CodeArtsDeployClient {
     public SyncInvoker<ShowProjectSuccessRateRequest, ShowProjectSuccessRateResponse> showProjectSuccessRateInvoker(
         ShowProjectSuccessRateRequest request) {
         return new SyncInvoker<>(request, CodeArtsDeployMeta.showProjectSuccessRate, hcClient);
+    }
+
+    /**
+     * 查询部署记录的执行日志
+     *
+     * 查询部署记录的执行日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTaskLogsRequest 请求对象
+     * @return ShowTaskLogsResponse
+     */
+    public ShowTaskLogsResponse showTaskLogs(ShowTaskLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsDeployMeta.showTaskLogs);
+    }
+
+    /**
+     * 查询部署记录的执行日志
+     *
+     * 查询部署记录的执行日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTaskLogsRequest 请求对象
+     * @return SyncInvoker<ShowTaskLogsRequest, ShowTaskLogsResponse>
+     */
+    public SyncInvoker<ShowTaskLogsRequest, ShowTaskLogsResponse> showTaskLogsInvoker(ShowTaskLogsRequest request) {
+        return new SyncInvoker<>(request, CodeArtsDeployMeta.showTaskLogs, hcClient);
     }
 
 }

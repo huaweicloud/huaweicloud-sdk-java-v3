@@ -17,19 +17,19 @@ public class ListConfsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confs")
 
-    private List<Confs> confs = null;
+    private List<ListConfsRespConfs> confs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalSize")
 
     private Integer totalSize;
 
-    public ListConfsResponse withConfs(List<Confs> confs) {
+    public ListConfsResponse withConfs(List<ListConfsRespConfs> confs) {
         this.confs = confs;
         return this;
     }
 
-    public ListConfsResponse addConfsItem(Confs confsItem) {
+    public ListConfsResponse addConfsItem(ListConfsRespConfs confsItem) {
         if (this.confs == null) {
             this.confs = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ListConfsResponse extends SdkResponse {
         return this;
     }
 
-    public ListConfsResponse withConfs(Consumer<List<Confs>> confsSetter) {
+    public ListConfsResponse withConfs(Consumer<List<ListConfsRespConfs>> confsSetter) {
         if (this.confs == null) {
             this.confs = new ArrayList<>();
         }
@@ -49,11 +49,11 @@ public class ListConfsResponse extends SdkResponse {
      * 配置文件列表。
      * @return confs
      */
-    public List<Confs> getConfs() {
+    public List<ListConfsRespConfs> getConfs() {
         return confs;
     }
 
-    public void setConfs(List<Confs> confs) {
+    public void setConfs(List<ListConfsRespConfs> confs) {
         this.confs = confs;
     }
 

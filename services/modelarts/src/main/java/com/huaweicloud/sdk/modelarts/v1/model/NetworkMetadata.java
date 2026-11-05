@@ -22,6 +22,11 @@ public class NetworkMetadata {
     private String creationTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deletionTimestamp")
+
+    private String deletionTimestamp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
     private NetworkMetadataLabels labels;
@@ -63,6 +68,23 @@ public class NetworkMetadata {
 
     public void setCreationTimestamp(String creationTimestamp) {
         this.creationTimestamp = creationTimestamp;
+    }
+
+    public NetworkMetadata withDeletionTimestamp(String deletionTimestamp) {
+        this.deletionTimestamp = deletionTimestamp;
+        return this;
+    }
+
+    /**
+     * **参数解释**：网络的删除时间。例如\"2025-12-01T03:49:41Z\"。 **取值范围**：不涉及。
+     * @return deletionTimestamp
+     */
+    public String getDeletionTimestamp() {
+        return deletionTimestamp;
+    }
+
+    public void setDeletionTimestamp(String deletionTimestamp) {
+        this.deletionTimestamp = deletionTimestamp;
     }
 
     public NetworkMetadata withLabels(NetworkMetadataLabels labels) {
@@ -127,12 +149,13 @@ public class NetworkMetadata {
         }
         NetworkMetadata that = (NetworkMetadata) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.creationTimestamp, that.creationTimestamp)
+            && Objects.equals(this.deletionTimestamp, that.deletionTimestamp)
             && Objects.equals(this.labels, that.labels) && Objects.equals(this.annotations, that.annotations);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, creationTimestamp, labels, annotations);
+        return Objects.hash(name, creationTimestamp, deletionTimestamp, labels, annotations);
     }
 
     @Override
@@ -141,6 +164,7 @@ public class NetworkMetadata {
         sb.append("class NetworkMetadata {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");
+        sb.append("    deletionTimestamp: ").append(toIndentedString(deletionTimestamp)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
         sb.append("}");

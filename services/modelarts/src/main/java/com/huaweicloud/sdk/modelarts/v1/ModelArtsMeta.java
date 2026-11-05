@@ -7,6 +7,7 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.modelarts.v1.model.AcceptScheduledEventRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.AcceptScheduledEventResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.AgencyRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.Algorithm;
 import com.huaweicloud.sdk.modelarts.v1.model.AttachDevServerPortRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.AttachDevServerPortResponse;
@@ -16,6 +17,7 @@ import com.huaweicloud.sdk.modelarts.v1.model.AttachDevServerVolumeResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.AttachDynamicStorageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.AttachDynamicStorageResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.AttachServerVolumeRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.AuthGrantRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.AuthorizationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchBindApiKeyRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchBindInferApiKeysRequest;
@@ -25,6 +27,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.BatchBindPoolNodesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchBindPoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchCreatePoolTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchCreatePoolTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchCreateServiceOpensRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchCreateServiceOpensResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteInferIntranetConnectionsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteInferIntranetConnectionsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteInferServicesRequest;
@@ -92,6 +96,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryBod
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateApiKeyReq;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateAuthGrantRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateAuthGrantResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAuthorizationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAuthorizationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateDevServerJobRequest;
@@ -399,6 +405,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListResourceFlavorsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListResourceFlavorsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListScheduledEventsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListScheduledEventsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListServiceStatusesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListServiceStatusesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingExperimentsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingExperimentsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobEventsRequest;
@@ -434,6 +442,7 @@ import com.huaweicloud.sdk.modelarts.v1.model.ModifyTrainingQuotasResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.NetworkCreationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NetworkUpdateRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NodeBatchMigrationRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.NodeconfigUpdate;
 import com.huaweicloud.sdk.modelarts.v1.model.NodesDeletionRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NotebookCreateRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NotebookUpdateRequest;
@@ -441,6 +450,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationReques
 import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchNetworkRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchNetworkResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.PatchNodeConfigRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.PatchNodeConfigResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchNodePoolRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchNodePoolRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchNodePoolResponse;
@@ -477,11 +488,14 @@ import com.huaweicloud.sdk.modelarts.v1.model.ServerOsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ServerRoceNetworkRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ServerScaleDownRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ServerStartRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ServiceBatchOpenRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ServiceCreateRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ServicePodEventResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ServiceUpdateRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAlgorithmByUuidRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAlgorithmByUuidResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAuthGrantRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAuthGrantResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAuthmodeDetailRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAuthmodeDetailResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchParamAnalysisResultPathRequest;
@@ -697,6 +711,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.ValidateAuthorizationRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.ValidateAuthorizationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ValidateTrainingJobNameRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ValidateTrainingJobNameResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.VerifyAgencyRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.VerifyAgencyResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.WorkflowExecution;
 import com.huaweicloud.sdk.modelarts.v1.model.WorkflowMainServiceAuthReq;
 import com.huaweicloud.sdk.modelarts.v1.model.WorkflowParam;
@@ -926,6 +942,29 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTagRequest.class),
             f -> f.withMarshaller(BatchCreatePoolTagsRequest::getBody, BatchCreatePoolTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateServiceOpensRequest, BatchCreateServiceOpensResponse> batchCreateServiceOpens =
+        genForBatchCreateServiceOpens();
+
+    private static HttpRequestDef<BatchCreateServiceOpensRequest, BatchCreateServiceOpensResponse> genForBatchCreateServiceOpens() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateServiceOpensRequest, BatchCreateServiceOpensResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchCreateServiceOpensRequest.class, BatchCreateServiceOpensResponse.class)
+            .withName("BatchCreateServiceOpens")
+            .withUri("/v1/{project_id}/services/batch-open")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ServiceBatchOpenRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ServiceBatchOpenRequest.class),
+            f -> f.withMarshaller(BatchCreateServiceOpensRequest::getBody, BatchCreateServiceOpensRequest::setBody));
 
         // response
 
@@ -1743,6 +1782,29 @@ public class ModelArtsMeta {
             TypeCasts.uncheckedConversion(CreateAlgorithmVersionToGalleryBody.class),
             f -> f.withMarshaller(CreateAlgorithmVersionToGalleryRequest::getBody,
                 CreateAlgorithmVersionToGalleryRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAuthGrantRequest, CreateAuthGrantResponse> createAuthGrant =
+        genForCreateAuthGrant();
+
+    private static HttpRequestDef<CreateAuthGrantRequest, CreateAuthGrantResponse> genForCreateAuthGrant() {
+        // basic
+        HttpRequestDef.Builder<CreateAuthGrantRequest, CreateAuthGrantResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAuthGrantRequest.class, CreateAuthGrantResponse.class)
+                .withName("CreateAuthGrant")
+                .withUri("/v2/{project_id}/auth/grant")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AuthGrantRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AuthGrantRequest.class),
+            f -> f.withMarshaller(CreateAuthGrantRequest::getBody, CreateAuthGrantRequest::setBody));
 
         // response
 
@@ -4012,6 +4074,28 @@ public class ModelArtsMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHyperinstanceGroupRequest::getLimit, ListHyperinstanceGroupRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHyperinstanceGroupRequest::getOffset, ListHyperinstanceGroupRequest::setOffset));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHyperinstanceGroupRequest::getSortKey,
+                ListHyperinstanceGroupRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHyperinstanceGroupRequest::getSortDir,
+                ListHyperinstanceGroupRequest::setSortDir));
 
         // response
 
@@ -4063,6 +4147,30 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListHyperinstanceServersRequest::getId, ListHyperinstanceServersRequest::setId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHyperinstanceServersRequest::getLimit,
+                ListHyperinstanceServersRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHyperinstanceServersRequest::getOffset,
+                ListHyperinstanceServersRequest::setOffset));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHyperinstanceServersRequest::getSortKey,
+                ListHyperinstanceServersRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHyperinstanceServersRequest::getSortDir,
+                ListHyperinstanceServersRequest::setSortDir));
 
         // response
 
@@ -5449,10 +5557,10 @@ public class ModelArtsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListScheduledEventsRequest::getType, ListScheduledEventsRequest::setType));
-        builder.<String>withRequestField("id",
+        builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListScheduledEventsRequest::getId, ListScheduledEventsRequest::setId));
         builder.<String>withRequestField("nodeName",
             LocationType.Query,
@@ -5495,6 +5603,30 @@ public class ModelArtsMeta {
             String.class,
             f -> f.withMarshaller(ListScheduledEventsResponse::getXRequestId,
                 ListScheduledEventsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListServiceStatusesRequest, ListServiceStatusesResponse> listServiceStatuses =
+        genForListServiceStatuses();
+
+    private static HttpRequestDef<ListServiceStatusesRequest, ListServiceStatusesResponse> genForListServiceStatuses() {
+        // basic
+        HttpRequestDef.Builder<ListServiceStatusesRequest, ListServiceStatusesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListServiceStatusesRequest.class, ListServiceStatusesResponse.class)
+                .withName("ListServiceStatuses")
+                .withUri("/v1/{project_id}/services/status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_codes",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServiceStatusesRequest::getServiceCodes,
+                ListServiceStatusesRequest::setServiceCodes));
+
+        // response
+
         return builder.build();
     }
 
@@ -6012,6 +6144,39 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<PatchNodeConfigRequest, PatchNodeConfigResponse> patchNodeConfig =
+        genForPatchNodeConfig();
+
+    private static HttpRequestDef<PatchNodeConfigRequest, PatchNodeConfigResponse> genForPatchNodeConfig() {
+        // basic
+        HttpRequestDef.Builder<PatchNodeConfigRequest, PatchNodeConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, PatchNodeConfigRequest.class, PatchNodeConfigResponse.class)
+                .withName("PatchNodeConfig")
+                .withUri("/v2/{project_id}/pools/{pool_name}/node-config")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("pool_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PatchNodeConfigRequest::getPoolName, PatchNodeConfigRequest::setPoolName));
+        builder.<NodeconfigUpdate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NodeconfigUpdate.class),
+            f -> f.withMarshaller(PatchNodeConfigRequest::getBody, PatchNodeConfigRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(PatchNodeConfigResponse::getXRequestId, PatchNodeConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<PatchNodePoolRequest, PatchNodePoolResponse> patchNodePool =
         genForPatchNodePool();
 
@@ -6294,6 +6459,24 @@ public class ModelArtsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAlgorithmByUuidRequest::getAlgorithmId,
                 ShowAlgorithmByUuidRequest::setAlgorithmId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAuthGrantRequest, ShowAuthGrantResponse> showAuthGrant =
+        genForShowAuthGrant();
+
+    private static HttpRequestDef<ShowAuthGrantRequest, ShowAuthGrantResponse> genForShowAuthGrant() {
+        // basic
+        HttpRequestDef.Builder<ShowAuthGrantRequest, ShowAuthGrantResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAuthGrantRequest.class, ShowAuthGrantResponse.class)
+                .withName("ShowAuthGrant")
+                .withUri("/v2/{project_id}/auth/grant")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -8383,6 +8566,33 @@ public class ModelArtsMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<VerifyAgencyRequest, VerifyAgencyResponse> verifyAgency = genForVerifyAgency();
+
+    private static HttpRequestDef<VerifyAgencyRequest, VerifyAgencyResponse> genForVerifyAgency() {
+        // basic
+        HttpRequestDef.Builder<VerifyAgencyRequest, VerifyAgencyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, VerifyAgencyRequest.class, VerifyAgencyResponse.class)
+                .withName("VerifyAgency")
+                .withUri("/v2/{project_id}/atelier/agency/verify")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<AgencyRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AgencyRequest.class),
+            f -> f.withMarshaller(VerifyAgencyRequest::getBody, VerifyAgencyRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(VerifyAgencyResponse::getXRequestId, VerifyAgencyResponse::setXRequestId));
         return builder.build();
     }
 

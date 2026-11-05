@@ -24,7 +24,7 @@ public class ScheduledEvent {
     private String id;
 
     /**
-     * **参数解释**：事件分类。 **取值范围**：可选值如下： - hardware：硬件维修。 - software：软件维修。
+     * **参数解释**：事件分类。 **取值范围**：不涉及。
      */
     public static final class CatalogEnum {
 
@@ -98,8 +98,13 @@ public class ScheduledEvent {
 
     private CatalogEnum catalog;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isHyperNode")
+
+    private String isHyperNode;
+
     /**
-     * **参数解释**：事件类型。 **取值范围**：可选值如下： - system-maintenance：系统维护 - localdisk-recovery：本地盘恢复 - node_reboot：节点重启 - operation-request：运维授权 - node_maintenance：超节点维护 - node_redeploy：超节点重部署 - node_localdisk_recovery 超节点本地盘恢复。
+     * **参数解释**：事件类型。 **取值范围**：可选值如下： - system-maintenance：系统维护 - localdisk-recovery：本地盘恢复 - node_reboot：节点重启 - operation-request：运维授权 - node_maintenance：超节点维护 - node_redeploy：超节点重部署 - node_localdisk_recovery 超节点本地盘恢复
      */
     public static final class TypeEnum {
 
@@ -209,7 +214,7 @@ public class ScheduledEvent {
     private String description;
 
     /**
-     * **参数解释**：事件状态。 **取值范围**：可选择值如下： - inquiring: 待授权, - scheduled: 待执行, - executing: 执行中, - completed: 执行成功 - failed: 执行失败 - canceled: 取消
+     * **参数解释**：事件状态。 **取值范围**：可选择值如下： - inquiring: 待授权 - scheduled: 待执行 - executing: 执行中 - completed: 执行成功 - failed: 执行失败 - canceled: 取消 - part-completed: 部分成功
      */
     public static final class StateEnum {
 
@@ -243,6 +248,11 @@ public class ScheduledEvent {
          */
         public static final StateEnum CANCELED = new StateEnum("canceled");
 
+        /**
+         * Enum PART_COMPLETED for value: "part-completed"
+         */
+        public static final StateEnum PART_COMPLETED = new StateEnum("part-completed");
+
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StateEnum> createStaticFields() {
@@ -253,6 +263,7 @@ public class ScheduledEvent {
             map.put("completed", COMPLETED);
             map.put("failed", FAILED);
             map.put("canceled", CANCELED);
+            map.put("part-completed", PART_COMPLETED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -307,8 +318,63 @@ public class ScheduledEvent {
 
     private StateEnum state;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publishTime")
+
+    private String publishTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "startTime")
+
+    private String startTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "finishTime")
+
+    private String finishTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "notBefore")
+
+    private String notBefore;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "probeMsg")
+
+    private String probeMsg;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "executeOptions")
+
+    private ExecuteOptions executeOptions;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "redeployType")
+
+    private List<String> redeployType = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "autoRecoveryCheckTime")
+
+    private String autoRecoveryCheckTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nodes")
+
+    private List<NodeEvent> nodes = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instanceId")
+
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nodeName")
+
+    private String nodeName;
+
     /**
-     * **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点 - lite-cluster lite池 - standard 标准池
+     * **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点  - lite-cluster lite池  - standard 标准池 **约束限制**：待废弃: 请使用 nodes[0].instanceType。
      */
     public static final class InstanceTypeEnum {
 
@@ -389,14 +455,14 @@ public class ScheduledEvent {
     private InstanceTypeEnum instanceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instanceId")
+    @JsonProperty(value = "underLyingInstanceId")
 
-    private String instanceId;
+    private String underLyingInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "nodeName")
+    @JsonProperty(value = "flavorSupportRedeploy")
 
-    private String nodeName;
+    private Boolean flavorSupportRedeploy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "poolName")
@@ -409,44 +475,9 @@ public class ScheduledEvent {
     private String poolDisplayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "publishTime")
-
-    private String publishTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "startTime")
-
-    private String startTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "finishTime")
-
-    private String finishTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "notBefore")
-
-    private String notBefore;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "probeMsg")
-
-    private String probeMsg;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobProgress")
 
     private String jobProgress;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "redeployType")
-
-    private List<String> redeployType = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "underLyingInstanceId")
-
-    private String underLyingInstanceId;
 
     public ScheduledEvent withId(String id) {
         this.id = id;
@@ -471,7 +502,7 @@ public class ScheduledEvent {
     }
 
     /**
-     * **参数解释**：事件分类。 **取值范围**：可选值如下： - hardware：硬件维修。 - software：软件维修。
+     * **参数解释**：事件分类。 **取值范围**：不涉及。
      * @return catalog
      */
     public CatalogEnum getCatalog() {
@@ -482,13 +513,30 @@ public class ScheduledEvent {
         this.catalog = catalog;
     }
 
+    public ScheduledEvent withIsHyperNode(String isHyperNode) {
+        this.isHyperNode = isHyperNode;
+        return this;
+    }
+
+    /**
+     * **参数解释**：超节点标识。 **约束限制**：不涉及。 **取值范围**：true / false **默认取值**：false
+     * @return isHyperNode
+     */
+    public String getIsHyperNode() {
+        return isHyperNode;
+    }
+
+    public void setIsHyperNode(String isHyperNode) {
+        this.isHyperNode = isHyperNode;
+    }
+
     public ScheduledEvent withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
     /**
-     * **参数解释**：事件类型。 **取值范围**：可选值如下： - system-maintenance：系统维护 - localdisk-recovery：本地盘恢复 - node_reboot：节点重启 - operation-request：运维授权 - node_maintenance：超节点维护 - node_redeploy：超节点重部署 - node_localdisk_recovery 超节点本地盘恢复。
+     * **参数解释**：事件类型。 **取值范围**：可选值如下： - system-maintenance：系统维护 - localdisk-recovery：本地盘恢复 - node_reboot：节点重启 - operation-request：运维授权 - node_maintenance：超节点维护 - node_redeploy：超节点重部署 - node_localdisk_recovery 超节点本地盘恢复
      * @return type
      */
     public TypeEnum getType() {
@@ -522,7 +570,7 @@ public class ScheduledEvent {
     }
 
     /**
-     * **参数解释**：事件状态。 **取值范围**：可选择值如下： - inquiring: 待授权, - scheduled: 待执行, - executing: 执行中, - completed: 执行成功 - failed: 执行失败 - canceled: 取消
+     * **参数解释**：事件状态。 **取值范围**：可选择值如下： - inquiring: 待授权 - scheduled: 待执行 - executing: 执行中 - completed: 执行成功 - failed: 执行失败 - canceled: 取消 - part-completed: 部分成功
      * @return state
      */
     public StateEnum getState() {
@@ -533,98 +581,13 @@ public class ScheduledEvent {
         this.state = state;
     }
 
-    public ScheduledEvent withInstanceType(InstanceTypeEnum instanceType) {
-        this.instanceType = instanceType;
-        return this;
-    }
-
-    /**
-     * **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点 - lite-cluster lite池 - standard 标准池
-     * @return instanceType
-     */
-    public InstanceTypeEnum getInstanceType() {
-        return instanceType;
-    }
-
-    public void setInstanceType(InstanceTypeEnum instanceType) {
-        this.instanceType = instanceType;
-    }
-
-    public ScheduledEvent withInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-        return this;
-    }
-
-    /**
-     * **参数解释**：服务器ID。计算服务系统自动生成的实例ID，长度小于63。 **取值范围**：不涉及。
-     * @return instanceId
-     */
-    public String getInstanceId() {
-        return instanceId;
-    }
-
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-    }
-
-    public ScheduledEvent withNodeName(String nodeName) {
-        this.nodeName = nodeName;
-        return this;
-    }
-
-    /**
-     * **参数解释**：节点名称，取值自节点详情的metadata.name字段。系统自动生成，只能以小写字母开头，数字、中划线组成，不能以中划线结尾，小于63个字符。 **取值范围**：不涉及。
-     * @return nodeName
-     */
-    public String getNodeName() {
-        return nodeName;
-    }
-
-    public void setNodeName(String nodeName) {
-        this.nodeName = nodeName;
-    }
-
-    public ScheduledEvent withPoolName(String poolName) {
-        this.poolName = poolName;
-        return this;
-    }
-
-    /**
-     * **参数解释**：资源池名称, lite-cluster、standard才具有，取值自资源池详情的metadata.name字段。系统自动生成，只能以小写字母开头，数字、中划线组成，不能以中划线结尾，小于63个字符。 **取值范围**：不涉及。
-     * @return poolName
-     */
-    public String getPoolName() {
-        return poolName;
-    }
-
-    public void setPoolName(String poolName) {
-        this.poolName = poolName;
-    }
-
-    public ScheduledEvent withPoolDisplayName(String poolDisplayName) {
-        this.poolDisplayName = poolDisplayName;
-        return this;
-    }
-
-    /**
-     * **参数解释**：资源池对外显示的名称, lite-cluster、standard才具有，取值自资源池详情的metadata.name字段。只能以小写字母开头，数字、中划线组成，不能以中划线结尾，且长度为[36-63]个字符。 **取值范围**：不涉及。
-     * @return poolDisplayName
-     */
-    public String getPoolDisplayName() {
-        return poolDisplayName;
-    }
-
-    public void setPoolDisplayName(String poolDisplayName) {
-        this.poolDisplayName = poolDisplayName;
-    }
-
     public ScheduledEvent withPublishTime(String publishTime) {
         this.publishTime = publishTime;
         return this;
     }
 
     /**
-     * **参数解释**：事件发布时间。 **约束限制**：格式为UTC时间字符串：2025-09-15T07:02:30Z。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * **参数解释**：事件发布时间。 **取值范围**：不涉及。
      * @return publishTime
      */
     public String getPublishTime() {
@@ -641,7 +604,7 @@ public class ScheduledEvent {
     }
 
     /**
-     * **参数解释**：事件开始时间。 **约束限制**：格式为UTC时间字符串：2025-09-15T07:02:30Z。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * **参数解释**：事件开始时间。 **取值范围**：不涉及。
      * @return startTime
      */
     public String getStartTime() {
@@ -658,7 +621,7 @@ public class ScheduledEvent {
     }
 
     /**
-     * **参数解释**：事件完成时间。 **约束限制**：格式为UTC时间字符串：2025-09-15T07:02:30Z。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * **参数解释**：事件完成时间。 **取值范围**：不涉及。
      * @return finishTime
      */
     public String getFinishTime() {
@@ -675,7 +638,7 @@ public class ScheduledEvent {
     }
 
     /**
-     * **参数解释**：事件计划执行开始时间，格式为UTC时间字符串：2025-09-15T07:02:30Z。 **约束限制**：大于当前时间。 **取值范围**：不涉及。 **默认取值**：不填表示立即执行。
+     * **参数解释**：事件计划执行开始时间，格式为UTC时间字符串：2025-09-15T07:02:30Z。 **取值范围**：不涉及。
      * @return notBefore
      */
     public String getNotBefore() {
@@ -692,7 +655,7 @@ public class ScheduledEvent {
     }
 
     /**
-     * **参数解释**：提示信息。 **约束限制**：系统自动生成，只能以小写字母开头，数字、中划线组成，不能以中划线结尾，长度小于63字符。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * **参数解释**：提示信息。 **取值范围**：不涉及。
      * @return probeMsg
      */
     public String getProbeMsg() {
@@ -703,21 +666,30 @@ public class ScheduledEvent {
         this.probeMsg = probeMsg;
     }
 
-    public ScheduledEvent withJobProgress(String jobProgress) {
-        this.jobProgress = jobProgress;
+    public ScheduledEvent withExecuteOptions(ExecuteOptions executeOptions) {
+        this.executeOptions = executeOptions;
+        return this;
+    }
+
+    public ScheduledEvent withExecuteOptions(Consumer<ExecuteOptions> executeOptionsSetter) {
+        if (this.executeOptions == null) {
+            this.executeOptions = new ExecuteOptions();
+            executeOptionsSetter.accept(this.executeOptions);
+        }
+
         return this;
     }
 
     /**
-     * **参数解释**：计划事件执行的实时进度信息，系统自动生成。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
-     * @return jobProgress
+     * Get executeOptions
+     * @return executeOptions
      */
-    public String getJobProgress() {
-        return jobProgress;
+    public ExecuteOptions getExecuteOptions() {
+        return executeOptions;
     }
 
-    public void setJobProgress(String jobProgress) {
-        this.jobProgress = jobProgress;
+    public void setExecuteOptions(ExecuteOptions executeOptions) {
+        this.executeOptions = executeOptions;
     }
 
     public ScheduledEvent withRedeployType(List<String> redeployType) {
@@ -742,7 +714,7 @@ public class ScheduledEvent {
     }
 
     /**
-     * **参数解释**：节点的重部署类型。 **约束限制**：不涉及。 **取值范围**：可选值如下：- HARD：表示支持强制重部署, - SOFT：表示支持重部署 **默认取值**：不涉及。
+     * **参数解释**：节点重部署类型列表，标识该计划事件支持的重部署方式。 **约束限制**：不涉及。 **取值范围**：可选值如下： - SOFT：表示支持重部署 - HARD：表示支持强制重部署 **默认取值**：不涉及。
      * @return redeployType
      */
     public List<String> getRedeployType() {
@@ -753,13 +725,114 @@ public class ScheduledEvent {
         this.redeployType = redeployType;
     }
 
+    public ScheduledEvent withAutoRecoveryCheckTime(String autoRecoveryCheckTime) {
+        this.autoRecoveryCheckTime = autoRecoveryCheckTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**：事件系统自动授权执行时间，格式为UTC时间字符串：2025-09-15T07:02:30Z。 **取值范围**：不涉及。
+     * @return autoRecoveryCheckTime
+     */
+    public String getAutoRecoveryCheckTime() {
+        return autoRecoveryCheckTime;
+    }
+
+    public void setAutoRecoveryCheckTime(String autoRecoveryCheckTime) {
+        this.autoRecoveryCheckTime = autoRecoveryCheckTime;
+    }
+
+    public ScheduledEvent withNodes(List<NodeEvent> nodes) {
+        this.nodes = nodes;
+        return this;
+    }
+
+    public ScheduledEvent addNodesItem(NodeEvent nodesItem) {
+        if (this.nodes == null) {
+            this.nodes = new ArrayList<>();
+        }
+        this.nodes.add(nodesItem);
+        return this;
+    }
+
+    public ScheduledEvent withNodes(Consumer<List<NodeEvent>> nodesSetter) {
+        if (this.nodes == null) {
+            this.nodes = new ArrayList<>();
+        }
+        nodesSetter.accept(this.nodes);
+        return this;
+    }
+
+    /**
+     * **参数解释**：事件关联节点信息列表。 **取值范围**：不涉及。
+     * @return nodes
+     */
+    public List<NodeEvent> getNodes() {
+        return nodes;
+    }
+
+    public void setNodes(List<NodeEvent> nodes) {
+        this.nodes = nodes;
+    }
+
+    public ScheduledEvent withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * **参数解释**：节点ID。计算服务系统自动生成的实例ID，长度小于63。 **取值范围**：不涉及。 **约束限制**：待废弃: 请使用 nodes[0].InstanceId。
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public ScheduledEvent withNodeName(String nodeName) {
+        this.nodeName = nodeName;
+        return this;
+    }
+
+    /**
+     * **参数解释**：节点名称，取值自节点详情的metadata.name字段。系统自动生成，只能以小写字母开头，数字、中划线组成，不能以中划线结尾，小于63个字符。 **取值范围**：不涉及。 **约束限制**：待废弃: 请使用 nodes[0].nodeName。
+     * @return nodeName
+     */
+    public String getNodeName() {
+        return nodeName;
+    }
+
+    public void setNodeName(String nodeName) {
+        this.nodeName = nodeName;
+    }
+
+    public ScheduledEvent withInstanceType(InstanceTypeEnum instanceType) {
+        this.instanceType = instanceType;
+        return this;
+    }
+
+    /**
+     * **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点  - lite-cluster lite池  - standard 标准池 **约束限制**：待废弃: 请使用 nodes[0].instanceType。
+     * @return instanceType
+     */
+    public InstanceTypeEnum getInstanceType() {
+        return instanceType;
+    }
+
+    public void setInstanceType(InstanceTypeEnum instanceType) {
+        this.instanceType = instanceType;
+    }
+
     public ScheduledEvent withUnderLyingInstanceId(String underLyingInstanceId) {
         this.underLyingInstanceId = underLyingInstanceId;
         return this;
     }
 
     /**
-     * **参数解释**：snt9b23 场景对应ECS服务器ID。计算服务系统自动生成的实例ID，长度小于63。  **取值范围**：snt9b23 涉及, snt9b 不涉及。
+     * **参数解释**：超节点场景对应ECS服务器ID。计算服务系统自动生成的实例ID，长度小于63。  **取值范围**：超节点涉及, snt9b 不涉及。 **约束限制**：待废弃: 请使用 nodes[0].underLyingInstanceId。
      * @return underLyingInstanceId
      */
     public String getUnderLyingInstanceId() {
@@ -768,6 +841,74 @@ public class ScheduledEvent {
 
     public void setUnderLyingInstanceId(String underLyingInstanceId) {
         this.underLyingInstanceId = underLyingInstanceId;
+    }
+
+    public ScheduledEvent withFlavorSupportRedeploy(Boolean flavorSupportRedeploy) {
+        this.flavorSupportRedeploy = flavorSupportRedeploy;
+        return this;
+    }
+
+    /**
+     * **参数解释**：规格是否支持重部署。 **取值范围**：true/false。 **约束限制**：待废弃: 请使用 nodes[0].flavorSupportRedeploy。
+     * @return flavorSupportRedeploy
+     */
+    public Boolean getFlavorSupportRedeploy() {
+        return flavorSupportRedeploy;
+    }
+
+    public void setFlavorSupportRedeploy(Boolean flavorSupportRedeploy) {
+        this.flavorSupportRedeploy = flavorSupportRedeploy;
+    }
+
+    public ScheduledEvent withPoolName(String poolName) {
+        this.poolName = poolName;
+        return this;
+    }
+
+    /**
+     * **参数解释**：资源池名称, lite-cluster、standard才具有，取值自资源池详情的metadata.name字段。系统自动生成，只能以小写字母开头，数字、中划线组成，不能以中划线结尾，小于63个字符。 **取值范围**：不涉及。 **约束限制**：待废弃: 请使用 nodes[0].poolName。
+     * @return poolName
+     */
+    public String getPoolName() {
+        return poolName;
+    }
+
+    public void setPoolName(String poolName) {
+        this.poolName = poolName;
+    }
+
+    public ScheduledEvent withPoolDisplayName(String poolDisplayName) {
+        this.poolDisplayName = poolDisplayName;
+        return this;
+    }
+
+    /**
+     * **参数解释**：资源池对外显示的名称, lite-cluster、standard才具有，取值自资源池详情的metadata.labels字段。只能以小写字母开头，数字、中划线组成，不能以中划线结尾，且长度为[36-63]个字符。 **取值范围**：不涉及。 **约束限制**：待废弃: 请使用 nodes[0].poolDisplayName。
+     * @return poolDisplayName
+     */
+    public String getPoolDisplayName() {
+        return poolDisplayName;
+    }
+
+    public void setPoolDisplayName(String poolDisplayName) {
+        this.poolDisplayName = poolDisplayName;
+    }
+
+    public ScheduledEvent withJobProgress(String jobProgress) {
+        this.jobProgress = jobProgress;
+        return this;
+    }
+
+    /**
+     * **参数解释**：重部署执行的实时进度信息，系统自动生成。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。 **约束限制**：待废弃: 请使用 nodes[0].jobProgress。
+     * @return jobProgress
+     */
+    public String getJobProgress() {
+        return jobProgress;
+    }
+
+    public void setJobProgress(String jobProgress) {
+        this.jobProgress = jobProgress;
     }
 
     @Override
@@ -780,38 +921,47 @@ public class ScheduledEvent {
         }
         ScheduledEvent that = (ScheduledEvent) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.catalog, that.catalog)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.state, that.state) && Objects.equals(this.instanceType, that.instanceType)
-            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.nodeName, that.nodeName)
-            && Objects.equals(this.poolName, that.poolName)
-            && Objects.equals(this.poolDisplayName, that.poolDisplayName)
+            && Objects.equals(this.isHyperNode, that.isHyperNode) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.state, that.state)
             && Objects.equals(this.publishTime, that.publishTime) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.finishTime, that.finishTime) && Objects.equals(this.notBefore, that.notBefore)
-            && Objects.equals(this.probeMsg, that.probeMsg) && Objects.equals(this.jobProgress, that.jobProgress)
+            && Objects.equals(this.probeMsg, that.probeMsg) && Objects.equals(this.executeOptions, that.executeOptions)
             && Objects.equals(this.redeployType, that.redeployType)
-            && Objects.equals(this.underLyingInstanceId, that.underLyingInstanceId);
+            && Objects.equals(this.autoRecoveryCheckTime, that.autoRecoveryCheckTime)
+            && Objects.equals(this.nodes, that.nodes) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.nodeName, that.nodeName) && Objects.equals(this.instanceType, that.instanceType)
+            && Objects.equals(this.underLyingInstanceId, that.underLyingInstanceId)
+            && Objects.equals(this.flavorSupportRedeploy, that.flavorSupportRedeploy)
+            && Objects.equals(this.poolName, that.poolName)
+            && Objects.equals(this.poolDisplayName, that.poolDisplayName)
+            && Objects.equals(this.jobProgress, that.jobProgress);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id,
             catalog,
+            isHyperNode,
             type,
             description,
             state,
-            instanceType,
-            instanceId,
-            nodeName,
-            poolName,
-            poolDisplayName,
             publishTime,
             startTime,
             finishTime,
             notBefore,
             probeMsg,
-            jobProgress,
+            executeOptions,
             redeployType,
-            underLyingInstanceId);
+            autoRecoveryCheckTime,
+            nodes,
+            instanceId,
+            nodeName,
+            instanceType,
+            underLyingInstanceId,
+            flavorSupportRedeploy,
+            poolName,
+            poolDisplayName,
+            jobProgress);
     }
 
     @Override
@@ -820,22 +970,27 @@ public class ScheduledEvent {
         sb.append("class ScheduledEvent {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    catalog: ").append(toIndentedString(catalog)).append("\n");
+        sb.append("    isHyperNode: ").append(toIndentedString(isHyperNode)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
-        sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
-        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    nodeName: ").append(toIndentedString(nodeName)).append("\n");
-        sb.append("    poolName: ").append(toIndentedString(poolName)).append("\n");
-        sb.append("    poolDisplayName: ").append(toIndentedString(poolDisplayName)).append("\n");
         sb.append("    publishTime: ").append(toIndentedString(publishTime)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    finishTime: ").append(toIndentedString(finishTime)).append("\n");
         sb.append("    notBefore: ").append(toIndentedString(notBefore)).append("\n");
         sb.append("    probeMsg: ").append(toIndentedString(probeMsg)).append("\n");
-        sb.append("    jobProgress: ").append(toIndentedString(jobProgress)).append("\n");
+        sb.append("    executeOptions: ").append(toIndentedString(executeOptions)).append("\n");
         sb.append("    redeployType: ").append(toIndentedString(redeployType)).append("\n");
+        sb.append("    autoRecoveryCheckTime: ").append(toIndentedString(autoRecoveryCheckTime)).append("\n");
+        sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    nodeName: ").append(toIndentedString(nodeName)).append("\n");
+        sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
         sb.append("    underLyingInstanceId: ").append(toIndentedString(underLyingInstanceId)).append("\n");
+        sb.append("    flavorSupportRedeploy: ").append(toIndentedString(flavorSupportRedeploy)).append("\n");
+        sb.append("    poolName: ").append(toIndentedString(poolName)).append("\n");
+        sb.append("    poolDisplayName: ").append(toIndentedString(poolDisplayName)).append("\n");
+        sb.append("    jobProgress: ").append(toIndentedString(jobProgress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

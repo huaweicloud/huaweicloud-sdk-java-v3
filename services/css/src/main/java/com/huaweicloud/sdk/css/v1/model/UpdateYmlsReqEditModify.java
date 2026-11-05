@@ -20,6 +20,11 @@ public class UpdateYmlsReqEditModify {
 
     private Object kibanaYml;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "system.config")
+
+    private Object systemConfig;
+
     public UpdateYmlsReqEditModify withElasticsearchYml(Object elasticsearchYml) {
         this.elasticsearchYml = elasticsearchYml;
         return this;
@@ -54,6 +59,23 @@ public class UpdateYmlsReqEditModify {
         this.kibanaYml = kibanaYml;
     }
 
+    public UpdateYmlsReqEditModify withSystemConfig(Object systemConfig) {
+        this.systemConfig = systemConfig;
+        return this;
+    }
+
+    /**
+     * Get systemConfig
+     * @return systemConfig
+     */
+    public Object getSystemConfig() {
+        return systemConfig;
+    }
+
+    public void setSystemConfig(Object systemConfig) {
+        this.systemConfig = systemConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +86,12 @@ public class UpdateYmlsReqEditModify {
         }
         UpdateYmlsReqEditModify that = (UpdateYmlsReqEditModify) obj;
         return Objects.equals(this.elasticsearchYml, that.elasticsearchYml)
-            && Objects.equals(this.kibanaYml, that.kibanaYml);
+            && Objects.equals(this.kibanaYml, that.kibanaYml) && Objects.equals(this.systemConfig, that.systemConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(elasticsearchYml, kibanaYml);
+        return Objects.hash(elasticsearchYml, kibanaYml, systemConfig);
     }
 
     @Override
@@ -78,6 +100,7 @@ public class UpdateYmlsReqEditModify {
         sb.append("class UpdateYmlsReqEditModify {\n");
         sb.append("    elasticsearchYml: ").append(toIndentedString(elasticsearchYml)).append("\n");
         sb.append("    kibanaYml: ").append(toIndentedString(kibanaYml)).append("\n");
+        sb.append("    systemConfig: ").append(toIndentedString(systemConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }
