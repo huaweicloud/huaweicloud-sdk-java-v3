@@ -120,6 +120,8 @@ import com.huaweicloud.sdk.vpc.v2.model.ListSubnetsByTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v2.model.ListSubnetsByTagsResponse;
 import com.huaweicloud.sdk.vpc.v2.model.ListSubnetsRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ListSubnetsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListVpcPeeringInfosRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListVpcPeeringInfosResponse;
 import com.huaweicloud.sdk.vpc.v2.model.ListVpcPeeringsRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ListVpcPeeringsResponse;
 import com.huaweicloud.sdk.vpc.v2.model.ListVpcRoutesRequest;
@@ -1348,6 +1350,59 @@ public class VpcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListSubnetsByTagsRequestBody.class),
             f -> f.withMarshaller(ListSubnetsByTagsRequest::getBody, ListSubnetsByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVpcPeeringInfosRequest, ListVpcPeeringInfosResponse> listVpcPeeringInfos =
+        genForListVpcPeeringInfos();
+
+    private static HttpRequestDef<ListVpcPeeringInfosRequest, ListVpcPeeringInfosResponse> genForListVpcPeeringInfos() {
+        // basic
+        HttpRequestDef.Builder<ListVpcPeeringInfosRequest, ListVpcPeeringInfosResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVpcPeeringInfosRequest.class, ListVpcPeeringInfosResponse.class)
+                .withName("ListVpcPeeringInfos")
+                .withUri("/v2.0/vpc/peering-infos")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVpcPeeringInfosRequest::getId, ListVpcPeeringInfosRequest::setId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVpcPeeringInfosRequest::getLimit, ListVpcPeeringInfosRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcPeeringInfosRequest::getMarker, ListVpcPeeringInfosRequest::setMarker));
+        builder.<List<String>>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVpcPeeringInfosRequest::getName, ListVpcPeeringInfosRequest::setName));
+        builder.<ListVpcPeeringInfosRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListVpcPeeringInfosRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListVpcPeeringInfosRequest::getStatus, ListVpcPeeringInfosRequest::setStatus));
+        builder.<String>withRequestField("tenant_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcPeeringInfosRequest::getTenantId, ListVpcPeeringInfosRequest::setTenantId));
+        builder.<List<String>>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVpcPeeringInfosRequest::getVpcId, ListVpcPeeringInfosRequest::setVpcId));
 
         // response
 

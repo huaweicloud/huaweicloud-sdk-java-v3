@@ -32,7 +32,7 @@ public class CreateSupabaseApplicationRequestBody {
     private String version;
 
     /**
-     * 部署模式。
+     * 部署模式。当前仅支持Single。
      */
     public static final class ModeEnum {
 
@@ -41,17 +41,11 @@ public class CreateSupabaseApplicationRequestBody {
          */
         public static final ModeEnum SINGLE = new ModeEnum("Single");
 
-        /**
-         * Enum HA for value: "Ha"
-         */
-        public static final ModeEnum HA = new ModeEnum("Ha");
-
         private static final Map<String, ModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ModeEnum> createStaticFields() {
             Map<String, ModeEnum> map = new HashMap<>();
             map.put("Single", SINGLE);
-            map.put("Ha", HA);
             return Collections.unmodifiableMap(map);
         }
 
@@ -287,7 +281,7 @@ public class CreateSupabaseApplicationRequestBody {
     }
 
     /**
-     * 部署模式。
+     * 部署模式。当前仅支持Single。
      * @return mode
      */
     public ModeEnum getMode() {
@@ -304,7 +298,7 @@ public class CreateSupabaseApplicationRequestBody {
     }
 
     /**
-     * 规格码，格式 rds.supabase.{...}。Ha模式必须以.ha结尾，Single不得以.ha结尾。
+     * 规格码，格式 rds.supabase.{...}。
      * @return flavorRef
      */
     public String getFlavorRef() {
@@ -321,7 +315,7 @@ public class CreateSupabaseApplicationRequestBody {
     }
 
     /**
-     * 可用区ID。Single=1个，Ha=2个逗号分隔。
+     * 可用区ID。Single模式下为1个可用区。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {

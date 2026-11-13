@@ -1,0 +1,72 @@
+package com.huaweicloud.sdk.doczip.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * 应用发布请求消息
+ */
+public class ReleaseAppReq {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "release_note")
+
+    private String releaseNote;
+
+    public ReleaseAppReq withReleaseNote(String releaseNote) {
+        this.releaseNote = releaseNote;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 发布说明。 **约束限制**： 不涉及。 **取值范围**： [1-500]个字符。 **默认取值**： 不涉及。
+     * @return releaseNote
+     */
+    public String getReleaseNote() {
+        return releaseNote;
+    }
+
+    public void setReleaseNote(String releaseNote) {
+        this.releaseNote = releaseNote;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        ReleaseAppReq that = (ReleaseAppReq) obj;
+        return Objects.equals(this.releaseNote, that.releaseNote);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(releaseNote);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ReleaseAppReq {\n");
+        sb.append("    releaseNote: ").append(toIndentedString(releaseNote)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

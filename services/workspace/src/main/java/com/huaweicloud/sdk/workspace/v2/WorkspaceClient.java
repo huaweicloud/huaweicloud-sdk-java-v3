@@ -3115,6 +3115,7 @@ public class WorkspaceClient {
      * @param request ExportUserLoginInfoNewRequest 请求对象
      * @return ExportUserLoginInfoNewResponse
      */
+    @Deprecated
     public ExportUserLoginInfoNewResponse exportUserLoginInfoNew(ExportUserLoginInfoNewRequest request) {
         return hcClient.syncInvokeHttp(request, WorkspaceMeta.exportUserLoginInfoNew);
     }
@@ -3129,6 +3130,7 @@ public class WorkspaceClient {
      * @param request ExportUserLoginInfoNewRequest 请求对象
      * @return SyncInvoker<ExportUserLoginInfoNewRequest, ExportUserLoginInfoNewResponse>
      */
+    @Deprecated
     public SyncInvoker<ExportUserLoginInfoNewRequest, ExportUserLoginInfoNewResponse> exportUserLoginInfoNewInvoker(
         ExportUserLoginInfoNewRequest request) {
         return new SyncInvoker<>(request, WorkspaceMeta.exportUserLoginInfoNew, hcClient);
@@ -5353,6 +5355,7 @@ public class WorkspaceClient {
      * @param request ListDesktopByTagsRequest 请求对象
      * @return ListDesktopByTagsResponse
      */
+    @Deprecated
     public ListDesktopByTagsResponse listDesktopByTags(ListDesktopByTagsRequest request) {
         return hcClient.syncInvokeHttp(request, WorkspaceMeta.listDesktopByTags);
     }
@@ -5367,6 +5370,7 @@ public class WorkspaceClient {
      * @param request ListDesktopByTagsRequest 请求对象
      * @return SyncInvoker<ListDesktopByTagsRequest, ListDesktopByTagsResponse>
      */
+    @Deprecated
     public SyncInvoker<ListDesktopByTagsRequest, ListDesktopByTagsResponse> listDesktopByTagsInvoker(
         ListDesktopByTagsRequest request) {
         return new SyncInvoker<>(request, WorkspaceMeta.listDesktopByTags, hcClient);

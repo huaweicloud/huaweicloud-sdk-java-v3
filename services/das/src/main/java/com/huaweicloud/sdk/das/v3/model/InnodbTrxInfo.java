@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.das.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * InnoDB事务信息
@@ -104,6 +107,41 @@ public class InnodbTrxInfo {
     @JsonProperty(value = "trx_isolation_level")
 
     private String trxIsolationLevel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trx_unique_checks")
+
+    private String trxUniqueChecks;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trx_foreign_key_checks")
+
+    private String trxForeignKeyChecks;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trx_last_foreign_key_error")
+
+    private String trxLastForeignKeyError;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trx_adaptive_hash_latched")
+
+    private String trxAdaptiveHashLatched;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trx_adaptive_hash_timeout")
+
+    private String trxAdaptiveHashTimeout;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "wait_locks")
+
+    private List<InnodbLock> waitLocks = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hold_locks")
+
+    private List<InnodbLock> holdLocks = null;
 
     public InnodbTrxInfo withTrxId(String trxId) {
         this.trxId = trxId;
@@ -428,6 +466,157 @@ public class InnodbTrxInfo {
         this.trxIsolationLevel = trxIsolationLevel;
     }
 
+    public InnodbTrxInfo withTrxUniqueChecks(String trxUniqueChecks) {
+        this.trxUniqueChecks = trxUniqueChecks;
+        return this;
+    }
+
+    /**
+     * 是否打开唯一性检查的标识
+     * @return trxUniqueChecks
+     */
+    public String getTrxUniqueChecks() {
+        return trxUniqueChecks;
+    }
+
+    public void setTrxUniqueChecks(String trxUniqueChecks) {
+        this.trxUniqueChecks = trxUniqueChecks;
+    }
+
+    public InnodbTrxInfo withTrxForeignKeyChecks(String trxForeignKeyChecks) {
+        this.trxForeignKeyChecks = trxForeignKeyChecks;
+        return this;
+    }
+
+    /**
+     * 是否打开外键检查的标识
+     * @return trxForeignKeyChecks
+     */
+    public String getTrxForeignKeyChecks() {
+        return trxForeignKeyChecks;
+    }
+
+    public void setTrxForeignKeyChecks(String trxForeignKeyChecks) {
+        this.trxForeignKeyChecks = trxForeignKeyChecks;
+    }
+
+    public InnodbTrxInfo withTrxLastForeignKeyError(String trxLastForeignKeyError) {
+        this.trxLastForeignKeyError = trxLastForeignKeyError;
+        return this;
+    }
+
+    /**
+     * 最后一次的外键错误信息
+     * @return trxLastForeignKeyError
+     */
+    public String getTrxLastForeignKeyError() {
+        return trxLastForeignKeyError;
+    }
+
+    public void setTrxLastForeignKeyError(String trxLastForeignKeyError) {
+        this.trxLastForeignKeyError = trxLastForeignKeyError;
+    }
+
+    public InnodbTrxInfo withTrxAdaptiveHashLatched(String trxAdaptiveHashLatched) {
+        this.trxAdaptiveHashLatched = trxAdaptiveHashLatched;
+        return this;
+    }
+
+    /**
+     * 自适应散列索引是否被当前事务锁住的标识
+     * @return trxAdaptiveHashLatched
+     */
+    public String getTrxAdaptiveHashLatched() {
+        return trxAdaptiveHashLatched;
+    }
+
+    public void setTrxAdaptiveHashLatched(String trxAdaptiveHashLatched) {
+        this.trxAdaptiveHashLatched = trxAdaptiveHashLatched;
+    }
+
+    public InnodbTrxInfo withTrxAdaptiveHashTimeout(String trxAdaptiveHashTimeout) {
+        this.trxAdaptiveHashTimeout = trxAdaptiveHashTimeout;
+        return this;
+    }
+
+    /**
+     * 是否立刻放弃为自适应散列索引搜索 LATCH 的标识
+     * @return trxAdaptiveHashTimeout
+     */
+    public String getTrxAdaptiveHashTimeout() {
+        return trxAdaptiveHashTimeout;
+    }
+
+    public void setTrxAdaptiveHashTimeout(String trxAdaptiveHashTimeout) {
+        this.trxAdaptiveHashTimeout = trxAdaptiveHashTimeout;
+    }
+
+    public InnodbTrxInfo withWaitLocks(List<InnodbLock> waitLocks) {
+        this.waitLocks = waitLocks;
+        return this;
+    }
+
+    public InnodbTrxInfo addWaitLocksItem(InnodbLock waitLocksItem) {
+        if (this.waitLocks == null) {
+            this.waitLocks = new ArrayList<>();
+        }
+        this.waitLocks.add(waitLocksItem);
+        return this;
+    }
+
+    public InnodbTrxInfo withWaitLocks(Consumer<List<InnodbLock>> waitLocksSetter) {
+        if (this.waitLocks == null) {
+            this.waitLocks = new ArrayList<>();
+        }
+        waitLocksSetter.accept(this.waitLocks);
+        return this;
+    }
+
+    /**
+     * 等待的锁列表
+     * @return waitLocks
+     */
+    public List<InnodbLock> getWaitLocks() {
+        return waitLocks;
+    }
+
+    public void setWaitLocks(List<InnodbLock> waitLocks) {
+        this.waitLocks = waitLocks;
+    }
+
+    public InnodbTrxInfo withHoldLocks(List<InnodbLock> holdLocks) {
+        this.holdLocks = holdLocks;
+        return this;
+    }
+
+    public InnodbTrxInfo addHoldLocksItem(InnodbLock holdLocksItem) {
+        if (this.holdLocks == null) {
+            this.holdLocks = new ArrayList<>();
+        }
+        this.holdLocks.add(holdLocksItem);
+        return this;
+    }
+
+    public InnodbTrxInfo withHoldLocks(Consumer<List<InnodbLock>> holdLocksSetter) {
+        if (this.holdLocks == null) {
+            this.holdLocks = new ArrayList<>();
+        }
+        holdLocksSetter.accept(this.holdLocks);
+        return this;
+    }
+
+    /**
+     * 持有的锁列表
+     * @return holdLocks
+     */
+    public List<InnodbLock> getHoldLocks() {
+        return holdLocks;
+    }
+
+    public void setHoldLocks(List<InnodbLock> holdLocks) {
+        this.holdLocks = holdLocks;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -454,7 +643,13 @@ public class InnodbTrxInfo {
             && Objects.equals(this.trxRowsLocked, that.trxRowsLocked)
             && Objects.equals(this.trxRowsModified, that.trxRowsModified)
             && Objects.equals(this.trxConcurrencyTickets, that.trxConcurrencyTickets)
-            && Objects.equals(this.trxIsolationLevel, that.trxIsolationLevel);
+            && Objects.equals(this.trxIsolationLevel, that.trxIsolationLevel)
+            && Objects.equals(this.trxUniqueChecks, that.trxUniqueChecks)
+            && Objects.equals(this.trxForeignKeyChecks, that.trxForeignKeyChecks)
+            && Objects.equals(this.trxLastForeignKeyError, that.trxLastForeignKeyError)
+            && Objects.equals(this.trxAdaptiveHashLatched, that.trxAdaptiveHashLatched)
+            && Objects.equals(this.trxAdaptiveHashTimeout, that.trxAdaptiveHashTimeout)
+            && Objects.equals(this.waitLocks, that.waitLocks) && Objects.equals(this.holdLocks, that.holdLocks);
     }
 
     @Override
@@ -477,7 +672,14 @@ public class InnodbTrxInfo {
             trxRowsLocked,
             trxRowsModified,
             trxConcurrencyTickets,
-            trxIsolationLevel);
+            trxIsolationLevel,
+            trxUniqueChecks,
+            trxForeignKeyChecks,
+            trxLastForeignKeyError,
+            trxAdaptiveHashLatched,
+            trxAdaptiveHashTimeout,
+            waitLocks,
+            holdLocks);
     }
 
     @Override
@@ -503,6 +705,13 @@ public class InnodbTrxInfo {
         sb.append("    trxRowsModified: ").append(toIndentedString(trxRowsModified)).append("\n");
         sb.append("    trxConcurrencyTickets: ").append(toIndentedString(trxConcurrencyTickets)).append("\n");
         sb.append("    trxIsolationLevel: ").append(toIndentedString(trxIsolationLevel)).append("\n");
+        sb.append("    trxUniqueChecks: ").append(toIndentedString(trxUniqueChecks)).append("\n");
+        sb.append("    trxForeignKeyChecks: ").append(toIndentedString(trxForeignKeyChecks)).append("\n");
+        sb.append("    trxLastForeignKeyError: ").append(toIndentedString(trxLastForeignKeyError)).append("\n");
+        sb.append("    trxAdaptiveHashLatched: ").append(toIndentedString(trxAdaptiveHashLatched)).append("\n");
+        sb.append("    trxAdaptiveHashTimeout: ").append(toIndentedString(trxAdaptiveHashTimeout)).append("\n");
+        sb.append("    waitLocks: ").append(toIndentedString(waitLocks)).append("\n");
+        sb.append("    holdLocks: ").append(toIndentedString(holdLocks)).append("\n");
         sb.append("}");
         return sb.toString();
     }

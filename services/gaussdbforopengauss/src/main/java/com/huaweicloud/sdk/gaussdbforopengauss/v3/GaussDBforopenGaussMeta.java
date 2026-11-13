@@ -7222,7 +7222,7 @@ public class GaussDBforopenGaussMeta {
                     SwitchLoggerReplicaAvailabilityZonesRequest.class,
                     SwitchLoggerReplicaAvailabilityZonesResponse.class)
                 .withName("SwitchLoggerReplicaAvailabilityZones")
-                .withUri("/v3/{project_id}/instances/{instance_id}/switch-logger-replica/availability_zones")
+                .withUri("/v3/{project_id}/instances/{instance_id}/switch-logger-replica/availability-zones")
                 .withContentType("application/json");
 
         // requests

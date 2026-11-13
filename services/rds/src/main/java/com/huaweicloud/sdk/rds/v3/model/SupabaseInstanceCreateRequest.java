@@ -39,11 +39,6 @@ public class SupabaseInstanceCreateRequest {
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ha")
-
-    private SupabaseHaConfig ha;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configuration_id")
 
     private String configurationId;
@@ -179,7 +174,7 @@ public class SupabaseInstanceCreateRequest {
     }
 
     /**
-     * 可用区，≤2个逗号分隔，首个=顶层主AZ。
+     * 可用区，Single模式下为1个，需与顶层主AZ一致。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -188,32 +183,6 @@ public class SupabaseInstanceCreateRequest {
 
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
-    }
-
-    public SupabaseInstanceCreateRequest withHa(SupabaseHaConfig ha) {
-        this.ha = ha;
-        return this;
-    }
-
-    public SupabaseInstanceCreateRequest withHa(Consumer<SupabaseHaConfig> haSetter) {
-        if (this.ha == null) {
-            this.ha = new SupabaseHaConfig();
-            haSetter.accept(this.ha);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get ha
-     * @return ha
-     */
-    public SupabaseHaConfig getHa() {
-        return ha;
-    }
-
-    public void setHa(SupabaseHaConfig ha) {
-        this.ha = ha;
     }
 
     public SupabaseInstanceCreateRequest withConfigurationId(String configurationId) {
@@ -364,7 +333,7 @@ public class SupabaseInstanceCreateRequest {
         SupabaseInstanceCreateRequest that = (SupabaseInstanceCreateRequest) obj;
         return Objects.equals(this.datastore, that.datastore) && Objects.equals(this.chargeInfo, that.chargeInfo)
             && Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.volume, that.volume)
-            && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.ha, that.ha)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
             && Objects.equals(this.configurationId, that.configurationId) && Objects.equals(this.port, that.port)
             && Objects.equals(this.securityGroupId, that.securityGroupId)
             && Objects.equals(this.password, that.password) && Objects.equals(this.dataVip, that.dataVip)
@@ -379,7 +348,6 @@ public class SupabaseInstanceCreateRequest {
             flavorRef,
             volume,
             availabilityZone,
-            ha,
             configurationId,
             port,
             securityGroupId,
@@ -398,7 +366,6 @@ public class SupabaseInstanceCreateRequest {
         sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
         sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
-        sb.append("    ha: ").append(toIndentedString(ha)).append("\n");
         sb.append("    configurationId: ").append(toIndentedString(configurationId)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");

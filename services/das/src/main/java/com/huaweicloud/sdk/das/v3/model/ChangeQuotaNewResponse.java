@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -15,63 +12,25 @@ import java.util.function.Consumer;
 public class ChangeQuotaNewResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instances")
+    @JsonProperty(value = "success")
 
-    private List<DasCommonInstanceDto> instances = null;
+    private Boolean success;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total_count")
-
-    private Long totalCount;
-
-    public ChangeQuotaNewResponse withInstances(List<DasCommonInstanceDto> instances) {
-        this.instances = instances;
-        return this;
-    }
-
-    public ChangeQuotaNewResponse addInstancesItem(DasCommonInstanceDto instancesItem) {
-        if (this.instances == null) {
-            this.instances = new ArrayList<>();
-        }
-        this.instances.add(instancesItem);
-        return this;
-    }
-
-    public ChangeQuotaNewResponse withInstances(Consumer<List<DasCommonInstanceDto>> instancesSetter) {
-        if (this.instances == null) {
-            this.instances = new ArrayList<>();
-        }
-        instancesSetter.accept(this.instances);
+    public ChangeQuotaNewResponse withSuccess(Boolean success) {
+        this.success = success;
         return this;
     }
 
     /**
-     * 实例列表
-     * @return instances
+     * 是否成功
+     * @return success
      */
-    public List<DasCommonInstanceDto> getInstances() {
-        return instances;
+    public Boolean getSuccess() {
+        return success;
     }
 
-    public void setInstances(List<DasCommonInstanceDto> instances) {
-        this.instances = instances;
-    }
-
-    public ChangeQuotaNewResponse withTotalCount(Long totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-
-    /**
-     * 总记录数
-     * @return totalCount
-     */
-    public Long getTotalCount() {
-        return totalCount;
-    }
-
-    public void setTotalCount(Long totalCount) {
-        this.totalCount = totalCount;
+    public void setSuccess(Boolean success) {
+        this.success = success;
     }
 
     @Override
@@ -83,20 +42,19 @@ public class ChangeQuotaNewResponse extends SdkResponse {
             return false;
         }
         ChangeQuotaNewResponse that = (ChangeQuotaNewResponse) obj;
-        return Objects.equals(this.instances, that.instances) && Objects.equals(this.totalCount, that.totalCount);
+        return Objects.equals(this.success, that.success);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instances, totalCount);
+        return Objects.hash(success);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ChangeQuotaNewResponse {\n");
-        sb.append("    instances: ").append(toIndentedString(instances)).append("\n");
-        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("    success: ").append(toIndentedString(success)).append("\n");
         sb.append("}");
         return sb.toString();
     }

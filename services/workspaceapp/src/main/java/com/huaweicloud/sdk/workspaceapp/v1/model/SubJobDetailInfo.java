@@ -25,7 +25,7 @@ public class SubJobDetailInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_resource_info")
 
-    private JobResourceInfo jobResourceInfo;
+    private ApsJobResourceInfo jobResourceInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
@@ -96,14 +96,14 @@ public class SubJobDetailInfo {
         this.jobType = jobType;
     }
 
-    public SubJobDetailInfo withJobResourceInfo(JobResourceInfo jobResourceInfo) {
+    public SubJobDetailInfo withJobResourceInfo(ApsJobResourceInfo jobResourceInfo) {
         this.jobResourceInfo = jobResourceInfo;
         return this;
     }
 
-    public SubJobDetailInfo withJobResourceInfo(Consumer<JobResourceInfo> jobResourceInfoSetter) {
+    public SubJobDetailInfo withJobResourceInfo(Consumer<ApsJobResourceInfo> jobResourceInfoSetter) {
         if (this.jobResourceInfo == null) {
-            this.jobResourceInfo = new JobResourceInfo();
+            this.jobResourceInfo = new ApsJobResourceInfo();
             jobResourceInfoSetter.accept(this.jobResourceInfo);
         }
 
@@ -114,11 +114,11 @@ public class SubJobDetailInfo {
      * Get jobResourceInfo
      * @return jobResourceInfo
      */
-    public JobResourceInfo getJobResourceInfo() {
+    public ApsJobResourceInfo getJobResourceInfo() {
         return jobResourceInfo;
     }
 
-    public void setJobResourceInfo(JobResourceInfo jobResourceInfo) {
+    public void setJobResourceInfo(ApsJobResourceInfo jobResourceInfo) {
         this.jobResourceInfo = jobResourceInfo;
     }
 

@@ -1459,6 +1459,7 @@ public class WorkspaceAppAsyncClient {
      * @param request ShowSessionTypesRequest 请求对象
      * @return CompletableFuture<ShowSessionTypesResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowSessionTypesResponse> showSessionTypesAsync(ShowSessionTypesRequest request) {
         return hcClient.asyncInvokeHttp(request, WorkspaceAppMeta.showSessionTypes);
     }
@@ -1473,6 +1474,7 @@ public class WorkspaceAppAsyncClient {
      * @param request ShowSessionTypesRequest 请求对象
      * @return AsyncInvoker<ShowSessionTypesRequest, ShowSessionTypesResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowSessionTypesRequest, ShowSessionTypesResponse> showSessionTypesAsyncInvoker(
         ShowSessionTypesRequest request) {
         return new AsyncInvoker<>(request, WorkspaceAppMeta.showSessionTypes, hcClient);
@@ -2718,6 +2720,7 @@ public class WorkspaceAppAsyncClient {
      * @param request ShowJobRequest 请求对象
      * @return CompletableFuture<ShowJobResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowJobResponse> showJobAsync(ShowJobRequest request) {
         return hcClient.asyncInvokeHttp(request, WorkspaceAppMeta.showJob);
     }
@@ -2734,6 +2737,7 @@ public class WorkspaceAppAsyncClient {
      * @param request ShowJobRequest 请求对象
      * @return AsyncInvoker<ShowJobRequest, ShowJobResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowJobRequest, ShowJobResponse> showJobAsyncInvoker(ShowJobRequest request) {
         return new AsyncInvoker<>(request, WorkspaceAppMeta.showJob, hcClient);
     }

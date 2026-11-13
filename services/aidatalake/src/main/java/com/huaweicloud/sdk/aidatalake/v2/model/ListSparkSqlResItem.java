@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -92,6 +94,16 @@ public class ListSparkSqlResItem {
     @JsonProperty(value = "create_user")
 
     private SparkCreateUser createUser;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "spark_config")
+
+    private Map<String, String> sparkConfig = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "labels")
+
+    private List<SparkSqlLabelRes> labels = null;
 
     public ListSparkSqlResItem withStatementId(String statementId) {
         this.statementId = statementId;
@@ -426,6 +438,72 @@ public class ListSparkSqlResItem {
         this.createUser = createUser;
     }
 
+    public ListSparkSqlResItem withSparkConfig(Map<String, String> sparkConfig) {
+        this.sparkConfig = sparkConfig;
+        return this;
+    }
+
+    public ListSparkSqlResItem putSparkConfigItem(String key, String sparkConfigItem) {
+        if (this.sparkConfig == null) {
+            this.sparkConfig = new HashMap<>();
+        }
+        this.sparkConfig.put(key, sparkConfigItem);
+        return this;
+    }
+
+    public ListSparkSqlResItem withSparkConfig(Consumer<Map<String, String>> sparkConfigSetter) {
+        if (this.sparkConfig == null) {
+            this.sparkConfig = new HashMap<>();
+        }
+        sparkConfigSetter.accept(this.sparkConfig);
+        return this;
+    }
+
+    /**
+     * **参数解释**：用户自定义Spark参数配置。Map中的key为Spark配置项名称（如spark.executor.memory），value为对应的配置值，key和value均为字符串，单个长度不超过10240个字符。
+     * @return sparkConfig
+     */
+    public Map<String, String> getSparkConfig() {
+        return sparkConfig;
+    }
+
+    public void setSparkConfig(Map<String, String> sparkConfig) {
+        this.sparkConfig = sparkConfig;
+    }
+
+    public ListSparkSqlResItem withLabels(List<SparkSqlLabelRes> labels) {
+        this.labels = labels;
+        return this;
+    }
+
+    public ListSparkSqlResItem addLabelsItem(SparkSqlLabelRes labelsItem) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        this.labels.add(labelsItem);
+        return this;
+    }
+
+    public ListSparkSqlResItem withLabels(Consumer<List<SparkSqlLabelRes>> labelsSetter) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        labelsSetter.accept(this.labels);
+        return this;
+    }
+
+    /**
+     * **参数解释**：作业标签列表，用于标识和分类作业。
+     * @return labels
+     */
+    public List<SparkSqlLabelRes> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(List<SparkSqlLabelRes> labels) {
+        this.labels = labels;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -443,7 +521,8 @@ public class ListSparkSqlResItem {
             && Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
             && Objects.equals(this.metricStatistics, that.metricStatistics) && Objects.equals(this.logUrl, that.logUrl)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.createUser, that.createUser);
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.createUser, that.createUser)
+            && Objects.equals(this.sparkConfig, that.sparkConfig) && Objects.equals(this.labels, that.labels);
     }
 
     @Override
@@ -463,7 +542,9 @@ public class ListSparkSqlResItem {
             createTime,
             startTime,
             endTime,
-            createUser);
+            createUser,
+            sparkConfig,
+            labels);
     }
 
     @Override
@@ -486,6 +567,8 @@ public class ListSparkSqlResItem {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    createUser: ").append(toIndentedString(createUser)).append("\n");
+        sb.append("    sparkConfig: ").append(toIndentedString(sparkConfig)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("}");
         return sb.toString();
     }

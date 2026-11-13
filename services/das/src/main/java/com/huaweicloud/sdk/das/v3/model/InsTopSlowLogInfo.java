@@ -29,9 +29,9 @@ public class InsTopSlowLogInfo {
     private List<String> databases = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "time")
+    @JsonProperty(value = "times")
 
-    private Long time;
+    private Long times;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avg_query_time")
@@ -135,21 +135,21 @@ public class InsTopSlowLogInfo {
         this.databases = databases;
     }
 
-    public InsTopSlowLogInfo withTime(Long time) {
-        this.time = time;
+    public InsTopSlowLogInfo withTimes(Long times) {
+        this.times = times;
         return this;
     }
 
     /**
      * 执行次数
-     * @return time
+     * @return times
      */
-    public Long getTime() {
-        return time;
+    public Long getTimes() {
+        return times;
     }
 
-    public void setTime(Long time) {
-        this.time = time;
+    public void setTimes(Long times) {
+        this.times = times;
     }
 
     public InsTopSlowLogInfo withAvgQueryTime(Double avgQueryTime) {
@@ -281,7 +281,7 @@ public class InsTopSlowLogInfo {
         }
         InsTopSlowLogInfo that = (InsTopSlowLogInfo) obj;
         return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.template, that.template)
-            && Objects.equals(this.databases, that.databases) && Objects.equals(this.time, that.time)
+            && Objects.equals(this.databases, that.databases) && Objects.equals(this.times, that.times)
             && Objects.equals(this.avgQueryTime, that.avgQueryTime)
             && Objects.equals(this.maxQueryTime, that.maxQueryTime)
             && Objects.equals(this.avgRowsExamined, that.avgRowsExamined)
@@ -295,7 +295,7 @@ public class InsTopSlowLogInfo {
         return Objects.hash(templateId,
             template,
             databases,
-            time,
+            times,
             avgQueryTime,
             maxQueryTime,
             avgRowsExamined,
@@ -312,7 +312,7 @@ public class InsTopSlowLogInfo {
         sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
         sb.append("    template: ").append(toIndentedString(template)).append("\n");
         sb.append("    databases: ").append(toIndentedString(databases)).append("\n");
-        sb.append("    time: ").append(toIndentedString(time)).append("\n");
+        sb.append("    times: ").append(toIndentedString(times)).append("\n");
         sb.append("    avgQueryTime: ").append(toIndentedString(avgQueryTime)).append("\n");
         sb.append("    maxQueryTime: ").append(toIndentedString(maxQueryTime)).append("\n");
         sb.append("    avgRowsExamined: ").append(toIndentedString(avgRowsExamined)).append("\n");

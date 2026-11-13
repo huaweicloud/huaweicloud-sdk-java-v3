@@ -44,6 +44,9 @@ import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateTrafficMirrorFilterRulesRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateTrafficMirrorFilterRulesRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateTrafficMirrorFilterRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteClouddcnSubnetsTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteFirewallTagsRequest;
@@ -170,6 +173,8 @@ import com.huaweicloud.sdk.vpc.v3.model.ListPortsByTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.ListPortsByTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListPortsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListPortsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListResourceAssociationsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListResourceAssociationsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListResourcesByTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesResponse;
@@ -495,6 +500,40 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(BatchCreateSubNetworkInterfaceTagsRequestBody.class),
             f -> f.withMarshaller(BatchCreateSubNetworkInterfaceTagsRequest::getBody,
                 BatchCreateSubNetworkInterfaceTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateTrafficMirrorFilterRulesRequest, BatchCreateTrafficMirrorFilterRulesResponse> batchCreateTrafficMirrorFilterRules =
+        genForBatchCreateTrafficMirrorFilterRules();
+
+    private static HttpRequestDef<BatchCreateTrafficMirrorFilterRulesRequest, BatchCreateTrafficMirrorFilterRulesResponse> genForBatchCreateTrafficMirrorFilterRules() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateTrafficMirrorFilterRulesRequest, BatchCreateTrafficMirrorFilterRulesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateTrafficMirrorFilterRulesRequest.class,
+                    BatchCreateTrafficMirrorFilterRulesResponse.class)
+                .withName("BatchCreateTrafficMirrorFilterRules")
+                .withUri(
+                    "/v3/{project_id}/vpc/traffic-mirror-filters/{traffic_mirror_filter_id}/traffic-mirror-filter-rules/batch-create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("traffic_mirror_filter_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateTrafficMirrorFilterRulesRequest::getTrafficMirrorFilterId,
+                BatchCreateTrafficMirrorFilterRulesRequest::setTrafficMirrorFilterId));
+        builder.<BatchCreateTrafficMirrorFilterRulesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateTrafficMirrorFilterRulesRequestBody.class),
+            f -> f.withMarshaller(BatchCreateTrafficMirrorFilterRulesRequest::getBody,
+                BatchCreateTrafficMirrorFilterRulesRequest::setBody));
 
         // response
 
@@ -1292,6 +1331,61 @@ public class VpcMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPortsByTagsRequestBody.class),
             f -> f.withMarshaller(ListPortsByTagsRequest::getBody, ListPortsByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResourceAssociationsRequest, ListResourceAssociationsResponse> listResourceAssociations =
+        genForListResourceAssociations();
+
+    private static HttpRequestDef<ListResourceAssociationsRequest, ListResourceAssociationsResponse> genForListResourceAssociations() {
+        // basic
+        HttpRequestDef.Builder<ListResourceAssociationsRequest, ListResourceAssociationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListResourceAssociationsRequest.class, ListResourceAssociationsResponse.class)
+                .withName("ListResourceAssociations")
+                .withUri("/v3/{project_id}/vpc/resource-associations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListResourceAssociationsRequest::getResourceId,
+                ListResourceAssociationsRequest::setResourceId));
+        builder.<List<String>>withRequestField("resource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListResourceAssociationsRequest::getResourceType,
+                ListResourceAssociationsRequest::setResourceType));
+        builder.<String>withRequestField("resource_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceAssociationsRequest::getResourceProjectId,
+                ListResourceAssociationsRequest::setResourceProjectId));
+        builder.<List<String>>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListResourceAssociationsRequest::getInstanceId,
+                ListResourceAssociationsRequest::setInstanceId));
+        builder.<List<String>>withRequestField("instance_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListResourceAssociationsRequest::getInstanceType,
+                ListResourceAssociationsRequest::setInstanceType));
+        builder.<String>withRequestField("instance_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceAssociationsRequest::getInstanceProjectId,
+                ListResourceAssociationsRequest::setInstanceProjectId));
 
         // response
 

@@ -1445,6 +1445,7 @@ public class WorkspaceAppClient {
      * @param request ShowSessionTypesRequest 请求对象
      * @return ShowSessionTypesResponse
      */
+    @Deprecated
     public ShowSessionTypesResponse showSessionTypes(ShowSessionTypesRequest request) {
         return hcClient.syncInvokeHttp(request, WorkspaceAppMeta.showSessionTypes);
     }
@@ -1459,6 +1460,7 @@ public class WorkspaceAppClient {
      * @param request ShowSessionTypesRequest 请求对象
      * @return SyncInvoker<ShowSessionTypesRequest, ShowSessionTypesResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowSessionTypesRequest, ShowSessionTypesResponse> showSessionTypesInvoker(
         ShowSessionTypesRequest request) {
         return new SyncInvoker<>(request, WorkspaceAppMeta.showSessionTypes, hcClient);
@@ -2683,6 +2685,7 @@ public class WorkspaceAppClient {
      * @param request ShowJobRequest 请求对象
      * @return ShowJobResponse
      */
+    @Deprecated
     public ShowJobResponse showJob(ShowJobRequest request) {
         return hcClient.syncInvokeHttp(request, WorkspaceAppMeta.showJob);
     }
@@ -2699,6 +2702,7 @@ public class WorkspaceAppClient {
      * @param request ShowJobRequest 请求对象
      * @return SyncInvoker<ShowJobRequest, ShowJobResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowJobRequest, ShowJobResponse> showJobInvoker(ShowJobRequest request) {
         return new SyncInvoker<>(request, WorkspaceAppMeta.showJob, hcClient);
     }

@@ -3139,6 +3139,7 @@ public class WorkspaceAsyncClient {
      * @param request ExportUserLoginInfoNewRequest 请求对象
      * @return CompletableFuture<ExportUserLoginInfoNewResponse>
      */
+    @Deprecated
     public CompletableFuture<ExportUserLoginInfoNewResponse> exportUserLoginInfoNewAsync(
         ExportUserLoginInfoNewRequest request) {
         return hcClient.asyncInvokeHttp(request, WorkspaceMeta.exportUserLoginInfoNew);
@@ -3154,6 +3155,7 @@ public class WorkspaceAsyncClient {
      * @param request ExportUserLoginInfoNewRequest 请求对象
      * @return AsyncInvoker<ExportUserLoginInfoNewRequest, ExportUserLoginInfoNewResponse>
      */
+    @Deprecated
     public AsyncInvoker<ExportUserLoginInfoNewRequest, ExportUserLoginInfoNewResponse> exportUserLoginInfoNewAsyncInvoker(
         ExportUserLoginInfoNewRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.exportUserLoginInfoNew, hcClient);
@@ -5417,6 +5419,7 @@ public class WorkspaceAsyncClient {
      * @param request ListDesktopByTagsRequest 请求对象
      * @return CompletableFuture<ListDesktopByTagsResponse>
      */
+    @Deprecated
     public CompletableFuture<ListDesktopByTagsResponse> listDesktopByTagsAsync(ListDesktopByTagsRequest request) {
         return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listDesktopByTags);
     }
@@ -5431,6 +5434,7 @@ public class WorkspaceAsyncClient {
      * @param request ListDesktopByTagsRequest 请求对象
      * @return AsyncInvoker<ListDesktopByTagsRequest, ListDesktopByTagsResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListDesktopByTagsRequest, ListDesktopByTagsResponse> listDesktopByTagsAsyncInvoker(
         ListDesktopByTagsRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.listDesktopByTags, hcClient);

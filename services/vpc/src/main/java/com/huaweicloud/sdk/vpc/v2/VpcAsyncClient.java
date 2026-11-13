@@ -97,6 +97,8 @@ import com.huaweicloud.sdk.vpc.v2.model.ListSubnetsByTagsRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ListSubnetsByTagsResponse;
 import com.huaweicloud.sdk.vpc.v2.model.ListSubnetsRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ListSubnetsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListVpcPeeringInfosRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListVpcPeeringInfosResponse;
 import com.huaweicloud.sdk.vpc.v2.model.ListVpcPeeringsRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ListVpcPeeringsResponse;
 import com.huaweicloud.sdk.vpc.v2.model.ListVpcRoutesRequest;
@@ -1306,6 +1308,35 @@ public class VpcAsyncClient {
     public AsyncInvoker<ListSubnetsByTagsRequest, ListSubnetsByTagsResponse> listSubnetsByTagsAsyncInvoker(
         ListSubnetsByTagsRequest request) {
         return new AsyncInvoker<>(request, VpcMeta.listSubnetsByTags, hcClient);
+    }
+
+    /**
+     * 查询对等连接信息列表
+     *
+     * 当您的对等连接创建成功后，您可以通过该接口查询所有对等连接信息，包括对等连接的名称、两端vpc的信息等
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVpcPeeringInfosRequest 请求对象
+     * @return CompletableFuture<ListVpcPeeringInfosResponse>
+     */
+    public CompletableFuture<ListVpcPeeringInfosResponse> listVpcPeeringInfosAsync(ListVpcPeeringInfosRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listVpcPeeringInfos);
+    }
+
+    /**
+     * 查询对等连接信息列表
+     *
+     * 当您的对等连接创建成功后，您可以通过该接口查询所有对等连接信息，包括对等连接的名称、两端vpc的信息等
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVpcPeeringInfosRequest 请求对象
+     * @return AsyncInvoker<ListVpcPeeringInfosRequest, ListVpcPeeringInfosResponse>
+     */
+    public AsyncInvoker<ListVpcPeeringInfosRequest, ListVpcPeeringInfosResponse> listVpcPeeringInfosAsyncInvoker(
+        ListVpcPeeringInfosRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.listVpcPeeringInfos, hcClient);
     }
 
     /**

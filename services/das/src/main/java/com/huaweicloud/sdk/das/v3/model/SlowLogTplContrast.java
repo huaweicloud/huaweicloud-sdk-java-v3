@@ -16,12 +16,12 @@ public class SlowLogTplContrast {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_of_pre_day")
 
-    private List<SlowSqlTemplate> templateOfPreDay = null;
+    private List<SlowSqlTplTemplate> templateOfPreDay = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_of_cur_day")
 
-    private List<SlowSqlTemplate> templateOfCurDay = null;
+    private List<SlowSqlTplTemplate> templateOfCurDay = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execute_time_increase")
@@ -38,12 +38,12 @@ public class SlowLogTplContrast {
 
     private Boolean newTemplate;
 
-    public SlowLogTplContrast withTemplateOfPreDay(List<SlowSqlTemplate> templateOfPreDay) {
+    public SlowLogTplContrast withTemplateOfPreDay(List<SlowSqlTplTemplate> templateOfPreDay) {
         this.templateOfPreDay = templateOfPreDay;
         return this;
     }
 
-    public SlowLogTplContrast addTemplateOfPreDayItem(SlowSqlTemplate templateOfPreDayItem) {
+    public SlowLogTplContrast addTemplateOfPreDayItem(SlowSqlTplTemplate templateOfPreDayItem) {
         if (this.templateOfPreDay == null) {
             this.templateOfPreDay = new ArrayList<>();
         }
@@ -51,7 +51,7 @@ public class SlowLogTplContrast {
         return this;
     }
 
-    public SlowLogTplContrast withTemplateOfPreDay(Consumer<List<SlowSqlTemplate>> templateOfPreDaySetter) {
+    public SlowLogTplContrast withTemplateOfPreDay(Consumer<List<SlowSqlTplTemplate>> templateOfPreDaySetter) {
         if (this.templateOfPreDay == null) {
             this.templateOfPreDay = new ArrayList<>();
         }
@@ -63,20 +63,20 @@ public class SlowLogTplContrast {
      * 前一日慢日志模板数据列表
      * @return templateOfPreDay
      */
-    public List<SlowSqlTemplate> getTemplateOfPreDay() {
+    public List<SlowSqlTplTemplate> getTemplateOfPreDay() {
         return templateOfPreDay;
     }
 
-    public void setTemplateOfPreDay(List<SlowSqlTemplate> templateOfPreDay) {
+    public void setTemplateOfPreDay(List<SlowSqlTplTemplate> templateOfPreDay) {
         this.templateOfPreDay = templateOfPreDay;
     }
 
-    public SlowLogTplContrast withTemplateOfCurDay(List<SlowSqlTemplate> templateOfCurDay) {
+    public SlowLogTplContrast withTemplateOfCurDay(List<SlowSqlTplTemplate> templateOfCurDay) {
         this.templateOfCurDay = templateOfCurDay;
         return this;
     }
 
-    public SlowLogTplContrast addTemplateOfCurDayItem(SlowSqlTemplate templateOfCurDayItem) {
+    public SlowLogTplContrast addTemplateOfCurDayItem(SlowSqlTplTemplate templateOfCurDayItem) {
         if (this.templateOfCurDay == null) {
             this.templateOfCurDay = new ArrayList<>();
         }
@@ -84,7 +84,7 @@ public class SlowLogTplContrast {
         return this;
     }
 
-    public SlowLogTplContrast withTemplateOfCurDay(Consumer<List<SlowSqlTemplate>> templateOfCurDaySetter) {
+    public SlowLogTplContrast withTemplateOfCurDay(Consumer<List<SlowSqlTplTemplate>> templateOfCurDaySetter) {
         if (this.templateOfCurDay == null) {
             this.templateOfCurDay = new ArrayList<>();
         }
@@ -96,11 +96,11 @@ public class SlowLogTplContrast {
      * 当日慢日志模板数据列表
      * @return templateOfCurDay
      */
-    public List<SlowSqlTemplate> getTemplateOfCurDay() {
+    public List<SlowSqlTplTemplate> getTemplateOfCurDay() {
         return templateOfCurDay;
     }
 
-    public void setTemplateOfCurDay(List<SlowSqlTemplate> templateOfCurDay) {
+    public void setTemplateOfCurDay(List<SlowSqlTplTemplate> templateOfCurDay) {
         this.templateOfCurDay = templateOfCurDay;
     }
 

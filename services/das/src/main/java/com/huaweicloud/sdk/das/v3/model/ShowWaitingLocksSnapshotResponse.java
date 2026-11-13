@@ -22,7 +22,7 @@ public class ShowWaitingLocksSnapshotResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lock_waits_infos")
 
-    private List<Object> lockWaitsInfos = null;
+    private List<InnodbLockWaitsInfo> lockWaitsInfos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "wait_lock_count")
@@ -77,12 +77,12 @@ public class ShowWaitingLocksSnapshotResponse extends SdkResponse {
         this.trx = trx;
     }
 
-    public ShowWaitingLocksSnapshotResponse withLockWaitsInfos(List<Object> lockWaitsInfos) {
+    public ShowWaitingLocksSnapshotResponse withLockWaitsInfos(List<InnodbLockWaitsInfo> lockWaitsInfos) {
         this.lockWaitsInfos = lockWaitsInfos;
         return this;
     }
 
-    public ShowWaitingLocksSnapshotResponse addLockWaitsInfosItem(Object lockWaitsInfosItem) {
+    public ShowWaitingLocksSnapshotResponse addLockWaitsInfosItem(InnodbLockWaitsInfo lockWaitsInfosItem) {
         if (this.lockWaitsInfos == null) {
             this.lockWaitsInfos = new ArrayList<>();
         }
@@ -90,7 +90,8 @@ public class ShowWaitingLocksSnapshotResponse extends SdkResponse {
         return this;
     }
 
-    public ShowWaitingLocksSnapshotResponse withLockWaitsInfos(Consumer<List<Object>> lockWaitsInfosSetter) {
+    public ShowWaitingLocksSnapshotResponse withLockWaitsInfos(
+        Consumer<List<InnodbLockWaitsInfo>> lockWaitsInfosSetter) {
         if (this.lockWaitsInfos == null) {
             this.lockWaitsInfos = new ArrayList<>();
         }
@@ -102,11 +103,11 @@ public class ShowWaitingLocksSnapshotResponse extends SdkResponse {
      * InnoDB锁等待信息
      * @return lockWaitsInfos
      */
-    public List<Object> getLockWaitsInfos() {
+    public List<InnodbLockWaitsInfo> getLockWaitsInfos() {
         return lockWaitsInfos;
     }
 
-    public void setLockWaitsInfos(List<Object> lockWaitsInfos) {
+    public void setLockWaitsInfos(List<InnodbLockWaitsInfo> lockWaitsInfos) {
         this.lockWaitsInfos = lockWaitsInfos;
     }
 

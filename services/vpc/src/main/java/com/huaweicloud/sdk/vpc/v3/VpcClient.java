@@ -29,6 +29,8 @@ import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateTrafficMirrorFilterRulesRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateTrafficMirrorFilterRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteClouddcnSubnetsTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteFirewallTagsRequest;
@@ -131,6 +133,8 @@ import com.huaweicloud.sdk.vpc.v3.model.ListPortsByTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListPortsByTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListPortsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListPortsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListResourceAssociationsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListResourceAssociationsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupsRequest;
@@ -444,6 +448,36 @@ public class VpcClient {
     public SyncInvoker<BatchCreateSubNetworkInterfaceTagsRequest, BatchCreateSubNetworkInterfaceTagsResponse> batchCreateSubNetworkInterfaceTagsInvoker(
         BatchCreateSubNetworkInterfaceTagsRequest request) {
         return new SyncInvoker<>(request, VpcMeta.batchCreateSubNetworkInterfaceTags, hcClient);
+    }
+
+    /**
+     * 批量创建流量镜像筛选规则
+     *
+     * 批量创建流量镜像筛选规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateTrafficMirrorFilterRulesRequest 请求对象
+     * @return BatchCreateTrafficMirrorFilterRulesResponse
+     */
+    public BatchCreateTrafficMirrorFilterRulesResponse batchCreateTrafficMirrorFilterRules(
+        BatchCreateTrafficMirrorFilterRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.batchCreateTrafficMirrorFilterRules);
+    }
+
+    /**
+     * 批量创建流量镜像筛选规则
+     *
+     * 批量创建流量镜像筛选规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateTrafficMirrorFilterRulesRequest 请求对象
+     * @return SyncInvoker<BatchCreateTrafficMirrorFilterRulesRequest, BatchCreateTrafficMirrorFilterRulesResponse>
+     */
+    public SyncInvoker<BatchCreateTrafficMirrorFilterRulesRequest, BatchCreateTrafficMirrorFilterRulesResponse> batchCreateTrafficMirrorFilterRulesInvoker(
+        BatchCreateTrafficMirrorFilterRulesRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.batchCreateTrafficMirrorFilterRules, hcClient);
     }
 
     /**
@@ -1214,6 +1248,35 @@ public class VpcClient {
     public SyncInvoker<ListPortsByTagsRequest, ListPortsByTagsResponse> listPortsByTagsInvoker(
         ListPortsByTagsRequest request) {
         return new SyncInvoker<>(request, VpcMeta.listPortsByTags, hcClient);
+    }
+
+    /**
+     * 查询资源关联的实例信息列表
+     *
+     * 网卡等资源可以关联高阶服务的资源实例，如ELB，您可以通过此接口查询资源关联的实例信息列表，包括资源和实例的类型、ID和所属的项目ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceAssociationsRequest 请求对象
+     * @return ListResourceAssociationsResponse
+     */
+    public ListResourceAssociationsResponse listResourceAssociations(ListResourceAssociationsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.listResourceAssociations);
+    }
+
+    /**
+     * 查询资源关联的实例信息列表
+     *
+     * 网卡等资源可以关联高阶服务的资源实例，如ELB，您可以通过此接口查询资源关联的实例信息列表，包括资源和实例的类型、ID和所属的项目ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceAssociationsRequest 请求对象
+     * @return SyncInvoker<ListResourceAssociationsRequest, ListResourceAssociationsResponse>
+     */
+    public SyncInvoker<ListResourceAssociationsRequest, ListResourceAssociationsResponse> listResourceAssociationsInvoker(
+        ListResourceAssociationsRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.listResourceAssociations, hcClient);
     }
 
     /**

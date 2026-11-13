@@ -15,41 +15,63 @@ import java.util.function.Consumer;
 public class ListAllTypeInstancesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "entry_names")
+    @JsonProperty(value = "instances")
 
-    private List<String> entryNames = null;
+    private List<DasCommonInstanceDto> instances = null;
 
-    public ListAllTypeInstancesResponse withEntryNames(List<String> entryNames) {
-        this.entryNames = entryNames;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_count")
+
+    private Long totalCount;
+
+    public ListAllTypeInstancesResponse withInstances(List<DasCommonInstanceDto> instances) {
+        this.instances = instances;
         return this;
     }
 
-    public ListAllTypeInstancesResponse addEntryNamesItem(String entryNamesItem) {
-        if (this.entryNames == null) {
-            this.entryNames = new ArrayList<>();
+    public ListAllTypeInstancesResponse addInstancesItem(DasCommonInstanceDto instancesItem) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
         }
-        this.entryNames.add(entryNamesItem);
+        this.instances.add(instancesItem);
         return this;
     }
 
-    public ListAllTypeInstancesResponse withEntryNames(Consumer<List<String>> entryNamesSetter) {
-        if (this.entryNames == null) {
-            this.entryNames = new ArrayList<>();
+    public ListAllTypeInstancesResponse withInstances(Consumer<List<DasCommonInstanceDto>> instancesSetter) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
         }
-        entryNamesSetter.accept(this.entryNames);
+        instancesSetter.accept(this.instances);
         return this;
     }
 
     /**
-     * 错误信息条件列表
-     * @return entryNames
+     * 实例列表
+     * @return instances
      */
-    public List<String> getEntryNames() {
-        return entryNames;
+    public List<DasCommonInstanceDto> getInstances() {
+        return instances;
     }
 
-    public void setEntryNames(List<String> entryNames) {
-        this.entryNames = entryNames;
+    public void setInstances(List<DasCommonInstanceDto> instances) {
+        this.instances = instances;
+    }
+
+    public ListAllTypeInstancesResponse withTotalCount(Long totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+
+    /**
+     * 总记录数
+     * @return totalCount
+     */
+    public Long getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Long totalCount) {
+        this.totalCount = totalCount;
     }
 
     @Override
@@ -61,19 +83,20 @@ public class ListAllTypeInstancesResponse extends SdkResponse {
             return false;
         }
         ListAllTypeInstancesResponse that = (ListAllTypeInstancesResponse) obj;
-        return Objects.equals(this.entryNames, that.entryNames);
+        return Objects.equals(this.instances, that.instances) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(entryNames);
+        return Objects.hash(instances, totalCount);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAllTypeInstancesResponse {\n");
-        sb.append("    entryNames: ").append(toIndentedString(entryNames)).append("\n");
+        sb.append("    instances: ").append(toIndentedString(instances)).append("\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }
