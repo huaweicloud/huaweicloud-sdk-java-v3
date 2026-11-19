@@ -743,6 +743,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionFinalConfirmRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionFinalConfirmResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionNewRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionNewResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionRequest;
@@ -7328,6 +7330,36 @@ public class RdsClient {
     public SyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse> upgradeDbVersionInvoker(
         UpgradeDbVersionRequest request) {
         return new SyncInvoker<>(request, RdsMeta.upgradeDbVersion, hcClient);
+    }
+
+    /**
+     * 数据库小版本升级后最后确认操作
+     *
+     * 数据库小版本升级后最后确认操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeDbVersionFinalConfirmRequest 请求对象
+     * @return UpgradeDbVersionFinalConfirmResponse
+     */
+    public UpgradeDbVersionFinalConfirmResponse upgradeDbVersionFinalConfirm(
+        UpgradeDbVersionFinalConfirmRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.upgradeDbVersionFinalConfirm);
+    }
+
+    /**
+     * 数据库小版本升级后最后确认操作
+     *
+     * 数据库小版本升级后最后确认操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeDbVersionFinalConfirmRequest 请求对象
+     * @return SyncInvoker<UpgradeDbVersionFinalConfirmRequest, UpgradeDbVersionFinalConfirmResponse>
+     */
+    public SyncInvoker<UpgradeDbVersionFinalConfirmRequest, UpgradeDbVersionFinalConfirmResponse> upgradeDbVersionFinalConfirmInvoker(
+        UpgradeDbVersionFinalConfirmRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.upgradeDbVersionFinalConfirm, hcClient);
     }
 
     /**

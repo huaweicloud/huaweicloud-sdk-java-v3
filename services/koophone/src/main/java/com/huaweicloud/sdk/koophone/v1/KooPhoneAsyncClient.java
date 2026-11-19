@@ -3,8 +3,6 @@ package com.huaweicloud.sdk.koophone.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.koophone.v1.model.AsyncInvokeInstanceRequest;
-import com.huaweicloud.sdk.koophone.v1.model.AsyncInvokeInstanceResponse;
 import com.huaweicloud.sdk.koophone.v1.model.BatchBackupInstancesRequest;
 import com.huaweicloud.sdk.koophone.v1.model.BatchBackupInstancesResponse;
 import com.huaweicloud.sdk.koophone.v1.model.BatchPrepareInstancesRequest;
@@ -43,8 +41,6 @@ import com.huaweicloud.sdk.koophone.v1.model.StopInstancesSessionRequest;
 import com.huaweicloud.sdk.koophone.v1.model.StopInstancesSessionResponse;
 import com.huaweicloud.sdk.koophone.v1.model.StopInstancesStreamingRequest;
 import com.huaweicloud.sdk.koophone.v1.model.StopInstancesStreamingResponse;
-import com.huaweicloud.sdk.koophone.v1.model.SyncInvokeInstanceRequest;
-import com.huaweicloud.sdk.koophone.v1.model.SyncInvokeInstanceResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -59,41 +55,6 @@ public class KooPhoneAsyncClient {
     public static ClientBuilder<KooPhoneAsyncClient> newBuilder() {
         ClientBuilder<KooPhoneAsyncClient> clientBuilder = new ClientBuilder<>(KooPhoneAsyncClient::new);
         return clientBuilder;
-    }
-
-    /**
-     * 实例执行异步命令
-     *
-     * 实例执行异步命令接口。
-     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
-     * 可以通过调用该接口实现对自己的koophone云手机实例进行异步adb指令操作。
-     * 调用完该接口后携带该接口返回的task_id去调用实例执行任务查询接口。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AsyncInvokeInstanceRequest 请求对象
-     * @return CompletableFuture<AsyncInvokeInstanceResponse>
-     */
-    public CompletableFuture<AsyncInvokeInstanceResponse> asyncInvokeInstanceAsync(AsyncInvokeInstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, KooPhoneMeta.asyncInvokeInstance);
-    }
-
-    /**
-     * 实例执行异步命令
-     *
-     * 实例执行异步命令接口。
-     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
-     * 可以通过调用该接口实现对自己的koophone云手机实例进行异步adb指令操作。
-     * 调用完该接口后携带该接口返回的task_id去调用实例执行任务查询接口。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AsyncInvokeInstanceRequest 请求对象
-     * @return AsyncInvoker<AsyncInvokeInstanceRequest, AsyncInvokeInstanceResponse>
-     */
-    public AsyncInvoker<AsyncInvokeInstanceRequest, AsyncInvokeInstanceResponse> asyncInvokeInstanceAsyncInvoker(
-        AsyncInvokeInstanceRequest request) {
-        return new AsyncInvoker<>(request, KooPhoneMeta.asyncInvokeInstance, hcClient);
     }
 
     /**
@@ -709,37 +670,6 @@ public class KooPhoneAsyncClient {
     public AsyncInvoker<StopInstancesStreamingRequest, StopInstancesStreamingResponse> stopInstancesStreamingAsyncInvoker(
         StopInstancesStreamingRequest request) {
         return new AsyncInvoker<>(request, KooPhoneMeta.stopInstancesStreaming, hcClient);
-    }
-
-    /**
-     * 实例执行同步命令
-     *
-     * 实例执行同步命令接口。调用此api的前提条件是租户需要先购买koophone云手机实例。可以通过调用该接口实现对自己的koophone云手机实例进行adb指令操作。
-     * 该接口是同步操作接口，如果有耗时adb操作建议使用实例执行异步命令接口。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SyncInvokeInstanceRequest 请求对象
-     * @return CompletableFuture<SyncInvokeInstanceResponse>
-     */
-    public CompletableFuture<SyncInvokeInstanceResponse> syncInvokeInstanceAsync(SyncInvokeInstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, KooPhoneMeta.syncInvokeInstance);
-    }
-
-    /**
-     * 实例执行同步命令
-     *
-     * 实例执行同步命令接口。调用此api的前提条件是租户需要先购买koophone云手机实例。可以通过调用该接口实现对自己的koophone云手机实例进行adb指令操作。
-     * 该接口是同步操作接口，如果有耗时adb操作建议使用实例执行异步命令接口。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SyncInvokeInstanceRequest 请求对象
-     * @return AsyncInvoker<SyncInvokeInstanceRequest, SyncInvokeInstanceResponse>
-     */
-    public AsyncInvoker<SyncInvokeInstanceRequest, SyncInvokeInstanceResponse> syncInvokeInstanceAsyncInvoker(
-        SyncInvokeInstanceRequest request) {
-        return new AsyncInvoker<>(request, KooPhoneMeta.syncInvokeInstance, hcClient);
     }
 
 }

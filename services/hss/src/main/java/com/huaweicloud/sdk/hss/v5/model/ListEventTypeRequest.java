@@ -205,7 +205,7 @@ public class ListEventTypeRequest {
     }
 
     /**
-     * **参数解释**: 事件类别 **约束限制**: 不涉及 **取值范围**: - host : 主机安全事件 - container : 容器安全事件 - serverless : serverless场景安全事件 **默认取值**: 不涉及 
+     * **参数解释**: 事件类别 **约束限制**: 不涉及 **取值范围**: - host : 主机安全事件 - container : 容器安全事件 - serverless : serverless场景安全事件  **默认取值**: 不涉及 
      * @return category
      */
     public String getCategory() {

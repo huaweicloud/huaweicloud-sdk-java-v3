@@ -107,7 +107,7 @@ public class ListRiskConfigsRequest {
     }
 
     /**
-     * **参数解释**: 风险等级 **约束限制**: 不涉及 **取值范围**: - Security : 安全 - Low : 低危 - Medium : 中危 - High : 高危 **默认取值**: 不涉及 
+     * **参数解释**: 风险等级 **约束限制**: 不涉及 **取值范围**: - Security : 安全 - Low : 低危 - Medium : 中危 - High : 高危  **默认取值**: 不涉及 
      * @return severity
      */
     public String getSeverity() {
@@ -124,7 +124,7 @@ public class ListRiskConfigsRequest {
     }
 
     /**
-     * **参数解释**: 标准类型 **约束限制**: 不涉及 **取值范围**: - cn_standard : 等保合规标准 - hw_standard : 云安全实践标准 **默认取值**: 不涉及 
+     * **参数解释**: 标准类型 **约束限制**: 不涉及 **取值范围**: - cn_standard : 等保合规标准 - hw_standard : 云安全实践标准  **默认取值**: 不涉及 
      * @return standard
      */
     public String getStandard() {

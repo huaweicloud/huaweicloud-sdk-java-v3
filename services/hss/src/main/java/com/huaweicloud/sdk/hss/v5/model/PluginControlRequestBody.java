@@ -51,7 +51,7 @@ public class PluginControlRequestBody {
     }
 
     /**
-     * **参数解释**： 是否是全量操作，优先级高于host_id_list，若取值为true且host_id_list不为空，仍执行全量操作 **约束限制**: 不涉及 **取值范围**: - true：全量操作，启动/停止所有符合条件的插件 - false: 非全量操作，仅对host_id_list内服务器执行启动/停止插件操作 **默认取值**: false 
+     * **参数解释**： 是否是全量操作，优先级高于host_id_list，若取值为true且host_id_list不为空，仍执行全量操作 **约束限制**: 不涉及 **取值范围**: - true：全量操作，启动/停止所有符合条件的插件 - false: 非全量操作，仅对host_id_list内服务器执行启动/停止插件操作  **默认取值**: false 
      * @return operateAll
      */
     public Boolean getOperateAll() {

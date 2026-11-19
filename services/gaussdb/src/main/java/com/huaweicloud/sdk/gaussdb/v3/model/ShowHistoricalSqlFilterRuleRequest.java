@@ -30,6 +30,16 @@ public class ShowHistoricalSqlFilterRuleRequest {
 
     private String sqlType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public ShowHistoricalSqlFilterRuleRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -100,6 +110,42 @@ public class ShowHistoricalSqlFilterRuleRequest {
         this.sqlType = sqlType;
     }
 
+    public ShowHistoricalSqlFilterRuleRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  索引位置，偏移量。从第一条数据偏移offset条数据后开始查询。  **约束限制**：  必须为整数，不能为负数。  **取值范围**：  ≥0。  **默认取值**：  0。
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ShowHistoricalSqlFilterRuleRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  查询记录数。  **约束限制**：  必须为整数，不能为负数。  **取值范围**：  1-100。  **默认取值**：  100。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -110,12 +156,13 @@ public class ShowHistoricalSqlFilterRuleRequest {
         }
         ShowHistoricalSqlFilterRuleRequest that = (ShowHistoricalSqlFilterRuleRequest) obj;
         return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.sqlType, that.sqlType);
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.sqlType, that.sqlType)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, instanceId, nodeId, sqlType);
+        return Objects.hash(xLanguage, instanceId, nodeId, sqlType, offset, limit);
     }
 
     @Override
@@ -126,6 +173,8 @@ public class ShowHistoricalSqlFilterRuleRequest {
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
         sb.append("    sqlType: ").append(toIndentedString(sqlType)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -54,16 +54,6 @@ public class RecycleInstanceV3 {
     private Long deletedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "volume_type")
-
-    private String volumeType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "volume_size")
-
-    private String volumeSize;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_vip")
 
     private String dataVip;
@@ -97,6 +87,11 @@ public class RecycleInstanceV3 {
     @JsonProperty(value = "recycle_status")
 
     private String recycleStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retention_days")
+
+    private Integer retentionDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recycle_backups")
@@ -239,40 +234,6 @@ public class RecycleInstanceV3 {
         this.deletedAt = deletedAt;
     }
 
-    public RecycleInstanceV3 withVolumeType(String volumeType) {
-        this.volumeType = volumeType;
-        return this;
-    }
-
-    /**
-     * 磁盘类型。
-     * @return volumeType
-     */
-    public String getVolumeType() {
-        return volumeType;
-    }
-
-    public void setVolumeType(String volumeType) {
-        this.volumeType = volumeType;
-    }
-
-    public RecycleInstanceV3 withVolumeSize(String volumeSize) {
-        this.volumeSize = volumeSize;
-        return this;
-    }
-
-    /**
-     * 磁盘大小。
-     * @return volumeSize
-     */
-    public String getVolumeSize() {
-        return volumeSize;
-    }
-
-    public void setVolumeSize(String volumeSize) {
-        this.volumeSize = volumeSize;
-    }
-
     public RecycleInstanceV3 withDataVip(String dataVip) {
         this.dataVip = dataVip;
         return this;
@@ -392,6 +353,23 @@ public class RecycleInstanceV3 {
         this.recycleStatus = recycleStatus;
     }
 
+    public RecycleInstanceV3 withRetentionDays(Integer retentionDays) {
+        this.retentionDays = retentionDays;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  回收站备份剩余保留天数。由总保留天数减去实例删除后已过天数得出，为0表示即将清理。  **取值范围**：  - 0：回收站备份即将被清理。 - -1：永久保留（retain_all 策略，不主动清理）。 - 其他值：剩余保留天数。  **默认取值**： 不涉及。
+     * @return retentionDays
+     */
+    public Integer getRetentionDays() {
+        return retentionDays;
+    }
+
+    public void setRetentionDays(Integer retentionDays) {
+        this.retentionDays = retentionDays;
+    }
+
     public RecycleInstanceV3 withRecycleBackups(List<RecycleBackupV3> recycleBackups) {
         this.recycleBackups = recycleBackups;
         return this;
@@ -438,13 +416,13 @@ public class RecycleInstanceV3 {
             && Objects.equals(this.haMode, that.haMode) && Objects.equals(this.engineName, that.engineName)
             && Objects.equals(this.engineVersion, that.engineVersion) && Objects.equals(this.payModel, that.payModel)
             && Objects.equals(this.createAt, that.createAt) && Objects.equals(this.deletedAt, that.deletedAt)
-            && Objects.equals(this.volumeType, that.volumeType) && Objects.equals(this.volumeSize, that.volumeSize)
             && Objects.equals(this.dataVip, that.dataVip) && Objects.equals(this.dataVipIpv6, that.dataVipIpv6)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
             && Objects.equals(this.backupLevel, that.backupLevel)
             && Objects.equals(this.recycleBackupId, that.recycleBackupId)
             && Objects.equals(this.recycleStatus, that.recycleStatus)
+            && Objects.equals(this.retentionDays, that.retentionDays)
             && Objects.equals(this.recycleBackups, that.recycleBackups);
     }
 
@@ -458,8 +436,6 @@ public class RecycleInstanceV3 {
             payModel,
             createAt,
             deletedAt,
-            volumeType,
-            volumeSize,
             dataVip,
             dataVipIpv6,
             enterpriseProjectId,
@@ -467,6 +443,7 @@ public class RecycleInstanceV3 {
             backupLevel,
             recycleBackupId,
             recycleStatus,
+            retentionDays,
             recycleBackups);
     }
 
@@ -482,8 +459,6 @@ public class RecycleInstanceV3 {
         sb.append("    payModel: ").append(toIndentedString(payModel)).append("\n");
         sb.append("    createAt: ").append(toIndentedString(createAt)).append("\n");
         sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
-        sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
-        sb.append("    volumeSize: ").append(toIndentedString(volumeSize)).append("\n");
         sb.append("    dataVip: ").append(toIndentedString(dataVip)).append("\n");
         sb.append("    dataVipIpv6: ").append(toIndentedString(dataVipIpv6)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
@@ -491,6 +466,7 @@ public class RecycleInstanceV3 {
         sb.append("    backupLevel: ").append(toIndentedString(backupLevel)).append("\n");
         sb.append("    recycleBackupId: ").append(toIndentedString(recycleBackupId)).append("\n");
         sb.append("    recycleStatus: ").append(toIndentedString(recycleStatus)).append("\n");
+        sb.append("    retentionDays: ").append(toIndentedString(retentionDays)).append("\n");
         sb.append("    recycleBackups: ").append(toIndentedString(recycleBackups)).append("\n");
         sb.append("}");
         return sb.toString();

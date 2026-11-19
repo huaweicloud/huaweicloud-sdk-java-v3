@@ -23,6 +23,7 @@ import com.huaweicloud.sdk.iam.v5.model.AttachUserPolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ChangePasswordReqBody;
 import com.huaweicloud.sdk.iam.v5.model.ChangePasswordV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ChangePasswordV5Response;
+import com.huaweicloud.sdk.iam.v5.model.CreateAccessKeyReqBody;
 import com.huaweicloud.sdk.iam.v5.model.CreateAccessKeyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.CreateAccessKeyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.CreateAgencyReqBody;
@@ -2523,6 +2524,11 @@ public class IamMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateAccessKeyV5Request::getUserId, CreateAccessKeyV5Request::setUserId));
+        builder.<CreateAccessKeyReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateAccessKeyReqBody.class),
+            f -> f.withMarshaller(CreateAccessKeyV5Request::getBody, CreateAccessKeyV5Request::setBody));
 
         // response
 

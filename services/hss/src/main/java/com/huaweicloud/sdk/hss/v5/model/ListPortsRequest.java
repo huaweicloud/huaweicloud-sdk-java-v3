@@ -136,7 +136,7 @@ public class ListPortsRequest {
     }
 
     /**
-     * **参数解释**: 端口类型：目前包括TCP，UDP两种 **约束限制**: 不涉及 **取值范围**: - TCP: TCP类型的端口 - UDP: UDP类型的端口 **默认取值**: 不涉及 
+     * **参数解释**: 端口类型：目前包括TCP，UDP两种 **约束限制**: 不涉及 **取值范围**: - TCP: TCP类型的端口 - UDP: UDP类型的端口  **默认取值**: 不涉及 
      * @return type
      */
     public String getType() {
@@ -225,7 +225,7 @@ public class ListPortsRequest {
     }
 
     /**
-     * **参数解释**: 类别，默认为host **约束限制**: 不涉及 **取值范围**: - host：主机 - container：容器 **默认取值**: host 
+     * **参数解释**: 类别，默认为host **约束限制**: 不涉及 **取值范围**: - host：主机 - container：容器  **默认取值**: host 
      * @return category
      */
     public String getCategory() {

@@ -58,6 +58,56 @@ public class ListSubNetworkInterfacesRequest {
 
     private List<String> parentId = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_eip")
+
+    private Boolean enableEip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scope")
+
+    private String scope;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "security_groups")
+
+    private List<String> securityGroups = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "parent_device_id")
+
+    private List<String> parentDeviceId = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vlan_id")
+
+    private List<Integer> vlanId = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "state")
+
+    private List<String> state = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_ip_address")
+
+    private List<String> ipv6IpAddress = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private List<String> instanceId = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_type")
+
+    private List<String> instanceType = null;
+
     public ListSubNetworkInterfacesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -323,6 +373,288 @@ public class ListSubNetworkInterfacesRequest {
         this.parentId = parentId;
     }
 
+    public ListSubNetworkInterfacesRequest withEnableEip(Boolean enableEip) {
+        this.enableEip = enableEip;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 辅助弹性网卡是否关联EIP，可以通过此字段过滤辅助弹性网卡，不支持传入多个值进行过滤。 **取值范围**：   - true：辅助弹性网卡已关联EIP   - false：辅助弹性网卡未关联EIP **约束限制**： 不涉及。 **默认取值**： 不涉及。
+     * @return enableEip
+     */
+    public Boolean getEnableEip() {
+        return enableEip;
+    }
+
+    public void setEnableEip(Boolean enableEip) {
+        this.enableEip = enableEip;
+    }
+
+    public ListSubNetworkInterfacesRequest withScope(String scope) {
+        this.scope = scope;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 辅助弹性网卡所在站点的公网出口信息，可以通过此字段过滤辅助弹性网卡。 **取值范围**： 不涉及。 **约束限制**： 不涉及。 **默认取值**： 不涉及。
+     * @return scope
+     */
+    public String getScope() {
+        return scope;
+    }
+
+    public void setScope(String scope) {
+        this.scope = scope;
+    }
+
+    public ListSubNetworkInterfacesRequest withSecurityGroups(List<String> securityGroups) {
+        this.securityGroups = securityGroups;
+        return this;
+    }
+
+    public ListSubNetworkInterfacesRequest addSecurityGroupsItem(String securityGroupsItem) {
+        if (this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
+        this.securityGroups.add(securityGroupsItem);
+        return this;
+    }
+
+    public ListSubNetworkInterfacesRequest withSecurityGroups(Consumer<List<String>> securityGroupsSetter) {
+        if (this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
+        securityGroupsSetter.accept(this.securityGroups);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 辅助弹性网卡关联的安全组ID，可以通过此字段过滤辅助弹性网卡，支持传入多个安全组ID过滤。[获取方式请参见[查询安全组列表](vpc_apiv3_0011.xml)。](tag:hws,hws_hk,hws_test) **取值范围**： 不涉及。 **约束限制**： 不涉及。 **默认取值**： 不涉及。
+     * @return securityGroups
+     */
+    public List<String> getSecurityGroups() {
+        return securityGroups;
+    }
+
+    public void setSecurityGroups(List<String> securityGroups) {
+        this.securityGroups = securityGroups;
+    }
+
+    public ListSubNetworkInterfacesRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 辅助弹性网卡所属企业项目的ID。可以使用该字段过滤某个企业项目下的辅助弹性网卡。 **取值范围**： - 最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。 - 若需要查询当前用户所有企业项目绑定的辅助弹性网卡，请传参all_granted_eps。 **约束限制**： 不涉及。 **默认取值**： 不涉及。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ListSubNetworkInterfacesRequest withParentDeviceId(List<String> parentDeviceId) {
+        this.parentDeviceId = parentDeviceId;
+        return this;
+    }
+
+    public ListSubNetworkInterfacesRequest addParentDeviceIdItem(String parentDeviceIdItem) {
+        if (this.parentDeviceId == null) {
+            this.parentDeviceId = new ArrayList<>();
+        }
+        this.parentDeviceId.add(parentDeviceIdItem);
+        return this;
+    }
+
+    public ListSubNetworkInterfacesRequest withParentDeviceId(Consumer<List<String>> parentDeviceIdSetter) {
+        if (this.parentDeviceId == null) {
+            this.parentDeviceId = new ArrayList<>();
+        }
+        parentDeviceIdSetter.accept(this.parentDeviceId);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 辅助弹性网卡的宿主网卡所属的设备ID，可以通过此字段过滤辅助弹性网卡，支持传入多个ID过滤。 **取值范围**： 不涉及。 **约束限制**： 不涉及。 **默认取值**： 不涉及。
+     * @return parentDeviceId
+     */
+    public List<String> getParentDeviceId() {
+        return parentDeviceId;
+    }
+
+    public void setParentDeviceId(List<String> parentDeviceId) {
+        this.parentDeviceId = parentDeviceId;
+    }
+
+    public ListSubNetworkInterfacesRequest withVlanId(List<Integer> vlanId) {
+        this.vlanId = vlanId;
+        return this;
+    }
+
+    public ListSubNetworkInterfacesRequest addVlanIdItem(Integer vlanIdItem) {
+        if (this.vlanId == null) {
+            this.vlanId = new ArrayList<>();
+        }
+        this.vlanId.add(vlanIdItem);
+        return this;
+    }
+
+    public ListSubNetworkInterfacesRequest withVlanId(Consumer<List<Integer>> vlanIdSetter) {
+        if (this.vlanId == null) {
+            this.vlanId = new ArrayList<>();
+        }
+        vlanIdSetter.accept(this.vlanId);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 辅助弹性网卡的VLAN ID，可以通过此字段过滤辅助弹性网卡，支持传入多个VLAN ID过滤。 **取值范围**： 1-4094。 **约束限制**： 不涉及。 **默认取值**： 不涉及。
+     * @return vlanId
+     */
+    public List<Integer> getVlanId() {
+        return vlanId;
+    }
+
+    public void setVlanId(List<Integer> vlanId) {
+        this.vlanId = vlanId;
+    }
+
+    public ListSubNetworkInterfacesRequest withState(List<String> state) {
+        this.state = state;
+        return this;
+    }
+
+    public ListSubNetworkInterfacesRequest addStateItem(String stateItem) {
+        if (this.state == null) {
+            this.state = new ArrayList<>();
+        }
+        this.state.add(stateItem);
+        return this;
+    }
+
+    public ListSubNetworkInterfacesRequest withState(Consumer<List<String>> stateSetter) {
+        if (this.state == null) {
+            this.state = new ArrayList<>();
+        }
+        stateSetter.accept(this.state);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 辅助弹性网卡的状态，可以通过此字段过滤辅助弹性网卡，支持传入多个状态过滤。 **取值范围**： NORMAL：过滤出已挂载在弹性网卡上的辅助弹性网卡 UNBOUND：过滤出未挂载在弹性网卡上的辅助弹性网卡 **约束限制**： 不涉及。 **默认取值**： 不涉及。
+     * @return state
+     */
+    public List<String> getState() {
+        return state;
+    }
+
+    public void setState(List<String> state) {
+        this.state = state;
+    }
+
+    public ListSubNetworkInterfacesRequest withIpv6IpAddress(List<String> ipv6IpAddress) {
+        this.ipv6IpAddress = ipv6IpAddress;
+        return this;
+    }
+
+    public ListSubNetworkInterfacesRequest addIpv6IpAddressItem(String ipv6IpAddressItem) {
+        if (this.ipv6IpAddress == null) {
+            this.ipv6IpAddress = new ArrayList<>();
+        }
+        this.ipv6IpAddress.add(ipv6IpAddressItem);
+        return this;
+    }
+
+    public ListSubNetworkInterfacesRequest withIpv6IpAddress(Consumer<List<String>> ipv6IpAddressSetter) {
+        if (this.ipv6IpAddress == null) {
+            this.ipv6IpAddress = new ArrayList<>();
+        }
+        ipv6IpAddressSetter.accept(this.ipv6IpAddress);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 辅助弹性网卡的IPv6地址，可以通过此字段过滤辅助弹性网卡，支持传入多个IP地址过滤。 **取值范围**： 不涉及。 **约束限制**： 不涉及。 **默认取值**： 不涉及。
+     * @return ipv6IpAddress
+     */
+    public List<String> getIpv6IpAddress() {
+        return ipv6IpAddress;
+    }
+
+    public void setIpv6IpAddress(List<String> ipv6IpAddress) {
+        this.ipv6IpAddress = ipv6IpAddress;
+    }
+
+    public ListSubNetworkInterfacesRequest withInstanceId(List<String> instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    public ListSubNetworkInterfacesRequest addInstanceIdItem(String instanceIdItem) {
+        if (this.instanceId == null) {
+            this.instanceId = new ArrayList<>();
+        }
+        this.instanceId.add(instanceIdItem);
+        return this;
+    }
+
+    public ListSubNetworkInterfacesRequest withInstanceId(Consumer<List<String>> instanceIdSetter) {
+        if (this.instanceId == null) {
+            this.instanceId = new ArrayList<>();
+        }
+        instanceIdSetter.accept(this.instanceId);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 辅助弹性网卡所属云服务实例的ID，例如RDS实例的ID，可以通过此字段过滤辅助弹性网卡，支持传入多个ID过滤。 **取值范围**： 不涉及。 **约束限制**： 不涉及。 **默认取值**： 不涉及。
+     * @return instanceId
+     */
+    public List<String> getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(List<String> instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public ListSubNetworkInterfacesRequest withInstanceType(List<String> instanceType) {
+        this.instanceType = instanceType;
+        return this;
+    }
+
+    public ListSubNetworkInterfacesRequest addInstanceTypeItem(String instanceTypeItem) {
+        if (this.instanceType == null) {
+            this.instanceType = new ArrayList<>();
+        }
+        this.instanceType.add(instanceTypeItem);
+        return this;
+    }
+
+    public ListSubNetworkInterfacesRequest withInstanceType(Consumer<List<String>> instanceTypeSetter) {
+        if (this.instanceType == null) {
+            this.instanceType = new ArrayList<>();
+        }
+        instanceTypeSetter.accept(this.instanceType);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 辅助弹性网卡所属云服务实例的类型，例如“RDS”，可以通过此字段过滤辅助弹性网卡，支持传入多个实例类型过滤。 **取值范围**： 不涉及。 **约束限制**： 不涉及。 **默认取值**： 不涉及。
+     * @return instanceType
+     */
+    public List<String> getInstanceType() {
+        return instanceType;
+    }
+
+    public void setInstanceType(List<String> instanceType) {
+        this.instanceType = instanceType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -336,12 +668,36 @@ public class ListSubNetworkInterfacesRequest {
             && Objects.equals(this.id, that.id) && Objects.equals(this.virsubnetId, that.virsubnetId)
             && Objects.equals(this.privateIpAddress, that.privateIpAddress)
             && Objects.equals(this.macAddress, that.macAddress) && Objects.equals(this.vpcId, that.vpcId)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.parentId, that.parentId);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.parentId, that.parentId)
+            && Objects.equals(this.enableEip, that.enableEip) && Objects.equals(this.scope, that.scope)
+            && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.parentDeviceId, that.parentDeviceId) && Objects.equals(this.vlanId, that.vlanId)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.ipv6IpAddress, that.ipv6IpAddress)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceType, that.instanceType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, id, virsubnetId, privateIpAddress, macAddress, vpcId, description, parentId);
+        return Objects.hash(limit,
+            marker,
+            id,
+            virsubnetId,
+            privateIpAddress,
+            macAddress,
+            vpcId,
+            description,
+            parentId,
+            enableEip,
+            scope,
+            securityGroups,
+            enterpriseProjectId,
+            parentDeviceId,
+            vlanId,
+            state,
+            ipv6IpAddress,
+            instanceId,
+            instanceType);
     }
 
     @Override
@@ -357,6 +713,16 @@ public class ListSubNetworkInterfacesRequest {
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
+        sb.append("    enableEip: ").append(toIndentedString(enableEip)).append("\n");
+        sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
+        sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    parentDeviceId: ").append(toIndentedString(parentDeviceId)).append("\n");
+        sb.append("    vlanId: ").append(toIndentedString(vlanId)).append("\n");
+        sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    ipv6IpAddress: ").append(toIndentedString(ipv6IpAddress)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

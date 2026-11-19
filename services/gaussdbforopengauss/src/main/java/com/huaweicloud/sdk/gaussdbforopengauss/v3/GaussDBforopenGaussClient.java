@@ -11,6 +11,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AllowDbPrivilegesRequest
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AllowDbPrivilegesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AllowDbRolePrivilegesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AllowDbRolePrivilegesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ApplyConfigurationWithEntitiesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ApplyConfigurationWithEntitiesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AuthorizeBackupDownloadRequest;
@@ -27,6 +29,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindDNatRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindDNatResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindLtsConfigRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindLtsConfigResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindServerRouteRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindServerRouteResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ChangeDemand2PeriodRequest;
@@ -137,14 +141,22 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExportTopSqlListRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExportTopSqlListResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallKernelPluginRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallKernelPluginResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallPluginRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallPluginResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAgencyInfosRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAgencyInfosResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListApplicableInstancesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListApplicableInstancesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListApplicableInstancesWithEntitiesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListApplicableInstancesWithEntitiesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAppliedHistoriesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAppliedHistoriesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAppliedHistoriesWithEntitiesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAppliedHistoriesWithEntitiesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAspInfosRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAspInfosResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAvailableFlavorsDetailRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAvailableFlavorsDetailResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAvailableFlavorsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAvailableFlavorsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListBackupsDetailsRequest;
@@ -259,6 +271,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListReadonlyNodesRequest
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListReadonlyNodesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRealTimeSessionsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRealTimeSessionsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRealTimeSessionsUseOpsTunnelRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRealTimeSessionsUseOpsTunnelResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRecycleInstancesDetailsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRecycleInstancesDetailsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRecycleInstancesRequest;
@@ -291,6 +305,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlExcuteNodesReques
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlExcuteNodesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlLimitTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlLimitTaskResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlPatchRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlPatchResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlPlanActionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlPlanActionResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlRecommendRulesRequest;
@@ -331,6 +347,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyHbaConfRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyHbaConfResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyInstancePortRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyInstancePortResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyOpsWindowRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyOpsWindowResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyParameterConfigTemplateRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyParameterConfigTemplateResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifySecurityGroupRequest;
@@ -439,6 +457,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowRedistributionParame
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowRedistributionParametersResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSessionOverviewRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSessionOverviewResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSessionSummaryUseOpsTunnelRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSessionSummaryUseOpsTunnelResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowShardDiskMessagesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowShardDiskMessagesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSlowLogDownloadRequest;
@@ -479,6 +499,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopSessionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopSessionResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopSessionUseOpsTunnelRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopSessionUseOpsTunnelResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopTransactionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopTransactionResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchAspStatusRequest;
@@ -503,6 +525,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SyncLimitDataRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SyncLimitDataResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UnbindLtsConfigRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UnbindLtsConfigResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UninstallPluginRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UninstallPluginResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateAgencyPolicyRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateAgencyPolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateExpansionParametersRequest;
@@ -660,6 +684,36 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<AllowDbRolePrivilegesRequest, AllowDbRolePrivilegesResponse> allowDbRolePrivilegesInvoker(
         AllowDbRolePrivilegesRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.allowDbRolePrivileges, hcClient);
+    }
+
+    /**
+     * 应用参数模板
+     *
+     * 指定实例变更参数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ApplyConfigurationWithEntitiesRequest 请求对象
+     * @return ApplyConfigurationWithEntitiesResponse
+     */
+    public ApplyConfigurationWithEntitiesResponse applyConfigurationWithEntities(
+        ApplyConfigurationWithEntitiesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.applyConfigurationWithEntities);
+    }
+
+    /**
+     * 应用参数模板
+     *
+     * 指定实例变更参数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ApplyConfigurationWithEntitiesRequest 请求对象
+     * @return SyncInvoker<ApplyConfigurationWithEntitiesRequest, ApplyConfigurationWithEntitiesResponse>
+     */
+    public SyncInvoker<ApplyConfigurationWithEntitiesRequest, ApplyConfigurationWithEntitiesResponse> applyConfigurationWithEntitiesInvoker(
+        ApplyConfigurationWithEntitiesRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.applyConfigurationWithEntities, hcClient);
     }
 
     /**
@@ -862,6 +916,35 @@ public class GaussDBforopenGaussClient {
      */
     public SyncInvoker<BindDNatRequest, BindDNatResponse> bindDNatInvoker(BindDNatRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.bindDNat, hcClient);
+    }
+
+    /**
+     * 服务端路由配置
+     *
+     * 服务端路由配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindServerRouteRequest 请求对象
+     * @return BindServerRouteResponse
+     */
+    public BindServerRouteResponse bindServerRoute(BindServerRouteRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.bindServerRoute);
+    }
+
+    /**
+     * 服务端路由配置
+     *
+     * 服务端路由配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindServerRouteRequest 请求对象
+     * @return SyncInvoker<BindServerRouteRequest, BindServerRouteResponse>
+     */
+    public SyncInvoker<BindServerRouteRequest, BindServerRouteResponse> bindServerRouteInvoker(
+        BindServerRouteRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.bindServerRoute, hcClient);
     }
 
     /**
@@ -2088,6 +2171,34 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 安装插件接口
+     *
+     * 安装插件接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InstallPluginRequest 请求对象
+     * @return InstallPluginResponse
+     */
+    public InstallPluginResponse installPlugin(InstallPluginRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.installPlugin);
+    }
+
+    /**
+     * 安装插件接口
+     *
+     * 安装插件接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InstallPluginRequest 请求对象
+     * @return SyncInvoker<InstallPluginRequest, InstallPluginResponse>
+     */
+    public SyncInvoker<InstallPluginRequest, InstallPluginResponse> installPluginInvoker(InstallPluginRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.installPlugin, hcClient);
+    }
+
+    /**
      * 查询委托权限详情
      *
      * 查询委托权限详情
@@ -2146,6 +2257,36 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 查询可应用实例列表
+     *
+     * 查询可应用当前参数组模板的实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListApplicableInstancesWithEntitiesRequest 请求对象
+     * @return ListApplicableInstancesWithEntitiesResponse
+     */
+    public ListApplicableInstancesWithEntitiesResponse listApplicableInstancesWithEntities(
+        ListApplicableInstancesWithEntitiesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listApplicableInstancesWithEntities);
+    }
+
+    /**
+     * 查询可应用实例列表
+     *
+     * 查询可应用当前参数组模板的实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListApplicableInstancesWithEntitiesRequest 请求对象
+     * @return SyncInvoker<ListApplicableInstancesWithEntitiesRequest, ListApplicableInstancesWithEntitiesResponse>
+     */
+    public SyncInvoker<ListApplicableInstancesWithEntitiesRequest, ListApplicableInstancesWithEntitiesResponse> listApplicableInstancesWithEntitiesInvoker(
+        ListApplicableInstancesWithEntitiesRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listApplicableInstancesWithEntities, hcClient);
+    }
+
+    /**
      * 查询参数模板的应用记录
      *
      * 查询参数模板的应用记录，以实例级别为维度。
@@ -2175,6 +2316,36 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 查询参数模板的应用记录
+     *
+     * 查询参数模板的应用记录，以实例级别为维度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAppliedHistoriesWithEntitiesRequest 请求对象
+     * @return ListAppliedHistoriesWithEntitiesResponse
+     */
+    public ListAppliedHistoriesWithEntitiesResponse listAppliedHistoriesWithEntities(
+        ListAppliedHistoriesWithEntitiesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listAppliedHistoriesWithEntities);
+    }
+
+    /**
+     * 查询参数模板的应用记录
+     *
+     * 查询参数模板的应用记录，以实例级别为维度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAppliedHistoriesWithEntitiesRequest 请求对象
+     * @return SyncInvoker<ListAppliedHistoriesWithEntitiesRequest, ListAppliedHistoriesWithEntitiesResponse>
+     */
+    public SyncInvoker<ListAppliedHistoriesWithEntitiesRequest, ListAppliedHistoriesWithEntitiesResponse> listAppliedHistoriesWithEntitiesInvoker(
+        ListAppliedHistoriesWithEntitiesRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listAppliedHistoriesWithEntities, hcClient);
+    }
+
+    /**
      * 查询实例可变更规格
      *
      * 查询实例可变更规格列表。
@@ -2201,6 +2372,35 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ListAvailableFlavorsRequest, ListAvailableFlavorsResponse> listAvailableFlavorsInvoker(
         ListAvailableFlavorsRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listAvailableFlavors, hcClient);
+    }
+
+    /**
+     * 查询实例可变更规格详情
+     *
+     * 查询实例可变更的规格信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAvailableFlavorsDetailRequest 请求对象
+     * @return ListAvailableFlavorsDetailResponse
+     */
+    public ListAvailableFlavorsDetailResponse listAvailableFlavorsDetail(ListAvailableFlavorsDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listAvailableFlavorsDetail);
+    }
+
+    /**
+     * 查询实例可变更规格详情
+     *
+     * 查询实例可变更的规格信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAvailableFlavorsDetailRequest 请求对象
+     * @return SyncInvoker<ListAvailableFlavorsDetailRequest, ListAvailableFlavorsDetailResponse>
+     */
+    public SyncInvoker<ListAvailableFlavorsDetailRequest, ListAvailableFlavorsDetailResponse> listAvailableFlavorsDetailInvoker(
+        ListAvailableFlavorsDetailRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listAvailableFlavorsDetail, hcClient);
     }
 
     /**
@@ -3327,6 +3527,36 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 查询实时会话（紧急通道）
+     *
+     * 查询数据库实例节点的实时会话列表。（紧急通道）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRealTimeSessionsUseOpsTunnelRequest 请求对象
+     * @return ListRealTimeSessionsUseOpsTunnelResponse
+     */
+    public ListRealTimeSessionsUseOpsTunnelResponse listRealTimeSessionsUseOpsTunnel(
+        ListRealTimeSessionsUseOpsTunnelRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listRealTimeSessionsUseOpsTunnel);
+    }
+
+    /**
+     * 查询实时会话（紧急通道）
+     *
+     * 查询数据库实例节点的实时会话列表。（紧急通道）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRealTimeSessionsUseOpsTunnelRequest 请求对象
+     * @return SyncInvoker<ListRealTimeSessionsUseOpsTunnelRequest, ListRealTimeSessionsUseOpsTunnelResponse>
+     */
+    public SyncInvoker<ListRealTimeSessionsUseOpsTunnelRequest, ListRealTimeSessionsUseOpsTunnelResponse> listRealTimeSessionsUseOpsTunnelInvoker(
+        ListRealTimeSessionsUseOpsTunnelRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listRealTimeSessionsUseOpsTunnel, hcClient);
+    }
+
+    /**
      * 查询回收站所有引擎实例列表。
      *
      * 查询回收站所有引擎实例列表。
@@ -4021,6 +4251,35 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ModifyInstancePortRequest, ModifyInstancePortResponse> modifyInstancePortInvoker(
         ModifyInstancePortRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.modifyInstancePort, hcClient);
+    }
+
+    /**
+     * 修改实例可维护时间段
+     *
+     * 修改实例可维护时间段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyOpsWindowRequest 请求对象
+     * @return ModifyOpsWindowResponse
+     */
+    public ModifyOpsWindowResponse modifyOpsWindow(ModifyOpsWindowRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.modifyOpsWindow);
+    }
+
+    /**
+     * 修改实例可维护时间段
+     *
+     * 修改实例可维护时间段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyOpsWindowRequest 请求对象
+     * @return SyncInvoker<ModifyOpsWindowRequest, ModifyOpsWindowResponse>
+     */
+    public SyncInvoker<ModifyOpsWindowRequest, ModifyOpsWindowResponse> modifyOpsWindowInvoker(
+        ModifyOpsWindowRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.modifyOpsWindow, hcClient);
     }
 
     /**
@@ -5272,6 +5531,36 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 查询会话统计概要信息
+     *
+     * 查询会话统计概要信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSessionSummaryUseOpsTunnelRequest 请求对象
+     * @return ShowSessionSummaryUseOpsTunnelResponse
+     */
+    public ShowSessionSummaryUseOpsTunnelResponse showSessionSummaryUseOpsTunnel(
+        ShowSessionSummaryUseOpsTunnelRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showSessionSummaryUseOpsTunnel);
+    }
+
+    /**
+     * 查询会话统计概要信息
+     *
+     * 查询会话统计概要信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSessionSummaryUseOpsTunnelRequest 请求对象
+     * @return SyncInvoker<ShowSessionSummaryUseOpsTunnelRequest, ShowSessionSummaryUseOpsTunnelResponse>
+     */
+    public SyncInvoker<ShowSessionSummaryUseOpsTunnelRequest, ShowSessionSummaryUseOpsTunnelResponse> showSessionSummaryUseOpsTunnelInvoker(
+        ShowSessionSummaryUseOpsTunnelRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showSessionSummaryUseOpsTunnel, hcClient);
+    }
+
+    /**
      * 获取分片的磁盘使用信息
      *
      * 获取分片的磁盘使用信息。
@@ -5674,6 +5963,35 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 结束会话（紧急通道）
+     *
+     * 通过紧急通道查杀指定会话列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopSessionUseOpsTunnelRequest 请求对象
+     * @return StopSessionUseOpsTunnelResponse
+     */
+    public StopSessionUseOpsTunnelResponse stopSessionUseOpsTunnel(StopSessionUseOpsTunnelRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.stopSessionUseOpsTunnel);
+    }
+
+    /**
+     * 结束会话（紧急通道）
+     *
+     * 通过紧急通道查杀指定会话列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopSessionUseOpsTunnelRequest 请求对象
+     * @return SyncInvoker<StopSessionUseOpsTunnelRequest, StopSessionUseOpsTunnelResponse>
+     */
+    public SyncInvoker<StopSessionUseOpsTunnelRequest, StopSessionUseOpsTunnelResponse> stopSessionUseOpsTunnelInvoker(
+        StopSessionUseOpsTunnelRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.stopSessionUseOpsTunnel, hcClient);
+    }
+
+    /**
      * 手动结束事务
      *
      * 手动结束事务。
@@ -5901,6 +6219,35 @@ public class GaussDBforopenGaussClient {
      */
     public SyncInvoker<SwitchShardRequest, SwitchShardResponse> switchShardInvoker(SwitchShardRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.switchShard, hcClient);
+    }
+
+    /**
+     * 卸载插件接口
+     *
+     * 卸载插件接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UninstallPluginRequest 请求对象
+     * @return UninstallPluginResponse
+     */
+    public UninstallPluginResponse uninstallPlugin(UninstallPluginRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.uninstallPlugin);
+    }
+
+    /**
+     * 卸载插件接口
+     *
+     * 卸载插件接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UninstallPluginRequest 请求对象
+     * @return SyncInvoker<UninstallPluginRequest, UninstallPluginResponse>
+     */
+    public SyncInvoker<UninstallPluginRequest, UninstallPluginResponse> uninstallPluginInvoker(
+        UninstallPluginRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.uninstallPlugin, hcClient);
     }
 
     /**
@@ -8104,6 +8451,34 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<UpdateSqlLimitTaskRequest, UpdateSqlLimitTaskResponse> updateSqlLimitTaskInvoker(
         UpdateSqlLimitTaskRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.updateSqlLimitTask, hcClient);
+    }
+
+    /**
+     * 查看全量补丁列表
+     *
+     * 查看全量的SQL Patch信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlPatchRequest 请求对象
+     * @return ListSqlPatchResponse
+     */
+    public ListSqlPatchResponse listSqlPatch(ListSqlPatchRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listSqlPatch);
+    }
+
+    /**
+     * 查看全量补丁列表
+     *
+     * 查看全量的SQL Patch信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlPatchRequest 请求对象
+     * @return SyncInvoker<ListSqlPatchRequest, ListSqlPatchResponse>
+     */
+    public SyncInvoker<ListSqlPatchRequest, ListSqlPatchResponse> listSqlPatchInvoker(ListSqlPatchRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listSqlPatch, hcClient);
     }
 
     /**

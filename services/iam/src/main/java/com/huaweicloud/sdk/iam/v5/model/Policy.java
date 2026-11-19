@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 身份策略。
@@ -60,6 +63,11 @@ public class Policy {
     @JsonProperty(value = "updated_at")
 
     private OffsetDateTime updatedAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<Tag> tags = null;
 
     public Policy withPolicyType(PolicyType policyType) {
         this.policyType = policyType;
@@ -231,6 +239,39 @@ public class Policy {
         this.updatedAt = updatedAt;
     }
 
+    public Policy withTags(List<Tag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public Policy addTagsItem(Tag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public Policy withTags(Consumer<List<Tag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 身份策略标签列表。
+     * @return tags
+     */
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -245,7 +286,7 @@ public class Policy {
             && Objects.equals(this.path, that.path) && Objects.equals(this.defaultVersionId, that.defaultVersionId)
             && Objects.equals(this.attachmentCount, that.attachmentCount)
             && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -259,7 +300,8 @@ public class Policy {
             attachmentCount,
             description,
             createdAt,
-            updatedAt);
+            updatedAt,
+            tags);
     }
 
     @Override
@@ -276,6 +318,7 @@ public class Policy {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

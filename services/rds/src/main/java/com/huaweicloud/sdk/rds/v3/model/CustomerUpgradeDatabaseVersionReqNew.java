@@ -20,6 +20,11 @@ public class CustomerUpgradeDatabaseVersionReqNew {
 
     private Boolean secondSwitch;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_rollback")
+
+    private Boolean supportRollback;
+
     public CustomerUpgradeDatabaseVersionReqNew withIsDelayed(Boolean isDelayed) {
         this.isDelayed = isDelayed;
         return this;
@@ -54,6 +59,23 @@ public class CustomerUpgradeDatabaseVersionReqNew {
         this.secondSwitch = secondSwitch;
     }
 
+    public CustomerUpgradeDatabaseVersionReqNew withSupportRollback(Boolean supportRollback) {
+        this.supportRollback = supportRollback;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否支持升级成功后能够回滚。  **约束限制**： 该配置仅对RDS for MySQL 8.0 和5.7实例生效。  **取值范围**： - true：支持小版本升级成功后回滚，小版本升级时长会增加。升级完成后实例会进入观察状态，期间数据库可以正常读写。如果确认无误，需要确认完成。如果出现问题，可以回滚，恢复到原始小版本。 - false：小版本升级后不支持回滚。  **默认取值**： false
+     * @return supportRollback
+     */
+    public Boolean getSupportRollback() {
+        return supportRollback;
+    }
+
+    public void setSupportRollback(Boolean supportRollback) {
+        this.supportRollback = supportRollback;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class CustomerUpgradeDatabaseVersionReqNew {
             return false;
         }
         CustomerUpgradeDatabaseVersionReqNew that = (CustomerUpgradeDatabaseVersionReqNew) obj;
-        return Objects.equals(this.isDelayed, that.isDelayed) && Objects.equals(this.secondSwitch, that.secondSwitch);
+        return Objects.equals(this.isDelayed, that.isDelayed) && Objects.equals(this.secondSwitch, that.secondSwitch)
+            && Objects.equals(this.supportRollback, that.supportRollback);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isDelayed, secondSwitch);
+        return Objects.hash(isDelayed, secondSwitch, supportRollback);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class CustomerUpgradeDatabaseVersionReqNew {
         sb.append("class CustomerUpgradeDatabaseVersionReqNew {\n");
         sb.append("    isDelayed: ").append(toIndentedString(isDelayed)).append("\n");
         sb.append("    secondSwitch: ").append(toIndentedString(secondSwitch)).append("\n");
+        sb.append("    supportRollback: ").append(toIndentedString(supportRollback)).append("\n");
         sb.append("}");
         return sb.toString();
     }

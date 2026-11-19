@@ -24,6 +24,11 @@ public class KeystoneListGroupsResponse extends SdkResponse {
 
     private Links links;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_number")
+
+    private Integer totalNumber;
+
     public KeystoneListGroupsResponse withGroups(List<KeystoneGroupResult> groups) {
         this.groups = groups;
         return this;
@@ -83,6 +88,23 @@ public class KeystoneListGroupsResponse extends SdkResponse {
         this.links = links;
     }
 
+    public KeystoneListGroupsResponse withTotalNumber(Integer totalNumber) {
+        this.totalNumber = totalNumber;
+        return this;
+    }
+
+    /**
+     * 满足查询条件的用户组总数。
+     * @return totalNumber
+     */
+    public Integer getTotalNumber() {
+        return totalNumber;
+    }
+
+    public void setTotalNumber(Integer totalNumber) {
+        this.totalNumber = totalNumber;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -92,12 +114,13 @@ public class KeystoneListGroupsResponse extends SdkResponse {
             return false;
         }
         KeystoneListGroupsResponse that = (KeystoneListGroupsResponse) obj;
-        return Objects.equals(this.groups, that.groups) && Objects.equals(this.links, that.links);
+        return Objects.equals(this.groups, that.groups) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.totalNumber, that.totalNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groups, links);
+        return Objects.hash(groups, links, totalNumber);
     }
 
     @Override
@@ -106,6 +129,7 @@ public class KeystoneListGroupsResponse extends SdkResponse {
         sb.append("class KeystoneListGroupsResponse {\n");
         sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
+        sb.append("    totalNumber: ").append(toIndentedString(totalNumber)).append("\n");
         sb.append("}");
         return sb.toString();
     }

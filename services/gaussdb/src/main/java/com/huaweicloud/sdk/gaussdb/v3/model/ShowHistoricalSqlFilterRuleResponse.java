@@ -15,9 +15,31 @@ import java.util.function.Consumer;
 public class ShowHistoricalSqlFilterRuleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_count")
+
+    private Integer totalCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_filter_rules")
 
     private List<HistoricalSqlFilterRule> sqlFilterRules = null;
+
+    public ShowHistoricalSqlFilterRuleResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  总记录数。  **取值范围**：  大于等于0。
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
 
     public ShowHistoricalSqlFilterRuleResponse withSqlFilterRules(List<HistoricalSqlFilterRule> sqlFilterRules) {
         this.sqlFilterRules = sqlFilterRules;
@@ -62,18 +84,20 @@ public class ShowHistoricalSqlFilterRuleResponse extends SdkResponse {
             return false;
         }
         ShowHistoricalSqlFilterRuleResponse that = (ShowHistoricalSqlFilterRuleResponse) obj;
-        return Objects.equals(this.sqlFilterRules, that.sqlFilterRules);
+        return Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.sqlFilterRules, that.sqlFilterRules);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sqlFilterRules);
+        return Objects.hash(totalCount, sqlFilterRules);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowHistoricalSqlFilterRuleResponse {\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("    sqlFilterRules: ").append(toIndentedString(sqlFilterRules)).append("\n");
         sb.append("}");
         return sb.toString();

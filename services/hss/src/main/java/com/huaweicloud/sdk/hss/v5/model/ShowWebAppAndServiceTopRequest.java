@@ -43,7 +43,7 @@ public class ShowWebAppAndServiceTopRequest {
     }
 
     /**
-     * **参数解释**: web类型 **约束限制**: 不涉及 **取值范围**: - web_cms：web应用 - web_service：web服务 - database：数据库 **默认取值**: 不涉及 
+     * **参数解释**: web类型 **约束限制**: 不涉及 **取值范围**: - web_cms：web应用 - web_service：web服务 - database：数据库  **默认取值**: 不涉及 
      * @return catalogue
      */
     public String getCatalogue() {

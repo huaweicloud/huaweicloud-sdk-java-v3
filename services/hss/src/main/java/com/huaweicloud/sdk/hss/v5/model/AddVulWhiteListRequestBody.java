@@ -149,7 +149,7 @@ public class AddVulWhiteListRequestBody {
     }
 
     /**
-     * **参数解释**: 是否忽略当前已扫描出的漏洞 **约束限制**: 不涉及 **取值范围**: - true：忽略 - false：不忽略 **默认取值**: true 
+     * **参数解释**: 是否忽略当前已扫描出的漏洞 **约束限制**: 不涉及 **取值范围**: - true：忽略 - false：不忽略  **默认取值**: true 
      * @return withIgnore
      */
     public Boolean getWithIgnore() {

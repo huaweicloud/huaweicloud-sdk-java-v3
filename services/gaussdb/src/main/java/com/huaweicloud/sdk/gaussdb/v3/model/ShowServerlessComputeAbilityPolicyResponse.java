@@ -41,6 +41,21 @@ public class ShowServerlessComputeAbilityPolicyResponse extends SdkResponse {
 
     private Integer minReadonlyNodeCount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scale_to_zero")
+
+    private Boolean scaleToZero;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "idle_duration_seconds")
+
+    private Integer idleDurationSeconds;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scale_to_zero_status")
+
+    private String scaleToZeroStatus;
+
     public ShowServerlessComputeAbilityPolicyResponse withCurrentVcpus(String currentVcpus) {
         this.currentVcpus = currentVcpus;
         return this;
@@ -132,7 +147,7 @@ public class ShowServerlessComputeAbilityPolicyResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：  最小只读节点个数。  **取值范围**：  ≥1。    
+     * **参数解释**：  最小只读节点个数。  **取值范围**：  ≥1。
      * @return minReadonlyNodeCount
      */
     public Integer getMinReadonlyNodeCount() {
@@ -141,6 +156,57 @@ public class ShowServerlessComputeAbilityPolicyResponse extends SdkResponse {
 
     public void setMinReadonlyNodeCount(Integer minReadonlyNodeCount) {
         this.minReadonlyNodeCount = minReadonlyNodeCount;
+    }
+
+    public ShowServerlessComputeAbilityPolicyResponse withScaleToZero(Boolean scaleToZero) {
+        this.scaleToZero = scaleToZero;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  Scale to Zero开关。  **取值范围**： - true: 开启Scale to Zero。 - false: 关闭Scale to Zero。
+     * @return scaleToZero
+     */
+    public Boolean getScaleToZero() {
+        return scaleToZero;
+    }
+
+    public void setScaleToZero(Boolean scaleToZero) {
+        this.scaleToZero = scaleToZero;
+    }
+
+    public ShowServerlessComputeAbilityPolicyResponse withIdleDurationSeconds(Integer idleDurationSeconds) {
+        this.idleDurationSeconds = idleDurationSeconds;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  空闲持续时长阈值，单位是秒。  所有节点活跃连接数为0且持续达到该阈值时触发Scale to Zero（停止计算计费）。  **取值范围**：  300-3600。
+     * @return idleDurationSeconds
+     */
+    public Integer getIdleDurationSeconds() {
+        return idleDurationSeconds;
+    }
+
+    public void setIdleDurationSeconds(Integer idleDurationSeconds) {
+        this.idleDurationSeconds = idleDurationSeconds;
+    }
+
+    public ShowServerlessComputeAbilityPolicyResponse withScaleToZeroStatus(String scaleToZeroStatus) {
+        this.scaleToZeroStatus = scaleToZeroStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  Scale to Zero开启后实例的运行状态。  **取值范围**： - ACTIVE：实例已唤醒，正常计费。 - SCALED_TO_ZERO：计算资源停止计费。
+     * @return scaleToZeroStatus
+     */
+    public String getScaleToZeroStatus() {
+        return scaleToZeroStatus;
+    }
+
+    public void setScaleToZeroStatus(String scaleToZeroStatus) {
+        this.scaleToZeroStatus = scaleToZeroStatus;
     }
 
     @Override
@@ -155,13 +221,23 @@ public class ShowServerlessComputeAbilityPolicyResponse extends SdkResponse {
         return Objects.equals(this.currentVcpus, that.currentVcpus) && Objects.equals(this.minVcpus, that.minVcpus)
             && Objects.equals(this.maxVcpus, that.maxVcpus) && Objects.equals(this.scaleOutSwitch, that.scaleOutSwitch)
             && Objects.equals(this.maxReadonlyNodeCount, that.maxReadonlyNodeCount)
-            && Objects.equals(this.minReadonlyNodeCount, that.minReadonlyNodeCount);
+            && Objects.equals(this.minReadonlyNodeCount, that.minReadonlyNodeCount)
+            && Objects.equals(this.scaleToZero, that.scaleToZero)
+            && Objects.equals(this.idleDurationSeconds, that.idleDurationSeconds)
+            && Objects.equals(this.scaleToZeroStatus, that.scaleToZeroStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(currentVcpus, minVcpus, maxVcpus, scaleOutSwitch, maxReadonlyNodeCount, minReadonlyNodeCount);
+        return Objects.hash(currentVcpus,
+            minVcpus,
+            maxVcpus,
+            scaleOutSwitch,
+            maxReadonlyNodeCount,
+            minReadonlyNodeCount,
+            scaleToZero,
+            idleDurationSeconds,
+            scaleToZeroStatus);
     }
 
     @Override
@@ -174,6 +250,9 @@ public class ShowServerlessComputeAbilityPolicyResponse extends SdkResponse {
         sb.append("    scaleOutSwitch: ").append(toIndentedString(scaleOutSwitch)).append("\n");
         sb.append("    maxReadonlyNodeCount: ").append(toIndentedString(maxReadonlyNodeCount)).append("\n");
         sb.append("    minReadonlyNodeCount: ").append(toIndentedString(minReadonlyNodeCount)).append("\n");
+        sb.append("    scaleToZero: ").append(toIndentedString(scaleToZero)).append("\n");
+        sb.append("    idleDurationSeconds: ").append(toIndentedString(idleDurationSeconds)).append("\n");
+        sb.append("    scaleToZeroStatus: ").append(toIndentedString(scaleToZeroStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

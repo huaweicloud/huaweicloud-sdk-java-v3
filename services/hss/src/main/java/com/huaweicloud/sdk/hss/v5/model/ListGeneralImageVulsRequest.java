@@ -291,7 +291,7 @@ public class ListGeneralImageVulsRequest {
     }
 
     /**
-     * **参数解释**: 漏洞当前状态 **约束限制**: 不涉及 **取值范围**: - vul_status_unfix：未处理 - vul_status_ignored：已忽略 **默认取值**: 不涉及 
+     * **参数解释**: 漏洞当前状态 **约束限制**: 不涉及 **取值范围**: - vul_status_unfix：未处理 - vul_status_ignored：已忽略  **默认取值**: 不涉及 
      * @return status
      */
     public String getStatus() {

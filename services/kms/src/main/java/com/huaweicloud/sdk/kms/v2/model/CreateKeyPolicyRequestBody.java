@@ -36,7 +36,7 @@ public class CreateKeyPolicyRequestBody {
     }
 
     /**
-     * **参数解释：** 密钥策略归属的可信密钥空间ID **约束限制：** 满足正则表达式^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$ **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 密钥策略归属的密钥空间ID **约束限制：** 满足正则表达式^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$ **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return keyspaceId
      */
     public String getKeyspaceId() {

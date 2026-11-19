@@ -215,6 +215,16 @@ public class FlavorExtraSpec {
 
     private String infoFeatures;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hw:cpu_policy")
+
+    private String hwCpuPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hw:cpu_threads")
+
+    private String hwCpuThreads;
+
     public FlavorExtraSpec withEcsPerformancetype(String ecsPerformancetype) {
         this.ecsPerformancetype = ecsPerformancetype;
         return this;
@@ -913,6 +923,40 @@ public class FlavorExtraSpec {
         this.infoFeatures = infoFeatures;
     }
 
+    public FlavorExtraSpec withHwCpuPolicy(String hwCpuPolicy) {
+        this.hwCpuPolicy = hwCpuPolicy;
+        return this;
+    }
+
+    /**
+     * 规格的CPU资源绑定策略。（该字段是否返回根据云服务器规格而定）  - dedicated，CPU资源独占绑定。
+     * @return hwCpuPolicy
+     */
+    public String getHwCpuPolicy() {
+        return hwCpuPolicy;
+    }
+
+    public void setHwCpuPolicy(String hwCpuPolicy) {
+        this.hwCpuPolicy = hwCpuPolicy;
+    }
+
+    public FlavorExtraSpec withHwCpuThreads(String hwCpuThreads) {
+        this.hwCpuThreads = hwCpuThreads;
+        return this;
+    }
+
+    /**
+     * 规格的CPU超线程数（每核线程数）。（该字段是否返回根据云服务器规格而定）  - 1，每核1线程，未开启超线程。 - 2，每核2线程，开启超线程。
+     * @return hwCpuThreads
+     */
+    public String getHwCpuThreads() {
+        return hwCpuThreads;
+    }
+
+    public void setHwCpuThreads(String hwCpuThreads) {
+        this.hwCpuThreads = hwCpuThreads;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -960,7 +1004,9 @@ public class FlavorExtraSpec {
             && Objects.equals(this.securityEnclaveSupported, that.securityEnclaveSupported)
             && Objects.equals(this.infoGpus, that.infoGpus)
             && Objects.equals(this.infoAsicAccelerators, that.infoAsicAccelerators)
-            && Objects.equals(this.infoFeatures, that.infoFeatures);
+            && Objects.equals(this.infoFeatures, that.infoFeatures)
+            && Objects.equals(this.hwCpuPolicy, that.hwCpuPolicy)
+            && Objects.equals(this.hwCpuThreads, that.hwCpuThreads);
     }
 
     @Override
@@ -1005,7 +1051,9 @@ public class FlavorExtraSpec {
             securityEnclaveSupported,
             infoGpus,
             infoAsicAccelerators,
-            infoFeatures);
+            infoFeatures,
+            hwCpuPolicy,
+            hwCpuThreads);
     }
 
     @Override
@@ -1059,6 +1107,8 @@ public class FlavorExtraSpec {
         sb.append("    infoGpus: ").append(toIndentedString(infoGpus)).append("\n");
         sb.append("    infoAsicAccelerators: ").append(toIndentedString(infoAsicAccelerators)).append("\n");
         sb.append("    infoFeatures: ").append(toIndentedString(infoFeatures)).append("\n");
+        sb.append("    hwCpuPolicy: ").append(toIndentedString(hwCpuPolicy)).append("\n");
+        sb.append("    hwCpuThreads: ").append(toIndentedString(hwCpuThreads)).append("\n");
         sb.append("}");
         return sb.toString();
     }

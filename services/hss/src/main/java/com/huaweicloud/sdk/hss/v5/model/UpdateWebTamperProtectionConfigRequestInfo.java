@@ -98,7 +98,7 @@ public class UpdateWebTamperProtectionConfigRequestInfo {
     }
 
     /**
-     * **参数解释**: 防护模式 **约束限制**: 不涉及 **取值范围**: - alarm：告警模式 - block：拦截模式 **默认取值**: alarm 
+     * **参数解释**: 防护模式 **约束限制**: 不涉及 **取值范围**: - alarm：告警模式 - block：拦截模式  **默认取值**: alarm 
      * @return protectMode
      */
     public String getProtectMode() {
@@ -115,7 +115,7 @@ public class UpdateWebTamperProtectionConfigRequestInfo {
     }
 
     /**
-     * **参数解释**: 是否对篡改行为进行进程监控 **约束限制**: 不涉及 **取值范围**: - true：监控篡改进程 - false：不监控篡改进程 **默认取值**: true 
+     * **参数解释**: 是否对篡改行为进行进程监控 **约束限制**: 不涉及 **取值范围**: - true：监控篡改进程 - false：不监控篡改进程  **默认取值**: true 
      * @return monitorProcess
      */
     public Boolean getMonitorProcess() {
@@ -166,7 +166,7 @@ public class UpdateWebTamperProtectionConfigRequestInfo {
     }
 
     /**
-     * **参数解释**: 特权进程的子进程是否仍享有特权 **约束限制**: monitor_process值为true时生效（不进行进程监控无法判断特权进程） **取值范围**: - true：特权进程的子进程依然是特权进程 - false：特权进程的子进程不再是特权进程 **默认取值**: false 
+     * **参数解释**: 特权进程的子进程是否仍享有特权 **约束限制**: monitor_process值为true时生效（不进行进程监控无法判断特权进程） **取值范围**: - true：特权进程的子进程依然是特权进程 - false：特权进程的子进程不再是特权进程  **默认取值**: false 
      * @return privilegedChild
      */
     public Boolean getPrivilegedChild() {

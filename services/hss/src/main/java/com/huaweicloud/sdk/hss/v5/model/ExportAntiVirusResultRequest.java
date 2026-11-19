@@ -210,7 +210,7 @@ public class ExportAntiVirusResultRequest {
     }
 
     /**
-     * **参数解释**: 处置状态 **约束限制**: 不涉及 **取值范围**: 包含如下:   - unhandled：未处理   - handled：已处理 **默认取值**: 不涉及 
+     * **参数解释**: 处置状态 **约束限制**: 不涉及 **取值范围**: 包含如下:   - unhandled：未处理   - handled：已处理  **默认取值**: 不涉及 
      * @return handleStatus
      */
     public String getHandleStatus() {
@@ -243,7 +243,7 @@ public class ExportAntiVirusResultRequest {
     }
 
     /**
-     * **参数解释**: 威胁等级，已废弃 **约束限制**: 不涉及 **取值范围**: 威胁等级，包含如下:   - Low：低危   - Medium：中危   - High：高危   - Critical：致命 **默认取值**: 不涉及 
+     * **参数解释**: 威胁等级，已废弃 **约束限制**: 不涉及 **取值范围**: 威胁等级，包含如下:   - Low：低危   - Medium：中危   - High：高危   - Critical：致命  **默认取值**: 不涉及 
      * @return severityList
      */
     public List<String> getSeverityList() {
@@ -277,7 +277,7 @@ public class ExportAntiVirusResultRequest {
     }
 
     /**
-     * **参数解释**： 资产重要性 **约束限制**： 不涉及 **取值范围**： - important：重要资产 - common：一般资产 - test：测试资产 **默认取值**： 无 
+     * **参数解释**： 资产重要性 **约束限制**： 不涉及 **取值范围**： - important：重要资产 - common：一般资产 - test：测试资产  **默认取值**： 无 
      * @return assetValue
      */
     public String getAssetValue() {

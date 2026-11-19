@@ -165,7 +165,7 @@ public class ShowVulAffectedStaticsRequest {
     }
 
     /**
-     * **参数解释**: 是否是容器场景 **约束限制**: 不涉及 **取值范围**: - true：是容器场景 - false：不是容器场景 **默认取值**: false 
+     * **参数解释**: 是否是容器场景 **约束限制**: 不涉及 **取值范围**: - true：是容器场景 - false：不是容器场景  **默认取值**: false 
      * @return isContainer
      */
     public Boolean getIsContainer() {

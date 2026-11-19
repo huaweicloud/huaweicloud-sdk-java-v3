@@ -116,6 +116,11 @@ public class RealTimeSessionResult {
     private String clientPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_port")
+
+    private String serverPort;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "query_id")
 
     private String queryId;
@@ -547,6 +552,23 @@ public class RealTimeSessionResult {
         this.clientPort = clientPort;
     }
 
+    public RealTimeSessionResult withServerPort(String serverPort) {
+        this.serverPort = serverPort;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 服务端用于通讯的TCP端口号，如果使用Unix套接字，则为-1。 **取值范围**： 不涉及。
+     * @return serverPort
+     */
+    public String getServerPort() {
+        return serverPort;
+    }
+
+    public void setServerPort(String serverPort) {
+        this.serverPort = serverPort;
+    }
+
     public RealTimeSessionResult withQueryId(String queryId) {
         this.queryId = queryId;
         return this;
@@ -823,7 +845,8 @@ public class RealTimeSessionResult {
             && Objects.equals(this.applicationName, that.applicationName)
             && Objects.equals(this.execTime, that.execTime) && Objects.equals(this.transNum, that.transNum)
             && Objects.equals(this.rollbackNum, that.rollbackNum) && Objects.equals(this.sqlNum, that.sqlNum)
-            && Objects.equals(this.clientPort, that.clientPort) && Objects.equals(this.queryId, that.queryId)
+            && Objects.equals(this.clientPort, that.clientPort) && Objects.equals(this.serverPort, that.serverPort)
+            && Objects.equals(this.queryId, that.queryId)
             && Objects.equals(this.transactionTimeCost, that.transactionTimeCost)
             && Objects.equals(this.traceId, that.traceId) && Objects.equals(this.globalSessionId, that.globalSessionId)
             && Objects.equals(this.topTransactionId, that.topTransactionId)
@@ -858,6 +881,7 @@ public class RealTimeSessionResult {
             rollbackNum,
             sqlNum,
             clientPort,
+            serverPort,
             queryId,
             transactionTimeCost,
             traceId,
@@ -900,6 +924,7 @@ public class RealTimeSessionResult {
         sb.append("    rollbackNum: ").append(toIndentedString(rollbackNum)).append("\n");
         sb.append("    sqlNum: ").append(toIndentedString(sqlNum)).append("\n");
         sb.append("    clientPort: ").append(toIndentedString(clientPort)).append("\n");
+        sb.append("    serverPort: ").append(toIndentedString(serverPort)).append("\n");
         sb.append("    queryId: ").append(toIndentedString(queryId)).append("\n");
         sb.append("    transactionTimeCost: ").append(toIndentedString(transactionTimeCost)).append("\n");
         sb.append("    traceId: ").append(toIndentedString(traceId)).append("\n");

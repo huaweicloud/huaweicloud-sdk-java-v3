@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -14,6 +15,11 @@ public class CreateAccessKeyV5Request {
     @JsonProperty(value = "user_id")
 
     private String userId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private CreateAccessKeyReqBody body;
 
     public CreateAccessKeyV5Request withUserId(String userId) {
         this.userId = userId;
@@ -32,6 +38,32 @@ public class CreateAccessKeyV5Request {
         this.userId = userId;
     }
 
+    public CreateAccessKeyV5Request withBody(CreateAccessKeyReqBody body) {
+        this.body = body;
+        return this;
+    }
+
+    public CreateAccessKeyV5Request withBody(Consumer<CreateAccessKeyReqBody> bodySetter) {
+        if (this.body == null) {
+            this.body = new CreateAccessKeyReqBody();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public CreateAccessKeyReqBody getBody() {
+        return body;
+    }
+
+    public void setBody(CreateAccessKeyReqBody body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +73,12 @@ public class CreateAccessKeyV5Request {
             return false;
         }
         CreateAccessKeyV5Request that = (CreateAccessKeyV5Request) obj;
-        return Objects.equals(this.userId, that.userId);
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userId);
+        return Objects.hash(userId, body);
     }
 
     @Override
@@ -54,6 +86,7 @@ public class CreateAccessKeyV5Request {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateAccessKeyV5Request {\n");
         sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

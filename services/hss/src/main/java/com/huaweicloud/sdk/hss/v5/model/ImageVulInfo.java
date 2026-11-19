@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.hss.v5.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ImageVulInfo
@@ -14,6 +17,11 @@ public class ImageVulInfo {
     @JsonProperty(value = "vul_id")
 
     private String vulId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vul_name")
+
+    private String vulName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repair_necessity")
@@ -55,13 +63,28 @@ public class ImageVulInfo {
 
     private String url;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_list")
+
+    private List<CveInfo> dataList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "severity_level")
+
+    private String severityLevel;
+
     public ImageVulInfo withVulId(String vulId) {
         this.vulId = vulId;
         return this;
     }
 
     /**
-     * **参数解释**: 漏洞ID **取值范围**: 字符长度0-128 
+     * **参数解释**: 漏洞ID **取值范围**: 字符长度1-64位 
      * @return vulId
      */
     public String getVulId() {
@@ -72,13 +95,30 @@ public class ImageVulInfo {
         this.vulId = vulId;
     }
 
+    public ImageVulInfo withVulName(String vulName) {
+        this.vulName = vulName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 漏洞名称 **取值范围**: 字符长度0-256位 
+     * @return vulName
+     */
+    public String getVulName() {
+        return vulName;
+    }
+
+    public void setVulName(String vulName) {
+        this.vulName = vulName;
+    }
+
     public ImageVulInfo withRepairNecessity(String repairNecessity) {
         this.repairNecessity = repairNecessity;
         return this;
     }
 
     /**
-     * **参数解释**: 危险程度 **取值范围**: - immediate_repair：高危 - delay_repair：中危 - not_needed_repair：低危 
+     * **参数解释**: 修复紧急度 **取值范围**: - immediate_repair：紧急修复 - delay_repair：延迟修复 - not_needed_repair：无需修复 
      * @return repairNecessity
      */
     public String getRepairNecessity() {
@@ -95,7 +135,7 @@ public class ImageVulInfo {
     }
 
     /**
-     * **参数解释**: 漏洞描述 **取值范围** : 字符长度0-128 
+     * **参数解释**: 漏洞描述 **取值范围**: 字符长度0-4096位 
      * @return description
      */
     public String getDescription() {
@@ -112,7 +152,7 @@ public class ImageVulInfo {
     }
 
     /**
-     * **参数解释**: 漏洞所在镜像层 **取值范围** : 字符长度0-128 
+     * **参数解释**: 漏洞位置 **取值范围**: 字符长度0-512位 
      * @return position
      */
     public String getPosition() {
@@ -129,7 +169,7 @@ public class ImageVulInfo {
     }
 
     /**
-     * **参数解释**: 漏洞的软件名称 **取值范围** : 字符长度0-128 
+     * **参数解释**: 软件名称 **取值范围**: 字符长度0-128位 
      * @return appName
      */
     public String getAppName() {
@@ -146,7 +186,7 @@ public class ImageVulInfo {
     }
 
     /**
-     * **参数解释**: 应用软件的路径（只有应用漏洞有该字段） **取值范围** : 字符长度1-512 
+     * **参数解释**: 软件路径 **取值范围**: 字符长度0-512位 
      * @return appPath
      */
     public String getAppPath() {
@@ -163,7 +203,7 @@ public class ImageVulInfo {
     }
 
     /**
-     * **参数解释**: 软件版本 **取值范围** : 字符长度0-128 
+     * **参数解释**: 软件版本 **取值范围**: 字符长度0-128位 
      * @return version
      */
     public String getVersion() {
@@ -180,7 +220,7 @@ public class ImageVulInfo {
     }
 
     /**
-     * **参数解释**: 解决方案 **取值范围** : 字符长度0-256 
+     * **参数解释**: 修复建议 **取值范围**: 字符长度0-4096位 
      * @return solution
      */
     public String getSolution() {
@@ -197,7 +237,7 @@ public class ImageVulInfo {
     }
 
     /**
-     * **参数解释**: 补丁地址 **取值范围** : 字符长度0-128 
+     * **参数解释**: URL **取值范围**: 字符长度0-2048位 
      * @return url
      */
     public String getUrl() {
@@ -206,6 +246,73 @@ public class ImageVulInfo {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public ImageVulInfo withDataList(List<CveInfo> dataList) {
+        this.dataList = dataList;
+        return this;
+    }
+
+    public ImageVulInfo addDataListItem(CveInfo dataListItem) {
+        if (this.dataList == null) {
+            this.dataList = new ArrayList<>();
+        }
+        this.dataList.add(dataListItem);
+        return this;
+    }
+
+    public ImageVulInfo withDataList(Consumer<List<CveInfo>> dataListSetter) {
+        if (this.dataList == null) {
+            this.dataList = new ArrayList<>();
+        }
+        dataListSetter.accept(this.dataList);
+        return this;
+    }
+
+    /**
+     * **参数解释**: CVE列表 **取值范围**: 取值0-100个CveInfo对象 
+     * @return dataList
+     */
+    public List<CveInfo> getDataList() {
+        return dataList;
+    }
+
+    public void setDataList(List<CveInfo> dataList) {
+        this.dataList = dataList;
+    }
+
+    public ImageVulInfo withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 漏洞状态 **取值范围**: 字符长度0-64位 
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public ImageVulInfo withSeverityLevel(String severityLevel) {
+        this.severityLevel = severityLevel;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 危险程度 **取值范围**: - Low：低危 - Medium：中危 - High：高危 - Critical：危急 
+     * @return severityLevel
+     */
+    public String getSeverityLevel() {
+        return severityLevel;
+    }
+
+    public void setSeverityLevel(String severityLevel) {
+        this.severityLevel = severityLevel;
     }
 
     @Override
@@ -217,16 +324,30 @@ public class ImageVulInfo {
             return false;
         }
         ImageVulInfo that = (ImageVulInfo) obj;
-        return Objects.equals(this.vulId, that.vulId) && Objects.equals(this.repairNecessity, that.repairNecessity)
+        return Objects.equals(this.vulId, that.vulId) && Objects.equals(this.vulName, that.vulName)
+            && Objects.equals(this.repairNecessity, that.repairNecessity)
             && Objects.equals(this.description, that.description) && Objects.equals(this.position, that.position)
             && Objects.equals(this.appName, that.appName) && Objects.equals(this.appPath, that.appPath)
             && Objects.equals(this.version, that.version) && Objects.equals(this.solution, that.solution)
-            && Objects.equals(this.url, that.url);
+            && Objects.equals(this.url, that.url) && Objects.equals(this.dataList, that.dataList)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.severityLevel, that.severityLevel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vulId, repairNecessity, description, position, appName, appPath, version, solution, url);
+        return Objects.hash(vulId,
+            vulName,
+            repairNecessity,
+            description,
+            position,
+            appName,
+            appPath,
+            version,
+            solution,
+            url,
+            dataList,
+            status,
+            severityLevel);
     }
 
     @Override
@@ -234,6 +355,7 @@ public class ImageVulInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class ImageVulInfo {\n");
         sb.append("    vulId: ").append(toIndentedString(vulId)).append("\n");
+        sb.append("    vulName: ").append(toIndentedString(vulName)).append("\n");
         sb.append("    repairNecessity: ").append(toIndentedString(repairNecessity)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    position: ").append(toIndentedString(position)).append("\n");
@@ -242,6 +364,9 @@ public class ImageVulInfo {
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    solution: ").append(toIndentedString(solution)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    dataList: ").append(toIndentedString(dataList)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    severityLevel: ").append(toIndentedString(severityLevel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

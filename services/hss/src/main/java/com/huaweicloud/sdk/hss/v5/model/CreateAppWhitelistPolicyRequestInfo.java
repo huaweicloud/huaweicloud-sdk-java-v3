@@ -122,7 +122,7 @@ public class CreateAppWhitelistPolicyRequestInfo {
     }
 
     /**
-     * **参数解释**： 是否指定学习目录 **约束限制**： 不涉及 **取值范围**: - true：是 - false：否 **默认取值**： 不涉及 
+     * **参数解释**： 是否指定学习目录 **约束限制**： 不涉及 **取值范围**: - true：是 - false：否  **默认取值**： 不涉及 
      * @return specifiedDir
      */
     public Boolean getSpecifiedDir() {

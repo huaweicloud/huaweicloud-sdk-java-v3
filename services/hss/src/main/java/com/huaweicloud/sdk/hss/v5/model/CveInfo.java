@@ -36,7 +36,7 @@ public class CveInfo {
     }
 
     /**
-     * **参数解释** CVE id **取值范围** 字符长度0-128位 
+     * **参数解释**: CVE id **取值范围**: 字符长度0-64位 
      * @return cveId
      */
     public String getCveId() {
@@ -53,9 +53,9 @@ public class CveInfo {
     }
 
     /**
-     * **参数解释** CVSS分数 **取值范围** 取值0-100 
+     * **参数解释**: CVSS分数 **取值范围**: 最小值0，最大值10 
      * minimum: 0
-     * maximum: 1E+2
+     * maximum: 1E+1
      * @return cvssScore
      */
     public Float getCvssScore() {
@@ -72,9 +72,9 @@ public class CveInfo {
     }
 
     /**
-     * **参数解释** CVE公布时间，时间单位：毫秒（ms） **取值范围** 取值0-3857960855552
+     * **参数解释**: CVE公布时间，毫秒级时间戳 **取值范围**: 最小值0，最大值9223372036854775807 
      * minimum: 0
-     * maximum: 3857960855552
+     * maximum: 9223372036854775807
      * @return publishTime
      */
     public Long getPublishTime() {
@@ -91,7 +91,7 @@ public class CveInfo {
     }
 
     /**
-     * **参数解释** CVE描述 **取值范围** 字符长度0-256位
+     * **参数解释**: CVE描述 **取值范围**: 字符长度0-4096位 
      * @return description
      */
     public String getDescription() {

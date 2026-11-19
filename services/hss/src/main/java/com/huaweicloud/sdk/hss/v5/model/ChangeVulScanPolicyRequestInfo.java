@@ -49,7 +49,7 @@ public class ChangeVulScanPolicyRequestInfo {
     }
 
     /**
-     * **参数解释**: 扫描周期 **约束限制**: 不涉及 **取值范围**: - one_day：每天 - three_day：每三天 - one_week：每周 - one_month：每月 **默认取值**: 不涉及 
+     * **参数解释**: 扫描周期 **约束限制**: 不涉及 **取值范围**: - one_day：每天 - three_day：每三天 - one_week：每周 - one_month：每月  **默认取值**: 不涉及 
      * @return scanPeriod
      */
     public String getScanPeriod() {
@@ -66,7 +66,7 @@ public class ChangeVulScanPolicyRequestInfo {
     }
 
     /**
-     * **参数解释**: 扫描主机的范围 **约束限制**: 不涉及 **取值范围**: - all_host：扫描全部主机 - specific_host：扫描指定主机 **默认取值**: 不涉及 
+     * **参数解释**: 扫描主机的范围 **约束限制**: 不涉及 **取值范围**: - all_host：扫描全部主机 - specific_host：扫描指定主机  **默认取值**: 不涉及 
      * @return scanRangeType
      */
     public String getScanRangeType() {

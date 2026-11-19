@@ -20,11 +20,6 @@ public class BatchCreateTrafficMirrorFilterRulesResponse extends SdkResponse {
     private List<TrafficMirrorFilterRule> trafficMirrorFilterRules = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_info")
-
-    private PageInfo pageInfo;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_id")
 
     private String requestId;
@@ -54,7 +49,7 @@ public class BatchCreateTrafficMirrorFilterRulesResponse extends SdkResponse {
     }
 
     /**
-     * 流量镜像筛选条件规则对象
+     * **参数解释**： 流量镜像筛选规则列表的响应体。 **取值范围**： 不涉及。
      * @return trafficMirrorFilterRules
      */
     public List<TrafficMirrorFilterRule> getTrafficMirrorFilterRules() {
@@ -65,39 +60,13 @@ public class BatchCreateTrafficMirrorFilterRulesResponse extends SdkResponse {
         this.trafficMirrorFilterRules = trafficMirrorFilterRules;
     }
 
-    public BatchCreateTrafficMirrorFilterRulesResponse withPageInfo(PageInfo pageInfo) {
-        this.pageInfo = pageInfo;
-        return this;
-    }
-
-    public BatchCreateTrafficMirrorFilterRulesResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
-        if (this.pageInfo == null) {
-            this.pageInfo = new PageInfo();
-            pageInfoSetter.accept(this.pageInfo);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get pageInfo
-     * @return pageInfo
-     */
-    public PageInfo getPageInfo() {
-        return pageInfo;
-    }
-
-    public void setPageInfo(PageInfo pageInfo) {
-        this.pageInfo = pageInfo;
-    }
-
     public BatchCreateTrafficMirrorFilterRulesResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
     }
 
     /**
-     * 请求ID
+     * **参数解释**： 请求ID。 **取值范围**： 不涉及。
      * @return requestId
      */
     public String getRequestId() {
@@ -118,12 +87,12 @@ public class BatchCreateTrafficMirrorFilterRulesResponse extends SdkResponse {
         }
         BatchCreateTrafficMirrorFilterRulesResponse that = (BatchCreateTrafficMirrorFilterRulesResponse) obj;
         return Objects.equals(this.trafficMirrorFilterRules, that.trafficMirrorFilterRules)
-            && Objects.equals(this.pageInfo, that.pageInfo) && Objects.equals(this.requestId, that.requestId);
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(trafficMirrorFilterRules, pageInfo, requestId);
+        return Objects.hash(trafficMirrorFilterRules, requestId);
     }
 
     @Override
@@ -131,7 +100,6 @@ public class BatchCreateTrafficMirrorFilterRulesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchCreateTrafficMirrorFilterRulesResponse {\n");
         sb.append("    trafficMirrorFilterRules: ").append(toIndentedString(trafficMirrorFilterRules)).append("\n");
-        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("}");
         return sb.toString();

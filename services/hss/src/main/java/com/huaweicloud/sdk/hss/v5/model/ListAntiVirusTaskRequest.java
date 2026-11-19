@@ -209,7 +209,7 @@ public class ListAntiVirusTaskRequest {
     }
 
     /**
-     * **参数解释**: 任务状态 **约束限制**: 不涉及 **取值范围**: 包含如下4种   - scanning：扫描中   - cancel：已取消   - fail：扫描失败   - finish：已完成 **默认取值**: 不涉及 
+     * **参数解释**: 任务状态 **约束限制**: 不涉及 **取值范围**: 包含如下4种   - scanning：扫描中   - cancel：已取消   - fail：扫描失败   - finish：已完成  **默认取值**: 不涉及 
      * @return taskStatus
      */
     public String getTaskStatus() {
@@ -310,7 +310,7 @@ public class ListAntiVirusTaskRequest {
     }
 
     /**
-     * 服务器扫描状态， **参数解释**： 服务器扫描状态 **约束限制**: 不涉及 **取值范围**: 包含如下4种   - scanning ：扫描中   - success ：扫描成功   - fail ：扫描失败   - cancel ：取消扫描 **默认取值**: 不涉及 
+     * 服务器扫描状态， **参数解释**： 服务器扫描状态 **约束限制**: 不涉及 **取值范围**: 包含如下4种   - scanning ：扫描中   - success ：扫描成功   - fail ：扫描失败   - cancel ：取消扫描  **默认取值**: 不涉及 
      * @return hostTaskStatus
      */
     public List<String> getHostTaskStatus() {

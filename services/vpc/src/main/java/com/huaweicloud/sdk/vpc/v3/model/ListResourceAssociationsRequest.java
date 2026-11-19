@@ -43,6 +43,16 @@ public class ListResourceAssociationsRequest {
 
     private String instanceProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
     public ListResourceAssociationsRequest withResourceId(List<String> resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -209,6 +219,40 @@ public class ListResourceAssociationsRequest {
         this.instanceProjectId = instanceProjectId;
     }
 
+    public ListResourceAssociationsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 每页返回的个数。 **取值范围**： 0-2000。
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListResourceAssociationsRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 分页查询起始的资源ID，为空时查询第一页。 **取值范围**： 带“-”的标准UUID格式。
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -221,12 +265,20 @@ public class ListResourceAssociationsRequest {
         return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceType, that.resourceType)
             && Objects.equals(this.resourceProjectId, that.resourceProjectId)
             && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceType, that.instanceType)
-            && Objects.equals(this.instanceProjectId, that.instanceProjectId);
+            && Objects.equals(this.instanceProjectId, that.instanceProjectId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceId, resourceType, resourceProjectId, instanceId, instanceType, instanceProjectId);
+        return Objects.hash(resourceId,
+            resourceType,
+            resourceProjectId,
+            instanceId,
+            instanceType,
+            instanceProjectId,
+            limit,
+            marker);
     }
 
     @Override
@@ -239,6 +291,8 @@ public class ListResourceAssociationsRequest {
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
         sb.append("    instanceProjectId: ").append(toIndentedString(instanceProjectId)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -56,7 +56,7 @@ public class NodeDetectRiskResponseInfo {
     }
 
     /**
-     * 有风险镜像数量
+     * **参数解释**： 有风险镜像数量 **取值范围**： 0~2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return imagesNum
@@ -75,7 +75,7 @@ public class NodeDetectRiskResponseInfo {
     }
 
     /**
-     * 基线检查风险项总和
+     * **参数解释**： 基线检查风险项总和 **取值范围**： 0~2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return baselineRiskNum
@@ -94,7 +94,7 @@ public class NodeDetectRiskResponseInfo {
     }
 
     /**
-     * 漏洞数量
+     * **参数解释**： 漏洞数量 **取值范围**： 0~2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return vulNum
@@ -113,7 +113,7 @@ public class NodeDetectRiskResponseInfo {
     }
 
     /**
-     * 告警数量
+     * **参数解释**： 告警数量 **取值范围**： 0~2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return eventNum
@@ -132,7 +132,7 @@ public class NodeDetectRiskResponseInfo {
     }
 
     /**
-     * 集群开启防护节点数量
+     * **参数解释**： 集群开启防护节点数量 **取值范围**： 0~2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return protectNodeNum
@@ -151,7 +151,7 @@ public class NodeDetectRiskResponseInfo {
     }
 
     /**
-     * 集群节点总数
+     * **参数解释**： 集群节点总数 **取值范围**： 0~2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return nodeTotalNum
@@ -170,7 +170,7 @@ public class NodeDetectRiskResponseInfo {
     }
 
     /**
-     * 集群id
+     * **参数解释**： 集群ID **取值范围**： 字符长度0-128位 
      * @return clusterId
      */
     public String getClusterId() {
@@ -187,7 +187,7 @@ public class NodeDetectRiskResponseInfo {
     }
 
     /**
-     * 付费模式包括： - on_demand：按需 - free：免费
+     * **参数解释**： 付费模式 **取值范围**： - on_demand：按需 - free：免费 
      * @return chargingMode
      */
     public String getChargingMode() {

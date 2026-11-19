@@ -100,7 +100,7 @@ public class CreateGlobalAssetScanTaskRequestInfo {
     }
 
     /**
-     * **参数解释**: 下发全部主机的扫描 **约束限制**: 不涉及 **取值范围**: - true：扫描全部主机 - false：不扫描全部主机 **默认取值**: 不涉及 
+     * **参数解释**: 下发全部主机的扫描 **约束限制**: 不涉及 **取值范围**: - true：扫描全部主机 - false：不扫描全部主机  **默认取值**: 不涉及 
      * @return allHosts
      */
     public Boolean getAllHosts() {

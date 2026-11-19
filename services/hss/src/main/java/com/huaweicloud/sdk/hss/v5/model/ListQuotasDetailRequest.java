@@ -113,7 +113,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * **参数解释**： 主机开通的版本 **约束限制**: 不涉及 **取值范围**： 包含如下7种输入。 - hss.version.null ：无。 - hss.version.basic ：基础版。 - hss.version.advanced ：专业版。 - hss.version.enterprise ：企业版。 - hss.version.premium ：旗舰版。 - hss.version.wtp ：网页防篡改版。 - hss.version.container.enterprise：容器版。 **默认取值**: 不涉及
+     * **参数解释**： 主机开通的版本 **约束限制**: 不涉及 **取值范围**： 包含如下7种输入。 - hss.version.null ：无。 - hss.version.basic ：基础版。 - hss.version.advanced ：专业版。 - hss.version.enterprise ：企业版。 - hss.version.premium ：旗舰版。 - hss.version.wtp ：网页防篡改版。 - hss.version.container.enterprise：容器版。 - hss.version.container.wtp：容器网页防篡改增值项。  **默认取值**: 不涉及
      * @return version
      */
     public String getVersion() {
@@ -130,7 +130,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * **参数解释**: 类别 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - host_resource ：主机 - container_resource ：容器 **默认取值**: 不涉及
+     * **参数解释**: 类别 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - host_resource：主机 - container_resource：容器 - container_wtp_resource：容器网页防篡改  **默认取值**: 不涉及
      * @return category
      */
     public String getCategory() {
@@ -147,7 +147,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * **参数解释**: 配额状态 **约束限制**: 不涉及 **取值范围**: 包含如下三种： - normal ： 正常 - expired ：过期 - freeze ：冻结 **默认取值**: 不涉及
+     * **参数解释**: 配额状态 **约束限制**: 不涉及 **取值范围**: 包含如下三种： - normal ： 正常 - expired ：过期 - freeze ：冻结  **默认取值**: 不涉及
      * @return quotaStatus
      */
     public String getQuotaStatus() {
@@ -164,7 +164,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * **参数解释**: 使用状态 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - idle ：空闲的 - used ：使用中 **默认取值**: 不涉及
+     * **参数解释**: 使用状态 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - idle ：空闲的 - used ：使用中  **默认取值**: 不涉及
      * @return usedStatus
      */
     public String getUsedStatus() {
@@ -248,7 +248,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * **参数解释**： 收费模式 **约束限制**: 不涉及 **取值范围**: - packet_cycle ：包年/包月。 - on_demand ：按需。 **默认取值**: 不涉及
+     * **参数解释**： 收费模式 **约束限制**: 不涉及 **取值范围**: - packet_cycle ：包年/包月。 - on_demand ：按需。  **默认取值**: 不涉及
      * @return chargingMode
      */
     public String getChargingMode() {

@@ -255,7 +255,7 @@ public class ListRegistryImagesRequest {
     }
 
     /**
-     * **参数解释**: 镜像类型 **约束限制**: 不涉及 **取值范围**: - private_image：SWR私有镜像。 - shared_image：SWR共享镜像。 - instance_image：SWR企业版镜像。 - harbor：Harbor仓库镜像。 - jfrog：Jfrog镜像。 **默认取值**: 不涉及 
+     * **参数解释**: 镜像类型 **约束限制**: 不涉及 **取值范围**: - private_image：SWR私有镜像。 - shared_image：SWR共享镜像。 - instance_image：SWR企业版镜像。 - harbor：Harbor仓库镜像。 - jfrog：Jfrog镜像。  **默认取值**: 不涉及 
      * @return imageType
      */
     public String getImageType() {

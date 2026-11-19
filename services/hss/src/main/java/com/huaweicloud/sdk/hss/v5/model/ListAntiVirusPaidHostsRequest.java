@@ -223,7 +223,7 @@ public class ListAntiVirusPaidHostsRequest {
     }
 
     /**
-     * **参数解释**: 启动类型 **约束限制**: 不涉及 **取值范围**: - now ：立即启动 - period : 周期启动 **默认取值**: 不涉及 
+     * **参数解释**: 启动类型 **约束限制**: 不涉及 **取值范围**: - now ：立即启动 - period : 周期启动  **默认取值**: 不涉及 
      * @return startType
      */
     public String getStartType() {

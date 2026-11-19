@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -19,6 +20,11 @@ public class DeleteGaussMySqlInstanceRequest {
     @JsonProperty(value = "instance_id")
 
     private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private DeleteGaussMySqlInstanceRequestBody body;
 
     public DeleteGaussMySqlInstanceRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -56,6 +62,32 @@ public class DeleteGaussMySqlInstanceRequest {
         this.instanceId = instanceId;
     }
 
+    public DeleteGaussMySqlInstanceRequest withBody(DeleteGaussMySqlInstanceRequestBody body) {
+        this.body = body;
+        return this;
+    }
+
+    public DeleteGaussMySqlInstanceRequest withBody(Consumer<DeleteGaussMySqlInstanceRequestBody> bodySetter) {
+        if (this.body == null) {
+            this.body = new DeleteGaussMySqlInstanceRequestBody();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public DeleteGaussMySqlInstanceRequestBody getBody() {
+        return body;
+    }
+
+    public void setBody(DeleteGaussMySqlInstanceRequestBody body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -65,12 +97,13 @@ public class DeleteGaussMySqlInstanceRequest {
             return false;
         }
         DeleteGaussMySqlInstanceRequest that = (DeleteGaussMySqlInstanceRequest) obj;
-        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId);
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, instanceId);
+        return Objects.hash(xLanguage, instanceId, body);
     }
 
     @Override
@@ -79,6 +112,7 @@ public class DeleteGaussMySqlInstanceRequest {
         sb.append("class DeleteGaussMySqlInstanceRequest {\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -270,7 +270,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * **参数解释**： 主机开通的版本 **约束限制**: 不涉及 **取值范围**： 包含如下7种输入。 - hss.version.null ：无。 - hss.version.basic ：基础版。 - hss.version.advanced ：专业版。 - hss.version.enterprise ：企业版。 - hss.version.premium ：旗舰版。 - hss.version.wtp ：网页防篡改版。 - hss.version.container.enterprise：容器版。 **默认取值**: 不涉及
+     * **参数解释**： 主机开通的版本 **约束限制**: 不涉及 **取值范围**： 包含如下7种输入。 - hss.version.null ：无。 - hss.version.basic ：基础版。 - hss.version.advanced ：专业版。 - hss.version.enterprise ：企业版。 - hss.version.premium ：旗舰版。 - hss.version.wtp ：网页防篡改版。 - hss.version.container.enterprise：容器版。 - hss.version.container.wtp：容器网页防篡改增值项。  **默认取值**: 不涉及
      * @return version
      */
     public String getVersion() {
@@ -304,7 +304,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * **参数解释**: 检测结果 **约束限制**: 不涉及 **取值范围**: 包含如下4种。   - undetected ：未检测。   - clean ：无风险。   - risk ：有风险。   - scanning ：检测中。 **默认取值**: 不涉及
+     * **参数解释**: 检测结果 **约束限制**: 不涉及 **取值范围**: 包含如下4种。   - undetected ：未检测。   - clean ：无风险。   - risk ：有风险。   - scanning ：检测中。  **默认取值**: 不涉及
      * @return detectResult
      */
     public String getDetectResult() {
@@ -355,7 +355,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * **参数解释**: 主机状态 **约束限制**: 不涉及 **取值范围**: 包含如下4种。 - ACTIVE ：正在运行。 - SHUTOFF ：关机。 - BUILDING ：创建中。 - ERROR ：故障。 **默认取值**: 不涉及
+     * **参数解释**: 主机状态 **约束限制**: 不涉及 **取值范围**: 包含如下4种。 - ACTIVE ：正在运行。 - SHUTOFF ：关机。 - BUILDING ：创建中。 - ERROR ：故障。  **默认取值**: 不涉及
      * @return hostStatus
      */
     public String getHostStatus() {
@@ -372,7 +372,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * **参数解释**: 操作系统类型 **约束限制**: 不涉及 **取值范围**: 包含如下2种。 - Linux ：Linux。 - Windows ：Windows。 **默认取值**: 不涉及
+     * **参数解释**: 操作系统类型 **约束限制**: 不涉及 **取值范围**: 包含如下2种。 - Linux ：Linux。 - Windows ：Windows。  **默认取值**: 不涉及
      * @return osType
      */
     public String getOsType() {
@@ -440,7 +440,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * **参数解释**: 防护状态 **约束限制**: 不涉及 **取值范围**: 包含如下3种： - closed ：关闭。 - opened ：开启。 - protection_exception ：防护异常。 **默认取值**: 不涉及
+     * **参数解释**: 防护状态 **约束限制**: 不涉及 **取值范围**: 包含如下3种： - closed ：关闭。 - opened ：开启。 - protection_exception ：防护异常。  **默认取值**: 不涉及
      * @return protectStatus
      */
     public String getProtectStatus() {
@@ -644,7 +644,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * **参数解释**: 排序的顺序 **约束限制**: 不涉及 **取值范围**: - asc: 正序 - desc: 倒序 **默认取值**: 不涉及 
+     * **参数解释**: 排序的顺序 **约束限制**: 不涉及 **取值范围**: - asc: 正序 - desc: 倒序  **默认取值**: 不涉及 
      * @return sortDir
      */
     public String getSortDir() {
@@ -695,7 +695,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * **参数解释**： 收费模式 **约束限制**: 不涉及 **取值范围**: - packet_cycle ：包年/包月。 - on_demand ：按需。 **默认取值**: 不涉及
+     * **参数解释**： 收费模式 **约束限制**: 不涉及 **取值范围**: - packet_cycle ：包年/包月。 - on_demand ：按需。  **默认取值**: 不涉及
      * @return chargingMode
      */
     public String getChargingMode() {

@@ -5,8 +5,6 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.koophone.v1.model.AsyncInvokeInstanceRequest;
-import com.huaweicloud.sdk.koophone.v1.model.AsyncInvokeInstanceResponse;
 import com.huaweicloud.sdk.koophone.v1.model.BatchBackupInstancesRequest;
 import com.huaweicloud.sdk.koophone.v1.model.BatchBackupInstancesResponse;
 import com.huaweicloud.sdk.koophone.v1.model.BatchPrepareInstancesRequest;
@@ -33,7 +31,6 @@ import com.huaweicloud.sdk.koophone.v1.model.InstallAppReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstallAppRequest;
 import com.huaweicloud.sdk.koophone.v1.model.InstallAppResponse;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceAssignReq;
-import com.huaweicloud.sdk.koophone.v1.model.InstanceAsyncCommandsReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceBatchBackupReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceBatchPrepareReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceCommandsReq;
@@ -44,7 +41,6 @@ import com.huaweicloud.sdk.koophone.v1.model.InstanceResetReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceSessionReleaseReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceStatusReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceStreamingStopReq;
-import com.huaweicloud.sdk.koophone.v1.model.InstanceSyncCommandsReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceUnassignReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceVideoSettingReq;
 import com.huaweicloud.sdk.koophone.v1.model.ListInstanceAppRequest;
@@ -61,34 +57,9 @@ import com.huaweicloud.sdk.koophone.v1.model.StopInstancesSessionRequest;
 import com.huaweicloud.sdk.koophone.v1.model.StopInstancesSessionResponse;
 import com.huaweicloud.sdk.koophone.v1.model.StopInstancesStreamingRequest;
 import com.huaweicloud.sdk.koophone.v1.model.StopInstancesStreamingResponse;
-import com.huaweicloud.sdk.koophone.v1.model.SyncInvokeInstanceRequest;
-import com.huaweicloud.sdk.koophone.v1.model.SyncInvokeInstanceResponse;
 
 @SuppressWarnings("unchecked")
 public class KooPhoneMeta {
-
-    public static final HttpRequestDef<AsyncInvokeInstanceRequest, AsyncInvokeInstanceResponse> asyncInvokeInstance =
-        genForAsyncInvokeInstance();
-
-    private static HttpRequestDef<AsyncInvokeInstanceRequest, AsyncInvokeInstanceResponse> genForAsyncInvokeInstance() {
-        // basic
-        HttpRequestDef.Builder<AsyncInvokeInstanceRequest, AsyncInvokeInstanceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, AsyncInvokeInstanceRequest.class, AsyncInvokeInstanceResponse.class)
-                .withName("AsyncInvokeInstance")
-                .withUri("/v1/instances/async-command")
-                .withContentType("application/json");
-
-        // requests
-        builder.<InstanceAsyncCommandsReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(InstanceAsyncCommandsReq.class),
-            f -> f.withMarshaller(AsyncInvokeInstanceRequest::getBody, AsyncInvokeInstanceRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
 
     public static final HttpRequestDef<BatchBackupInstancesRequest, BatchBackupInstancesResponse> batchBackupInstances =
         genForBatchBackupInstances();
@@ -600,29 +571,6 @@ public class KooPhoneMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceStreamingStopReq.class),
             f -> f.withMarshaller(StopInstancesStreamingRequest::getBody, StopInstancesStreamingRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<SyncInvokeInstanceRequest, SyncInvokeInstanceResponse> syncInvokeInstance =
-        genForSyncInvokeInstance();
-
-    private static HttpRequestDef<SyncInvokeInstanceRequest, SyncInvokeInstanceResponse> genForSyncInvokeInstance() {
-        // basic
-        HttpRequestDef.Builder<SyncInvokeInstanceRequest, SyncInvokeInstanceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, SyncInvokeInstanceRequest.class, SyncInvokeInstanceResponse.class)
-                .withName("SyncInvokeInstance")
-                .withUri("/v1/instances/sync-command")
-                .withContentType("application/json");
-
-        // requests
-        builder.<InstanceSyncCommandsReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(InstanceSyncCommandsReq.class),
-            f -> f.withMarshaller(SyncInvokeInstanceRequest::getBody, SyncInvokeInstanceRequest::setBody));
 
         // response
 

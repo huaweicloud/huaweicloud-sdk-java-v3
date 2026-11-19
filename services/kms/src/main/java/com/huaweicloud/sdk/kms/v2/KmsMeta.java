@@ -59,6 +59,9 @@ import com.huaweicloud.sdk.kms.v2.model.CreateRandomResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateRsaDatakeyPairRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateRsaDatakeyPairRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.CreateRsaDatakeyPairResponse;
+import com.huaweicloud.sdk.kms.v2.model.CreateTrustedKeySpaceRequest;
+import com.huaweicloud.sdk.kms.v2.model.CreateTrustedKeySpaceRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.CreateTrustedKeySpaceResponse;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDataRequest;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDataRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDataResponse;
@@ -83,6 +86,8 @@ import com.huaweicloud.sdk.kms.v2.model.DeleteKeyStoreRequest;
 import com.huaweicloud.sdk.kms.v2.model.DeleteKeyStoreResponse;
 import com.huaweicloud.sdk.kms.v2.model.DeleteTagRequest;
 import com.huaweicloud.sdk.kms.v2.model.DeleteTagResponse;
+import com.huaweicloud.sdk.kms.v2.model.DeleteTrustedKeySpaceRequest;
+import com.huaweicloud.sdk.kms.v2.model.DeleteTrustedKeySpaceResponse;
 import com.huaweicloud.sdk.kms.v2.model.DeriveSharedSecretRequest;
 import com.huaweicloud.sdk.kms.v2.model.DeriveSharedSecretRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.DeriveSharedSecretResponse;
@@ -145,6 +150,8 @@ import com.huaweicloud.sdk.kms.v2.model.ListRetirableGrantsRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.ListRetirableGrantsResponse;
 import com.huaweicloud.sdk.kms.v2.model.ListSupportRegionsRequest;
 import com.huaweicloud.sdk.kms.v2.model.ListSupportRegionsResponse;
+import com.huaweicloud.sdk.kms.v2.model.ListTrustedKeySpaceRequest;
+import com.huaweicloud.sdk.kms.v2.model.ListTrustedKeySpaceResponse;
 import com.huaweicloud.sdk.kms.v2.model.OperateKeyRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.ReEncryptRequest;
 import com.huaweicloud.sdk.kms.v2.model.ReEncryptRequestBody;
@@ -163,6 +170,8 @@ import com.huaweicloud.sdk.kms.v2.model.ShowKeyRotationStatusRequest;
 import com.huaweicloud.sdk.kms.v2.model.ShowKeyRotationStatusResponse;
 import com.huaweicloud.sdk.kms.v2.model.ShowKeyStoreRequest;
 import com.huaweicloud.sdk.kms.v2.model.ShowKeyStoreResponse;
+import com.huaweicloud.sdk.kms.v2.model.ShowKeyUsageFlowRequest;
+import com.huaweicloud.sdk.kms.v2.model.ShowKeyUsageFlowResponse;
 import com.huaweicloud.sdk.kms.v2.model.ShowKmsTagsRequest;
 import com.huaweicloud.sdk.kms.v2.model.ShowKmsTagsResponse;
 import com.huaweicloud.sdk.kms.v2.model.ShowPublicKeyRequest;
@@ -178,6 +187,9 @@ import com.huaweicloud.sdk.kms.v2.model.ShowVersionsResponse;
 import com.huaweicloud.sdk.kms.v2.model.SignRequest;
 import com.huaweicloud.sdk.kms.v2.model.SignRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.SignResponse;
+import com.huaweicloud.sdk.kms.v2.model.TransferKeyRequest;
+import com.huaweicloud.sdk.kms.v2.model.TransferKeyRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.TransferKeyResponse;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyAliasRequest;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyAliasRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyAliasResponse;
@@ -190,6 +202,9 @@ import com.huaweicloud.sdk.kms.v2.model.UpdateKeyPolicyResponse;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyRotationIntervalRequest;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyRotationIntervalRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyRotationIntervalResponse;
+import com.huaweicloud.sdk.kms.v2.model.UpdateKeyStoreRequest;
+import com.huaweicloud.sdk.kms.v2.model.UpdateKeyStoreRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.UpdateKeyStoreResponse;
 import com.huaweicloud.sdk.kms.v2.model.UpdatePrimaryRegionRequest;
 import com.huaweicloud.sdk.kms.v2.model.UpdatePrimaryRegionRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.UpdatePrimaryRegionResponse;
@@ -676,6 +691,29 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateTrustedKeySpaceRequest, CreateTrustedKeySpaceResponse> createTrustedKeySpace =
+        genForCreateTrustedKeySpace();
+
+    private static HttpRequestDef<CreateTrustedKeySpaceRequest, CreateTrustedKeySpaceResponse> genForCreateTrustedKeySpace() {
+        // basic
+        HttpRequestDef.Builder<CreateTrustedKeySpaceRequest, CreateTrustedKeySpaceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateTrustedKeySpaceRequest.class, CreateTrustedKeySpaceResponse.class)
+            .withName("CreateTrustedKeySpace")
+            .withUri("/v1.0/{project_id}/kms/key-spaces")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateTrustedKeySpaceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTrustedKeySpaceRequestBody.class),
+            f -> f.withMarshaller(CreateTrustedKeySpaceRequest::getBody, CreateTrustedKeySpaceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DecryptDataRequest, DecryptDataResponse> decryptData = genForDecryptData();
 
     private static HttpRequestDef<DecryptDataRequest, DecryptDataResponse> genForDecryptData() {
@@ -906,6 +944,30 @@ public class KmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTagRequest::getKey, DeleteTagRequest::setKey));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTrustedKeySpaceRequest, DeleteTrustedKeySpaceResponse> deleteTrustedKeySpace =
+        genForDeleteTrustedKeySpace();
+
+    private static HttpRequestDef<DeleteTrustedKeySpaceRequest, DeleteTrustedKeySpaceResponse> genForDeleteTrustedKeySpace() {
+        // basic
+        HttpRequestDef.Builder<DeleteTrustedKeySpaceRequest, DeleteTrustedKeySpaceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteTrustedKeySpaceRequest.class, DeleteTrustedKeySpaceResponse.class)
+            .withName("DeleteTrustedKeySpace")
+            .withUri("/v1.0/{project_id}/kms/key-spaces/{keyspace_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("keyspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTrustedKeySpaceRequest::getKeyspaceId,
+                DeleteTrustedKeySpaceRequest::setKeyspaceId));
 
         // response
 
@@ -1532,6 +1594,45 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTrustedKeySpaceRequest, ListTrustedKeySpaceResponse> listTrustedKeySpace =
+        genForListTrustedKeySpace();
+
+    private static HttpRequestDef<ListTrustedKeySpaceRequest, ListTrustedKeySpaceResponse> genForListTrustedKeySpace() {
+        // basic
+        HttpRequestDef.Builder<ListTrustedKeySpaceRequest, ListTrustedKeySpaceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTrustedKeySpaceRequest.class, ListTrustedKeySpaceResponse.class)
+                .withName("ListTrustedKeySpace")
+                .withUri("/v1.0/{project_id}/kms/key-spaces")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrustedKeySpaceRequest::getLimit, ListTrustedKeySpaceRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrustedKeySpaceRequest::getMarker, ListTrustedKeySpaceRequest::setMarker));
+        builder.<String>withRequestField("keyspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrustedKeySpaceRequest::getKeyspaceId,
+                ListTrustedKeySpaceRequest::setKeyspaceId));
+        builder.<Integer>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTrustedKeySpaceRequest::getType, ListTrustedKeySpaceRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ReEncryptRequest, ReEncryptResponse> reEncrypt = genForReEncrypt();
 
     private static HttpRequestDef<ReEncryptRequest, ReEncryptResponse> genForReEncrypt() {
@@ -1672,6 +1773,34 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowKeyUsageFlowRequest, ShowKeyUsageFlowResponse> showKeyUsageFlow =
+        genForShowKeyUsageFlow();
+
+    private static HttpRequestDef<ShowKeyUsageFlowRequest, ShowKeyUsageFlowResponse> genForShowKeyUsageFlow() {
+        // basic
+        HttpRequestDef.Builder<ShowKeyUsageFlowRequest, ShowKeyUsageFlowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowKeyUsageFlowRequest.class, ShowKeyUsageFlowResponse.class)
+                .withName("ShowKeyUsageFlow")
+                .withUri("/v1.0/{project_id}/kms/key-spaces/usage-flow")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("keyspace_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKeyUsageFlowRequest::getKeyspaceId, ShowKeyUsageFlowRequest::setKeyspaceId));
+        builder.<String>withRequestField("key_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKeyUsageFlowRequest::getKeyId, ShowKeyUsageFlowRequest::setKeyId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowKmsTagsRequest, ShowKmsTagsResponse> showKmsTags = genForShowKmsTags();
 
     private static HttpRequestDef<ShowKmsTagsRequest, ShowKmsTagsResponse> genForShowKmsTags() {
@@ -1775,6 +1904,28 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<TransferKeyRequest, TransferKeyResponse> transferKey = genForTransferKey();
+
+    private static HttpRequestDef<TransferKeyRequest, TransferKeyResponse> genForTransferKey() {
+        // basic
+        HttpRequestDef.Builder<TransferKeyRequest, TransferKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, TransferKeyRequest.class, TransferKeyResponse.class)
+                .withName("TransferKey")
+                .withUri("/v1.0/{project_id}/kms/key-spaces/transfer-key")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<TransferKeyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TransferKeyRequestBody.class),
+            f -> f.withMarshaller(TransferKeyRequest::getBody, TransferKeyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateKeyAliasRequest, UpdateKeyAliasResponse> updateKeyAlias =
         genForUpdateKeyAlias();
 
@@ -1870,6 +2021,34 @@ public class KmsMeta {
             TypeCasts.uncheckedConversion(UpdateKeyRotationIntervalRequestBody.class),
             f -> f.withMarshaller(UpdateKeyRotationIntervalRequest::getBody,
                 UpdateKeyRotationIntervalRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateKeyStoreRequest, UpdateKeyStoreResponse> updateKeyStore =
+        genForUpdateKeyStore();
+
+    private static HttpRequestDef<UpdateKeyStoreRequest, UpdateKeyStoreResponse> genForUpdateKeyStore() {
+        // basic
+        HttpRequestDef.Builder<UpdateKeyStoreRequest, UpdateKeyStoreResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateKeyStoreRequest.class, UpdateKeyStoreResponse.class)
+                .withName("UpdateKeyStore")
+                .withUri("/v1.0/{project_id}/keystores/{keystore_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("keystore_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateKeyStoreRequest::getKeystoreId, UpdateKeyStoreRequest::setKeystoreId));
+        builder.<UpdateKeyStoreRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateKeyStoreRequestBody.class),
+            f -> f.withMarshaller(UpdateKeyStoreRequest::getBody, UpdateKeyStoreRequest::setBody));
 
         // response
 

@@ -128,7 +128,7 @@ public class ListWebTamperEventRequest {
     }
 
     /**
-     * **参数解释**: 网页防篡改类型 **约束限制**: 不涉及。 **取值范围**: - container_wtp：容器网页防篡改 **默认取值**: 不涉及 
+     * **参数解释**: 网页防篡改类型 **约束限制**: 不涉及。 **取值范围**: - container_wtp：容器网页防篡改  **默认取值**: 不涉及 
      * @return type
      */
     public String getType() {
@@ -370,7 +370,7 @@ public class ListWebTamperEventRequest {
     }
 
     /**
-     * **参数解释**: 进程环境，是指在容器内的进程或者宿主机的进程 **约束限制**: 不涉及 **取值范围**: - host：主机进程 - container：容器进程 **默认取值**: 不涉及 
+     * **参数解释**: 进程环境，是指在容器内的进程或者宿主机的进程 **约束限制**: 不涉及 **取值范围**: - host：主机进程 - container：容器进程  **默认取值**: 不涉及 
      * @return processEnv
      */
     public String getProcessEnv() {

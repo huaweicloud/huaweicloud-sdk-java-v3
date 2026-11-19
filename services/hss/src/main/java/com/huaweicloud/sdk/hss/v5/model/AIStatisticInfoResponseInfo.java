@@ -26,7 +26,7 @@ public class AIStatisticInfoResponseInfo {
     }
 
     /**
-     * **参数解释**： AI组件对应类型的名称 **取值范围**： 字符长度1-256位 
+     * **参数解释**： AI组件对应类型的名称 **取值范围**： 字符长度1-256位    
      * @return aiComponentName
      */
     public String getAiComponentName() {

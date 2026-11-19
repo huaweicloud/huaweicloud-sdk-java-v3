@@ -743,6 +743,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionFinalConfirmRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionFinalConfirmResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionNewRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionNewResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionRequest;
@@ -7427,6 +7429,36 @@ public class RdsAsyncClient {
     public AsyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse> upgradeDbVersionAsyncInvoker(
         UpgradeDbVersionRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.upgradeDbVersion, hcClient);
+    }
+
+    /**
+     * 数据库小版本升级后最后确认操作
+     *
+     * 数据库小版本升级后最后确认操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeDbVersionFinalConfirmRequest 请求对象
+     * @return CompletableFuture<UpgradeDbVersionFinalConfirmResponse>
+     */
+    public CompletableFuture<UpgradeDbVersionFinalConfirmResponse> upgradeDbVersionFinalConfirmAsync(
+        UpgradeDbVersionFinalConfirmRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.upgradeDbVersionFinalConfirm);
+    }
+
+    /**
+     * 数据库小版本升级后最后确认操作
+     *
+     * 数据库小版本升级后最后确认操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeDbVersionFinalConfirmRequest 请求对象
+     * @return AsyncInvoker<UpgradeDbVersionFinalConfirmRequest, UpgradeDbVersionFinalConfirmResponse>
+     */
+    public AsyncInvoker<UpgradeDbVersionFinalConfirmRequest, UpgradeDbVersionFinalConfirmResponse> upgradeDbVersionFinalConfirmAsyncInvoker(
+        UpgradeDbVersionFinalConfirmRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.upgradeDbVersionFinalConfirm, hcClient);
     }
 
     /**

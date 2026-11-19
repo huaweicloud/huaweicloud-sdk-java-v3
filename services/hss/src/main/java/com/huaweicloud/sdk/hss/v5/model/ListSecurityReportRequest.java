@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ListSecurityReportRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region")
-
-    private String region;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -34,23 +29,6 @@ public class ListSecurityReportRequest {
     @JsonProperty(value = "limit")
 
     private Integer limit;
-
-    public ListSecurityReportRequest withRegion(String region) {
-        this.region = region;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 区域ID，用于查询目的区域内的资产。获取方式请参见[获取区域ID](hss_02_0026.xml)。 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
-     * @return region
-     */
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
 
     public ListSecurityReportRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -75,7 +53,7 @@ public class ListSecurityReportRequest {
     }
 
     /**
-     * **参数解释**: \"报告类别(不传默认是全部)\"  **约束限制**:  不涉及  **取值范围**:  - daily_report：安全日报  - weekly_report：安全周报  - monthly_report：安全月报  - custom_report：自定义报告  **默认取值**:  不涉及，不传默认是全部 
+     * **参数解释**: 报告类别，不传默认查询全部类别。 **约束限制**: 不涉及 **取值范围**: - daily_report：日报 - weekly_report：周报 - monthly_report：月报 - custom_report：自定义报告  **默认取值**: 不涉及 
      * @return reportCategory
      */
     public String getReportCategory() {
@@ -133,22 +111,20 @@ public class ListSecurityReportRequest {
             return false;
         }
         ListSecurityReportRequest that = (ListSecurityReportRequest) obj;
-        return Objects.equals(this.region, that.region)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.reportCategory, that.reportCategory) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(region, enterpriseProjectId, reportCategory, offset, limit);
+        return Objects.hash(enterpriseProjectId, reportCategory, offset, limit);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSecurityReportRequest {\n");
-        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    reportCategory: ").append(toIndentedString(reportCategory)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

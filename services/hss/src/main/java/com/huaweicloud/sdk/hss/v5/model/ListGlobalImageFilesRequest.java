@@ -118,7 +118,7 @@ public class ListGlobalImageFilesRequest {
     }
 
     /**
-     * **参数解释**: 镜像类型 **约束限制**: 不涉及 **取值范围**: - registry：仓库镜像。 - cicd：cicd镜像。 **默认取值**: 不涉及 
+     * **参数解释**: 镜像类型 **约束限制**: 不涉及 **取值范围**: - registry：仓库镜像。 - cicd：cicd镜像。  **默认取值**: 不涉及 
      * @return imageType
      */
     public String getImageType() {

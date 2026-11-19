@@ -173,7 +173,7 @@ public class BatchExportLocalVulInfoRequestInfo {
     }
 
     /**
-     * **参数解释**: 扫描状态 **约束限制**: 不涉及 **取值范围**:   - unscan : 未扫描。   - success : 扫描完成。   - scanning : 扫描中。   - failed : 扫描失败。   - download_failed : 下载失败。   - image_oversized : 镜像超大。   - waiting_for_scan : 等待扫描。   - image_scan_stop : 扫描终止。 **默认取值**: 不涉及 
+     * **参数解释**: 扫描状态 **约束限制**: 不涉及 **取值范围**:   - unscan : 未扫描。   - success : 扫描完成。   - scanning : 扫描中。   - failed : 扫描失败。   - download_failed : 下载失败。   - image_oversized : 镜像超大。   - waiting_for_scan : 等待扫描。   - image_scan_stop : 扫描终止。  **默认取值**: 不涉及 
      * @return scanStatus
      */
     public String getScanStatus() {

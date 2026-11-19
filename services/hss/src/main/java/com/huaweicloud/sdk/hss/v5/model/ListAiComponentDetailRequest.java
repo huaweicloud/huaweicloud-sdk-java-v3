@@ -139,7 +139,7 @@ public class ListAiComponentDetailRequest {
     }
 
     /**
-     * **参数解释**: 资产类别 **约束限制**: 不涉及 **取值范围**: - host：主机资产 - container：容器资产  **默认取值**: host 
+     * **参数解释**: 资产类别 **约束限制**: 不涉及 **取值范围**: - host：主机资产 - container：容器资产 - serverless：Serverless安全场景  **默认取值**: host 
      * @return category
      */
     public String getCategory() {
@@ -156,7 +156,7 @@ public class ListAiComponentDetailRequest {
     }
 
     /**
-     * **参数解释**: AI组件类别 **约束限制**: 不涉及 **取值范围**: - app：应用 - tool：工具  **默认取值**: 不涉及
+     * **参数解释**: AI组件类别 **约束限制**: 不涉及 **取值范围**: - app：应用 - tool：工具 - service：服务  **默认取值**: 不涉及
      * @return catalogue
      */
     public String getCatalogue() {

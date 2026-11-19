@@ -22,7 +22,7 @@ public class ValidateAdminResponse extends SdkResponse {
     }
 
     /**
-     * 是否是管理员账号
+     * **参数解释**： 当前账号是否是管理员账号 **取值范围**： - true：是管理员账号 - false：不是管理员账号 
      * @return isAdminAccount
      */
     public Boolean getIsAdminAccount() {

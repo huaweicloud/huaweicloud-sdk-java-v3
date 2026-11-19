@@ -82,7 +82,7 @@ public class CreateManualImageScanTaskReqInfo {
     }
 
     /**
-     * **参数解释**: 扫描全部镜像 **约束限制**: 不涉及 **取值范围**: - true：扫描全部镜像。支持全部镜像扫描或者指定镜像仓类型扫描，若为指定镜像仓类型扫描，需要填写query_info的image_type类型。 - false：指定镜像扫描,需要填写详细的镜像信息image_info字段。 **默认取值**: 不涉及 
+     * **参数解释**: 扫描全部镜像 **约束限制**: 不涉及 **取值范围**: - true：扫描全部镜像。支持全部镜像扫描或者指定镜像仓类型扫描，若为指定镜像仓类型扫描，需要填写query_info的image_type类型。 - false：指定镜像扫描,需要填写详细的镜像信息image_info字段。  **默认取值**: 不涉及 
      * @return isAll
      */
     public Boolean getIsAll() {

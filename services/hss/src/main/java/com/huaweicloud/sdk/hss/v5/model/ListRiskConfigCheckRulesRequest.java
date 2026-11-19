@@ -95,7 +95,7 @@ public class ListRiskConfigCheckRulesRequest {
     }
 
     /**
-     * **参数解释**: 标准类型 **约束限制**: 不涉及 **取值范围**: - cn_standard : 等保合规标准 - hw_standard : 云安全实践标准 **默认取值**: 不涉及 
+     * **参数解释**: 标准类型 **约束限制**: 不涉及 **取值范围**: - cn_standard : 等保合规标准 - hw_standard : 云安全实践标准  **默认取值**: 不涉及 
      * @return standard
      */
     public String getStandard() {
@@ -112,7 +112,7 @@ public class ListRiskConfigCheckRulesRequest {
     }
 
     /**
-     * **参数解释**: 结果类型 **约束限制**: 不涉及 **取值范围**: - safe : 已通过 - unhandled : 未通过，且未忽略的 - ignored : 未通过，且已忽略的 **默认取值**: unhandled 
+     * **参数解释**: 结果类型 **约束限制**: 不涉及 **取值范围**: - safe : 已通过 - unhandled : 未通过，且未忽略的 - ignored : 未通过，且已忽略的  **默认取值**: unhandled 
      * @return resultType
      */
     public String getResultType() {
@@ -146,7 +146,7 @@ public class ListRiskConfigCheckRulesRequest {
     }
 
     /**
-     * **参数解释**: 风险等级 **约束限制**: 不涉及 **取值范围**: - Security : 安全 - Low : 低危 - Medium : 中危 - High : 高危 - Critical : 危急 **默认取值**: 不涉及 
+     * **参数解释**: 风险等级 **约束限制**: 不涉及 **取值范围**: - Security : 安全 - Low : 低危 - Medium : 中危 - High : 高危 - Critical : 危急  **默认取值**: 不涉及 
      * @return severity
      */
     public String getSeverity() {

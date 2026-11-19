@@ -116,7 +116,7 @@ public class ListImageFilesRequest {
     }
 
     /**
-     * **参数解释**: 镜像类型 **取值范围**: - private_image : 私有镜像仓库 - shared_image : 共享镜像仓库 - instance_image : 企业镜像 - cicd : cicd镜像 - harbor ：Harbor仓库镜像 **默认取值**: 不涉及 
+     * **参数解释**: 镜像类型 **取值范围**: - private_image : 私有镜像仓库 - shared_image : 共享镜像仓库 - instance_image : 企业镜像 - cicd : cicd镜像 - harbor ：Harbor仓库镜像  **默认取值**: 不涉及 
      * @return imageType
      */
     public String getImageType() {

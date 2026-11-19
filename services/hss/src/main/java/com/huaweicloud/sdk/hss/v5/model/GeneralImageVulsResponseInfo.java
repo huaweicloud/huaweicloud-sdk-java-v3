@@ -123,7 +123,7 @@ public class GeneralImageVulsResponseInfo {
     }
 
     /**
-     * **参数解释**： 漏洞类型 **约束限制**: 不涉及 **取值范围**： - linux_vul：linux漏洞 - app_vul：应用漏洞 **默认取值**: 不涉及 
+     * **参数解释**： 漏洞类型 **约束限制**: 不涉及 **取值范围**： - linux_vul：linux漏洞 - app_vul：应用漏洞  **默认取值**: 不涉及 
      * @return type
      */
     public String getType() {
@@ -140,7 +140,7 @@ public class GeneralImageVulsResponseInfo {
     }
 
     /**
-     * **参数解释**： 镜像类型 **约束限制**: 不涉及 **取值范围**： - local：本地镜像 - registry：仓库镜像 - cicd：CI/CD镜像 - cluster：集群镜像 **默认取值**: 不涉及 
+     * **参数解释**： 镜像类型 **约束限制**: 不涉及 **取值范围**： - local：本地镜像 - registry：仓库镜像 - cicd：CI/CD镜像 - cluster：集群镜像  **默认取值**: 不涉及 
      * @return imageType
      */
     public String getImageType() {
@@ -190,7 +190,7 @@ public class GeneralImageVulsResponseInfo {
     }
 
     /**
-     * **参数解释**： 漏洞的风险程度 **约束限制**: 不涉及 **取值范围**： - Critical：严重 - High：高危 - Medium：中危 - Low：低危 **默认取值**: 不涉及 
+     * **参数解释**： 漏洞的风险程度 **约束限制**: 不涉及 **取值范围**： - Critical：严重 - High：高危 - Medium：中危 - Low：低危  **默认取值**: 不涉及 
      * @return severityLevel
      */
     public String getSeverityLevel() {

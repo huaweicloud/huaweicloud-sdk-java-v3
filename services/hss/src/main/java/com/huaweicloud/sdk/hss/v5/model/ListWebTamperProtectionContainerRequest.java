@@ -223,7 +223,7 @@ public class ListWebTamperProtectionContainerRequest {
     }
 
     /**
-     * **参数解释**: 防护状态 **约束限制**: 不涉及 **取值范围**: - protected：防护中 - partial_protected：部分防护 - protect_failed：防护失败 **默认取值**: 不涉及 
+     * **参数解释**: 防护状态 **约束限制**: 不涉及 **取值范围**: - protected：防护中 - partial_protected：部分防护 - protect_failed：防护失败  **默认取值**: 不涉及 
      * @return status
      */
     public String getStatus() {

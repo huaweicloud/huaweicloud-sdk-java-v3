@@ -122,7 +122,7 @@ public class ListIacFilesResponseInfoDataList {
     }
 
     /**
-     * **参数解释**: 是否有风险 **约束限制**: 不涉及 **取值范围**: - true：有风险 - false：无风险 **默认取值**: 不涉及 
+     * **参数解释**: 是否有风险 **约束限制**: 不涉及 **取值范围**: - true：有风险 - false：无风险  **默认取值**: 不涉及 
      * @return risky
      */
     public Boolean getRisky() {
@@ -249,7 +249,7 @@ public class ListIacFilesResponseInfoDataList {
     }
 
     /**
-     * **参数解释**: 扫描方式 **约束限制**: 不涉及 **取值范围**: - manual_scan：手动扫描 - cicd_scan：cicd扫描 **默认取值**: 不涉及 
+     * **参数解释**: 扫描方式 **约束限制**: 不涉及 **取值范围**: - manual_scan：手动扫描 - cicd_scan：cicd扫描  **默认取值**: 不涉及 
      * @return scanType
      */
     public String getScanType() {

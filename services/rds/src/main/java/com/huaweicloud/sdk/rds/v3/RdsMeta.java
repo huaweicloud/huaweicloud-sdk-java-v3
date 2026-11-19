@@ -911,6 +911,9 @@ import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionFinalConfirmRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionFinalConfirmRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionFinalConfirmResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionNewRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionNewResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionRequest;
@@ -8893,6 +8896,45 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CustomerUpgradeDatabaseVersionReq.class),
             f -> f.withMarshaller(UpgradeDbVersionRequest::getBody, UpgradeDbVersionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeDbVersionFinalConfirmRequest, UpgradeDbVersionFinalConfirmResponse> upgradeDbVersionFinalConfirm =
+        genForUpgradeDbVersionFinalConfirm();
+
+    private static HttpRequestDef<UpgradeDbVersionFinalConfirmRequest, UpgradeDbVersionFinalConfirmResponse> genForUpgradeDbVersionFinalConfirm() {
+        // basic
+        HttpRequestDef.Builder<UpgradeDbVersionFinalConfirmRequest, UpgradeDbVersionFinalConfirmResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpgradeDbVersionFinalConfirmRequest.class,
+                    UpgradeDbVersionFinalConfirmResponse.class)
+                .withName("UpgradeDbVersionFinalConfirm")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-upgrade/operation")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeDbVersionFinalConfirmRequest::getInstanceId,
+                UpgradeDbVersionFinalConfirmRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeDbVersionFinalConfirmRequest::getXLanguage,
+                UpgradeDbVersionFinalConfirmRequest::setXLanguage));
+        builder.<UpgradeDbVersionFinalConfirmRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpgradeDbVersionFinalConfirmRequestBody.class),
+            f -> f.withMarshaller(UpgradeDbVersionFinalConfirmRequest::getBody,
+                UpgradeDbVersionFinalConfirmRequest::setBody));
 
         // response
 

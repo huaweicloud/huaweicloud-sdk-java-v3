@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 用户名称，用户组，角色三个信息
+ * 用户名称，用户组，角色及OBS路径信息
  */
 public class IdentityInput {
 
@@ -27,6 +27,11 @@ public class IdentityInput {
     @JsonProperty(value = "roles")
 
     private List<String> roles = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "location")
+
+    private String location;
 
     public IdentityInput withUserNames(List<String> userNames) {
         this.userNames = userNames;
@@ -127,6 +132,23 @@ public class IdentityInput {
         this.roles = roles;
     }
 
+    public IdentityInput withLocation(String location) {
+        this.location = location;
+        return this;
+    }
+
+    /**
+     * OBS路径（可选），用于指定获取临时AKSK访问的对象路径，仅支持并行文件系统（PFS）桶，不支持对象桶。格式：obs://桶名/对象键
+     * @return location
+     */
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -137,12 +159,12 @@ public class IdentityInput {
         }
         IdentityInput that = (IdentityInput) obj;
         return Objects.equals(this.userNames, that.userNames) && Objects.equals(this.groups, that.groups)
-            && Objects.equals(this.roles, that.roles);
+            && Objects.equals(this.roles, that.roles) && Objects.equals(this.location, that.location);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userNames, groups, roles);
+        return Objects.hash(userNames, groups, roles, location);
     }
 
     @Override
@@ -152,6 +174,7 @@ public class IdentityInput {
         sb.append("    userNames: ").append(toIndentedString(userNames)).append("\n");
         sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
         sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
+        sb.append("    location: ").append(toIndentedString(location)).append("\n");
         sb.append("}");
         return sb.toString();
     }

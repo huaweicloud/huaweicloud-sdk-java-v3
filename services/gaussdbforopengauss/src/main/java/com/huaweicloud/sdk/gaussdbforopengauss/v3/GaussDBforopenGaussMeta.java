@@ -16,7 +16,10 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AllowDbPrivilegesRespons
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AllowDbRolePrivilegesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AllowDbRolePrivilegesRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AllowDbRolePrivilegesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ApplyConfigurationEntityRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ApplyConfigurationRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ApplyConfigurationWithEntitiesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ApplyConfigurationWithEntitiesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AuthorizeBackupDownloadRequest;
@@ -40,6 +43,9 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindEIPRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindLtsConfigRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindLtsConfigRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindLtsConfigResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindServerRouteRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindServerRouteRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindServerRouteResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ChangeDemand2PeriodRequest;
@@ -183,15 +189,24 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.GaussDBforOpenGaussUserF
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallKernelPluginRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallKernelPluginRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallKernelPluginResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallPluginRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallPluginRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallPluginResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.KillSessionRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAgencyInfosRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAgencyInfosResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListApplicableInstancesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListApplicableInstancesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListApplicableInstancesWithEntitiesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListApplicableInstancesWithEntitiesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAppliedHistoriesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAppliedHistoriesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAppliedHistoriesWithEntitiesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAppliedHistoriesWithEntitiesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAspInfosRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAspInfosResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAvailableFlavorsDetailRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAvailableFlavorsDetailResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAvailableFlavorsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAvailableFlavorsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListBackupsDetailsRequest;
@@ -309,6 +324,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListReadonlyNodesRespons
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRealTimeSessionsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRealTimeSessionsRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRealTimeSessionsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRealTimeSessionsUseOpsTunnelRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRealTimeSessionsUseOpsTunnelResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRecycleInstancesDetailsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRecycleInstancesDetailsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRecycleInstancesRequest;
@@ -345,6 +362,9 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlExcuteNodesRespon
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlLimitTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlLimitTaskRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlLimitTaskResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlPatchRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlPatchRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlPatchResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlPlanActionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlPlanActionResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlRecommendRulesRequest;
@@ -395,6 +415,9 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyHbaConfResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyInstancePortRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyInstancePortRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyInstancePortResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyOpsWindowRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyOpsWindowRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyOpsWindowResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyParameterConfigTemplateRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyParameterConfigTemplateRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyParameterConfigTemplateResponse;
@@ -533,6 +556,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowRedistributionParame
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowRedistributionParametersResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSessionOverviewRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSessionOverviewResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSessionSummaryUseOpsTunnelRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSessionSummaryUseOpsTunnelResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowShardDiskMessagesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowShardDiskMessagesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSlowLogDownloadRequest;
@@ -577,6 +602,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopInstanceRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopSessionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopSessionResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopSessionUseOpsTunnelRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopSessionUseOpsTunnelResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopTransactionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopTransactionRequsetBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopTransactionResponse;
@@ -610,6 +637,9 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SyncLimitDataResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UnbindLtsConfigRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UnbindLtsConfigRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UnbindLtsConfigResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UninstallPluginRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UninstallPluginRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UninstallPluginResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateAgencyPolicyRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateAgencyPolicyRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateAgencyPolicyResponse;
@@ -784,6 +814,45 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AllowDbRolePrivilegesRequestBody.class),
             f -> f.withMarshaller(AllowDbRolePrivilegesRequest::getBody, AllowDbRolePrivilegesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ApplyConfigurationWithEntitiesRequest, ApplyConfigurationWithEntitiesResponse> applyConfigurationWithEntities =
+        genForApplyConfigurationWithEntities();
+
+    private static HttpRequestDef<ApplyConfigurationWithEntitiesRequest, ApplyConfigurationWithEntitiesResponse> genForApplyConfigurationWithEntities() {
+        // basic
+        HttpRequestDef.Builder<ApplyConfigurationWithEntitiesRequest, ApplyConfigurationWithEntitiesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ApplyConfigurationWithEntitiesRequest.class,
+                    ApplyConfigurationWithEntitiesResponse.class)
+                .withName("ApplyConfigurationWithEntities")
+                .withUri("/v4/{project_id}/configurations/{config_id}/apply")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ApplyConfigurationWithEntitiesRequest::getConfigId,
+                ApplyConfigurationWithEntitiesRequest::setConfigId));
+        builder.<ApplyConfigurationWithEntitiesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ApplyConfigurationWithEntitiesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ApplyConfigurationWithEntitiesRequest::getXLanguage,
+                ApplyConfigurationWithEntitiesRequest::setXLanguage));
+        builder.<ApplyConfigurationEntityRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApplyConfigurationEntityRequestBody.class),
+            f -> f.withMarshaller(ApplyConfigurationWithEntitiesRequest::getBody,
+                ApplyConfigurationWithEntitiesRequest::setBody));
 
         // response
 
@@ -1008,6 +1077,39 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BindDNatRequestBody.class),
             f -> f.withMarshaller(BindDNatRequest::getBody, BindDNatRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BindServerRouteRequest, BindServerRouteResponse> bindServerRoute =
+        genForBindServerRoute();
+
+    private static HttpRequestDef<BindServerRouteRequest, BindServerRouteResponse> genForBindServerRoute() {
+        // basic
+        HttpRequestDef.Builder<BindServerRouteRequest, BindServerRouteResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BindServerRouteRequest.class, BindServerRouteResponse.class)
+                .withName("BindServerRoute")
+                .withUri("/v3/{project_id}/instances/{instance_id}/server-router")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BindServerRouteRequest::getInstanceId, BindServerRouteRequest::setInstanceId));
+        builder.<BindServerRouteRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BindServerRouteRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(BindServerRouteRequest::getXLanguage, BindServerRouteRequest::setXLanguage));
+        builder.<BindServerRouteRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BindServerRouteRequestBody.class),
+            f -> f.withMarshaller(BindServerRouteRequest::getBody, BindServerRouteRequest::setBody));
 
         // response
 
@@ -2395,6 +2497,39 @@ public class GaussDBforopenGaussMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<InstallPluginRequest, InstallPluginResponse> installPlugin =
+        genForInstallPlugin();
+
+    private static HttpRequestDef<InstallPluginRequest, InstallPluginResponse> genForInstallPlugin() {
+        // basic
+        HttpRequestDef.Builder<InstallPluginRequest, InstallPluginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, InstallPluginRequest.class, InstallPluginResponse.class)
+                .withName("InstallPlugin")
+                .withUri("/v3/{project_id}/instances/{instance_id}/install-plugin")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InstallPluginRequest::getInstanceId, InstallPluginRequest::setInstanceId));
+        builder.<InstallPluginRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(InstallPluginRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(InstallPluginRequest::getXLanguage, InstallPluginRequest::setXLanguage));
+        builder.<InstallPluginRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InstallPluginRequestBody.class),
+            f -> f.withMarshaller(InstallPluginRequest::getBody, InstallPluginRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAgencyInfosRequest, ListAgencyInfosResponse> listAgencyInfos =
         genForListAgencyInfos();
 
@@ -2464,6 +2599,51 @@ public class GaussDBforopenGaussMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListApplicableInstancesWithEntitiesRequest, ListApplicableInstancesWithEntitiesResponse> listApplicableInstancesWithEntities =
+        genForListApplicableInstancesWithEntities();
+
+    private static HttpRequestDef<ListApplicableInstancesWithEntitiesRequest, ListApplicableInstancesWithEntitiesResponse> genForListApplicableInstancesWithEntities() {
+        // basic
+        HttpRequestDef.Builder<ListApplicableInstancesWithEntitiesRequest, ListApplicableInstancesWithEntitiesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListApplicableInstancesWithEntitiesRequest.class,
+                    ListApplicableInstancesWithEntitiesResponse.class)
+                .withName("ListApplicableInstancesWithEntities")
+                .withUri("/v4/{project_id}/configurations/{config_id}/applicable-instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApplicableInstancesWithEntitiesRequest::getConfigId,
+                ListApplicableInstancesWithEntitiesRequest::setConfigId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApplicableInstancesWithEntitiesRequest::getOffset,
+                ListApplicableInstancesWithEntitiesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApplicableInstancesWithEntitiesRequest::getLimit,
+                ListApplicableInstancesWithEntitiesRequest::setLimit));
+        builder.<ListApplicableInstancesWithEntitiesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListApplicableInstancesWithEntitiesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListApplicableInstancesWithEntitiesRequest::getXLanguage,
+                ListApplicableInstancesWithEntitiesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAppliedHistoriesRequest, ListAppliedHistoriesResponse> listAppliedHistories =
         genForListAppliedHistories();
 
@@ -2497,6 +2677,51 @@ public class GaussDBforopenGaussMeta {
             TypeCasts.uncheckedConversion(ListAppliedHistoriesRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListAppliedHistoriesRequest::getXLanguage,
                 ListAppliedHistoriesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAppliedHistoriesWithEntitiesRequest, ListAppliedHistoriesWithEntitiesResponse> listAppliedHistoriesWithEntities =
+        genForListAppliedHistoriesWithEntities();
+
+    private static HttpRequestDef<ListAppliedHistoriesWithEntitiesRequest, ListAppliedHistoriesWithEntitiesResponse> genForListAppliedHistoriesWithEntities() {
+        // basic
+        HttpRequestDef.Builder<ListAppliedHistoriesWithEntitiesRequest, ListAppliedHistoriesWithEntitiesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAppliedHistoriesWithEntitiesRequest.class,
+                    ListAppliedHistoriesWithEntitiesResponse.class)
+                .withName("ListAppliedHistoriesWithEntities")
+                .withUri("/v4/{project_id}/configurations/{config_id}/applied-histories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppliedHistoriesWithEntitiesRequest::getConfigId,
+                ListAppliedHistoriesWithEntitiesRequest::setConfigId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAppliedHistoriesWithEntitiesRequest::getOffset,
+                ListAppliedHistoriesWithEntitiesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAppliedHistoriesWithEntitiesRequest::getLimit,
+                ListAppliedHistoriesWithEntitiesRequest::setLimit));
+        builder.<ListAppliedHistoriesWithEntitiesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAppliedHistoriesWithEntitiesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListAppliedHistoriesWithEntitiesRequest::getXLanguage,
+                ListAppliedHistoriesWithEntitiesRequest::setXLanguage));
 
         // response
 
@@ -2537,6 +2762,39 @@ public class GaussDBforopenGaussMeta {
             TypeCasts.uncheckedConversion(ListAvailableFlavorsRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListAvailableFlavorsRequest::getXLanguage,
                 ListAvailableFlavorsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAvailableFlavorsDetailRequest, ListAvailableFlavorsDetailResponse> listAvailableFlavorsDetail =
+        genForListAvailableFlavorsDetail();
+
+    private static HttpRequestDef<ListAvailableFlavorsDetailRequest, ListAvailableFlavorsDetailResponse> genForListAvailableFlavorsDetail() {
+        // basic
+        HttpRequestDef.Builder<ListAvailableFlavorsDetailRequest, ListAvailableFlavorsDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAvailableFlavorsDetailRequest.class,
+                    ListAvailableFlavorsDetailResponse.class)
+                .withName("ListAvailableFlavorsDetail")
+                .withUri("/v3.1/{project_id}/instances/{instance_id}/available-flavors")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAvailableFlavorsDetailRequest::getInstanceId,
+                ListAvailableFlavorsDetailRequest::setInstanceId));
+        builder.<ListAvailableFlavorsDetailRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAvailableFlavorsDetailRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListAvailableFlavorsDetailRequest::getXLanguage,
+                ListAvailableFlavorsDetailRequest::setXLanguage));
 
         // response
 
@@ -4120,6 +4378,45 @@ public class GaussDBforopenGaussMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRealTimeSessionsUseOpsTunnelRequest, ListRealTimeSessionsUseOpsTunnelResponse> listRealTimeSessionsUseOpsTunnel =
+        genForListRealTimeSessionsUseOpsTunnel();
+
+    private static HttpRequestDef<ListRealTimeSessionsUseOpsTunnelRequest, ListRealTimeSessionsUseOpsTunnelResponse> genForListRealTimeSessionsUseOpsTunnel() {
+        // basic
+        HttpRequestDef.Builder<ListRealTimeSessionsUseOpsTunnelRequest, ListRealTimeSessionsUseOpsTunnelResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListRealTimeSessionsUseOpsTunnelRequest.class,
+                    ListRealTimeSessionsUseOpsTunnelResponse.class)
+                .withName("ListRealTimeSessionsUseOpsTunnel")
+                .withUri("/v3/{project_id}/instances/{instance_id}/real-time-session-use-ops-tunnel")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRealTimeSessionsUseOpsTunnelRequest::getInstanceId,
+                ListRealTimeSessionsUseOpsTunnelRequest::setInstanceId));
+        builder.<ListRealTimeSessionsUseOpsTunnelRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListRealTimeSessionsUseOpsTunnelRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListRealTimeSessionsUseOpsTunnelRequest::getXLanguage,
+                ListRealTimeSessionsUseOpsTunnelRequest::setXLanguage));
+        builder.<ListRealTimeSessionsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListRealTimeSessionsRequestBody.class),
+            f -> f.withMarshaller(ListRealTimeSessionsUseOpsTunnelRequest::getBody,
+                ListRealTimeSessionsUseOpsTunnelRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListRecycleInstancesDetailsRequest, ListRecycleInstancesDetailsResponse> listRecycleInstancesDetails =
         genForListRecycleInstancesDetails();
 
@@ -5127,6 +5424,39 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyInstancePortRequestBody.class),
             f -> f.withMarshaller(ModifyInstancePortRequest::getBody, ModifyInstancePortRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyOpsWindowRequest, ModifyOpsWindowResponse> modifyOpsWindow =
+        genForModifyOpsWindow();
+
+    private static HttpRequestDef<ModifyOpsWindowRequest, ModifyOpsWindowResponse> genForModifyOpsWindow() {
+        // basic
+        HttpRequestDef.Builder<ModifyOpsWindowRequest, ModifyOpsWindowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyOpsWindowRequest.class, ModifyOpsWindowResponse.class)
+                .withName("ModifyOpsWindow")
+                .withUri("/v3/{project_id}/instances/{instance_id}/ops-window")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyOpsWindowRequest::getInstanceId, ModifyOpsWindowRequest::setInstanceId));
+        builder.<ModifyOpsWindowRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ModifyOpsWindowRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ModifyOpsWindowRequest::getXLanguage, ModifyOpsWindowRequest::setXLanguage));
+        builder.<ModifyOpsWindowRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyOpsWindowRequestBody.class),
+            f -> f.withMarshaller(ModifyOpsWindowRequest::getBody, ModifyOpsWindowRequest::setBody));
 
         // response
 
@@ -6559,6 +6889,57 @@ public class GaussDBforopenGaussMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSessionSummaryUseOpsTunnelRequest, ShowSessionSummaryUseOpsTunnelResponse> showSessionSummaryUseOpsTunnel =
+        genForShowSessionSummaryUseOpsTunnel();
+
+    private static HttpRequestDef<ShowSessionSummaryUseOpsTunnelRequest, ShowSessionSummaryUseOpsTunnelResponse> genForShowSessionSummaryUseOpsTunnel() {
+        // basic
+        HttpRequestDef.Builder<ShowSessionSummaryUseOpsTunnelRequest, ShowSessionSummaryUseOpsTunnelResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSessionSummaryUseOpsTunnelRequest.class,
+                    ShowSessionSummaryUseOpsTunnelResponse.class)
+                .withName("ShowSessionSummaryUseOpsTunnel")
+                .withUri("/v3/{project_id}/instances/{instance_id}/session/statistic/session-summary")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSessionSummaryUseOpsTunnelRequest::getInstanceId,
+                ShowSessionSummaryUseOpsTunnelRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSessionSummaryUseOpsTunnelRequest::getNodeId,
+                ShowSessionSummaryUseOpsTunnelRequest::setNodeId));
+        builder.<String>withRequestField("component_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSessionSummaryUseOpsTunnelRequest::getComponentId,
+                ShowSessionSummaryUseOpsTunnelRequest::setComponentId));
+        builder.<Boolean>withRequestField("use_ops_tunnel",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowSessionSummaryUseOpsTunnelRequest::getUseOpsTunnel,
+                ShowSessionSummaryUseOpsTunnelRequest::setUseOpsTunnel));
+        builder.<ShowSessionSummaryUseOpsTunnelRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowSessionSummaryUseOpsTunnelRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowSessionSummaryUseOpsTunnelRequest::getXLanguage,
+                ShowSessionSummaryUseOpsTunnelRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowShardDiskMessagesRequest, ShowShardDiskMessagesResponse> showShardDiskMessages =
         genForShowShardDiskMessages();
 
@@ -7034,6 +7415,41 @@ public class GaussDBforopenGaussMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<StopSessionUseOpsTunnelRequest, StopSessionUseOpsTunnelResponse> stopSessionUseOpsTunnel =
+        genForStopSessionUseOpsTunnel();
+
+    private static HttpRequestDef<StopSessionUseOpsTunnelRequest, StopSessionUseOpsTunnelResponse> genForStopSessionUseOpsTunnel() {
+        // basic
+        HttpRequestDef.Builder<StopSessionUseOpsTunnelRequest, StopSessionUseOpsTunnelResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, StopSessionUseOpsTunnelRequest.class, StopSessionUseOpsTunnelResponse.class)
+            .withName("StopSessionUseOpsTunnel")
+            .withUri("/v3/{project_id}/instances/{instance_id}/kill-session-use-ops-tunnel")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopSessionUseOpsTunnelRequest::getInstanceId,
+                StopSessionUseOpsTunnelRequest::setInstanceId));
+        builder.<StopSessionUseOpsTunnelRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(StopSessionUseOpsTunnelRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(StopSessionUseOpsTunnelRequest::getXLanguage,
+                StopSessionUseOpsTunnelRequest::setXLanguage));
+        builder.<KillSessionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(KillSessionRequestBody.class),
+            f -> f.withMarshaller(StopSessionUseOpsTunnelRequest::getBody, StopSessionUseOpsTunnelRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StopTransactionRequest, StopTransactionResponse> stopTransaction =
         genForStopTransaction();
 
@@ -7303,6 +7719,39 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SwitchShardRequestBody.class),
             f -> f.withMarshaller(SwitchShardRequest::getBody, SwitchShardRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UninstallPluginRequest, UninstallPluginResponse> uninstallPlugin =
+        genForUninstallPlugin();
+
+    private static HttpRequestDef<UninstallPluginRequest, UninstallPluginResponse> genForUninstallPlugin() {
+        // basic
+        HttpRequestDef.Builder<UninstallPluginRequest, UninstallPluginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UninstallPluginRequest.class, UninstallPluginResponse.class)
+                .withName("UninstallPlugin")
+                .withUri("/v3/{project_id}/instances/{instance_id}/uninstall-plugin")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UninstallPluginRequest::getInstanceId, UninstallPluginRequest::setInstanceId));
+        builder.<UninstallPluginRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UninstallPluginRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UninstallPluginRequest::getXLanguage, UninstallPluginRequest::setXLanguage));
+        builder.<UninstallPluginRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UninstallPluginRequestBody.class),
+            f -> f.withMarshaller(UninstallPluginRequest::getBody, UninstallPluginRequest::setBody));
 
         // response
 
@@ -9978,6 +10427,38 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSqlLimitTaskRequestBody.class),
             f -> f.withMarshaller(UpdateSqlLimitTaskRequest::getBody, UpdateSqlLimitTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSqlPatchRequest, ListSqlPatchResponse> listSqlPatch = genForListSqlPatch();
+
+    private static HttpRequestDef<ListSqlPatchRequest, ListSqlPatchResponse> genForListSqlPatch() {
+        // basic
+        HttpRequestDef.Builder<ListSqlPatchRequest, ListSqlPatchResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListSqlPatchRequest.class, ListSqlPatchResponse.class)
+                .withName("ListSqlPatch")
+                .withUri("/v3/{project_id}/instances/{instance_id}/list-sql-patch")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSqlPatchRequest::getInstanceId, ListSqlPatchRequest::setInstanceId));
+        builder.<ListSqlPatchRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSqlPatchRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListSqlPatchRequest::getXLanguage, ListSqlPatchRequest::setXLanguage));
+        builder.<ListSqlPatchRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListSqlPatchRequestBody.class),
+            f -> f.withMarshaller(ListSqlPatchRequest::getBody, ListSqlPatchRequest::setBody));
 
         // response
 

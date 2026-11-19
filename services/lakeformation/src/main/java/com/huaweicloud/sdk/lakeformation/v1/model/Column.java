@@ -25,6 +25,11 @@ public class Column {
 
     private String comment;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "advance_column_type")
+
+    private String advanceColumnType;
+
     public Column withColumnType(String columnType) {
         this.columnType = columnType;
         return this;
@@ -76,6 +81,23 @@ public class Column {
         this.comment = comment;
     }
 
+    public Column withAdvanceColumnType(String advanceColumnType) {
+        this.advanceColumnType = advanceColumnType;
+        return this;
+    }
+
+    /**
+     * 用户自定义类型名称，当且仅当column_type为struct，字段可填写。该字段存在值时，表示用户自定义的高阶类型
+     * @return advanceColumnType
+     */
+    public String getAdvanceColumnType() {
+        return advanceColumnType;
+    }
+
+    public void setAdvanceColumnType(String advanceColumnType) {
+        this.advanceColumnType = advanceColumnType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,13 @@ public class Column {
         }
         Column that = (Column) obj;
         return Objects.equals(this.columnType, that.columnType) && Objects.equals(this.columnName, that.columnName)
-            && Objects.equals(this.comment, that.comment);
+            && Objects.equals(this.comment, that.comment)
+            && Objects.equals(this.advanceColumnType, that.advanceColumnType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(columnType, columnName, comment);
+        return Objects.hash(columnType, columnName, comment, advanceColumnType);
     }
 
     @Override
@@ -101,6 +124,7 @@ public class Column {
         sb.append("    columnType: ").append(toIndentedString(columnType)).append("\n");
         sb.append("    columnName: ").append(toIndentedString(columnName)).append("\n");
         sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
+        sb.append("    advanceColumnType: ").append(toIndentedString(advanceColumnType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

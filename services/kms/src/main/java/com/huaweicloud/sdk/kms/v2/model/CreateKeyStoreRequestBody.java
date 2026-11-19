@@ -55,6 +55,11 @@ public class CreateKeyStoreRequestBody {
          */
         public static final KeystoreTypeEnum CDMS = new KeystoreTypeEnum("CDMS");
 
+        /**
+         * Enum XKS for value: "XKS"
+         */
+        public static final KeystoreTypeEnum XKS = new KeystoreTypeEnum("XKS");
+
         private static final Map<String, KeystoreTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, KeystoreTypeEnum> createStaticFields() {
@@ -62,6 +67,7 @@ public class CreateKeyStoreRequestBody {
             map.put("DEFAULT", DEFAULT);
             map.put("DHSM", DHSM);
             map.put("CDMS", CDMS);
+            map.put("XKS", XKS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -115,6 +121,36 @@ public class CreateKeyStoreRequestBody {
     @JsonProperty(value = "keystore_type")
 
     private KeystoreTypeEnum keystoreType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "proxy_uri_endpoint")
+
+    private String proxyUriEndpoint;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "proxy_uri_path")
+
+    private String proxyUriPath;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "proxy_access_key_id")
+
+    private String proxyAccessKeyId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "proxy_secret_access_key")
+
+    private String proxySecretAccessKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "proxy_vpc_endpoint_service_name")
+
+    private String proxyVpcEndpointServiceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "proxy_vpc_endpoint_service_owner")
+
+    private String proxyVpcEndpointServiceOwner;
 
     public CreateKeyStoreRequestBody withKeystoreAlias(String keystoreAlias) {
         this.keystoreAlias = keystoreAlias;
@@ -201,6 +237,108 @@ public class CreateKeyStoreRequestBody {
         this.keystoreType = keystoreType;
     }
 
+    public CreateKeyStoreRequestBody withProxyUriEndpoint(String proxyUriEndpoint) {
+        this.proxyUriEndpoint = proxyUriEndpoint;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 仅XKS类型的密钥库支持；可选，表示Xks-Proxy的域名信息 **约束限制：** ^https://[^\\s]+ **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return proxyUriEndpoint
+     */
+    public String getProxyUriEndpoint() {
+        return proxyUriEndpoint;
+    }
+
+    public void setProxyUriEndpoint(String proxyUriEndpoint) {
+        this.proxyUriEndpoint = proxyUriEndpoint;
+    }
+
+    public CreateKeyStoreRequestBody withProxyUriPath(String proxyUriPath) {
+        this.proxyUriPath = proxyUriPath;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 仅XKS类型的密钥库支持；必选，Xks-Proxy的路径前缀 **约束限制：** ^/(?:[a-zA-Z0-9/_-]{0,127})$ **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return proxyUriPath
+     */
+    public String getProxyUriPath() {
+        return proxyUriPath;
+    }
+
+    public void setProxyUriPath(String proxyUriPath) {
+        this.proxyUriPath = proxyUriPath;
+    }
+
+    public CreateKeyStoreRequestBody withProxyAccessKeyId(String proxyAccessKeyId) {
+        this.proxyAccessKeyId = proxyAccessKeyId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 仅XKS类型的密钥库支持；必选，访问XKS-Proxy的凭据ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return proxyAccessKeyId
+     */
+    public String getProxyAccessKeyId() {
+        return proxyAccessKeyId;
+    }
+
+    public void setProxyAccessKeyId(String proxyAccessKeyId) {
+        this.proxyAccessKeyId = proxyAccessKeyId;
+    }
+
+    public CreateKeyStoreRequestBody withProxySecretAccessKey(String proxySecretAccessKey) {
+        this.proxySecretAccessKey = proxySecretAccessKey;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 仅XKS类型的密钥库支持；必选，访问XKS-Proxy的凭据Key **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return proxySecretAccessKey
+     */
+    public String getProxySecretAccessKey() {
+        return proxySecretAccessKey;
+    }
+
+    public void setProxySecretAccessKey(String proxySecretAccessKey) {
+        this.proxySecretAccessKey = proxySecretAccessKey;
+    }
+
+    public CreateKeyStoreRequestBody withProxyVpcEndpointServiceName(String proxyVpcEndpointServiceName) {
+        this.proxyVpcEndpointServiceName = proxyVpcEndpointServiceName;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 仅XKS类型的密钥库支持；必选，Xks-Proxy的终端节点服务名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return proxyVpcEndpointServiceName
+     */
+    public String getProxyVpcEndpointServiceName() {
+        return proxyVpcEndpointServiceName;
+    }
+
+    public void setProxyVpcEndpointServiceName(String proxyVpcEndpointServiceName) {
+        this.proxyVpcEndpointServiceName = proxyVpcEndpointServiceName;
+    }
+
+    public CreateKeyStoreRequestBody withProxyVpcEndpointServiceOwner(String proxyVpcEndpointServiceOwner) {
+        this.proxyVpcEndpointServiceOwner = proxyVpcEndpointServiceOwner;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 仅XKS类型的密钥库支持；必选，终端节点服务所属账号 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return proxyVpcEndpointServiceOwner
+     */
+    public String getProxyVpcEndpointServiceOwner() {
+        return proxyVpcEndpointServiceOwner;
+    }
+
+    public void setProxyVpcEndpointServiceOwner(String proxyVpcEndpointServiceOwner) {
+        this.proxyVpcEndpointServiceOwner = proxyVpcEndpointServiceOwner;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -212,12 +350,28 @@ public class CreateKeyStoreRequestBody {
         CreateKeyStoreRequestBody that = (CreateKeyStoreRequestBody) obj;
         return Objects.equals(this.keystoreAlias, that.keystoreAlias)
             && Objects.equals(this.hsmClusterId, that.hsmClusterId) && Objects.equals(this.hsmCaCert, that.hsmCaCert)
-            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.keystoreType, that.keystoreType);
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.keystoreType, that.keystoreType)
+            && Objects.equals(this.proxyUriEndpoint, that.proxyUriEndpoint)
+            && Objects.equals(this.proxyUriPath, that.proxyUriPath)
+            && Objects.equals(this.proxyAccessKeyId, that.proxyAccessKeyId)
+            && Objects.equals(this.proxySecretAccessKey, that.proxySecretAccessKey)
+            && Objects.equals(this.proxyVpcEndpointServiceName, that.proxyVpcEndpointServiceName)
+            && Objects.equals(this.proxyVpcEndpointServiceOwner, that.proxyVpcEndpointServiceOwner);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keystoreAlias, hsmClusterId, hsmCaCert, clusterId, keystoreType);
+        return Objects.hash(keystoreAlias,
+            hsmClusterId,
+            hsmCaCert,
+            clusterId,
+            keystoreType,
+            proxyUriEndpoint,
+            proxyUriPath,
+            proxyAccessKeyId,
+            proxySecretAccessKey,
+            proxyVpcEndpointServiceName,
+            proxyVpcEndpointServiceOwner);
     }
 
     @Override
@@ -229,6 +383,16 @@ public class CreateKeyStoreRequestBody {
         sb.append("    hsmCaCert: ").append(toIndentedString(hsmCaCert)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    keystoreType: ").append(toIndentedString(keystoreType)).append("\n");
+        sb.append("    proxyUriEndpoint: ").append(toIndentedString(proxyUriEndpoint)).append("\n");
+        sb.append("    proxyUriPath: ").append(toIndentedString(proxyUriPath)).append("\n");
+        sb.append("    proxyAccessKeyId: ").append(toIndentedString(proxyAccessKeyId)).append("\n");
+        sb.append("    proxySecretAccessKey: ").append(toIndentedString(proxySecretAccessKey)).append("\n");
+        sb.append("    proxyVpcEndpointServiceName: ")
+            .append(toIndentedString(proxyVpcEndpointServiceName))
+            .append("\n");
+        sb.append("    proxyVpcEndpointServiceOwner: ")
+            .append(toIndentedString(proxyVpcEndpointServiceOwner))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

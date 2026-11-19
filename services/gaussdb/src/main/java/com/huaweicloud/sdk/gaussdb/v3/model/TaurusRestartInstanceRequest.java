@@ -15,6 +15,11 @@ public class TaurusRestartInstanceRequest {
 
     private Boolean delay;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_connections")
+
+    private Integer maxConnections;
+
     public TaurusRestartInstanceRequest withDelay(Boolean delay) {
         this.delay = delay;
         return this;
@@ -32,6 +37,23 @@ public class TaurusRestartInstanceRequest {
         this.delay = delay;
     }
 
+    public TaurusRestartInstanceRequest withMaxConnections(Integer maxConnections) {
+        this.maxConnections = maxConnections;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  实例重启后生效的max_connections内核参数配置值。max_connections用于设置允许同时连接到数据库实例的最大客户端连接数。  **约束限制**：  不涉及。  **取值范围**： 30-100000。  **默认取值**： 不涉及。
+     * @return maxConnections
+     */
+    public Integer getMaxConnections() {
+        return maxConnections;
+    }
+
+    public void setMaxConnections(Integer maxConnections) {
+        this.maxConnections = maxConnections;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class TaurusRestartInstanceRequest {
             return false;
         }
         TaurusRestartInstanceRequest that = (TaurusRestartInstanceRequest) obj;
-        return Objects.equals(this.delay, that.delay);
+        return Objects.equals(this.delay, that.delay) && Objects.equals(this.maxConnections, that.maxConnections);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(delay);
+        return Objects.hash(delay, maxConnections);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class TaurusRestartInstanceRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class TaurusRestartInstanceRequest {\n");
         sb.append("    delay: ").append(toIndentedString(delay)).append("\n");
+        sb.append("    maxConnections: ").append(toIndentedString(maxConnections)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -73,7 +73,7 @@ public class ListWebTamperProtectionDirectoryRequest {
     }
 
     /**
-     * **参数解释**: 网页防篡改类型 **约束限制**: 不涉及。 **取值范围**: - container_wtp：容器网页防篡改 **默认取值**: 不涉及 
+     * **参数解释**: 网页防篡改类型 **约束限制**: 不涉及。 **取值范围**: - container_wtp：容器网页防篡改  **默认取值**: 不涉及 
      * @return type
      */
     public String getType() {
@@ -162,7 +162,7 @@ public class ListWebTamperProtectionDirectoryRequest {
     }
 
     /**
-     * **参数解释**: 防护状态 **约束限制**: type为container_wtp时必传 **取值范围**: - protected：防护中 - protect_failed：防护失败 **默认取值**: 不涉及 
+     * **参数解释**: 防护状态 **约束限制**: type为container_wtp时必传 **取值范围**: - protected：防护中 - protect_failed：防护失败  **默认取值**: 不涉及 
      * @return status
      */
     public String getStatus() {

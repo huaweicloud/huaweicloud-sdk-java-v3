@@ -184,7 +184,7 @@ public class ListProtectionServerRequest {
     }
 
     /**
-     * **参数解释**: 主机状态 **约束限制**: 不涉及 **取值范围**: 包含如下3种。   - 不传参默认为全部。   - ACTIVE ：正在运行。   - SHUTOFF ：关机。 **默认取值**: 不涉及 
+     * **参数解释**: 主机状态 **约束限制**: 不涉及 **取值范围**: 包含如下3种。   - 不传参默认为全部。   - ACTIVE ：正在运行。   - SHUTOFF ：关机。  **默认取值**: 不涉及 
      * @return hostStatus
      */
     public String getHostStatus() {

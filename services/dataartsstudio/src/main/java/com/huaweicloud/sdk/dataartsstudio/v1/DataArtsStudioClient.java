@@ -3198,7 +3198,7 @@ public class DataArtsStudioClient {
     /**
      * 创建服务目录
      *
-     * 创建服务目录。 根目录编号为0。
+     * 创建服务目录。根目录编号为0。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3212,7 +3212,7 @@ public class DataArtsStudioClient {
     /**
      * 创建服务目录
      *
-     * 创建服务目录。 根目录编号为0。
+     * 创建服务目录。根目录编号为0。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4302,8 +4302,7 @@ public class DataArtsStudioClient {
     /**
      * 批量删除目录
      *
-     * 批量删除服务目录。  
-     * 删除目录的同时会删除其下的所有子目录，不支持删除带有API的目录。
+     * 批量删除服务目录。删除目录的同时会删除其下的所有子目录，不支持删除带有API的目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4317,8 +4316,7 @@ public class DataArtsStudioClient {
     /**
      * 批量删除目录
      *
-     * 批量删除服务目录。  
-     * 删除目录的同时会删除其下的所有子目录，不支持删除带有API的目录。
+     * 批量删除服务目录。删除目录的同时会删除其下的所有子目录，不支持删除带有API的目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4997,7 +4995,7 @@ public class DataArtsStudioClient {
     /**
      * 获取当前目录下的所有类型列表
      *
-     * 获取当前目录下所有类型列表（包括api和目录，均以目录的数据格式形式展示）。
+     * 获取当前目录下所有类型列表（包括API和目录，均以目录的数据格式形式展示）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5011,7 +5009,7 @@ public class DataArtsStudioClient {
     /**
      * 获取当前目录下的所有类型列表
      *
-     * 获取当前目录下所有类型列表（包括api和目录，均以目录的数据格式形式展示）。
+     * 获取当前目录下所有类型列表（包括API和目录，均以目录的数据格式形式展示）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5083,7 +5081,7 @@ public class DataArtsStudioClient {
     /**
      * 获取当前目录下的api列表
      *
-     * 获取当前目录下的api列表。
+     * 获取当前目录下的API列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5097,7 +5095,7 @@ public class DataArtsStudioClient {
     /**
      * 获取当前目录下的api列表
      *
-     * 获取当前目录下的api列表。
+     * 获取当前目录下的API列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5112,7 +5110,7 @@ public class DataArtsStudioClient {
     /**
      * 查询指定api 应用调用topN
      *
-     * 查询指定api 应用调用topN。
+     * 查询指定API应用调用TopN。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5126,7 +5124,7 @@ public class DataArtsStudioClient {
     /**
      * 查询指定api 应用调用topN
      *
-     * 查询指定api 应用调用topN。
+     * 查询指定API应用调用TopN。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5198,7 +5196,7 @@ public class DataArtsStudioClient {
     /**
      * 查询api 服务调用topN
      *
-     * 查询api 服务调用topN。
+     * 查询API服务调用TopN。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5212,7 +5210,7 @@ public class DataArtsStudioClient {
     /**
      * 查询api 服务调用topN
      *
-     * 查询api 服务调用topN。
+     * 查询API服务调用TopN。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7849,7 +7847,7 @@ public class DataArtsStudioClient {
     /**
      * 批量移动api至新目录
      *
-     * 批量移动api至新目录。
+     * 批量移动API至新目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7863,7 +7861,7 @@ public class DataArtsStudioClient {
     /**
      * 批量移动api至新目录
      *
-     * 批量移动api至新目录。
+     * 批量移动API至新目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8548,7 +8546,7 @@ public class DataArtsStudioClient {
     /**
      * 通过路径获取id
      *
-     * 通过路径获取id。
+     * 通过路径获取ID。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8562,7 +8560,7 @@ public class DataArtsStudioClient {
     /**
      * 通过路径获取id
      *
-     * 通过路径获取id。
+     * 通过路径获取ID。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8751,7 +8749,7 @@ public class DataArtsStudioClient {
     /**
      * 查询指定api 仪表板数据详情
      *
-     * 查询指定api 仪表板数据详情。
+     * 查询指定API仪表板数据详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8765,7 +8763,7 @@ public class DataArtsStudioClient {
     /**
      * 查询指定api 仪表板数据详情
      *
-     * 查询指定api 仪表板数据详情。
+     * 查询指定API仪表板数据详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8780,7 +8778,7 @@ public class DataArtsStudioClient {
     /**
      * 查询api 仪表板数据详情
      *
-     * 查询api 仪表板数据详情。
+     * 查询API仪表板数据详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8794,7 +8792,7 @@ public class DataArtsStudioClient {
     /**
      * 查询api 仪表板数据详情
      *
-     * 查询api 仪表板数据详情。
+     * 查询API仪表板数据详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8809,7 +8807,7 @@ public class DataArtsStudioClient {
     /**
      * 查询api 统计数据详情
      *
-     * 查询api 统计数据详情。
+     * 查询API统计数据详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8823,7 +8821,7 @@ public class DataArtsStudioClient {
     /**
      * 查询api 统计数据详情
      *
-     * 查询api 统计数据详情。
+     * 查询API统计数据详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8926,7 +8924,7 @@ public class DataArtsStudioClient {
     /**
      * 查询app 仪表板数据详情
      *
-     * 查询app 仪表板数据详情。
+     * 查询APP仪表板数据详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8940,7 +8938,7 @@ public class DataArtsStudioClient {
     /**
      * 查询app 仪表板数据详情
      *
-     * 查询app 仪表板数据详情。
+     * 查询APP仪表板数据详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8955,7 +8953,7 @@ public class DataArtsStudioClient {
     /**
      * 查询app 统计数据详情
      *
-     * 查询app 统计数据详情。
+     * 查询APP统计数据详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8969,7 +8967,7 @@ public class DataArtsStudioClient {
     /**
      * 查询app 统计数据详情
      *
-     * 查询app 统计数据详情。
+     * 查询APP统计数据详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -10257,7 +10255,7 @@ public class DataArtsStudioClient {
     /**
      * 通过id获取路径
      *
-     * 通过id获取路径。
+     * 通过ID获取路径。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -10271,7 +10269,7 @@ public class DataArtsStudioClient {
     /**
      * 通过id获取路径
      *
-     * 通过id获取路径。
+     * 通过ID获取路径。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -10285,7 +10283,6 @@ public class DataArtsStudioClient {
     /**
      * 通过id获取路径对象
      *
-     * 通过目录id获取路径对象。  
      * 通过目录id获取从根目录至当前目录链路上每一层的路径信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -10300,7 +10297,6 @@ public class DataArtsStudioClient {
     /**
      * 通过id获取路径对象
      *
-     * 通过目录id获取路径对象。  
      * 通过目录id获取从根目录至当前目录链路上每一层的路径信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -12392,6 +12388,7 @@ public class DataArtsStudioClient {
     /**
      * API授权操作(授权/取消授权/申请/续约)
      *
+     * API授权操作(授权/取消授权/申请/续约)。
      * - API主动授权：  API审核人可发起，API主动授权成功后，在有效期内，APP即可访问该API。API授权包含授权和续约两部分功能。
      *     * 授权：授权会给予APP在有效期内访问API的权利。
      *     * 续约：续约会更新授权有效期，仅支持延长有效期，不能减少。
@@ -12415,6 +12412,7 @@ public class DataArtsStudioClient {
     /**
      * API授权操作(授权/取消授权/申请/续约)
      *
+     * API授权操作(授权/取消授权/申请/续约)。
      * - API主动授权：  API审核人可发起，API主动授权成功后，在有效期内，APP即可访问该API。API授权包含授权和续约两部分功能。
      *     * 授权：授权会给予APP在有效期内访问API的权利。
      *     * 续约：续约会更新授权有效期，仅支持延长有效期，不能减少。
@@ -12557,6 +12555,7 @@ public class DataArtsStudioClient {
     /**
      * API操作(下线/停用/恢复)
      *
+     * 下线API、停用API或恢复API。
      * - 下线API。将已发布的API下线。下线后，所有授权关系都会被解除，API将无法再被调用。
      * - 停用API。将已发布的API临时下线。下线后，授权关系会保留，停用期间API将无法再被调用。
      * - 恢复API。将已停用的API恢复使用。恢复后， API重新提供调用。
@@ -12576,6 +12575,7 @@ public class DataArtsStudioClient {
     /**
      * API操作(下线/停用/恢复)
      *
+     * 下线API、停用API或恢复API。
      * - 下线API。将已发布的API下线。下线后，所有授权关系都会被解除，API将无法再被调用。
      * - 停用API。将已发布的API临时下线。下线后，授权关系会保留，停用期间API将无法再被调用。
      * - 恢复API。将已停用的API恢复使用。恢复后， API重新提供调用。
@@ -12596,7 +12596,7 @@ public class DataArtsStudioClient {
     /**
      * 导出包含API信息的excel文件
      *
-     * 导出包含API信息的excel文件。
+     * 导出包含API信息的EXCEL文件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -12610,7 +12610,7 @@ public class DataArtsStudioClient {
     /**
      * 导出包含API信息的excel文件
      *
-     * 导出包含API信息的excel文件。
+     * 导出包含API信息的EXCEL文件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -12625,7 +12625,7 @@ public class DataArtsStudioClient {
     /**
      * 下载excel模板
      *
-     * 下载excel模板。
+     * 下载EXCEL模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -12640,7 +12640,7 @@ public class DataArtsStudioClient {
     /**
      * 下载excel模板
      *
-     * 下载excel模板。
+     * 下载EXCEL模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -12655,7 +12655,7 @@ public class DataArtsStudioClient {
     /**
      * 全量导出包含API的excel压缩文件
      *
-     * 全量导出包含API的excel压缩文件。
+     * 全量导出包含API的EXCEL压缩文件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -12669,7 +12669,7 @@ public class DataArtsStudioClient {
     /**
      * 全量导出包含API的excel压缩文件
      *
-     * 全量导出包含API的excel压缩文件。
+     * 全量导出包含API的EXCEL压缩文件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -12684,7 +12684,7 @@ public class DataArtsStudioClient {
     /**
      * 导入包含API信息的excel文件
      *
-     * 导入包含API信息的excel文件。
+     * 导入包含API信息的EXCEL文件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -12698,7 +12698,7 @@ public class DataArtsStudioClient {
     /**
      * 导入包含API信息的excel文件
      *
-     * 导入包含API信息的excel文件。
+     * 导入包含API信息的EXCEL文件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -45,6 +45,11 @@ public class LoginPolicyResult {
 
     private Boolean showRecentLoginInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allow_sms_login")
+
+    private Boolean allowSmsLogin;
+
     public LoginPolicyResult withAccountValidityPeriod(Integer accountValidityPeriod) {
         this.accountValidityPeriod = accountValidityPeriod;
         return this;
@@ -164,6 +169,23 @@ public class LoginPolicyResult {
         this.showRecentLoginInfo = showRecentLoginInfo;
     }
 
+    public LoginPolicyResult withAllowSmsLogin(Boolean allowSmsLogin) {
+        this.allowSmsLogin = allowSmsLogin;
+        return this;
+    }
+
+    /**
+     * 是否允许账号短信登录。
+     * @return allowSmsLogin
+     */
+    public Boolean getAllowSmsLogin() {
+        return allowSmsLogin;
+    }
+
+    public void setAllowSmsLogin(Boolean allowSmsLogin) {
+        this.allowSmsLogin = allowSmsLogin;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -179,7 +201,8 @@ public class LoginPolicyResult {
             && Objects.equals(this.loginFailedTimes, that.loginFailedTimes)
             && Objects.equals(this.periodWithLoginFailures, that.periodWithLoginFailures)
             && Objects.equals(this.sessionTimeout, that.sessionTimeout)
-            && Objects.equals(this.showRecentLoginInfo, that.showRecentLoginInfo);
+            && Objects.equals(this.showRecentLoginInfo, that.showRecentLoginInfo)
+            && Objects.equals(this.allowSmsLogin, that.allowSmsLogin);
     }
 
     @Override
@@ -190,7 +213,8 @@ public class LoginPolicyResult {
             loginFailedTimes,
             periodWithLoginFailures,
             sessionTimeout,
-            showRecentLoginInfo);
+            showRecentLoginInfo,
+            allowSmsLogin);
     }
 
     @Override
@@ -204,6 +228,7 @@ public class LoginPolicyResult {
         sb.append("    periodWithLoginFailures: ").append(toIndentedString(periodWithLoginFailures)).append("\n");
         sb.append("    sessionTimeout: ").append(toIndentedString(sessionTimeout)).append("\n");
         sb.append("    showRecentLoginInfo: ").append(toIndentedString(showRecentLoginInfo)).append("\n");
+        sb.append("    allowSmsLogin: ").append(toIndentedString(allowSmsLogin)).append("\n");
         sb.append("}");
         return sb.toString();
     }

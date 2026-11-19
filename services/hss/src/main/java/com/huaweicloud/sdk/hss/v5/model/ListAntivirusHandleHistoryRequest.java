@@ -226,7 +226,7 @@ public class ListAntivirusHandleHistoryRequest {
     }
 
     /**
-     * **参数解释**: 威胁等级，已废弃 **约束限制**: 不涉及 **取值范围**: 威胁等级，包含如下:   - Low：低危   - Medium：中危   - High：高危   - Critical：致命 **默认取值**: 不涉及 
+     * **参数解释**: 威胁等级，已废弃 **约束限制**: 不涉及 **取值范围**: 威胁等级，包含如下:   - Low：低危   - Medium：中危   - High：高危   - Critical：致命  **默认取值**: 不涉及 
      * @return severityList
      */
     public List<String> getSeverityList() {
@@ -328,7 +328,7 @@ public class ListAntivirusHandleHistoryRequest {
     }
 
     /**
-     * **参数解释**: 处理方式 **约束限制**: 不涉及 **取值范围**: 处理方式，包含如下:   - mark_as_handled：手动处理   - ignore：忽略   - add_to_alarm_whitelist：加入告警白名单   - manual_isolate_and_kill：手动隔离查杀   - auto_isolate_and_kill：自动隔离查杀   - unhandle：取消手动处理   - do_not_ignore：取消忽略   - remove_from_alarm_whitelist：删除告警白名单   - do_not_isolate_or_kill：取消隔离文件 **默认取值**: 不涉及 
+     * **参数解释**: 处理方式 **约束限制**: 不涉及 **取值范围**: 处理方式，包含如下:   - mark_as_handled：手动处理   - ignore：忽略   - add_to_alarm_whitelist：加入告警白名单   - manual_isolate_and_kill：手动隔离查杀   - auto_isolate_and_kill：自动隔离查杀   - unhandle：取消手动处理   - do_not_ignore：取消忽略   - remove_from_alarm_whitelist：删除告警白名单   - do_not_isolate_or_kill：取消隔离文件  **默认取值**: 不涉及 
      * @return handleMethod
      */
     public String getHandleMethod() {

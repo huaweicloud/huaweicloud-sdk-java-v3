@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -66,6 +68,16 @@ public class ShowDataframeJobResp {
     @JsonProperty(value = "execution_result")
 
     private ExecutionResult executionResult;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error")
+
+    private ErrorMessage error;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sessions")
+
+    private List<DataframeJobSessionResp> sessions = null;
 
     public ShowDataframeJobResp withId(String id) {
         this.id = id;
@@ -272,6 +284,65 @@ public class ShowDataframeJobResp {
         this.executionResult = executionResult;
     }
 
+    public ShowDataframeJobResp withError(ErrorMessage error) {
+        this.error = error;
+        return this;
+    }
+
+    public ShowDataframeJobResp withError(Consumer<ErrorMessage> errorSetter) {
+        if (this.error == null) {
+            this.error = new ErrorMessage();
+            errorSetter.accept(this.error);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get error
+     * @return error
+     */
+    public ErrorMessage getError() {
+        return error;
+    }
+
+    public void setError(ErrorMessage error) {
+        this.error = error;
+    }
+
+    public ShowDataframeJobResp withSessions(List<DataframeJobSessionResp> sessions) {
+        this.sessions = sessions;
+        return this;
+    }
+
+    public ShowDataframeJobResp addSessionsItem(DataframeJobSessionResp sessionsItem) {
+        if (this.sessions == null) {
+            this.sessions = new ArrayList<>();
+        }
+        this.sessions.add(sessionsItem);
+        return this;
+    }
+
+    public ShowDataframeJobResp withSessions(Consumer<List<DataframeJobSessionResp>> sessionsSetter) {
+        if (this.sessions == null) {
+            this.sessions = new ArrayList<>();
+        }
+        sessionsSetter.accept(this.sessions);
+        return this;
+    }
+
+    /**
+     * **参数解释**：作业关联的 session 列表（含该 session 下的 statement 列表与已处理条数）。 **约束限制**：作业无关联 session 时返回空数组。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * @return sessions
+     */
+    public List<DataframeJobSessionResp> getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(List<DataframeJobSessionResp> sessions) {
+        this.sessions = sessions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -286,7 +357,8 @@ public class ShowDataframeJobResp {
             && Objects.equals(this.entrypoint, that.entrypoint) && Objects.equals(this.duration, that.duration)
             && Objects.equals(this.createUser, that.createUser) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.executionResult, that.executionResult);
+            && Objects.equals(this.executionResult, that.executionResult) && Objects.equals(this.error, that.error)
+            && Objects.equals(this.sessions, that.sessions);
     }
 
     @Override
@@ -301,7 +373,9 @@ public class ShowDataframeJobResp {
             createTime,
             startTime,
             endTime,
-            executionResult);
+            executionResult,
+            error,
+            sessions);
     }
 
     @Override
@@ -319,6 +393,8 @@ public class ShowDataframeJobResp {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    executionResult: ").append(toIndentedString(executionResult)).append("\n");
+        sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("    sessions: ").append(toIndentedString(sessions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

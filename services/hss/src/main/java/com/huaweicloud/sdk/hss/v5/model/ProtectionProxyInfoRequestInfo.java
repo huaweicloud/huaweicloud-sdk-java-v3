@@ -103,7 +103,7 @@ public class ProtectionProxyInfoRequestInfo {
     }
 
     /**
-     * **参数解释**: 防护动作，新建防护策略则必填 **约束限制**: 不涉及 **取值范围**: 包含如下：   - alarm_and_isolation ：告警并自动隔离。   - alarm_only ：仅告警。 **默认取值**: 不涉及
+     * **参数解释**: 防护动作，新建防护策略则必填 **约束限制**: 不涉及 **取值范围**: 包含如下：   - alarm_and_isolation ：告警并自动隔离。   - alarm_only ：仅告警。  **默认取值**: 不涉及
      * @return protectionMode
      */
     public String getProtectionMode() {
@@ -120,7 +120,7 @@ public class ProtectionProxyInfoRequestInfo {
     }
 
     /**
-     * **参数解释**: 是否开启诱饵防护，新建防护策略则必填。 **约束限制**: 不涉及 **取值范围**: 包含如下1种：   - opened ：开启。 **默认取值**: 不涉及
+     * **参数解释**: 是否开启诱饵防护，新建防护策略则必填。 **约束限制**: 不涉及 **取值范围**: 包含如下1种：   - opened ：开启。  **默认取值**: 不涉及
      * @return baitProtectionStatus
      */
     public String getBaitProtectionStatus() {
@@ -188,7 +188,7 @@ public class ProtectionProxyInfoRequestInfo {
     }
 
     /**
-     * **参数解释**: 是否运行时检测 **约束限制**: 不涉及 **取值范围**: 暂时只有关闭一种状态，为预留字段。   - closed ：关闭。 **默认取值**: 不涉及
+     * **参数解释**: 是否运行时检测 **约束限制**: 不涉及 **取值范围**: 暂时只有关闭一种状态，为预留字段。   - closed ：关闭。  **默认取值**: 不涉及
      * @return runtimeDetectionStatus
      */
     public String getRuntimeDetectionStatus() {
@@ -205,7 +205,7 @@ public class ProtectionProxyInfoRequestInfo {
     }
 
     /**
-     * **参数解释**: 支持该策略的操作系统，新建防护策略则必填 **约束限制**: 不涉及 **取值范围**: 包含两种：   - Windows : Windows系统   - Linux : Linux系统 **默认取值**: 不涉及
+     * **参数解释**: 支持该策略的操作系统，新建防护策略则必填 **约束限制**: 不涉及 **取值范围**: 包含两种：   - Windows : Windows系统   - Linux : Linux系统  **默认取值**: 不涉及
      * @return operatingSystem
      */
     public String getOperatingSystem() {

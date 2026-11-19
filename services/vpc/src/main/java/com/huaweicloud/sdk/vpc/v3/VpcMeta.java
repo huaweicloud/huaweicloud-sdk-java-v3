@@ -1386,6 +1386,18 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceAssociationsRequest::getInstanceProjectId,
                 ListResourceAssociationsRequest::setInstanceProjectId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourceAssociationsRequest::getLimit,
+                ListResourceAssociationsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceAssociationsRequest::getMarker,
+                ListResourceAssociationsRequest::setMarker));
 
         // response
 
@@ -1627,6 +1639,66 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getParentId,
                 ListSubNetworkInterfacesRequest::setParentId));
+        builder.<Boolean>withRequestField("enable_eip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getEnableEip,
+                ListSubNetworkInterfacesRequest::setEnableEip));
+        builder.<String>withRequestField("scope",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getScope,
+                ListSubNetworkInterfacesRequest::setScope));
+        builder.<List<String>>withRequestField("security_groups",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getSecurityGroups,
+                ListSubNetworkInterfacesRequest::setSecurityGroups));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getEnterpriseProjectId,
+                ListSubNetworkInterfacesRequest::setEnterpriseProjectId));
+        builder.<List<String>>withRequestField("parent_device_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getParentDeviceId,
+                ListSubNetworkInterfacesRequest::setParentDeviceId));
+        builder.<List<Integer>>withRequestField("vlan_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getVlanId,
+                ListSubNetworkInterfacesRequest::setVlanId));
+        builder.<List<String>>withRequestField("state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getState,
+                ListSubNetworkInterfacesRequest::setState));
+        builder.<List<String>>withRequestField("ipv6_ip_address",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getIpv6IpAddress,
+                ListSubNetworkInterfacesRequest::setIpv6IpAddress));
+        builder.<List<String>>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getInstanceId,
+                ListSubNetworkInterfacesRequest::setInstanceId));
+        builder.<List<String>>withRequestField("instance_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSubNetworkInterfacesRequest::getInstanceType,
+                ListSubNetworkInterfacesRequest::setInstanceType));
 
         // response
 

@@ -350,6 +350,41 @@ public class UpdateTableResponse extends SdkResponse {
 
     private String viewOriginalText;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "catalog_id")
+
+    private String catalogId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "database_id")
+
+    private String databaseId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "table_id")
+
+    private String tableId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "table_status")
+
+    private Integer tableStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "external_table_id")
+
+    private String externalTableId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_statistic_enable")
+
+    private Boolean dataStatisticEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version_id")
+
+    private String versionId;
+
     public UpdateTableResponse withCatalogName(String catalogName) {
         this.catalogName = catalogName;
         return this;
@@ -697,6 +732,125 @@ public class UpdateTableResponse extends SdkResponse {
         this.viewOriginalText = viewOriginalText;
     }
 
+    public UpdateTableResponse withCatalogId(String catalogId) {
+        this.catalogId = catalogId;
+        return this;
+    }
+
+    /**
+     * catalogID
+     * @return catalogId
+     */
+    public String getCatalogId() {
+        return catalogId;
+    }
+
+    public void setCatalogId(String catalogId) {
+        this.catalogId = catalogId;
+    }
+
+    public UpdateTableResponse withDatabaseId(String databaseId) {
+        this.databaseId = databaseId;
+        return this;
+    }
+
+    /**
+     * 数据库ID
+     * @return databaseId
+     */
+    public String getDatabaseId() {
+        return databaseId;
+    }
+
+    public void setDatabaseId(String databaseId) {
+        this.databaseId = databaseId;
+    }
+
+    public UpdateTableResponse withTableId(String tableId) {
+        this.tableId = tableId;
+        return this;
+    }
+
+    /**
+     * 表ID
+     * @return tableId
+     */
+    public String getTableId() {
+        return tableId;
+    }
+
+    public void setTableId(String tableId) {
+        this.tableId = tableId;
+    }
+
+    public UpdateTableResponse withTableStatus(Integer tableStatus) {
+        this.tableStatus = tableStatus;
+        return this;
+    }
+
+    /**
+     * 表状态，0表示正常，1表示删除中，2表示已删除，3表示恢复中，4表示清除中，其余值为元数据更新、创建、异常等中间状态
+     * @return tableStatus
+     */
+    public Integer getTableStatus() {
+        return tableStatus;
+    }
+
+    public void setTableStatus(Integer tableStatus) {
+        this.tableStatus = tableStatus;
+    }
+
+    public UpdateTableResponse withExternalTableId(String externalTableId) {
+        this.externalTableId = externalTableId;
+        return this;
+    }
+
+    /**
+     * 用户端表id，创建时指定，不可修改
+     * @return externalTableId
+     */
+    public String getExternalTableId() {
+        return externalTableId;
+    }
+
+    public void setExternalTableId(String externalTableId) {
+        this.externalTableId = externalTableId;
+    }
+
+    public UpdateTableResponse withDataStatisticEnable(Boolean dataStatisticEnable) {
+        this.dataStatisticEnable = dataStatisticEnable;
+        return this;
+    }
+
+    /**
+     * 数据概况统计开关。默认状态为开，修改table开关状态后，还需检查所属database的开关状态
+     * @return dataStatisticEnable
+     */
+    public Boolean getDataStatisticEnable() {
+        return dataStatisticEnable;
+    }
+
+    public void setDataStatisticEnable(Boolean dataStatisticEnable) {
+        this.dataStatisticEnable = dataStatisticEnable;
+    }
+
+    public UpdateTableResponse withVersionId(String versionId) {
+        this.versionId = versionId;
+        return this;
+    }
+
+    /**
+     * 版本ID
+     * @return versionId
+     */
+    public String getVersionId() {
+        return versionId;
+    }
+
+    public void setVersionId(String versionId) {
+        this.versionId = versionId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -718,7 +872,12 @@ public class UpdateTableResponse extends SdkResponse {
             && Objects.equals(this.tableFormat, that.tableFormat) && Objects.equals(this.tableType, that.tableType)
             && Objects.equals(this.comments, that.comments)
             && Objects.equals(this.viewExpandedText, that.viewExpandedText)
-            && Objects.equals(this.viewOriginalText, that.viewOriginalText);
+            && Objects.equals(this.viewOriginalText, that.viewOriginalText)
+            && Objects.equals(this.catalogId, that.catalogId) && Objects.equals(this.databaseId, that.databaseId)
+            && Objects.equals(this.tableId, that.tableId) && Objects.equals(this.tableStatus, that.tableStatus)
+            && Objects.equals(this.externalTableId, that.externalTableId)
+            && Objects.equals(this.dataStatisticEnable, that.dataStatisticEnable)
+            && Objects.equals(this.versionId, that.versionId);
     }
 
     @Override
@@ -740,7 +899,14 @@ public class UpdateTableResponse extends SdkResponse {
             tableType,
             comments,
             viewExpandedText,
-            viewOriginalText);
+            viewOriginalText,
+            catalogId,
+            databaseId,
+            tableId,
+            tableStatus,
+            externalTableId,
+            dataStatisticEnable,
+            versionId);
     }
 
     @Override
@@ -765,6 +931,13 @@ public class UpdateTableResponse extends SdkResponse {
         sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
         sb.append("    viewExpandedText: ").append(toIndentedString(viewExpandedText)).append("\n");
         sb.append("    viewOriginalText: ").append(toIndentedString(viewOriginalText)).append("\n");
+        sb.append("    catalogId: ").append(toIndentedString(catalogId)).append("\n");
+        sb.append("    databaseId: ").append(toIndentedString(databaseId)).append("\n");
+        sb.append("    tableId: ").append(toIndentedString(tableId)).append("\n");
+        sb.append("    tableStatus: ").append(toIndentedString(tableStatus)).append("\n");
+        sb.append("    externalTableId: ").append(toIndentedString(externalTableId)).append("\n");
+        sb.append("    dataStatisticEnable: ").append(toIndentedString(dataStatisticEnable)).append("\n");
+        sb.append("    versionId: ").append(toIndentedString(versionId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

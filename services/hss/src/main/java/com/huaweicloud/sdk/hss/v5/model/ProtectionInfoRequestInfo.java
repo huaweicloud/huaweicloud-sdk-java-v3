@@ -69,7 +69,7 @@ public class ProtectionInfoRequestInfo {
     }
 
     /**
-     * **参数解释**: 策略支持的操作系统 **约束限制**: 不涉及 **取值范围**: 包含如下：   - Windows : Windows系统   - Linux : Linux系统 **默认取值**: 不涉及
+     * **参数解释**: 策略支持的操作系统 **约束限制**: 不涉及 **取值范围**: 包含如下：   - Windows : Windows系统   - Linux : Linux系统  **默认取值**: 不涉及
      * @return operatingSystem
      */
     public String getOperatingSystem() {
@@ -86,7 +86,7 @@ public class ProtectionInfoRequestInfo {
     }
 
     /**
-     * **参数解释**: 勒索防护是否开启，若开启勒索病毒防护，则必填protection_policy_id或者create_protection_policy其中一项。 **约束限制**: 不涉及 **取值范围**: 包含如下：   - closed ：关闭。   - opened ：开启。 **默认取值**: 不涉及
+     * **参数解释**: 勒索防护是否开启，若开启勒索病毒防护，则必填protection_policy_id或者create_protection_policy其中一项。 **约束限制**: 不涉及 **取值范围**: 包含如下：   - closed ：关闭。   - opened ：开启。  **默认取值**: 不涉及
      * @return ransomProtectionStatus
      */
     public String getRansomProtectionStatus() {
@@ -147,7 +147,7 @@ public class ProtectionInfoRequestInfo {
     }
 
     /**
-     * **参数解释**: 是否服务器备份，若选择开启服务器备份，则backup_cycle必填 **约束限制**: 不涉及 **取值范围**: 包含如下：   - closed ：关闭。   - opened ：开启。 **默认取值**: 不涉及
+     * **参数解释**: 是否服务器备份，若选择开启服务器备份，则backup_cycle必填 **约束限制**: 不涉及 **取值范围**: 包含如下：   - closed ：关闭。   - opened ：开启。  **默认取值**: 不涉及
      * @return backupProtectionStatus
      */
     public String getBackupProtectionStatus() {

@@ -91,7 +91,7 @@ public class ListServerlessAssetRequest {
     }
 
     /**
-     * **参数解释**： 资产维度 **约束限制**： 不涉及 **取值范围**： - container: 容器维度 - pod: pod实例维度 **默认取值**： container
+     * **参数解释**： 资产维度 **约束限制**： 不涉及 **取值范围**： - container: 容器维度 - pod: pod实例维度  **默认取值**： container
      * @return category
      */
     public String getCategory() {

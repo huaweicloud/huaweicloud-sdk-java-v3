@@ -571,7 +571,7 @@ public class VulHostInfo {
     }
 
     /**
-     * **参数解释**: 主机状态 **取值范围**: - ACTIVE：正在运行。 - SHUTOFF：关机。 - BUILDING：创建中。 - ERROR：故障。 **默认取值**: 不涉及 
+     * **参数解释**: 主机状态 **取值范围**: - ACTIVE：正在运行。 - SHUTOFF：关机。 - BUILDING：创建中。 - ERROR：故障。  **默认取值**: 不涉及 
      * @return hostStatus
      */
     public String getHostStatus() {

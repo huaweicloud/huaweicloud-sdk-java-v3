@@ -22,6 +22,11 @@ public class ListRealTimeSessionsRequestBody {
     private String componentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_local")
+
+    private Boolean supportLocal;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "query_info")
 
     private SessionQueryInfoOption queryInfo;
@@ -60,6 +65,23 @@ public class ListRealTimeSessionsRequestBody {
         this.componentId = componentId;
     }
 
+    public ListRealTimeSessionsRequestBody withSupportLocal(Boolean supportLocal) {
+        this.supportLocal = supportLocal;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否展示本地会话。 **约束限制**： 不涉及。 **取值范围**： - true：展示本地会话 - false：不展示本地会话  **默认取值**: false。
+     * @return supportLocal
+     */
+    public Boolean getSupportLocal() {
+        return supportLocal;
+    }
+
+    public void setSupportLocal(Boolean supportLocal) {
+        this.supportLocal = supportLocal;
+    }
+
     public ListRealTimeSessionsRequestBody withQueryInfo(SessionQueryInfoOption queryInfo) {
         this.queryInfo = queryInfo;
         return this;
@@ -96,12 +118,12 @@ public class ListRealTimeSessionsRequestBody {
         }
         ListRealTimeSessionsRequestBody that = (ListRealTimeSessionsRequestBody) obj;
         return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.componentId, that.componentId)
-            && Objects.equals(this.queryInfo, that.queryInfo);
+            && Objects.equals(this.supportLocal, that.supportLocal) && Objects.equals(this.queryInfo, that.queryInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nodeId, componentId, queryInfo);
+        return Objects.hash(nodeId, componentId, supportLocal, queryInfo);
     }
 
     @Override
@@ -110,6 +132,7 @@ public class ListRealTimeSessionsRequestBody {
         sb.append("class ListRealTimeSessionsRequestBody {\n");
         sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
         sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
+        sb.append("    supportLocal: ").append(toIndentedString(supportLocal)).append("\n");
         sb.append("    queryInfo: ").append(toIndentedString(queryInfo)).append("\n");
         sb.append("}");
         return sb.toString();

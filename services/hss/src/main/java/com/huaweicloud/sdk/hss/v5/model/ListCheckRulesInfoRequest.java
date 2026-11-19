@@ -245,7 +245,7 @@ public class ListCheckRulesInfoRequest {
     }
 
     /**
-     * **参数解释**: 检测结果 **约束限制**: 不涉及 **取值范围**:   - pass：通过   - failed：未通过 **默认取值**: 不涉及
+     * **参数解释**: 检测结果 **约束限制**: 不涉及 **取值范围**:   - pass：通过   - failed：未通过  **默认取值**: 不涉及
      * @return scanResult
      */
     public String getScanResult() {
